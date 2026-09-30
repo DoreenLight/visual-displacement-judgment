@@ -1,0 +1,750 @@
+started   collect   开始 collect
+专家库已加载：2 个实体（/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/09_章隆彬_合作团队/experts.yaml）
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+Longbin+Zhang+Hunan+University+%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E9%99%A2+rehabilitation+robotics+exoskeleton+neuromusculoskeletal+model+surface+EMG+markerless+motion+capture+brain+computer+interface+muscle+tendon+estimation+joint+torque+prediction+gait+balance+assessment+%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F+%E5%90%88%E4%BD%9C%E7%BD%91%E7%BB%9C&limit=1 200
+response: https://grokipedia.com/api/typeahead?query=%22Longbin+Zhang%22+Hunan+University+exoskeleton+rehabilitation+robotics&limit=1 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20Longbin%20Zhang%20Hunan%20University%20%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E9%99%A2%20rehabilitation%20robotics%20exoskeleton%20neuromusculoskeletal%20model%20surface%20EMG%20markerless%20motion%20capture%20brain%20computer%20interface%20muscle%20tendon%20estimation%20joint%20torque%20prediction%20gait%20balance%20assessment%20%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F%20%E5%90%88%E4%BD%9C%E7%BD%91%E7%BB%9C) > client error (Connect) > tls handshake eof')")
+response: https://search.yahoo.com/search;_ylt=KC3RRoWDQRx8EaQutdxAVC-0;_ylu=Rdn9TA-xmkcFiiEZFV0DfSE3wYU5S93pZ6Wn6Kz2nk3dn3c?p=%22Longbin+Zhang%22+Hunan+University+exoskeleton+rehabilitation+robotics 200
+response: https://search.yahoo.com/search;_ylt=aKvR7-o8aJeTv1xO7vJJPWC6;_ylu=HsHXNN5i-OUZ_OjO3_JkIz1v9B4og9vmdGMP3CqlrGJ_oDc?p=%E7%AB%A0%E9%9A%86%E5%BD%AC+Longbin+Zhang+Hunan+University+%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E9%99%A2+rehabilitation+robotics+exoskeleton+neuromusculoskeletal+model+surface+EMG+markerless+motion+capture+brain+computer+interface+muscle+tendon+estimation+joint+torque+prediction+gait+balance+assessment+%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F+%E5%90%88%E4%BD%9C%E7%BD%91%E7%BB%9C 200
+response: https://grokipedia.com/api/typeahead?query=EMG-driven+neuromusculoskeletal+model+joint+torque+prediction+lower+limb&limit=1 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%22Longbin%20Zhang%22%20Hunan%20University%20exoskeleton%20rehabilitation%20robotics) > client error (Connect) > tls handshake eof')")
+response: https://www.mojeek.com/search?q=EMG-driven+neuromusculoskeletal+model+joint+torque+prediction+lower+limb 403
+response: https://grokipedia.com/api/typeahead?query=markerless+motion+capture+gait+balance+assessment+deep+learning+pose+estimation&limit=1 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=EMG-driven%20neuromusculoskeletal%20model%20joint%20torque%20prediction%20lower%20limb) > client error (Connect) > tls handshake eof')")
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=markerless%20motion%20capture%20gait%20balance%20assessment%20deep%20learning%20pose%20estimation) > client error (Connect) > tls handshake eof')")
+response: https://www.startpage.com/ 200
+response: https://www.google.com/search?q=EMG-driven+neuromusculoskeletal+model+joint+torque+prediction+lower+limb&filter=1&start=0&hl=wt-WT&lr=lang_wt&cr=countryWT 200
+response: https://www.startpage.com/sp/search 200
+response: https://search.brave.com/search?q=markerless+motion+capture+gait+balance+assessment+deep+learning+pose+estimation&source=web 429
+response: https://www.google.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+Longbin+Zhang+Hunan+University+%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E9%99%A2+rehabilitation+robotics+exoskeleton+neuromusculoskeletal+model+surface+EMG+markerless+motion+capture+brain+computer+interface+muscle+tendon+estimation+joint+torque+prediction+gait+balance+assessment+%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F+%E5%90%88%E4%BD%9C%E7%BD%91%E7%BB%9C&filter=1&start=0&hl=wt-WT&lr=lang_wt&cr=countryWT 200
+response: https://www.google.com/search?q=%22Longbin+Zhang%22+Hunan+University+exoskeleton+rehabilitation+robotics&filter=1&start=0&hl=wt-WT&lr=lang_wt&cr=countryWT 200
+response: https://www.startpage.com/ 200
+response: https://www.mojeek.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+Longbin+Zhang+Hunan+University+%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E9%99%A2+rehabilitation+robotics+exoskeleton+neuromusculoskeletal+model+surface+EMG+markerless+motion+capture+brain+computer+interface+muscle+tendon+estimation+joint+torque+prediction+gait+balance+assessment+%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F+%E5%90%88%E4%BD%9C%E7%BD%91%E7%BB%9C 403
+response: https://www.startpage.com/sp/search 200
+response: https://yandex.com/search/site/?text=EMG-driven+neuromusculoskeletal+model+joint+torque+prediction+lower+limb&web=1&searchid=7689654 200
+response: https://search.brave.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+Longbin+Zhang+Hunan+University+%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E9%99%A2+rehabilitation+robotics+exoskeleton+neuromusculoskeletal+model+surface+EMG+markerless+motion+capture+brain+computer+interface+muscle+tendon+estimation+joint+torque+prediction+gait+balance+assessment+%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F+%E5%90%88%E4%BD%9C%E7%BD%91%E7%BB%9C&source=web 429
+response: https://yandex.com/search/site/?text=%22Longbin+Zhang%22+Hunan+University+exoskeleton+rehabilitation+robotics&web=1&searchid=4963036 200
+response: https://grokipedia.com/api/typeahead?query=brain-computer+interface+lower+limb+exoskeleton+motor+imagery+control&limit=1 200
+response: https://www.mojeek.com/search?q=markerless+motion+capture+gait+balance+assessment+deep+learning+pose+estimation 403
+response: https://search.yahoo.com/search;_ylt=2KeY4V9uqHI4ENAK2ThYUnYP;_ylu=CK-ZPeeigYacC5ITJl0wzcA_zf9Se86POWeY0gyymXXeZZo?p=brain-computer+interface+lower+limb+exoskeleton+motor+imagery+control 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=brain-computer%20interface%20lower%20limb%20exoskeleton%20motor%20imagery%20control) > client error (Connect) > tls handshake eof')")
+response: https://grokipedia.com/api/typeahead?query=muscle+tendon+force+estimation+surface+EMG+OpenSim+musculoskeletal+simulation&limit=1 200
+response: https://search.yahoo.com/search;_ylt=QxloKTfghIxAurx5SHG55ZER;_ylu=2qQO-l6ZbRV6nMczSKScouxY3cSQKxAAHRb1t5l87KCdtt4?p=muscle+tendon+force+estimation+surface+EMG+OpenSim+musculoskeletal+simulation 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=muscle%20tendon%20force%20estimation%20surface%20EMG%20OpenSim%20musculoskeletal%20simulation) > client error (Connect) > tls handshake eof')")
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+Longbin+Zhang+Hunan+University+%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E9%99%A2+rehabilitation+robotics+exoskeleton+neuromusculoskeletal+model+surface+EMG+markerless+motion+capture+brain+computer+interface+muscle+tendon+estimation+joint+torque+prediction+gait+balance+assessment+%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F+%E5%90%88%E4%BD%9C%E7%BD%91%E7%BB%9C&web=1&searchid=2615358 200
+response: https://yandex.com/search/site/?text=markerless+motion+capture+gait+balance+assessment+deep+learning+pose+estimation&web=1&searchid=2151432 200
+response: https://www.startpage.com/ 200
+response: https://yandex.com/search/site/?text=brain-computer+interface+lower+limb+exoskeleton+motor+imagery+control&web=1&searchid=7476975 200
+response: https://www.startpage.com/sp/search 200
+response: https://www.startpage.com/ 200
+response: https://www.startpage.com/sp/search 200
+response: https://search.brave.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E6%B9%96%E5%8D%97%E5%A4%A7%E5%AD%A6+%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E9%99%A2+%E5%BA%B7%E5%A4%8D%E6%9C%BA%E5%99%A8%E4%BA%BA+%E5%A4%96%E9%AA%A8%E9%AA%BC&source=web 429
+response: https://search.yahoo.com/search;_ylt=w0i57EKmaqy5r67wu8KyFkEm;_ylu=cV4_FIaJFRVMlAq7ANM2srYImZ5_T6rWMSrHulnhgtPWjAs?p=markerless+motion+capture+gait+balance+assessment+deep+learning+pose+estimation 200
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E6%B9%96%E5%8D%97%E5%A4%A7%E5%AD%A6+%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E9%99%A2+%E5%BA%B7%E5%A4%8D%E6%9C%BA%E5%99%A8%E4%BA%BA+%E5%A4%96%E9%AA%A8%E9%AA%BC&limit=1 200
+response: https://www.mojeek.com/search?q=muscle+tendon+force+estimation+surface+EMG+OpenSim+musculoskeletal+simulation 403
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20%E6%B9%96%E5%8D%97%E5%A4%A7%E5%AD%A6%20%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E9%99%A2%20%E5%BA%B7%E5%A4%8D%E6%9C%BA%E5%99%A8%E4%BA%BA%20%E5%A4%96%E9%AA%A8%E9%AA%BC) > client error (Connect) > tls handshake eof')")
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC&limit=1 200
+response: https://search.brave.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC&source=web 429
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC) > client error (Connect) > tls handshake eof')")
+response: https://www.google.com/search?q=markerless+motion+capture+gait+balance+assessment+deep+learning+pose+estimation&filter=1&start=0&hl=wt-WT&lr=lang_wt&cr=countryWT 200
+response: https://yandex.com/search/site/?text=muscle+tendon+force+estimation+surface+EMG+OpenSim+musculoskeletal+simulation&web=1&searchid=2865203 200
+response: https://search.yahoo.com/search;_ylt=JLi7F7gxm12Gfnc0ZVNuNcl1;_ylu=G9vlJoMRQmhVxIbyuwrTyc-lSzEldswHLOuHNf4e0J2FW1M?p=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E6%B9%96%E5%8D%97%E5%A4%A7%E5%AD%A6+%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E9%99%A2+%E5%BA%B7%E5%A4%8D%E6%9C%BA%E5%99%A8%E4%BA%BA+%E5%A4%96%E9%AA%A8%E9%AA%BC 200
+response: https://search.yahoo.com/search;_ylt=rRZFGtq6OotanndqeVHvVe_g;_ylu=wiP8T1bd4BRvTcxkuZYN1UFv2YAWlTlqnk98U_JbYqE_zxw?p=%E7%AB%A0%E9%9A%86%E5%BD%AC 200
+response: https://www.google.com/search?q=muscle+tendon+force+estimation+surface+EMG+OpenSim+musculoskeletal+simulation&filter=1&start=0&hl=wt-WT&lr=lang_wt&cr=countryWT 200
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E6%B9%96%E5%8D%97%E5%A4%A7%E5%AD%A6&limit=1 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20%E6%B9%96%E5%8D%97%E5%A4%A7%E5%AD%A6) > client error (Connect) > tls handshake eof')")
+response: https://search.brave.com/search?q=muscle+tendon+force+estimation+surface+EMG+OpenSim+musculoskeletal+simulation&source=web 429
+response: https://www.mojeek.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E6%B9%96%E5%8D%97%E5%A4%A7%E5%AD%A6+%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E9%99%A2+%E5%BA%B7%E5%A4%8D%E6%9C%BA%E5%99%A8%E4%BA%BA+%E5%A4%96%E9%AA%A8%E9%AA%BC 403
+response: https://www.startpage.com/ 200
+response: https://www.startpage.com/sp/search 200
+response: https://www.mojeek.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC 403
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E6%B9%96%E5%8D%97%E5%A4%A7%E5%AD%A6+%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E9%99%A2+%E5%BA%B7%E5%A4%8D%E6%9C%BA%E5%99%A8%E4%BA%BA+%E5%A4%96%E9%AA%A8%E9%AA%BC&web=1&searchid=8549054 200
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E9%99%A2&limit=1 200
+response: https://www.startpage.com/ 200
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E6%B9%96%E5%8D%97%E5%A4%A7%E5%AD%A6&web=1&searchid=2137428 200
+response: https://www.startpage.com/ 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E9%99%A2) > client error (Connect) > tls handshake eof')")
+response: https://www.startpage.com/sp/search 200
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E9%99%A2&web=1&searchid=9088294 200
+response: https://www.startpage.com/sp/search 200
+response: https://www.google.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E6%B9%96%E5%8D%97%E5%A4%A7%E5%AD%A6&filter=1&start=0&hl=wt-WT&lr=lang_wt&cr=countryWT 200
+response: https://www.google.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E6%B9%96%E5%8D%97%E5%A4%A7%E5%AD%A6+%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E9%99%A2+%E5%BA%B7%E5%A4%8D%E6%9C%BA%E5%99%A8%E4%BA%BA+%E5%A4%96%E9%AA%A8%E9%AA%BC&filter=1&start=0&hl=wt-WT&lr=lang_wt&cr=countryWT 200
+response: https://www.mojeek.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E9%99%A2 403
+response: https://search.brave.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E6%B9%96%E5%8D%97%E5%A4%A7%E5%AD%A6&source=web 429
+response: https://www.google.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%86%E8%A7%89%E6%84%9F%E7%9F%A5%E4%B8%8E%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF%E5%9B%BD%E5%AE%B6%E5%B7%A5%E7%A8%8B%E7%A0%94%E7%A9%B6%E4%B8%AD%E5%BF%83&filter=1&start=0&hl=wt-WT&lr=lang_wt&cr=countryWT 200
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC&web=1&searchid=2719710 200
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%86%E8%A7%89%E6%84%9F%E7%9F%A5%E4%B8%8E%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF%E5%9B%BD%E5%AE%B6%E5%B7%A5%E7%A8%8B%E7%A0%94%E7%A9%B6%E4%B8%AD%E5%BF%83&limit=1 200
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+rehabilitation+robotics&limit=1 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%86%E8%A7%89%E6%84%9F%E7%9F%A5%E4%B8%8E%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF%E5%9B%BD%E5%AE%B6%E5%B7%A5%E7%A8%8B%E7%A0%94%E7%A9%B6%E4%B8%AD%E5%BF%83) > client error (Connect) > tls handshake eof')")
+response: https://www.google.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC&filter=1&start=0&hl=wt-WT&lr=lang_wt&cr=countryWT 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20rehabilitation%20robotics) > client error (Connect) > tls handshake eof')")
+response: https://www.mojeek.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E6%B9%96%E5%8D%97%E5%A4%A7%E5%AD%A6 403
+response: https://search.brave.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+wearable+exoskeleton&source=web 429
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+wearable+exoskeleton&limit=1 200
+response: https://search.yahoo.com/search;_ylt=qkPhtcqvFDfaPIk0rciTQbvQ;_ylu=C73QDkUG_12a2SCzlidXI-OwxAWswKmRZLCPjsKuTCwH0nQ?p=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E6%B9%96%E5%8D%97%E5%A4%A7%E5%AD%A6 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20wearable%20exoskeleton) > client error (Connect) > tls handshake eof')")
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+rehabilitation+robotics&web=1&searchid=9528541 200
+response: https://www.mojeek.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%86%E8%A7%89%E6%84%9F%E7%9F%A5%E4%B8%8E%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF%E5%9B%BD%E5%AE%B6%E5%B7%A5%E7%A8%8B%E7%A0%94%E7%A9%B6%E4%B8%AD%E5%BF%83 403
+response: https://search.brave.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+neuromusculoskeletal+modelling&source=web 429
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+neuromusculoskeletal+modelling&limit=1 200
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+surface+EMG&limit=1 200
+response: https://www.startpage.com/ 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20neuromusculoskeletal%20modelling) > client error (Connect) > tls handshake eof')")
+response: https://www.startpage.com/sp/search 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20surface%20EMG) > client error (Connect) > tls handshake eof')")
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+surface+EMG&web=1&searchid=5519589 200
+response: https://www.mojeek.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+wearable+exoskeleton 403
+response: https://search.brave.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%86%E8%A7%89%E6%84%9F%E7%9F%A5%E4%B8%8E%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF%E5%9B%BD%E5%AE%B6%E5%B7%A5%E7%A8%8B%E7%A0%94%E7%A9%B6%E4%B8%AD%E5%BF%83&source=web 429
+response: https://www.mojeek.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+surface+EMG 403
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+neuromusculoskeletal+modelling&web=1&searchid=8621210 200
+response: https://search.yahoo.com/search;_ylt=bfiVchA2c_XNnu0PVqnehKhp;_ylu=MMPfDtwZDC91p0C0-5GzTjhiLGSPmprAjbW-Am1vRQPuo60?p=%E7%AB%A0%E9%9A%86%E5%BD%AC+wearable+exoskeleton 200
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+markerless+motion+capture&limit=1 200
+response: https://search.brave.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+brain+computer+interface&source=web 429
+response: https://search.yahoo.com/search;_ylt=9IN0rkv2yOQRX3GU7oQy_JQ0;_ylu=xVuYeD_WW04vIJKwLsBBKX70TXm9hSyXAch5yI1eoW5sVac?p=%E7%AB%A0%E9%9A%86%E5%BD%AC+markerless+motion+capture 200
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+brain+computer+interface&limit=1 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20markerless%20motion%20capture) > client error (Connect) > tls handshake eof')")
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%86%E8%A7%89%E6%84%9F%E7%9F%A5%E4%B8%8E%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF%E5%9B%BD%E5%AE%B6%E5%B7%A5%E7%A8%8B%E7%A0%94%E7%A9%B6%E4%B8%AD%E5%BF%83&web=1&searchid=2271257 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20brain%20computer%20interface) > client error (Connect) > tls handshake eof')")
+response: https://search.brave.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+markerless+motion+capture&source=web 429
+response: https://www.startpage.com/ 200
+response: https://search.yahoo.com/search;_ylt=cXsXy0uK2kew0LcyV6xyW-Vn;_ylu=clAm0QD984uWRJ4sX8Rl8ik7JCaBRSm1nSIpNVNs8jawyMk?p=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%86%E8%A7%89%E6%84%9F%E7%9F%A5%E4%B8%8E%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF%E5%9B%BD%E5%AE%B6%E5%B7%A5%E7%A8%8B%E7%A0%94%E7%A9%B6%E4%B8%AD%E5%BF%83 200
+response: https://www.startpage.com/sp/search 200
+response: https://www.startpage.com/ 200
+response: https://www.startpage.com/sp/search 200
+response: https://www.startpage.com/ 200
+response: https://www.startpage.com/sp/search 200
+response: https://www.google.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+markerless+motion+capture&filter=1&start=0&hl=wt-WT&lr=lang_wt&cr=countryWT 200
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+wearable+exoskeleton&web=1&searchid=7651631 200
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+muscle+tendon+parameter+estimation&limit=1 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20muscle%20tendon%20parameter%20estimation) > client error (Connect) > tls handshake eof')")
+response: https://search.brave.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+joint+torque+prediction&source=web 429
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+joint+torque+prediction&limit=1 200
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+brain+computer+interface&web=1&searchid=5730878 200
+response: https://www.mojeek.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+markerless+motion+capture 403
+response: https://www.google.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+muscle+tendon+parameter+estimation&filter=1&start=0&hl=wt-WT&lr=lang_wt&cr=countryWT 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20joint%20torque%20prediction) > client error (Connect) > tls handshake eof')")
+response: https://www.google.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+joint+torque+prediction&filter=1&start=0&hl=wt-WT&lr=lang_wt&cr=countryWT 200
+response: https://search.yahoo.com/search;_ylt=pBYkQ_-gSXxb7uWUDqJCErLw;_ylu=pYVw1y7jSxbwG5-i1--K6qd4ZCilqHssaKNUKSkSy-Vw9-A?p=%E7%AB%A0%E9%9A%86%E5%BD%AC+brain+computer+interface 200
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+markerless+motion+capture&web=1&searchid=3531004 200
+response: https://www.mojeek.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+muscle+tendon+parameter+estimation 403
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+digital+twin&limit=1 200
+response: https://search.yahoo.com/search;_ylt=q1qViTgwA53MTGgkvzIuGQ-T;_ylu=hoUWGDLlnAxA2GL5B8664OOOkTSE-XYTtnyb9qrjshJg3bo?p=%E7%AB%A0%E9%9A%86%E5%BD%AC+muscle+tendon+parameter+estimation 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20digital%20twin) > client error (Connect) > tls handshake eof')")
+response: https://www.google.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+brain+computer+interface&filter=1&start=0&hl=wt-WT&lr=lang_wt&cr=countryWT 200
+response: https://search.yahoo.com/search;_ylt=ea-A5VvjqZpSIEQvbQdAnoz1;_ylu=6QAfRtQRQHpTW3C0R2seZp6WgbJ-y-T5Kp4x3VRihlciROg?p=%E7%AB%A0%E9%9A%86%E5%BD%AC+joint+torque+prediction 200
+response: https://www.mojeek.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+digital+twin 403
+response: https://search.brave.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+muscle+tendon+parameter+estimation&source=web 429
+response: https://www.mojeek.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+brain+computer+interface 403
+response: https://www.google.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+digital+twin&filter=1&start=0&hl=wt-WT&lr=lang_wt&cr=countryWT 200
+response: https://www.google.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+gait+balance+fall+assessment&filter=1&start=0&hl=wt-WT&lr=lang_wt&cr=countryWT 200
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+gait+balance+fall+assessment&limit=1 200
+response: https://www.startpage.com/ 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20gait%20balance%20fall%20assessment) > client error (Connect) > tls handshake eof')")
+response: https://www.startpage.com/ 200
+response: https://www.startpage.com/sp/search 200
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+joint+torque+prediction&web=1&searchid=6274814 200
+response: https://www.startpage.com/sp/search 200
+response: https://www.startpage.com/ 200
+response: https://search.brave.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+KTH+Royal+Institute+of+Technology&source=web 429
+response: https://www.startpage.com/sp/search 200
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+KTH+Royal+Institute+of+Technology&limit=1 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20KTH%20Royal%20Institute%20of%20Technology) > client error (Connect) > tls handshake eof')")
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+digital+twin&web=1&searchid=5714638 200
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+muscle+tendon+parameter+estimation&web=1&searchid=1852248 200
+response: https://search.brave.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+gait+balance+fall+assessment&source=web 429
+response: https://www.startpage.com/ 200
+response: https://www.startpage.com/ 200
+response: https://www.startpage.com/sp/search 200
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+Nanyang+Technological+University&limit=1 200
+response: https://www.startpage.com/sp/search 200
+response: https://www.mojeek.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+gait+balance+fall+assessment 403
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20Nanyang%20Technological%20University) > client error (Connect) > tls handshake eof')")
+response: https://search.yahoo.com/search;_ylt=Cecl_HpUF9Bupk4WfX8EUVKX;_ylu=7fjitb1SI2n7mk-YhJw18-jZ5UXVR0KHj7IM_LWowpZOPMY?p=%E7%AB%A0%E9%9A%86%E5%BD%AC+digital+twin 200
+response: https://www.google.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+Nanyang+Technological+University&filter=1&start=0&hl=wt-WT&lr=lang_wt&cr=countryWT 200
+response: https://search.yahoo.com/search;_ylt=OurIb9R-BKXIaQZqVqkaJoOG;_ylu=nP2s_TA1J1fsOAACD0eCHy7OP5MnTjYV7SD9nj1Tglyn7wY?p=%E7%AB%A0%E9%9A%86%E5%BD%AC+KTH+Royal+Institute+of+Technology 200
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+Gutierrez-Farewik&limit=1 200
+response: https://search.yahoo.com/search;_ylt=SNbeAqunTBb0uPdKtDXUMMEt;_ylu=S75lrksVEvHPAtyZS_gDCzTra1xNLnjaO0-QLvSE8-LfsJY?p=%E7%AB%A0%E9%9A%86%E5%BD%AC+gait+balance+fall+assessment 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20Gutierrez-Farewik) > client error (Connect) > tls handshake eof')")
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+Gutierrez-Farewik&web=1&searchid=3465086 200
+response: https://www.mojeek.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+KTH+Royal+Institute+of+Technology 403
+response: https://www.mojeek.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+Nanyang+Technological+University 403
+response: https://www.startpage.com/ 200
+response: https://www.google.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+KTH+Royal+Institute+of+Technology&filter=1&start=0&hl=wt-WT&lr=lang_wt&cr=countryWT 200
+response: https://www.startpage.com/sp/search 200
+response: https://search.yahoo.com/search;_ylt=1I44N50uK2g6IaFMhPWaJDcv;_ylu=8hGltWte5qyYJmB5Dh83jGBNNwTZpH3jtquRxfQdhajHY4k?p=%E7%AB%A0%E9%9A%86%E5%BD%AC+Nanyang+Technological+University 200
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+co-author+collaboration+network&limit=1 200
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+gait+balance+fall+assessment&web=1&searchid=6107560 200
+response: https://www.mojeek.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+co-author+collaboration+network 403
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20co-author%20collaboration%20network) > client error (Connect) > tls handshake eof')")
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E5%9B%A2%E9%98%9F%E6%88%90%E5%91%98+%E5%8D%9A%E5%A3%AB%E5%90%8E+%E5%8D%9A%E5%A3%AB%E7%94%9F&limit=1 200
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+KTH+Royal+Institute+of+Technology&web=1&searchid=5128781 200
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+Nanyang+Technological+University&web=1&searchid=3804829 200
+response: https://www.startpage.com/ 200
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20%E5%9B%A2%E9%98%9F%E6%88%90%E5%91%98%20%E5%8D%9A%E5%A3%AB%E5%90%8E%20%E5%8D%9A%E5%A3%AB%E7%94%9F) > client error (Connect) > tls handshake eof')")
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E5%9B%A2%E9%98%9F%E6%88%90%E5%91%98+%E5%8D%9A%E5%A3%AB%E5%90%8E+%E5%8D%9A%E5%A3%AB%E7%94%9F&web=1&searchid=7986994 200
+response: https://www.startpage.com/sp/search 200
+response: https://grokipedia.com/api/typeahead?query=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E8%AF%BE%E9%A2%98%E7%BB%84+%E6%8B%9B%E8%81%98+%E6%8B%9B%E7%94%9F&limit=1 200
+response: https://www.mojeek.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E8%AF%BE%E9%A2%98%E7%BB%84+%E6%8B%9B%E8%81%98+%E6%8B%9B%E7%94%9F 403
+response: https://www.google.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E5%9B%A2%E9%98%9F%E6%88%90%E5%91%98+%E5%8D%9A%E5%A3%AB%E5%90%8E+%E5%8D%9A%E5%A3%AB%E7%94%9F&filter=1&start=0&hl=wt-WT&lr=lang_wt&cr=countryWT 200
+response: https://search.brave.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+Nanyang+Technological+University&source=web 429
+Error in engine wikipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=%E7%AB%A0%E9%9A%86%E5%BD%AC%20%E8%AF%BE%E9%A2%98%E7%BB%84%20%E6%8B%9B%E8%81%98%20%E6%8B%9B%E7%94%9F) > client error (Connect) > tls handshake eof')")
+response: https://www.google.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+co-author+collaboration+network&filter=1&start=0&hl=wt-WT&lr=lang_wt&cr=countryWT 200
+response: https://search.yahoo.com/search;_ylt=7zJh4k3CtPwdFiFYO3pfh4PE;_ylu=Rm9aKT0qUgI-muFQMzM8iTToB3sSszyge3zZaluzdhzsl28?p=%E7%AB%A0%E9%9A%86%E5%BD%AC+co-author+collaboration+network 200
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+%E8%AF%BE%E9%A2%98%E7%BB%84+%E6%8B%9B%E8%81%98+%E6%8B%9B%E7%94%9F&web=1&searchid=6311062 200
+response: https://yandex.com/search/site/?text=%E7%AB%A0%E9%9A%86%E5%BD%AC+co-author+collaboration+network&web=1&searchid=2883670 200
+response: https://search.brave.com/search?q=%E7%AB%A0%E9%9A%86%E5%BD%AC+co-author+collaboration+network&source=web 429
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://robotics.hnu.edu.cn/info/1176/3002.htm                                                       | ✓ | ⏱: 1.66s 
+[SCRAPE].. ◆ https://robotics.hnu.edu.cn/info/1176/3002.htm                                                       | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://robotics.hnu.edu.cn/info/1176/3002.htm                                                       | ✓ | ⏱: 1.68s 
+[FETCH]... ↓ https://robotics.hnu.edu.cn/szdw/jsjj2.htm                                                           | ✓ | ⏱: 1.67s 
+[SCRAPE].. ◆ https://robotics.hnu.edu.cn/szdw/jsjj2.htm                                                           | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://robotics.hnu.edu.cn/szdw/jsjj2.htm                                                           | ✓ | ⏱: 1.69s 
+[FETCH]... ↓ https://grzy.hnu.edu.cn/site/index/zhanglongbin                                                      | ✓ | ⏱: 1.86s 
+[SCRAPE].. ◆ https://grzy.hnu.edu.cn/site/index/zhanglongbin                                                      | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://grzy.hnu.edu.cn/site/index/zhanglongbin                                                      | ✓ | ⏱: 1.87s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://orcid.org/0000-0001-8785-5885                                                                | ✓ | ⏱: 3.70s 
+[SCRAPE].. ◆ https://orcid.org/0000-0001-8785-5885                                                                | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://orcid.org/0000-0001-8785-5885                                                                | ✓ | ⏱: 3.72s 
+[FETCH]... ↓ https://api.openalex.org/authors/A5002794703                                                         | ✓ | ⏱: 1.93s 
+[SCRAPE].. ◆ https://api.openalex.org/authors/A5002794703                                                         | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://api.openalex.org/authors/A5002794703                                                         | ✓ | ⏱: 1.93s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://kth.diva-portal.org/smash/record.jsf?pid=diva2:1599588                                       | ✓ | ⏱: 4.36s 
+[SCRAPE].. ◆ https://kth.diva-portal.org/smash/record.jsf?pid=diva2:1599588                                       | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://kth.diva-portal.org/smash/record.jsf?pid=diva2:1599588                                       | ✓ | ⏱: 4.37s 
+[FETCH]... ↓ https://api.openalex.org/works?filter=author.id:A5002794703&per-page=50&sort=publication_date:desc   | ✓ | ⏱: 4.55s 
+[SCRAPE].. ◆ https://api.openalex.org/works?filter=author.id:A5002794703&per-page=50&sort=publication_date:desc   | ✓ | ⏱: 0.05s 
+[COMPLETE] ● https://api.openalex.org/works?filter=author.id:A5002794703&per-page=50&sort=publication_date:desc   | ✓ | ⏱: 4.61s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2023.1254088/full           | ✓ | ⏱: 4.78s 
+[SCRAPE].. ◆ https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2023.1254088/full           | ✓ | ⏱: 0.10s 
+[COMPLETE] ● https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2023.1254088/full           | ✓ | ⏱: 4.89s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://loop.frontiersin.org/people/1121302/overview                                                 | ✓ | ⏱: 5.69s 
+[SCRAPE].. ◆ https://loop.frontiersin.org/people/1121302/overview                                                 | ✓ | ⏱: 0.03s 
+[COMPLETE] ● https://loop.frontiersin.org/people/1121302/overview                                                 | ✓ | ⏱: 5.73s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://www.gaoxiaojob.com/announcement/detail/414402.html                                           | ✓ | ⏱: 2.02s 
+[SCRAPE].. ◆ https://www.gaoxiaojob.com/announcement/detail/414402.html                                           | ✓ | ⏱: 0.04s 
+[COMPLETE] ● https://www.gaoxiaojob.com/announcement/detail/414402.html                                           | ✓ | ⏱: 2.07s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://kth.diva-portal.org/smash/person.jsf?pid=authority-person:73231                              | ✓ | ⏱: 10.04s 
+[SCRAPE].. ◆ https://kth.diva-portal.org/smash/person.jsf?pid=authority-person:73231                              | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://kth.diva-portal.org/smash/person.jsf?pid=authority-person:73231                              | ✓ | ⏱: 10.05s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.11834/jig.260112                                                                  | ✓ | ⏱: 3.02s 
+[SCRAPE].. ◆ https://doi.org/10.11834/jig.260112                                                                  | ✓ | ⏱: 0.02s 
+[COMPLETE] ● https://doi.org/10.11834/jig.260112                                                                  | ✓ | ⏱: 3.05s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2021.620928/full           | ✓ | ⏱: 11.36s 
+[SCRAPE].. ◆ https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2021.620928/full           | ✓ | ⏱: 0.07s 
+[COMPLETE] ● https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2021.620928/full           | ✓ | ⏱: 11.44s 
+[FETCH]... ↓ https://doi.org/10.70693/rwsk.v1i1.425                                                               | ✓ | ⏱: 5.01s 
+[SCRAPE].. ◆ https://doi.org/10.70693/rwsk.v1i1.425                                                               | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://doi.org/10.70693/rwsk.v1i1.425                                                               | ✓ | ⏱: 5.04s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.11834/jig.240040                                                                  | ✓ | ⏱: 3.01s 
+[SCRAPE].. ◆ https://doi.org/10.11834/jig.240040                                                                  | ✓ | ⏱: 0.02s 
+[COMPLETE] ● https://doi.org/10.11834/jig.240040                                                                  | ✓ | ⏱: 3.04s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.11834/jig.260022                                                                  | ✓ | ⏱: 3.09s 
+[SCRAPE].. ◆ https://doi.org/10.11834/jig.260022                                                                  | ✓ | ⏱: 0.02s 
+[COMPLETE] ● https://doi.org/10.11834/jig.260022                                                                  | ✓ | ⏱: 3.12s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.63887/fns.2025.1.4.9                                                              | ✓ | ⏱: 9.87s 
+[SCRAPE].. ◆ https://doi.org/10.63887/fns.2025.1.4.9                                                              | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://doi.org/10.63887/fns.2025.1.4.9                                                              | ✓ | ⏱: 9.90s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.64216/3080-1486.26.06.095                                                         | ✓ | ⏱: 6.19s 
+[SCRAPE].. ◆ https://doi.org/10.64216/3080-1486.26.06.095                                                         | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://doi.org/10.64216/3080-1486.26.06.095                                                         | ✓ | ⏱: 6.19s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.37155/2717-5170-0608-66                                                           | ✓ | ⏱: 12.48s 
+[SCRAPE].. ◆ https://doi.org/10.37155/2717-5170-0608-66                                                           | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.37155/2717-5170-0608-66                                                           | ✓ | ⏱: 12.48s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.62989/jetm2024.1.4.30                                                             | ✓ | ⏱: 6.87s 
+[SCRAPE].. ◆ https://doi.org/10.62989/jetm2024.1.4.30                                                             | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://doi.org/10.62989/jetm2024.1.4.30                                                             | ✓ | ⏱: 6.88s 
+[FETCH]... ↓ https://doi.org/10.37155/2717-5170-0607-11                                                           | ✓ | ⏱: 13.15s 
+[SCRAPE].. ◆ https://doi.org/10.37155/2717-5170-0607-11                                                           | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.37155/2717-5170-0607-11                                                           | ✓ | ⏱: 13.15s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.7498/aps.58.2742                                                                  | ✓ | ⏱: 2.73s 
+[SCRAPE].. ◆ https://doi.org/10.7498/aps.58.2742                                                                  | ✓ | ⏱: 0.03s 
+[COMPLETE] ● https://doi.org/10.7498/aps.58.2742                                                                  | ✓ | ⏱: 2.77s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.11834/jig.240681                                                                  | ✓ | ⏱: 4.04s 
+[SCRAPE].. ◆ https://doi.org/10.11834/jig.240681                                                                  | ✓ | ⏱: 0.02s 
+[COMPLETE] ● https://doi.org/10.11834/jig.240681                                                                  | ✓ | ⏱: 4.07s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/icorr.2015.7281323                                                           | ✓ | ⏱: 4.37s 
+[SCRAPE].. ◆ https://doi.org/10.1109/icorr.2015.7281323                                                           | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/icorr.2015.7281323                                                           | ✓ | ⏱: 4.37s 
+[FETCH]... ↓ https://doi.org/10.37155/2717-5170-0506-55                                                           | ✓ | ⏱: 6.19s 
+[SCRAPE].. ◆ https://doi.org/10.37155/2717-5170-0506-55                                                           | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.37155/2717-5170-0506-55                                                           | ✓ | ⏱: 6.20s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/icorr66766.2025.11063171                                                     | ✓ | ⏱: 5.63s 
+[SCRAPE].. ◆ https://doi.org/10.1109/icorr66766.2025.11063171                                                     | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/icorr66766.2025.11063171                                                     | ✓ | ⏱: 5.63s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/icorr.2011.5975387                                                           | ✓ | ⏱: 4.58s 
+[SCRAPE].. ◆ https://doi.org/10.1109/icorr.2011.5975387                                                           | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/icorr.2011.5975387                                                           | ✓ | ⏱: 4.58s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/icarm49381.2020.9195302                                                      | ✓ | ⏱: 4.57s 
+[SCRAPE].. ◆ https://doi.org/10.1109/icarm49381.2020.9195302                                                      | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/icarm49381.2020.9195302                                                      | ✓ | ⏱: 4.57s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.5772/5175                                                                         | ✓ | ⏱: 5.98s 
+[SCRAPE].. ◆ https://doi.org/10.5772/5175                                                                         | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://doi.org/10.5772/5175                                                                         | ✓ | ⏱: 6.00s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/werob.2017.8383824                                                           | ✓ | ⏱: 4.33s 
+[SCRAPE].. ◆ https://doi.org/10.1109/werob.2017.8383824                                                           | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/werob.2017.8383824                                                           | ✓ | ⏱: 4.33s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/robio58561.2023.10354877                                                     | ✓ | ⏱: 4.46s 
+[SCRAPE].. ◆ https://doi.org/10.1109/robio58561.2023.10354877                                                     | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/robio58561.2023.10354877                                                     | ✓ | ⏱: 4.46s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.5772/5176                                                                         | ✓ | ⏱: 6.05s 
+[SCRAPE].. ◆ https://doi.org/10.5772/5176                                                                         | ✓ | ⏱: 0.04s 
+[COMPLETE] ● https://doi.org/10.5772/5176                                                                         | ✓ | ⏱: 6.09s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1007/s11370-026-00697-3                                                           | ✓ | ⏱: 5.77s 
+[SCRAPE].. ◆ https://doi.org/10.1007/s11370-026-00697-3                                                           | ✓ | ⏱: 0.06s 
+[COMPLETE] ● https://doi.org/10.1007/s11370-026-00697-3                                                           | ✓ | ⏱: 5.84s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.3390/robotics7020028                                                              | ✓ | ⏱: 7.80s 
+[SCRAPE].. ◆ https://doi.org/10.3390/robotics7020028                                                              | ✓ | ⏱: 0.17s 
+[COMPLETE] ● https://doi.org/10.3390/robotics7020028                                                              | ✓ | ⏱: 7.98s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/icorr.2009.5209482                                                           | ✓ | ⏱: 4.62s 
+[SCRAPE].. ◆ https://doi.org/10.1109/icorr.2009.5209482                                                           | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/icorr.2009.5209482                                                           | ✓ | ⏱: 4.62s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1016/j.gaitpost.2022.07.174                                                       | ✓ | ⏱: 3.93s 
+[SCRAPE].. ◆ https://doi.org/10.1016/j.gaitpost.2022.07.174                                                       | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1016/j.gaitpost.2022.07.174                                                       | ✓ | ⏱: 3.93s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/icorr.2011.5975441                                                           | ✓ | ⏱: 4.70s 
+[SCRAPE].. ◆ https://doi.org/10.1109/icorr.2011.5975441                                                           | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/icorr.2011.5975441                                                           | ✓ | ⏱: 4.70s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/raiie70320.2026.11566884                                                     | ✓ | ⏱: 4.73s 
+[SCRAPE].. ◆ https://doi.org/10.1109/raiie70320.2026.11566884                                                     | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/raiie70320.2026.11566884                                                     | ✓ | ⏱: 4.73s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.2139/ssrn.4883215                                                                 | ✓ | ⏱: 4.28s 
+[SCRAPE].. ◆ https://doi.org/10.2139/ssrn.4883215                                                                 | ✓ | ⏱: 0.00s 
+[ERROR]... × https://doi.org/10.2139/ssrn.4883215               | Error: Blocked by anti-bot protection: Cloudflare JS challenge 
+[COMPLETE] ● https://doi.org/10.2139/ssrn.4883215                                                                 | ✗ | ⏱: 4.28s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1016/j.jbiomech.2010.05.035                                                       | ✓ | ⏱: 3.86s 
+[SCRAPE].. ◆ https://doi.org/10.1016/j.jbiomech.2010.05.035                                                       | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1016/j.jbiomech.2010.05.035                                                       | ✓ | ⏱: 3.86s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1016/j.jelekin.2004.06.007                                                        | ✓ | ⏱: 4.20s 
+[SCRAPE].. ◆ https://doi.org/10.1016/j.jelekin.2004.06.007                                                        | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1016/j.jelekin.2004.06.007                                                        | ✓ | ⏱: 4.20s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1115/detc2022-89952                                                               | ✓ | ⏱: 5.36s 
+[SCRAPE].. ◆ https://doi.org/10.1115/detc2022-89952                                                               | ✓ | ⏱: 0.00s 
+[ERROR]... × https://doi.org/10.1115/detc2022-89952             | Error: Blocked by anti-bot protection: Cloudflare JS challenge 
+[COMPLETE] ● https://doi.org/10.1115/detc2022-89952                                                               | ✗ | ⏱: 5.37s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/icbme.2013.6782184                                                           | ✓ | ⏱: 4.63s 
+[SCRAPE].. ◆ https://doi.org/10.1109/icbme.2013.6782184                                                           | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/icbme.2013.6782184                                                           | ✓ | ⏱: 4.63s 
+[INIT].... → Crawl4AI 0.9.0 
+[ANTIBOT]. ℹ https://doi.org/10.1160...021.tde-15092021-084047  | Error: Proxy direct failed: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://doi.org/10.11606/d.18.2021.tde-15092021-084047", waiting until "domcontentloaded"
+ 
+[ERROR]... × https://doi.org/10.1160...021.tde-15092021-084047  | Error: Unexpected error in _crawl_web at line 778 in _crawl_web 
+(../../../../opt/anaconda3/envs/research-tool/lib/python3.11/site-packages/crawl4ai/async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://doi.org/10.11606/d.18.2021.tde-15092021-084047", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its 
+[FETCH]... ↓ https://doi.org/10.5897/jetr11.067                                                                   | ✓ | ⏱: 3.78s 
+[SCRAPE].. ◆ https://doi.org/10.5897/jetr11.067                                                                   | ✓ | ⏱: 0.00s 
+[ERROR]... × https://doi.org/10.5897/jetr11.067                 | Error: Blocked by anti-bot protection: Cloudflare JS challenge 
+[COMPLETE] ● https://doi.org/10.5897/jetr11.067                                                                   | ✗ | ⏱: 3.79s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/smc.2017.8122861                                                             | ✓ | ⏱: 4.32s 
+[SCRAPE].. ◆ https://doi.org/10.1109/smc.2017.8122861                                                             | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/smc.2017.8122861                                                             | ✓ | ⏱: 4.32s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.3390/math14132400                                                                 | ✓ | ⏱: 5.30s 
+[SCRAPE].. ◆ https://doi.org/10.3390/math14132400                                                                 | ✓ | ⏱: 0.11s 
+[COMPLETE] ● https://doi.org/10.3390/math14132400                                                                 | ✓ | ⏱: 5.42s 
+[FETCH]... ↓ https://doi.org/10.1109/robio.2015.7418908                                                           | ✓ | ⏱: 4.61s 
+[SCRAPE].. ◆ https://doi.org/10.1109/robio.2015.7418908                                                           | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/robio.2015.7418908                                                           | ✓ | ⏱: 4.61s 
+[FETCH]... ↓ https://doi.org/10.31224/osf.io/j4rbg                                                                | ✓ | ⏱: 4.57s 
+[SCRAPE].. ◆ https://doi.org/10.31224/osf.io/j4rbg                                                                | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.31224/osf.io/j4rbg                                                                | ✓ | ⏱: 4.57s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1016/j.gaitpost.2022.07.019                                                       | ✓ | ⏱: 3.94s 
+[SCRAPE].. ◆ https://doi.org/10.1016/j.gaitpost.2022.07.019                                                       | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1016/j.gaitpost.2022.07.019                                                       | ✓ | ⏱: 3.94s 
+[FETCH]... ↓ https://doi.org/10.2139/ssrn.5229551                                                                 | ✓ | ⏱: 4.39s 
+[SCRAPE].. ◆ https://doi.org/10.2139/ssrn.5229551                                                                 | ✓ | ⏱: 0.00s 
+[ERROR]... × https://doi.org/10.2139/ssrn.5229551               | Error: Blocked by anti-bot protection: Cloudflare JS challenge 
+[COMPLETE] ● https://doi.org/10.2139/ssrn.5229551                                                                 | ✗ | ⏱: 4.39s 
+[FETCH]... ↓ https://doi.org/10.1101/2024.12.17.628985                                                            | ✓ | ⏱: 5.07s 
+[SCRAPE].. ◆ https://doi.org/10.1101/2024.12.17.628985                                                            | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1101/2024.12.17.628985                                                            | ✓ | ⏱: 5.08s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.2139/ssrn.5088029                                                                 | ✓ | ⏱: 4.42s 
+[SCRAPE].. ◆ https://doi.org/10.2139/ssrn.5088029                                                                 | ✓ | ⏱: 0.00s 
+[ERROR]... × https://doi.org/10.2139/ssrn.5088029               | Error: Blocked by anti-bot protection: Cloudflare JS challenge 
+[COMPLETE] ● https://doi.org/10.2139/ssrn.5088029                                                                 | ✗ | ⏱: 4.42s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1016/j.gaitpost.2026.110405                                                       | ✓ | ⏱: 3.98s 
+[SCRAPE].. ◆ https://doi.org/10.1016/j.gaitpost.2026.110405                                                       | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1016/j.gaitpost.2026.110405                                                       | ✓ | ⏱: 3.99s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1101/2020.12.10.420075                                                            | ✓ | ⏱: 5.14s 
+[SCRAPE].. ◆ https://doi.org/10.1101/2020.12.10.420075                                                            | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1101/2020.12.10.420075                                                            | ✓ | ⏱: 5.14s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.14733/cadaps.2024.392-423                                                         | ✓ | ⏱: 6.70s 
+[SCRAPE].. ◆ https://doi.org/10.14733/cadaps.2024.392-423                                                         | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://doi.org/10.14733/cadaps.2024.392-423                                                         | ✓ | ⏱: 6.71s 
+[FETCH]... ↓ https://doi.org/10.21203/rs.3.rs-9347103/v1                                                          | ✓ | ⏱: 6.42s 
+[SCRAPE].. ◆ https://doi.org/10.21203/rs.3.rs-9347103/v1                                                          | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://doi.org/10.21203/rs.3.rs-9347103/v1                                                          | ✓ | ⏱: 6.43s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1016/j.gaitpost.2023.07.098                                                       | ✓ | ⏱: 3.83s 
+[SCRAPE].. ◆ https://doi.org/10.1016/j.gaitpost.2023.07.098                                                       | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1016/j.gaitpost.2023.07.098                                                       | ✓ | ⏱: 3.83s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.7287/peerj.12995v0.1/reviews/2                                                    | ✓ | ⏱: 3.41s 
+[SCRAPE].. ◆ https://doi.org/10.7287/peerj.12995v0.1/reviews/2                                                    | ✓ | ⏱: 0.00s 
+[ERROR]... × https://doi.org/10.7287/peerj.12995v0.1/reviews/2  | Error: Blocked by anti-bot protection: Cloudflare JS challenge 
+[COMPLETE] ● https://doi.org/10.7287/peerj.12995v0.1/reviews/2                                                    | ✗ | ⏱: 3.41s 
+[FETCH]... ↓ https://doi.org/10.3389/fbioe.2026.1869878                                                           | ✓ | ⏱: 6.88s 
+[SCRAPE].. ◆ https://doi.org/10.3389/fbioe.2026.1869878                                                           | ✓ | ⏱: 0.07s 
+[COMPLETE] ● https://doi.org/10.3389/fbioe.2026.1869878                                                           | ✓ | ⏱: 6.96s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/aict61888.2024.10740430                                                      | ✓ | ⏱: 4.62s 
+[SCRAPE].. ◆ https://doi.org/10.1109/aict61888.2024.10740430                                                      | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/aict61888.2024.10740430                                                      | ✓ | ⏱: 4.63s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.3791/6572                                                                         | ✓ | ⏱: 4.52s 
+[SCRAPE].. ◆ https://doi.org/10.3791/6572                                                                         | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.3791/6572                                                                         | ✓ | ⏱: 4.53s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/iww-bci.2017.7858156                                                         | ✓ | ⏱: 4.37s 
+[SCRAPE].. ◆ https://doi.org/10.1109/iww-bci.2017.7858156                                                         | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/iww-bci.2017.7858156                                                         | ✓ | ⏱: 4.37s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.5772/intechopen.115174                                                            | ✓ | ⏱: 5.31s 
+[SCRAPE].. ◆ https://doi.org/10.5772/intechopen.115174                                                            | ✓ | ⏱: 0.05s 
+[COMPLETE] ● https://doi.org/10.5772/intechopen.115174                                                            | ✓ | ⏱: 5.37s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/icinfa.2017.8078925                                                          | ✓ | ⏱: 4.85s 
+[SCRAPE].. ◆ https://doi.org/10.1109/icinfa.2017.8078925                                                          | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/icinfa.2017.8078925                                                          | ✓ | ⏱: 4.85s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.52591/lxai202306182                                                               | ✓ | ⏱: 3.68s 
+[SCRAPE].. ◆ https://doi.org/10.52591/lxai202306182                                                               | ✓ | ⏱: 0.00s 
+[ERROR]... × https://doi.org/10.52591/lxai202306182             | Error: Blocked by anti-bot protection: Structural: minimal_text, no_content_elements (174 bytes, 0 chars visible) 
+[COMPLETE] ● https://doi.org/10.52591/lxai202306182                                                               | ✗ | ⏱: 3.68s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/icinfa.2016.7832126                                                          | ✓ | ⏱: 4.35s 
+[SCRAPE].. ◆ https://doi.org/10.1109/icinfa.2016.7832126                                                          | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/icinfa.2016.7832126                                                          | ✓ | ⏱: 4.35s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/iww-bci.2019.8737311                                                         | ✓ | ⏱: 4.63s 
+[SCRAPE].. ◆ https://doi.org/10.1109/iww-bci.2019.8737311                                                         | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/iww-bci.2019.8737311                                                         | ✓ | ⏱: 4.63s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/bci51272.2021.9385309                                                        | ✓ | ⏱: 4.50s 
+[SCRAPE].. ◆ https://doi.org/10.1109/bci51272.2021.9385309                                                        | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/bci51272.2021.9385309                                                        | ✓ | ⏱: 4.50s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.3389/fneur.2024.1394424                                                           | ✓ | ⏱: 5.17s 
+[SCRAPE].. ◆ https://doi.org/10.3389/fneur.2024.1394424                                                           | ✓ | ⏱: 0.07s 
+[COMPLETE] ● https://doi.org/10.3389/fneur.2024.1394424                                                           | ✓ | ⏱: 5.25s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.7717/peerj.17678/table-1                                                          | ✓ | ⏱: 3.89s 
+[SCRAPE].. ◆ https://doi.org/10.7717/peerj.17678/table-1                                                          | ✓ | ⏱: 0.00s 
+[ERROR]... × https://doi.org/10.7717/peerj.17678/table-1        | Error: Blocked by anti-bot protection: Cloudflare JS challenge 
+[COMPLETE] ● https://doi.org/10.7717/peerj.17678/table-1                                                          | ✗ | ⏱: 3.89s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.3390/electronics12224697                                                          | ✓ | ⏱: 6.11s 
+[SCRAPE].. ◆ https://doi.org/10.3390/electronics12224697                                                          | ✓ | ⏱: 0.06s 
+[COMPLETE] ● https://doi.org/10.3390/electronics12224697                                                          | ✓ | ⏱: 6.19s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/embc.2018.8512256                                                            | ✓ | ⏱: 7.95s 
+[SCRAPE].. ◆ https://doi.org/10.1109/embc.2018.8512256                                                            | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/embc.2018.8512256                                                            | ✓ | ⏱: 7.96s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.5772/27638                                                                        | ✓ | ⏱: 5.98s 
+[SCRAPE].. ◆ https://doi.org/10.5772/27638                                                                        | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://doi.org/10.5772/27638                                                                        | ✓ | ⏱: 6.00s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.31224/osf.io/hy36f                                                                | ✓ | ⏱: 4.48s 
+[SCRAPE].. ◆ https://doi.org/10.31224/osf.io/hy36f                                                                | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.31224/osf.io/hy36f                                                                | ✓ | ⏱: 4.49s 
+[FETCH]... ↓ https://doi.org/10.3724/sp.j.1329.2025.01015                                                         | ✓ | ⏱: 3.76s 
+[SCRAPE].. ◆ https://doi.org/10.3724/sp.j.1329.2025.01015                                                         | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.3724/sp.j.1329.2025.01015                                                         | ✓ | ⏱: 3.77s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1201/9780429330629-3                                                              | ✓ | ⏱: 3.25s 
+[SCRAPE].. ◆ https://doi.org/10.1201/9780429330629-3                                                              | ✓ | ⏱: 0.00s 
+[ERROR]... × https://doi.org/10.1201/9780429330629-3            | Error: Blocked by anti-bot protection: Cloudflare JS challenge 
+[COMPLETE] ● https://doi.org/10.1201/9780429330629-3                                                              | ✗ | ⏱: 3.25s 
+[FETCH]... ↓ https://doi.org/10.1109/embc.2013.6610569                                                            | ✓ | ⏱: 4.95s 
+[SCRAPE].. ◆ https://doi.org/10.1109/embc.2013.6610569                                                            | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/embc.2013.6610569                                                            | ✓ | ⏱: 4.95s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/proc.1977.10547                                                              | ✓ | ⏱: 4.66s 
+[SCRAPE].. ◆ https://doi.org/10.1109/proc.1977.10547                                                              | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/proc.1977.10547                                                              | ✓ | ⏱: 4.67s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/iccea58433.2023.10135503                                                     | ✓ | ⏱: 4.51s 
+[SCRAPE].. ◆ https://doi.org/10.1109/iccea58433.2023.10135503                                                     | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/iccea58433.2023.10135503                                                     | ✓ | ⏱: 4.51s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.7717/peerj.16180/fig-5                                                            | ✓ | ⏱: 3.53s 
+[SCRAPE].. ◆ https://doi.org/10.7717/peerj.16180/fig-5                                                            | ✓ | ⏱: 0.00s 
+[ERROR]... × https://doi.org/10.7717/peerj.16180/fig-5          | Error: Blocked by anti-bot protection: Cloudflare JS challenge 
+[COMPLETE] ● https://doi.org/10.7717/peerj.16180/fig-5                                                            | ✗ | ⏱: 3.53s 
+[FETCH]... ↓ https://doi.org/10.1016/j.jbiomech.2019.01.045                                                       | ✓ | ⏱: 4.12s 
+[SCRAPE].. ◆ https://doi.org/10.1016/j.jbiomech.2019.01.045                                                       | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1016/j.jbiomech.2019.01.045                                                       | ✓ | ⏱: 4.12s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1109/fuzz-ieee.2014.6891790                                                       | ✓ | ⏱: 4.67s 
+[SCRAPE].. ◆ https://doi.org/10.1109/fuzz-ieee.2014.6891790                                                       | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1109/fuzz-ieee.2014.6891790                                                       | ✓ | ⏱: 4.67s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.11834/jig.20030258                                                                | ✓ | ⏱: 2.79s 
+[SCRAPE].. ◆ https://doi.org/10.11834/jig.20030258                                                                | ✓ | ⏱: 0.02s 
+[COMPLETE] ● https://doi.org/10.11834/jig.20030258                                                                | ✓ | ⏱: 2.82s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.11834/jig.200207207                                                               | ✓ | ⏱: 3.43s 
+[SCRAPE].. ◆ https://doi.org/10.11834/jig.200207207                                                               | ✓ | ⏱: 0.02s 
+[COMPLETE] ● https://doi.org/10.11834/jig.200207207                                                               | ✓ | ⏱: 3.46s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.64216/3104-9702.25.03.052                                                         | ✓ | ⏱: 5.70s 
+[SCRAPE].. ◆ https://doi.org/10.64216/3104-9702.25.03.052                                                         | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.64216/3104-9702.25.03.052                                                         | ✓ | ⏱: 5.71s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.11113/jmeditec.v1n1.31                                                            | ✓ | ⏱: 11.80s 
+[SCRAPE].. ◆ https://doi.org/10.11113/jmeditec.v1n1.31                                                            | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://doi.org/10.11113/jmeditec.v1n1.31                                                            | ✓ | ⏱: 11.81s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.37155/2717-5170-0805-13                                                           | ✓ | ⏱: 6.60s 
+[SCRAPE].. ◆ https://doi.org/10.37155/2717-5170-0805-13                                                           | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.37155/2717-5170-0805-13                                                           | ✓ | ⏱: 6.61s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.59863/cmge2179                                                                    | ✓ | ⏱: 6.32s 
+[SCRAPE].. ◆ https://doi.org/10.59863/cmge2179                                                                    | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://doi.org/10.59863/cmge2179                                                                    | ✓ | ⏱: 6.33s 
+[INIT].... → Crawl4AI 0.9.0 
+[ANTIBOT]. ℹ https://doi.org/10.52810/jir                       | Error: Proxy direct failed: Failed on navigating ACS-GOTO:
+Page.goto: net::ERR_CONNECTION_CLOSED at https://doi.org/10.52810/jir
+Call log:
+  - navigating to "https://doi.org/10.52810/jir", waiting until "domcontentloaded"
+ 
+[ERROR]... × https://doi.org/10.52810/jir                       | Error: Unexpected error in _crawl_web at line 778 in _crawl_web 
+(../../../../opt/anaconda3/envs/research-tool/lib/python3.11/site-packages/crawl4ai/async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: net::ERR_CONNECTION_CLOSED at https://doi.org/10.52810/jir
+Call log:
+  - navigating to "https://doi.org/10.52810/jir", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.69979/3029-2735.24.12.043                                                         | ✓ | ⏱: 2.29s 
+[SCRAPE].. ◆ https://doi.org/10.69979/3029-2735.24.12.043                                                         | ✓ | ⏱: 0.00s 
+[ERROR]... × https://doi.org/10.69979/3029-2735.24.12.043       | Error: Blocked by anti-bot protection: Structural: minimal_text on small page (137 bytes, 19 chars visible) 
+[COMPLETE] ● https://doi.org/10.69979/3029-2735.24.12.043                                                         | ✗ | ⏱: 2.29s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.4324/9781003527299-9                                                              | ✓ | ⏱: 3.48s 
+[SCRAPE].. ◆ https://doi.org/10.4324/9781003527299-9                                                              | ✓ | ⏱: 0.00s 
+[ERROR]... × https://doi.org/10.4324/9781003527299-9            | Error: Blocked by anti-bot protection: Cloudflare JS challenge 
+[COMPLETE] ● https://doi.org/10.4324/9781003527299-9                                                              | ✗ | ⏱: 3.48s 
+[FETCH]... ↓ https://doi.org/10.36012/sde.v2i1.816                                                                | ✓ | ⏱: 4.45s 
+[SCRAPE].. ◆ https://doi.org/10.36012/sde.v2i1.816                                                                | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.36012/sde.v2i1.816                                                                | ✓ | ⏱: 4.45s 
+[FETCH]... ↓ https://doi.org/10.64216/3080-1508.25.02.018                                                         | ✓ | ⏱: 6.22s 
+[SCRAPE].. ◆ https://doi.org/10.64216/3080-1508.25.02.018                                                         | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.64216/3080-1508.25.02.018                                                         | ✓ | ⏱: 6.23s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.5768/jao202445.0602002                                                            | ✓ | ⏱: 3.77s 
+[SCRAPE].. ◆ https://doi.org/10.5768/jao202445.0602002                                                            | ✓ | ⏱: 0.00s 
+[ERROR]... × https://doi.org/10.5768/jao202445.0602002          | Error: Blocked by anti-bot protection: Structural: minimal_text on small page (151 bytes, 26 chars visible) 
+[COMPLETE] ● https://doi.org/10.5768/jao202445.0602002                                                            | ✗ | ⏱: 3.77s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.52926/jpmjfr202i                                                                  | ✓ | ⏱: 4.38s 
+[SCRAPE].. ◆ https://doi.org/10.52926/jpmjfr202i                                                                  | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.52926/jpmjfr202i                                                                  | ✓ | ⏱: 4.39s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.62989/jetm2024.1.4.29                                                             | ✓ | ⏱: 6.89s 
+[SCRAPE].. ◆ https://doi.org/10.62989/jetm2024.1.4.29                                                             | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://doi.org/10.62989/jetm2024.1.4.29                                                             | ✓ | ⏱: 6.90s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.62989/jnsr2024.1.5.15                                                             | ✓ | ⏱: 8.23s 
+[SCRAPE].. ◆ https://doi.org/10.62989/jnsr2024.1.5.15                                                             | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://doi.org/10.62989/jnsr2024.1.5.15                                                             | ✓ | ⏱: 8.24s 
+[FETCH]... ↓ https://doi.org/10.1360/csb1960-5-4-109                                                              | ✓ | ⏱: 3.68s 
+[SCRAPE].. ◆ https://doi.org/10.1360/csb1960-5-4-109                                                              | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1360/csb1960-5-4-109                                                              | ✓ | ⏱: 3.69s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1360/csb1995-40-18-1707                                                           | ✓ | ⏱: 3.81s 
+[SCRAPE].. ◆ https://doi.org/10.1360/csb1995-40-18-1707                                                           | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1360/csb1995-40-18-1707                                                           | ✓ | ⏱: 3.81s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.1360/csb1957-2-9-282-x                                                            | ✓ | ⏱: 3.91s 
+[SCRAPE].. ◆ https://doi.org/10.1360/csb1957-2-9-282-x                                                            | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.1360/csb1957-2-9-282-x                                                            | ✓ | ⏱: 3.91s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.26549/gcjsygl.v4i10.5340                                                          | ✓ | ⏱: 6.76s 
+[SCRAPE].. ◆ https://doi.org/10.26549/gcjsygl.v4i10.5340                                                          | ✓ | ⏱: 0.00s 
+[ERROR]... × https://doi.org/10.26549/gcjsygl.v4i10.5340        | Error: Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (5665 bytes, 6 chars visible)
+[COMPLETE] ● https://doi.org/10.26549/gcjsygl.v4i10.5340                                                          | ✗ | ⏱: 6.76s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.53106/615471682023120037008                                                       | ✓ | ⏱: 5.88s 
+[SCRAPE].. ◆ https://doi.org/10.53106/615471682023120037008                                                       | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://doi.org/10.53106/615471682023120037008                                                       | ✓ | ⏱: 5.90s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.2463/jjmrm.2021-1743                                                              | ✓ | ⏱: 16.20s 
+[SCRAPE].. ◆ https://doi.org/10.2463/jjmrm.2021-1743                                                              | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://doi.org/10.2463/jjmrm.2021-1743                                                              | ✓ | ⏱: 16.22s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.61654/zzjkwz0332                                                                  | ✓ | ⏱: 2.34s 
+[SCRAPE].. ◆ https://doi.org/10.61654/zzjkwz0332                                                                  | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://doi.org/10.61654/zzjkwz0332                                                                  | ✓ | ⏱: 2.35s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.7498/aps.70.20211857                                                              | ✓ | ⏱: 2.59s 
+[SCRAPE].. ◆ https://doi.org/10.7498/aps.70.20211857                                                              | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://doi.org/10.7498/aps.70.20211857                                                              | ✓ | ⏱: 2.61s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.5111/bunkou.67.3_134                                                              | ✓ | ⏱: 15.80s 
+[SCRAPE].. ◆ https://doi.org/10.5111/bunkou.67.3_134                                                              | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://doi.org/10.5111/bunkou.67.3_134                                                              | ✓ | ⏱: 15.82s 
+[FETCH]... ↓ https://doi.org/10.7498/aps.70.20211477                                                              | ✓ | ⏱: 2.90s 
+[SCRAPE].. ◆ https://doi.org/10.7498/aps.70.20211477                                                              | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://doi.org/10.7498/aps.70.20211477                                                              | ✓ | ⏱: 2.93s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.7498/aps.56.376                                                                   | ✓ | ⏱: 4.43s 
+[SCRAPE].. ◆ https://doi.org/10.7498/aps.56.376                                                                   | ✓ | ⏱: 0.02s 
+[COMPLETE] ● https://doi.org/10.7498/aps.56.376                                                                   | ✓ | ⏱: 4.47s 
+[FETCH]... ↓ https://doi.org/10.7498/aps.58.5988                                                                  | ✓ | ⏱: 2.84s 
+[SCRAPE].. ◆ https://doi.org/10.7498/aps.58.5988                                                                  | ✓ | ⏱: 0.02s 
+[COMPLETE] ● https://doi.org/10.7498/aps.58.5988                                                                  | ✓ | ⏱: 2.88s 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.7498/aps.56.2523                                                                  | ✓ | ⏱: 2.85s 
+[SCRAPE].. ◆ https://doi.org/10.7498/aps.56.2523                                                                  | ✓ | ⏱: 0.03s 
+[COMPLETE] ● https://doi.org/10.7498/aps.56.2523                                                                  | ✓ | ⏱: 2.89s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.7498/aps.53.4087                                                                  | ✓ | ⏱: 2.85s 
+[SCRAPE].. ◆ https://doi.org/10.7498/aps.53.4087                                                                  | ✓ | ⏱: 0.02s 
+[COMPLETE] ● https://doi.org/10.7498/aps.53.4087                                                                  | ✓ | ⏱: 2.88s 
+[FETCH]... ↓ https://doi.org/10.7498/aps.52.2723                                                                  | ✓ | ⏱: 2.78s 
+[SCRAPE].. ◆ https://doi.org/10.7498/aps.52.2723                                                                  | ✓ | ⏱: 0.02s 
+[COMPLETE] ● https://doi.org/10.7498/aps.52.2723                                                                  | ✓ | ⏱: 2.81s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.7498/aps.56.2434                                                                  | ✓ | ⏱: 2.78s 
+[SCRAPE].. ◆ https://doi.org/10.7498/aps.56.2434                                                                  | ✓ | ⏱: 0.02s 
+[COMPLETE] ● https://doi.org/10.7498/aps.56.2434                                                                  | ✓ | ⏱: 2.81s 
+[FETCH]... ↓ https://doi.org/10.7498/aps.55.583                                                                   | ✓ | ⏱: 2.72s 
+[SCRAPE].. ◆ https://doi.org/10.7498/aps.55.583                                                                   | ✓ | ⏱: 0.02s 
+[COMPLETE] ● https://doi.org/10.7498/aps.55.583                                                                   | ✓ | ⏱: 2.75s 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://doi.org/10.11834/jrs.1993031                                                                 | ✓ | ⏱: 6.44s 
+[SCRAPE].. ◆ https://doi.org/10.11834/jrs.1993031                                                                 | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://doi.org/10.11834/jrs.1993031                                                                 | ✓ | ⏱: 6.47s 
+[FETCH]... ↓ https://doi.org/10.4286/ikakikaigaku.73.4_203_2                                                      | ✓ | ⏱: 15.93s 
+[SCRAPE].. ◆ https://doi.org/10.4286/ikakikaigaku.73.4_203_2                                                      | ✓ | ⏱: 0.01s 
+[COMPLETE] ● https://doi.org/10.4286/ikakikaigaku.73.4_203_2                                                      | ✓ | ⏱: 15.95s 
+[FETCH]... ↓ https://doi.org/10.11834/jrs.20100113                                                                | ✓ | ⏱: 2.23s 
+[SCRAPE].. ◆ https://doi.org/10.11834/jrs.20100113                                                                | ✓ | ⏱: 0.02s 
+[COMPLETE] ● https://doi.org/10.11834/jrs.20100113                                                                | ✓ | ⏱: 2.26s 
+[FETCH]... ↓ https://doi.org/10.7498/aps.54.4192                                                                  | ✓ | ⏱: 2.94s 
+[SCRAPE].. ◆ https://doi.org/10.7498/aps.54.4192                                                                  | ✓ | ⏱: 0.02s 
+[COMPLETE] ● https://doi.org/10.7498/aps.54.4192                                                                  | ✓ | ⏱: 2.97s 
+completed collect   collect 完成（310.9s）
+started   clean     开始 clean
+completed clean     clean 完成（41.6s）
+started   extract   开始 extract
+22:26:45 [WARNING] research_tool.application.pipeline: extract 第 1/3 次执行失败，2.0s 后重试
+22:37:56 [WARNING] research_tool.application.pipeline: extract 第 2/3 次执行失败，4.0s 后重试
+failed    extract   extract 失败: [extract] LLM 块抽取失败 3/224；未写入完成产物，可安全续跑
+来源审计（调用/命中/失败/过滤/去重/抓取失败/保留）:
+  arxiv              27/192/6/168/24/0/0
+  crossref           27/324/0/129/75/47/60
+  expert_seed        0/0/0/0/0/0/13
+  google_news        27/49/0/48/1/0/0
+  pubmed             27/183/0/178/5/0/0
+  web                27/306/0/262/44/0/0
+  wikipedia          27/53/0/52/1/0/0
+22:49:19 [WARNING] __main__: arxiv 搜索失败 query='章隆彬 KTH Royal Institute of Technology': arxiv 官方 API 限流 429；请稍后重试或减少并发/查询频率
+22:49:19 [WARNING] __main__: arxiv 搜索失败 query='章隆彬 Nanyang Technological University': arxiv 官方 API 限流 429；请稍后重试或减少并发/查询频率
+22:49:19 [WARNING] __main__: arxiv 搜索失败 query='章隆彬 Gutierrez-Farewik': arxiv 官方 API 限流 429；请稍后重试或减少并发/查询频率
+22:49:19 [WARNING] __main__: arxiv 搜索失败 query='章隆彬 co-author collaboration network': arxiv 官方 API 限流 429；请稍后重试或减少并发/查询频率
+22:49:19 [WARNING] __main__: arxiv 搜索失败 query='章隆彬 团队成员 博士后 博士生': arxiv 官方 API 限流 429；请稍后重试或减少并发/查询频率
+22:49:19 [WARNING] __main__: arxiv 搜索失败 query='章隆彬 课题组 招聘 招生': arxiv 官方 API 限流 429；请稍后重试或减少并发/查询频率
+22:49:19 [ERROR] __main__: 错误 在 extract 阶段失败

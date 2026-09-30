@@ -1,0 +1,4007 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Lower limbjoint angle estimation using a single RGB camera"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                58,
+                206,
+                657,
+                226
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/2168d0736fc7b85e15f3ed6293642ed3f85fbd8086a582a479678f6299202bd4.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                838,
+                185,
+                887,
+                221
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Vanyi Chao <sup>a,b</sup> , Sungho Park <sup>a,c</sup> , Ankhzaya Jamsrandorj <sup>a</sup> , Dawoon Jung <sup>a</sup> , Jinwook Kim <sup>a</sup> <sup>,∗</sup>, Kyung-Ryoul Mun <sup>a</sup> <sup>,∗</sup>"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                233,
+                695,
+                266
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "<sup>a</sup> Intelligence and Interaction Research Center, Korea Institute of Science and Technology, Seoul 02792, Republic of Korea"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                269,
+                631,
+                282
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "<sup>b</sup> AI-Robotics, KIST School, University of Science and Technology, Seoul 02792, Republic of Korea"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                282,
+                524,
+                293
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "<sup>c</sup> Department of Brain and Cognitive Engineering, Korea University, Seoul 02841, Republic of Korea"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                292,
+                529,
+                303
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "A R T I C L E I N F O"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                58,
+                325,
+                223,
+                337
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Keywords: CNN-transformer architecture Joint angle estimation Lower limb kinematics"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                350,
+                206,
+                395
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "A B S T R A C T"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                334,
+                325,
+                452,
+                339
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Accurate measurement of lower-limb joint angles is essential for gait analysis, rehabilitation, and early detection of degenerative disease. Current marker-based approaches using wearable sensors not only require complex setups but also intricate calibrations, hindering widespread application of them in daily life. This study aimed to propose a vision-based estimation of hip, knee, and ankle angles directly from single-view RGB frames. An end-to-end model that integrated a convolutional neural network for spatial feature extraction with a transformer module to capture temporal gait dynamics was built, and a novel loss function that jointly penalizes angle and angular-velocity errors improved overall consistency and accuracy of the estimation. The performance of the developed model was compared with that of the 3D pose method, and its robustness was examined by varying camera perspectives, walking speeds, and abnormality in gait patterns. The proposed model achieved the intraclass correlation coefficients above 0.92 across varying viewing angles, walking speeds, and gait patterns. The model outperformed the two-stage baseline of the 3D pose method. The proposed model not only eliminates the need for complex setups and sensors but is also less prone to inaccuracies compared to the two-stage pipeline method. When applied to clinical and home-based environments, it can offer a cost-effective and reliable solution for gait assessment."
+                    }
+                ]
+            },
+            "bbox": [
+                332,
+                350,
+                937,
+                520
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1. Introduction"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                58,
+                544,
+                164,
+                559
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Joint angle measurement is fundamental to the analysis of human movement and finds wide application in fields such as gait analysis, clinical assessment, rehabilitation, and sports science. Notably, recent studies have demonstrated that joint angle measurements in gait anal ysis can be effectively used for the early detection of Parkinson’s disease [1], sarcopenia [2,3], dementia and Alzheimer’s disease [4], and frailty [5]."
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                571,
+                487,
+                663
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Conventional lower-limb joint angle measurement relies mainly on motion capture (MoCap) systems using wearable sensors. MoCap systems use multiple cameras and body markers to deliver accurate joint angle data and are regarded as the gold standard. Wearable sensors, such as inertial measurement units (IMUs) and surface electromyography (sEMG) sensors, are attached directly to the body to capture kinematic data and muscle activity that can be mapped to joint angles. Despite their accuracy, the MoCap systems entailed several challenges regarding setups and user discomfort. The setups for MoCap often require not only a controlled environment but also complex and costly equipment. The IMUs and sEMG sensors are rather prone to signal drift [6,7] and placement issues [8], and occasional user discomfort has been reported."
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                662,
+                487,
+                808
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                509,
+                544,
+                937,
+                572
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The recent incorporation of deep learning technology into MoCap has made it capable of estimating joint angles without markers or wearables [9–13]. These systems extract 2D joint keypoints from each video frame using a pose estimation model, then a 2D-to-3D lifting model reconstructs the 3D positions of the joints so that the joint angles throughout the gait cycle can be calculated. They have emerged as a practical, non-intrusive alternative for conventional gait analysis. Yet, certain challenges remain to be addressed. The accuracy of 2D keypoint detections is vulnerable to individual anthropometric variations, causing discrepancies between the estimated and actual joint centers. These initial errors in 2D keypoint localization often propagate through the subsequent 2D-to-3D pose reconstruction, amplifying inaccuracies, underscoring the need for robust single-camera solutions that generalize well across diverse populations and recording conditions."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                572,
+                939,
+                761
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "These challenges further limit the applicability of pose estimation models in clinical and real-world environments. Studies have demonstrated that achieving accuracy comparable to clinical standards often requires vision-based systems to employ multi-view camera setups to resolve occlusions and ensure 3D fidelity [14]. Thus, it necessitates synchronized hardware and dedicated capture spaces akin to traditional laboratory settings. To overcome the challenge, single-camera approaches have been proposed, offering greater accessibility, but they rely on the explicit knowledge of intrinsic camera parameters or require specific calibration objects in the scene to recover absolute scale [15]. These impede the widespread adoption of markerless pose estimation technologies for remote monitoring scenarios, where non-expert users typically rely on uncalibrated consumer devices without any assistance from trained professionals."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                761,
+                939,
+                803
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Measurement 270 (2026) 120772"
+                    }
+                ]
+            },
+            "bbox": [
+                405,
+                42,
+                591,
+                56
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "一"
+                    }
+                ]
+            },
+            "bbox": [
+                60,
+                74,
+                161,
+                143
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Contents lists available at ScienceDirect"
+                    }
+                ]
+            },
+            "bbox": [
+                378,
+                75,
+                621,
+                88
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": []
+            },
+            "bbox": [
+                60,
+                146,
+                161,
+                161
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Measurement"
+                    }
+                ]
+            },
+            "bbox": [
+                428,
+                109,
+                571,
+                126
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "journal homepage: www.elsevier.com/locate/measurement"
+                    }
+                ]
+            },
+            "bbox": [
+                309,
+                145,
+                690,
+                158
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Measurement"
+                    }
+                ]
+            },
+            "bbox": [
+                833,
+                66,
+                937,
+                160
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "∗ Corresponding authors."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                831,
+                215,
+                843
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "E-mail addresses: vanyi@kist.re.kr (V. Chao), parksh@kist.re.kr (S. Park), ankhzaya@kist.re.kr (A. Jamsrandorj), dwjung@kist.re.kr (D. Jung), zinook@kist.re.kr (J. Kim), krmoon02@kist.re.kr (K.-R. Mun)."
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                843,
+                863,
+                868
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "https://doi.org/10.1016/j.measurement.2026.120772 Received 22 August 2025; Received in revised form 18 December 2025; Accepted 7 February 2026 Available online 16 February 2026 0263-2241/© 2026 Published by Elsevier Ltd."
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                877,
+                606,
+                926
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/25e37f2e480760616a541f7f26928beb694aab0dd19f92ee0cfa0ae11f67ae17.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 1. Experimental setup showing the twelve cameras arranged into four regions for optimal data collection. Region 1 (C12, C1, C2), Region 2 (C3, C4, C5), Region 3 (C6, C7, C8) and Region 4 (C9, C10, and C11)."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Table 1"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                95,
+                66,
+                902,
+                331
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                57,
+                384,
+                487,
+                522
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Building on this motivation, we propose an end-to-end model that can estimate lower-limb joint angles directly from video frames collected from a single RGB camera, eliminating the two-stage pipeline of the 3D pose method. The model will leverage a combination of spatial feature extraction and temporal modeling, and its performance will be validated across varying camera viewpoints, walking speeds, and gait patterns. The contributions of this study include:"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                523,
+                487,
+                612
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. a robust, single-camera joint angle estimation model that can be generalized across various viewpoints, walking speeds, and gait patterns,"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                620,
+                487,
+                658
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. an end-to-end deep learning architecture integrating both spatial and temporal modeling,"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                659,
+                485,
+                684
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3. enriched gait analysis that can benefit from precise prediction of joint angles and angular velocities,"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                684,
+                487,
+                711
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "4. a comprehensive joint angle dataset developed not only for joint angle estimation but also for early identification of diseases."
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                711,
+                487,
+                737
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2. Materials and methods"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                58,
+                746,
+                231,
+                759
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.1. Participants"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                58,
+                771,
+                159,
+                785
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A total of 69 participants were included in the study (Table 1). The mean age was 73.34 ± 12.4 years, and the mean height and mean weight were 161.43 ± 9.43 cm and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "6 0 . 4 3 \\pm 1 0 . 6 7"
+                    },
+                    {
+                        "type": "text",
+                        "content": "kg, respectively. Male participants comprised 58% "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\left( \\mathbf { n } = 4 0 \\right)"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". The participants included 28 sarcopenia patients and 23 Parkinson’s disease patients. The remaining 18 did not have any medical conditions that could affect their walking ability, and they served as controls. All recruited participants were able to walk independently without the use of walking aids. All par ticipants provided their written informed consent before participation, and the study was approved by the institutional review board (KHUH 2022-05-036-001)."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                796,
+                487,
+                935
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/2f1e1b83b65c642452c6761bf12a3e33e0df650a8d5538824f31a7588470f37d.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Anthropometric characteristics of study participants by group."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td rowspan=\"2\"></td><td rowspan=\"2\">Normal gait</td><td colspan=\"2\">Abnormal gait</td></tr><tr><td>Sarcopenia</td><td>Parkinson&#x27;s disease</td></tr><tr><td>Age</td><td>62.72 ± 18.00</td><td>81.14 ± 3.93</td><td>72.17 ± 5.08</td></tr><tr><td>Weight</td><td>65.29 ± 11.17</td><td>53.43 ± 6.75</td><td>65.29 ± 11.17</td></tr><tr><td>Height</td><td>163.33 ± 11.41</td><td>157.67 ± 7.05</td><td>164.52 ± 8.65</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                512,
+                408,
+                937,
+                475
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.2. Experiments"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                510,
+                506,
+                613,
+                520
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The experiment was conducted indoors, where a motion capture system and 12 digital cameras were installed (Fig. 1). Each participant was instructed to walk 4 m straight under two speed conditions of usual and faster-than-usual, wearing tracking markers. Additionally, a supplementary validation experiment was conducted using data from a subject wearing loose-fitting long pants to assess model robustness under severe clothing occlusion. The digital cameras recorded the walking of the participants from 12 different angles, divided into four views of Regions 1, 2,3, and 4. Region 1 was the diagonal view from the right side of the participant, while Region 2 was the frontal view, Region 3 was the lateral view, and Region 4 was the diagonal view from the left side of the participant. The CORTEX optical motion capture system was used to obtain joint angles and positions. The sampling frequency of both digital and optical cameras was set to 60 Hz."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                534,
+                939,
+                721
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.3. Data collection and processing"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                510,
+                735,
+                717,
+                747
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Since 12 cameras recorded the videos simultaneously at the same time when motion capture was conducted, the recorded videos were trimmed and synchronized using a flashing signal technique. First, a circuit to receive the flash signal from a flash device was designed. When the flash fired, a photodiode generated an electric current, which was then amplified by an operational amplifier and converted to a Transistor-Transistor Logic (TTL) level signal. When this signal changed abruptly, the microcontroller generated a pulse lasting 100 ms. The MoCap system used in this experiment was triggered by a rising edge pulse. Meanwhile, the digital camera captured the moment the flash occurred. This moment was identified by detecting a sudden increase in pixel intensity. To account for variations in background brightness and lighting conditions, the pixel intensity threshold for detecting the flash was set between 100 and 150. The generated pulse and the captured flashing moment were used to synchronize and trim the video and joint angle data."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                762,
+                939,
+                936
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "V. Chao et al."
+                    }
+                ]
+            },
+            "bbox": [
+                60,
+                42,
+                129,
+                52
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Measurement 270 (2026) 120772"
+                    }
+                ]
+            },
+            "bbox": [
+                778,
+                42,
+                939,
+                52
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                494,
+                952,
+                505,
+                960
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/3f3b426a8af2ba46750ff281521f5a332ae5115933e37180fbf5769cd2eb7ce8.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 2. End-to-end architecture for joint-angle and angular-velocity prediction. A single-view input clip of � frames is passed through a shared image encoder to extract spatial features for each frame. These frame-level features are concatenated and fed into two parallel Transformer modules, one predicting frame-wise joint angles and the other predicting joint angular velocities, enabling simultaneous learning of spatial and temporal gait dynamics."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                97,
+                70,
+                895,
+                370
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                57,
+                436,
+                487,
+                475
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "After obtaining the joint angle data, a Gaussian filter with "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\sigma = 3"
+                    },
+                    {
+                        "type": "text",
+                        "content": "was applied to smooth the data and reduce noise. Then, the bounding box of each participant for every frame was extracted to focus solely on the participant. To obtain the bounding boxes, the YOLOv8 [16] model and ByteTrack [17] were used for human detection and track ing, respectively. Since the tracker generated a bounding box for all people in the frame, including non-participants, the IDs were manually corrected to ensure that the bounding boxes correctly corresponded to each participant."
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                475,
+                487,
+                593
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The dataset was split into three sets: the training set comprising 41 subjects, the validation set comprising 14 subjects, and the test set comprising 14 subjects. Specifically, the training, validation, and test sets consist of 1342 videos and 1,037,010 images, 466 videos and 324,953 images, and 455 videos and 338,433 images, respectively."
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                593,
+                487,
+                660
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.4. Model building"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                58,
+                672,
+                178,
+                686
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The overall architecture of the proposed end-to-end model is illustrated in Fig. 2. The framework is designed to estimate joint angles and angular velocities directly from video frames through a unified pipeline. It consists of three primary stages: (1) Input Construction, where temporal video clips are prepared; (2) Feature Extraction, where a shared image encoder captures spatial features from each frame; and (3) Temporal Aggregation and Prediction, where Transformer modules model the temporal gait dynamics to generate the final kinematic predictions. The specific details of each component are described in the following subsections."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                698,
+                487,
+                829
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.4.1. Input construction"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                58,
+                843,
+                208,
+                854
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To build a deep learning model for predicting human joint angles and angular velocities, inputs were constructed adopting a sliding window approach. The inputs were constructed using 32 consecutive frames, making sure that no frames overlapped. The constructed inputs corresponded to half a second of video at 60 frames per second (FPS). The model input tensor was denoted as "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x \\in \\mathbb { R } ^ { T \\times 3 \\times H \\times W }"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", where � is the number of frames per input, � and � are the height and width of each video frame, respectively. The inputs were randomly chosen for training. The model consisted of two primary modules: feature extraction and temporal aggregation."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                854,
+                487,
+                936
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                507,
+                435,
+                939,
+                490
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.4.2. Feature extraction"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                505,
+                660,
+                517
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Given the frame sequence "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x \\in \\mathbb { R } ^ { C \\times T \\times H \\times W }"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", each encoder processed a single frame "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x _ { i } \\in \\mathbb { R } ^ { C \\times H \\times W }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "independently and produced an output feature vector "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x _ { i } \\ \\in \\ \\mathbb { R } ^ { D } ."
+                    },
+                    {
+                        "type": "text",
+                        "content": ", where � denotes the dimensionality of the extracted features. After the frames were processed by the encoders, the individual encoder outputs were concatenated along the temporal dimension to produce the frame-level features "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\boldsymbol { x } _ { f } \\in \\mathbb { R } ^ { T \\times D }"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". This concatenated representation captured the spatial features of each frame in the sequence and was subsequently passed to the temporal aggregation module for further processing."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                518,
+                939,
+                638
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The dimensionality � of the extracted features depended on the choice of backbone model. Multiple backbone models, including Vision Transformers, Convolutional Neural Networks (CNNs), and hybrid models, were explored. As for Vision Transformers, the Swin Transformer [18], which leverages a hierarchical architecture with shifted windows to efficiently capture both local and global spatial features, was used. For hybrid models, we used MaxViT [19], which integrated CNN and ViT to capture both local and global spatial features using block attention and grid attention. For CNNs, we implemented ConvNeXtV2 [20], RegNetY [21], and EfficientNetV2 [22], which are regarded as among the current state-of-the-art backbone models [23]."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                638,
+                939,
+                786
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.4.3. Temporal aggregation"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                800,
+                680,
+                814
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "After feature extraction, we obtained a sequence of frame-level features "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x _ { f } \\in \\mathbb { R } ^ { T \\times D }"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". The temporal aggregation module processed this sequence to capture the dynamic relationships between frames. In our approach, a Transformer-based architecture leveraged self-attention mechanisms to dynamically weight and integrate both local and global temporal dependencies, resulting in aggregated features "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x _ { \\mathbf { a g g } } \\in \\mathbb { R } ^ { T \\times D }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "that encapsulate the evolution of spatial features over time."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                814,
+                939,
+                907
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The temporal-aware features were then fed into a fully connected layer with several neurons equal to the number of joint classes. These classes corresponded to the flexion and extension angles of the righ and left ankles, right and left knees, and right and left hips."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                907,
+                939,
+                936
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "V. Chao et al."
+                    }
+                ]
+            },
+            "bbox": [
+                60,
+                42,
+                129,
+                52
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Measurement 270 (2026) 120772"
+                    }
+                ]
+            },
+            "bbox": [
+                778,
+                42,
+                939,
+                54
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                494,
+                952,
+                504,
+                960
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                57,
+                66,
+                487,
+                93
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Then, an additional branch for joint angular velocity prediction was created to mirror the joint angles prediction branch. This extra branch slightly improved the overall performance of the models by leveraging the multi-task loss function. Joint angular velocities served as a valu able gait parameter because they are known not to be influenced by marker placement, which can cause shifts in angles when collecting MoCap ground truth data."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                93,
+                487,
+                185
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.4.4. Inference algorithm"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                58,
+                197,
+                215,
+                210
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In this work, as opposed to conventional algorithms that rely on intermediate keypoint localization, the proposed framework learns a direct mapping function "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "{ \\mathcal { F } } : x \\to ( \\theta , \\omega )"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". It takes the raw video tensor � as input and regresses the joint angles � and angular velocities � in a single forward pass, implicitly capturing the subject’s gait pattern without explicit skeleton tracking. Appendix Algorithm 1 presents the algorithms used in this study."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                211,
+                487,
+                303
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.5. Loss function"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                58,
+                316,
+                168,
+                330
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our model was trained using a multi-task loss that jointly optimized two related tasks: the estimation of joint angle and that of joint angular velocity. For both tasks, we employed the L1 loss, which has been proven effective in regression scenarios. In addition, to promote temporal consistency between the estimated joint angles and the derived velocities, we included a consistency loss term. This term encouraged the predicted velocities to match the finite differences of the predicted joint angles. The loss components were computed as follows:"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                341,
+                487,
+                448
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\mathcal {L} _ {\\theta} = \\| \\hat {\\theta} - \\theta \\| _ {1},\\tag{1}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/5155aaa835ae1a390309a8a854b9500c5a4531de8b3aa590272c65f4b3baa8d4.jpg"
+                }
+            },
+            "bbox": [
+                58,
+                455,
+                156,
+                469
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\mathcal {L} _ {\\omega} = \\| \\hat {\\omega} - \\omega \\| _ {1},\\tag{2}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/c61ef808b7e53d9e44d2782688bc82a5454d259fd672e9aed251f00a142faa9b.jpg"
+                }
+            },
+            "bbox": [
+                58,
+                485,
+                161,
+                499
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\mathcal {L} = \\mathcal {L} _ {\\theta} + \\mathcal {L} _ {\\omega} + \\lambda \\left\\| \\hat {\\omega} _ {2: T} - (\\hat {\\theta} _ {2: T} - \\hat {\\theta} _ {1: T - 1}) \\right\\| _ {1},\\tag{3}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/77abc118b38d7e91463c07698b3579c5a24d3b29ce4be50fafa4c1ba63cc55d3.jpg"
+                }
+            },
+            "bbox": [
+                58,
+                513,
+                324,
+                533
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where �<sup>̂</sup> and � denote the predicted joint angle and ground truth joint angle, respectively. ̂� and � denote the predicted joint angular velocity and ground truth joint angular velocity. 2:T indicates the frames from time-step 2 to �. � is a manually tuned weighting factor for the consistency term."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                537,
+                487,
+                604
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.6. Training details"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                58,
+                617,
+                181,
+                630
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The prepared samples were cropped using the bounding boxes generated by YOLOv8 for training. The bounding boxes of YOLOv8 were enlarged by 10 pixels on all sides to ensure complete coverage of the limbs of each participant. The cropped inputs were then squarepadded with zero values to preserve their aspect ratio and then resized to 224 × 224 pixels to ensure a consistent size as inputs. The ground truth was segmented by applying the sliding window approach that was applied to the input construction. Each joint angle was normalized to fall within the interval of 0 and 1 by its range of motion. To obtain the ground truth for the joint angular velocity ground truth, the difference between consecutive joint angles was computed as:"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                643,
+                487,
+                789
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\omega_ {2: T} = \\theta_ {2: T} - \\theta_ {1: T - 1},\\tag{4}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/4a652199a71c5d0b307e5938fef3aa37c75de3d1a3973673e0314ea5e77f674f.jpg"
+                }
+            },
+            "bbox": [
+                58,
+                796,
+                189,
+                810
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where the initial angular velocity was set to zero, assuming that each participant started walking from a stationary position. These steps ensured that both the input images and the corresponding ground truth data were uniformly scaled, temporally aligned, and ready for model training."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                815,
+                487,
+                882
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The AdamW optimizer with a weight decay of 0.01 and an initial learning rate of "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1 \\times 1 0 ^ { - 4 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "was employed for training. A CosineAnnealing WarmupRestarts scheduler with a 6-epoch warmup period, where the learning rate was annealed from a minimum of "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "3 \\times 1 0 ^ { - 6 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "to a maximum of "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1 \\times 1 0 ^ { - 4 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "was used. The model was trained with the loss function  (3) and a maximum of 50 epochs. All experiments were conducted on an NVIDIA RTX 4090 GPU. The training performance was evaluated on the evaluation set after each epoch using the Mean Absolute Error (MAE) and the Intraclass Correlation Coefficient (ICC). The MAE was employed to quantify the absolute accuracy of the model, representing the average magnitude of the deviation between the predicted joint angles and the ground truth in degrees. A lower MAE indicates higher precision in the estimation of joint position amplitudes. To assess the reliability and temporal consistency of the predicted gait waveforms, the ICC was calculated. According to established guidelines for reliability [24], ICC values less than 0.50, between 0.50 and 0.75, between 0.75 and 0.90, and greater than 0.90 are indicative of poor, moderate, good, and excellent reliability, respectively. These thresholds were used to categorize the quality of the model’s performance across different test conditions."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                882,
+                487,
+                936
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/34ba5284c4e86d17b84b132d115e4aacab01c5d0bc25d36603bebeba6fe48b88.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 2"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Comparison of backbone models for joint angle and joint angular velocity prediction on the test set."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td rowspan=\"2\">Backbone</td><td colspan=\"2\">Angle</td><td colspan=\"2\">Angular velocity</td></tr><tr><td>MAE</td><td>ICC</td><td>MAE</td><td>ICC</td></tr><tr><td>MaxViT</td><td>4.5874</td><td>0.9138</td><td>0.4167</td><td>0.9385</td></tr><tr><td>ConvNeXtV2-T</td><td>4.5310</td><td>0.9184</td><td>0.4257</td><td>0.9319</td></tr><tr><td>RegNetY3.2GF</td><td>4.1966</td><td>0.9285</td><td>0.4027</td><td>0.9418</td></tr><tr><td>EfficientNetV2-S</td><td>4.2577</td><td>0.9297</td><td>0.4318</td><td>0.9331</td></tr><tr><td>Swin-T</td><td>4.8141</td><td>0.9149</td><td>0.4863</td><td>0.9205</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                514,
+                102,
+                937,
+                189
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                507,
+                221,
+                939,
+                436
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3. Results"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                510,
+                450,
+                581,
+                462
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1. Model performance by backbone models"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                510,
+                477,
+                773,
+                491
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The model using RegNetY as a backbone outperformed the other models in predicting both angles and angular velocity (Table 2). The lowest MAE of 4.1966 was achieved by the model using RegNetY as a backbone with an ICC of 0.9285 in predicting angles. As for predicting angular velocity, the lowest MAE of 0.4027 was achieved with an ICC of 0.9418. Overall, all five backbones delivered strong performance with only minor differences in their metrics, confirming the effectiveness of the proposed architecture for joint-angle and angular-velocity prediction. The models using RegNetY and EfficientNetV2 offered the best balance between accuracy and reliability. The model using Efficient-NetV2 achieved the highest ICC of 0.9297 for angle prediction, while that using RegNetY demonstrated consistently low MAEs for predicting both angles and angular velocity. The model using RegNetY as a backbone was selected due to its overall strong prediction performance across both joint angle and angular velocity. Although EfficientNetV2 achieved a slightly higher ICC for angles, RegNetY delivered the lowest MAEs for predicting both and the highest ICCs for angular velocity. This consistent accuracy made RegNetY the preferred choice for the model we propose."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                505,
+                939,
+                760
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.2. Performance of the developed model"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                774,
+                751,
+                788
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The developed model achieved an average MAE of 4.1966 with an ICC of 0.9285 in the test set, showing a high correlation with the ground truth (Table 3). When the model was trained without the angular velocity, an ICC of 0.9193 was achieved. The lowest MAE of 2.9992 was achieved with the prediction of the left ankle angle, while the highest ICC of 0.9654 was achieved with the prediction of the right knee angle. Although modest, the inclusion of angular velocity information enhanced the consistency and overall performance of joint angle predictions. Taken together, the developed model was found effective at predicting both the magnitude and timing of joint movements across different joints, with particularly robust performance on the prediction of angular velocity."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                800,
+                939,
+                936
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "V. Chao et al."
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                42,
+                129,
+                52
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Measurement 270 (2026) 120772"
+                    }
+                ]
+            },
+            "bbox": [
+                778,
+                42,
+                939,
+                54
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                494,
+                952,
+                504,
+                960
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/73ebf6304e34fbce619c82919dad4e85940ce1bfea06178be5998f3ebf267667.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 5"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Table 4"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Table 3"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Performance comparison for different joints in angle and angular velocity prediction. The performance is evaluated using MAE and ICC. Results are based on the RegNetY3.2GF backbone model, evaluated on the test set."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td rowspan=\"2\">Joints</td><td colspan=\"2\">Angle</td><td colspan=\"2\">Angular velocity</td></tr><tr><td>MAE</td><td>ICC</td><td>MAE</td><td>ICC</td></tr><tr><td>Right hip</td><td>4.6776</td><td>0.9420</td><td>0.3192</td><td>0.9691</td></tr><tr><td>Left hip</td><td>5.1525</td><td>0.9338</td><td>0.3459</td><td>0.9618</td></tr><tr><td>Right knee</td><td>4.5971</td><td>0.9654</td><td>0.5347</td><td>0.9635</td></tr><tr><td>Left knee</td><td>4.4972</td><td>0.9651</td><td>0.5278</td><td>0.9635</td></tr><tr><td>Right ankle</td><td>3.2557</td><td>0.8795</td><td>0.3549</td><td>0.8916</td></tr><tr><td>Left ankle</td><td>2.9992</td><td>0.8856</td><td>0.3335</td><td>0.9010</td></tr><tr><td>Average</td><td>4.1966</td><td>0.9285</td><td>0.4027</td><td>0.9418</td></tr><tr><td>Without velocity</td><td>-</td><td>0.9193</td><td>-</td><td>-</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                60,
+                114,
+                484,
+                239
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/5981711f7fc9e4c335568464530085644d3b477a9dd068791f5a847da147d338.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Performance comparison of the developed model across different input image resolutions. The baseline resolution is 224 × 224. Results are based on the RegNetY3.2GF backbone model, evaluated on the test set."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td rowspan=\"2\">Resolution</td><td colspan=\"2\">Angle</td><td colspan=\"2\">Angular velocity</td></tr><tr><td>MAE</td><td>ICC</td><td>MAE</td><td>ICC</td></tr><tr><td>224 × 224</td><td>4.1966</td><td>0.9285</td><td>0.4027</td><td>0.9418</td></tr><tr><td>128 × 128</td><td>4.6676</td><td>0.9189</td><td>0.4077</td><td>0.9392</td></tr><tr><td>112 × 112</td><td>4.6392</td><td>0.9160</td><td>0.4369</td><td>0.9294</td></tr><tr><td>64 × 64</td><td>5.1559</td><td>0.9000</td><td>0.4528</td><td>0.9255</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                60,
+                306,
+                484,
+                384
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/2dd3760af05a15f10af2cfcfd5c532c06a1bf339918c715f97e4da3458db0296.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Comparison between our model with RegNetY3.2GF and the 3D pose method on the validation and test sets"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td rowspan=\"2\">Model (Knee only)</td><td colspan=\"2\">Validation set</td><td colspan=\"2\">Test set</td></tr><tr><td>MAE</td><td>ICC</td><td>MAE</td><td>ICC</td></tr><tr><td>RegNetY3.2GF</td><td>5.5312</td><td>0.8983</td><td>4.5472</td><td>0.9652</td></tr><tr><td>3D pose method</td><td>10.2434</td><td>0.7932</td><td>9.6163</td><td>0.8522</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                60,
+                438,
+                484,
+                494
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                57,
+                525,
+                485,
+                552
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "When a sensitivity analysis by varying smoothing kernel sizes was further conducted, it was found that reducing the kernel size to � = 1 slightly reduced reliability due to retained high-frequency noise (ICC = 0.9253), while increasing it to � = 5 excessively attenuated peak joint angles. Thus, the kernel size of � = 3 was selected as the optimal balance between noise reduction and waveform preservation (ICC = 0.9285)."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                553,
+                487,
+                645
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.3. Effect of input resolution on the proposed model"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                58,
+                658,
+                364,
+                672
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To evaluate the robustness of the proposed model against varying image resolutions, an ablation study involving four different resolutions of 224×224, 128 × 128, 112×112, and 64 × 64 was conducted. As Table 4 shows, the model trained with the image resolution of 224 × 224 achieved the highest accuracy, with an MAE of 4.3200 and an ICC of 0.9285 for the joint angle. Reducing the image resolution to 128 × 128 yielded an MAE of 4.6676 and an ICC of 0.9189 for the joint angle. At the lowest image resolution of "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "6 4 \\times 6 4"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", the model achieved an MAE of 5.1559 and an ICC of 0.9000 for the joint angle. For angular velocity, the ICCs remained above 0.92 across all image resolutions."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                684,
+                489,
+                817
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.4. Quantitative comparison with 3D pose method"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                58,
+                829,
+                356,
+                843
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The comparison of the developed model with the 3D pose method showed that the developed model outperforms the 3D pose method in predicting the joint angles of the knees (Table 5). Since the source code for the 3D pose methods was unavailable, the two-stage pipeline was recreated for comparison. First, ViTPose was applied to extract 2D joint keypoints from RGB images [25]. Then, MotionBERT lifted those keypoints into 3D space [26]. The joint angles were directly computed from these reconstructed 3D positions. ViTPose was chosen for its robust 2D keypoint estimation, and Motion BERT was chosen for its accuracy in 3D pose. This approach was taken for their state-ofthe-art performance, combined with their open-source availability and straightforward implementation."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                854,
+                487,
+                936
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/946f4201b97843327ec4661eb7412dc34e3309e85c78fa47a86a80be1bc0e42a.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 6"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Performance across four camera-view groups on the test set. The camera setup is explained in Section 2.2."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td rowspan=\"2\">Camera group</td><td colspan=\"2\">Angle</td><td colspan=\"2\">Angular velocity</td></tr><tr><td>MAE</td><td>ICC</td><td>MAE</td><td>ICC</td></tr><tr><td>Region 1</td><td>4.240</td><td>0.929</td><td>0.410</td><td>0.942</td></tr><tr><td>Region 2</td><td>4.256</td><td>0.929</td><td>0.405</td><td>0.942</td></tr><tr><td>Region 3</td><td>4.028</td><td>0.936</td><td>0.396</td><td>0.945</td></tr><tr><td>Region 4</td><td>4.337</td><td>0.919</td><td>0.405</td><td>0.938</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                512,
+                102,
+                937,
+                180
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                507,
+                211,
+                939,
+                290
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "When MotionBERT lifted the keypoints into 3D space, it output coordinates in a camera-centric frame. To transform these into a bodycentric coordinate system aligned with human anatomy, the local axes were defined first: the �-axis was established by the vector from the root joint to the left hip, the �-axis was established by the vector from the root joint to the belly, and the �-axis was established by taking the cross product of the Y- and Z-axes. Then, the head-to-nose vector was projected onto the XY-plane and computed its dot product with the preliminary �-axis. In the cases of a negative dot product, the �-axis was flipped so that it could consistently point toward the nose projection, ensuring a forward anatomical direction. As the final step, a canonical T-pose was defined based on standard anatomical landmarks in this local frame. During joint-angle computation, each limb segment was hierarchically rotated from its T-pose orientation to its observed orientation, guaranteeing that all joint angles were measured in consistent anatomical axes. Since the 3D pose estimator of MotionBERT did not provide toe keypoints, the calculation for the ankle joint angle was unfeasible. Thus, the comparison was made exclusively with the joint angles of left and right knees."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                290,
+                939,
+                540
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The ICC of the developed model in predicting the knee angle in the validation set was 0.8983, while that of the 3D pose method was 0.7932. In the test set, the developed model achieved an ICC of 0.9652 while the 3D pose method achieved an ICC of 0.8522."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                540,
+                939,
+                593
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "When the target trajectories of the proposed model and the 3D pose method were compared, the proposed model tracked the ground truth more closely, especially during rapid flexion and extension phases (Fig. 3)."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                593,
+                939,
+                646
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.5. Robustness to view variations"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                659,
+                710,
+                672
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "When the performance of the developed model by varying views was investigated, no significant difference by views was observed (Table 6). The model demonstrated consistent accuracy and reliability for the prediction of both joint angle and angular velocity, regardless of Regions. The ICCs by Regions 1, 2, 3, and 4 ranged narrowly from 0.919 to 0.936, with MAEs varying from 4.028 to 4.337. Region 3 yields the highest ICC of 0.945 with the lowest MAE of 4.028. The ICC of Region 4 was the lowest. The prediction of each view converged very close to the ground truth, suggesting that the proposed model produces reliable predictions regardless of views (Fig. 4)."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                684,
+                939,
+                818
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.6. Robustness to speed variations"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                829,
+                717,
+                843
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "When the performance of the developed model was investigated at two different walking speeds, the prediction of the developed model aligned well with the trajectories of ground truth in both usual and faster-than-usual speed conditions (Fig. 5). The predicted amplitude, phase, and timing closely matched those of the ground truth, whereas minor deviations were found with stride length and cycle duration."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                854,
+                939,
+                936
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "V. Chao et al."
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                42,
+                129,
+                52
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Measurement 270 (2026) 120772"
+                    }
+                ]
+            },
+            "bbox": [
+                778,
+                42,
+                939,
+                54
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                492,
+                952,
+                505,
+                960
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/34c202a6f6f5d70d7a0e7706a500270843f83e1ca5e0e1fbd3fff4a8944cd75a.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                223,
+                68,
+                766,
+                263
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/bbda97cd82a283e045784d043554d1a43b6cf06b79a2dc32c9fb8af3a043020e.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 3. Visualization of right and left knee angle predictions: Proposed method vs. 3D pose method."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                223,
+                276,
+                766,
+                467
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/3879842456241a75a2d0cdd45fe1fe32465fec8fdb09331ff81f3a86e1ff0ef4.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Performance comparison of joint-angle and angular-velocity predictions across participant groups on the test set. The healthy group includes both young and elderly subjects."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td rowspan=\"2\">Group</td><td colspan=\"2\">Angle</td><td colspan=\"2\">Angular velocity</td></tr><tr><td>MAE</td><td>ICC</td><td>MAE</td><td>ICC</td></tr><tr><td>Parkinson&#x27;s disease</td><td>4.2069</td><td>0.9165</td><td>0.4109</td><td>0.9170</td></tr><tr><td>Sarcopenia</td><td>4.2911</td><td>0.9251</td><td>0.3678</td><td>0.9474</td></tr><tr><td>Healthy</td><td>4.1281</td><td>0.9389</td><td>0.4201</td><td>0.9547</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                62,
+                559,
+                484,
+                625
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Under the faster-than-usual speed condition, the model exhibited a slight phase lag at mid-swing for the ankle angle due to the smaller range of motion at faster-than-usual speed compared to usual speed. Nevertheless, the proposed model accurately captured the overall trend and dynamics of joint motion at both usual and fast speeds."
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                658,
+                487,
+                725
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.7. Robustness to gait variations"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                58,
+                736,
+                255,
+                750
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The performance of the developed model was further investigated by the abnormality of gaits. The participants were divided into three groups: those diagnosed with Parkinson’s disease (n = 23), those diagnosed with sarcopenia (n = 28), and those without any diagnosis of health conditions that could affect their walking at the time of participating in the experiment (n = 18). There was no overlap between those diagnosed with Parkinson’s disease and those diagnosed with sar copenia. The gait of those with either Parkinson’s disease or sarcopenia was considered abnormal gait, while that of the rest was considered normal gait. In the test set. the model achieved an ICC of 0.9165 in predicting the joint angles of those with Parkinson’s disease, an ICC of 0.9251 in those with sarcopenia, and an ICC of 0.9389 in the rest (Table 7). The MAEs for abnormal gait ranged narrowly from 4.2069 to 4.2911, and did not deviate significantly from that of normal gait. In the case of angular velocity, a slight drop in the MAE was observed with sarcopenia, albeit within a range that did not compromise the reliable prediction performance of the model. Finally, in a validation with a subject wearing loose-fitting long pants that completely obscured the knee and ankle joints, the model retained high reliability with an average ICC of 0.9335 across seven viewing angles (C1, C3, C4, C5, C8, C10, C12), demonstrating robustness under obscuring joint conditions."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                762,
+                487,
+                936
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                507,
+                511,
+                939,
+                619
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4. Discussion"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                510,
+                630,
+                603,
+                643
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This study aimed to develop and validate a model that can estimate lower-limb joint angles directly from video frames. A model using RegNetY as a backbone was developed, integrating a convolutional neural network for spatial feature extraction with a transformer module to capture temporal gait dynamics. A novel loss function that jointly penalizes angle and angular-velocity errors was suggested to improve consistency and overall estimation accuracy. The performance of the developed model was compared with that of the 3D pose model for its accuracy, and an ICC of 0.9652 was achieved in the test set. The developed model demonstrated robust performance in estimating not only joint angles but also angular velocity in varying camera views, walking speeds, and gait patterns."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                656,
+                939,
+                815
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The core innovation of the proposed approach lies in a paradigm shift from explicit geometric reconstruction to direct kinematic learning, eliminating the previous error-prone two-stage pipeline. By bypassing intermediate keypoint detection, this framework directly learns the intrinsic biomechanical relationship between visual gait patterns and joint mechanics, guided by a velocity-aware loss function that ensures temporal consistency. By eliminating the necessity for markers or specialized hardware, the proposed approach removes the depen dence on specialized equipment and trained professionals, significantly enhancing accessibility. The fair performance of the proposed model, even with low image resolutions commonly obtainable by consumergrade smartphone cameras, demonstrates the potential of the model to serve as a cost-effective and accessible solution for both clinical and home-based gait assessment."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                815,
+                939,
+                936
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "V. Chao et al."
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                42,
+                129,
+                52
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Measurement 270 (2026) 120772"
+                    }
+                ]
+            },
+            "bbox": [
+                778,
+                42,
+                939,
+                54
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                494,
+                952,
+                504,
+                960
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c6c10ee974c29853ea928d5ccdd4862740e133f67c2e61fba67f693fb6c5b874.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                92,
+                68,
+                497,
+                206
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/7ff4158ec672cee8edfb5db424524cbb73fc7c27772b07c260526864472fff91.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                90,
+                214,
+                497,
+                355
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/4800f72f3c29ee8fd0a60513afa7d892b7e1f415d5a853164648e2287838ff45.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                500,
+                70,
+                904,
+                206
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1d09dd85baef219527a0b10911baafddc462fa11ada1b2d4ddef2c0d5077759e.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                499,
+                216,
+                905,
+                354
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a098b34eea52c494ba9eced3c259a91fd85e75e5cd75045dd9b6796623cbdb6e.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                90,
+                360,
+                497,
+                501
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/304b87f7f44f7aa3b9b18affe2de7f0d874c935e6c537e923f052caae5d2a822.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 4. Visualization of joint angle predictions (blue) compared to the ground truth (orange) for a subject walking at a fast pace, recorded from twelve different camera viewpoints (C1 to C12)."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                499,
+                361,
+                904,
+                501
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                57,
+                554,
+                487,
+                622
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The outstanding achievement of the proposed model might have derived from combining CNNs and Transformers. It has been suggested that hybrid deep learning architectures combining CNNs for local feature extraction with Transformers for global temporal modeling show superior performance in human kinematic analysis [27]. These hybrid networks effectively mitigated the trade-off between spatial resolution and temporal coherence in gait event detection and spatiotemporal parameter estimation [28]. The pronounced range of motion of the knees during the gait cycle may also have contributed to the remarkable performance. Unlike the ankle, which undergoes relatively subtle rotation, the knees exhibit distinct and high-amplitude flexion-extension patterns that provide strong visual cues, allowing the spatial feature extractor to capture their dynamics with greater precision. A novel multi-task loss function that jointly optimizes angle and angular-velocity predictions contributed to improved overall consistency, as well."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                622,
+                487,
+                825
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The loss function used in this study was formulated to jointly optimize the estimation of joint angles and their corresponding angular velocities. The model was trained using a multi-task loss, where L1 losses were employed for both joint angle and angular velocity predictions. In addition, a consistency loss term was incorporated to promote temporal coherence by encouraging the predicted velocities to match the finite differences of the predicted joint angles. This approach allowed the model to take advantage of the inherent relationship between angle and angular velocity, thereby improving both the accuracy and temporal consistency of the predictions. Including angular velocity in both the output and the loss calculation contributed to overall performance gains. Notably, the inclusion of velocity prediction improved the ICC from 0.9193 to 0.9285. Although the improvement is modest, it indicates enhanced agreement with the ground truth and highlights the value of incorporating dynamic features. This suggests that leveraging both static and dynamic gait features during training leads to more reliable estimation of lower-limb joint angles from video data. This approach reflects recent trends in physics-aware motion capture as well as state-of-the-art motion representation learning. It has been demonstrated that the integration of velocity-level supervision into the MotionBERT loss function has been shown to be crucial for recovering smooth and temporally coherent 3D motion from partially observed observations [26]. Studies nowadays have adopted explicit physics-based learning strategies to enforce biological plausibility, utilizing derivative-based constraints to eliminate physically impossible artifacts [29.30]."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                825,
+                487,
+                936
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                507,
+                554,
+                939,
+                790
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This study explored several models as backbones for model devel opment, and RegNetY was finally selected. Although all the backbone models exhibited fairly strong performance, supporting the effectiveness of the proposed model design, RegNetY provided the most robust and consistent performance for both joint angle and angular velocity among other backbone models. It can be speculated that the flexible and scalable architecture of RegNetY is attributed to balancing depth, width, and group convolution efficiently, enhancing feature represen tation. The observation is supported by recent studies demonstrating the strong feature extraction capabilities and efficiency of RegNet architectures [23]. The developed model using RegNetY showed strong performance in estimating lower limb joint angles, with the highest accuracy for the knee. Incorporating angular velocity into the model further improved prediction accuracy, suggesting the value of dynamic features in prediction. Future quantization of the RegNetY backbone us ing regression-specialized quantization methods such as Reg-PTQ [31] and a quantized Transformer module such as Q-ViT [32] will minimize the memory footprint and improve the applicability of the proposed model."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                790,
+                939,
+                936
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "V. Chao et al."
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                42,
+                129,
+                52
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Measurement 270 (2026) 120772"
+                    }
+                ]
+            },
+            "bbox": [
+                778,
+                42,
+                939,
+                54
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                492,
+                952,
+                505,
+                960
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/d51c1fe09adcbdec85cabf02058d2a515159f9e0ac9009d6060786dd70b3019f.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                95,
+                73,
+                490,
+                209
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/4b1c66df652dfc076d7c76216e280772a7461a4385396ca6d915c021aaba98eb.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                95,
+                216,
+                490,
+                351
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/68c713fa671ade95662d74b7bf7caeb662af2d5fb7058b40d78ea4e97ebd1437.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                507,
+                75,
+                900,
+                209
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/18af63823f82a3c6b1f34a7faf029a60abdab5a3ff1b375d79512720747134e1.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                505,
+                218,
+                900,
+                351
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1085b880a42100d4e92cb1202a206a6b9becdd6565c3d9dde3681695d5cbf2f7.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "(a) Fast walking."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                95,
+                359,
+                490,
+                494
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6c6b807d276211f0a90b08ab419bc50def257efcb2d35780b14f49d41079be30.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "(b) Normal walking."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Fig. 5. Comparison of target and predicted right-side joint angles over video frames for two gait conditions. (a) Fast walking (solid orange: target; dashed blue: prediction). (b) Normal walking (solid green: target; dashed red: prediction)."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                505,
+                358,
+                900,
+                493
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                57,
+                568,
+                487,
+                673
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The performance comparison between the developed model and the 3D pose model suggests that the developed model can be a reliable alternative to it. The 3D pose approach relies on extracting 2D keypoints from RGB images to be used in a lifting model that estimates 3D joint positions. From these positions, joint angles are calculated [9–13]. Yet, this process is rather prone to errors since the initial 2D keypoint local ization can lead to compounded inaccuracies in the final estimates. By contrast, the developed model achieved estimation closer to the ground truth by estimating joint angles directly from video frames. Thus, the risk of error propagation was reduced, especially during rapid phases of gait for both timing and amplitude. This direct estimation not only improves accuracy but also simplifies the workflow, making it a more accessible alternative in gait analysis under various circumstances."
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                672,
+                487,
+                843
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The developed model exhibited strong robustness to various sources of variation, such as camera views, walking speeds, gait abnormalities, and varying clothing conditions. The estimation across varying camera views remained consistent, with only minor fluctuations in ICCs and MAEs by views. Fair performance was once again confirmed with speed variations. The prediction under both the usual and faster-than-usual speed conditions closely matched ground truth trajectories, despite a small deviation in mid-swing at faster-than-usual speed. The phase lag observed at higher walking speeds might have derived from increased motion blur of fast-moving distal joints, which degraded joint-related spatial features and affected temporal estimation. The robustness of the developed model in differentiating the gaits of sarcopenia patients and Parkinson’s disease patients from normal ones further expanded the potential scope of its application. This robustness extends to clothing variations, as the model successfully inferred joint kinematics despite loose pants obscuring the limbs by leveraging global body dynamics and temporal patterns rather than relying solely on local joint visibility. This robustness can be attributed to the end-to-end architecture of the model, which combined powerful spatial feature extraction from each video frame with temporal modeling using Transformers. By learning both frame-level visual cues and their temporal relationships, the model effectively captured essential gait dynamics, allowing it to maintain performance across diverse conditions. This capability is critical for real-world applications, where variability in recording settings and patient conditions is common."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                843,
+                487,
+                936
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                507,
+                568,
+                939,
+                804
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "When the impact of input resolution on model performance was investigated, it was found that reducing image resolutions led to only a subtle degradation in accuracy, while high reliability was preserved even at lower resolutions. This suggests that the proposed model effectively captures global spatiotemporal gait patterns rather than relying solely on fine-grained spatial details. This enhances the applicability of the proposed model to real-world scenarios, where computational resources or input quality may be limited. In particular, it supports deployment in practical gait assessment settings that require both robustness and efficiency."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                804,
+                939,
+                936
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "V. Chao et al."
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                42,
+                129,
+                52
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Measurement 270 (2026) 120772"
+                    }
+                ]
+            },
+            "bbox": [
+                778,
+                42,
+                939,
+                54
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                494,
+                952,
+                505,
+                960
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The high processing throughput of the proposed model suggests strong feasibility for real-time gait analysis. The proposed model pro cessed a video consisting of 1127 frames in 4.14 s, corresponding to an average throughput of approximately 270 FPS, or about 3.7 ms per frame. Given that the standard video acquisition rate for gait analysis is 60 FPS, the proposed model operates approximately 4.5 times faster than real-time. Despite the need for a short initial buffering period due to the sliding-window strategy, the model could generate subsequent outputs with negligible latency, supporting continuous analysis. This capability highlights the potential of the proposed model for real-time clinical and monitoring applications."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                66,
+                487,
+                213
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The proposed model offers several clinically meaningful advan tages that support its applicability in real-world healthcare settings. By utilizing a single RGB camera, it enables low-cost and non-invasive gait analysis without relying on wearable sensors or marker-based systems. The model demonstrates high estimation accuracy and reli ability, allowing for clinically viable assessment of joint angles and angular velocities. Its robustness across diverse gait patterns, including those observed in individuals with neurological and musculoskeletal conditions, highlights its potential for early detection and longitudinal monitoring of disease progression. Finally, its capability to quantify dynamic gait features provides opportunities for the development of scalable, video-based digital biomarkers to support future diagnostic and prognostic applications. For future real-world deployment, several strategies, such as test-time augmentation and domain adaptation, can be considered. Test-time augmentation, where multiple augmented versions of the input are evaluated and aggregated, will improve the robustness of the prediction. Domain adaptation techniques can be applied to mitigate the domain gap between the training data and real-world scenarios."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                213,
+                487,
+                465
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This study bears several limitations, nevertheless. First, the developed model was designed and validated exclusively in scenarios where only a single participant was present in the frame. The performance of the model in frames involving multiple individuals or in environments where occlusions caused by daily life objects, such as furniture or walking aids, is subject to further investigation. Second, the data were collected in a controlled indoor setup where consistent lighting and background were guaranteed."
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                465,
+                487,
+                573
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "5. Conclusion"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                58,
+                586,
+                154,
+                598
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This study developed and validated an end-to-end vision-based model that can estimate lower-limb joint angles directly from video frames. Using RegNetY as a backbone, the developed model integrated a convolutional neural network for spatial feature extraction with a transformer module to capture temporal gait dynamics. A novel loss function that jointly penalizes angle and angular-velocity errors improved overall estimation accuracy. The developed model exhibited higher accuracy than the 3D pose model, achieving the highest ICC of 0.9652. The robustness of the developed model was confirmed across varying camera views, speed conditions, and gait patterns. The developed model can usher in a more reliable and accessible gait assessment in both clinical and home-based circumstances."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                614,
+                487,
+                775
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CRediT authorship contribution statement"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                58,
+                788,
+                337,
+                800
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Vanyi Chao: Writing – review & editing, Writing – original draft, Visualization, Validation, Software, Methodology, Formal analysis, Conceptualization. Sungho Park: Visualization, Validation, Investigation, Data curation. Ankhzaya Jamsrandorj: Writing – review & editing, Formal analysis, Data curation. Dawoon Jung: Validation, Formal analysis. Jinwook Kim: Writing – review & editing, Formal analysis. Kyung-Ryoul Mun: Writing – review & editing, Visualization, Validation, Supervision, Funding acquisition, Formal analysis, Concep tualization."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                815,
+                487,
+                935
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Declaration of competing interest"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                510,
+                66,
+                734,
+                81
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                100,
+                939,
+                142
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Acknowledgments"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                163,
+                633,
+                177
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This study was funded by the Korea Institute of Science and Technology Institutional Program (Project No. 26E0211) and by a grant from the National Research Foundation of Korea (NRF) funded by the Korea government (MSIT) (No. RS-2025-25462906)."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                197,
+                939,
+                254
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Appendix. Implementation details of the inference stage"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                276,
+                880,
+                290
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The overall algorithmic workflow, from raw video input to final kinematic estimation, is detailed in Algorithm 1. The process begins with subject localization (Step 1), where the YOLOv8 detector isolates the participant in each video frame. These detections are used to crop and resize the frames to 224 × 224 pixels, applying square padding to preserve the original aspect ratio of the subject. In Step 2, the preprocessed video sequence is partitioned into non-overlapping temporal windows of 32 frames (T = 32). To ensure robustness against potential out-of-order processing, the frame indices of each window are stored as reference keys. During model inference (Step 3), each window is passed through the proposed end-to-end network  to predict the corresponding joint angles � and angular velocities �. Finally, in Step 4, the window-level predictions are sorted by their index keys and concatenated to reconstruct the continuous kinematic trajectories for the entire video duration."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                310,
+                939,
+                520
+            ]
+        },
+        {
+            "type": "algorithm",
+            "content": {
+                "algorithm_caption": [],
+                "algorithm_content": [
+                    {
+                        "type": "text",
+                        "content": "Algorithm 1 Inference algorithm for end-to-end joint angle estimation\nInput: Raw video sequence  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "V = \\{f_1, f_2, ..., f_N\\}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "\nOutput: Joint angles  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\theta \\in \\mathbb{R}^{N \\times J}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " and angular velocities  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\omega \\in \\mathbb{R}^{N \\times J}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "\n1: Initialize empty prediction map  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "M_{preds} \\leftarrow \\{\\}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "\n2: Step 1: Subject Localization & Preprocessing\n3: for each frame  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "f_i \\in V"
+                    },
+                    {
+                        "type": "text",
+                        "content": " do\n4:  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "B_i \\leftarrow \\text{YOLOv8}(f_i)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "\n5:  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x_i \\leftarrow \\text{SquarePad}(\\text{Crop}(f_i, B_i), 224 \\times 224)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "\n6: end for\n7: Step 2: Temporal Windowing\n8: Partition processed frames  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x"
+                    },
+                    {
+                        "type": "text",
+                        "content": " into non-overlapping windows  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "W"
+                    },
+                    {
+                        "type": "text",
+                        "content": "\n9: Set window size  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "T \\leftarrow 32"
+                    },
+                    {
+                        "type": "text",
+                        "content": "\n10: Store frame indices  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "idx_k"
+                    },
+                    {
+                        "type": "text",
+                        "content": " for each window  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "W_k"
+                    },
+                    {
+                        "type": "text",
+                        "content": "\n11: Step 3: Model Inference\n12: for each window  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "W_k \\in W"
+                    },
+                    {
+                        "type": "text",
+                        "content": " do\n13:  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "(\\hat{\\theta}_k, \\hat{\\omega}_k) \\leftarrow F(W_k)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "\n14:  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "M_{preds}[idx_k] \\leftarrow (\\hat{\\theta}_k, \\hat{\\omega}_k)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "\n15: end for\n16: Step 4: Sequence Alignment\n17: Sort  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "M_{preds}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " by key indices\n18:  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\theta, \\omega \\leftarrow \\text{Concatenate}(M_{preds})"
+                    },
+                    {
+                        "type": "text",
+                        "content": "\n19: return  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\theta, \\omega"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                530,
+                937,
+                829
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Data availability"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                510,
+                872,
+                623,
+                886
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Data will be made available on request."
+                    }
+                ]
+            },
+            "bbox": [
+                529,
+                905,
+                774,
+                919
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "V. Chao et al."
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                42,
+                129,
+                52
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Measurement 270 (2026) 120772"
+                    }
+                ]
+            },
+            "bbox": [
+                778,
+                42,
+                939,
+                54
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                494,
+                950,
+                505,
+                960
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "References"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                58,
+                66,
+                134,
+                79
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[1] L. Di Biase, A. Di Santo, M.L. Caminiti, A. De Liso, S.A. Shah, L. Ricci, V. Di Lazzaro. Gait analysis in Parkinson's disease: An overview of the most accurate markers for diagnosis and symptoms monitoring, Sensors 20 (12) (2020) 3529."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                92,
+                485,
+                124
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[2] J.-K. Kim, M.-N. Bae, K.B. Lee, S.G. Hong, Identification of patients with sarcopenia using gait parameters based on inertial sensors, Sensors 21 (5) (2021) 1786."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                124,
+                485,
+                155
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[3] S. Kim, S. Park, S. Lee, S.H. Seo, H.S. Kim, Y. Cha, J.-T. Kim, J.-W. Kim, Y.-C. Ha, J.-I. Yoo, Assessing physical abilities of sarcopenia patients using gait analysis and smart insole for development of digital biomarker, Sci. Rep. 13 (1) (2023) 10602."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                157,
+                485,
+                199
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[4] R. Rucco, V. Agosti, F. Jacini, P. Sorrentino, P. Varriale, M. De Stefano, G. Milan, P. Montella, G. Sorrentino, Spatio-temporal and kinematic gait analysis in patients with frontotemporal dementia and alzheimer's disease through 3D motion capture, Gait Posture 52 (2017) 312–317."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                200,
+                485,
+                243
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[5] W. Tsuchida, Y. Kobayashi, K. Inoue, M. Horie, K. Yoshihara, T. Ooie, Kinematic characteristics during gait in frail older women identified by principal componen analysis, Sci. Rep. 12 (1) (2022) 1676."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                244,
+                485,
+                274
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[6] J. Ryu, B.-H. Lee, J. Maeng, D.-H. Kim, sEMG-signal and IMU sensor-based gait sub-phase detection and prediction using a user-adaptive classifier, Med. Eng. Phys, 69 (2019) 50–57."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                276,
+                485,
+                307
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[7] A. Küderle, N. Roth, J. Zlatanovic, M. Zrenner, B. Eskofier, F. Kluge, The placement of foot-mounted IMU sensors does affect the accuracy of spatial parameters during regular walking, PLoS One 17 (6) (2022) e0269567."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                308,
+                485,
+                340
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[8] R. Merletti, P. Di Torino, Standards for reporting EMG data, J Electromyogr Kinesiol. 9 (1) (1999) 3–4."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                341,
+                485,
+                361
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[9] H. Wang, Z. Xie. L. Lu. L, Li. X. Xu, A computer-vision method to estimate joint angles and L5/S1 moments during lifting tasks through a single camera, J. Biomech. 129 (2021).110860."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                361,
+                485,
+                394
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[10] J.-Y. Choi, E. Ha, M. Son, J.-H. Jeon, J.-W. Kim, Human joint angle estimation using deep learning-based three-dimensional human pose estimation for application in a real environment, Sensors 24 (12) (2024) 3823."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                395,
+                485,
+                426
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[11] H. Yuan, Y. Zhou, Ergonomic assessment based on monocular RGB camera in elderly care by a new multi-person 3D pose estimation technique (ROMP), Int. J. Ind. Ergon. 95 (2023) 103440."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                427,
+                485,
+                459
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[12] M. Yahya, J. Shah, K. Kadir, A. Warsi, S. Khan, H. Nasir, Accurate shoulde joint angle estimation using single RGB camera for rehabilitation, in: 2019 Ieee International Instrumentation and Measurement Technology Conference, I2MTC, IEEE, 2019, pp. 1–6."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                459,
+                485,
+                501
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[13] H. Wang, B. Su, L. Lu, S. Jung, L. Qing, Z. Xie, X. Xu, Markerless gait analysi through a single camera and computer vision. J. Biomech. 165 (2024) 112027"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                503,
+                484,
+                524
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[14] N. Nakano, T. Sakura, K. Ueda, L. Omura, A. Kimura, Y. Iino, S. Fukashiro, S. Yoshioka, Evaluation of 3D markerless motion capture accuracy using OpenPose with multiple video cameras, Front. Sport. Act. Living 2 (2020) 50."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                525,
+                485,
+                556
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[15] L. Needham, M. Evans, D.P. Cosker, L. Wade, P.M. McGuigan, J.L. Bilzon, S.L. Colyer, The accuracy of several pose estimation methods for 3D joint centre localisation, Sci. Rep. 11 (1) (2021) 20673."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                557,
+                485,
+                588
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[16] D. Reis, J. Kupec, J. Hong, A. Daoudi, Real-time flying object detection with YOLOv8, 2023, arXiv preprint arXiv:2305.09972."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                588,
+                485,
+                609
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[17] Y. Zhang, P. Sun, Y. Jiang, D. Yu, F. Weng, Z. Yuan, P. Luo, W. Liu, X. Wang, Bytetrack: Multi-object tracking by associating every detection box, in: European Conference on Computer Vision, Springer, 2022, pp. 1–21."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                69,
+                937,
+                100
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[18] Z. Liu, Y. Lin, Y. Cao, H. Hu, Y. Wei, Z. Zhang, S. Lin, B. Guo, Swin transformer: Hierarchical vision transformer using shifted windows, in: Proceedings of the IEEE/CVF International Conference on Computer Vision, 2021, pp. 10012–10022."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                100,
+                937,
+                143
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[19] Z. Tu, H. Talebi, H. Zhang, F. Yang, P. Milanfar, A. Bovik, Y. Li, Maxvit: Multi axis vision transformer, in: European Conference on Computer Vision, Springer, 2022, pp. 459–479."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                143,
+                937,
+                175
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[20] S. Woo, S. Debnath, R. Hu, X. Chen, Z. Liu, I.S. Kweon, S. Xie, Convnext v2: Co-designing and scaling convnets with masked autoencoders, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Reco nition, 2023, pp. 16133–16142."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                177,
+                939,
+                219
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[21] I. Radosavovic, R.P. Kosaraju, R. Girshick, K. He, P. Dollár, Designing network design spaces, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2020, pp. 10428–10436."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                219,
+                937,
+                250
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[22] M. Tan, Q. Le, Efficientnetv2: Smaller models and faster training, in: International Conference on Machine Learning, PMLR, 2021, pp. 10096–10106."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                252,
+                937,
+                273
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[23] P. Jeevan, A. Sethi, Which backbone to use: A resource-efficient domain specifi comparison for computer vision, 2024, arXiv preprint arXiv:2406.05612."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                273,
+                937,
+                295
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[24] T.K. Koo, M.Y. Li, A guideline of selecting and reporting intraclass correlation coefficients for reliability research, J. Chiropr. Med. 15 (2) (2016) 155–163."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                295,
+                937,
+                316
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[25] Y. Xu, J. Zhang, Q. Zhang, D. Tao, Vitpose: Simple vision transformer baselines for human pose estimation, Adv. Neural Inf. Process. Syst. 35 (2022) 38571–38584."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                317,
+                937,
+                348
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[26] W. Zhu, X. Ma, Z. Liu, L. Liu, W. Wu, Y. Wang, Motionbert: A unified perspective on learning human motion representations, in: Proceedings of the IEEE/CVF International Conference on Computer Vision, 2023, pp. 15085–15099"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                349,
+                937,
+                380
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[27] A. Jamsrandorj, Q.H.N. Nguyen, D. Jung, M.S. Baek, K.-R. Mun, J. Kim, Imagebased gait spatiotemporal parameters estimation using a single camera and CNN-transformer hybrid network, in: 2023 45th Annual International Conference of the IEEE Engineering in Medicine & Biology Society, EMBC, IEEE, 2023, pp. 1–5."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                382,
+                937,
+                433
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[28] A. Jamsrandorj, D. Jung, K.S. Kumar, M.Z. Arshad, H. Lim, J. Kim, K.-R. Mun, View-independent gait events detection using CNN-transformer hybrid network, J. Biomed, Informatics 147 (2023) 104524"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                435,
+                937,
+                467
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[29] S. Shimada, V. Golyanik, W. Xu, C. Theobalt, Physcap: Physically plausible monocular 3d motion capture in real time, ACM Trans. Graph. (ToG) 39 (6) (2020) 1–16."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                467,
+                937,
+                499
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[30] C. Guo, G. L’Erario, G. Romualdi, M. Leonori, M. Lorenzini, A. Ajoudani, D. Pucci, Physics-informed learning for human whole-body kinematics prediction via sparse IMUs, 2025, arXiv preprint arXiv:2509.25704."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                501,
+                937,
+                532
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[31] Y. Ding, W. Feng, C. Chen, J. Guo, X. Liu, Reg-PTQ: Regression-specialized posttraining quantization for fully quantized object detector, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2024, pp. 16174-16184"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                533,
+                937,
+                575
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[32] Y. Li, S. Xu, B. Zhang, X. Cao, P. Gao, G. Guo, Q-vit: Accurate and fully quantized low-bit vision transformer, Adv. Neural Inf. Process. Syst. 35 (2022) 34451-34463"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                575,
+                937,
+                607
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "V. Chao et al."
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                42,
+                129,
+                52
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Measurement 270 (2026) 120772"
+                    }
+                ]
+            },
+            "bbox": [
+                778,
+                42,
+                939,
+                52
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                492,
+                952,
+                507,
+                960
+            ]
+        }
+    ]
+]

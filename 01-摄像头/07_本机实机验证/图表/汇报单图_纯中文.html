@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>视觉位移判断汇报图</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1376px;
+      height: 768px;
+      position: relative;
+      background: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    .base-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1376px;
+      height: 768px;
+      z-index: 1;
+    }
+    .patch {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* 顶部主标题遮罩与中文文字 */
+    /* 左侧列背景：#f6f9fc */
+    .title-left {
+      left: 20px;
+      top: 50px;
+      width: 418px;
+      height: 155px;
+      background: #f6f9fc;
+    }
+    .title-left h2 {
+      font-size: 32px;
+      font-weight: 900;
+      color: #0f2744;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+    .title-left p {
+      font-size: 17px;
+      font-weight: 700;
+      color: #3b526d;
+    }
+
+    /* 中间列背景：#ffffff */
+    .title-mid {
+      left: 470px;
+      top: 50px;
+      width: 440px;
+      height: 155px;
+      background: #ffffff;
+    }
+    .title-mid h2 {
+      font-size: 32px;
+      font-weight: 900;
+      color: #0f2744;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+    .title-mid p {
+      font-size: 17px;
+      font-weight: 700;
+      color: #3b526d;
+    }
+
+    /* 右侧列背景：#fdf7f0 */
+    .title-right {
+      left: 935px;
+      top: 50px;
+      width: 420px;
+      height: 155px;
+      background: #fdf7f0;
+    }
+    .title-right h2 {
+      font-size: 32px;
+      font-weight: 900;
+      color: #1a293f;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+    .title-right p {
+      font-size: 17px;
+      font-weight: 700;
+      color: #b45309;
+    }
+
+    /* 左侧标注：2mm displacement */
+    .lbl-slider {
+      left: 235px;
+      top: 590px;
+      width: 140px;
+      height: 48px;
+      background: #f6f9fc;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .lbl-slider span {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #0f2744;
+      line-height: 1.25;
+    }
+
+    /* 左下底端说明 */
+    .desc-left {
+      left: 40px;
+      top: 700px;
+      width: 380px;
+      height: 52px;
+      background: #f6f9fc;
+    }
+    .desc-left p {
+      font-size: 16.5px;
+      font-weight: 800;
+      color: #059669;
+    }
+
+    /* 中间标注：拉索 */
+    .lbl-pulley {
+      left: 520px;
+      top: 238px;
+      width: 160px;
+      height: 46px;
+      background: #ffffff;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .lbl-pulley span {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #1e293b;
+      line-height: 1.3;
+    }
+
+    /* 中间标注：红外相机 */
+    .lbl-camera {
+      left: 710px;
+      top: 250px;
+      width: 170px;
+      height: 46px;
+      background: #ffffff;
+      align-items: flex-end;
+      text-align: right;
+    }
+    .lbl-camera span {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #0284c7;
+      line-height: 1.3;
+    }
+
+    /* 中间箭头下方标注：前后位移 */
+    .lbl-disp {
+      left: 685px;
+      top: 485px;
+      width: 165px;
+      height: 48px;
+      background: #ffffff;
+    }
+    .lbl-disp span {
+      font-size: 15px;
+      font-weight: 900;
+      color: #0284c7;
+      line-height: 1.3;
+    }
+
+    /* 右上标注：视线光轴 */
+    .lbl-sight {
+      left: 1110px;
+      top: 275px;
+      width: 110px;
+      height: 32px;
+      background: #fdf7f0;
+    }
+    .lbl-sight span {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #64748b;
+    }
+
+    /* 右上文字：头部旋转导致伪位移 */
+    .desc-rotation {
+      left: 1105px;
+      top: 310px;
+      width: 250px;
+      height: 75px;
+      background: #fdf7f0;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .desc-rotation p {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #b91c1c;
+      line-height: 1.35;
+    }
+
+    /* 右中警告标签：几何串扰 */
+    .lbl-crosstalk {
+      left: 970px;
+      top: 440px;
+      width: 375px;
+      height: 60px;
+      background: #fdf7f0;
+      align-items: center;
+      text-align: center;
+    }
+    .lbl-crosstalk p {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #b45309;
+      line-height: 1.35;
+    }
+
+    /* 右下说明：3个刚体标记点解算 6-DoF */
+    .desc-markers {
+      left: 1085px;
+      top: 610px;
+      width: 270px;
+      height: 120px;
+      background: #fdf7f0;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .desc-markers p {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #047857;
+      line-height: 1.45;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 底层精美插画 -->
+  <img src="视觉位移测量汇报图_单图.png" class="base-img" alt="底图">
+
+  <!-- 左栏中文覆盖 -->
+  <div class="patch title-left">
+    <h2>完成了什么</h2>
+    <p>D435i 深度实测通过 2mm 精度判据</p>
+  </div>
+  <div class="patch lbl-slider">
+    <span>实测 2mm 微位移<br>(尺度误差 0.0009mm)</span>
+  </div>
+  <div class="patch desc-left">
+    <p>✅ 满足 2~5mm 要求，理论极限可达 0.2mm</p>
+  </div>
+
+  <!-- 中栏中文覆盖 -->
+  <div class="patch title-mid">
+    <h2>原理与实验场景</h2>
+    <p>医疗颈部康复牵引多模态视觉监测</p>
+  </div>
+  <div class="patch lbl-pulley">
+    <span>牵引动力系统<br>(拉力带动头部上下拉伸)</span>
+  </div>
+  <div class="patch lbl-camera">
+    <span>红外 3D 深度相机<br>(主动散斑立体测距)</span>
+  </div>
+  <div class="patch lbl-disp">
+    <span>前后位移 (Z轴深度)<br>作用时间内精确追踪</span>
+  </div>
+
+  <!-- 右栏中文覆盖 -->
+  <div class="patch title-right">
+    <h2>存在问题与后续方向</h2>
+    <p>⚠️ 头部仰角几何风险与姿态解耦</p>
+  </div>
+  <div class="patch lbl-sight">
+    <span>投影视线</span>
+  </div>
+  <div class="patch desc-rotation">
+    <p>头部微仰角度 θ 导致距离变大<br>
+    <strong>10° 仰角产生 3.39mm 虚假位移</strong><br>
+    (超判据 170%，非噪声无法平均)</p>
+  </div>
+  <div class="patch lbl-crosstalk">
+    <p><strong>核心隐患：俯仰角 θ 几何非线性串扰</strong><br>
+    <span style="font-size:13px; color:#78350f;">Z_测得 = Z_真实 / cos(θ) ，必须进行角度解耦</span></p>
+  </div>
+  <div class="patch desc-markers">
+    <p>
+      <strong>后续方向：头戴 3 个刚体标记点</strong><br>
+      利用空间多点解算 6 自由度刚体位姿，彻底分离纯 Y 轴拉伸与 Z 轴位移，消除仰角伪位移。
+    </p>
+  </div>
+
+</body>
+</html>

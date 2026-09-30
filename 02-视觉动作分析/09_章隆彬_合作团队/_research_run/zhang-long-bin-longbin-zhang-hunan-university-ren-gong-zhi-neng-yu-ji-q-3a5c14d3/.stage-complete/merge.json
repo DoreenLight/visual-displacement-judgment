@@ -1,0 +1,9 @@
+{
+  "stage": "merge",
+  "status": "completed",
+  "timestamp": 1790812097.503558,
+  "input_fingerprint": "f360ee82b105034cc7e065c4ba8f118b523ef678b56655edd17d45003fb1b4d6",
+  "outputs_sha256": {
+    "artifacts/merge.json": "11c37fff1e21bf1600b617163c8c357c7e603b53f040e0471a92474b02e49760"
+  }
+}

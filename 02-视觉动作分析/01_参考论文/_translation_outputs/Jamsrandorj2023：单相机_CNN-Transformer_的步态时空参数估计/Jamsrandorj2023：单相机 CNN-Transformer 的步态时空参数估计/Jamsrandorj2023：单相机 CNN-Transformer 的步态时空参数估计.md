@@ -1,0 +1,168 @@
+# Image-based Gait Spatiotemporal Parameters Estimation using a Single Camera and CNN-Transformer Hybrid Network
+
+Ankhzaya Jamsrandorj<sup>1,4</sup>, Quynh Hoang Ngan Nguyen<sup>2,4</sup>, Dawoon Jung<sup>4</sup>, Min Seok Baek<sup>3</sup>, Kyung-Ryoul Mun<sup>4</sup>, Jinwook Kim<sup>4</sup>
+
+Abstract— Vision-based gait analysis can play an important role in the remote and continuous monitoring of the elderly’s health conditions. However, most vision-based approaches compute gait spatiotemporal parameters using human pose information and provide average parameters. This study aimed to propose a straightforward method for stride-by-stride gait spatiotemporal parameters estimation. A total of 160 elderly individuals participated in this study. Data were gathered with a GAITRite system and a mobile camera simultaneously. Three deep learning networks were trained with a few RGB frames as input and a continuous 1D signal containing both spatial and temporal gait parameters as output. The trained networks estimated the stride lengths with correlations of 0.938 and more and detected gait events with F -scores of 0.914 and more.
+
+Clinical relevance— The proposed method showed excellent agreements with the GAITRite system in analyzing spatiotemporal gait parameters. Our approach can be applied to monitor the elderly’s health conditions based on their gait parameters for early diagnosis of diseases, proper treatment, and timely intervention.
+
+## I. INTRODUCTION
+
+Gait can be altered due to injuries, weakness, and aging, resulting in abnormal walking that can lead to more significant health issues such as musculoskeletal, cardiovascular, and mental health. Accordingly, the gait analysis in the elderly can be an effective clinical indicator to evaluate their physical and psychological condition and detect medical concerns early.
+
+The current specialized systems, including optical motion capture systems, force plates, and wearable devices, are expensive, immobile, and inaccessible daily. It may cause discomfort for the elderly due to the need for high cooperation. Therefore, a vision-based gait analysis system is vital for evaluating and monitoring the elderly’s gait remotely. Most vision-based methods focus on the 2D or 3D human pose estimation with a particular camera system or external pose machines and then calculate gait parameters based on skeleton tracking data [1]–[9]. Ismail et al. applied the DeepPose framework to obtain 2D human joints location and estimated movements of selected joints with a regression model for gait analysis [2]. Similarly, Stenum et al. used lateral view videos to measure spatiotemporal gait parameters by localizing the joints with OpenPose and tracking them [6]. However, the 2D joint locations extracted from the human pose detector may not be the center of that joints and have some errors. Besides, 2D pose estimation results are altered due to view-point, partial occlusion, lighting changes, and biometric variation. It affects the gait parameters calculation. Therefore, some research works used 3D joint locations to avoid these problems and improve reliability for gait analysis. Azhand et al. proposed a gait analysis system based on the 3D human poses lifted from the 2D body poses, and their trackings [7]. Zhu et al. introduced a cascade network that regressed 3D human joint locations using the infrared thermal videos and 2D poses extracted from the OpenPose framework and then calculated gait parameters by tracking the estimated joints [8]. However, these approaches still depended on 2D poses and used complicated models to estimate 3D human joint coordinates. Besides, the methods were validated on healthy young and older subjects.
+
+In this study, we mainly focus on the elderly, including healthy controls (HC) and patients with neurodegenerative diseases, especially Parkinson’s disease (PD), Alzheimer’s disease (AD), and Mild cognitive impairment (MCI), considering their high prevalence among the elderly since the gait can be used to assess neurodegenerative diseases [10]– [12]. Also, continuous stride-by-stride gait analysis in the elderly can enable a fundamental clinical assessment of the risks of injury or fall [9], the effect of rehabilitation after surgery, and the diagnosis and assess motion disorders.
+
+Hence, this study aimed to propose a vision-based approach, which does not require human joint locations and can be easily applied to daily life, for stride-by-stride spatiotemporal gait parameters estimation.
+
+## II. MATERIALS AND METHODS
+
+## A. Participants
+
+This study is based on work supported by the Institutional Review Board of the Korea Institute of Science and Technology.
+
+A total of 160 elderly subjects participated in this experiment. Written informed consent was obtained from all the participants before the participation. All subjects, including HC and patients diagnosed with PD, AD, MCI, and other diseases, could walk without help or aid from devices.
+
+![](images/c3b361bb5dbf96075dc54ac8c8b22049ce2f7d8fe02e21449dada7a69c9a60ff.jpg)  
+Fig. 1. Experimental setup with a GAITRite walkway system and a mobile camera. The camera recorded the walking actions from a lateral view, but the camera’s height and location were not fixed.
+
+Table I summarizes the demographic and anthropometric characteristics of each study group.
+
+## B. Experimental protocol
+
+The data were simultaneously collected from an indoor environment with a GAITRite walkway system and a mobile camera, as shown in Fig.1. The participants were instructed to walk on the pressure mat at their preferred speed. The participants were requested to carry out the walking action ten times. A camera recorded the walking action from a lateral view with a resolution of HD and a frame rate of 30 Hz. Ground truths of gait spatiotemporal parameters, including stride length (SL), foot contact (FC), and footoff (FO) times, were measured by the GAITRite walkway system. The videos and data from the GAITRite system were manually synchronized by an expert using the first FC event, and another expert then cross-checked the synchronizations.
+
+## C. Gait spatiotemporal parameters estimator development
+
+1) Target construction for vision-based gait spatiotemporal parameters estimation: The GAITRite system provides two groups of spatiotemporal gait parameters: average parameters in the test field and individual-footfall parameters in the detailed field. We extracted time information on which
+
+![](images/a2a635b57132ba211897981f424668459a95518bb9b4ff03d3bdbd8c8f23200c.jpg)  
+Fig. 2. Target construction for stride-by-stride gait spatiotemporal parameters estimation. (Stride length-rectangles, FC-squares, and FO-rhombuses)
+
+TABLE I  
+DEMOGRAPHIC AND ANTHROPOMETRIC CHARACTERISTICS OF EACHSTUDY GROUP.
+
+<table><tr><td></td><td>AD</td><td>MCI</td><td>PD</td><td>HC</td><td>Other</td></tr><tr><td>Number of participants (Female)</td><td>37 (18)</td><td>28 (15)</td><td>39 (18)</td><td>26 (14)</td><td>30 (12)</td></tr><tr><td>Age (years)</td><td> $73.5 \pm 7.6$ </td><td> $74.4 \pm 6.0$ </td><td> $70.9 \pm 10.6$ </td><td> $70.8 \pm 9.7$ </td><td> $70.7 \pm 11.8$ </td></tr><tr><td>Weight (kg)</td><td> $56.7 \pm 10.4$ </td><td> $55.5 \pm 9.7$ </td><td> $61.2 \pm 10.4$ </td><td> $59.8 \pm 12.9$ </td><td> $61.8 \pm 9.9$ </td></tr><tr><td>Height (cm)</td><td> $157.7 \pm 8.8$ </td><td> $153.4 \pm 6.8$ </td><td> $160.9 \pm 9.1$ </td><td> $162.1 \pm 7.1$ </td><td> $161.7 \pm 8.8$ </td></tr><tr><td>Average walking speed (cm/s)</td><td> $76.2 \pm 16.7$ </td><td> $84.7 \pm 23.1$ </td><td> $91.7 \pm 24.2$ </td><td> $102.9 \pm 20.6$ </td><td> $80.1 \pm 25.0$ </td></tr></table>
+
+Data are presented as mean ± SD.
+
+FC and FO events occur and SL from each participant’s individual-footfall parameters, and every SL parameter was normalized using the participant’s leg length. As shown in Fig.2, these spatiotemporal parameters were used to construct the stride-by-stride 1D signals for vision-based estimation. The stride length is the distance between consecutive moments of FC of the same foot. However, we built the 1D signals between FO and FC events of the same foot. Assuming the participants had consistent velocity during the walks, the signal was linearly increased to reach the ground truth of SL extracted from the GAITRite system. Accordingly, each constructed signal contains both spatial and temporal gait parameters of each stride.
+
+2) Network architectures: The proposed network, CNN-Transformer, for vision-based gait spatiotemporal parameters estimation consisted of a spatial feature extractor, a temporal feature extractor, and fully connected layers. The ResNet18 pre-trained on ImageNet was adopted as the spatial feature extractor from the input frames, and the transformer encoder was used to extract temporal features. As shown in Fig. 3, the input feature sequences insinuated positional information and fed it to the transformer encoder, which contained two encoder layers. Each encoder layer had four multi-head self-attention sublayers and a feed-forward layer. The final module has two fully connected layers with a ReLU activation function and Dropout between them. We conducted the experiments with two deep learning networks of the Long Short-term Memory (CNN-LSTM) and the Bidirectional LSTM (CNN-BiLSTM) as the temporal features extractor for the performance comparisons. The networks’ input is 27 subsequent video frames, and the output of the networks is the constructed target values of the stride lengths for both legs.
+
+## D. Implementation details
+
+1) Data processing: The networks’ input was the twentyseven subsequent frames with the ground truth human bounding boxes and the constructed stride length values for all frames. The raw frames were preprocessed by cropping the person in the frame, then pad left and right to get a square image and resize it to a 448×448. We divided the dataset into three parts by subjects. The training set included data from 96 participants, consisting of 20 AD, 17 MCI, 21 PD, 15 HC, and 23 subjects with other diseases. The validation set contained data from 32 participants, including 7 AD, 5 MCI, 8 PD, 5 HC, and 7 subjects with other conditions. Finally, the test set was comprised of data from the remaining 32 participants, consisting of 10 AD, 6 MCI, 10 PD, and 6 HC subjects.
+
+TABLE II  
+SPATIAL PARAMETERS ESTIMATION PERFORMANCE OF THE NETWORKS ON THE TEST SET.
+
+<table><tr><td rowspan="2">Model</td><td colspan="2">MAE (cm)</td><td colspan="2">ICC</td></tr><tr><td>RSL</td><td>LSL</td><td>RSL</td><td>LSL</td></tr><tr><td>CNN-LSTM</td><td>9.236 ± 4.677</td><td>9.983 ± 4.523</td><td>0.905 ± 0.041</td><td>0.885 ± 0.047</td></tr><tr><td>CNN-BiLSTM</td><td>7.211 ± 3.648</td><td>8.643 ± 4.742</td><td>0.953 ± 0.043</td><td>0.918 ± 0.043</td></tr><tr><td>CNN-Transformer</td><td>6.909 ± 3.657</td><td>7.420 ± 3.153</td><td>0.962 ± 0.047</td><td>0.957 ± 0.045</td></tr></table>
+
+RSL, right stride length; LSL, left stride length.  
+Data are presented as mean ± SD.
+
+2) Data augmentations: Even though a single camera was used in this study to acquire gait data, the camera’s height and location were not fixed to avoid being restricted by only a particular camera view. They could be slightly different for each participant. Additionally, the rotation augmentation was applied to the input frames by rotating them on an x-axis for $3 0 ^ { \circ }$ and -30° degrees to make the proposed method more robust against the changes in camera angle. The horizontal flip was used as well.
+
+3) Training scheme: Pytorch framework was used for all the experiments. The weights of the networks were initialized by pre-training on the ImageNet for gait spatiotemporal parameters estimation. All networks were trained using the Mean Absolute Error (MAE) and the Adam optimizer with an initial learning rate of 0.0001 and a batch size of 16. The learning rate was reduced two times after every three epochs.
+
+![](images/a2c6db8846710e403a285c8cbec98f12e64f24e1eda9bf829e2e3c56b5f5defa.jpg)  
+Fig. 3. The architecture of the CNN-Transformer network. The ResNet18 model was adopted as a spatial feature extractor, and the transformer encoder, which has two encoder layers, was used to extract temporal features. Each transformer encoder layer had four multi-head self-attention sublayers.
+
+TABLE III  
+GAIT EVENTS DETECTION PERFORMANCE OF THE NETWORKS ON THE TEST SET.
+
+<table><tr><td rowspan="2">Model</td><td colspan="4">F1</td></tr><tr><td>RFC</td><td>RFO</td><td>LFC</td><td>LFO</td></tr><tr><td>CNN-LSTM</td><td>0.908 ± 0.132</td><td>0.941 ± 0.127</td><td>0.914 ± 0.136</td><td>0.949 ± 0.112</td></tr><tr><td>CNN-BiLSTM</td><td>0.907 ± 0.125</td><td>0.941 ± 0.119</td><td>0.906 ± 0.128</td><td>0.965 ± 0.090</td></tr><tr><td>CNN-Transformer</td><td>0.901 ± 0.146</td><td>0.951 ± 0.114</td><td>0.928 ± 0.141</td><td>0.967 ± 0086</td></tr></table>
+
+RFC, right foot contact; RFO, right foot-off; LFC, left foot contact; LFO, left foot-off. Data are presented as mean ± SD.
+
+## E. Evaluation metrics
+
+The target for gait spatiotemporal parameters estimation was designed as simple 1D signals. MAE (cm) and intraclass correlation coefficient (ICC) were used to evaluate the networks’ performance for stride lengths estimation. The peak values, which define the stride length, were first picked for each signal, and then the MAE and ICC of type (2,k) were calculated to assess the agreement between the GAITRite system and the proposed method. F<sub>1</sub>-score (F1) was used to evaluate networks’ performance for gait events detection. We found the frames with peak values to precise the frame numbers containing FC events. The closest points with a threshold of 2 (cm) determine frame numbers with FO events. Then the frame difference between the target and the prediction frame numbers was calculated. If the frame difference was less than a threshold of 2 frames, the event was treated as a true positive. All other gait event predictions were considered false positives, and all targets that were not detected were treated as false negatives.
+
+## III. RESULTS
+
+The estimation results were illustrated in Fig.4, showing that all three networks accurately estimated stride lengths and detected the frames with gait events.
+
+Table II summarized the MAE and ICC of the deep learning networks for estimating the right and left stride lengths. The CNN-Transformer network achieved the minimum MAEs of 6.909 and 7.420 on the stride lengths estimation. Accordingly, the highest ICCs were 0.962 and 0.957, acquired by the CNN-Transformer network in estimating the right and left stride lengths, respectively.
+
+Table III summarized FO and FC events detection results of the networks on the test set. For all networks, the detection performance of the FO event was higher than that of the FC event. The CNN-Transformer network achieved the highest $\mathrm { F } _ { 1 } \mathrm { \cdot }$ -scores of 0.951 (precision 0.928 and recall 0.985), 0.928 (precision 0.909 and recall 0.969), and 0.967 (precision 0.953 and recall 0.988) in detecting right FO events, left FC and FO events, respectively. In contrast, the CNN-BiLSTM network detected right FC events with the highest F1-score of 0.908 (precision 0.857 and recall 0.993).
+
+Table IV and Table V showed the performance of the deep learning networks in case the camera angle was changed. All three networks used in this study showed a reasonably robust estimation of spatiotemporal gait parameters when the input frames were rotated on the horizontal axis. As shown in the tables, the networks achieved better performance with the inputs rotated by -30° degrees compared to rotating the inputs by $3 0 ^ { \circ }$ degrees. The improved performance may be due to the lower limb appearing more expanded in frames rotated in negative degrees.
+
+TABLE IV  
+STRIDE LENGTH ESTIMATION PERFORMANCE OF THE NETWORKS ONTHE DATA ROTATED WITH DIFFERENT ANGLES.
+
+<table><tr><td rowspan="2"></td><td rowspan="2">Model</td><td colspan="3">Rotation angle</td></tr><tr><td> $30^{\circ}$ </td><td> $0^{\circ}$ </td><td> $-30^{\circ}$ </td></tr><tr><td rowspan="3">MAE (cm)</td><td>CNN-LSTM</td><td> $9.635 \pm 5.141$ </td><td> $9.610 \pm 4.600$ </td><td> $9.487 \pm 5.162$ </td></tr><tr><td>CNN-BiLSTM</td><td> $7.930 \pm 4.821$ </td><td> $7.927 \pm 4.195$ </td><td> $7.685 \pm 4.773$ </td></tr><tr><td>CNN-Transformer</td><td> $7.171 \pm 3.971$ </td><td> $7.165 \pm 3.405$ </td><td> $7.061 \pm 3.854$ </td></tr><tr><td rowspan="3">ICC</td><td>CNN-LSTM</td><td> $0.882 \pm 0.045$ </td><td> $0.895 \pm 0.063$ </td><td> $0.896 \pm 0.078$ </td></tr><tr><td>CNN-BiLSTM</td><td> $0.937 \pm 0.049$ </td><td> $0.936 \pm 0.047$ </td><td> $0.940 \pm 0.045$ </td></tr><tr><td>CNN-Transformer</td><td> $0.961 \pm 0.042$ </td><td> $0.960 \pm 0.042$ </td><td> $0.963 \pm 0.041$ </td></tr></table>
+
+Data are presented as mean ± SD.
+
+## IV. DISCUSSION
+
+This study introduced a novel vision-based approach for spatiotemporal gait parameters estimation. We constructed the simple 1D signals containing both spatial and temporal gait parameters for continuous stride-by-stride gait analysis. The deep learning networks trained with a few RGB frames achieved promising performance in estimating spatiotemporal gait parameters through the constructed signals. It is worth noting that our approach does not require any special sensors, markers, or human pose estimators for gait analysis in the elderly.
+
+The proposed approach showed excellent agreement with the GAITRite walkway system in analyzing spatiotemporal gait parameters. The best estimation performance that the CNN-Transformer network achieved in this study might have derived from its ability to simultaneously access the longrange sequential data using the multi-head self-attention mechanisms. Unlike the CNN-LSTM, the CNN-Transformer network can consider both future and past information simultaneously, which also brings the benefit of CNN-BiLSTM, with two times less computation cost.
+
+Using the CNN-Transformer network, we analyzed estimation performance on different subject groups, including AD, MCI, PD, and HC. As shown in Table VI, the CNN Transformer network estimated the stride lengths with the ICC of 0.929 and more and detected FO events with the $\mathrm { F } _ { 1 }$ -scores of 0.933 and more regardless of subject groups. However, the FC events for AD and PD patients were detected inadequately compared to HC and MCI. Based on the estimation performance, the proposed approach can be used for the remote monitoring and analysis of not only normal but also pathological gait.
+
+As mentioned in the introduction, most vision-based methods use human pose estimation machines to locate human joints and track them to compute spatiotemporal parameters. However, some studies used only RGB videos for gait analysis. Yu and Jeong et al. developed and used the same deep learning network for analyzing gait. They estimated average spatiotemporal parameters using preprepared features extracted from RGB video frames with the 3D CNN network [13], [14]. Compared to these studies, our approach estimated the stride-by-stride gait parameters without any preprepared features, making it more appropriate for continuous and remote gait analysis in daily life. Besides, due to their health conditions, the elderly and the patients may have distinguishable gait characteristics at different stages of walking, such as the starting, middle, and ending phases. The stride-by-stride spatiotemporal gait parameters can enable the analysis of gait variability at these walking phases.
+
+TABLE V  
+GAIT EVENTS DETECTION PERFORMANCE OF THE NETWORKS ON THEDATA ROTATED WITH DIFFERENT ANGLES.
+
+<table><tr><td rowspan="2"></td><td rowspan="2">Model</td><td colspan="3">Rotation angle</td></tr><tr><td> $30^{\circ}$ </td><td> $0^{\circ}$ </td><td> $-30^{\circ}$ </td></tr><tr><td rowspan="3">EI</td><td>CNN-LSTM</td><td> $0.928 \pm 0.093$ </td><td> $0.928 \pm 0.079$ </td><td> $0.936 \pm 0.091$ </td></tr><tr><td>CNN-BiLSTM</td><td> $0.931 \pm 0.074$ </td><td> $0.930 \pm 0.069$ </td><td> $0.933 \pm 0.079$ </td></tr><tr><td>CNN-Transformer</td><td> $0.939 \pm 0.061$ </td><td> $0.937 \pm 0.086$ </td><td> $0.943 \pm 0.055$ </td></tr></table>
+
+Data are presented as mean ± SD.
+
+Several things may be considered limitations in this study. This study aimed to detect gait events and estimate the stride length only. The temporal gait parameters can be computed using the main two gait events. However, more spatial parameters, such as step length, width, and foot clearance, will be considered in future work. Our approach achieved promising performance for gait spatiotemporal parameters from the single-view videos. Still, extending the proposed method with multi-view videos, enhancing the network architecture to improve the performance, and examining different shapes of the target signal are in the future work plan.
+
+![](images/2d47cc6920ca2b193ff8177bb31d275130a475a7b78868d3137ff76067c3f683.jpg)  
+Fig. 4. Estimation performance of the networks and target signal. Note: The black dashed line is the threshold to precise the frame numbers containing FO events, and the frames with peak values of each signal indicate frame numbers with FC events.
+
+TABLE VI  
+COMPARISON OF THE SPATIOTEMPORAL GAIT PARAMETERS ESTIMATION PERFORMANCE OF THE CNN-TRANSFORMER NETWORK ON DIFFERENT SUBJECT GROUPS.
+
+<table><tr><td rowspan="2">Subject group</td><td colspan="2">ICC</td><td colspan="2">F1</td></tr><tr><td> $RSL$ </td><td> $LSL$ </td><td> $FC$ </td><td> $FO$ </td></tr><tr><td>AD</td><td>0.957 ± 0.139</td><td>0.933 ± 0.131</td><td>0.895 ± 0.210</td><td>0.933 ± 0.178</td></tr><tr><td>MCI</td><td>0.966 ± 0.039</td><td>0.929 ± 0.026</td><td>0.922 ± 0.096</td><td>0.970 ± 0.069</td></tr><tr><td>PD</td><td>0.939 ± 0.063</td><td>0.937 ± 0.074</td><td>0.895 ± 0.175</td><td>0.949 ± 0.102</td></tr><tr><td>HC</td><td>0.981 ± 0.029</td><td>0.983 ± 0.033</td><td>0.941 ± 0.051</td><td>0.982 ± 0.049</td></tr></table>
+
+RSL, right stride length; LSL, left stride length; FC, foot contact; FO, foot-off. Data are presented as $\mathrm { m e a n } \pm \mathrm { S D } .$
+
+## V. CONCLUSIONS
+
+This study proposed a vision-based approach for stride-bystride gait spatiotemporal parameters estimation. Our results support the ability of the proposed method to assess various gait. The deep learning networks trained with a few video frames and continuous signals as targets showed competitive performance in detecting gait events and estimating stride lengths. Our approach can be applied to monitor the elderly’s health conditions in their homes and contribute to early diagnosis of diseases, proper treatment, and timely intervention.
+
+## ACKNOWLEDGMENT
+
+This work was supported by Development of foot diagnosis and shoe manufacturing technology for the disabled Project(No.1711192863) and Athletes’ training/matches data management and AI-based performance enhancement solution technology development Project (No.1375027432).
+
+## REFERENCES
+
+[1] I. Gonzalez, I. H. L´ opez-Nava, J. Fontecha, A. Mu´ noz-Mel˜ endez, A. I.´ Perez-SanPablo, and I. Qui´ nones-Uri˜ ostegui, “Comparison between´ passive vision-based system and a wearable inertial-based system for estimating temporal gait parameters related to the gaitrite electronic
+
+walkway,” Journal of biomedical informatics, vol. 62, pp. 210–223, 2016.
+
+[2] H. Ismail, I. Radwan, H. Suominen, and R. Goecke, “Gait estimation and analysis from noisy observations,” in 2019 41st Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC). IEEE, 2019, pp. 2707–2712.
+
+[3] Ł. Kidzinski, B. Yang, J. L. Hicks, A. Rajagopal, S. L. Delp, and ´ M. H. Schwartz, “Deep neural networks enable quantitative movement analysis using single-camera videos,” Nature communications, vol. 11, no. 1, pp. 1–10, 2020.
+
+[4] S. Hazra, A. A. Pratap, D. Tripathy, and A. Nandy, “Novel data fusion strategy for human gait analysis using multiple kinect sensors,” Biomedical Signal Processing and Control, vol. 67, p. 102512, 2021.
+
+[5] Y. Ma, K. Mithraratne, N. Wilson, Y. Zhang, and X. Wang, “Kinect v2-based gait analysis for children with cerebral palsy: Validity and reliability of spatial margin of stability and spatiotemporal variables,” Sensors, vol. 21, no. 6, p. 2104, 2021.
+
+[6] J. Stenum, C. Rossi, and R. T. Roemmich, “Two-dimensional videobased analysis of human gait using pose estimation,” PLoS computational biology, vol. 17, no. 4, p. e1008935, 2021.
+
+[7] A. Azhand, S. Rabe, S. Muller, I. Sattler, and A. Heimann-Steinert,¨ “Algorithm based on one monocular video delivers highly valid and reliable gait parameters,” Scientific Reports, vol. 11, no. 1, pp. 1–10, 2021.
+
+[8] Y. Zhu, W. Lu, R. Zhang, R. Wang, and D. Robbins, “Dual-channel cascade pose estimation network trained on infrared thermal image and groundtruth annotation for real-time gait measurement,” Medical Image Analysis, vol. 79, p. 102435, 2022.
+
+[9] E. E. Stone and M. Skubic, “Passive in-home measurement of strideto-stride gait variability comparing vision and kinect sensing,” in 2011 Annual international conference of the IEEE engineering in medicine and biology society. IEEE, 2011, pp. 6491–6494.
+
+[10] D. Jung, J. Kim, M. Kim, C. W. Won, and K.-R. Mun, “Classifying the risk of cognitive impairment using sequential gait characteristics and long short-term memory networks,” IEEE Journal of Biomedical and Health Informatics, vol. 25, no. 10, pp. 4029–4040, 2021.
+
+[11] B. Vidya and P. Sasikumar, “Gait based parkinson’s disease diagnosis and severity rating using multi-class support vector machine,” Applied Soft Computing, vol. 113, p. 107939, 2021.
+
+[12] B. Ghoraani, L. N. Boettcher, M. D. Hssayeni, A. Rosenfeld, M. I. Tolea, and J. E. Galvin, “Detection of mild cognitive impairment and alzheimer’s disease using dual-task gait assessments and machine learning,” Biomedical signal processing and control, vol. 64, p. 102249, 2021.
+
+[13] H. Yu, K. Kang, S. Jeong, and J. Park, “Deep vision system for clinical gait analysis in and out of hospital,” in International Conference on Neural Information Processing. Springer, 2019, pp. 633–642.
+
+[14] S. Jeong, H. Yu, J. Park, and K. Kang, “Quantitative gait analysis of idiopathic normal pressure hydrocephalus using deep learning algorithms on monocular videos,” Scientific Reports, vol. 11, no. 1, pp. 1–10, 2021.

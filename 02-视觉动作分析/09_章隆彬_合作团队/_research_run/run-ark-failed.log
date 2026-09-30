@@ -1,0 +1,8 @@
+started   collect   开始 collect
+21:46:50 [WARNING] research_tool.application.pipeline: collect 第 1/3 次执行失败，2.0s 后重试
+21:46:52 [WARNING] research_tool.application.pipeline: collect 第 2/3 次执行失败，4.0s 后重试
+failed    collect   collect 失败: LLM chat 调用失败（HTTP 400）
+21:46:56 [ERROR] __main__: 错误 在 collect 阶段失败
+started   collect   开始 collect
+failed    collect   collect 失败: LLM 鉴权失败（chat，HTTP 401）；已停止后续 LLM 阶段
+21:52:18 [ERROR] __main__: 错误 在 collect 阶段失败

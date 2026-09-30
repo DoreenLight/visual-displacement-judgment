@@ -1,0 +1,666 @@
+{
+  "01-localpdf-Zhang2024-TBME-MuscleTendon-ce7829": {
+    "original_size": 70790,
+    "cleaned_size": 23835,
+    "score": 0.337,
+    "issues": []
+  },
+  "02-localpdf-Zhang2023-TNSRE-JointTorqueLSTM-6e28bd": {
+    "original_size": 53702,
+    "cleaned_size": 35663,
+    "score": 0.664,
+    "issues": []
+  },
+  "03-localpdf-Zhang2023-FrontNeurosci-NMSExoControl-292e4a": {
+    "original_size": 58847,
+    "cleaned_size": 35227,
+    "score": 0.599,
+    "issues": []
+  },
+  "04-localpdf-Zhang2022-JBHI-AnkleTorque-f99867": {
+    "original_size": 58315,
+    "cleaned_size": 42962,
+    "score": 0.737,
+    "issues": []
+  },
+  "05-localpdf-Zhang2022-TNSRE-LowerLimbTorque-fd1150": {
+    "original_size": 56405,
+    "cleaned_size": 40262,
+    "score": 0.714,
+    "issues": []
+  },
+  "06-localpdf-Zhang2025-JBHI-MarkerlessTUG-89b427": {
+    "original_size": 69641,
+    "cleaned_size": 50420,
+    "score": 0.724,
+    "issues": []
+  },
+  "07-robotics.hnu.edu.cn-a344c9": {
+    "original_size": 11067,
+    "cleaned_size": 8462,
+    "score": 0.765,
+    "issues": []
+  },
+  "08-grzy.hnu.edu.cn-da34b8": {
+    "original_size": 995,
+    "cleaned_size": 992,
+    "score": 0.997,
+    "issues": []
+  },
+  "09-robotics.hnu.edu.cn-2842fc": {
+    "original_size": 10081,
+    "cleaned_size": 7462,
+    "score": 0.74,
+    "issues": []
+  },
+  "10-orcid.org-f8f410": {
+    "original_size": 2382,
+    "cleaned_size": 2381,
+    "score": 1.0,
+    "issues": [
+      "relevance:0.15",
+      "low_relevance"
+    ]
+  },
+  "11-api.openalex.org-ef8cd0": {
+    "original_size": 13458,
+    "cleaned_size": 13451,
+    "score": 0.999,
+    "issues": []
+  },
+  "12-api.openalex.org-fc55b3": {
+    "original_size": 1174033,
+    "cleaned_size": 50516,
+    "score": 0.043,
+    "issues": []
+  },
+  "13-kth.diva-portal.org-7d88c3": {
+    "original_size": 1297,
+    "cleaned_size": 1281,
+    "score": 0.988,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "14-kth.diva-portal.org-76f205": {
+    "original_size": 39849,
+    "cleaned_size": 39639,
+    "score": 0.995,
+    "issues": [
+      "relevance:0.1",
+      "low_relevance"
+    ]
+  },
+  "15-arxiv.org-d1dfa3": {
+    "original_size": 34944,
+    "cleaned_size": 32505,
+    "score": 0.93,
+    "issues": [
+      "relevance:0.3",
+      "low_relevance"
+    ]
+  },
+  "16-frontiersin.org-d260b0": {
+    "original_size": 116234,
+    "cleaned_size": 50039,
+    "score": 0.431,
+    "issues": [
+      "relevance:0.1",
+      "low_relevance"
+    ]
+  },
+  "17-frontiersin.org-faee29": {
+    "original_size": 111284,
+    "cleaned_size": 45506,
+    "score": 0.409,
+    "issues": [
+      "relevance:0.2",
+      "low_relevance"
+    ]
+  },
+  "18-loop.frontiersin.org-273865": {
+    "original_size": 13092,
+    "cleaned_size": 11177,
+    "score": 0.854,
+    "issues": []
+  },
+  "19-gaoxiaojob.com-bc6055": {
+    "original_size": 25397,
+    "cleaned_size": 17557,
+    "score": 0.691,
+    "issues": [
+      "relevance:0.05",
+      "low_relevance"
+    ]
+  },
+  "20-doi.org-933da6": {
+    "original_size": 12399,
+    "cleaned_size": 8840,
+    "score": 0.713,
+    "issues": [
+      "relevance:0.1",
+      "low_relevance"
+    ]
+  },
+  "21-doi.org-6897ff": {
+    "original_size": 7651,
+    "cleaned_size": 7429,
+    "score": 0.971,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "22-doi.org-f84255": {
+    "original_size": 16226,
+    "cleaned_size": 15318,
+    "score": 0.944,
+    "issues": [
+      "relevance:0.05",
+      "low_relevance"
+    ]
+  },
+  "23-doi.org-85ea08": {
+    "original_size": 8761,
+    "cleaned_size": 4887,
+    "score": 0.558,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "24-doi.org-e72722": {
+    "original_size": 3132,
+    "cleaned_size": 2041,
+    "score": 0.652,
+    "issues": [
+      "relevance:0.05",
+      "low_relevance"
+    ]
+  },
+  "25-doi.org-ba1964": {
+    "original_size": 3103,
+    "cleaned_size": 2005,
+    "score": 0.646,
+    "issues": [
+      "dedup_of:24-doi.org-e72722"
+    ]
+  },
+  "26-doi.org-9ae74e": {
+    "original_size": 8969,
+    "cleaned_size": 5193,
+    "score": 0.579,
+    "issues": [
+      "relevance:0.05",
+      "low_relevance"
+    ]
+  },
+  "27-doi.org-f4d358": {
+    "original_size": 5561,
+    "cleaned_size": 5524,
+    "score": 0.993,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "28-doi.org-3be60c": {
+    "original_size": 4041,
+    "cleaned_size": 801,
+    "score": 0.198,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "29-doi.org-d48839": {
+    "original_size": 16270,
+    "cleaned_size": 13175,
+    "score": 0.81,
+    "issues": [
+      "relevance:0.1",
+      "low_relevance"
+    ]
+  },
+  "30-doi.org-7e990e": {
+    "original_size": 700,
+    "cleaned_size": 699,
+    "score": 0.999,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "31-doi.org-9c7732": {
+    "original_size": 10439,
+    "cleaned_size": 6772,
+    "score": 0.649,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "32-doi.org-177662": {
+    "original_size": 10274,
+    "cleaned_size": 9402,
+    "score": 0.915,
+    "issues": []
+  },
+  "33-doi.org-fd3ec2": {
+    "original_size": 50224,
+    "cleaned_size": 42488,
+    "score": 0.846,
+    "issues": []
+  },
+  "34-doi.org-c822b9": {
+    "original_size": 183716,
+    "cleaned_size": 50432,
+    "score": 0.275,
+    "issues": []
+  },
+  "35-doi.org-84544e": {
+    "original_size": 163010,
+    "cleaned_size": 50409,
+    "score": 0.309,
+    "issues": []
+  },
+  "36-doi.org-c25521": {
+    "original_size": 81887,
+    "cleaned_size": 50541,
+    "score": 0.617,
+    "issues": []
+  },
+  "37-doi.org-6d4fe6": {
+    "original_size": 5942,
+    "cleaned_size": 4930,
+    "score": 0.83,
+    "issues": []
+  },
+  "38-doi.org-37620a": {
+    "original_size": 802,
+    "cleaned_size": 801,
+    "score": 0.999,
+    "issues": []
+  },
+  "39-doi.org-e42cc4": {
+    "original_size": 7088,
+    "cleaned_size": 7085,
+    "score": 1.0,
+    "issues": []
+  },
+  "40-doi.org-432c8c": {
+    "original_size": 790,
+    "cleaned_size": 789,
+    "score": 0.999,
+    "issues": [
+      "dedup_of:38-doi.org-37620a"
+    ]
+  },
+  "41-doi.org-03e8a2": {
+    "original_size": 6383,
+    "cleaned_size": 5677,
+    "score": 0.889,
+    "issues": []
+  },
+  "42-doi.org-46db4d": {
+    "original_size": 103541,
+    "cleaned_size": 50357,
+    "score": 0.486,
+    "issues": []
+  },
+  "43-doi.org-f31175": {
+    "original_size": 80059,
+    "cleaned_size": 50492,
+    "score": 0.631,
+    "issues": []
+  },
+  "44-doi.org-a7ec7c": {
+    "original_size": 107922,
+    "cleaned_size": 32407,
+    "score": 0.3,
+    "issues": []
+  },
+  "45-doi.org-1f59f3": {
+    "original_size": 87478,
+    "cleaned_size": 49788,
+    "score": 0.569,
+    "issues": []
+  },
+  "46-doi.org-ac2f08": {
+    "original_size": 10550,
+    "cleaned_size": 9676,
+    "score": 0.917,
+    "issues": []
+  },
+  "47-doi.org-46486d": {
+    "original_size": 5636,
+    "cleaned_size": 5629,
+    "score": 0.999,
+    "issues": []
+  },
+  "48-doi.org-153ad8": {
+    "original_size": 890,
+    "cleaned_size": 784,
+    "score": 0.881,
+    "issues": []
+  },
+  "49-doi.org-d7ce40": {
+    "original_size": 10353,
+    "cleaned_size": 10302,
+    "score": 0.995,
+    "issues": []
+  },
+  "50-doi.org-d9cda8": {
+    "original_size": 15048,
+    "cleaned_size": 4787,
+    "score": 0.318,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "51-doi.org-e91c45": {
+    "original_size": 4957,
+    "cleaned_size": 4920,
+    "score": 0.993,
+    "issues": [
+      "relevance:0.15",
+      "low_relevance"
+    ]
+  },
+  "52-doi.org-6eb7cf": {
+    "original_size": 13065,
+    "cleaned_size": 4633,
+    "score": 0.355,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "53-doi.org-f0b865": {
+    "original_size": 3170,
+    "cleaned_size": 2015,
+    "score": 0.636,
+    "issues": [
+      "dedup_of:24-doi.org-e72722"
+    ]
+  },
+  "54-doi.org-e17a7f": {
+    "original_size": 8456,
+    "cleaned_size": 7825,
+    "score": 0.925,
+    "issues": [
+      "relevance:0.02",
+      "low_relevance"
+    ]
+  },
+  "55-doi.org-b6bb36": {
+    "original_size": 5071,
+    "cleaned_size": 5034,
+    "score": 0.993,
+    "issues": [
+      "relevance:0.08",
+      "low_relevance"
+    ]
+  },
+  "56-doi.org-e8d9ed": {
+    "original_size": 1228,
+    "cleaned_size": 1101,
+    "score": 0.897,
+    "issues": [
+      "relevance:0.02",
+      "low_relevance"
+    ]
+  },
+  "57-doi.org-64e6ac": {
+    "original_size": 3933,
+    "cleaned_size": 796,
+    "score": 0.202,
+    "issues": [
+      "dedup_of:28-doi.org-3be60c"
+    ]
+  },
+  "58-doi.org-952430": {
+    "original_size": 2657,
+    "cleaned_size": 2535,
+    "score": 0.954,
+    "issues": [
+      "relevance:0.01",
+      "low_relevance"
+    ]
+  },
+  "59-doi.org-4eb5ad": {
+    "original_size": 3962,
+    "cleaned_size": 801,
+    "score": 0.202,
+    "issues": [
+      "dedup_of:28-doi.org-3be60c"
+    ]
+  },
+  "60-doi.org-92f6bf": {
+    "original_size": 15130,
+    "cleaned_size": 14333,
+    "score": 0.947,
+    "issues": [
+      "relevance:0.01",
+      "low_relevance"
+    ]
+  },
+  "61-doi.org-5b0b07": {
+    "original_size": 812,
+    "cleaned_size": 706,
+    "score": 0.869,
+    "issues": [
+      "dedup_of:48-doi.org-153ad8"
+    ]
+  },
+  "62-doi.org-7171d4": {
+    "original_size": 821,
+    "cleaned_size": 715,
+    "score": 0.871,
+    "issues": [
+      "dedup_of:48-doi.org-153ad8"
+    ]
+  },
+  "63-doi.org-5ca4be": {
+    "original_size": 14478,
+    "cleaned_size": 13701,
+    "score": 0.946,
+    "issues": [
+      "relevance:0.01",
+      "low_relevance"
+    ]
+  },
+  "64-doi.org-9f0fbb": {
+    "original_size": 823,
+    "cleaned_size": 717,
+    "score": 0.871,
+    "issues": [
+      "dedup_of:48-doi.org-153ad8"
+    ]
+  },
+  "65-doi.org-501312": {
+    "original_size": 11123,
+    "cleaned_size": 11019,
+    "score": 0.991,
+    "issues": [
+      "relevance:0.01",
+      "low_relevance"
+    ]
+  },
+  "66-doi.org-7551e6": {
+    "original_size": 6711,
+    "cleaned_size": 6451,
+    "score": 0.961,
+    "issues": [
+      "relevance:0.01",
+      "low_relevance"
+    ]
+  },
+  "67-doi.org-7a835d": {
+    "original_size": 15488,
+    "cleaned_size": 13266,
+    "score": 0.857,
+    "issues": [
+      "relevance:0.01",
+      "low_relevance"
+    ]
+  },
+  "68-doi.org-69b69b": {
+    "original_size": 9020,
+    "cleaned_size": 8520,
+    "score": 0.945,
+    "issues": [
+      "relevance:0.01",
+      "low_relevance"
+    ]
+  },
+  "69-doi.org-500d85": {
+    "original_size": 9027,
+    "cleaned_size": 8527,
+    "score": 0.945,
+    "issues": [
+      "dedup_of:68-doi.org-69b69b"
+    ]
+  },
+  "70-doi.org-e6790e": {
+    "original_size": 17064,
+    "cleaned_size": 14056,
+    "score": 0.824,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "71-doi.org-2234c1": {
+    "original_size": 14394,
+    "cleaned_size": 11413,
+    "score": 0.793,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "72-doi.org-92ac21": {
+    "original_size": 15788,
+    "cleaned_size": 12760,
+    "score": 0.808,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "73-doi.org-229b42": {
+    "original_size": 14618,
+    "cleaned_size": 11588,
+    "score": 0.793,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "74-doi.org-734f73": {
+    "original_size": 14529,
+    "cleaned_size": 11554,
+    "score": 0.795,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "75-doi.org-ebdfd2": {
+    "original_size": 6013,
+    "cleaned_size": 2731,
+    "score": 0.454,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "76-doi.org-5dccc5": {
+    "original_size": 14638,
+    "cleaned_size": 11652,
+    "score": 0.796,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "77-doi.org-9d77fa": {
+    "original_size": 14848,
+    "cleaned_size": 11881,
+    "score": 0.8,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "78-doi.org-9f8985": {
+    "original_size": 5533,
+    "cleaned_size": 2739,
+    "score": 0.495,
+    "issues": [
+      "dedup_of:75-doi.org-ebdfd2"
+    ]
+  },
+  "79-doi.org-34a925": {
+    "original_size": 15297,
+    "cleaned_size": 12276,
+    "score": 0.803,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "80-arxiv.org-e46d7c": {
+    "original_size": 199937,
+    "cleaned_size": 50492,
+    "score": 0.253,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "81-arxiv.org-280a13": {
+    "original_size": 223844,
+    "cleaned_size": 50482,
+    "score": 0.226,
+    "issues": [
+      "dedup_of:80-arxiv.org-e46d7c"
+    ]
+  },
+  "82-arxiv.org-727319": {
+    "original_size": 176290,
+    "cleaned_size": 38452,
+    "score": 0.218,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "83-arxiv.org-4c8bf8": {
+    "original_size": 101350,
+    "cleaned_size": 41145,
+    "score": 0.406,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "84-arxiv.org-b0c63b": {
+    "original_size": 55258,
+    "cleaned_size": 33428,
+    "score": 0.605,
+    "issues": [
+      "relevance:0.0",
+      "low_relevance"
+    ]
+  },
+  "85-scholar.google.com-619db2": {
+    "original_size": 1827,
+    "cleaned_size": 1782,
+    "score": 0.975,
+    "issues": []
+  }
+}

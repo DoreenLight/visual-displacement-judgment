@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>第二部分：原理与实验场景 —— 相机怎么测出来的？为什么能达到 0.2mm？</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1920px;
+      height: 1080px;
+      background: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+      color: #0f172a;
+      padding: 36px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    /* 顶部标题栏 */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 3px solid #cbd5e1;
+    }
+    .header-left .tag {
+      display: inline-block;
+      background: #e0e7ff;
+      color: #3730a3;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 4px 14px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .header-left h1 {
+      font-size: 34px;
+      font-weight: 900;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+    }
+    .header-left p {
+      font-size: 16px;
+      color: #475569;
+      margin-top: 4px;
+    }
+    .tech-pill {
+      background: #eff6ff;
+      border: 2px solid #2563eb;
+      padding: 10px 22px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 800;
+      color: #1d4ed8;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.12);
+    }
+
+    /* 三列主体网格 */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr 1.25fr;
+      gap: 22px;
+      margin: 18px 0;
+      flex: 1;
+    }
+    .panel {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .panel-header h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #1e293b;
+    }
+    .icon-wrap {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eff6ff;
+      color: #2563eb;
+      font-weight: 900;
+      font-size: 16px;
+    }
+
+    /* 左列：硬件与光路 */
+    .optic-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+    .optic-card h3 {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .optic-card p {
+      font-size: 13.5px;
+      color: #475569;
+      line-height: 1.55;
+    }
+    .svg-optic-box {
+      background: #0f172a;
+      border-radius: 12px;
+      padding: 12px;
+      margin-top: 6px;
+    }
+
+    /* 中列：假噪声机理 */
+    .danger-box {
+      background: #fff5f5;
+      border: 1px solid #fed7d7;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+    .danger-box h3 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #c53030;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .danger-box p {
+      font-size: 13.5px;
+      color: #742a2a;
+      line-height: 1.5;
+    }
+    .contrast-stat {
+      display: flex;
+      justify-content: space-between;
+      background: #ffffff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      font-size: 14px;
+      margin-top: 6px;
+      font-weight: 700;
+    }
+    .contrast-stat .val-bad { color: #dc2626; font-weight: 800; }
+    .contrast-stat .val-good { color: #16a34a; font-weight: 800; }
+
+    /* 右列：S4 算法与阶梯对比 */
+    .formula-banner {
+      background: #f0fdf4;
+      border: 1.5px solid #86efac;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+    .formula-banner h3 {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #166534;
+      margin-bottom: 6px;
+    }
+    .formula-code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      background: #ffffff;
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: 1px solid #bbf7d0;
+      color: #14532d;
+      line-height: 1.6;
+      font-weight: 600;
+    }
+
+    .strategy-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .strategy-table th {
+      background: #f8fafc;
+      color: #334155;
+      font-weight: 700;
+      padding: 7px 10px;
+      border: 1px solid #cbd5e1;
+      text-align: left;
+    }
+    .strategy-table td {
+      padding: 7px 10px;
+      border: 1px solid #cbd5e1;
+    }
+    .strategy-row-win {
+      background: #ecfdf5 !important;
+      font-weight: 800;
+      color: #065f46;
+    }
+
+    /* 阶梯性能柱状 */
+    .step-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .step-row {
+      display: grid;
+      grid-template-columns: 110px 1fr 85px;
+      align-items: center;
+      gap: 10px;
+      font-size: 12.5px;
+    }
+    .step-label { color: #475569; font-weight: 700; }
+    .step-track {
+      background: #f1f5f9;
+      height: 22px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+    .step-fill {
+      height: 100%;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 8px;
+      color: #fff;
+      font-size: 11.5px;
+      font-weight: 800;
+    }
+
+    /* 底部条 */
+    .footer-bar {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      padding: 14px 26px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 15px;
+      color: #334155;
+    }
+    .footer-bar strong { color: #0f172a; font-weight: 800; }
+    .footer-tags { display: flex; gap: 10px; }
+    .footer-tag {
+      background: #f1f5f9;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #475569;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部标题栏 -->
+  <div class="header">
+    <div class="header-left">
+      <div class="tag">第二部分 · 原理突破与实验场景</div>
+      <h1>双目红外立体光路与 S4 截尾均值算法</h1>
+      <p>突破弱纹理表面测距瓶颈 · 解剖两大“假噪声”机制 · 算法信噪比提升 651 倍</p>
+    </div>
+    <div class="tech-pill">
+      <span>🚀 算法降噪突破：底噪从 199.7 毫米 ➔ 0.307 毫米</span>
+    </div>
+  </div>
+
+  <!-- 三列主体网格 -->
+  <div class="main-grid">
+
+    <!-- 左列：硬件光路与实验装置 -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="icon-wrap">1</div>
+        <h2>硬件工作原理与实验环境</h2>
+      </div>
+
+      <div class="optic-card">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5"><rect x="2" y="7" width="20" height="14" rx="2"/><circle cx="12" cy="14" r="3"/><path d="M7 4h10"/></svg>
+          主动红外散斑立体视觉 (D435i)
+        </h3>
+        <p>相机内置红外激光投射器，在被测目标表面人工投射成千上万个伪随机散斑点。不管是平整白纸还是缺乏高频纹理的人体皮肤，都能形成立体匹配视差，摆脱了普通可见光相机对物体表面花纹的依赖。</p>
+      </div>
+
+      <div class="optic-card">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          实验场景两项关键突破
+        </h3>
+        <p><strong>① 吸光黑背景</strong>：吸收漏过去的红外光，阻断 4 米外杂散物体对红外相位的反射干扰；<br>
+        <strong>② 展平漫反射白纸</strong>：消除光滑金属细杆的高光反光空洞，目标深度有效像素率从 33% 暴增至 <strong>95%</strong>（稳定提供 13,000 个采样点）。</p>
+      </div>
+
+      <!-- 光路示意图 -->
+      <div class="svg-optic-box">
+        <svg viewBox="0 0 380 150" width="100%" height="150">
+          <!-- 相机主体 -->
+          <rect x="20" y="45" width="45" height="60" rx="4" fill="#334155" stroke="#94a3b8" stroke-width="1.5"/>
+          <circle cx="42" cy="58" r="5" fill="#38bdf8"/>
+          <circle cx="42" cy="75" r="4" fill="#ef4444"/>
+          <circle cx="42" cy="92" r="5" fill="#38bdf8"/>
+          <text x="42" y="125" font-size="11" fill="#94a3b8" text-anchor="middle">D435i 相机</text>
+
+          <!-- 红外激光散斑与视锥 -->
+          <path d="M42 75 L180 30 L180 120 Z" fill="rgba(239, 68, 68, 0.15)"/>
+          <path d="M42 58 L180 40 L180 110 Z" fill="rgba(56, 189, 248, 0.15)"/>
+          <line x1="42" y1="75" x2="180" y2="75" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+          <!-- 被测目标与白纸 -->
+          <rect x="180" y="40" width="10" height="70" rx="2" fill="#ffffff" stroke="#38bdf8" stroke-width="1.5"/>
+          <text x="185" y="125" font-size="11" fill="#f8fafc" text-anchor="middle">被测目标 (220mm)</text>
+
+          <!-- 穿透/背景泄漏 -->
+          <line x1="190" y1="50" x2="310" y2="25" stroke="#64748b" stroke-dasharray="2,2"/>
+          <line x1="190" y1="100" x2="310" y2="125" stroke="#64748b" stroke-dasharray="2,2"/>
+
+          <!-- 吸收黑背景 -->
+          <rect x="310" y="20" width="8" height="110" fill="#020617" stroke="#475569" stroke-width="1"/>
+          <text x="314" y="142" font-size="11" fill="#94a3b8" text-anchor="middle">消光黑背景</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- 中列：假噪声机理剖析 -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="icon-wrap" style="background:#fef2f2; color:#ef4444;">2</div>
+        <h2>传统统计失效：两大“假噪声”机制</h2>
+      </div>
+
+      <div class="contrast-stat">
+        <span>单个像素连续测量的波动</span>
+        <span class="val-good">0.20 毫米 (极其稳定)</span>
+      </div>
+      <div class="contrast-stat" style="margin-bottom: 12px;">
+        <span>此前传统块级求均值的波动</span>
+        <span class="val-bad">25 ~ 199 毫米 (彻底崩溃)</span>
+      </div>
+
+      <div class="danger-box">
+        <h3>
+          <span>⚠️ 假噪声机制一：边缘像素集合逐帧跳变</span>
+        </h3>
+        <p>被测物体边缘的像素会逐帧闪烁，每一帧参与平均的像素数量都不同。在 3200 个目标像素中，只要某一帧偶尔混入 200 个背景像素（距离 4000 毫米），均值瞬间被拉高 <strong>20 毫米以上</strong>！造成极大的虚假跳变。</p>
+      </div>
+
+      <div class="danger-box">
+        <h3>
+          <span>⚠️ 假噪声机制二：时间中值填补使背景复活</span>
+        </h3>
+        <p>如果强行“固定像素，用历史中值填补缺失空洞”，会把本属于远景的像素永久固化在测量区域内。当它们偶尔读出时又瞬跳回 220 毫米，引发强烈震荡（传统方案下依然有 133 毫米的虚假波动）。</p>
+      </div>
+
+      <div style="background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; padding:12px 14px; font-size:13.5px; color:#1e40af; line-height:1.55;">
+        🎯 <strong>关键发现</strong>：硬件传感器测出的物理数据其实非常准（单像素离散度仅 0.2 毫米），之前测试不准完全是因为<strong>空间聚合平均算法被背景假噪声污染</strong>！
+      </div>
+    </div>
+
+    <!-- 右列：S4 算法突破与策略对比 -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="icon-wrap" style="background:#ecfdf5; color:#059669;">3</div>
+        <h2>S4 截尾均值算法与降噪效果</h2>
+      </div>
+
+      <div class="formula-banner">
+        <h3>S4 算法核心机制：中值刚性锚定 + 物理窗口截尾</h3>
+        <div class="formula-code">
+          ① 获取单帧所有有效深度点: V = [所有非零点]<br>
+          ② 计算中位数作为刚体锚点: med = median(V) # 免疫远景拉偏<br>
+          ③ 截取纯净物理窗口: W = [满足 |V - med| &lt;= 20毫米的点]<br>
+          ④ 对纯净窗口求均值: 干净深度 = mean(W)
+        </div>
+      </div>
+
+      <table class="strategy-table">
+        <thead>
+          <tr>
+            <th>统计处理策略</th>
+            <th>底噪波动 (3倍标准差)</th>
+            <th>可行性判定</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>传统直接算术平均 (S1)</td>
+            <td style="color:#dc2626; font-weight:700;">199.69 毫米</td>
+            <td>❌ 边缘漂移拉高</td>
+          </tr>
+          <tr>
+            <td>固定像素填补均值 (S3)</td>
+            <td style="color:#dc2626; font-weight:700;">133.03 毫米</td>
+            <td>❌ 背景复活污染</td>
+          </tr>
+          <tr>
+            <td>四分位截断法 (S6)</td>
+            <td>18.80 毫米</td>
+            <td>❌ 仍受边缘浸染</td>
+          </tr>
+          <tr>
+            <td>传统纯中位数法 (S2)</td>
+            <td>2.76 毫米</td>
+            <td>⚠️ 整数步进受限</td>
+          </tr>
+          <tr class="strategy-row-win">
+            <td>S4 中值锚定截尾均值</td>
+            <td>0.710 毫米</td>
+            <td>✅ 攻破 1 毫米大关</td>
+          </tr>
+          <tr class="strategy-row-win">
+            <td>★ S4 算法 + 时域平滑</td>
+            <td style="color:#059669; font-size:14.5px;">0.307 毫米</td>
+            <td>✅ 改善 651 倍！</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 阶梯柱状图 -->
+      <div class="step-bars">
+        <div class="step-row">
+          <div class="step-label">传统直接平均</div>
+          <div class="step-track"><div class="step-fill" style="width:100%; background:#ef4444;">199.7 毫米</div></div>
+          <span style="color:#dc2626; font-weight:800;">相差 651倍</span>
+        </div>
+        <div class="step-row">
+          <div class="step-label">固定填补平均</div>
+          <div class="step-track"><div class="step-fill" style="width:68%; background:#f87171;">133.0 毫米</div></div>
+          <span style="color:#dc2626; font-weight:800;">相差 433倍</span>
+        </div>
+        <div class="step-row">
+          <div class="step-label">S4 算法(无滤波)</div>
+          <div class="step-track"><div class="step-fill" style="width:9%; background:#2563eb;">0.71 毫米</div></div>
+          <span style="color:#1d4ed8; font-weight:800;">达标 2.8倍</span>
+        </div>
+        <div class="step-row">
+          <div class="step-label">★ S4+时域平滑</div>
+          <div class="step-track"><div class="step-fill" style="width:4%; background:#059669;">0.31 毫米</div></div>
+          <span style="color:#059669; font-weight:800;">达标 6.5倍</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 底部汇总 Bar -->
+  <div class="footer-bar">
+    <div>
+      <strong>核心答卷：</strong> D435i 摄像头之所以能稳定测出 0.2~0.3 毫米的微位移，关键在于**红外散斑人工注入纹理 + 黑背景消杂光 + S4 算法剔除边缘假噪声**，这套方法在近距离下达到了极高的信噪比。
+    </div>
+    <div class="footer-tags">
+      <span class="footer-tag">算法名称：S4 截尾均值</span>
+      <span class="footer-tag">滤波窗口：±20 毫米动态阈值</span>
+      <span class="footer-tag">时域平滑参数：α=0.4</span>
+    </div>
+  </div>
+
+</body>
+</html>

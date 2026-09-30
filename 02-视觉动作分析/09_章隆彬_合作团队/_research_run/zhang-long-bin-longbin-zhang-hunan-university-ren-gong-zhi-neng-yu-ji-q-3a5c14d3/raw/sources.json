@@ -1,0 +1,682 @@
+[
+  {
+    "url": "https://doi.org/10.1109/tbme.2024.3352556",
+    "title": "EMG-Constrained and Ultrasound-Informed Muscle-Tendon Parameter Estimation in Post-Stroke Hemiparesis",
+    "fetched_at": "2026-09-30T13:46:08Z",
+    "source_engine": "local_paper_fulltext",
+    "content_hash": "sha256:13b8a194676541c5e054e0c9f6b7d6ebf1c324d7140d185959fb9b1072d83822",
+    "snippet": "Longbin Zhang 全文（本地 PDF 解析），原始文件 _translation_outputs/Zhang_2024_TBME_MuscleTendon/Zhang_2024_TBME_MuscleTendon/auto/Zhang_2024_TBME_MuscleTendon.md"
+  },
+  {
+    "url": "https://doi.org/10.1109/tnsre.2023.3315373",
+    "title": "Estimation of Joint Torque by EMG-Driven Neuromusculoskeletal Models and LSTM Networks",
+    "fetched_at": "2026-09-30T13:46:08Z",
+    "source_engine": "local_paper_fulltext",
+    "content_hash": "sha256:22606cbc5c56357a2d69eb0e2075e3a5efde13bc9a13b8c511d287dea896b069",
+    "snippet": "Longbin Zhang 全文（本地 PDF 解析），原始文件 _translation_outputs/Zhang_2023_TNSRE_JointTorqueLSTM/Zhang_2023_TNSRE_JointTorqueLSTM/auto/Zhang_2023_TNSRE_JointTorqueLSTM.md"
+  },
+  {
+    "url": "https://doi.org/10.3389/fnins.2023.1254088",
+    "title": "Neuromusculoskeletal Model-Informed Machine Learning-Based Control of a Knee Exoskeleton With Uncertainties Quantification",
+    "fetched_at": "2026-09-30T13:46:08Z",
+    "source_engine": "local_paper_fulltext",
+    "content_hash": "sha256:078ade55063540a64eaf98c0c429b443c79c880afb9f7056d7df85fc5846c790",
+    "snippet": "Longbin Zhang 全文（本地 PDF 解析），原始文件 _translation_outputs/Zhang_2023_FrontNeurosci_NMSExoControl/Zhang_2023_FrontNeurosci_NMSExoControl/auto/Zhang_2023_FrontNeurosci_NMSExoControl.md"
+  },
+  {
+    "url": "https://doi.org/10.1109/jbhi.2022.3207313",
+    "title": "Ankle Joint Torque Prediction Using an NMS Solver Informed-ANN Model and Transfer Learning",
+    "fetched_at": "2026-09-30T13:46:08Z",
+    "source_engine": "local_paper_fulltext",
+    "content_hash": "sha256:944a3b5616a5e6ec2c972bf1b6d3eb1447711cf4bb32f5ceed80d8e5a9698796",
+    "snippet": "Longbin Zhang 全文（本地 PDF 解析），原始文件 _translation_outputs/Zhang_2022_JBHI_AnkleTorque/Zhang_2022_JBHI_AnkleTorque/auto/Zhang_2022_JBHI_AnkleTorque.md"
+  },
+  {
+    "url": "https://doi.org/10.1109/tnsre.2022.3156786",
+    "title": "Lower-Limb Joint Torque Prediction Using LSTM Neural Networks and Transfer Learning",
+    "fetched_at": "2026-09-30T13:46:08Z",
+    "source_engine": "local_paper_fulltext",
+    "content_hash": "sha256:4251318acd3176e2ebe47fa4640297a50f7d3bd093318cc845d7a24022cb6be3",
+    "snippet": "Longbin Zhang 全文（本地 PDF 解析），原始文件 _translation_outputs/Zhang_2022_TNSRE_LowerLimbTorque/Zhang_2022_TNSRE_LowerLimbTorque/auto/Zhang_2022_TNSRE_LowerLimbTorque.md"
+  },
+  {
+    "url": "https://doi.org/10.1109/jbhi.2025.3543095",
+    "title": "Towards Clinical Application of Enhanced Timed Up and Go With Markerless Motion Capture and Machine Learning for Balance and Gait Assessment",
+    "fetched_at": "2026-09-30T13:46:22Z",
+    "source_engine": "local_paper_fulltext",
+    "content_hash": "sha256:07cf08514c8b45754c659d14984ca81217d8d5fc1ea6e723e0617f51d6fb542a",
+    "snippet": "Longbin Zhang 全文（本地 PDF + pdftotext 抽取）"
+  },
+  {
+    "url": "https://robotics.hnu.edu.cn/info/1176/3002.htm",
+    "title": "",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "expert_seed",
+    "content_hash": "sha256:73febf7208465ae0e264288fd0ca5f548529f58558d663d1965aa7e01acfbb0f",
+    "snippet": "[expert/seed]"
+  },
+  {
+    "url": "https://grzy.hnu.edu.cn/site/index/zhanglongbin",
+    "title": "",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "expert_seed",
+    "content_hash": "sha256:576bec899f9559ebb0cdd3051ad29564c123a4128ac856026f071d3ba9c43403",
+    "snippet": "[expert/seed]"
+  },
+  {
+    "url": "https://robotics.hnu.edu.cn/szdw/jsjj2.htm",
+    "title": "",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "expert_seed",
+    "content_hash": "sha256:24482685a1d956b36c4bb3cef46b481ca92a6577265310728f3e851ae3e7d1fa",
+    "snippet": "[expert/seed]"
+  },
+  {
+    "url": "https://orcid.org/0000-0001-8785-5885",
+    "title": "",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "expert_seed",
+    "content_hash": "sha256:78e49133c75e1bad847d060168e4d6270ce7decf083bc2612319b3bf0f11ed23",
+    "snippet": "[expert/seed]"
+  },
+  {
+    "url": "https://api.openalex.org/authors/A5002794703",
+    "title": "",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "expert_seed",
+    "content_hash": "sha256:098f3e6967bca058c2072e921686c13aff51c7492486053eddc53bd20ca1c064",
+    "snippet": "[expert/seed]"
+  },
+  {
+    "url": "https://api.openalex.org/works?filter=author.id:A5002794703&per-page=50&sort=publication_date:desc",
+    "title": "",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "expert_seed",
+    "content_hash": "sha256:9fd2121755f15241248cde0ee5fefbf5770b13602dc92d5fb42de0247b36e43f",
+    "snippet": "[expert/seed]"
+  },
+  {
+    "url": "https://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A1599588",
+    "title": "",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "expert_seed",
+    "content_hash": "sha256:dc69ff3bba9fe0bb4ce8eabadfb7c810c1fb6c856b85abeec15f0c06ab995246",
+    "snippet": "[expert/seed]"
+  },
+  {
+    "url": "https://kth.diva-portal.org/smash/person.jsf?pid=authority-person:73231",
+    "title": "",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "expert_seed",
+    "content_hash": "sha256:f2d11f6a9ccb5552f46530a901709ebfda391fabe0f520b5fd873017855a45ce",
+    "snippet": "[expert/seed]"
+  },
+  {
+    "url": "https://arxiv.org/abs/2503.00794",
+    "title": "",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "expert_seed",
+    "content_hash": "sha256:5a28eef11d7a3b702e350f71d43dbfc1fc8f9fe900ad530b02341fc16ffffca7",
+    "snippet": "[expert/seed]"
+  },
+  {
+    "url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2023.1254088/full",
+    "title": "",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "expert_seed",
+    "content_hash": "sha256:1ac2e490e805ad0182c12dbe231f34b600313cc28456d2023df89ecd2117d4c3",
+    "snippet": "[expert/seed]"
+  },
+  {
+    "url": "https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2021.620928/full",
+    "title": "",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "expert_seed",
+    "content_hash": "sha256:ff388d8fbd74ad7480b35b06da77d3e3187e5f00f36b52567bd7ba6006d55ebf",
+    "snippet": "[expert/seed]"
+  },
+  {
+    "url": "https://loop.frontiersin.org/people/1121302/overview",
+    "title": "",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "expert_seed",
+    "content_hash": "sha256:836b0ad77d3a03983b6f28b5ec999a001e2c9d9a62666af74c1c76d85eaca10c",
+    "snippet": "[expert/seed]"
+  },
+  {
+    "url": "https://www.gaoxiaojob.com/announcement/detail/414402.html",
+    "title": "",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "expert_seed",
+    "content_hash": "sha256:16afa7c8e6200a7c9a75327139604e382050fd93c15fa57284fee2b418ccf4ac",
+    "snippet": "[expert/seed]"
+  },
+  {
+    "url": "https://doi.org/10.11834/jig.260112",
+    "title": "21世纪新一代人工神经网络—具身认知神经网络",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:9faf78b593a967306be81c522b0e61d4f9a2023300d6f9f2a9e1a4f483e1195e",
+    "snippet": "2026 | Journal of Image and Graphics | Bao Hong, , Liang Tianjiao, Zheng Ying, "
+  },
+  {
+    "url": "https://doi.org/10.70693/rwsk.v1i1.425",
+    "title": "数智时代人工智能技术赋能网球发球机使用体验研究",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:96bac13ffae94a04b0e2a0ef35af8b677fed4438c2bd1dada6fcc0a28b1c049a",
+    "snippet": "2025 | 人文与社会科学学刊 | 张明阳"
+  },
+  {
+    "url": "https://doi.org/10.63887/fns.2025.1.4.9",
+    "title": "城市知识合作网络与企业人工智能发展",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:72b9307475d2b30deb94e2b87672becbb3937b0cd760151cea8eec4589386057",
+    "snippet": "2025 | 自然科学前沿 | 王双"
+  },
+  {
+    "url": "https://doi.org/10.11834/jig.240040",
+    "title": "A benchmark dataset for high-altitude UAV multi-modal tracking",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:debaaf77117faf19f3c7c062468bfc74cfb6df52fc146308e64f877b6abfb0f1",
+    "snippet": "2025 | Journal of Image and Graphics | Xiao Yun, , Cao Dan, Li Chenglong, Jiang Bo"
+  },
+  {
+    "url": "https://doi.org/10.37155/2717-5170-0608-66",
+    "title": "“人工智能+”视阈下工业机器人应用与维护专业工学一体技能人才培养模式研究与实践",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:e0e7e66483e938f77d2803ae4039a05f4068d24a9a1564c545411899acf05155",
+    "snippet": "2024 | 电子通信与计算机科学 | 宁业林"
+  },
+  {
+    "url": "https://doi.org/10.37155/2717-5170-0607-11",
+    "title": "人工智能在计算机网络安全中的作用与挑战分析",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:90950e5c054bb80dbcc40c01229e90a9d7f112b83dadf5dfc40b2d2aa06c78e5",
+    "snippet": "2024 | 电子通信与计算机科学 | 赵崇昌"
+  },
+  {
+    "url": "https://doi.org/10.11834/jig.260022",
+    "title": "脑启发的人工智能研究进展与展望",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:4c525619c09dd3cf4271901af2388d3c1ff98dc49f6c9452d2d53d40ee6d0234",
+    "snippet": "2026 | Journal of Image and Graphics | Yang Shuangming, , Shen Jiangrong, Li Youjun, Huang Zigang"
+  },
+  {
+    "url": "https://doi.org/10.64216/3080-1486.26.06.095",
+    "title": "人工智能赋能下技工院校影视工作室“学创融合”模式构建与实践研究——以克卜勒影视工作室为例",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:2173fa231436b7975017d02f79af0a0459418da2a1e48b2f15ec3d7bcedcf485",
+    "snippet": "2026 | 社会经济导刊 | 何燕 吴幸杭"
+  },
+  {
+    "url": "https://doi.org/10.62989/jetm2024.1.4.30",
+    "title": "试析人工智能在计算机网络技术中的运用问题",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:c43f9b5ca18a746ceb75dbec7cf463131a50d2ac1b5a1a4e0016296837c476f6",
+    "snippet": "2024 | Academic Frontiers Publishing Group | 张海波 张海波, 李彬 李彬, 杨军 杨军"
+  },
+  {
+    "url": "https://doi.org/10.7498/aps.58.2742",
+    "title": "X-ray photoelectron spectroscopy analysis of the effect of thickness on the transformation temperature of NiTi alloy thin films",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:aeb77d8867fdefffe2f75d9b16835ad99b524f50aa49c1bcb3632744cca354b5",
+    "snippet": "2009 | Acta Physica Sinica | Li Yong-Hua, Liu Chang-Sheng, Meng Fan-Ling, Wang Yu-Ming, Zheng Wei-Tao"
+  },
+  {
+    "url": "https://doi.org/10.37155/2717-5170-0506-55",
+    "title": "人工智能与大数据在计算机网络中的应用",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:5b40d207ef4f58aba80890296424ee1bd8a93ae6d11e1cde936e100b7b3114ea",
+    "snippet": "2023 | 电子通信与计算机科学 | 徐 静"
+  },
+  {
+    "url": "https://doi.org/10.11834/jig.240681",
+    "title": "基于多域特征融合的多分支网络用于Deepfake检测",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:959ac78193f75196a1478162cc4af277dceec865bfdd228966e67625587dc9ef",
+    "snippet": "2026 | Journal of Image and Graphics | Long Min, , Yin Xi, Zhang Lebing, Peng Fei"
+  },
+  {
+    "url": "https://doi.org/10.5772/5175",
+    "title": "Upper-Limb Robotic Rehabilitation Exoskeleton: Tremor Suppression",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:f08e9c2bca6420b207eeb0aaa8f4bb737f4a03ebb6c7a6c3e19299ccdf7fe121",
+    "snippet": "2007 | Rehabilitation Robotics | J.L. Pons, E. Rocon, A.F. Ruiz, J.C. Moreno"
+  },
+  {
+    "url": "https://doi.org/10.5772/5176",
+    "title": "Lower-Limb Wearable Exoskeleton",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:f7593c0c05601d6e7793ec71acbbfd9938f56bd1d77f829c986feaec73526bbc",
+    "snippet": "2007 | Rehabilitation Robotics | J.L. Pons, J.C. Moreno, F.J. Brunetti, E. Roco"
+  },
+  {
+    "url": "https://doi.org/10.3390/robotics7020028",
+    "title": "Lower Limb Exoskeleton for Rehabilitation with Improved Postural Equilibrium",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:5ba60f8637b2d05552b8ff4e7feff1dd20a2df3d74469dd9cd764a4ea31aacfa",
+    "snippet": "2018 | Robotics | Giuseppe Menga, Marco Ghirardi"
+  },
+  {
+    "url": "https://doi.org/10.1007/s11370-026-00697-3",
+    "title": "Handmaid: design and evaluation of a hand exoskeleton with active backdrive for neuromuscular rehabilitation",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:ff9f8a1dec75888abc44a4ac36465570825c3bb948a36a0a03bdba72874c7b11",
+    "snippet": "2026 | Intelligent Service Robotics | Hakkı Güçlü, Adnan Cora"
+  },
+  {
+    "url": "https://doi.org/10.3390/math14132400",
+    "title": "A Refined 2D Lagrangian-Based Model for Joint Torque Estimation in Lower-Limb Exoskeleton Applications",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:d2e671bbd4bf6181c80ca677036ecb285ce00b5f8fef60a7beeb8e5aa56dceaa",
+    "snippet": "2026 | Mathematics | Chanoknan Boonlupyanan, Thitima Jintanawan, Gridsada Phanomchoeng"
+  },
+  {
+    "url": "https://doi.org/10.31224/osf.io/j4rbg",
+    "title": "Assessment of spatiotemporal gait parameters using a deep learning algorithm-based markerless motion capture system",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:f757d52d9d5e02b70f9db323af97ea1bde3abe44be21a1c5e73cb5d005992f3a",
+    "snippet": "2020 | Robert Kanko, Gerda Strutzenberger, Marcus Brown, Scott Selbie, Kevin Deluzio"
+  },
+  {
+    "url": "https://doi.org/10.1101/2024.12.17.628985",
+    "title": "A Low-Cost Markerless motion capture system to automate Functional Gait Assessment: Feasibility Study",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:4f0b1a50ca8561a1275d6a017610a7bf93ed368d80e5be4e238939f02831fe42",
+    "snippet": "2024 | Osman Darici, Chanel Cabak, Jeremy D Wong"
+  },
+  {
+    "url": "https://doi.org/10.14733/cadaps.2024.392-423",
+    "title": "A Review of Human Pose Estimation Methods in Markerless Motion Capture",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:1e892c27cb56ec0c01cf64d49e70016ca1195dd171993b9e128c5a4a055b7901",
+    "snippet": "2023 | Computer-Aided Design and Applications | Huaiming Ji, Li Wang, Yuwei Zhang, Zhi Li, Chenlong Wei"
+  },
+  {
+    "url": "https://doi.org/10.1101/2020.12.10.420075",
+    "title": "Concurrent assessment of gait kinematics using marker-based and markerless motion capture",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:205b93cbf6da1d3af9ed84e7eba9fbd7ebacd847412485bb4969d4701b9fab23",
+    "snippet": "2020 | Robert Kanko, Elise K. Laende, Elysia M. Davis, W. Scott Selbie, Kevin J. Deluzio"
+  },
+  {
+    "url": "https://doi.org/10.21203/rs.3.rs-9347103/v1",
+    "title": "Validated Multi-Camera Markerless Motion Capture with Real-Time Data Analytics for Gait Stability Assessment",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:978d5ce16c3955d4100f1aeca19c939f59a4ef013a66c2bc9b1a277062033d6e",
+    "snippet": "2026 | Sajeda Al-Hammouri, Ziao Chen, Nima Toosizadeh, Christopher Arellano, Kavan Hazeli"
+  },
+  {
+    "url": "https://doi.org/10.3389/fbioe.2026.1869878",
+    "title": "Gait assessment using a 2D video-based pose estimation app in comparison to a markerless motion capture system in subjects with osteoarthritis of the knee – a pilot study",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:5c38dd01f875ac7fef76aebb5c8a87b09f9ba939e7635883ee55238e651b71c4",
+    "snippet": "2026 | Frontiers in Bioengineering and Biotechnology | Mathis Wegner, Madita Molt, Clint Hansen, Florian Gellhaus, Maciej J. K. Simon"
+  },
+  {
+    "url": "https://doi.org/10.5772/intechopen.115174",
+    "title": "Neural Networks to Control Voluntary Movements in a Lower Limb Exoskeleton Using Electromyographic Signals",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:531d08bb2a301b71f6cae439ec9abcc57cdc8c54b014eb4acc42ed753f1ca5b9",
+    "snippet": "2024 | Artificial Intelligence | Giuseppe Menga, Jie Geng, Massimo Mancin"
+  },
+  {
+    "url": "https://doi.org/10.3389/fneur.2024.1394424",
+    "title": "Effects of motor imagery-based brain-computer interface-controlled electrical stimulation on lower limb function in hemiplegic patients in the acute phase of stroke: a randomized controlled study",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:aa9eb74c3540e17b5e5abd0c53fc2540156cf571fa6f97e8f7e58e63090f1ef3",
+    "snippet": "2024 | Frontiers in Neurology | Xi Luo"
+  },
+  {
+    "url": "https://doi.org/10.3390/electronics12224697",
+    "title": "A Decoding Method Using Riemannian Local Linear Feature Construction for a Lower-Limb Motor Imagery Brain–Computer Interface System",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:981f40ca5de5d5e9f06fbcb44f34e3ab6219c0c610ba1e474e58c004eeee8c7a",
+    "snippet": "2023 | Electronics | Yao Hou, Rongnian Tang, Xiaofeng Xie"
+  },
+  {
+    "url": "https://doi.org/10.5772/27638",
+    "title": "Clinical Implications of Muscle-Tendon &amp; -Force Interplay: Surface Electromyography Recordings of m. vastus lateralis in Renal Failure Patients Undergoing Dialysis and of m. gastrocnemius in Individuals with Achilles Tendon Damage",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:9bfb676acfef8f236c88e5acc0323464d55a5309f99006797e1b464fd2ff3f91",
+    "snippet": "2012 | EMG Methods for Evaluating Muscle and Nerve Function | Adrian P., Stig Molsted, Jessica Pingel, Henning Langberg, Else Marie"
+  },
+  {
+    "url": "https://doi.org/10.31224/osf.io/hy36f",
+    "title": "Automated creation and tuning of personalised muscle paths for OpenSim musculoskeletal models via the Musculoskeletal Atlas Project Client",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:8329acc0966c2159a2c7bb9514983edc48c2b8f3e5e38c89b7d6b500ba6bd0f4",
+    "snippet": "2020 | Bryce Killen"
+  },
+  {
+    "url": "https://doi.org/10.3724/sp.j.1329.2025.01015",
+    "title": "Tibiofemoral Joint Contact Force Estimation Based on OpenSim Musculoskeletal Modeling",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:feedcc79e55a08098ee65f59002a44b571c4fe7a04ae71c769417b447ffca041",
+    "snippet": "2025 | Rehabilitation Medicine | Xiaoling WANG, Jiawei JIAN, Qiurong XIE, Zhanghui LIAN, Chunming GUO"
+  },
+  {
+    "url": "https://doi.org/10.11113/jmeditec.v1n1.31",
+    "title": "Simulation of Lower Limb Muscle Moment and Total Muscle Fiber Force Using OpenSim for Knee Osteoarthritis",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:c49a10b1ce01ae6e717f42fb2449465f34d9ca289a99628d443a5fc9633e0be9",
+    "snippet": "2023 | Journal of Medical Device Technology | Aizreena Azaman, Ibrahim Adel Mohammed Qahtani, Jaysuman Puspanathan, Izwyn Zulkapri, Kamaruzaman Soeed"
+  },
+  {
+    "url": "https://doi.org/10.11834/jig.20030258",
+    "title": "Ambient Light Independent Panorama Mosaics",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:7fecdb94f775b908532f366fab2d9c03c720bf0ddfe21acd1e2a415d467ffe94",
+    "snippet": "2003 | Journal of Image and Graphics"
+  },
+  {
+    "url": "https://doi.org/10.64216/3104-9702.25.03.052",
+    "title": "人工智能融入机械工程专业机器人方向课程的教学内容与方法创新",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:6df41d25d8c660d71719ed3a75cdc69ea855231da632ca9e66f731605eea4d00",
+    "snippet": "2025 | 教育科学理论研究"
+  },
+  {
+    "url": "https://doi.org/10.11834/jig.200207207",
+    "title": "A Method of Detecting Blood Vessel Shape Without Smoothing",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:e07930efb440dd8a84442f69cce1032f162160fa3a4ca2912ab08a692e139d4a",
+    "snippet": "2002 | Journal of Image and Graphics"
+  },
+  {
+    "url": "https://doi.org/10.37155/2717-5170-0805-13",
+    "title": "AI与工业机器人的人机协作能力优化",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:014cd26e359e741e6cf34acdf86e5830c5c0c05b3fb2b8fd5c513fc040810f09",
+    "snippet": "2026 | 电子通信与计算机科学 | 张瑞琳"
+  },
+  {
+    "url": "https://doi.org/10.59863/cmge2179",
+    "title": "人机协同：运用人工智能与机器学习保障教育评估的公平与无偏差",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:ce6a6fa243f649c136c84ee20e9b477e33c851880d8bc41bc437656e9773156d",
+    "snippet": "2025 | Chinese/English Journal of Educational Measurement and Evaluation | Hayri Eren Suna, Mahmut Özer"
+  },
+  {
+    "url": "https://doi.org/10.64216/3080-1508.25.02.018",
+    "title": "工业机器人自主学习与智能决策研究",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:1a969eedf12626f1c209e3a83ecf3e714f95d2af55e073cd7094852c8f61cd74",
+    "snippet": "2025 | 工程技术论坛"
+  },
+  {
+    "url": "https://doi.org/10.36012/sde.v2i1.816",
+    "title": "新工科背景下《机器视觉与人工智能》课程教学改革探索———以无锡太湖学院为例",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:4c6c3a3b58dad100b91663774f5c6873c0d1708fe851ff8b69ddf9d6e7be57fb",
+    "snippet": "2020 | 教育科学发展 | 涛 王, 晨 刘, 乐 张, 光辉 方"
+  },
+  {
+    "url": "https://doi.org/10.62989/jnsr2024.1.5.15",
+    "title": "机械工程设备管理与维护策略探究",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:e05281231a02911552f3c83d98892a9d4b0009970972581acb2c9465a390076c",
+    "snippet": "2024 | Academic Frontiers Publishing Group | 陈振坡 陈振坡, 陈章彬 陈章彬"
+  },
+  {
+    "url": "https://doi.org/10.52926/jpmjfr202i",
+    "title": "",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:9b1176e4fb7c20822ed12eacb16205011b09254d13b9b80e7d2de8d6f3fd177f",
+    "snippet": "2021"
+  },
+  {
+    "url": "https://doi.org/10.62989/jetm2024.1.4.29",
+    "title": "浅谈电气工程及其自动化在机械工程中的应用",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:6b2ff4c0416d3c7760debbc3a56d1c74b039e69b1b65234999aec46ea3845372",
+    "snippet": "2024 | Academic Frontiers Publishing Group | 陈章彬 陈章彬, 陈振坡 陈振坡"
+  },
+  {
+    "url": "https://doi.org/10.2463/jjmrm.2021-1743",
+    "title": "宮崎美津恵先生の紫綬褒章受章",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:b75f99f63b62934682b86ab9cc8569f5a646ff5a4d91fcc0bfefbee43492624b",
+    "snippet": "2021 | Japanese Journal of Magnetic Resonance in Medicine | 輝 黒田, 隆行 小畠, 好男 町田"
+  },
+  {
+    "url": "https://doi.org/10.1360/csb1960-5-4-109",
+    "title": "治疗精神病藥物的篩选方法",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:feedcc79e55a08098ee65f59002a44b571c4fe7a04ae71c769417b447ffca041",
+    "snippet": "1960 | Chinese Science Bulletin | 彬 胥, 國章 金, 岡 鄒"
+  },
+  {
+    "url": "https://doi.org/10.1360/csb1995-40-18-1707",
+    "title": "稻田鱼腥藻返地克隆株的卫星再搭载研究",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:feedcc79e55a08098ee65f59002a44b571c4fe7a04ae71c769417b447ffca041",
+    "snippet": "1995 | Chinese Science Bulletin | 章立 胡"
+  },
+  {
+    "url": "https://doi.org/10.5111/bunkou.67.3_134",
+    "title": "学会だより",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:f732e0b60f136f5354c7dd158262e2a76f738049f56de6c46ba1a06d52633113",
+    "snippet": "2018 | Journal of the Spectroscopical Society of Japan | 隆章 矢野, 孝章 石橋, 行夫 古川"
+  },
+  {
+    "url": "https://doi.org/10.1360/csb1957-2-9-282-x",
+    "title": "国产阿米那嗪(аминаэин)的药理研究",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:feedcc79e55a08098ee65f59002a44b571c4fe7a04ae71c769417b447ffca041",
+    "snippet": "1957 | Chinese Science Bulletin | 国章 金, 瑞婷 陈, 彬 胥, 道苑 王"
+  },
+  {
+    "url": "https://doi.org/10.53106/615471682023120037008",
+    "title": "尋求獨立憲法理論的嘗試——對《繼往以爲序章：中國憲法的制度展開》的批判性述評",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:869a5d724dd7abb6fff367e62ab57f36f69efb014415377873802077acce703f",
+    "snippet": "2023 | 宏彬 沈"
+  },
+  {
+    "url": "https://doi.org/10.61654/zzjkwz0332",
+    "title": "中医辨证施治在老年慢性病综合管理中的临床应用研究",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:7836c2f41fd5ba69502f5527f3f1d3f2b8c738dd9163e8f613268735b4a81090",
+    "snippet": "2025 | 健康文摘 | 隆志 庄, 文彬 叶"
+  },
+  {
+    "url": "https://doi.org/10.4286/ikakikaigaku.73.4_203_2",
+    "title": "搬送式ポンプ架台の開発",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:e153fb7d7718498855985c67cfc1f4091e2ddfabac3ce5c345e65679da270ef6",
+    "snippet": "2003 | JAPANES JOURNAL OF MEDICAL INSTRUMENTATION | 和宏 都留, 章 竹谷, 隆史 矢野, 吉明 河埜"
+  },
+  {
+    "url": "https://doi.org/10.7498/aps.70.20211857",
+    "title": "Effect of ion irradiation on thermal conductivity of phosphorene and underlying mechanism",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:84e30546f0d95eb862efe1c9e45e0dd0b2a85816337f3a79997c224e6d37e502",
+    "snippet": "2021 | Acta Physica Sinica | , , , "
+  },
+  {
+    "url": "https://doi.org/10.7498/aps.70.20211477",
+    "title": "Theoretical Study on Anisotropy and Ultra-low Thermal Conductance of Porous Graphene nanoribbons",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:90318374adf770d676433b4ebf6019da03b5b2073ff1e682f63ccc184bfc4113",
+    "snippet": "2021 | Acta Physica Sinica | , "
+  },
+  {
+    "url": "https://doi.org/10.7498/aps.56.376",
+    "title": "Simulation study of effects of initial melt temperature on microstructure of liquid metal Na during solidification processes",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:f97a18a2373f404d093a7602c04444185f0f7c9b157b2e7ff5beb7f4e0302b07",
+    "snippet": "2007 | Acta Physica Sinica | Hou Zhao-Yang, Liu Rang-Su, Wang Xin, Tian Ze-An, Zhou Qun-Yi"
+  },
+  {
+    "url": "https://doi.org/10.7498/aps.58.5988",
+    "title": "The orbital effect of photon in the general stationary spacetime",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:b1ce9a2d3c64339bc91587a9f9fbaf8cc4cfcdc6f0b6f03f758024faf4e1beba",
+    "snippet": "2009 | Acta Physica Sinica | Gong Tian-Xi, Wang Yong-Jiu, "
+  },
+  {
+    "url": "https://doi.org/10.7498/aps.56.2523",
+    "title": "Study of a novel matrix converter based on double-loop control strategy",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:b92158c91389592e847b2331b73d87b427b0f24db8bb81c7a78614243591e4e4",
+    "snippet": "2007 | Acta Physica Sinica | Zhang Xiao_Ping, Zhu Jian_Lin, Wen Ze_Jun, Yue Zhou, Liu Sha_Sha"
+  },
+  {
+    "url": "https://doi.org/10.7498/aps.53.4087",
+    "title": "Direct adaptive fuzzy-neural control of unknown chaotic system",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:3404494999af07e4cd48942e073bfc298ea9348583c0c19fc544f98c98355139",
+    "snippet": "2004 | Acta Physica Sinica | Tan Wen, Wang Yao－Nan, "
+  },
+  {
+    "url": "https://doi.org/10.7498/aps.52.2723",
+    "title": "Genetic-based neural network control for chaotic system",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:89b3577e588f63b8b497caa1eb8e37da76d6fb276311786b4c80ecf2a3a2ddc9",
+    "snippet": "2003 | Acta Physica Sinica | Wang Yao-Nan, Tan Wen, "
+  },
+  {
+    "url": "https://doi.org/10.11834/jrs.1993031",
+    "title": "IMAGE CODING &amp;amp; COMPRESSING WITH PEANO SCAN AND FRACTAL-BASED SCHEME",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:064b89b035b0a68867855bbf444d2098eb44f2bae7f58ddb0db8857118234e5d",
+    "snippet": "1993 | National Remote Sensing Bulletin | Qijun Yang Hailang Gu, , 杨海浪, 赵锐, 赵宏"
+  },
+  {
+    "url": "https://doi.org/10.7498/aps.56.2434",
+    "title": "Depletion interactions in charged colloidal system",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:71c873fb328c2448bf0edb631972f0391a6dfded581e701db3cf1dc54dd1dd83",
+    "snippet": "2007 | Acta Physica Sinica | Li Chun-Shu, Xiao Chang-Ming, "
+  },
+  {
+    "url": "https://doi.org/10.7498/aps.55.583",
+    "title": "Energy band structure of two ions in a one-dimensional Paul trap",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:56e7bc4fe2eee3f1983f42d3c988627d5fd1fef9f4b25c610d732cea5670dbd7",
+    "snippet": "2006 | Acta Physica Sinica | Wu Yun-Wen, Hai Wen-Hua, Cai Li-Hua, "
+  },
+  {
+    "url": "https://doi.org/10.11834/jrs.20100113",
+    "title": "Region multi-center method for land use classification of multispectral RS imagery",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:b9cd62d4ebc2e6f9572b806551f3a4d2d811bd178b9d518537b54fa179be0a7a",
+    "snippet": "2010 | National Remote Sensing Bulletin | 林剑, , 钟迎春, 彭顺喜, 刘建勋"
+  },
+  {
+    "url": "https://doi.org/10.7498/aps.54.4192",
+    "title": "Buckling of a single wall carbon nanotube under an axial pressure based on the nonlocal elastic theory",
+    "fetched_at": "2026-09-30T14:14:37Z",
+    "source_engine": "crossref",
+    "content_hash": "sha256:8f719beee4b61a67da597de2e4326b8320fe72932ee4a35386340c82a575fe1c",
+    "snippet": "2005 | Acta Physica Sinica | Xie Gen-Quan, Han Xu, Long Shu-Yao, Tian Jian-Hui, "
+  },
+  {
+    "url": "http://arxiv.org/abs/2511.14593v1",
+    "title": "First measurement of reactor neutrino oscillations at JUNO",
+    "fetched_at": "2026-09-30T23:47:34Z",
+    "source_engine": "arxiv",
+    "content_hash": "sha256:c92ea506e112c23ea718e61657d6e919c68e739010bd2f4d7118f5e9b45c17da",
+    "snippet": "2025\nNeutrino oscillations, a quantum effect manifesting at macroscopic scales, are governed by lepton flavor mixing angles and neutrino mass-squared differences that are fundamental parameters of particle physics, representing phenomena beyond the Standard Model. Precision measurements of these parameters are essential for testing the completeness of the three-flavor framework, determining the mass ordering of neutrinos, and probing possible new physics. The Jiangmen Underground Neutrino Observatory"
+  },
+  {
+    "url": "http://arxiv.org/abs/2511.14590v1",
+    "title": "Initial performance results of the JUNO detector",
+    "fetched_at": "2026-09-30T23:47:34Z",
+    "source_engine": "arxiv",
+    "content_hash": "sha256:3c094cb43621a2e5767a56e63094ba1833eb684c9adf0fe96cd09e0a845b23ee",
+    "snippet": "2025\nThe Jiangmen Underground Neutrino Observatory (JUNO) started physics data taking on 26 August 2025. JUNO consists of a 20-kton liquid scintillator central detector, surrounded by a 35 kton water pool serving as a Cherenkov veto, and almost 1000 m$^2$ of plastic scintillator veto on top. The detector is located in a shallow underground laboratory with an overburden of 1800 m.w.e. This paper presents the performance results of the detector, extensively studied during the commissioning of the water"
+  },
+  {
+    "url": "http://arxiv.org/abs/2604.05701v1",
+    "title": "Measurement of the CKM angle $γ$ in $B^{\\pm} \\rightarrow D(\\rightarrow K^{0}_{\\rm S} h^{\\prime+}h^{\\prime-})h^{\\pm}$ decays with a novel approach",
+    "fetched_at": "2026-09-30T23:47:34Z",
+    "source_engine": "arxiv",
+    "content_hash": "sha256:eff317e60e50650964f3cac1cca635b6cbb2d343bd3b6c1ab42676a40ab420bf",
+    "snippet": "2026\nA measurement of the CKM angle $γ$ and related strong-phase parameters is performed using a novel, model-independent approach in ${B^{\\pm}\\rightarrow D(\\rightarrow K^{0}_{\\rm S} h^{\\prime+}h^{\\prime-}) h^{\\pm}}$ decays, where $h^{(\\prime)} \\equiv π, K$. The analysis uses a joint data sample of electron-positron collisions collected by the BESIII experiment at the Beijing Electron-Positron Collider II during 2010--2011 and 2021--2022, corresponding to an integrated luminosity of 8 fb$^{-1}$, and"
+  },
+  {
+    "url": "http://arxiv.org/abs/2604.05712v1",
+    "title": "Precise measurement of the CKM angle $γ$ with a novel approach",
+    "fetched_at": "2026-09-30T23:47:34Z",
+    "source_engine": "arxiv",
+    "content_hash": "sha256:b8b800f076c9722ba4b7895b16777d375820524b675cd0d78a602819aea992cc",
+    "snippet": "2026\nA measurement of the CKM angle $γ$ is performed by applying a novel, unbinned, model-independent approach to datasets of electron-positron collisions collected by the BESIII experiment and proton-proton collisions by the LHCb experiment, corresponding to integrated luminosities of 8 fb$^{-1}$ and 9 fb$^{-1}$, respectively. The $C\\!P$-violating phase $γ$ is determined from ${B^{\\pm}\\rightarrow D(\\rightarrow K_{\\rm S}^{0} h^{\\prime+}h^{\\prime-}) h^{\\pm}}$ decays in LHCb data, where $h^{(\\prime)}$"
+  },
+  {
+    "url": "http://arxiv.org/abs/2609.05829v1",
+    "title": "Measurement of CP Asymmetry Parameters and Polarization Correlations in $Ω^{-}\\barΩ^{+}$ Pairs",
+    "fetched_at": "2026-09-30T23:47:34Z",
+    "source_engine": "arxiv",
+    "content_hash": "sha256:6c18af8592231aa195ce128dcd11404f997021c193640e02d33efe82e2aee5ea",
+    "snippet": "2026\nUsing $(2.71 \\pm 0.01) \\times 10^9$ $ψ(3686)$ events collected with the BESIII detector, a joint full angular distribution analysis is carried out for the process $ψ(3686) \\to Ω^-(\\toΛK^-) \\, \\barΩ^{+}(\\to \\barΛK^+)$. The first simultaneous measurement of the weak decay parameters $φ_{Ω^{-}}$ and $φ_{\\barΩ^{+}}$ for $Ω^- \\to K^-Λ$ and $\\barΩ^+ \\to K^+\\barΛ$ is performed, yielding the first result for the CP-sensitive observable, $φ_{\\rm CP} = (-0.004 \\pm 0.055 \\pm 0.017)~\\text{rad}$, where the f"
+  },
+  {
+    "url": "https://scholar.google.com/citations?user=zfHrGd0AAAAJ&hl=en",
+    "title": "Longbin Zhang - Google Scholar",
+    "fetched_at": "2026-09-30T23:47:34Z",
+    "source_engine": "web",
+    "content_hash": "sha256:b354cc348473652599790901d31c0612836b114c2b3e2ea6817b6b2504a65957",
+    "snippet": "zimi sawacha zimi sawachauniversity of PadovaVerified email at dei.unipd.it. Follow. Longbin Zhang.Human-in-the-loop control of a wearable lower limb exoskeleton for stable dynamic walking."
+  }
+]

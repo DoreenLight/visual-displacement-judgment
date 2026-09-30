@@ -1,0 +1,1955 @@
+[
+    {
+        "type": "text",
+        "text": "Article",
+        "bbox": [
+            53,
+            122,
+            109,
+            136
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Wearable Sensor to Monitor Quality of Upper Limb Task Practice for Stroke Survivors at Home",
+        "text_level": 1,
+        "bbox": [
+            53,
+            136,
+            939,
+            181
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Na Jin Seo <sup>1,2,3,</sup>\\* , Kristen Coupland <sup>2,3</sup>, Christian Finetto <sup>2,3</sup> and Gabrielle Scronce <sup>2,3</sup>",
+        "bbox": [
+            53,
+            193,
+            744,
+            211
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Department of Rehabilitation Sciences, College of Health Professions, Medical University of South Carolina, Charleston, SC 29425, USA",
+        "bbox": [
+            273,
+            235,
+            939,
+            262
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "2 Department of Health Sciences and Research, College of Health Professions, Medical University of South Carolina, Charleston, SC 29425, USA; coupland@musc.edu (K.C.); finetto@musc.edu (C.F.); scronce@musc.edu (G.S.)",
+        "bbox": [
+            273,
+            262,
+            922,
+            300
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ralph H. Johnson VA Health Care System, Charleston, SC 29401, USA",
+        "bbox": [
+            273,
+            300,
+            717,
+            313
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Correspondence: seon@musc.edu; Tel.: +1-843-792-0084",
+        "bbox": [
+            273,
+            313,
+            635,
+            326
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Abstract: Many stroke survivors experience persistent upper extremity impairment that limits performance in activities of daily living. Upper limb recovery requires high repetitions of task-specific practice. Stroke survivors are often prescribed task practices at home to supplement rehabilitation therapy. A poor quality of task practices, such as the use of compensatory movement patterns, results in maladaptive neuroplasticity and suboptimal motor recovery. There currently lacks a tool for the remote monitoring of movement quality of stroke survivors’ task practices at home. The objective of this study was to evaluate the feasibility of classifying movement quality at home using a wearable IMU. Nineteen stroke survivors wore an IMU sensor on the paretic wrist and performed four functional upper limb tasks in the lab and later at home while videorecording themselves. The lab data served as reference data to classify home movement quality using dynamic time warping. Incorrect and correct movement quality was labeled by a therapist. The home task practice movement quality was classified with an accuracy of 92% and F1 score of 0.95 for all tasks combined. Movement types contributing to misclassification were further investigated. The results support the feasibility of a home movement quality monitoring system to assist with upper limb rehabilitation post stroke.",
+        "bbox": [
+            272,
+            343,
+            942,
+            558
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/fb47fa2afa22bf451f8241758812fcd02b0d6fcfc1cd7c9f66eac038817d6bd9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            55,
+            539,
+            147,
+            563
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Citation: Seo, N.J.; Coupland, K.; Finetto, C.; Scronce, G. Wearable Sensor to Monitor Quality of Upper Limb Task Practice for Stroke Survivors at Home. Sensors 2024, 24, 554. https://doi.org/10.3390/ s24020554",
+        "bbox": [
+            53,
+            567,
+            250,
+            664
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Academic Editors: Giorgio Biagetti and Paolo Crippa",
+        "bbox": [
+            53,
+            673,
+            243,
+            701
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Received: 22 December 2023 Revised: 10 January 2024 Accepted: 12 January 2024 Published: 16 January 2024",
+        "bbox": [
+            53,
+            709,
+            208,
+            766
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/91db87683566e618a643ace0b3b797dd3a5523e928746d1d1ebcabaea3492235.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            57,
+            778,
+            154,
+            803
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Copyright: © 2024 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (https:// creativecommons.org/licenses/by/ 4.0/).",
+        "bbox": [
+            53,
+            808,
+            258,
+            920
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Keywords: stroke; upper extremity; rehabilitation; accelerometer; inertial measurement unit (IMU); wearable sensor; machine learning; remote monitoring; home monitoring",
+        "bbox": [
+            273,
+            571,
+            942,
+            604
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1. Introduction",
+        "text_level": 2,
+        "bbox": [
+            275,
+            646,
+            396,
+            661
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Stroke is a leading cause of long-term disability worldwide [1]. In the U.S. alone, there are nearly 7 million stroke survivors [2]. Roughly 3% of the adult population have suffered a stroke and related costs are expected to increase to \\$240 billion in the U.S. by 2030 [3]. Approximately 77% of stroke survivors experience upper extremity motor impairment [4–6]. Upper extremity motor impairment decreases individuals’ ability to perform activities of daily living, such as self-care, hygiene, employment, and recreation, thereby diminishing their independence and quality of life [7,8].",
+        "bbox": [
+            272,
+            665,
+            944,
+            770
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Previous research has shown that stroke survivors can recover their upper extremity function through extensive repetitions of task practices [9–12]. The extensive repetitions of task practices, however, cannot be accomplished within patients’ therapy visits only [13–15]. To make up for limited time available within therapy visits, rehabilitation therapists often prescribe a home exercise program comprised of self-directed upper extremity task practices to be performed at home [16]. Those who adhere to the home exercise program to a greater degree have been shown to achieve greater motor recovery, compared to those who do not adhere or who adhere to a lesser degree [17,18]. Thus, the level of adherence to home exercises plays an important role in post-stroke motor recovery [16–21]. In addition, if patients do not practice newly learned functional movements at home, their motor capacity gained from therapy visits may not transfer to their activities of daily living, and they may not achieve functional improvement [14,18].",
+        "bbox": [
+            270,
+            770,
+            944,
+            921
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "三.",
+        "bbox": [
+            58,
+            57,
+            115,
+            98
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "sensors",
+        "bbox": [
+            121,
+            68,
+            257,
+            90
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "MDPI",
+        "bbox": [
+            862,
+            64,
+            939,
+            99
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Sensors 2024, 24, 554. https://doi.org/10.3390/s24020554",
+        "bbox": [
+            55,
+            964,
+            398,
+            977
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "https://www.mdpi.com/journal/sensors",
+        "bbox": [
+            687,
+            964,
+            939,
+            978
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            272,
+            102,
+            942,
+            133
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "For home exercises to be effective, not only the quantity, but also the quality of task practices is important because the use of compensatory motions for task practices does not address post-stroke motor impairment and may lead to maladaptive plasticity that hinders restoration of motor function [22–24]. Thus, many recent studies have aimed to develop systems to monitor the quality of movements for post-stroke rehabilitation, as shown in Table 1. The strength of these previous studies is that they collected data about upper limb movements using an inertial measurement unit (IMU) sensor worn on the wrist for ease of use by patients in the home setting.",
+        "bbox": [
+            272,
+            133,
+            942,
+            252
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The major limitation of these previous studies is that while these systems were developed for home use, the testing of their accuracy was performed in the lab setting only. Validation in the home is warranted to support the use of the monitoring system in the patients’ home. In addition, most studies classified gross movement categories regardless of quality (e.g., functional movements including drinking vs. writing vs. nonfunctional arm movement during walking). One study distinguished compensatory movement patterns from the correct movements in an arm raise task [25]. However, this task was somewhat limited in relevance for activities of daily living typically involving object manipulation using the hand. Another study distinguished the quality of movements for multiple repre sentative functional task practices [26], but only tested healthy adults. Thus, the detection of subtle differences in stroke survivors’ way of performing functional tasks with versus without compensatory movement patterns using a wrist-worn IMU sensor has not been investigated. To this end, the objective of this study was to investigate the feasibility of monitoring stroke survivors’ movement qualities during functional task practices at home using a wrist-worn IMU sensor.",
+        "bbox": [
+            272,
+            252,
+            944,
+            478
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/ef7f9d7e2917f02c65b69de7631204ffb6f5fd8f5f61efe289dad8bf637d33c3.jpg",
+        "table_caption": [
+            "Table 1. Summary of previous research classifying upper limb movement types using data from wristworn IMU sensors for rehabilitation purposes (RF = random forest, CNN = convolutional neural net work, DTW = dynamic time warping, LSTM = Long Short-Term Memory, LDA = linear discriminant analysis, SVM = support vector machine, KNN = K-Nearest Neighbors, CT = classification trees)."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Reference</td><td>Participant</td><td>Method</td><td>Setting</td><td>Finding</td></tr><tr><td>Bochniewicz 2017 [27]</td><td>10 healthy persons, 10 stroke survivors</td><td>RF</td><td>Lab</td><td>Classified functional vs. nonfunctional movement</td></tr><tr><td>David 2021 [28]</td><td>5 healthy persons, 5 hemiparetic patients</td><td>Thresholding</td><td>Lab</td><td>Classified functional vs. nonfunctional movement</td></tr><tr><td>Gomez-Arrunategui 2022 [29]</td><td>12 stroke survivors</td><td>RF, CNN</td><td>Lab</td><td>Detected reach time and number of reaching gestures during prescribed tasks.</td></tr><tr><td>Lee 2018 [25]</td><td>9 healthy persons, 11 stroke survivors</td><td>RF</td><td>Lab</td><td>Classified quality of arm raise</td></tr><tr><td>Bhagat 2020 [30]</td><td>2 persons with spinal cord injury</td><td>DTW, LSTM</td><td>Lab</td><td>Classified cylindrical vs. pincer grasp (to pick up a water bottle vs. pen)</td></tr><tr><td>Li 2023 [26]</td><td>20 healthy persons</td><td>LSTM</td><td>Lab</td><td>Classified functional task practice quality</td></tr><tr><td>Lui 2019 [31]</td><td>11 healthy persons</td><td>LDA, SVM, KNN, CT</td><td>Lab</td><td>Classified pre-selected upper limb movements</td></tr></table>",
+        "bbox": [
+            57,
+            558,
+            939,
+            828
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2. Materials and Methods",
+        "text_level": 2,
+        "bbox": [
+            273,
+            847,
+            478,
+            862
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2.1. Participants",
+        "text_level": 2,
+        "bbox": [
+            273,
+            863,
+            396,
+            878
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Nineteen adult stroke survivors with upper limb hemiparesis participated in the study. Their demographic information is summarized in Table 2. All participants had some hand movement capacity appropriate to engage in the practice of functional tasks involving object manipulation. Participants did not have comorbidities such as orthopedic conditions limiting motion, premorbid neurologic conditions, compromised skin integrity of the wrist, or language barrier or cognitive impairment that precluded following instructions and/or providing consent. Written informed consent was obtained from all participants prior to the study procedure.",
+        "bbox": [
+            272,
+            881,
+            944,
+            913
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Sensors 2024, 24, 554",
+        "bbox": [
+            55,
+            55,
+            179,
+            70
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2 of 14",
+        "bbox": [
+            895,
+            59,
+            941,
+            72
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            272,
+            103,
+            942,
+            193
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/c3a4887f7b5e88163fd6cfa4e121e943a7b695ca4d0a2a02b5cd575d7da003ae.jpg",
+        "table_caption": [
+            "Table 2. Participant characteristics."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Characteristics</td><td>Descriptive Statistics</td></tr><tr><td>Age (mean ± SD years)</td><td>61 ± 12</td></tr><tr><td>Sex (M/F)</td><td>12/7</td></tr><tr><td>Time since stroke (mean ± SD years)</td><td>4 ± 3</td></tr><tr><td>Stroke type (ischemic/hemorrhagic)</td><td>14/5</td></tr><tr><td>Fugl-Meyer Assessment of Motor Recovery after Stroke—Upper Extremity (mean ± SD out of 66)</td><td>45 ± 9</td></tr></table>",
+        "bbox": [
+            275,
+            227,
+            939,
+            356
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "2.2. Procedure",
+        "text_level": 2,
+        "bbox": [
+            273,
+            372,
+            381,
+            387
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The study procedure was designed with the intended application of the system as follows. The therapist identifies appropriate therapy goals for a patient during an in-clinic therapy session and prescribes home exercises. Then, a wrist-worn IMU is used to monitor at-home exercise quality, i.e., whether the patient followed the movement pattern learned during the therapy session. Exercise quality is assessed by comparing at-home movements to the in-clinic reference movements using the DTW algorithm.",
+        "bbox": [
+            273,
+            390,
+            942,
+            480
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "First, participants came to the laboratory and performed 4 functional tasks using the paretic hand while wearing an IMU sensor (ActiGraph GT9X link, ActiGraph Corporation, Pensacola, FL, USA) on the paretic wrist. An occupational therapist observed their movement quality and identified individual participants’ compensatory movement patterns. Then, they provided feedback to correct their movement patterns, similar with a typical in-clinic therapy session. The 4 functional tasks used in this study are described in Table 3. More details of these tasks along with task instructions and pictures can be found in the study of Li et al., 2023 [26]. These tasks were chosen as representative functional tasks prescribed in home exercise programs from the task practice manual [32] and vary in difficulty. Specifically, tasks 1 and 2 require a cylindrical grasp, with task 1 additionally requiring shoulder flexion. Tasks 3 and 4 are relatively more difficult than tasks 1 and 2, as they require more control and dexterity with the hand. If a participant did not exhibit an incorrect movement pattern for a task, they were instructed to simulate a compensatory movement pattern that they should avoid. Each movement quality was performed with 3 to 6 trials. This number of trials is feasible to accomplish within a standard care rehabilitation therapy session [13]. Each trial’s start and end were time-stamped by the therapist pressing a button on a computer. Trials were annotated for movement quality as correct or incorrect (compensatory or incomplete) by the therapist.",
+        "bbox": [
+            272,
+            480,
+            942,
+            749
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "At the end of the in-lab session, participants were instructed to practice these 4 functional tasks at home another day. They were instructed to perform 75 trials of each task with the correct movement pattern learned during the in-lab session. They were provided with an IMU sensor to wear on their paretic wrist at home. The IMU sensor was chosen due to the ease of use by stroke survivors at home, as it requires it wearing an IMU sensor on the wrist just like a watch, thereby increasing the likelihood for feasibility. For ground truth labeling, they also videorecorded themselves performing the functional task practices at home. These videos were later reviewed by the occupational therapist to segment the start and end of each trial and annotate each trial’s movement quality. The occupational therapist had 15 years of experience in treating stroke survivors. The therapist also noted the type for each incorrect movement (e.g., trunk flexion and abnormal forearm supination) to facilitate interpretation of the results. The procedure is summarized in Figure 1.",
+        "bbox": [
+            272,
+            747,
+            942,
+            900
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Sensors 2024, 24, 554",
+        "bbox": [
+            55,
+            55,
+            179,
+            70
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3 of 14",
+        "bbox": [
+            895,
+            59,
+            941,
+            72
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            273,
+            102,
+            942,
+            135
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/45a19bfb3fdbb7f0a4dbf47db19e0d3ee18972f029ba03581ebb41425adcdf85.jpg",
+        "image_caption": [
+            "<sub>Table</sub> <sub>3.</sub> <sub>Description</sub> <sub>of</sub> <sub>the</sub> <sub>four</sub> <sub>functional</sub> <sub>tasks.</sub>1. Cup to shelf shelf on top of the tab",
+            "<sup>Figure</sup> <sup>1.</sup> <sup>Flow</sup> <sup>chart</sup> <sup>of</sup> <sup>the</sup> <sup>procedure.</sup><sub>Figure 1. Flow chart of the procedure.</sub>"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            58,
+            170,
+            937,
+            516
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "<sup>Analysis</sup> The IMU sensor recorded acceleration, gyroscope, and magnetometer data in 3 dimen-We used participant-specific classification where the participant’s in-lab data servedsions at 100 Hz both in the lab and home. The IMU sensor data obtained in the lab were as the references to which their home data were compared. We used this participant-spe-used as the reference data for correct vs. incorrect movement patterns. The IMU sensor cific approach because individual stroke survivors perform upper limb tasks diferentlydata obtained in the home were compared against the lab reference data using dynamic time warping (DTW) [33] to classify each home trial’s movement quality.",
+        "bbox": [
+            272,
+            554,
+            944,
+            632
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "2.3. Analysis",
+        "text_level": 2,
+        "bbox": [
+            273,
+            640,
+            374,
+            657
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "We used participant-specific classification where the participant’s in-lab data served as the references to which their home data were compared. We used this participant-specific approach because individual stroke survivors perform upper limb tasks differently depend ing on their impairment level, impairment characteristics, and compensatory strategies used. Accordingly, our algorithm of choice was DTW, as DTW enables a patient-specific algorithm for classification. DTW also accommodates varying time durations of movement trials [25,33]. Previous studies using DTW applied to IMU data were able to distinguish cylindrical grasp versus pincer grasp [30], compensatory motions during the paretic arm raise [25], and different exercises [33].",
+        "bbox": [
+            272,
+            659,
+            942,
+            795
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "For the lab data, a variety of data processing and DTW methods were explored, and the best method that statistically distinguishes trials of different movement types for a given participant was chosen to be used for analysis of their home data. The rationale for choosing the best method for each participant was that individual participants have different impairment characteristics and compensatory strategies that may be detected better with different methods. Only trials that were clearly determined as correct or incorrect movement, qualified by the therapist, were used for the lab reference data. Exploration of different methods included the use of different combinations of the IMU data, namely the acceleration without gravity, gravity vector, gyroscope, and magnetometer in 3 dimensions. The gravity vector was computed by estimating the sensor orientation from the accelerom eter and gyroscope data using a six-axis Kalman filter (imufilter function in MATLAB, MathWorks, Natick, MA, USA). The gravity vector was subtracted from the acceleration data to obtain acceleration without gravity. Exploration of different methods also included data normalization (by the standard deviation for each axis) or lack thereof, as well as various maximum warping sizes for DTW (for MATLAB dtw function’s maxsamp variable ranging from half to 4 times the sampling frequency). To account for different data lengths resulting from DTW, the warped data were projected to the original test data and the DTW distance was computed with the original test data length with a consistent sampling rate.",
+        "bbox": [
+            272,
+            794,
+            944,
+            915
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Sensors 2024, 24, 554",
+        "bbox": [
+            55,
+            55,
+            179,
+            70
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4 of 14",
+        "bbox": [
+            895,
+            59,
+            941,
+            72
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            272,
+            103,
+            944,
+            253
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "For each method, DTW distances were computed among all trials of one movement type, and they were also computed between trials of two different movement types of different movement qualities (correct vs. incorrect). The p-values for comparison between the two clusters of DTW distances (within the same movement type vs. between two different movement types of different movement qualities) were obtained for all movement types. The p-values were obtained using a 1-sided t-test with the alternative hypothesis that the DTW distance within the same movement type is smaller than that between two different movement types. The maximum p-value was used to indicate the statistical discernability of the movement quality for a given DTW method for a given participant. The method with the smallest p-value or p-value < 0.05 was chosen.",
+        "bbox": [
+            272,
+            253,
+            942,
+            401
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "If multiple methods were able to statistically distinguish trials of different descriptions, then the accuracy of classifying each lab trial in reference to all other lab data was examined using a leave-one-trial-out approach for each method. The method that resulted in the highest accuracy was chosen. If multiple methods performed well for both statistical discernability and lab accuracy, then the method including acceleration without gravity, gravity vector, and gyroscope data with normalization with a longer warping size was chosen. The magnetometer was not considered to provide valuable information about the movement patterns as it relates to the orientation relative to the earth which can change between the lab and home.",
+        "bbox": [
+            272,
+            401,
+            942,
+            535
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Once the best data processing and DTW method was chosen from the lab data for a given participant, the method was applied to analyze that participant’s home data. For each home trial, DTW distances against each of the lab trials were computed. The movement quality label for the lab trial with the minimum DTW distance was used to classify the movement quality of the home trial.",
+        "bbox": [
+            272,
+            535,
+            942,
+            609
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The confusion matrices, along with accuracy and the F1 score, were examined for the classification results. Classification results were examined for all tasks combined as well as for each task. Classification results for individual movement types were also examined. To examine the necessity of collecting gyroscope data in addition to acceleration data at the expense of shorter battery life, the classification accuracy utilizing all available data, including gyroscope, was compared against that using only acceleration data.",
+        "bbox": [
+            272,
+            609,
+            944,
+            702
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "3. Results",
+        "text_level": 2,
+        "bbox": [
+            273,
+            711,
+            357,
+            726
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The results of the movement quality classification for home task practices based on in-lab reference data are shown in confusion matrices in Figure 2. Specifically, Figure 2A shows the results for all tasks and participants’ data combined. The overall accuracy was 92%. The overall F1 score was 0.95. The results for each task are shown in Figure 2B–E. The accuracy was 94%, 95%, 86%, and 93% for task 1 through 4. The F1 score was 0.96, 0.97, 0.91, and 0.96 for task 1 through 4. Across participants, accuracy varied. For task 1, the accuracy ranged from 80% to 100% for individual participants, with a median of 95%. For task 2, the accuracy ranged from 86% to 100% for individual participants, with a median of 97%. For task 3, the range was 68% to 100%, with a median of 86%. For task 4, it ranged from 72% to 100%, with a median of 97%.",
+        "bbox": [
+            272,
+            730,
+            944,
+            879
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Sensors 2024, 24, 554",
+        "bbox": [
+            55,
+            55,
+            179,
+            70
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5 of 14",
+        "bbox": [
+            895,
+            59,
+            941,
+            72
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/b5af7ec0506d807e95fed710c243b2c4af141684956838bc323c96fbb58ad1ca.jpg",
+        "image_caption": [
+            "(A) All tasks combined"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            154,
+            105,
+            492,
+            298
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/221807548d2bfc8dc7eebac59d700a831e1068797fc711a75532a7fa33565240.jpg",
+        "image_caption": [
+            "(B) Task 1"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            174,
+            329,
+            477,
+            500
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/8c34067a39855d5d76a43ea1185cf2de8f6a36619f544565bcd9cb0b915ce472.jpg",
+        "image_caption": [
+            "(C) Task 2"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            541,
+            330,
+            840,
+            499
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/cefeda059fc07baa9aedf08d066c93777d5318b50927f4e2ca1cda7fae06e449.jpg",
+        "image_caption": [
+            "(D) Task 3"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            176,
+            530,
+            477,
+            701
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/e01b409fc3a37dbe5e366aeafb8d1b24c535fbcb2c1a73c6b160095d13d11f6f.jpg",
+        "image_caption": [
+            "(E) Task 4",
+            "Figure 2. Classification results of the correct vs. incorrect movements at home for all tasks (A) a<sub>Figure 2. Classification results of the correct vs. incorrect movements at home for all tasks (A)</sub> and each of the four tasks (B–E) using all available data including gyroscope. The darker cell color indicates higher percent accuracy."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            542,
+            531,
+            840,
+            700
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "An example of the DTW distance distribution for a single home trial against lab reference data is shown in Figure 3 for one participant performing task 2. Specifically, this single home trial was performed with shoulder abduction, according to the video review by the therapist. The DTW distance was computed for this home trial against 3 movement types of in-lab data, which were shoulder abduction, correct movement, and unable to grasp the cup, with 6 trials each. The DTW distance distribution shows that this single home trial had smaller DTW distances to lab trials with shoulder abduction, compared to lab trials with the correct movement pattern or lab trials in which the participant was unable to grasp the cup.",
+        "bbox": [
+            272,
+            785,
+            942,
+            923
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Sensors 2024, 24, 554",
+        "bbox": [
+            55,
+            55,
+            179,
+            70
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6 of 14",
+        "bbox": [
+            897,
+            59,
+            941,
+            72
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a8bb05a72353073aba8c60c049248e3b8757b16aa37305701fc16c009b88f647.jpg",
+        "content": "",
+        "chart_caption": [
+            "<sup>Figure</sup> <sup>3.</sup> <sup>A</sup> <sup>box</sup> <sup>plot</sup> <sup>showing</sup> <sup>an</sup> <sup>example</sup> <sup>DTW</sup> <sup>distance</sup> <sup>distribution</sup> <sup>for</sup> <sup>a</sup> <sup>single</sup> <sup>home</sup> <sup>task</sup> <sup>practic</sup>Figure 3. A box plot showing an example DTW distance distribution for a single home task practice <sup>trial</sup> <sup>against</sup> <sup>lab</sup> <sup>reference</sup> <sup>data</sup> <sup>with</sup> <sup>3</sup> <sup>movement</sup> <sup>types</sup> <sup>(shoulder</sup> <sup>abduction,</sup> <sup>correct</sup> <sup>movement,</sup> <sup>an</sup>trial against lab reference data with 3 movement types (shoulder abduction, correct movement, and <sup>unable</sup> <sup>to</sup> <sup>grasp</sup> <sup>the</sup> <sup>cup)</sup> <sup>for</sup> <sup>task</sup> <sup>2.</sup> <sup>Each</sup> <sup>dot</sup> <sup>represents</sup> <sup>the</sup> <sup>DTW</sup> <sup>distance</sup> <sup>between</sup> <sup>the</sup> <sup>single</sup> <sup>hom</sup>unable to grasp the cup) for task 2. Each dot represents the DTW distance between the single home trial and one lab trial. The home trial was performed with shoulder abduction. The DTW distance was smaller between the home trial and the lab trials performed with shoulder abduction. The DTW distance was larger against the lab trials performed correctly and against the lab trials in which the participant was unable to grasp the cup."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            289,
+            99,
+            601,
+            325
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The results of the movement quality classification for home task practices using only acceleration data (without using gyroscope data) are shown in confusion matrices in Figure 4. For all tasks combined, the accuracy was 81% and the F1 score was 0.88. The accuracy for individual tasks was 89%, 95%, 73%, and 88% for task 1 through 4.",
+        "bbox": [
+            272,
+            454,
+            942,
+            514
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Classification results for individual movement types were examined further to understand the trend (Table 4). Among the incorrect movements, the most frequently observed movement type at home was compensatory movements using the trunk and/or shoulder (e.g., trunk flexion for reaching, and shoulder hike or shoulder abduction for lifting). This <sup>0.81</sup> <sup>0.19</sup>movement type accounted for approximately half of the incorrect movements observed at home. This movement type was classified correctly (as incorrect movement), with sensitivity of 86%.",
+        "bbox": [
+            272,
+            514,
+            942,
+            620
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/082ee85d3ab99d6d3bba09f43cfe6b540275c0f42277744a3b533e377830a967.jpg",
+        "table_caption": [
+            "Table 4. Incomplete movement types observed from home, their classification sensitivity, and 0.20 0.80associated observations."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Movement Type</td><td>Sensitivity</td><td>Observations</td></tr><tr><td>Compensatory trunk and/or shoulder involvement</td><td>86%</td><td>Trunk flexion for reaching and shoulder hike or shoulder abduction for lifting were identified.</td></tr><tr><td>Unable to complete</td><td>68%</td><td>Classification errors were from earlier object drop and repeated grip attempts in tasks 3–4 and object drop after release in task 1.</td></tr><tr><td>Use of the nonparetic hand to assist</td><td>62%</td><td>Classification errors were from the participants who exhibited this movement type at home but not in the lab. This movement type occurred most for task 3, the most difficult task.</td></tr><tr><td>Compensatory grip</td><td>83%</td><td>Use of key grip or whole hand grip instead of precision grip for task 4 and noncylindrical grip for task 1 were identified. Classification errors were from dragging of the object for task 3 misclassified as correct.</td></tr></table>",
+        "bbox": [
+            57,
+            671,
+            937,
+            884
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Sensors 2024, 24, 554",
+        "bbox": [
+            55,
+            55,
+            179,
+            70
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7 of 14",
+        "bbox": [
+            895,
+            58,
+            941,
+            72
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/938cf6d58dde372afead6eb143a6698d50622def2c2088184f4d8cffa588dfb7.jpg",
+        "image_caption": [
+            "(A) All tasks combined"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            151,
+            104,
+            467,
+            282
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/0f28ec86f065b5d0f4a3e9ff392bc7e84d2b75087b20188d29a04cfcb794ce94.jpg",
+        "image_caption": [
+            "(B) Task 1"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            154,
+            315,
+            465,
+            492
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/1c5763d2061511ff54b5c93dc2d29e9a2ba1607fe1bcf980f0dc3a64059e803b.jpg",
+        "image_caption": [
+            "(C) Task 2"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            531,
+            315,
+            842,
+            492
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/faeeb4d20da85297e90a39378e78e9ca715651e6b58ceaf6ef679d6beaeeb3e0.jpg",
+        "image_caption": [
+            "(D) Task 3"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            154,
+            524,
+            465,
+            699
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/41ed803866c33a9db0ebbf5961056bdf8f04ff089c7e1030a49318dd392d69e3.jpg",
+        "image_caption": [
+            "(E) Task 4",
+            "Figure 4. Classification results of the correct vs. incorrect movements at home for all tasks (A) and <sup>ach</sup> <sup>of</sup> <sup>the</sup> <sup>four</sup> <sup>tasks</sup> <sup>(B–E)</sup> <sup>using</sup> <sup>only</sup> <sup>acceleration</sup> <sup>data.</sup> <sup>The</sup> <sup>darker</sup> <sup>cell</sup> <sup>color</sup> <sup>indicates</sup> <sup>higher</sup> each of the four tasks (B–E) using only acceleration data. The darker cell color indicates higher percent accuracy."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            532,
+            525,
+            840,
+            699
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Classification results for individual movement types were examined further to The second most frequently observed incorrect movement type was being unable to erstand the trend (Table 4). Among the incorrect movements, the most frequently complete the task (e.g., unable to grasp, drops before reaching the destination), which ac erved movement type at home was compensatory movements using the trunk andcounted for approximately 23% of incorrect movements observed at home. This movement houlder (e.g., trunk flexion for reaching, and shoulder hike or shoulder abduction type was classified with sensitivity of 68%. Classification errors were primarily from tasks 3–4, when the block fell while the participant was moving the paretic hand toward the destination. Repeated attempts to grasp without success also contributed to misclassification for tasks 3–4. To a lesser extent, classification errors were from task 1 when the cup fell off the shelf while the participant was placing the cup and/or returning the paretic hand to the table.",
+        "bbox": [
+            272,
+            785,
+            944,
+            921
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Sensors 2024, 24, 554",
+        "bbox": [
+            55,
+            55,
+            179,
+            70
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8 of 14",
+        "bbox": [
+            895,
+            59,
+            941,
+            72
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Another observed incorrect movement type was use of the nonparetic hand to assist with the task. This movement type of the nonparetic hand use accounted for approximately 13% of the incorrect movements observed at home. The majority occurred in task 3, likely because task 3 was the most difficult of the 4 tasks. This movement type was classified with sensitivity of 62%. Interestingly, use of the nonparetic hand was observed for only three participants in the lab. At home, however, five additional participants used the nonparetic hand. Since these five participants did not display this movement type (use of the nonparetic hand) in the lab, thus lacking this movement type in the reference data, it is explicable that their home data using this movement type could not be classified with high accuracy.",
+        "bbox": [
+            272,
+            102,
+            942,
+            253
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "One last observed incorrect movement type observed at home was compensatory grip (e.g., key grip or whole hand grip instead of precision grip for task 4, noncylindrical grip for task 1). This movement type accounted for approximately 13% of the incorrect movements observed at home. This movement type was classified correctly (as incorrect movement), with a sensitivity of 83%. Classification errors were primarily from when the participant dragged the tongs or block in task 3.",
+        "bbox": [
+            272,
+            253,
+            944,
+            344
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "4. Discussion",
+        "text_level": 2,
+        "bbox": [
+            273,
+            353,
+            384,
+            368
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "This study examined if DTW modeling using data collected via a wrist-worn IMU sensor can be used to discern qualities of upper limb movements during functional task practices at home for stroke survivors. Specifically, person-specific modeling was employed to account for heterogeneous movement patterns across stroke survivors and to focus on individual stroke survivors’ compensatory movement patterns to detect. The individual participants’ data obtained in the lab served as a reference to classify their home data. Ground truth labeling for home data was obtained from video reviews. Overall, the movement quality of stroke survivors’ task practices at home was classified with 92% accuracy. Correct movements at home were classified with 95% sensitivity, while incorrect movements at home were classified with 78% sensitivity. To our best knowledge, this study is the first study to evaluate the performance of movement quality monitoring for stroke survivors at home.",
+        "bbox": [
+            272,
+            370,
+            944,
+            551
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The classification results are comparable to those observed in the laboratory in previous studies. Specifically, a previous study found an F1 score of 0.84 when detecting compensatory movement during a simple task of arm raise in neurotypical adults and stroke survivors using the random forest [25]. Another study found an F1 score of 0.89 when detecting compensatory and incomplete movements during functional tasks in neurotypical adults using long short-term memory [26]. The present study found an F1 score of 0.95 in stroke survivors, possibly due to a person-specific modeling approach used compared to other studies.",
+        "bbox": [
+            272,
+            551,
+            944,
+            670
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The classification results are deemed suitable for their intended clinical purpose, considering that they used data from only 1 IMU sensor worn on the paretic wrist and DTW approach with only a limited number of trials of the movement quality from each participant in the lab as the reference data. Compensation from the trunk and shoulder were relatively well classified, as well as compensatory grip strategies such as use of key grip or whole hand grip instead of precision grip for task 4. The trunk and shoulder posture affects the forearm orientation and thus may have affected movement of the wrist, allowing involvement of trunk/shoulder compensation to be detected. The grip posture was also discernable for task 4, possibly because precision grip involves slowing down the hand and wrist extension/stabilization to adequately position the fingertips around the block, while key grip or whole hand grip typically involves greater acceleration without fine adjustment of the hand position. In summary, the findings of this study show that these subtle differences in stroke survivors’ performance of functional tasks with versus without compensatory movement patterns were detectable using a wrist worn IMU sensor and DTW approach.",
+        "bbox": [
+            272,
+            670,
+            944,
+            896
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Sensors 2024, 24, 554",
+        "bbox": [
+            55,
+            55,
+            179,
+            70
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9 of 14",
+        "bbox": [
+            895,
+            59,
+            941,
+            72
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The lower sensitivity for classification of incorrect movements appears to be due to novel movement types at home that were not used in the lab, including the use of the nonparetic hand to assist, undetected object drops, dragging of the object, and repeated grip attempts not discernable from completion of the task involving gripping tongs, gripping a block, and releasing the block and then tongs for task 3–4. These shortcomings may be addressed as follows. Use of the nonparetic hand to assist with completion of the task may be detected by use of another IMU sensor on the nonparetic wrist. Dropping of the object after being released by the paretic hand can be detected by use of another sensor on the object to detect its movement. Design of the tasks for practice may incorporate different heights for the start and end position (e.g., high and low for grasping and release, respectively) to prevent the possibility of dragging. Use of distinct start and end positions may also introduce a vertical movement between grip and release movements and may help to better distinguish repeated grip attempts from task completions.",
+        "bbox": [
+            270,
+            102,
+            944,
+            297
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "In addition, use of novel movement types at home that were unobserved in the lab may be addressed by gleaning from a larger dataset to infer the movement quality. For example, Li et al. (2023) [26] obtained a large dataset encompassing a variety of incorrect movement types from multiple persons with multiple repetitions to develop a deep learning model to classify movement quality. Although this study used data from people without stroke mimicking hemiparetic upper limb movement, the similar approach may be considered for a large number of stroke survivors with various impairment levels and characteristics. A model developed from this large dataset may be fine-tuned using a small amount of data from individual patients via transfer learning [34].",
+        "bbox": [
+            272,
+            297,
+            944,
+            431
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Use of all available data including gyroscope data resulted in better classification results compared to use of only acceleration data. This finding is consistent with previous literature [35]. Collection of only acceleration data could occur for 24 h per day for weeks after charging the battery of the sensor, while collection of all data including gyroscope exhausts the battery only a day or two after charging. Therefore, use of all IMU data to increase classification accuracy would mean that IMU data collection would need to be limited to the home task practice times only and not extended for daily living activities throughout the day, to avoid the need for patients to charge the sensor’s battery at home. Such a trade-off may be lifted in the future with continued enhancement of battery life.",
+        "bbox": [
+            272,
+            431,
+            942,
+            565
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The significant contribution of this study is that this study supports the technical feasibility of monitoring movement qualities of task practices by stroke survivors at home. Use of only 1 wrist worn IMU sensor is simple and affords feasibility for long-term home use, as has been demonstrated in previous studies [18,36]. In addition, only a few trials of task practices in the lab were obtained as reference data in order to classify larger home data. The number of trials needed in the lab is well within the feasible number of trials observed in a standard care rehabilitation therapy session [13] and, therefore, maximizes potential for translation to clinical settings. The classification accuracy with the wrist worn IMU sensor in this study was comparable or better compared to that with a camera-based sensor and motion detection algorithm [37]. The DTW algorithm is simple enough to be implemented in a smartphone application for home use without server connection. This simplicity adds to the usability and complements the feasibility toward potential clinical implementation [38].",
+        "bbox": [
+            272,
+            565,
+            942,
+            760
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The anticipated impact of this work is the development of an objective quality monitoring system for home task practices for stroke survivors. Currently, stroke survivors adherence to home exercises is typically assessed via self-reports [19,39], which are known to be inaccurate [19,20]. Objective quality monitoring is important because effective home exercises require performance of tasks in the correct movement pattern, without compen satory strategies, to facilitate neuroplasticity and restore motor function post stroke [22–24]. While the link between the level of adherence to home exercises in quantity and motor recovery has been investigated [17,18], the link between the home exercise quality and motor recovery has not been investigated, due to the current lack of such an objective monitoring capability. The objective home task practice quality monitoring system may be incorporated into transfer packages within rehabilitation intervention trials [40–42] to increase the real-world use of the paretic hand in stroke survivors. Therefore, this study paves the way for future novel research to investigate the clinical utility of a home task practice quality monitoring system to improve stroke survivors’ motor recovery.",
+        "bbox": [
+            270,
+            759,
+            944,
+            910
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Sensors 2024, 24, 554",
+        "bbox": [
+            55,
+            55,
+            179,
+            70
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10 of 14",
+        "bbox": [
+            890,
+            59,
+            941,
+            72
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            270,
+            102,
+            942,
+            164
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "If effective, the objective quality monitoring system may be implemented in clinical practice to improve motor recovery. We envision the integration of this technology in clinical practices and rehabilitation protocols in the following way. The objective monitoring system may assess the quality of task practices at home, provide patients with feedback to improve movement quality for home task practices, and provide a clinician with a summary report to be reviewed as part of remote monitoring [43]. During the in-person therapy appointment, the summary report may provide an opportunity for therapists and stroke survivors to increase the use of correct movement patterns via demonstration, visualization, and instruments [44] and to have conversations about the importance of high-quality home task practices for recovery. A high rate of high-quality home practices could serve as a goal for patients to achieve. A high rate of poor-quality movements may suggest to the clinician that the prescribed task may be too difficult for the patient’s abilities and that an adjustment of task difficulty may be needed to achieve an optimal challenge level to ensure patient engagement for adherence and recovery [32,45]. The monitoring system with a wrist-worn device and smartphone application may be integrated with other rehabilitation technologies such as activity tracking [46], remind-to-move [47,48], sensory stimulation as adjuvant to motor rehabilitation [18,36,49], and home exercise tracking [50] to further the effects. Ultimately, these efforts are expected to enable efficient rehabilitation service for maximal motor recovery post stroke.",
+        "bbox": [
+            272,
+            162,
+            942,
+            445
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Limitations exist in the present study, and future studies may aim to address these limitations. In the present study, if a participant did not exhibit an incorrect movement pattern for a task, they were instructed to simulate a compensatory movement pattern that they should avoid. Considering the patient-specific DTW algorithm, future studies may explore using patient-specific tasks tailored for individual patients’ motor skill level, while examining accuracy, for practical implementation purposes. In addition, only four functional tasks were examined in this study. This limited range of tasks may not fully represent the diverse range of activities needed for comprehensive stroke rehabilitation. Future studies may investigate a broader spectrum of tasks to enhance the applicability and relevance. Likewise, future studies may include a broader spectrum of patients to examine the generalizability of the technical feasibility and usability across stroke survivors with severity levels and impairment characteristics. Such investigation will enhance the relevance to a broader stroke survivor population. Furthermore, only one wrist-worn IMU sensor was used. The use of additional sensors such as on the nonparetic wrist or the object could be explored to enhance accuracy, as discussed above.",
+        "bbox": [
+            272,
+            445,
+            944,
+            670
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "In the present study, home task repetitions were segmented via video reviews. Future studies may use a custom smartphone application for stroke survivors to indicate the start and end of each task repetition at home to minimize the burden on stroke survivors to manually count their repetitions and the burden on researchers for video reviews. Such a system including the custom smartphone application and sensors should be investigated for technology acceptance and usability by both stroke survivors [36] and clinicians [51], as insights into the practical challenges, user friendliness, and acceptance in a real-world setting are crucial for successful clinical implementation [38]. While the present study focused on the technical feasibility and immediate accuracy of the system, it does not provide data on long-term clinical outcomes. Future studies may investigate the clinical utility of a home task practice quality monitoring system in improving motor function and quality of life for stroke survivors.",
+        "bbox": [
+            272,
+            669,
+            944,
+            850
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "5. Conclusions",
+        "text_level": 2,
+        "bbox": [
+            273,
+            860,
+            396,
+            875
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "In summary, the present study provides feasibility for objectively monitoring home task practice movement quality for stroke survivors using a wrist-worn IMU sensor and",
+        "bbox": [
+            272,
+            878,
+            942,
+            910
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Sensors 2024, 24, 554",
+        "bbox": [
+            55,
+            55,
+            179,
+            70
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11 of 14",
+        "bbox": [
+            890,
+            59,
+            941,
+            72
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "DTW algorithm. We used only a small amount of movement data obtained from individual participants in the laboratory as the reference data to classify the individuals’ task practices at home on their own. To our best knowledge, this is the first investigation of this kind of movement quality monitoring in stroke survivors at home. The findings of the present study encourage future research to examine the direct linkage between home task practice quality and motor recovery in stroke survivors, as well as personalized feedback to enhance the quality of task practices to improve motor recovery in stroke survivors. Clinical implementation of an objective movement quality monitoring system is expected to provide a means for remote monitoring and increase the efficiency of rehabilitation therapy service for better patient outcomes.",
+        "bbox": [
+            272,
+            102,
+            942,
+            253
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Author Contributions: Conceptualization, N.J.S. and G.S.; methodology, N.J.S., K.C., G.S. and C.F.; software, C.F.; validation, N.J.S. and C.F.; formal analysis, N.J.S.; investigation, N.J.S., K.C., G.S. and C.F.; resources, N.J.S.; data curation, K.C. and C.F.; writing—original draft preparation, N.J.S.; writing—review and editing, N.J.S., K.C., G.S. and C.F.; visualization, N.J.S.; supervision, N.J.S.; project administration, N.J.S.; funding acquisition, N.J.S. and G.S. All authors have read and agreed to the published version of the manuscript.",
+        "bbox": [
+            272,
+            266,
+            944,
+            350
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Funding: This research was funded by the NIH/NICHD P2C HD101913 Pilot grant and NIH/NIGMS P20 GM109040.",
+        "bbox": [
+            273,
+            356,
+            942,
+            382
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Institutional Review Board Statement: The study was conducted in accordance with the Declaration of Helsinki and approved by the Institutional Review Board of the Medical University of South Carolina (Pro00107753, date of approval: 31 March 2021).",
+        "bbox": [
+            273,
+            391,
+            942,
+            434
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Informed Consent Statement: Written informed consent was obtained from all participants prior to their study participation.",
+        "bbox": [
+            273,
+            441,
+            941,
+            469
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Data Availability Statement: Data will be shared upon request.",
+        "bbox": [
+            273,
+            475,
+            705,
+            489
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Acknowledgments: We appreciate Nader Naghavi, Adam Baker, Feng Luo, and Mingqi Li for their initial help in the study.",
+        "bbox": [
+            273,
+            495,
+            942,
+            524
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Conflicts of Interest: The authors declare no conflicts of interest. The funders had no role in the design of the study; in the collection, analyses, or interpretation of data; in the writing of the manuscript; or in the decision to publish the results.",
+        "bbox": [
+            272,
+            531,
+            942,
+            573
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "References",
+        "text_level": 2,
+        "bbox": [
+            55,
+            585,
+            146,
+            599
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "1. Katan, M.; Luft, A. Global Burden of Stroke. Semin. Neurol. 2018, 38, 208–211. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            602,
+            754,
+            615
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "2. Tsao. C.W.: Aday. A.W.: Almarzooq. Z.J: Anderson. C.A.: Arora. P: Avery. C.L: Baker-Smith. C.M.: Beaton. A.Z.: Boehme. A.K. Buxton, A.E. Heart Disease and Stroke Statistics-2023 Update: A Report From the American Heart Association. Circulation 2023, 147, e93–e621. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            617,
+            942,
+            657
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "3. Ovbiagele, B.; Goldstein, L.B.; Higashida, R.T.; Howard, V.J.; Johnston, S.C.; Khavjou, O.A.; Lackland, D.T.; Lichtman, J.H.; Mohl, S.; Sacco, R.L.; et al. Forecasting the future of stroke in the United States: A policy statement from the American Heart Association and American Stroke Association. Stroke 2013, 44, 2361–2375. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            658,
+            942,
+            697
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "4. Hendricks. H.T.: Van Limbeek. L.: Geurts. A.C.: Zwarts. M.I. Motor recovery after stroke: A systematic review of the literature Arch. Phys. Med. Rehabil. 2002, 83, 1629–1637. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            699,
+            941,
+            725
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "5. Lawrence, E.S.; Coshall, C.; Dundas, R.; Stewart, J.; Rudd, A.G.; Howard, R.; Wolfe, C.D. Estimates of the prevalence of acute stroke impairments and disability in a multiethnic population. Stroke 2001, 32, 1279–1284. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            727,
+            939,
+            753
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "6. Sathian, K.; Buxbaum, L.J.; Cohen, L.G.; Krakauer, J.W.; Lang, C.E.; Corbetta, M.; Fitzpatrick, S.M. Neurological principles and rehabilitation of action disorders: Common clinical deficits. Neurorehabil. Neural. Repair 2011, 25 (Suppl. S5), 21S–32S. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            753,
+            939,
+            791
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "7. Dobkin, B.H. Clinical practice. Rehabilitation after stroke. N. Engl. J. Med. 2005, 352, 1677–1684.",
+        "bbox": [
+            55,
+            794,
+            712,
+            807
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "8. Stewart, J.C.; Cramer, S.C. Patient-reported measures provide unique insights into motor function after stroke. Stroke 2013, 44, 1111–1116. [CrossRef]",
+        "bbox": [
+            55,
+            808,
+            942,
+            834
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "9. Dobkin, B.H. Strategies for stroke rehabilitation. Lancet Neurol. 2004, 3, 528–536. [CrossRef]",
+        "bbox": [
+            55,
+            835,
+            702,
+            848
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "10. Schaefer, S.Y.; Patterson, C.B.; Lang, C.E. Transfer of training between distinct motor tasks after stroke: Implications for task specific approaches to upper-extremity neurorehabilitation. Neurorehabil. Neural. Repair 2013, 27, 602–612. [CrossRef]",
+        "bbox": [
+            55,
+            848,
+            942,
+            876
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "11. Lohse, K.R.; Lang, C.E.; Boyd, L.A. Is more better? Using metadata to explore dose-response relationships in stroke rehabilitation. Stroke 2014, 45, 2053–2058. [CrossRef] [PubMed]",
+        "bbox": [
+            57,
+            877,
+            942,
+            902
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Sensors 2024, 24, 554",
+        "bbox": [
+            55,
+            55,
+            179,
+            70
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12 of 14",
+        "bbox": [
+            890,
+            59,
+            941,
+            72
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "12. Winstein, C.; Kim, B.; Kim, S.; Martinez, C.; Schweighofer, N. Dosage Matters: A phase IIb randomized controlled trial of motor therapy in the chronic phase after stroke. Stroke 2019, 50, 1831–1837. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            104,
+            942,
+            131
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "13. Lang, C.E.; MacDonald, J.R.; Reisman, D.S.; Boyd, L.; Kimberley, T.J.; Schindler-Ivens, S.M.; Hornby, T.G.; Ross, S.A.; Scheets, P.L. Observation of amounts of movement practice provided during stroke rehabilitation. Arch. Phys. Med. Rehabil. 2009, 90, 1692–1698. [CrossRef]",
+        "bbox": [
+            55,
+            131,
+            942,
+            171
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "14. Lang, C.E.; Strube, M.J.; Bland, M.D.; Waddell, K.J.; Cherry-Allen, K.M.; Nudo, R.J.; Dromerick, A.W.; Birkenmeier, R.L. Dose response of task-specific upper limb training in people at least 6 months poststroke: A phase II, single-blind, randomized, controlled trial. Ann. Neurol. 2016, 80, 342–354. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            172,
+            942,
+            212
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "15. Schneider, E.J.; Lannin, N.A.; Ada, L.; Schmidt, J. Increasing the amount of usual rehabilitation improves activity after stroke: A systematic review. J. Physiother. 2016, 62, 182–187. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            212,
+            942,
+            241
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "16. Miller, K.K.; Porter, R.E.; DeBaun-Sprague, E.; Van Puymbroeck, M.; Schmid, A.A. Exercise after Stroke: Patient Adherence and Beliefs after Discharge from Rehabilitation. Top. Stroke Rehabil. 2017, 24, 142–148. [CrossRef]",
+        "bbox": [
+            55,
+            241,
+            942,
+            268
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "17. Gunnes, M.; Indredavik, B.; Langhammer, B.; Lydersen, S.; Ihle-Hansen, H.; Dahl, A.E.; Askim, T. Associations Between Adherence to the Physical Activity and Exercise Program Applied in the LAST Study and Functional Recovery after Stroke. Arch. Phys. Med. Rehabil. 2019, 100, 2251–2259. [CrossRef]",
+        "bbox": [
+            55,
+            268,
+            942,
+            307
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "18. Scronce, G.; Ramakrishnan, V.; Vatinno, A.A.; Seo, N.J. Effect of Self-Directed Home Therapy Adherence Combined with TheraBracelet on Poststroke Hand Recovery: A Pilot Study. Stroke Res. Treat. 2023, 2023, 3682898. [CrossRef]",
+        "bbox": [
+            55,
+            309,
+            942,
+            336
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "19. Levy, T.; Laver, K.; Killington, M.; Lannin, N.; Crotty, M. A systematic review of measures of adherence to physical exercise recommendations in people with stroke. Clin. Rehabil. 2019, 33, 535–545. [CrossRef]",
+        "bbox": [
+            55,
+            336,
+            942,
+            363
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "20. Waddell, K.J.; Lang, C.E. Comparison of Self-Report Versus Sensor-Based Methods for Measuring the Amount of Upper Limb Activity Outside the Clinic. Arch. Phys. Med. Rehabil. 2018, 99, 1913–1916. [CrossRef]",
+        "bbox": [
+            55,
+            363,
+            941,
+            390
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "21. Mahmood, A.; Solomon, J.M.; English, C.; Bhaskaran, U.; Menon, G.; Manikandan, N. Measurement of adherence to home-based exercises among community-dwelling stroke survivors in India. Physiother. Res. Int. 2020, 25, e1827. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            391,
+            941,
+            418
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "22. Cirstea, M.C.; Levin, M.F. Improvement of arm movement patterns and endpoint control depends on type of feedback during practice in stroke survivors. Neurorehabil. Neural. Repair 2007, 21, 398–411. [CrossRef] [PubMed]",
+        "bbox": [
+            53,
+            418,
+            942,
+            445
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "23. Jones, T.A. Motor compensation and its effects on neural reorganization after stroke. Nat. Rev. Neurosci. 2017, 18, 267–280. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            445,
+            942,
+            472
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "24. Jang, S.H. Motor function-related maladaptive plasticity in stroke: A review. NeuroRehabilitation 2013, 32, 311–316. [CrossRef]",
+        "bbox": [
+            55,
+            472,
+            929,
+            487
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "25. Lee, S.I.; Adans-Dester, C.P.; Grimaldi, M.; Dowling, A.V.; Horak, P.C.; Black-Schaffer, R.M.; Bonato, P.; Gwin, J.T. Enabling Stroke Rehabilitation in Home and Community Settings: A Wearable Sensor-Based Approach for Upper-Limb Motor Training. IEEE J. Transl. Eng. Health Med. 2018, 6, 2100411. [CrossRef]",
+        "bbox": [
+            53,
+            487,
+            942,
+            527
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "26. Li, M.; Scronce, G.; Finetto, C.; Coupland, K.; Zhong, M.; Lambert, M.E.; Baker, A.; Luo, F.; Seo, N.J. Application of Deep Learning Algorithm to Monitor Upper Extremity Task Practice. Sensors 2023, 23, 6110. [CrossRef]",
+        "bbox": [
+            55,
+            527,
+            942,
+            555
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "27. Bochniewicz, E.M.; Emmer, G.: McLeod, A.: Barth, I.: Dromerick, A.W.; Lum, P. Measuring Functional Arm Movement after Stroke Using a Single Wrist-Worn Sensor and Machine Learning. J. Stroke Cerebrovasc. Dis. 2017, 26, 2880–2887. [CrossRef]",
+        "bbox": [
+            55,
+            555,
+            942,
+            583
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "28. David, A.; ReethaJanetSureka, S.; Gayathri, S.; Annamalai, S.J.; Samuelkamleshkumar, S.; Kuruvilla, A.; Magimairaj, H.P.; Varadhan, S.K.; Balasubramanian, S. Quantification of the relative arm use in patients with hemiparesis using inertial measurement units. J. Rehabil. Assist. Technol. Eng. 2021, 8, 20556683211019694. [CrossRef]",
+        "bbox": [
+            55,
+            582,
+            942,
+            623
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "29. Gomez-Arrunategui, J.P.; Eng, J.J.; Hodgson, A.J. Monitoring Arm Movements Post-Stroke for Applications in Rehabilitation and Home Settings. IEEE Trans. Neural Syst. Rehabil. Eng. 2022, 30, 2312–2321. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            623,
+            942,
+            650
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "30. Bhagat, N.; King, K.; Ramdeo, R.; Stein, A.; Bouton, C. Determining grasp selection from arm trajectories via deep learning to enable functional hand movement in tetraplegia. Bioelectron. Med. 2020, 6, 17. [CrossRef]",
+        "bbox": [
+            53,
+            651,
+            942,
+            678
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "31. Lui, J.; Menon, C. Would a thermal sensor improve arm motion classification accuracy of a single wrist-mounted inertial device? Biomed. Eng. Online 2019, 18, 53. [CrossRef] [PubMed]",
+        "bbox": [
+            53,
+            677,
+            942,
+            705
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "32. Lang, C.E.; Birkenmeier, R.L. Upper-Extremity Task-Specific Training after Stroke or Disability: A Manualfor Occupational Therapy and Physical Therapy; AOTA Press: Bethesda, MD, USA, 2013.",
+        "bbox": [
+            55,
+            705,
+            942,
+            732
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "33. Yurtman, A.; Barshan, B. Automated evaluation of physical therapy exercises using multi-template dynamic time warping on wearable sensor signals. Comput. Methods Programs Biomed. 2014, 117, 189–207. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            733,
+            941,
+            760
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "34. Williams, H.E.; Hebert, J.S.; Pilarski, P.M.; Shehata, A.W. A Case Series in Position-Aware Myoelectric Prosthesis Control Using Recurrent Convolutional Neural Network Classification with Transfer Learning. IEEE Int. Conf. Rehabil. Robot. 2023, 2023, 1–6.",
+        "bbox": [
+            55,
+            760,
+            942,
+            787
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "35. Totty, M.S.; Wade, E. Muscle Activation and Inertial Motion Data for Noninvasive Classification of Activities of Daily Living. IEEE Trans. Biomed. Eng. 2018, 65, 1069–1076.",
+        "bbox": [
+            53,
+            787,
+            942,
+            814
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "36. Seo, N.J.; Enders, L.R.; Fortune, A.; Cain, S.; Vatinno, A.A.; Schuster, E.; Ramakrishnan, V.; Feng, W. Phase I Safety Trial: Extended Daily Peripheral Sensory Stimulation Using a Wrist-Worn Vibrator in Stroke Survivors. Transl. Stroke Res. 2020, 11, 204–213. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            814,
+            942,
+            854
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "37. Seo, N.J.; Crocher, V.; Spaho, E.; Ewert, C.R.; Fathi, M.F.; Hur, P.; Lum, S.A.; Humanitzki, E.M.; Kelly, A.L.; Ramakrishnan, V.; et al. Capturing Upper Limb Gross Motor Categories Using the Kinect(R) Sensor. Am. J. Occup. Ther. 2019, 73, p1–p7304205090. [CrossRefl[PubMed]",
+        "bbox": [
+            55,
+            854,
+            944,
+            896
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Sensors 2024, 24, 554",
+        "bbox": [
+            55,
+            55,
+            181,
+            70
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13 of 14",
+        "bbox": [
+            889,
+            59,
+            942,
+            72
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "38. Morrow, C.M.; Johnson, E.; Simpson, K.N.; Seo, N.J. Determining Factors that Influence Adoption of New Post-Stroke Sensorimo tor Rehabilitation Devices in the USA. IEEE Trans. Neural Syst. Rehabil. Eng. 2021, 29, 1213–1222. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            103,
+            942,
+            131
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "ref_text",
+        "text": "39. Donoso Brown, E.V.; Nolfi, D.; Wallace, S.E.; Eskander, J.; Hoffman, J.M. Home program practices for supporting and measuring adherence in post-stroke rehabilitation: A scoping review. Top. Stroke Rehabil. 2020, 27, 377–400. [CrossRef]",
+        "bbox": [
+            55,
+            131,
+            941,
+            159
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "ref_text",
+        "text": "40. Takebayashi, T.; Koyama, T.; Amano, S.; Hanada, K.; Tabusadani, M.; Hosomi, M.; Marumoto, K.; Takahashi, K.; Domen, K. A 6-month follow-up after constraint-induced movement therapy with and without transfer package for patients with hemiparesis after stroke: A pilot quasi-randomized controlled trial. Clin. Rehabil. 2013, 27, 418–426. [CrossRef]",
+        "bbox": [
+            55,
+            159,
+            942,
+            200
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "ref_text",
+        "text": "41. Taub, E.; Uswatte, G.; Mark, V.W.; Morris, D.M.; Barman, J.; Bowman, M.H.; Bryson, C.; Delgado, A.; Bishop-McKay, S. Method for enhancing real-world use of a more affected arm in chronic stroke: Transfer package of constraint-induced movement therapy. Stroke 2013, 44, 1383–1388. [CrossRef]",
+        "bbox": [
+            55,
+            200,
+            942,
+            240
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "ref_text",
+        "text": "42. Seo, N.J.; Ramakrishnan, V.; Woodbury, M.L.; Bonilha, L.; Finetto, C.; Schranz, C.; Scronce, G.; Coupland, K.; Blaschke, J.; Baker, A.; et al. Concomitant sensory stimulation during therapy to enhance hand functional recovery post stroke. Trials 2022, 23, 262. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            240,
+            942,
+            281
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "ref_text",
+        "text": "43. Swanson, V.A.; Chan, V.; Cruz-Coble, B.; Alcantara, C.M.; Scott, D.; Jones, M.; Zondervan, D.K.; Khan, N.; Ichimura, J.; Reinkensmeyer, D.J. A Pilot Study of a Sensor Enhanced Activity Management System for Promoting Home Rehabilitation Exercise Performed during the COVID-19 Pandemic: Therapist Experience, Reimbursement, and Recommendations for Implementation. Int. J. Environ. Res. Public Health 2021, 18, 10186. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            281,
+            944,
+            336
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "ref_text",
+        "text": "44. Michaelsen, S.M.; Dannenbaum, R.; Levin, M.F. Task-specific training with trunk restraint on arm recovery in stroke: Randomized control trial. Stroke 2006, 37, 186–192. [CrossRef]",
+        "bbox": [
+            55,
+            336,
+            941,
+            363
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "ref_text",
+        "text": "45. Guadagnoli, M.A.; Lee, T.D. Challenge point: A framework for conceptualizing the effects of various practice conditions in motor learning. J. Mot. Behav. 2004, 36, 212–224. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            363,
+            942,
+            391
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "ref_text",
+        "text": "46. Held, J.P.O.; Luft, A.R.; Veerbeek, J.M. Encouragement-Induced Real-World Upper Limb Use after Stroke by a Tracking and Feedback Device: A Study Protocol for a Multi-Center, Assessor-Blinded, Randomized Controlled Trial. Front. Neurol. 2018, 9, 13. [CrossRef]",
+        "bbox": [
+            55,
+            391,
+            942,
+            431
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "ref_text",
+        "text": "47. Signal, N.E.; McLaren, R.; Rashid, U.; Vandal, A.; King, M.; Almesfer, F.; Henderson, J.; Taylor, D. Haptic Nudges Increase Affected Upper Limb Movement During Inpatient Stroke Rehabilitation: Multiple-Period Randomized Crossover Study. JMIR Mhealth Uhealth 2020, 8, e17036. [CrossRef]",
+        "bbox": [
+            55,
+            431,
+            942,
+            472
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "ref_text",
+        "text": "48. Wei, W.X.; Fong, K.N.; Chung, R.C.; Cheung, H.K.; Chow, E.S. “Remind-to-Move” for Promoting Upper Extremity Recovery Using Wearable Devices in Subacute Stroke: A Multi-Center Randomized Controlled Study. IEEE Trans. Neural Syst. Rehabil. Eng. 2019, 27, 51–59. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            472,
+            942,
+            513
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "ref_text",
+        "text": "49. Seo, N.J.; Woodbury, M.L.; Bonilha, L.; Ramakrishnan, V.; Kautz, S.A.; Downey, R.J.; Dellenbach, B.H.; Lauer, A.W.; Roark, C.M.; Landers, L.E.; et al. TheraBracelet Stimulation During Task-Practice Therapy to Improve Upper Extremity Function After Stroke: A Pilot Randomized Controlled Study. Phys. Ther. 2019, 99, 319–328. [CrossRef]",
+        "bbox": [
+            55,
+            513,
+            942,
+            554
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "ref_text",
+        "text": "50. Jones, M.; Collier, G.; Reinkensmeyer, D.J.; DeRuyter, F.; Dzivak, J.; Zondervan, D.; Morris, J. Big Data Analytics and Sensor Enhanced Activity Management to Improve Effectiveness and Efficiency of Outpatient Medical Rehabilitation. Int. J. Environ. Res. Public Health 2020, 17, 748. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            555,
+            942,
+            595
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "ref_text",
+        "text": "51. Judy, L.M.; Morrow, C.; Seo, N.J. Development and evaluation of an efficient training program to facilitate the adoption of a novel neurorehabilitation device. J. Rehabil. Assist. Technol. Eng. 2023, 10, 20556683231158552. [CrossRef] [PubMed]",
+        "bbox": [
+            55,
+            596,
+            942,
+            623
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Disclaimer/Publisher’s Note: The statements, opinions and data contained in all publications are solely those of the individual author(s) and contributor(s) and not of MDPI and/or the editor(s). MDPI and/or the editor(s) disclaim responsibility for any injury to people or property resulting from any ideas, methods, instructions or products referred to in the content.",
+        "bbox": [
+            52,
+            639,
+            942,
+            683
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Sensors 2024, 24, 554",
+        "bbox": [
+            55,
+            57,
+            179,
+            70
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14 of 14",
+        "bbox": [
+            890,
+            59,
+            942,
+            72
+        ],
+        "page_idx": 13
+    }
+]
