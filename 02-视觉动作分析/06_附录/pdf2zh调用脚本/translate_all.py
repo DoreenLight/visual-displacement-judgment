@@ -71,6 +71,14 @@ References / Bibliography / 参考文献 整节都要翻译成中文：
 
 # ---------------------------------------------------------------- chunking
 IMG_LINE = re.compile(r"^\s*!\[[^\]]*\]\([^)]+\)\s*$")
+IMG_ANY = re.compile(r"!\[[^\]]*\]\(([^)]+)\)")
+NUM_RE = re.compile(r"\d+(?:\.\d+)?")
+URL_RE = re.compile(r"(?:https?://|doi:|arxiv|www\.)\S*", re.I)
+YEARISH = re.compile(r"^(?:19|20)\d{2}$")
+# 只排「前导零的片段」（0003 / 0139 这类 DOI 尾号）。
+# 不能用 \d{5,} —— 那会把 1300000（1.3 million）这类真实数值也排掉。
+DOIISH = re.compile(r"^0*\d{1,3}$|^0{2,}$")
+FENCE_LINE = re.compile(r"^\s*```[^\n]*$", re.M)
 IMG_TAG = re.compile(r"^\s*<img[^>]*>\s*$", re.I)
 FENCE_BLOCK = re.compile(r"```[\s\S]*?```")
 TABLE_BLOCK = re.compile(r"<table[\s\S]*?</table>", re.I)
@@ -134,12 +142,12 @@ def _split_long_paragraph(p: str, max_chars: int) -> list[str]:
 def chunk_markdown(md: str, max_chars: int = 3000) -> list[dict]:
     """把 Markdown 切成块，每块 = {"images": [...], "text": str}。
 
-    关键设计：**图片行与 <table> 完全不进模型**。
-    实测把图片交给模型时，附录里成串的无题注图片会被整段丢弃
-    （MotionAGFormer 丢 6 张）；整表偶尔也会被吃掉（2505.01718 丢 1 张）。
-    所以：
-      - 独占一行的图片 → 抽成 images，随译文原样拼回，永不丢失；
-      - <table> → 抽成 tables，随译文原样拼回（表头保持英文，数据完整）。
+    关键设计：**图片行、<table>、块公式、``` 代码块 完全不进模型**，逐字原样拼回。
+    实测四种丢法都真实发生过：
+      - 附录里成串的无题注图片被整段丢弃（MotionAGFormer 丢 6 张）；
+      - 整表偶尔被吃掉（2505.01718 丢 1 张）；
+      - 块公式被重排空白 / 丢 \tag / 整块漏掉（TokenHMR 少 6 个 $$）；
+      - ``` 代码块被丢（Li2024 丢 2 个）。
     图题/表题（"Figure 10. ..." 这类散文行）仍在 text 里，照常翻译。
     带图的原子块单独成块，保证图与题注的相对位置不被大段文字挤开。
     """
@@ -171,6 +179,12 @@ def chunk_markdown(md: str, max_chars: int = 3000) -> list[dict]:
 
     for a in atoms:
         if TABLE_BLOCK.fullmatch(a.strip()):
+            flush()
+            chunks.append({"images": [a], "text": ""})
+            continue
+        # 块公式与 ``` 代码块同样不进模型：模型会重排 LaTeX 空白、丢 \tag，
+        # 也会整块漏掉。逐字原样拼回才能保证公式一个不少。
+        if FORMULA_BLOCK.fullmatch(a.strip()) or FENCE_BLOCK.fullmatch(a.strip()):
             flush()
             chunks.append({"images": [a], "text": ""})
             continue
@@ -206,17 +220,73 @@ def looks_untranslated(text: str, threshold: float = 0.05) -> bool:
     return zh_ratio(text) < threshold
 
 
-def translate_chunk(client: OpenAI, chunk: str, max_retries: int = 4) -> str:
+# 模型遇到「只有 (a) 这种碎片」时会以为用户在恶作剧，回一段索要完整原文的废话。
+# 这些废话一旦写进译文就是污染，必须当失败处理并改用 nudge 提示重试。
+#
+# 判定用「第二人称称呼 + 索要/否认内容」的组合：学术正文里两者几乎不共现，
+# 而实测拒答句式全部命中（请提供/请补充/粘贴过来/只发送了/看起来只是一个标签/
+# 并没有给出…）。只用单个关键词会误伤正文里的「无法…」，所以必须成对匹配。
+REFUSAL_PERSON = r"(?:您|你|用户)"
+REFUSAL_PERSON = r"(?:您|你|用户)"
+# 注意：触发词只留「请」——「需要…提供」在学术正文里是高频搭配，
+# 用它当触发词会把「需要长时间佩戴…它们并不能直接提供」这种句子误判成拒答。
+# 「未包含」「未提供」同样是正文常用词，也一律不单独当拒答信号。
+REFUSAL_ASK = (r"请[^\n]{0,60}?(?:提供|补充|粘贴|发送|上传|提交|重新|再次|发来|给出|贴出)"
+               r"|(?:你|您|用户)提供的只有|看起来(?:只是|仅仅)"
+               r"|(?:并)?(?:没|未)(?:有)?(?:给出|附上|附带)"
+               r"|没有(?:包含|提供|附上)(?:需要翻译|任何)"
+               r"|(?:无法|不能)(?:进行|完成|识别|识别出)?翻译"
+               r"|无法在没有|我没有办法翻译|我(?:将|即可|就能|可以)(?:按规则|按照)"
+               r"|收到完整|我才能|点击下载"
+               r"|只收到了|只发送了|只给了|只是(?:一个)?(?:标签|标题|片段|词|名称)")
+REFUSAL = re.compile(REFUSAL_PERSON + r"[^\n]{0,90}?" + REFUSAL_ASK, re.S)
+# 不带人称的拒答变体：不少拒答以「请提供……」开头，或用「我将严格遵循……为您翻译」
+# 这类客套收尾。单独列一组，用 ^ 锚定行首/句首，避免误伤正文。
+REFUSAL_ALONE = re.compile(
+    r"(?:^|(?<=[。！？\n])\s*)(?:请|麻烦|需要)\s*(?:您|你)?\s*"
+    r"(?:提供|补充|粘贴|发送|上传|提交|发来)[^\n]{0,40}?"
+    r"(?:文本|内容|原文|Markdown|markdown|论文|材料|片段|完整|Markdown)"
+    r"|(?:收到|收到完整)(?:后|完整)"
+    r"|我(?:将|即可|就能|可以)\s*(?:严格)?\s*(?:遵循|按照)(?:学术翻译规范|规则|要求|规范)"
+    r"|^\s*(?:以下是|以下为)(?:本次|这段|该)")
+NUDGE = (
+    "下面这段是论文正文中的一个碎片（可能是子图标签、小节标题、表头或图题片段）。"
+    "它本身就是完整待翻译内容，不需要额外上下文。\n"
+    "请只输出这段文字的中文译文，保持原有格式与结构，不要解释、不要索要完整原文、"
+    "不要说无法翻译。如果它是 (a)/(b)/(c) 这类子图标签或纯英文术语，原样保留即可。\n\n"
+    "待翻译内容：\n"
+)
+# 数字保真提示：实测模型会把 8.57 写成 8.47 这类数字错位。
+NUM_NUDGE = (
+    "翻译下面这段论文正文。额外硬性要求：\n"
+    "1. 原文里的每一个数字、小数、百分比、误差值、单位系数必须逐字原样出现在译文中，"
+    "不得改写、四舍五入、颠倒数位或调整小数点位置。\n"
+    "2. 数字所在句子的结构可以变，但数字本身一个字符都不能变。\n"
+    "3. 不要输出任何解释、前言或总结。\n\n"
+    "待翻译内容：\n"
+)
+
+
+def is_refusal(text: str) -> bool:
+    if not text:
+        return False
+    return bool(REFUSAL.search(text) or REFUSAL_ALONE.search(text))
+
+
+def translate_chunk(client: OpenAI, chunk: str, max_retries: int = 4,
+                    nudge: bool = False,
+                    allow_images: set[str] | None = None) -> str:
     if not chunk.strip():
         return ""
     last_err = None
     for attempt in range(max_retries):
         try:
+            user = (NUDGE + chunk) if nudge else chunk
             resp = client.chat.completions.create(
                 model=MODEL,
                 messages=[
                     {"role": "system", "content": SYSTEM_PROMPT},
-                    {"role": "user", "content": chunk},
+                    {"role": "user", "content": user},
                 ],
                 temperature=0.2,
                 stream=False,
@@ -229,18 +299,35 @@ def translate_chunk(client: OpenAI, chunk: str, max_retries: int = 4) -> str:
                 content = re.sub(r"\n?```$", "", content)
             if not content:
                 raise ValueError("empty response")
-            # 极短碎片（图题、纯公式、纯表格骨架）没有足够英文可判，不做校验
+            if is_refusal(content):
+                raise ValueError("model returned a refusal / meta response")
+            # 极短碎片（图题、纯公式、纯表格骨架）没有足够英文可判，不做译文校验
             if len(re.findall(r"[A-Za-z]{4,}", chunk)) < 6:
-                return content
+                return _strip_bogus_images(content, allow_images)
             if looks_untranslated(content):
                 raise ValueError(
                     f"response not translated (zh_ratio={zh_ratio(content):.3f})")
-            return content
+            return _strip_bogus_images(content, allow_images)
         except Exception as e:  # noqa: BLE001
             last_err = e
             wait = min(2 ** attempt * 2, 20)
             time.sleep(wait)
     raise RuntimeError(f"chunk failed after {max_retries} tries: {last_err}")
+
+
+def _strip_bogus_images(text: str, allow: set[str] | None) -> str:
+    """清理模型输出里的两类杂质。
+
+    1. 幻觉图片：模型造出过 ![](images/xxx.jpg)，只保留源里真实存在的路径。
+    2. 残留 ``` 围栏：真实代码块已由分块器抽走逐字回填，模型再吐 ``` 就是
+       多余噪声（实测 MotionAGFormer 凭空多 2 个、Li2024 多 2 个）。
+    """
+    if not allow:
+        text = IMG_ANY.sub("", text)
+    else:
+        text = IMG_ANY.sub(
+            lambda m: m.group(0) if m.group(1) in allow else "", text)
+    return FENCE_LINE.sub("", text)
 
 
 # ---------------------------------------------------------------- cache
@@ -297,8 +384,124 @@ def sync_images(en_md: Path, paper_dir: Path) -> int:
     return n
 
 
+def _norm_ws(s: str) -> str:
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def _is_mathy(p: str) -> bool:
+    """公式/代码/表格骨架：不能当英文回显删掉。
+
+    这类段落一个汉字都没有，但它们是原文的逐字内容，删了就是丢公式。
+    判据：含数学定界符或 LaTeX 命令，或非空白字符里数学符号占比高。
+    """
+    if re.search(r"[$`\\%]|\\begin|\\end|\\frac|\\sum|\\int", p):
+        return True
+    core = re.sub(r"\s", "", p)
+    if not core:
+        return False
+    mathy = sum(1 for c in core if c in "=+-*/^_{}<>()[]|&")
+    return mathy / len(core) > 0.10
+
+
+def strip_echo(out: str, src: str) -> str:
+    """去掉模型「先原样复读英文、再给译文」的重复段落。
+
+    实测 29 篇里有 200 处这种回显：段落被原样贴一遍，紧接着才是中文。
+    中文已经在，留着英文只是噪声，还会把中文占比指标压低。
+    判据：整段几乎无中文（zh<0.10）、英文词数够多、能在原文里找到同样的文字。
+    必须排除公式/代码块（见 _is_mathy）——它们同样无中文且逐字来自原文，
+    但它们是内容不是回显。
+    """
+    if not out or not src:
+        return out
+    src_n = _norm_ws(src)
+    keep: list[str] = []
+    for para in out.split("\n\n"):
+        p = para.strip()
+        if not p:
+            continue
+        if _is_mathy(p):
+            keep.append(para)
+            continue
+        words = len(re.findall(r"[A-Za-z]{2,}", p))
+        if words >= 12 and zh_ratio(p) < 0.10:
+            probe = _norm_ws(p)[:120]
+            if probe and probe in src_n:
+                continue  # 原文复读，丢弃
+        keep.append(para)
+    return "\n\n".join(keep) if keep else out
+
+
+def restore_structural(out: str, src: str) -> str:
+    """把源里存在、译文里丢失的 $$公式$$ 与 ```代码块``` 原样补回去。
+
+    模型偶尔会漏掉整块公式；de-echo 早期版本也误删过。这里做一次确定性补偿：
+    只要源里有、译文里找不到（按归一化空白比对），就把原文块追加回去。
+    宁可位置稍偏，也不能丢公式。
+    """
+    if not out or not src:
+        return out
+    out_n = _norm_ws(out)
+    missing: list[str] = []
+    for m in re.finditer(r"\$\$[\s\S]*?\$\$|```[\s\S]*?```", src):
+        blk = m.group(0)
+        if len(_norm_ws(blk)) < 8:
+            continue
+        if _norm_ws(blk) not in out_n:
+            missing.append(blk)
+    if not missing:
+        return out
+    return out.rstrip() + "\n\n" + "\n\n".join(missing)
+
+
+def data_nums(t: str) -> set[str]:
+    """「像数据」的数字集合：小数点、或 2 位及以上；排除年份与 DOI 尾号。
+
+    章节号/图号/文献条目号翻来翻去都是那几种，不值得为它们重跑；
+    真正会伤到结论的是 8.57 被写成 8.47 这种，所以只盯带小数点和多位数。
+    注意：不能按 References 标题截断——MinerU 会把末张大表排在参考文献之后
+    （Jamsrandorj2022-EMBC 的 Table VI 就在 ## 参考文献 之后），
+    一截断就把表里的数据全算成「丢失」。改用逐行剥离文献条目。
+    """
+    t = URL_RE.sub(" ", t)
+    t = re.sub(r"^\s*(?:\[\w+\]|\d+[.)])\s+\S.*$", " ", t, flags=re.M)
+    out: set[str] = set()
+    for x in NUM_RE.findall(t):
+        if YEARISH.match(x) or DOIISH.match(x):
+            continue
+        if "." in x or len(x) >= 2:
+            out.add(x)
+    return out
+
+
+def _translate_one(client: OpenAI, chunk: dict, num_focus: bool = False) -> str:
+    """先正常翻；模型要是回「请提供完整原文」这类废话，改用 nudge 提示重试。
+
+    实测孤立碎片（单独的 `(a)`、`Table 2 Continued`、光杆小节标题）会触发拒答，
+    nudge 后能正常产出；再失败就原样透传，绝不把拒答写进译文。
+    num_focus=True 时优先用数字保真提示（治 8.57→8.47 这类数位错位）。
+    """
+    allow = {IMG_ANY.match(i.strip()).group(1) for i in chunk["images"]
+             if IMG_ANY.match(i.strip())}
+    first = {"nudge": True} if num_focus else {}
+    out = None
+    try:
+        out = translate_chunk(client, chunk["text"], allow_images=allow, **first)
+    except Exception:  # noqa: BLE001
+        out = None
+    if out is None:
+        second = {} if num_focus else {"nudge": True}
+        try:
+            out = translate_chunk(client, chunk["text"], allow_images=allow, **second)
+        except Exception:  # noqa: BLE001
+            return _strip_bogus_images(chunk["text"], allow)
+    out = strip_echo(out, chunk["text"])
+    return restore_structural(out, chunk["text"])
+
+
 def process_paper(row: dict, client: OpenAI, workers: int,
-                  chunk_size: int, dry_run: bool) -> dict:
+                  chunk_size: int, dry_run: bool, repair: bool = False,
+                  deecho: bool = False, fixnums: bool = False) -> dict:
     name = row["name"]
     en_md = row["en_md"]
     pdf = row["pdf"]
@@ -311,9 +514,49 @@ def process_paper(row: dict, client: OpenAI, workers: int,
 
     md = Path(en_md).read_text(encoding="utf-8")
     chunks = chunk_markdown(md, chunk_size)
-    # v2：分块器改为图片/表格不进模型，块结构变了，缓存必须换命名空间
-    key = f"v2::{name}"
+    # v3：块公式与 ``` 代码块也改为不进模型，块结构变了，缓存换命名空间
+    key = f"v3::{name}"
     results = load_cache(key, len(chunks))
+    if repair:
+        # 只把被污染的块重新置空：拒答废话 / 幻觉图片引用
+        for i, r in enumerate(results):
+            if r is None:
+                continue
+            allowed = {m.group(1) for img in chunks[i]["images"]
+                       for m in [IMG_ANY.search(img)] if m}
+            if is_refusal(r) or any(p not in allowed for p in IMG_ANY.findall(r)):
+                results[i] = None
+        save_cache(key, len(chunks), results)
+    elif deecho:
+        # 纯本地处理：删英文复读段 + 补回可能被删的公式/代码块，不调 API
+        n = n2 = 0
+        for i, r in enumerate(results):
+            if r is None:
+                continue
+            src = chunks[i]["text"]
+            cleaned = strip_echo(r, src)
+            cleaned = FENCE_LINE.sub("", cleaned)   # 模型残留的 ``` 围栏
+            if cleaned != r:
+                n += 1
+            fixed = restore_structural(cleaned, src)
+            if fixed != cleaned:
+                n2 += 1
+            results[i] = fixed
+        save_cache(key, len(chunks), results)
+        if n or n2:
+            print(f"      去回显 {n} 块 / 补公式代码 {n2} 块", flush=True)
+    elif fixnums:
+        # 重跑「原文有的数字在译文里找不到」的块，用数字保真提示
+        n = 0
+        for i, r in enumerate(results):
+            if r is None or not chunks[i]["text"].strip():
+                continue
+            if data_nums(chunks[i]["text"]) - data_nums(r):
+                results[i] = None
+                n += 1
+        save_cache(key, len(chunks), results)
+        if n:
+            print(f"      数字对不上 {n} 块，待重译", flush=True)
     todo = [i for i, r in enumerate(results) if r is None]
 
     n_img_refs = sum(len(c["images"]) for c in chunks)
@@ -338,7 +581,7 @@ def process_paper(row: dict, client: OpenAI, workers: int,
                 results[i] = ""
         if need:
             with ThreadPoolExecutor(max_workers=workers) as ex:
-                futs = {ex.submit(translate_chunk, client, chunks[i]["text"]): i
+                futs = {ex.submit(_translate_one, client, chunks[i], fixnums): i
                         for i in need}
                 for n, f in enumerate(as_completed(futs), 1):
                     i = futs[f]
@@ -381,6 +624,12 @@ def main() -> int:
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--chunk-size", type=int, default=3000)
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--repair", action="store_true",
+                    help="只重跑被污染的块（拒答/幻觉图片），其余走缓存")
+    ap.add_argument("--deecho", action="store_true",
+                    help="只删英文复读段（纯本地，不调 API）")
+    ap.add_argument("--fixnums", action="store_true",
+                    help="重跑数字对不上的块（治 8.57→8.47 这类数位错位）")
     ap.add_argument("--limit", type=int, default=0)
     args = ap.parse_args()
 
@@ -413,7 +662,9 @@ def main() -> int:
     for i, r in enumerate(rows, 1):
         print(f"\n[{i}/{len(rows)}] {r['name']}", flush=True)
         try:
-            res = process_paper(r, client, args.workers, args.chunk_size, False)
+            res = process_paper(r, client, args.workers, args.chunk_size, False,
+                                repair=args.repair, deecho=args.deecho,
+                                fixnums=args.fixnums)
         except Exception as e:  # noqa: BLE001
             res = {"name": r["name"], "status": "FAIL", "error": str(e)[:300]}
         report.append(res)

@@ -1,0 +1,395 @@
+# ELECTRA: PRE-TRAINING TEXT ENCODERS AS DISCRIMINATORS RATHER THAN GENERATORS
+
+Kevin Clark Stanford University kevclark@cs.stanford.edu
+
+Minh-Thang Luong Google Brain thangluong@google.com
+
+Quoc V. Le Google Brain qvl@google.com
+
+Christopher D. Manning Stanford University & CIFAR Fellow manning@cs.stanford.edu
+
+## ABSTRACT
+
+Masked language modeling (MLM) pre-training methods such as BERT corrupt the input by replacing some tokens with [MASK] and then train a model to reconstruct the original tokens. While they produce good results when transferred to downstream NLP tasks, they generally require large amounts of compute to be effective. As an alternative, we propose a more sample-efficient pre-training task called replaced token detection. Instead of masking the input, our approach corrupts it by replacing some tokens with plausible alternatives sampled from a small generator network. Then, instead of training a model that predicts the original identities of the corrupted tokens, we train a discriminative model that predicts whether each token in the corrupted input was replaced by a generator sample or not. Thorough experiments demonstrate this new pre-training task is more efficient than MLM because the task is defined over all input tokens rather than just the small subset that was masked out. As a result, the contextual representations learned by our approach substantially outperform the ones learned by BERT given the same model size, data, and compute. The gains are particularly strong for small models; for example, we train a model on one GPU for 4 days that outperforms GPT (trained using 30x more compute) on the GLUE natural language understanding benchmark. Our approach also works well at scale, where it performs comparably to RoBERTa and XLNet while using less than 1/4 of their compute and outperforms them when using the same amount of compute.
+
+## 1 INTRODUCTION
+
+Current state-of-the-art representation learning methods for language can be viewed as learning denoising autoencoders (Vincent et al., 2008). They select a small subset of the unlabeled input sequence (typically 15%), mask the identities of those tokens (e.g., BERT; Devlin et al. (2019)) or attention to those tokens (e.g., XLNet; Yang et al. (2019)), and then train the network to recover the original input. While more effective than conventional language-model pre-training due to learning bidirectional representations, these masked language modeling (MLM) approaches incur a substantial compute cost because the network only learns from 15% of the tokens per example.
+
+As an alternative, we propose replaced token detection, a pre-training task in which the model learns to distinguish real input tokens from plausible but synthetically generated replacements. Instead of masking, our method corrupts the input by replacing some tokens with samples from a proposal distribution, which is typically the output of a small masked language model. This corruption procedure solves a mismatch in BERT (although not in XLNet) where the network sees artificial [MASK] tokens during pre-training but not when being fine-tuned on downstream tasks. We then pre-train the network as a discriminator that predicts for every token whether it is an original or a replacement. In contrast, MLM trains the network as a generator that predicts the original identities of the corrupted tokens. A key advantage of our discriminative task is that the model learns from all input tokens instead of just the small masked-out subset, making it more computationally efficient. Although our approach is reminiscent of training the discriminator of a GAN, our method is not adversarial in that the generator producing corrupted tokens is trained with maximum likelihood due to the difficulty of applying GANs to text (Caccia et al., 2018).
+
+![](images/e0af1cdf7129978403e8717c7f3cd8c64a46247704094c89239dc5bdc2e9235c.jpg)  
+Figure 1: Replaced token detection pre-training consistently outperforms masked language model pre-training given the same compute budget. The left figure is a zoomed-in view of the dashed box.
+
+We call our approach ELECTRA<sup>1</sup> for “Efficiently Learning an Encoder that Classifies Token Replacements Accurately.” As in prior work, we apply it to pre-train Transformer text encoders (Vaswani et al., 2017) that can be fine-tuned on downstream tasks. Through a series of ablations, we show that learning from all input positions causes ELECTRA to train much faster than BERT. We also show ELECTRA achieves higher accuracy on downstream tasks when fully trained.
+
+Most current pre-training methods require large amounts of compute to be effective, raising concerns about their cost and accessibility. Since pre-training with more compute almost always results in better downstream accuracies, we argue an important consideration for pre-training methods should be compute efficiency as well as absolute downstream performance. From this viewpoint, we train ELECTRA models of various sizes and evaluate their downstream performance vs. their compute requirement. In particular, we run experiments on the GLUE natural language understanding benchmark (Wang et al., 2019) and SQuAD question answering benchmark (Rajpurkar et al., 2016). ELECTRA substantially outperforms MLM-based methods such as BERT and XLNet given the same model size, data, and compute (see Figure 1). For example, we build an ELECTRA-Small model that can be trained on 1 GPU in 4 days.<sup>2</sup> ELECTRA-Small outperforms a comparably small BERT model by 5 points on GLUE, and even outperforms the much larger GPT model (Radford et al., 2018). Our approach also works well at large scale, where we train an ELECTRA-Large model that performs comparably to RoBERTa (Liu et al., 2019) and XLNet (Yang et al., 2019), despite having fewer parameters and using 1/4 of the compute for training. Training ELECTRA-Large further results in an even stronger model that outperforms ALBERT (Lan et al., 2019) on GLUE and sets a new state-of-the-art for SQuAD 2.0. Taken together, our results indicate that the discriminative task of distinguishing real data from challenging negative samples is more compute-efficient and parameter-efficient than existing generative approaches for language representation learning.
+
+## 2 METHOD
+
+We first describe the replaced token detection pre-training task; see Figure 2 for an overview. We suggest and evaluate several modeling improvements for this method in Section 3.2.
+
+![](images/51d2d5645f48e745e977188d51d7182446d728ba5e095f09548d20d90cd1ac09.jpg)  
+Figure 2: An overview of replaced token detection. The generator can be any model that produces an output distribution over tokens, but we usually use a small masked language model that is trained jointly with the discriminator. Although the models are structured like in a GAN, we train the generator with maximum likelihood rather than adversarially due to the difficulty of applying GANs to text. After pre-training, we throw out the generator and only fine-tune the discriminator (the ELECTRA model) on downstream tasks.
+
+Our approach trains two neural networks, a generator $G$ and a discriminator $D .$ . Each one primarily consists of an encoder (e.g., a Transformer network) that maps a sequence on input tokens ${ \textbf { \em x } } =$ $[ x _ { 1 } , . . . , x _ { n } ]$ into a sequence of contextualized vector representations $h ( \bar { \pmb { x } } ) = [ h _ { 1 } , . . . , \bar { h } _ { n } ]$ . For a given position t, (in our case only positions where $x _ { t } = \mathrm { [ M A S K ] } )$ , the generator outputs a probability for generating a particular token $x _ { t }$ with a softmax layer:
+
+$$
+p _ {G} (x _ {t} | \boldsymbol {x}) = \exp \left(e (x _ {t}) ^ {T} h _ {G} (\boldsymbol {x}) _ {t}\right) / \sum_ {x ^ {\prime}} \exp \left(e (x ^ {\prime}) ^ {T} h _ {G} (\boldsymbol {x}) _ {t}\right)
+$$
+
+where e denotes token embeddings. For a given position t, the discriminator predicts whether the token $x _ { t }$ is $\mathrm { \bf \ddot { r e a l } } , \mathrm { \bf \ddot { i } . e . }$ , that it comes from the data rather than the generator distribution, with a sigmoid output layer:
+
+$$
+D (\boldsymbol {x}, t) = \operatorname{sigmoid} (w ^ {T} h _ {D} (\boldsymbol {x}) _ {t})
+$$
+
+The generator is trained to perform masked language modeling (MLM). Given an input ${ \textbf { \em x } } =$ $[ x _ { 1 } , x _ { 2 } , . . . , x _ { n } ]$ , MLM first select a random set of positions (integers between 1 and n) to mask out $m = [ \widehat { m _ { 1 } } , . . . , m _ { k } ] . ^ { 3 }$ The tokens in the selected positions are replaced with a [MASK] token: we denote this as ${ \pmb x } ^ { \mathrm { m a s k e d } } = \mathrm { R E P L A C E } ( { \pmb x } , m$ , [MASK]). The generator then learns to predict the original identities of the masked-out tokens. The discriminator is trained to distinguish tokens in the data from tokens that have been replaced by generator samples. More specifically, we create a corrupted example $\pmb { x } ^ { \mathrm { c o r r u p t } }$ by replacing the masked-out tokens with generator samples and train the discriminator to predict which tokens in $\pmb { x } ^ { \mathrm { c o r r u p t } }$ match the original input x. Formally, model inputs are constructed according to
+
+$$
+\begin{array}{l l} m _ {i} \sim \text { unif } \{1, n \} \text { for } i = 1 \text { to } k & \quad \boldsymbol {x} ^ {\text { masked }} = \text { REPLACE } (\boldsymbol {x}, \boldsymbol {m}, [ \text { MASK } ]) \\ \hat {x} _ {i} \sim p _ {G} (x _ {i} | \boldsymbol {x} ^ {\text { masked }}) \text { for } i \in \boldsymbol {m} & \quad \boldsymbol {x} ^ {\text { corrupt }} = \text { REPLACE } (\boldsymbol {x}, \boldsymbol {m}, \hat {\boldsymbol {x}}) \end{array}
+$$
+
+and the loss functions are
+
+$$
+\begin{array}{l} \mathcal {L} _ {\mathrm{MLM}} (\boldsymbol {x}, \theta_ {G}) = \mathbb {E} \left(\sum_ {i \in \boldsymbol {m}} - \log p _ {G} (x _ {i} | \boldsymbol {x} ^ {\text { masked }})\right) \\ \mathcal {L} _ {\mathrm{Disc}} (\boldsymbol {x}, \theta_ {D}) = \mathbb {E} \left(\sum_ {t = 1} ^ {n} - \mathbb {1} (x _ {t} ^ {\text { corrupt }} = x _ {t}) \log D (\boldsymbol {x} ^ {\text { corrupt }}, t) - \mathbb {1} (x _ {t} ^ {\text { corrupt }} \neq x _ {t}) \log (1 - D (\boldsymbol {x} ^ {\text { corrupt }}, t))\right) \end{array}
+$$
+
+Although similar to the training objective of a GAN, there are several key differences. First, if the generator happens to generate the correct token, that token is considered “real” instead $0 \mathrm { f } \ ^ { \mathrm { 6 4 } } \mathrm { f a k e } ^ { \mathrm { 7 } } ;$ we found this formulation to moderately improve results on downstream tasks. More importantly, the generator is trained with maximum likelihood rather than being trained adversarially to fool the discriminator. Adversarially training the generator is challenging because it is impossible to backpropagate through sampling from the generator. Although we experimented circumventing this issue by using reinforcement learning to train the generator (see Appendix F), this performed worse than maximum-likelihood training. Lastly, we do not supply the generator with a noise vector as input, as is typical with a GAN.
+
+We minimize the combined loss
+
+$$
+\min _ {\theta_ {G}, \theta_ {D}} \sum_ {\boldsymbol {x} \in \mathcal {X}} \mathcal {L} _ {\mathrm{MLM}} (\boldsymbol {x}, \theta_ {G}) + \lambda \mathcal {L} _ {\mathrm{Disc}} (\boldsymbol {x}, \theta_ {D})
+$$
+
+over a large corpus X of raw text. We approximate the expectations in the losses with a single sample. We don’t back-propagate the discriminator loss through the generator (indeed, we can’t because of the sampling step). After pre-training, we throw out the generator and fine-tune the discriminator on downstream tasks.
+
+## 3 EXPERIMENTS
+
+## 3.1 EXPERIMENTAL SETUP
+
+We evaluate on the General Language Understanding Evaluation (GLUE) benchmark (Wang et al., 2019) and Stanford Question Answering (SQuAD) dataset (Rajpurkar et al., 2016). GLUE contains a variety of tasks covering textual entailment (RTE and MNLI) question-answer entailment (QNLI), paraphrase (MRPC), question paraphrase (QQP), textual similarity (STS), sentiment (SST), and linguistic acceptability (CoLA). See Appendix C for more details on the GLUE tasks. Our evaluation metrics are Spearman correlation for STS, Matthews correlation for CoLA, and accuracy for the other GLUE tasks; we generally report the average score over all tasks. For SQuAD, we evaluate on versions 1.1, in which models select the span of text answering a question, and 2.0, in which some questions are unanswerable by the passage. We use the standard evaluation metrics of Exact-Match (EM) and F1 scores. For most experiments we pre-train on the same data as BERT, which consists of 3.3 Billion tokens from Wikipedia and BooksCorpus (Zhu et al., 2015). However, for our Large model we pre-trained on the data used for XLNet (Yang et al., 2019), which extends the BERT dataset to 33B tokens by including data from ClueWeb (Callan et al., 2009), CommonCrawl, and Gigaword (Parker et al., 2011). All of the pre-training and evaluation is on English data, although we think it would be interesting to apply our methods to multilingual data in the future.
+
+Our model architecture and most hyperparameters are the same as BERT’s. For fine-tuning on GLUE, we add simple linear classifiers on top of ELECTRA. For SQuAD, we add the questionanswering module from XLNet on top of ELECTRA, which is slightly more sophisticated than BERT’s in that it jointly rather than independently predicts the start and end positions and has a “answerability” classifier added for SQuAD 2.0. Some of our evaluation datasets are small, which means accuracies of fine-tuned models can vary substantially depending on the random seed. We therefore report the median of 10 fine-tuning runs from the same pre-trained checkpoint for each result. Unless stated otherwise, results are on the dev set. See the appendix for further training details and hyperparameter values.
+
+## 3.2 MODEL EXTENSIONS
+
+We improve our method by proposing and evaluating several extensions to the model. Unless stated otherwise, these experiments use the same model size and training data as BERT-Base.
+
+Weight Sharing We propose improving the efficiency of the pre-training by sharing weights between the generator and discriminator. If the generator and discriminator are the same size, all of the transformer weights can be tied. However, we found it to be more efficient to have a small generator, in which case we only share the embeddings (both the token and positional embeddings) of the generator and discriminator. In this case we use embeddings the size of the discriminator’s hidden states.<sup>4</sup> The “input” and “output” token embeddings of the generator are always tied as in BERT.
+
+We compare the weight tying strategies when the generator is the same size as the discriminator. We train these models for 500k steps. GLUE scores are 83.6 for no weight tying, 84.3 for tying token embeddings, and 84.4 for tying all weights. We hypothesize that ELECTRA benefits from tied token embeddings because masked language modeling is particularly effective at learning these representations: while the discriminator only updates tokens that are present in the input or are sampled by the generator, the generator’s softmax over the vocabulary densely updates all token embeddings. On the other hand, tying all encoder weights caused little improvement while incurring the significant disadvantage of requiring the generator and discriminator to be the same size. Based on these findings, we use tied embeddings for further experiments in this paper.
+
+![](images/9758d52f971bc66882cf806a9a968ad81a756919e3047a842657349fa99cf8b4.jpg)
+
+![](images/30a1b7bfacee378cc2cd3ae7fecc8d3a6aaa768c1f36e217e0ba7325884492ea.jpg)  
+Figure 3: Left: GLUE scores for different generator/discriminator sizes (number of hidden units). Interestingly, having a generator smaller than the discriminator improves results. Right: Comparison of different training algorithms. As our focus is on efficiency, the x-axis shows FLOPs rather than train steps (e.g., ELECTRA is trained for fewer steps than BERT because it includes the generator).
+
+Smaller Generators If the generator and discriminator are the same size, training ELECTRA would take around twice as much compute per step as training only with masked language modeling. We suggest using a smaller generator to reduce this factor. Specifically, we make models smaller by decreasing the layer sizes while keeping the other hyperparameters constant. We also explore using an extremely simple “unigram” generator that samples fake tokens according their frequency in the train corpus. GLUE scores for differently-sized generators and discriminators are shown in the left of Figure 3. All models are trained for 500k steps, which puts the smaller generators at a disadvantage in terms of compute because they require less compute per training step. Nevertheless, we find that models work best with generators 1/4-1/2 the size of the discriminator. We speculate that having too strong of a generator may pose a too-challenging task for the discriminator, preventing it from learning as effectively. In particular, the discriminator may have to use many of its parameters modeling the generator rather than the actual data distribution. Further experiments in this paper use the best generator size found for the given discriminator size.
+
+Training Algorithms Lastly, we explore other training algorithms for ELECTRA, although these did not end up improving results. The proposed training objective jointly trains the generator and discriminator. We experiment with instead using the following two-stage training procedure:
+
+1. Train only the generator with ${ \mathcal { L } } _ { \mathrm { M L M } }$ for n steps.
+
+2. Initialize the weights of the discriminator with the weights of the generator. Then train the discriminator with $\mathcal { L } _ { \mathrm { D i s c } }$ for n steps, keeping the generator’s weights frozen.
+
+Note that the weight initialization in this procedure requires having the same size for the generator and discriminator. We found that without the weight initialization the discriminator would sometimes fail to learn at all beyond the majority class, perhaps because the generator started so far ahead of the discriminator. Joint training on the other hand naturally provides a curriculum for the discriminator where the generator starts off weak but gets better throughout training. We also explored training the generator adversarially as in a GAN, using reinforcement learning to accommodate the discrete operations of sampling from the generator. See Appendix F for details.
+
+Results are shown in the right of Figure 3. During two-stage training, downstream task performance notably improves after the switch from the generative to the discriminative objective, but does not end up outscoring joint training. Although still outperforming BERT, we found adversarial training to underperform maximum-likelihood training. Further analysis suggests the gap is caused by two problems with adversarial training. First, the adversarial generator is simply worse at masked language modeling; it achieves 58% accuracy at masked language modeling compared to 65% accuracy for an MLE-trained one. We believe the worse accuracy is mainly due to the poor sample efficiency of reinforcement learning when working in the large action space of generating text. Secondly, the adversarially trained generator produces a low-entropy output distribution where most of the probability mass is on a single token, which means there is not much diversity in the generator samples. Both of these problems have been observed in GANs for text in prior work (Caccia et al., 2018).
+
+<table><tr><td>Model</td><td>Train / Infer FLOPs</td><td>Speedup</td><td>Params</td><td>Train Time + Hardware</td><td>GLUE</td></tr><tr><td>ELMo</td><td>3.3e18 / 2.6e10</td><td>19x / 1.2x</td><td>96M</td><td>14d on 3 GTX 1080 GPUs</td><td>71.2</td></tr><tr><td>GPT</td><td>4.0e19 / 3.0e10</td><td>1.6x / 0.97x</td><td>117M</td><td>25d on 8 P6000 GPUs</td><td>78.8</td></tr><tr><td>BERT-Small</td><td>1.4e18 / 3.7e9</td><td>45x / 8x</td><td>14M</td><td>4d on 1 V100 GPU</td><td>75.1</td></tr><tr><td>BERT-Base</td><td>6.4e19 / 2.9e10</td><td>1x / 1x</td><td>110M</td><td>4d on 16 TPUv3s</td><td>82.2</td></tr><tr><td>ELECTRA-Small</td><td>1.4e18 / 3.7e9</td><td>45x / 8x</td><td>14M</td><td>4d on 1 V100 GPU</td><td>79.9</td></tr><tr><td>50% trained</td><td>7.1e17 / 3.7e9</td><td>90x / 8x</td><td>14M</td><td>2d on 1 V100 GPU</td><td>79.0</td></tr><tr><td>25% trained</td><td>3.6e17 / 3.7e9</td><td>181x / 8x</td><td>14M</td><td>1d on 1 V100 GPU</td><td>77.7</td></tr><tr><td>12.5% trained</td><td>1.8e17 / 3.7e9</td><td>361x / 8x</td><td>14M</td><td>12h on 1 V100 GPU</td><td>76.0</td></tr><tr><td>6.25% trained</td><td>8.9e16 / 3.7e9</td><td>722x / 8x</td><td>14M</td><td>6h on 1 V100 GPU</td><td>74.1</td></tr><tr><td>ELECTRA-Base</td><td>6.4e19 / 2.9e10</td><td>1x / 1x</td><td>110M</td><td>4d on 16 TPUv3s</td><td>85.1</td></tr></table>
+
+Table 1: Comparison of small models on the GLUE dev set. BERT-Small/Base are our implementation and use the same hyperparameters as ELECTRA-Small/Base. Infer FLOPs assumes single length-128 input. Training times should be taken with a grain of salt as they are for different hardware and with sometimes un-optimized code. ELECTRA performs well even when trained on a single GPU, scoring 5 GLUE points higher than a comparable BERT model and even outscoring the much larger GPT model.
+
+## 3.3 SMALL MODELS
+
+As a goal of this work is to improve the efficiency of pre-training, we develop a small model that can be quickly trained on a single GPU. Starting with the BERT-Base hyperparameters, we shortened the sequence length (from 512 to 128), reduced the batch size (from 256 to 128), reduced the model’s hidden dimension size (from 768 to 256), and used smaller token embeddings (from 768 to 128). To provide a fair comparison, we also train a BERT-Small model using the same hyperparameters. We train BERT-Small for 1.5M steps, so it uses the same training FLOPs as ELECTRA-Small, which was trained for 1M steps.<sup>5</sup> In addition to BERT, we compare against two less resource-intensive pre-training methods based on language modeling: ELMo (Peters et al., 2018) and GPT (Radford et al., 2018).<sup>6</sup> We also show results for a base-sized ELECTRA model comparable to BERT-Base.
+
+Results are shown in Table 1. See Appendix D for additional results, including stronger small-sized and base-sized models trained with more compute. ELECTRA-Small performs remarkably well given its size, achieving a higher GLUE score than other methods using substantially more compute and parameters. For example, it scores 5 points higher than a comparable BERT-Small model and even outperforms the much larger GPT model. ELECTRA-Small is trained mostly to convergence, with models trained for even less time (as little as 6 hours) still achieving reasonable performance. While small models distilled from larger pre-trained transformers can also achieve good GLUE scores (Sun et al., 2019b; Jiao et al., 2019), these models require first expending substantial compute to pre-train the larger teacher model. The results also demonstrate the strength of ELECTRA at a moderate size; our base-sized ELECTRA model substantially outperforms BERT-Base and even outperforms BERT-Large (which gets 84.0 GLUE score). We hope ELECTRA’s ability to achieve strong results with relatively little compute will broaden the accessibility of developing and applying pre-trained models in NLP.
+
+<table><tr><td>Model</td><td>Train FLOPs</td><td>Params</td><td>CoLA</td><td>SST</td><td>MRPC</td><td>STS</td><td>QQP</td><td>MNLI</td><td>QNLI</td><td>RTE</td><td>Avg.</td></tr><tr><td>BERT</td><td>1.9e20 (0.27x)</td><td>335M</td><td>60.6</td><td>93.2</td><td>88.0</td><td>90.0</td><td>91.3</td><td>86.6</td><td>92.3</td><td>70.4</td><td>84.0</td></tr><tr><td>RoBERTa-100K</td><td>6.4e20 (0.90x)</td><td>356M</td><td>66.1</td><td>95.6</td><td>91.4</td><td>92.2</td><td>92.0</td><td>89.3</td><td>94.0</td><td>82.7</td><td>87.9</td></tr><tr><td>RoBERTa-500K</td><td>3.2e21 (4.5x)</td><td>356M</td><td>68.0</td><td>96.4</td><td>90.9</td><td>92.1</td><td>92.2</td><td>90.2</td><td>94.7</td><td>86.6</td><td>88.9</td></tr><tr><td>XLNet</td><td>3.9e21 (5.4x)</td><td>360M</td><td>69.0</td><td>97.0</td><td>90.8</td><td>92.2</td><td>92.3</td><td>90.8</td><td>94.9</td><td>85.9</td><td>89.1</td></tr><tr><td>BERT (ours)</td><td>7.1e20 (1x)</td><td>335M</td><td>67.0</td><td>95.9</td><td>89.1</td><td>91.2</td><td>91.5</td><td>89.6</td><td>93.5</td><td>79.5</td><td>87.2</td></tr><tr><td>ELECTRA-400K</td><td>7.1e20 (1x)</td><td>335M</td><td>69.3</td><td>96.0</td><td>90.6</td><td>92.1</td><td>92.4</td><td>90.5</td><td>94.5</td><td>86.8</td><td>89.0</td></tr><tr><td>ELECTRA-1.75M</td><td>3.1e21 (4.4x)</td><td>335M</td><td>69.1</td><td>96.9</td><td>90.8</td><td>92.6</td><td>92.4</td><td>90.9</td><td>95.0</td><td>88.0</td><td>89.5</td></tr></table>
+
+Table 2: Comparison of large models on the GLUE dev set. ELECTRA and RoBERTa are shown for different numbers of pre-training steps, indicated by the numbers after the dashes. ELECTRA performs comparably to XLNet and RoBERTa when using less than 1/4 of their pre-training compute and outperforms them when given a similar amount of pre-training compute. BERT dev results are from Clark et al. (2019).
+
+<table><tr><td>Model</td><td>Train FLOPs</td><td>CoLA</td><td>SST</td><td>MRPC</td><td>STS</td><td>QQP</td><td>MNLI</td><td>QNLI</td><td>RTE</td><td>WNLI</td><td>Avg.*</td><td>Score</td></tr><tr><td>BERT</td><td>1.9e20 (0.06x)</td><td>60.5</td><td>94.9</td><td>85.4</td><td>86.5</td><td>89.3</td><td>86.7</td><td>92.7</td><td>70.1</td><td>65.1</td><td>79.8</td><td>80.5</td></tr><tr><td>RoBERTa</td><td>3.2e21 (1.02x)</td><td>67.8</td><td>96.7</td><td>89.8</td><td>91.9</td><td>90.2</td><td>90.8</td><td>95.4</td><td>88.2</td><td>89.0</td><td>88.1</td><td>88.1</td></tr><tr><td>ALBERT</td><td>3.1e22 (10x)</td><td>69.1</td><td>97.1</td><td>91.2</td><td>92.0</td><td>90.5</td><td>91.3</td><td>-</td><td>89.2</td><td>91.8</td><td>89.0</td><td>-</td></tr><tr><td>XLNet</td><td>3.9e21 (1.26x)</td><td>70.2</td><td>97.1</td><td>90.5</td><td>92.6</td><td>90.4</td><td>90.9</td><td>-</td><td>88.5</td><td>92.5</td><td>89.1</td><td>-</td></tr><tr><td>ELECTRA</td><td>3.1e21 (1x)</td><td>71.7</td><td>97.1</td><td>90.7</td><td>92.5</td><td>90.8</td><td>91.3</td><td>95.8</td><td>89.8</td><td>92.5</td><td>89.5</td><td>89.4</td></tr></table>
+
+Table 3: GLUE test-set results for large models. Models in this table incorporate additional tricks such as ensembling to improve scores (see Appendix B for details). Some models do not have QNLI scores because they treat QNLI as a ranking task, which has recently been disallowed by the GLUE benchmark. To compare against these models, we report the average score excluding QNLI (Avg.\*) in addition to the GLUE leaderboard score (Score). “ELECTRA” and “RoBERTa” refer to the fully-trained ELECTRA-1.75M and RoBERTa-500K models.
+
+## 3.4 LARGE MODELS
+
+We train big ELECTRA models to measure the effectiveness of the replaced token detection pretraining task at the large scale of current state-of-the-art pre-trained Transformers. Our ELECTRA-Large models are the same size as BERT-Large but are trained for much longer. In particular, we train a model for 400k steps (ELECTRA-400K; roughly 1/4 the pre-training compute of RoBERTa) and one for 1.75M steps (ELECTRA-1.75M; similar compute to RoBERTa). We use a batch size 2048 and the XLNet pre-training data. We note that although the XLNet data is similar to the data used to train RoBERTa, the comparison is not entirely direct. As a baseline, we trained our own BERT-Large model using the same hyperparameters and training time as ELECTRA-400K.
+
+Results on the GLUE dev set are shown in Table 2. ELECTRA-400K performs comparably to RoBERTa and XLNet. However, it took less than 1/4 of the compute to train ELECTRA-400K as it did to train RoBERTa and XLNet, demonstrating that ELECTRA’s sample-efficiency gains hold at large scale. Training ELECTRA for longer (ELECTRA-1.75M) results in a model that outscores them on most GLUE tasks while still requiring less pre-training compute. Surprisingly, our baseline BERT model scores notably worse than RoBERTa-100K, suggesting our models may benefit from more hyperparameter tuning or using the RoBERTa training data. ELECTRA’s gains hold on the GLUE test set (see Table 3), although these comparisons are less apples-to-apples due to the additional tricks employed by the models (see Appendix B).
+
+Results on SQuAD are shown in Table 4. Consistent, with the GLUE results, ELECTRA scores better than masked-language-modeling-based methods given the same compute resources. For example, ELECTRA-400K outperforms RoBERTa-100k and our BERT baseline, which use similar amounts of pre-training compute. ELECTRA-400K also performs comparably to RoBERTa-500K despite using less than 1/4th of the compute. Unsurprisingly, training ELECTRA longer improves results further: ELECTRA-1.75M scores higher than previous models on the SQuAD 2.0 benchmark. ELECTRA-Base also yields strong results, scoring substantially better than BERT-Base and XLNet-Base, and even surpassing BERT-Large according to most metrics. ELECTRA generally performs better at SQuAD 2.0 than 1.1. Perhaps replaced token detection, in which the model distinguishes real tokens from plausible fakes, is particularly transferable to the answerability classification of SQuAD 2.0, in which the model must distinguish answerable questions from fake unanswerable questions.
+
+<table><tr><td rowspan="2">Model</td><td rowspan="2">Train FLOPs</td><td rowspan="2">Params</td><td colspan="2">SQuAD 1.1 dev</td><td colspan="2">SQuAD 2.0 dev</td><td colspan="2">SQuAD 2.0 test</td></tr><tr><td>EM</td><td>F1</td><td>EM</td><td>F1</td><td>EM</td><td>F1</td></tr><tr><td>BERT-Base</td><td>6.4e19 (0.09x)</td><td>110M</td><td>80.8</td><td>88.5</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>BERT</td><td>1.9e20 (0.27x)</td><td>335M</td><td>84.1</td><td>90.9</td><td>79.0</td><td>81.8</td><td>80.0</td><td>83.0</td></tr><tr><td>SpanBERT</td><td>7.1e20 (1x)</td><td>335M</td><td>88.8</td><td>94.6</td><td>85.7</td><td>88.7</td><td>85.7</td><td>88.7</td></tr><tr><td>XLNet-Base</td><td>6.6e19 (0.09x)</td><td>117M</td><td>81.3</td><td>-</td><td>78.5</td><td>-</td><td>-</td><td>-</td></tr><tr><td>XLNet</td><td>3.9e21 (5.4x)</td><td>360M</td><td>89.7</td><td>95.1</td><td>87.9</td><td>90.6</td><td>87.9</td><td>90.7</td></tr><tr><td>RoBERTa-100K</td><td>6.4e20 (0.90x)</td><td>356M</td><td>-</td><td>94.0</td><td>-</td><td>87.7</td><td>-</td><td>-</td></tr><tr><td>RoBERTa-500K</td><td>3.2e21 (4.5x)</td><td>356M</td><td>88.9</td><td>94.6</td><td>86.5</td><td>89.4</td><td>86.8</td><td>89.8</td></tr><tr><td>ALBERT</td><td>3.1e22 (44x)</td><td>235M</td><td>89.3</td><td>94.8</td><td>87.4</td><td>90.2</td><td>88.1</td><td>90.9</td></tr><tr><td>BERT (ours)</td><td>7.1e20 (1x)</td><td>335M</td><td>88.0</td><td>93.7</td><td>84.7</td><td>87.5</td><td>-</td><td>-</td></tr><tr><td>ELECTRA-Base</td><td>6.4e19 (0.09x)</td><td>110M</td><td>84.5</td><td>90.8</td><td>80.5</td><td>83.3</td><td>-</td><td>-</td></tr><tr><td>ELECTRA-400K</td><td>7.1e20 (1x)</td><td>335M</td><td>88.7</td><td>94.2</td><td>86.9</td><td>89.6</td><td>-</td><td>-</td></tr><tr><td>ELECTRA-1.75M</td><td>3.1e21 (4.4x)</td><td>335M</td><td>89.7</td><td>94.9</td><td>88.0</td><td>90.6</td><td>88.7</td><td>91.4</td></tr></table>
+
+Table 4: Results on the SQuAD for non-ensemble models.
+
+## 3.5 EFFICIENCY ANALYSIS
+
+We have suggested that posing the training objective over a small subset of tokens makes masked language modeling inefficient. However, it isn’t entirely obvious that this is the case. After all, the model still receives a large number of input tokens even though it predicts only a small number of masked tokens. To better understand where the gains from ELECTRA are coming from, we compare a series of other pre-training objectives that are designed to be a set of “stepping stones” between BERT and ELECTRA.
+
+• ELECTRA 15%: This model is identical to ELECTRA except the discriminator loss only comes from the 15% of the tokens that were masked out of the input. In other words, the sum in the discriminator loss $\mathcal { L } _ { \mathrm { D i s c } }$ is over i ∈ m instead of from 1 to n.<sup>7</sup>
+
+• Replace MLM: This objective is the same as masked language modeling except instead of replacing masked-out tokens with [MASK], they are replaced with tokens from a generator model. This objective tests to what extent ELECTRA’s gains come from solving the discrepancy of exposing the model to [MASK] tokens during pre-training but not fine-tuning.
+
+• All-Tokens MLM: Like in Replace MLM, masked tokens are replaced with generator samples. Furthermore, the model predicts the identity of all tokens in the input, not just ones that were masked out. We found it improved results to train this model with an explicit copy mechanism that outputs a copy probability D for each token using a sigmoid layer. The model’s output distribution puts D weight on the input token plus 1 − D times the output of the MLM softmax. This model is essentially a combination of BERT and ELEC-TRA. Note that without generator replacements, the model would trivially learn to make predictions from the vocabulary for [MASK] tokens and copy the input for other ones.
+
+Results are shown in Table 5. First, we find that ELECTRA is greatly benefiting from having a loss defined over all input tokens rather than just a subset: ELECTRA 15% performs much worse than ELECTRA. Secondly, we find that BERT performance is being slightly harmed from the pre-train fine-tune mismatch from [MASK] tokens, as Replace MLM slightly outperforms BERT. We note that BERT (including our implementation) already includes a trick to help with the pre-train/finetune discrepancy: masked tokens are replaced with a random token 10% of the time and are kept the same 10% of the time. However, our results suggest these simple heuristics are insufficient to fully solve the issue. Lastly, we find that All-Tokens MLM, the generative model that makes predictions over all tokens instead of a subset, closes most of the gap between BERT and ELECTRA. In total, these results suggest a large amount of ELECTRA’s improvement can be attributed to learning from all tokens and a smaller amount can be attributed to alleviating the pre-train fine-tune mismatch.
+
+<table><tr><td>Model</td><td>ELECTRA</td><td>All-Tokens MLM</td><td>Replace MLM</td><td>ELECTRA 15%</td><td>BERT</td></tr><tr><td>GLUE score</td><td>85.0</td><td>84.3</td><td>82.4</td><td>82.4</td><td>82.2</td></tr></table>
+
+Table 5: Compute-efficiency experiments (see text for details).
+
+![](images/d506a87c2aea4daabff654951c18748b5c1fb44f780f1fec7d3a905e6fdb9021.jpg)
+
+![](images/f943cfe934a7eb3934aea55fd3202ef7e4f748ac8686e8668af3d601d8733584.jpg)
+
+![](images/0a47777f89f5dbd0cdb2ae6bd2f42ee95f696df6cd27185b80980fbbcb538bf1.jpg)  
+Figure 4: Left and Center: Comparison of BERT and ELECTRA for different model sizes. Right: A small ELECTRA model converges to higher downstream accuracy than BERT, showing the improvement comes from more than just faster training.
+
+The improvement of ELECTRA over All-Tokens MLM suggests that the ELECTRA’s gains come from more than just faster training. We study this further by comparing BERT to ELECTRA for various model sizes (see Figure 4, left). We find that the gains from ELECTRA grow larger as the models get smaller. The small models are trained fully to convergence (see Figure 4, right), showing that ELECTRA achieves higher downstream accuracy than BERT when fully trained. We speculate that ELECTRA is more parameter-efficient than BERT because it does not have to model the full distribution of possible tokens at each position, but we believe more analysis is needed to completely explain ELECTRA’s parameter efficiency.
+
+## 4 RELATED WORK
+
+Self-Supervised Pre-training for NLP Self-supervised learning has been used to learn word representations (Collobert et al., 2011; Pennington et al., 2014) and more recently contextual representations of words though objectives such as language modeling (Dai & Le, 2015; Peters et al., 2018; Howard & Ruder, 2018). BERT (Devlin et al., 2019) pre-trains a large Transformer (Vaswani et al., 2017) at the masked-language modeling task. There have been numerous extensions to BERT. For example, MASS (Song et al., 2019) and UniLM (Dong et al., 2019) extend BERT to generation tasks by adding auto-regressive generative training objectives. ERNIE (Sun et al., 2019a) and SpanBERT (Joshi et al., 2019) mask out contiguous sequences of token for improved span representations. This idea may be complementary to ELECTRA; we think it would be interesting to make ELECTRA’s generator auto-regressive and add a “replaced span detection” task. Instead of masking out input tokens, XLNet (Yang et al., 2019) masks attention weights such that the input sequence is autoregressively generated in a random order. However, this method suffers from the same inefficiencies as BERT because XLNet only generates 15% of the input tokens in this way. Like ELECTRA, XL-Net may alleviate BERT’s pretrain-finetune discrepancy by not requiring [MASK] tokens, although this isn’t entirely clear because XLNet uses two “streams” of attention during pre-training but only one for fine-tuning. Recently, models such as TinyBERT (Jiao et al., 2019) and MobileBERT (Sun et al., 2019b) show that BERT can effectively be distilled down to a smaller model. In contrast, we focus more on pre-training speed rather than inference speed, so we train ELECTRA-Small from scratch.
+
+Generative Adversarial Networks GANs (Goodfellow et al., 2014) are effective at generating high-quality synthetic data. Radford et al. (2016) propose using the discriminator of a GAN in downstream tasks, which is similar to our method. GANs have been applied to text data (Yu et al., 2017; Zhang et al., 2017), although state-of-the-art approaches still lag behind standard maximumlikelihood training (Caccia et al., 2018; Tevet et al., 2018). Although we do not use adversarial learning, our generator is particularly reminiscent of MaskGAN (Fedus et al., 2018), which trains the generator to fill in tokens deleted from the input.
+
+Contrastive Learning Broadly, contrastive learning methods distinguish observed data points from fictitious negative samples. They have been applied to many modalities including text (Smith & Eisner, 2005), images (Chopra et al., 2005), and video (Wang & Gupta, 2015; Sermanet et al., 2017) data. Common approaches learn embedding spaces where related data points are similar (Saunshi et al., 2019) or models that rank real data points over negative samples (Collobert et al., 2011; Bordes et al., 2013). ELECTRA is particularly related to Noise-Contrastive Estimation (NCE) (Gutmann & Hyvarinen, 2010), which also trains a binary classifier to distinguish real and fake data points.¨
+
+Word2Vec (Mikolov et al., 2013), one of the earliest pre-training methods for NLP, uses contrastive learning. In fact, ELECTRA can be viewed as a massively scaled-up version of Continuous Bagof-Words (CBOW) with Negative Sampling. CBOW also predicts an input token given surrounding context and negative sampling rephrases the learning task as a binary classification task on whether the input token comes from the data or proposal distribution. However, CBOW uses a bag-ofvectors encoder rather than a transformer and a simple proposal distribution derived from unigram token frequencies instead of a learned generator.
+
+## 5 CONCLUSION
+
+We have proposed replaced token detection, a new self-supervised task for language representation learning. The key idea is training a text encoder to distinguish input tokens from high-quality negative samples produced by an small generator network. Compared to masked language modeling, our pre-training objective is more compute-efficient and results in better performance on downstream tasks. It works well even when using relatively small amounts of compute, which we hope will make developing and applying pre-trained text encoders more accessible to researchers and practitioners with less access to computing resources. We also hope more future work on NLP pre-training will consider efficiency as well as absolute performance, and follow our effort in reporting compute usage and parameter counts along with evaluation metrics.
+
+## ACKNOWLEDGEMENTS
+
+We thank Allen Nie, Prajit Ramachandran, audiences at the CIFAR LMB meeting and U. de Montreal, and the anonymous reviewers for their thoughtful comments and suggestions. We thank´ Matt Peters for answering our questions about ELMo, Alec Radford for answers about GPT, Naman Goyal and Myle Ott for answers about RoBERTa, Zihang Dai for answers about XLNet, Zhenzhong Lan for answers about ALBERT, and Danqi Chen and Mandar Joshi for answers about SpanBERT. Kevin is supported by a Google PhD Fellowship.
+
+## REFERENCES
+
+Antoine Bordes, Nicolas Usunier, Alberto Garc´ıa-Duran, Jason Weston, and Oksana Yakhnenko.´ Translating embeddings for modeling multi-relational data. In NeurIPS, 2013.
+
+Avishek Joey Bose, Huan Ling, and Yanshuai Cao. Adversarial contrastive estimation. In ACL, 2018.
+
+Massimo Caccia, Lucas Caccia, William Fedus, Hugo Larochelle, Joelle Pineau, and Laurent Charlin. Language GANs falling short. arXiv preprint arXiv:1811.02549, 2018.
+
+Jamie Callan, Mark Hoy, Changkuk Yoo, and Le Zhao. Clueweb09 data set, 2009. URL https: //lemurproject.org/clueweb09.php/.
+
+Daniel M. Cer, Mona T. Diab, Eneko Agirre, Inigo Lopez-Gazpio, and Lucia Specia. Semeval-˜ 2017 task 1: Semantic textual similarity multilingual and crosslingual focused evaluation. In SemEval@ACL, 2017.
+
+Sumit Chopra, Raia Hadsell, and Yann LeCun. Learning a similarity metric discriminatively, with application to face verification. CVPR, 2005.
+
+Kevin Clark, Minh-Thang Luong, Urvashi Khandelwal, Christopher D. Manning, and Quoc V. Le. BAM! Born-again multi-task networks for natural language understanding. In ACL, 2019.
+
+Ronan Collobert, Jason Weston, Leon Bottou, Michael Karlen, Koray Kavukcuoglu, and Pavel P.´ Kuksa. Natural language processing (almost) from scratch. JMLR, 2011.
+
+Andrew M Dai and Quoc V Le. Semi-supervised sequence learning. In NeurIPS, 2015.
+
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. BERT: Pre-training of deep bidirectional transformers for language understanding. In NAACL-HLT, 2019.
+
+William B. Dolan and Chris Brockett. Automatically constructing a corpus of sentential paraphrases. In IWP@IJCNLP, 2005.
+
+Li Dong, Nan Yang, Wenhui Wang, Furu Wei, Xiaodong Liu, Yu Wang, Jianfeng Gao, Ming Zhou, and Hsiao-Wuen Hon. Unified language model pre-training for natural language understanding and generation. In NeurIPS, 2019.
+
+William Fedus, Ian J. Goodfellow, and Andrew M. Dai. MaskGAN: Better text generation via filling in the . In ICLR, 2018.
+
+Danilo Giampiccolo, Bernardo Magnini, Ido Dagan, and William B. Dolan. The third pascal recognizing textual entailment challenge. In ACL-PASCAL@ACL, 2007.
+
+Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron C. Courville, and Yoshua Bengio. Generative adversarial nets. In NeurIPS, 2014.
+
+Michael Gutmann and Aapo Hyvarinen. Noise-contrastive estimation: A new estimation principle¨ for unnormalized statistical models. In AISTATS, 2010.
+
+Jeremy Howard and Sebastian Ruder. Universal language model fine-tuning for text classification. In ACL, 2018.
+
+Shankar Iyer, Nikhil Dandekar, and Kornl Csernai. First Quora dataset release: Question pairs, 2017. URL https://data.quora.com/ First-Quora-Dataset-Release-Question-Pairs.
+
+Xiaoqi Jiao, Yichun Yin, Lifeng Shang, Xin Jiang, Xiao Chen, Linlin Li, Fang Wang, and Qun Liu. Tinybert: Distilling bert for natural language understanding. arXiv preprint arXiv:1909.10351, 2019.
+
+Mandar Joshi, Danqi Chen, Yinhan Liu, Daniel S Weld, Luke Zettlemoyer, and Omer Levy. SpanBERT: Improving pre-training by representing and predicting spans. arXiv preprint arXiv:1907.10529, 2019.
+
+Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, and Radu Soricut. ALBERT: A lite bert for self-supervised learning of language representations. arXiv preprint arXiv:1909.11942, 2019.
+
+Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. RoBERTa: A robustly optimized BERT pretraining approach. arXiv preprint arXiv:1907.11692, 2019.
+
+Tomas Mikolov, Kai Chen, Gregory S. Corrado, and Jeffrey Dean. Efficient estimation of word representations in vector space. In ICLR Workshop Papers, 2013.
+
+Robert Parker, David Graff, Junbo Kong, Ke Chen, and Kazuaki Maeda. English gigaword, fifth edition. Technical report, Linguistic Data Consortium, Philadelphia, 2011.
+
+Jeffrey Pennington, Richard Socher, and Christopher Manning. Glove: Global vectors for word representation. In EMNLP, 2014.
+
+Matthew E Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. Deep contextualized word representations. In NAACL-HLT, 2018.
+
+Jason Phang, Thibault Fevry, and Samuel R Bowman. Sentence encoders on STILTs: Supplemen-´ tary training on intermediate labeled-data tasks. arXiv preprint arXiv:1811.01088, 2018.
+
+Alec Radford, Luke Metz, and Soumith Chintala. Unsupervised representation learning with deep convolutional generative adversarial networks. In ICLR, 2016.
+
+Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. Improving language understanding by generative pre-training. https://blog.openai.com/language-unsupervised, 2018.
+
+Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy S. Liang. Squad: 100, 000+ questions for machine comprehension of text. In EMNLP, 2016.
+
+Nikunj Saunshi, Orestis Plevrakis, Sanjeev Arora, Mikhail Khodak, and Hrishikesh Khandeparkar. A theoretical analysis of contrastive unsupervised representation learning. In ICML, 2019.
+
+Pierre Sermanet, Corey Lynch, Yevgen Chebotar, Jasmine Hsu, Eric Jang, Stefan Schaal, and Sergey Levine. Time-contrastive networks: Self-supervised learning from video. ICRA, 2017.
+
+Noah A. Smith and Jason Eisner. Contrastive estimation: Training log-linear models on unlabeled data. In ACL, 2005.
+
+Richard Socher, Alex Perelygin, Jean Wu, Jason Chuang, Christopher D. Manning, Andrew Y. Ng, and Christopher Potts. Recursive deep models for semantic compositionality over a sentiment treebank. In EMNLP, 2013.
+
+Kaitao Song, Xu Tan, Tao Qin, Jianfeng Lu, and Tie-Yan Liu. MASS: Masked sequence to sequence pre-training for language generation. In ICML, 2019.
+
+Yu Sun, Shuohuan Wang, Yukun Li, Shikun Feng, Xuyi Chen, Han Zhang, Xin Tian, Danxiang Zhu, Hao Tian, and Hua Wu. Ernie: Enhanced representation through knowledge integration. arXiv preprint arXiv:1904.09223, 2019a.
+
+Zhiqing Sun, Hongkun Yu, Xiaodan Song, Renjie Liu, Yiming Yang, and Denny Zhou. Mobile-BERT: Task-agnostic compression of bert for resource limited devices, 2019b. URL https: //openreview.net/forum?id=SJxjVaNKwB.
+
+Guy Tevet, Gavriel Habib, Vered Shwartz, and Jonathan Berant. Evaluating text gans as language models. In NAACL-HLT, 2018.
+
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosukhin. Attention is all you need. In NeurIPS, 2017.
+
+Pascal Vincent, Hugo Larochelle, Yoshua Bengio, and Pierre-Antoine Manzagol. Extracting and composing robust features with denoising autoencoders. In ICML, 2008.
+
+Alex Wang, Amapreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R Bowman. GLUE: A multi-task benchmark and analysis platform for natural language understanding. In ICLR, 2019.
+
+Xiaolong Wang and Abhinav Gupta. Unsupervised learning of visual representations using videos. ICCV, 2015.
+
+Alex Warstadt, Amanpreet Singh, and Samuel R. Bowman. Neural network acceptability judgments. arXiv preprint arXiv:1805.12471, 2018.
+
+Adina Williams, Nikita Nangia, and Samuel R. Bowman. A broad-coverage challenge corpus for sentence understanding through inference. In NAACL-HLT, 2018.
+
+Ronald J. Williams. Simple statistical gradient-following algorithms for connectionist reinforcement learning. Machine Learning, 8(3-4):229–256, 1992.
+
+Zhilin Yang, Zihang Dai, Yiming Yang, Jaime Carbonell, Ruslan Salakhutdinov, and Quoc V Le. XLNet: Generalized autoregressive pretraining for language understanding. In NeurIPS, 2019.
+
+Lantao Yu, Weinan Zhang, Jun Wang, and Yingrui Yu. SeqGAN: Sequence generative adversarial nets with policy gradient. In AAAI, 2017.
+
+Yizhe Zhang, Zhe Gan, Kai Fan, Zhi Chen, Ricardo Henao, Dinghan Shen, and Lawrence Carin. Adversarial feature matching for text generation. In ICML, 2017.
+
+Yukun Zhu, Ryan Kiros, Richard S. Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio Torralba, and Sanja Fidler. Aligning books and movies: Towards story-like visual explanations by watching movies and reading books. ICCV, 2015.
+
+## A PRE-TRAINING DETAILS
+
+The following details apply to both our ELECTRA models and BERT baselines. We mostly use the same hyperparameters as BERT. We set λ, the weight for the discriminator objective in the loss to 50.<sup>8</sup> We use dynamic token masking with the masked positions decided on-the-fly instead of during preprocessing. Also, we did not use the next sentence prediction objective proposed in the original BERT paper, as recent work has suggested it does not improve scores (Yang et al., 2019; Liu et al., 2019). For our ELECTRA-Large model, we used a higher mask percent (25 instead of 15) because we noticed the generator was achieving high accuracy with 15% masking, resulting in very few replaced tokens. We searched for the best learning rate for the Base and Small models out of [1e-4, 2e-4, 3e-4, 5e-4] and selected λ out of [1, 10, 20, 50, 100] in early experiments. Otherwise we did no hyperparameter tuning beyond the experiments in Section 3.2. The full set of hyperparameters are listed in Table 6.
+
+## B FINE-TUNING DETAILS
+
+For Large-sized models, we used the hyperparameters from Clark et al. (2019) for the most part. However, after noticing that RoBERTa (Liu et al., 2019) uses more training epochs (up to 10 rather than 3) we searched for the best number of train epochs out of [10, 3] for each task. For SQuAD, we decreased the number of train epochs to 2 to be consistent with BERT and RoBERTa. For Basesized models we searched for a learning rate out of [3e-5, 5e-5, 1e-4, 1.5e-4] and the layer-wise learning-rate decay out of [0.9, 0.8, 0.7], but otherwise used the same hyperparameters as for Large models. We found the small models benefit from a larger learning rate and searched for the best one out of [1e-4, 2e-4, 3e-4, 5e-3]. With the exception of number of train epochs, we used the same hyperparameters for all tasks. In contrast, previous research on GLUE such as BERT, XLNet, and RoBERTa separately searched for the best hyperparameters for each task. We expect our results would improve slightly if we performed the same sort of additional hyperparameter search. The full set of hyperparameters is listed in Table 7.
+
+Following BERT, we do not show results on the WNLI GLUE task for the dev set results, as it is difficult to beat even the majority classifier using a standard fine-tuning-as-classifier approach. For the GLUE test set results, we apply the standard tricks used by many of the GLUE leaderboard submissions including RoBERTa (Liu et al., 2019), XLNet (Yang et al., 2019), and ALBERT (Lan et al., 2019). Specifically:
+
+• For RTE and STS we use intermediate task training (Phang et al., 2018), starting from an ELECTRA checkpoint that has been fine-tuned on MNLI. For RTE, we found it helpful to combine this with a lower learning rate of 2e-5.
+
+<table><tr><td>Hyperparameter</td><td>Small</td><td>Base</td><td>Large</td></tr><tr><td>Number of layers</td><td>12</td><td>12</td><td>24</td></tr><tr><td>Hidden Size</td><td>256</td><td>768</td><td>1024</td></tr><tr><td>FFN inner hidden size</td><td>1024</td><td>3072</td><td>4096</td></tr><tr><td>Attention heads</td><td>4</td><td>12</td><td>16</td></tr><tr><td>Attention head size</td><td>64</td><td>64</td><td>64</td></tr><tr><td>Embedding Size</td><td>128</td><td>768</td><td>1024</td></tr><tr><td>Generator Size (multiplier for hidden-size, FFN-size, and num-attention-heads)</td><td>1/4</td><td>1/3</td><td>1/4</td></tr><tr><td>Mask percent</td><td>15</td><td>15</td><td>25</td></tr><tr><td>Learning Rate Decay</td><td>Linear</td><td>Linear</td><td>Linear</td></tr><tr><td>Warmup steps</td><td>10000</td><td>10000</td><td>10000</td></tr><tr><td>Learning Rate</td><td>5e-4</td><td>2e-4</td><td>2e-4</td></tr><tr><td>Adam  $\epsilon$ </td><td>1e-6</td><td>1e-6</td><td>1e-6</td></tr><tr><td>Adam  $\beta_1$ </td><td>0.9</td><td>0.9</td><td>0.9</td></tr><tr><td>Adam  $\beta_2$ </td><td>0.999</td><td>0.999</td><td>0.999</td></tr><tr><td>Attention Dropout</td><td>0.1</td><td>0.1</td><td>0.1</td></tr><tr><td>Dropout</td><td>0.1</td><td>0.1</td><td>0.1</td></tr><tr><td>Weight Decay</td><td>0.01</td><td>0.01</td><td>0.01</td></tr><tr><td>Batch Size</td><td>128</td><td>256</td><td>2048</td></tr><tr><td>Train Steps (BERT/ELECTRA)</td><td>1.45M/1M</td><td>1M/766K</td><td>464K/400K</td></tr></table>
+
+Table 6: Pre-train hyperparameters. We also train an ELECTRA-Large model for 1.75M steps (other hyperparameters are identical).
+
+<table><tr><td>Hyperparameter</td><td>GLUE Value</td></tr><tr><td>Learning Rate</td><td>3e-4 for Small, 1e-4 for Base, 5e-5 for Large</td></tr><tr><td>Adam ε</td><td>1e-6</td></tr><tr><td>Adam β1</td><td>0.9</td></tr><tr><td>Adam β2</td><td>0.999</td></tr><tr><td>Layerwise LR decay</td><td>0.8 for Base/Small, 0.9 for Large</td></tr><tr><td>Learning rate decay</td><td>Linear</td></tr><tr><td>Warmup fraction</td><td>0.1</td></tr><tr><td>Attention Dropout</td><td>0.1</td></tr><tr><td>Dropout</td><td>0.1</td></tr><tr><td>Weight Decay</td><td>0</td></tr><tr><td>Batch Size</td><td>32</td></tr><tr><td>Train Epochs</td><td>10 for RTE and STS, 2 for SQuAD, 3 for other tasks</td></tr></table>
+
+Table 7: Fine-tune hyperparameters
+
+• For WNLI, we follow the trick described in Liu et al. (2019) where we extract candidate antecedents for the pronoun using rules and train a model to score the correct antecedent highly. However, different from Liu et al. (2019), the scoring function is not based on MLM probabilities. Instead, we fine-tune ELECTRA’s discriminator so it assigns high scores to the tokens of the correct antecedent when the correct antecedent replaces the pronoun. For example, if the Winograd schema is “the trophy could not fit in the suitcase because it was too big,” we train the discriminator so it gives a high score to “trophy” in “the trophy could not fit in the suitcase because the trophy was too big” but a low score to “suitcase” in “the trophy could not fit in the suitcase because the suitcase was too big.”
+
+• For each task we ensemble the best 10 of 30 models fine-tuned with different random seeds but initialized from the same pre-trained checkpoint.
+
+While these tricks do improve scores, they make having clear scientific comparisons more difficult because they require extra work to implement, require lots of compute, and make results less applesto-apples because different papers implement the tricks differently. We therefore also report results for ELECTRA-1.75M with the only trick being dev-set model selection (best of 10 models), which is the setting BERT used to report results, in Table 8.
+
+For our SQuAD 2.0 test set submission, we fine-tuned 20 models from the same pre-trained checkpoint and submitted the one with the best dev set score.
+
+## C DETAILS ABOUT GLUE
+
+We provide further details about the GLUE benchmark tasks below
+
+• CoLA: Corpus of Linguistic Acceptability (Warstadt et al., 2018). The task is to determine whether a given sentence is grammatical or not. The dataset contains 8.5k train examples from books and journal articles on linguistic theory.
+
+• SST: Stanford Sentiment Treebank (Socher et al., 2013). The tasks is to determine if the sentence is positive or negative in sentiment. The dataset contains 67k train examples from movie reviews.
+
+• MRPC: Microsoft Research Paraphrase Corpus (Dolan & Brockett, 2005). The task is to predict whether two sentences are semantically equivalent or not. The dataset contains 3.7k train examples from online news sources.
+
+• STS: Semantic Textual Similarity (Cer et al., 2017). The tasks is to predict how semantically similar two sentences are on a 1-5 scale. The dataset contains 5.8k train examples drawn from new headlines, video and image captions, and natural language inference data.
+
+• QQP: Quora Question Pairs (Iyer et al., 2017). The task is to determine whether a pair of questions are semantically equivalent. The dataset contains 364k train examples from the community question-answering website Quora.
+
+• MNLI: Multi-genre Natural Language Inference (Williams et al., 2018). Given a premise sentence and a hypothesis sentence, the task is to predict whether the premise entails the hypothesis, contradicts the hypothesis, or neither. The dataset contains 393k train examples drawn from ten different sources.
+
+• QNLI: Question Natural Language Inference; constructed from SQuAD (Rajpurkar et al., 2016). The task is to predict whether a context sentence contains the answer to a question sentence. The dataset contains 108k train examples from Wikipedia.
+
+• RTE: Recognizing Textual Entailment (Giampiccolo et al., 2007). Given a premise sentence and a hypothesis sentence, the task is to predict whether the premise entails the hypothesis or not. The dataset contains 2.5k train examples from a series of annual textual entailment challenges.
+
+## D FURTHER RESULTS ON GLUE
+
+We report results for ELECTRA-Base and ELECTRA-Small on the GLUE test set in Table 8. Furthermore, we push the limits of base-sized and small-sized models by training them on the XLNet data instead of wikibooks and for much longer (4e6 train steps); these models are called ELECTRA-Base++ and ELECTRA-Small++ in the table. For ELECTRA-Small++ we also increased the sequence length to 512; otherwise the hyperparameters are the same as the ones listed in Table 6. Lastly, the table contains results for ELECTRA-1.75M without the tricks described in Appendix B. Consistent with dev-set results in the paper, ELECTRA-Base outperforms BERT-Large while ELECTRA-Small outperforms GPT in terms of average score. Unsurprisingly, the ++ models perform even better. The small model scores are even close to TinyBERT (Jiao et al., 2019) and MobileBERT (Sun et al., 2019b). These models learn from BERT-Base using sophisticated distillation procedures. Our ELECTRA models, on the other hand, are trained from scratch. Given the success of distilling BERT, we believe it would be possible to build even stronger small pre-trained models by distilling ELECTRA. ELECTRA appears to be particularly effective at CoLA. In CoLA the goal is to distinguish linguistically acceptable sentences from ungrammatical ones, which fairly closely matches ELECTRA’s pre-training task of identifying fake tokens, perhaps explaining ELECTRA’s strength at the task.
+
+<table><tr><td>Model</td><td>Train FLOPs</td><td>Params</td><td>CoLA</td><td>SST</td><td>MRPC</td><td>STS</td><td>QQP</td><td>MNLI</td><td>QNLI</td><td>RTE</td><td>Avg.</td></tr><tr><td>TinyBERT</td><td>6.4e19+ (45x+)</td><td>14.5M</td><td>51.1</td><td>93.1</td><td>82.6</td><td>83.7</td><td>89.1</td><td>84.6</td><td>90.4</td><td>70.0</td><td>80.6</td></tr><tr><td>MobileBERT</td><td>6.4e19+ (45x+)</td><td>25.3M</td><td>51.1</td><td>92.6</td><td>84.5</td><td>84.8</td><td>88.3</td><td>84.3</td><td>91.6</td><td>70.4</td><td>81.0</td></tr><tr><td>GPT</td><td>4.0e19 (29x)</td><td>117M</td><td>45.4</td><td>91.3</td><td>75.7</td><td>80.0</td><td>88.5</td><td>82.1</td><td>88.1</td><td>56.0</td><td>75.9</td></tr><tr><td>BERT-Base</td><td>6.4e19 (45x)</td><td>110M</td><td>52.1</td><td>93.5</td><td>84.8</td><td>85.8</td><td>89.2</td><td>84.6</td><td>90.5</td><td>66.4</td><td>80.9</td></tr><tr><td>BERT-Large</td><td>1.9e20 (135x)</td><td>335M</td><td>60.5</td><td>94.9</td><td>85.4</td><td>86.5</td><td>89.3</td><td>86.7</td><td>92.7</td><td>70.1</td><td>83.3</td></tr><tr><td>SpanBERT</td><td>7.1e20 (507x)</td><td>335M</td><td>64.3</td><td>94.8</td><td>87.9</td><td>89.9</td><td>89.5</td><td>87.7</td><td>94.3</td><td>79.0</td><td>85.9</td></tr><tr><td>ELECTRA-Small</td><td>1.4e18 (1x)</td><td>14M</td><td>54.6</td><td>89.1</td><td>83.7</td><td>80.3</td><td>88.0</td><td>79.7</td><td>87.7</td><td>60.8</td><td>78.0</td></tr><tr><td>ELECTRA-Small++</td><td>3.3e19 (18x)</td><td>14M</td><td>55.6</td><td>91.1</td><td>84.9</td><td>84.6</td><td>88.0</td><td>81.6</td><td>88.3</td><td>63.6</td><td>79.7</td></tr><tr><td>ELECTRA-Base</td><td>6.4e19 (45x)</td><td>110M</td><td>59.7</td><td>93.4</td><td>86.7</td><td>87.7</td><td>89.1</td><td>85.8</td><td>92.7</td><td>73.1</td><td>83.5</td></tr><tr><td>ELECTRA-Base++</td><td>3.3e20 (182x)</td><td>110M</td><td>64.6</td><td>96.0</td><td>88.1</td><td>90.2</td><td>89.5</td><td>88.5</td><td>93.1</td><td>75.2</td><td>85.7</td></tr><tr><td>ELECTRA-1.75M</td><td>3.1e21 (2200x)</td><td>330M</td><td>68.1</td><td>96.7</td><td>89.2</td><td>91.7</td><td>90.4</td><td>90.7</td><td>95.5</td><td>86.1</td><td>88.6</td></tr></table>
+
+Table 8: Results for models on the GLUE test set. Only models with single-task finetuning (no ensembling, task-specific tricks, etc.) are shown.
+
+## E COUNTING FLOPS
+
+We chose to measure compute usage in terms of floating point operations (FLOPs) because it is a measure agnostic to the particular hardware, low-level optimizations, etc. However, it is worth noting that in some cases abstracting away hardware details is a drawback because hardware-centered optimizations can be key parts of a model’s design, such as the speedup ALBERT (Lan et al., 2019) gets by tying weights and thus reducing communication overhead between TPU workers. We used TensorFlow’s FLOP-counting capabilities<sup>9</sup> and checked the results with by-hand computation. We made the following assumptions:
+
+• An “operation” is a mathematical operation, not a machine instruction. For example, an exp is one op like an add, even though in practice the exp might be slower. We believe this assumption does not substantially change compute estimates because matrix-multiplies dominate the compute for most models. Similarly, we count matrix-multiplies as $2 * m * n$ FLOPs instead of m ∗ n as one might if considering fused multiply-add operations.
+
+• The backwards pass takes the same number of FLOPs as the forward pass. This assumption is not exactly right (e.g., for softmax cross entropy loss the backward pass is faster), but importantly, the forward/backward pass FLOPs really are the same for matrix-multiplies, which is most of the compute anyway.
+
+• We assume “dense” embedding lookups (i.e., multiplication by a one-hot vector). In practice, sparse embedding lookups are much slower than constant time; on some hardware accelerators dense operations are actually faster than sparse lookups.
+
+## F ADVERSARIAL TRAINING
+
+Here we detail attempts to adversarially train the generator instead of using maximum likelihood. In particular we train the generator G to maximize the discriminator loss $\mathcal { L } _ { \mathrm { D i s c } }$ . As our discriminator isn’t precisely the same as the discriminator of a GAN (see the discussion in Section 2), this method is really an instance of Adversarial Contrastive Estimation (Bose et al., 2018) rather than Generative Adversarial Training. It is not possible to adversarially train the generator by back-propagating through the discriminator (e.g., as in a GAN trained on images) due to the discrete sampling from the generator, so we use reinforcement learning instead.
+
+Our generator is different from most text generation models in that it is non-autogregressive: predictions are made independently. In other words, rather than taking a sequence of actions where each action generates a token, the generator takes a single giant action of generating all tokens simultaneously, where the probability for the action factorizes as the product of generator probabilities for each token. To deal with this enormous action space, we make the following simplifying assumption: that the discriminator’s prediction $D ( { \boldsymbol x } ^ { \mathrm { c o r r u p t } } , t )$ depends only on the token $x _ { t }$ and the non-replaced tokens $\{ x _ { i } : i \notin m \}$ , i.e., it does not depend on other generated tokens $\{ \hat { x } _ { i } : i \in m \land i \neq t \}$ This isn’t too bad of an assumption because a relatively small number of tokens are replaced, and it greatly simplifies credit assignment when using reinforcement learning. Notationally, we show this assumption by (in a slight abuse of notation) by writing $D ( \hat { x } _ { t } | \pmb { x } ^ { \mathrm { m a s \breve { k } e d } } )$ for the discriminator predicting whether the generated token $\hat { x } _ { t }$ equals the original token $x _ { t }$ given the masked context $\mathbf { \dot { \Phi } } _ { \mathbf { \Phi } } ^ { \mathrm { m a s k e d } } . \mathbf { \tilde { A } }$ useful consequence of this assumption is that the discriminator score for non-replaced tokens $( D ( x _ { t } | x ^ { \mathrm { m a s k e d } } )$ for $t \not \in m )$ is independent of $p _ { G }$ because we are assuming it does not depend on any replaced token. Therefore these tokens can be ignored when training $\overrightharpoon { G }$ to maximize $\dot { \mathcal { L } } _ { \mathrm { D i s c } } .$ During training we seek to find
+
+$$
+\begin{array}{c} \underset {\theta_ {G}} {\arg \max} \mathcal {L} _ {\text {Disc}} = \underset {\theta_ {G}} {\arg \max} \underset {\boldsymbol {x}, \boldsymbol {m}, \hat {\boldsymbol {x}}} {\mathbb {E}} \left(\sum_ {t = 1} ^ {n} - \mathbb {1} (x _ {t} ^ {\text {corrupt}} = x _ {t}) \log D (\boldsymbol {x} ^ {\text {corrupt}}, t) - \right. \\ \left. \mathbb {1} (x _ {t} ^ {\text {corrupt}} \neq x _ {t}) \log (1 - D (\boldsymbol {x} ^ {\text {corrupt}}, t))\right) \end{array}
+$$
+
+Using the simplifying assumption, we approximate the above by finding the argmax of
+
+$$
+\begin{array}{l} \underset {\boldsymbol {x}, \boldsymbol {m}, \hat {\boldsymbol {x}}} {\mathbb {E}} \left(\sum_ {t \in \boldsymbol {m}} - \mathbb {1} (\hat {x} _ {t} = x _ {t}) \log D (\hat {x} | \boldsymbol {x} ^ {\text {masked}}) - \mathbb {1} (\hat {x} _ {t} \neq x _ {t}) \log (1 - D (\hat {x} | \boldsymbol {x} ^ {\text {masked}}))\right) \\ = \underset {\boldsymbol {x}, \boldsymbol {m}} {\mathbb {E}} \sum_ {t \in \boldsymbol {m}} \underset {\hat {x} _ {t} \sim p _ {G}} {\mathbb {E}} R (\hat {x} _ {t}, \boldsymbol {x}) \\ \text {where} R (\hat {x} _ {t}, \boldsymbol {x}) = \left\{ \begin{array}{l l} - \log D (\hat {x} _ {t} | \boldsymbol {x} ^ {\text {masked}}) & \text {if} \hat {x} _ {t} = x _ {t} \\ - \log (1 - D (\hat {x} _ {t} | \boldsymbol {x} ^ {\text {masked}})) & \text {otherwise} \end{array} \right. \end{array}
+$$
+
+In short, the simplifying assumption allows us to decompose the loss over the individual generated tokens. We cannot directly find arg ma $\boldsymbol { \zeta } _ { \boldsymbol { \theta } _ { G } }$ using gradient ascent because it is impossible to backpropagate through discrete sampling of ${ \hat { x } } .$ Instead, we use policy gradient reinforcement learning (Williams, 1992). In particular, we use the REINFORCE gradient
+
+$$
+\nabla_ {\theta_ {G}} \mathcal {L} _ {\mathrm{Disc}} \approx \underset {\boldsymbol {x}, \boldsymbol {m}} {\mathbb {E}} \sum_ {t \in \boldsymbol {m}} \underset {\hat {x} _ {t} \sim p _ {G}} {\mathbb {E}} \nabla_ {\theta_ {g}} \log p _ {G} (\hat {x} _ {t} | \boldsymbol {x} ^ {\mathrm{masked}}) [ R (\hat {x} _ {t}, \boldsymbol {x}) - b (\boldsymbol {x} ^ {\mathrm{masked}}, t) ]
+$$
+
+Where b is a learned baseline implemented as $b ( \pmb { x } ^ { \mathrm { m a s k e d } } , t ) ~ = ~ - \log \mathrm { s i g }$ moid $( w ^ { T } h _ { G } ( \pmb { x } ^ { \mathrm { m a s k e d } } ) _ { t } )$ where $h _ { G } ( \pmb { x } ^ { \mathrm { m a s k e d } } )$ are the outputs of the generator’s Transformer encoder. The baseline is trained with cross-entropy loss to match the reward for the corresponding position. We approximate the expectations with a single sample and learn $\theta _ { G }$ with gradient ascent. Despite receiving no explicit feedback about which generated tokens are correct, we found the adversarial training resulted in a fairly accurate generator (for a 256-hidden-size generator, the adversarially trained one achieves 58% accuracy at masked language modeling while the same sized MLE generator gets 65%). However, using this generator did not improve over the MLE-trained one on downstream tasks (see the right of Figure 3 in the main paper).
+
+## G EVALUATING ELECTRA AS A MASKED LANGUAGE MODEL
+
+This sections details some initial experiments in evaluating ELECTRA as a masked language model. Using slightly different notation from the main paper, given a context c consisting of a text sequence with one token x masked-out, the discriminator loss can be written as
+
+$$
+\mathcal {L} _ {\text {Disc}} = - \sum_ {x \in \text {vocab}} \left( \begin{array}{l l} (1 - p _ {\text {mask}}) p _ {\text {data}} (x | c) \log D (x, c) + & / / \text {unmasked token} \\ p _ {\text {mask}} p _ {\text {data}} (x | c) p _ {G} (x | c) \log D (x, c) + & / / \text {generator samples correct token} \\ p _ {\text {mask}} (1 - p _ {\text {data}} (x | c)) p _ {G} (x | c) \log (1 - D (x, c)) \end{array} \right)   / / \text {generator samples incorrect token}
+$$
+
+Finding the critical points of this loss with respect to $D$ shows that for a fixed generator the optimal discriminator is
+
+$$
+D (x, c) = p _ {\text { data }} (x | c) \left(a + p _ {G} (x | c)\right) / \left(a p _ {\text { data }} (x | c) + p _ {G} (x | c)\right)
+$$
+
+which means
+
+$$
+p _ {\mathrm{data}} (x | c) = D (x, c) p _ {G} (x | c) / (a (1 - D (x, c)) + p _ {G} (x | c))
+$$
+
+where $a ~ = ~ ( 1 ~ - ~ p _ { \mathrm { m a s k } } ) / p _ { \mathrm { m a s k } }$ is the number of unmasked tokens for every masked token. We can use this expression to evaluate ELECTRA as a masked language model by selecting $\mathrm { a r g m a x } _ { x \in \mathrm { v o c a b } } D ( x , c ) p _ { G } ( x | c ) / ( a ( 1 - D ( x , c ) ) + p _ { G } ( x | c ) )$ as the model’s prediction for a given context. In practice, selecting over the whole vocabulary is very expensive, so we instead take the argmax over the top 100 predictions from the generator.<sup>10</sup> Using this method, we compared ELECTRA-Base and BERT-Base on the Wikipedia+BooksCorpus dataset. We found that BERT slightly outperformed ELECTRA at masked language modeling (77.9% vs 75.5% accuracy). It is possible that the assumption of an optimal discriminator, which is certainly far from correct, is harming ELECTRA’s accuracy under this evaluation scheme. However, perhaps it is not too surprising that a model like BERT that is trained specifically for generation performs better at generation while a model with a discriminative objective like ELECTRA is better at being fine-tuned on discriminative tasks. We think comparisons of BERT’s and ELECTRA’s MLM predictions might be an interesting way to uncover more about the differences between ELECTRA and BERT encoders in future work.
+
+## H NEGATIVE RESULTS
+
+We briefly describe a few ideas that did not look promising in our initial experiments:
+
+• We initially attempted to make BERT more efficient by strategically masking-out tokens (e.g., masking our rarer tokens more frequently, or training a model to guess which tokens BERT would struggle to predict if they were masked out). This resulted in fairly minor speedups over regular BERT.
+
+• Given that ELECTRA seemed to benefit (up to a certain point) from having a weaker generator (see Section 3.2), we explored raising the temperature of the generator’s output softmax or disallowing the generator from sampling the correct token. Neither of these improved results.
+
+• We tried adding a sentence-level contrastive objective. For this task, we kept 20% of input sentences unchanged rather than noising them with the generator. We then added a prediction head to the model that predicted if the entire input was corrupted or not. Surprisingly, this slightly decreased scores on downstream tasks.

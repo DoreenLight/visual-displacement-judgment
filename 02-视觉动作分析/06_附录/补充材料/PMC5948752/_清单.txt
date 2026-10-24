@@ -1,0 +1,27 @@
+# PMC5948752 补充材料取件清单
+
+- 取件时间：2026-10-01 15:32:05
+- 接口：`GET https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5948752/supplementaryFiles`
+- HTTP 200 / 397,410 bytes / 14 个文件
+
+## 文件
+
+- `sensors-18-01004-g001.gif`  4,282 bytes
+- `sensors-18-01004-g001.jpg`  28,835 bytes
+- `sensors-18-01004-g002.gif`  5,756 bytes
+- `sensors-18-01004-g002.jpg`  53,013 bytes
+- `sensors-18-01004-g003.gif`  1,617 bytes
+- `sensors-18-01004-g003.jpg`  41,253 bytes
+- `sensors-18-01004-g004.gif`  9,223 bytes
+- `sensors-18-01004-g004.jpg`  81,068 bytes
+- `sensors-18-01004-g005.gif`  4,135 bytes
+- `sensors-18-01004-g005.jpg`  80,785 bytes
+- `sensors-18-01004-g006.gif`  3,520 bytes
+- `sensors-18-01004-g006.jpg`  71,785 bytes
+- `sensors-18-01004-g007.gif`  1,794 bytes
+- `sensors-18-01004-g007.jpg`  34,087 bytes
+
+## ⚠️ 取件纪律提醒
+
+- **文件名编号 ≠ 表号编号**：本项目 Pohl 2026 那篇，正文引用的「表 S2/S3」全部在 `s002.pdf` 一份里。取件后**必须逐份打开核对表号**，不要按文件名推断。
+- 补充材料是**已入库论文的附件**，不是独立论文条目：**不要**为它造 `_Abstract_Card.md`（会犯 K8），**不要**改语料三的条目计数。

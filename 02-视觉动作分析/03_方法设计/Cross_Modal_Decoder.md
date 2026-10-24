@@ -14,8 +14,8 @@ ViKiT 的核心命题是**翻译**：Visual Language → Kinematic Language。�
 
 | | source language | target language |
 |---|---|---|
-| **模态** | 视觉（anatomy-aware visual tokens） | 运动学（kinematic tokens） |
-| **编码器** | `Anatomy_aware_Tokenizer` + `Spatio_Temporal_Encoder` | **本解码器** |
+| **模态** | 视觉（anatomy-aware region embeddings） | 运动学（kinematic tokens） |
+| **编码器** | `Anatomy_aware_Region_Encoder` + `Spatio_Temporal_Encoder` | **本解码器** |
 | **"词"** | anatomy region token（$R=8$） | 关节角码字（$K=256$/DOF） |
 | **"句法"** | 空间-时间注意力 | **Kinematic grammar（6 项损失）** |
 
@@ -121,7 +121,7 @@ Kinematic prefix:  k_{1:t-1}
 | 肘屈伸 | `r1 shoulder`, `r2 upper_arm`, `r3 elbow`, `r4 forearm` | 肘角由肩-肘-前臂链决定 |
 | 腕屈伸/偏移 | `r3 elbow`, `r4 forearm`, `r5 wrist`, `r6 hand` | 腕角由前臂-腕-手链决定 |
 | 肩（3 DOF） | `r0 torso`, `r1 shoulder`, `r2 upper_arm` | 肩角需躯干参照系 |
-| **全部 DOF** | **`r7 global` 始终可用** | 保留全局上下文（见 `Anatomy_aware_Tokenizer.md` §2.2） |
+| **全部 DOF** | **`r7 global` 始终可用** | 保留全局上下文（见 `Anatomy_aware_Region_Encoder.md` §2.2） |
 
 > ⚠️ **这同时是一个可检验的假设**：如果解剖路由有效，则**打乱每 DOF 的允许集合**应导致性能下降。
 > **该诊断必须做**（与 `Spatio_Temporal_Encoder.md` 的 region 打乱诊断配套）。
@@ -163,13 +163,13 @@ Kinematic prefix:  k_{1:t-1}
 
 | # | 失败模式 | 症状 | 根因 | 对策 |
 |---|---|---|---|---|
-| **F1** | **Cross-attention 退化为恒等/忽略** | 去掉视觉输入后输出不变 | decoder 直接从 target 侧学到先验（角度分布本身可预测） | ① **必做诊断：视觉消融（输入置零/打乱帧序）**，输出必须显著劣化；② 加视觉-运动学对比损失；③ 检查 attention 熵 |
-| **F2** | **解剖路由限制了必要连接** | 腕角精度上不去 | 真实代偿会让远端角度依赖躯干（**近端代偿**） | ① `r7 global` 兜底；② 路由改为**软偏置**（bias 而非硬 mask）；③ 用 attention 可视化验证 |
-| **F3** | **自回归 exposure bias（P2）** | teacher forcing 好，自由运行崩 | 训练/推理分布不一致 | ① scheduled sampling；② 训练时混入自由运行片段；③ 或直接选 P1 |
-| **F4** | **$J$ 个 DOF query 互相干扰** | 某关节角被另一关节拖累 | query 之间无结构约束 | ① 加 DOF 级解耦损失；② 用解剖路由（§3.1.1）天然解耦；③ 分关节 report 指标 |
-| **F5** | **`(B,T,R,d)` memory 过长导致 cross-attention OOM** | 显存溢出 | M1 展平后 K/V 长度 648 | ① 用 M2；② 对 R 先 pooling；③ memory 下采样 |
-| **F6** | **码本 logits 过于尖锐/平坦** | 训练不收敛或输出恒定 | temperature 设置不当 | ① 引入可学习 temperature；② 用 label smoothing；③ 监控码字熵 |
-| **F7** | **teacher forcing 泄漏未来帧** | 验证指标虚高 | target 侧 mask 错误，或 encoder 看到了未来 | ① **因果性单元测试**（见 §7）；② 显式检查 mask |
+| **XMD-F1** | **Cross-attention 退化为恒等/忽略** | 去掉视觉输入后输出不变 | decoder 直接从 target 侧学到先验（角度分布本身可预测） | ① **必做诊断：视觉消融（输入置零/打乱帧序）**，输出必须显著劣化；② 加视觉-运动学对比损失；③ 检查 attention 熵 |
+| **XMD-F2** | **解剖路由限制了必要连接** | 腕角精度上不去 | 真实代偿会让远端角度依赖躯干（**近端代偿**） | ① `r7 global` 兜底；② 路由改为**软偏置**（bias 而非硬 mask）；③ 用 attention 可视化验证 |
+| **XMD-F3** | **自回归 exposure bias（P2）** | teacher forcing 好，自由运行崩 | 训练/推理分布不一致 | ① scheduled sampling；② 训练时混入自由运行片段；③ 或直接选 P1 |
+| **XMD-F4** | **$J$ 个 DOF query 互相干扰** | 某关节角被另一关节拖累 | query 之间无结构约束 | ① 加 DOF 级解耦损失；② 用解剖路由（§3.1.1）天然解耦；③ 分关节 report 指标 |
+| **XMD-F5** | **`(B,T,R,d)` memory 过长导致 cross-attention OOM** | 显存溢出 | M1 展平后 K/V 长度 648 | ① 用 M2；② 对 R 先 pooling；③ memory 下采样 |
+| **XMD-F6** | **码本 logits 过于尖锐/平坦** | 训练不收敛或输出恒定 | temperature 设置不当 | ① 引入可学习 temperature；② 用 label smoothing；③ 监控码字熵 |
+| **XMD-F7** | **teacher forcing 泄漏未来帧** | 验证指标虚高 | target 侧 mask 错误，或 encoder 看到了未来 | ① **因果性单元测试**（见 §7）；② 显式检查 mask |
 
 ---
 
@@ -192,7 +192,7 @@ Kinematic prefix:  k_{1:t-1}
 | # | 交付物 | 验收标准 |
 |---|---|---|
 | 1 | P1 / P2 两实现 | 可切换；参数量、FLOPs、**推理延迟（ms/序列）**报告 |
-| 2 | **视觉消融诊断** | 视觉输入置零 / 打乱帧序后，输出必须显著劣化（否则 F1 成立） |
+| 2 | **视觉消融诊断** | 视觉输入置零 / 打乱帧序后，输出必须显著劣化（否则 XMD-F1 成立） |
 | 3 | **解剖路由打乱诊断** | 打乱每 DOF 的允许 region 集合后性能变化 |
 | 4 | attention 可视化 | 输出"predicted 肘角 ↔ 各 region/帧"的注意力热图 |
 | 5 | **因果性单元测试** | 断言：改变 $t'>t$ 的输入**不得**影响 $t$ 时刻输出（P1 与 P2 均需） |
@@ -204,7 +204,7 @@ Kinematic prefix:  k_{1:t-1}
 
 | # | 风险 | 影响 | 缓解 |
 |---|---|---|---|
-| **R1** | **Cross-attention 并非必要**（视觉消融后性能不显著下降） | "跨模态翻译"叙事被击穿——**这是全项目最大的单点风险** | 必须在**项目早期**做该诊断，而不是论文定稿前；若成立，需重新定位贡献（退到"结构化输出 + grammar"） |
-| **R2** | 自回归（P2）推理延迟不可接受 | 实时应用主张失效 | 按 §4 规则选 P1；或 P2 + KV cache + 蒸馏 |
-| **R3** | 审稿人指"cross-attention decoder"是标准组件 | novelty 被削弱 | **主动承认** cross-attention 本身不新；novelty 锚定在**解剖路由**（§3.1.1）与**六项 grammar 约束**上 |
-| **R4** | P1 被指为"就是个回归头" | 与 Chao 2026 的区别被抹平 | 论证：P1 的 query 是**词表上的符号分布**（$K=256$ logits/DOF），而非单一标量回归；推理时虽然输出连续值，**但训练目标是语言建模目标** |
+| **XMD-R1** | **Cross-attention 并非必要**（视觉消融后性能不显著下降） | "跨模态翻译"叙事被击穿——**这是全项目最大的单点风险** | 必须在**项目早期**做该诊断，而不是论文定稿前；若成立，需重新定位贡献（退到"结构化输出 + grammar"） |
+| **XMD-R2** | 自回归（P2）推理延迟不可接受 | 实时应用主张失效 | 按 §4 规则选 P1；或 P2 + KV cache + 蒸馏 |
+| **XMD-R3** | 审稿人指"cross-attention decoder"是标准组件 | novelty 被削弱 | **主动承认** cross-attention 本身不新；novelty 锚定在**解剖路由**（§3.1.1）与**六项 grammar 约束**上 |
+| **XMD-R4** | P1 被指为"就是个回归头" | 与 Chao 2026 的区别被抹平 | 论证：P1 的 query 是**词表上的符号分布**（$K=256$ logits/DOF），而非单一标量回归；推理时虽然输出连续值，**但训练目标是语言建模目标** |

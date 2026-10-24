@@ -1,0 +1,222 @@
+TYPE Original Research
+PUBLISHED 26 November 2024
+DOI 10.3389/fbioe.2024.1453604
+
+OPEN ACCESS
+EDITED BY
+
+Huub Maas,
+VU Amsterdam, Netherlands
+REVIEWED BY
+
+Markus Tilp,
+University of Graz, Austria
+Josh Walker,
+Leeds Beckett University, United Kingdom
+*CORRESPONDENCE
+
+Ruoli Wang,
+ruoli@kth.se
+These authors share ﬁrst authorship
+
+Individualized muscle
+architecture and contractile
+properties of ankle plantarﬂexors
+and dorsiﬂexors in post-stroke
+individuals
+Ruoli Wang 1*†, Longbin Zhang 1†, Hoor Jalo 1, Olga Tarassova 2,
+Gaia Valentina Pennati 3 and Anton Arndt 2,4
+
+†
+
+RECEIVED 23 June 2024
+ACCEPTED 12 November 2024
+PUBLISHED 26 November 2024
+CITATION
+
+Wang R, Zhang L, Jalo H, Tarassova O,
+Pennati GV and Arndt A (2024) Individualized
+muscle architecture and contractile properties
+of ankle plantarﬂexors and dorsiﬂexors in poststroke individuals.
+Front. Bioeng. Biotechnol. 12:1453604.
+doi: 10.3389/fbioe.2024.1453604
+COPYRIGHT
+
+© 2024 Wang, Zhang, Jalo, Tarassova, Pennati
+and Arndt. This is an open-access article
+distributed under the terms of the Creative
+Commons Attribution License (CC BY). The use,
+distribution or reproduction in other forums is
+permitted, provided the original author(s) and
+the copyright owner(s) are credited and that the
+original publication in this journal is cited, in
+accordance with accepted academic practice.
+No use, distribution or reproduction is
+permitted which does not comply with these
+terms.
+
+1
+KTH MoveAbility Lab, Department of Engineering Mechanics, KTH Royal Institute of Technology,
+Stockholm, Sweden, 2Biomechanics and Motor Control Laboratory, Swedish School of Sport and Health
+Sciences, Stockholm, Sweden, 3Department of Clinical Sciences, Danderyd Hospital, Division of
+Rehabilitation Medicine, Karolinska Institutet, Stockholm, Sweden, 4Department CLINTEC, Karolinska
+Institute, Stockholm, Sweden
+
+Objective: This study was to investigate alterations in contractile properties of the
+ankle plantar- and dorsiﬂexors in post-stroke individuals. The correlation
+between muscle architecture parameters and contractile properties was
+also evaluated.
+Methods: Eight post-stroke individuals and eight age-matched healthy subjects
+participated in the study. Participants were instructed to perform maximal
+isometric contraction (MVC) of ankle plantar- and dorsiﬂexors at four ankle
+angles, and isokinetic concentric contraction at two angular velocities.
+B-mode ultrasound images of gastrocnemius medialis (GM) and tibialis
+anterior (TA) were collected simultaneously during the MVC and isokinetic
+measurements. Individualized torque-angle and torque-angular velocity
+relations were established by ﬁtting the experimental data using a secondorder polynomial and a rectangular hyperbola function, respectively. Muscle
+structure parameters, such as fascicle length, muscle thickness and pennation
+angle of the GM and TA muscles were quantiﬁed.
+Results: Post-stroke subjects had signiﬁcantly smaller ankle plantarﬂexor and
+dorsiﬂexor torques. The muscle structure parameters also showed a signiﬁcant
+change in the stroke group, but no signiﬁcant difference was observed in the TA
+muscle. A narrowed parabolic shape of the ankle PF torque-ﬁber length proﬁle
+with a lower width span was also found in the stroke group.
+Conclusion: This study showed that the contractile properties and architecture of
+ankle muscles in post-stroke individuals undergo considerable changes that may
+directly contribute to muscle weakness, decreased range of motion, and impaired
+motion function in individuals after stroke.
+KEYWORDS
+
+torque-angle relationship, torque-angular velocity relation, fascicle length, muscle
+thickness, pennation angle, ultrasound
+
+Frontiers in Bioengineering and Biotechnology
+
+01
+
+frontiersin.org
+
+Wang et al.
+
+10.3389/fbioe.2024.1453604
+
+1 Introduction
+
+ultrasonography (US). Schillebeeckx et al. (Schillebeeckx et al.,
+2021) conducted a systematic review and revealed signiﬁcant
+architectural changes, including reduced muscle thickness and
+fascicle length in individuals after stroke. However, the
+relationship between these morphological changes and muscle
+weakness remains unclear and requires further investigation. Gao
+and Zhang (2008) reported shorter FL and smaller PA in
+gastrocnemius medialis (GM) at rest compared to a control
+group. Compared to the less-affected side, decreased FL was also
+observed in the GM and soleus on the paretic side, respectively
+(Zhao et al., 2015). For dorsiﬂexors, muscle volumes, muscle length,
+FL and PA were nevertheless found similar in tibialis anterior (TA)
+between paretic and non-paretic sides at neutral position (Ramsay
+et al., 2014). Although the authors stated that the muscular structure
+alteration was not the primary inhibitor of the dorsiﬂexor strength, it
+is unclear whether there are structural changes through joint range
+of motion in post-stroke individuals and how these changes are
+intertwined with force production capacity. Liu et al. (2014)
+reported that body weight support treadmill training can increase
+pennation angle and muscle thickness in the tibialis anterior and
+fascicle length in the medial gastrocnemius, suggesting that early
+rehabilitation can positively impact muscle structure and improve
+function in individuals after subacute stroke. To the best of our
+knowledge, only one study by Gao and Zhang (2008) has
+investigated the changes in contractile properties of the
+gastrocnemius muscle using an electrical stimulator. However,
+there is still a lack of knowledge on the contractile properties of
+paretic muscle in patients with neurological disorders, particularly
+under voluntary contraction conditions.
+The purpose of the current study was therefore to quantitatively
+compare muscle architecture parameters, i.e., FL, PA and MT of GM
+and TA, and contractile properties (T − θ and T − ω proﬁles) of
+ankle plantarﬂexors (PF) and dorsiﬂexors (DF) between post-stroke
+and non-disabled individuals. In addition, the relationship between
+the maximal isometric torque of the ankle and the fascicle length of
+GM and TA was also investigated, respectively.
+
+Skeletal muscles are considered as the biological force generator
+that is designed to provide the functional requirements for
+maintaining movement and posture (Dordević et al., 2014). In
+particular, ankle plantar- and dorsiﬂexor muscles controlling the
+ankle joints play an essential role in many daily activities (Hasson
+et al., 2011). The force developed by contracting muscle in vivo
+depends on the muscle length and velocity, with active and passive
+muscle forces contributing to total muscle force (Ward et al., 2009).
+Force-length and force-velocity relationships thus are commonly
+used to describe basic properties associated with force production
+capacity of a muscle. In practice, torque-angle (T − θ) and torqueangular velocity (T − ω) relationships were instead more often
+reported due to the advantages of readily direct measurement
+and no need of non-trivial assumptions of individual antagonistic
+muscle’s contribution. T − θ and T − ω relationship can provide a
+more comprehensive picture of various factors impacting muscle
+function at the joint level.
+Stroke is one of the world’s leading causes of death and disability
+in adults (Aked et al., 2018; Shi et al., 2022). Post-stroke individuals
+often experience motor impairments dominantly on one side of the
+body, including muscle weakness, contracture, and spasticity
+(Hatem et al., 2016; Alamri et al., 2010). Ankle joint is one of
+the most affected lower-limb joints after stroke that about 60% of
+stroke individuals discharged from in-patient rehabilitation require
+an ankle orthosis and 34% of stroke individuals developing ankle
+contracture (Gao and Zhang, 2008; Chisholm and Perry, 2012; Hara
+et al., 2017). For many post-stroke individuals, the impaired
+dorsiﬂexors could lead to foot drop and increase the risk of
+stumbling and falling (Gorst et al., 2016). Moreover, weak and/or
+spastic plantarﬂexors may also reduce forward propulsion during
+gait (Vattanasilp et al., 2000; Zhang et al., 2013). Maximal isometric
+torque was often used in clinical settings as a marker of active muscle
+functional ability (Ramsay et al., 2014). However, peak torque often
+occurs at different joint angles for individuals due to variations in
+muscle-tendon properties, joint mechanics, and neuromuscular
+control (Kannus, 1991; Timmins et al., 2016). It is essential to
+take individual joint range of motion into consideration when
+evaluating muscle functionality in a non-intact group, i.e., poststroke. It has been previously reported that age-related differences in
+contractile properties of both dorsi- and plantarﬂexors (T − θ and
+T − ω relationships) were observed (Hasson et al., 2011). However,
+T − θ and T − ω relationships of ankle muscles have not been
+investigated in post-stroke individuals, which might yield new
+markers in joint functional ability.
+Neurological impairment after stroke often leads to secondary
+skeletal muscle structural and functional alterations, which impact
+contractile properties of the muscle and force production capacity
+(Zhang et al., 2024). The macroscopic arrangement of muscle ﬁbers
+is also highly inﬂuenced by different factors such as age, gender and
+diseases (Knarr et al., 2014; Körting et al., 2019). Various
+noninvasive techniques, including surface electromyography,
+near-infrared spectroscopy, and ultrasonography, are used to
+analyze and assess muscle parameters (Guo et al., 2022). Muscle
+structure parameters, such as fascicle length (FL), muscle thickness
+(MT) and pennation angle (PA) have been evaluated in post-stroke
+individuals in vivo using medical imaging techniques, e.g.,
+
+Frontiers in Bioengineering and Biotechnology
+
+2 Methods
+2.1 Experimental setup
+Eight hemiplegic post-stroke individuals (sex: 2F/6M; age: 53.5 ±
+15.1 years; weight: 74.9 ± 13.5 kg; height: 174.5 ± 11.5 cm) were
+recruited from Department of Rehabilitation Medicine, Danderyd
+Hospital, Stockholm, Sweden. Inclusion criteria were: (1) stroke >
+6 months prior to inclusion; (2) no anti-spastic treatment within
+3 months; (3) absence of other lower limb injuries or disorders; (4)
+being able to walk with or without assistance. Eight non-disabled
+individuals (sex: 4F/4M; age: 53.1 ± 6.0 years; weight: 70.9 ± 13.3 kg;
+height: 175.5 ± 11.3 cm) without any history of neurological or
+musculoskeletal disorders were participated as a control group
+(HC). The study was approved by the Swedish Ethical Review
+Authority. All participants gave written informed consent
+according to the Declaration of Helsinki.
+In order to measure T − θ and T − ω relationships of ankle PF
+and DF, each participant performed a series of isometric and
+isokinetic contraction on a dynamometer (IsoMed 2000, Hemau,
+
+02
+
+frontiersin.org
+
+

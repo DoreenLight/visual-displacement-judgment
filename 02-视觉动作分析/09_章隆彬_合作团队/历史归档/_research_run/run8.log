@@ -1,0 +1,5 @@
+stages: ['report']
+work_dir: /Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/09_章隆彬_合作团队/_research_run
+[started ] report       0% 开始 report 合成
+report 第 1/3 次执行失败，2.0s 后重试
+report 第 2/3 次执行失败，4.0s 后重试

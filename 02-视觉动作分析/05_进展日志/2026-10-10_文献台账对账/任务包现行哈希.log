@@ -1,0 +1,11 @@
+$ (cd 04_实验设计/D435i_四问任务包 && shasum -a 256 -c 文件清单.sha256)
+README.md: FAILED
+01_上肢关键点三维坐标任务包.md: FAILED
+02_腕关节运动轨迹任务包.md: FAILED
+03_肩肘代偿识别任务包.md: FAILED
+04_运动质量评价任务包.md: FAILED
+RealSense_D435i_腕关节康复人体运动状态感知测试任务书.md: FAILED
+D435i_实验方案与风险清单.md: FAILED
+../../00_研究背景/D435i_四问可行性回答.md: FAILED
+../../Agent.md: FAILED
+shasum: WARNING: 9 computed checksums did NOT match

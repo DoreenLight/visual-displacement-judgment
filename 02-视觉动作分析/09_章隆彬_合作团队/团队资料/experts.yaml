@@ -1,0 +1,359 @@
+# 专家库（ExpertLib）—— 章隆彬及其团队与合作网络
+#
+# 用法：任何调研用 --experts-file 指向本文件（或 config.yaml 的 collector.experts_file）。
+# 强档：seed_urls 直塞抓取队列、跳过搜索排序，保证其官方主页/全文/博论一定入库。
+# 弱档：handles.github 存在时生成 scoped 查询（本库无 github 句柄，故不用）。
+# domains 与 topic 做词重叠匹配（v1 无线语义），标签已按同义词归并收敛。
+#
+# 建库：2026-09-30 首次建立（research-tool 九段闭环深度调研产出确证）
+# 维护约定：新增条目只允许"已在 papers/ 或 _research_run/ 调研产物中确证"的实体，禁止凭印象写入。
+# 条目确证来源见各条 notes 字段（标注了确证文档）。
+
+version: 1
+experts:
+  # ===================================================== 主条目：章隆彬
+  - id: longbin-zhang
+    name: 章隆彬 (Longbin Zhang)
+    kind: author
+    domains:
+      - rehabilitation robotics
+      - exoskeleton
+      - wearable assistive device
+      - neuromusculoskeletal model
+      - muscle tendon estimation
+      - ultrasound imaging
+      - surface emg
+      - emg driven control
+      - brain computer interface
+      - eeg
+      - markerless motion capture
+      - human motion analysis
+      - biomechanics
+      - musculoskeletal modelling
+      - joint torque prediction
+      - muscle force prediction
+      - gait analysis
+      - balance assessment
+      - fall risk
+      - timed up and go
+      - clinical gait assessment
+      - gait event detection
+      - heel strike detection
+      - digital twin
+      - physics informed machine learning
+      - hybrid physics data driven model
+      - machine learning
+      - transfer learning
+      - lstm
+      - uncertainty quantification
+      - post stroke rehabilitation
+      - 3d human pose estimation
+      - spatio temporal encoder
+      - hunan university
+      - royal institute of technology kth
+      - nanyang technological university
+    handles:
+      homepage: https://grzy.hnu.edu.cn/site/index/zhanglongbin
+      faculty_hnu: https://robotics.hnu.edu.cn/info/1176/3002.htm
+      orcid: 0000-0001-8785-5885
+      scholar: https://scholar.google.com/citations?user=zfHrGd0AAAAJ
+      ieee: https://ieeexplore.ieee.org/author/37088232279
+      openalex: A5002794703
+      kth_diva: https://kth.diva-portal.org/smash/person.jsf?pid=authority-person:73231
+      linkedin: https://www.linkedin.com/in/longbin-zhang-863957190
+      email: longbin@hnu.edu.cn
+    seed_urls:
+      # 官方身份与团队（强档优先）
+      - https://robotics.hnu.edu.cn/info/1176/3002.htm
+      - https://grzy.hnu.edu.cn/site/index/zhanglongbin
+      - https://robotics.hnu.edu.cn/szdw/jsjj2.htm
+      # 学术身份（去重/消歧/时间线）
+      - https://orcid.org/0000-0001-8785-5885
+      - https://api.openalex.org/authors/A5002794703
+      - "https://api.openalex.org/works?filter=author.id:A5002794703&per-page=50&sort=publication_date:desc"
+      # 博士阶段（KTH）：博论 + 档案，补齐履历与早期代表作
+      - https://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A1599588
+      - https://kth.diva-portal.org/smash/person.jsf?pid=authority-person:73231
+      # 开放获取全文（无需机构权限即可进 raw/）
+      - https://arxiv.org/abs/2503.00794
+      - https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2023.1254088/full
+      - https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2021.620928/full
+      - https://loop.frontiersin.org/people/1121302/overview
+      # 课题组公开信息（招生/团队规模侧证）
+      - https://www.gaoxiaojob.com/announcement/detail/414402.html
+    priority: high
+    notes: >-
+      湖南大学人工智能与机器人学院教授（博导），国家海外青年人才；KTH 博士、NTU 博后。
+      核心命题：NMS + ML 混合模型实时预测运动意图/关节力矩/肌肉力，个性化肌腱参数估计。
+      2025 起团队产出明显前移：markerless 动捕 + 临床步态/平衡评估（arXiv 2503.00794 为湖大团队
+      代表作，署 School of Artificial Intelligence and Robotics, Hunan University）。
+      扩展域「3d human pose estimation / spatio temporal encoder」来自 IEEE TMM 2023
+      （10.1109/tmm.2023.3321438），与本项目"视觉位移判断"课题直接相关。
+      ⚠️ 数据坑：OpenAlex 作者 ID A5002794703 存在同名污染，100 篇里混入真菌漆酶/肿瘤标志物等
+      完全无关领域论文（调研实测），抓取其 works 列表后必须按领域过滤，不可直接当全集使用。
+
+  # =============================================== 湖大团队（arXiv 2503.00794 共同作者）
+  # 确证：_research_run/raw/12-api.openalex.org-fc55b3.md（OpenAlex works 原始 JSON）
+  #      + _research_run/raw/15-arxiv.org-d1dfa3.md（arXiv 全文，单位声明为 Hunan University, Changsha）
+  - id: hnu-zhizhang-li
+    name: Zhizhang Li（章实验室，arXiv 2503.00794 共同作者）
+    kind: author
+    domains: [markerless motion capture, gait event detection, heel strike detection, kinematic analysis, gait, hunan university]
+    handles: {openalex: A5148123537}
+    seed_urls: ["https://api.openalex.org/authors/A5148123537"]
+    priority: normal
+    notes: "湖大在读学生/青年作者，works 1；署名机构含 Hunan University。早期作者，暂不单独建档检索。"
+
+  - id: hnu-xinyi-fu
+    name: Xinyi Fu（章实验室，arXiv 2503.00794 共同作者）
+    kind: author
+    domains: [markerless motion capture, gait event detection, heel strike detection, kinematic analysis, gait, hunan university]
+    handles: {openalex: A5148131680}
+    seed_urls: ["https://api.openalex.org/authors/A5148131680"]
+    priority: normal
+    notes: "湖大在读学生/青年作者，works 1；署名机构含 Hunan University。"
+
+  - id: hnu-yi-xie
+    name: Yi Xie（章实验室，arXiv 2503.00794 共同作者）
+    kind: author
+    domains: [markerless motion capture, gait event detection, heel strike detection, kinematic analysis, gait, hunan university]
+    handles: {openalex: A5147686316}
+    seed_urls: ["https://api.openalex.org/authors/A5147686316"]
+    priority: normal
+    notes: "湖大在读学生/青年作者，works 3；署名机构含 Hunan University。团队中作品数最多的学生作者。"
+
+  - id: hnu-te-zhang
+    name: Te Zhang（章实验室，arXiv 2503.00794 共同作者）
+    kind: author
+    domains: [markerless motion capture, gait event detection, heel strike detection, kinematic analysis, gait, hunan university]
+    handles: {openalex: A5148175198}
+    seed_urls: ["https://api.openalex.org/authors/A5148175198"]
+    priority: normal
+    notes: "湖大在读学生/青年作者，works 1；署名机构含 Hunan University。"
+
+  - id: hnu-hui-zhang
+    name: Hui Zhang（章实验室，arXiv 2503.00794 共同作者）
+    kind: author
+    domains: [markerless motion capture, gait event detection, heel strike detection, kinematic analysis, gait, hunan university]
+    handles: {openalex: A5148140288}
+    seed_urls: ["https://api.openalex.org/authors/A5148140288"]
+    priority: normal
+    notes: "湖大在读学生/青年作者，works 2；署名机构含 Hunan University。"
+
+  - id: hnu-xiaoyue-yan
+    name: Xiaoyue Yan（严小月，章团队学生/核心成员，ICORR 2025 SMAEXO 第一作者）
+    kind: author
+    domains: [exoskeleton, single sided exoskeleton, hemiplegia, wearable assistive device, balance control, muscle activation, postural sway, markerless motion capture, gait event detection, rehabilitation robotics, hunan university, nanyang technological university]
+    handles: {}
+    seed_urls: []
+    priority: high
+    notes: >-
+      2026-10-01 由用户下载的原文确证升级为团队核心成员：ICORR 2025 SMAEXO
+      （10.1109/icorr66766.2025.11063171）**第一作者**，单位为 Hunan University + NTU；
+      同时是 ICORR 2025 肌电/姿态摆动（10.1109/icorr66766.2025.11063123）共同作者与
+      arXiv 2503.00794 共同作者。OpenAlex 无独立作者 ID（匿名额度已用尽，待明日重查后补 handles）。
+
+  - id: hnu-suiyuan-wang
+    name: Suiyuan Wang（章实验室，arXiv 2503.00794 共同作者）
+    kind: author
+    domains: [markerless motion capture, gait event detection, kinematic analysis, gait, hunan university]
+    handles: {}
+    seed_urls: []
+    priority: normal
+    notes: "arXiv 2503.00794 共同作者；OpenAlex 无独立作者 ID（姓名 Wang, Suiyuan 未消歧），暂不注入。"
+
+  # =============================================== NTU 长期合作者（arXiv 2503.00794 / JBHI 2025）
+  - id: ang-wei-tech
+    name: Wei Tech Ang（南洋理工，合作导师/长期合作者）
+    kind: author
+    domains: [rehabilitation robotics, brain computer interface, eeg, motor imagery, neurorehabilitation, gait, markerless motion capture, nanyang technological university]
+    handles: {openalex: A5002794481}
+    seed_urls: ["https://api.openalex.org/authors/A5002794481"]
+    priority: normal
+    notes: "NTU，works 245；其课题组（康复机器人+BCI 方向）是章隆彬团队最主要的国际合作出口。"
+
+  - id: wu-tsung-lin
+    name: Tsung-Lin Wu（南洋理工，合作者）
+    kind: author
+    domains: [markerless motion capture, gait analysis, motion capture, biomechanics, neurorehabilitation, nanyang technological university]
+    handles: {openalex: A5111572165}
+    seed_urls: ["https://api.openalex.org/authors/A5111572165"]
+    priority: normal
+    notes: "NTU，works 9；JBHI 2025 markerless TUG 与 arXiv 2503.00794 共同作者。"
+
+  - id: jatesiktat-prayook
+    name: Prayook Jatesiktat（南洋理工，合作者）
+    kind: author
+    domains: [markerless motion capture, gait analysis, balance assessment, fall risk, clinical gait assessment, nanyang technological university]
+    handles: {openalex: A5041973076}
+    seed_urls: ["https://api.openalex.org/authors/A5041973076"]
+    priority: normal
+    notes: "NTU，works 27；JBHI 2025 markerless TUG 共同作者，临床步态/平衡评估方向的落地接口人。"
+
+  - id: sidarta-ananda
+    name: Ananda Sidarta（NTU→Singapore Institute of Technology，合作者）
+    kind: author
+    domains: [markerless motion capture, gait analysis, clinical gait assessment, machine learning, neurorehabilitation, nanyang technological university, singapore institute of technology]
+    handles: {openalex: A5013851454}
+    seed_urls: ["https://api.openalex.org/authors/A5013851454"]
+    priority: normal
+    notes: "works 62，现职 Singapore Institute of Technology；JBHI 2025 第一作者之一（markerless TUG）。"
+
+  # ------------------------------------------------------- KTH 阶段长期合作者
+  - id: gutierrez-farewik-elena
+    name: Elena M. Gutierrez-Farewik（KTH 神经肌肉骨骼研究单元，博士阶段合作导师/长期合作者）
+    kind: author
+    domains:
+      - neuromuscular research
+      - muscle modelling
+      - biomechanics
+      - electromyography
+      - wearable sensors
+      - gait analysis
+      - balance
+      - motion analysis
+      - physiotherapy
+      - rehabilitation
+      - markerless motion capture
+      - joint torque prediction
+      - machine learning
+      - royal institute of technology kth
+    handles: {}
+    seed_urls: []
+    priority: normal
+    notes: >-
+      KTH 阶段与合作者（2021-2023 多篇共同作者，含 NMS + LSTM 混合建模系列）。
+      无 github、无免付费墙作者主页，故不设 seed_urls，靠 OpenAlex/Crossref 作者检索兜底命中。
+
+  # ------------------------------------------------------- 方法学上游（KTH）
+  - id: sartori-massimo
+    name: Massimo Sartori（University of Twente，direct collocation / NMS 建模方法上游）
+    kind: author
+    domains: [direct collocation, neuromuscular model, optimal control, muscle redundancy, biomechanics, rehabilitation robotics]
+    handles: {}
+    seed_urls: []
+    priority: normal
+    notes: "章隆彬 NMS 求解与 direct collocation 方法的上游作者（KTH 时期合作网络），方法学溯源用。"
+
+  # ==================================== 合作网络：2026-10-01 新增 7 篇原文确证的合作者
+  # 确证来源：papers/ 下用户从学校数据库下载的 7 篇 PDF（作者与单位均取自原文首页）。
+  # OpenAlex 匿名额度当日已用尽（429），故暂不写 openalex handle/seed，待额度重置后补。
+
+  # ---- 3D 人体姿态估计线（与本项目「视觉位移判断」最对口）----
+  - id: kang-hongbo
+    name: Hongbo Kang（康洪波，通讯作者，3D 姿态估计线）
+    kind: author
+    domains: [3d human pose estimation, poseformer, spatio temporal encoder, transformer, computer vision, video based human pose, markerless motion capture, gait analysis]
+    handles: {}
+    seed_urls: []
+    priority: normal
+    notes: >-
+      TMM 2023「Global and Local Spatio-Temporal Encoder for 3D Human Pose Estimation」
+      （10.1109/tmm.2023.3321438）通讯作者，单位：School of Artificial Intelligence,
+      Chongqing University of Technology（重庆理工大学人工智能学院）。与 Yong Wang、
+      Doudou Wu 同单位（三人对本文贡献相同）。章隆彬在该文的合作者身份是入局计算机视觉
+      视觉人体姿态估计的关键线索。
+
+  - id: wang-yong-cqut
+    name: Yong Wang（王勇，重工·人工智能学院）
+    kind: author
+    domains: [3d human pose estimation, transformer, computer vision, spatio temporal encoder, human motion analysis]
+    handles: {}
+    seed_urls: []
+    priority: normal
+    notes: "TMM 2023 3D 姿态估计第一作者（10.1109/tmm.2023.3321438），与 Hongbo Kang 同单位，对本文贡献相同。"
+
+  - id: wu-doudou
+    name: Doudou Wu（吴豆豆，重工·人工智能学院）
+    kind: author
+    domains: [3d human pose estimation, computer vision, transformer, human motion analysis]
+    handles: {}
+    seed_urls: []
+    priority: normal
+    notes: "TMM 2023 3D 姿态估计共同作者（10.1109/tmm.2023.3321438），与 Yong Wang 同单位，对本文贡献相同。"
+
+  - id: yang-wenming
+    name: Wenming Yang（杨文明，深度学习/计算机视觉领域知名专家，IEEE Senior Member）
+    kind: author
+    domains: [computer vision, deep learning, 3d human pose estimation, transformer, person re identification, human motion analysis, intelligent systems]
+    handles: {}
+    seed_urls: []
+    priority: normal
+    notes: >-
+      TMM 2023 3D 姿态估计共同作者（10.1109/tmm.2023.3321438），单位：Shenzhen
+      International Graduate School（深圳国际研究生院）。他是章隆彬在计算机视觉方向
+      能触达到的最高层级合作人，对本项目「视觉位移判断」的方法选型有直接价值。
+
+  # ---- 临床步态/足底力学线（四川大学 + 湖南大学）----
+  - id: yang-luming
+    name: Luming Yang（杨录明，四川大学轻工清洁技术与工程研究中心）
+    kind: author
+    domains: [clinical biomechanics, gait analysis, plantar loading, foot arch, flatfoot, balance assessment, fall risk, rehabilitation, markerless motion capture]
+    handles: {}
+    seed_urls: []
+    priority: normal
+    notes: >-
+      J Biomech 2025（10.1016/j.jbiomech.2025.112758）通讯作者单位：四川大学轻工清洁技术
+      与工程研究中心/智能服装与运动生物力学实验室。与章隆彬的 HNU 机器人团队合作，
+      是她把 markerless 动捕落到「临床步态/足底力学」侧的桥梁合作人。
+
+  - id: zhao-yihong
+    name: Yihong Zhao（赵一泓/赵怡泓，四川大学）
+    kind: author
+    domains: [clinical biomechanics, gait analysis, plantar loading, foot arch, flatfoot, obesity, balance assessment]
+    handles: {}
+    seed_urls: []
+    priority: normal
+    notes: "J Biomech 2025（10.1016/j.jbiomech.2025.112758）与 Gait&Posture 2023（10.1016/j.gaitpost.2023.07.273）共同作者，四川大学。"
+
+  - id: yan-shiyang
+    name: Shiyang Yan（严诗扬，四川大学）
+    kind: author
+    domains: [clinical biomechanics, gait analysis, plantar loading, foot arch, flatfoot, balance assessment]
+    handles: {}
+    seed_urls: []
+    priority: normal
+    notes: "J Biomech 2025（10.1016/j.jbiomech.2025.112758）第一作者、Gait&Posture 2023 共同作者，四川大学。"
+
+  # ---- SMAEXO 外骨骼线（湖大 + NTU）----
+  - id: wee-seng-kwee
+    name: Seng Kwee Wee（NTU，康复工程/外骨骼方向）
+    kind: author
+    domains: [exoskeleton, rehabilitation robotics, assistive device, stroke rehabilitation, mechatronics, nanyang technological university]
+    handles: {}
+    seed_urls: []
+    priority: normal
+    notes: "ICORR 2025 SMAEXO（10.1109/icorr66766.2025.11063171）共同作者，NTU。"
+
+  - id: wang-ruoli
+    name: Ruoli Wang（王若丽，KTH 阶段长期合作者，现已独立）
+    kind: author
+    domains: [neuromuscular model, muscle modelling, biomechanics, electromyography, wearable sensors, motion analysis, joint torque prediction, markerless motion capture]
+    handles: {}
+    seed_urls: []
+    priority: normal
+    notes: >-
+      由 TASE 2021 原文确证为共同作者（10.1109/tase.2020.3033664），并出现于
+      TNSRE 2022/2023、Front Neurosci 2023、ICARM 2023。是章隆彬 KTH 时期最稳定的
+      合作者（学生→独立研究者），方法学线索（NMS + 肌电驱动）。
+
+  - id: zhu-xueyu
+    name: Xueyu Zhu（朱雪宇，NMS 求解/高斯过程方向）
+    kind: author
+    domains: [neuromusculoskeletal model, gaussian process, joint torque prediction, uncertainty quantification, machine learning, physics informed model]
+    handles: {}
+    seed_urls: []
+    priority: normal
+    notes: "ICARM 2023「Solver-informed Gaussian Process」共同作者（10.1109/icarm58088.2023.10218934），章团队 NMS+GP 路线。"
+
+  - id: zhang-xiaochen
+    name: Xiaochen Zhang（张晓晨，NMS 求解方向）
+    kind: author
+    domains: [neuromusculoskeletal model, joint torque prediction, direct collocation, optimal control, machine learning]
+    handles: {}
+    seed_urls: []
+    priority: normal
+    notes: "ICARM 2023 共同作者（10.1109/icarm58088.2023.10218934）。"
+
+  # ================================================================ 方法学参照库
+  # 说明：后续调研确证到正式师生名单后继续增量追加（确证标准见文件头「维护约定」）。

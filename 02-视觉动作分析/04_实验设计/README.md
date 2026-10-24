@@ -10,10 +10,10 @@
 
 | # | 文档 | 核心内容 |
 |---|---|---|
-| 1 | [`对比方案.md`](对比方案.md) | **4 组对比定义**（B0 Pipeline / B1 Direct Regression / B2 Transformer Regression / B3 Structured Translation）、**B2 的 KIST 逐字复现版 vs 调优版**（防止稻草人）、**有效性威胁 V1–V9**、统计严谨性要求 |
+| 1 | [`对比方案.md`](对比方案.md) | **4 组对比定义**（CMP-B0 Pipeline / CMP-B1 Direct Regression / CMP-B2 Transformer Regression / CMP-B3 Structured Translation）、**CMP-B2 的 KIST 逐字复现版 vs 调优版**（防止稻草人）、**有效性威胁 CMP-V1–CMP-V9**、统计严谨性要求 |
 | 2 | [`评价指标.md`](评价指标.md) | **8 项指标的公式与合格阈值**（MAE° / RMSE° / R² / ICC / angular velocity error / temporal jerk / ROM violation rate / FK consistency）+ **3 项反作弊基线**（persistence / mean / oracle） |
 | 3 | [`数据集与协议.md`](数据集与协议.md) | 数据集（CMU Mocap / Human3.6M / 自采康复数据）+ **四轴划分协议**（跨被试 / 跨视角 / 跨速度 / 遮挡）+ **5 条反数据泄漏硬性要求** |
-| 4 | [`Ablation设计.md`](Ablation设计.md) | **A1–A5 消融**，每条含假设 / 实现变体 / 预期结论 / **若证伪的应对** + 执行优先级 |
+| 4 | [`Ablation设计.md`](Ablation设计.md) | **ABL-A1–ABL-A5 消融**，每条含假设 / 实现变体 / 预期结论 / **若证伪的应对** + 执行优先级 |
 
 ---
 
@@ -37,11 +37,11 @@ D435i验收阈值以对应四包的冻结配置为准，不能照搬下面ViKiT�
 
 | # | 指标 | 阈值 | 竞品是否用 |
 |---|---|---|---|
-| M1 | MAE° | ≤ 5.0° | ✅ 普遍 |
-| M2 | RMSE° | ≤ 6.5° | ✅ |
-| M3 | R² | ≥ 0.90 | ⚠️ 部分 |
-| M4 | **ICC** | **≥ 0.92** | ✅ **Chao 2026 的硬门槛** |
-| M5 | angular velocity error | ≤ 1.5 rad/s | ✅ **Chao 2026 用了** |
+| EXR-M1 | MAE° | ≤ 5.0° | ✅ 普遍 |
+| EXR-M2 | RMSE° | ≤ 6.5° | ✅ |
+| EXR-M3 | R² | ≥ 0.90 | ⚠️ 部分 |
+| EXR-M4 | **ICC** | **≥ 0.92** | ✅ **Chao 2026 的硬门槛** |
+| EXR-M5 | angular velocity error | ≤ 1.5 rad/s | ✅ **Chao 2026 用了** |
 | M6 | temporal jerk | ≤ 竞品 0.8× | ❌ 无人用 |
 | M7 | **ROM violation rate** | **≤ 1.0%** | ❌ **无人用（差异化指标）** |
 | M8 | **FK consistency** | **≤ 5 mm** | ❌ **无人用（差异化指标）** |

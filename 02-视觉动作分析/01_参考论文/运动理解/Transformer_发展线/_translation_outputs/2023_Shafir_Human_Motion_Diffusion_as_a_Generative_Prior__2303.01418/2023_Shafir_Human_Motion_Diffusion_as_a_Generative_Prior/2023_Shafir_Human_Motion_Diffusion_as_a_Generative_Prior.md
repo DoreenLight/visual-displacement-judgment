@@ -1,0 +1,326 @@
+# Human Motion Difusion as a Generative Prior
+
+Yonatan Shafir<sup>∗</sup>, Guy Tevet<sup>∗</sup>, Roy Kapon, and Amit H. Bermano Tel-Aviv University, Israel {Shafir2,guytevet}@mail.tau.ac.il
+
+![](images/93e47b7b16ea8be30cbda8d855befcc298ac8de6751a605ce5aed510326dbfd3.jpg)  
+“Walk״ ”→ Sit while crossing legs” → →”Long leap forward” →“Running in a circle”  
+“A Capoeira practice. One is kicking and the other is avoiding the kick.”
+
+Fig. 1. We suggest three novel motion composition methods, all based on the recent Motion Difusion Model (MDM). (Left) Sequential composition generating an arbitrary long motion with text control over each time interval. (Middle) Parallel composition generating two-person motion from text. A diferent color represents a diferent person - both are generated simultaneously given the text prompt. (Right) Model composition achieving accurate and flexible control by blending models with diferent control signals - here writing “hello" in mid-air.
+
+Recent work has demonstrated the significant potential of denoising difu sion models for generating human motion, including text-to-motion capa bilities. However, these methods are restricted by the paucity of annotated motion data, a focus on single-person motions, and a lack of detailed control. In this paper, we introduce three forms of composition based on difusion priors: sequential, parallel, and model composition. Using sequential compo sition, we tackle the challenge of long sequence generation. We introduce DoubleTake, an inference-time method with which we generate long anima tions consisting of sequences of prompted intervals and their transitions, using a prior trained only for short clips. Using parallel composition, we show promising steps toward two-person generation. Beginning with two fixed priors as well as a few two-person training examples, we learn a slim communication block, ComMDM, to coordinate interaction between the two resulting motions. Lastly, using model composition, we first train in dividual priors to complete motions that realize a prescribed motion for a given joint. We then introduce DifusionBlending, an interpolation mecha nism to efectively blend several such models to enable flexible and eficient fine-grained joint and trajectory-level control and editing. We evaluate the composition methods using an of-the-shelf motion difusion model, and further compare the results to dedicated models trained for these specific tasks. https://priormdm.github.io/priorMDM-page/ <sup>1</sup>
+
+## 1 INTRODUCTION
+
+Human Motion Generation has recently experienced a tremendous leap forward. The recent elaborate language models [Devlin et al. 2019; Radford et al. 2021] and difusion generation approach [Ho et al. 2020; Sohl-Dickstein et al. 2015] have quickly found their way into the field, yielding motion generation models that produce diverse and high-quality sequences from text or other forms of control [Guo et al. 2022; Petrovich et al. 2022; Tevet et al. 2022, 2023]. In turn, these models have been already applied in the world of gaming, and hold the potential to open the field of character animation to novices and professionals alike.
+
+However, the main problem the field of human motion generation has always struggled with and is still struggling with is data. Motion data is typically either acquired by elaborate motion cap ture settings [Joo et al. 2015] or crafted by artists [Adobe Systems Inc. 2021]. Both cases eventually lead to expensive and relatively small and homogeneous datasets [Guo et al. 2022; Punnakkal et al. 2021]. For example, the datasets that current models are trained on, consist almost exclusively of short, single-person sequences. In the absence of data, tasks like multi-person interaction and long sequence generation are left behind, with poor generation quality.
+
+In this paper, we show that pretrained difusion-based motion generation models can be leveraged as priors for composition, allowing out-of-domain motion generation and eficient control. Contrary to the high data consumption reputation of difusion models, we show three methods that overcome the cost barrier using the aforementioned prior, enabling non-trivial tasks in few-shot or even zero-shot settings.
+
+In particular, we choose a pretrained Motion Difusion Model (MDM) [Tevet et al. 2023] to serve as the prior. MDM achieves stateof-the-art results in the text-to-motion and action-to-motion tasks for short single-person sequences, and has already been demonstrated to generalize well to conditions from other domains [Tseng et al. 2022], and to corrections performed between the sampling iterations [Yuan et al. 2022].
+
+Using this prior, we demonstrate three forms of composition:
+
+• Sequential composition, where short sequences are con catenated to create a single long and coherent motion;
+
+• parallel composition, where two single motions are coor dinated to perform together;
+
+• and model composition, where the motions generated by models with diferent control capabilities are blended together for composite control.
+
+Our DoubleTake method (Figure 1-Left), suggests a sequential composition by carefully composing two generated motions in time, including the transition between them, and enables the eficient generation of long motion sequences in a zero-shot manner. Using it, we demonstrate 10-minute long fluent motions that were generated using a model that was trained only on up to 10 seconds long sequences [Guo et al. 2022; Punnakkal et al. 2021]. In addition, due to the composite nature of the generation, DoubleTake allows individ ual control for each motion interval, while maintaining consistent motion and transitions. This result is fairly surprising considering that such transitions were not explicitly annotated in the training data. DoubleTake consists of two phases for every difusion iteration - in the first step, the individual motions, or intervals, are generated together in the same batch, each aware of the context of its neighboring intervals. Then, the second take refines the transitions between intervals to better match those generated in the previous phase.
+
+For parallel composition, we consider a few-shot setting, and enable textually driven two-person motion generation for the first time (Figure 1-Middle). Using our prior-based approach, we demon strate promising two-person motion generation using only as few as a dozen training examples. The key idea is that in order to learn human interactions, we only need to enable prior models to commu nicate with each other throughout the difusion process. Hence, we learn a slim communication block, ComMDM, that passes a communication signal between the two frozen priors through intermediate activation maps.
+
+Finally, we introduce a novel control mechanism via model composition. We observe that the motion inpainting process suggested by Tevet et al. [2023] does not extend well to more elaborate yet important motion tasks such as trajectory and end-efector tracking. Hence, we first show that fine-tuning the prior for this task yields satisfying results while controlling even just a single end-efector. Then, we introduce the DifusionBlending technique, which gener alizes classifier-free guidance [Ho and Salimans 2022] to compose together diferent fine-tuned models and thus enables cross combi nations of keypoints control on the generated motion. This enables surgical and flexible control for human motion that comprises a key capability for any animation system (Figure 1-Right).
+
+We demonstrate, both quantitatively and qualitatively, that these inexpensive composition methods extend a more elaborately trained motion prior and outperform dedicated previous art in the respective tasks [Athanasiou et al. 2022; Wang et al. 2021].
+
+## 2 RELATED WORK
+
+## 2.1 Motion Difusion Models
+
+Very recently, MDM [Tevet et al. 2023], MotionDifuse [Zhang et al. 2022], MoFusion [Dabral et al. 2023], and FLAME [Kim et al. 2022] successfully implemented motion generation neural models using the Denoising Difusion Probabilistic Models (DDPM) [Ho et al. 2020] setting, which was originally suggested for image generation. MDM enables both high-quality generation and generic conditioning that together comprise a good baseline for new motion generation tasks. EDGE [Tseng et al. 2022] followed MDM by extending it for the music-to-motion task. SinMDM [Raab et al. 2023] adapted MDM to non-human motions using a single-sample learning scheme. PhysDif [Yuan et al. 2022] added to MDM a pre-trained physical model based on reinforcement learning which enforces physical constraints during the sampling process. These examples demonstrate the flexibility of MDM to novel tasks.
+
+In the images domain, Rombach et al. [2022a] observed that training a model specifically for the inpainting task improves results. They input the inpainting mask as an additional control signal. Meng et al. [2022], Lugmayr et al. [2022], and Choi et al. [2021] suggested various difusion image editing methods based on partial denoising.
+
+## 2.2 Long-Sequence Motion Generation
+
+Motion Graphs [Kovar et al. 2008] can synthesize long motions via traversing discrete poses given a data corpus. This approach is limited to existing data and will fail to generalize for elaborate textual conditions. RNN-based motion generation tends to collapse into constant poses. Martinez et al. [2017] and Zhou et al. [2018] overcome this issue by feeding the model with its own generated frames during training for the task of prefix completion. Yet, those methods are still limited to the relatively short sequences of the available data. More recently, several works suggested breaking the data limitation by auto-regressively generating short sequences each one conditioned on a textual prompt and the sufix of the previous sequence. Transitions were either learned according to a smoothness prior [Athanasiou et al. 2022; Mao et al. 2022] or from data [Athanasiou et al. 2022; Wang et al. 2022], using the BABEL dataset [Punnakkal et al. 2021], which explicitly annotates transitions between actions. EDGE [Tseng et al. 2022] suggested the unfolding method to generate long sequences with SLERP interpolating between every two neighboring sequences. Contrarily, our DoubleTake suggests an unfolding method that leverages difusion and blends the motion together at each denoising step.
+
+## 2.3 Multi-Person Motion Generation
+
+Data scarcity is a major obstacle for multi-person motion generation, and the number of works is limited accordingly. MuPoTS-3D dataset [Mehta et al. 2018] includes 20 real-world multi-person sequences; CMU-Mocap [CMU [n. d.]] and 3DPW [Von Marcard et al. 2018] includes 55 and 27 two-person motion sequences respectively. Yin et al. [2018] suggested overcoming the data barrier by exploiting 2D information. Recently, Song et al. [2022] contributed the syn thetic multi-person GTA Combat dataset. None of the datasets is textually (or otherwise) annotated, hence, the recent MRT [Wang et al. 2021] and SoMoFormer [Vendrow et al. 2022] models learned the unsupervised prefix completion task. Both learned motions under the DCT transform, which promotes smoothness and unrealistic motion, although improving L2 error measures. In this work, we textually annotate 3DPW and learn text-guided two-person motion generation for the first time.
+
+![](images/a6eec331dcc615ae19e314d6605e9ed67a2ebaba32b297e669d5678d53317d74.jpg)  
+Fig. 2. Soft blending overview. We allow b frames long linear masking between $\mathbf { M _ { h a r d } }$ to $\mathbf { M } _ { s \mathbf { o f f } }$ such that during the Second take at every denoising step part of the originally generated motion (sufix or prefix) going through refinement to fit the transition.
+
+## 2.4 Human Motion Priors
+
+VPoser [Pavlakos et al. 2019] is a human pose auto-encoder, trained on the AMASS motion capture dataset [Mahmood et al. 2019]. It is used as a prior for motion applications, such as motion denoising, fitting SMPL [Loper et al. 2015] model to joint location and as a pose code book for motion generation [Hong et al. 2022]. More recently, Tiwari et al. [2022] showed that such prior can be learned as an implicit model. MoDi [Raab et al. 2022] is an unsupervised motion generator, adapted from StyleGAN [Karras et al. 2019]. Without further training, it enables latent space editing and motion interpolation. Contrary to those examples, MotionCLIP [Tevet et al. 2022] uses priors from the image and text domains to learn motion. It aligns the motion manifold with CLIP [Radford et al. 2021] latent space. This enables inheriting the knowledge learned by CLIP to generate motions out of the data limitations.
+
+In the difusion context, MDM adapts difusion image inpainting [Saharia et al. 2022; Song et al. 2020] for motion editing applications. In this work, we extend this principle by solving non-trivial motion tasks in few to zero-shot settings. More recently, MLD [Xin et al. 2022] learned a latent difusion model, similar to LDM [Rom bach et al. 2022b] , which enables generating motion latent code instead of the motion itself, and lets a larger and pre-trained motion generator translate it into the physical space.
+
+## 3 METHOD
+
+In this work, we use the recent Motion Difusion Model (MDM) [Tevet et al. 2023], pre-trained for the task of text-to-motion, to learn new generative tasks. We represent Human Motion as a sequence of poses $X = \{ x ^ { i } \} _ { i = 1 } ^ { N }$ where $\boldsymbol { x } ^ { i } \in \mathbb { R } ^ { D }$ represent a single pose. Specifically, we use the SMPL [Loper et al. 2015] representation for experi ments with the BABEL [Punnakkal et al. 2021] dataset, including joint rotations and global positions on top of a single human identity $( \beta = 0 )$ . For all other experiments, we use the HumanML3D [Guo et al. 2022] representation, composed of joint positions, rotations, velocities, and foot contact information. MDM is a denoising diffusion model based on the DDPM [Ho et al. 2020] framework. It assumes � noising steps modeled by the stochastic process
+
+![](images/f29a43556e1f9009ba26006406d9ce4858b430790726f80f244bd097c39154c5.jpg)  
+Fig. 3. DoubleTake overview. We generate arbitrarily-long sequences with text control per interval using a fixed motion difusion prior. At the first take, we generate each interval as a single sample handshaking neighboring samples. At each denoising iteration, the handshakes are forced to be equal to eventually compose one long sequence. To refine the transition between intervals, the second take partially noise the handshakes and clean them conditioned on the neighboring intervals using a soft mask. Solid frames mark generation or refinement; Dashed frames mark input motion to the take.
+
+$$
+q (X _ {t} | X _ {t - 1}) = \mathcal {N} (\sqrt {\alpha_ {t}} X _ {t - 1}, (1 - \alpha_ {t}) I),\tag{1}
+$$
+
+for a noising step $t \in T ,$ were $X _ { T } \sim { \cal N } ( 0 , I )$ is assumed. MDM models the denoising process: it predicts the clean motion $\hat { X } _ { 0 }$ given a noised motion $X _ { t } ,$ , a noise step � and a textual condition encoded to CLIP [Radford et al. 2021] space and represented by �. The model is learned with the standard $\mathcal { L } _ { \mathrm { s i m p l e } } = E _ { X _ { 0 } \sim q ( X _ { 0 } | c ) , t \sim [ 1 , T ] } [ \| X _ { 0 } - $ $M D M ( X _ { t } , t , c ) \| _ { 2 } ^ { 2 } ]$ together with geometric losses that regulate the joint position, velocity and foot contact. Sampling a novel motion from MDM is done in an iterative manner, according to Ho et al. [2020]. In every time step � the clean sample $\hat { X } _ { 0 }$ is predicted and noised back to $X _ { t - 1 }$ . This is repeated from $t = T$ until � is achieved.
+
+In this Section, we present sequential composition with the DoubleTake method (3.1), which generalizes MDM to generate motions of arbitrary length without further training, through sequential composition. Then, we present parallel composition by employing a slim communication layer, ComMDM (3.2), trained with as few as 10 interaction samples, for generating two-person motion. Lastly, we fine-tune MDM to control specific joints and present our model composition method, DifusionBlending (3.3), that generalizes the classifier-free approach [Ho and Salimans 2022] to achieve finegrained control over the body with any cross combination of joints to be controlled.
+
+## 3.1 Long Sequences Generation
+
+Our goal is to generate arbitrarily long motions, such that each time interval of the motion is potentially controlled with a diferent text prompt and a diferent sequence length. We want the transi tions between intervals to be realistic and to semantically match the neighboring intervals. Since available datasets are limited in motion length and often do not explicitly include transitions, we suggest approaching this task in a zero-shot manner, using a fixed generative prior that was trained with such short sequences. We present DoubleTake (Figure 3), a two-stage inference-time process that suggests a parallel solution and generates the long motion in a single batch. Typically, approaches that were designed specifically for this task [Athanasiou et al. 2022; Mao et al. 2022; Wang et al. 2022] generate each such interval conditioned on the fixed sufix of the previous interval. In contrast, DoubleTake generates a prompted interval while observing both the previous and next intervals, which are generated simultaneously. In the first take, we generate each in terval as a diferent sample in the denoised batch, such that each one is conditioned on its own text prompt and maintains a handshake with its neighboring intervals through the denoising process. Hand shake, �, is defined as a short (about a second long) prefix or sufix of the motion, such that the prefix of the current motion is forced to be equal to the sufix of the previous motion. Each interval maintains two such handshakes as demonstrated in Figure 3. The handshake is maintained by simply overriding � with the frame-wise average of the relevant sufix and prefix at each denoising step. This allows our model to generate long sequences that depend on the past and future motions while being aware of the whole sequence during the generation of each interval. The handshake length $h = | \tau |$ can be ar bitrarily defined by the user, also on a per-transition level. However, in practice, we find that the choice of one-second-long handshakes is robust throughout our experiments. Formally, handshakes are forced to be equal at the end of each denoising iteration as follows:
+
+$$
+\tau_ {i} = (1 - \vec {\alpha}) \odot S _ {i - 1} [ - h: ] + \vec {\alpha} \odot S _ {i} [: h ]\tag{2}
+$$
+
+where $S _ { i }$ indicates the $i ^ { t h }$ sequence $\alpha _ { j } = j / h , \forall j : j \in [ 0 : h )$ and $\odot$ indicates a element-wise multiplication.
+
+Looking at the generated handshaked motion however, we ob serve visually displeasing results, as artifacts and inconsistencies occur in the transitions between semantically diferent motions (i.e. “Run" and then “Crawl"). Consequently we suggest adding the second take, applied on the output of the first take. In the second take, we reshape our batch as shown in Figure 3, such that in each sample we get the transition sandwich $( S _ { i } , \tau _ { i } , S _ { i + 1 } )$ . Now, we partially noise the sandwich $T ^ { \prime }$ noising steps and denoise it back to $t = 0$ under our suggested soft-masking feature to refine transitions: In a regular inpainting mask, the content is either taken completely from the input, or is completely generated. We suggest a soft inpainting scheme, where each frame is assigned a soft mask value between 0 and 1 that dictates the amount of refinement the second take performs on top of the first take’s result. To this end, we define the masks $M _ { s o f t } , M _ { h a r d }$ for the interval � and hanshake � respectively, with a short, � frames long, linear transition between the mask values as demonstrated in Figure 2.
+
+![](images/e449298ee7919ef64db07f9fae425e15206cadd8cd81efcaa55db437043d49b5.jpg)  
+Fig. 4. ComMDM overview. Using two fixed MDM models, we train a slim communication block (ComMDM) for two-person motion generation. ComMDM gets as input the activations of transformer layer $L _ { n }$ from both actors and outputs a correction term which is added to the same activations. Optionally, ComMDM also predicts the initial poses $D ^ { i }$ of the two persons. IN and OUT stand for the linear input and output layers of the transformer.
+
+Finally, we construct the long sequence by unfolding it, i.e. by reshaping each sequence and transition back to its linear place as demonstrated in Figure 3 bottom.
+
+## 3.2 Two-Person Generation
+
+Our goal is to simultaneously generate motion of two people interacting with each other. The limited data availability dictates a few-shot learning solution. Our key insight is that by dedicating a fixed generator for each person in the scene the motion remains in the human motion distribution, and we only need to learn to coordinate between the two. Hence, we introduce ComMDM (Figure 4), a single-layer transformer model that is trained to coordinate between two instances of a fixed MDM (one for each person). ComMDM is placed after transformer layer �, gets as inputs the output activations of this layer from both models $( O _ { t } ^ { 1 , ( \bar { n } ) } , O _ { t } ^ { 2 , ( n ) } )$ and outputs a correction term for each of the two models $\Delta O _ { t } ^ { i , ( n ) }$ . To further reduce the number of learned parameters, we exploit symmetry considerations and output only one correction term, then the output to be corrected is entered first, such that the corrected output is $\tilde { O } _ { t } ^ { i , ( n ) } = O _ { t } ^ { i , ( n ) } + C o m M D M ( O _ { t } ^ { i , ( n ) } , O _ { t } ^ { 3 - i , ( n ) } )$ . We note that in some datasets, such as HumanML3D, all motions are processed to start with the root at the origin and facing the same direction. Hence, naively using ComMDM on a model that was trained with such data will result in two people both being placed at the origin at the beginning of the motion. To mitigate that, ComMDM additionally learns $D _ { \colon }$ , the initial pose of each person at the first frame as a part of the difusion process. Hence, the full implementation of ComMDM is $\Delta O _ { t } ^ { i , ( n ) } , \hat { D } _ { 0 } ^ { i } = C o m M D M ( O _ { t } ^ { i , ( n ) } , O _ { t } ^ { 3 - i , ( n ) } , D _ { t } ^ { i } , t )$
+
+We freeze the weights of the MDM instances and train only Com-MDM with the $L _ { \mathrm { s i m p l e } }$ loss. We learn two motion tasks; For prefix completion, we use a fine-tuned version of MDM for prefix completion (See 3.3) and completely mask the textual condition. For the text-to-motion task, we use a regular instance of MDM and mask the textual condition with a probability of 10% to support classifier-free guidance.
+
+<div class="mineru-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Algorithm 1 Fine-tuning method
+repeat
+    $x_0 \sim q(x_0)$ $t \sim \text{Uniform}(\{1, \ldots, T\})$ $\epsilon \sim \mathcal{N}(0, I)$ $\epsilon[\text{trajectory}] = 0$ ▷ Our addition
+    Take gradient descent step on:
+    $\nabla_\theta \| x_0 - \epsilon_\theta (\sqrt{\bar{\alpha}_t} x_0 + \sqrt{1 - \bar{\alpha}_t} \epsilon, t) \|$
+until Converged
+
+Algorithm 2 Sampling method
+$x_0^{(T)} = 0$
+for $t = T, \ldots, 0$ do
+    $x_0^{(t)}[\text{trajectory}] = \text{given trajectory} \triangleright \text{Original in-painting}$ $\epsilon \sim \mathcal{N}(0, I)$ $\epsilon[\text{trajectory}] = 0$ ▷ Our addition
+    $x_0^{(t-1)} = \epsilon_\theta (\sqrt{\bar{\alpha}_t} x_0 + \sqrt{1 - \bar{\alpha}_t} \epsilon, t)$
+end for
+</div>
+
+## 3.3 Fine-Tuned Motion Control
+
+Our goal is to generate full-body motion controlled by a user-defined set of input features. These features can be root trajectory, a single joint, or any combination of them. We require a self-coherent generation that semantically adheres to the control signal. For instance, when specifying the root trajectory of a person to move backward, we expect the generated motion to have the legs adjusted to walking backward. As we show in subsection 4.3, the motion in-painting method suggested by Tevet et al. [2023] fails to meet this requirement.
+
+Single Control Fine-Tuning. Consequently, inspired by Rom bach et al. [2022a], we introduce a fine-tuning process to yield a model that adheres to the control features. In essence, our method works by masking out the noise applied to the ground-truth features we wish to control, during the forward pass of the difusion process. This means that during training, the ground-truth control features propagate to the input of the model, and thus, the model learns to rely on these features when trying to reconstruct the rest of the fea tures. Algorithm 1 describes the fine-tuning process for trajectory control task. For sampling, we follow the core idea of the finetuning process: After we get the model’s prediction of�<sub>0</sub>, we inject the editing features into it. Then, in the forward process from the predicted �<sub>0</sub> to $x _ { t - 1 }$ , we mask out the noise in the control features to allow them to cleanly propagate into the model. Algorithm 2 defines this sampling process for trajectory control task. The fine-tuning stage requires less than 20� steps to generate visually pleasing results. It allows us to easily acquire a dedicated model for a given control task.
+
+DifusionBlending. A fine-tuned model for every possible con trol task is sub-optimal. Hence, we suggest DifusionBlending, a model composition method for using multiple models for composite control tasks. For instance, if we wish to dictate both the trajectory of the character and its left hand, we can blend the model that was trained solely for trajectory control and the model that was trained only for the left hand.
+
+![](images/7460c843f53ec044b21c0933c9b8c512d09799bf3622d190cb90dc648572d8ff.jpg)  
+Fig. 5. DoubleTake transition refinement. The second take refines the transitions generated in the first take to be more smooth and more realistic. Orange are subsequent transition frames and Blue are context intervals.
+
+To control cross combinations of the joints (i.e. both the root and the end efector as in Figure 1), we extend the core idea of the classifier-free approach [Ho and Salimans 2022] and present DifusionBlending. The classifier-free approach suggests interpolating or extrapolating between the conditioned model � and the unconditioned model $G ^ { \emptyset }$ . We argue that this idea can be generalized to any two "aligned" (see definition in [Wu et al. 2021]) difusion models $G ^ { a }$ and $G ^ { b }$ that are conditioned on $c _ { a }$ and $c _ { b }$ respectively. Then sampling with two conditions simultaneously is implemented as
+
+$$
+G _ {s} ^ {a, b} (X _ {t}, t, c _ {a}, c _ {b}) = G ^ {a} (X _ {t}, t, c _ {a}) + s \cdot (G ^ {b} (X _ {t}, t, c _ {b}) - G ^ {a} (X _ {t}, t, c _ {a})),\tag{3}
+$$
+
+with the scale parameter � trading-of the significance of the two control signals.
+
+## 4 EXPERIMENTS
+
+## 4.1 Long Sequences Generation
+
+For long sequence generation with our DoubleTake method, we use a fixed MDM [Tevet et al. 2023] trained on the HumanML3D [Guo et al. 2022] dataset, originally trained with up to 10 seconds long motions. To compare with TEACH [Athanasiou et al. 2022], which was dedicatedly trained for this task, we train MDM for 1.25� steps on BABEL [Punnakkal et al. 2021], the same dataset TEACH was trained on with the same hyperparameters suggested by Tevet et al. [2023] on a single NVIDIA GeForce RTX 2080 Ti GPU. For both datasets, we applied DoubleTake with a one-second-long transition length, $T ^ { \prime } = 7 0 0 , M _ { h a r d } = 0 . 8 5 , M _ { s o f t } = 0 . 1$ and $b = 1 0$
+
+In both cases, we evaluate the generation using the evaluators and metrics suggested by Guo et al. [2022]. In short, they learn text and motion encoders for the HumanML3D dataset as evaluators that map motion and text to the same latent space, then apply a “Two people are dancing in a circle and holding hands.”
+
+<table><tr><td rowspan="2"></td><td colspan="4">Motion</td><td colspan="2">Transition (70 frames)</td><td colspan="2">Transition (30 frames)</td></tr><tr><td>R-precision ↑</td><td>FID↓</td><td>Diversity→</td><td>MultiModal-Dist↓</td><td>FID↓</td><td>Diversity→</td><td>FID↓</td><td>Diversity→</td></tr><tr><td>Ground Truth</td><td>0.62</td><td> $0.4 \cdot 10^{-3}$ </td><td>8.51</td><td>3.57</td><td> $0.8 \cdot 10^{-3}$ </td><td>8.23</td><td> $0.9 \cdot 10^{-3}$ </td><td>8.33</td></tr><tr><td>TEACH [2022]</td><td>0.46</td><td>1.12</td><td>8.28</td><td>7.14</td><td>3.86</td><td>7.62</td><td>7.93</td><td>6.53</td></tr><tr><td>Double Take (ours)</td><td>0.43</td><td>1.04</td><td>8.14</td><td>7.39</td><td>1.88</td><td>7.00</td><td>3.45</td><td>7.19</td></tr><tr><td>+ Trans. Emb</td><td>0.48</td><td>0.79</td><td>8.16</td><td>6.97</td><td>3.43</td><td>6.78</td><td>7.23</td><td>6.41</td></tr><tr><td>+ Trans. Emb + geo losses</td><td>0.45</td><td>0.91</td><td>8.16</td><td>7.09</td><td>2.39</td><td>7.18</td><td>6.05</td><td>6.57</td></tr></table>
+
+Table 1. Quantitative results on the BABEL [2021] test set. All methods use the real motion length from the ground truth. ‘→’ means results are beter if the metric is closer to the real distribution. We run all the evaluations 10 times. Transition metrics were tested on two diferent lengths and it contains context from the sufix of the previous frame and the prefix of the next frame. tested on two diferent margin lengths since TEACH [2022] define transition of 8 frames. Bold indicates best result, ��������� indicates second best result. R-precision reported is top-3.
+
+![](images/b2593a1a6abd93ad6eb8a45061ec8782ff6c36f51ae01436f86781614c69ac90.jpg)  
+Fig. 6. Two-Person Prefix Completion. MRT [Wang et al. 2021] tends to fixate on the prefix pose whereas our ComMDM provides lively and semantically correct completions. Blue figures are the input prefix frames, provided to both models. The red and orange figures are MRT and our completions correspondingly.
+
+set of metrics on the generated motions as they are represented in this latent space. R-precision measures the proximity of the motion to the text it was conditioned on, FID measures the distance of the generated motion distribution to the ground truth distribution in latent space, Diversity measures the variance of generated motion in latent space, and MultiModel distance is the average �2 distance between the pairs of text and conditioned motion in latent space. For full details, we refer the reader to the original paper. Note that for the BABEL dataset, we trained the same evaluators following the setting defined by Guo et al. [2022]. To provide a proper analysis, we generate a 32-intervals long sequence, then apply HumanML3D metrics on the intervals themselves, and once again for the transition. Note that the text-related metrics are not relevant for transitions.
+
+Since the BABEL dataset annotates transitions as well, we suggest using our Transition Embedding: we choose to embed each frame with transition embedding signal, allowing the model better “A Capoeira practice. One is kicking and the other is avoiding the kick.”
+
+“The two people are playing basketball, one with the ball the other is defending.”
+
+![](images/cb552c7d2a203b248ab7bafe498ea8699fafbabfc33d5414f05860f08c432105.jpg)  
+Fig. 7. Two-Person Text-to-Motion. We use ComMDM to generate twoperson interactions given an unseen text prompt describing it. Diferent color defines diferent character, both are generated simultaneously.
+
+understand if the following frame belongs to transition or part of the motion. We then add this embedding to the frame’s features. Additionally, we choose to train our model over the BABEL dataset with geometric losses as proposed in MDM. We note that whereas we do not apply any post-process to the motion, TEACH aligns the start of each interval to the end of the previous one and adds extra interpolation frames between the two. We observe that without this post-process TEACH produces poor transition, yet evaluated it with all the above to maintain fair conditions.
+
+Table 1 presents quantitative results over the BABEL dataset, compared to TEACH. We evaluated the transitions with two variations - the first with fair margins from the intervals (70 frames) and the other with minimal possible margins for both DoubleTake and TEACH (30 frames which are 1 second). DoubleTake outperforms TEACH in terms of FID with all our methods. When considering transition evaluations the gaps in favor of DoubleTake are even larger. Figure 10 shows a qualitative comparison between the two approaches. Table 2 presents ablations for the DoubleTake hyperparameters over the HumanML3D dataset. We show that our method using DoubleTake, soft masking, and one-second handshake size achieves the best results. Figure 5 shows qualitatively how the second take refines the first take.
+
+<table><tr><td rowspan="2"></td><td colspan="4">Motion</td><td colspan="2">Transition</td></tr><tr><td>R-precision↑</td><td>FID↓</td><td>Div.→</td><td>M.-Dist↓</td><td>FID↓</td><td>Div.→</td></tr><tr><td>Ground Truth</td><td>0.80</td><td> $1.6 \cdot 10^{-3}$ </td><td>9.62</td><td>2.96</td><td>0.05</td><td>9.57</td></tr><tr><td>DoubleTake (ours)</td><td>0.59</td><td>0.60</td><td>9.50</td><td>5.61</td><td>1.48</td><td>8.90</td></tr><tr><td>First take only</td><td>0.59</td><td>1.00</td><td>9.46</td><td>5.63</td><td>2.15</td><td>8.73</td></tr><tr><td>Second take only</td><td>0.59</td><td>1.09</td><td>9.34</td><td>5.57</td><td>3.22</td><td>8.35</td></tr><tr><td>DoubleTake (b=0)</td><td>0.59</td><td>1.00</td><td>9.51</td><td>5.61</td><td>2.21</td><td>8.66</td></tr><tr><td>DoubleTake (b=20)</td><td>0.59</td><td>0.84</td><td>9.74</td><td>5.60</td><td>1.56</td><td>8.73</td></tr><tr><td>DoubleTake (h=30)</td><td>0.60</td><td>1.03</td><td>9.53</td><td>5.60</td><td>2.22</td><td>8.64</td></tr><tr><td>DoubleTake (h=40)</td><td>0.58</td><td>1.16</td><td>9.61</td><td>5.67</td><td>2.41</td><td>8.61</td></tr><tr><td>DoubleTake ( $M_{soft}=0.0$ )</td><td>0.59</td><td>0.85</td><td>9.75</td><td>5.70</td><td>1.72</td><td>8.67</td></tr><tr><td>DoubleTake ( $M_{soft}=0.2$ )</td><td>0.59</td><td>0.90</td><td>9.69</td><td>5.66</td><td>1.50</td><td>8.77</td></tr></table>
+
+Table 2. Quantitative results on the HumanML3D [2022] test set. All methods use the real motion length from the ground truth. ‘→’ means results are beter if the metric is closer to the real distribution. We run all the evaluations 10 times. Bold indicates best result, ��������� indicates second best result. R-precision reported is top-3, Div. stands for diversity and M.-Dist for Multi-modal distance.
+
+## 4.2 Two-Person Generation
+
+Due to the limited availability ofdata, we learn two-person motion in a few-shot manner. We use fixed MDM trained on the HumanML3D dataset and learn a slim communication block, ComMDM, as described in Section 3.
+
+Data. We train and evaluate ComMDM with the 3DPW dataset [Von Marcard et al. 2018], which contains 27 two-person motion sequences annotated with SMPL joints. We omit the test set since it is noisy and does not include any meaningful human interaction. Then we are left with only 10 training examples and 4 validation examples. Yet, the root position is often drifting which was partially fixable by reducing the drift of the camera from the drift of the root. We further augment the data by randomly mirroring and cropping each sequence. Then, we process the data to the HumanML3D joint representation, for compatibility with the original MDM input for mat. We train ComMDM for two diferent generation tasks, both with batch size 64 on a single NVIDIA GeForce RTX 2080 Ti GPU.
+
+Prefix completion. We follow MRT [Wang et al. 2021] and learn to complete 3 seconds of motion given a 1-second prefix. Table 3 presents the root and joints mean �2 error - considering the ablation study presented, we placed the communication layer in the 8th and last layer of the transformer. We train ComMDM for 240� steps. We retrain MRT with our processed data and observe that our data process alone improved the results originally reported by the authors. Although MRT achieves lower error compared to our ComMDM, it generates static and unrealistic motions as presented in Figure 6. Hence we further conducted a user study comparing ComMDM to MDM, MRT, and ground truth data, according to the aspects of interaction level, completion ofthe prefix, and overall quality of the generated motion. 30 unique users were participating in the user study. Each model was compared to ComMDM through 10 randomly sampled prefixes and each such comparison was repeated by 10 unique users. The results (Figure 8) show that the motions generated by ComMDM were clearly preferred over MRT and MDM. Figure 11 shows an example screenshot from this user study.
+
+![](images/3b45e8c7200f078272e0cd22666520cfa3fc17e99f35bc9953d4650780e6930f.jpg)  
+Fig. 8. 3DPW two-person prefix completion user study. We asked users to compare our ComMDM to the original MDM, MRT model, and ground truth in a side-by-side view. The dashed line marks 50%. ComMDM outperforms both MRT and MDM in all three aspects of generation.
+
+Text-to-Motion. We argue that prefix completion is a motion task that becomes irrelevant. It is an explicit control signal that is both limiting the motion and giving a too-large hint for the generation. Additionally, reporting joint error promotes dull low-frequency motion and discourages learning the distribution of motion given a condition. Hence, we make a first step toward text control for two-person motion generation. Since no multi-person dataset is annotated with text, we contribute 5 textual annotations for the 14 training and validation set motions, and train ComMDM on both for 100� steps. Figures 1 and 7 present diverse motion generation given unseen text prompts. We note that due to the small number of samples, generalization is fairly limited to interactions from the same type seen during training.
+
+## 4.3 Fine-Tuned Motion Control
+
+We compare our fine-tuned models and the DifusionBlending sampling method with the original MDM model on various control tasks. For that sake, we sample text and control features according to each task from the HumanML3D test set. Motion is generated with the original MDM model by injecting the control features using the original inpainting method suggested by [Tevet et al. 2023]. We then generate motions with the fine-tuned model that was trained for a specific control task, using our proposed inpainting method. All fine-tuned models were initialized with the same original MDM instance we compare with, and trained with our finetuning method for 80� steps, with a batch size of 64.
+
+Note that we consider the trajectory to be the angle of the character on �� plane and its linear velocities in that plane (we do not include the vertical position). In the joint control tasks, we take the relative location of the joint with respect to the root location. For composite tasks such as left wrist+trajectory and left wrist+right walk → jog → forward wavy motion with hands → cartwheel to the left
+
+![](images/82faa645c4f0859e98aae87cd609a645c1e74b7205cf853f76a59b8ca4d9d035.jpg)  
+Fig. 9. Fine-tuned Motion Control (unconditioned on text). We can see that MDM [Tevet et al. 2023] generates motions that completely ignore the input features: In trajectory control - MDM generates massive foot sliding, and in the hand control, the hand unrealistically bends behind the back. Our finetuned models generate natural motions that semantically and physically match the input features: In trajectory control - we generate a walking motion that fits the trajectory and in hand control, the model recognizes the swinging motion and generates a golf swing.
+
+![](images/ee2c4842f503e558896b01c7ef854579510aa7233d3655e328fba313237101e8.jpg)  
+Fig. 10. DoubleTake compared to TEACH [Athanasiou et al. 2022]. We show that while our DoubleTake provides coherent motion with realistic transitions, TEACH generation sufers from sliding.
+
+foot, we apply our DifusionBlending method on the two corresponding fine-tuned models with equal weights (� = 0.5). All motion control experiments were conducted above HumanML3D dataset, with text-conditioning and a classifier-free guidance scale of 2.5. Quantitative results are presented in Table 4 and qualitative results are demonstrated in Figure 9. We can clearly see that fine-tuning MDM is crucial for the control task, and produces high-quality results.
+
+<table><tr><td></td><td colspan="3">Root Error [m]</td><td colspan="3">Joints Error [m]</td></tr><tr><td></td><td>1s</td><td>2s</td><td>3s</td><td>1s</td><td>2s</td><td>3s</td></tr><tr><td>MRT [2021]</td><td>0.13</td><td>0.21</td><td>0.25</td><td>0.092</td><td>0.128</td><td>0.146</td></tr><tr><td>ComMDM (ours)</td><td>0.19</td><td>0.26</td><td>0.30</td><td>0.147</td><td>0.167</td><td>0.176</td></tr><tr><td>MDM (no Com)</td><td>0.21</td><td>0.38</td><td>0.54</td><td>0.162</td><td>0.203</td><td>0.227</td></tr><tr><td>Com only</td><td>0.25</td><td>0.37</td><td>0.47</td><td>0.154</td><td>0.172</td><td>0.181</td></tr><tr><td>ComMDM - 2layers</td><td>0.21</td><td>0.27</td><td>0.31</td><td>0.162</td><td>0.177</td><td>0.185</td></tr><tr><td>ComMDM - 4layers</td><td>0.22</td><td>0.28</td><td>0.32</td><td>0.167</td><td>0.182</td><td>0.191</td></tr><tr><td>ComMDM @ layer6</td><td>0.21</td><td>0.29</td><td>0.33</td><td>0.151</td><td>0.168</td><td>0.176</td></tr><tr><td>ComMDM @ layer4</td><td>0.23</td><td>0.32</td><td>0.36</td><td>0.151</td><td>0.169</td><td>0.178</td></tr><tr><td>ComMDM @ layer2</td><td>0.31</td><td>0.41</td><td>0.45</td><td>0.156</td><td>0.173</td><td>0.181</td></tr><tr><td>ComMDM @ layer0</td><td>0.34</td><td>0.44</td><td>0.47</td><td>0.157</td><td>0.173</td><td>0.180</td></tr></table>
+
+Table 3. 3DPW prefix completion L2 error. Given a 1-second long prefix, all models predict a 3-second long motion completion. We report the root error and the joint’s mean error relative to the root for the first 1, 2, and 3 seconds. Bold indicates best result, underline indicates second best. We introduce two ablation studies, the first is for the number of layers constructing ComMDM (ours is 1), and the second is in which layer of MDM it is placed (ours is in the 8th). Observe that the communication block performs beter when placed in higher layers of the transformer and constructed from fewer layers.
+
+<table><tr><td colspan="2"></td><td>R-precision↑</td><td>FID↓</td><td>Diversity→</td></tr><tr><td></td><td>Ground Truth</td><td>0.80</td><td> $1.6 \cdot 10^{-3}$ </td><td>9.33</td></tr><tr><td rowspan="2">Trajectory</td><td>MDM</td><td>0.63</td><td>0.98</td><td>9.04</td></tr><tr><td>Fine-tuned (Ours)</td><td>0.64</td><td>0.54</td><td>9.16</td></tr><tr><td rowspan="2">Left Wrist</td><td>MDM</td><td>0.63</td><td>0.82</td><td>9.31</td></tr><tr><td>Fine-tuned (Ours)</td><td>0.64</td><td>0.34</td><td>9.41</td></tr><tr><td rowspan="2">Left Wrist + Trajectory</td><td>MDM</td><td>0.65</td><td>1.18</td><td>8.81</td></tr><tr><td>DiffusionBlending (Ours)</td><td>0.67</td><td>0.22</td><td>9.33</td></tr><tr><td rowspan="2">Left Wrist + Right Foot</td><td>MDM</td><td>0.63</td><td>0.81</td><td>8.84</td></tr><tr><td>DiffusionBlending (Ours)</td><td>0.67</td><td>0.18</td><td>9.35</td></tr></table>
+
+Table 4. Joints control with fine-tuned models and DifusionBlending. We compare our joints control method with the motion inpainting method suggested by Tevet et al. [2023]. We conduct the evaluation on HumanML3D [2022] test set. <sup>′</sup>+<sup>′</sup> sign represents a blending of two fine-tuned models with our DifusionBlending method.
+
+## 5 CONCLUSION
+
+In this paper, we have shown that a motion-based prior can be employed for advanced motion generation and control, using three novel composition methods. We have leveraged the difusion approach itselffor the task, and have shown that it lends itselfnaturally to composition, enabling new tasks with little to no new data. Conceptually, we argue that the difusion-based generative model can serve as a prior, or a proxy, to the human motion manifold, and thus the advanced techniques only need to address the integration between the parts being composed, relying on the fact that the generated motion is always projected back to the motion manifold.
+
+While promising, this initial approach is still in its infancy, and much can be further investigated. In long-sequence generation, for example, we are still limited to the quality of the initial model and the motion may sufer inconsistencies between distant intervals. In addition, long sequences emphasize the need to learn motions that can interact with rich environments.
+
+In two-person motion generation, ComMDM does well at syn chronizing motions between two priors, but only for interactions seen during training, lacking generalization. Based on the singleperson synthesis case, we expect this approach as well to scale with larger datasets in the future. Nevertheless, two-person synthesis brings new challenges yet to be addressed. For example, future methods should allow for valid contacts between people.
+
+Lastly, we note the proposed techniques are not specifically designed for the motion domain. Hence perhaps the most promising avenue for future work is to adapt the techniques described in this paper (DifusionBlending, DoubleTake, ComMDM) to other fields of generation, as well as to investigate additional ways to combine the vast knowledge embedded in pretrained generative models for novel tasks.
+
+## ACKNOWLEDGEMENTS
+
+We extend our gratitude to Prof. Michiel Van de Panne for his invalu able guidance, and insightful suggestions, which have significantly enriched the quality and rigor of this paper. We thank Chuan Guo and Nikos Athanasiou for their technical support and useful advice. We thank Sigal Raab, Roy Hachnochi and Rinon Gal for the fruit ful discussions. This research was supported in part by the Israel Science Foundation (grants no. 2492/20 and 3441/21), Len Blavatnik and the Blavatnik family foundation, and The Tel Aviv University Innovation Laboratories (TILabs). This work was supported by the Yandex Initiative in Machine Learning.
+
+## REFERENCES
+
+[n. d.]. CMU Graphics Lab Motion Capture Database. http://mocap.cs.cmu.edu/.
+
+Adobe Systems Inc. 2021. Mixamo. https://www.mixamo.com Accessed: 2021-12-25.
+
+Nikos Athanasiou, Mathis Petrovich, Michael J. Black, and Gül Varol. 2022. TEACH: Temporal Action Compositions for 3D Humans. In International Conference on 3D Vision (3DV).
+
+Jooyoung Choi, Sungwon Kim, Yonghyun Jeong, Youngjune Gwon, and Sungroh Yoon. 2021. ILVR: Conditioning Method for Denoising Difusion Probabilistic Models. In 2021 IEEE/CVF International Conference on Computer Vision (ICCV). 14347–14356. https://doi.org/10.1109/ICCV48922.2021.01410
+
+Rishabh Dabral, Muhammad Hamza Mughal, Vladislav Golyanik, and Christian Theobalt. 2023. Mofusion: A framework for denoising-difusion-based motion synthesis. In Proceedings ofthe IEEE/CVF Conference on Computer Vision and Pattern Recognition. 9760–9770.
+
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. In Proceedings ofthe 2019 Conference ofthe North American Chapter ofthe Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers). Association for Computational Linguistics, Minneapolis, Minnesota, 4171–4186. https://doi.org/10.18653/v1/N19-1423
+
+Chuan Guo, Shihao Zou, Xinxin Zuo, Sen Wang, Wei Ji, Xingyu Li, and Li Cheng. 2022. Generating Diverse and Natural 3D Human Motions From Text. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 5152–5161.
+
+Jonathan Ho, Ajay Jain, and Pieter Abbeel. 2020. Denoising difusion probabilistic models. Advances in Neural Information Processing Systems 33 (2020), 6840–6851.
+
+Jonathan Ho and Tim Salimans. 2022. Classifier-free difusion guidance. arXiv preprint arXiv:2207.12598 (2022).
+
+Fangzhou Hong, Mingyuan Zhang, Liang Pan, Zhongang Cai, Lei Yang, and Ziwei Liu. 2022. AvatarCLIP: Zero-Shot Text-Driven Generation and Animation of 3D Avatars. ACM Transactions on Graphics (TOG) 41, 4, Article 161 (2022), 19 pages. https://doi.org/10.1145/3528223.3530094
+
+Hanbyul Joo, Hao Liu, Lei Tan, Lin Gui, Bart Nabbe, Iain Matthews, Takeo Kanade, Shohei Nobuhara, and Yaser Sheikh. 2015. Panoptic Studio: A Massively Multiview System for Social Motion Capture. In The IEEE International Conference on Computer Vision (ICCV).
+
+Tero Karras, Samuli Laine, and Timo Aila. 2019. A style-based generator architecture for generative adversarial networks. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition. 4401–4410.
+
+Jihoon Kim, Jiseob Kim, and Sungjoon Choi. 2022. FLAME: Free-form Language-based Motion Synthesis & Editing. arXiv preprint arXiv:2209.00349 (2022).
+
+Lucas Kovar, Michael Gleicher, and Frédéric Pighin. 2008. Motion graphs. In ACM SIGGRAPH 2008 classes. 1–10.
+
+Matthew Loper, Naureen Mahmood, Javier Romero, Gerard Pons-Moll, and Michael J Black. 2015. SMPL: A skinned multi-person linear model. ACM transactions on graphics (TOG) 34, 6 (2015), 1–16.
+
+Andreas Lugmayr, Martin Danelljan, Andres Romero, Fisher Yu, Radu Timofte, and Luc Van Gool. 2022. Repaint: Inpainting using denoising difusion probabilistic models. In Proceedings ofthe IEEE/CVF Conference on Computer Vision and Pattern Recognition. 11461–11471.
+
+Naureen Mahmood, Nima Ghorbani, Nikolaus F. Troje, Gerard Pons-Moll, and Michael J. Black. 2019. AMASS: Archive of Motion Capture as Surface Shapes. In International Conference on Computer Vision. 5442–5451
+
+Wei Mao, Miaomiao Liu, and Mathieu Salzmann. 2022. Weakly-supervised Action Transition Learning for Stochastic Human Motion Prediction. In Proceedings ofthe IEEE/CVF Conference on Computer Vision and Pattern Recognition. 8151–8160.
+
+Julieta Martinez, Michael J Black, and Javier Romero. 2017. On human motion prediction using recurrent neural networks. In Proceedings ofthe IEEE conference on computer vision and pattern recognition. 2891–2900.
+
+Dushyant Mehta, Oleksandr Sotnychenko, Franziska Mueller, Weipeng Xu, Srinath Sridhar, Gerard Pons-Moll, and Christian Theobalt. 2018. Single-shot multi-person 3d pose estimation from monocular rgb. In 2018 International Conference on 3D Vision (3DV). IEEE, 120–130
+
+Chenlin Meng, Yutong He, Yang Song, Jiaming Song, Jiajun Wu, Jun-Yan Zhu, and Stefano Ermon. 2022. SDEdit: Guided Image Synthesis and Editing with Stochastic Diferential Equations. In International Conference on Learning Representations.
+
+Georgios Pavlakos, Vasileios Choutas, Nima Ghorbani, Timo Bolkart, Ahmed A. A. Osman, Dimitrios Tzionas, and Michael J. Black. 2019. Expressive Body Capture: 3D Hands, Face, and Body from a Single Image. In Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR). 10975–10985.
+
+Mathis Petrovich, Michael J. Black, and Gül Varol. 2022. TEMOS: Generating diverse human motions from textual descriptions. In European Conference on Computer Vision (ECCV).
+
+Abhinanda R. Punnakkal, Arjun Chandrasekaran, Nikos Athanasiou, Alejandra Quiros-Ramirez, and Michael J. Black. 2021. BABEL: Bodies, Action and Behavior with English Labels. In Proceedings IEEE/CVF Conf. on Computer Vision and Pattern Recognition (CVPR). 722–731.
+
+Sigal Raab, Inbal Leibovitch, Peizhuo Li, Kfir Aberman, Olga Sorkine-Hornung, and Daniel Cohen-Or. 2022. MoDi: Unconditional Motion Synthesis from Diverse Data. arXiv preprint arXiv:2206.08010 (2022).
+
+Sigal Raab, Inbal Leibovitch, Guy Tevet, Moab Arar, Amit H Bermano, and Danie Cohen-Or. 2023. Single Motion Difusion. arXiv preprint arXiv:2302.05905 (2023).
+
+Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhin Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, et al. 2021. Learning transferable visual models from natural language supervision. In International Conference on Machine Learning. PMLR, 8748–8763.
+
+Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Björn Ommer. 2022a. High-Resolution Image Synthesis With Latent Difusion Models. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR). 10684–10695.
+
+Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Björn Ommer. 2022b. High-resolution image synthesis with latent difusion models. In Proceedings ofthe IEEE/CVFConference on ComputerVision and Pattern Recognition. 10684–10695.
+
+Chitwan Saharia, William Chan, Huiwen Chang, Chris Lee, Jonathan Ho, Tim Salimans, David Fleet, and Mohammad Norouzi. 2022. Palette: Image-to-image difusion models. In ACM SIGGRAPH 2022 Conference Proceedings. 1–10.
+
+Jascha Sohl-Dickstein, Eric Weiss, Niru Maheswaranathan, and Surya Ganguli. 2015. Deep unsupervised learning using nonequilibrium thermodynamics. In International Conference on Machine Learning. PMLR, 2256–2265.
+
+Yang Song, Jascha Sohl-Dickstein, Diederik P Kingma, Abhishek Kumar, Stefano Ermon, and Ben Poole. 2020. Score-based generative modeling through stochastic diferentia equations. arXiv preprint arXiv:2011.13456 (2020).
+
+Ziyang Song, Dongliang Wang, Nan Jiang, Zhicheng Fang, Chenjing Ding, Weihao Gan, and Wei Wu. 2022. ActFormer: A GAN Transformer Framework towards General Action-Conditioned 3D Human Motion Generation. arXiv preprint arXiv:2203.07706 (2022).
+
+Guy Tevet, Brian Gordon, Amir Hertz, Amit H Bermano, and Daniel Cohen-Or. 2022. Motionclip: Exposing human motion generation to clip space. In Computer Vision– ECCV2022: 17th European Conference, Tel Aviv, Israel, October23–27, 2022, Proceedings, Part XXII. Springer, 358–374.
+
+Guy Tevet, Sigal Raab, Brian Gordon, Yoni Shafir, Daniel Cohen-or, and Amit Haim Bermano. 2023. Human Motion Difusion Model. In The Eleventh International Conference on Learning Representations. https://openreview.net/forum?id=SJ1kSyO2jwu
+
+Garvita Tiwari, Dimitrije Antić, Jan Eric Lenssen, Nikolaos Sarafianos, Tony Tung, and Gerard Pons-Moll. 2022. Pose-ndf: Modeling human pose manifolds with neural distance fields. In European Conference on Computer Vision. Springer, 572–589.
+
+Jonathan Tseng, Rodrigo Castellon, and C Karen Liu. 2022. EDGE: Editable Dance Generation From Music. arXiv preprint arXiv:2211.10658 (2022).
+
+Edward Vendrow, Satyajit Kumar, Ehsan Adeli, and Hamid Rezatofighi. 2022. So MoFormer: Multi-Person Pose Forecasting with Transformers. arXiv preprint arXiv:2208.14023 (2022).
+
+Timo Von Marcard, Roberto Henschel, Michael J Black, Bodo Rosenhahn, and Gerard Pons-Moll. 2018. Recovering accurate 3d human pose in the wild using imus and a moving camera. In Proceedings of the European Conference on Computer Vision (ECCV). 601–617.
+
+Jiashun Wang, Huazhe Xu, Medhini Narasimhan, and Xiaolong Wang. 2021. Multi Person 3D Motion Prediction with Multi-Range Transformers. Advances in Neural Information Processing Systems 34 (2021).
+
+Weiqiang Wang, Xuefei Zhe, Huan Chen, Di Kang, Tingguang Li, Ruizhi Chen, and Linchao Bao. 2022. NEURAL MARIONETTE: A Transformer-based Multi-action Human Motion Synthesis System. arXiv preprint arXiv:2209.13204 (2022).
+
+Zongze Wu, Yotam Nitzan, Eli Shechtman, and Dani Lischinski. 2021. StyleAlign: Anal ysis and Applications of Aligned StyleGAN Models. arXiv preprint arXiv:2110.11323 (2021).
+
+Chen Xin, Biao Jiang, Wen Liu, Zilong Huang, Bin Fu, Tao Chen, Jingyi Yu, and Gang Yu. 2022. Executing your Commands via Motion Difusion in Latent Space. arXiv (2022).
+
+Kangxue Yin, Hui Huang, Edmond SL Ho, Hao Wang, Taku Komura, Daniel Cohen-Or, and Hao Zhang. 2018. A sampling approach to generating closely interacting 3d pose-pairs from 2d annotations. IEEE transactions on visualization and computer graphics 25, 6 (2018), 2217–2227.
+
+Ye Yuan, Jiaming Song, Umar Iqbal, Arash Vahdat, and Jan Kautz. 2022. PhysDif: Physics-Guided Human Motion Difusion Model. arXiv preprint arXiv:2212.02500 (2022).
+
+Mingyuan Zhang, Zhongang Cai, Liang Pan, Fangzhou Hong, Xinying Guo, Lei Yang, and Ziwei Liu. 2022. MotionDifuse: Text-Driven Human Motion Generation with Difusion Model. arXiv preprint arXiv:2208.15001 (2022).
+
+Yi Zhou, Zimo Li, Shuangjiu Xiao, Chong He, Zeng Huang, and Hao Li. 2018. Auto-Conditioned Recurrent Networks for Extended Complex Human Motion Synthesis. In International Conference on Learning Representations.
+
+## A USER STUDY
+
+We conducted a user study of the two-person prefix completion task. Its details can be found in Section 4.2 and the results are presented in Figure 8. Figure 11 presents a sample screenshot from the user study form.
+
+![](images/290a6cc9422f5492d0567d5e83c477cebe16592fadc3ad6f869cfbcfe24fcb37.jpg)
+
+[ORANGE FRAMES ONLY] Which animation seems more humanlike and reasonable?
+
+In which animation do the orange frames continues the blue V beginning better?
+
+[ORANGE FRAMES ONLY] Which animation has a better interaction between the two figures?
+
+Fig. 11. A sample screenshot from the two-person prefix completion user study.

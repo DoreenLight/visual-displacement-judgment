@@ -1,0 +1,21 @@
+# PMC6862815 补充材料取件清单
+
+- 取件时间：2026-10-01 15:31:43
+- 接口：`GET https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6862815/supplementaryFiles`
+- HTTP 200 / 223,898 bytes / 8 个文件
+
+## 文件
+
+- `12984_2019_612_Fig1_HTML.gif`  7,937 bytes
+- `12984_2019_612_Fig1_HTML.jpg`  88,491 bytes
+- `12984_2019_612_Fig2_HTML.gif`  3,397 bytes
+- `12984_2019_612_Fig2_HTML.jpg`  48,340 bytes
+- `12984_2019_612_Fig3_HTML.gif`  3,545 bytes
+- `12984_2019_612_Fig3_HTML.jpg`  20,312 bytes
+- `12984_2019_612_Fig4_HTML.gif`  4,385 bytes
+- `12984_2019_612_Fig4_HTML.jpg`  53,137 bytes
+
+## ⚠️ 取件纪律提醒
+
+- **文件名编号 ≠ 表号编号**：本项目 Pohl 2026 那篇，正文引用的「表 S2/S3」全部在 `s002.pdf` 一份里。取件后**必须逐份打开核对表号**，不要按文件名推断。
+- 补充材料是**已入库论文的附件**，不是独立论文条目：**不要**为它造 `_Abstract_Card.md`（会犯 K8），**不要**改语料三的条目计数。

@@ -1,0 +1,15 @@
+stages: ['knowledge', 'inspect', 'qgate', 'report']
+work_dir: /Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/09_章隆彬_合作团队/_research_run
+[started ] knowledge    0% 开始 knowledge 构建
+[completed] knowledge  100% knowledge 完成（279.1s）
+[started ] inspect      0% 开始 inspect 检视
+[completed] inspect      0% inspect 检视完成
+[started ] qgate        0% 开始 qgate 门控评估
+[completed] qgate        0% 门控判定: STOP_SUCCESS
+[started ] report       0% 开始 report 合成
+[completed] report     100% report 完成（149.5s）
+{
+  "topic_dir": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3",
+  "stages_run": null,
+  "citation_coverage": null
+}

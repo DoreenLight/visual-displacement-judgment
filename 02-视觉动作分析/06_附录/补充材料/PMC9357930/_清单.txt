@@ -1,0 +1,23 @@
+# PMC9357930 补充材料取件清单
+
+- 取件时间：2026-10-01 15:30:47
+- 接口：`GET https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9357930/supplementaryFiles`
+- HTTP 200 / 716,026 bytes / 9 个文件
+
+## 文件
+
+- `Data_Sheet_1.pdf`  106,321 bytes
+  - 首行：Supplementary Material 1 Supplementary Figures and Tables 1.1 Supplementary Figures Supplementary Figure 1. Scheme depicting locations of 44 markers on the body (description provided in the supplementary Table 1)
+- `fspor-04-939980-g0001.gif`  14,615 bytes
+- `fspor-04-939980-g0001.jpg`  87,242 bytes
+- `fspor-04-939980-g0002.gif`  16,494 bytes
+- `fspor-04-939980-g0002.jpg`  240,508 bytes
+- `fspor-04-939980-g0003.gif`  15,145 bytes
+- `fspor-04-939980-g0003.jpg`  211,034 bytes
+- `fspor-04-939980-g0004.gif`  12,526 bytes
+- `fspor-04-939980-g0004.jpg`  140,996 bytes
+
+## ⚠️ 取件纪律提醒
+
+- **文件名编号 ≠ 表号编号**：本项目 Pohl 2026 那篇，正文引用的「表 S2/S3」全部在 `s002.pdf` 一份里。取件后**必须逐份打开核对表号**，不要按文件名推断。
+- 补充材料是**已入库论文的附件**，不是独立论文条目：**不要**为它造 `_Abstract_Card.md`（会犯 K8），**不要**改语料三的条目计数。

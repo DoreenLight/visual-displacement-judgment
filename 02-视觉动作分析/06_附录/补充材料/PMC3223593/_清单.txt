@@ -1,0 +1,30 @@
+# PMC3223593 补充材料取件清单
+
+- 取件时间：2026-10-01 15:31:21
+- 接口：`GET https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3223593/supplementaryFiles`
+- HTTP 200 / 730,459 bytes / 17 个文件
+
+## 文件
+
+- `11517_2011_839_Article_Equ1.gif`  418 bytes
+- `11517_2011_839_Article_Equ2.gif`  160 bytes
+- `11517_2011_839_Article_Equ3.gif`  857 bytes
+- `11517_2011_839_Article_IEq1.gif`  151 bytes
+- `11517_2011_839_Article_IEq2.gif`  152 bytes
+- `11517_2011_839_Article_IEq3.gif`  178 bytes
+- `11517_2011_839_Fig1_HTML.gif`  13,178 bytes
+- `11517_2011_839_Fig1_HTML.jpg`  35,867 bytes
+- `11517_2011_839_Fig2_HTML.gif`  3,759 bytes
+- `11517_2011_839_Fig2_HTML.jpg`  147,444 bytes
+- `11517_2011_839_Fig3a_HTML.gif`  4,958 bytes
+- `11517_2011_839_Fig3a_HTML.jpg`  176,592 bytes
+- `11517_2011_839_Fig3b_HTML.gif`  4,071 bytes
+- `11517_2011_839_Fig3b_HTML.jpg`  131,784 bytes
+- `11517_2011_839_Fig4_HTML.gif`  11,648 bytes
+- `11517_2011_839_Fig4_HTML.jpg`  33,698 bytes
+- `11517_2011_839_MOESM1_ESM.doc`  327,680 bytes
+
+## ⚠️ 取件纪律提醒
+
+- **文件名编号 ≠ 表号编号**：本项目 Pohl 2026 那篇，正文引用的「表 S2/S3」全部在 `s002.pdf` 一份里。取件后**必须逐份打开核对表号**，不要按文件名推断。
+- 补充材料是**已入库论文的附件**，不是独立论文条目：**不要**为它造 `_Abstract_Card.md`（会犯 K8），**不要**改语料三的条目计数。

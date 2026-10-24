@@ -1,0 +1,234 @@
+ M 00_研究背景/问题定义_视觉到关节角的翻译.md
+ M "01_参考论文/METRO/METRO：Transformer 端到端人体姿态与网格重建/METRO：Transformer 端到端人体姿态与网格重建_全文翻译.md"
+ M 01_参考论文/OpenCap_传统生物力学/MarkerlessReview2021：视频无标记动捕临床康复生物力学综述/MarkerlessReview2021：视频无标记动捕临床康复生物力学综述_全文翻译.md
+ M 01_参考论文/OpenCap_传统生物力学/OpenCap-Monocular：单目智能手机视频捕捉人体运动动力学/OpenCap-Monocular：单目智能手机视频捕捉人体运动动力学_全文翻译.md
+ M 01_参考论文/OpenCap_传统生物力学/OpenCap：从智能手机视频获取人体运动动力学/OpenCap：从智能手机视频获取人体运动动力学_全文翻译.md
+ M "01_参考论文/PoseFormer_MotionBERT/MotionAGFormer：Transformer-GCNFormer 增强三维人体姿态估计/MotionAGFormer：Transformer-GCNFormer 增强三维人体姿态估计_全文翻译.md"
+ M 01_参考论文/PoseFormer_MotionBERT/MotionBERT：从异构数据源学习人体运动表征/MotionBERT：从异构数据源学习人体运动表征_全文翻译.md
+ M "01_参考论文/PoseFormer_MotionBERT/PoseFormerV2：频域高效鲁棒的 3D 人体姿态估计/PoseFormerV2：频域高效鲁棒的 3D 人体姿态估计_全文翻译.md"
+ M "01_参考论文/PoseFormer_MotionBERT/PoseFormer：时空 Transformer 的 3D 人体姿态估计/PoseFormer：时空 Transformer 的 3D 人体姿态估计_全文翻译.md"
+ M "01_参考论文/RGB_直接竞品_2026_Chao/Chao2026：单目 RGB 相机的下肢关节角度估计/Chao2026：单目 RGB 相机的下肢关节角度估计_全文翻译.md"
+ M "01_参考论文/RGB_直接竞品_2026_Chao/Jamsrandorj2023：单相机 CNN-Transformer 的步态时空参数估计/Jamsrandorj2023：单相机 CNN-Transformer 的步态时空参数估计_全文翻译.md"
+ M 01_参考论文/RGB_角度估计_2022_EMBC/Jamsrandorj2022-EMBC：视角无关的膝肘关节角度深度学习估计/Jamsrandorj2022-EMBC：视角无关的膝肘关节角度深度学习估计_全文翻译.md
+ M "01_参考论文/RGB_角度估计_2022_EMBC/Jamsrandorj2022-Wearable：腰戴混合 CNN-RNN 的步态事件预测/Jamsrandorj2022-Wearable：腰戴混合 CNN-RNN 的步态事件预测_全文翻译.md"
+ M 01_参考论文/RGB_角度估计_2022_EMBC/Kumar2022：深度学习从视觉系统预测下肢运动学/Kumar2022：深度学习从视觉系统预测下肢运动学_全文翻译.md
+ M 01_参考论文/TokenHMR_PoseTokens/TokenHMR：令牌化姿态表示的人体网格恢复/TokenHMR：令牌化姿态表示的人体网格恢复_全文翻译.md
+ M "01_参考论文/ViT_HMR_2.0/HMR2.0：4DHumans 基于 Transformer 的人体重建与跟踪/HMR2.0：4DHumans 基于 Transformer 的人体重建与跟踪_全文翻译.md"
+ D "01_参考论文/_backup_20260930_2214/METRO/METRO：Transformer 端到端人体姿态与网格重建/METRO：Transformer 端到端人体姿态与网格重建_全文翻译.md"
+ D "01_参考论文/_backup_20260930_2214/METRO/METRO：Transformer 端到端人体姿态与网格重建/METRO：Transformer 端到端人体姿态与网格重建_翻译导读.md"
+ D 01_参考论文/_backup_20260930_2214/OpenCap_传统生物力学/MarkerlessReview2021：视频无标记动捕临床康复生物力学综述/MarkerlessReview2021：视频无标记动捕临床康复生物力学综述_全文翻译.md
+ D 01_参考论文/_backup_20260930_2214/OpenCap_传统生物力学/MarkerlessReview2021：视频无标记动捕临床康复生物力学综述/MarkerlessReview2021：视频无标记动捕临床康复生物力学综述_翻译导读.md
+ D 01_参考论文/_backup_20260930_2214/OpenCap_传统生物力学/OpenCap-Monocular：单目智能手机视频捕捉人体运动动力学/OpenCap-Monocular：单目智能手机视频捕捉人体运动动力学_全文翻译.md
+ D 01_参考论文/_backup_20260930_2214/OpenCap_传统生物力学/OpenCap-Monocular：单目智能手机视频捕捉人体运动动力学/OpenCap-Monocular：单目智能手机视频捕捉人体运动动力学_翻译导读.md
+ D 01_参考论文/_backup_20260930_2214/OpenCap_传统生物力学/OpenCap：从智能手机视频获取人体运动动力学/OpenCap：从智能手机视频获取人体运动动力学_全文翻译.md
+ D 01_参考论文/_backup_20260930_2214/OpenCap_传统生物力学/OpenCap：从智能手机视频获取人体运动动力学/OpenCap：从智能手机视频获取人体运动动力学_翻译导读.md
+ D "01_参考论文/_backup_20260930_2214/PoseFormer_MotionBERT/MotionAGFormer：Transformer-GCNFormer 增强三维人体姿态估计/MotionAGFormer：Transformer-GCNFormer 增强三维人体姿态估计_全文翻译.md"
+ D "01_参考论文/_backup_20260930_2214/PoseFormer_MotionBERT/MotionAGFormer：Transformer-GCNFormer 增强三维人体姿态估计/MotionAGFormer：Transformer-GCNFormer 增强三维人体姿态估计_翻译导读.md"
+ D 01_参考论文/_backup_20260930_2214/PoseFormer_MotionBERT/MotionBERT：从异构数据源学习人体运动表征/MotionBERT：从异构数据源学习人体运动表征_全文翻译.md
+ D 01_参考论文/_backup_20260930_2214/PoseFormer_MotionBERT/MotionBERT：从异构数据源学习人体运动表征/MotionBERT：从异构数据源学习人体运动表征_翻译导读.md
+ D "01_参考论文/_backup_20260930_2214/PoseFormer_MotionBERT/PoseFormerV2：频域高效鲁棒的 3D 人体姿态估计/PoseFormerV2：频域高效鲁棒的 3D 人体姿态估计_全文翻译.md"
+ D "01_参考论文/_backup_20260930_2214/PoseFormer_MotionBERT/PoseFormerV2：频域高效鲁棒的 3D 人体姿态估计/PoseFormerV2：频域高效鲁棒的 3D 人体姿态估计_翻译导读.md"
+ D "01_参考论文/_backup_20260930_2214/PoseFormer_MotionBERT/PoseFormer：时空 Transformer 的 3D 人体姿态估计/PoseFormer：时空 Transformer 的 3D 人体姿态估计_全文翻译.md"
+ D "01_参考论文/_backup_20260930_2214/PoseFormer_MotionBERT/PoseFormer：时空 Transformer 的 3D 人体姿态估计/PoseFormer：时空 Transformer 的 3D 人体姿态估计_翻译导读.md"
+ D "01_参考论文/_backup_20260930_2214/RGB_直接竞品_2026_Chao/Chao2026：单目 RGB 相机的下肢关节角度估计/Chao2026：单目 RGB 相机的下肢关节角度估计_全文翻译.md"
+ D "01_参考论文/_backup_20260930_2214/RGB_直接竞品_2026_Chao/Chao2026：单目 RGB 相机的下肢关节角度估计/Chao2026：单目 RGB 相机的下肢关节角度估计_翻译导读.md"
+ D "01_参考论文/_backup_20260930_2214/RGB_直接竞品_2026_Chao/Jamsrandorj2023：单相机 CNN-Transformer 的步态时空参数估计/Jamsrandorj2023：单相机 CNN-Transformer 的步态时空参数估计_全文翻译.md"
+ D "01_参考论文/_backup_20260930_2214/RGB_直接竞品_2026_Chao/Jamsrandorj2023：单相机 CNN-Transformer 的步态时空参数估计/Jamsrandorj2023：单相机 CNN-Transformer 的步态时空参数估计_翻译导读.md"
+ D 01_参考论文/_backup_20260930_2214/RGB_角度估计_2022_EMBC/Jamsrandorj2022-EMBC：视角无关的膝肘关节角度深度学习估计/Jamsrandorj2022-EMBC：视角无关的膝肘关节角度深度学习估计_全文翻译.md
+ D 01_参考论文/_backup_20260930_2214/RGB_角度估计_2022_EMBC/Jamsrandorj2022-EMBC：视角无关的膝肘关节角度深度学习估计/Jamsrandorj2022-EMBC：视角无关的膝肘关节角度深度学习估计_翻译导读.md
+ D "01_参考论文/_backup_20260930_2214/RGB_角度估计_2022_EMBC/Jamsrandorj2022-Wearable：腰戴混合 CNN-RNN 的步态事件预测/Jamsrandorj2022-Wearable：腰戴混合 CNN-RNN 的步态事件预测_全文翻译.md"
+ D "01_参考论文/_backup_20260930_2214/RGB_角度估计_2022_EMBC/Jamsrandorj2022-Wearable：腰戴混合 CNN-RNN 的步态事件预测/Jamsrandorj2022-Wearable：腰戴混合 CNN-RNN 的步态事件预测_翻译导读.md"
+ D 01_参考论文/_backup_20260930_2214/RGB_角度估计_2022_EMBC/Kumar2022：深度学习从视觉系统预测下肢运动学/Kumar2022：深度学习从视觉系统预测下肢运动学_全文翻译.md
+ D 01_参考论文/_backup_20260930_2214/RGB_角度估计_2022_EMBC/Kumar2022：深度学习从视觉系统预测下肢运动学/Kumar2022：深度学习从视觉系统预测下肢运动学_翻译导读.md
+ D 01_参考论文/_backup_20260930_2214/TokenHMR_PoseTokens/TokenHMR：令牌化姿态表示的人体网格恢复/TokenHMR：令牌化姿态表示的人体网格恢复_全文翻译.md
+ D 01_参考论文/_backup_20260930_2214/TokenHMR_PoseTokens/TokenHMR：令牌化姿态表示的人体网格恢复/TokenHMR：令牌化姿态表示的人体网格恢复_翻译导读.md
+ D "01_参考论文/_backup_20260930_2214/ViT_HMR_2.0/HMR2.0：4DHumans 基于 Transformer 的人体重建与跟踪/HMR2.0：4DHumans 基于 Transformer 的人体重建与跟踪_全文翻译.md"
+ D "01_参考论文/_backup_20260930_2214/ViT_HMR_2.0/HMR2.0：4DHumans 基于 Transformer 的人体重建与跟踪/HMR2.0：4DHumans 基于 Transformer 的人体重建与跟踪_翻译导读.md"
+ D "01_参考论文/_backup_20260930_2214/sEMG_原始参照论文/Wei2024：基于 sEMG 的上肢康复连续运动意图预测综述/Wei2024：基于 sEMG 的上肢康复连续运动意图预测综述_全文翻译.md"
+ D "01_参考论文/_backup_20260930_2214/sEMG_原始参照论文/Wei2024：基于 sEMG 的上肢康复连续运动意图预测综述/Wei2024：基于 sEMG 的上肢康复连续运动意图预测综述_翻译导读.md"
+ D "01_参考论文/_backup_20260930_2214/sEMG_原始参照论文/Wei2026-JBHI：肌肉解剖与 Seq2Seq 翻译的 sEMG 关节运动学预测/Wei2026-JBHI：肌肉解剖与 Seq2Seq 翻译的 sEMG 关节运动学预测_全文翻译.md"
+ D "01_参考论文/_backup_20260930_2214/sEMG_原始参照论文/Wei2026-JBHI：肌肉解剖与 Seq2Seq 翻译的 sEMG 关节运动学预测/Wei2026-JBHI：肌肉解剖与 Seq2Seq 翻译的 sEMG 关节运动学预测_翻译导读.md"
+ D "01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/上肢代偿检测/Li2024：IMU 上肢活动范围测量并行效度综述/Li2024：IMU 上肢活动范围测量并行效度综述_全文翻译.md"
+ D "01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/上肢代偿检测/Li2024：IMU 上肢活动范围测量并行效度综述/Li2024：IMU 上肢活动范围测量并行效度综述_翻译导读.md"
+ D 01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/上肢代偿检测/Seo2024：可穿戴传感器居家监测卒中上肢训练质量/Seo2024：可穿戴传感器居家监测卒中上肢训练质量_全文翻译.md
+ D 01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/上肢代偿检测/Seo2024：可穿戴传感器居家监测卒中上肢训练质量/Seo2024：可穿戴传感器居家监测卒中上肢训练质量_翻译导读.md
+ D 01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/上肢代偿检测/Wang2022：卒中上肢代偿评估与检测技术系统综述/Wang2022：卒中上肢代偿评估与检测技术系统综述_全文翻译.md
+ D 01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/上肢代偿检测/Wang2022：卒中上肢代偿评估与检测技术系统综述/Wang2022：卒中上肢代偿评估与检测技术系统综述_翻译导读.md
+ D 01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/上肢代偿检测/肱二头肌弯举疲劳诱发代偿运动分析/肱二头肌弯举疲劳诱发代偿运动分析_全文翻译.md
+ D 01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/上肢代偿检测/肱二头肌弯举疲劳诱发代偿运动分析/肱二头肌弯举疲劳诱发代偿运动分析_翻译导读.md
+ D 01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/上肢代偿检测/自适应协作机器人减轻假肢使用者代偿运动/自适应协作机器人减轻假肢使用者代偿运动_全文翻译.md
+ D 01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/上肢代偿检测/自适应协作机器人减轻假肢使用者代偿运动/自适应协作机器人减轻假肢使用者代偿运动_翻译导读.md
+ D "01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/上肢代偿检测/骨骼数据卒中代偿检测的图卷积 LSTM 注意力网络/骨骼数据卒中代偿检测的图卷积 LSTM 注意力网络_全文翻译.md"
+ D "01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/上肢代偿检测/骨骼数据卒中代偿检测的图卷积 LSTM 注意力网络/骨骼数据卒中代偿检测的图卷积 LSTM 注意力网络_翻译导读.md"
+ D "01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/深度图姿态估计精度/RealSense-Kinematics：单 RGBD 相机实时开源上肢肌肉骨骼分析/RealSense-Kinematics：单 RGBD 相机实时开源上肢肌肉骨骼分析_全文翻译.md"
+ D "01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/深度图姿态估计精度/RealSense-Kinematics：单 RGBD 相机实时开源上肢肌肉骨骼分析/RealSense-Kinematics：单 RGBD 相机实时开源上肢肌肉骨骼分析_翻译导读.md"
+ D 01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/腕关节与前臂专项/改进腕部运动学模型用于人机交互/改进腕部运动学模型用于人机交互_全文翻译.md
+ D 01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/腕关节与前臂专项/改进腕部运动学模型用于人机交互/改进腕部运动学模型用于人机交互_翻译导读.md
+ D 01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/腕关节与前臂专项/自适应学习协作机器人上肢康复训练系统/自适应学习协作机器人上肢康复训练系统_全文翻译.md
+ D 01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/腕关节与前臂专项/自适应学习协作机器人上肢康复训练系统/自适应学习协作机器人上肢康复训练系统_翻译导读.md
+ D 01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/运动质量评价指标/Longhi2016：卒中上肢功能评估的仪器化指标效度验证/Longhi2016：卒中上肢功能评估的仪器化指标效度验证_全文翻译.md
+ D 01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/运动质量评价指标/Longhi2016：卒中上肢功能评估的仪器化指标效度验证/Longhi2016：卒中上肢功能评估的仪器化指标效度验证_翻译导读.md
+ D 01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/运动质量评价指标/Mei2026：面向康复训练的传感器化运动质量评估与生物反馈综述/Mei2026：面向康复训练的传感器化运动质量评估与生物反馈综述_全文翻译.md
+ D 01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/运动质量评价指标/Mei2026：面向康复训练的传感器化运动质量评估与生物反馈综述/Mei2026：面向康复训练的传感器化运动质量评估与生物反馈综述_翻译导读.md
+ D 01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/运动质量评价指标/通过分类和平滑度分析简化自动神经康复/通过分类和平滑度分析简化自动神经康复_全文翻译.md
+ D 01_参考论文/_backup_20260930_2214/腕关节康复感知_D435i/运动质量评价指标/通过分类和平滑度分析简化自动神经康复/通过分类和平滑度分析简化自动神经康复_翻译导读.md
+ M "01_参考论文/sEMG_原始参照论文/Wei2024：基于 sEMG 的上肢康复连续运动意图预测综述/Wei2024：基于 sEMG 的上肢康复连续运动意图预测综述_全文翻译.md"
+ M "01_参考论文/sEMG_原始参照论文/Wei2026-JBHI：肌肉解剖与 Seq2Seq 翻译的 sEMG 关节运动学预测/Wei2026-JBHI：肌肉解剖与 Seq2Seq 翻译的 sEMG 关节运动学预测_全文翻译.md"
+ M "01_参考论文/腕关节康复感知_D435i/上肢代偿检测/Li2024：IMU 上肢活动范围测量并行效度综述/Li2024：IMU 上肢活动范围测量并行效度综述_全文翻译.md"
+ M 01_参考论文/腕关节康复感知_D435i/上肢代偿检测/Seo2024：可穿戴传感器居家监测卒中上肢训练质量/Seo2024：可穿戴传感器居家监测卒中上肢训练质量_全文翻译.md
+ M 01_参考论文/腕关节康复感知_D435i/上肢代偿检测/Wang2022：卒中上肢代偿评估与检测技术系统综述/Wang2022：卒中上肢代偿评估与检测技术系统综述_全文翻译.md
+ M 01_参考论文/腕关节康复感知_D435i/上肢代偿检测/肱二头肌弯举疲劳诱发代偿运动分析/肱二头肌弯举疲劳诱发代偿运动分析_全文翻译.md
+ M 01_参考论文/腕关节康复感知_D435i/上肢代偿检测/自适应协作机器人减轻假肢使用者代偿运动/自适应协作机器人减轻假肢使用者代偿运动_全文翻译.md
+ M "01_参考论文/腕关节康复感知_D435i/上肢代偿检测/骨骼数据卒中代偿检测的图卷积 LSTM 注意力网络/骨骼数据卒中代偿检测的图卷积 LSTM 注意力网络_全文翻译.md"
+ M "01_参考论文/腕关节康复感知_D435i/深度图姿态估计精度/RealSense-Kinematics：单 RGBD 相机实时开源上肢肌肉骨骼分析/RealSense-Kinematics：单 RGBD 相机实时开源上肢肌肉骨骼分析_全文翻译.md"
+ M 01_参考论文/腕关节康复感知_D435i/腕关节与前臂专项/改进腕部运动学模型用于人机交互/改进腕部运动学模型用于人机交互_全文翻译.md
+ M 01_参考论文/腕关节康复感知_D435i/腕关节与前臂专项/自适应学习协作机器人上肢康复训练系统/自适应学习协作机器人上肢康复训练系统_全文翻译.md
+ M 01_参考论文/腕关节康复感知_D435i/运动质量评价指标/Longhi2016：卒中上肢功能评估的仪器化指标效度验证/Longhi2016：卒中上肢功能评估的仪器化指标效度验证_全文翻译.md
+ M 01_参考论文/腕关节康复感知_D435i/运动质量评价指标/Mei2026：面向康复训练的传感器化运动质量评估与生物反馈综述/Mei2026：面向康复训练的传感器化运动质量评估与生物反馈综述_全文翻译.md
+ M 01_参考论文/腕关节康复感知_D435i/运动质量评价指标/通过分类和平滑度分析简化自动神经康复/通过分类和平滑度分析简化自动神经康复_全文翻译.md
+ M 02_创新点矩阵/ViKiT_方法概览.md
+ M 02_创新点矩阵/创新点查重_vs_竞品.md
+ D 03_方法设计/Anatomy_aware_Tokenizer.md
+ M 03_方法设计/Cross_Modal_Decoder.md
+ M 03_方法设计/Forecasting_Task.md
+ M 03_方法设计/Kinematic_Tokens_与_Grammar.md
+ M 03_方法设计/README.md
+ M 03_方法设计/Spatio_Temporal_Encoder.md
+ M 04_实验设计/Ablation设计.md
+ M 04_实验设计/D435i_四问任务包/01_上肢关键点三维坐标任务包.md
+ M 04_实验设计/D435i_四问任务包/02_腕关节运动轨迹任务包.md
+ M 04_实验设计/D435i_四问任务包/03_肩肘代偿识别任务包.md
+ M 04_实验设计/D435i_四问任务包/04_运动质量评价任务包.md
+ M 04_实验设计/D435i_四问任务包/D435i_实验方案与风险清单.md
+ M 04_实验设计/D435i_四问任务包/文件清单.sha256
+ M 04_实验设计/README.md
+ M 04_实验设计/对比方案.md
+ M 04_实验设计/数据集与协议.md
+ M 04_实验设计/评价指标.md
+ M 06_附录/pdf2zh调用脚本/README.md
+ M 06_附录/pdf2zh调用脚本/translate_all.py
+ M 06_附录/pdf2zh调用脚本/verify_translations.py
+ M 06_附录/检索渠道尝试记录.md
+ M 06_附录/缺口台账.md
+ M 06_附录/自检脚本/verify_kb.sh
+ M 09_章隆彬_合作团队/LIST.md
+ M 09_章隆彬_合作团队/_research_run/config.yaml
+ M 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/.stage-complete/clean.json
+ M 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/.stage-complete/inspect.json
+ M 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/.stage-complete/merge.json
+ M 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/.stage-complete/organize.json
+ M 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/.stage-complete/qgate.json
+ M 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/.stage-complete/targeted.json
+ M 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/artifacts/clean.json
+ M 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/artifacts/gate.json
+ M 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/artifacts/inspect.json
+ D 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/artifacts/inspect_r1.json
+ M 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/artifacts/knowledge.json
+ M 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/artifacts/merge.json
+ M 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/artifacts/network.json
+ M 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/artifacts/qgate.json
+ D 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/artifacts/qgate_r1.json
+ M 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/artifacts/targeted.json
+ M 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/clean/quality.json
+ M 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/raw/sources.json
+ M 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/run-summary.json
+ M 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/state.json
+ M 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/tree/00-主表.md
+ D 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/tree/N1-EMG与超声驱动的个性化肌肉-肌腱参数估计.md
+ D 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/tree/N2-物理信息混合模型驱动的下肢多关节力矩预测.md
+ D 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/tree/N3-面向外骨骼按需辅助的自适应控制与不确定性量化.md
+ D 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/tree/N4-无标记运动捕捉与机器学习的临床步态与平衡评估.md
+ D 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/tree/N5-面向运动功能恢复的脑机接口系统.md
+ D 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/tree/N6-实验室团队与国际合作网络.md
+ M 09_章隆彬_合作团队/experts.yaml
+ M "09_章隆彬_合作团队/papers/Zhang2025-JBHI：无标记动捕与 ML 增强的 TUG 平衡步态评估/Zhang2025-JBHI：无标记动捕与 ML 增强的 TUG 平衡步态评估_全文翻译.md"
+ M "09_章隆彬_合作团队/papers/Zhang2025-JBHI：无标记动捕与 ML 增强的 TUG 平衡步态评估/Zhang2025-JBHI：无标记动捕与 ML 增强的 TUG 平衡步态评估_翻译导读.md"
+ M Agent.md
+ M HANDOFF.md
+ M INDEX.md
+ M README.md
+ M STATUS.md
+?? .pi/p0-8-browser-download.json
+?? 00_研究背景/DoF覆盖核查_公开数据集.md
+?? 00_研究背景/JEV路线可行性评估.md
+?? 00_研究背景/Transformer_发展线与康复迁移推演.md
+?? 00_研究背景/V7_单目前臂旋转可行性_证据链.md
+?? 00_研究背景/V9g_临床指标清单_主张E数据源.md
+?? 00_研究背景/上肢DoF预算_串联链拓扑.md
+?? 00_研究背景/中间地带扫描_sweep_middle.md
+?? 00_研究背景/临床侧撞红扫描_sweep_clinical.md
+?? 00_研究背景/第二代引文追溯_snowball_gen2.md
+?? 00_研究背景/翻译范式论证与定位重定_2026-10-01.md
+?? 00_研究背景/论文定位陈述_收窄版.md
+?? 01_参考论文/Transformer_发展线/
+?? 01_参考论文/决策模型线_JEV/
+?? 01_参考论文/生物力学线/
+?? 02_创新点矩阵/Transformer前沿到上肢康复创新点矩阵.md
+?? 03_方法设计/Anatomy_aware_Region_Encoder.md
+?? 04_实验设计/ISB坐标定义抄录.md
+?? 05_进展日志/2026-10-01_Transformer发展线语料库与上肢康复推演.md
+?? 05_进展日志/2026-10-01_语料三新建与定位重定.md
+?? 05_进展日志/2026-10-02_论文收尾与目录整理/
+?? 06_附录/ID命名约定.md
+?? 06_附录/Transformer语料工具/
+?? 06_附录/gen_acquisition_list.py
+?? 06_附录/pdf2zh调用脚本/test_number_fidelity.py
+?? 06_附录/pdf2zh调用脚本/test_refusal_detector.py
+?? 06_附录/决策模型工具/
+?? 06_附录/取件清单_人工标注.json
+?? 06_附录/归档机制.md
+?? 06_附录/待下载论文总清单.md
+?? 06_附录/补充材料/
+?? 08_三维动作分析展示台/Transformer_发展线图谱.html
+?? 08_三维动作分析展示台/生物力学语料图谱.html
+?? 09_章隆彬_合作团队/PAPER_GAP_LIST.md
+?? 09_章隆彬_合作团队/_research_run/RESEARCH_STATUS.md
+?? 09_章隆彬_合作团队/_research_run/extract-tolerant2.log
+?? 09_章隆彬_合作团队/_research_run/extract-tolerant3.log
+?? 09_章隆彬_合作团队/_research_run/extract-tolerant4.log
+?? 09_章隆彬_合作团队/_research_run/run10.log
+?? 09_章隆彬_合作团队/_research_run/run11.log
+?? 09_章隆彬_合作团队/_research_run/run12.log
+?? 09_章隆彬_合作团队/_research_run/run5.log
+?? 09_章隆彬_合作团队/_research_run/run6.log
+?? 09_章隆彬_合作团队/_research_run/run7.log
+?? 09_章隆彬_合作团队/_research_run/run8.log
+?? 09_章隆彬_合作团队/_research_run/run9.log
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/.stage-complete/report.json
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/artifacts/report.json
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/clean/15-arxiv.org-d1dfa3.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/clean/86-localpdf-Zhang2023-TMM-3DPoseEstimator-3335ea.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/clean/87-localpdf-Zhang2025-ICORR-PosturalSway-a34c4a.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/clean/88-localpdf-Zhang2025-ICORR-SMAEXO-2209bb.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/clean/89-localpdf-Zhang2021-TASE-AnkleTorque-ed0375.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/clean/90-localpdf-Zhang2025-JBiomech-FootArches-25c0eb.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/clean/91-localpdf-Zhang2023-GaitPosture-PlantarLoading-564ccd.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/clean/92-localpdf-Zhang2023-ICARM-KneeTorqueGP-3815ce.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/extracted/
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/raw/86-localpdf-Zhang2023-TMM-3DPoseEstimator-3335ea.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/raw/87-localpdf-Zhang2025-ICORR-PosturalSway-a34c4a.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/raw/88-localpdf-Zhang2025-ICORR-SMAEXO-2209bb.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/raw/89-localpdf-Zhang2021-TASE-AnkleTorque-ed0375.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/raw/90-localpdf-Zhang2025-JBiomech-FootArches-25c0eb.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/raw/91-localpdf-Zhang2023-GaitPosture-PlantarLoading-564ccd.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/raw/92-localpdf-Zhang2023-ICARM-KneeTorqueGP-3815ce.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/report.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/sources.json
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/tree/N1-章隆彬与湖南大学人工智能与机器人学院的实验室定位.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/tree/N2-神经肌肉骨骼建模的理论基础与-Hill-type-肌肉模型.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/tree/N3-基于-EMG-+-超声的个体化肌肉-肌腱参数标定.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/tree/N4-卒中后踝关节肌-腱力学改变的量化与对照研究.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/tree/N5-基于-LSTM-与-NMS-模型的多关节关节力矩预测.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/tree/N6-基于聚类分析的个体化运动模式建模.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/tree/N7-下肢外骨骼的按需辅助（AAN）控制策略.md
+?? 09_章隆彬_合作团队/_research_run/zhang-long-bin-longbin-zhang-hunan-university-ren-gong-zhi-neng-yu-ji-q-3a5c14d3/tree/N8-多模态实验采集与跨地域合作网络.md
+?? "09_章隆彬_合作团队/papers/Zhang2021-TASE：肌电驱动 NMS 模型与 ANN 的踝关节力矩估计/"
+?? 09_章隆彬_合作团队/papers/Zhang2023-GaitPosture：肥胖儿童足底负荷阈值的确定方法/
+?? "09_章隆彬_合作团队/papers/Zhang2023-ICARM：NMS 求解器与高斯过程的膝关节力矩预测/"
+?? 09_章隆彬_合作团队/papers/Zhang2024-TMM：全局与局部时空编码器的三维人体姿态估计/
+?? 09_章隆彬_合作团队/papers/Zhang2025-ICORR：任务复杂度下的肌电激活与姿态摇摆/
+?? 09_章隆彬_合作团队/papers/Zhang2025-ICORR：偏瘫单侧移动辅助外骨骼的设计与评估/
+?? 09_章隆彬_合作团队/papers/Zhang2025-JBiomech：扁平足儿童足弓与步态同步恢复的前瞻性队列研究/
+?? 10_研究方向/
+?? 11_归档/
+?? ../视觉实验/

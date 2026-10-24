@@ -1,0 +1,1004 @@
+--- a/10_研究方向/主动参与与训练强度_链路研究/文献台账.json
++++ b/10_研究方向/主动参与与训练强度_链路研究/文献台账.json
+@@ -1,6 +1,7 @@
+ {
+  "schema": "rehab-chain-research/v1",
+  "checked_at": "2026-10-03",
++ "fulltext_checked_at": "2026-10-10",
+  "scope": "上肢主动参与（物理贡献/心理参与分别评价）与训练挑战/剂量，兼可迁移方法",
+  "cutoff": "2026-10-02",
+  "papers": [
+@@ -477,7 +478,7 @@
+    "venue": "arXiv 预印本（cs.RO）",
+    "corpus": "决策模型线_JEV",
+    "thread": "D4",
+-   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/When to Act_ Calibrated Confidence for Reliable Human Intent.pdf",
++   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/何时采取行动：用于辅助机器人中可靠人类意图预测的校准置信度/何时采取行动：用于辅助机器人中可靠人类意图预测的校准置信度.pdf",
+    "version_note": "★★ **与本项目新方向几乎完全对应的论文，标题就是「何时行动」。**\n核心主张：「错误的辅助比没有辅助更糟」（Wrong assistance can be worse than no assistance）。\n**它把置信度阈值变成可解释、可调节的定量安全参数**，这正是 AAN 决策层缺的东西。\n注意其自陈局限：需真实用户闭环验证；校准在病理运动等域偏移下的稳定性仍需检验 —— **对卒中患者恰好就是域偏移**。",
+    "screening": "included",
+    "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+@@ -500,7 +501,7 @@
+    "venue": "ACM/IEEE HRI 2026, pp. 346-355（DOI 10.1145/3757279.3788668）",
+    "corpus": "决策模型线_JEV",
+    "thread": "D4",
+-   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/A Human-in-the-Loop Confidence-Aware Failure Recovery Framew.pdf",
++   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/一种面向模块化机器人策略的人在回路置信度感知故障恢复框架/一种面向模块化机器人策略的人在回路置信度感知故障恢复框架.pdf",
+    "version_note": "★★ **本语料证据等级最高的一篇**（同行评审会议论文，非预印本）。\n**关键设计是「两个决策分离」**：问哪个模块 vs 是否要问人。\n迁移到 AAN：把「是否介入」与「介入哪个自由度/哪个方向」拆成两个独立校准决策 —— 这比单阈值更贴合上肢腕-肘-肩的多关节结构。",
+    "screening": "included",
+    "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+@@ -523,7 +524,7 @@
+    "venue": "Sensors (MDPI) 26(9): 2740（Gold OA CC-BY）",
+    "corpus": "决策模型线_JEV",
+    "thread": "D4",
+-   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Model Predictive Control-Based Assist-as-Needed Strategy for.pdf",
++   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于模型预测控制的按需辅助策略用于减少机器人辅助康复中的运动懈怠/基于模型预测控制的按需辅助策略用于减少机器人辅助康复中的运动懈怠.pdf",
+    "version_note": "★ **指出了误差型 AAN 的结构性缺陷**：助力和用户主动贡献被单一误差系数耦合，「主动出力减少被辅助通道吸收，伪装成小误差」。\n**这正是「用置信度而非误差做介入决策」的论据** —— 误差可以伪装，参与度不能。\n双通道导纳 + 凸 MPC + 能量罐保证无源性。",
+    "screening": "included",
+    "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+@@ -546,7 +547,7 @@
+    "venue": "Mechatronics 114: 103450",
+    "corpus": "决策模型线_JEV",
+    "thread": "D4",
+-   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Velocity field assist-as-needed controller for upper limb re.pdf",
++   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于 sEMG 痉挛检测的上肢康复速度场按需辅助控制器/基于 sEMG 痉挛检测的上肢康复速度场按需辅助控制器.pdf",
+    "version_note": "**「什么时候介入」不只有一层**：除了「患者能力不足要帮」，还有「检测到痉挛要减速保护」。\n这支持把介入决策拆成**多个原子问题**（能力不足 / 疲劳 / 痉挛 / 代偿出现），每个独立校准 —— 正是 JEV 式原语该干的事。",
+    "screening": "included",
+    "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+@@ -569,7 +570,7 @@
+    "venue": "Frontiers in Neurorobotics 17: 1161007（开放获取）",
+    "corpus": "决策模型线_JEV",
+    "thread": "D4",
+-   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Assistance level quantification-based human-robot interactio.pdf",
++   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于助力水平量化的人机交互空间重塑用于康复训练/基于助力水平量化的人机交互空间重塑用于康复训练.pdf",
+    "version_note": "**已有人把 sEMG 接到 AAN 决策上**，用的正是本项目关心的 sEMG 通路。\n其局限：SVM/KF 不是校准过的概率，分类器输出不能直接当安全阈值用 —— 这正是 D4 主张「必须自己校准」的现实佐证。",
+    "screening": "included",
+    "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+@@ -592,7 +593,7 @@
+    "venue": "Neural Engineering and Rehabilitation（PMC5469353，开放全文）",
+    "corpus": "决策模型线_JEV",
+    "thread": "D4",
+-   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Effects of Assist-As-Needed Upper Extremity Robotic Therapy.pdf",
++   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/按需辅助上肢机器人疗法在不完全性脊髓损伤后的疗效：一项平行对照试验/按需辅助上肢机器人疗法在不完全性脊髓损伤后的疗效：一项平行对照试验.pdf",
+    "version_note": "★★ **这是本语料最该被记住的一篇「泼冷水」文献。**\n它用 RCT 级别的方法学给出：**AAN 控制器在主要功能终点上并未显著优于简单的主动触发式固定辅助。**\n作者自陈是 stage-two 概念验证研究、未证明功能获益。\n**对本项目的含义**：介入决策层不能只报「我的 AAN 更好」，必须预先定义主要终点并诚实报告阴性结果。\n另注：作者之一 Fabrizio Sergi 亦为 Neurorobotics 那篇的共同作者。",
+    "screening": "included",
+    "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+@@ -638,7 +639,7 @@
+    "venue": "IEEE ICMA 2025",
+    "corpus": "决策模型线_JEV",
+    "thread": "D5",
+-   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/Continuous Motion Prediction for Upper Limb Rehabilitation R.pdf",
++   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/基于表面肌电信号的上肢康复机器人连续运动预测：一种时空注意力与轻量级 TCN 方法/基于表面肌电信号的上肢康复机器人连续运动预测：一种时空注意力与轻量级 TCN 方法.pdf",
+    "version_note": "已用作者实验室公开的6页IEEE ICMA 2025正式PDF核对题名、作者、DOI、摘要及表I/II。原Zenodo 17850061错配，已撤下。比较数字须区分本实验TCN基线与表II文献比较；6名健康成人的离线结果不能直接当作卒中患者闭环疗效证据。1.5 ms为摘要报告的单次预测延迟，不等于整套系统闭环时延。",
+    "screening": "included",
+    "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+@@ -661,7 +662,7 @@
+    "venue": "arXiv 预印本（后有会议版）",
+    "corpus": "决策模型线_JEV",
+    "thread": "D5",
+-   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/Personalization of Wearable Sensor-Based Joint Kinematic Est.pdf",
++   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/基于计算机视觉的可穿戴传感器关节运动学估计个性化方法在髋关节外骨骼中的应用/基于计算机视觉的可穿戴传感器关节运动学估计个性化方法在髋关节外骨骼中的应用.pdf",
+    "version_note": "**直击本项目已知难点**（跨被试泛化只有 50–70%）。用计算机视觉姿态估计产生的标签 + TCN 迁移，是绕开「每个新被试都要重新标定」的可行路径。\n**且它同时命中了 AAN 决策层的一个前置问题**：决策阈值如果因被试而异，就必须先解决个体化，否则阈值不可迁移。",
+    "screening": "included",
+    "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+@@ -697,11 +698,7 @@
+    "source_records": [
+     "01_参考论文/整合系统/决策模型线_JEV/index.json"
+    ],
+-   "kind": "paper",
+-   "title_aliases": [
+-    "More Features Are Not More Evidence（康复视角摘录）"
+-   ],
+-   "alias_verified_from": "01_参考论文/整合系统/决策模型线_JEV/D2_独立评测与反驳/More Features Are Not More Evidence_ Limits of Training-Free.pdf PDF第1页"
++   "kind": "paper"
+   },
+   {
+    "title": "Markerless On-Device Detection of Compensatory Movement Patterns in Upper-Limb Rehabilitation Exercises from Monocular RGB Video",
+@@ -758,7 +755,7 @@
+    "venue": "Mechatronics 89: 102919",
+    "corpus": "决策模型线_JEV",
+    "thread": "D4",
+-   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Performance-based assistance control for robot-mediated uppe.pdf",
++   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于表现的机器人辅助上肢康复助力控制/基于表现的机器人辅助上肢康复助力控制.pdf",
+    "version_note": "**这是 AAN 介入时机最直接的工程实现，且揭示了一个关键事实：现行控制律用的是「表现（performance）」而非「意图（intent）」。**\n\n机制：单控制器覆盖三个康复阶段，靠跟踪误差这一单一标量做模式切换；作者自陈参数需按被试个性化调整。\n\n**对本项目的意义**：\n1. R1 想做的「介入时机判断」，工程上已有朴素基线 —— 阈值判据。**任何复杂决策模型都必须先打败它**，否则只是把一个 if-else 换成神经网络。\n2. 它只用**单一标量误差**，不预测意图、不建模阶段 —— 留出的正是 R1 的空间。\n3. 但也给出反面提醒：5 名健康被试、无临床终点，作者明说结论仅为 preliminary。\n**这是工程可行性证据，不是临床有效性证据**，不能与 Kuo 2024 的临床结论并列引用。\n4. 印证了 R1 的边界：介入决策是控制问题，不是表征学习问题 —— JEV 式语言决策模型在这里没有输入接口。",
+    "screening": "included",
+    "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+@@ -1042,7 +1039,7 @@
+    "venue": "IEEE Transactions on Fuzzy Systems",
+    "database": "IEEE Xplore；公开作者仓储",
+    "landing_url": "https://eprints.whiterose.ac.uk/id/eprint/231974/",
+-   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/TFS2025_NeuroFuzzy_AAN.pdf",
++   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制.pdf",
+    "format": "pdf",
+    "version": "Accepted Version（机构仓储作者接受稿）",
+    "sha256": "7cd821b71b08addbc45745b1c88028d28d7b59f4c35d74ee80dca1e3065d0e21",
+@@ -1188,7 +1185,7 @@
+    ],
+    "database": "IEEE Xplore",
+    "landing_url": "https://doi.org/10.1109/tro.2024.3411849",
+-   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller.pdf",
++   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/一种基于肌肉协同肌电控制器的绳驱上肢康复机器人/一种基于肌肉协同肌电控制器的绳驱上肢康复机器人.pdf",
+    "screening": "included",
+    "role": "assistance/integration",
+    "include_reason": "宋嵘团队重点对照",
+@@ -1266,7 +1263,7 @@
+    ],
+    "database": "IEEE Xplore",
+    "landing_url": "https://doi.org/10.1109/tie.2024.3398675",
+-   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration.pdf",
++   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/基于深度 LSTM 与静态-动态校准的人机协作控制/基于深度 LSTM 与静态-动态校准的人机协作控制.pdf",
+    "screening": "included",
+    "role": "assistance/integration",
+    "include_reason": "宋嵘团队重点对照",
+@@ -1392,7 +1389,7 @@
+    ],
+    "database": "IEEE Xplore",
+    "landing_url": "https://doi.org/10.1109/tbme.2022.3228070",
+-   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot.pdf",
++   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/针对踝关节助力康复机器人的主动按需辅助控制器/针对踝关节助力康复机器人的主动按需辅助控制器.pdf",
+    "screening": "included",
+    "role": "assistance/integration",
+    "include_reason": "宋嵘团队重点对照",
+@@ -1460,7 +1457,7 @@
+    ],
+    "database": "IEEE Xplore",
+    "landing_url": "https://doi.org/10.1109/tbme.2020.3027823",
+-   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot.pdf",
++   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/基于运动表现的绳驱动上肢康复机器人混合控制/基于运动表现的绳驱动上肢康复机器人混合控制.pdf",
+    "screening": "included",
+    "role": "assistance/integration",
+    "include_reason": "宋嵘团队重点对照",
+@@ -1566,7 +1563,7 @@
+    ],
+    "database": "IEEE Xplore",
+    "landing_url": "https://doi.org/10.1109/tbcas.2021.3130090",
+-   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller.pdf",
++   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/基于肌电导纳控制器的混合式臂-手康复机器人/基于肌电导纳控制器的混合式臂-手康复机器人.pdf",
+    "screening": "included",
+    "role": "assistance/integration",
+    "include_reason": "宋嵘团队重点对照",
+@@ -1680,7 +1677,7 @@
+    ],
+    "database": "IEEE Xplore；Padova IRIS（开放PDF）",
+    "landing_url": "https://research.unipd.it/handle/11577/3586318",
+-   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf",
++   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果.pdf",
+    "screening": "included",
+    "role": "assistance/integration",
+    "include_reason": "近期AAN/适配闭环直接对照",
+@@ -1777,7 +1774,7 @@
+    ],
+    "database": "IEEE Xplore",
+    "landing_url": "https://doi.org/10.1109/tnsre.2025.3579533",
+-   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf",
++   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制.pdf",
+    "screening": "included",
+    "role": "assistance/integration",
+    "include_reason": "近期AAN/适配闭环直接对照",
+@@ -1856,7 +1853,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "ScienceDirect / Elsevier",
+    "landing_url": "https://doi.org/10.1016/s0268-0033(00)00082-6",
+    "source_records": [
+@@ -1881,7 +1878,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "ScienceDirect / Elsevier",
+    "landing_url": "https://doi.org/10.1016/j.jse.2007.02.134",
+    "source_records": [
+@@ -1906,7 +1903,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "ScienceDirect / Elsevier",
+    "landing_url": "https://doi.org/10.1016/j.jht.2020.05.001",
+    "source_records": [
+@@ -1931,7 +1928,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "SAGE Journals",
+    "landing_url": "https://doi.org/10.1177/026921559701100408",
+    "source_records": [
+@@ -1956,7 +1953,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "ScienceDirect / Elsevier",
+    "landing_url": "https://doi.org/10.1016/S0031-9406(10)63103-3",
+    "source_records": [
+@@ -1981,7 +1978,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "ScienceDirect / Elsevier",
+    "landing_url": "https://doi.org/10.1016/0021-9290(96)00031-0",
+    "source_records": [
+@@ -2006,7 +2003,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "ScienceDirect / Elsevier",
+    "landing_url": "https://doi.org/10.1016/0021-9290(94)90062-0",
+    "source_records": [
+@@ -2031,7 +2028,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "ScienceDirect / Elsevier",
+    "landing_url": "https://doi.org/10.1016/s0003-9993(99)90088-6",
+    "source_records": [
+@@ -2056,7 +2053,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "Wiley Online Library",
+    "landing_url": "https://doi.org/10.1034/j.1600-0404.2003.00021.x",
+    "source_records": [
+@@ -2081,7 +2078,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "SpringerLink",
+    "landing_url": "https://doi.org/10.1007/978-981-16-4991-2_8",
+    "source_records": [
+@@ -2100,7 +2097,7 @@
+    "thread": "结合",
+    "priority": "高",
+    "source_team": "09 章隆彬 PAPER_GAP_LIST",
+-   "local_fulltext": null,
++   "local_fulltext": "09_章隆彬_合作团队/papers/理解与辅助结合/Li2021-TMECH：稳定动态行走的下肢外骨骼人在环控制/Li2021-TMECH：稳定动态行走的下肢外骨骼人在环控制.pdf",
+    "version_note": "Z21；下肢外骨骼人在环控制，连接理解与执行控制；此前 IEEE HTTP 418",
+    "screening": "included",
+    "index_reference": null,
+@@ -2126,12 +2123,14 @@
+    "priority": "高",
+    "source_team": "09 章隆彬 PAPER_GAP_LIST",
+    "local_fulltext": "01_参考论文/整合系统/章隆彬_理解与辅助结合/Qiu2017-TFUZZ：脑机接口与视觉压缩感知的外骨骼机器人遥操作控制/Qiu2017-TFUZZ：脑机接口与视觉压缩感知的外骨骼机器人遥操作控制.pdf",
++   "title_aliases": ["Brain Machine Interface and Visual Compressive Sensing based Teleoperation Control of an Exokeleton Robot"],
++   "alias_verified_from": "05_进展日志/2026-10-10_文献台账对账/DL-5e218103_首页抽取.txt；PDF首页DOI一致，12页接受稿，SHA与Z22用户补件记录一致；保留稿件原始拼写。",
+    "version_note": "Z22；脑机接口与视觉压缩感知遥操作；此前 IEEE HTTP 418。源清单标注 TFS，Crossref 核实为 IEEE Transactions on Fuzzy Systems ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+    "screening": "included",
+    "index_reference": null,
+    "role": "assistance",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "IEEE Xplore",
+    "landing_url": "https://doi.org/10.1109/TFUZZ.2016.2566676",
+    "source_records": [
+@@ -2150,7 +2149,7 @@
+    "thread": "结合",
+    "priority": "高",
+    "source_team": "09 章隆彬 PAPER_GAP_LIST",
+-   "local_fulltext": null,
++   "local_fulltext": "09_章隆彬_合作团队/papers/康复辅助/Zhang2017-TIE：扰动观测器与自适应神经网络变刚度控制/Zhang2017-TIE：扰动观测器与自适应神经网络变刚度控制.pdf",
+    "version_note": "Z20；扰动观测器与自适应神经网络变刚度控制；此前 IEEE HTTP 418",
+    "screening": "included",
+    "index_reference": null,
+@@ -2175,7 +2174,7 @@
+    "thread": "理解",
+    "priority": "中",
+    "source_team": "09 章隆彬 PAPER_GAP_LIST",
+-   "local_fulltext": null,
++   "local_fulltext": "09_章隆彬_合作团队/papers/运动理解/Zhang2021-ICARM：NMS求解器与NN的踝动态力矩估计/Zhang2021-ICARM：NMS求解器与NN的踝动态力矩估计.pdf",
+    "version_note": "Z23；NMS 求解器与神经网络的踝动态力矩估计，视觉→动力学桥接；此前 IEEE 418 / ResearchGate 403。Crossref 核实为 ICARM 2021",
+    "screening": "included",
+    "index_reference": null,
+@@ -2200,7 +2199,7 @@
+    "thread": "理解",
+    "priority": "中",
+    "source_team": "09 章隆彬 PAPER_GAP_LIST",
+-   "local_fulltext": null,
++   "local_fulltext": "09_章隆彬_合作团队/papers/运动理解/Li2026-YAC：多任务平衡挑战的EEG与压力中心调节/Li2026-YAC：多任务平衡挑战的EEG与压力中心调节.pdf",
+    "version_note": "Z24；多任务平衡挑战下的 EEG 与压力中心调节；此前 IEEE HTTP 418",
+    "screening": "included",
+    "index_reference": null,
+@@ -2225,7 +2224,7 @@
+    "thread": "理解",
+    "priority": "中",
+    "source_team": "09 章隆彬 PAPER_GAP_LIST",
+-   "local_fulltext": null,
++   "local_fulltext": "09_章隆彬_合作团队/papers/运动理解/Fu2026-YAC：多模态LSTM地面反力预测/Fu2026-YAC：多模态LSTM地面反力预测.pdf",
+    "version_note": "Z25；多模态 LSTM 地面反力预测；此前 IEEE HTTP 418",
+    "screening": "included",
+    "index_reference": null,
+@@ -2256,7 +2255,7 @@
+    "index_reference": null,
+    "role": "assistance",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "IEEE Xplore",
+    "landing_url": "https://doi.org/10.1109/TNSRE.2020.2986295",
+    "source_records": [
+@@ -2281,7 +2280,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "IEEE Xplore",
+    "landing_url": "https://doi.org/10.1109/TNSRE.2025.3535928",
+    "source_records": [
+@@ -2306,7 +2305,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "IEEE Xplore",
+    "landing_url": "https://doi.org/10.1109/TBME.2024.3368021",
+    "source_records": [
+@@ -2331,7 +2330,7 @@
+    "index_reference": null,
+    "role": "assistance",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "Frontiers（出版方开放获取平台）",
+    "landing_url": "https://doi.org/10.3389/fbioe.2023.1246014",
+    "source_records": [
+@@ -2356,7 +2355,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "IEEE Xplore",
+    "landing_url": "https://doi.org/10.1109/TMRB.2026.3682646",
+    "source_records": [
+@@ -2381,7 +2380,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "IOPscience",
+    "landing_url": "https://doi.org/10.1088/1741-2552/ac18ae",
+    "source_records": [
+@@ -2406,7 +2405,7 @@
+    "index_reference": null,
+    "role": "assistance",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "Wiley Online Library",
+    "landing_url": "https://doi.org/10.1002/aisy.202400505",
+    "source_records": [
+@@ -2431,7 +2430,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "IEEE Xplore",
+    "landing_url": "https://doi.org/10.1109/TNSRE.2024.3371465",
+    "source_records": [
+@@ -2456,7 +2455,7 @@
+    "index_reference": null,
+    "role": "assistance",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "IEEE Xplore",
+    "landing_url": "https://doi.org/10.1109/TNSRE.2023.3348332",
+    "source_records": [
+@@ -2481,7 +2480,7 @@
+    "index_reference": null,
+    "role": "assistance",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "IEEE Xplore",
+    "landing_url": "https://doi.org/10.1109/TBME.2020.3012296",
+    "source_records": [
+@@ -2506,7 +2505,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "IEEE Xplore",
+    "landing_url": "https://doi.org/10.1109/TNSRE.2020.3042221",
+    "source_records": [
+@@ -2532,7 +2531,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "IEEE Xplore",
+    "landing_url": "https://doi.org/10.1109/TNSRE.2021.3066592",
+    "source_records": [
+@@ -2557,7 +2556,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "IEEE Xplore",
+    "landing_url": "https://doi.org/10.1109/TNSRE.2019.2949203",
+    "source_records": [
+@@ -2582,7 +2581,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "IOPscience",
+    "landing_url": "https://doi.org/10.1088/1741-2552/abc29a",
+    "source_records": [
+@@ -2607,7 +2606,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "IEEE Xplore",
+    "landing_url": "https://doi.org/10.1109/TNSRE.2023.3238758",
+    "source_records": [
+@@ -2632,7 +2631,7 @@
+    "index_reference": null,
+    "role": "understanding",
+    "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+-   "needs_fulltext": false,
++   "needs_fulltext": true,
+    "database": "IEEE Xplore",
+    "landing_url": "https://doi.org/10.1109/tnsre.2021.3101615",
+    "source_records": [
+@@ -3907,6 +3906,8 @@
+  ],
+  "notes": [
+   "这是本轮纳入台账，不承诺穷尽；原研究库未移动。",
++  "needs_fulltext表示本研究是否需要全文，不是当前缺件状态；已取得的必需全文仍为true，由生成器实时核对正文身份，避免false让记录被跳过。",
++  "2026-10-10对87条完成原件身份对账（71 PDF/16 XML），修复17条失效路径并回填5条空路径；不改变纳入ID、DOI或研究裁定。逐条SHA/版本例外与复算证据见05_进展日志/2026-10-10_文献台账对账/整理记录.md；不是87篇方法精读或独立复现。",
+   "全文缺失的关键对照不能据摘要推断具体机制或创新空白。",
+   "正式下载判定必须再核对全库及候选文件内容，不能只看该字段。",
+   "2026-10-03用户确认双参与目标，补纳2份心理/游戏化JATS原文；首批53+补核2=55，48本地全文、7缺全文；不新增用户待取件。"
+--- a/06_附录/取件导读.md
++++ b/06_附录/取件导读.md
+@@ -1,4 +1,20 @@
+-# 取件导读：27 篇待下载论文的分组、顺序与解锁价值
++# 取件导读：当前对账与历史取件记录
++
++## 2026-10-10 当前口径
++
++**本轮台账87条均已核到可用原件：71份PDF、16份全文XML；待下载0条。** 核验范围仅为纳入台账，不等于全知识库所有论文、全部中文翻译或全部精读已齐。
++
++- 修复17条失效路径，回填5条空路径；22项是路径记录问题，不是22篇缺全文。
++- 两个自动识别例外已回原件核清：Pigeon1996的标题读取顺序问题，Qiu2017接受稿的`Exokeleton`拼写差异。接受稿不是出版社最终排版版，不要求为阅读重复下载。
++- `needs_fulltext`统一表示“本研究需要全文”，不是“现在缺全文”。87条均参与生成器正文身份核验；已取得不设为`false`，否则会被跳过。缺件由实际文件与身份核验决定。
++- 唯一下载清单仍由[生成器](gen_acquisition_list.py)生成，不手写条目；[逐条证据、旧新路径与复算记录](../05_进展日志/2026-10-10_文献台账对账/整理记录.md)可查。
++- 不再按旧P0建议重复取N1/N6/N8或Z22；这些原件已取得。P0关键方法复核未解除C1/C3，文献到齐不等于创新、数据或临床条件成立。
++
++**下文为2026-10-08历史正文，保留原措辞，不作为现行取件任务或研究裁定。** 旧“27篇”“只缺Z22”“取P0可解锁”和“将已取得记录设为false”均由本节覆盖；Z26在投稿仍不属于这87条可下载文献。
++
++---
++
++## 历史导读：27篇的分组、顺序与解锁价值
+ 
+ > **本文件不是清单。** 唯一待下载清单是
+ > [`待下载论文总清单.md`](待下载论文总清单.md)，由
+--- a/06_附录/gen_acquisition_list.py
++++ b/06_附录/gen_acquisition_list.py
+@@ -99,12 +99,13 @@
+ 
+ 
+ @lru_cache(maxsize=4096)
+-def pdf_head(path, size, mtime_ns):
++def pdf_head(path, size, mtime_ns, layout=False):
+     # In-process cache only; the stat key prevents reuse after a user supplies a new file.
+     with path.open('rb') as stream:
+         if stream.read(5) != b'%PDF-':
+             return ''
+-    result = subprocess.run(['pdftotext', '-f', '1', '-l', '2', str(path), '-'],
++    args = ['pdftotext'] + (['-layout'] if layout else [])
++    result = subprocess.run(args + ['-f', '1', '-l', '2', str(path), '-'],
+                             capture_output=True, text=True, timeout=30, check=True)
+     return result.stdout
+ 
+@@ -126,9 +127,13 @@
+     head = pdf_head(path, stat.st_size, stat.st_mtime_ns)
+     # Title is required even if a DOI appears in the first two pages.
+     titles = [normalize_title(t) for t in [paper['title']] + paper.get('title_aliases', [])]
+-    if not any(t and t in normalize_title(head) for t in titles):
+-        return False
+-    return True
++    if any(t and t in normalize_title(head) for t in titles):
++        return True
++    # Some older PDFs scramble the title in reading-order extraction. Retry the
++    # same pages in physical layout; retain exact normalized title/verified alias
++    # matching rather than accepting a DOI alone or fuzzy title similarity.
++    head = pdf_head(path, stat.st_size, stat.st_mtime_ns, layout=True)
++    return any(t and t in normalize_title(head) for t in titles)
+ 
+ 
+ def unindexed_fulltexts(root, known):
+--- a/06_附录/自检脚本/test_acquisition_list.py
++++ b/06_附录/自检脚本/test_acquisition_list.py
+@@ -116,6 +116,29 @@
+     def test_chinese_titles_not_empty_identity(self):
+         self.assertTrue(A.normalize_title('康复研究'))
+ 
++    def test_pdf_layout_retry_recovers_title_reading_order(self):
++        from types import SimpleNamespace
++        from unittest.mock import patch
++        p = self.root / 'reading-order.pdf'
++        p.write_bytes(b'%PDF-1.7\nfixture')
++
++        def extract(args, **kwargs):
++            text = ('A verified rehabilitation paper' if '-layout' in args
++                    else 'rehabilitation paper\nJournal header\nA verified')
++            return SimpleNamespace(stdout=text)
++
++        with patch.object(A.subprocess, 'run', side_effect=extract):
++            self.assertEqual(self.pending([paper()], unindexed=[p]), [])
++
++    def test_pdf_layout_retry_does_not_accept_doi_alone(self):
++        from types import SimpleNamespace
++        from unittest.mock import patch
++        p = self.root / 'wrong-title.pdf'
++        p.write_bytes(b'%PDF-1.7\nfixture')
++        with patch.object(A.subprocess, 'run', return_value=SimpleNamespace(
++                stdout='An unrelated article\nReferences: 10.1234/test')):
++            self.assertEqual(len(self.pending([paper()], unindexed=[p])), 1)
++
+     def test_verified_accepted_manuscript_title_alias(self):
+         from types import SimpleNamespace
+         from unittest.mock import patch
+--- a/README.md
++++ b/README.md
+@@ -6,7 +6,7 @@
+ >
+ > **当前任务**：围绕患者主动参与度和训练强度，整合运动理解与康复辅助文献，搭建完整链路，再寻找论文创新方向。
+ > **只看这一份清单**：[当前任务清单](10_研究方向/README.md)。不是写论文正文，也不要求你重新做实验；外部完成为用户陈述，公开工程材料已核；独立身心/真实辅助验证仍不足。
+-> **最后更新**：2026-10-09（现行 K01–K16 候选池已整理，16项均为条件性候选、0条定案；宋嵘16篇 + 章隆彬1篇 + 语料三10篇并入纳入台账；当前台账87条，下载清单文件显示无待下载，直接配置路径不可达不等于缺全文；`01_参考论文/` 已三分法重组；独立参照/真实辅助条件与创新定案仍未闭合。55原件/0待下载与398段是既有审计快照）
++> **最后更新**：2026-10-10（87条台账已逐条对账，87条均有原件：71 PDF/16 XML，待下载0条；17条失效路径、5条空路径已修复。见[对账证据](05_进展日志/2026-10-10_文献台账对账/整理记录.md)。K01–K16仍为16项条件性候选、0条定案；55/55/0、398段及27篇缺件均保留为历史快照，不是当前缺件数或此次新增精读。独立参照/真实辅助条件仍未闭合）
+ > **父项目**：[`视觉位移判断/`](../)
+ 
+ ## 原有 ViKiT 路线定位（候选输入，不是新方向定稿）
+--- a/INDEX.md
++++ b/INDEX.md
+@@ -1,6 +1,6 @@
+ # 知识库索引 — 视觉动作分析（视觉→关节角 Seq2Seq 翻译）
+ 
+-> **最后更新**：2026-10-09
++> **最后更新**：2026-10-10
+ > **当前主任务**：整合运动理解与康复辅助文献，面向患者主动参与度和训练强度搭建完整链路，再寻找论文创新方向；既有路线保留供比较。
+ > **文件规模**：论文与翻译计数以STATUS和磁盘自检为准；任务文档持续更新，不冻结易漂移的KB快照。
+ 
+@@ -33,8 +33,8 @@
+ | **Transformer 发展线推演** | [`00_研究背景/Transformer_发展线与康复迁移推演.md`](00_研究背景/Transformer_发展线与康复迁移推演.md) （双轴坐标 + 六阶段叙事 + 三个康复缺口）|
+ | **新创新点矩阵** | [`02_创新点矩阵/Transformer前沿到上肢康复创新点矩阵.md`](02_创新点矩阵/Transformer前沿到上肢康复创新点矩阵.md) （MTR-P0–MTR-P2 六个候选创新点 + 证伪判据）|
+ | **Transformer 语料库** | [`01_参考论文/运动理解/Transformer_发展线/`](01_参考论文/运动理解/Transformer_发展线/README.md) （93 PDF + 93 定位卡 + 85 全文译文；7 份线程清单 + 可检索 index.json）|
+-| **待下载论文总清单**（**唯一取件入口**） | [`06_附录/待下载论文总清单.md`](06_附录/待下载论文总清单.md) （当前文件显示无待下载；**2026-10-08：27篇**为历史交接快照，不与当前台账/路径检查合并）|
+-| **取件导读** | [`06_附录/取件导读.md`](06_附录/取件导读.md) （27 篇的三组构成、先取哪三篇与解锁价值、DOI 纠正留证、Z26 为何不入清单；不是第二份清单）|
++| **待下载论文总清单**（**唯一取件入口**） | [`06_附录/待下载论文总清单.md`](06_附录/待下载论文总清单.md) （2026-10-10逐条对账：87条均有原件，71 PDF/16 XML，待下载0条；不是全库所有论文或全部译文）|
++| **取件导读** | [`06_附录/取件导读.md`](06_附录/取件导读.md) （当前87条对账与字段语义；旧27篇/P0取件建议仅历史留证；不是第二份清单）|
+ | **创新点矩阵** | [`02_创新点矩阵/主动参与与训练强度_创新点矩阵.md`](02_创新点矩阵/主动参与与训练强度_创新点矩阵.md) （历史矩阵正文 + 现行修订入口；**0 条定案**）|
+ | **现行候选池** | [`02_创新点矩阵/主动参与与训练强度_候选方向总表.md`](02_创新点矩阵/主动参与与训练强度_候选方向总表.md) （K01–K16 共16项条件性候选、S0–S10覆盖摘要；不是16条定案创新）|
+ | **TF 工具入口** | [`06_附录/Transformer语料工具/README.md`](06_附录/Transformer语料工具/README.md) （TF 检索、构建、取件与翻译；BM 已独立）|
+--- a/STATUS.md
++++ b/STATUS.md
+@@ -1,8 +1,9 @@
+ # 项目状态与补全记录
+ 
+-> **最后更新**：2026-10-09（现行 K01–K16 候选池已写入；16 项均为条件性候选、0 条定案；398段选择证据范围审计通过，独立参照/真实策略条件与创新定案尚未闭合）
+-> **当前任务**：2026-10-09 更新；现行 K01–K16 候选池已写入，16项均为条件性候选、0条定案；宋嵘团队16篇、章隆彬团队6篇、语料三10篇并入纳入台账，当前台账87条；下载清单文件显示无待下载；27篇缺全文是2026-10-08交接快照，55/55/0与398段是旧审计快照；22条直接配置路径不可达不等于缺全文。统一入口为 [06_附录/待下载论文总清单.md](06_附录/待下载论文总清单.md)，分组与取件顺序见[取件导读](06_附录/取件导读.md)；纠正一条错误 DOI（`TNSRE.2021.3079572` 不存在，实为 `tnsre.2021.3101615`）。C1–C3 判定与创新定案未变，仍为 0 条。2026-10-04 状态保留：55条纳入；用户补取7出版PDF，获准移动入库，康复新原件库20份（12XML+8PDF）；新7篇身份/结构/SHA及关键方法、64条指定页证据已核，主定位398段；逐条范围审计为39 PDF/16 XML、0定位失败，但不是55篇全篇译读或系统验收完成。宋嵘页面已按章隆彬的画像/论文清单版式再整理；双参与设计已有阶段22 PASS/0 FAIL 与全库22 PASS/2 FAIL（2项FAIL均在09/12两个团队目录，属其并发重组中途态）；0条确认创新，用户仍仅已有工程资料，独立身心参照/真实辅助验证条件不足。方向定案与全目标验收保持未完成。
++> **最后更新**：2026-10-10（87条原件身份对账完成：71 PDF/16 XML，待下载0条；K01–K16仍为条件性候选、0条定案；此次未增加方法精读或临床验证）
++> **当前任务**：2026-10-10 更新；现行87条均已核到原件，17条失效路径及5条空路径已修复；71 PDF/16 XML，待下载0条，见[逐条对账](05_进展日志/2026-10-10_文献台账对账/整理记录.md)。K01–K16仍为16项条件性候选、0条定案；27篇缺全文、55/55/0与398段是旧快照，不改写历史也不扩充精读数。统一入口为 [06_附录/待下载论文总清单.md](06_附录/待下载论文总清单.md)，分组与取件顺序见[取件导读](06_附录/取件导读.md)；纠正一条错误 DOI（`TNSRE.2021.3079572` 不存在，实为 `tnsre.2021.3101615`）。C1–C3 判定与创新定案未变，仍为 0 条。2026-10-04 状态保留：55条纳入；用户补取7出版PDF，获准移动入库，康复新原件库20份（12XML+8PDF）；新7篇身份/结构/SHA及关键方法、64条指定页证据已核，主定位398段；逐条范围审计为39 PDF/16 XML、0定位失败，但不是55篇全篇译读或系统验收完成。宋嵘页面已按章隆彬的画像/论文清单版式再整理；双参与设计已有阶段22 PASS/0 FAIL 与全库22 PASS/2 FAIL（2项FAIL均在09/12两个团队目录，属其并发重组中途态）；0条确认创新，用户仍仅已有工程资料，独立身心参照/真实辅助验证条件不足。方向定案与全目标验收保持未完成。
+ > **2026-10-08 章教授资料整理**：新增5份PDF＋1份全文XML，用户又补齐Z20—Z25六份PDF，章教授目录现24份PDF＋1份XML；24份PDF均已生成英文原文Markdown并嵌入250张逐页图像（非中文翻译）；13份既有中文译文保留，11份新增PDF及1份XML仍未中译。六篇下载缺口已关闭，仅Z26在投稿需团队分享，见[目录入口](09_章隆彬_合作团队/README.md)。已按用户补充要求实际迁移19个论文资料目录、团队资料与旧检索运行，并同步现行引用；不代表创新定案或临床验证；全库自检遗留问题见[本轮验证记录](09_章隆彬_合作团队/资料核查/验证记录.md)。机器计数块已按本次磁盘复算同步；以下旧完成度表及历史批次记录不代表当前全集。
++> **2026-10-10 验证状态**：87条专项通过，87份原件SHA未变；19项生成器与6项URI回归通过，清单重复生成一致。全库自检为15 PASS / 7 FAIL（退出1），不是全绿；另有任务包现行9项及历史2项哈希不符，本轮未改写这些文件或清单，详见[对账报告](05_进展日志/2026-10-10_文献台账对账/整理记录.md)。
+ > **任务清单入口**：[当前任务清单](10_研究方向/README.md)。本文件主要留存知识库统计与既有执行记录，不是当前任务排序。
+ > **实验分工更新**：用户说明实验由另一方完成，成果尚未在本库接收/核验；不要求用户重新做实验，也不自动把本地四问任务包标为验收通过。
+ > **口径基准**：本文件所有数字均由 `06_附录/自检脚本/verify_kb.sh` 从磁盘复算，可一键复核
+--- a/HANDOFF.md
++++ b/HANDOFF.md
+@@ -5,12 +5,20 @@
+ sender: "pi-agent"
+ intended_receiver: "next-agent / human-owner"
+ created: 2026-09-29
+-updated: 2026-10-09
++updated: 2026-10-10
+ state_pointer: "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md"
+ workspace_path: "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析"
+ ---
+ 
+ # 当前全局交接：整合运动理解与康复辅助，寻找论文创新方向
++
++## 2026-10-10 原件对账交接
++
++- **已完成**：87条台账全部逐条核到原件（71 PDF/16 XML），待下载0条；修复17条失效路径及5条空路径，并同步本87条相关的JEV/康复链路索引。
++- **关键修正**：`needs_fulltext`是研究需求，不是缺件状态。87条均参与生成器身份核验；Pigeon1996采用保留排版文本匹配，Qiu2017接受稿拼写差异用已核别名说明，不改原件。
++- **边界**：不移动/删除论文，不修改历史证据，不提交Git；55/55/0、398段与27篇缺件仍为历史快照。本轮不增加全文精读数，K01–K16仍为条件性候选、0定案。
++- **证据与未解决项**：[对账记录](05_进展日志/2026-10-10_文献台账对账/整理记录.md)。87份原件哈希未变，19项生成器/6项链接回归通过，清单重复生成一致；全库仍15 PASS / 7 FAIL，其他语料的路径、配对和机器计数不纳入本87条对账。项目规定的任务包哈希检查另有现行9项、历史2项不符，未修改文件或重生成清单掩盖差异；原件取得与临床/创新裁定分开。
++- **唯一下一步**：阅读现行候选总表，按真实患者/任务与独立参照条件裁定研究主线；不再把已在库原件或旧P0取件当成数据解锁条件。
+ 
+ ## 2026-10-08 独立目录整理交接
+ 
+--- a/10_研究方向/README.md
++++ b/10_研究方向/README.md
+@@ -10,7 +10,7 @@
+ 
+ ## 现在按顺序做什么
+ 
+-2026-10-09续接：现行候选池已整理为 K01–K16 共16项条件性候选，当前0条定案，入口为[候选方向总表](../02_创新点矩阵/主动参与与训练强度_候选方向总表.md)。以下55/55/0与398段是既有审计快照；当前全库台账87条、下载清单文件显示无待下载，22条直接配置路径不可达不等于缺全文。新7出版原件已核验关键方法，独立参照/真实策略条件仍不足；398段选择证据已逐条回源审计（39 PDF/16 XML，0定位失败），但不等于55篇全篇精读。链路仍DESIGN，既有阶段自检不代表全目标完成。用户确认仅有已给工程资料，独立双参与/真实策略暴露条件仍不足，受影响创新定案及全目标验收保持暂停；原目标不自动收窄。[简明总结与裁定入口](主动参与与训练强度_链路研究/研究总结与裁定入口.md)、[实际进展和材料](主动参与与训练强度_链路研究/README.md)。已有库和旧建议只是输入，不冒充整合结论。
++2026-10-10续接：现行候选池已整理为 K01–K16 共16项条件性候选，当前0条定案，入口为[候选方向总表](../02_创新点矩阵/主动参与与训练强度_候选方向总表.md)。以下55/55/0与398段是既有审计快照；本轮87条台账已逐条核到原件（71 PDF/16 XML），待下载0条；17条失效路径及5条空路径已修复，见[对账记录](../05_进展日志/2026-10-10_文献台账对账/整理记录.md)。新7出版原件已核验关键方法，独立参照/真实策略条件仍不足；398段选择证据已逐条回源审计（39 PDF/16 XML，0定位失败），但不等于55篇全篇精读。链路仍DESIGN，既有阶段自检不代表全目标完成。用户确认仅有已给工程资料，独立双参与/真实策略暴露条件仍不足，受影响创新定案及全目标验收保持暂停；原目标不自动收窄。[简明总结与裁定入口](主动参与与训练强度_链路研究/研究总结与裁定入口.md)、[实际进展和材料](主动参与与训练强度_链路研究/README.md)。已有库和旧建议只是输入，不冒充整合结论。
+ 
+ | 顺序 | 任务（大白话） | 完成后应拿到什么 |
+ |---|---|---|
+@@ -41,7 +41,7 @@
+ 
+ ## 你现在需要提供什么
+ 
+-- **已有材料已经核对**：只有已给工程资料的范围已确认；不重复索取额外索引，也不假定另有独立参照。**2026-10-09 更新**：现行 K01–K16 候选池已整理，16项均为条件性候选、0条定案；宋嵘16篇、章隆彬6篇、语料三10篇并入纳入台账，当前台账87条，下载清单文件显示无待下载；27篇缺全文是前一交接快照，22条直接配置路径不可达不等于缺全文。见 [../06_附录/待下载论文总清单.md](../06_附录/待下载论文总清单.md) 与 [取件导读](../06_附录/取件导读.md)。
++- **已有材料已经核对**：只有已给工程资料的范围已确认；不重复索取额外索引，也不假定另有独立参照。**2026-10-10 更新**：87条均有可验证原件（71 PDF/16 XML），待下载0条；27篇缺件与22条路径问题是历史快照，路径已修复。K01–K16仍为16项条件性候选、0条定案；文件齐备不增加精读或临床验证。见 [../06_附录/待下载论文总清单.md](../06_附录/待下载论文总清单.md) 与 [取件导读](../06_附录/取件导读.md)。
+ - **尚未明确的再与老师确认**：面向哪类患者和训练任务、怎样衡量两项目标、完整链路需要做到什么程度。
+ - 文献去重、对照表和缺口整理由助手推进；你与老师负责范围及最终方向裁定。**不要求你读完全部论文，也不要求先补齐剩余 11 份全文。**
+ 
+--- a/10_研究方向/主动参与与训练强度_链路研究/README.md
++++ b/10_研究方向/主动参与与训练强度_链路研究/README.md
+@@ -27,7 +27,7 @@
+ | 范围与本地基础 | 物理/心理分别评价已确认；外部工程资料已核，不推患者/健康身份或验收 | [范围](研究范围与指标.md)、[外部材料](外部实验分支核对.md) |
+ | 三类文献/反例 | 87条当前台账的目的性地图，不宣称穷尽；55/55/0为既有审计快照，身份/筛选/检索记录可追溯 | [检索筛选](检索与筛选说明.md)、[台账](文献台账.json) |
+ | 宋嵘团队 | 按章隆彬画像/论文清单层次重排；3既有XML+5用户出版PDF均有来源，临床/健康/下肢及参考类型分开。画像已迁 `12_宋嵘_合作团队/`，本轮按官方两页扩充语料 | [团队画像与论文清单](..)、[扩充语料](..)、[链路映射与裁决](..) |
+-| 原件/下载 | 55/55/0 与新库20份（12XML+8PDF）是既有审计快照；当前台账为87条，下载清单文件显示无待下载；22条 `local_fulltext` 配置路径不可达仅是路径检查，不等于缺全文 | [唯一清单](..)、[原件库](..) |
++| 原件/下载 | 2026-10-10逐条对账：87条均有原件（71 PDF/16 XML），待下载0条；17条失效路径和5条空路径已修复。55/55/0、398段是历史审计范围 | [唯一清单](../../06_附录/待下载论文总清单.md)、[逐条证据](../../05_进展日志/2026-10-10_文献台账对账/整理记录.md) |
+ | 逐篇对照 | 398段主原件定位（334+本次64）是既有审计快照；基础多为摘要/选择段落，不冒充87条全篇精读/复现 | [对照表](文献对照表.md)、[主定位](文献对照_原文定位.json) |
+ | 新7篇机制 | 校准/力标签、人群/对照、阴性及安全边界已核；RL原图公式已核，符号歧义不擅修 | [原件机制与候选裁剪](补取七篇_原件机制与候选裁剪.md) |
+ | 早期补核 | ALP/TFS方法17条、心理2原件；RL旧16段派生正文保留历史，不再充当当前缺件 | [ALP/TFS](已取得最近工作_方法参照深核.md)、[心理](心理参与补核.md)、[旧RL阶段](RL2026_正文补核与候选裁剪.md) |
+@@ -44,5 +44,5 @@
+ 
+ - [64条原件方法证据](..)具有源文件SHA、文件页/章节和字面核对；原件取得、方法选择核验、独立复现、临床效度/安全、创新性是不同层次。
+ - 仅新7篇按授权移动一次；旧原件、译文、历史/R1–R5及无关工作树保持。定位/历史补充不增加独立样本。
+-- 唯一清单由本轮台账+可接受PDF/XML实况推导，当前为空；旧库缺件、网页和历史失败/其他待办不混入。
++- 唯一清单由87条纳入台账+正文身份核验推导，2026-10-10待下载0条；`needs_fulltext`均为研究需求true，不靠false跳过已取得条目；其他未纳入语料缺件不混入。
+ - 本次入库阶段知识库22 PASS/0 FAIL、清单17项与URI6项回归已通过；这些不是研究新颖性或运行验收。
+--- a/10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md
++++ b/10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md
+@@ -6,9 +6,9 @@
+ 
+ ## 一句话结论
+ 
+-**7篇用户原件已全部核验入库并核关键方法，55条均有本地原件、0待下载；主定位398段；“连接理解和辅助”及校准/联合适配均有先例，0条可定案方向。** C1–C3比较已据新原件收紧，但现有工程资料缺独立身心参照和真实辅助/可比策略条件，创新定案及全目标验收仍未完成。
++**2026-10-10对账：87条均有可验证原件（71 PDF/16 XML），待下载0条；“连接理解和辅助”及校准/联合适配均有先例，0条可定案方向。** C1–C3比较已据新原件收紧，但现有工程资料缺独立身心参照和真实辅助/可比策略条件，创新定案及全目标验收仍未完成。
+ 
+-> 数量说明：55/55/0、398段是既有审计快照；当前全库台账为87条，下载清单文件当前显示无待下载。历史快照、当前清单和直接路径可达性不合并为一个缺件结论。
++> 数量说明：55/55/0、398段与27篇缺全文是历史快照。此次修复17条失效路径、5条空路径并逐条核身份，87/87/0才是当前纳入/有原件/待下载口径；不是87篇精读或全库所有条目齐全。见[对账记录](../../05_进展日志/2026-10-10_文献台账对账/整理记录.md)。
+ 
+ ---
+ 
+@@ -39,7 +39,7 @@
+ | 心理/外部补核 | 两份心理原件：2014 IMI+机器人游戏、2022游戏化/偏好与运动表现；用户分支1人25试次，工程可用，不足双参与/真实辅助验证 | [心理补核](心理参与补核.md)、[外部分支](外部实验分支核对.md) |
+ | 新7篇方法/图公式 | 校准标签/独立性、人群/统计与阴性已核；RL原图/公式已核并保留Eq12符号歧义，不擅修实现 | [原件机制与候选裁剪](补取七篇_原件机制与候选裁剪.md) |
+ | 原件方法再核 | ALP已有isotonic/Brier、机械/肌电/质量+SAM/TLX；TFS参照OpenSim且被动性有条件。不能只靠加校准/身体心理同报立新 | [ALP/TFS方法参照深核](已取得最近工作_方法参照深核.md) |
+-| 取件 | 当前下载清单文件显示无待下载；20份新库原件（12XML+8PDF）是既有审计快照；仅7用户PDF获准移动一次且名称/字节不变，旧库/网页/历史不混入 | [纯下载清单](..) |
++| 取件 | 87条均有原件（71 PDF/16 XML），待下载0条；康复链路子库20份（12XML+8PDF）单独统计，不混同跨库87条；本次没有移动原件 | [纯下载清单](../../06_附录/待下载论文总清单.md)、[对账证据](../../05_进展日志/2026-10-10_文献台账对账/整理记录.md) |
+ 
+ ## 状态如何连到调整与反馈
+ 
+--- a/10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md
++++ b/10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md
+@@ -4,7 +4,7 @@
+ 
+ **已有整合先例充分，模块连接本身不是新意；目前没有确认可定案的论文创新方向。** 以下3条是条件性研究问题，不是已经证明新颖、可投稿或有效的3个方向。若关键对照表明重复，或现有数据不能验证，应删除/合并，不为凑3–5个而保留。
+ 
+-2026-10-09更新：现行候选池已整理为 K01–K16 共16项条件性候选、0条定案；以下 C1–C3 与缺口表仍是裁定依据。55纳入/55本地原件/0待下载与398段是既有审计快照；当前台账87条，下载清单文件显示无待下载，22条直接配置路径不可达不等于缺全文。详见[候选方向总表](../../02_创新点矩阵/主动参与与训练强度_候选方向总表.md)、[七篇原件与候选裁剪](补取七篇_原件机制与候选裁剪.md)和64条新增定位。既有工程资料仍不足独立物理/心理参照、真实策略暴露及患者/任务条件；候选新颖性与可写可行性不能由原件到齐自动确认。最终定案仍受阻，0定案，提交用户与老师裁定；不写“所核论文未测，所以全领域没有”。
++2026-10-10更新：现行候选池已整理为 K01–K16 共16项条件性候选、0条定案；以下 C1–C3 与缺口表仍是裁定依据。55纳入/55本地原件/0待下载与398段是既有审计快照；当前87条已逐条核到原件（71 PDF/16 XML），待下载0条；17条失效路径和5条空路径已修复，见[对账记录](../../05_进展日志/2026-10-10_文献台账对账/整理记录.md)。详见[候选方向总表](../../02_创新点矩阵/主动参与与训练强度_候选方向总表.md)、[七篇原件与候选裁剪](补取七篇_原件机制与候选裁剪.md)和64条新增定位。既有工程资料仍不足独立物理/心理参照、真实策略暴露及患者/任务条件；候选新颖性与可写可行性不能由原件到齐自动确认。最终定案仍受阻，0定案，提交用户与老师裁定；不写“所核论文未测，所以全领域没有”。
+ 
+ 用户已确认物理贡献与心理参与两类分别评价，并选择补材料后裁定；[外部分支已核](外部实验分支核对.md)。这3条物理候选现扩充双构念条件，**不穷尽心理/动机参与研究，也不预设必须采用机器人**。非机器人辅助的执行责任方与真实训练暴露另按方案定义；两类目标已确认；具体人群/任务与独立参照仍不足。不能因为当前候选依赖EMG/力/模型参照，就声称所有参与研究都必须这些传感器。
+ 
+@@ -106,7 +106,7 @@
+ ## 需要用户与老师裁定什么
+ 
+ 1. **外部入口已读，不再重复索取**；只补公开材料未明确的疾病/病程、独立物理/心理参照及真实辅助/权限索引，详见[分支核对](外部实验分支核对.md)和[D0–D4](链路验证计划.md)。不用上传可识别人像，不要求重做实验。
+-2. **原件与清单口径分开**：[7篇原件机制与候选裁剪](补取七篇_原件机制与候选裁剪.md)已核关键方法；当前下载清单文件显示无待下载。2026-10-08交接中的27篇缺全文是历史快照，不能与当前清单和22条直接路径检查合并；取件前仍应先做候选资格裁定，不得因取到文献就把条件性问题当可写方向。
++2. **原件与清单口径分开**：[7篇原件机制与候选裁剪](补取七篇_原件机制与候选裁剪.md)已核关键方法；2026-10-10对账为87条均有原件、待下载0条；2026-10-08的27篇缺件和随后22条路径问题保留为历史，失效/空路径已修复；取件前仍应先做候选资格裁定，不得因取到文献就把条件性问题当可写方向。
+ 3. **决定交付口径**：先审上述待证问题，或材料到齐后裁可写论文方向；若目标本身改成仅运动质量/其他范围，由用户明确变更，不自行收窄。
+ 
+ 在这些材料和决定前，**创新筛选/最终排序尚未完成**；不将本表存在当成三个创新方向通过，不把该阻塞部分标为完成。
+--- a/02_创新点矩阵/主动参与与训练强度_创新点矩阵.md
++++ b/02_创新点矩阵/主动参与与训练强度_创新点矩阵.md
+@@ -1,4 +1,8 @@
+ # 主动参与度与训练强度 · 创新点矩阵
++
++## 2026-10-10 原件对账补充
++
++87条台账已逐条核到原件（71 PDF/16 XML），待下载0条；17条失效路径和5条空路径已修复。下方2026-10-09的“22条路径不可达、暂未对账”及更早27篇缺件均为当时记录，不作现行待办。见[对账证据](../05_进展日志/2026-10-10_文献台账对账/整理记录.md)。原件到齐不增加精读或创新定案数，K01–K16仍为16项条件性候选、0条定案。
+ 
+ ## 2026-10-09 现行修订：先读这一节
+ 
+--- a/01_参考论文/整合系统/决策模型线_JEV/index.json
++++ b/01_参考论文/整合系统/决策模型线_JEV/index.json
+@@ -486,10 +486,10 @@
+    "note": "★★ **与本项目新方向几乎完全对应的论文，标题就是「何时行动」。**\n核心主张：「错误的辅助比没有辅助更糟」（Wrong assistance can be worse than no assistance）。\n**它把置信度阈值变成可解释、可调节的定量安全参数**，这正是 AAN 决策层缺的东西。\n注意其自陈局限：需真实用户闭环验证；校准在病理运动等域偏移下的稳定性仍需检验 —— **对卒中患者恰好就是域偏移**。",
+    "lens": "★★★ 本语料核心：校准置信度 → ACT/HOLD 介入门控",
+    "pdf_status": "ok",
+-   "pdf_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/When to Act_ Calibrated Confidence for Reliable Human Intent.pdf",
++   "pdf_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/何时采取行动：用于辅助机器人中可靠人类意图预测的校准置信度/何时采取行动：用于辅助机器人中可靠人类意图预测的校准置信度.pdf",
+    "pdf_bytes": 467518,
+    "xml_path": "",
+-   "fulltext_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/When to Act_ Calibrated Confidence for Reliable Human Intent.pdf",
++   "fulltext_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/何时采取行动：用于辅助机器人中可靠人类意图预测的校准置信度/何时采取行动：用于辅助机器人中可靠人类意图预测的校准置信度.pdf",
+    "fulltext_format": "pdf",
+    "fulltext_reference": "",
+    "acquisition_check": ""
+@@ -521,10 +521,10 @@
+    "note": "★★ **本语料证据等级最高的一篇**（同行评审会议论文，非预印本）。\n**关键设计是「两个决策分离」**：问哪个模块 vs 是否要问人。\n迁移到 AAN：把「是否介入」与「介入哪个自由度/哪个方向」拆成两个独立校准决策 —— 这比单阈值更贴合上肢腕-肘-肩的多关节结构。",
+    "lens": "★★ 同行评审：置信感知 + 人类负荷成本决定问谁、何时问",
+    "pdf_status": "ok",
+-   "pdf_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/A Human-in-the-Loop Confidence-Aware Failure Recovery Framew.pdf",
++   "pdf_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/一种面向模块化机器人策略的人在回路置信度感知故障恢复框架/一种面向模块化机器人策略的人在回路置信度感知故障恢复框架.pdf",
+    "pdf_bytes": 8572891,
+    "xml_path": "",
+-   "fulltext_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/A Human-in-the-Loop Confidence-Aware Failure Recovery Framew.pdf",
++   "fulltext_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/一种面向模块化机器人策略的人在回路置信度感知故障恢复框架/一种面向模块化机器人策略的人在回路置信度感知故障恢复框架.pdf",
+    "fulltext_format": "pdf",
+    "fulltext_reference": "",
+    "acquisition_check": ""
+@@ -551,10 +551,10 @@
+    "note": "★ **指出了误差型 AAN 的结构性缺陷**：助力和用户主动贡献被单一误差系数耦合，「主动出力减少被辅助通道吸收，伪装成小误差」。\n**这正是「用置信度而非误差做介入决策」的论据** —— 误差可以伪装，参与度不能。\n双通道导纳 + 凸 MPC + 能量罐保证无源性。",
+    "lens": "★ AAN 的核心难题：motor slacking（偷懒）",
+    "pdf_status": "ok",
+-   "pdf_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Model Predictive Control-Based Assist-as-Needed Strategy for.pdf",
++   "pdf_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于模型预测控制的按需辅助策略用于减少机器人辅助康复中的运动懈怠/基于模型预测控制的按需辅助策略用于减少机器人辅助康复中的运动懈怠.pdf",
+    "pdf_bytes": 1933917,
+    "xml_path": "",
+-   "fulltext_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Model Predictive Control-Based Assist-as-Needed Strategy for.pdf",
++   "fulltext_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于模型预测控制的按需辅助策略用于减少机器人辅助康复中的运动懈怠/基于模型预测控制的按需辅助策略用于减少机器人辅助康复中的运动懈怠.pdf",
+    "fulltext_format": "pdf",
+    "fulltext_reference": "",
+    "acquisition_check": ""
+@@ -583,10 +583,10 @@
+    "note": "**「什么时候介入」不只有一层**：除了「患者能力不足要帮」，还有「检测到痉挛要减速保护」。\n这支持把介入决策拆成**多个原子问题**（能力不足 / 疲劳 / 痉挛 / 代偿出现），每个独立校准 —— 正是 JEV 式原语该干的事。",
+    "lens": "AAN + 病理状态检测（痉挛）双条件介入",
+    "pdf_status": "ok",
+-   "pdf_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Velocity field assist-as-needed controller for upper limb re.pdf",
++   "pdf_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于 sEMG 痉挛检测的上肢康复速度场按需辅助控制器/基于 sEMG 痉挛检测的上肢康复速度场按需辅助控制器.pdf",
+    "pdf_bytes": 3062969,
+    "xml_path": "",
+-   "fulltext_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Velocity field assist-as-needed controller for upper limb re.pdf",
++   "fulltext_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于 sEMG 痉挛检测的上肢康复速度场按需辅助控制器/基于 sEMG 痉挛检测的上肢康复速度场按需辅助控制器.pdf",
+    "fulltext_format": "pdf",
+    "fulltext_reference": "",
+    "acquisition_check": ""
+@@ -616,10 +616,10 @@
+    "note": "**已有人把 sEMG 接到 AAN 决策上**，用的正是本项目关心的 sEMG 通路。\n其局限：SVM/KF 不是校准过的概率，分类器输出不能直接当安全阈值用 —— 这正是 D4 主张「必须自己校准」的现实佐证。",
+    "lens": "AAN 的能力评估：EMG + 运动学双输入分类",
+    "pdf_status": "ok",
+-   "pdf_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Assistance level quantification-based human-robot interactio.pdf",
++   "pdf_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于助力水平量化的人机交互空间重塑用于康复训练/基于助力水平量化的人机交互空间重塑用于康复训练.pdf",
+    "pdf_bytes": 3774162,
+    "xml_path": "",
+-   "fulltext_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Assistance level quantification-based human-robot interactio.pdf",
++   "fulltext_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于助力水平量化的人机交互空间重塑用于康复训练/基于助力水平量化的人机交互空间重塑用于康复训练.pdf",
+    "fulltext_format": "pdf",
+    "fulltext_reference": "",
+    "acquisition_check": "既有具体来源快照已核对：01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Assistance level quantification-based human-robot interactio_网页存档.md；非同行评审论文。"
+@@ -651,10 +651,10 @@
+    "note": "★★ **这是本语料最该被记住的一篇「泼冷水」文献。**\n它用 RCT 级别的方法学给出：**AAN 控制器在主要功能终点上并未显著优于简单的主动触发式固定辅助。**\n作者自陈是 stage-two 概念验证研究、未证明功能获益。\n**对本项目的含义**：介入决策层不能只报「我的 AAN 更好」，必须预先定义主要终点并诚实报告阴性结果。\n另注：作者之一 Fabrizio Sergi 亦为 Neurorobotics 那篇的共同作者。",
+    "lens": "★ 负面结果：AAN 并非总是优于固定辅助",
+    "pdf_status": "ok",
+-   "pdf_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Effects of Assist-As-Needed Upper Extremity Robotic Therapy.pdf",
++   "pdf_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/按需辅助上肢机器人疗法在不完全性脊髓损伤后的疗效：一项平行对照试验/按需辅助上肢机器人疗法在不完全性脊髓损伤后的疗效：一项平行对照试验.pdf",
+    "pdf_bytes": 3907364,
+    "xml_path": "",
+-   "fulltext_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Effects of Assist-As-Needed Upper Extremity Robotic Therapy.pdf",
++   "fulltext_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/按需辅助上肢机器人疗法在不完全性脊髓损伤后的疗效：一项平行对照试验/按需辅助上肢机器人疗法在不完全性脊髓损伤后的疗效：一项平行对照试验.pdf",
+    "fulltext_format": "pdf",
+    "fulltext_reference": "",
+    "acquisition_check": "2026-10-02T15:04:22：官方 PDF 已核验正文与标识；来源 https://www.frontiersin.org/articles/10.3389/fnbot.2017.00026/pdf；3907364 bytes"
+@@ -835,10 +835,10 @@
+    "note": "已用作者实验室公开的6页IEEE ICMA 2025正式PDF核对题名、作者、DOI、摘要及表I/II。原Zenodo 17850061错配，已撤下。比较数字须区分本实验TCN基线与表II文献比较；6名健康成人的离线结果不能直接当作卒中患者闭环疗效证据。1.5 ms为摘要报告的单次预测延迟，不等于整套系统闭环时延。",
+    "lens": "上肢康复外骨骼的实时 sEMG 连续预测",
+    "pdf_status": "ok",
+-   "pdf_path": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/Continuous Motion Prediction for Upper Limb Rehabilitation R.pdf",
++   "pdf_path": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/基于表面肌电信号的上肢康复机器人连续运动预测：一种时空注意力与轻量级 TCN 方法/基于表面肌电信号的上肢康复机器人连续运动预测：一种时空注意力与轻量级 TCN 方法.pdf",
+    "pdf_bytes": 2552350,
+    "xml_path": "",
+-   "fulltext_path": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/Continuous Motion Prediction for Upper Limb Rehabilitation R.pdf",
++   "fulltext_path": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/基于表面肌电信号的上肢康复机器人连续运动预测：一种时空注意力与轻量级 TCN 方法/基于表面肌电信号的上肢康复机器人连续运动预测：一种时空注意力与轻量级 TCN 方法.pdf",
+    "fulltext_format": "pdf",
+    "fulltext_reference": "",
+    "acquisition_check": "作者所在GUOLab官网公开PDF，6页；已核验题名、Weiyu Chen作者及IEEE DOI 11120720；不是此前错配Zenodo记录。"
+@@ -867,10 +867,10 @@
+    "note": "**直击本项目已知难点**（跨被试泛化只有 50–70%）。用计算机视觉姿态估计产生的标签 + TCN 迁移，是绕开「每个新被试都要重新标定」的可行路径。\n**且它同时命中了 AAN 决策层的一个前置问题**：决策阈值如果因被试而异，就必须先解决个体化，否则阈值不可迁移。",
+    "lens": "TCN 的跨被试个性化迁移（直击本项目已知难点）",
+    "pdf_status": "ok",
+-   "pdf_path": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/Personalization of Wearable Sensor-Based Joint Kinematic Est.pdf",
++   "pdf_path": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/基于计算机视觉的可穿戴传感器关节运动学估计个性化方法在髋关节外骨骼中的应用/基于计算机视觉的可穿戴传感器关节运动学估计个性化方法在髋关节外骨骼中的应用.pdf",
+    "pdf_bytes": 1912109,
+    "xml_path": "",
+-   "fulltext_path": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/Personalization of Wearable Sensor-Based Joint Kinematic Est.pdf",
++   "fulltext_path": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/基于计算机视觉的可穿戴传感器关节运动学估计个性化方法在髋关节外骨骼中的应用/基于计算机视觉的可穿戴传感器关节运动学估计个性化方法在髋关节外骨骼中的应用.pdf",
+    "fulltext_format": "pdf",
+    "fulltext_reference": "",
+    "acquisition_check": ""
+@@ -1009,10 +1009,10 @@
+    "note": "**这是 AAN 介入时机最直接的工程实现，且揭示了一个关键事实：现行控制律用的是「表现（performance）」而非「意图（intent）」。**\n\n机制：单控制器覆盖三个康复阶段，靠跟踪误差这一单一标量做模式切换；作者自陈参数需按被试个性化调整。\n\n**对本项目的意义**：\n1. R1 想做的「介入时机判断」，工程上已有朴素基线 —— 阈值判据。**任何复杂决策模型都必须先打败它**，否则只是把一个 if-else 换成神经网络。\n2. 它只用**单一标量误差**，不预测意图、不建模阶段 —— 留出的正是 R1 的空间。\n3. 但也给出反面提醒：5 名健康被试、无临床终点，作者明说结论仅为 preliminary。\n**这是工程可行性证据，不是临床有效性证据**，不能与 Kuo 2024 的临床结论并列引用。\n4. 印证了 R1 的边界：介入决策是控制问题，不是表征学习问题 —— JEV 式语言决策模型在这里没有输入接口。",
+    "lens": "AAN 介入时机在真实机器人上怎么实现：现有控制律的判据是什么",
+    "pdf_status": "ok",
+-   "pdf_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Performance-based assistance control for robot-mediated uppe.pdf",
++   "pdf_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于表现的机器人辅助上肢康复助力控制/基于表现的机器人辅助上肢康复助力控制.pdf",
+    "pdf_bytes": 7768271,
+    "xml_path": "",
+-   "fulltext_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Performance-based assistance control for robot-mediated uppe.pdf",
++   "fulltext_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于表现的机器人辅助上肢康复助力控制/基于表现的机器人辅助上肢康复助力控制.pdf",
+    "fulltext_format": "pdf",
+    "fulltext_reference": "",
+    "acquisition_check": ""
+--- a/01_参考论文/康复辅助/康复整合链路/index.json
++++ b/01_参考论文/康复辅助/康复整合链路/index.json
+@@ -174,7 +174,7 @@
+       "venue": "IEEE Transactions on Fuzzy Systems",
+       "database": "IEEE Xplore；公开作者仓储",
+       "landing_url": "https://eprints.whiterose.ac.uk/id/eprint/231974/",
+-      "local_fulltext": "01_参考论文/康复辅助/康复整合链路/TFS2025_NeuroFuzzy_AAN.pdf",
++      "local_fulltext": "01_参考论文/康复辅助/康复整合链路/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制.pdf",
+       "format": "pdf",
+       "version": "Accepted Version（机构仓储作者接受稿）",
+       "sha256": "7cd821b71b08addbc45745b1c88028d28d7b59f4c35d74ee80dca1e3065d0e21",
+@@ -224,7 +224,7 @@
+       "landing_url": "https://doi.org/10.1109/tro.2024.3411849",
+       "source_kind": "user-provided-IEEE-publisher-PDF",
+       "source_record": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
+-      "local_fulltext": "01_参考论文/康复辅助/康复整合链路/A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller.pdf",
++      "local_fulltext": "01_参考论文/康复辅助/康复整合链路/一种基于肌肉协同肌电控制器的绳驱上肢康复机器人/一种基于肌肉协同肌电控制器的绳驱上肢康复机器人.pdf",
+       "format": "PDF",
+       "version": "IEEE publisher PDF,13 file pages=journal3199–3211",
+       "pages": 13,
+@@ -245,7 +245,7 @@
+       "landing_url": "https://doi.org/10.1109/tbcas.2021.3130090",
+       "source_kind": "user-provided-IEEE-publisher-PDF",
+       "source_record": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
+-      "local_fulltext": "01_参考论文/康复辅助/康复整合链路/A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller.pdf",
++      "local_fulltext": "01_参考论文/康复辅助/康复整合链路/基于肌电导纳控制器的混合式臂-手康复机器人/基于肌电导纳控制器的混合式臂-手康复机器人.pdf",
+       "format": "PDF",
+       "version": "IEEE publisher PDF,11 file pages=journal1332–1342;Dec2021",
+       "pages": 11,
+@@ -266,7 +266,7 @@
+       "landing_url": "https://doi.org/10.1109/tnsre.2025.3579533",
+       "source_kind": "user-provided-IEEE-publisher-PDF",
+       "source_record": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
+-      "local_fulltext": "01_参考论文/康复辅助/康复整合链路/Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf",
++      "local_fulltext": "01_参考论文/康复辅助/康复整合链路/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制.pdf",
+       "format": "PDF",
+       "version": "IEEE publisher PDF,10 file pages=journal2358–2367",
+       "pages": 10,
+@@ -287,7 +287,7 @@
+       "landing_url": "https://doi.org/10.1109/tie.2024.3398675",
+       "source_kind": "user-provided-IEEE-publisher-PDF",
+       "source_record": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
+-      "local_fulltext": "01_参考论文/康复辅助/康复整合链路/Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration.pdf",
++      "local_fulltext": "01_参考论文/康复辅助/康复整合链路/基于深度 LSTM 与静态-动态校准的人机协作控制/基于深度 LSTM 与静态-动态校准的人机协作控制.pdf",
+       "format": "PDF",
+       "version": "IEEE publisher PDF,11 file pages=journal16165–16175;Dec2024",
+       "pages": 11,
+@@ -308,7 +308,7 @@
+       "landing_url": "https://doi.org/10.1109/tbme.2020.3027823",
+       "source_kind": "user-provided-IEEE-publisher-PDF",
+       "source_record": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
+-      "local_fulltext": "01_参考论文/康复辅助/康复整合链路/Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot.pdf",
++      "local_fulltext": "01_参考论文/康复辅助/康复整合链路/基于运动表现的绳驱动上肢康复机器人混合控制/基于运动表现的绳驱动上肢康复机器人混合控制.pdf",
+       "format": "PDF",
+       "version": "IEEE publisher PDF,9 file pages=journal1351–1359;Apr2021,first publication2020",
+       "pages": 9,
+@@ -331,7 +331,7 @@
+       "landing_url": "https://research.unipd.it/handle/11577/3586318",
+       "source_kind": "user-provided-IEEE-publisher-PDF",
+       "source_record": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
+-      "local_fulltext": "01_参考论文/康复辅助/康复整合链路/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf",
++      "local_fulltext": "01_参考论文/康复辅助/康复整合链路/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果.pdf",
+       "format": "PDF",
+       "version": "IEEE publisher PDF, 11 file pages = journal532–542",
+       "pages": 11,
+@@ -352,7 +352,7 @@
+       "landing_url": "https://doi.org/10.1109/tbme.2022.3228070",
+       "source_kind": "user-provided-IEEE-publisher-PDF",
+       "source_record": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
+-      "local_fulltext": "01_参考论文/康复辅助/康复整合链路/Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot.pdf",
++      "local_fulltext": "01_参考论文/康复辅助/康复整合链路/针对踝关节助力康复机器人的主动按需辅助控制器/针对踝关节助力康复机器人的主动按需辅助控制器.pdf",
+       "format": "PDF",
+       "version": "IEEE publisher PDF,9 file pages=journal1795–1803;June2023,first publication2022",
+       "pages": 9,
+--- a/01_参考论文/康复辅助/康复整合链路/README.md
++++ b/01_参考论文/康复辅助/康复整合链路/README.md
+@@ -1,6 +1,8 @@
+ # 康复整合链路：本轮新取得的全文
+ 
+-这里保存原文，不是用户下载清单。用户只需查看[仍需补取的论文](..)。本研究的任务、筛选规则及分析入口在[链路研究专题](..)。
++这里保存原文，不是用户下载清单。用户只需查看[仍需补取的论文](../../../06_附录/待下载论文总清单.md)。本研究的任务、筛选规则及分析入口在[链路研究专题](../../../10_研究方向/主动参与与训练强度_链路研究/README.md)。
++
++2026-10-10对账：本子库20条原件索引均已回读并核对既有SHA，8条因目录整理失效的PDF路径已修复；本研究跨库87条均有原件（71 PDF/16 XML），待下载0条。下文55条/398段与2026-10-04入库流程为历史审计范围，不代表此次新精读或新移动。
+ 
+ ## 原件与版本
+ 
+@@ -20,7 +22,7 @@
+ | [2026儿科步态多模态参与估计](PMC13523423.xml) | 下肢/儿科迁移方法，不能当成人上肢有效性证据 |
+ | [2014竞争/合作游戏与IMI心理评价](PMC4021830.xml) | 30健常/8慢性卒中；动机、偏好、自报努力与物理贡献区分 |
+ | [2022游戏化机器人训练/偏好与运动表现](PMC9708787.xml) | 10慢性卒中；精度/平滑与速度、偏好、学习/迁移分别解释 |
+-| [2025神经模糊肌骨模型驱动AAN](TFS2025_NeuroFuzzy_AAN.pdf) | 力矩估计→可变阻抗的最近整合反例；[证据卡](TFS2025_NeuroFuzzy_AAN_Evidence_Card.md) |
++| [2025神经模糊肌骨模型驱动AAN](基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制.pdf) | 力矩估计→可变阻抗的最近整合反例；[证据卡](基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制_Evidence_Card.md) |
+ 
+ ## 2026-10-04用户补取原件
+ 
+@@ -31,8 +33,8 @@
+ | [Song_VAAN](../../../12_宋嵘_合作团队/papers/背景资料/Yang2023-TBME：踝关节动力辅助康复机器人的自主助行控制器/Yang2023-TBME：踝关节动力辅助康复机器人的自主助行控制器.pdf) | 9页；传感器MVC、5卒中踝研究及比例/比较边界已定位 |
+ | [Song_TBME](../../../12_宋嵘_合作团队/papers/背景资料/Li2021-TBME：基于表现型混合控制的线缆驱动上肢康复机器人/Li2021-TBME：基于表现型混合控制的线缆驱动上肢康复机器人.pdf) | 9页；模糊/限制模式、张力代理及10健常边界已定位 |
+ | [Song_TBCAS](../../../12_宋嵘_合作团队/papers/背景资料/Xie2021-TBCAS：基于肌电导纳控制器的臂手一体化康复机器人/Xie2021-TBCAS：基于肌电导纳控制器的臂手一体化康复机器人.pdf) | 11页；单人、反算力标签及手FZCR不显著已定位 |
+-| [RL2026](Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf) | 11页；原图/公式/表已核，符号歧义和旧派生历史保留 |
+-| [Shoulder2025](Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf) | 10页；期望模型力矩/刚度、10健常及稳定/安全边界已定位 |
++| [RL2026](基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果.pdf) | 11页；原图/公式/表已核，符号歧义和旧派生历史保留 |
++| [Shoulder2025](基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制.pdf) | 10页；期望模型力矩/刚度、10健常及稳定/安全边界已定位 |
+ 
+ [移动/回滚清单](..)；每份出版PDF有同名`_Evidence_Card.md`，记录身份及关键方法/边界选择核验，不伪装独立复现、患者安全或创新定案；[最新64条原件与候选裁剪](..)。
+ 
+--- a/10_研究方向/主动参与与训练强度_链路研究/文献对照表.md
++++ b/10_研究方向/主动参与与训练强度_链路研究/文献对照表.md
+@@ -2,7 +2,9 @@
+ 
+ ## 先看结论
+ 
+-当前55条均有本地原件、0待下载；2026-10-04新7篇出版PDF的关键正文/方法已核，新增64条定位，主定位398段；ALP/TFS补充17条及旧RL派生16段分计。**整合先例已经找到**：连续肌电辅助、表现型可变阻抗、MPC-AAN、生成模型双模式外骨骼、ALP参与控制及神经模糊肌骨AAN。不能再以“没人把理解与辅助接起来”作为创新前提。目的性地图不能给出“结合者很少”的总体频率。
++2026-10-10原件对账：现行台账87条均有可验证原件（71 PDF/16 XML），待下载0条；17条旧路径与5条空路径已修复。见[逐条对账记录](../../05_进展日志/2026-10-10_文献台账对账/整理记录.md)。下文55条/398段方法证据及末尾27篇缺件描述均为先前审计快照；此次原件对账不增加精读篇数、选段数或创新定案数。
++
++历史55条均有本地原件、0待下载；2026-10-04新7篇出版PDF的关键正文/方法已核，新增64条定位，主定位398段；ALP/TFS补充17条及旧RL派生16段分计。**整合先例已经找到**：连续肌电辅助、表现型可变阻抗、MPC-AAN、生成模型双模式外骨骼、ALP参与控制及神经模糊肌骨AAN。不能再以“没人把理解与辅助接起来”作为创新前提。目的性地图不能给出“结合者很少”的总体频率。
+ 
+ 角度精度、代偿分类、意图概率、肌电/力矩代理、训练量与临床结局属于不同证据层。反馈闭环存在也不等于参与和强度都被可靠测量，更不等于患者收益已验证。
+ 
+--- a/01_参考论文/康复辅助/康复整合链路/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制_Evidence_Card.md
++++ b/01_参考论文/康复辅助/康复整合链路/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制_Evidence_Card.md
+@@ -6,7 +6,7 @@
+ 
+ - Cao Y等，*Neuro-Fuzzy Musculoskeletal Model-Driven Assist-as-Needed Control via Impedance Regulation for Rehabilitation Robots*。
+ - IEEE Transactions on Fuzzy Systems，33(12):4277–4288，2025；DOI `10.1109/TFUZZ.2025.3611266`。
+-- [原件](TFS2025_NeuroFuzzy_AAN.pdf)、[仓储记录](https://eprints.whiterose.ac.uk/id/eprint/231974/)。
++- [原件](基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制.pdf)、[仓储记录](https://eprints.whiterose.ac.uk/id/eprint/231974/)。
+ - 版本：Accepted Version，不等同出版排版版。PDF页码以下含第1页仓储封面；论文自编号比PDF页码少1。
+ 
+ ## 原文可支持的判断
+--- a/01_参考论文/康复辅助/康复整合链路/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果_Evidence_Card.md
++++ b/01_参考论文/康复辅助/康复整合链路/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果_Evidence_Card.md
+@@ -4,7 +4,7 @@
+ 
+ - 题名：Personalized Adaptive Assistance With Reinforcement Learning Control Enhances Engagement, Performance, and Retention in Robot-Assisted Arm-Reaching Exercises
+ - DOI：`10.1109/tnsre.2025.3650096`；卷期年2026；期刊：IEEE Transactions on Neural Systems and Rehabilitation Engineering。
+-- [本地出版PDF](Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf)；[权威页](https://research.unipd.it/handle/11577/3586318)；版本：IEEE publisher PDF, 11 file pages = journal532–542。
++- [本地出版PDF](基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果.pdf)；[权威页](https://research.unipd.it/handle/11577/3586318)；版本：IEEE publisher PDF, 11 file pages = journal532–542。
+ - 原件11页；SHA-256：`4b6e21ec3be9c4d677c6ad4d9099df49d3a8198fecf7abe990a360bf93ff97e6`；用户下载，仅获准移动一次，文件名/字节保持。
+ - [授权/源目标/回滚留证](..)。
+ 
+--- a/01_参考论文/康复辅助/康复整合链路/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制_Evidence_Card.md
++++ b/01_参考论文/康复辅助/康复整合链路/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制_Evidence_Card.md
+@@ -4,7 +4,7 @@
+ 
+ - 题名：Assist-as-Needed Control of a Shoulder Rehabilitation Robot Using a Virtual Biomechanical Model and Online Stiffness Adaptation
+ - DOI：`10.1109/tnsre.2025.3579533`；卷期年2025；期刊：IEEE Transactions on Neural Systems and Rehabilitation Engineering。
+-- [本地出版PDF](Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf)；[权威页](https://doi.org/10.1109/tnsre.2025.3579533)；版本：IEEE publisher PDF,10 file pages=journal2358–2367。
++- [本地出版PDF](基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制.pdf)；[权威页](https://doi.org/10.1109/tnsre.2025.3579533)；版本：IEEE publisher PDF,10 file pages=journal2358–2367。
+ - 原件10页；SHA-256：`e71f6fb2dfc06eb87118b3056e4e82e6bc6dc67fb0554698ba3a008ceabf1768`；用户下载，仅获准移动一次，文件名/字节保持。
+ - [授权/源目标/回滚留证](..)。
+ 

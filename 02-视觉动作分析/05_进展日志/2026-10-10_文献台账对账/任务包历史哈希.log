@@ -1,0 +1,5 @@
+$ (cd 04_实验设计/D435i_四问任务包/历史归档 && shasum -a 256 -c 原件哈希.sha256)
+RealSense_D450i_腕关节康复人体运动状态感知测试任务书.md: OK
+D435i_四问可行性回答.md: FAILED
+D435i_实验方案与风险清单.md: FAILED
+shasum: WARNING: 2 computed checksums did NOT match

@@ -1,0 +1,24 @@
+One-off content assertion failed after source/paragraph checks; diagnostic values:
+{
+  "protection_differences": [
+    "01_参考论文/生物力学线/README.md",
+    "01_参考论文/生物力学线/取件入口.md",
+    "01_参考论文/Transformer_发展线/README.md",
+    "01_参考论文/Transformer_发展线/取件入口.md",
+    "01_参考论文/决策模型线_JEV/取件入口.md"
+  ],
+  "interface_regex_results": [
+    "ObservationPacket",
+    "ValidityPacket",
+    "KinematicQualityState",
+    "EffortEstimate",
+    "PsychologicalEngagementState",
+    "ConstraintState",
+    "DecisionRequest",
+    "AppliedPolicyReceipt",
+    "TrainingBlockOutcome",
+    "PlanRevision"
+  ]
+}
+
+Further harness failures/corrections: older initial 原件保护基线 compared against post-ISB-correction task entry; current bytes match migration ZIP and 迁移前保护基线. Subsequent broad table extraction included common-field names; restricted to message section. No source/contract fields removed to obtain PASS. Corrected check passed; see 双参与_内容与保护验收.json.

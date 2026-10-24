@@ -1,0 +1,23 @@
+# PMC8884063 补充材料取件清单
+
+- 取件时间：2026-10-01 15:31:55
+- 接口：`GET https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8884063/supplementaryFiles`
+- HTTP 200 / 1,418,210 bytes / 10 个文件
+
+## 文件
+
+- `peerj-10-12995-g001.gif`  65,772 bytes
+- `peerj-10-12995-g001.jpg`  125,756 bytes
+- `peerj-10-12995-g002.gif`  68,648 bytes
+- `peerj-10-12995-g002.jpg`  165,168 bytes
+- `peerj-10-12995-g003.gif`  77,963 bytes
+- `peerj-10-12995-g003.jpg`  468,655 bytes
+- `peerj-10-12995-g004.gif`  67,092 bytes
+- `peerj-10-12995-g004.jpg`  167,334 bytes
+- `peerj-10-12995-g005.gif`  71,646 bytes
+- `peerj-10-12995-g005.jpg`  171,841 bytes
+
+## ⚠️ 取件纪律提醒
+
+- **文件名编号 ≠ 表号编号**：本项目 Pohl 2026 那篇，正文引用的「表 S2/S3」全部在 `s002.pdf` 一份里。取件后**必须逐份打开核对表号**，不要按文件名推断。
+- 补充材料是**已入库论文的附件**，不是独立论文条目：**不要**为它造 `_Abstract_Card.md`（会犯 K8），**不要**改语料三的条目计数。

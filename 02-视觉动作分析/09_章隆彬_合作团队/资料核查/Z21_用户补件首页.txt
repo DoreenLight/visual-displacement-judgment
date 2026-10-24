@@ -1,0 +1,76 @@
+This article has been accepted for publication in a future issue of this journal, but has not been fully edited. Content may change prior to final publication. Citation information: DOI 10.1109/TMECH.2020.3044289, IEEE/ASME
+                                                                                                       Transactions on Mechatronics
+                                                                                                                                                                                                              1
+
+
+
+
+                   Human-in-the-Loop Control of a Wearable Lower
+                    Limb Exoskeleton for Stable Dynamic Walking
+                       Zhijun Li, Senior Member, IEEE, Kuankuan Zhao, Longbin Zhang, Xinyu Wu, Tao Zhang, Qinjian Li,
+                                             Xiang Li, and Chun-Yi Su, Senior Member, IEEE
+
+
+
+                  Abstract—Exoskeletons are increasingly used to assist humans                                   exoskeleton system which was mainly designed for stroke
+               in military, industry, and healthcare applications, thereby en-                                   and spinal cord injury (SCI) patients’ rehabilitation and gait
+               abling individuals to gain increased strength and endurance. This                                 training in clinical environments [5]. The ReWalk company
+               paper proposes a novel human-in-the-loop control framework
+               for a fully actuated lower-limb exoskeleton with high degree-                                     also designed a lower-limb exoskeleton that could support the
+               of-freedoms (DoFs), allowing users to walk without crutches                                       patients to walk [6].
+               or other external stabilization tools. To imitate the natural                                        For the motion planning of exoskeletons, a few planning
+               lower limb motion of users, a novel barrier energy function                                       algorithms have been fully investigated to generate gait trajec-
+               is utilized for the design of the control strategy, where the                                     tories. Kajita et al. [7] and Vanderborght et al. [8] generated a
+               human-robot manipulation space is reformulated as a human-
+               voluntary and a robot-constrained region. The variations in                                       dynamically stable gait with a linear inverted pendulum model
+               the barrier energy function are based on the distance between                                     (LIPM); however, the gait pattern of a walking robot is less
+               the center of mass (COM) and zero moment point (ZMP) of                                           smooth and efficient than the natural gait of humans. Due
+               the walking exoskeleton, thereby constraining the lower limb                                      to the lack of the hip abduction/adduction motion in many
+               motion of the user to a compliant region around various desired                                   mechanical designs of the lower exoskeletons, keeping the
+               trajectories. Based on varying regional functions, the proposed
+               strategy is designed to control the exoskeleton to follow appro-                                  balance of walking gait and the internal/external rotation in
+               priate ergonomic trajectories. For such a purpose, an adaptive                                    turning gait usually need extra support device. To achieve
+               controller is exploited considering the functions of the human                                    the dynamic balance, most previously developed exoskeletons
+               effort and the robot’s capabilities simultaneously, and a smooth                                  have to rely on assistive devices such as crutches [9], [10],
+               motion transition can be achieved between the human and robot                                     [11]. In [12], [13], the authors found that passive walking
+               regions. Finally, physical experiments are conducted on a ten-
+               DoFs walking exoskeleton to validate the stability and robustness                                 movement only assures sagittally balance whereas the lateral
+               of the proposed control framework with subjects performing flat                                   balance can not be achieved. Donelan et al. [14] and Hof
+               walking, turning, and obstacle avoidance movements.                                               et al. [15] demonstrated that varying foot positions and step
+                                                                                                                 sizes can produce the different performance of the lateral
+                 Keywords: Human-in-the-loop, exoskeletons, dynamic
+                                                                                                                 balance in passive walking. Therefore, in order to produce self-
+               walking
+                                                                                                                 balanced walking, hip abduction/adduction assistance from
+                                                                                                                 the powered exoskeleton should be involved. To utilize the
+                                               I. I NTRODUCTION                                                  hip abduction/adduction and internal/external rotation motion,
+                  Exoskeletons can provide promising support to the human                                        predefined trajectories can be planned to realize dynamic
+               movement, especially as it enhances the capability of para-                                       activities (e.g., walking, crossing obstacles, turning) without
+               plegic individuals in different scenarios, such as walking,                                       auxiliary supported devices. Traditionally high DoFs exoskele-
+               sitting, stepping over obstacles, and climbing stairs [1], [2],                                   tons always have multiple actuators mounted at the hip, knee,
+               [3] and [4]. Generally, to implement more ergonomic capa-                                         and ankle joints that try to provide enough workspace for
+               bilities of exoskeletons, preprogrammed motion patterns are                                       the various motions of humans. However, the major drawback
+               designed to drive the exoskeletons with the user’s commands.                                      of such exoskeletons is the requirement of external assistive
+               For example, Ekso Bionics company developed an ’EksoGT’                                           devices, such as crutches and canes, to keep balance during
+                                                                                                                 walking. Harib et al. [16] realized the function with ’REX’
+                  This work was supported in part by the National Key Research and Devel-                        Bionics lower-limb exoskeleton; however, only slow static
+               opment Program of China under Grant 2017YFB1302302, 2018YFC2001600,
+               and Grant 2018YFC2001602, and the National Natural Science Foundation                             gaits were allowed with limited velocities at 0.05 m/s and
+               of China under Grant 61625303, Grant 61751310, and Grant U1913601,                                it could not complete various walking tasks. Therefore, in this
+               in part by the Anhui Science and Technology Major Program under Grant                             paper, we focus on the design of a novel control strategy for a
+               17030901029. Corresponding author: Zhijun Li (zjli@ieee.org).
+                  Z. Li, K. Zhao, T. Zhang, Q. Li, X. Li are with Department of Automation,                      fully actuated lower-limb exoskeleton with high DOFs, where
+               University of Science and Technology of China, Hefei, China, 230060. Email:                       the user can achieve walking without crutches or other external
+               zjli@ieee.org.                                                                                    stabilization tools.
+                  L. Zhang is with Department of Engineering Mechanics, KTH Royal
+               Institute of Technology, Stockholm, Sweden.                                                          Most existing works of exoskeletons only drive humans
+                  X. Wu is with Shenzhen Institutes of Advanced Technology, Chinese                              with a predefined trajectory, and traditional position control
+               Academy of Sciences, Shenzhen, China.                                                             methods have been widely used to the field of medical reha-
+                  C. Y. Su is with the School of Automation, Guangdong University of
+               Technology, Guangzhou 510006, China, on leave from Concordia University,                          bilitation. However, these traditional methods didn’t consider
+               Montreal, QC H3G 1M8, Canada.                                                                     the user’s customized needs, and may not adapt to different
+
+
+      1083-4435 (c) 2020 IEEE. Personal use is permitted, but republication/redistribution requires IEEE permission. See http://www.ieee.org/publications_standards/publications/rights/index.html for more information.
+                             Authorized licensed use limited to: Carleton University. Downloaded on June 04,2021 at 19:48:46 UTC from IEEE Xplore. Restrictions apply.
+

@@ -1,0 +1,673 @@
+# PhysPT: Physics-aware Pretrained Transformer for Estimating Human Dynamics from Monocular Videos
+
+Yufei Zhang<sup>1</sup>, Jeffrey O. Kephart<sup>2</sup>, Zijun Cui<sup>1,3</sup>, Qiang Ji<sup>1</sup>
+
+<sup>1</sup>Rensselaer Polytechnic Institute, <sup>2</sup>IBM Research, <sup>3</sup>University of Southern California
+
+{zhangy76, jiq}@rpi.edu, kephart@us.ibm.com, ceejkl@gmail.com
+
+## Abstract
+
+While current methods have shown promising progress on estimating 3D human motion from monocular videos, their motion estimates are often physically unrealistic because they mainly consider kinematics. In this paper, we introduce Physics-aware Pretrained Transformer (PhysPT), which improves kinematics-based motion estimates and infers motionforces. PhysPT exploits a Transformer encoderdecoder backbone to effectively learn human dynamics in a self-supervised manner. Moreover, it incorporates physics principles governing human motion. Specifically, we build a physics-based body representation and contact force model. We leverage them to impose novel physics-inspired training losses (i.e.,force loss, contact loss, and Euler-Lagrange loss), enabling PhysPT to capture physical properties of the human body and the forces it experiences. Experiments demonstrate that, once trained, PhysPT can be directly applied to kinematics-based estimates to significantly enhance their physical plausibility and generate favourable motion forces. Furthermore, we show that these physically meaningful quantities translate into improved accuracy ofan important downstream task: human action recognition.
+
+## 1. Introduction
+
+Monocular 3D human motion estimation is essential for applications like human-computer interaction [8, 74], motion analysis [14], and robotics [17]. This task is inherently challenging due to the absence of depth information and the intricate interplay of forces and human body movements.
+
+Recent advances in deep learning, along with progress in 3D human modeling [47, 85], have substantially improved the reconstruction of 3D humans from a single image [28, 33, 38, 76, 105]. With video inputs, current research aims to enhance model performance by exploiting temporal information. Some authors devise temporal models that extract meaningful features from videos to improve performance [6, 10, 11, 13, 23, 36, 55, 64, 69, 73, 80, 98,
+
+100]. Other authors learn motion priors that capture natural 3D body movement patterns. Integrating the learned priors into model training can promote smooth motion estimates [31, 48, 61, 66]. While these approaches enhance reconstruction to some extent, they often produce unrealistic estimates characterized by noticeable physical artifacts such as motion jittering and foot skating.
+
+To address this limitation, a promising strategy is to leverage physical principles governing body movements. In this approach, the human body is treated as an articulated rigid body, and human dynamics are described through the Euler-Lagrange equations. These equations link body mass, inertia, and physical forces (including joint actuations and contact forces) to body motion through ordinary differential equations. Some researchers [19, 20, 40, 60, 67, 84, 88] formulate optimization frameworks that jointly estimate unknown physical parameters and refine kinematics-based estimates by aligning them with the physics equations. Alternatively, others [24, 39, 49, 68, 93] employ learning-based frameworks. They sidestep the cumbersome manual parameter tuning inherent in optimization-based methods by training neural networks to predict the parameters.
+
+Yet, a key challenge remains: physics information, including physical properties of human bodies and motion forces, is absent in current 3D motion capture datasets [51]. To incorporate physics, existing methods generally rely on physics engines [15, 75]. This entails creating proxy bodies with geometric primitives to capture body properties, importing these proxies into a physics engine, and then leveraging the physics engine to compute the necessary physical parameters and simulate body motion. The problem with this approach arises from the difficulty of efficiently computing gradients from physics engine outputs [19], thereby limiting their seamless integration with deep learning models. Moreover, existing physics-based models are primarily trained with 3D annotated videos, which are challenging to acquire in practice. Consequently, the trained models may not generalize well to unseen scenarios.
+
+In this paper, we propose a novel framework for learning human dynamics that circumvents the need for 3D annotated videos and effectively integrates physics with advanced deep models. Specifically, drawing inspiration from recent success of pre-trained Transformers [77] in temporal modeling, we propose leveraging a Transformer encoderdecoder architecture and training in a self-supervised manner by reconstructing input human motion. When incorporating physics, we bypass unrealistic body proxies by directly computing body physical properties from the widely adopted 3D body model, SMPL [47]. We also introduce a contact model to effectively model the contact forces. We utilize these models to derive motion forces from training sequences and impose novel physics-inspired training losses, including force loss, contact loss, and Euler-Lagrange loss. We train the Transformer model only using existing motion capture data. Once trained, our physicsaware pretrained Transformer (PhysPT) can be applied on top of any kinematics-based reconstruction model to produce enhanced motion and force estimates from monocular videos. In summary, our main contributions include:
+
+• We introduce PhysPT, a Transformer encoder-decoder model trained through self-supervised learning with incorporation of physics. Once trained, PhysPT can be combined with any kinematic-based model to estimate human dynamics without additional model fine-tuning.
+
+• We present a novel framework for incorporating physics. This includes a physics-based body representation and a contact force model, and, subsequently, the imposition of a set of novel physics-inspired losses for model training.
+
+• We demonstrate through experiments that PhysPT significantly enhances the physical plausibility of motion estimates and infers favourable motion forces. Furthermore, we demonstrate that the enhanced motion and force estimates translate into accuracy improvements in an important downstream task: human action recognition.
+
+## 2. Related Work
+
+Kinematics-based Human Motion Estimation. Methods modeling body kinematics estimate body geometry configuration solely. Among these approaches, one line of work involves optimization-based pipelines that iteratively fit a prior body model to 2D observations to reconstruct a 3D human [1, 4, 22, 78, 83, 89, 111]. Others embrace deep learning models to directly predict 3D human bodies. Given a single input image, existing methods have proposed different model architectures with various intermediate and output representations to improve the reconstruction accuracy [18, 32, 34, 38, 41, 43, 50, 53, 63, 81, 91, 104].
+
+Given input of a monocular video, current kinematicsbased methods aim to fully harness temporal information to obtain improved results. Various temporal models are developed based on Temporal Convolutional Networks [29, 36, 55, 99, 100], Graph Convolutional Networks [6, 10, 11, 80, 98], Recurrent Neural Networks [13, 23, 31, 48, 72, 92],
+
+Transformer [21, 42, 58, 59, 64, 73, 108, 112], or those explicitly capturing and exploiting attention [44, 71, 79, 82]. Another common approach to encouraging realistic temporal predictions is to incorporate smoothness constraints or motion priors during training [31, 48, 61, 94, 101]. These kinematics-based methods, however, often produce noticeable physical artifacts due to their failure to realistically capture the complexity of human motion.
+
+Physics-based Human Motion Estimation. Physics-based approaches explicitly leverage physics principles, particularly the Euler-Lagrange equations, to capture human dynamics. Prior works have adopted optimization frameworks to jointly estimate motion forces and refine initial kinematics-based motion estimates by minimizing the residuals introduced by the Euler-Lagrange equations [40, 60, 84]. Directly estimating the exerted forces is challenging; therefore, others employ a character control methodology. In this paradigm, kinematics-based estimates act as reference motions, and the forces needed to emulate these motions in a physics engine are predicted by estimating the parameters of a controller [19, 37, 67, 88, 90, 110]. However, these optimization-based methods often require careful tuning of the control parameters. Some approaches instead leverage neural networks to estimate the parameters, where the models are trained through fully supervised learning [68] or reinforcement learning [24, 26, 49, 93]. In these approaches, incorporating the physics engine alongside learning models falls short of achieving an effective end-to-end integration of physics. Li et al. [39] enhance the learning process by analytically computing some of the physical parameters coupled with the usage of 3D supervisions. While the produced results are promising, existing learning-based methods rely on 3D annotated videos for training and often exhibit poor generalization. In contrast, our model adopts self-supervised learning, trained solely using existing 3D motion data without images. Additionally, we introduce a novel framework that seamlessly bridges the gap between body kinematics and physics without relying on physics engines, facilitating the effective integration of physics with advanced deep learning models.
+
+Full Human Dynamics Estimation. Fully capturing human dynamics requires determining both body movements and the forces exerted by individuals [3, 12, 62, 65]. Prevailing methods for estimating human dynamics primarily focus on inferring forces from 3D motion capture data [5, 95–97]. These estimated forces are used to facilitate tasks such as human action recognition [52] or human motion prediction [45, 106, 107]. Our approach can address a more challenging task: the estimation of full human dynamics from a monocular video. We do so without utilizing any ground truth force labels. To our knowledge, we are the first to demonstrate that forces inferred from monocular videos can improve human action recognition.
+
+![](images/f71bc11dafacfea3b31d2841818fd2858654ce7e8f0050d2f4cafd98c9614c35.jpg)  
+Figure 1. Method Overview. The proposed framework consists of a kinematics-based motion estimation model (orange) and a physicsaware pre-trained Transformer (green) for estimating human dynamics from a monocular video. Inset (a) illustrates joint actuation of right pelvis and contact forces at each foot. (b) illustrates reconstructed body motion and inferred forces with lighter colors representing greater joint actuation magnitudes (e.g. upper body joints when the figure is standing, and leg joints when it is walking).
+
+## 3. Proposed Method
+
+Fig. 1 shows an overview of our method. Given T video frames $\{ \mathbf { X } _ { t } \} _ { t = 1 } ^ { T }$ , a kinematics-based model is employed to generate initial motion estimates $\{ \hat { \mathbf { q } } _ { t } \} _ { t = 1 } ^ { T }$ , followed by the proposed PhysPT to estimate refined motion $\{ \mathbf { q } _ { t } \} _ { t = 1 } ^ { T }$ and infer forces $\left. \lambda _ { t } , \tau _ { t } \right. _ { t = 1 } ^ { T }$ . In Sec. 3.1, we introduce the physics equations for modeling human dynamics and describe how we generate the kinematics-based estimates. In Sec. 3.2, we delve into the key components of PhysPT.
+
+## 3.1. Preliminary
+
+Euler-Lagrange Equations. As a complex physical system composed of multiple interacting body parts, the human body is often modeled using rigid body dynamics. In this context, the Euler-Lagrange equations provide a concise mathematical description of human dynamics within a generalized coordinate system.
+
+The generalized coordinates are defined by variables that fully specify the system’s state. Based on the successful geometry body model SMPL [47], we represent a 3D human body in terms of a mesh model using body pose $\pmb { \theta } \in \mathbb { R } ^ { 2 3 \times 3 }$ and body shape parameters $\beta \in \mathbb { R } ^ { 1 0 }$ . The pose parameters characterize the rotations of 23 body joints, while the shape parameters control the variations in body attributes, e.g. girth. Given that the body shape remains constant within a video, the 3D body trajectory in the world frame can be fully specified by the pose θ plus body translation $\mathbf { T } \in \mathbb { R } ^ { 3 }$ and rotation $\mathbf { R } \in \mathbb { R } ^ { 3 }$ via a generalized coordinate q:
+
+$$
+\mathbf {q} = \{\mathbf {T}, \mathbf {R}, \boldsymbol {\theta} \}.\tag{1}
+$$
+
+Denoting the velocity and the acceleration in the generalized coordinates as $\dot { \mathbf { q } }$ and ${ \ddot { \mathbf { q } } } ,$ respectively, the body dynamics governed by the Euler-Lagrange equations are:
+
+$$
+\mathbf {M} (\mathbf {q}; \mathbf {m}, \mathbf {I}) \ddot {\mathbf {q}} + \mathbf {C} (\mathbf {q}, \dot {\mathbf {q}}; \mathbf {m}, \mathbf {I}) + \mathbf {g} (\mathbf {q}; \mathbf {m}) = \mathbf {J} _ {C} ^ {T} \boldsymbol {\lambda} + \boldsymbol {\tau},\tag{2}
+$$
+
+where $\mathbf { M } ( \mathbf { q } ; \mathbf { m } , \mathbf { I } )$ is the generalized inertia matrix determined by the position q, the body mass m, and the inertia I. $\mathbf { C } \left( \mathbf { q } , { \dot { \mathbf { q } } } ; \ \mathbf { m } , \mathbf { I } \right)$ represents the Coriolis and centrifugal forces. $\mathbf { g } ( \mathbf { q } ; \mathbf { m } )$ indicates the gravitational forces. $\pmb { \lambda } \in \mathbb { R } ^ { 3 n _ { c } }$ denotes the contact forces, where $n _ { c }$ is the number of points of contact. $\mathbf { J } _ { C } \in \mathbb { R } ^ { 3 n _ { c } \times 7 5 }$ is the contact Jacobian matrix that describes the mapping between the contact points’ Cartesian velocity, $\mathbf { v } _ { C } \in \mathbb { R } ^ { 3 n _ { c } }$ , and the generalized velocity, ${ \dot { \mathbf { q } } } ,$ according to the equation ${ \bf v } _ { C } = { \bf J } _ { C } \dot { \bf q }$ . Additionally, $\tau \in \mathbb { R } ^ { 7 5 }$ represents joint actuations, as exemplified in Fig. 1-a for right pelvis joint.
+
+Kinematics-based Motion Estimation Model. We first employ an established method to obtain per-frame 3D body pose and shape $\{ \hat { \pmb { \theta } } _ { t } , \hat { \pmb { \beta } } _ { t } \} _ { t = 1 } ^ { T }$ from the video input. It places no restrictions on which method is used; for our experiments we use recent publicly-available models. The pose and shape estimated by those traditional 3D human reconstruction models only capture body movements in the body frame, lacking a global motion trajectory to fully specify the generalized positions defined in Eq. 1. As in [94], we train a global trajectory predictor to provide per-frame global translation and rotation $\{ \hat { \mathbf { T } } _ { t } , \hat { \mathbf { R } } _ { t } \} _ { t = 1 } ^ { T }$ based on the local body movements. The global trajectory predictor is trained independently and produces the global estimates without additional model fine-tuning. Further details of the model architecture and training are in Supp. A. Finally, by combining the estimated global trajectory with the local body pose, we obtain the initial generalized position estimates $\{ \hat { \mathbf { q } } _ { t } \} _ { t = 1 } ^ { T }$ which are input to PhysPT for further refinement. Meanwhile, we consider the final shape estimate $\begin{array} { r } { \beta = \frac { 1 } { T } \sum _ { t = 1 } ^ { T } \hat { \beta } _ { t } } \end{array}$ since the subject’s shape remains unchanged over time.
+
+## 3.2. Physics-aware Pretrained Transformer
+
+The initial kinematics-based motion estimates maintain reasonable per-frame reconstruction accuracy. The Physicsaware Pretrained Transformer introduced in this section further enhances the motion estimates and infers motion forces. In the following, we first introduce the Transformer encoder-decoder backbone of PhysPT in Sec. 3.2.1. To incorporate physics into the model, we build a physics-based body representation (Sec. 3.2.2) and a contact force model (Sec. 3.2.3), which enable the formulation of physicsinspired training losses (Sec. 3.2.4).
+
+## 3.2.1 Transformer Encoder-Decoder Backbone
+
+Differing from existing works that primarily utilize a Transformer encoder to learn representations, we exploit a Transformer encoder-decoder architecture [77]. As illustrated in Fig. 1 (green region), the model first extracts embedding ${ \bf E } _ { i n p u t } \in { \bf R } ^ { T \times n _ { f } }$ from the kinematics-based estimates $\{ \hat { \mathbf { q } } _ { t } \} _ { t = 1 } ^ { T }$ using a linear layer. This $\mathbf { E } _ { i n p u t }$ , combined with a time positional encoding, is then fed into the Transformer encoder to generate a latent embedding ${ \bf E } _ { l a t e n t } \in { \bf R } ^ { T \times n _ { l } }$ Here, $n _ { f }$ and $n _ { l }$ are embedding dimensions. Subsequently, the decoder generates refined estimates $\{ \mathbf { q } _ { t } \} _ { t = 1 } ^ { T }$ via autoregressive prediction. Specifically, at time frame $m + 1$ the previous m estimates are projected into embeddings $\mathbf { E } _ { o u t p u t } \in \mathbf { R } ^ { m \times n _ { f } }$ , to which a positional encoding is added. Together with ${ \bf E } _ { l a t e n t }$ , this is input to the Transformer decoder to produce the motion prediction.
+
+Leveraging the Transformer encoder-decoder backbone can effectively capture temporal information in a selfsupervised manner by reconstructing the input. Specifically, denoting an input sequence from existing 3D motion capture data as $\{ \bar { \mathbf { q } } _ { t } \} _ { t = 1 } ^ { T }$ , we compute a mean squared error on the generalized positions and 3D joint positions, leading to the added reconstruction loss $\mathcal { L } _ { r e c o n }$
+
+$$
+\begin{array}{c} \mathcal {L} _ {r e c o n} = \sum_ {t = 1} ^ {T} \gamma_ {q} \mathcal {L} _ {q, t} + \gamma_ {J} \mathcal {L} _ {J, t}, \\ \mathcal {L} _ {q, t} = \| \mathbf {q} _ {t} - \bar {\mathbf {q}} _ {t} \| _ {2} ^ {2}, \\ \mathcal {L} _ {J, t} = \| \mathbf {J} _ {t} - \bar {\mathbf {J}} _ {t} \| _ {2} ^ {2}, \end{array}\tag{3}
+$$
+
+where the 3D joint positions $\mathbf { J } _ { t } ~ \in ~ \mathbb { R } ^ { n _ { J } \times 3 }$ are computed from the generalized positions and the body shape parameters using forward kinematics and $n _ { J }$ is the number of body joints. $\gamma _ { q }$ and $\gamma _ { J }$ are training loss weights. To enhance model robustness, we introduce random Gaussian noise into the input during training while the model is still tasked with reconstructing the clean input. Up to this point, the Transformer model is trained to effectively learn the geometry information from motion data, but it is agnostic to physics and insufficient to faithfully capture human dynamics.
+
+![](images/53d3537ef0f766a559d526979192017908a2f055f6b363f0c12d2f9f5a577150.jpg)  
+Figure 2. Phys-SMPL. Besides 3D positions, Phys-SMPL models the volume (V), mass (m), and inertia (I) of every body parts. Lighter colors represent larger body weight distributions.
+
+## 3.2.2 Physics-based Body Representation
+
+To empower the model to capture physics, we need to first model the physical properties of human bodies. For this purpose, we introduce a physics-based body representation, Phys-SMPL. As shown in Fig. 2, Phys-SMPL incorporates the mass m $\iota ( \beta ) \in \mathbb { R } ^ { 2 4 }$ and inertia $\bar { \mathbf { I } ( \beta ) } \in \mathbb { R } ^ { 2 4 \times 3 \times \bar { 3 } }$ of 24 body parts in additional to SMPL’s geometry information. Specifically, we first close the meshes of each body part. This allows us to compute the volume of a body part as the sum of the tetrahedrons formed by its centroid and mesh faces. Based on the average mass density of the human body [56], we calculate the mass and, subsequently, the inertia of different body parts. Note that these physical body properties are computed directly from SMPL’s geometry information specified by the shape parameters $\beta ,$ without the need for creating unrealistic body proxies. Expanding on Phys-SMPL, we analytically calculate the physical terms in the Euler-Lagrange equations (Eq. 2). The analytical computation of physical parameters is fully differentiable, enabling the seamless integration of physics with learning models during the training process. Further details of Phys-SMPL and the analytical calculation are in Supp. B.
+
+## 3.2.3 Continuous Contact Force Model
+
+To capture human dynamics, the motion forces must be modeled as well. For the joint actuations and contact forces, modeling the contact forces can be particularly challenging. The contact status often needs to be determined beforehand — and this is in itself difficult to do accurately. The discrete contact status also introduces a non-differentiable process in estimating the forces. To address this issue, we draw inspiration from the continuous contact model proposed by [5] for estimating ground reaction forces from 3D motion, which entails introducing a spring-mass system as illustrated in Fig. 3. Specifically, the ground contact force experienced by a point p at time t is modeled as:
+
+$$
+\pmb {\lambda} _ {p, t} = s _ {p, t} (- k _ {h, t} \mathbf {b} _ {h, t} - k _ {n, t} \mathbf {b} _ {n, t} - c _ {t} \mathbf {v} _ {C, t}).\tag{4}
+$$
+
+![](images/de9757ca321d128d26850a1d1e950155233a5ba3f91cd8b2939bb54f212d9050.jpg)  
+Figure 3. Continuous Contact Force Model. The contact forces received by a point p at time frame t are determined by its velocity and distance to the ground through a spring-mass system built along the horizontal $( k _ { h , t } )$ and normal $( k _ { n , t } )$ directions.
+
+where $k _ { h , t }$ <sub>t</sub> and $k _ { n , t }$ denote the stiffness of the springmass in the horizontal and normal directions, respectively, while $c _ { t }$ represents the damping factor. The scalar s<sub>p,t</sub> = $2 \sigma ( - 6 0 d _ { t } ) \sigma ( - 6 0 \| \mathbf { v } _ { C , t } \| )$ regulates the force magnitude, where $\sigma ( \cdot )$ represents the Sigmoid function, $d _ { t }$ denotes the point’s distance to the ground, and $\| \mathbf { v } _ { C , t } \|$ is its velocity. Additionally, $\mathbf b _ { h , t } \ = \ [ d _ { t , x } \ - 0 . 5 ; d _ { t , y } \ - \ 0 . 5 ; 0 ]$ and $\mathbf { b } _ { n , t } = [ 0 ; 0 ; d _ { t } - 2 ]$ is the distance to the reference point in the horizontal and normal direction, respectively. Here, $d _ { t , x }$ and $d _ { t , y }$ are projections of $d _ { t }$ onto the x and y axes using the normal of the contact point. The units are in meters. For the sake of computational efficiency (and as further discussed in Supp. C), we apply the contact model to a subset of vertices within each body part. The contact model captures the essentials of natural contact behavior, where points closest to the ground and most stable experience larger forces. Utilizing the contact model also avoids the problems presented in estimating the discrete contact status.
+
+## 3.2.4 Physics-inspired Training Losses
+
+Building upon the physics-based body representation and force model, we can effectively integrate physics with the model by utilizing several physics-inspired training losses.
+
+To formulate these losses, the first step involves deriving valuable motion force information from training sequences. Given a 3D trajectory $\{ \bar { \mathbf { q } } _ { t } \} _ { t = 1 } ^ { T }$ from training data, we utilize the finite difference to obtain the velocity and acceleration $\{ \dot { \bar { \mathbf { q } } } _ { t } , \ddot { \bar { \mathbf { q } } } _ { t } \} _ { t = 1 } ^ { T }$ . We then formulate the following optimization problem to recover the motion forces at time frame t as:
+
+$$
+\begin{array}{l l} \arg \min _ {\mathbf {x} _ {t}, \boldsymbol {\tau} _ {t}} & \| \bar {\mathbf {M}} _ {t} \ddot {\bar {\mathbf {q}}} _ {t} + \bar {\mathbf {C}} _ {t} + \bar {\mathbf {g}} _ {t} - \bar {\mathbf {J}} _ {C, t} ^ {T} \bar {\mathbf {A}} _ {t} \mathbf {x} _ {t} - \boldsymbol {\tau} _ {t} \| _ {2} ^ {2} \\ s. t. & \mathbf {0} <   \mathbf {x} _ {t} <   \bar {\mathbf {x}} _ {m a x}. \quad (\text { stiffness   and   damping   constraints }) \end{array}\tag{5}
+$$
+
+The objective is a least squared error introduced by the Euler-Lagrange equations in Eq. 2. (Variables for each physical term are omitted for simplicity.) The optimization variables consist of joint actuations $\tau _ { t }$ and the springmass model parameters $\mathbf { x } _ { t }$ . Specifically, the contact force model in Eq. 4 is written in a vector representation as $\lambda _ { p , t } =$ $\mathbf { A } _ { p , t } \mathbf { x } _ { p , t } .$ , where $\mathbf { A } _ { p , t } = s _ { p , t } [ - \mathbf { b } _ { h , t } , - \mathbf { b } _ { n , t } , - \mathbf { v } _ { C , t } ]$ include the position-related parameters, and $\mathbf { x } _ { p , t } = [ k _ { h , t } ; k _ { n , t } ; c _ { t } ]$ involve the unknown stiffness and damping parameters. Concatenating the contact forces of all modeled points, we have $\lambda _ { t } = \mathbf { A } _ { t } \mathbf { x } _ { t }$ . Additionally, the linear inequality constraints on $\mathbf { x } _ { t }$ are specified considering the maximal contact forces that can be experienced when a human is standing normally. The formulated optimization problem is a standard Quadratic Programming problem for which the global minimum is found by utilizing CVXOPT [16]. The final solution yields forces that comply with the constraints set by the spring-mass model and optimally satisfy the Euler-Lagrange equations. Utilizing the inferred forces enables effective incorporation of physics into the model by imposing the following physics-inspired losses.
+
+Force Loss. We first employ the derived motion forces to guide the model to produce realistic motion forces and extract meaningful latent representations for predicting physically plausible motion. Specifically, we introduce a linear layer to project the latent representation ${ \bf E } _ { l a t e n t }$ to motion forces $\{ \lambda _ { t } , \tau _ { t } \} _ { t = 1 } ^ { T }$ based on the contact force model. Given the derived forces $\bar { \tau } _ { t }$ and ${ \bar { \lambda } } _ { t } ,$ we train the model by minimizing the mean absolute error as:
+
+$$
+\mathcal {L} _ {\text { force }} = \sum_ {t = 1} ^ {T} \gamma_ {\tau} \| \boldsymbol {\tau} _ {t} - \bar {\boldsymbol {\tau}} _ {t} \| _ {1} + \gamma_ {\lambda} \| \boldsymbol {\lambda} _ {t} - \bar {\boldsymbol {\lambda}} _ {t} \| _ {1}.\tag{6}
+$$
+
+Contact Loss. Moreover, we apply constraints to the vertices experiencing contact forces, obtaining realistic contact behavior through the following contact loss:
+
+$$
+\mathcal {L} _ {\text { c   o   n   t   a   c   t }} = \sum_ {t = 1} ^ {T} \frac {1}{n _ {C _ {t}}} \sum_ {n _ {i} \in \mathcal {C} _ {t}} \gamma_ {v} \| \mathbf {v} _ {n _ {i}, t} \| _ {1} + \gamma_ {z} | z _ {n _ {i}, t} |,\tag{7}
+$$
+
+where $\mathcal { C } _ { t }$ denotes the set of vertices that exhibit contact forces (calculated via Eq. 5), and $n _ { C _ { t } }$ is the set size. $\mathbf { v } _ { n _ { i } , t }$ and $z _ { n _ { i } , t }$ represent the velocity and vertical distance to the ground of the $n _ { i } ^ { t h }$ vertex, respectively. Minimizing Eq. 7 encourages those vertices that experience large contact forces to have smaller velocity and be closer to the ground.
+
+Euler-Lagrange Loss. Furthermore, we incorporate a loss derived from the Euler-Lagrange equations to ensure the reconstructed motion adheres to the physics equations:
+
+$$
+\mathcal {L} _ {e u l e r} = \sum_ {t = 1} ^ {T} \| \mathbf {M} _ {t} \ddot {\mathbf {q}} _ {t} + \mathbf {C} _ {t} + \mathbf {g} _ {t} - \mathbf {J} _ {C, t} ^ {T} \bar {\boldsymbol {\lambda}} _ {t} - \bar {\boldsymbol {\tau}} _ {t} \| _ {1}.\tag{8}
+$$
+
+It is worth noting that all terms in the loss function are analytically computed and fully differentiable with respect to the model outputs thanks to the physics-based body model. Total Model Training Loss. Combining all the physicsinspired losses with the reconstruction loss, we obtain the total training loss function:
+
+$$
+\mathcal {L} = \mathcal {L} _ {r e c o n} + \mathcal {L} _ {f o r c e} + \mathcal {L} _ {c o n t a c t} + \mathcal {L} _ {e u l e r}.\tag{9}
+$$
+
+We utilize Eq. 9 to train the Transformer encoder-decoder backbone solely using motion capture data. Once the model is trained, it is directly added on top of the kinematics-based model to obtain improved motion estimates and infer motion forces, without the need of model fine-tuning.
+
+## 4. Experiment
+
+Datasets. During training, we use AMASS [51], a collection of motion capture datasets featuring a diverse range of subjects and actions. For evaluation, we utilize the test set of Human3.6M [25] and 3DOH [102]. Human3.6M encompasses common activities such as walking and sitting down. In contrast to certain physics-based methods that focus solely on sequences involving interactions with the ground, we adhere to the standard protocol and evaluate our method on all actions. 3DOH includes sequences of humanobject interactions, such as opening a box — representing a challenging testing setting with significant occlusions. Furthermore, we utilize PennAction [103] to demonstrate that our approach helps improve human action recognition. PennAction comprises over 2K online videos of 15 sports actions, such as baseball pitching and bowling.
+
+Evaluation Metrics. We evaluate 3D reconstruction error (Rec. Error) and physical plausibility (Phys. Plausibility). Rec. Error includes the Mean Per-Joint Position Error (MJE in mm) and MJE after the Procrustes Alignment (P-MJE in mm). Phys. Plausibility involves metrics introduced by prior methods [31, 67, 93], including: (1) the average difference between the predicted and the ground truth acceleration (acceleration error ACCL in mm/frame<sup>2</sup>); (2) the difference between the predicted and the ground truth joint velocity magnitude (velocity error VEL in mm/frame); (3) the average displacement between two adjacent frames of those in-contact vertices (foot sliding FS in mm); (4) the average distance to the ground of those mesh vertices below the ground (ground penetration GP in mm).
+
+Implementation. The Transformer backbone consists of standard encoder and decoder layers, with 6 layers, 8 attention heads, and 1024 embedding dimensions. The model’s input sequence length is 16, aligning with most existing methods. For efficient Transformer training [77], we initially use the ground truth to extract the output embeddings for 20 epochs, followed by an additional 5 epochs using the prediction. We employ the Adam optimizer [30] with a weight decay of $1 0 ^ { - 4 }$ . The initial learning rate is $1 0 ^ { - 5 }$ and decreases to 0.8 after every 5 epochs. The hyperparameters are empirically set as: $\gamma _ { q } = 2 e ^ { 3 } , \gamma _ { J } = 1 e ^ { 5 } , \gamma _ { \tau } = 5$ $\gamma _ { \lambda } = 1 , \gamma _ { v } = 1 0 0 .$ , and $\gamma _ { z } = 2 0 0$
+
+## 4.1. Comparison with State-of-the-Arts (SOTAs)
+
+Improvements to Kinematics-based Methods. As seen in Tab. 1, PhysPT, significantly improves the physical plausibility of kinematics-based motion estimates. Whether they take images or video frames as input, the kinematics-based methods often struggle with physical plausibility. For example, CLIFF retains competitive per-frame reconstruction accuracy but provides poor performance on all the physical plausibility evaluation metrics. Applying PhysPT to CLIFF significantly enhances its physics plausibility. Notably, the acceleration error (ACCL) and foot skating (FS) are reduced by 83.8% and 68.7% respectively. Like PhysPT, PoseBert leverages a Transformer-encoder pre-trained on 3D motion capture data, but it does not consider physics. PoseBert reduces ACCL and VEL somewhat, but unlike PhysPT it fails to decrease the foot skating and ground penetration error. In Supp. D, we demonstrate that PhysPT also improves other kinematics-based models besides CLIFF (SPIN [33] and IPMAN [76]) and the improvements are consistently more significant than PoseBert.
+
+<table><tr><td rowspan="2">Method</td><td rowspan="2">Physics Engine</td><td rowspan="2">Video Label</td><td colspan="2">Rec. Error</td><td colspan="4">Phys. Plausibility</td></tr><tr><td>MJE</td><td>P-MJE</td><td>ACCL</td><td>VEL</td><td>FS</td><td>GP</td></tr><tr><td> $HybriK^†$  [38]</td><td>-</td><td>-</td><td>55.4</td><td>33.6</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>*CLIFF [41]</td><td>-</td><td>-</td><td>52.2</td><td>36.8</td><td>15.4</td><td>6.8</td><td>8.3</td><td>9.3</td></tr><tr><td>VIBE [31]</td><td>-</td><td>-</td><td>61.3</td><td>43.1</td><td>15.2</td><td>25.5</td><td>15.1</td><td>12.6</td></tr><tr><td>*PoseBert [2]</td><td>-</td><td>-</td><td>54.9</td><td>37.5</td><td>5.0</td><td>4.0</td><td>10.0</td><td>12.8</td></tr><tr><td>GLoT [64]</td><td>-</td><td>-</td><td>67.0</td><td>46.3</td><td>3.6</td><td>-</td><td>-</td><td>-</td></tr><tr><td>PMCE [92]</td><td>-</td><td>-</td><td>53.5</td><td>37.7</td><td>3.1</td><td>-</td><td>-</td><td>-</td></tr><tr><td>PhysCap [67]</td><td>Yes</td><td>-</td><td>97.4</td><td>65.1</td><td>-</td><td>7.2</td><td>-</td><td>-</td></tr><tr><td>NeurPhys [68]</td><td>Yes</td><td>Yes</td><td>76.5</td><td>58.2</td><td>-</td><td>4.5</td><td>-</td><td>-</td></tr><tr><td>Xie et al. [84]</td><td>Yes</td><td>-</td><td>68.1</td><td>-</td><td>-</td><td>4.0</td><td>-</td><td>-</td></tr><tr><td>SimPoE [93]</td><td>Yes</td><td>Yes</td><td>56.7</td><td>41.6</td><td>6.7</td><td>-</td><td>3.4</td><td>1.6</td></tr><tr><td>NeurMoCon [24]</td><td>Yes</td><td>Yes</td><td>72.5</td><td>54.6</td><td>-</td><td>3.8</td><td>-</td><td>-</td></tr><tr><td>TrajOpt [20]</td><td>Yes</td><td>-</td><td>84</td><td>56</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>DiffPhy [19]</td><td>Yes</td><td>-</td><td>81.7</td><td>55.6</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>D&amp;D $^†$  [39]</td><td>No</td><td>Yes</td><td>52.5</td><td>35.5</td><td>6.1</td><td>-</td><td>5.8</td><td>1.5</td></tr><tr><td>Huang et al. [26]</td><td>Yes</td><td>Yes</td><td>55.4</td><td>41.3</td><td>-</td><td>3.5</td><td>-</td><td>-</td></tr><tr><td>PhysPT (Ours)</td><td>No</td><td>No</td><td>52.7</td><td>36.7</td><td>2.5↓83.8</td><td>3.4↓50.0</td><td>2.6↓68.7</td><td>1.5↓83.9</td></tr></table>
+
+Table 1. Evaluation on Human3.6M. Methods in the top block use image inputs, those in the middle use video inputs, and those in the bottom are physics-based. Current physics-based methods require 3D annotated videos (“Video Label”) for training or adopt a optimization-based framework. Methods marked by <sup>†</sup> are evaluated on 3D joints computed from fitted body models [46] instead of the one provided in the original datasets. For those marked “\*”, the results are from their officially released models. All other results are taken from the respective papers. Evaluation of PoseBert and PhysPT is based on CLIFF. The green numbers represent percentages of the relative improvement of our approach over CLIFF. For all metrics, smaller values are preferred.
+
+Advantages over Physics-based Methods. PhysPT surpasses existing physics-based methods without relying on physics engines or 3D annotated videos for training. As illustrated in Tab. 1, existing physics-based methods generally exhibit improved physical plausibility compared to kinematics-based methods. They typically employ a physics engine separate from their learning models to compute physical parameters and simulate body motion. They require 3D annotations paired with input videos for training or are confined to optimization-based approaches. In contrast, our approach avoids the need for 3D annotated videos by exploiting an innovative self-supervised learning framework. We bridge the gap between body kinematics and physics through a physics-based body representation and contact force model, allowing the seamless integration of physics with deep models. Comparing the performance, our model achieves competitive reconstruction accuracy with more significant advancements in physical plausibility (Tab. 1). For instance, although all other methods utilize training data from Human3.6M, our approach yields an acceleration error that is 2.4 times less than that of its nearest competitor D&D (2.5 vs. 6.1 mm/frame<sup>2</sup>), and foot skating that is 76% of second-best SimPoE’s (2.6mm vs. 3.4mm). In Supp. E, we demonstrate that our approach produces improved global motion recovery as well.
+
+<table><tr><td rowspan="2">Method</td><td colspan="2">Rec. Error</td><td colspan="4">Phys. Plausibility</td></tr><tr><td>MJE</td><td>P-MJE</td><td>ACCL</td><td>VEL</td><td>FS</td><td>GP</td></tr><tr><td>*CLIFF [41]</td><td>53.0</td><td>34.4</td><td>26.0</td><td>12.0</td><td>10.8</td><td>12.6</td></tr><tr><td>VIBE [31]</td><td>98.1</td><td>61.8</td><td>-</td><td>26.5</td><td>-</td><td>-</td></tr><tr><td>*PoseBert [2]</td><td>54.8</td><td>34.1</td><td>6.6</td><td>6.9</td><td>14.0</td><td>10.4</td></tr><tr><td>NeurPhys [68]</td><td>107.8</td><td>93.3</td><td>-</td><td>12.2</td><td>-</td><td>-</td></tr><tr><td>NeurMoCon [24]</td><td>93.4</td><td>86.7</td><td>-</td><td>9.2</td><td>-</td><td>-</td></tr><tr><td>Huang et al. [26]</td><td>79.3</td><td>72.8</td><td>-</td><td>8.9</td><td>-</td><td>-</td></tr><tr><td>PhysPT (Ours)</td><td>53.0</td><td>33.3</td><td>4.6↓82.3</td><td>6.5↓45.8</td><td>4.7↓56.5</td><td>0.1↓99.2</td></tr></table>
+
+Table 2. Evaluation on 3DOH. Evaluation of PoseBert and PhysPT is based on CLIFF. The green numbers represent percentages of the relative improvement of our approach over CLIFF.
+
+Robustness under Occlusion. Our approach is robust to occlusion, as demonstrated through the evaluation on 3DOH (Tab. 2). Despite the significant occlusions and complex human-object interaction motions included in 3DOH, applying PhysPT to CLIFF produces consistent improvement on motion estimates. The final model performance outperforms existing physics-based methods. For example, our approach achieves a velocity error of 6.5 mm/frame (Tab. 2, VEL), 45.8% less than CLIFF’s 12.0, and 27.0% less than the 8.9 attained by SOTA Huang et al.. Furthermore, on 3DOH, our approach surpasses existing physicsbased methods in reconstruction accuracy by a large margin. Specifically, our approach achieves P-MJE of 33.5, 54.0% less than Huang et al.’s 72.8. Existing physics-based methods do not utilize 3DOH for training, and their performance degrades on new testing sequences. In contrast, our approach maintains better generalization ability and effectively leverages the favourable per-frame 3D body reconstruction of kinematics-based estimates to generate accurate and physical plausible motion.
+
+<table><tr><td colspan="4">Training Losses</td><td colspan="2">Rec. Error</td><td colspan="3">Phys. Plausibility</td></tr><tr><td> $\mathcal{L}_{recon}$ </td><td> $\mathcal{L}_{force}$ </td><td> $\mathcal{L}_{contact}$ </td><td> $\mathcal{L}_{euler}$ </td><td>MJE</td><td>P-MJE</td><td>ACCL</td><td>VEL</td><td>FS GP</td></tr><tr><td>-</td><td>-</td><td>-</td><td>-</td><td>52.2</td><td>36.8</td><td>15.4</td><td>6.8</td><td>8.3 9.3</td></tr><tr><td>√</td><td></td><td></td><td></td><td>52.7</td><td>36.7</td><td>2.5</td><td>3.5</td><td>7.1 6.9</td></tr><tr><td>√</td><td>√</td><td></td><td></td><td>52.7</td><td>36.7</td><td>2.5</td><td>3.4</td><td>6.5 5.6</td></tr><tr><td>√</td><td>√</td><td>√</td><td></td><td>53.0</td><td>36.8</td><td>2.5</td><td>3.4</td><td>4.1 1.7</td></tr><tr><td>√</td><td>√</td><td>√</td><td>√</td><td>52.7</td><td>36.7</td><td>2.5</td><td>3.4</td><td>2.6 1.5</td></tr></table>
+
+Table 3. Ablation on the Training Losses. The evaluation is on Human3.6M. The first row denotes the kinematics-based model
+
+![](images/90d92fc6b21f729abbeaa75f9f8dbadbb23c15f912e190c53dc92d9e63e18520.jpg)  
+Figure 4. Qualitative Evaluation on Utilizing PhysPT. The body color of each figure represents the reconstruction at different time frames (lighter colors indicate later time frames). Ground penetration and motion jittering exhibited in the reconstructed motion are marked by red circle and rectangle, respectively.
+
+## 4.2. Ablation Study
+
+Effectiveness of PhysPT. We first study the effectiveness of the Transformer encoder-decoder backbone and the physics-inspired training losses. According to the evaluation results detailed in Tab. 3, when trained exclusively with the reconstruction loss (Eq. 3), the model maintains the reconstruction accuracy while reducing the acceleration and velocity errors of the kinematics-based estimates (Tab. 3-row2 over row1). The reduction is more significant than that observed in PoseBert (Tab. 1), demonstrating the advantages of leveraging the Transformer encoderdecoder rather than using the encoder solely. However, the foot skating and ground penetration errors are reduced to a much lesser extent. Reducing them significantly requires further imposing the physics-inspired losses. Specifically, when force labels are used for training, the foot skating error drops from 7.1mm to 6.5mm and the ground penetration error drops from 6.9mm to 5.6mm. Imposing the contact loss (Eq. 7) further reduces the errors but sacrifices the reconstruction accuracy (Tab. 3-row3). To obtain the best model, PhysPT, we leverage all the physics-inspired losses for training. In Fig. 4, we showcase that utilizing PhysPT effectively reduces the motion jitter and foot penetration exhibited by kinematics-based estimates. For example, the kinematics-based model can produce excessive motion jitter of the lower body even when only the upper body moves (Fig. 4-row1) or be affected by occlusion in the input video frame (Fig. 4-row2). By contrast, PhysPT resolves these issues by integrating physics with the Transformer.
+
+![](images/9193116ac39755d2e4c5b0ced7caa38ad835434f416fa4a57d9b5a399f613f37.jpg)  
+Figure 5. Qualitative Evaluation with Force Estimation Visualization. The testing image frames are from Human3.6M (left), 3DOH (middle), and PennAction (right).
+
+Motion Reconstruction with Force Estimation. Our approach can generate accurate 3D motion and infer forces, as illustrated qualitatively in Fig. 5. The inferred forces offer valuable insights into body dynamic behavior. For instance, in the left column of Fig. 5, significant contact forces and joint actuations are evident on the left foot when the subject walks forward with the left foot (top) or on the left leg and when the body leans forward to the left (middle). The estimated forces also capture the contact behavior of various body parts, such as the knee (bottom). Moreover, our approach effectively handles occlusion (Fig. 5, 3DOH) and is applicable to in-the-wild videos (Fig. 5, PennAction).
+
+## 4.3. Improvements to Human Action Recognition
+
+In the preceding sections, we illustrate that PhysPT generates more physically-realistic motion and produces reasonable force estimates. The improved motion and additional force estimates can successfully improve downstream tasks such as human action recognition. We demonstrate this through the evaluation of human action recognition on PennAction. Specifically, we employ a recent skeleton-based recognition model proposed by [9]. We utilize the motion and forces generated by our approach as model input and evaluate the corresponding recognition accuracy. We summarize the evaluation results with comparison to recent skeleton-based recognition models in Tab. 4. In this comparison, we exclude the physics-based recognition model discussed in the related work ([52]) as it relies on 3D motion capture data and is not adept at handling in-the-wild videos. Conventional methods primarily rely on 2D body pose as model input. In contrast, our approach excels by leveraging 3D body pose information. Particularly, as shown in Tab. 4, utilizing the motion generated by PhysPT yields better performance compared to using kinematics-based estimates (96.8% over 96.0% in accuracy). Note that, using estimated forces alone, the accuracy is superior to that of existing methods (94.4% over UNIK’s 94.0%), further demonstrating the effectiveness of our approach in estimating human dynamics. Finally, the combination of motion and force estimates leads to a significant performance boost, achieving the best recognition accuracy of 98.0%. In Supp. G, we provide action-wise evaluation, illustrating that utilizing forces enhances performance, particularly in cases where relying solely on 3D joint positions falls short, such as when different actions have similar body movement patterns.
+
+<table><tr><td rowspan="2">Method</td><td rowspan="2">HDM [109]</td><td rowspan="2">UNIK [87]</td><td colspan="4">Ours</td></tr><tr><td> $J_{kin}$ </td><td> $J_{phys}$ </td><td>F</td><td> $J_{phys}+F$ </td></tr><tr><td>Top-1 Acc. (↑)</td><td>93.4</td><td>94.0</td><td>96.0</td><td>96.8</td><td>94.4</td><td>98.0</td></tr></table>
+
+Table 4. Human Action Recognition. The evaluation is on Penn-Action. We report the Top-1 accuracy in percentage. ${ \bf J } _ { k i n }$ and $\mathbf { J } _ { p h y s }$ stands for the 3D body joint positions estimated by the kinematics-based model and PhysPT, respectively. F indicates the motion forces output by PhysPT.
+
+## 5. Conclusion
+
+In summary, we describe PhysPT (Physics-aware Pretrained Transformer), which generates more physically plausible motion estimates than previous methods and infers motion forces. PhysPT exploits a Transformer encoder-decoder backbone trained through self-supervised learning and it integrates physics principles. Specifically, we craft a physicsbased body representation and a continuous contact force model. We introduce novel physics-inspired training losses. Leveraging them for model training enables PhysPT to effectively capture physical properties of the human body and the forces it experiences. Through extensive experiments, we demonstrate the direct applicability of PhysPT to kinematics-based estimates results in the reconstruction of more physically-realistic motion and the inference of motion forces from monocular videos. Notably, for the first time, we demonstrate that these more accurate estimates of motion and force translate to improvements in an important downstream task: human action recognition.
+
+Acknowledgement This work is supported in part by the Rensselaer-IBM AI Research Collaboration (http://airc.rpi.edu), part of the IBM AI Horizons Network.
+
+## References
+
+[1] Anurag Arnab, Carl Doersch, and Andrew Zisserman. Exploiting temporal context for 3d human pose estimation in the wild. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 3395–3404, 2019. 2
+
+[2] Fabien Baradel, Romain Bregier, Thibault Groueix,´ Philippe Weinzaepfel, Yannis Kalantidis, and Gregory Ro-´ gez. Posebert: A generic transformer module for temporal 3d human modeling. IEEE Transactions on Pattern Analysis and Machine Intelligence, 2022. 6, 7, 4
+
+[3] Dan Biderman, Christian A Naesseth, Luhuan Wu, Taiga Abe, Alice C Mosberger, Leslie J Sibener, Rui Costa, James Murray, and John P Cunningham. Inverse articulated-body dynamics from video via variational sequential monte carlo. NeurIPS 2020 Workshop, 2021. 2
+
+[4] Federica Bogo, Angjoo Kanazawa, Christoph Lassner, Peter Gehler, Javier Romero, and Michael J Black. Keep it smpl: Automatic estimation of 3d human pose and shape from a single image. In Computer Vision–ECCV2016: 14th European Conference, Amsterdam, The Netherlands, October 11-14, 2016, Proceedings, Part V 14, pages 561–578. Springer, 2016. 2
+
+[5] Marcus A Brubaker, Leonid Sigal, and David J Fleet. Estimating contact dynamics. In 2009 IEEE 12th International Conference on Computer Vision, pages 2389–2396. IEEE, 2009. 2, 4
+
+[6] Yujun Cai, Liuhao Ge, Jun Liu, Jianfei Cai, Tat-Jen Cham, Junsong Yuan, and Nadia Magnenat Thalmann. Exploiting spatial-temporal relationships for 3d pose estimation via graph convolutional networks. In Proceedings ofthe IEEE International Conference on Computer Vision, pages 2272– 2281, 2019. 1, 2
+
+[7] Joao Carreira, Pulkit Agrawal, Katerina Fragkiadaki, and Jitendra Malik. Human pose estimation with iterative error feedback. In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 4733–4742, 2016. 1
+
+[8] Biplab Ketan Chakraborty, Debajit Sarma, Manas Kamal Bhuyan, and Karl F MacDorman. Review of constraints on vision-based gesture recognition for human–computer interaction. IET Computer Vision, 12(1):3–15, 2018. 1
+
+[9] Yuxin Chen, Ziqi Zhang, Chunfeng Yuan, Bing Li, Ying Deng, and Weiming Hu. Channel-wise topology refinement graph convolution for skeleton-based action recognition. In Proceedings ofthe IEEE/CVF International Conference on Computer Vision, pages 13359–13368, 2021. 8
+
+[10] Yu Cheng, Bo Wang, Bo Yang, and Robby T Tan. Graph and temporal convolutional networks for 3d multi-person pose estimation in monocular videos. arXiv preprint arXiv:2012.11806, 2020. 1, 2
+
+[11] Yu Cheng, Bo Wang, Bo Yang, and Robby T Tan. Monocular 3d multi-person pose estimation by integrating top-down and bottom-up networks. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 7649–7659, 2021. 1, 2
+
+[12] Mia Chiquier and Carl Vondrick. Muscles in action. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 22091–22101, 2023. 2
+
+[13] Hongsuk Choi, Gyeongsik Moon, Ju Yong Chang, and Kyoung Mu Lee. Beyond static features for temporally consistent 3d human pose and shape from a video. In Proceedings ofthe IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 1964–1973, 2021. 1, 2
+
+[14] Jessica Colombel, Vincent Bonnet, David Daney, Raphael¨ Dumas, Antoine Seilles, and Franc¸ois Charpillet. Physically consistent whole-body kinematics assessment based on an rgb-d sensor. application to simple rehabilitation exercises. Sensors, 20(10):2848, 2020. 1
+
+[15] Erwin Coumans and Yunfei Bai. Pybullet, a python module for physics simulation for games, robotics and machine learning. 2016. 1
+
+[16] Steven Diamond and Stephen Boyd. Cvxpy: A pythonembedded modeling language for convex optimization. The Journal of Machine Learning Research, 17(1):2909–2913, 2016. 5
+
+[17] Zackory Erickson, Vamsee Gangaram, Ariel Kapusta, C Karen Liu, and Charles C Kemp. Assistive gym: A physics simulation framework for assistive robotics. In 2020 IEEE International Conference on Robotics and Automation (ICRA), pages 10169–10176. IEEE, 2020. 1
+
+[18] Qi Fang, Kang Chen, Yinghui Fan, Qing Shuai, Jiefeng Li, and Weidong Zhang. Learning analytical posterior probability for human mesh recovery. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 8781–8791, 2023. 2
+
+[19] Erik Gartner, Mykhaylo Andriluka, Erwin Coumans, and¨ Cristian Sminchisescu. Differentiable dynamics for articulated 3d human motion reconstruction. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 13190–13200, 2022. 1, 2, 6
+
+[20] Erik Gartner, Mykhaylo Andriluka, Hongyi Xu, and Cris-¨ tian Sminchisescu. Trajectory optimization for physicsbased reconstruction of 3d human pose from monocular video. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 13106– 13115, 2022. 1, 6
+
+[21] Shubham Goel, Georgios Pavlakos, Jathushan Rajasegaran, Angjoo Kanazawa, and Jitendra Malik. Humans in 4D: Reconstructing and tracking humans with transformers. In ICCV, 2023. 2
+
+[22] Shanyan Guan, Jingwei Xu, Yunbo Wang, Bingbing Ni, and Xiaokang Yang. Bilevel online adaptation for outof-domain human mesh reconstruction. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 10472–10481, 2021. 2
+
+[23] Mir Rayat Imtiaz Hossain and James J Little. Exploiting temporal information for 3d human pose estimation. In Proceedings of the European Conference on Computer Vision (ECCV), pages 68–84, 2018. 1, 2
+
+[24] Buzhen Huang, Liang Pan, Yuan Yang, Jingyi Ju, and Yangang Wang. Neural mocon: Neural motion control for physically plausible human motion capture. In Proceed-
+
+ings ofthe IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 6417–6426, 2022. 1, 2, 6, 7
+
+[25] Catalin Ionescu, Dragos Papava, Vlad Olaru, and Cristian Sminchisescu. Human3. 6m: Large scale datasets and predictive methods for 3d human sensing in natural environments. IEEE transactions on pattern analysis and machine intelligence, 36(7):1325–1339, 2013. 6
+
+[26] Jingyi Ju, Buzhen Huang, Chen Zhu, Zhihao Li, and Yangang Wang. Physics-guided human motion capture with pose probability modeling. arXiv preprint arXiv:2308.09910, 2023. 2, 6, 7
+
+[27] Michael Kallay. Computing the moment of inertia of a solid defined by a triangle mesh. Journal of Graphics Tools, 11 (2):51–57, 2006. 2
+
+[28] Angjoo Kanazawa, Michael J Black, David W Jacobs, and Jitendra Malik. End-to-end recovery of human shape and pose. In Proceedings ofthe IEEE Conference on Computer Vision and Pattern Recognition, pages 7122–7131, 2018. 1
+
+[29] Angjoo Kanazawa, Jason Y Zhang, Panna Felsen, and Jitendra Malik. Learning 3d human dynamics from video. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 5614–5623, 2019. 2
+
+[30] Diederik P Kingma and Jimmy Ba. Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980, 2014. 6, 1
+
+[31] Muhammed Kocabas, Nikos Athanasiou, and Michael J Black. Vibe: Video inference for human body pose and shape estimation. In Proceedings ofthe IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 5253–5263, 2020. 1, 2, 6, 7
+
+[32] Muhammed Kocabas, Chun-Hao P Huang, Otmar Hilliges, and Michael J Black. Pare: Part attention regressor for 3d human body estimation. arXiv preprint arXiv:2104.08527, 2021. 2
+
+[33] Nikos Kolotouros, Georgios Pavlakos, Michael J Black, and Kostas Daniilidis. Learning to reconstruct 3d human pose and shape via model-fitting in the loop. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 2252–2261, 2019. 1, 6, 4
+
+[34] Nikos Kolotouros, Georgios Pavlakos, Dinesh Jayaraman, and Kostas Daniilidis. Probabilistic modeling for human mesh recovery. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 11605– 11614, 2021. 2
+
+[35] Robotic Systems Lab. Robot dynamics lecture notes. ETH Zurich, 2017. 3
+
+[36] Gun-Hee Lee and Seong-Whan Lee. Uncertainty-aware human mesh recovery from video by learning part-based 3d dynamics. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 12375– 12384, 2021. 1, 2
+
+[37] Sergey Levine and Jovan Popovic. Physically plausible´ simulation for character animation. In Proceedings of the 11th ACM SIGGRAPH/Eurographics conference on Computer Animation, pages 221–230, 2012. 2
+
+[38] Jiefeng Li, Chao Xu, Zhicun Chen, Siyuan Bian, Lixin Yang, and Cewu Lu. Hybrik: A hybrid analytical-neural
+
+inverse kinematics solution for 3d human pose and shape estimation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 3383– 3393, 2021. 1, 2, 6
+
+[39] Jiefeng Li, Siyuan Bian, Chao Xu, Gang Liu, Gang Yu, and Cewu Lu. D &d: Learning human dynamics from dynamic camera. In European Conference on Computer Vision, pages 479–496. Springer, 2022. 1, 2, 6, 4
+
+[40] Zongmian Li, Jiri Sedlar, Justin Carpentier, Ivan Laptev, Nicolas Mansard, and Josef Sivic. Estimating 3d motion and forces of person-object interactions from monocular video. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 8640– 8649, 2019. 1, 2
+
+[41] Zhihao Li, Jianzhuang Liu, Zhensong Zhang, Songcen Xu, and Youliang Yan. Cliff: Carrying location information in full frames into human pose and shape estimation. In European Conference on Computer Vision, pages 590–606. Springer, 2022. 2, 6, 7
+
+[42] Ziwen Li, Bo Xu, Han Huang, Cheng Lu, and Yandong Guo. Deep two-stream video inference for human body pose and shape estimation. In Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision, pages 430–439, 2022. 2
+
+[43] Kevin Lin, Lijuan Wang, and Zicheng Liu. End-to-end human pose and mesh reconstruction with transformers. In Proceedings ofthe IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 1954–1963, 2021. 2
+
+[44] Ruixu Liu, Ju Shen, He Wang, Chen Chen, Sen-ching Cheung, and Vijayan Asari. Attention mechanism exploits temporal contexts: Real-time 3d human pose reconstruction. In Proceedings ofthe IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 5064–5073, 2020. 2
+
+[45] Wansong Liu, Xiao Liang, and Minghui Zheng. Dynamic model informed human motion prediction based on unscented kalman filter. IEEE/ASME Transactions on Mechatronics, 27(6):5287–5295, 2022. 2
+
+[46] Matthew Loper, Naureen Mahmood, and Michael J Black. Mosh: motion and shape capture from sparse markers. ACM Trans. Graph., 33(6):220–1, 2014. 6
+
+[47] Matthew Loper, Naureen Mahmood, Javier Romero, Gerard Pons-Moll, and Michael J Black. Smpl: A skinned multi-person linear model. ACM transactions on graphics (TOG), 34(6):1–16, 2015. 1, 2, 3
+
+[48] Zhengyi Luo, S Alireza Golestaneh, and Kris M Kitani. 3d human motion estimation via motion compression and refinement. In Proceedings ofthe Asian Conference on Computer Vision, 2020. 1, 2
+
+[49] Zhengyi Luo, Shun Iwase, Ye Yuan, and Kris Kitani. Embodied scene-aware human pose estimation. arXiv preprint arXiv:2206.09106, 2022. 1, 2
+
+[50] Xiaoxuan Ma, Jiajun Su, Chunyu Wang, Wentao Zhu, and Yizhou Wang. 3d human mesh estimation from virtual markers. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 534–543, 2023. 2
+
+[51] Naureen Mahmood, Nima Ghorbani, Nikolaus F Troje, Gerard Pons-Moll, and Michael J Black. Amass: Archive
+
+of motion capture as surface shapes. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 5442–5451, 2019. 1, 6, 5
+
+[52] Al Mansur, Yasushi Makihara, and Yasushi Yagi. Inverse dynamics for action recognition. IEEE transactions on cybernetics, 43(4):1226–1236, 2012. 2, 8
+
+[53] Gyeongsik Moon and Kyoung Mu Lee. I2l-meshnet: Image-to-lixel prediction network for accurate 3d human pose and mesh estimation from a single rgb image. In Computer Vision–ECCV 2020: 16th European Conference, Glasgow, UK, August 23–28, 2020, Proceedings, Part VII 16, pages 752–768. Springer, 2020. 2
+
+[54] Vinod Nair and Geoffrey E Hinton. Rectified linear units improve restricted boltzmann machines. In Proceedings of the 27th international conference on machine learning (ICML-10), pages 807–814, 2010. 1
+
+[55] Dario Pavllo, Christoph Feichtenhofer, David Grangier, and Michael Auli. 3d human pose estimation in video with temporal convolutions and semi-supervised training. In Proceedings ofthe IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 7753–7762, 2019. 1, 2
+
+[56] Stanley Plagenhoef, F Gaynor Evans, and Thomas Abdelnour. Anatomical data for analyzing human motion. Research quarterly for exercise and sport, 54(2):169–178, 1983. 4, 2
+
+[57] Barry M Prior, Christopher M Modlesky, Ellen M Evans, Mark A Sloniger, Michael J Saunders, Richard D Lewis, and Kirk J Cureton. Muscularity and the density of the fatfree mass in athletes. Journal ofApplied Physiology, 90(4): 1523–1531, 2001. 2
+
+[58] Zhongwei Qiu, Qiansheng Yang, Jian Wang, Haocheng Feng, Junyu Han, Errui Ding, Chang Xu, Dongmei Fu, and Jingdong Wang. Psvt: End-to-end multi-person 3d pose and shape estimation with progressive video transformers. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 21254–21263, 2023. 2
+
+[59] Jathushan Rajasegaran, Georgios Pavlakos, Angjoo Kanazawa, and Jitendra Malik. Tracking people with 3d representations. arXiv preprint arXiv:2111.07868, 2021. 2
+
+[60] Davis Rempe, Leonidas J Guibas, Aaron Hertzmann, Bryan Russell, Ruben Villegas, and Jimei Yang. Contact and human dynamics from monocular video. In European Conference on Computer Vision, pages 71–87. Springer, 2020. 1, 2
+
+[61] Davis Rempe, Tolga Birdal, Aaron Hertzmann, Jimei Yang, Srinath Sridhar, and Leonidas J Guibas. Humor: 3d human motion model for robust pose estimation. arXiv preprint arXiv:2105.04668, 2021. 1, 2
+
+[62] Jesse Scott, Bharadwaj Ravichandran, Christopher Funk, Robert T Collins, and Yanxi Liu. From image to stability: learning dynamics from human pose. In European Conference on Computer Vision, pages 536–554. Springer, 2020. 2
+
+[63] Akash Sengupta, Ignas Budvytis, and Roberto Cipolla. Humaniflow: Ancestor-conditioned normalising flows on so (3) manifolds for human pose and shape distribution estimation. In Proceedings of the IEEE/CVF Conference
+
+on Computer Vision and Pattern Recognition, pages 4779– 4789, 2023. 2
+
+[64] Xiaolong Shen, Zongxin Yang, Xiaohan Wang, Jianxin Ma, Chang Zhou, and Yi Yang. Global-to-local modeling for video-based 3d human pose and shape estimation. In Proceedings ofthe IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 8887–8896, 2023. 1, 2, 6
+
+[65] Michael A Sherman, Ajay Seth, and Scott L Delp. Simbody: multibody dynamics for biomedical research. Procedia Iutam, 2:241–261, 2011. 2
+
+[66] Mingyi Shi, Sebastian Starke, Yuting Ye, Taku Komura, and Jungdam Won. Phasemp: Robust 3d pose estimation via phase-conditioned human motion prior. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 14725–14737, 2023. 1
+
+[67] Soshi Shimada, Vladislav Golyanik, Weipeng Xu, and Christian Theobalt. Physcap: Physically plausible monocular 3d motion capture in real time. ACM Transactions on Graphics (TOG), 39(6):1–16, 2020. 1, 2, 6
+
+[68] Soshi Shimada, Vladislav Golyanik, Weipeng Xu, Patrick Perez, and Christian Theobalt. Neural monocular 3d hu-´ man motion capture with physical awareness. ACM Transactions on Graphics (TOG), 40(4):1–15, 2021. 1, 2, 6, 7
+
+[69] Soyong Shin, Juyong Kim, Eni Halilaj, and Michael J Black. Wham: Reconstructing world-grounded humans with accurate 3d motion. arXiv preprint arXiv:2312.07531, 2023. 1
+
+[70] Mark W Spong and Mathukumalli Vidyasagar. Robot dynamics and control. John Wiley & Sons, 2008. 2
+
+[71] Yu Sun, Yun Ye, Wu Liu, Wenpeng Gao, Yili Fu, and Tao Mei. Human mesh recovery from monocular images via a skeleton-disentangled representation. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 5349–5358, 2019. 2
+
+[72] Yu Sun, Qian Bao, Wu Liu, Tao Mei, and Michael J Black. Trace: 5d temporal regression of avatars with dynamic cameras in 3d environments. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 8856–8866, 2023. 2
+
+[73] Zhenhua Tang, Zhaofan Qiu, Yanbin Hao, Richang Hong, and Ting Yao. 3d human pose estimation with spatiotemporal criss-cross attention. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 4790–4799, 2023. 1, 2
+
+[74] Theophilus Teo, Louise Lawrence, Gun A Lee, Mark Billinghurst, and Matt Adcock. Mixed reality remote collaboration combining 360 video and 3d reconstruction. In Proceedings ofthe 2019 CHI conference on humanfactors in computing systems, pages 1–14, 2019. 1
+
+[75] Emanuel Todorov, Tom Erez, and Yuval Tassa. Mujoco: A physics engine for model-based control. In 2012 IEEE/RSJ international conference on intelligent robots and systems, pages 5026–5033. IEEE, 2012. 1
+
+[76] Shashank Tripathi, Lea Muller, Chun-Hao P Huang, Omid¨ Taheri, Michael J Black, and Dimitrios Tzionas. 3d human pose estimation via intuitive physics. In Proceedings ofthe IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 4713–4725, 2023. 1, 6, 4
+
+[77] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin. Attention is all you need. Advances in neural information processing systems, 30, 2017. 2, 4, 6
+
+[78] Minh Vo, Yaser Sheikh, and Srinivasa G Narasimhan. Spatiotemporal bundle adjustment for dynamic 3d human reconstruction in the wild. IEEE Transactions on Pattern Analysis and Machine Intelligence, 44(2):1066–1080, 2020. 2
+
+[79] Ziniu Wan, Zhengjia Li, Maoqing Tian, Jianbo Liu, Shuai Yi, and Hongsheng Li. Encoder-decoder with multi-level attention for 3d human shape and pose estimation. In Proceedings ofthe IEEE/CVF International Conference on Computer Vision, pages 13033–13042, 2021. 2
+
+[80] Jingbo Wang, Sijie Yan, Yuanjun Xiong, and Dahua Lin. Motion guided 3d pose estimation from videos. In European Conference on Computer Vision, pages 764–780. Springer, 2020. 1, 2
+
+[81] Wenjia Wang, Yongtao Ge, Haiyi Mei, Zhongang Cai, Qingping Sun, Yanjun Wang, Chunhua Shen, Lei Yang, and Taku Komura. Zolly: Zoom focal length correctly for perspective-distorted human mesh reconstruction. arXiv preprint arXiv:2303.13796, 2023. 2
+
+[82] Wen-Li Wei, Jen-Chun Lin, Tyng-Luh Liu, and Hong-Yuan Mark Liao. Capturing humans in motion: Temporalattentive 3d human pose and shape estimation from monocular video. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 13211– 13220, 2022. 2
+
+[83] Donglai Xiang, Hanbyul Joo, and Yaser Sheikh. Monocular total capture: Posing face, body, and hands in the wild. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 10965–10974, 2019. 2
+
+[84] Kevin Xie, Tingwu Wang, Umar Iqbal, Yunrong Guo, Sanja Fidler, and Florian Shkurti. Physics-based human motion estimation and synthesis from videos. In Proceedings ofthe IEEE/CVF International Conference on Computer Vision, pages 11532–11541, 2021. 1, 2, 6
+
+[85] Hongyi Xu, Eduard Gabriel Bazavan, Andrei Zanfir, William T Freeman, Rahul Sukthankar, and Cristian Sminchisescu. Ghum & ghuml: Generative 3d human shape and articulated pose models. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 6184–6193, 2020. 1
+
+[86] Sijie Yan, Yuanjun Xiong, and Dahua Lin. Spatial temporal graph convolutional networks for skeleton-based action recognition. In Thirty-second AAAI conference on artificial intelligence, 2018. 1
+
+[87] Di Yang, Yaohui Wang, Antitza Dantcheva, Lorenzo Garattoni, Gianpiero Francesca, and Franc¸ois Bremond. Unik:´ A unified framework for real-world skeleton-based action recognition. arXiv preprint arXiv:2107.08580, 2021. 8
+
+[88] Gengshan Yang, Shuo Yang, John Z Zhang, Zachary Manchester, and Deva Ramanan. Ppr: Physically plausible reconstruction from monocular videos. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 3914–3924, 2023. 1, 2
+
+[89] Vickie Ye, Georgios Pavlakos, Jitendra Malik, and Angjoo Kanazawa. Decoupling human and camera motion from videos in the wild. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 21222–21232, 2023. 2
+
+[90] Xinyu Yi, Yuxiao Zhou, Marc Habermann, Soshi Shimada, Vladislav Golyanik, Christian Theobalt, and Feng Xu. Physical inertial poser (pip): Physics-aware real-time human motion tracking from sparse inertial sensors. arXiv preprint arXiv:2203.08528, 2022. 2, 5
+
+[91] Yusuke Yoshiyasu. Deformable mesh transformer for 3d human mesh recovery. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 17006–17015, 2023. 2
+
+[92] Yingxuan You, Hong Liu, Ti Wang, Wenhao Li, Runwei Ding, and Xia Li. Co-evolution of pose and mesh for 3d human body estimation from video. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 14963–14973, 2023. 2, 6
+
+[93] Ye Yuan, Shih-En Wei, Tomas Simon, Kris Kitani, and Jason Saragih. Simpoe: Simulated character control for 3d human pose estimation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 7159–7169, 2021. 1, 2, 6
+
+[94] Ye Yuan, Umar Iqbal, Pavlo Molchanov, Kris Kitani, and Jan Kautz. Glamr: Global occlusion-aware human mesh recovery with dynamic cameras. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 11038–11049, 2022. 2, 3, 1, 4
+
+[95] Petrissa Zell and Bodo Rosenhahn. Learning-based inverse dynamics of human motion. In Proceedings of the IEEE International Conference on Computer Vision Workshops, pages 842–850, 2017. 2
+
+[96] Petrissa Zell and Bodo Rosenhahn. Learning inverse dynamics for human locomotion analysis. Neural Computing and Applications, 32(15):11729–11743, 2020.
+
+[97] Petrissa Zell, Bodo Rosenhahn, and Bastian Wandt. Weakly-supervised learning of human dynamics. In European Conference on Computer Vision, pages 68–84. Springer, 2020. 2
+
+[98] Ailing Zeng, Xiao Sun, Lei Yang, Nanxuan Zhao, Minhao Liu, and Qiang Xu. Learning skeletal graph neural networks for hard 3d pose estimation. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 11436–11445, 2021. 1, 2
+
+[99] Ailing Zeng, Lei Yang, Xuan Ju, Jiefeng Li, Jianyi Wang, and Qiang Xu. Smoothnet: A plug-and-play network for refining human poses in videos. In European Conference on Computer Vision, pages 625–642. Springer, 2022. 2
+
+[100] Boyang Zhang, Kehua Ma, Suping Wu, and Zhixiang Yuan. Two-stage co-segmentation network based on discriminative representation for recovering human mesh from videos. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 5662–5670, 2023. 1, 2
+
+[101] Siwei Zhang, Yan Zhang, Federica Bogo, Marc Pollefeys, and Siyu Tang. Learning motion priors for 4d human body
+
+capture in 3d scenes. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 11343– 11353, 2021. 2
+
+[102] Tianshu Zhang, Buzhen Huang, and Yangang Wang. Object-occluded human shape and pose estimation from a single color image. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 7376–7385, 2020. 6
+
+[103] Weiyu Zhang, Menglong Zhu, and Konstantinos G Derpanis. From actemes to action: A strongly-supervised representation for detailed action understanding. In Proceedings of the IEEE international conference on computer vision, pages 2248–2255, 2013. 6
+
+[104] Yi Zhang, Pengliang Ji, Angtian Wang, Jieru Mei, Adam Kortylewski, and Alan Yuille. 3d-aware neural body fitting for occlusion robust 3d human pose estimation. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 9399–9410, 2023. 2
+
+[105] Yufei Zhang, Hanjing Wang, Jeffrey O Kephart, and Qiang Ji. Body knowledge and uncertainty modeling for monocular 3d human body reconstruction. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 9020–9032, 2023. 1
+
+[106] Yufei Zhang, Jeffrey O Kephart, and Qiang Ji. Incorporating physics principles for precise human motion prediction. In Proceedings ofthe IEEE/CVF Winter Conference on Applications ofComputer Vision, pages 6164–6174, 2024. 2
+
+[107] Zhibo Zhang, Yanjun Zhu, Rahul Rai, and David Doermann. Pimnet: Physics-infused neural network for human motion prediction. IEEE Robotics and Automation Letters, 7(4):8949–8955, 2022. 2
+
+[108] Qitao Zhao, Ce Zheng, Mengyuan Liu, Pichao Wang, and Chen Chen. Poseformerv2: Exploring frequency domain for efficient and robust 3d human pose estimation. In Proceedings ofthe IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 8877–8886, 2023. 2
+
+[109] Rui Zhao, Wanru Xu, Hui Su, and Qiang Ji. Bayesian hierarchical dynamic model for human action recognition. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 7733–7742, 2019. 8
+
+[110] Yu Zheng and Katsu Yumane. Human motion tracking control with strict contact force constraints for floating-base humanoid robots, 2015. US Patent 9,120,227. 2
+
+[111] Xiaowei Zhou, Menglong Zhu, Spyridon Leonardos, Konstantinos G Derpanis, and Kostas Daniilidis. Sparseness meets deepness: 3d human pose estimation from monocular video. In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 4966–4975, 2016. 2
+
+[112] Wentao Zhu, Xiaoxuan Ma, Zhaoyang Liu, Libin Liu, Wayne Wu, and Yizhou Wang. Motionbert: Unified pretraining for human motion analysis. arXiv preprint arXiv:2210.06551, 2022. 2
+
+# PhysPT: Physics-aware Pretrained Transformer for Estimating Human Dynamics from Monocular Videos
+
+Supplementary Material
+
+In this supplementary material, we first provide additional details of our proposed approach:
+
+• Section A: Global Trajectory Estimation
+
+• Section B: Creation of Phys-SMPL, which includes (1) the Calculation of Body Part Volume, Mass, and Inertia Tensor; and (2) the Derivation of the Physical Parameters in the Euler-Lagrange Equations
+
+• Section C: Selection of Body Contact Regions We then present additional evaluation results:
+
+• Section D: Improvements over Different Kinematicsbased 3D Body Reconstruction Models
+
+• Section E: Evaluation on Global Motion Recovery
+
+• Section F: Quality of the Generated Force Labels
+
+• Section G: Action-wise Recognition Performance
+
+## A. Global Trajectory Estimation
+
+Traditional image or video-based 3D human body reconstruction models provide estimates of 3D body configuration in the body frame. Additionally, they estimate a root rotation that transforms the estimated 3D configuration from the body frame to the camera frame. To effectively model human dynamics, a human body motion trajectory represented in the world frame is needed. Besides local body movements, the global motion trajectory further involves the relative rotation between the camera frame and the world frame, and the body translation in the world frame. Inspired by the framework proposed by [94], we estimate these information through a global trajectory predictor with the model architecture illustrated in Figure 6. The input of the model are 3D body joint positions represented in the body frame $\{ \mathbf { J } _ { t } \} _ { t = 1 } ^ { T }$ . A Spatial-Temporal Graph Convolutional Networks (ST-GCN) [86] are then employed to extract spatial-temporal features for every time frame as:
+
+$$
+\{\mathbf {h} _ {t} \} _ {t = 1} ^ {T} = \operatorname{GCN} (\{\mathbf {J} _ {t} \} _ {t = 1} ^ {T}),\tag{10}
+$$
+
+where $\mathbf { h } ^ { t } \in \mathbb { R } ^ { 2 5 6 }$ . Typically, the camera pose remains constant throughout a video. The model thus estimates a single rotation matrix for all frames. Specifically, the extracted features $\{ \mathbf { h } _ { t } \} _ { t = 1 } ^ { T }$ are concatenated together and then input to a multi-layer perceptrons (MLP). The MLP module includes three fully connected layers with the ReLU activation functions [54] to predict the rotation transformation between the camera and world frame as:
+
+$$
+\mathbf {R} _ {c} = \mathrm{MLP} \big (\{\mathbf {h} _ {t} \} _ {t = 1} ^ {T} \big).\tag{11}
+$$
+
+Combining the estimated $\mathbf { R } _ { c }$ with the root rotation generated by the kinematics-based 3D human body reconstruction model at each frame leads to the global rotation $\{ \mathbf { R } _ { t } \} _ { t = 1 } ^ { T }$ defined in Eq. 1. Note that the prediction of the camera rotation can be readily extended to predicting rotations for every frame considering a moving camera. Furthermore, to estimate the global translation, we employ a regression model with Iterative Error Feedback (IEF) [7] with 3 iterations. The employed regression model takes as input the exacted spatial-temporal features and outputs the 3D root joint positions represented in the world frame as:
+
+![](images/89f41d79be7b888f778fecec3ec21865547a7c557426dc3cb017791c2b7dc9dd.jpg)  
+Figure 6. Global Trajectory Estimation Model. “MLP” and “IEF” represents Multi-layer Perceptrons and Iterative Error Feedback regression model [7], respectively.
+
+$$
+\delta_ {x, t}, \delta_ {y, t}, z _ {t} = \operatorname{IEF} (\mathbf {h} _ {t}),\tag{12}
+$$
+
+where $\delta _ { x , t }$ and $\delta _ { y , t }$ are position changes in the horizontal directions at time frame t, and $z _ { t }$ is the corresponding vertical position relative to the ground plane. Adding the position changes $( \delta _ { x , t } , \delta _ { y , t } )$ over time and combining them with the vertical position $z _ { t }$ at different time frames, we obtain the final global translation $\{ \mathbf { T } _ { t } \} _ { t = 1 } ^ { T }$ required to specify the generalized positions defined in Eq. 1.
+
+For training of the global trajectory predictor, we use AMASS [51]. The training loss consists of the mean square errors between the predicted and the ground truth rotation and translation. The 3D motion sequences in AMASS are 3D trajectories represented in the world frame and only vary in the body translation. We hence introduce random rotation changes to the input to allow the model to predict the rotation changes. Meanwhile, we add random Gaussian noise to the input 3D joint positions to improve the model robustness. During training, we utilize the Adam optimizer [30] with a weight decay of $1 0 ^ { - 4 }$ The initial learning rate is $1 0 ^ { - 3 }$ and decreases to its 0.95 after every 15,000 steps. The total number of training epochs is 20. Note that the training of the global trajectory predictor is independent to certain 3D human body reconstruction models. Once the model is trained, we directly combine it with the 3D reconstruction model to generate the initial generalize positions $\{ \hat { \mathbf { q } } _ { t } \} _ { t = 1 } ^ { T }$
+
+## B. Creation of Phys-SMPL
+
+Phys-SMPL characterizes the necessary physical properties of the human body required in modeling human dynamics through the Euler-Lagrange equations. Specifically, these physical information includes body mass and inertia of different body parts and is utilized in computing the physical terms in the Euler-Lagrange equations. In this section, we first introduce the way of calculating the physics information based on the geometry information provided by SMPL. Then, we present the analytical equations for computing the physical parameters in the Euler-Lagrange Equations.
+
+Calculation of Body Part Volume, Mass, and Inertia Tensor. The original SMPL builds upon 3D triangle mesh models. The 3D triangle mesh model captures the body geometry information but not physics. To effectively model physical properties from the geometry information, we first compute the volume of different body parts. Specifically, we build a close mesh for each body part by closing the mesh along the boundary. Then, each mesh triangle in a body part combined with the body part center can form a 3D tetrahedron, the volume of which can be easily computed. Meanwhile, for each body part, its volume can be computed as the sum of the volumes of all the 3D tetrahedra belonging to that body part. Defining the origin of a body part as its geometric center, the volume of body part i can thus be computed as:
+
+$$
+V _ {i} = \sum_ {j = 1} ^ {n _ {j}} | \det (\mathbf {P} _ {i, j, 1}, \mathbf {P} _ {i, j, 2}, \mathbf {P} _ {i, j, 3}) |,\tag{13}
+$$
+
+where $n _ { j }$ is the total number of mesh triangles included in the $i ^ { t h }$ body part, $\mathbf { P } _ { i , j , 1 } , \mathbf { P } _ { i , j , 2 }$ , and $\mathbf { P } _ { i , j , 3 }$ are the 3D vertex position of the $j ^ { t h }$ triangle.
+
+Using the computed volume, we can then determine the mass of each body part. Specifically, for the mean shape of SMPL, we consider it has a total body mass of 70 kg following the typical setting [84]. We compute the mass of each body part by distributing the total body mass based on the average human body weight distribution [56]. For subjects with different body shapes, we calculate their body mass based on the proportion of their body part volume relative to the mean shape. As human tissue exhibits varying mass density, instead of scaling the mass solely based on the body part volume, we consider the density differences between bone, muscle, and fat to introduce additional predefined scaling factors for different body parts following the study shown in [57].
+
+For the inertia tensor required to specify the Euler-Lagrange equations, we need to compute the inertia tensor for each body part relative to its root joint represented in the body part frame. In the following, we present the analytical equations to compute the inertia tensor $\mathbf { I } _ { i }$ of the $i ^ { t h }$ body part without loss of the generality. Firstly, we consider a body part is a rigid solid body that has a uniform mass density. The entries in the inertia tensor can be denoted as
+
+$$
+\mathbf {I} _ {i} = \left[ \begin{array}{c c c} I _ {x x} & I _ {x y} & I _ {x z} \\ I _ {y x} & I _ {y y} & I _ {y z} \\ I _ {z x} & I _ {z y} & I _ {z z} \end{array} \right].\tag{14}
+$$
+
+Following the standard way to compute the inertia tensor [70], an entry in $\mathbf { I } _ { i }$ is computed as
+
+$$
+\frac {m _ {i}}{V _ {i}} \iiint_ {(x, y, z) \in \mathbf {S} _ {i}} f (x, y, z) d x d y d z,\tag{15}
+$$
+
+where $m _ { i } , V _ { i }$ , and $\mathbf { S } _ { i }$ denotes the mass, volume, 3D integral region of the body part, respectively. Then,
+
+$$
+f (x, y, z) = \left\{ \begin{array}{l l} y ^ {2} + z ^ {2} & \text {for I_{xx}} \\ x ^ {2} + z ^ {2} & \text {for I_{yy}} \\ x ^ {2} + y ^ {2} & \text {for I_{zz}} \\ - x y & \text {for I_{xy} and I_{yx}} \\ - x z & \text {for I_{xz} and I_{xz}} \\ - y z & \text {for I_{yz} and I_{yz}} \end{array} \right..\tag{16}
+$$
+
+As a body part is represented as a triangulate mesh, the integral can be computed as the sum of the integral computed within each tetrahedron of the body part as
+
+$$
+\frac {m _ {i}}{V _ {i}} \sum_ {j = 1} ^ {n _ {i}} \iiint_ {(x, y, z) \in \mathbf {S} _ {i, j}} f (x, y, z) d x d y d z,\tag{17}
+$$
+
+where $\mathbf { S } _ { i , j }$ is the 3D integral region of the $j ^ { t h }$ tetrahedron, and $n _ { j }$ is the total number of mesh triangles of the i body part. Given that each body part is assumed to have a uniform mass density, the Center of Mass (COM) coincides with the centroid of that body part. As shown in [27], the integral over the $j ^ { t h }$ tetrahedron of the $i ^ { t h }$ body part can be computed as
+
+$$
+\frac {v _ {i , j}}{2 0} (f (\mathbf {P} _ {i, j, 1}) + f (\mathbf {P} _ {i, j, 2}) + f (\mathbf {P} _ {i, j, 3}) + f (\mathbf {P} _ {i, j, 1} + \mathbf {P} _ {i, j, 2} + \mathbf {P} _ {i, j, 3})),\tag{18}
+$$
+
+where $\mathbf { P } _ { i , j , 1 } , \mathbf { P } _ { i , j , 2 }$ , and $\mathbf { P } _ { i , j , 3 }$ represent the 3D vertex positions of the $j ^ { t h }$ tetrahedron in the body frame with regards to the COM.
+
+As introduced above, the calculation of the body mass and inertia tensor is based on the study of human anatomy and is accomplished using SMPL’s geometry information. This approach avoids the use of unrealistic proxy bodies and establishes a direct mapping between the physics information and the shape parameters.
+
+Derivation of the Physical Parameters in the Euler-Lagrange Equations. The physical parameters in the Euler-Lagrange equations are functions of the generalized positions, as well as the body mass and inertia. In this section, we present analytical equations to compute these physical parameters, including the contact Jacobian $\mathbf { J } _ { C } .$ , the generalized mass matrix $\mathbf { M } ( \mathbf { q } ; \ \mathbf { m } , \mathbf { I } )$ , the gravitational force g q; m, I, and the generalized bias force $\mathbf { C } ( \mathbf { q } , \dot { \mathbf { q } } ; \mathbf { m } , \mathbf { I } )$
+
+For the contact Jacobian, it is the Jacobian matrix that maps a contact force represented in the Cartesian coordinates to the generalized coordinates. The contact Jacobian matrix only relates to the position of a contact point. For the human body, it can receive multiple contact forces. Below we derive the contact Jacobian matrix applied to one contact position C without loss of generality.
+
+As shown in [35], the contact Jacobian can be computed as,
+
+$$
+\mathbf {J} _ {C} = \left[ \begin{array}{c c c c c} \mathbf {e} _ {x} & \mathbf {e} _ {y} & \mathbf {e} _ {z} & \boldsymbol {\xi} _ {i} & \dots \end{array} \right],\tag{19}
+$$
+
+where $\mathbf { e } _ { x } , \mathbf { e } _ { y } ,$ , and $\mathbf { e } _ { z }$ are the unit vectors along the $x , y ,$ and z directions, respectively. $\mathbf { e } _ { x } , \mathbf { e } _ { y }$ , and $\mathbf { e } _ { z }$ correspond to the global translation defined in the generalized position q. For the other columns corresponding to joint rotations, they are computed as
+
+$$
+\boldsymbol {\xi} _ {i} = \left\{ \begin{array}{l l} \mathcal {A} \mathbf {h} _ {i} \times_ {\mathcal {A}} \mathbf {r} _ {i C}, & \text { if   } i \text {   is   a   parent   joint }, \\ \mathbf {0}, & \text { otherwise }. \end{array} \right.\tag{20}
+$$
+
+where $\mathbf { \mathcal { A } } \mathbf { h } _ { i }$ is the rotation axis of $\mathbf { q } _ { i }$ represented in the world frame A, and is computed as
+
+$$
+\mathbf {\Lambda} _ {\mathcal {A}} \mathbf {h} _ {i} = \mathbf {R} _ {0 i - 1 \mathcal {B}} \mathbf {h} _ {i}.\tag{21}
+$$
+
+${ \bf R } _ { 0 i - 1 }$ is the rotation matrix describing the transformation from the body part frame to the world frame. Moreover, $\mathbf { \nabla } _ { A } \mathbf { r } _ { i C }$ is the 3D position of the contact point relative to its root joint i represented in the world frame. $\mathbf { \nabla } _ { A } \mathbf { r } _ { i } \mathbf { \nabla } _ { C }$ is computed as
+
+$$
+\mathbf {\Lambda} _ {\mathcal {A}} \mathbf {r} _ {i C} = \mathbf {r} _ {C} - \mathbf {P} _ {i},\tag{22}
+$$
+
+where $\mathbf { r } _ { C }$ and $\mathbf { P } _ { i }$ are 3D positions of the contact point and the root joint represented in the world frame, respectively.
+
+For the generalized mass matrix M q; m, I, it is a function of the body part mass m, inertia I, and the generalized position $\mathbf { q } .$ The generalized mass matrix can be computed as the sum of the generalized mass of each individual body part as:
+
+$$
+\mathbf {M} (\mathbf {q}; \mathbf {m}, \mathbf {I}) = \sum_ {n = 1} ^ {2 4} \mathbf {J} _ {S, n} ^ {T} m _ {n} \mathbf {J} _ {S, n} + \mathbf {J} _ {R, n} ^ {T} \mathbf {R} _ {0, n} \mathbf {I} _ {n} \mathbf {R} _ {0, n} ^ {T} \mathbf {J} _ {R, n}\tag{23}
+$$
+
+where $\mathbf { J } _ { S , n }$ is the Jacobian matrix computed in the world frame. The calculation of ${ \mathbf { J } } _ { S , n }$ is similar to the contact Jacobian matrix but considers the root joint of a body part as the target position to computed the Jacobian matrix. Moreover, ${ \bf R } _ { 0 , n }$ is the pose of the $n ^ { t h }$ body part, and $\mathbf { J } _ { R , n }$ is the angular Jacobian computed as
+
+$$
+\mathbf {J} _ {R, n} = \left[ \begin{array}{c c c c c c} \mathbf {0} & \mathbf {0} & \mathbf {0} & \boldsymbol {\xi} _ {i} & \dots & \mathbf {0} \end{array} \right],\tag{24}
+$$
+
+where
+
+$$
+\boldsymbol {\xi} _ {i} = \left\{ \begin{array}{l l} \mathcal {A} \mathbf {h} _ {i}, & \text { if   } i \text {   is   a   parent   joint }, \\ \mathbf {0}, & \text { otherwise }. \end{array} \right.\tag{25}
+$$
+
+For the gravitational force term, it is computed as
+
+$$
+\mathbf {g} \big (\mathbf {q}; \mathbf {m}, \mathbf {I} \big) = - \sum_ {n = 1} ^ {2 4} \mathbf {J} _ {S, n} ^ {T} m _ {n} \mathbf {g},\tag{26}
+$$
+
+where ${ \mathbf { J } } _ { S , n }$ is the Jacobian matrix of the $n ^ { t h }$ body part and g is the gravitational acceleration.
+
+For the generalized bias force $\mathbf { C } ( \mathbf { q } , \dot { \mathbf { q } } ; \mathbf { m } , \mathbf { I } )$ , it is computed as
+
+$$
+\mathbf {C} \big (\mathbf {q}, \dot {\mathbf {q}}; \mathbf {m}, \mathbf {I} \big) = \sum_ {n = 1} ^ {2 4} \mathbf {J} _ {S, n} ^ {T} m _ {n} \dot {\mathbf {J}} _ {S, n} \dot {\mathbf {q}}\tag{27}
+$$
+
+$$
++ \mathbf {J} _ {R, n} ^ {T} (\mathbf {R} _ {0, n} \mathbf {I} _ {n} \mathbf {R} _ {0, n} ^ {T} \dot {\mathbf {J}} _ {R, n} \dot {\mathbf {q}}\tag{28}
+$$
+
+$$
++ \mathbf {J} _ {R, n} \dot {\mathbf {q}} \times \mathbf {R} _ {0, n} \mathbf {I} _ {n} \mathbf {R} _ {0, n} ^ {T} \mathbf {J} _ {R, n} \dot {\mathbf {q}}),\tag{29}
+$$
+
+where $\dot { \mathbf { J } } _ { S , n }$ and ${ \dot { \mathbf { J } } } _ { R , n }$ are the time derivatives of the linear and angular Jacobian. Specifically,
+
+$$
+\dot {\mathbf {J}} _ {S, n} = \left[ \begin{array}{c c c c c} \mathbf {0} & \mathbf {0} & \mathbf {0} & \dot {\boldsymbol {\xi}} _ {i} & \dots \end{array} \right].\tag{30}
+$$
+
+For the none-zero terms,
+
+$$
+\begin{array}{c} \dot {\boldsymbol {\xi}} _ {i} = \dot {\mathbf {R}} _ {0 i - 1 \mathcal {B}} \mathbf {h} _ {i} \times_ {\mathcal {A}} \mathbf {r} _ {i C} \\ + \mathbf {R} _ {0 i - 1 \mathcal {B}} \mathbf {h} _ {i} \times_ {\mathcal {A}} \dot {\mathbf {r}} _ {i C} \end{array}\tag{31}
+$$
+
+(32)
+
+where $\dot { \mathbf { r } } _ { i C }$ can be computed through finite difference. The time derivative of the rotation matrix is computed as
+
+$$
+\dot {\mathbf {R}} _ {0 i - 1} = (\mathbf {J} _ {R, i - 1} \dot {\mathbf {q}}) ^ {\times} \mathbf {R} _ {0 i - 1}\tag{33}
+$$
+
+On the other hand, the time derivatives of the angular Jacobian can be computed similarly as
+
+$$
+\dot {\mathbf {J}} _ {R, n} = \left[ \begin{array}{c c c c c} \mathbf {0} & \mathbf {0} & \mathbf {0} & \dot {\mathbf {R}} _ {0 i - 1 \mathcal {B}} \mathbf {h} _ {i} & \dots \end{array} \right].\tag{34}
+$$
+
+In summary, Phys-SMPL computes the body mass and inertia information directly from SMPL specified by its shape parameters. The calculation of the physical terms in the Euler-Lagrange equations is also fully-differentiable, facilitating the seamless integration with physics and deep learning models. Additional background of the Euler-Lagrange equations can be found in [35].
+
+## C. Selection of Body Contact Regions
+
+We consider that the human body receives contact forces primarily from the ground. To effectively and efficiently model the contact behavior, we first investigate the body regions that frequently contact with the ground. We employ the motion sequence in AMASS and count the frequency of the vertices in contact with the ground. We visualize the results in Figure 7. As expected, not all vertices have frequent contacts with the ground. On the other hand, modeling the contact for all vertices can result in significant computational overhead. Following existing approaches, we model a subset of vertices for each body part that frequently come into contact with the ground. The chosen vertices are highlighted by black colors in Figure 7.
+
+![](images/5ac755a2f4d9b27f8870728f6dbff1c1dd5d3761e61d979c35bafab69344efea.jpg)  
+Figure 7. Contact Map. The lighter color (yellow) of a vertex indicates the higher frequency of contact with the ground. The modeled contact vertices are marked in black.
+
+<table><tr><td rowspan="2">Method</td><td colspan="2">Rec. Error</td><td colspan="5">Phys. Plausibility</td></tr><tr><td>MJE</td><td>P-MJE</td><td>ACCL</td><td>VEL</td><td>FS</td><td>GP</td><td>BOS</td></tr><tr><td>SPIN [33]</td><td>66.2</td><td>40.8</td><td>18.1</td><td>8.2</td><td>8.8</td><td>12.5</td><td>23.7</td></tr><tr><td>+PoseBert [2]</td><td>64.3</td><td>41.8</td><td>5.3</td><td>4.1</td><td>9.2</td><td>15.7</td><td>26.1</td></tr><tr><td>+PhysPT (Ours)</td><td>60.7</td><td>40.3</td><td>2.5</td><td>3.6</td><td>3.0</td><td>2.1</td><td>31.4</td></tr><tr><td>IPMAN [76]</td><td>63.1</td><td>41.0</td><td>17.2</td><td>7.8</td><td>8.6</td><td>11.9</td><td>28.6</td></tr><tr><td>+PoseBert [2]</td><td>62.2</td><td>41.5</td><td>5.3</td><td>4.2</td><td>9.1</td><td>11.9</td><td>29.8</td></tr><tr><td>+PhysPT (Ours)</td><td>59.4</td><td>40.2</td><td>2.5</td><td>3.6</td><td>3.0</td><td>2.3</td><td>36.1</td></tr></table>
+
+Table 5. Evaluation on Human3.6M using Different Kinematics-based 3D Reconstruction Models. The results of other works are from their officially released models. BOS is measured in percentages, with larger values indicating better performance, while the other metrics prefer smaller values.
+
+## D. Improvements over Different Kinematicsbased 3D Body Reconstruction Models
+
+PhysPT can be seamlessly applied to different kinematicsbased models to enhance their motion estimates. To demonstrate this, besides employing CLIFF (evaluation is discussed in the main manuscript), we here report the improvements over two recent image-based 3D human body reconstruction methods, SPIN and IPMAN. SPIN and IPMAN are both model-based 3D human body reconstruction models that directly predict the 3D body pose and shape parameters from input images. IPMAN can produce more stable 3D body pose estimates than SPIN due to the incorporation of an intuitive-physics loss during training. To further demonstrate the effectiveness of PhysPT and compare with IPMAN, we follow IPMAN and compute the Base of Support (BOS) metric to evaluate the physical plausibility in terms of pose stability. We present the results in Table 5 and compare the improvements achieved by our approach with those produced by PoseBert. As demonstrated, when integrated with both SPIN and IPMAN, PhysPT effectively improves the reconstruction accuracy and substantially enhances the physical plausibility. For instance, when evaluating the reconstruction accuracy, adding PhysPT on top of SPIN shows a reduction in MJE from 66.2mm to 60.7mm, and on top of IPMAN, it experiences a decrease from 63.1mm to 59.4mm. In terms of physical plausibility, incorporating PhysPT with SPIN results in a reduction of 15.6 mm/frame<sup>2</sup> in ACCL, and with IPMAN, it exhibits a reduction of 14.7 mm/frame<sup>2</sup>. The improvements achieved by PhysPT are also more pronounced than PoseBert. Furthermore, when assessing stability, SPIN initially exhibits poor performance with a lower BOS than IPMAN (23.7% vs. 28.6%). By integrating with PhysPT, SPIN can generate a higher BOS than IPMAN (31.4% over 28.6%). The improvements in stability are also evident when incorporating PhysPT with IPMAN. PhysPT significantly enhances the motion estimates by effectively leveraging the Transformer model and integrating physics principles and it applies to various kinematics-based 3D reconstruction models.
+
+<table><tr><td>Method</td><td>Training on Human3.6M</td><td>G-MPJPE (↓)</td><td>G-MPVPE (↓)</td></tr><tr><td>D&amp;D [39]</td><td>Yes</td><td>525.3</td><td>533.9</td></tr><tr><td>PhysPT (Ours)</td><td>No</td><td>335.7</td><td>343.5</td></tr></table>
+
+Table 6. Evaluation on Global Motion Recovery. The evaluation is on the test set of Human3.6M. The units of G-MPJPE and G-MPVPE are in mm.
+
+## E. Evaluation on Global Motion Recovery
+
+This section demonstrates the accurate global motion recovery achieved by our approach. We compute the Mean Per-Joint Position Errors and Mean Per-Vertex Position Errors in the world frame (G-MPJPE and G-MPVPE). Following the typical evaluation protocol [39, 94], we use a 10-second sliding window with the root translation aligned with the ground truth at the starting frame of each window. We report the results in Table 6 with comparison to the physicsbased SOTA. As shown, our approach produces much lower errors than the SOTA. For example, our approach achieves 335.7 mm of G-MPJPE, reducing D&D’s 525.3 by nearly 36%. Moreover, it’s worth noting that our method achieves better performance without utilizing any 3D data from Human3.6M during training.
+
+![](images/48d70c148af18ae397bf4a7c6cd84eae4a1c754dfc270a18d3235d425291af42.jpg)  
+Figure 8. Visualization of the Inferred Motion Forces. The motion sequences (a), (b), (c), and (d) are from AMASS [51]. For sequence (c), (c-i) and (c-ii) are visualization of the same figure from different views. For sequence (d), (d-i) and (d-ii) are visualization of the forces generated with and without employing the continuous contact force model, respectively. In each image, the contact forces are visualized via a 3D vector on each contact point (green lines ended with red dots). The joint actuations are characterized by three vectors along the three Euler angles of a joint (green lines ended with blue dots). Meanwhile, the magnitudes of joint actuations are visualized by different colors at different body parts, with lighter colors indicating larger magnitudes.
+
+## F. Quality of the Inferred Motion Forces
+
+The motion forces derived from the Euler-Lagrange equations using the physics-based body representation and the contact force model offer valuable insights into human dynamic behaviors. Utilizing them enables a more effective incorporation of the physics equations. We here discuss the quality of the inferred motion forces. In Figure 8, we present example forces generated from different motion sequences in AMASS. As illustrated, the inferred motion forces sensibly indicate the direction and magnitude of the underlying forces. For example, during normal standing (Figure 8-a, column 1), the contact forces are evenly distributed between both feet. When leaning to the left or right, the center of gravity shifts, and larger contact forces are displayed on the left or right foot accordingly (Figure 8- c, columns 1-2). Additionally, the contact forces applied to different body parts, such as those experienced on the feet and hips, are effectively modelled (Figure 8-b, columns 2- 3). On the other hand, the inferred joint actuations clearly indicate the rotation direction and force magnitudes. For example, the spine joint actuation in the horizontal direction controls rotation along the horizontal axis. It changes direction when rotating the upper body from left to right (Figure 8-c, columns 1-2). Moreover, large forces are shown at the shoulder joints when extending the arms (Figure 8-a, columns 2-3), or at the spine joints when rotating the upper body (Figure 8-c, column 3).
+
+To demonstrate the benefits of utilizing the continuous contact force model, we further compare the forces inferred with and without employing the contact force model. As illustrated in Figure 8-d, exploiting the contact force model results in a more stable estimation of the forces. Additionally, when not using the contact force model, a contact status must be determined beforehand in a heuristic manner. For example, a point is considered in contact if its distance to the ground is less than 3 cm, and its velocity is less than 1 m/s [90]. In contrast, utilizing the contact force model eliminates the need for estimating the contact status and directly infers the contact forces based on a spring-mass model. Utilizing the contact force model can avoid the problems caused by incorrect estimations of the contact status (Figure 8-d-ii, column 3).
+
+## G. Action-wise Recognition Performance
+
+In the main manuscript, we demonstrate that combining motion and force estimates leads to the best model performance. In this section, we discuss the action-wise evaluation results, providing further insights into the benefits of utilizing forces for understanding human behaviours.
+
+<table><tr><td>Input</td><td>Baseball Pitch</td><td>Clean &amp;Jerk</td><td>Pull Ups</td><td>Strum Guitar</td><td>Baseball Swing</td><td>Golf Swing</td><td>Push Ups</td><td>Tennis Forehand</td><td>Bench Press</td><td>Jumping Jacks</td><td>Sit Ups</td><td>Tennis Serve</td><td>Bowling</td><td>Jump Rope</td><td>Squats</td><td>All</td></tr><tr><td> $J_{phys}$ </td><td>100.0</td><td>95.6</td><td>94.9</td><td>100.0</td><td>98.3</td><td>100.0</td><td>99.0</td><td>93.5</td><td>91.4</td><td>98.2</td><td>98.0</td><td>97.1</td><td>96.4</td><td>97.6</td><td>94.9</td><td>96.8</td></tr><tr><td>F</td><td>100.0</td><td>93.3</td><td>97.0</td><td>97.8</td><td>96.6</td><td>97.4</td><td>98.1</td><td>81.8</td><td>94.3</td><td>96.4</td><td>90.0</td><td>92.9</td><td>88.1</td><td>97.6</td><td>95.9</td><td>94.4</td></tr><tr><td> $J_{phys}+F$ </td><td>100.0</td><td>100.0</td><td>97.0</td><td>100.0</td><td>98.3</td><td>100.0</td><td>98.1</td><td>96.1</td><td>97.1</td><td>98.2</td><td>98.0</td><td>97.1</td><td>97.6</td><td>97.6</td><td>96.9</td><td>98.0</td></tr></table>
+
+Table 7. Action-wise Evaluation on PennAction Utilizing Different Model Inputs. The numbers represent recognition accuracy in percentages. Actions that show higher accuracy when utilizing forces (F) compared to utilizing the physics-based estimation of 3D body joint positions $( \mathbf { J } _ { p h y s } )$ are marked in green. The term “All” denotes the average accuracy over all actions.
+
+Action-wise Evaluation. The action-wise evaluation results are summarized in Table 7. As shown, only using forces as model input produces a lower average recognition accuracy compared to utilizing the physics-based motion estimates. Nonetheless, utilizing forces yields higher accuracy for certain actions, such as “Pull Ups”, “Bench Press”, and “Squats”. These actions are distinctive particularly in their underlying motion forces. Specifically, ”Pull Ups” and “Bench Press” involve similar body movements, such as raising the arms with bending legs. However, their underlying motion forces are significantly different. “Pull Ups” involves body lifting, while “Bench Press” involves body lying on a bench. For these actions, the estimated forces provide additional insights towards the human dynamic behaviours, and when combined with the 3D position data, they can significantly improve the final recognition accuracy. For example, the recognition accuracy of “Bench Press” increases from 91.4% to 97.1% by further adding the forces as model input.
+
+We here present the implementation details for reproducibility. Implementation Details. For our experiments on PennAction, we follow the established protocol that use the official split to divide the training and test sets. The skeleton graph is defined in the SMPL joint format. For the motion estimate input, they are 3D body joint positions. For the force input, they are estimated force values, where the contact forces are transformed into the generalized coordinates to align with the defined skeleton graph. When combining the motion and force estimates, we employ a decision-level fusion. The models are trained by minimizing the cross-entropy loss. We utilize the Adam optimizer with a weight decay of $1 0 ^ { - 4 }$ . We train the models for 200 epochs with an initial learning rate of $1 0 ^ { - 4 }$ and decreasing to its 0.8 after every 40 epochs. The batch size is 128.

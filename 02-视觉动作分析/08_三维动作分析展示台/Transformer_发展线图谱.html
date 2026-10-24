@@ -1,0 +1,1036 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Transformer 发展线图谱 · 康复迁移推演</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f5f0;--card:#fff;--line:#e9e3d6;--ink:#14171e;--ink2:#3a4256;--muted:#7c7a72;--primary:#2f6f5e;--amber:#c97b3f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Outfit',sans-serif;font-size:14.5px;line-height:1.6;
+background-image:radial-gradient(900px 500px at 8% -8%,rgba(47,111,94,.05),transparent 60%),radial-gradient(800px 460px at 100% 0%,rgba(201,123,63,.05),transparent 60%)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2{font-family:'DM Serif Display',serif;font-weight:400;letter-spacing:-.005em}
+h1{font-size:34px;margin:0 0 6px}
+h2{font-size:24px;margin:0}
+.mono{font-family:'JetBrains Mono',monospace}
+.muted{color:var(--muted)}
+.lead{font-size:16px;color:var(--ink2);max-width:74ch;margin:0 0 22px}
+section{margin:52px 0}
+.sh{display:flex;align-items:center;gap:10px;margin:0 0 6px}
+.sh svg{color:var(--primary);flex:none}
+.sub{color:var(--muted);font-size:13.5px;margin:0 0 18px;max-width:82ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;
+box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:22px 0 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.stat b{display:block;font-family:'DM Serif Display',serif;font-size:27px;line-height:1.1;color:var(--primary)}
+.stat span{font-size:12.5px;color:var(--muted)}
+table.mx{border-collapse:separate;border-spacing:6px;width:100%}
+table.mx th{font-size:12px;font-weight:600;color:var(--muted);text-align:left;padding:4px 6px;vertical-align:bottom}
+table.mx th.tl{width:118px}
+td.cell{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 10px;vertical-align:top;min-width:96px}
+td.cell.empty{background:transparent;border-style:dashed;border-color:#dcd6c8;opacity:.55}
+td.cell .n{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);display:flex;align-items:center;justify-content:space-between}
+.dot{width:7px;height:7px;border-radius:50%;display:inline-block}
+p.tt{font-size:12.5px;line-height:1.45;margin:6px 0 0;color:var(--ink2);cursor:pointer}
+p.tt:hover{color:var(--primary);text-decoration:underline}
+.tl{list-style:none;padding:0;margin:0;position:relative}
+.tl::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:var(--primary);opacity:.32}
+.tl li{position:relative;padding:0 0 26px 34px}
+.tl li::before{content:"";position:absolute;left:3px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--primary)}
+.tl h3{margin:0 0 3px;font-size:16.5px;font-family:'Outfit',sans-serif;font-weight:600}
+.tl .yr{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--primary);margin-right:8px}
+.tl p{margin:4px 0 0;font-size:13.5px;color:var(--ink2);max-width:88ch}
+.tl .lst{margin:8px 0 0;font-size:12.5px;color:var(--muted)}
+.bench{display:grid;grid-template-columns:150px 1fr 68px;gap:12px;align-items:center;padding:6px 0}
+.bench-track{height:14px;background:#efece3;border-radius:7px;overflow:hidden}
+.bench-fill{height:100%;background:var(--primary);border-radius:7px;opacity:.85}
+.bench-val{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--ink2);text-align:right}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px;align-items:center}
+button.f{font-family:'Outfit',sans-serif;font-size:12.5px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink2);cursor:pointer;transition:all .18s}
+button.f:hover{border-color:var(--primary);color:var(--primary)}
+button.f.on{background:var(--primary);border-color:var(--primary);color:#fff}
+input.s{font-family:'Outfit',sans-serif;font-size:13.5px;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);min-width:230px;flex:1}
+input.s:focus{outline:none;border-color:var(--primary)}
+.row{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:10px}
+.p{border:1px solid var(--line);border-radius:13px;padding:13px 14px;background:var(--card);transition:all .2s}
+.p:hover{transform:translateY(-2px);box-shadow:0 6px 18px -6px rgba(0,0,0,.10)}
+.p .h{display:flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted)}
+.p h4{margin:6px 0 5px;font-size:14.5px;font-weight:600;line-height:1.35}
+.p .au{font-size:12px;color:var(--muted);margin:0 0 6px}
+.p .nt{font-size:12.5px;color:var(--ink2);margin:0}
+.p .tags{margin-top:8px;display:flex;gap:5px;flex-wrap:wrap}
+.tag{font-size:10.5px;padding:2px 7px;border-radius:999px;background:rgba(47,111,94,.09);color:var(--primary);font-family:'JetBrains Mono',monospace}
+.tag.a{background:rgba(201,123,63,.11);color:#a2632f}
+.tag.g{background:rgba(47,111,94,.14);color:#215a4b;font-weight:600}
+.tag.miss{background:#f1e6e2;color:#a2543f}
+.hide{display:none!important}
+.note{font-size:12.5px;color:var(--muted);margin-top:10px}
+svg.i{width:19px;height:19px}
+footer{margin:60px 0 40px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+@media(max-width:860px){.wrap{padding:0 16px}table.mx{border-spacing:4px}td.cell{min-width:74px}p.tt{font-size:11.5px}}
+</style></head><body>
+<div class="wrap">
+<div style="padding:44px 0 6px">
+<h1>Transformer 发展线图谱</h1>
+<p class="lead">从 2017 年的原始架构到 2026 年的混合架构，本图谱按 <b>时间阶段 × 技术线程</b> 双轴组织 85 篇已核验论文，并标注每一条对 <b>上肢腕–肘–肩康复</b>（sEMG / 视觉 → 连续关节角、实时预测、离散 token、物理约束）的迁移价值。结论先行：<b>康复领域尚未吃透的三块，正好是 Transformer 已经解决的三块</b> —— 离散 token 化（T5）、长时序线性化（T7）、物理约束注入（T6）。</p>
+<div class="stats">
+<div class="stat"><b>85</b><span>已入库论文（PDF 实测）</span></div>
+<div class="stat"><b>85</b><span>核验元数据条目</span></div>
+<div class="stat"><b>15</b><span>康复迁移价值「高」</span></div>
+<div class="stat"><b>7</b><span>技术线程</span></div>
+</div></div>
+<section><div class="sh"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><h2>双轴矩阵：线程 × 阶段</h2></div>
+<p class="sub">纵轴是技术线程，横轴是时间阶段。单元格内的数字是论文数，圆点颜色表示该篇的康复迁移价值。这张矩阵回答的问题是：<b>哪些线程在康复领域还几乎是空白</b>。</p>
+<table class="mx"><thead><tr><th class="tl">线程 ＼ 阶段</th>
+<th>S0<br><span style="font-weight:400">2017-2018（原始架构与通用化）</span></th>
+<th>S1<br><span style="font-weight:400">2019-2020（预训练语言模型 + 稀疏/线性注意力）</span></th>
+<th>S2<br><span style="font-weight:400">2021-2022（视觉/语言多模态 + 长上下文外推 + 视频）</span></th>
+<th>S3<br><span style="font-weight:400">2023（动作生成扩散 + 状态空间模型兴起）</span></th>
+<th>S4<br><span style="font-weight:400">2024-2025（物理约束人体运动 + 世界模型）</span></th>
+<th>S5<br><span style="font-weight:400">2025-2026（线性注意力复兴 + 测试时记忆）</span></th>
+</tr></thead><tbody>
+<tr><th class="tl">T1 架构与注意力机制</th>
+<td class="cell"><div class="n"><span>3</span><span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#8a8a80"></span></span></div>
+<p class="tt" data-q="Layer Normalization">Layer Normalization</p>
+<p class="tt" data-q="Attention Is All You Need">Attention Is All You Need</p>
+<p class="tt" data-q="Universal Transformers">Universal Transformers</p>
+</td>
+<td class="cell"><div class="n"><span>6</span><span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#c97b3f"></span></span></div>
+<p class="tt" data-q="BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding">BERT: Pre-training of Deep Bidirectional Tra</p>
+<p class="tt" data-q="Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer">Exploring the Limits of Transfer Learning wi</p>
+<p class="tt" data-q="RoBERTa: A Robustly Optimized BERT Pretraining Approach">RoBERTa: A Robustly Optimized BERT Pretraini</p>
+<p class="tt" data-q="ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators">ELECTRA: Pre-training Text Encoders as Discr</p>
+<p class="tt" data-q="">+2 更多</p>
+</td>
+<td class="cell"><div class="n"><span>2</span><span><span class="dot" style="background:#2f6f5e"></span><span class="dot" style="background:#8a8a80"></span></span></div>
+<p class="tt" data-q="LoRA: Low-Rank Adaptation of Large Language Models">LoRA: Low-Rank Adaptation of Large Language </p>
+<p class="tt" data-q="A ConvNet for the 2020s">A ConvNet for the 2020s</p>
+</td>
+<td class="cell empty"><div class="n">·</div></td>
+<td class="cell empty"><div class="n">·</div></td>
+<td class="cell empty"><div class="n">·</div></td>
+</tr>
+<tr><th class="tl">T2 效率与长序列</th>
+<td class="cell empty"><div class="n">·</div></td>
+<td class="cell"><div class="n"><span>12</span><span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#8a8a80"></span></span></div>
+<p class="tt" data-q="Generating Long Sequences with Sparse Transformers">Generating Long Sequences with Sparse Transf</p>
+<p class="tt" data-q="Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context">Transformer-XL: Attentive Language Models Be</p>
+<p class="tt" data-q="ZeRO: Memory Optimizations Toward Training Trillion Parameter Models">ZeRO: Memory Optimizations Toward Training T</p>
+<p class="tt" data-q="Big Bird: Transformers for Longer Sequences">Big Bird: Transformers for Longer Sequences</p>
+<p class="tt" data-q="">+8 更多</p>
+</td>
+<td class="cell"><div class="n"><span>3</span><span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#c97b3f"></span></span></div>
+<p class="tt" data-q="TokenLearner: What Can 8 Learned Tokens Do for Images and Videos?">TokenLearner: What Can 8 Learned Tokens Do f</p>
+<p class="tt" data-q="Fast Inference from Transformers via Speculative Decoding">Fast Inference from Transformers via Specula</p>
+<p class="tt" data-q="FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness">FlashAttention: Fast and Memory-Efficient Ex</p>
+</td>
+<td class="cell"><div class="n"><span>3</span><span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#8a8a80"></span></span></div>
+<p class="tt" data-q="Efficient Memory Management for Large Language Model Serving with PagedAttention">Efficient Memory Management for Large Langua</p>
+<p class="tt" data-q="FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning">FlashAttention-2: Faster Attention with Bett</p>
+<p class="tt" data-q="Ring Attention with Blockwise Transformers for Near-Infinite Context">Ring Attention with Blockwise Transformers f</p>
+</td>
+<td class="cell empty"><div class="n">·</div></td>
+<td class="cell empty"><div class="n">·</div></td>
+</tr>
+<tr><th class="tl">T3 位置编码与长度外推</th>
+<td class="cell empty"><div class="n">·</div></td>
+<td class="cell empty"><div class="n">·</div></td>
+<td class="cell"><div class="n"><span>2</span><span><span class="dot" style="background:#2f6f5e"></span><span class="dot" style="background:#c97b3f"></span></span></div>
+<p class="tt" data-q="RoFormer: Enhanced Transformer with Rotary Position Embedding">RoFormer: Enhanced Transformer with Rotary P</p>
+<p class="tt" data-q="Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation">Train Short, Test Long: Attention with Linea</p>
+</td>
+<td class="cell empty"><div class="n">·</div></td>
+<td class="cell empty"><div class="n">·</div></td>
+<td class="cell empty"><div class="n">·</div></td>
+</tr>
+<tr><th class="tl">T4 视觉·多模态·人体</th>
+<td class="cell"><div class="n"><span>1</span><span><span class="dot" style="background:#8a8a80"></span></span></div>
+<p class="tt" data-q="PartNet: A Recursive Part Decomposition Network for Fine-grained and Hierarchical Shape Segmentation">PartNet: A Recursive Part Decomposition Netw</p>
+</td>
+<td class="cell"><div class="n"><span>3</span><span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#c97b3f"></span></span></div>
+<p class="tt" data-q="An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale">An Image is Worth 16x16 Words: Transformers </p>
+<p class="tt" data-q="End-to-End Human Pose and Mesh Reconstruction with Transformers">End-to-End Human Pose and Mesh Reconstructio</p>
+<p class="tt" data-q="ColloSSL: Collaborative Self-Supervised Learning for Human Activity Recognition">ColloSSL: Collaborative Self-Supervised Lear</p>
+</td>
+<td class="cell"><div class="n"><span>10</span><span><span class="dot" style="background:#2f6f5e"></span><span class="dot" style="background:#2f6f5e"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#2f6f5e"></span><span class="dot" style="background:#c97b3f"></span></span></div>
+<p class="tt" data-q="3D Human Pose Estimation with Spatial and Temporal Transformers">3D Human Pose Estimation with Spatial and Te</p>
+<p class="tt" data-q="Is Space-Time Attention All You Need for Video Understanding?">Is Space-Time Attention All You Need for Vid</p>
+<p class="tt" data-q="Learning Transferable Visual Models From Natural Language Supervision">Learning Transferable Visual Models From Nat</p>
+<p class="tt" data-q="Masked Autoencoders Are Scalable Vision Learners">Masked Autoencoders Are Scalable Vision Lear</p>
+<p class="tt" data-q="">+6 更多</p>
+</td>
+<td class="cell"><div class="n"><span>7</span><span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#2f6f5e"></span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#8a8a80"></span></span></div>
+<p class="tt" data-q="BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models">BLIP-2: Bootstrapping Language-Image Pre-tra</p>
+<p class="tt" data-q="DINOv2: Learning Robust Visual Features without Supervision">DINOv2: Learning Robust Visual Features with</p>
+<p class="tt" data-q="ImageBind: One Embedding Space To Bind Them All">ImageBind: One Embedding Space To Bind Them </p>
+<p class="tt" data-q="MotionAGFormer: Enhancing 3D Human Pose Estimation with a Transformer-GCNFormer Network">MotionAGFormer: Enhancing 3D Human Pose Esti</p>
+<p class="tt" data-q="">+3 更多</p>
+</td>
+<td class="cell"><div class="n"><span>2</span><span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#2f6f5e"></span></span></div>
+<p class="tt" data-q="SAM 2: Segment Anything in Images and Videos">SAM 2: Segment Anything in Images and Videos</p>
+<p class="tt" data-q="TokenHMR: Advancing Human Mesh Recovery with a Tokenized Pose Representation">TokenHMR: Advancing Human Mesh Recovery with</p>
+</td>
+<td class="cell empty"><div class="n">·</div></td>
+</tr>
+<tr><th class="tl">T5 动作生成与离散 token</th>
+<td class="cell empty"><div class="n">·</div></td>
+<td class="cell"><div class="n"><span>1</span><span><span class="dot" style="background:#c97b3f"></span></span></div>
+<p class="tt" data-q="Denoising Diffusion Probabilistic Models">Denoising Diffusion Probabilistic Models</p>
+</td>
+<td class="cell"><div class="n"><span>5</span><span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#2f6f5e"></span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#c97b3f"></span></span></div>
+<p class="tt" data-q="GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models">GLIDE: Towards Photorealistic Image Generati</p>
+<p class="tt" data-q="Zero-Shot Text-to-Image Generation">Zero-Shot Text-to-Image Generation</p>
+<p class="tt" data-q="Human Motion Diffusion Model">Human Motion Diffusion Model</p>
+<p class="tt" data-q="MaskGIT: Masked Generative Image Transformer">MaskGIT: Masked Generative Image Transformer</p>
+<p class="tt" data-q="">+1 更多</p>
+</td>
+<td class="cell"><div class="n"><span>2</span><span><span class="dot" style="background:#2f6f5e"></span><span class="dot" style="background:#2f6f5e"></span></span></div>
+<p class="tt" data-q="MotionGPT: Human Motion as a Foreign Language">MotionGPT: Human Motion as a Foreign Languag</p>
+<p class="tt" data-q="T2M-GPT: Generating Human Motion from Textual Descriptions with Discrete Representations">T2M-GPT: Generating Human Motion from Textua</p>
+</td>
+<td class="cell empty"><div class="n">·</div></td>
+<td class="cell"><div class="n"><span>1</span><span><span class="dot" style="background:#2f6f5e"></span></span></div>
+<p class="tt" data-q="A Novel Transformer-Based Method for Full Lower-Limb Joint Angles and Moments Prediction in Gait Using sEMG and IMU data">A Novel Transformer-Based Method for Full Lo</p>
+</td>
+</tr>
+<tr><th class="tl">T6 物理约束·世界模型</th>
+<td class="cell"><div class="n"><span>1</span><span><span class="dot" style="background:#8a8a80"></span></span></div>
+<p class="tt" data-q="World Models">World Models</p>
+</td>
+<td class="cell empty"><div class="n">·</div></td>
+<td class="cell"><div class="n"><span>1</span><span><span class="dot" style="background:#8a8a80"></span></span></div>
+<p class="tt" data-q="Temporal Difference Learning for Model Predictive Control">Temporal Difference Learning for Model Predi</p>
+</td>
+<td class="cell"><div class="n"><span>7</span><span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#2f6f5e"></span></span></div>
+<p class="tt" data-q="PhysDiff: Physics-Guided Human Motion Diffusion Model">PhysDiff: Physics-Guided Human Motion Diffus</p>
+<p class="tt" data-q="Diffusion Policy: Visuomotor Policy Learning via Action Diffusion">Diffusion Policy: Visuomotor Policy Learning</p>
+<p class="tt" data-q="Human Motion Diffusion as a Generative Prior">Human Motion Diffusion as a Generative Prior</p>
+<p class="tt" data-q="Mastering Diverse Domains through World Models">Mastering Diverse Domains through World Mode</p>
+<p class="tt" data-q="">+3 更多</p>
+</td>
+<td class="cell"><div class="n"><span>2</span><span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#c97b3f"></span></span></div>
+<p class="tt" data-q="Pre-Trained Video Generative Models as World Simulators">Pre-Trained Video Generative Models as World</p>
+<p class="tt" data-q="Upper-Limb Rehabilitation with a Dual-Mode Individualized Exoskeleton Robot: A Generative-Model-Based Solution">Upper-Limb Rehabilitation with a Dual-Mode I</p>
+</td>
+<td class="cell"><div class="n"><span>1</span><span><span class="dot" style="background:#2f6f5e"></span></span></div>
+<p class="tt" data-q="Machine Learning-Based Real-Time Detection of Compensatory Trunk Movements Using Trunk-Wrist Inertial Measurement Units">Machine Learning-Based Real-Time Detection o</p>
+</td>
+</tr>
+<tr><th class="tl">T7 状态空间与混合架构</th>
+<td class="cell empty"><div class="n">·</div></td>
+<td class="cell empty"><div class="n">·</div></td>
+<td class="cell"><div class="n"><span>1</span><span><span class="dot" style="background:#c97b3f"></span></span></div>
+<p class="tt" data-q="Efficiently Modeling Long Sequences with Structured State Spaces">Efficiently Modeling Long Sequences with Str</p>
+</td>
+<td class="cell"><div class="n"><span>4</span><span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#2f6f5e"></span><span class="dot" style="background:#2f6f5e"></span><span class="dot" style="background:#c97b3f"></span></span></div>
+<p class="tt" data-q="Hyena Hierarchy: Towards Larger Convolutional Language Models">Hyena Hierarchy: Towards Larger Convolutiona</p>
+<p class="tt" data-q="Mamba: Linear-Time Sequence Modeling with Selective State Spaces">Mamba: Linear-Time Sequence Modeling with Se</p>
+<p class="tt" data-q="iTransformer: Inverted Transformers Are Effective for Time Series Forecasting">iTransformer: Inverted Transformers Are Effe</p>
+<p class="tt" data-q="Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality">Transformers are SSMs: Generalized Models an</p>
+</td>
+<td class="cell"><div class="n"><span>4</span><span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#c97b3f"></span><span class="dot" style="background:#8a8a80"></span><span class="dot" style="background:#c97b3f"></span></span></div>
+<p class="tt" data-q="Byte Latent Transformer: Patches Scale Better Than Tokens">Byte Latent Transformer: Patches Scale Bette</p>
+<p class="tt" data-q="Gated Delta Networks: Improving Mamba2 with Delta Rule">Gated Delta Networks: Improving Mamba2 with </p>
+<p class="tt" data-q="Parallelizing Linear Transformers with the Delta Rule over Sequence Length">Parallelizing Linear Transformers with the D</p>
+<p class="tt" data-q="Titans: Learning to Memorize at Test Time">Titans: Learning to Memorize at Test Time</p>
+</td>
+<td class="cell"><div class="n"><span>1</span><span><span class="dot" style="background:#c97b3f"></span></span></div>
+<p class="tt" data-q="Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention">Native Sparse Attention: Hardware-Aligned an</p>
+</td>
+</tr>
+</tbody></table>
+<p class="note">说明：阶段与线程的归属是<b>人工判断</b>（见各线程 LIST.md），arXiv 只提供客观元数据；两者在卡片中分列标注，不混为一谈。</p>
+</section>
+<section><div class="sh"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h2>阶段时间线</h2></div>
+<p class="sub">每个阶段回答一个问题：这一阶段 Transformer 解决或暴露了什么，以及对康复的直接含义。</p>
+<ol class="tl">
+<li><h3><span class="yr">S0</span>奠基期 2017-2018（原始架构与通用化）</h3><p>原始架构给了「编码器–解码器 + 交叉注意力」的骨架，这正是「源语言→目标语言」翻译范式的原型。</p><p style="color:var(--primary)">→ 康复含义：ViKiT 的「翻译」比喻在此有出处；康复领域至今少有真正的 encoder–decoder 结构，多为单塔回归。</p>
+<p class="lst">本阶段入库 5 篇：Layer Normalization、Attention Is All You Need、Universal Transformers、World Models、PartNet: A Recursive Part Decompositio</p></li>
+<li><h3><span class="yr">S1</span>效率与规模化 2019-2020（预训练语言模型 + 稀疏/线性注意力）</h3><p>预训练 + 稀疏/线性注意力：模型开始能吃长序列，注意力不再是平方级瓶颈。</p><p style="color:var(--primary)">→ 康复含义：长时程 sEMG 窗口与长视频段成为可建模对象；但稀疏化会丢细节，正是 Wei 2026 批评 Informer 的点。</p>
+<p class="lst">本阶段入库 22 篇：BERT: Pre-training of Deep Bidirection、Exploring the Limits of Transfer Learn、RoBERTa: A Robustly Optimized BERT Pre、Generating Long Sequences with Sparse 、Transformer-XL: Attentive Language Mod、ZeRO: Memory Optimizations Toward Trai …</p></li>
+<li><h3><span class="yr">S2</span>多模态与长序列 2021-2022（视觉/语言多模态 + 长上下文外推 + 视频）</h3><p>位置编码（RoPE/ALiBi）与视频、多模态成型；「空间注意力 + 时间注意力分解」成为人体姿态标准做法。</p><p style="color:var(--primary)">→ 康复含义：ViKiT 时空 encoder 的直接蓝本；RoPE 对角度序列的长度外推友好，可缓解「训练 27 帧、测试 81 帧」。</p>
+<p class="lst">本阶段入库 24 篇：LoRA: Low-Rank Adaptation of Large Lan、TokenLearner: What Can 8 Learned Token、RoFormer: Enhanced Transformer with Ro、Train Short, Test Long: Attention with、3D Human Pose Estimation with Spatial 、Is Space-Time Attention All You Need f …</p></li>
+<li><h3><span class="yr">S3</span>生成式与效率革命 2023（动作生成扩散 + 状态空间模型兴起）</h3><p>离散动作 token（T2M-GPT / MotionGPT）与状态空间模型（Mamba）同时爆发：一头是「可翻译」，一头是「可长跑」。</p><p style="color:var(--primary)">→ 康复含义：离散 kinematic vocabulary 有现成范式；Mamba 线性时间对康复实时闭环是硬需求。</p>
+<p class="lst">本阶段入库 23 篇：PhysDiff: Physics-Guided Human Motion 、Efficient Memory Management for Large 、FlashAttention-2: Faster Attention wit、Ring Attention with Blockwise Transfor、BLIP-2: Bootstrapping Language-Image P、DINOv2: Learning Robust Visual Feature …</p></li>
+<li><h3><span class="yr">S4</span>具身·世界模型·物理 2024-2025（物理约束人体运动 + 世界模型）</h3><p>物理先验注入人体运动（PhysPT / PHC）与测试时记忆（Titans）：开始处理「不满足物理规律的输出」。</p><p style="color:var(--primary)">→ 康复含义：biomechanical grammar 从「手写 loss」升级为「可学习/可约束的先验」；个体化在线校准有了架构答案。</p>
+<p class="lst">本阶段入库 8 篇：SAM 2: Segment Anything in Images and 、TokenHMR: Advancing Human Mesh Recover、Pre-Trained Video Generative Models as、Upper-Limb Rehabilitation with a Dual-、Byte Latent Transformer: Patches Scale、Gated Delta Networks: Improving Mamba2 …</p></li>
+<li><h3><span class="yr">S5</span>混合架构与测试时学习 2025-2026（线性注意力复兴 + 测试时记忆）</h3><p>线性注意力与混合架构复兴（delta rule 等），注意力不再是唯一解。</p><p style="color:var(--primary)">→ 康复含义：算力受限的康复端侧部署有了新选项；也提醒我们别把「Transformer」当成唯一范式押注。</p>
+<p class="lst">本阶段入库 3 篇：A Novel Transformer-Based Method for F、Native Sparse Attention: Hardware-Alig、Machine Learning-Based Real-Time Detec</p></li>
+</ol></section>
+<section><div class="sh"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5M4 19h16"/><rect x="7" y="12" width="3" height="7" rx="1"/><rect x="12" y="8" width="3" height="11" rx="1"/><rect x="17" y="10" width="3" height="9" rx="1"/></svg><h2>线程分布与迁移密度</h2></div>
+<p class="sub">论文数不等于价值。真正要看的是「高迁移价值」的密度 —— 它决定了康复方向的优先级。</p>
+<div class="card">
+<div class="bench"><span class="bench-label">T1 架构与注意力机制</span><div class="bench-track"><div class="bench-fill" style="width:48%"></div></div><span class="bench-val">11·高1</span></div>
+<div class="bench"><span class="bench-label">T2 效率与长序列</span><div class="bench-track"><div class="bench-fill" style="width:78%"></div></div><span class="bench-val">18·高0</span></div>
+<div class="bench"><span class="bench-label">T3 位置编码与长度外推</span><div class="bench-track"><div class="bench-fill" style="width:9%"></div></div><span class="bench-val">2·高1</span></div>
+<div class="bench"><span class="bench-label">T4 视觉·多模态·人体</span><div class="bench-track"><div class="bench-fill" style="width:100%"></div></div><span class="bench-val">23·高5</span></div>
+<div class="bench"><span class="bench-label">T5 动作生成与离散 token</span><div class="bench-track"><div class="bench-fill" style="width:39%"></div></div><span class="bench-val">9·高4</span></div>
+<div class="bench"><span class="bench-label">T6 物理约束·世界模型</span><div class="bench-track"><div class="bench-fill" style="width:52%"></div></div><span class="bench-val">12·高2</span></div>
+<div class="bench"><span class="bench-label">T7 状态空间与混合架构</span><div class="bench-track"><div class="bench-fill" style="width:43%"></div></div><span class="bench-val">10·高2</span></div>
+</div>
+<p class="note">读法：条长 = 该线程总篇数；「高」= 其中康复迁移价值高的篇数。T5（动作生成与离散 token）与 T6（物理约束）在康复领域<b>几乎未被占用</b>，是创新密度最高的洼地。</p>
+</section>
+<section id="lib"><div class="sh"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><h2>可检索论文清单</h2></div>
+<p class="sub">按标题、作者、线程、阶段、note 全文检索。灰标 = 尚未入库，需人工补件。</p>
+<div class="filters">
+<input class="s" id="q" type="search" placeholder="搜索标题 / 作者 / 迁移作用…">
+<button class="f on" data-r="全部">全部</button>
+<button class="f" data-r="高">高</button>
+<button class="f" data-r="中">中</button>
+<button class="f" data-r="低">低</button>
+<button class="f" data-r="已入库">已入库</button>
+<button class="f" data-r="需人工取件">需人工取件</button>
+</div>
+<div class="row" id="cards">
+<div class="p" data-rel="低" data-ok="1" data-t="Layer Normalization Jimmy Lei Ba Jamie Ryan Kiros Geoffrey E. Hinton 批归一化替代方案，训练稳定性起点" data-stage="S0 T1" data-note="批归一化替代方案，训练稳定性起点">
+<div class="h"><span>2016</span><span>1607.06450v1</span></div>
+<h4>Layer Normalization</h4>
+<p class="au">Jimmy Lei Ba, Jamie Ryan Kiros, Geoffrey E. Hinton</p>
+<p class="nt">批归一化替代方案，训练稳定性起点</p>
+<div class="tags"><span class="tag">S0</span><span class="tag">T1</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Attention Is All You Need Ashish Vaswani Noam Shazeer Niki Parmar Transformer 原始论文，SEQ2SEQ 自回归+交叉注意力范式源头，ViKiT 的一切起点" data-stage="S0 T1" data-note="Transformer 原始论文，SEQ2SEQ 自回归+交叉注意力范式源头，ViKiT 的一切起点">
+<div class="h"><span>2017</span><span>1706.03762v7</span></div>
+<h4>Attention Is All You Need</h4>
+<p class="au">Ashish Vaswani, Noam Shazeer, Niki Parmar 等</p>
+<p class="nt">Transformer 原始论文，SEQ2SEQ 自回归+交叉注意力范式源头，ViKiT 的一切起点</p>
+<div class="tags"><span class="tag">S0</span><span class="tag">T1</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding Jacob Devlin Ming-Wei Chang Kenton Lee 双向编码器范式" data-stage="S1 T1" data-note="双向编码器范式">
+<div class="h"><span>2018</span><span>1810.04805v2</span></div>
+<h4>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</h4>
+<p class="au">Jacob Devlin, Ming-Wei Chang, Kenton Lee 等</p>
+<p class="nt">双向编码器范式</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T1</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Universal Transformers Mostafa Dehghani Stephan Gouws Oriol Vinyals 自适应计算深度，启发 STU/可变计算" data-stage="S0 T1" data-note="自适应计算深度，启发 STU/可变计算">
+<div class="h"><span>2018</span><span>1807.03819v3</span></div>
+<h4>Universal Transformers</h4>
+<p class="au">Mostafa Dehghani, Stephan Gouws, Oriol Vinyals 等</p>
+<p class="nt">自适应计算深度，启发 STU/可变计算</p>
+<div class="tags"><span class="tag">S0</span><span class="tag">T1</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="World Models David Ha Jürgen Schmidhuber 可学习动力学世界模型开山" data-stage="S0 T6" data-note="可学习动力学世界模型开山">
+<div class="h"><span>2018</span><span>1803.10122v4</span></div>
+<h4>World Models</h4>
+<p class="au">David Ha, Jürgen Schmidhuber</p>
+<p class="nt">可学习动力学世界模型开山</p>
+<div class="tags"><span class="tag">S0</span><span class="tag">T6</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer Colin Raffel Noam Shazeer Adam Roberts T5，文本到文本统一" data-stage="S1 T1" data-note="T5，文本到文本统一">
+<div class="h"><span>2019</span><span>1910.10683v4</span></div>
+<h4>Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer</h4>
+<p class="au">Colin Raffel, Noam Shazeer, Adam Roberts 等</p>
+<p class="nt">T5，文本到文本统一</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T1</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="RoBERTa: A Robustly Optimized BERT Pretraining Approach Yinhan Liu Myle Ott Naman Goyal 预训练配方优化" data-stage="S1 T1" data-note="预训练配方优化">
+<div class="h"><span>2019</span><span>1907.11692v1</span></div>
+<h4>RoBERTa: A Robustly Optimized BERT Pretraining Approach</h4>
+<p class="au">Yinhan Liu, Myle Ott, Naman Goyal 等</p>
+<p class="nt">预训练配方优化</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T1</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Generating Long Sequences with Sparse Transformers Rewon Child Scott Gray Alec Radford 稀疏注意力先驱" data-stage="S1 T2" data-note="稀疏注意力先驱">
+<div class="h"><span>2019</span><span>1904.10509v1</span></div>
+<h4>Generating Long Sequences with Sparse Transformers</h4>
+<p class="au">Rewon Child, Scott Gray, Alec Radford 等</p>
+<p class="nt">稀疏注意力先驱</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T2</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context Zihang Dai Zhilin Yang Yiming Yang 分段记忆机制，长时序建模参照" data-stage="S1 T2" data-note="分段记忆机制，长时序建模参照">
+<div class="h"><span>2019</span><span>1901.02860v3</span></div>
+<h4>Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context</h4>
+<p class="au">Zihang Dai, Zhilin Yang, Yiming Yang 等</p>
+<p class="nt">分段记忆机制，长时序建模参照</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T2</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="ZeRO: Memory Optimizations Toward Training Trillion Parameter Models Samyam Rajbhandari Jeff Rasley Olatunji Ruwase ZeRO/DeepScale 内存优化：大规模训练系统；与 Scaling Laws 配套阅读" data-stage="S1 T2" data-note="ZeRO/DeepScale 内存优化：大规模训练系统；与 Scaling Laws 配套阅读">
+<div class="h"><span>2019</span><span>1910.02054v3</span></div>
+<h4>ZeRO: Memory Optimizations Toward Training Trillion Parameter Models</h4>
+<p class="au">Samyam Rajbhandari, Jeff Rasley, Olatunji Ruwase 等</p>
+<p class="nt">ZeRO/DeepScale 内存优化：大规模训练系统；与 Scaling Laws 配套阅读</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T2</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="PartNet: A Recursive Part Decomposition Network for Fine-grained and Hierarchical Shape Segmentation Fenggen Yu Kun Liu Yan Zhang 层次化部件分割，解剖先验的早期思路" data-stage="S0 T4" data-note="层次化部件分割，解剖先验的早期思路">
+<div class="h"><span>2019</span><span>1903.00709v5</span></div>
+<h4>PartNet: A Recursive Part Decomposition Network for Fine-grained and Hierarchical Shape Segmentation</h4>
+<p class="au">Fenggen Yu, Kun Liu, Yan Zhang 等</p>
+<p class="nt">层次化部件分割，解剖先验的早期思路</p>
+<div class="tags"><span class="tag">S0</span><span class="tag">T4</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators Kevin Clark Minh-Thang Luong Quoc V. Le 判别式预训练，算力高效" data-stage="S1 T1" data-note="判别式预训练，算力高效">
+<div class="h"><span>2020</span><span>2003.10555v1</span></div>
+<h4>ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators</h4>
+<p class="au">Kevin Clark, Minh-Thang Luong, Quoc V. Le 等</p>
+<p class="nt">判别式预训练，算力高效</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T1</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="GLU Variants Improve Transformer Noam Shazeer 门控线性单元，稳定性小改动" data-stage="S1 T1" data-note="门控线性单元，稳定性小改动">
+<div class="h"><span>2020</span><span>2002.05202v1</span></div>
+<h4>GLU Variants Improve Transformer</h4>
+<p class="au">Noam Shazeer</p>
+<p class="nt">门控线性单元，稳定性小改动</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T1</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="Scaling Laws for Neural Language Models Jared Kaplan Sam McCandlish Tom Henighan 规模律，决定算力/数据/模型配比，效率取舍的理论依据" data-stage="S1 T1" data-note="规模律，决定算力/数据/模型配比，效率取舍的理论依据">
+<div class="h"><span>2020</span><span>2001.08361v1</span></div>
+<h4>Scaling Laws for Neural Language Models</h4>
+<p class="au">Jared Kaplan, Sam McCandlish, Tom Henighan 等</p>
+<p class="nt">规模律，决定算力/数据/模型配比，效率取舍的理论依据</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T1</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="Big Bird: Transformers for Longer Sequences Manzil Zaheer Guru Guruganesh Avinava Dubey 块稀疏注意力" data-stage="S1 T2" data-note="块稀疏注意力">
+<div class="h"><span>2020</span><span>2007.14062v2</span></div>
+<h4>Big Bird: Transformers for Longer Sequences</h4>
+<p class="au">Manzil Zaheer, Guru Guruganesh, Avinava Dubey 等</p>
+<p class="nt">块稀疏注意力</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T2</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="ETC: Encoding Long and Structured Inputs in Transformers Joshua Ainslie Santiago Ontanon Chris Alberti 全局+局部混合，长输入" data-stage="S1 T2" data-note="全局+局部混合，长输入">
+<div class="h"><span>2020</span><span>2004.08483v5</span></div>
+<h4>ETC: Encoding Long and Structured Inputs in Transformers</h4>
+<p class="au">Joshua Ainslie, Santiago Ontanon, Chris Alberti 等</p>
+<p class="nt">全局+局部混合，长输入</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T2</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Funnel-Transformer: Filtering out Sequential Redundancy for Efficient Language Processing Zihang Dai Guokun Lai Yiming Yang 漏斗式逐层降采样" data-stage="S1 T2" data-note="漏斗式逐层降采样">
+<div class="h"><span>2020</span><span>2006.03236v1</span></div>
+<h4>Funnel-Transformer: Filtering out Sequential Redundancy for Efficient Language Processing</h4>
+<p class="au">Zihang Dai, Guokun Lai, Yiming Yang 等</p>
+<p class="nt">漏斗式逐层降采样</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T2</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Linformer: Self-Attention with Linear Complexity Sinong Wang Belinda Z. Li Madian Khabsa 低秩投影降复杂度" data-stage="S1 T2" data-note="低秩投影降复杂度">
+<div class="h"><span>2020</span><span>2006.04768v3</span></div>
+<h4>Linformer: Self-Attention with Linear Complexity</h4>
+<p class="au">Sinong Wang, Belinda Z. Li, Madian Khabsa 等</p>
+<p class="nt">低秩投影降复杂度</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T2</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="Longformer: The Long-Document Transformer Iz Beltagy Matthew E. Peters Arman Cohan 滑窗+全局token，长序列稀疏模式" data-stage="S1 T2" data-note="滑窗+全局token，长序列稀疏模式">
+<div class="h"><span>2020</span><span>2004.05150v2</span></div>
+<h4>Longformer: The Long-Document Transformer</h4>
+<p class="au">Iz Beltagy, Matthew E. Peters, Arman Cohan</p>
+<p class="nt">滑窗+全局token，长序列稀疏模式</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T2</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Reformer: The Efficient Transformer Nikita Kitaev Łukasz Kaiser Anselm Levskaya LSH+可逆残差，效率派" data-stage="S1 T2" data-note="LSH+可逆残差，效率派">
+<div class="h"><span>2020</span><span>2001.04451v2</span></div>
+<h4>Reformer: The Efficient Transformer</h4>
+<p class="au">Nikita Kitaev, Łukasz Kaiser, Anselm Levskaya</p>
+<p class="nt">LSH+可逆残差，效率派</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T2</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Rethinking Attention with Performers Krzysztof Choromanski Valerii Likhosherstov David Dohan 核方法线性注意力" data-stage="S1 T2" data-note="核方法线性注意力">
+<div class="h"><span>2020</span><span>2009.14794v4</span></div>
+<h4>Rethinking Attention with Performers</h4>
+<p class="au">Krzysztof Choromanski, Valerii Likhosherstov, David Dohan 等</p>
+<p class="nt">核方法线性注意力</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T2</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Synthesizer: Rethinking Self-Attention in Transformer Models Yi Tay Dara Bahri Donald Metzler FFN 替代注意力的实验" data-stage="S1 T2" data-note="FFN 替代注意力的实验">
+<div class="h"><span>2020</span><span>2005.00743v3</span></div>
+<h4>Synthesizer: Rethinking Self-Attention in Transformer Models</h4>
+<p class="au">Yi Tay, Dara Bahri, Donald Metzler 等</p>
+<p class="nt">FFN 替代注意力的实验</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T2</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale Alexey Dosovitskiy Lucas Beyer Alexander Kolesnikov ViT，纯注意力视觉骨干，ViKiT tokenizer 上游" data-stage="S1 T4" data-note="ViT，纯注意力视觉骨干，ViKiT tokenizer 上游">
+<div class="h"><span>2020</span><span>2010.11929v2</span></div>
+<h4>An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale</h4>
+<p class="au">Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov 等</p>
+<p class="nt">ViT，纯注意力视觉骨干，ViKiT tokenizer 上游</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T4</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="End-to-End Human Pose and Mesh Reconstruction with Transformers Kevin Lin Lijuan Wang Zicheng Liu 早期 image→mesh Transformer" data-stage="S1 T4" data-note="早期 image→mesh Transformer">
+<div class="h"><span>2020</span><span>2012.09760v3</span></div>
+<h4>End-to-End Human Pose and Mesh Reconstruction with Transformers</h4>
+<p class="au">Kevin Lin, Lijuan Wang, Zicheng Liu</p>
+<p class="nt">早期 image→mesh Transformer</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T4</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="Denoising Diffusion Probabilistic Models Jonathan Ho Ajay Jain Pieter Abbeel DDPM，动作扩散生成源头" data-stage="S1 T5" data-note="DDPM，动作扩散生成源头">
+<div class="h"><span>2020</span><span>2006.11239v2</span></div>
+<h4>Denoising Diffusion Probabilistic Models</h4>
+<p class="au">Jonathan Ho, Ajay Jain, Pieter Abbeel</p>
+<p class="nt">DDPM，动作扩散生成源头</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T5</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="高" data-ok="1" data-t="LoRA: Low-Rank Adaptation of Large Language Models Edward J. Hu Yelong Shen Phillip Wallis 参数高效适配：康复个体差异极大，逐被试微调而不动预训练权重的标准路径" data-stage="S2 T1" data-note="参数高效适配：康复个体差异极大，逐被试微调而不动预训练权重的标准路径">
+<div class="h"><span>2021</span><span>2106.09685v2</span></div>
+<h4>LoRA: Low-Rank Adaptation of Large Language Models</h4>
+<p class="au">Edward J. Hu, Yelong Shen, Phillip Wallis 等</p>
+<p class="nt">参数高效适配：康复个体差异极大，逐被试微调而不动预训练权重的标准路径</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T1</span>
+<span class="tag g">迁移·高</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="TokenLearner: What Can 8 Learned Tokens Do for Images and Videos? Michael S. Ryoo AJ Piergiovanni Anurag Arnab 自适应少量 token，动态 token 化思路" data-stage="S2 T2" data-note="自适应少量 token，动态 token 化思路">
+<div class="h"><span>2021</span><span>2106.11297v4</span></div>
+<h4>TokenLearner: What Can 8 Learned Tokens Do for Images and Videos?</h4>
+<p class="au">Michael S. Ryoo, AJ Piergiovanni, Anurag Arnab 等</p>
+<p class="nt">自适应少量 token，动态 token 化思路</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T2</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="高" data-ok="1" data-t="RoFormer: Enhanced Transformer with Rotary Position Embedding Jianlin Su Yu Lu Shengfeng Pan 旋转位置编码，视觉时序角度建模友好，长度外推强" data-stage="S2 T3" data-note="旋转位置编码，视觉时序角度建模友好，长度外推强">
+<div class="h"><span>2021</span><span>2104.09864v5</span></div>
+<h4>RoFormer: Enhanced Transformer with Rotary Position Embedding</h4>
+<p class="au">Jianlin Su, Yu Lu, Shengfeng Pan 等</p>
+<p class="nt">旋转位置编码，视觉时序角度建模友好，长度外推强</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T3</span>
+<span class="tag g">迁移·高</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation Ofir Press Noah A. Smith Mike Lewis 线性偏置外推，免位置编码" data-stage="S2 T3" data-note="线性偏置外推，免位置编码">
+<div class="h"><span>2021</span><span>2108.12409v2</span></div>
+<h4>Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation</h4>
+<p class="au">Ofir Press, Noah A. Smith, Mike Lewis</p>
+<p class="nt">线性偏置外推，免位置编码</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T3</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="高" data-ok="1" data-t="3D Human Pose Estimation with Spatial and Temporal Transformers Ce Zheng Sijie Zhu Matias Mendieta 空间+时间分解注意力，ViKiT 时空 encoder 蓝本" data-stage="S2 T4" data-note="空间+时间分解注意力，ViKiT 时空 encoder 蓝本">
+<div class="h"><span>2021</span><span>2103.10455v3</span></div>
+<h4>3D Human Pose Estimation with Spatial and Temporal Transformers</h4>
+<p class="au">Ce Zheng, Sijie Zhu, Matias Mendieta 等</p>
+<p class="nt">空间+时间分解注意力，ViKiT 时空 encoder 蓝本</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T4</span>
+<span class="tag g">迁移·高</span>
+</div>
+<div class="p" data-rel="高" data-ok="1" data-t="Is Space-Time Attention All You Need for Video Understanding? Gedas Bertasius Heng Wang Lorenzo Torresani 分解时空注意力，ViKiT encoder 直接前身" data-stage="S2 T4" data-note="分解时空注意力，ViKiT encoder 直接前身">
+<div class="h"><span>2021</span><span>2102.05095v4</span></div>
+<h4>Is Space-Time Attention All You Need for Video Understanding?</h4>
+<p class="au">Gedas Bertasius, Heng Wang, Lorenzo Torresani</p>
+<p class="nt">分解时空注意力，ViKiT encoder 直接前身</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T4</span>
+<span class="tag g">迁移·高</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Learning Transferable Visual Models From Natural Language Supervision Alec Radford Jong Wook Kim Chris Hallacy CLIP，图文对比预训练" data-stage="S2 T4" data-note="CLIP，图文对比预训练">
+<div class="h"><span>2021</span><span>2103.00020v1</span></div>
+<h4>Learning Transferable Visual Models From Natural Language Supervision</h4>
+<p class="au">Alec Radford, Jong Wook Kim, Chris Hallacy 等</p>
+<p class="nt">CLIP，图文对比预训练</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T4</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Masked Autoencoders Are Scalable Vision Learners Kaiming He Xinlei Chen Saining Xie MAE 自监督视觉" data-stage="S2 T4" data-note="MAE 自监督视觉">
+<div class="h"><span>2021</span><span>2111.06377v3</span></div>
+<h4>Masked Autoencoders Are Scalable Vision Learners</h4>
+<p class="au">Kaiming He, Xinlei Chen, Saining Xie 等</p>
+<p class="nt">MAE 自监督视觉</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T4</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="Scaling Vision Transformers Xiaohua Zhai Alexander Kolesnikov Neil Houlsby 视觉规模律，算力/数据/模型配比的理论依据" data-stage="S2 T4" data-note="视觉规模律，算力/数据/模型配比的理论依据">
+<div class="h"><span>2021</span><span>2106.04560v2</span></div>
+<h4>Scaling Vision Transformers</h4>
+<p class="au">Xiaohua Zhai, Alexander Kolesnikov, Neil Houlsby 等</p>
+<p class="nt">视觉规模律，算力/数据/模型配比的理论依据</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T4</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="Swin Transformer: Hierarchical Vision Transformer using Shifted Windows Ze Liu Yutong Lin Yue Cao 层次化窗口注意力，多尺度特征，anatomy tokenizer 可借鉴" data-stage="S2 T4" data-note="层次化窗口注意力，多尺度特征，anatomy tokenizer 可借鉴">
+<div class="h"><span>2021</span><span>2103.14030v2</span></div>
+<h4>Swin Transformer: Hierarchical Vision Transformer using Shifted Windows</h4>
+<p class="au">Ze Liu, Yutong Lin, Yue Cao 等</p>
+<p class="nt">层次化窗口注意力，多尺度特征，anatomy tokenizer 可借鉴</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T4</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models Alex Nichol Prafulla Dhariwal Aditya Ramesh 文本引导扩散" data-stage="S2 T5" data-note="文本引导扩散">
+<div class="h"><span>2021</span><span>2112.10741v3</span></div>
+<h4>GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models</h4>
+<p class="au">Alex Nichol, Prafulla Dhariwal, Aditya Ramesh 等</p>
+<p class="nt">文本引导扩散</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T5</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Zero-Shot Text-to-Image Generation Aditya Ramesh Mikhail Pavlov Gabriel Goh DALL-E，离散 token 生成范式" data-stage="S2 T5" data-note="DALL-E，离散 token 生成范式">
+<div class="h"><span>2021</span><span>2102.12092v2</span></div>
+<h4>Zero-Shot Text-to-Image Generation</h4>
+<p class="au">Aditya Ramesh, Mikhail Pavlov, Gabriel Goh 等</p>
+<p class="nt">DALL-E，离散 token 生成范式</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T5</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="Efficiently Modeling Long Sequences with Structured State Spaces Albert Gu Karan Goel Christopher Ré S4，结构化状态空间" data-stage="S2 T7" data-note="S4，结构化状态空间">
+<div class="h"><span>2021</span><span>2111.00396v3</span></div>
+<h4>Efficiently Modeling Long Sequences with Structured State Spaces</h4>
+<p class="au">Albert Gu, Karan Goel, Christopher Ré</p>
+<p class="nt">S4，结构化状态空间</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T7</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="A ConvNet for the 2020s Zhuang Liu Hanzi Mao Chao-Yuan Wu ConvNeXt，卷积复兴对照" data-stage="S2 T1" data-note="ConvNeXt，卷积复兴对照">
+<div class="h"><span>2022</span><span>2201.03545v2</span></div>
+<h4>A ConvNet for the 2020s</h4>
+<p class="au">Zhuang Liu, Hanzi Mao, Chao-Yuan Wu 等</p>
+<p class="nt">ConvNeXt，卷积复兴对照</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T1</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Fast Inference from Transformers via Speculative Decoding Yaniv Leviathan Matan Kalman Yossi Matias 投机解码，加速自回归" data-stage="S2 T2" data-note="投机解码，加速自回归">
+<div class="h"><span>2022</span><span>2211.17192v2</span></div>
+<h4>Fast Inference from Transformers via Speculative Decoding</h4>
+<p class="au">Yaniv Leviathan, Matan Kalman, Yossi Matias</p>
+<p class="nt">投机解码，加速自回归</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T2</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness Tri Dao Daniel Y. Fu Stefano Ermon IO 感知注意力，长序列加速" data-stage="S2 T2" data-note="IO 感知注意力，长序列加速">
+<div class="h"><span>2022</span><span>2205.14135v2</span></div>
+<h4>FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness</h4>
+<p class="au">Tri Dao, Daniel Y. Fu, Stefano Ermon 等</p>
+<p class="nt">IO 感知注意力，长序列加速</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T2</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Hydra Attention: Efficient Attention with Many Heads Daniel Bolya Cheng-Yang Fu Xiaoliang Dai 多头线性" data-stage="S1 T2" data-note="多头线性">
+<div class="h"><span>2022</span><span>2209.07484v1</span></div>
+<h4>Hydra Attention: Efficient Attention with Many Heads</h4>
+<p class="au">Daniel Bolya, Cheng-Yang Fu, Xiaoliang Dai 等</p>
+<p class="nt">多头线性</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T2</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="ColloSSL: Collaborative Self-Supervised Learning for Human Activity Recognition Yash Jain Chi Ian Tang Chulhong Min 可穿戴自监督，康复传感器表征" data-stage="S1 T4" data-note="可穿戴自监督，康复传感器表征">
+<div class="h"><span>2022</span><span>2202.00758v1</span></div>
+<h4>ColloSSL: Collaborative Self-Supervised Learning for Human Activity Recognition</h4>
+<p class="au">Yash Jain, Chi Ian Tang, Chulhong Min 等</p>
+<p class="nt">可穿戴自监督，康复传感器表征</p>
+<div class="tags"><span class="tag">S1</span><span class="tag">T4</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Flamingo: a Visual Language Model for Few-Shot Learning Jean-Baptiste Alayrac Jeff Donahue Pauline Luc 交错块注意力，冻结感知编码器" data-stage="S2 T4" data-note="交错块注意力，冻结感知编码器">
+<div class="h"><span>2022</span><span>2204.14198v2</span></div>
+<h4>Flamingo: a Visual Language Model for Few-Shot Learning</h4>
+<p class="au">Jean-Baptiste Alayrac, Jeff Donahue, Pauline Luc 等</p>
+<p class="nt">交错块注意力，冻结感知编码器</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T4</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="InternVideo: General Video Foundation Models via Generative and Discriminative Learning Yi Wang Kunchang Li Yizhuo Li 视频基础模型，跨模态泛化" data-stage="S2 T4" data-note="视频基础模型，跨模态泛化">
+<div class="h"><span>2022</span><span>2212.03191v2</span></div>
+<h4>InternVideo: General Video Foundation Models via Generative and Discriminative Learning</h4>
+<p class="au">Yi Wang, Kunchang Li, Yizhuo Li 等</p>
+<p class="nt">视频基础模型，跨模态泛化</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T4</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="高" data-ok="1" data-t="MotionBERT: A Unified Perspective on Learning Human Motion Representations Wentao Zhu Xiaoxuan Ma Zhaoyang Liu 统一运动表征含运动学知识，双向自回归" data-stage="S2 T4" data-note="统一运动表征含运动学知识，双向自回归">
+<div class="h"><span>2022</span><span>2210.06551v5</span></div>
+<h4>MotionBERT: A Unified Perspective on Learning Human Motion Representations</h4>
+<p class="au">Wentao Zhu, Xiaoxuan Ma, Zhaoyang Liu 等</p>
+<p class="nt">统一运动表征含运动学知识，双向自回归</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T4</span>
+<span class="tag g">迁移·高</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="VideoMAE: Masked Autoencoders are Data-Efficient Learners for Self-Supervised Video Pre-Training Zhan Tong Yibing Song Jue Wang 视频自监督，视觉 backbone 选型" data-stage="S2 T4" data-note="视频自监督，视觉 backbone 选型">
+<div class="h"><span>2022</span><span>2203.12602v3</span></div>
+<h4>VideoMAE: Masked Autoencoders are Data-Efficient Learners for Self-Supervised Video Pre-Training</h4>
+<p class="au">Zhan Tong, Yibing Song, Jue Wang 等</p>
+<p class="nt">视频自监督，视觉 backbone 选型</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T4</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="高" data-ok="1" data-t="Human Motion Diffusion Model Guy Tevet Sigal Raab Brian Gordon MDM，动作扩散生成，多样性" data-stage="S2 T5" data-note="MDM，动作扩散生成，多样性">
+<div class="h"><span>2022</span><span>2209.14916v2</span></div>
+<h4>Human Motion Diffusion Model</h4>
+<p class="au">Guy Tevet, Sigal Raab, Brian Gordon 等</p>
+<p class="nt">MDM，动作扩散生成，多样性</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T5</span>
+<span class="tag g">迁移·高</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="MaskGIT: Masked Generative Image Transformer Huiwen Chang Han Zhang Lu Jiang 并行 token 生成（去自回归）" data-stage="S2 T5" data-note="并行 token 生成（去自回归）">
+<div class="h"><span>2022</span><span>2202.04200v1</span></div>
+<h4>MaskGIT: Masked Generative Image Transformer</h4>
+<p class="au">Huiwen Chang, Han Zhang, Lu Jiang 等</p>
+<p class="nt">并行 token 生成（去自回归）</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T5</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="MotionDiffuse: Text-Driven Human Motion Generation with Diffusion Model Mingyuan Zhang Zhongang Cai Liang Pan 文本驱动动作生成" data-stage="S2 T5" data-note="文本驱动动作生成">
+<div class="h"><span>2022</span><span>2208.15001v1</span></div>
+<h4>MotionDiffuse: Text-Driven Human Motion Generation with Diffusion Model</h4>
+<p class="au">Mingyuan Zhang, Zhongang Cai, Liang Pan 等</p>
+<p class="nt">文本驱动动作生成</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T5</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="PhysDiff: Physics-Guided Human Motion Diffusion Model Ye Yuan Jiaming Song Umar Iqbal 物理引导的动作扩散：把动力学可行性写进生成过程，而非事后惩罚" data-stage="S3 T6" data-note="物理引导的动作扩散：把动力学可行性写进生成过程，而非事后惩罚">
+<div class="h"><span>2022</span><span>2212.02500v3</span></div>
+<h4>PhysDiff: Physics-Guided Human Motion Diffusion Model</h4>
+<p class="au">Ye Yuan, Jiaming Song, Umar Iqbal 等</p>
+<p class="nt">物理引导的动作扩散：把动力学可行性写进生成过程，而非事后惩罚</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T6</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Temporal Difference Learning for Model Predictive Control Nicklas Hansen Xiaolong Wang Hao Su 可学习模型预测控制" data-stage="S2 T6" data-note="可学习模型预测控制">
+<div class="h"><span>2022</span><span>2203.04955v2</span></div>
+<h4>Temporal Difference Learning for Model Predictive Control</h4>
+<p class="au">Nicklas Hansen, Xiaolong Wang, Hao Su</p>
+<p class="nt">可学习模型预测控制</p>
+<div class="tags"><span class="tag">S2</span><span class="tag">T6</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="Efficient Memory Management for Large Language Model Serving with PagedAttention Woosuk Kwon Zhuohan Li Siyuan Zhuang vLLM 分页显存管理，推理侧工程" data-stage="S3 T2" data-note="vLLM 分页显存管理，推理侧工程">
+<div class="h"><span>2023</span><span>2309.06180v1</span></div>
+<h4>Efficient Memory Management for Large Language Model Serving with PagedAttention</h4>
+<p class="au">Woosuk Kwon, Zhuohan Li, Siyuan Zhuang 等</p>
+<p class="nt">vLLM 分页显存管理，推理侧工程</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T2</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning Tri Dao FA2 加速" data-stage="S3 T2" data-note="FA2 加速">
+<div class="h"><span>2023</span><span>2307.08691v1</span></div>
+<h4>FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning</h4>
+<p class="au">Tri Dao</p>
+<p class="nt">FA2 加速</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T2</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Ring Attention with Blockwise Transformers for Near-Infinite Context Hao Liu Matei Zaharia Pieter Abbeel 环形设备并行超长上下文" data-stage="S3 T2" data-note="环形设备并行超长上下文">
+<div class="h"><span>2023</span><span>2310.01889v4</span></div>
+<h4>Ring Attention with Blockwise Transformers for Near-Infinite Context</h4>
+<p class="au">Hao Liu, Matei Zaharia, Pieter Abbeel</p>
+<p class="nt">环形设备并行超长上下文</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T2</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models Junnan Li Dongxu Li Silvio Savarese 冻结编码器 + 轻量适配" data-stage="S3 T4" data-note="冻结编码器 + 轻量适配">
+<div class="h"><span>2023</span><span>2301.12597v3</span></div>
+<h4>BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models</h4>
+<p class="au">Junnan Li, Dongxu Li, Silvio Savarese 等</p>
+<p class="nt">冻结编码器 + 轻量适配</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T4</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="DINOv2: Learning Robust Visual Features without Supervision Maxime Oquab Timothée Darcet Théo Moutakanni 自监督视觉特征，冻结骨干更稳" data-stage="S3 T4" data-note="自监督视觉特征，冻结骨干更稳">
+<div class="h"><span>2023</span><span>2304.07193v2</span></div>
+<h4>DINOv2: Learning Robust Visual Features without Supervision</h4>
+<p class="au">Maxime Oquab, Timothée Darcet, Théo Moutakanni 等</p>
+<p class="nt">自监督视觉特征，冻结骨干更稳</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T4</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="高" data-ok="1" data-t="ImageBind: One Embedding Space To Bind Them All Rohit Girdhar Alaaeldin El-Nouby Zhuang Liu 跨模态共享嵌入空间，正是 RGB-D+IMU+sEMG 融合的候选架构" data-stage="S3 T4" data-note="跨模态共享嵌入空间，正是 RGB-D+IMU+sEMG 融合的候选架构">
+<div class="h"><span>2023</span><span>2305.05665v2</span></div>
+<h4>ImageBind: One Embedding Space To Bind Them All</h4>
+<p class="au">Rohit Girdhar, Alaaeldin El-Nouby, Zhuang Liu 等</p>
+<p class="nt">跨模态共享嵌入空间，正是 RGB-D+IMU+sEMG 融合的候选架构</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T4</span>
+<span class="tag g">迁移·高</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="MotionAGFormer: Enhancing 3D Human Pose Estimation with a Transformer-GCNFormer Network Soroush Mehraban Vida Adeli Babak Taati Transformer+GCN 混合，关节耦合建模" data-stage="S3 T4" data-note="Transformer+GCN 混合，关节耦合建模">
+<div class="h"><span>2023</span><span>2310.16288v1</span></div>
+<h4>MotionAGFormer: Enhancing 3D Human Pose Estimation with a Transformer-GCNFormer Network</h4>
+<p class="au">Soroush Mehraban, Vida Adeli, Babak Taati</p>
+<p class="nt">Transformer+GCN 混合，关节耦合建模</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T4</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="PoseFormerV2: Exploring Frequency Domain for Efficient and Robust 3D Human Pose Estimation Qitao Zhao Ce Zheng Mengyuan Liu 3D 姿态实例建模" data-stage="S3 T4" data-note="3D 姿态实例建模">
+<div class="h"><span>2023</span><span>2303.17472v1</span></div>
+<h4>PoseFormerV2: Exploring Frequency Domain for Efficient and Robust 3D Human Pose Estimation</h4>
+<p class="au">Qitao Zhao, Ce Zheng, Mengyuan Liu 等</p>
+<p class="nt">3D 姿态实例建模</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T4</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Segment Anything Alexander Kirillov Eric Mintun Nikhila Ravi SAM，提示驱动分割" data-stage="S3 T4" data-note="SAM，提示驱动分割">
+<div class="h"><span>2023</span><span>2304.02643v1</span></div>
+<h4>Segment Anything</h4>
+<p class="au">Alexander Kirillov, Eric Mintun, Nikhila Ravi 等</p>
+<p class="nt">SAM，提示驱动分割</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T4</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Visual Instruction Tuning Haotian Liu Chunyuan Li Qingyang Wu 视觉指令微调" data-stage="S3 T4" data-note="视觉指令微调">
+<div class="h"><span>2023</span><span>2304.08485v2</span></div>
+<h4>Visual Instruction Tuning</h4>
+<p class="au">Haotian Liu, Chunyuan Li, Qingyang Wu 等</p>
+<p class="nt">视觉指令微调</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T4</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="高" data-ok="1" data-t="MotionGPT: Human Motion as a Foreign Language Biao Jiang Xin Chen Wen Liu 把人体运动视为&#x27;外语&#x27;，token 化运动，翻译隐喻直接对应" data-stage="S3 T5" data-note="把人体运动视为&#x27;外语&#x27;，token 化运动，翻译隐喻直接对应">
+<div class="h"><span>2023</span><span>2306.14795v2</span></div>
+<h4>MotionGPT: Human Motion as a Foreign Language</h4>
+<p class="au">Biao Jiang, Xin Chen, Wen Liu 等</p>
+<p class="nt">把人体运动视为&#x27;外语&#x27;，token 化运动，翻译隐喻直接对应</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T5</span>
+<span class="tag g">迁移·高</span>
+</div>
+<div class="p" data-rel="高" data-ok="1" data-t="T2M-GPT: Generating Human Motion from Textual Descriptions with Discrete Representations Jianrong Zhang Yangsong Zhang Xiaodong Cun 离散运动 token+GPT，kinematic vocabulary 直接前身" data-stage="S3 T5" data-note="离散运动 token+GPT，kinematic vocabulary 直接前身">
+<div class="h"><span>2023</span><span>2301.06052v4</span></div>
+<h4>T2M-GPT: Generating Human Motion from Textual Descriptions with Discrete Representations</h4>
+<p class="au">Jianrong Zhang, Yangsong Zhang, Xiaodong Cun 等</p>
+<p class="nt">离散运动 token+GPT，kinematic vocabulary 直接前身</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T5</span>
+<span class="tag g">迁移·高</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="Diffusion Policy: Visuomotor Policy Learning via Action Diffusion Cheng Chi Zhenjia Xu Siyuan Feng 扩散策略，动作序列生成范式" data-stage="S3 T6" data-note="扩散策略，动作序列生成范式">
+<div class="h"><span>2023</span><span>2303.04137v5</span></div>
+<h4>Diffusion Policy: Visuomotor Policy Learning via Action Diffusion</h4>
+<p class="au">Cheng Chi, Zhenjia Xu, Siyuan Feng 等</p>
+<p class="nt">扩散策略，动作序列生成范式</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T6</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="Human Motion Diffusion as a Generative Prior Yonatan Shafir Guy Tevet Roy Kapon 运动学/动力学约束的扩散先验" data-stage="S3 T6" data-note="运动学/动力学约束的扩散先验">
+<div class="h"><span>2023</span><span>2303.01418v3</span></div>
+<h4>Human Motion Diffusion as a Generative Prior</h4>
+<p class="au">Yonatan Shafir, Guy Tevet, Roy Kapon 等</p>
+<p class="nt">运动学/动力学约束的扩散先验</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T6</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Mastering Diverse Domains through World Models Danijar Hafner Jurgis Pasukonis Jimmy Ba DreamerV3，通用世界模型" data-stage="S3 T6" data-note="DreamerV3，通用世界模型">
+<div class="h"><span>2023</span><span>2301.04104v2</span></div>
+<h4>Mastering Diverse Domains through World Models</h4>
+<p class="au">Danijar Hafner, Jurgis Pasukonis, Jimmy Ba 等</p>
+<p class="nt">DreamerV3，通用世界模型</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T6</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="TD-MPC2: Scalable, Robust World Models for Continuous Control Nicklas Hansen Hao Su Xiaolong Wang TD 世界模型，可控预测" data-stage="S3 T6" data-note="TD 世界模型，可控预测">
+<div class="h"><span>2023</span><span>2310.16828v2</span></div>
+<h4>TD-MPC2: Scalable, Robust World Models for Continuous Control</h4>
+<p class="au">Nicklas Hansen, Hao Su, Xiaolong Wang</p>
+<p class="nt">TD 世界模型，可控预测</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T6</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Hyena Hierarchy: Towards Larger Convolutional Language Models Michael Poli Stefano Massaroli Eric Nguyen 隐式长卷积" data-stage="S3 T7" data-note="隐式长卷积">
+<div class="h"><span>2023</span><span>2302.10866v3</span></div>
+<h4>Hyena Hierarchy: Towards Larger Convolutional Language Models</h4>
+<p class="au">Michael Poli, Stefano Massaroli, Eric Nguyen 等</p>
+<p class="nt">隐式长卷积</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T7</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="高" data-ok="1" data-t="Mamba: Linear-Time Sequence Modeling with Selective State Spaces Albert Gu Tri Dao 选择性状态空间，线性时间长序列，实时预测潜力" data-stage="S3 T7" data-note="选择性状态空间，线性时间长序列，实时预测潜力">
+<div class="h"><span>2023</span><span>2312.00752v2</span></div>
+<h4>Mamba: Linear-Time Sequence Modeling with Selective State Spaces</h4>
+<p class="au">Albert Gu, Tri Dao</p>
+<p class="nt">选择性状态空间，线性时间长序列，实时预测潜力</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T7</span>
+<span class="tag g">迁移·高</span>
+</div>
+<div class="p" data-rel="高" data-ok="1" data-t="iTransformer: Inverted Transformers Are Effective for Time Series Forecasting Yong Liu Tengge Hu Haoran Zhang 把注意力建在「变量维」而非「时间维」，正是关节角这类多变量序列的合适归纳偏置；MDPI iTransformer-DTL 即沿此路线做 sEMG/IMU 解码" data-stage="S3 T7" data-note="把注意力建在「变量维」而非「时间维」，正是关节角这类多变量序列的合适归纳偏置；MDPI iTransformer-DTL 即沿此路线做 sEMG/IMU 解码">
+<div class="h"><span>2023</span><span>2310.06625v4</span></div>
+<h4>iTransformer: Inverted Transformers Are Effective for Time Series Forecasting</h4>
+<p class="au">Yong Liu, Tengge Hu, Haoran Zhang 等</p>
+<p class="nt">把注意力建在「变量维」而非「时间维」，正是关节角这类多变量序列的合适归纳偏置；MDPI iTransformer-DTL 即沿此路线做 sEMG/IMU 解码</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T7</span>
+<span class="tag g">迁移·高</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="SAM 2: Segment Anything in Images and Videos Nikhila Ravi Valentin Gabeur Yuan-Ting Hu 视频分割，anatomy region 提取的自动化路线" data-stage="S4 T4" data-note="视频分割，anatomy region 提取的自动化路线">
+<div class="h"><span>2024</span><span>2408.00714v2</span></div>
+<h4>SAM 2: Segment Anything in Images and Videos</h4>
+<p class="au">Nikhila Ravi, Valentin Gabeur, Yuan-Ting Hu 等</p>
+<p class="nt">视频分割，anatomy region 提取的自动化路线</p>
+<div class="tags"><span class="tag">S4</span><span class="tag">T4</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="高" data-ok="1" data-t="TokenHMR: Advancing Human Mesh Recovery with a Tokenized Pose Representation Sai Kumar Dwivedi Yu Sun Priyanka Patel 姿态词表+token 预测，最贴近&#x27;词表化&#x27;翻译思想" data-stage="S4 T4" data-note="姿态词表+token 预测，最贴近&#x27;词表化&#x27;翻译思想">
+<div class="h"><span>2024</span><span>2404.16752v1</span></div>
+<h4>TokenHMR: Advancing Human Mesh Recovery with a Tokenized Pose Representation</h4>
+<p class="au">Sai Kumar Dwivedi, Yu Sun, Priyanka Patel 等</p>
+<p class="nt">姿态词表+token 预测，最贴近&#x27;词表化&#x27;翻译思想</p>
+<div class="tags"><span class="tag">S4</span><span class="tag">T4</span>
+<span class="tag g">迁移·高</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Genie: Generative Interactive Environments Jake Bruce Michael Dennis Ashley Edwards 可交互生成世界" data-stage="S3 T6" data-note="可交互生成世界">
+<div class="h"><span>2024</span><span>2402.15391v1</span></div>
+<h4>Genie: Generative Interactive Environments</h4>
+<p class="au">Jake Bruce, Michael Dennis, Ashley Edwards 等</p>
+<p class="nt">可交互生成世界</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T6</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="高" data-ok="1" data-t="PhysPT: Physics-aware Pretrained Transformer for Estimating Human Dynamics from Monocular Videos Yufei Zhang Jeffrey O. Kephart Zijun Cui 物理感知预训练 Transformer，从单目视频估计人体动力学；biomechanical grammar 的最强外部先例" data-stage="S3 T6" data-note="物理感知预训练 Transformer，从单目视频估计人体动力学；biomechanical grammar 的最强外部先例">
+<div class="h"><span>2024</span><span>2404.04430v1</span></div>
+<h4>PhysPT: Physics-aware Pretrained Transformer for Estimating Human Dynamics from Monocular Videos</h4>
+<p class="au">Yufei Zhang, Jeffrey O. Kephart, Zijun Cui 等</p>
+<p class="nt">物理感知预训练 Transformer，从单目视频估计人体动力学；biomechanical grammar 的最强外部先例</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T6</span>
+<span class="tag g">迁移·高</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="Pre-Trained Video Generative Models as World Simulators  Sora，世界模拟器视角" data-stage="S4 T6" data-note="Sora，世界模拟器视角">
+<div class="h"><span>2024</span><span>2502.07825v1</span></div>
+<h4>Pre-Trained Video Generative Models as World Simulators</h4>
+<p class="au"></p>
+<p class="nt">Sora，世界模拟器视角</p>
+<div class="tags"><span class="tag">S4</span><span class="tag">T6</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="Upper-Limb Rehabilitation with a Dual-Mode Individualized Exoskeleton Robot: A Generative-Model-Based Solution Yu Chen Shu Miao Jing Ye 清华，扩散模型生成个体化助力轨迹 + 异常检测网络，上肢外骨骼的生成式控制路线" data-stage="S4 T6" data-note="清华，扩散模型生成个体化助力轨迹 + 异常检测网络，上肢外骨骼的生成式控制路线">
+<div class="h"><span>2024</span><span>2409.03193v1</span></div>
+<h4>Upper-Limb Rehabilitation with a Dual-Mode Individualized Exoskeleton Robot: A Generative-Model-Based Solution</h4>
+<p class="au">Yu Chen, Shu Miao, Jing Ye 等</p>
+<p class="nt">清华，扩散模型生成个体化助力轨迹 + 异常检测网络，上肢外骨骼的生成式控制路线</p>
+<div class="tags"><span class="tag">S4</span><span class="tag">T6</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Byte Latent Transformer: Patches Scale Better Than Tokens Artidoro Pagnoni Ram Pasunuru Pedro Rodriguez 字节级 latent 降推理开销" data-stage="S4 T7" data-note="字节级 latent 降推理开销">
+<div class="h"><span>2024</span><span>2412.09871v1</span></div>
+<h4>Byte Latent Transformer: Patches Scale Better Than Tokens</h4>
+<p class="au">Artidoro Pagnoni, Ram Pasunuru, Pedro Rodriguez 等</p>
+<p class="nt">字节级 latent 降推理开销</p>
+<div class="tags"><span class="tag">S4</span><span class="tag">T7</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="Gated Delta Networks: Improving Mamba2 with Delta Rule Songlin Yang Jan Kautz Ali Hatamizadeh delta rule 线性注意力" data-stage="S4 T7" data-note="delta rule 线性注意力">
+<div class="h"><span>2024</span><span>2412.06464v3</span></div>
+<h4>Gated Delta Networks: Improving Mamba2 with Delta Rule</h4>
+<p class="au">Songlin Yang, Jan Kautz, Ali Hatamizadeh</p>
+<p class="nt">delta rule 线性注意力</p>
+<div class="tags"><span class="tag">S4</span><span class="tag">T7</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="低" data-ok="1" data-t="Parallelizing Linear Transformers with the Delta Rule over Sequence Length Songlin Yang Bailin Wang Yu Zhang DeltaNet，并行 delta 规则" data-stage="S4 T7" data-note="DeltaNet，并行 delta 规则">
+<div class="h"><span>2024</span><span>2406.06484v6</span></div>
+<h4>Parallelizing Linear Transformers with the Delta Rule over Sequence Length</h4>
+<p class="au">Songlin Yang, Bailin Wang, Yu Zhang 等</p>
+<p class="nt">DeltaNet，并行 delta 规则</p>
+<div class="tags"><span class="tag">S4</span><span class="tag">T7</span>
+<span class="tag ">迁移·低</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="Titans: Learning to Memorize at Test Time Ali Behrouz Peilin Zhong Vahab Mirrokni 测试时记忆，长期个体化在线适应（康复个体差异）启发" data-stage="S4 T7" data-note="测试时记忆，长期个体化在线适应（康复个体差异）启发">
+<div class="h"><span>2024</span><span>2501.00663v1</span></div>
+<h4>Titans: Learning to Memorize at Test Time</h4>
+<p class="au">Ali Behrouz, Peilin Zhong, Vahab Mirrokni</p>
+<p class="nt">测试时记忆，长期个体化在线适应（康复个体差异）启发</p>
+<div class="tags"><span class="tag">S4</span><span class="tag">T7</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality Tri Dao Albert Gu Mamba-2，SSM 与 Transformer 的对偶统一" data-stage="S3 T7" data-note="Mamba-2，SSM 与 Transformer 的对偶统一">
+<div class="h"><span>2024</span><span>2405.21060v1</span></div>
+<h4>Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality</h4>
+<p class="au">Tri Dao, Albert Gu</p>
+<p class="nt">Mamba-2，SSM 与 Transformer 的对偶统一</p>
+<div class="tags"><span class="tag">S3</span><span class="tag">T7</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="高" data-ok="1" data-t="A Novel Transformer-Based Method for Full Lower-Limb Joint Angles and Moments Prediction in Gait Using sEMG and IMU data Farshad Haghgoo Daryakenari Tara Farizeh sEMG+IMU 双模态 Transformer 预测全下肢关节角与关节力矩，长时程实时；与 Wei 2026 同赛道的新对手" data-stage="S5 T5" data-note="sEMG+IMU 双模态 Transformer 预测全下肢关节角与关节力矩，长时程实时；与 Wei 2026 同赛道的新对手">
+<div class="h"><span>2025</span><span>2506.04577v1</span></div>
+<h4>A Novel Transformer-Based Method for Full Lower-Limb Joint Angles and Moments Prediction in Gait Using sEMG and IMU data</h4>
+<p class="au">Farshad Haghgoo Daryakenari, Tara Farizeh</p>
+<p class="nt">sEMG+IMU 双模态 Transformer 预测全下肢关节角与关节力矩，长时程实时；与 Wei 2026 同赛道的新对手</p>
+<div class="tags"><span class="tag">S5</span><span class="tag">T5</span>
+<span class="tag g">迁移·高</span>
+</div>
+<div class="p" data-rel="中" data-ok="1" data-t="Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention Jingyang Yuan Huazuo Gao Damai Dai 硬件对齐稀疏注意力，长上下文效率新解" data-stage="S5 T7" data-note="硬件对齐稀疏注意力，长上下文效率新解">
+<div class="h"><span>2025</span><span>2502.11089v2</span></div>
+<h4>Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention</h4>
+<p class="au">Jingyang Yuan, Huazuo Gao, Damai Dai 等</p>
+<p class="nt">硬件对齐稀疏注意力，长上下文效率新解</p>
+<div class="tags"><span class="tag">S5</span><span class="tag">T7</span>
+<span class="tag a">迁移·中</span>
+</div>
+<div class="p" data-rel="高" data-ok="1" data-t="Machine Learning-Based Real-Time Detection of Compensatory Trunk Movements Using Trunk-Wrist Inertial Measurement Units Jannis Gabler Clément Lhoste Max Quast ETH Zurich，腕+躯干双 IMU 实时检测代偿性躯干运动（XGBoost，macro-F1 0.80）；TP-03 肩肘代偿的直接基线——且它没用 Transformer，说明该任务尚未被注意力架构攻克" data-stage="S5 T6" data-note="ETH Zurich，腕+躯干双 IMU 实时检测代偿性躯干运动（XGBoost，macro-F1 0.80）；TP-03 肩肘代偿的直接基线——且它没用 Transformer，说明该任务尚未被注意力架构攻克">
+<div class="h"><span>2026</span><span>2604.12591v1</span></div>
+<h4>Machine Learning-Based Real-Time Detection of Compensatory Trunk Movements Using Trunk-Wrist Inertial Measurement Units</h4>
+<p class="au">Jannis Gabler, Clément Lhoste, Max Quast 等</p>
+<p class="nt">ETH Zurich，腕+躯干双 IMU 实时检测代偿性躯干运动（XGBoost，macro-F1 0.80）；TP-03 肩肘代偿的直接基线——且它没用 Transformer，说明该任务尚未被注意力架构攻克</p>
+<div class="tags"><span class="tag">S5</span><span class="tag">T6</span>
+<span class="tag g">迁移·高</span>
+</div>
+</div>
+<p class="note" id="cnt"></p>
+</section>
+<section><div class="sh"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg><h2>推演：Transformer 已解决 → 康复可用的三个缺口</h2></div>
+<p class="sub">以下为<b>推断</b>，不是既有事实。每条都标注了它在语料中的证据来源，以及需要用实验证伪的判据。</p>
+<div class="card">
+<div style="display:grid;gap:14px">
+<div style="border:1px solid var(--line);border-radius:13px;padding:15px 17px;background:#fcfbf8">
+<div class="h" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--primary)">D1 · 证据线程 T5</div>
+<h4 style="margin:5px 0 7px;font-size:15.5px">离散 kinematic token 取代连续角度回归</h4>
+<p style="margin:0 0 6px;font-size:13px;color:var(--ink2)"><b>语料证据：</b>T2M-GPT / MotionGPT 已把连续运动量化成离散 token 再用自回归建模；TokenHMR 已把姿态做成词表。</p>
+<p style="margin:0 0 6px;font-size:13px;color:var(--ink2)"><b>可做什么：</b>ViKiT 现有 256 桶 bucketize 仍是&lt;b&gt;硬量化&lt;/b&gt;，会丢分辨率且训练/推理不匹配。可改用&lt;b&gt;残差 VQ-VAE + EMA 码本更新 + 死码复活&lt;/b&gt;，与 T2M-GPT 的 VQ 方案对齐。</p>
+<p style="margin:0;font-size:12.5px;color:var(--muted)"><b>证伪判据：</b>判据：同参数量下，VQ 版本 MAE 必须低于 bucketize；且码本利用率（非零码字占比）需 &amp;gt; 80%。</p>
+</div>
+<div style="border:1px solid var(--line);border-radius:13px;padding:15px 17px;background:#fcfbf8">
+<div class="h" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--primary)">D2 · 证据线程 T7</div>
+<h4 style="margin:5px 0 7px;font-size:15.5px">长时序实时预测：线性/混合架构替代纯注意力</h4>
+<p style="margin:0 0 6px;font-size:13px;color:var(--ink2)"><b>语料证据：</b>Mamba 证明选择性状态空间可线性时间建模长序列；2025 的 delta rule 复兴说明注意力不再是唯一解。</p>
+<p style="margin:0 0 6px;font-size:13px;color:var(--ink2)"><b>可做什么：</b>康复端侧算力受限（Wei 2026 用 Tesla T4 训练 &amp;lt;2 分钟），300 ms 提前预测 + 长窗口在纯注意力下成本高。可做&lt;b&gt;注意力/SSM 混合编码器&lt;/b&gt;，前段注意力抓局部关节耦合、后段 SSM 抓长时程。</p>
+<p style="margin:0;font-size:12.5px;color:var(--muted)"><b>证伪判据：</b>判据：同等 MAE 下参数量与推理延迟显著低于纯 Transformer；且延迟抖动（jitter）必须下降。</p>
+</div>
+<div style="border:1px solid var(--line);border-radius:13px;padding:15px 17px;background:#fcfbf8">
+<div class="h" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--primary)">D3 · 证据线程 T6</div>
+<h4 style="margin:5px 0 7px;font-size:15.5px">物理约束从「手写 loss」升级为「可学习先验」</h4>
+<p style="margin:0 0 6px;font-size:13px;color:var(--ink2)"><b>语料证据：</b>PhysPT / PHC 把物理一致性作为预训练约束而非纯后处理；章隆彬团队 NMS+ML 混合已在康复侧验证过物理+学习路线。</p>
+<p style="margin:0 0 6px;font-size:13px;color:var(--ink2)"><b>可做什么：</b>ViKiT 现有 6 项 grammar loss 是手写标量惩罚。可升级为&lt;b&gt;能量/约束模型 + projection 投影解码&lt;/b&gt;：训练期学约束强度，推理期把预测投影回可行域（ROM + FK），得到&lt;b&gt;硬保证&lt;/b&gt;而非软惩罚。</p>
+<p style="margin:0;font-size:12.5px;color:var(--muted)"><b>证伪判据：</b>判据：ROM violation rate 必须&lt;b&gt;恒等于 0&lt;/b&gt;（硬约束定义），且 MAE 相对软 loss 的退化需在统计显著范围内可接受。</p>
+</div>
+<div style="border:1px solid var(--line);border-radius:13px;padding:15px 17px;background:#fcfbf8">
+<div class="h" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--primary)">D4 · 证据线程 T3</div>
+<h4 style="margin:5px 0 7px;font-size:15.5px">位置编码与长度外推：解决训练/测试窗口不一致</h4>
+<p style="margin:0 0 6px;font-size:13px;color:var(--ink2)"><b>语料证据：</b>RoPE 通过旋转把相对位置编码进注意力，长度外推能力远好于绝对位置编码；ALiBi 走另一条外推路线。</p>
+<p style="margin:0 0 6px;font-size:13px;color:var(--ink2)"><b>可做什么：</b>康复数据采集窗口常变（250 ms / 150 ms / 不等），且跨速度、跨被试长度不一致。引入 RoPE 可让模型在&lt;b&gt;未见过的窗口长度&lt;/b&gt;上直接推理。</p>
+<p style="margin:0;font-size:12.5px;color:var(--muted)"><b>证伪判据：</b>判据：在训练未出现过的窗口长度上，MAE 相对 baseline 劣化 &amp;lt; 10%。</p>
+</div>
+<div style="border:1px solid var(--line);border-radius:13px;padding:15px 17px;background:#fcfbf8">
+<div class="h" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--primary)">D5 · 证据线程 T4</div>
+<h4 style="margin:5px 0 7px;font-size:15.5px">多模态融合：RGB-D + IMU + sEMG 的统一 token 系统</h4>
+<p style="margin:0 0 6px;font-size:13px;color:var(--ink2)"><b>语料证据：</b>Flamingo 的交错块注意力证明「冻结专家 + 轻量适配」可在异构模态间传信息，且不破坏预训练权重。</p>
+<p style="margin:0 0 6px;font-size:13px;color:var(--ink2)"><b>可做什么：</b>本项目 D435i（RGB-D + 内置 IMU）与章隆彬团队 sEMG 天然是异构模态。可用&lt;b&gt;各自编码器 + 交错块 cross-attention&lt;/b&gt;，先单模态可用，再逐步融合 —— 避免一开始就因多模态对齐失败而全盘皆输。</p>
+<p style="margin:0;font-size:12.5px;color:var(--muted)"><b>证伪判据：</b>判据：单模态子模型各自可用；融合后至少不比单模态最差者差。</p>
+</div>
+<div style="border:1px solid var(--line);border-radius:13px;padding:15px 17px;background:#fcfbf8">
+<div class="h" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--primary)">D6 · 证据线程 T4</div>
+<h4 style="margin:5px 0 7px;font-size:15.5px">个体化：测试时记忆 / 参数高效适配</h4>
+<p style="margin:0 0 6px;font-size:13px;color:var(--ink2)"><b>语料证据：</b>LoRA 与 Titans（测试时记忆）提供了「少量样本快速个性化」的架构路径，而非全量重训。</p>
+<p style="margin:0 0 6px;font-size:13px;color:var(--ink2)"><b>可做什么：</b>康复个体差异极大（章隆彬路线也强调跨被试迁移难）。可把 anatomy tokenizer + kinematic codebook 用 LoRA 冻结大部分预训练权重，逐个被试用极少数据适配。</p>
+<p style="margin:0;font-size:12.5px;color:var(--muted)"><b>证伪判据：</b>判据：每被试 ≤1 分钟适配数据即可显著降低误差，且原始权重不被污染。</p>
+</div>
+</div></div>
+<p class="note"><b>边界声明：</b>以上是「Transformer 已有能力 → 康复可迁移」的<b>推断</b>，尚未经本项目实验验证。其中 D1/D3 与 ViKiT 现有设计直接冲突或升级，实施前必须先与 <code>03_方法设计/</code> 的既定决策对齐并做查重，不能直接开跑。</p>
+</section>
+<footer>
+语料元数据来源：arXiv 官方 API（逐条标题检索 + 相似度比对，阈值 0.90 自动采信）；PDF 仅取 arXiv 开放获取版本。阶段/线程归属、迁移价值、推演方向均为<b>人工判断</b>，已在卡片中与官方元数据分列。本页面为本地自包含 HTML，不引用任何 CDN 脚本（仅 Google Fonts 字体）。
+</footer></div>
+<script>
+(function(){
+ var q=document.getElementById('q'),cards=[].slice.call(document.querySelectorAll('#cards .p')),btns=[].slice.call(document.querySelectorAll('button.f')),cnt=document.getElementById('cnt'),cur='全部';
+ function run(){
+  var s=(q.value||'').toLowerCase(),n=0;
+  cards.forEach(function(c){
+   var okR=(cur==='全部')||(cur==='已入库'&&c.dataset.ok==='1')||(cur==='需人工取件'&&c.dataset.ok==='0')||(cur===c.dataset.rel);
+   var okQ=!s||c.dataset.t.toLowerCase().indexOf(s)>-1;
+   var show=okR&&okQ;c.classList.toggle('hide',!show);if(show)n++;
+  });
+  cnt.textContent='显示 '+n+' / '+cards.length+' 篇';
+ }
+ btns.forEach(function(b){b.addEventListener('click',function(){btns.forEach(function(x){x.classList.remove('on')});b.classList.add('on');cur=b.dataset.r;run();});});
+ q.addEventListener('input',run);run();
+})();
+</script>
+</body></html>

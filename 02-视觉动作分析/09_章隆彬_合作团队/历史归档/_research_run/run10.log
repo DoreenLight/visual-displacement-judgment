@@ -1,0 +1,5 @@
+stages: ['clean', 'extract', 'knowledge', 'inspect', 'qgate', 'report']
+work_dir: /Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/09_章隆彬_合作团队/_research_run
+[started ] clean        0% 开始 clean
+[completed] clean      100% clean 完成（62.5s）
+[started ] extract      0% 开始 extract

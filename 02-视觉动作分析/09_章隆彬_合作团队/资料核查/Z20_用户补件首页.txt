@@ -1,0 +1,74 @@
+This article has been accepted for publication in a future issue of this journal, but has not been fully edited. Content may change prior to final publication. Citation information: DOI 10.1109/TIE.2016.2624260, IEEE
+                                                                                            Transactions on Industrial Electronics
+         IEEE TRANSACTIONS ON INDUSTRIAL ELECTRONICS
+
+
+
+
+            Adaptive Neural Network Based Variable Stiffness
+              Control of Uncertain Robotic Systems Using
+                         Disturbance Observer
+                       Longbin Zhang, Zhijun Li, Senior Member, IEEE, and Chenguang Yang, Senior Member, IEEE
+
+
+
+            Abstract—The variable stiffness actuator (VSA) has been e-                                        to employ human muscle like variable stiffness actuator to
+         quipped on many new generation of robots because of its superior                                     concurrently guarantee both safety and performance. It brings
+         performance in terms of safety, robustness and flexibility. How-                                     in a mechanical compliance that can be adjusted via control
+         ever, the control of robots with joints driven by variable stiffness
+         actuators is challenging due to the inherited highly nonlinear                                       action in the joint actuation. There are a number of significant
+         dynamics. In this paper, a novel disturbance observer based                                          work devoted to the development of variable stiffness actuated
+         adaptive neural network control is developed for robotic systems                                     mechanical systems [4]-[8]. In [6], a concept design of an
+         with variable stiffness joints and subject to model uncertainties.                                   energy-efficient variable stiffness actuator was presented and
+         By utilizing a high dimensional integral-type Lyapunov function,                                     implemented. In [7], a hybrid variable stiffness actuator was
+         adaptive neural network control is designed to approximate the
+         model uncertainties, and a disturbance observer is integrated                                        proposed, and by controlling the relative motion of gears in
+         to compensate for the nonlinear VSA dynamics, as well as the                                         the hybrid control module, position and stiffness of a joint
+         neural network approximation errors and external disturbance.                                        can be simultaneously controlled. A thorough discussion on
+         The semiglobally uniformly ultimately boundness of the closed-                                       the details influencing the stiffness properties was provided in
+         loop control system has been theoretically established. Simulation                                   [8] for a variable stiffness mechanism.
+         and extensive experimental studies have also been performed to
+         verify the effectiveness of the proposed approach.                                                      As aforementioned, variable joint elasticity is deliberately
+                                                                                                              introduced in the variable stiffness actuator, such that we are
+            Index Terms—Variable stiffness actuator; Adaptive neural                                          provided the means to adjust the flexibility of a robot to be
+         network; High dimensional integral Lyapunov; Disturbance Ob-
+         server                                                                                               adapted to a certain task at mechanical level. However, there
+                                                                                                              are great challenges associated with the control of variable
+                                                                                                              stiffness robot joints due to nonlinearities, e.g., the input
+                                          I. I NTRODUCTION                                                    nonlinearity, which could lead to the increasing of undesirable
+              ESPITE advances of automation technologies in the                                               inaccuracy or oscillations, so that robot system performance
+         D     recent decades, most robots nowadays still underperform
+         in comparison to our humans in tasks that require dexterity,
+                                                                                                              could be severely limited, and even become unstable.
+                                                                                                                 To effectively reduce or eliminate the side effect of variable
+         safety and efficiency. In the scenarios when robots need to                                          stiffness on system performance, several methods have been
+         physically interact with environment or people, instability may                                      proposed in the recent decades [9]–[17]. In [9], a sensor-
+         occur during the interaction if the actuators are too stiff. This                                    less force control approach for the robot-assisted motion of
+         would further lead to possible damage of robot or even injuries                                      the human arm was presented. A twin direct-drive motor
+         of staff. While our humans could perform these interactive                                           system with a wire rope had been developed to provide a
+         tasks well, even in an unstructured or unknown environment,                                          precise force sensation and safety for human-robot interaction,
+         by properly adjusting muscle stiffness of our joints to a level                                      by considering the stiffness in human arm movements, this
+         appropriate for the task and the environment. Consider that                                          method increases the efficiency of the force control system
+         human-like performance would enable robots to perform better                                         and realizes comfortable force for human-robot interaction. In
+         for interactive tasks such as medical operation [1], search                                          [11], an approach to a variable stiffness actuator with tunable
+         [2], rescue [3], and social events. It is therefore desired                                          resonant frequencies was presented, a cellular artificial muscle
+                                                                                                              actuator based on piezoelectric stack actuators achieves both
+            Manuscript received February 9, 2016; revised June 18, 2016, July 3,
+         2016 and September 10, 2016; accepted September 19, 2016. This work is                               variable stiffness and variable resonance functions. In [12], a
+         supported in part by National Natural Science Foundation of China grants                             new design of actuator with adjustable stiffness was presented.
+         Nos. 61573147, 91520201 and 61473120, Guangzhou Research Collabo-                                    The proposed actuator design regulates the joint stiffness in a
+         rative Innovation Projects (No. 2014Y2-00507), Guangdong Science and
+         Technology Research Collaborative Innovation Projects under Grant Nos.                               large range with minimum energy consumption by means of a
+         2013B010102010, 2014B090901056, 2015B020214003, Guangdong Science                                    small motor. In [13], a variable stiffness joint (VSJ) for a robot
+         and Technology Plan Project (Application Technology Research Foundation)                             manipulator was designed, and a singular perturbation model
+         No. 2015B020233006, and National High-Tech Research and Development
+         Program of China (863 Program) (Grant No. 2015AA042303).                                             was employed in the nonlinear control design to establish
+            L. Zhang and Z. Li are with The Key Lab of Autonomous System and                                  closed-loop system stability.
+         Network Control, College of Automation Science and Engineering, South                                   The control design in this work takes into account both
+         China University of Technology, Guangzhou, 510641, China. C. Yang is with
+         Zienkiewicz Centre for Computational Engineering, Swansea University, SA1                            robot dynamics and actuator dynamics. As demonstrated in
+         8EN, UK. Corresponding author is Z. Li. (Email: zjli@ieee.org)                                       [18], the actuator dynamics in fact constitute an important part
+
+
+0278-0046 (c) 2016 IEEE. Personal use is permitted, but republication/redistribution requires IEEE permission. See http://www.ieee.org/publications_standards/publications/rights/index.html for more information.
+

@@ -1,0 +1,16 @@
+# PMC8821890 补充材料取件清单
+
+- 取件时间：2026-10-01 15:30:40
+- 接口：`GET https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8821890/supplementaryFiles`
+- HTTP 200 / 131,022 bytes / 3 个文件
+
+## 文件
+
+- `Table_1.DOCX`  21,317 bytes
+- `fspor-03-809898-g0001.gif`  6,576 bytes
+- `fspor-03-809898-g0001.jpg`  130,689 bytes
+
+## ⚠️ 取件纪律提醒
+
+- **文件名编号 ≠ 表号编号**：本项目 Pohl 2026 那篇，正文引用的「表 S2/S3」全部在 `s002.pdf` 一份里。取件后**必须逐份打开核对表号**，不要按文件名推断。
+- 补充材料是**已入库论文的附件**，不是独立论文条目：**不要**为它造 `_Abstract_Card.md`（会犯 K8），**不要**改语料三的条目计数。

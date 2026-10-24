@@ -1,0 +1,201 @@
+ORIGINAL RESEARCH
+published: 08 March 2021
+doi: 10.3389/fnbot.2021.620928
+
+Modeling and Simulation of a Human
+Knee Exoskeleton’s Assistive
+Strategies and Interaction
+Longbin Zhang 1,2 , Yixing Liu 1,2 , Ruoli Wang 1,2,3 , Christian Smith 4 and
+Elena M. Gutierrez-Farewik 1,2,3*
+1
+KTH MoveAbility Lab, Department of Engineering Mechanics, KTH Royal Institute of Technology, Stockholm, Sweden, 2 KTH
+BioMEx Center, KTH Royal Institute of Technology, Stockholm, Sweden, 3 Department of Women’s and Children’s Health,
+Karolinska Institutet, Stockholm, Sweden, 4 Robotics, Perception, and Learning Lab, KTH Royal Institute of Technology,
+Stockholm, Sweden
+
+Edited by:
+Andrej Gams,
+Institut Jožef Stefan, Slovenia
+Reviewed by:
+Andrej Olenšek,
+University Rehabilitation
+Institute, Slovenia
+Suncheol Kwon,
+National Rehabilitation Center,
+South Korea
+*Correspondence:
+Elena M. Gutierrez-Farewik
+lanie@kth.se
+Received: 24 October 2020
+Accepted: 01 February 2021
+Published: 08 March 2021
+Citation:
+Zhang L, Liu Y, Wang R, Smith C and
+Gutierrez-Farewik EM (2021) Modeling
+and Simulation of a Human Knee
+Exoskeleton’s Assistive Strategies and
+Interaction.
+Front. Neurorobot. 15:620928.
+doi: 10.3389/fnbot.2021.620928
+
+Exoskeletons are increasingly used in rehabilitation and daily life in patients with motor
+disorders after neurological injuries. In this paper, a realistic human knee exoskeleton
+model based on a physical system was generated, a human–machine system was
+created in a musculoskeletal modeling software, and human–machine interactions
+based on different assistive strategies were simulated. The developed human–machine
+system makes it possible to compute torques, muscle impulse, contact forces, and
+interactive forces involved in simulated movements. Assistive strategies modeled as a
+rotational actuator, a simple pendulum model, and a damped pendulum model were
+applied to the knee exoskeleton during simulated normal and fast gait. We found
+that the rotational actuator–based assistive controller could reduce the user’s required
+physiological knee extensor torque and muscle impulse by a small amount, which
+suggests that joint rotational direction should be considered when developing an assistive
+strategy. Compared to the simple pendulum model, the damped pendulum model based
+controller made little difference during swing, but further decreased the user’s required
+knee flexor torque during late stance. The trade-off that we identified between interaction
+forces and physiological torque, of which muscle impulse is the main contributor, should
+be considered when designing controllers for a physical exoskeleton system. Detailed
+information at joint and muscle levels provided in this human–machine system can
+contribute to the controller design optimization of assistive exoskeletons for rehabilitation
+and movement assistance.
+Keywords: anybody, conditional contact elements, damping factor, interactive forces, human-exoskeleton
+interaction
+
+1. INTRODUCTION
+Exoskeletons have attracted increasing research interest in rehabilitation in patients with neurologic
+disorders, such as stroke, spinal cord injury, cerebral palsy, and Parkinson’s disease (Ye et al., 2017;
+Fournier et al., 2018). Robotic exoskeletons are promising assistive/rehabilitative devices that can
+complement torque generation in people with strength deficits or assist recovery of patients with
+motor disorders (Yao et al., 2018; Zhang et al., 2019). Such exoskeletons can potentially alleviate
+therapists’ intensive and tedious physical effort during rehabilitation, leaving them to focus on
+
+Frontiers in Neurorobotics | www.frontiersin.org
+
+1
+
+March 2021 | Volume 15 | Article 620928
+
+Zhang et al.
+
+Exoskeleton’s Assistive Strategies and Interaction
+
+total metabolic energy consumption with rotational-actuatorbased hip joint assistance decreased more than that with knee
+and ankle joint assistance. A damping component was also
+considered in El Zahraa Webhi et al. (2017) for an impedance
+control with a double pendulum model for a knee joint orthosis
+during swing phase. Their experimental results showed that the
+user’s effort could be significantly decreased with this proposed
+approach. The exoskeletons’ influences on the user at joint and
+muscle levels, including muscle activation, physiological joint
+torque, joint contact forces, and interaction forces have not been
+extensively described.
+In simulating exoskeleton’s motion assistive strategies,
+mass, inertia, and damping factor of its components, as
+well as interaction forces between exoskeletons and users,
+will all influence the control schemes. Dembia et al. used
+musculoskeletal simulations to evaluate how seven hypothetical,
+ideal (massless), bilateral assistive devices may affect muscle
+activity and metabolic cost when walking with heavy loads
+(Dembia et al., 2017). In their simulation results, devices
+that assist hip flexion, knee flexion, and hip abduction could
+provide greater metabolic savings than a device that assists ankle
+plantarflexion, and a device that assist hip abduction displayed
+the greatest ratio of metabolic savings to peak instantaneous
+positive device power. Even though they neglected the mass in
+their simulations, such results may guide experimental scientists
+in targeting joint motions. In addition, only few studies have
+considered the interaction forces between an exoskeleton and
+its user (Li et al., 2018a; Serrancolí et al., 2019; Su et al., 2019).
+Given that an exoskeleton is designed to interact directly with
+its wearer, it is essential to investigate the interactive forces
+involved. The easiest and most accurate way to determine
+interactive forces would be to develop prototypes and measure
+forces during experiments, but this would be expensive and time
+consuming as model design iterations are commonly needed
+(Cho et al., 2012). It is therefore useful when evaluating different
+control schemes to predict interaction forces while taking the
+mass, inertia, and damping factor of exoskeleton components
+into account.
+The objectives of this study were to, in a simulation of a
+virtual human–machine system (HMS) with a knee exoskeleton,
+evaluate how different assistive strategies affect the user’s required
+effort as well as joint contact forces, and to study the interaction
+forces between the device and the wearer. To illustrate these
+objectives, three different assistive models, namely an RA,
+a simple pendulum model (SPM) and a damped pendulum
+model (DPM), were used to model assistive torques at the
+knee during simulated normal and fast gait. Measurements
+including muscle impulse, required physiological torque, joint
+contact forces, and interaction forces were estimated through a
+computational musculoskeletal model and compared among the
+three assistive strategies.
+
+minimally physical interaction, observation, and supervision of
+patients during training (Veneman et al., 2007; Li et al., 2018b,
+2019).
+The mechanical design of an exoskeleton is an important
+factor that influences the effectiveness of its interaction with
+the user. Some experiments have been designed to evaluate
+adaptability, safety, efficiency, and comfort of an exoskeleton (Hu
+et al., 2016; Del Carmen Sanchez-Villamañan et al., 2019). An
+experimental evaluation of a passive lower extremity exoskeleton
+with a simple structure and a low weight was investigated
+with gait self-adaptivity (Wang et al., 2019), and its authors
+showed that the exoskeleton had the greatest influence on
+ankle kinematics and the least influence on hip kinematics. Li
+et al. (2014) evaluated an upper extremity exoskeleton with
+an adaptive back-stepping controller to provide assistance for
+the user to track predefined trajectories. Their experimental
+results demonstrated that the proposed adaptive controller could
+provide effective assistance when tracking repeated trajectories.
+Veneman et al. (2007) designed and evaluated a lower limb
+exoskeleton for interactive gait rehabilitation. Their evaluation
+measurements showed that the exoskeleton could follow or
+guide a patient, but position/angle measurement of the legs
+via the exoskeleton device was not sufficiently accurate for
+inverse dynamic calculations. While experimental evaluation of
+exoskeleton prototypes is important, biomechanical predictive
+simulations early in the design process can minimize prototype
+iterations and evaluate some parameters that are otherwise
+difficult to measure experimentally.
+Most exoskeletons are evaluated with respect to their effect
+on the user during normal motions (Lenzi et al., 2013; Yan
+et al., 2015). Lenzi et al. (2013) studied the human locomotor
+adaptation to the action of a powered hip exoskeleton providing
+assistive torque with a fraction of the nominal torque profile
+during walking. Their experimental results showed that users
+could adapt and benefit from this kind of assistance by
+significantly reducing their muscle activation both at the hip
+and the ankle level. Agrawal et al. (2007) designed a passive hip
+and knee exoskeleton and altered the level of gravity assistance
+on the joints of the swing leg during walking in four ablebodied persons and three patients with stroke. They observed
+a number of important gait improvements in patients, such
+as increase in knee and hip flexion. Computational modeling
+of motion assistive strategies for exoskeletons has been used
+to analyze and estimate interaction factors on the user. The
+leg has been modeled as an inverted pendulum during stance
+and a pendulum during swing (Singh et al., 2008; Furse, 2010;
+Bazargan-Lari et al., 2015; Sharbafi et al., 2016). Sharbafi et al.
+(2017) combined a spring-mass inverted pendulum for the
+stance leg with a double pendulum model for the swing leg to
+explain human-like leg behavior in walking. The comparison
+between their simulations and experiments demonstrated the
+ability of the proposed model in replicating kinematic and kinetic
+behavior of both stance and swing legs. Shourijeh et al. (2017)
+modeled the assistive torque as a rotational actuator (RA) and
+applied it to hip, knee, and ankle joints. Metabolic energy was
+simulated with a metabolic energy rate model (Umberger, 2010)
+during a box-lifting task for several variations that include
+one to three joints. Their simulation results showed that the
+Frontiers in Neurorobotics | www.frontiersin.org
+
+2. METHODS
+In this paper, we created a human knee exoskeleton CAD model,
+then incorporated it into a musculoskeletal model (AnyBody
+AMMR), creating a virtual HMS (Figure 1). Normal and fast
+gait were simulated, and three different assistive torques at the
+2
+
+March 2021 | Volume 15 | Article 620928
+
+

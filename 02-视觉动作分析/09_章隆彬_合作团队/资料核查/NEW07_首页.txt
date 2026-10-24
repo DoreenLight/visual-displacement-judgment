@@ -1,0 +1,199 @@
+Hindawi
+Complexity
+Volume 2017, Article ID 5361246, 9 pages
+https://doi.org/10.1155/2017/5361246
+
+Research Article
+Adaptive Neural Network Control of
+Serial Variable Stiffness Actuators
+Zhao Guo,1 Yongping Pan,2,3 Tairen Sun,4 Yubing Zhang,1 and Xiaohui Xiao1
+1
+
+School of Power and Mechanical Engineering, Wuhan University, Wuhan 430072, China
+Department of Biomedical Engineering, National University of Singapore, Singapore
+3
+National University of Singapore (Suzhou) Research Institute, Suzhou 215123, China
+4
+Department of Electrical and Information Engineering, Jiangsu University, Zhenjiang 212013, China
+2
+
+Correspondence should be addressed to Yongping Pan; yongppan@gmail.com
+Received 13 August 2017; Revised 8 September 2017; Accepted 20 September 2017; Published 8 November 2017
+Academic Editor: Junpei Zhong
+Copyright © 2017 Zhao Guo et al. This is an open access article distributed under the Creative Commons Attribution License,
+which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.
+This paper focuses on modeling and control of a class of serial variable stiffness actuators (SVSAs) based on level mechanisms for
+robotic applications. A multi-input multi-output complex nonlinear dynamic model is derived to fully describe SVSAs and the
+relative degree of the model is determined accordingly. Due to nonlinearity, high coupling, and parametric uncertainty of SVSAs,
+a neural network-based adaptive control strategy based on feedback linearization is proposed to handle system uncertainties. The
+feasibility of the proposed approach for position and stiffness tracking of SVSAs is verified by simulation results.
+
+1. Introduction
+Variable stiffness actuators (VSAs), which can increase safety
+in physical human-robot interaction and meet the dynamic
+requirements of robots in unknown environments, have
+been developed for a new generation of robots [1–11]. VSAs
+present advantages in terms of mechanical stiffness adjusting,
+energy storing, and force sensing capabilities [3]. According
+to the design configurations, there are two typical mechanical
+arrangements for VSAs: one is the antagonistic configuration
+with a pair of actuators coupled via nonlinear springs [10],
+and the other is the serial configuration with two independent
+motors, where a principal motor drives the joint position
+through a compliant transmission, and a secondary motor
+adjusts the stiffness [11].
+Antagonistic-type VSAs need two driving units to change
+the stiffness and position synchronously, which lead to high
+energy consumption and complex control design. Serialtype VSAs (SVSAs) do not have this requirement and have
+gained more attention. Recently, new types of SVSAs have
+been developed based on level arm mechanisms, where
+the mechanical stiffness is regulated by moving one of the
+level points: a pivot point, a spring located point, or a
+
+force point [12–14]. Thus, the SVSAs are not significantly
+influenced by the coupling between the load and the stiffness transmission mechanism. It also brings higher energy
+efficiency in unloaded conditions [15]. Based on the variable
+ratio lever principle by changing the pivot position, a novel
+compact rotational SVSA with an Archimedean spiral relocation mechanism (ASRM) was developed to obtain compact
+mechanical structure, large adjustable stiffness range, and
+better force transmission ability in [15]. In this innovative
+design, the ASRM is applied to transfer the rotation of the
+Archimedean spiral cam into the linear motion of the pivot,
+and an elastic force transmission mechanism with a spring
+shaft vertical to the output link is proposed to achieve large
+deflection angle and high energy storage ability.
+VSAs are multi-input multioutput (MIMO), highly coupled, and complex nonlinear systems which include both
+structured and unstructured uncertainties [16]. In VSAs, the
+stiffness variation brings physical modifications, requiring
+the control system to quickly transit among different operating conditions. In addition, the coupling between stiffness and positioning mechanisms and the increased system
+dimensionality complicate the entire control system [16]. As
+a result, it is challenging to design control strategies for VSAs
+
+2
+in robotic applications. Different control strategies have been
+proposed to for VSAs, where the simplest one is the PD
+control in [16]. However, the performance of the PD control
+highly depends on PD gains due to the high nonlinearity
+of VSAs. In [17, 18], a classical nonlinear control technique
+termed feedback linearization was explored for VSAs. Nevertheless, feedback linearization is very sensitive to modeling
+accuracy so that significant efforts in system modeling and
+parameter identification are required to achieve a desired
+performance. Based on the feedback linearization, some
+advanced control methods, such as gain-scheduling control
+[19], active damping control [20], backstepping control [21],
+nonlinear model predictive control [22], and output feedback
+control [23], have been integrated to improve stiffness and
+position tracking performances of VSAs. Although these
+control methods are proved to be effective for VSAs, they may
+exhibit undesired performances especially if the VSA dynamics are highly nonlinear and experience large parameter
+variations due to the changes of the actuator stiffness and load
+conditions [24].
+Neural networks (NNs) have been widely applied to control complex nonlinear systems, especially complex robotic
+systems in recent years [25–37]. Compared with the traditional adaptive control, NN adaptive control (NNAC) has two
+prominent attractive features [38]. Firstly, due to the universal
+approximation property of NNs, the difficulty of system
+modeling in many practical control problems can be largely
+alleviated. Secondly, due to the practical persistently exciting
+(PE) condition of NNs, parameter convergence is easier to be
+obtained during control resulting in an exact online modeling and superior exponential tracking. Although NNAC is
+promising for complex nonlinear systems like VSAs, it is
+seldom applied to VSAs except [39], where antagonistic VSAs
+are considered in [39].
+This paper focuses on modeling and control of a class of
+SVSAs based on level mechanisms. Firstly, a MIMO complex nonlinear dynamic model is derived to fully describe
+SVSAs and the relative degree of the model is determined
+accordingly; secondly, based on the feedback linearization, a
+direct NNAC strategy is proposed to govern the SVSA model;
+finally, high-fidelity simulations are provided to verify the
+effectiveness of the proposed approach. Compared with other
+control strategies for VSAs, the proposed NNAC can deal
+with high coupling and parametric uncertainties of SVSAs. In
+addition, the control on both position and stiffness tracking
+remain effective under load changing conditions.
+
+2. Serial Variable Stiffness Actuator Modeling
+As illustrated in Figure 1, a compact rotational SVSA consists
+of a variable stiffness mechanism (VSM), a principal motor,
+and a secondary motor, where the principal motor drives the
+output link motion through the spring transmission, and a
+secondary motor adjusts the stiffness of the actuator
+by changing the position of the pivot with an ASRM
+[15].
+By considering gravity and external loads, the dynamic
+model of SVSAs is represented as follows:
+
+Complexity
+𝑀𝑞 ̈ + 𝐷𝑞 ̇ + 𝜏𝑒 (𝜃2 , 𝜑) + 𝜏𝑔 (𝑞) = 𝜏ext
+𝐵1 𝜃1̈ + 𝐷1 𝜃1̇ − 𝜏𝑒 (𝜃2 , 𝜑) = 𝑢1
+
+(1)
+
+𝐵2 𝜃2̈ + 𝐷2 𝜃2̇ + 𝜏𝑟 (𝜃2 , 𝜑) = 𝑢2 ,
+where 𝑞 is a position of the output link, 𝜃𝑖 with 𝑖 = 1, 2 is a
+position associated with each motor, 𝜑 fl 𝑞−𝜃1 is a deflection
+angle of the elastic transmission, 𝑀 is an inertia of the output
+link, 𝐵𝑖 is a reflected inertia of each motor, 𝐷 is a reflected
+damping of the link, 𝐷𝑖 is a reflected damping of each motor,
+𝜏𝑔 (𝑞) is a gravity torque, 𝑢𝑖 is a control input of each motor,
+𝜏ext is an external torque, 𝜏𝑟 is a coupling reaction torque, and
+𝜏𝑒 is an elastic torque of the spring transmission.
+The elastic torque across the transmission is given by
+𝜏𝑒 = 𝐾𝑠 𝑅2 𝜇2
+
+sin 𝜑 cos 𝜑
+(1 − 𝜇 cos 𝜑)
+
+2
+
+,
+
+(2)
+
+where 𝐾𝑠 is a spring stiffness, 𝑅 is a radius of the output link,
+and 𝜇 is a lever length ratio. The coupled flexibility torque,
+representing the transmission deformation reacting on the
+secondary motor, is given by
+𝜏𝑟 = 𝐾𝑠 𝑅2 𝑎2
+
+sin 2𝛽 sin2 𝜑
+,
+2 (𝑅 − 𝑎 cos 𝜑) (𝑎2 + 𝑅2 − 2𝑎𝑅 cos 𝜑)
+
+(3)
+
+where 𝛽 = arctan(−𝜃2 /𝛾) is a tangent angle of the Archimedean spiral gear, 𝛾 is a reduction gear ratio of the secondary
+motor, and 𝑎 = 𝜇𝑅 = 𝑅𝜃2 /2𝜋 is a distance from the pivot
+point to the joint center. The stiffness of this SVSA is formulated by
+𝜎 (𝜃2 , 𝜑) =
+
+𝜕𝜏𝑒 (𝜃2 , 𝜑)
+cos 2𝜑 − 𝜇 cos 𝜑
+.
+= 𝐾𝑠 𝑅2 𝜇2
+3
+𝜕𝜑
+(1 − 𝜇 cos 𝜑)
+
+(4)
+
+The level length ratio 𝜇 can be represented by the position of
+the secondary motor as follows:
+𝜇=
+
+𝜃2
++ 𝜇0 ,
+2𝜋𝛾
+
+(5)
+
+where 𝜇0 is an initial level length ratio.
+
+3. Neural Network Control Design
+3.1. Problem Formulation. The dynamic model of SVSAs
+given by (1)–(5) can be represented in the standard form
+ẋ = f (x) + g (x) u
+y = h (x) ,
+
+(6)
+
+

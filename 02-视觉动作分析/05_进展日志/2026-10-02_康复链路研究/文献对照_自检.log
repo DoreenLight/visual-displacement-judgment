@@ -1,0 +1,60 @@
+==============================================================================
+知识库自检报告 (v4)  root=/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析
+==============================================================================
+[FAIL] Case 1    Markdown 相对链接完整性                失败 46    / 检查 604
+         - 10_研究方向/主动参与与训练强度_链路研究/文献对照表.md -> [Video-Based Markerless Motion Capture for Clinical and Rehabilitation Biomechanics: A PRISMA-ScR Scoping Review of Validated Architectures, Clinical Readiness, and Emerging Methods](../../01_%E5%8F%82%E8%80%83%E8%AE%BA%E6%96%87/%E7%94%9F%E7%89%A9%E5%8A%9B%E5%AD%A6%E7%BA%BF/B1_%E8%A7%86%E8%A7%89%E8%BF%90%E5%8A%A8%E5%AD%A6_%E4%BC%B0%E8%AE%A1%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E6%B3%95%E5%AD%A6/Video-Based%20Markerless%20Motion%20Capture%20for%20Clinical%20and%20Rehab.pdf)
+         - 10_研究方向/主动参与与训练强度_链路研究/文献对照表.md -> [SHOULDER AND ELBOW JOINT ANGLE ESTIMATION FOR UPPER LIMB REHABILITATION TASKS USING LOW-COST INERTIAL AND OPTICAL SENSORS](../../01_%E5%8F%82%E8%80%83%E8%AE%BA%E6%96%87/%E7%94%9F%E7%89%A9%E5%8A%9B%E5%AD%A6%E7%BA%BF/B1_%E8%A7%86%E8%A7%89%E8%BF%90%E5%8A%A8%E5%AD%A6_%E4%BC%B0%E8%AE%A1%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E6%B3%95%E5%AD%A6/SHOULDER%20AND%20ELBOW%20JOINT%20ANGLE%20ESTIMATION%20FOR%20UPPER%20LIMB%20REH.pdf)
+         - 10_研究方向/主动参与与训练强度_链路研究/文献对照表.md -> [Inverse Estimation of Multiple Muscle Activations From Joint Moment With Muscle Synergy Extraction](../../01_%E5%8F%82%E8%80%83%E8%AE%BA%E6%96%87/%E7%94%9F%E7%89%A9%E5%8A%9B%E5%AD%A6%E7%BA%BF/B2_%E8%82%8C%E8%82%89%E9%AA%A8%E9%AA%BC%E5%8A%A8%E5%8A%9B%E5%AD%A6_%E4%B8%8E%E5%8F%AF%E5%BE%AE%E4%BB%BF%E7%9C%9F/Inverse%20Estimation%20of%20Multiple%20Muscle%20Activations%20From%20Joint.pdf)
+         - 10_研究方向/主动参与与训练强度_链路研究/文献对照表.md -> [Robot-Assisted Therapy for Upper Extremity Motor Impairment After Stroke: A Systematic Review and Meta-Analysis](../../01_%E5%8F%82%E8%80%83%E8%AE%BA%E6%96%87/%E7%94%9F%E7%89%A9%E5%8A%9B%E5%AD%A6%E7%BA%BF/B3_%E4%B8%8A%E8%82%A2%E5%BA%B7%E5%A4%8D_%E4%BB%A3%E5%81%BF%E4%B8%8E%E4%B8%B4%E5%BA%8A%E8%AF%84%E4%BC%B0/Robot-Assisted%20Therapy%20for%20Upper%20Extremity%20Motor%20Impairment.pdf)
+         - 10_研究方向/主动参与与训练强度_链路研究/文献对照表.md -> [Wearable technology in stroke rehabilitation: towards improved diagnosis and treatment of upper-limb motor impairment](../../01_%E5%8F%82%E8%80%83%E8%AE%BA%E6%96%87/%E7%94%9F%E7%89%A9%E5%8A%9B%E5%AD%A6%E7%BA%BF/B3_%E4%B8%8A%E8%82%A2%E5%BA%B7%E5%A4%8D_%E4%BB%A3%E5%81%BF%E4%B8%8E%E4%B8%B4%E5%BA%8A%E8%AF%84%E4%BC%B0/Wearable%20technology%20in%20stroke%20rehabilitation_%20towards%20improv.xml)
+         - 10_研究方向/主动参与与训练强度_链路研究/文献对照表.md -> [Fatigue, induced via repetitive upper-limb motor tasks, influences trunk and shoulder kinematics during an upper limb reaching task in a virtual reality environment](../../01_%E5%8F%82%E8%80%83%E8%AE%BA%E6%96%87/%E7%94%9F%E7%89%A9%E5%8A%9B%E5%AD%A6%E7%BA%BF/B3_%E4%B8%8A%E8%82%A2%E5%BA%B7%E5%A4%8D_%E4%BB%A3%E5%81%BF%E4%B8%8E%E4%B8%B4%E5%BA%8A%E8%AF%84%E4%BC%B0/Fatigue%2C%20induced%20via%20repetitive%20upper-limb%20motor%20tasks%2C%20infl.pdf)
+         - 10_研究方向/主动参与与训练强度_链路研究/文献对照表.md -> [A clinically feasible kinematic assessment method of upper extremity motor function impairment after stroke](../../01_%E5%8F%82%E8%80%83%E8%AE%BA%E6%96%87/%E7%94%9F%E7%89%A9%E5%8A%9B%E5%AD%A6%E7%BA%BF/B3_%E4%B8%8A%E8%82%A2%E5%BA%B7%E5%A4%8D_%E4%BB%A3%E5%81%BF%E4%B8%8E%E4%B8%B4%E5%BA%8A%E8%AF%84%E4%BC%B0/A%20clinically%20feasible%20kinematic%20assessment%20method%20of%20upper%20e.pdf)
+         - 10_研究方向/主动参与与训练强度_链路研究/文献对照表.md -> [Exoskeleton for forearm pronation and supination rehabilitation](../../01_%E5%8F%82%E8%80%83%E8%AE%BA%E6%96%87/%E7%94%9F%E7%89%A9%E5%8A%9B%E5%AD%A6%E7%BA%BF/B3_%E4%B8%8A%E8%82%A2%E5%BA%B7%E5%A4%8D_%E4%BB%A3%E5%81%BF%E4%B8%8E%E4%B8%B4%E5%BA%8A%E8%AF%84%E4%BC%B0/Exoskeleton%20for%20forearm%20pronation%20and%20supination%20rehabilitat.pdf)
+         - 10_研究方向/主动参与与训练强度_链路研究/文献对照表.md -> [Markerless Motion Capture in Routine Clinical Upper Limb Assessments: Validity and Insights Beyond Ordinal Scoring](../../01_%E5%8F%82%E8%80%83%E8%AE%BA%E6%96%87/%E7%94%9F%E7%89%A9%E5%8A%9B%E5%AD%A6%E7%BA%BF/B3_%E4%B8%8A%E8%82%A2%E5%BA%B7%E5%A4%8D_%E4%BB%A3%E5%81%BF%E4%B8%8E%E4%B8%B4%E5%BA%8A%E8%AF%84%E4%BC%B0/Markerless%20Motion%20Capture%20in%20Routine%20Clinical%20Upper%20Limb%20Ass.pdf)
+         - 10_研究方向/主动参与与训练强度_链路研究/文献对照表.md -> [Monocular Markerless Motion Capture Enables Quantitative Assessment of Upper Extremity Reachable Workspace](../../01_%E5%8F%82%E8%80%83%E8%AE%BA%E6%96%87/%E7%94%9F%E7%89%A9%E5%8A%9B%E5%AD%A6%E7%BA%BF/B3_%E4%B8%8A%E8%82%A2%E5%BA%B7%E5%A4%8D_%E4%BB%A3%E5%81%BF%E4%B8%8E%E4%B8%B4%E5%BA%8A%E8%AF%84%E4%BC%B0/Monocular%20Markerless%20Motion%20Capture%20Enables%20Quantitative%20Ass.pdf)
+         - 10_研究方向/主动参与与训练强度_链路研究/文献对照表.md -> [From Metrics to Meaning in Neurological Rehabilitation: Clinicians’ Perspectives on Digital Metrics of Upper Limb Functioning—A Focus Group Study](../../01_%E5%8F%82%E8%80%83%E8%AE%BA%E6%96%87/%E7%94%9F%E7%89%A9%E5%8A%9B%E5%AD%A6%E7%BA%BF/B3_%E4%B8%8A%E8%82%A2%E5%BA%B7%E5%A4%8D_%E4%BB%A3%E5%81%BF%E4%B8%8E%E4%B8%B4%E5%BA%8A%E8%AF%84%E4%BC%B0/From%20Metrics%20to%20Meaning%20in%20Neurological%20Rehabilitation_%20Clin.xml)
+         - 10_研究方向/主动参与与训练强度_链路研究/文献对照表.md -> [Target height influences shoulder and elbow non-use after stroke during reaching with the hand : A brief communication](../../01_%E5%8F%82%E8%80%83%E8%AE%BA%E6%96%87/%E7%94%9F%E7%89%A9%E5%8A%9B%E5%AD%A6%E7%BA%BF/B3_%E4%B8%8A%E8%82%A2%E5%BA%B7%E5%A4%8D_%E4%BB%A3%E5%81%BF%E4%B8%8E%E4%B8%B4%E5%BA%8A%E8%AF%84%E4%BC%B0/Target%20height%20influences%20shoulder%20and%20elbow%20non-use%20after%20st.pdf)
+         ... 另有 34 条
+[PASS] Case 2    翻译文档图片链接完整性                     失败 0     / 检查 1938
+[PASS] Case 3    顶层目录编号唯一性                       失败 0     / 检查 12
+[PASS] Case 4    顶层目录分隔符一致性                      失败 0     / 检查 12
+[PASS] Case 5    空目录 + 空壳目录                      失败 0     / 检查 193
+[PASS] Case 6    索引一致性（日期/进度条/计数块）               失败 0     / 检查 4
+[PASS] Case 7    PDF <-> 全文翻译/定位卡 配对             失败 0     / 检查 218
+[PASS] Case 8    软链接可达性（断链检查）                    失败 0     / 检查 26
+[PASS] Case 9    LIST.md 陈旧状态字段                  失败 0     / 检查 31
+[PASS] Case 10   正文计数声明 vs 磁盘                    失败 0     / 检查 0
+[PASS] Case 11   目录树中的子目录 PDF 计数                 失败 0     / 检查 2
+[PASS] Case 12   正文 PDF 字节数 vs 磁盘                失败 0     / 检查 0
+[PASS] Case 13   速读卡/精读中的「未获取」陈述                 失败 0     / 检查 355
+[PASS] Case 14   归档包不得自述「替代包/未获原文」               失败 0     / 检查 4
+[PASS] Case 15   缺口数/用例数自述一致性                    失败 0     / 检查 6
+[PASS] Case 16   现役正文中的无结论占位                     失败 0     / 检查 101146
+[PASS] Case 17   不得把归档包当权威来源                     失败 0     / 检查 101163
+[PASS] Case 18   语料二（Transformer）索引与定位卡          失败 0     / 检查 93
+[PASS] Case 20   语料三（生物力学）索引与定位卡                 失败 0     / 检查 111
+[PASS] Case 19   纯待下载清单 ↔ 本轮纳入及全库全文              失败 0     / 检查 53
+[PASS] Case 21   康复链路全文身份/原件哈希/证据卡               失败 0     / 检查 11
+[PASS] Case 6.5  索引计数块 vs 磁盘复算                   失败 0     / 检查 19
+==============================================================================
+附加统计（磁盘复算，供参考）
+  顶层目录数        : 12
+  论文 PDF 数       : 42
+  翻译 _全文翻译.md 数 : 42
+  深度替代包        : 4  （无）
+  论文条目总数      : 42  = PDF 42 + 仅替代包 0
+  PDF 覆盖率        : 100.0%  （内容覆盖率 = 100%）
+  速读卡            : 5
+  ── 语料二：Transformer 发展线（独立口径）──
+  TF PDF / 定位卡 / 全文译文 : 93 / 93 / 85
+  ── 语料三：生物力学与上肢运动学（独立口径）──
+  BM PDF / XML全文 / 定位卡   : 83 / 17 / 111
+  ── 语料四：决策模型线 / JEV · AAN 介入决策（独立口径）──
+  JV PDF / 定位卡              : 17 / 18
+  ── 康复整合链路（独立口径，证据卡非全文翻译）──
+  链路 PDF / XML / 证据卡     : 1 / 10 / 1
+  软链接 / 断链     : 26 / 0
+  计数块来源        : STATUS.md
+==============================================================================
+汇总：22 个用例，PASS 21 / FAIL 1
+==============================================================================

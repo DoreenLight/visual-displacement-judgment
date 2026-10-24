@@ -1,0 +1,28 @@
+............F......
+======================================================================
+FAIL: test_pdf_layout_retry_recovers_title_reading_order (__main__.DownloadOnlyTests.test_pdf_layout_retry_recovers_title_reading_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/06_附录/自检脚本/test_acquisition_list.py", line 131, in test_pdf_layout_retry_recovers_title_reading_order
+    self.assertEqual(self.pending([paper()], unindexed=[p]), [])
+AssertionError: Lists differ: [{'id': 'test', 'title': 'A verified rehab[211 chars]st'}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'id': 'test', 'title': 'A verified rehabilitation paper', 'doi': '10.1234/test', 'screening': 'included', 'needs_fulltext': True, 'kind': 'paper', 'venue': 'Verified Journal', 'database': 'Verified Database', 'landing_url': 'https://doi.org/10.1234/test'}
+
++ []
+- [{'database': 'Verified Database',
+-   'doi': '10.1234/test',
+-   'id': 'test',
+-   'kind': 'paper',
+-   'landing_url': 'https://doi.org/10.1234/test',
+-   'needs_fulltext': True,
+-   'screening': 'included',
+-   'title': 'A verified rehabilitation paper',
+-   'venue': 'Verified Journal'}]
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.087s
+
+FAILED (failures=1)

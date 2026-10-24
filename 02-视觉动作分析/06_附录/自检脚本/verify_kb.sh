@@ -31,18 +31,70 @@ if ! command -v python3 >/dev/null 2>&1; then
 fi
 
 python3 - "$ROOT" <<'PYEOF'
-import sys, os, re
+import sys, os, re, json, subprocess, importlib.util
 from pathlib import Path
+from urllib.parse import unquote
 
 ROOT = Path(sys.argv[1]).resolve()
-EXCLUDE_PARTS = {'.pi', '_translation_outputs', 'libs', 'node_modules', '__pycache__', '.git'}
+# 备份目录（形如 _backup_YYYYMMDD_HHMM）不是现役语料：既不计入计数，也不参与 PDF↔翻译配对。
+# 2026-10-01 补：此前 _backup_20260930_2214/ 被当作现役条目，
+# 2026-10-03 补：该目录已由 01_参考论文/ 迁入 11_归档/（见其 ARCHIVED.md），
+#            目录名刻意保留 _backup 前缀 —— 判据 is_backup 按前缀匹配，改名会把这 58 个旧版译文拉进现役扫描。
+# 导致 zh 计数 35→64 虚增、Case 6.5 FAIL。备份可留证，但不得污染现役口径。
+#
+# 2026-10-01 再补：_research_run/ 是网页抓取的**暂存层**（271 个文件，含 site-map/tree/artifacts
+# 与 33 个带 `javascript:` 伪链接的抓取残页）。与 _translation_outputs 同类：不是知识库正文，
+# 但此前未列入排除集，导致 Case 1 一次性报 605 条断链。暂存层可留证，不参与现役自检。
+EXCLUDE_PARTS = {'.pi', '_translation_outputs', 'libs', 'node_modules', '__pycache__', '.git',
+                 '_research_run'}
+TF_ROOT = ROOT / '01_参考论文' / '运动理解/Transformer_发展线'
+# 语料三（生物力学与上肢运动学）：**独立口径**，其 PDF/定位卡不计入主语料。
+# 理由与语料二同理——三份语料的翻译进度与取件方式各不相同，混写必漂移。
+BM_ROOT = ROOT / '01_参考论文' / '整合系统/生物力学线'
+# 语料四（决策模型线 / JEV · AAN 介入决策）：**独立口径**，2026-10-01 新增。
+# 与前三条语料同理由独立：其中大量条目是网页型证据（厂商文档、社区实测），
+# 本就没有 PDF 可入库，混进主语料会让「PDF 覆盖率」这类指标失真。
+JV_ROOT = ROOT / '01_参考论文' / '整合系统/决策模型线_JEV'
+# 新目标的全文证据库：独立口径，全文证据卡不冒充全文翻译。
+CHAIN_ROOT = ROOT / '01_参考论文' / '康复辅助/康复整合链路'
+
+
+def is_backup(rel):
+    return any(part.startswith('_backup') for part in rel.parts)
+
+
+def under_tf(p: Path) -> bool:
+    try:
+        p.relative_to(TF_ROOT)
+        return True
+    except ValueError:
+        return False
+
+
+def under_bm(p: Path) -> bool:
+    try:
+        p.relative_to(BM_ROOT)
+        return True
+    except ValueError:
+        return False
+
+
+def under_jv(p: Path) -> bool:
+    try:
+        p.relative_to(JV_ROOT)
+        return True
+    except ValueError:
+        return False
+
 
 def excluded(p: Path) -> bool:
     try:
         rel = p.relative_to(ROOT)
     except ValueError:
         return True
-    return any(part in EXCLUDE_PARTS for part in rel.parts)
+    if any(part in EXCLUDE_PARTS for part in rel.parts):
+        return True
+    return is_backup(rel)
 
 cases = []   # (no, name, fail_count, total_count, detail_lines)
 
@@ -60,7 +112,8 @@ for md in sorted(ROOT.rglob('*.md')):
             continue
         if re.match(r'^[†*✗✓\d\s.,、。·—–-]+$', label):     # 脚注/上标符号
             continue
-        t = target.split('#')[0].split('?')[0]
+        # Standard Markdown URI targets encode spaces/Unicode; decode once before stat.
+        t = unquote(target.split('#')[0].split('?')[0])
         if not t:
             continue
         total += 1
@@ -69,9 +122,14 @@ for md in sorted(ROOT.rglob('*.md')):
 cases.append((1, 'Markdown 相对链接完整性', len(broken), total, broken))
 
 # ---------------------------------------------------------------- Case 2
-# 翻译文档图片链接完整性（只查论文子目录内的 _全文翻译.md，不含 _translation_outputs 备份）
+# 翻译文档图片链接完整性（只查论文子目录内的 _全文翻译.md 与 _抽取_en.md，
+# 不含 _translation_outputs 备份）
+# 2026-10-08 新增 _抽取_en.md：26 篇新取得全文先做 MinerU 英文结构化抽取（含图），
+# 中文翻译尚未走 MiniMax 管线。这类 md 的图片链接**同样必须可解析**，
+# 否则「带图片的格式」就落空——纳入校验是加严，不是放松。
 broken, total = [], 0
-for md in sorted(ROOT.rglob('*_全文翻译.md')):
+for pattern in ('*_全文翻译.md', '*_抽取_en.md'):
+  for md in sorted(ROOT.rglob(pattern)):
     if excluded(md):
         continue
     txt = md.read_text(encoding='utf-8', errors='ignore')
@@ -80,7 +138,7 @@ for md in sorted(ROOT.rglob('*_全文翻译.md')):
         if src.startswith(('http://', 'https://', '#', 'data:')):
             continue
         total += 1
-        if not (md.parent / src).exists():
+        if not (md.parent / unquote(src)).exists():
             broken.append('%s -> ![]()' % md.relative_to(ROOT))
 cases.append((2, '翻译文档图片链接完整性', len(broken), total, sorted(set(broken))))
 
@@ -118,7 +176,11 @@ cases.append((4, '顶层目录分隔符一致性', len(bad_sep), checked, bad_se
 # [E1] 空目录 + 空壳目录
 #   空目录 = 目录内完全无文件
 #   空壳目录 = 目录内只有一份自称"空壳/待补/待填"的 README，且承诺的文档一个都不存在
-WALK_EXCLUDE = {'.pi', '.git', 'node_modules', '__pycache__'}
+# 2026-10-01 补：此前只排 4 项，导致 os.walk 会走进工作缓存层
+# （_translation_outputs 的抽取中间目录、_backup*、_research_run），
+# 把「正在抽取、暂时为空」的目录误判成知识库空目录。缓存层不是知识库结构。
+WALK_EXCLUDE = {'.pi', '.git', 'node_modules', '__pycache__', '.DS_Store',
+                '_translation_outputs', '_research_run'}
 empty = []
 scanned_dirs = 0
 SHELL_MARKERS = ('当前为空壳', '待 Phase 2 填充', '待补：', '待填：', '本目录当前为空壳')
@@ -126,7 +188,7 @@ slot_bad = []
 for root, dirs, files in os.walk(ROOT, followlinks=False):
     rp = Path(root)
     rel = rp.relative_to(ROOT)
-    if any(part in WALK_EXCLUDE for part in rel.parts):
+    if any(part in WALK_EXCLUDE for part in rel.parts) or is_backup(rel):
         dirs[:] = []
         continue
     scanned_dirs += 1
@@ -193,6 +255,15 @@ cases.append((6, '索引一致性（日期/进度条/计数块）', len(issues),
 # ---------------------------------------------------------------- Case 7
 # [E3] PDF <-> _全文翻译.md 配对，接受 *_reconstruction.md 作为合法替代孪生
 #      + 报告"论文条目覆盖率"（含替代包）
+#
+# [2026-10-01 新增] 语料二（Transformer 发展线）单列：
+#   01_参考论文/运动理解/Transformer_发展线/ 下的 PDF **不要求** _全文翻译.md，
+#   其合法孪生工件是 *_Abstract_Card.md（摘要级定位卡）。
+#   理由：该语料是「参考资料库」，本项目只做到摘要级；
+#   若强行要求全文翻译，就得靠占位文件凑数，那正是本脚本历次要防的漂移。
+#   定位卡必须自述「不是全文翻译」——由 Case 18 强制检查。
+#   康复整合链路使用明确非翻译的全文证据卡，由 Case 21 检验原件、身份及卡片。
+#   其余子目录与 09_章隆彬_合作团队仍保持原配对标准，不能靠假翻译满足检查。
 PAPER_ROOTS = [ROOT / '01_参考论文', ROOT / '09_章隆彬_合作团队']
 pdf_dirs, _seen = [], set()
 for d in PAPER_ROOTS:
@@ -201,25 +272,73 @@ for d in PAPER_ROOTS:
         _seen.add(d)
 
 pdfs, zhs, recs, cards = [], [], [], []
+tf_pdfs, tf_cards, tf_zhs = [], [], []
+bm_pdfs, bm_cards, bm_xmls = [], [], []
+jv_pdfs, jv_cards = [], []
+chain_pdfs = []
+chain_xmls = [p for p in CHAIN_ROOT.rglob('*.xml') if not excluded(p)]
+chain_cards = [p for p in CHAIN_ROOT.rglob('*_Evidence_Card.md') if not excluded(p)]
 for pr in pdf_dirs:
     for f in pr.rglob('*.pdf'):
-        if not excluded(f):
+        if excluded(f):
+            continue
+        if under_tf(f):
+            tf_pdfs.append(f)
+        elif under_bm(f):
+            bm_pdfs.append(f)
+        elif under_jv(f):
+            jv_pdfs.append(f)
+        elif f.is_relative_to(CHAIN_ROOT):
+            chain_pdfs.append(f)
+        else:
             pdfs.append(f)
     for f in pr.rglob('*_全文翻译.md'):
-        if not excluded(f):
-            zhs.append(f)
+        if excluded(f):
+            continue
+        # 语料二的译文单列：它与主语料 35 篇是两份语料，口径混写会随翻译进度漂移
+        (tf_zhs if under_tf(f) else zhs).append(f)
     for f in pr.rglob('*_reconstruction.md'):
         if not excluded(f):
             recs.append(f)
+    for f in pr.rglob('*.xml'):
+        if not excluded(f) and under_bm(f):
+            bm_xmls.append(f)
     for f in pr.rglob('*Abstract_Card.md'):
-        if not excluded(f):
+        if excluded(f):
+            continue
+        if under_tf(f):
+            tf_cards.append(f)
+        elif under_jv(f):
+            jv_cards.append(f)
+        elif under_bm(f):
+            bm_cards.append(f)
+        else:
             cards.append(f)
 
 pair_bad = []
+# 主语料（else 桶）的合法孪生二选一：
+#   _全文翻译.md —— 中文全文翻译（29 篇历史成品）
+#   _抽取_en.md  —— MinerU 英文结构化抽取 + 同级 images/（2026-10-08 起 26 篇新取得全文）
+# 二者都保证「没有裸PDF」：每份 PDF 至少有一份可检索、带图的正文工件。
 for pdf in pdfs:
-    zh = pdf.with_name(pdf.stem + '_全文翻译.md')
-    if not zh.exists():
-        pair_bad.append('%s 缺对应 %s' % (pdf.relative_to(ROOT), zh.name))
+    twins = [pdf.with_name(pdf.stem + s) for s in ('_全文翻译.md', '_抽取_en.md')]
+    if not any(t.exists() for t in twins):
+        pair_bad.append('%s 缺对应 %s 或 %s'
+                        % (pdf.relative_to(ROOT), twins[0].name, twins[1].name))
+
+# 语料二：定位卡是**必备**工件；全文译文本轮正在陆续产出，属可选增量，不计入配对失败
+tf_pair_bad = []
+for pdf in tf_pdfs:
+    card = pdf.with_name(pdf.stem + '_Abstract_Card.md')
+    if not card.exists():
+        tf_pair_bad.append('%s 缺对应 %s' % (pdf.relative_to(ROOT), card.name))
+
+# 语料三：定位卡同样是必备工件（摘要级），PDF↔定位卡配对必须完整
+bm_pair_bad = []
+for pdf in bm_pdfs:
+    card = pdf.with_name(pdf.stem + '_Abstract_Card.md')
+    if not card.exists():
+        bm_pair_bad.append('%s 缺对应 %s' % (pdf.relative_to(ROOT), card.name))
 
 rec_only = []   # 只有替代包、没有 PDF 的条目（合法，但需登记）
 for f in zhs:
@@ -237,7 +356,10 @@ for f in zhs:
 
 total_entries = len(pdfs) + len(rec_only)
 coverage = (len(pdfs) * 100.0 / total_entries) if total_entries else 0.0
-cases.append((7, 'PDF <-> _全文翻译.md 配对 + 覆盖率', len(pair_bad), len(pdfs), pair_bad))
+cases.append((7, 'PDF <-> 全文翻译/定位卡 配对',
+              len(pair_bad) + len(tf_pair_bad) + len(bm_pair_bad),
+              len(pdfs) + len(tf_pdfs) + len(bm_pdfs),
+              sorted(pair_bad + tf_pair_bad + bm_pair_bad)))
 
 # ---------------------------------------------------------------- Case 8
 # [E2] 软链接可达性（断链检查）
@@ -245,7 +367,7 @@ broken_links, all_links = [], 0
 for root, dirs, files in os.walk(ROOT, followlinks=False):
     rp = Path(root)
     rel = rp.relative_to(ROOT)
-    if any(part in WALK_EXCLUDE for part in rel.parts):
+    if any(part in WALK_EXCLUDE for part in rel.parts) or is_backup(rel):
         dirs[:] = []
         continue
     for nm in list(dirs) + list(files):
@@ -409,7 +531,7 @@ CARD_STALE = ['暂未获取', 'PDF 未下载', '全文：**未获取**', '暂无
               '机构订阅后', '删掉本卡', '一旦用户放入', 'IEEE 锁定', 'IEEE paywall',
               'Elsevier 锁定', 'Springer 锁定', '锁定，', '速读卡见']
 card_stale, card_checked = [], 0
-for pat in ('*_Abstract_Card.md', '*_全文翻译.md'):
+for pat in ('*_Abstract_Card.md', '*_全文翻译.md', '*_抽取_en.md'):
     for md in sorted(ROOT.rglob(pat)):
         if excluded(md):
             continue
@@ -468,6 +590,31 @@ if ledger_total is not None:
                 if v != ledger_total:
                     count_consistency.append('%s:%d 称「%s 项缺口」但台账合计为 %d' %
                                              (name, ln, v, ledger_total))
+# (a2) 引用「缺口台账」的行，其括注计数必须等于台账合计 —— [E11] K17
+# 起因：Case 15(a) 的正则要求「项」后紧跟「缺口」两字，而 README.md 曾写成
+# 「完整缺口台账见 …（**79 项**）」，措辞一变正则即静默失效，145 的台账被写成 79。
+# 本规则盯的是**括注形式**（（**N 项**）），与 (a) 的「N 项缺口」互补而非替代。
+# 🚨 两处必须排除，否则规则会误报自身（均由负例测试抓出，非推演）：
+#   ① **台账自身必须排除** —— 它的「合计」行是本检查的**定义源**，而它的变更日志与
+#      教训条目**合法地引用历史数字**（如 K17 那行就含「（**79 项**）」字面量）。
+#   ② **不得用 scan_files + [...] 追加** —— DOCS 已含 README.md / INDEX.md，
+#      追加会导致同一文件被扫两遍、同一错误重复上报（负例里 README.md:168 报了两次）。
+if ledger_total is not None:
+    for name in dict.fromkeys(scan_files):
+        if name == '06_附录/缺口台账.md':
+            continue
+        f = ROOT / name
+        if not f.exists():
+            continue
+        for ln, line in enumerate(f.read_text(encoding='utf-8', errors='ignore').splitlines(), 1):
+            if '缺口台账' not in line:
+                continue
+            for mm in re.finditer(r'[（(]\s*\*\*(\d+)\s*项\*\*\s*[）)]', line):
+                cons_checked += 1
+                v = int(mm.group(1))
+                if v != ledger_total:
+                    count_consistency.append('%s:%d 引用缺口台账时括注「%s 项」但台账合计为 %d（K17）' %
+                                             (name, ln, v, ledger_total))
 # (b) 脚本实际用例数 vs 文档声称
 script_f = ROOT / '06_附录' / '自检脚本' / 'verify_kb.sh'
 if script_f.exists():
@@ -492,7 +639,11 @@ cases.append((15, '缺口数/用例数自述一致性', len(count_consistency), 
 # [E11] 「待查/待校验/待用户/待补/待填」类**无结论占位**不得出现在「现役」正文里
 #       历史记录（发现时描述、变更记录）与归档包豁免
 PLACEHOLDER_TOKENS = ['待校验', '待查', '待用户', '待手动', '待补', '待填']
-FINDING_ROW_RE = re.compile(r'^\|\s*\*{0,2}[ABCDE]\d*\*{0,2}\s*\|')   # 台账发现表的行
+# 台账发现表的行豁免。
+# 2026-10-01 修正：原正则只认 [ABCDE]（写它时台账只有 A–E 五类），
+# 台账扩展到 F/G/H/I/J 之后，**新增类别的每一行登记都会被误判成「无结论占位」**。
+# 豁免的本意是「历史/发现时的描述不算现役正文」，与类别字母无关，故放开到 [A-Z]。
+FINDING_ROW_RE = re.compile(r'^\|\s*\*{0,2}[A-Z]\d*\*{0,2}\s*\|')
 HIST_HINTS = ('变更记录', '发现时', '历史', '归档说明', '不得再', '规则', '拦截',
               '检索渠道尝试记录', '<!-- ', 'Falsification', '反证')
 ph_hits, ph_checked = [], 0
@@ -553,6 +704,172 @@ for md in sorted(ROOT.rglob('*.md')):
                 break
 cases.append((17, '不得把归档包当权威来源', len(auth_hits), auth_checked, sorted(auth_hits)))
 
+# ---------------------------------------------------------------- Case 18
+# [2026-10-01 新增] 语料二（Transformer 发展线）完整性
+#   检查项：
+#     18a index.json 的 pdf_status=ok 条目，PDF 必须真实存在于磁盘且体积非零
+#     18b 定位卡必须自述「不是全文翻译」——防止日后被当成全文翻译引用
+#     18c 定位卡不得声称 arXiv 未收录条目已入库
+tf_issues, tf_checked = [], 0
+idx_f = TF_ROOT / 'index.json'
+if not TF_ROOT.exists():
+    tf_issues.append('语料二目录不存在：01_参考论文/运动理解/Transformer_发展线/')
+elif not idx_f.exists():
+    tf_issues.append('缺 index.json（可检索索引是本语料的硬要求）')
+else:
+    try:
+        tf_idx = json.loads(idx_f.read_text(encoding='utf-8'))
+    except Exception as e:                            # noqa: BLE001
+        tf_idx = {'papers': []}
+        tf_issues.append('index.json 解析失败: %r' % (e,))
+    for p in tf_idx.get('papers', []):
+        tf_checked += 1
+        if p.get('pdf_status') == 'ok':
+            cand = ROOT / p.get('pdf_path', '')
+            if not p.get('pdf_path'):
+                tf_issues.append('%s 标为已入库但无路径' % p.get('title', '?'))
+            elif not cand.exists():
+                tf_issues.append('%s 标为已入库但磁盘无文件：%s' % (p.get('title', '?'), p['pdf_path']))
+            elif cand.stat().st_size < 20480:
+                tf_issues.append('%s 的 PDF 仅 %d B，疑似下载残缺' % (p.get('title', '?'), cand.stat().st_size))
+        if p.get('pdf_status') == 'ok' and p.get('pdf_bytes') and p['pdf_path']:
+            f_ = ROOT / p['pdf_path']
+            if f_.exists() and f_.stat().st_size != p['pdf_bytes']:
+                tf_issues.append('%s 字节数与 index 不符（index %d / 磁盘 %d）'
+                                 % (p.get('title', '?'), p['pdf_bytes'], f_.stat().st_size))
+    # 18b 定位卡自述
+    for card in sorted(TF_ROOT.rglob('*_Abstract_Card.md')):
+        txt = card.read_text(encoding='utf-8', errors='ignore')
+        rel = card.relative_to(ROOT)
+        if '不是全文翻译' not in txt:
+            tf_issues.append('%s 定位卡未自述「不是全文翻译」' % rel)
+        if '全文翻译' in txt and '不是全文翻译' not in txt:
+            tf_issues.append('%s 可能被误读为全文翻译' % rel)
+cases.append((18, '语料二（Transformer）索引与定位卡', len(tf_issues), tf_checked, sorted(tf_issues)))
+
+# ---------------------------------------------------------------- Case 20
+# 语料三（生物力学与上肢运动学）索引与定位卡
+# 纪律与 Case 18 同：① 索引声明的 PDF 状态必须与磁盘一致；② 定位卡必须自述「不是全文翻译」；
+# ③ **只有证据等级 A/B 的条目才允许出现在可引用索引里**（C/D 级必须留在 pending_adjudication）。
+bm_issues, bm_checked = [], 0
+bm_idx_f = BM_ROOT / 'index.json'
+if not BM_ROOT.exists():
+    bm_issues.append('语料三目录不存在：01_参考论文/整合系统/生物力学线/')
+elif not bm_idx_f.exists():
+    bm_issues.append('缺 index.json（可检索索引是本语料的硬要求）')
+else:
+    try:
+        bm_idx = json.loads(bm_idx_f.read_text(encoding='utf-8'))
+    except Exception as e:                            # noqa: BLE001
+        bm_idx = {'papers': []}
+        bm_issues.append('index.json 解析失败: %r' % (e,))
+    for p in bm_idx.get('papers', []):
+        bm_checked += 1
+        g = (p.get('evidence_grade') or '')[:1]
+        if g not in ('A', 'B'):
+            bm_issues.append('%s 证据等级为 %s，不得出现在可引用索引中' % (p.get('title', '?'), g or '空'))
+        if p.get('status') in ('review', 'doi_conflict', 'unresolved'):
+            bm_issues.append('%s 状态为 %s（待裁定），不得出现在可引用索引中'
+                             % (p.get('title', '?'), p['status']))
+        for u in (p.get('url_abs') or '', p.get('url_pdf') or ''):
+            if u and not u.startswith(('http://', 'https://')):
+                bm_issues.append('%s 链接非 http(s)：%s' % (p.get('title', '?'), u))
+    # 20b 定位卡自述
+    for card in sorted(BM_ROOT.rglob('*_Abstract_Card.md')):
+        txt = card.read_text(encoding='utf-8', errors='ignore')
+        rel = card.relative_to(ROOT)
+        if '不是全文翻译' not in txt:
+            bm_issues.append('%s 定位卡未自述「不是全文翻译」' % rel)
+    # 20c Europe PMC JATS 全文：必须是含 <body> 的真全文，不是错误页
+    for x in sorted(BM_ROOT.rglob('*.xml')):
+        try:
+            head = x.read_text(encoding='utf-8', errors='ignore')[:200000]
+        except Exception as e:                                  # noqa: BLE001
+            bm_issues.append('%s 读取失败: %r' % (x.relative_to(ROOT), e))
+            continue
+        if '<body' not in head:
+            bm_issues.append('%s 不含 <body>，疑似错误页而非全文' % x.relative_to(ROOT))
+    # 20d 取件清单分类检查已迁至 Case 19（2026-10-03：五份清单合并为一份，
+    #     语料线内不再各自持有清单文件；分类断言归到校总清单的 Case 19）
+cases.append((20, '语料三（生物力学）索引与定位卡', len(bm_issues), bm_checked, sorted(bm_issues)))
+
+# ---------------------------------------------------------------- Case 19
+# 当前用户清单只能列本轮纳入且缺全文的论文，不能因旧库缺件或缺翻译强制加入。
+acq_issues, acq_checked = [], 0
+ACQ = ROOT / '06_附录' / '待下载论文总清单.md'
+ACQ_GEN = ROOT / '06_附录' / 'gen_acquisition_list.py'
+try:
+    spec = importlib.util.spec_from_file_location('acquisition_for_verify', ACQ_GEN)
+    acq_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(acq_module)
+    research = acq_module.load(acq_module.MANIFEST)
+    pending = acq_module.pending_papers(research)
+    acq_checked = len(research['papers'])
+    if ACQ.read_text(encoding='utf-8') != acq_module.render(pending):
+        acq_issues.append('待下载清单与纳入台账及全库全文实况不符，或混入非待取件内容')
+    for item in pending:
+        if not all(item.get(k) for k in ['title', 'landing_url', 'venue', 'database']):
+            acq_issues.append('待下载条目缺必填字段：' + item.get('title', '?'))
+    # 保留原有跨库原件引用的可达性检查，但不强制把已取得/网页条目写进下载表。
+    for item in json.loads((JV_ROOT / 'index.json').read_text(encoding='utf-8'))['papers']:
+        if item.get('pdf_status') == 'ok':
+            ref = item.get('fulltext_path') or item.get('pdf_path') or item.get('xml_path')
+            if acq_module.local_path(ROOT, ref) is None:
+                acq_issues.append('语料四已入库但全文引用无效：' + item.get('title', '?'))
+except Exception as e:
+    acq_issues.append('纯待下载清单核验失败（不降级为空清单）：%r' % (e,))
+for old in [ROOT / '06_附录/需你下载的论文清单.md',
+            BM_ROOT / '需人工取件清单.md', TF_ROOT / '需人工取件清单.md',
+            JV_ROOT / '需人工取件清单.md']:
+    if old.exists():
+        acq_issues.append('旧取件清单复活：' + str(old.relative_to(ROOT)))
+cases.append((19, '纯待下载清单 ↔ 本轮纳入及全库全文', len(acq_issues), acq_checked, acq_issues))
+
+# ---------------------------------------------------------------- Case 21
+# 新全文库采用可追溯证据卡；不通过伪装“全文翻译”来消除旧用例失败。
+chain_issues, chain_checked = [], 0
+try:
+    import hashlib
+    import xml.etree.ElementTree as ET
+    chain_index = json.loads((CHAIN_ROOT / 'index.json').read_text(encoding='utf-8'))
+    declared_paths = set()
+    for paper in chain_index['papers']:
+        chain_checked += 1
+        ref = paper.get('local_fulltext', '')
+        path = (ROOT / ref).resolve()
+        if not path.is_relative_to(CHAIN_ROOT) or not path.is_file():
+            chain_issues.append('链路原件引用不存在或越界：' + ref)
+            continue
+        if path in declared_paths:
+            chain_issues.append('链路原件重复登记：' + ref)
+        declared_paths.add(path)
+        if hashlib.sha256(path.read_bytes()).hexdigest() != paper.get('sha256'):
+            chain_issues.append('链路原件哈希变化：' + ref)
+        if path.suffix == '.xml':
+            tree = ET.parse(path).getroot()
+            ids = [e.text.lower().strip() for e in tree.findall('.//article-meta/article-id')
+                   if e.get('pub-id-type') == 'doi' and e.text]
+            if tree.find('.//body') is None or paper.get('doi', '').lower() not in ids:
+                chain_issues.append('链路XML无正文或DOI错配：' + ref)
+        elif path.suffix == '.pdf':
+            if path.read_bytes()[:5] != b'%PDF-':
+                chain_issues.append('链路PDF不是PDF：' + ref)
+            card = path.with_name(path.stem + '_Evidence_Card.md')
+            if not card.is_file():
+                chain_issues.append('链路PDF缺全文证据卡：' + ref)
+            else:
+                content = card.read_text(encoding='utf-8')
+                if '不是全文翻译' not in content or paper.get('doi', '').lower() not in content.lower():
+                    chain_issues.append('链路证据卡缺版本/身份/非翻译声明：' + str(card.relative_to(ROOT)))
+        else:
+            chain_issues.append('链路库登记了非全文格式：' + ref)
+    disk_paths = {p.resolve() for p in chain_pdfs + chain_xmls}
+    if declared_paths != disk_paths:
+        chain_issues.append('链路原件索引与磁盘成员不符')
+except Exception as e:
+    chain_issues.append('链路证据库核验失败：%r' % (e,))
+cases.append((21, '康复链路全文身份/原件哈希/证据卡', len(chain_issues), chain_checked, chain_issues))
+
 # ---------------------------------------------------------------- [E4] 计数块比对
 # 必须要求标签后直接换行，避免匹配到正文里对“<!-- VERIFY_KB_COUNTS -->”的引用
 COUNT_RE = re.compile(r'<!--\s*VERIFY_KB_COUNTS\s*\n(.*?)-->', re.S)
@@ -583,7 +900,29 @@ actual = {
     'entries':       total_entries,
     'abstract_cards': len(cards),
     'broken_links':  len(broken_links),
+    'tf_pdf':        len(tf_pdfs),
+    'tf_cards':      len(tf_cards),
+    'tf_zh':         len(tf_zhs),
+    'bm_pdf':        len(bm_pdfs),
+    'bm_cards':      len(bm_cards),
+    'bm_xml':        len(bm_xmls),
+    'jv_pdf':        len(jv_pdfs),
+    'jv_cards':      len(jv_cards),
+    'chain_pdf':     len(chain_pdfs),
+    'chain_xml':     len(chain_xmls),
+    'chain_cards':   len(chain_cards),
 }
+
+# 易变计数项：当其**生产进程正在运行时**，精确相等是错误断言。
+# 2026-10-01 实测：tf_translate.py 并发跑时，tf_zh 每次核对都在涨（2→21→23→24→25），
+# 逐次改计数块等于追一个移动靶，最终让 Case 6.5 长期 FAIL —— 那会训练人忽略 FAIL，比 FAIL 本身更糟。
+# 故：检测到生产进程在跑时，改为 WARN 并显式提示，不计入失败数。
+VOLATILE_KEYS = {'tf_zh': ('tf_translate.py', '语料二全文翻译流水线')}
+count_warns = []
+try:
+    _ps = subprocess.run(['ps', '-Ao', 'args'], capture_output=True, text=True, timeout=15).stdout
+except Exception:                                                  # noqa: BLE001
+    _ps = ''
 
 count_issues = []
 if not declared:
@@ -599,13 +938,18 @@ else:
             count_issues.append('计数块 %s=%s 非整数' % (k, declared[k]))
             continue
         if dv != v:
-            count_issues.append('计数块 %s=%d 与磁盘实际 %d 不符' % (k, dv, v))
+            proc, what = VOLATILE_KEYS.get(k, (None, None))
+            if proc and proc in _ps:
+                count_warns.append('计数块 %s=%d 与磁盘实际 %d 不符，但 %s 正在运行（%s）'
+                                   '→ 本项为易变值，暂降级为告警' % (k, dv, v, proc, what))
+            else:
+                count_issues.append('计数块 %s=%d 与磁盘实际 %d 不符' % (k, dv, v))
 cases.append((6.5, '索引计数块 vs 磁盘复算', len(count_issues), len(actual), count_issues))
 
 # ---------------------------------------------------------------- 输出报告
 LINE = '=' * 78
 print(LINE)
-print('知识库自检报告 (v2)  root=%s' % ROOT)
+print('知识库自检报告 (v4)  root=%s' % ROOT)
 print(LINE)
 
 failed = 0
@@ -620,6 +964,11 @@ for no, name, fails, tots, details in cases:
         print('         ... 另有 %d 条' % (len(details) - 12))
 
 print(LINE)
+if count_warns:
+    print('易变值告警（生产进程运行中，未计入失败）:')
+    for w in count_warns:
+        print('  ! ' + w)
+    print()
 print('附加统计（磁盘复算，供参考）')
 print('  顶层目录数        : %d' % actual['top_dirs'])
 print('  论文 PDF 数       : %d' % actual['pdf'])
@@ -629,6 +978,14 @@ print('  深度替代包        : %d  （%s）' % (actual['reconstruction'],
 print('  论文条目总数      : %d  = PDF %d + 仅替代包 %d' % (total_entries, actual['pdf'], actual['rec_only']))
 print('  PDF 覆盖率        : %.1f%%  （内容覆盖率 = 100%%）' % coverage)
 print('  速读卡            : %d' % actual['abstract_cards'])
+print('  ── 语料二：Transformer 发展线（独立口径）──')
+print('  TF PDF / 定位卡 / 全文译文 : %d / %d / %d' % (actual['tf_pdf'], actual['tf_cards'], actual['tf_zh']))
+print('  ── 语料三：生物力学与上肢运动学（独立口径）──')
+print('  BM PDF / XML全文 / 定位卡   : %d / %d / %d' % (actual['bm_pdf'], actual['bm_xml'], actual['bm_cards']))
+print('  ── 语料四：决策模型线 / JEV · AAN 介入决策（独立口径）──')
+print('  JV PDF / 定位卡              : %d / %d' % (actual['jv_pdf'], actual['jv_cards']))
+print('  ── 康复整合链路（独立口径，证据卡非全文翻译）──')
+print('  链路 PDF / XML / 证据卡     : %d / %d / %d' % (actual['chain_pdf'], actual['chain_xml'], actual['chain_cards']))
 print('  软链接 / 断链     : %d / %d' % (all_links, actual['broken_links']))
 if declared_src:
     print('  计数块来源        : %s' % declared_src)

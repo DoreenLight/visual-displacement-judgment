@@ -1,0 +1,76 @@
+This article has been accepted for publication in a future issue of this journal, but has not been fully edited. Content may change prior to final publication. Citation information: DOI 10.1109/TFUZZ.2016.2566676, IEEE
+                                                                                                 Transactions on Fuzzy Systems
+
+
+
+
+                 Brain Machine Interface and Visual Compressive
+                    Sensing based Teleoperation Control of an
+                                Exokeleton Robot
+                       Shiyuan Qiu, Zhijun Li, Senior Member, IEEE, Wei He, Senior Member, IEEE, Longbin Zhang,
+                            Chenguang Yang, Senior Member, IEEE, and Chun-Yi Su, Senior Member, IEEE
+
+
+
+              Abstract—This paper presents a teleoperation control for an                                      function of the established BMI is usually to detect user’s
+           exoskeleton robotic system based on the brain-machine interface                                     intention of motion [9]. Recent studies on BMI based control
+           (BMI) and vision feedback. Vision compressive sensing, brain-                                       have achieved considerable progress, e.g., EEG-based control
+           machine reference commands, and adaptive fuzzy controllers
+           in joint-space have been effectively integrated to enable robot                                     prosthetic devices [10], [11], [12], [13].
+           performing manipulation tasks guided by human operator’s                                               The core of a BMI system is a direct connection paths in the
+           mind. First, a visual-feedback link is implemented by video                                         human or animal brain (or brain cell culture) and established
+           captured by a camera, allowing him/her to visualize the manip-                                      between the external device instead of using the normal output
+           ulator’s workspace and the movements being executed. Then,                                          approaches of peripheral nerves and muscles. It transforms
+           compressed images are used as feedback errors in a non-
+           vector space for producing SSVEP (Steady-State Visual Evoked                                        EEG signals, which can be acquired from the surface of the
+           Potentials) electroencephalography (EEG) signals, and it requires                                   scalp, into commands that implement the requirements of user.
+           no prior information on features in contrast to the traditional                                     In most BMI systems, a variety of EEG signals can be used
+           visual servoing. The proposed EEG decoding algorithm generates                                      to extract control signals, , e.g., steady-state visual evoked
+           control signals for the exoskeleton robot using features extracted                                  potentials (SSVEPs), P300 evoked potentials, sensorimotor
+           from neural activity. Considering coupled dynamics and actuator
+           input constraints during the robot manipulation, a local adaptive                                   rhythms, motion-onset visual evoked potential and slow corti-
+           fuzzy controller has been designed following Lyapunov synthesis                                     cal potentials. SSVEPs is a kind of periodic evoked potentials
+           to drive the exoskeleton tracking the intended trajectories in                                      induced by rapidly repetitive visual stimulation, especially at
+           human operator’s mind and to provide a convenient way of                                            frequencies higher than 6 Hz. The strongest response to the
+           dynamics compensation with minimal knowledge of the dynam-                                          visual stimuli includes stimulation frequencies in the range
+           ics parameters of the exoskeleton robot. Extensive experiment
+           studies employing three subjects have been performed to verify                                      5 to 20 Hz. The SSVEPs usually occur in the occipital and
+           the validity of the proposed method.                                                                parietal lobes and its frequency is aligned with the fundamental
+                                                                                                               frequency and harmonics of the frequency-coded stimuli. In an
+             Keywords: Fuzzy logic system, EEG tele-operation, Visual                                          SSVEP-BCI system, user’s intended command, e.g., moving
+           compress sense, Brain-machine interface, Exoskeleton                                                a cursor on a computer screen or controlling a robot arm,
+                                                                                                               can be detected by extracting the frequency information in
+                                            I. I NTRODUCTION                                                   the SSVEPs signal. In [29], a motor imagery-based switching
+                                                                                                               to open or close an SSVEP-based BCI was presented. In
+             Recently, exoskeleton robotics has attracted much attention
+                                                                                                               [30], motor imagery and SSVEP signals had been used for
+           in the human-robot interaction [1]-[8]. In order to enable
+                                                                                                               continuous control of the direction and speed for a wheelchair,
+           patients of neurological injuries and diseases to use their
+                                                                                                               respectively.
+           mind to control a device performing certain task, brain-
+                                                                                                                  In the visual servoing, images are used for locating a feature
+           machine interface (BMI) techniques have been developed. The
+                                                                                                               or landmark associated with coordinates transformation, allow-
+              This work is supported in part by National Natural Science Foundation of                         ing the visual servoing system to get the position or velocity
+           China grants Nos. 61573147, 91520201, Guangzhou Research Collaborative                              feedback for the closed-loop system. The system does not need
+           Innovation Projects (No. 2014Y2-00507), Guangdong Science and Technology                            sensors to monitor the movement. However, the performance
+           Research Collaborative Innovation Projects under Grant 2014B090901056,
+           Guangdong Science and Technology Plan Project (Application Technology                               of conventional visual servoing heavily depends on feature
+           Research Foundation) No. 2015B020233006. ∗ Corresponding author: Zhijun                             extractions. However, perfect features may not be easy to be
+           Li (zjli@ieee.org).                                                                                 extracted and may change during manipulation [22]. Some
+              S. Qiu, Z. Li, and L. Zhang are currently College of Automation Science
+           and Engineering, South China University of Technology, Guangzhou, China.                            researchers also studied visual servoing without the feature
+           Email: zjli@ieee.org.                                                                               extraction process. In [23], the similarity of two images was
+              W. He is with School of Automation and Electrical Engineering, Uni-                              used to define the mutual information which was used to
+           versity of Science and Technology Beijing, Beijing 100083, China. Email:
+           hewei.ac@gmail.com.                                                                                 design a controller. In [24], the completed image intensities
+              C. Yang is with Zienkiewicz Centre for Computational Engineering,                                was utilized as a feature vector to perform feedback control.
+           Swansea University, UK. Email: cyang@theiet.org.                                                    Although these methods work well, the approach developed
+              C.-Y. Su is with the College of Automation Science and Engineering at
+           the South China University of Technology, Guangzhou, P. R. China, on leave                          in this paper is fundamentally different from them. In this
+           from Concordia University, Montreal, Canada. Email: cysu@scut.edu.cn.                               proposed approach, the image is considered as a set in non-
+
+                                                                                                           1 See http://www.ieee.org/publications_standards/publications/rights/index.html for more information.
+  1063-6706 (c) 2016 IEEE. Personal use is permitted, but republication/redistribution requires IEEE permission.
+

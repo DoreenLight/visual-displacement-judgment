@@ -1,0 +1,2189 @@
+--- a/10_研究方向/主动参与与训练强度_链路研究/文献台账.json
++++ b/10_研究方向/主动参与与训练强度_链路研究/文献台账.json
+@@ -1188,16 +1188,19 @@
+       ],
+       "database": "IEEE Xplore",
+       "landing_url": "https://doi.org/10.1109/tro.2024.3411849",
+-      "local_fulltext": "",
++      "local_fulltext": "01_参考论文/康复整合链路/A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller.pdf",
+       "screening": "included",
+       "role": "assistance/integration",
+       "include_reason": "宋嵘团队重点对照",
+       "needs_fulltext": true,
+-      "acquisition_status": "当前未能取得本地全文；不代表没有合法公开通路",
+-      "source_records": [
+-        "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json"
+-      ],
+-      "kind": "paper"
++      "acquisition_status": "用户提供出版PDF；原件身份/页结构/SHA及关键正文方法补核通过；不等于创新性/临床/系统验收",
++      "source_records": [
++        "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json",
++        "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
++        "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
++      ],
++      "kind": "paper",
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+     },
+     {
+       "id": "Song_TIE",
+@@ -1263,16 +1266,19 @@
+       ],
+       "database": "IEEE Xplore",
+       "landing_url": "https://doi.org/10.1109/tie.2024.3398675",
+-      "local_fulltext": "",
++      "local_fulltext": "01_参考论文/康复整合链路/Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration.pdf",
+       "screening": "included",
+       "role": "assistance/integration",
+       "include_reason": "宋嵘团队重点对照",
+       "needs_fulltext": true,
+-      "acquisition_status": "当前未能取得本地全文；不代表没有合法公开通路",
+-      "source_records": [
+-        "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json"
+-      ],
+-      "kind": "paper"
++      "acquisition_status": "用户提供出版PDF；原件身份/页结构/SHA及关键正文方法补核通过；不等于创新性/临床/系统验收",
++      "source_records": [
++        "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json",
++        "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
++        "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
++      ],
++      "kind": "paper",
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+     },
+     {
+       "id": "Song_VAAN",
+@@ -1386,16 +1392,21 @@
+       ],
+       "database": "IEEE Xplore",
+       "landing_url": "https://doi.org/10.1109/tbme.2022.3228070",
+-      "local_fulltext": "",
++      "local_fulltext": "01_参考论文/康复整合链路/Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot.pdf",
+       "screening": "included",
+       "role": "assistance/integration",
+       "include_reason": "宋嵘团队重点对照",
+       "needs_fulltext": true,
+-      "acquisition_status": "当前未能取得本地全文；不代表没有合法公开通路",
+-      "source_records": [
+-        "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json"
+-      ],
+-      "kind": "paper"
++      "acquisition_status": "用户提供出版PDF；原件身份/页结构/SHA及关键正文方法补核通过；不等于创新性/临床/系统验收",
++      "source_records": [
++        "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json",
++        "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
++        "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
++      ],
++      "kind": "paper",
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json",
++      "journal_year": 2023,
++      "first_online_year": 2022
+     },
+     {
+       "id": "Song_TBME",
+@@ -1449,16 +1460,21 @@
+       ],
+       "database": "IEEE Xplore",
+       "landing_url": "https://doi.org/10.1109/tbme.2020.3027823",
+-      "local_fulltext": "",
++      "local_fulltext": "01_参考论文/康复整合链路/Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot.pdf",
+       "screening": "included",
+       "role": "assistance/integration",
+       "include_reason": "宋嵘团队重点对照",
+       "needs_fulltext": true,
+-      "acquisition_status": "当前未能取得本地全文；不代表没有合法公开通路",
+-      "source_records": [
+-        "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json"
+-      ],
+-      "kind": "paper"
++      "acquisition_status": "用户提供出版PDF；原件身份/页结构/SHA及关键正文方法补核通过；不等于创新性/临床/系统验收",
++      "source_records": [
++        "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json",
++        "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
++        "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
++      ],
++      "kind": "paper",
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json",
++      "journal_year": 2021,
++      "first_online_year": 2020
+     },
+     {
+       "id": "Song_TBCAS",
+@@ -1550,16 +1566,19 @@
+       ],
+       "database": "IEEE Xplore",
+       "landing_url": "https://doi.org/10.1109/tbcas.2021.3130090",
+-      "local_fulltext": "",
++      "local_fulltext": "01_参考论文/康复整合链路/A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller.pdf",
+       "screening": "included",
+       "role": "assistance/integration",
+       "include_reason": "宋嵘团队重点对照",
+       "needs_fulltext": true,
+-      "acquisition_status": "当前未能取得本地全文；不代表没有合法公开通路",
+-      "source_records": [
+-        "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json"
+-      ],
+-      "kind": "paper"
++      "acquisition_status": "用户提供出版PDF；原件身份/页结构/SHA及关键正文方法补核通过；不等于创新性/临床/系统验收",
++      "source_records": [
++        "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json",
++        "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
++        "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
++      ],
++      "kind": "paper",
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+     },
+     {
+       "id": "RL2026",
+@@ -1661,17 +1680,20 @@
+       ],
+       "database": "IEEE Xplore；Padova IRIS（开放PDF）",
+       "landing_url": "https://research.unipd.it/handle/11577/3586318",
+-      "local_fulltext": "",
++      "local_fulltext": "01_参考论文/康复整合链路/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf",
+       "screening": "included",
+       "role": "assistance/integration",
+       "include_reason": "近期AAN/适配闭环直接对照",
+       "needs_fulltext": true,
+-      "acquisition_status": "11页正文文本已补核，非PDF/XML原件；原PDF直取403及浏览器失败，图表/公式仍需原件核验",
++      "acquisition_status": "用户提供出版PDF；原件身份/页结构/SHA及关键正文方法补核通过；不等于创新性/临床/系统验收",
+       "source_records": [
+         "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json",
+-        "05_进展日志/2026-10-02_康复链路研究/RL2026_公开正文补核.json"
+-      ],
+-      "kind": "paper"
++        "05_进展日志/2026-10-02_康复链路研究/RL2026_公开正文补核.json",
++        "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
++        "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
++      ],
++      "kind": "paper",
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+     },
+     {
+       "id": "Shoulder2025",
+@@ -1755,16 +1777,19 @@
+       ],
+       "database": "IEEE Xplore",
+       "landing_url": "https://doi.org/10.1109/tnsre.2025.3579533",
+-      "local_fulltext": "",
++      "local_fulltext": "01_参考论文/康复整合链路/Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf",
+       "screening": "included",
+       "role": "assistance/integration",
+       "include_reason": "近期AAN/适配闭环直接对照",
+       "needs_fulltext": true,
+-      "acquisition_status": "当前未能取得本地全文；不代表没有合法公开通路",
+-      "source_records": [
+-        "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json"
+-      ],
+-      "kind": "paper"
++      "acquisition_status": "用户提供出版PDF；原件身份/页结构/SHA及关键正文方法补核通过；不等于创新性/临床/系统验收",
++      "source_records": [
++        "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json",
++        "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
++        "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
++      ],
++      "kind": "paper",
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+     },
+     {
+       "id": "Psy2014",
+--- a/10_研究方向/主动参与与训练强度_链路研究/文献对照_原文定位.json
++++ b/10_研究方向/主动参与与训练强度_链路研究/文献对照_原文定位.json
+@@ -1615,61 +1615,537 @@
+     {
+       "id": "Song_TRO",
+       "title": "A Cable-Driven Upper Limb Rehabilitation Robot With Muscle-Synergy-Based Myoelectric Controller",
+-      "source": "",
++      "source": "01_参考论文/康复整合链路/A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller.pdf",
+       "doi": "10.1109/tro.2024.3411849",
+-      "passages": [],
+-      "status": "bibliography_only"
++      "passages": [
++        {
++          "uid": "S7-TRO-01",
++          "locator": "PDF page 5; II.C Experimental Setup",
++          "text": "Eight healthy participants (four males and four females; age: 24–29 years)",
++          "supports": "Healthy8, not patient validation.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-TRO-02",
++          "locator": "PDF page 3; II.A CDULRR Platform",
++          "text": "we built a six-axis force sensor (D45MM-F400N) into the end-effector for measuring human–robot interaction force",
++          "supports": "Interaction-force sensor exists but does not change the stated model-derived training target.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-TRO-03",
++          "locator": "PDF page 5; II.C reference construction",
++          "text": "The 3-D position data of the end-effector recorded by the motion capture system",
++          "supports": "Kinematic data are used to derive reference force through Eq9.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-TRO-04",
++          "locator": "PDF page 5; II.C reference construction",
++          "text": "which served as the reference/observed output of the transfer function model.",
++          "supports": "Force supervision is explicitly derived by the stated procedure; independent active torque is not demonstrated.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-TRO-05",
++          "locator": "PDF page 2; I final method paragraph",
++          "text": "one trajectory task was used for model training, whereas the other one was used for both the model testing and online verification",
++          "supports": "Specific cross-task split; do not infer cross-patient validation.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-TRO-06",
++          "locator": "PDF page 4; II.B.8 Workspace Limitation/Eq10–11",
++          "text": "a workspace limitation is added to make sure the position of the end-effector work in the following range",
++          "supports": "Explicit engineering guard, not a clinical safety claim.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-TRO-07",
++          "locator": "PDF page 6; II.D Statistics",
++          "text": "The number of samples for each t-test was 72",
++          "supports": "Trial-level stated sample size, not72 participants.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-TRO-08",
++          "locator": "PDF page 9; III.C Results, Fig14",
++          "text": "p = 0.170",
++          "supports": "Group2 y-axis tracking difference is nonsignificant.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-TRO-09",
++          "locator": "PDF page 10; IV.D.2 Limitations",
++          "text": "tested on eight healthy participants and only 144 trials",
++          "supports": "Limited engineering sample and trial count.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-TRO-10",
++          "locator": "PDF page 10; IV.D.2 Limitations",
++          "text": "muscle synergies of the patients may be different from those of the healthy ones.",
++          "supports": "Stroke efficacy/generalization cannot be inferred.",
++          "literal_check": true
++        }
++      ],
++      "status": "fulltext_with_selected_method_passages",
++      "sha256": "7e363aa8dca5100a8ea04afbb5c0fbcb81d8867924695365fbcc2d2958a8f1fe",
++      "pages": 13,
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+     },
+     {
+       "id": "Song_TIE",
+       "title": "Deep-LSTM-Based Human-Robot Collaboration Control With Static-Dynamic Calibration",
+-      "source": "",
++      "source": "01_参考论文/康复整合链路/Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration.pdf",
+       "doi": "10.1109/tie.2024.3398675",
+-      "passages": [],
+-      "status": "bibliography_only"
++      "passages": [
++        {
++          "uid": "S7-TIE-01",
++          "locator": "PDF page 2; I final overview",
++          "text": "Three subjects were recruited",
++          "supports": "3 participants; no demographics/clinical group inference.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-TIE-02",
++          "locator": "PDF page 5; III.A Static Calibration",
++          "text": "the measured interaction force was equal to the voluntary force applied by subjects.",
++          "supports": "Measured static force under locked-robot assumption.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-TIE-03",
++          "locator": "PDF page 7; V Discussion, dynamic target",
++          "text": "the human voluntary force is not equal to the dynamic interaction force",
++          "supports": "Dynamic target is a sum/estimate, not the force-sensor channel alone.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-TIE-04",
++          "locator": "PDF page 5; III.B Dynamic Calibration",
++          "text": "The updated DLN was then reembedded in the system substituting for the pretrained DLN for dynamic validation.",
++          "supports": "Offline staged calibration before online validation; no continual-online-learning inference.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-TIE-05",
++          "locator": "PDF page 2; II.A Fig2",
++          "text": "eight channels of muscle activations and three joint angles information",
++          "supports": "Posture-aware EMG force inference is a prior.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-TIE-06",
++          "locator": "PDF page 5; III.A Acquisition",
++          "text": "The interaction force and the marker positions were recorded at 100 Hz while the EMG signals were at 1000 Hz.",
++          "supports": "Separate acquisition clocks/rates must not be copied as local synchronization evidence.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-TIE-07",
++          "locator": "PDF page 1; Abstract",
++          "text": "for 160 trials",
++          "supports": "160 trials, not160 participants.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-TIE-08",
++          "locator": "PDF page 10; VII Conclusion continuation",
++          "text": "It might be interesting if the DLN network trained using data from healthy subjects could be slightly calibrated again and then applied to patients after stroke.",
++          "supports": "Stroke transfer is future work, not patient validation.",
++          "literal_check": true
++        }
++      ],
++      "status": "fulltext_with_selected_method_passages",
++      "sha256": "051062e5644209088b9c01a0eb023091e070b97400baf3cacd627fb762682615",
++      "pages": 11,
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+     },
+     {
+       "id": "Song_VAAN",
+       "title": "Voluntary Assist-as-Needed Controller for an Ankle Power-Assist Rehabilitation Robot",
+-      "source": "",
++      "source": "01_参考论文/康复整合链路/Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot.pdf",
+       "doi": "10.1109/tbme.2022.3228070",
+-      "passages": [],
+-      "status": "bibliography_only"
++      "passages": [
++        {
++          "uid": "S7-VA-01",
++          "locator": "PDF page 4; IV.A Participants",
++          "text": "experiments were performed on two healthy subjects (H1 and H2)",
++          "supports": "2healthy+5stroke, ankle applicability only.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-VA-02",
++          "locator": "PDF page 4; IV.A Inclusion",
++          "text": "the voluntary EMG signals of the affected tibialis anterior (TA) and gastrocnemius (GAS) should be measurable",
++          "supports": "Selected stroke population; not all impairments.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-VA-03",
++          "locator": "PDF page 4; IV.B MVC calibration",
++          "text": "fixed at 90° and 120°",
++          "supports": "Two-angle static MVC calibration.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-VA-04",
++          "locator": "PDF page 4; IV.B Eq19",
++          "text": "are the actual joint torque measured by the torque sensor",
++          "supports": "Independent torque-sensor MVC calibration prior exists.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-VA-05",
++          "locator": "PDF page 5; IV.C Training Protocol",
++          "text": "an amplitude of 25° and a frequency of 0.1 Hz for 30 seconds.",
++          "supports": "Short ankle exercise exposure, not clinical dose-response.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-VA-06",
++          "locator": "PDF page 5; IV.D Eq25",
++          "text": "The human contribution ratio in four working modes was used to evaluate patient’s active participation",
++          "supports": "Operational physical participation ratio, not psychological engagement.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-VA-07",
++          "locator": "PDF page 7; V TableVI literature comparison",
++          "text": "despite a slight bigger tracking errors were appeared",
++          "supports": "Participation/accuracy tradeoff and cross-study comparator, not across-endpoint superiority.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-VA-08",
++          "locator": "PDF page 8; VI.C Limitations and Future Work",
++          "text": "some involuntary motor activity of stroke patients, such as spasticity, might contaminate voluntary EMG signals",
++          "supports": "Voluntary/involuntary identification limit explicitly acknowledged.",
++          "literal_check": true
++        }
++      ],
++      "status": "fulltext_with_selected_method_passages",
++      "sha256": "360e92e294b0105eec6161352d9f884792e88c82aee11ae3530a95c58858afcb",
++      "pages": 9,
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+     },
+     {
+       "id": "Song_TBME",
+       "title": "Performance-Based Hybrid Control of a Cable-Driven Upper-Limb Rehabilitation Robot",
+-      "source": "",
++      "source": "01_参考论文/康复整合链路/Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot.pdf",
+       "doi": "10.1109/tbme.2020.3027823",
+-      "passages": [],
+-      "status": "bibliography_only"
++      "passages": [
++        {
++          "uid": "S7-BM-01",
++          "locator": "PDF page 5; III.B Trajectory Tracking Experiment",
++          "text": "Ten healthy subjects",
++          "supports": "10 healthy, no actual stroke trial.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-BM-02",
++          "locator": "PDF page 3; II.B human-force approximation",
++          "text": "Considering the small mass and acceleration of the end-effector",
++          "supports": "-Fc is an assumed approximation, not an independent active-force reference.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-BM-03",
++          "locator": "PDF page 5; III.B perturbed trials",
++          "text": "four kinds of tasks with different disturbance forces were designed",
++          "supports": "Artificial performance degradation, not a stroke model validated clinically.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-BM-04",
++          "locator": "PDF page 7; V Discussion, fuzzy prior",
++          "text": "fuzzy logic tuner",
++          "supports": "Error/error-rate fuzzy stiffness adaptation already exists; not calibrated uncertainty.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-BM-05",
++          "locator": "PDF page 6; III.C Data Analysis",
++          "text": "A Bonferroni correction was used to adjust the significant level",
++          "supports": "Use corrected threshold, not uncorrected.05, to interpret nulls.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-BM-06",
++          "locator": "PDF page 8; V Discussion, limitations",
++          "text": "the measurement of human active force should be improved",
++          "supports": "Author explicitly acknowledges force-reference weakness.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-BM-07",
++          "locator": "PDF page 8; V Discussion, simulated disability",
++          "text": "simulate patients with various levels of motor disabilities",
++          "supports": "Simulation in healthy subjects does not prove patient outcomes.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-BM-08",
++          "locator": "PDF page 7; IV Results, Fig12",
++          "text": "it is not shown in Fig. 12",
++          "supports": "Restriction-mode time is near0; guard existence is not validated hazardous-boundary exposure.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-BM-09",
++          "locator": "PDF page 5; III.B safety control",
++          "text": "scram button for safety",
++          "supports": "Engineering emergency stop, not clinical safety evidence.",
++          "literal_check": true
++        }
++      ],
++      "status": "fulltext_with_selected_method_passages",
++      "sha256": "bbf68a0f81d3d54716a5e2229404d070891a33b67ea29bd31fdc30e67a00c435",
++      "pages": 9,
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+     },
+     {
+       "id": "Song_TBCAS",
+       "title": "A Hybrid Arm-Hand Rehabilitation Robot With EMG-Based Admittance Controller",
+-      "source": "",
++      "source": "01_参考论文/康复整合链路/A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller.pdf",
+       "doi": "10.1109/tbcas.2021.3130090",
+-      "passages": [],
+-      "status": "bibliography_only"
++      "passages": [
++        {
++          "uid": "S7-BC-01",
++          "locator": "PDF page 5; II.C Calibration of Arm/Hand Force Model",
++          "text": "One healthy subject (age: 23 years; height: 171 cm; weight: 76 kg)",
++          "supports": "Single healthy subject, not a patient/multi-person cohort.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-BC-02",
++          "locator": "PDF page 5; II.C reference construction",
++          "text": "The position data were taken into (7) to derive the estimated arm force",
++          "supports": "Kinematic inversion provides stated model-training target, not independent active-force truth.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-BC-03",
++          "locator": "PDF page 5; II.C trial partition",
++          "text": "Among the twenty trials of data, ten were randomly selected for the training and the other ten for the testing.",
++          "supports": "20trials10/10, not an invented80/20 split or held-out-person design.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-BC-04",
++          "locator": "PDF page 6; III.A model-order selection/Fig5",
++          "text": "from 1 to 10",
++          "supports": "Order selection uses training/testing model fits, not fixed independent holdout proof.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-BC-05",
++          "locator": "PDF page 8; III.B/TableI",
++          "text": "Hand: p > 0.05",
++          "supports": "Hand force-zero-crossing difference nonsignificant;TableI exactp=.055 visually verified.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-BC-06",
++          "locator": "PDF page 8; III.B/Fig7",
++          "text": "p = 0.036 for end-effector",
++          "supports": "Jerk endpoint distinct from contribution/clinical outcome.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-BC-07",
++          "locator": "PDF page 8; III.B/Fig7",
++          "text": "p = 0.001 for rod ends",
++          "supports": "Rod-end jerk result, not all physical/psychological endpoints improved.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-BC-08",
++          "locator": "PDF page 9; IV.C Limitations and Future Works",
++          "text": "tested on the healthy subject at current stage.",
++          "supports": "Patient effectiveness remains future, not established.",
++          "literal_check": true
++        }
++      ],
++      "status": "fulltext_with_selected_method_passages",
++      "sha256": "cf7bf33523cb6196da35eada7614183a9200c77e7f8d7b6a6fe22140de1b4fc6",
++      "pages": 11,
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+     },
+     {
+       "id": "RL2026",
+       "title": "Personalized Adaptive Assistance With Reinforcement Learning Control Enhances Engagement, Performance, and Retention in Robot-Assisted Arm-Reaching Exercises",
+-      "source": "",
++      "source": "01_参考论文/康复整合链路/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf",
+       "doi": "10.1109/tnsre.2025.3650096",
+-      "passages": [],
+-      "status": "original_missing_derived_body_available",
++      "passages": [
++        {
++          "uid": "S7-RL-01",
++          "locator": "PDF page 5; III.C, Eq9–12/Fig3",
++          "text": "objectives in exercise training: minimizing external assistance to encourage active effort, vs. minimizing movement errors to promote correct task execution.",
++          "supports": "Dynamic error/assistance tradeoff already exists; not a new coupling claim.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-RL-02",
++          "locator": "PDF page 8; V.A footnote1",
++          "text": "Herein, we use the expression “user engagement” to refer to the degree to which individuals actively participate in—and remain physically involved with—the motor task.",
++          "supports": "The paper's engagement definition is physical, not an independent psychological measure.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-RL-03",
++          "locator": "PDF page 8; V.A footnote1",
++          "text": "utilized as a proxy for engagement",
++          "supports": "Negative directional error is explicitly a proxy, not continuous active-torque truth.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-RL-04",
++          "locator": "PDF page 5; IV.A Protocol",
++          "text": "Fifteen healthy adults (11 males, age 18-32 years) volunteered for this study.",
++          "supports": "15 healthy adults, not stroke patients.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-RL-05",
++          "locator": "PDF page 6; IV.A Protocol",
++          "text": "scheduled at least 48 hours apart",
++          "supports": "Within-subject visits have washout and balanced order; do not treat as15 patients per independent group.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-RL-06",
++          "locator": "PDF page 6; IV.A, Fig4",
++          "text": "These sessions began 1, 10, and 20 minutes after the end of T-4",
++          "supports": "Short-term unassisted retention only.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-RL-07",
++          "locator": "PDF page 6; IV.B Statistical Analysis",
++          "text": "used as a surrogate measure for robot assistance",
++          "supports": "Mean g is an assistance surrogate, not verified delivered dose/work.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-RL-08",
++          "locator": "PDF page 9; VI Discussion, limitations",
++          "text": "were manually set to uniform values across all participants",
++          "supports": "Threshold individuality/objectivity is explicitly limited.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-RL-09",
++          "locator": "PDF page 9; VI Discussion, stroke applicability",
++          "text": "additional work is required before this approach can be piloted in individuals post-stroke.",
++          "supports": "No patient efficacy or clinical implementation conclusion.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-RL-10",
++          "locator": "PDF page 9; VI Discussion, control limitation",
++          "text": "incorporating a control condition with visual feedback but no physical guidance would be valuable",
++          "supports": "No unguided-practice control in this study.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-RL-11",
++          "locator": "PDF page 5; III.C actor/critic definition",
++          "text": "Both the actor and the critic networks are nonlinear feedforward NNs with one hidden layer and sigmoid activation functions",
++          "supports": "Specific online actor/critic model, not inferred generic deep RL.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-RL-12",
++          "locator": "PDF page 8; V.A Catch trials/TableIV",
++          "text": "Catch trials were conducted on a subset of study participants (N=6).",
++          "supports": "Catch-trial findings concern6, not the full15.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-RL-13",
++          "locator": "PDF page 5; III.C Eq12 curriculum",
++          "text": "a more challenging objective is set by decreasing η by a fixed quantity",
++          "supports": "Difficulty adaptation is explicit; equation/text bound notation has an original-PDF ambiguity.",
++          "literal_check": true
++        }
++      ],
++      "status": "fulltext_with_selected_method_passages",
+       "derived_text_ref": "05_进展日志/2026-10-02_康复链路研究/RL2026_派生正文.md",
+       "derived_evidence_ref": "05_进展日志/2026-10-02_康复链路研究/RL2026_公开正文补核.json",
+-      "limitations": "16段正文补核独立统计；不增加原件计数，图像/公式字形未核，仍需原PDF"
++      "limitations": "原出版PDF和关键图公式已核；Eq12边界符号与文字有歧义，未擅自修正；此前16段派生正文独立留史，不替代原件或增独立样本。",
++      "sha256": "4b6e21ec3be9c4d677c6ad4d9099df49d3a8198fecf7abe990a360bf93ff97e6",
++      "pages": 11,
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+     },
+     {
+       "id": "Shoulder2025",
+       "title": "Assist-as-Needed Control of a Shoulder Rehabilitation Robot Using a Virtual Biomechanical Model and Online Stiffness Adaptation",
+-      "source": "",
++      "source": "01_参考论文/康复整合链路/Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf",
+       "doi": "10.1109/tnsre.2025.3579533",
+-      "passages": [],
+-      "status": "bibliography_only"
++      "passages": [
++        {
++          "uid": "S7-SH-01",
++          "locator": "PDF page 7; IV Experimental Setup",
++          "text": "tested with ten healthy subjects (7 males and 3 females",
++          "supports": "10 healthy, not10 patients.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-SH-02",
++          "locator": "PDF page 7; IV Experimental Setup",
++          "text": "22-38 years; height: 143-183cm, weight: 52-98kg",
++          "supports": "Healthy-adult applicability.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-SH-03",
++          "locator": "PDF page 9; V Results and Discussion",
++          "text": "The VBSRM was used to compute the desired human torque through inverse dynamics, as a biomechanically inspired reference for assistance calculation.",
++          "supports": "Desired model torque reference, not independent voluntary-torque truth.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-SH-04",
++          "locator": "PDF page 9; V Results and Discussion",
++          "text": "updating joint stiffness values continuously as a function of subject interaction with a gradient-based learning rule.",
++          "supports": "Online stiffness adaptation already exists.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-SH-05",
++          "locator": "PDF page 9; VI Conclusion",
++          "text": "Experimental trials on ten healthy subjects during an ADL task",
++          "supports": "ADL engineering experiment, no patient efficacy conclusion.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-SH-06",
++          "locator": "PDF page 9; V Limitations",
++          "text": "experiments were conducted on healthy subjects alone",
++          "supports": "Author's explicit clinical-applicability limit.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-SH-07",
++          "locator": "PDF page 9; V Limitations",
++          "text": "environmental disturbances and long-term adaptability of the system were not tested comprehensively",
++          "supports": "No general long-term/OOD safety guarantee.",
++          "literal_check": true
++        },
++        {
++          "uid": "S7-SH-08",
++          "locator": "PDF page 6; III.D",
++          "text": "Stability Considerations",
++          "supports": "Control-design stability discussion is distinct from verified patient safety.",
++          "literal_check": true
++        }
++      ],
++      "status": "fulltext_with_selected_method_passages",
++      "sha256": "e71f6fb2dfc06eb87118b3056e4e82e6bc6dc67fb0554698ba3a008ceabf1768",
++      "pages": 10,
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+     },
+     {
+       "id": "Psy2014",
+--- a/10_研究方向/主动参与与训练强度_链路研究/文献对照_判读.json
++++ b/10_研究方向/主动参与与训练强度_链路研究/文献对照_判读.json
+@@ -1,6 +1,6 @@
+ {
+   "schema": "rehab-chain-comparison/v1",
+-  "note": "首轮53条与双参与确认后补核2条，共55条：48条本地原文、7条缺原件（6仅书目、RL有正文文本补核）。基础条目为摘要/选择段落，关键整合及心理测量补核方法；不是通篇译读或独立复现。",
++  "note": "共55条纳入/55条本地原件/0待下载。2026-10-04补取7出版PDF，正文/方法及64段原件定位补核，主定位398段；ALP/TFS补充17条与历史RL派生16段分计。基础条目为摘要/选择段落，不是55篇通篇译读或独立复现；方法先例不能代替独立身心参照、真实辅助/临床验证。", 
+   "columns": [
+     "id",
+     "role",
+@@ -615,94 +615,94 @@
+     ],
+     [
+       "Song_TRO",
+-      "整合候选（书目）",
+-      "题名指向肌肉协同肌电控制的绳驱上肢机器人",
+-      "书目不足：具体传感输入未核",
+-      "书目不足：控制输出与评价未核",
+-      "题名提示整合，但闭环细节与增益未知",
+-      "未核：不能从题名认定努力金标准",
+-      "未核：不能断言无强度策略",
+-      "未核",
+-      "仅正式身份；缺全文，阻断对应机制差异/新颖性判断",
+-      "Crossref身份；无本地全文"
++      "肌协同—导纳整合（原件方法已核）",
++      "肌协同能否改进跨任务EMG驱动3D辅助",
++      "8通道EMG/MVC、NNMF、运动学反算参考力；另测六轴交互力",
++      "3D力模型、导纳目标、绳驱控制及跟踪/交互力指标",
++      "EMG→协同/力模型→导纳/工作空间→PID→新观察，已有整合",
++      "训练目标用位置经Eq9反算，不是独立主动施力真值；交互力通道须另分",
++      "人驱导纳及重复任务；非剂量/心理/难度最优化",
++      "空间限幅、张力7–10N；不是患者或任意估计误差安全证明",
++      "8健常，跨任务不等于留人/患者泛化；Group2 y跟踪p=.170未显著，试次非独立人数",
++      "PDF pp.3/5/6/9/10；S7-TRO-01–10；补取七篇_原件机制与候选裁剪.md"
+     ],
+     [
+       "Song_TIE",
+-      "整合候选（书目）",
+-      "题名指向静动态校准的Deep-LSTM人机协作",
+-      "书目不足：传感器和标签未核",
+-      "书目不足：预测/辅助输出未核",
+-      "具体校准—控制反馈未核",
+-      "未核",
+-      "未核",
+-      "未核",
+-      "仅正式身份；不能断言其没有个体校准或在线适配",
+-      "Crossref身份；无本地全文"
++      "姿态/静动态校准—导纳整合（原件方法已核）",
++      "静态力标签怎样适配动态EMG人机协作",
++      "8肌激活+3关节角；静态测交互力，动态标签加入辅助估计",
++      "三层LSTM的3D力、导纳/绳驱轨迹及误差/时延",
++      "静态预训→动态重标定→重新嵌入控制；不是持续在线训练",
++      "静态力假设与动态模型标签不同；未证独立动态自主力矩或心理参与",
++      "在线人驱动作；160试次不构成最佳患者剂量",
++      "空间/张力限制；平均3.1230ms不证明最坏期限/OOD安全",
++      "3参与者，临床/人口细节未清报；卒中迁移属未来；TableIV y力误差变差，综合3D改善",
++      "PDF pp.2/5/7/9/10；S7-TIE-01–08；原TableIV–V目视核"
+     ],
+     [
+       "Song_VAAN",
+-      "整合候选（书目）",
+-      "题名指向踝关节voluntary AAN",
+-      "书目不足：主动状态传感未核",
+-      "书目不足：控制量与评价未核",
+-      "反馈细节及上肢迁移条件未知",
+-      "未核",
+-      "未核",
+-      "未核",
+-      "下肢不能直接当上肢临床证据；缺全文不判断未做某机制",
+-      "Crossref身份；无本地全文"
++      "主动力矩—踝AAN整合（原件方法已核）",
++      "按自愿力矩与表现切换辅助/自由/抵抗及机器人主导",
++      "TA/GAS、Hill模型、角度/力矩；90/120度MVC力矩传感器校准",
++      "估计自愿力矩、增益K、模式、贡献比Rh/跟踪",
++      "已存在力矩比例辅助与表现适配；下肢迁移须重核人群/关节",
++      "独立静态MVC校准已有；动态痉挛污染未解；Rh>1/符号约定不可补猜为概率",
++      "25度/.1Hz、3×30s/30s休息；抵抗/辅助改变挑战，不证明临床剂量收益",
++      "选择性患者短时控制可行性，不是上肢/心理/OOD安全验收",
++      "2健常+5卒中；TableVI跨文献贡献比高但跟踪更差，无患者比较栏/纵向恢复；卷2023在线2022",
++      "PDF pp.4–5/7–8，Eq19/25、TableV–VI；S7-VA-01–08"
+     ],
+     [
+       "Song_TBME",
+-      "整合候选（书目）",
+-      "题名指向表现型混合控制的绳驱上肢机器人",
+-      "书目不足：表现定义未核",
+-      "书目不足：混合控制与指标未核",
+-      "反馈与切换条件未核",
+-      "未核",
+-      "未核",
+-      "未核",
+-      "缺全文；不能预设只是误差阈值或缺少参与控制",
+-      "Crossref身份；无本地全文"
++      "表现—混合辅助整合（原件方法已核）",
++      "误差区域驱动抵抗/辅助/限制及模糊刚度调整",
++      "位置/误差/速度、4绳张力；小质量/加速度假设下Fh≈−Fc",
++      "刚度/阻尼、模式、MAE/AAF与模式占时",
++      "已有表现→辅助/抵抗/限制→新观察；模糊membership不是校准置信度",
++      "AAF为张力反算代理；作者要求3D力传感器；非独立身体或心理参照",
++      "抵抗/辅助与重复时长已有；人为扰动非患者剂量或实际损伤",
++      "限制/空间/张力/急停已有，限制暴露近0；不等于故障/OOD临床验证",
++      "10健常；Friedman/Wilcoxon+Bonferroni p<.008；邻组比较未显著；卷2021在线2020",
++      "PDF pp.3/5–8，Fig10–12；S7-BM-01–09"
+     ],
+     [
+       "Song_TBCAS",
+-      "整合候选（书目）",
+-      "题名指向EMG导纳控制的臂手机器人",
+-      "EMG由题名可知；其他输入及归一化未核",
+-      "导纳控制由题名可知；具体输出未核",
+-      "臂手协调/反馈细节未核",
+-      "未核",
+-      "未核",
+-      "未核",
+-      "缺全文；不能把EMG+AAN/臂手整合再说成独有创新",
+-      "Crossref身份；无本地全文"
++      "臂手EMG—导纳整合（原件方法已核）",
++      "连续EMG能否辅助臂手reach-and-grasp并改善平滑",
++      "6臂+2手EMG；臂力训练输出由位置经Eq7反算；另有交互力传感器",
++      "3D臂力/手力、导纳目标/控制、FZCR和jerk",
++      "已有臂手协调/延迟补偿/导纳→新观察，不能再把模块整合作新意",
++      "运动学反算标签不变成独立主动力；手力拟合、FZCR/jerk不是心理或自主贡献金标准",
++      "任务重复与主动驱动；非长期挑战/剂量优化",
++      "空间/手开度守卫是工程限制，不是患者失效安全验证",
++      "1健常；20试次10/10，阶数选择用到测试；手FZCR p=.055不显著，jerk两终点显著",
++      "PDF pp.5–6/8–9，Eq7、TableI/Fig7；S7-BC-01–08"
+     ],
+     [
+       "RL2026",
+-      "整合先例（派生正文；原件待核）",
+-      "RL-AAN个体化运动误差/辅助权衡及难度更新",
+-      "运动误差分量/执行历史；15健康成人；转写公式字形未核",
+-      "机器人辅助相关阻抗参数、可接受误差/难度；短时训练/保持比较ILC",
+-      "状态/误差历史→RL辅助/目标更新→新运动；不是首次联合个体化反馈",
+-      "脚注1定义物理参与，负向运动误差作代理；不是独立力矩或心理量表真值",
+-      "训练块、难度更新；保持1/10/20分钟；不证最优临床剂量",
+-      "休息安排不等于测得疲劳或患者安全；图表/临床事件未独立核",
+-      "11页PDF正文转写，非规范原件；15健康成人/短时保持；直取403仍需PDF核图公式",
+-      "III/IV/VI，文件页5–6/8–9；刊页536–537/539–540；RL2026_公开正文补核.json的16段；不改变原件计数"
++      "RL—辅助/难度整合（出版原件已核）",
++      "动态权衡误差/辅助并调难度以检验短时训练/保持",
++      "方向误差均值/峰值与历史；15健常，catch子样本6",
++      "阻抗g、目标权重Uc、误差阈值/难度及短时保持",
++      "原Fig3/Eq9–12已核：状态→RL权衡/辅助/挑战→新运动，已有联合适配",
++      "footnote1为身体参与代理；e_neg及平均g分别为参与/辅助代理，非心理或实际机械功真值",
++      "4训练块，保持1/10/20min；阈值手设，不证患者剂量或长期收益",
++      "边界参数/同意不等于患者安全；Eq12上下界符号/文字有原件歧义，不擅改实现",
++      "15健常；训练减误差控制器差异及部分过补偿/保持项未显著；无不引导视觉反馈对照",
++      "PDF pp.5–6/8–9，Eq9–12/Fig3/5–8/TableII–IV；S7-RL-01–13；旧16段派生留史"
+     ],
+     [
+       "Shoulder2025",
+-      "整合候选（书目）",
+-      "题名指向虚拟生物力学与在线刚度AAN",
+-      "书目不足：肌骨状态输入未核",
+-      "在线刚度由题名可知；具体控制与验证未核",
+-      "机制/主动贡献反馈未核",
+-      "未核",
+-      "未核",
+-      "未核",
+-      "缺全文；与肌骨模型/力矩AAN差异暂不能核验",
+-      "Crossref身份；无本地全文"
++      "虚拟肩生物力学—在线刚度AAN（原件方法已核）",
++      "模型期望力矩/交互力怎样驱动混合辅助和在线刚度",
++      "模型/机器人运动学、交互力；VBSRM逆动力学期望人体力矩",
++      "β混合力矩、梯度刚度、PID与ADL跟踪/峰值力矩",
++      "模型→混合AAN/在线刚度→新观察已有，不是首次肌骨辅助结合",
++      "模型期望人体力矩不等于独立自主力矩；β非校准参与概率，无心理量表",
++      "ADL追踪/参数适配，未确具体动作或重复数，不证明患者剂量",
++      "III.D稳定讨论及β/关节/力矩限幅、急停/监督；非一般被动性/估计误差/OOD安全证明",
++      "10健常7男3女，22–38；没有患者临床结论；环境/长期适配未全面测试",
++      "PDF pp.6–7/9，TableII–III/III.D/V局限；S7-SH-01–08"
+     ],
+     [
+       "Psy2014",
+--- a/10_研究方向/主动参与与训练强度_链路研究/文献对照表.md
++++ b/10_研究方向/主动参与与训练强度_链路研究/文献对照表.md
+@@ -2,14 +2,14 @@
+ 
+ ## 先看结论
+ 
+-首批53条加心理补核2条，当前55条逐条登记：48条有本地原文、7条缺原件（6仅正式书目，RL有受限正文文本补核）。**整合先例已经找到**：连续肌电辅助、表现型可变阻抗、MPC-AAN、生成模型双模式外骨骼、ALP参与控制及神经模糊肌骨AAN。不能再以“没人把理解与辅助接起来”作为创新前提。目的性地图不能给出“结合者很少”的总体频率。
++当前55条均有本地原件、0待下载；2026-10-04新7篇出版PDF的关键正文/方法已核，新增64条定位，主定位398段；ALP/TFS补充17条及旧RL派生16段分计。**整合先例已经找到**：连续肌电辅助、表现型可变阻抗、MPC-AAN、生成模型双模式外骨骼、ALP参与控制及神经模糊肌骨AAN。不能再以“没人把理解与辅助接起来”作为创新前提。目的性地图不能给出“结合者很少”的总体频率。
+ 
+ 角度精度、代偿分类、意图概率、肌电/力矩代理、训练量与临床结局属于不同证据层。反馈闭环存在也不等于参与和强度都被可靠测量，更不等于患者收益已验证。
+ 
+ ## 怎么读与证据边界
+ 
+-- 每条给出问题、输入、输出、反馈、三项目标评价及局限。基础条目主要核摘要、开篇及选择段落；关键对照补核方法/人群/结果，并不是53篇通篇译读或独立复现。
+-- “未核”是本轮证据不足，不是断言全文没有该机制/指标。缺原件项不用于断言创新空白；RL只就已回核正文裁剪泛化主张；患者原文未见、不良事件未核者不写“安全”。
++- 每条给出问题、输入、输出、反馈、三项目标评价及局限。基础条目主要核摘要、开篇及选择段落；关键对照补核方法/人群/结果，并不是55篇通篇译读或独立复现。
++- “未核”是证据范围限制，不是断言全文/领域没有该机制。新7篇已有规范原件与方法定位，RL原图公式已核；参照独立性/临床事件未证者仍不写“真实主动贡献/安全”，不拿文件存在代替内容或创新验收。
+ - 预印本、出版PDF、JATS和作者接受稿按实际原件解释；版本以原件及台账为准，不借旧卡片的年份/标签替代首页。
+ - [机器可读判读](文献对照_判读.json)与[原文定位/摘录/SHA](文献对照_原文定位.json)共同使用；定位中的PDF页码为文件页，XML为章节id及直接段落序号。
+ - 下表“强度”同时区分挑战/相对努力与练习时间/次数；没有统一成一个分数。所有“无疗效证据”只针对所列主张，不否定研究的其他贡献。
+@@ -718,112 +718,114 @@
+ | 人群/版本/推断边界 | Accepted Version带封面，文件页=稿页+1；3健康男性、20点窗/2点步长；跨人图不证明未见患者保留泛化 |
+ | 关键定位 | 文件p5/Eq19、p6/Theorem1、p7/JTCR、p8实验V/p9特征L2；[原件方法深核](已取得最近工作_方法参照深核.md)及原件证据卡 |
+ 
+-## D. 缺全文的关键对照：不能补猜
+-
+-### Song_TRO · 整合候选（书目）
+-
+-[A Cable-Driven Upper Limb Rehabilitation Robot With Muscle-Synergy-Based Myoelectric Controller](https://doi.org/10.1109/tro.2024.3411849)
+-
+-| 要回答的问题 | 原文可支持的回答 |
+-|---|---|
+-| 解决什么问题 | 题名指向肌肉协同肌电控制的绳驱上肢机器人 |
+-| 输入 → 输出 | 书目不足：具体传感输入未核 → 书目不足：控制输出与评价未核 |
+-| 怎样影响训练/是否闭环 | 题名提示整合，但闭环细节与增益未知 |
+-| 主动参与的真实测量 | 未核：不能从题名认定努力金标准 |
+-| 强度与剂量 | 未核：不能断言无强度策略 |
+-| 安全证据 | 未核 |
+-| 人群/版本/推断边界 | 仅正式身份；缺全文，阻断对应机制差异/新颖性判断 |
+-| 关键定位 | Crossref身份；无本地全文 |
+-
+-### Song_TIE · 整合候选（书目）
+-
+-[Deep-LSTM-Based Human-Robot Collaboration Control With Static-Dynamic Calibration](https://doi.org/10.1109/tie.2024.3398675)
+-
+-| 要回答的问题 | 原文可支持的回答 |
+-|---|---|
+-| 解决什么问题 | 题名指向静动态校准的Deep-LSTM人机协作 |
+-| 输入 → 输出 | 书目不足：传感器和标签未核 → 书目不足：预测/辅助输出未核 |
+-| 怎样影响训练/是否闭环 | 具体校准—控制反馈未核 |
+-| 主动参与的真实测量 | 未核 |
+-| 强度与剂量 | 未核 |
+-| 安全证据 | 未核 |
+-| 人群/版本/推断边界 | 仅正式身份；不能断言其没有个体校准或在线适配 |
+-| 关键定位 | Crossref身份；无本地全文 |
+-
+-### Song_VAAN · 整合候选（书目）
+-
+-[Voluntary Assist-as-Needed Controller for an Ankle Power-Assist Rehabilitation Robot](https://doi.org/10.1109/tbme.2022.3228070)
+-
+-| 要回答的问题 | 原文可支持的回答 |
+-|---|---|
+-| 解决什么问题 | 题名指向踝关节voluntary AAN |
+-| 输入 → 输出 | 书目不足：主动状态传感未核 → 书目不足：控制量与评价未核 |
+-| 怎样影响训练/是否闭环 | 反馈细节及上肢迁移条件未知 |
+-| 主动参与的真实测量 | 未核 |
+-| 强度与剂量 | 未核 |
+-| 安全证据 | 未核 |
+-| 人群/版本/推断边界 | 下肢不能直接当上肢临床证据；缺全文不判断未做某机制 |
+-| 关键定位 | Crossref身份；无本地全文 |
+-
+-### Song_TBME · 整合候选（书目）
+-
+-[Performance-Based Hybrid Control of a Cable-Driven Upper-Limb Rehabilitation Robot](https://doi.org/10.1109/tbme.2020.3027823)
+-
+-| 要回答的问题 | 原文可支持的回答 |
+-|---|---|
+-| 解决什么问题 | 题名指向表现型混合控制的绳驱上肢机器人 |
+-| 输入 → 输出 | 书目不足：表现定义未核 → 书目不足：混合控制与指标未核 |
+-| 怎样影响训练/是否闭环 | 反馈与切换条件未核 |
+-| 主动参与的真实测量 | 未核 |
+-| 强度与剂量 | 未核 |
+-| 安全证据 | 未核 |
+-| 人群/版本/推断边界 | 缺全文；不能预设只是误差阈值或缺少参与控制 |
+-| 关键定位 | Crossref身份；无本地全文 |
+-
+-### Song_TBCAS · 整合候选（书目）
+-
+-[A Hybrid Arm-Hand Rehabilitation Robot With EMG-Based Admittance Controller](https://doi.org/10.1109/tbcas.2021.3130090)
+-
+-| 要回答的问题 | 原文可支持的回答 |
+-|---|---|
+-| 解决什么问题 | 题名指向EMG导纳控制的臂手机器人 |
+-| 输入 → 输出 | EMG由题名可知；其他输入及归一化未核 → 导纳控制由题名可知；具体输出未核 |
+-| 怎样影响训练/是否闭环 | 臂手协调/反馈细节未核 |
+-| 主动参与的真实测量 | 未核 |
+-| 强度与剂量 | 未核 |
+-| 安全证据 | 未核 |
+-| 人群/版本/推断边界 | 缺全文；不能把EMG+AAN/臂手整合再说成独有创新 |
+-| 关键定位 | Crossref身份；无本地全文 |
+-
+-### RL2026 · 整合先例（派生正文；原件待核）
+-
+-[Personalized Adaptive Assistance With Reinforcement Learning Control Enhances Engagement, Performance, and Retention in Robot-Assisted Arm-Reaching Exercises](https://research.unipd.it/handle/11577/3586318) · [受限正文补核及候选裁剪](RL2026_正文补核与候选裁剪.md)
+-
+-| 要回答的问题 | 正文转写可支持的回答（图像/公式未核） |
+-|---|---|
+-| 解决什么问题 | RL-AAN个体化运动误差/辅助权衡及难度更新 |
+-| 输入 → 输出 | 运动误差分量/执行历史；15健康成人 → 机器人辅助相关阻抗参数、可接受误差/难度；短时训练/保持比较ILC |
+-| 怎样影响训练/是否闭环 | 状态/误差历史→RL辅助/目标更新→新运动；不是首次联合个体化反馈 |
+-| 主动参与的真实测量 | 脚注1定义物理参与，负向运动误差作代理；不是独立力矩或心理量表真值 |
+-| 强度与剂量 | 训练块、难度更新；保持1/10/20分钟；不证最优临床剂量 |
+-| 安全证据 | 休息安排不等于测得疲劳或患者安全；图表/临床事件未独立核 |
+-| 人群/版本/推断边界 | 11页PDF正文转写，非规范原件；15健康成人/短时保持；直取403仍需PDF核图公式 |
+-| 关键定位 | III/IV/VI，文件页5–6/8–9；刊页536–537/539–540；[16段独立字面补核](../../05_进展日志/2026-10-02_康复链路研究/RL2026_公开正文补核.json)；不改变原件计数 |
+-
+-### Shoulder2025 · 整合候选（书目）
+-
+-[Assist-as-Needed Control of a Shoulder Rehabilitation Robot Using a Virtual Biomechanical Model and Online Stiffness Adaptation](https://doi.org/10.1109/tnsre.2025.3579533)
+-
+-| 要回答的问题 | 原文可支持的回答 |
+-|---|---|
+-| 解决什么问题 | 题名指向虚拟生物力学与在线刚度AAN |
+-| 输入 → 输出 | 书目不足：肌骨状态输入未核 → 在线刚度由题名可知；具体控制与验证未核 |
+-| 怎样影响训练/是否闭环 | 机制/主动贡献反馈未核 |
+-| 主动参与的真实测量 | 未核 |
+-| 强度与剂量 | 未核 |
+-| 安全证据 | 未核 |
+-| 人群/版本/推断边界 | 缺全文；与肌骨模型/力矩AAN差异暂不能核验 |
+-| 关键定位 | Crossref身份；无本地全文 |
++## D. 用户补取7篇：原件机制与边界已核
++
++原件已齐、0待下载；[64条新增方法定位与候选裁剪](补取七篇_原件机制与候选裁剪.md)。不是55篇全文译读、独立复现或创新/临床验收。
++
++### Song_TRO · 肌协同—导纳整合（原件方法已核）
++
++[A Cable-Driven Upper Limb Rehabilitation Robot With Muscle-Synergy-Based Myoelectric Controller](../../01_%E5%8F%82%E8%80%83%E8%AE%BA%E6%96%87/%E5%BA%B7%E5%A4%8D%E6%95%B4%E5%90%88%E9%93%BE%E8%B7%AF/A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller.pdf) · [DOI/权威页](https://doi.org/10.1109/tro.2024.3411849)
++
++| 要回答的问题 | 原文可支持的回答 |
++|---|---|
++| 解决什么问题 | 肌协同能否改进跨任务EMG驱动3D辅助 |
++| 输入 → 输出 | 8通道EMG/MVC、NNMF、运动学反算参考力；另测六轴交互力 → 3D力模型、导纳目标、绳驱控制及跟踪/交互力指标 |
++| 怎样影响训练/是否闭环 | EMG→协同/力模型→导纳/工作空间→PID→新观察，已有整合 |
++| 主动参与的真实测量 | 训练目标用位置经Eq9反算，不是独立主动施力真值；交互力通道须另分 |
++| 强度与剂量 | 人驱导纳及重复任务；非剂量/心理/难度最优化 |
++| 安全证据 | 空间限幅、张力7–10N；不是患者或任意估计误差安全证明 |
++| 人群/版本/推断边界 | 8健常，跨任务不等于留人/患者泛化；Group2 y跟踪p=.170未显著，试次非独立人数 |
++| 关键定位 | PDF pp.3/5/6/9/10；S7-TRO-01–10；补取七篇_原件机制与候选裁剪.md |
++
++### Song_TIE · 姿态/静动态校准—导纳整合（原件方法已核）
++
++[Deep-LSTM-Based Human-Robot Collaboration Control With Static-Dynamic Calibration](../../01_%E5%8F%82%E8%80%83%E8%AE%BA%E6%96%87/%E5%BA%B7%E5%A4%8D%E6%95%B4%E5%90%88%E9%93%BE%E8%B7%AF/Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration.pdf) · [DOI/权威页](https://doi.org/10.1109/tie.2024.3398675)
++
++| 要回答的问题 | 原文可支持的回答 |
++|---|---|
++| 解决什么问题 | 静态力标签怎样适配动态EMG人机协作 |
++| 输入 → 输出 | 8肌激活+3关节角；静态测交互力，动态标签加入辅助估计 → 三层LSTM的3D力、导纳/绳驱轨迹及误差/时延 |
++| 怎样影响训练/是否闭环 | 静态预训→动态重标定→重新嵌入控制；不是持续在线训练 |
++| 主动参与的真实测量 | 静态力假设与动态模型标签不同；未证独立动态自主力矩或心理参与 |
++| 强度与剂量 | 在线人驱动作；160试次不构成最佳患者剂量 |
++| 安全证据 | 空间/张力限制；平均3.1230ms不证明最坏期限/OOD安全 |
++| 人群/版本/推断边界 | 3参与者，临床/人口细节未清报；卒中迁移属未来；TableIV y力误差变差，综合3D改善 |
++| 关键定位 | PDF pp.2/5/7/9/10；S7-TIE-01–08；原TableIV–V目视核 |
++
++### Song_VAAN · 主动力矩—踝AAN整合（原件方法已核）
++
++[Voluntary Assist-as-Needed Controller for an Ankle Power-Assist Rehabilitation Robot](../../01_%E5%8F%82%E8%80%83%E8%AE%BA%E6%96%87/%E5%BA%B7%E5%A4%8D%E6%95%B4%E5%90%88%E9%93%BE%E8%B7%AF/Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot.pdf) · [DOI/权威页](https://doi.org/10.1109/tbme.2022.3228070)
++
++| 要回答的问题 | 原文可支持的回答 |
++|---|---|
++| 解决什么问题 | 按自愿力矩与表现切换辅助/自由/抵抗及机器人主导 |
++| 输入 → 输出 | TA/GAS、Hill模型、角度/力矩；90/120度MVC力矩传感器校准 → 估计自愿力矩、增益K、模式、贡献比Rh/跟踪 |
++| 怎样影响训练/是否闭环 | 已存在力矩比例辅助与表现适配；下肢迁移须重核人群/关节 |
++| 主动参与的真实测量 | 独立静态MVC校准已有；动态痉挛污染未解；Rh>1/符号约定不可补猜为概率 |
++| 强度与剂量 | 25度/.1Hz、3×30s/30s休息；抵抗/辅助改变挑战，不证明临床剂量收益 |
++| 安全证据 | 选择性患者短时控制可行性，不是上肢/心理/OOD安全验收 |
++| 人群/版本/推断边界 | 2健常+5卒中；TableVI跨文献贡献比高但跟踪更差，无患者比较栏/纵向恢复；卷2023在线2022 |
++| 关键定位 | PDF pp.4–5/7–8，Eq19/25、TableV–VI；S7-VA-01–08 |
++
++### Song_TBME · 表现—混合辅助整合（原件方法已核）
++
++[Performance-Based Hybrid Control of a Cable-Driven Upper-Limb Rehabilitation Robot](../../01_%E5%8F%82%E8%80%83%E8%AE%BA%E6%96%87/%E5%BA%B7%E5%A4%8D%E6%95%B4%E5%90%88%E9%93%BE%E8%B7%AF/Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot.pdf) · [DOI/权威页](https://doi.org/10.1109/tbme.2020.3027823)
++
++| 要回答的问题 | 原文可支持的回答 |
++|---|---|
++| 解决什么问题 | 误差区域驱动抵抗/辅助/限制及模糊刚度调整 |
++| 输入 → 输出 | 位置/误差/速度、4绳张力；小质量/加速度假设下Fh≈−Fc → 刚度/阻尼、模式、MAE/AAF与模式占时 |
++| 怎样影响训练/是否闭环 | 已有表现→辅助/抵抗/限制→新观察；模糊membership不是校准置信度 |
++| 主动参与的真实测量 | AAF为张力反算代理；作者要求3D力传感器；非独立身体或心理参照 |
++| 强度与剂量 | 抵抗/辅助与重复时长已有；人为扰动非患者剂量或实际损伤 |
++| 安全证据 | 限制/空间/张力/急停已有，限制暴露近0；不等于故障/OOD临床验证 |
++| 人群/版本/推断边界 | 10健常；Friedman/Wilcoxon+Bonferroni p<.008；邻组比较未显著；卷2021在线2020 |
++| 关键定位 | PDF pp.3/5–8，Fig10–12；S7-BM-01–09 |
++
++### Song_TBCAS · 臂手EMG—导纳整合（原件方法已核）
++
++[A Hybrid Arm-Hand Rehabilitation Robot With EMG-Based Admittance Controller](../../01_%E5%8F%82%E8%80%83%E8%AE%BA%E6%96%87/%E5%BA%B7%E5%A4%8D%E6%95%B4%E5%90%88%E9%93%BE%E8%B7%AF/A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller.pdf) · [DOI/权威页](https://doi.org/10.1109/tbcas.2021.3130090)
++
++| 要回答的问题 | 原文可支持的回答 |
++|---|---|
++| 解决什么问题 | 连续EMG能否辅助臂手reach-and-grasp并改善平滑 |
++| 输入 → 输出 | 6臂+2手EMG；臂力训练输出由位置经Eq7反算；另有交互力传感器 → 3D臂力/手力、导纳目标/控制、FZCR和jerk |
++| 怎样影响训练/是否闭环 | 已有臂手协调/延迟补偿/导纳→新观察，不能再把模块整合作新意 |
++| 主动参与的真实测量 | 运动学反算标签不变成独立主动力；手力拟合、FZCR/jerk不是心理或自主贡献金标准 |
++| 强度与剂量 | 任务重复与主动驱动；非长期挑战/剂量优化 |
++| 安全证据 | 空间/手开度守卫是工程限制，不是患者失效安全验证 |
++| 人群/版本/推断边界 | 1健常；20试次10/10，阶数选择用到测试；手FZCR p=.055不显著，jerk两终点显著 |
++| 关键定位 | PDF pp.5–6/8–9，Eq7、TableI/Fig7；S7-BC-01–08 |
++
++### RL2026 · RL—辅助/难度整合（出版原件已核）
++
++[Personalized Adaptive Assistance With Reinforcement Learning Control Enhances Engagement, Performance, and Retention in Robot-Assisted Arm-Reaching Exercises](../../01_%E5%8F%82%E8%80%83%E8%AE%BA%E6%96%87/%E5%BA%B7%E5%A4%8D%E6%95%B4%E5%90%88%E9%93%BE%E8%B7%AF/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf) · [DOI/权威页](https://research.unipd.it/handle/11577/3586318)
++
++| 要回答的问题 | 原文可支持的回答 |
++|---|---|
++| 解决什么问题 | 动态权衡误差/辅助并调难度以检验短时训练/保持 |
++| 输入 → 输出 | 方向误差均值/峰值与历史；15健常，catch子样本6 → 阻抗g、目标权重Uc、误差阈值/难度及短时保持 |
++| 怎样影响训练/是否闭环 | 原Fig3/Eq9–12已核：状态→RL权衡/辅助/挑战→新运动，已有联合适配 |
++| 主动参与的真实测量 | footnote1为身体参与代理；e_neg及平均g分别为参与/辅助代理，非心理或实际机械功真值 |
++| 强度与剂量 | 4训练块，保持1/10/20min；阈值手设，不证患者剂量或长期收益 |
++| 安全证据 | 边界参数/同意不等于患者安全；Eq12上下界符号/文字有原件歧义，不擅改实现 |
++| 人群/版本/推断边界 | 15健常；训练减误差控制器差异及部分过补偿/保持项未显著；无不引导视觉反馈对照 |
++| 关键定位 | PDF pp.5–6/8–9，Eq9–12/Fig3/5–8/TableII–IV；S7-RL-01–13；旧16段派生留史 |
++
++### Shoulder2025 · 虚拟肩生物力学—在线刚度AAN（原件方法已核）
++
++[Assist-as-Needed Control of a Shoulder Rehabilitation Robot Using a Virtual Biomechanical Model and Online Stiffness Adaptation](../../01_%E5%8F%82%E8%80%83%E8%AE%BA%E6%96%87/%E5%BA%B7%E5%A4%8D%E6%95%B4%E5%90%88%E9%93%BE%E8%B7%AF/Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf) · [DOI/权威页](https://doi.org/10.1109/tnsre.2025.3579533)
++
++| 要回答的问题 | 原文可支持的回答 |
++|---|---|
++| 解决什么问题 | 模型期望力矩/交互力怎样驱动混合辅助和在线刚度 |
++| 输入 → 输出 | 模型/机器人运动学、交互力；VBSRM逆动力学期望人体力矩 → β混合力矩、梯度刚度、PID与ADL跟踪/峰值力矩 |
++| 怎样影响训练/是否闭环 | 模型→混合AAN/在线刚度→新观察已有，不是首次肌骨辅助结合 |
++| 主动参与的真实测量 | 模型期望人体力矩不等于独立自主力矩；β非校准参与概率，无心理量表 |
++| 强度与剂量 | ADL追踪/参数适配，未确具体动作或重复数，不证明患者剂量 |
++| 安全证据 | III.D稳定讨论及β/关节/力矩限幅、急停/监督；非一般被动性/估计误差/OOD安全证明 |
++| 人群/版本/推断边界 | 10健常7男3女，22–38；没有患者临床结论；环境/长期适配未全面测试 |
++| 关键定位 | PDF pp.6–7/9，TableII–III/III.D/V局限；S7-SH-01–08 |
+ 
+ ## E. 用户确认双参与目标后的心理补核
+ 
+--- a/01_参考论文/康复整合链路/index.json
++++ b/01_参考论文/康复整合链路/index.json
+@@ -1,6 +1,6 @@
+ {
+   "schema": "rehab-chain-corpus/v1",
+-  "checked_at": "2026-10-03",
++  "checked_at": "2026-10-04T11:41:22.448637+08:00",
+   "papers": [
+     {
+       "id": "control_review",
+@@ -212,6 +212,157 @@
+       "sha256": "96b98aa3fb97edfd815234a42d613adf599675f719de91ccbf5aa3073d40d863",
+       "screening": "included",
+       "include_reason": "用户确认物理与心理参与分别评价后，补核心理测量及训练模式整合反例"
++    },
++    {
++      "id": "Song_TRO",
++      "title": "A Cable-Driven Upper Limb Rehabilitation Robot With Muscle-Synergy-Based Myoelectric Controller",
++      "doi": "10.1109/tro.2024.3411849",
++      "year": 2024,
++      "venue": "IEEE Transactions on Robotics",
++      "authors": "Chenglin Xie; Yueling Lyu; Guoxin Li; Raymond Kai-Yu Tong; Haisheng Xia; Rong Song; Zhijun Li",
++      "database": "IEEE Xplore",
++      "landing_url": "https://doi.org/10.1109/tro.2024.3411849",
++      "source_kind": "user-provided-IEEE-publisher-PDF",
++      "source_record": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
++      "local_fulltext": "01_参考论文/康复整合链路/A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller.pdf",
++      "format": "PDF",
++      "version": "IEEE publisher PDF,13 file pages=journal3199–3211",
++      "pages": 13,
++      "bytes": 4253871,
++      "sha256": "7e363aa8dca5100a8ea04afbb5c0fbcb81d8867924695365fbcc2d2958a8f1fe",
++      "screening": "included",
++      "include_reason": "宋嵘团队重点对照",
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
++    },
++    {
++      "id": "Song_TBCAS",
++      "title": "A Hybrid Arm-Hand Rehabilitation Robot With EMG-Based Admittance Controller",
++      "doi": "10.1109/tbcas.2021.3130090",
++      "year": 2021,
++      "venue": "IEEE Transactions on Biomedical Circuits and Systems",
++      "authors": "Chenglin Xie; Qianqian Yang; Yao Huang; Steven Su; Ting Xu; Rong Song",
++      "database": "IEEE Xplore",
++      "landing_url": "https://doi.org/10.1109/tbcas.2021.3130090",
++      "source_kind": "user-provided-IEEE-publisher-PDF",
++      "source_record": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
++      "local_fulltext": "01_参考论文/康复整合链路/A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller.pdf",
++      "format": "PDF",
++      "version": "IEEE publisher PDF,11 file pages=journal1332–1342;Dec2021",
++      "pages": 11,
++      "bytes": 4688648,
++      "sha256": "cf7bf33523cb6196da35eada7614183a9200c77e7f8d7b6a6fe22140de1b4fc6",
++      "screening": "included",
++      "include_reason": "宋嵘团队重点对照",
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
++    },
++    {
++      "id": "Shoulder2025",
++      "title": "Assist-as-Needed Control of a Shoulder Rehabilitation Robot Using a Virtual Biomechanical Model and Online Stiffness Adaptation",
++      "doi": "10.1109/tnsre.2025.3579533",
++      "year": 2025,
++      "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
++      "authors": "Muhammad Faizan Shah; Prashant K. Jamwal; Mergen H. Ghayesh; Shahid Hussain",
++      "database": "IEEE Xplore",
++      "landing_url": "https://doi.org/10.1109/tnsre.2025.3579533",
++      "source_kind": "user-provided-IEEE-publisher-PDF",
++      "source_record": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
++      "local_fulltext": "01_参考论文/康复整合链路/Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf",
++      "format": "PDF",
++      "version": "IEEE publisher PDF,10 file pages=journal2358–2367",
++      "pages": 10,
++      "bytes": 977111,
++      "sha256": "e71f6fb2dfc06eb87118b3056e4e82e6bc6dc67fb0554698ba3a008ceabf1768",
++      "screening": "included",
++      "include_reason": "近期AAN/适配闭环直接对照",
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
++    },
++    {
++      "id": "Song_TIE",
++      "title": "Deep-LSTM-Based Human-Robot Collaboration Control With Static-Dynamic Calibration",
++      "doi": "10.1109/tie.2024.3398675",
++      "year": 2024,
++      "venue": "IEEE Transactions on Industrial Electronics",
++      "authors": "Chenglin Xie; Zhijun Li; Rong Song",
++      "database": "IEEE Xplore",
++      "landing_url": "https://doi.org/10.1109/tie.2024.3398675",
++      "source_kind": "user-provided-IEEE-publisher-PDF",
++      "source_record": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
++      "local_fulltext": "01_参考论文/康复整合链路/Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration.pdf",
++      "format": "PDF",
++      "version": "IEEE publisher PDF,11 file pages=journal16165–16175;Dec2024",
++      "pages": 11,
++      "bytes": 2119267,
++      "sha256": "051062e5644209088b9c01a0eb023091e070b97400baf3cacd627fb762682615",
++      "screening": "included",
++      "include_reason": "宋嵘团队重点对照",
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
++    },
++    {
++      "id": "Song_TBME",
++      "title": "Performance-Based Hybrid Control of a Cable-Driven Upper-Limb Rehabilitation Robot",
++      "doi": "10.1109/tbme.2020.3027823",
++      "year": 2021,
++      "venue": "IEEE Transactions on Biomedical Engineering",
++      "authors": "Xianming Li; Qianqian Yang; Rong Song",
++      "database": "IEEE Xplore",
++      "landing_url": "https://doi.org/10.1109/tbme.2020.3027823",
++      "source_kind": "user-provided-IEEE-publisher-PDF",
++      "source_record": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
++      "local_fulltext": "01_参考论文/康复整合链路/Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot.pdf",
++      "format": "PDF",
++      "version": "IEEE publisher PDF,9 file pages=journal1351–1359;Apr2021,first publication2020",
++      "pages": 9,
++      "bytes": 1995955,
++      "sha256": "bbf68a0f81d3d54716a5e2229404d070891a33b67ea29bd31fdc30e67a00c435",
++      "screening": "included",
++      "include_reason": "宋嵘团队重点对照",
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json",
++      "journal_year": 2021,
++      "first_online_year": 2020
++    },
++    {
++      "id": "RL2026",
++      "title": "Personalized Adaptive Assistance With Reinforcement Learning Control Enhances Engagement, Performance, and Retention in Robot-Assisted Arm-Reaching Exercises",
++      "doi": "10.1109/tnsre.2025.3650096",
++      "year": 2026,
++      "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
++      "authors": "Andy Li; Riccardo Minto; Maximillan Dölling; Giovanni Boschetti; Damiano Zanotto",
++      "database": "IEEE Xplore；Padova IRIS（开放PDF）",
++      "landing_url": "https://research.unipd.it/handle/11577/3586318",
++      "source_kind": "user-provided-IEEE-publisher-PDF",
++      "source_record": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
++      "local_fulltext": "01_参考论文/康复整合链路/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf",
++      "format": "PDF",
++      "version": "IEEE publisher PDF, 11 file pages = journal532–542",
++      "pages": 11,
++      "bytes": 7699552,
++      "sha256": "4b6e21ec3be9c4d677c6ad4d9099df49d3a8198fecf7abe990a360bf93ff97e6",
++      "screening": "included",
++      "include_reason": "近期AAN/适配闭环直接对照",
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
++    },
++    {
++      "id": "Song_VAAN",
++      "title": "Voluntary Assist-as-Needed Controller for an Ankle Power-Assist Rehabilitation Robot",
++      "doi": "10.1109/tbme.2022.3228070",
++      "year": 2023,
++      "venue": "IEEE Transactions on Biomedical Engineering",
++      "authors": "Renyu Yang; Zhihang Shen; Yueling Lyu; Yu Zhuang; Le Li; Rong Song",
++      "database": "IEEE Xplore",
++      "landing_url": "https://doi.org/10.1109/tbme.2022.3228070",
++      "source_kind": "user-provided-IEEE-publisher-PDF",
++      "source_record": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
++      "local_fulltext": "01_参考论文/康复整合链路/Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot.pdf",
++      "format": "PDF",
++      "version": "IEEE publisher PDF,9 file pages=journal1795–1803;June2023,first publication2022",
++      "pages": 9,
++      "bytes": 2780005,
++      "sha256": "360e92e294b0105eec6161352d9f884792e88c82aee11ae3530a95c58858afcb",
++      "screening": "included",
++      "include_reason": "宋嵘团队重点对照",
++      "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json",
++      "journal_year": 2023,
++      "first_online_year": 2022
+     }
+   ]
+ }
+--- a/01_参考论文/康复整合链路/README.md
++++ b/01_参考论文/康复整合链路/README.md
+@@ -4,7 +4,7 @@
+ 
+ ## 原件与版本
+ 
+-目前新取得12份完整JATS XML、1份机构作者接受稿PDF；详见[index.json](index.json)中的正式标题、DOI、来源、版本及SHA-256。XML有正文，不是摘要或翻译；PDF是作者接受稿，不等同出版排版版本。既有原件仍在原库，台账只引用，不复制。
++当前20份原件：12份完整JATS XML、1份机构作者接受稿PDF、7份用户提供IEEE出版PDF；详见[index.json](index.json)的DOI/版本/SHA。XML有正文，不是摘要或翻译；TFS为接受稿，其余7PDF为出版排版。用户仅授权这7篇从01_参考论文根目录移动一次，保留文件名和字节；旧原件保持位置，不复制。55条纳入均已有本地原件，当前无待下载论文；新7篇关键机制与64条原件定位已核，不等于创新定案、独立复现或临床验证完成。
+ 
+ | 原件 | 主要用途 |
+ |---|---|
+@@ -22,4 +22,18 @@
+ | [2022游戏化机器人训练/偏好与运动表现](PMC9708787.xml) | 10慢性卒中；精度/平滑与速度、偏好、学习/迁移分别解释 |
+ | [2025神经模糊肌骨模型驱动AAN](TFS2025_NeuroFuzzy_AAN.pdf) | 力矩估计→可变阻抗的最近整合反例；[证据卡](TFS2025_NeuroFuzzy_AAN_Evidence_Card.md) |
+ 
++## 2026-10-04用户补取原件
++
++| ID / 原件 | 入库状态 |
++|---|---|
++| [Song_TRO](A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller.pdf) | 13页；运动学参考力/肌协同、8健常及阴性项已定位 |
++| [Song_TIE](Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration.pdf) | 11页；静动态标签/重标定及3参与者边界已定位 |
++| [Song_VAAN](Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot.pdf) | 9页；传感器MVC、5卒中踝研究及比例/比较边界已定位 |
++| [Song_TBME](Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot.pdf) | 9页；模糊/限制模式、张力代理及10健常边界已定位 |
++| [Song_TBCAS](A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller.pdf) | 11页；单人、反算力标签及手FZCR不显著已定位 |
++| [RL2026](Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf) | 11页；原图/公式/表已核，符号歧义和旧派生历史保留 |
++| [Shoulder2025](Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf) | 10页；期望模型力矩/刚度、10健常及稳定/安全边界已定位 |
++
++[移动/回滚清单](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json)；每份出版PDF有同名`_Evidence_Card.md`，记录身份及关键方法/边界选择核验，不伪装独立复现、患者安全或创新定案；[最新64条原件与候选裁剪](../../10_研究方向/主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md)。
++
+ 证据卡明确不是全文翻译；新原文入库后更新索引和独立计数，并运行 `bash 06_附录/自检脚本/verify_kb.sh`。不按文件存在就宣布临床证据充分，不把未知人群、未报告安全性或摘要描述补成实验结果。
+--- a/06_附录/待下载论文总清单.md
++++ b/06_附录/待下载论文总清单.md
+@@ -1,11 +1,3 @@
+ # 需要你下载的论文
+ 
+-| 序号 | 论文标题 | 地址 | 期刊/会议 | 数据库/平台 |
+-|---|---|---|---|---|
+-| 1 | A Cable-Driven Upper Limb Rehabilitation Robot With Muscle-Synergy-Based Myoelectric Controller | [取件页](https://doi.org/10.1109/tro.2024.3411849) | IEEE Transactions on Robotics | IEEE Xplore |
+-| 2 | Deep-LSTM-Based Human-Robot Collaboration Control With Static-Dynamic Calibration | [取件页](https://doi.org/10.1109/tie.2024.3398675) | IEEE Transactions on Industrial Electronics | IEEE Xplore |
+-| 3 | Voluntary Assist-as-Needed Controller for an Ankle Power-Assist Rehabilitation Robot | [取件页](https://doi.org/10.1109/tbme.2022.3228070) | IEEE Transactions on Biomedical Engineering | IEEE Xplore |
+-| 4 | Performance-Based Hybrid Control of a Cable-Driven Upper-Limb Rehabilitation Robot | [取件页](https://doi.org/10.1109/tbme.2020.3027823) | IEEE Transactions on Biomedical Engineering | IEEE Xplore |
+-| 5 | A Hybrid Arm-Hand Rehabilitation Robot With EMG-Based Admittance Controller | [取件页](https://doi.org/10.1109/tbcas.2021.3130090) | IEEE Transactions on Biomedical Circuits and Systems | IEEE Xplore |
+-| 6 | Personalized Adaptive Assistance With Reinforcement Learning Control Enhances Engagement, Performance, and Retention in Robot-Assisted Arm-Reaching Exercises | [取件页](https://research.unipd.it/handle/11577/3586318) | IEEE Transactions on Neural Systems and Rehabilitation Engineering | IEEE Xplore；Padova IRIS（开放PDF） |
+-| 7 | Assist-as-Needed Control of a Shoulder Rehabilitation Robot Using a Virtual Biomechanical Model and Online Stiffness Adaptation | [取件页](https://doi.org/10.1109/tnsre.2025.3579533) | IEEE Transactions on Neural Systems and Rehabilitation Engineering | IEEE Xplore |
++当前无待下载论文。
+--- a/README.md
++++ b/README.md
+@@ -1,8 +1,8 @@
+ # 视觉动作分析：视觉→关节角 Seq2Seq 翻译研究
+ 
+ > **当前任务**：围绕患者主动参与度和训练强度，整合运动理解与康复辅助文献，搭建完整链路，再寻找论文创新方向。
+-> **只看这一份清单**：[当前任务清单](10_研究方向/README.md)。不是写论文正文，也不要求你重新做实验；外部实验已完成为用户陈述，成果待本库核验。
+-> **最后更新**：2026-10-03（文献对照与有条件链路设计完成；创新筛选需关键全文/外部条件裁定）
++> **只看这一份清单**：[当前任务清单](10_研究方向/README.md)。不是写论文正文，也不要求你重新做实验；外部完成为用户陈述，公开工程材料已核；独立身心/真实辅助验证仍不足。
++> **最后更新**：2026-10-04（7原件/方法已核，55原件/0待下载；独立参照/真实辅助条件与创新定案仍未闭合）
+ > **父项目**：[`视觉位移判断/`](../)
+ 
+ ## 原有 ViKiT 路线定位（候选输入，不是新方向定稿）
+@@ -15,7 +15,7 @@
+ |---|---|---|
+ | 首先 | [当前任务清单](10_研究方向/README.md) | 老师的目标、六步推进顺序、当前要做与不用做的事 |
+ | 身心参与补核 | [心理原文与分型](10_研究方向/主动参与与训练强度_链路研究/心理参与补核.md)、[外部材料边界](10_研究方向/主动参与与训练强度_链路研究/外部实验分支核对.md) | 用户已确认两类分别评价；工程记录不作双参与真值 |
+-| 最近先例正文 | [RL2026正文补核与候选裁剪](10_研究方向/主动参与与训练强度_链路研究/RL2026_正文补核与候选裁剪.md) | 正文已见联合误差/辅助/难度适配；非原PDF取得，7缺件不变 |
++| 新7篇原件机制 | [原件与候选裁剪](10_研究方向/主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md) | 55条均有原件/0待下载；64新增定位、RL图公式及校准/标签/阴性边界已核，不等于创新/临床验收 |
+ | 原件方法深核 | [ALP/TFS方法参照深核](10_研究方向/主动参与与训练强度_链路研究/已取得最近工作_方法参照深核.md) | 加校准/同时身体心理评价已有；17条补充定位，不增原件 |
+ | 研究结论 | [简明总结与裁定入口](10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md) | 对照与链路已交付；3条待证问题，不是已确认创新或系统验收 |
+ | 0 | [`Agent.md`](Agent.md) | 作业与文件结构规范：任务包在实验设计，历史版本留证归档 |
+--- a/INDEX.md
++++ b/INDEX.md
+@@ -1,6 +1,6 @@
+ # 知识库索引 — 视觉动作分析（视觉→关节角 Seq2Seq 翻译）
+ 
+-> **最后更新**：2026-10-03
++> **最后更新**：2026-10-04
+ > **当前主任务**：整合运动理解与康复辅助文献，面向患者主动参与度和训练强度搭建完整链路，再寻找论文创新方向；既有路线保留供比较。
+ > **文件规模**：论文与翻译计数以STATUS和磁盘自检为准；任务文档持续更新，不冻结易漂移的KB快照。
+ 
+@@ -9,7 +9,7 @@
+ | 你想知道 | 跳到 |
+ |---|---|
+ | **身心参与与外部证据** | [心理补核](10_研究方向/主动参与与训练强度_链路研究/心理参与补核.md)、[分支核对](10_研究方向/主动参与与训练强度_链路研究/外部实验分支核对.md)（两类分别评价；不等同工程提示） |
+-| **RL最近先例与裁剪** | [正文补核](10_研究方向/主动参与与训练强度_链路研究/RL2026_正文补核与候选裁剪.md)（派生文本/16段，不冒充原件） |
++| **新7篇原件与裁剪** | [方法/候选补核](10_研究方向/主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md)（55原件/0待下载，主398段；RL原图公式及参照/阴性已核） |
+ | **已得原件方法/参照深核** | [ALP/TFS](10_研究方向/主动参与与训练强度_链路研究/已取得最近工作_方法参照深核.md)（校准、SAM/TLX、OpenSim与条件性被动性） |
+ | **当前结论与待裁定** | [研究总结](10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md)（对照/有条件链路完成，创新尚未确认） |
+ | **已在推进的链路研究** | [专题进展与材料](10_研究方向/主动参与与训练强度_链路研究/README.md)（含宋嵘团队、三类检索和证据边界） |
+--- a/STATUS.md
++++ b/STATUS.md
+@@ -1,7 +1,7 @@
+ # 项目状态与补全记录
+ 
+-> **最后更新**：2026-10-03（文献对照与有条件链路设计交付，关键机制/外部条件及创新裁定尚未闭合）
+-> **当前任务**：首批53条加心理补核2条，共55条；双参与链路/接口/验证内容核验完成，完整自检22 PASS/0 FAIL；3条待证问题已比较；RL正文已核动态权衡/难度先例并裁剪泛化差异，原PDF仍缺；0条确认定案。不是系统整合验收，用户确认仅已给工程资料，双参与/真实辅助参照条件不足，关键原件仍缺；暂停创新筛选及全目标验收，两项未完成。
++> **最后更新**：2026-10-04（7原件关键方法已核；原件缺口已解，独立参照/真实策略条件与创新定案尚未闭合）
++> **当前任务**：55条纳入；2026-10-04用户补取7出版PDF，获准移动入库，现55条有本地原件、0待下载；康复新原件库20份（12XML+8PDF）。新7篇身份/结构/SHA及关键方法、64条指定页证据已核，主定位398段；不是55篇全篇译读或系统验收完成。双参与设计已有阶段22 PASS/0 FAIL；0条确认创新，用户仍仅已有工程资料，独立身心参照/真实辅助验证条件不足。方向定案与全目标验收保持未完成。
+ > **任务清单入口**：[当前任务清单](10_研究方向/README.md)。本文件主要留存知识库统计与既有执行记录，不是当前任务排序。
+ > **实验分工更新**：用户说明实验由另一方完成，成果尚未在本库接收/核验；不要求用户重新做实验，也不自动把本地四问任务包标为验收通过。
+ > **口径基准**：本文件所有数字均由 `06_附录/自检脚本/verify_kb.sh` 从磁盘复算，可一键复核
+@@ -55,9 +55,9 @@
+ jv_pdf=17
+ jv_cards=18
+ jv_web=13
+-chain_pdf=1
++chain_pdf=8
+ chain_xml=12
+-chain_cards=1
++chain_cards=8
+ -->
+ 
+ ---
+--- a/HANDOFF.md
++++ b/HANDOFF.md
+@@ -5,7 +5,7 @@
+ sender: "pi-agent"
+ intended_receiver: "next-agent / human-owner"
+ created: 2026-09-29
+-updated: 2026-10-03
++updated: 2026-10-04
+ state_pointer: "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md"
+ workspace_path: "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析"
+ ---
+@@ -21,16 +21,16 @@
+ 
+ - **任务清单唯一入口**：[当前任务清单](10_研究方向/README.md)。老师提出的目标是最大化患者主动参与度和训练强度。
+ - **执行顺序**：确认目标与研究范围 → 整合运动理解、康复辅助及两者交集的有意义论文 → 对照各文献的实际贡献 → 根据证据搭建完整链路 → 识别链路缺口 → 筛选可写论文的创新方向。
+-- **当前进展**：首批53+心理补核2=55条（48本地原文、7缺原件；6仅书目、RL有正文文本），334段原件摘录+16段独立RL补核；用户已确认物理/心理分别评价，新增原文/双参与修订内容核验与自检22 PASS/0 FAIL；11环节链路、接口和验证设计已交付，不是系统运行验收。3条待证问题已补双构念条件，0条确认定案；RL已核动态权衡/难度先例并裁剪泛化创新主张，原图公式待核；ALP/TFS原件17条方法定位已补概率校准/身体心理评价与模型参照边界；用户确认仅已给工程资料，当前3条均不进入定案；7关键原件之外，身心参照/真实辅助验证条件须用户/老师裁定，暂停受影响任务；GitHub commit5192efe工程材料已读；关键机制/临床身份、独立双参与参照和实际辅助条件仍不足，创新筛选和全目标收尾尚未完成。[总结与裁定](10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md)。
++- **当前进展**：2026-10-04新7出版原件按明确授权移动一次并核身份/SHA/关键方法，现55纳入/55本地原件/0待下载，主定位334+64=398段；新库20份（12XML+8PDF）。ALP/TFS补充17和旧RL派生16分计留史。RL原图公式、TIE静动态/VAAN传感器MVC、TRO/TBCAS运动学参考力、TBME限制/模糊与Shoulder期望模型力矩已核，C1–C3的宽泛差异进一步剔除，0定案。11环节/12消息/10验证项/9负场景仍DESIGN，不是系统/患者验收。GitHub commit5192efe工程资料已读且用户确认只有已给资料，独立双参与参照/真实策略暴露与授权仍不足，不再索取额外索引、下载或实验；创新定案与全目标验收未完成、受影响任务暂停。[总结与裁定](10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md)。
+ - **用户职责**：与老师确认研究范围和方向；文献盘点与对照由助手推进。不是要求用户下载或读完全部论文。
+-- **实验状态**：用户说明实验由另一方完成；本库尚未接收或核验对应成果。不要将本地旧 `proposed` 记录当作全局实验未做，也不要把外部完成自动写成本地 TP-01～04 全部验收通过。
++- **实验状态**：用户说明另一方完成，已核公开工程材料而非重验原始人像/完整实验；独立参照及实际辅助仍不足。不要将本地旧 `proposed` 记录当作全局实验未做，也不要把外部完成自动写成本地 TP-01～04 全部验收通过。
+ - **边界**：不继续安排用户重新采集实验；不以论文正文撰写或补齐 11 份缺件取代方向研究；不调用 `/sol` 或 Oracle。链路仅为有条件设计；实际频率、阈值、独立参照和物理反馈尚未核验，不擅自启动患者采集或控制系统。
+ 
+ ## 当前下一步：先裁材料与问题，不凑创新数量
+ 
+-1. 补[唯一纯下载清单的7篇全文](06_附录/待下载论文总清单.md)，核具体校准/混合控制/RL目标与对照差异；不由书目推方法不存在。
+-2. 提供已有外部实验的去标识化文字说明/材料索引：[D0–D4核对包](10_研究方向/主动参与与训练强度_链路研究/链路验证计划.md)。患者、关节/任务、同步EMG/力/视频、独立参照及实际控制是否存在决定候选能否验证；不是要求重做实验。
+-3. 与用户/老师审[3条条件性问题](10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md)：先测量可观测性，再决策风险，再训练块权衡，仅是验证依赖顺序。关键差异不足时暂停受影响创新裁定；不能把文件齐全/自检通过当可投稿或全目标完成。
++1. 无需继续取件；先读[7原件机制与候选裁剪](10_研究方向/主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md)，标签目标/适用域及阴性已注明，旧取件失败留史。
++2. [D0–D4](10_研究方向/主动参与与训练强度_链路研究/链路验证计划.md)为未满足的科学验证条件，不假定另有可补索引，不请求新采集/复跑。只有已给工程资料时不能实例化主动贡献/心理或真实辅助对照。
++3. 用户/老师据[3条件问题](10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md)裁定范围/可验证条件；C1→C2→C3仅验证依赖，不是发表排名。保持原目标暂停受影响创新定案及全目标验收，不以文档/自检齐全宣称可写或完成。
+ 
+ ## 已完成的基础工作：论文取件与目录整理（2026-10-02）
+ 
+--- a/10_研究方向/README.md
++++ b/10_研究方向/README.md
+@@ -6,11 +6,11 @@
+ 
+ 老师提出的目标是：**最大化患者的主动参与度和训练强度**。本轮研究按以下顺序推进：整合运动理解与康复辅助的有意义论文 → 根据文献搭建完整链路 → 从链路的不足中寻找创新方向。
+ 
+-用户已说明实验由另一方完成；本库尚未接收或核验对应材料，不能据此把本地四个实验任务包全部标成验收通过。这里不把实验执行安排给你。
++用户已说明实验由另一方完成；已只读核公开工程分支和已有材料，独立身心/真实辅助条件仍不足，不能把本地四包全部标成通过。用户确认只有已给工程资料，不再索取额外索引或安排实验。
+ 
+ ## 现在按顺序做什么
+ 
+-目标定义、文献地图、纯待下载清单及有条件链路设计已交付；首批53加心理补核2，共55条。用户确认物理与心理分别评价，GitHub工程材料已读；双参与来源/内容/保护复核及知识库22 PASS/0 FAIL；仅阶段通过，不是全目标完成。RL正文补核已裁剪动态权衡/联合难度适配的泛化创新说法。用户确认仅有已给工程资料，独立双参与/真实辅助验证条件不足；3条均不进入当前定案，0定案。暂停创新筛选及全目标收尾，原目标不变时由用户/老师确认验证条件，不能自动收窄。[简明总结与裁定入口](主动参与与训练强度_链路研究/研究总结与裁定入口.md)、[实际进展和材料](主动参与与训练强度_链路研究/README.md)。已有库和旧建议只是输入，不冒充整合结论。
++2026-10-04新7出版原件已核验入库及关键方法，现55纳入/55原件/0待下载，主定位398段；仅7PDF按授权移动一次且名称/字节不变。RL原图公式、静动态/传感器MVC校准、臂手/肌协同、模糊/限制和虚拟肩模型先例进一步收紧C1–C3；3问题比较修订不等于方向定案，0可定案。链路仍DESIGN，入库阶段知识库22 PASS/0 FAIL不代表全目标完成。用户确认仅有已给工程资料，独立双参与/真实策略暴露条件仍不足，受影响创新定案及全目标验收保持暂停；原目标不自动收窄。[简明总结与裁定入口](主动参与与训练强度_链路研究/研究总结与裁定入口.md)、[实际进展和材料](主动参与与训练强度_链路研究/README.md)。已有库和旧建议只是输入，不冒充整合结论。
+ 
+ | 顺序 | 任务（大白话） | 完成后应拿到什么 |
+ |---|---|---|
+@@ -21,7 +21,7 @@
+ | 5 | **找出链路真正缺什么**：研究缺口、接口问题、目标冲突和证据不足分开看；与已整合工作比较 | 一份缺口表，每项给出依据、最接近的已有工作，以及需要怎样验证 |
+ | 6 | **筛出可以写论文的方向**：不是简单拼模块，而是提出可验证的新问题或方法 | 候选方向比较表：研究问题、新意、最近对照、评价指标、数据/实验条件、风险；再与老师裁定优先方向 |
+ 
+-**当前先补7篇关键全文，并提供外部已完成实验的患者/任务、装置/信号、独立参照与实际控制材料说明，再裁候选差异与方向。** [候选比较](主动参与与训练强度_链路研究/链路缺口与候选比较.md)是待证问题，不是3个创新方向已通过；不跳到选模型、写正文或重新做实验。
++**当前无需下载或补假定索引：7原件与64条方法证据已核，剩余阻塞是独立参照/真实辅助等科研条件。** [新原件机制与裁剪](主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md)已排除更多泛化新意，保持原目标时由用户/老师裁定可验证条件，不请求新采集/复跑。 [候选比较](主动参与与训练强度_链路研究/链路缺口与候选比较.md)是待证问题，不是3个创新方向已通过；不跳到选模型、写正文或重新做实验。
+ 
+ 第 4 项遵循老师要求的“先搭完整链路，再找方向”。链路是证据梳理、接口定义还是可运行系统，以及复用哪部分外部实验成果，须在范围确认中说清；未确认前不擅自启动硬件、患者采集或控制系统。
+ 
+@@ -37,7 +37,7 @@
+ 
+ ## 你现在需要提供什么
+ 
+-- **已有的就发**：老师的讨论记录或推荐论文、外部实验的简要介绍。没有这些材料也能先盘点本库；缺失处明确标注。
++- **已有材料已经核对**：只有已给工程资料的范围已确认；不重复索取额外索引，也不假定另有独立参照。当前无待下载论文。
+ - **尚未明确的再与老师确认**：面向哪类患者和训练任务、怎样衡量两项目标、完整链路需要做到什么程度。
+ - 文献去重、对照表和缺口整理由助手推进；你与老师负责范围及最终方向裁定。**不要求你读完全部论文，也不要求先补齐剩余 11 份全文。**
+ 
+--- a/10_研究方向/主动参与与训练强度_链路研究/README.md
++++ b/10_研究方向/主动参与与训练强度_链路研究/README.md
+@@ -2,34 +2,33 @@
+ 
+ ## 先看结论与分工
+ 
+-目标不是马上写正文，也不是把两个模块接起来就宣称创新。围绕老师提出的患者主动参与度和训练强度，先对照运动理解、康复辅助及已有整合系统，形成完整链路方案，再评估有证据的新问题。
++围绕患者物理主动贡献、心理参与和训练强度，先对照运动理解、康复辅助及已有整合系统，再评估可检验的问题。两类参与分别评价，不合成未经验证总分；任务表现、强度/挑战、剂量与临床收益不互换。
+ 
+-**已发现理解—辅助整合的先例**：宋嵘团队的连续肌电辅助、2025 ALP参与控制和神经模糊肌骨模型驱动AAN均须正面对照。主动努力、动作完成、心理参与、训练量与训练挑战不是同一个指标。
++**理解—辅助的整合先例充分，模块连接本身不是新意。** 当前0条可定案论文方向，C1–C3仅条件性问题；原件到齐不能补出已有工程资料缺少的独立身心参照或真实辅助对照。
+ 
+ ## 当前进展与入口
+ 
+-| 工作 | 当前状态 | 看哪份文件 |
++| 工作 | 实际状态与边界 | 入口 |
+ |---|---|---|
+-| 明确目标与本地基础 | 初轮完成，未指定患者/设备条件明列 | [研究范围与指标](研究范围与指标.md)、[本地盘点](本地文献盘点.json) |
+-| 找三类论文与反例 | 首批有边界的证据地图完成；不承诺穷尽 | [检索与筛选说明](检索与筛选说明.md)、[55条文献台账](文献台账.json) |
+-| 宋嵘团队 | 官方身份核验、三份相关全文取得、其余关键对照尚缺全文 | [团队追踪](宋嵘团队追踪.md) |
+-| 用户下载清单 | 只列当前确需补取的7篇；不混入已下载、网页或研究待办 | [需要你下载的论文](../../06_附录/待下载论文总清单.md) |
+-| 逐篇证据对照 | 首批53+心理补核2，55条/48本地原文/7缺原件（6仅书目、RL有正文）；334段原件+16段独立RL补核，不冒充全篇精读 | [逐条对照表](文献对照表.md)、[334段原文定位](文献对照_原文定位.json) |
+-| 完整链路方案与接口/验证 | 双参与设计内容核验及知识库22 PASS/0 FAIL；11环节/12消息/10验证项/9负场景，不是系统验收 | [链路及PNG](完整链路方案.md)、[接口](链路接口定义.md)、[验证计划](链路验证计划.md) |
+-| 最近控制先例正文补核 | RL动态权衡/难度更新已有；非PDF取得，图公式仍待核 | [RL正文与候选裁剪](RL2026_正文补核与候选裁剪.md) |
+-| 已得原件方法再核 | ALP isotonic/Brier+SAM/TLX；TFS OpenSim/JTCR与条件性被动性，17条定位；不增原件计数 | [方法参照深核](已取得最近工作_方法参照深核.md) |
+-| 可写论文的方向比较 | 3条待证问题已比较；0条确认定案，关键机制/数据与范围不足须用户裁定 | [缺口与候选比较](链路缺口与候选比较.md)、[简明总结与决定](研究总结与裁定入口.md) |
++| 范围与本地基础 | 物理/心理分别评价已确认；外部工程资料已核，不推患者/健康身份或验收 | [范围](研究范围与指标.md)、[外部材料](外部实验分支核对.md) |
++| 三类文献/反例 | 55条目的性地图，不宣称穷尽；身份/筛选/检索记录可追溯 | [检索筛选](检索与筛选说明.md)、[台账](文献台账.json) |
++| 宋嵘团队 | 3既有XML+5用户出版PDF均有来源；临床/健康/下肢及参考类型分开 | [团队追踪](宋嵘团队追踪.md) |
++| 原件/下载 | 55条均已有本地原件，0待下载；新库20份（12XML+8PDF）；仅7篇获准移动，名称/字节不变 | [唯一清单](../../06_附录/待下载论文总清单.md)、[原件库](../../01_参考论文/康复整合链路/README.md) |
++| 逐篇对照 | 398段主原件定位（334+本次64）；基础多为摘要/选择段落，不冒充55篇全篇精读/复现 | [对照表](文献对照表.md)、[主定位](文献对照_原文定位.json) |
++| 新7篇机制 | 校准/力标签、人群/对照、阴性及安全边界已核；RL原图公式已核，符号歧义不擅修 | [原件机制与候选裁剪](补取七篇_原件机制与候选裁剪.md) |
++| 早期补核 | ALP/TFS方法17条、心理2原件；RL旧16段派生正文保留历史，不再充当当前缺件 | [ALP/TFS](已取得最近工作_方法参照深核.md)、[心理](心理参与补核.md)、[旧RL阶段](RL2026_正文补核与候选裁剪.md) |
++| 链路/接口/验证 | 11环节/12消息/10验证项/9负场景，已按新原件收紧参照与基线；DESIGN，不是系统/患者验收 | [链路及PNG](完整链路方案.md)、[接口](链路接口定义.md)、[验证](链路验证计划.md) |
++| 创新方向裁定 | 3问题的最近工作/假设/指标/条件/风险已修订；不凑3–5方向，0定案，全目标未完成 | [候选比较](链路缺口与候选比较.md)、[总结与决定](研究总结与裁定入口.md) |
+ 
+-## 你需要做什么
++## 当前无需继续下载或补假定索引
+ 
+-目前只有一项明确的外部协助：通过你能访问的合法数据库补取[7篇全文](../../06_附录/待下载论文总清单.md)，可以直接把文件交给助手做身份核验和入库。下载清单逐篇有正式标题、地址、期刊和数据库。公开版、可核对的作者接受稿或完整XML均先核验，不能以摘要、登录页或网页证据代替论文全文。
++用户提供的7份原件均已核验入库，不再请求下载或重复取件。用户确认只有已给工程资料，不再索取入口或假定另有独立参照/辅助索引；不请求人像、新采集或复跑四问。
+ 
+-文献对照和有条件链路设计已交付。用户确认仅有已给工程资料，[外部分支已核](外部实验分支核对.md)但不足独立身心参照/真实辅助验证；不再索取入口或假设另有索引。当前3条均不进入定案，暂停创新裁定与最终验收；原目标不变时先由用户/老师确认[D0–D4验证条件](链路验证计划.md)，改变范围须用户明确变更。补原文只解决机制差异，不补出数据条件；不要求复做四问或上传人像。
++**剩余阻塞是科研条件，不是取件。** C1须有可辨物理贡献与独立心理参照，C2须有可靠目标/独立决策依据，C3须有实际可比较训练及辅助暴露；现有材料不具这些条件。依C1→C2→C3的验证依赖提交老师裁定，不将它当发表价值排序。保持原目标时受影响的创新定案/全目标验收暂停；改变范围只能由用户明确决定。
+ 
+-## 证据边界
++## 证据与保护边界
+ 
+-- 首批53条加[心理补核2条](心理参与补核.md)，当前55条/48本地原文/7缺原件；6仅书目、RL有受限正文文本。摘要/选择段落及关键方法，不代表通篇精读或独立复现；用户确认两类参与分别评价。
+-- 新取得13份原文有DOI与哈希，见[新全文库](../../01_参考论文/康复整合链路/README.md)；旧全文保持原路径，不重复下载。
+-- 7篇关键对照仍缺规范原件；6仅书目，RL有11页正文/16段受限补核，图表和公式未核。既有动态权衡/难度更新先例已用于裁剪泛化创新说法，其余机制差异不补猜。
+-- 候选研究方向不是临床有效性或设备安全验收。R1–R5编号和历史建议仍保留，不作为本轮固定路线。
+-- 取件生成器只按本轮纳入台账和全库实况筛选；旧库11个缺件不自动转换成用户待办，旧历史取件记录仍保留。
++- [64条原件方法证据](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json)具有源文件SHA、文件页/章节和字面核对；原件取得、方法选择核验、独立复现、临床效度/安全、创新性是不同层次。
++- 仅新7篇按授权移动一次；旧原件、译文、历史/R1–R5及无关工作树保持。定位/历史补充不增加独立样本。
++- 唯一清单由本轮台账+可接受PDF/XML实况推导，当前为空；旧库缺件、网页和历史失败/其他待办不混入。
++- 本次入库阶段知识库22 PASS/0 FAIL、清单17项与URI6项回归已通过；这些不是研究新颖性或运行验收。
+--- a/10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md
++++ b/10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md
+@@ -2,20 +2,20 @@
+ 
+ ## 一句话结论
+ 
+-**文献对照及有条件链路设计已交付，新增双参与原文/接口/图已核；知识库22 PASS/0 FAIL；“连接理解和辅助”已有先例，尚不能定案论文创新方向。** 本轮提出3条待证问题，关键全文及外部实验条件不足，最终创新筛选与全目标收尾仍未闭合。
++**7篇用户原件已全部核验入库并核关键方法，55条均有本地原件、0待下载；主定位398段；“连接理解和辅助”及校准/联合适配均有先例，0条可定案方向。** C1–C3比较已据新原件收紧，但现有工程资料缺独立身心参照和真实辅助/可比策略条件，创新定案及全目标验收仍未完成。
+ 
+ ## 已核验的交付
+ 
+ | 内容 | 实际完成与边界 | 入口 |
+ |---|---|---|
+ | 目标与地图 | 主动贡献、意图、心理参与、质量、剂量/挑战分开；首批53+心理补核2=55条；物理/心理分别评价已确认，不宣称穷尽 | [范围](研究范围与指标.md)、[检索/筛选](检索与筛选说明.md) |
+-| 文献对照 | 48份本地原文/7缺原件（6仅书目、RL有正文文本）；334段原件定位+独立16段RL补核；不是通篇译读/复现 | [逐条表](文献对照表.md)、[原文定位](文献对照_原文定位.json) |
+-| 整合反例 | Song_wrist、ALP2025、MPC-AAN、双模式生成外骨骼、TFS2025已须正面对照；没有“模块拼接即新”的前提 | [缺口与候选](链路缺口与候选比较.md) |
++| 文献对照 | 55本地原件/0缺件；334+新增64=398段主定位，ALP/TFS补充17与历史RL派生16分计；不是55篇通篇译读/独立复现 | [逐条表](文献对照表.md)、[原文定位](文献对照_原文定位.json) |
++| 整合反例 | 宋嵘5篇新原件加既有EMG/ALP/TFS等：静动态/传感器MVC校准、表现抵抗/守卫、臂手/肌协同整合、RL联合难度及肩模型AAN均已有 | [缺口与候选](链路缺口与候选比较.md) |
+ | 完整链路 | 11环节、12消息类型、10验证项、9失败场景；仅DESIGN，不是运行或患者/设备验收 | [链路](完整链路方案.md)、[接口](链路接口定义.md)、[验证](链路验证计划.md) |
+ | 心理/外部补核 | 两份心理原件：2014 IMI+机器人游戏、2022游戏化/偏好与运动表现；用户分支1人25试次，工程可用，不足双参与/真实辅助验证 | [心理补核](心理参与补核.md)、[外部分支](外部实验分支核对.md) |
+-| RL最近对照 | 正文转写已核动态误差/辅助权衡、难度适配及物理参与代理；裁剪C3泛化创新主张，原PDF图公式未核 | [RL正文补核与裁剪](RL2026_正文补核与候选裁剪.md) |
++| 新7篇方法/图公式 | 校准标签/独立性、人群/统计与阴性已核；RL原图/公式已核并保留Eq12符号歧义，不擅修实现 | [原件机制与候选裁剪](补取七篇_原件机制与候选裁剪.md) |
+ | 原件方法再核 | ALP已有isotonic/Brier、机械/肌电/质量+SAM/TLX；TFS参照OpenSim且被动性有条件。不能只靠加校准/身体心理同报立新 | [ALP/TFS方法参照深核](已取得最近工作_方法参照深核.md) |
+-| 取件 | 唯一清单仍7篇缺原件；RL派生正文不冒充PDF，旧库缺件/网页/其他待办不混入 | [纯下载清单](../../06_附录/待下载论文总清单.md) |
++| 取件 | 唯一清单当前无待下载；20份新库原件（12XML+8PDF）；仅7用户PDF获准移动一次且名称/字节不变，旧库/网页/历史不混入 | [纯下载清单](../../06_附录/待下载论文总清单.md) |
+ 
+ ## 状态如何连到调整与反馈
+ 
+@@ -29,17 +29,21 @@
+ 2. **C2 决策风险**：校准与可观测性是否在匹配覆盖率下减少错误调整？一般confidence gating已有，必须核具体差异。
+ 3. **C3 训练块权衡**：在约束和可比较训练暴露下，联合反馈能否增加有效主动练习而不恶化质量/症状？需要真实外部对照和日志。
+ 
+-这3条已补双构念的参照、错误许可及训练块权衡要求；ALP/TFS原件再核进一步剔除“加概率校准”“同时报身体心理”的泛化差异，17条方法定位单独补充；心理/动机参与未被穷尽，机器人只是条件分支，不是预设设备。暂按C1→C2→C3的验证依赖建议审议；**不是新颖性或发表价值排名**。当前确认定案数为0，详见[候选差异、假设、指标、条件与失败风险](链路缺口与候选比较.md)。关键全文证明重复或数据不满足时，应删减而不是凑数。
++这3条已补双构念的参照、错误许可及训练块权衡要求；ALP/TFS原件再核进一步剔除“加概率校准”“同时报身体心理”的泛化差异，17条方法定位单独补充；心理/动机参与未被穷尽，机器人只是条件分支，不是预设设备。暂按C1→C2→C3的验证依赖建议审议；**不是新颖性或发表价值排名**。当前确认定案数为0，详见[候选差异、假设、指标、条件与失败风险](链路缺口与候选比较.md)。新原件排除了“加校准/肌骨模型/臂手整合/RL联合难度/工程守卫”的宽泛差异，独立静态传感器MVC校准也已有；数据仍不满足时不凑可写方向。
+ 
+ ## 真实阻塞与最省事的下一步
+ 
+-- **关键机制差异**：7份原件未落盘；RL正文已核动态权衡/挑战更新，图公式字形待核，不能继续把其只当题名。其余校准/混合控制机制及领域差异仍不足。请从唯一清单合法补取原件，助手再核身份、版本及来源。
++- **原件阻塞已解**：7出版PDF已落到唯一规范位置并核身份/SHA/方法；新增64段指定页证据。TRO/TBCAS运动学力标签、TIE静动态目标、VAAN传感器MVC、Shoulder期望模型力矩、RL物理误差代理不能互换。无需继续下载；出处清楚也不等于领域新颖性或可写条件已满足。
+ - **范围与数据条件**：提供的分支已读，不再索取入口。用户现已确认“只有已给工程资料”；已核材料不足独立物理/心理参照与真实辅助暴露，不能再假设有额外索引可补。补论文不改变这一数据缺口；未推定健康/患者身份，不请求人像或重做实验。
+-- **裁定**：用户已选择两类参与分别评价、补材料后定方向。关键机制及可用参照不足，C1–C3当前均不进入可验证方向定案，0定案；[资料确认](../../05_进展日志/2026-10-02_康复链路研究/既有资料确认与候选裁定.json)后暂停创新筛选及全目标收尾。原目标不变时由用户/老师确认验证条件后恢复；改变范围须用户明确变更。不反复让用户选择同一构念或索取不存在的额外索引。仅视频/角度资料不能被悄悄改称主动贡献控制证据。
++- **裁定**：用户已选择两类参与分别评价、补材料后定方向。关键原件方法已核、可用独立参照/真实策略条件仍不足，C1–C3均不进入可验证方向定案，0定案；[资料确认](../../05_进展日志/2026-10-02_康复链路研究/既有资料确认与候选裁定.json)后暂停创新筛选及全目标收尾。原目标不变时由用户/老师确认验证条件后恢复；改变范围须用户明确变更。不反复让用户选择同一构念或索取不存在的额外索引。仅视频/角度资料不能被悄悄改称主动贡献控制证据。
+ 
+-未调用/sol、Oracle或子代理；未实现系统、启动设备或采集/复做患者实验。历史R1–R5、论文原件、旧译文和留证保持原有位置。文档/知识库自检通过也不等于研究新颖性或系统/临床验收通过。
++未调用/sol、Oracle或子代理；未实现系统、启动设备或采集/复做患者实验。除用户明确授权的新7PDF移动一次外，历史R1–R5、旧原件/译文及留证保持原位置和字节。文档/知识库自检通过也不等于研究新颖性或系统/临床验收通过。
+ 
+-## 验证证据入口
++## 本次原件方法与保护证据
++
++[7对移动/回滚](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json)、[7篇/64段原件证据](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json)、[入库阶段22 PASS/0 FAIL](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/入库后完整自检.log)、[入库保护核验](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/入库阶段保护核验.json)。原件身份/方法、工程自检、独立参照/临床安全和创新定案分层；未解决条件不标完成。
++
++## 上阶段验证留证（以下数目为当时，非当前缺件）
+ 
+ [文献内容核对](../../05_进展日志/2026-10-02_康复链路研究/文献对照_内容验收.json)、[链路内容核对](../../05_进展日志/2026-10-02_康复链路研究/链路方案_内容验收.json)、[链路自检](../../05_进展日志/2026-10-02_康复链路研究/链路方案_自检.log)。最新双参与/来源/保护核对见[阶段内容验收](../../05_进展日志/2026-10-02_康复链路研究/双参与_内容与保护验收.json)，[完整自检22 PASS/0 FAIL](../../05_进展日志/2026-10-02_康复链路研究/双参与_完整自检.log)、清单17项及URI6项回归通过，两轮再生清单相同。PNG已导出、相对嵌入并目视无裁切；1133基线除5获批导航外1128字节不变，迁移前567字节不变。DAUG依赖审计无仓库账本而不可用，未擅自初始化，已人工核模板/入口并再生。最终交付及创新裁定仍阻塞，不将阶段通过写成全目标完成。
+ 
+--- a/10_研究方向/主动参与与训练强度_链路研究/检索与筛选说明.md
++++ b/10_研究方向/主动参与与训练强度_链路研究/检索与筛选说明.md
+@@ -2,7 +2,7 @@
+ 
+ ## 这是有边界的证据地图，不是穷尽综述
+ 
+-本轮检索截至 **2026-10-02**，上肢康复为主，兼纳可迁移的下肢/心理参与方法。基于本地库、数据库检索、官方团队种子、控制/评估综述和引用追踪进行目的性扩展；没有完成双人独立筛选或全库无限翻页，不自称PRISMA系统综述，也不把未命中当作不存在。
++数据库主检索截至 **2026-10-02**；心理补检索为10-03，用户7原件核验/方法补核为10-04，不把取件日期当新检索截止日期。上肢康复为主，兼纳可迁移的下肢/心理参与方法。基于本地库、数据库检索、官方团队种子、控制/评估综述和引用追踪进行目的性扩展；没有完成双人独立筛选或全库无限翻页，不自称PRISMA系统综述，也不把未命中当作不存在。
+ 
+ ## 检索范围与记录
+ 
+@@ -25,10 +25,14 @@
+ 2. 迁移纳入：下肢或儿科方法需明确标为不同人群/任务，不把其阈值与有效性外推到上肢成人患者。
+ 3. 排除：与目标无直接关系的运动生成基准、网球技术、护理信息系统、厂商/社区网页证据；这些不成为用户论文下载待办。
+ 4. 本地缺件不自动继承到本轮。旧B3中网球、关节解剖章节或早期临床文献是否必须读全文，须由当前问题判断；有跨库全文则复用。不能把旧缺件11条直接搬给用户。
+-5. 首批有目的地优先可读全文以及宋嵘/近期最近对照，存在可得性和检索排名偏倚。台账中的本地支持文献待逐篇证据提取；题名/摘要筛选不等于全文核验。
++5. 首批有目的地优先可读全文以及宋嵘/近期最近对照，存在可得性和检索排名偏倚。基础文献主要核摘要/选择段落，关键整合方法与新7原件正文另核；398段定位不等于55篇全篇精读，题名筛选不等于机制核验。
+ 6. 阴性证据与直接整合反例同样保留：Frullo/Kuo须分别区分人群与设计，Lang剂量试验不能泛化成“强度无效”，2026剂量综述也不能直接导出所有患者应加200%训练。
+ 
+ ## 当前台账
++
++2026-10-04用户7出版原件已核验入库并核关键方法：**55纳入/55本地原件/0待下载，主定位398段（334+64）**；新库20份（12XML+8PDF）。64段指定页/SHA及参照、人群、阴性、原图公式见[七篇机制补核](补取七篇_原件机制与候选裁剪.md)。无新联网取件/外部代码执行或实验；旧原件不复制，7份仅获准移动一次，名称/字节不变。
++
++以下首批/心理/RL取件数目为对应日期的过程留证，不再表示当前缺件。
+ 
+ [文献台账](文献台账.json)以规范DOI、arXiv身份或题名归并，首批 **53条纳入记录，46条有本地全文引用，7条关键对照仍需补取**。这是有限证据地图，不表示53篇都已完成深入阅读全文。所有下载状态最终由生成器再核磁盘与身份；后续增补会改变数目。
+ 
+@@ -59,4 +63,4 @@
+ 
+ ## 缺件与受影响判断
+ 
+-缺宋嵘TRO/TIE/TBME/TBCAS及VAAN、RL-AAN与肩部AAN原件；RL完整正文文本现已补核，可裁剪已知动态权衡/联合难度适配的泛化创新说法，图/公式及其余方法细粒度仍不足。可以继续已取得论文的比较与链路接口方案；**不能据摘要断言其没有某机制或据此确认我们的新颖性**。最终创新排序中依赖这些差异的结论须暂定，用户提供全文后再核验。
++当前7关键原件及方法缺口已解，唯一清单无待下载；原图/公式、校准目标、模式/守卫及阴性已定位，更不能把模块、静动态/MVC校准、联合适配直接称新。**原文未报告某指标不等于领域无人做，文档自检也不确认新颖性。** 用户仅已有工程资料，独立双参与/真实辅助和可比较条件仍不足，受影响方向裁定及全目标验收继续暂停；不再请求取件、额外索引或新实验。
+--- a/10_研究方向/主动参与与训练强度_链路研究/研究范围与指标.md
++++ b/10_研究方向/主动参与与训练强度_链路研究/研究范围与指标.md
+@@ -50,4 +50,4 @@
+ 
+ [本地文献盘点](本地文献盘点.json)：三个索引237条记录、216条可达PDF/XML引用，题名/线程初筛41条；另有43个未被三索引路径覆盖的PDF候选，须核首页。这是跨线条目数，不是去重纳入篇数，不能把216条称为216项独立研究。
+ 
+-目标定义初轮使用四项本地全文及其页码/章节证据；目前新全文库为12份JATS XML和1份接受稿PDF。首批53条加心理补核2条，当前55条区分48条本地原文与7条缺原件（6仅书目、RL有正文文本）；初轮279段外另补55段心理原文、独立16段RL派生正文补核，不复制旧原件。R1–R5保留既有位置，均作为待复核候选：R2/R3关注回归/部署，R4关注泛化，R5是来源方法，不能替代目标收益证据；R1最贴近新目标，但其“一行不改”“两个RCT体系”等旧表述不是本轮前提。
++目标定义初轮使用四项本地全文及其页码/章节；当前新库20份（12JATS、1接受稿、7用户出版PDF），55条均有本地原件、0待下载。初轮279+心理55+本次原件64=398主定位；ALP/TFS补充17及历史RL派生16分计。新7篇仅按授权移动一次，名称/字节不变；[原件机制与校准目标](补取七篇_原件机制与候选裁剪.md)已核，不代表全篇译读或独立身心/临床验证。R1–R5保留既有位置，均作为待复核候选：R2/R3关注回归/部署，R4关注泛化，R5是来源方法，不能替代目标收益证据；R1最贴近新目标，但其“一行不改”“两个RCT体系”等旧表述不是本轮前提。
+--- a/10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md
++++ b/10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md
+@@ -4,7 +4,7 @@
+ 
+ **已有整合先例充分，模块连接本身不是新意；目前没有确认可定案的论文创新方向。** 以下3条是条件性研究问题，不是已经证明新颖、可投稿或有效的3个方向。若关键对照表明重复，或现有数据不能验证，应删除/合并，不为凑3–5个而保留。
+ 
+-已取得证据可以支持链路与问题提出，但7篇关键对照缺全文，患者/任务、独立参照和外部实验条件也未确认。凡涉及这些条件的具体差异均标为**未核验**，不能据题名/摘要写“已有方法没有”。最终筛选受阻，须提交用户与老师裁定。
++2026-10-04补取7篇原件后，关键校准/控制/人群/指标机制已经原文核对，当前55纳入/55本地原件/0待下载；详见[七篇原件与候选裁剪](补取七篇_原件机制与候选裁剪.md)和64条新增定位。原件缺口不再是阻塞，但既有工程资料仍不足独立物理/心理参照、真实策略暴露及患者/任务条件；候选新颖性与可写可行性不能由原件到齐自动确认。最终定案仍受阻，0定案，提交用户与老师裁定；不写“所核论文未测，所以全领域没有”。
+ 
+ 用户已确认物理贡献与心理参与两类分别评价，并选择补材料后裁定；[外部分支已核](外部实验分支核对.md)。这3条物理候选现扩充双构念条件，**不穷尽心理/动机参与研究，也不预设必须采用机器人**。非机器人辅助的执行责任方与真实训练暴露另按方案定义；两类目标已确认；具体人群/任务与独立参照仍不足。不能因为当前候选依赖EMG/力/模型参照，就声称所有参与研究都必须这些传感器。
+ 
+@@ -29,45 +29,45 @@
+ | 要素 | 条件性候选内容 |
+ |---|---|
+ | 研究问题/链路 | S3/S4/S9：在辅助代做、被动阻力、共收缩、代偿及能力差异下，EMG/交互力/模型力矩何时能支持“患者有效主动贡献”？能否显式识别不可观测而减少错误评价？ |
+-| 最接近已核工作（含受限正文） | Song_wrist归一化EMG连续辅助；ALP2025指令标签/isotonic、机械功/iEMG/质量与SAM/TLX；TFS2025 OpenSim力矩监督→阻抗；L-3731e26a逆激活的分配不唯一；L-f2769289辅助量估计；RL2026正文脚注1受控扰动负向误差参与代理 |
+-| 候选差异（未证实新颖） | 不换网络后只报误差：预先定义贡献构念、独立参照及混杂条件，比较单代理/多信号的有效域与拒绝边界，分别报告质量和物理贡献。是否超出已有肌协同/混合控制的验证，尚不能裁定 |
++| 最接近已核工作（原件方法） | Song_TRO/TBCAS位置反算力标签→EMG控制；TIE静态传感力/动态加入辅助估计及姿态校准；VAAN独立力矩传感器MVC校准+5卒中踝训练；Shoulder模型期望人体力矩；ALP指令类/isotonic与身体/SAM/TLX；TFS OpenSim监督；RL原件脚注1运动误差参与代理；L-3731e26a逆分配不唯一 |
++| 候选差异（未证实新颖） | 明确独立参照、混杂域及物理/心理构念，比较有效域与不可观测边界，不只换网络/加传感器/加校准。静态传感器校准已有；运动学反算、动态模型标签、指令类概率和心理自报不能互换。是否超出这些工作与其他测量研究仍未确认 |
+ | 可证伪假设 | 在预先定义且有独立参照的混杂条件，分型并允许不可观测的估计，比单一代理减少贡献误判；若参照不独立、有效域不扩大或只是拒绝更多数据，假设不获支持 |
+ | 评价指标 | 独立贡献参照误差/偏差及参照误差说明；机器人代做/被动组织/共收缩误判；跨患者/任务分层；匹配覆盖率的误判与可观测覆盖。心理参与另列，不能用FMA/角度MAE替代 |
+ | 必需数据/条件 | 例如已有同步EMG/力/模型参照、辅助实际状态及运动质量，具体通道按独立验证条件选择；患者/任务、校准/能力参照；独立于被评模型的贡献参照和混杂条件。只有视频或同一模型伪标签不足以证物理贡献 |
+ | 失败风险/停止 | 净力矩与肌肉努力不唯一、参照误差或循环验证；样本域窄；只多传感器而无构念贡献；已被Song_TRO/TIE/TBCAS或其他工作覆盖。任一关键条件未满足就不定案 |
+-| 全文阻塞 | Song_TRO/TIE/TBCAS及Shoulder2025的估计/校准/临床验证细节需原文核验；不根据题名判其缺少独立参照 |
++| 原件核验后剩余条件 | 原件已核：不能说前人没有独立静态力矩校准；目标是动态贡献/混杂域与独立心理参照是否可辨。已有工程资料不具这些参照，不能定案；64条原件定位见七篇补核，不再请求下载 |
+ 
+ ## C2：校准后的“不知道”能否改善努力驱动调整，而不只是降低预测误差
+ 
+ | 要素 | 条件性候选内容 |
+ |---|---|
+ | 研究问题/链路 | S4/S5→S6/S7：面对失效、域变与努力/质量冲突，可观测性及适用域校准能否减少不恰当的挑战/辅助调整，同时保持可用的决策覆盖？ |
+-| 最接近已核工作（含受限正文） | L-3390a0e6已做校准→selective prediction，不是首次confidence gating；L-561c1bd5已经多目标MPC/slacking研究；ALP2025明确isotonic/Brier及活动baseline阈值适配；不是首个概率校准；TFS2025已有力矩/JTCR驱动阻抗与条件性被动性；L-debbc1bf一般机器人有人在环失败恢复；RL2026正文III动态误差/辅助权衡 |
++| 最接近已核工作（原件方法） | L-3390a0e6校准/selective prediction；ALP isotonic/Brier及活动阈值；TIE静动态重标定；TBME模糊调刚度/越界限制；TBCAS/TRO工作空间守卫；TFS JTCR/条件性被动性；RL原Eq9–12动态误差/辅助/难度；MPC/slacking及一般失败恢复先例。不能只加confidence阈值或重命名门禁 |
+ | 候选差异（未证实新颖） | 将校准对象明确为患者努力/质量的估计错误及“调整错误”，区分连续区间/概率/未校准分数，比较同覆盖率下的决策风险；估计许可与独立设备安全分开。不宣称一般拒绝机制新颖 |
+ | 可证伪假设 | 在预定适用域/域变和缺失条件、匹配覆盖率与任务条件下，校准+可观测性门禁相较原始分数阈值或无门禁，降低独立定义的错误调整；若仅靠全拒绝得分更好、校准失配或改善仅在预测指标，假设不获支持 |
+ | 评价指标 | 错误调节风险—覆盖曲线、误接受/误拒绝、过期/OOD错误、质量/努力/有效剂量权衡；分类校准和连续区间覆盖按目标分型。真实安全/疗效不能用回放推荐误差代替 |
+ | 必需数据/条件 | 先满足C1或取得可靠努力参照；患者级保留划分、独立决策评价依据/获准参数包络、真实策略应用及时间/症状日志。离线反事实未观测则只做决策合理性验证，不推干预收益 |
+ | 失败风险/停止 | 基本selective prediction直接移植而无新问题；多信号得分不可比；临床错误标签事后定义；漂移下校准失效；多拒绝损失练习机会；在缺独立安全合同时不能上设备 |
+-| 全文阻塞 | RL2026正文已核动态权衡但原图公式待核；Song_TIE/TBME/TBCAS及Shoulder2025原件仍缺，适用域校准/拒绝与安全合同差异未核 |
++| 原件核验后剩余条件 | 原RL图/公式与4篇控制原件已核；一般限制/校准/安全包络已经存在。须以可靠目标及独立决策参照，在匹配覆盖率下比较错误调整，不以预测误差或全拒绝替代；现有材料无实际策略/时间/症状验证条件 |
+ 
+ ## C3：训练块调整能否增加有效主动练习，而不只增加次数或完成率
+ 
+ | 要素 | 条件性候选内容 |
+ |---|---|
+ | 研究问题/链路 | S6/S9/S10：在获准能力/安全边界及明确训练时间条件下，联合参考质量、主动贡献和疲劳调整挑战，能否优于仅误差/完成率或固定计划的策略？ |
+-| 最接近已核工作（含受限正文） | Song_wrist肌电辅助/抵抗；Song_impedance/L-d70787db表现型控制；ALP2025已经执行时间适配；L-90b8ba05个体化双模式整合；L-f7650ef4目标高度影响非使用；dose_review2026及Lang2016数量/强度区分；RL2026正文III/VI已有辅助权衡与难度同时适配 |
+-| 候选差异（未证实新颖） | 把“质量有效练习”“努力可观测覆盖”“主动贡献”“相对挑战”“总剂量”分开，预先确定主要终点与权衡，再研究训练块调整，而不是新增一个含糊总分。RL2026转写已证动态权衡/个体化/联合难度适配有先例，删除它们作为创新的差异；更窄的独立双参与/有效练习权衡仍待核 |
++| 最接近已核工作（原件方法） | RL原Eq9–12联合误差/辅助/难度；VAAN主动比例与4模式切换；TBME表现抵抗/辅助；Song_wrist肌电训练；ALP时间适配与身体/SAM/TLX；个体化双模式、目标高度/非使用研究；dose_review2026及Lang2016数量/强度区分 |
++| 候选差异（未证实新颖） | 预先分开质量有效练习、可观测覆盖、真实物理/心理参与、挑战、剂量及症状，以可比较暴露检验训练块权衡，不造总分。动态权衡/RL+AAN/个体化/联合难度或同时报身体心理均已有先例，已排除为差异；剩余假设还需独立参照与对照验证 |
+ | 可证伪假设 | 在匹配训练暴露/任务条件和获准约束下，联合反馈相较适用的固定/表现型/参与时间适配基线，增加质量有效且有可验证主动贡献的练习，同时不恶化预定症状/质量指标；无改善或权衡不利都接受 |
+ | 评价指标 | 总时间/次数、质量有效剂量、努力可观测比例、有效主动练习、相对挑战、症状/退出分别比较；实际辅助量和能力变化作为条件。ARAT/FMA等临床随访若真实存在则另列，不把过程指标换名为疗效 |
+ | 必需数据/条件 | 实际患者/任务、重复训练块及真实辅助日志、C1测量条件、能力/疲劳参考、可比较策略暴露。已有材料若非合适对照，不能从相关或组内变化得因果结论；新干预需另立授权任务 |
+ | 失败风险/停止 | 指标合成掩盖代偿/疲劳；严重度与能力混杂；时间和难度不匹配；样本/随访不足；更复杂策略不优；RL/混合控制已有同等问题设置；外部材料没有真实控制暴露 |
+-| 全文阻塞 | RL2026正文已核目标/挑战更新及健康人群，但原PDF图公式仍需核；Song_TBME及可迁移Song_VAAN/Shoulder2025仍缺原文；不推其只优化误差 |
++| 原件核验后剩余条件 | 7原件机制与阴性项已核：VAAN有5卒中但踝/短时，RL仅健康短时保持，不能外推上肢临床或因果收益。实际患者重复块、双构念参照/疲劳、真实辅助及可比策略暴露仍缺；不启动新干预来填补 |
+ 
+ ## 既有资料确认后的当前裁定
+ 
+ 用户在“分支之外是否有独立物理/心理参照及真实辅助记录”问题中回答**“只有已给工程资料”**，见[确认留证](../../05_进展日志/2026-10-02_康复链路研究/既有资料确认与候选裁定.json)。已有分支不足以核验双参与与干预暴露；不是尚未索取某个已知额外文件，也不是助手判定参与者必为健康人。
+ 
+-因此C1/C2/C3当前**均不进入可验证论文方向定案**，仅保留条件性问题与验证依赖顺序；0定案。补7篇原件可核机制差异，但不能补出独立身心参照或真实辅助对照。暂停创新裁定与全目标最终验收，由用户/老师确认验证条件；若只有工程资料而要改变范围，须用户明确变更，不自动改成纯运动质量目标，也不请求新采集/复跑。
++因此C1/C2/C3当前**均不进入可验证论文方向定案**，仅保留条件性问题与验证依赖顺序；0定案。7原件现已补齐并核方法，排除更多宽泛主张，但没有补出独立身心参照或真实辅助对照。创新裁定与全目标最终验收仍暂停，由用户/老师裁定已明确的验证条件；改变范围须用户明确变更，不自动改成纯运动质量目标，也不索取额外索引或请求新采集/复跑。
+ 
+ ## 条件性推荐顺序，不是新颖性打分
+ 
+@@ -85,7 +85,7 @@
+ - **C2**分别验证物理与心理估计的错误及调节许可；心理低分/未知不能自动增阻或减助力，不能靠全拒绝赢指标。缺心理参照不从运动/按钮补造心理投入。
+ - **C3**分别记录心理参与、物理贡献、质量、挑战/剂量与症状权衡；Psy2014模式/偏好、Psy2022游戏化与速度—精度权衡均是最近反例，不能以游戏化或身心连接本身作为新意。
+ 
+-两篇原文、定位与适用边界见[心理补核](心理参与补核.md)。当前外部数据不满足独立双参与/干预验证，三条均保持待证、0定案；必须核7篇关键原文的具体差异与可用条件后再裁，不将这段修订写成创新筛选完成。
++两篇原文、定位与适用边界见[心理补核](心理参与补核.md)。7篇关键原件机制及64条定位已核，当前外部数据仍不满足独立双参与/干预验证，三条均保持待证、0定案；不将原件补齐或本表修订写成创新筛选定案完成。
+ 
+ ## 已取得原件方法深核：差异进一步收紧
+ 
+@@ -93,7 +93,7 @@
+ 
+ ## 新增最近工作反例与候选裁剪
+ 
+-[RL2026正文补核](RL2026_正文补核与候选裁剪.md)提供16段可回核转写：15健康成人、物理参与代理、动态误差/辅助权衡、难度更新及短时保持。正文不是原件，图/公式字形待核，下载仍7项。C3不得将RL+AAN、个体化或参与/质量/难度联合更新当新意；C1/C2必须正面对照其代理与在线适配。双构念独立参照、真实患者条件及领域差异仍缺，0定案、创新筛选未完成。
++[旧RL正文补核](RL2026_正文补核与候选裁剪.md)的16段转写保留历史；现在以[出版原件补核](补取七篇_原件机制与候选裁剪.md)为准，图/公式已核，0待下载。15健常、6人catch子样本、物理代理、动态误差/辅助/难度与短时保持均有原页定位；未显著项及Eq12边界符号歧义保留，不擅修实现。C3不得将RL+AAN/个体化/联合适配当新；C1/C2须对照其代理/授权边界。双构念独立参照与真实策略条件仍缺，0定案。
+ 
+ ## 哪些本轮不推荐
+ 
+@@ -106,7 +106,7 @@
+ ## 需要用户与老师裁定什么
+ 
+ 1. **外部入口已读，不再重复索取**；只补公开材料未明确的疾病/病程、独立物理/心理参照及真实辅助/权限索引，详见[分支核对](外部实验分支核对.md)和[D0–D4](链路验证计划.md)。不用上传可识别人像，不要求重做实验。
+-2. **补关键原文**：[唯一下载入口的7篇](../../06_附录/待下载论文总清单.md)。保持正式书目和合法取件通路；取回后才能核具体校准、目标/奖励与对照差异。
++2. **原件已补齐**：[7篇原件机制与候选裁剪](补取七篇_原件机制与候选裁剪.md)。当前无待下载，不再请求取件；依据校准目标/现有控制先例及实际材料条件决定候选是否有资格继续，不把条件性问题当可写方向。
+ 3. **决定交付口径**：先审上述待证问题，或材料到齐后裁可写论文方向；若目标本身改成仅运动质量/其他范围，由用户明确变更，不自行收窄。
+ 
+ 在这些材料和决定前，**创新筛选/最终排序尚未完成**；不将本表存在当成三个创新方向通过，不把该阻塞部分标为完成。
+--- a/10_研究方向/主动参与与训练强度_链路研究/宋嵘团队追踪.md
++++ b/10_研究方向/主动参与与训练强度_链路研究/宋嵘团队追踪.md
+@@ -17,16 +17,16 @@
+ | Myoelectrically controlled wrist robot for stroke rehabilitation（2013） | Song R, Tong KY, Hu X, Zhou W；DOI `10.1186/1743-0003-10-52`；J NeuroEng Rehabil | EMG连续辅助+抵抗训练的临床整合先例 | [全文已在库](../../01_参考论文/康复整合链路/PMC3685570.xml)，不是待下载项 |
+ | Variable Impedance Control Based on Target Position and Tracking Error for Rehabilitation Robots During a Reaching Task（2022） | Tang R, Yang Q, Song R；DOI `10.3389/fnbot.2022.850692`；Frontiers in Neurorobotics | 目标位置及误差驱动辅助、避免把任务表现当主动贡献 | [全文已在库](../../01_参考论文/康复整合链路/PMC8927629.xml) |
+ | Effective Motor Skill Learning Induces Inverted-U Load-Dependent Activation in Contralateral Pre-Motor and Supplementary Motor Area（2025） | Wang X等、Song R；DOI `10.1002/hbm.70208`；Human Brain Mapping | 负荷与学习的机制边界；不是卒中疗效试验 | [全文已在库](../../01_参考论文/康复整合链路/PMC11971689.xml) |
+-| A Cable-Driven Upper Limb Rehabilitation Robot With Muscle-Synergy-Based Myoelectric Controller（2024） | 官方主页+Crossref一致；DOI `10.1109/TRO.2024.3411849`；IEEE Transactions on Robotics | 肌肉协同估计与辅助控制的最近团队对照 | 候选纳入，需继续核公开全文及本库身份；不依据标题宣布性能 |
+-| Performance-Based Hybrid Control of a Cable-Driven Upper-Limb Rehabilitation Robot（2021） | 官方实验室主页+Europe PMC；DOI `10.1109/TBME.2020.3027823`；IEEE TBME | 表现驱动混合控制对照 | 待公开全文定位与细节核验 |
+-| A Hybrid Arm-Hand Rehabilitation Robot With EMG-Based Admittance Controller（2021） | 官方主页+Europe PMC；DOI `10.1109/TBCAS.2021.3130090`；IEEE TBCAS | 多关节EMG理解与导纳控制对照 | 待公开全文定位与细节核验 |
+-| Deep-LSTM-Based Human–Robot Collaboration Control With Static-Dynamic Calibration（2024） | 官方主页+书目检索；DOI候选 `10.1109/TIE.2024.3398675`，须核权威元数据；IEEE TIE | 静态→动态标定及泛化条件 | 候选，未取得全文不得使用搜索摘要的性能数字 |
+-| Voluntary Assist-as-Needed Controller for an Ankle Power-Assist Rehabilitation Robot（2023） | 检索命中Renyu Yang等、Rong Song；IEEE TBME | 下肢参与估计与AAN的可迁移直接反例 | DOI与全文待核；不可直接迁移患者阈值到上肢 |
++| A Cable-Driven Upper Limb Rehabilitation Robot With Muscle-Synergy-Based Myoelectric Controller（2024） | 官方/Crossref/用户出版PDF；DOI `10.1109/TRO.2024.3411849`；IEEE TRO | 肌协同EMG→导纳；运动学参考力与独立交互力分开 | 原件/方法已核，8健常/跨任务；y跟踪阴性保留，不能称患者疗效 |
++| Performance-Based Hybrid Control of a Cable-Driven Upper-Limb Rehabilitation Robot（卷2021/在线2020） | 官方/数据库/用户出版PDF；DOI `10.1109/TBME.2020.3027823` | 表现抵抗/辅助/限制、模糊刚度，已非首次控制整合 | 原件/方法已核，10健常扰动模拟；限制暴露近0，不称失效安全已证 |
++| A Hybrid Arm-Hand Rehabilitation Robot With EMG-Based Admittance Controller（2021） | 官方/数据库/用户出版PDF；DOI `10.1109/TBCAS.2021.3130090` | 臂手导纳/延迟补偿；反算臂力训练目标 | 原件/方法已核，1健常；手FZCR p=.055不显著，重复试次不当患者数 |
++| Deep-LSTM-Based Human–Robot Collaboration Control With Static-Dynamic Calibration（2024） | 官方/Crossref/出版PDF一致；DOI `10.1109/TIE.2024.3398675`；IEEE TIE | 姿态输入、静动态标签与分阶段再标定 | 原件/方法已核，3参与者临床身份未清报；静态/动态目标不同，不当连续主动力真值 |
++| Voluntary Assist-as-Needed Controller for an Ankle Power-Assist Rehabilitation Robot（卷2023/在线2022） | 用户出版PDF/Renyu Yang等、Rong Song；DOI `10.1109/TBME.2022.3228070` | 传感器MVC校准、主动比例与模式切换已有 | 原件/方法已核，2健常+5卒中踝研究；不迁移上肢疗效或阈值，痉挛污染仍限 |
+ 
+-以上不是下载清单。最终只将确有研究必要且仍缺全文的项放入唯一[用户取件入口](../../06_附录/待下载论文总清单.md)，每项给出正式标题、地址、期刊/会议和数据库。
++以上不是下载清单。当前3既有XML+上述5用户PDF均已核，5PDF仅按授权移动一次，不重复取件；[新原件/64条定位](补取七篇_原件机制与候选裁剪.md)与[新库](../../01_参考论文/康复整合链路/README.md)可回原文。[唯一取件入口](../../06_附录/待下载论文总清单.md)当前无待下载，历史检索/失败不混入。
+ 
+ ## 已做与未做
+ 
+-本地候选PDF前两页署名扫描未命中Rong Song，见[扫描记录](宋嵘团队_本地署名核查.json)；这个结果只覆盖扫描范围，不足以证明整个库不存在其工作。新增三份团队相关XML的署名和机构已在元数据/原文核对。
++旧候选前两页扫描未命中Rong Song，见[历史扫描记录](宋嵘团队_本地署名核查.json)；范围不包含后来本次用户补取原件，不代表当前库无其工作。3XML和5出版PDF的署名/身份均已核；旧扫描文件保留不重写。
+ 
+ 尚未联系作者、发送邮件或请求数据；用户提出补充团队并不授权对外联系。专利可作技术背景线索，但不混入论文证据或用户下载清单。
+--- a/10_研究方向/主动参与与训练强度_链路研究/完整链路方案.md
++++ b/10_研究方向/主动参与与训练强度_链路研究/完整链路方案.md
+@@ -2,7 +2,7 @@
+ 
+ ## 结论与交付边界
+ 
+-**可以形成有文献依据的设计链路，不能称为已经运行或临床验证的系统。** 连通的整合反例包括Song_wrist（2013）、ALP2025、MPC-AAN、双模式生成模型外骨骼和TFS2025；这不是本项目首次把理解与辅助相连。
++**可以形成有文献依据的设计链路，不能称为已经运行或临床验证的系统。** 连通的整合反例包括Song_wrist（2013）、ALP2025、MPC-AAN、TFS2025，以及新补原件的肌协同/静动态校准/臂手导纳、表现混合控制、RL联合难度和虚拟肩模型AAN；这不是本项目首次把理解与辅助相连。
+ 
+ 本方案明确两个反馈层：任务内的状态—辅助反馈，以及任务/训练块结束后的质量、努力、剂量—训练计划反馈。三种时间尺度不指定经验频率：底层伺服按设备原有合同；状态/监督按同步和延迟预算；训练计划按任务/训练块调整。实际频率、稳定性和安全模式均为缺失条件，不能从单一论文的推理耗时推系统实时性。
+ 
+@@ -39,13 +39,13 @@
+ | S1 观察与记录 | RGB/深度或人体IMU；如存在EMG/力及机器人状态；症状/退出、心理量表/行为记录的版本及任务窗 → `ObservationPacket` | L-e3829d23视觉运动学；Song_wrist（2013）肌电；ALP2025 EMG/压力 | GAP：真实可用流、时钟、标定、原始/模型重建区分；接收S8实际执行后的新观察 | V1：时间对齐、单位/坐标、原始数据追溯；相机本体IMU不是人体姿态 |
+ | S2 同步与质量 | 数据、上下文、同步和标定记录 → `ValidityPacket` | L-e3829d23/L-e35abf95测量有效性提示；这里的统一门禁是方案，不冒称论文已经这样实现 | GAP：丢失、延迟和质量界限；向S3/S4输出各通道有效性，不用平滑替代缺失值 | V1/V2：缺流、乱序、超时、坐标/版本不匹配的负对照 |
+ | S3 运动状态与质量 | 有效几何/惯性输入、任务 → `KinematicQualityState` | L-e35abf95临床运动学评价；L-f696c42b/L-ee97e567代偿；L-9dda282a单目工作空间 | GAP：本项目三维与角度独立参考、病程适用标签；输出给S6和S9，不能单独产生努力结论 | V3：独立角度误差、一致性、任务分层质量及跨患者验证 |
+-| S4 双参与与可观测性 | 有效EMG/力/模型参照及任务后心理量表/独立行为记录 → `EffortEstimate`与`PsychologicalEngagementState`；分别可观测或未知 | Song_wrist（2013）/ALP2025/TFS2025物理代理；Psy2014 IMI与游戏模式、Psy2022偏好自评/表现 | GAP：独立物理参照、心理量表/行为参照及混杂分离；心理慢尺度记录不伪装每帧；输出S6/S9 | V4：物理误差/区间和心理版本/参照效度分别验证；不能拿模型自己或完成次数当两类真值 |
++| S4 双参与与可观测性 | 有效EMG/力/模型参照及任务后心理量表/独立行为记录 → `EffortEstimate`与`PsychologicalEngagementState`；分别可观测或未知 | Song_wrist/ALP/TFS物理代理；VAAN静态MVC传感器校准、TRO/TBCAS运动学力标签、TIE静动态目标须分开；Psy2014 IMI与Psy2022偏好/表现 | GAP：独立物理参照、心理量表/行为参照及混杂分离；心理慢尺度记录不伪装每帧；输出S6/S9 | V4：物理误差/区间和心理版本/参照效度分别验证；不能拿模型自己或完成次数当两类真值 |
+ | S5 疲劳、症状与能力变化 | 主观症状/退出、临床量表、有效生理/运动代理 → `ConstraintState` | L-06083b29疲劳与运动学；Song_load健康人负荷/fNIRS；L-c8f6fc7d小样本安全观察 | MISSING：患者疲劳/痛阈值、能力更新依据；代理未知保留不确定；安全事件优先送设备/临床停止路径 | V5：事件参考及漏报、提前量、负对照；健康人倒U不能定患者阈值 |
+-| S6 监督与决策门禁 | S3–S5、有效性、授权/边界、校准证据 → `DecisionRequest`及理由 | L-561c1bd5 MPC多目标；L-d70787db表现型辅助；ALP2025/TFS2025估计到控制先例；RL2026正文III动态权衡 | GAP：校准与风险合同；未校准分数/缺努力/心理低分不能触发增阻或减助力；输出只到S7，不直接给力矩 | V6：不确定/过期/疼痛/任务变化的决策表；接受风险—覆盖率，而非只看平均预测误差 |
++| S6 监督与决策门禁 | S3–S5、有效性、授权/边界、校准证据 → `DecisionRequest`及理由 | L-561c1bd5 MPC多目标；L-d70787db表现型辅助；ALP2025/TFS2025估计到控制先例；RL2026原Eq9–12动态权衡；TBME/TBCAS/TRO已有工程守卫 | GAP：校准与风险合同；未校准分数/缺努力/心理低分不能触发增阻或减助力；输出只到S7，不直接给力矩 | V6：不确定/过期/疼痛/任务变化的决策表；接受风险—覆盖率，而非只看平均预测误差 |
+ | S7 已批准控制与独立安全 | 请求、临床允许包络、设备合同 → 已应用/拒绝及`AppliedPolicyReceipt` | TFS2025变量阻抗、L-561c1bd5 MPC等可作基线；理论稳定性不替代物理验证 | MISSING：实际控制器/急停/失效安全模式；独立边界可否决全部请求；不得把旧增益直接用于患者 | V7：将来需设备责任方的延迟、饱和、被动性/稳定性及安全验证；本次不执行 |
+ | S8 患者—辅助交互 | 实际应用策略、患者/设备 → 新传感流、事件、真实辅助日志 | Song_wrist（2013）、ALP2025、TFS2025已有实际闭环；人群和装置分别适用 | MISSING：本项目运行/外部材料；实际日志回到S1，并送S9；不能把候选请求当执行事实 | V7/V8：实际应用回执、端到端同步、事件日志；回放不能证明物理闭环安全 |
+ | S9 任务/训练块效果 | 物理贡献/质量实测与心理量表/行为参照、实际辅助、症状/完成 → `TrainingBlockOutcome` | L-c8f6fc7d同时有机器人/临床指标；dose_review2026剂量综述；L-caa2314e临床试验 | GAP：有效练习定义与真实条件；质量有效、物理贡献/可观测覆盖、心理分量表/缺失率、总剂量分别统计；送S10 | V8：分母/覆盖率、条件及患者划分、组间比较；过程改善不等于功能收益 |
+-| S10 慢尺度计划/复核 | S9、能力/症状变化、随访/临床反馈 → 下一任务候选及新上下文版本 | ALP2025说明执行时间适配已存在；RL2026正文VI已有表现型难度更新（非原件，见正文补核）；Lang2016说明数量不等于强度；长期处方仍需独立临床依据 | MISSING：外部临床/随访材料；先经临床批准再更新S0，不能在线偷改模型和风险界限 | V8/V9：现有材料可回顾核对；新的患者干预须另立授权任务；疗效/迁移需合适试验 |
++| S10 慢尺度计划/复核 | S9、能力/症状变化、随访/临床反馈 → 下一任务候选及新上下文版本 | ALP2025说明执行时间适配已存在；RL2026原PDF Eq11–12/Fig3已核难度更新，见七篇原件补核；Lang2016说明数量不等于强度；长期处方仍需独立临床依据 | MISSING：外部临床/随访材料；先经临床批准再更新S0，不能在线偷改模型和风险界限 | V8/V9：现有材料可回顾核对；新的患者干预须另立授权任务；疗效/迁移需合适试验 |
+ 
+ ## 为什么这些箭头具有依据，而不是拼接即创新
+ 
+@@ -59,7 +59,7 @@
+ 
+ ## 搭建清单：先复用外部成果，再决定缺口
+ 
+-1. **核对现有外部成果**：只需先提供疾病/任务、装置和信号清单、采样/同步、参照、样本及划分、授权和结果材料目录。不要求上传可识别人像，不要求重做本地四包。
++1. **既有外部材料已核**：固定commit5192efe的1人25试次工程记录已读；用户确认只有已给资料，不再索取入口或额外索引。D0–D4是研究可验证条件，不是隐含可补数据或新采集/复跑请求；不足项保留MISSING。
+ 2. **冻结条件与输入合同**：明确哪一条信号来自实测，哪一条是模型重建，哪些关节/角度已经独立验证；物理与心理参照分别核，不用肩肘参与提示/计数代替心理投入。缺主动贡献参照则S4输出不可观测，其他运动质量研究仍可推进。
+ 3. **选择最小可核对基线**：固定辅助/表现型AAN/ALP式时间适配等，按实际装置与合法可用实现决定；不是先锁3DCNN-TF、JEV或某一控制器。
+ 4. **对照接口并检查反馈**：要求实际应用回执；未应用请求不能进入“治疗暴露”统计。症状、安全与设备异常独立于估计链路。
+@@ -71,7 +71,9 @@
+ | 缺失 | 影响 | 当前处理 |
+ |---|---|---|
+ | 具体患者、任务、临床/设备安全合同 | 不能实例化阈值、控制频率或处方 | 条件化设计；与老师裁定，不宣称闭环验收 |
+-| [外部GitHub分支已读](外部实验分支核对.md)，但独立参照/身心评价/实际辅助仍不足 | 可复用工程字段，不足以核患者角度、双参与和干预效果 | 固定commit5192efe记录事实；仅补未公开匿名参照/条件说明，不安排复做 |
+-| 7份关键全文 | 部分最近已有方法的细节/创新差异无法核验 | 仍只使用[唯一下载入口](../../06_附录/待下载论文总清单.md)；不从题名断言不存在 |
++| [外部GitHub分支已读](外部实验分支核对.md)，但独立参照/身心评价/实际辅助仍不足 | 可复用工程字段，不足以核患者角度、双参与和干预效果 | 固定commit5192efe与工程资料限定；独立参照/实际辅助条件仍MISSING，不再请求额外索引或复做 |
++| 7篇原件缺口已解 | 校准/力参考、控制/守卫、人群及阴性项已核，排除更多泛化差异；不补出本项目数据条件 | [64段原件机制补核](补取七篇_原件机制与候选裁剪.md)，当前0待下载，创新定案仍未完成 |
+ 
+-已完成整合的反例足以否定“连接两个模块本身就新”；缺全文不妨碍形成以上有条件设计，但影响最终创新性裁定。
++新原件映射：TRO/TBCAS的EMG—导纳与TIE姿态/分阶段校准支持S1/S4/S7的已有连通，但训练参考类型不同；VAAN的MVC传感器校准与踝患者案例不自动迁移到上肢；TBME限制模式、Shoulder模型期望力矩/在线刚度及RL原Fig3/Eq9–12支持S6/S7/S10已有先例。具体页码、参照和失败边界在七篇补核与主定位，不能移植参数或当独立贡献/心理真值。
++
++整合反例足以否定“连接模块本身即新”；当前有条件设计仍未运行，原件补齐不替代独立双参与参照、实际辅助反馈与创新定案。
+--- a/10_研究方向/主动参与与训练强度_链路研究/链路接口定义.md
++++ b/10_研究方向/主动参与与训练强度_链路研究/链路接口定义.md
+@@ -12,7 +12,7 @@
+ |---|---|
+ | `schema_version`、`message_id`、`parent_ids` | 每次处理可追溯；同一输入/策略/上下文版本可核对，不把估计覆写为原始值 |
+ | `participant_ref`、`session_ref`、`task_context_ref` | 适用患者/任务不可跨版本混接；哈希不是隐私授权的替代品 |
+-| `source_refs`、`model_ref`、`calibration_ref` | 保留数据/模型/校准来源；没有模型的原始测量可为空并注明类型 |
++| `source_refs`、`model_ref`、`calibration_ref` | 保留数据/模型/校准来源、校准目标定义/单位/独立性与静态/动态适用域；原始测量无模型可为空并注明类型 |
+ | `acquisition_time`、`clock_ref`、`window`、`processing_time` | 采集时间与处理时间分开，含时钟映射/偏差证据；实际设备延迟预算未给定 |
+ | `units`、`coordinate_frame_ref`、`joint_convention_ref` | 角度/力/力矩单位、左右侧、坐标及关节约定明确；像素或归一化模型坐标不能冒称标定毫米 |
+ | `validity`、`invalid_reasons`、`coverage` | 各通道/关节分别报告有效、过期、缺失/失配；缺失不成为努力为零 |
+@@ -27,11 +27,11 @@
+ | `ObservationPacket` | 原始/派生类型、信号引用及时间窗、单位/坐标、传感器元数据、心理量表/独立行为记录的版本与任务窗、实际辅助状态及事件 | S1 → S2 | 未同步、漂移、缺通道、原始与模型重建身份不明 |
+ | `ValidityPacket` | 每通道的有效期、校准版本、丢失/延迟、允许估计范围 | S2 → S3/S4/S5/S6 | 同一视觉流有效不代表EMG/力流有效；失效不能靠插值恢复“实测”身份 |
+ | `KinematicQualityState` | 可验证角度/轨迹、任务阶段、质量/代偿及其参考定义；观测覆盖 | S3 → S6/S9 | 无独立三维/角度参照；标签与任务/病程不符；不能从角度填努力 |
+-| `EffortEstimate` | 代理类型、估计/区间、归一化参照、力学混杂假设、参考独立性、`observable` | S4 → S6/S9 | 视觉单流或缺患者校准/混杂分离时可以不可观测；共收缩不能直接变成净主动功 |
++| `EffortEstimate` | 代理类型、估计/区间、目标与单位、静/动态归一化/校准参照、力学混杂、参考独立性、`observable` | S4 → S6/S9 | 视觉单流或缺患者校准/混杂分离时可以不可观测；共收缩不能直接变成净主动功 |
+ | `PsychologicalEngagementState` | 构念、量表/行为参照、版本/语言、分量表及方向、回答者/条件、任务或训练块时间窗、有效/缺失状态 | S4 → S6/S9/S10 | 量表非每帧测量；按钮/计数/肩肘运动不是心理真值；IMI自报effort不是物理力矩；缺记录不填零 |
+ | `ConstraintState` | 疼痛/退出、安全事件、能力变化、疲劳代理及不确定、事件时间 | S5 → S6及独立安全路径 | 主观报告应保留原意；未知疲劳不当“无疲劳”，急停不等待ML判断 |
+ | `DecisionRequest` | 请求类别、理由/证据、候选参数引用、适用上下文/有效期、允许包络、不可用项 | S6 → S7 | 不直接含设备力矩/未批准增益；低质量/不确定不触发更高强度 |
+-| `AppliedPolicyReceipt` | 接受/拒绝、实际策略/参数、执行时间、责任控制器、拒绝原因、安全事件 | S7/S8 → S1/S9 | 请求不是执行；无回执不能把候选干预当实际暴露 |
++| `AppliedPolicyReceipt` | 接受/拒绝、实际策略/参数及其物理类型、执行时间、实际辅助反馈/不可得状态、责任控制器、拒绝原因、安全事件 | S7/S8 → S1/S9 | 请求不是执行；无回执不能把候选干预当实际暴露 |
+ | `TrainingBlockOutcome` | 总时间/次数、质量有效部分、物理可观测覆盖/贡献、心理参照/分量表/时间窗及缺失率、相对挑战、真实辅助/事件 | S9 → S10 | 分母、失效时长、设备代做和丢失窗口不明；指标不能未经验证合成总参与分 |
+ | `PlanRevision` | 下一任务候选、能力/风险依据、审批、上下文新版本及回滚参照 | S10 → S0 | 不静默改变安全包络、处方或在线模型；临床审批不是算法自批 |
+ 
+@@ -39,8 +39,9 @@
+ 
+ 用户已确认物理贡献与心理参与分别评价。心理通道的依据见[心理原文补核](心理参与补核.md)：版本/语言/回答能力与时间窗必须核对；自评/独立行为是参照，不宣称无误真值或自动力矩许可。心理低分不诊断原因，不直接触发增阻/减助力；慢尺度候选仍经临床/设备边界批准。
+ 
+-- `effort_type`至少区分`emg_proxy`、`interaction_force_proxy`、`model_torque`、`unobservable`，不能统称“真实参与”。参考本身也有测量误差。
++- `effort_type`至少区分`emg_proxy`、`interaction_force_proxy`、`model_torque`、`unobservable`，不能统称“真实参与”。参照另标静态传感器MVC、运动学反算、动态加入辅助估计、模型期望力矩或指令类别；静态校准不自动赋予动态/域外许可，参考自身也有误差。
+ - 概率只适用于明确的概率目标与校准域；连续力矩需要合适的区间/误差验证。ALP2025的isotonic校准针对指令生成的活动类别，活动水平阈值不是可靠度阈值；TFS的JTCR/模糊隶属度、关键点分数不直接当概率，详见[方法深核](已取得最近工作_方法参照深核.md)。
++- [七篇原件补核](补取七篇_原件机制与候选裁剪.md)证明上述目标区别必要：TRO/TBCAS反算力、TIE静动态目标、VAAN传感器MVC/Rh、Shoulder期望力矩和RL误差/g代理不能互换。Rh表中可超过1而符号约定未明，不默默截断成概率；g/β/隶属度不是实际辅助功或风险概率。
+ - 运动意图、心理投入、主动机械贡献分别保存；不能由动作完成自动补成“有意愿且努力充分”。
+ - 测量/模型适用域不覆盖患者、病程、任务或负荷时，保留OOD/未知状态；不能靠高softmax消除域外问题。
+ 
+--- a/10_研究方向/主动参与与训练强度_链路研究/链路验证计划.md
++++ b/10_研究方向/主动参与与训练强度_链路研究/链路验证计划.md
+@@ -21,6 +21,10 @@
+ | V8 训练块/效果 | 已有真实剂量/辅助/任务结果及症状；保留患者/训练块层级 | 总剂量、质量有效剂量、努力可观测覆盖、主动贡献、挑战、事件分别比较；临床结果独立列出 | 不把更多次数/更少辅助当优效；组内前后变化不能自动证明对照优势；回放不证明临床功能收益 |
+ | V9 慢尺度计划与临床迁移 | 临床批准的计划、重复测量/随访、适当对照及伦理材料 | 依从性/体验、能力与日常使用、合适患者量表、症状/不良事件；负对照：仅健康人短时表现 | 数值阈值/样本方案由研究者与临床方制定；新的干预不在本任务内。允许阴性结果和方案弃用 |
+ 
++## 原件补核后的参照与基线要求
++
++[7篇原件/64条定位](补取七篇_原件机制与候选裁剪.md)已解决下载/机制缺口，不改变本文件DESIGN状态。V4须区分已有的VAAN传感器MVC校准、TIE静动态目标、TRO/TBCAS运动学反算、Shoulder期望模型力矩及ALP指令类别校准；标签同源不能当独立验证，静态MVC不足动态/痉挛识别，心理参照另核。V6对照须包括已有校准/限制/守卫，而不只无门禁；V7/V8实际辅助不由RL平均g或候选请求代填。VAAN踝患者、RL健康短时保持、单人/重复试次结果不充作上肢患者或独立样本；阴性项和符号歧义均保留。
++
+ ## 分层推进，不跃过证据等级
+ 
+ 1. **资料核对**：记录外部成果存在、身份、权限、输入/输出和独立参照，不把陈述自动升级为验收。
+@@ -31,7 +35,7 @@
+ 
+ 患者与训练块为统计层级，不能把视频帧、关节或重复次数当独立患者扩充样本。重复测量、跨人/任务划分、缺失处理、效应及不确定区间应预先定义；样本量依临床主要终点、可用外部数据及功效依据制定，本方案不虚构人数。
+ 
+-## 必须保存的七种失败场景
++## 必须保存的九种失败场景（N1–N7表内，N8–N9补充）
+ 
+ | 场景 | 预期行为/解释 | 对应合同 |
+ |---|---|---|
+@@ -49,7 +53,7 @@
+ 
+ ## 现有外部实验材料的最小核对包
+ 
+-用户已提供且助手已读固定GitHub分支，不再索取该入口。以下只补公开材料中仍未明确的条件/匿名参照索引：
++用户已提供且助手已读固定GitHub分支，并确认只有已给工程资料；不再索取入口或额外索引。以下是可验证研究的条件清单，当前缺项仍MISSING，不是假定另有可补材料，也不构成新采集/复跑请求：
+ 
+ - **D0**：疾病/病程、关节与任务、样本与分组、实验/伦理许可及数据可复用权限。
+ - **D1**：装置、实测流与模型派生流、采样/同步、坐标/单位/校准说明。
+@@ -57,4 +61,4 @@
+ - **D3**：实际辅助/参数/应用时间/异常日志，任务时间/次数及临床结果定义。
+ - **D4**：患者级训练/测试划分、处理步骤、结果及限制，能够对应原始材料的版本。
+ 
+-只有相机/角度数据时可以研究几何质量，不足以证明主动贡献调节；没有实际辅助日志时不能比较控制效果；没有临床参照/随访时不能声称患者功能改善。普通文献缺件不阻断此处设计，具体创新差异仍依[7篇全文补取](../../06_附录/待下载论文总清单.md)。
++只有相机/角度数据时可以研究几何质量，不足以证明主动贡献调节；没有实际辅助日志时不能比较控制效果；没有临床参照/随访时不能声称患者功能改善。当前7原件已补齐并核机制，[唯一清单](../../06_附录/待下载论文总清单.md)无待下载；参见[新原件差异与剩余条件](补取七篇_原件机制与候选裁剪.md)。文献到齐不使D0–D4真实验证条件自动满足，不将受阻的创新定案/全目标验收标为完成。
+--- a/10_研究方向/主动参与与训练强度_链路研究/已取得最近工作_方法参照深核.md
++++ b/10_研究方向/主动参与与训练强度_链路研究/已取得最近工作_方法参照深核.md
+@@ -1,4 +1,6 @@
+ # ALP2025 / TFS2025方法参照深核
++
++> **当前口径（2026-10-04）**：新7出版原件已核，55条均有本地原件/0待下载；主定位398段。本文件是ALP/TFS当时17条方法补核，334/缺7属于阶段信息；最新差异及剩余条件见[七篇补核](补取七篇_原件机制与候选裁剪.md)。
+ 
+ 本次仅核已取得原件，不新增论文、取件项或实验。[17条方法/指标定位与原件SHA](../../05_进展日志/2026-10-02_康复链路研究/已取得最近工作_方法参照深核.json)是主定位334段的补充，不表示17个独立实验样本；也不是RL的16段派生正文。保留原件、R1–R5和旧记录位置。
+ 
+--- a/10_研究方向/主动参与与训练强度_链路研究/RL2026_正文补核与候选裁剪.md
++++ b/10_研究方向/主动参与与训练强度_链路研究/RL2026_正文补核与候选裁剪.md
+@@ -1,6 +1,8 @@
+-# RL2026正文补核：可核反例不等于原件取得
++# RL2026正文补核：原件未到时的阶段留证
+ 
+-## 证据身份及剩余缺口
++> **当前口径（2026-10-04）**：用户出版PDF已入库并核关键图/公式/表，当前55条均有原件、0待下载，主定位398段。最新以[七篇原件机制与候选裁剪](补取七篇_原件机制与候选裁剪.md)为准；以下16段转写及取件失败属于此前阶段，不再表示当前缺PDF/需下载。
++
++## 当时的证据身份及缺口
+ 
+ DOI `10.1109/TNSRE.2025.3650096`；2026卷34、532–542页，首发2025-12-31；Andy Li等。[机构公开页](https://research.unipd.it/handle/11577/3586318)给出出版版PDF与CC许可。公开工具从其PDF链接解析11页正文；[派生文本](../../05_进展日志/2026-10-02_康复链路研究/RL2026_派生正文.md)按原输出保存，[来源/哈希/16段字面回核/查询及失败记录](../../05_进展日志/2026-10-02_康复链路研究/RL2026_公开正文补核.json)可追溯。
+ 
+@@ -23,7 +25,7 @@
+ ## 对三条候选的真实影响
+ 
+ - **C1**：增加一个“受控扰动下由运动误差推物理参与”的最近代理方法对照。候选若继续，应检验其可观测域、混杂与独立参照，不能把“同时考虑参与和质量”当差异。
+-- **C2**：动态代价权重、在线个体化和误差历史已有具体先例；不是首次动态权衡。文本未能证明其与可观测性/适用域校准的决策风险比较相同，也不能证明它完全没有相关约束；后者仍需原图/公式和其余最近工作核验。
++- **C2**：动态代价权重、在线个体化和误差历史已有具体先例；不是首次动态权衡。原图/公式及其余最近工作现已补核，校准目标/现有守卫与未测独立风险在最新原件表中区分；不因文中未测就称领域空白。
+ - **C3裁剪**：删除把“RL＋AAN”“个体化辅助”“参与/误差联合反馈”“辅助与挑战同时更新”作为创新差异的说法；它们已有此直接先例。仅保留更窄的待证问题：在独立物理贡献与独立心理评价分别成立、真实患者/训练暴露可比较时，是否改善预先定义的有效主动练习及症状/质量权衡。领域新颖性和数据可行性仍未证实。
+ 
+ 仍按C1→C2→C3的验证依赖审议，不是发表价值排序；**确认定案0条，创新筛选及全目标最终验收未完成**。不能靠正文补核或纯知识库自检补出患者参照/干预条件。
+--- a/10_研究方向/主动参与与训练强度_链路研究/心理参与补核.md
++++ b/10_研究方向/主动参与与训练强度_链路研究/心理参与补核.md
+@@ -2,7 +2,7 @@
+ 
+ ## 用户确认与新增原文
+ 
+-2026-10-03用户确认：**物理贡献和心理参与两类都要，分别评价；补材料后再裁定方向。** 新增两份合法公开JATS原文，DOI/题名/年份/正文及SHA核对，下载前全库无同DOI原件；已有53条加2条=55条，48条本地全文、7条缺全文。它们已入主台账/对照，不列用户下载待办。
++2026-10-03用户确认：**物理贡献和心理参与两类都要，分别评价；补材料后再裁定方向。** 2026-10-04新7出版PDF已核，当前55/55/0（纳入/原件/缺件），但独立身心参照与真实辅助条件仍不足，详见[七篇机制与剩余条件](补取七篇_原件机制与候选裁剪.md)。以下心理原件补入的48/7数目为当时阶段记录。 新增两份合法公开JATS原文，DOI/题名/年份/正文及SHA核对，下载前全库无同DOI原件；已有53条加2条=55条，48条本地全文、7条缺全文。它们已入主台账/对照，不列用户下载待办。
+ 
+ 检索式、来源与选择理由见[检索记录](检索与筛选说明.md)。这只是针对新确认构念的补检索，不穷尽心理参与领域，也不根据两篇判断最佳量表或训练模式。
+ 
+@@ -33,7 +33,7 @@
+ 
+ [已取得原件方法深核](已取得最近工作_方法参照深核.md)和[17条定位](../../05_进展日志/2026-10-02_康复链路研究/已取得最近工作_方法参照深核.json)表明ALP2025已报告机械功/iEMG/轨迹误差及SAM、NASA-TLX。SAM测valence/arousal/dominance；该文TLX各维用0–10评分，自报effort不是主动关节功。§3的SAM arousal组差p=0.007，TLX effort p=0.31未显著，不改称一般心理参与或动机获益。
+ 
+-ALP分类还已做isotonic概率校准与Brier评价，但标签由指令最大参与/被动产生；实时自然互动的真标签不可取得。校准类别概率不是独立连续力矩真值，个人活动baseline阈值不是可靠度阈值。15健康者的多终点闭环评价是必须正面对照的整合先例；“加问卷”“身体/心理一起报”“加校准”都不能单独当新意。本补核不增55/48/7数量，也不补出用户缺少的身心/辅助参照。
++ALP分类还已做isotonic概率校准与Brier评价，但标签由指令最大参与/被动产生；实时自然互动的真标签不可取得。校准类别概率不是独立连续力矩真值，个人活动baseline阈值不是可靠度阈值。15健康者的多终点闭环评价是必须正面对照的整合先例；“加问卷”“身体/心理一起报”“加校准”都不能单独当新意。这17条方法补核不增纳入/原件数量；后来7原件已补齐，当前55/55/0，但同样不补出用户缺少的身心/辅助参照。
+ 
+ ## 链路必须保留双通道
+ 
+--- /dev/null
++++ b/10_研究方向/主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md
+@@ -0,0 +1,47 @@
++# 补取七篇：原件机制与候选裁剪
++
++## 当前结论与证据口径
++
++2026-10-04，用户提供的7份IEEE出版PDF已逐份核题名、DOI、版本、全部页结构及SHA，并按明确授权移动一次到既有原件库，保留文件名和字节。**55条纳入均已有本地原件，当前0待下载；新原件库20份（12XML、1接受稿PDF、7出版PDF）。** 没有重下载、复制其他原文或移动旧材料。
++
++本次核关键正文、方法、参照、人群、对照及边界，新增**64段原件字面定位**；合并主定位为**398段**。ALP/TFS的17条方法补充和此前RL的16段派生正文分别留证，不相加冒充独立样本。基础48篇多为摘要/选择段落，并不因此成为55篇通篇译读或独立复现。
++
++- [7篇方法与64段证据](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json)：`S7-*`编号、文件页码、章节、SHA及字面核对。
++- [主判读](文献对照_判读.json)、[主定位](文献对照_原文定位.json)、[原件/版本索引](../../01_参考论文/康复整合链路/index.json)。下文页码均为PDF文件页。
++- [移动与回滚留证](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json)。只清空缺件，不删除旧取件失败/派生正文记录。
++
++**原件缺口已解决；独立身心参照、真实辅助暴露与可比较训练条件没有被论文补出来。** C1–C3仍为条件性问题，0条可定案，不能把取件或文档验收作为创新筛选/系统/患者验收通过。
++
++## 逐篇核什么，而不是看题名补猜
++
++| 原件 | 实际机制与参照 | 人群/设计 | 必须保留的边界与定位 |
++|---|---|---|---|
++| **Song_TRO，2024** | 8通道EMG/MVC→NNMF肌协同→状态空间3D力→导纳→工作空间/绳张力控制。§II.C明确用OptiTrack位置经Eq9反算训练参考力；另有六轴传感器测交互力，不能把两者混为独立主动施力真值 | 8健常，2组各4；三角/矩形跨任务训练与验证，不等于留患者泛化 | Group2的y跟踪`p=.170`未显著；72是作者的试次统计口径，不是72人。pp.3/5/6/9/10，`S7-TRO-01–10` |
++| **Song_TIE，2024** | 三层LSTM用8肌激活+3关节角；静态标签取交互力，动态标签加入机器人辅助估计，分阶段重标定后再嵌入控制。不是持续在线更新模型，也不是独立动态主动力矩真值 | 3参与者，160试次；人群/疾病细节未清楚报告，结论中的健康→卒中迁移是未来设想 | TableIV综合3D力误差9.457→6.278N，但y分量2.760→3.803N变差；平均3.1230ms不证明最坏时限或失效安全。pp.2/5/7/9/10，`S7-TIE-01–08` |
++| **Song_VAAN，卷期2023/在线2022** | TA/GAS肌骨力矩→主动比例辅助/抵抗/自由及机器人主导模式。90°/120°MVC用力矩传感器校准：已有独立静态物理校准，不能说之前没有；动态自愿/痉挛区分仍不足 | 2健常+5卒中，踝关节；3×30秒、休息30秒；纳入可测EMG并能理解指令的患者 | TableVI较文献对照贡献比例高但跟踪更差，患者比较栏缺对照，不能写随机优效。TableV有Rh>1；Eq25的RMS比例与符号/实现约定不能补猜，尤其不是[0,1]校准概率。pp.4–5/7–8，`S7-VA-01–08` |
++| **Song_TBME，卷期2021/在线2020** | 误差区域切抵抗/辅助/限制，模糊调刚度已有；越界时阻尼及刚度衰减也是先例。Fh≈−Fc依小质量/加速度假设，作者仍要求增加三维力传感器 | 10健常，4级人为扰动模拟能力差异；4×30秒圆形任务，不是卒中队列 | Friedman/Wilcoxon+Bonferroni`p<.008`；邻组MAE/AAF未通过修正显著性。限制模式时间近0，不等于危险边界充分验证。pp.3/5–8，`S7-BM-01–09` |
++| **Song_TBCAS，2021** | 臂手EMG→3D/手力模型→导纳→控制，已有延迟补偿与空间/手开度限幅。臂力训练输出同样由运动学经Eq7反算；不要凭后文“measured”措辞升级成独立主动力真值 | 1健常；20试次10训练/10测试，模型阶数比较用到两者；在线重复不是多人样本 | TableI手FZCR`p=.055`不显著，虽正文泛称全部显著；jerk的`.036/.001`属另外两终点。pp.5–6/8–9，`S7-BC-01–08` |
++| **RL2026** | 原Fig3/Eq9–12明确RL-AAN动态误差/辅助权衡和难度更新；负向误差是物理参与代理，平均g是辅助代理，不是心理/主动力矩/实际机械功真值 | 15健常；两次访问、RL与ILC平衡顺序，短时保持1/10/20分钟；catch试次仅6人 | TableII训练减误差两控制器差异未显著；保留对过补偿/保持的未显著项，不称全部终点改善。原件核了Fig3/5–8与TableII–IV；阈值边界有符号歧义，见下。pp.5–6/8–9，`S7-RL-01–13` |
++| **Shoulder2025** | 虚拟肩生物力学模型算“期望人体力矩”后混合机器人力矩，交互力/梯度在线刚度适配已有。期望模型力矩不是独立测得的自主贡献，β不是校准参与概率 | 10健常、3D ADL轨迹，主动/PID/被动模式；未据正文补猜具体ADL动作、5次重复或随机顺序 | TableII跟踪和TableIII峰值力矩是工程终点；III.D稳定性讨论、β/关节/力矩限制、急停及监督不证明任意估计误差/OOD安全。pp.6–7/9，`S7-SH-01–08` |
++
++### RL原PDF补核解决了什么
++
++原PDF现已取代“只有正文转写”的当前证据级别。Fig3与Eq9表明目标权重动态调误差和辅助；Eq11调权重，Eq12调可接受误差/难度；不能把RL+AAN、个体化或联合挑战更新作为C3新意。Footnote1明确physical involvement，不能改成独立心理参与或患者疗效。
++
++原p.5的Eq12写“变难”取`max(η_low,η−ζ)`、“变易”取`min(η_high,η+ζ)`，文字却给`η_low=5mm、η_high=2mm`。已目视确认，不是旧转写的错误。这是**复现边界符号歧义**，不是已查作者实现、证明控制失效或构成我们的创新；不擅自修公式，也不借它否认文中已存在的难度适配先例。
++
++## 对C1–C3的实质收紧
++
++| 问题 | 最近反例与排除的宽泛主张 | 仍可提问、但未定案的差异 | 所需条件/失败风险 |
++|---|---|---|---|
++| **C1：主动贡献何时可测** | VAAN已有传感器MVC校准；TIE已有静动态/姿态校准；TRO/TBCAS已有EMG—运动学力模型；ALP已有指令类概率校准。不能以“加校准/肌骨模型/多模态”立新 | 先指定独立参照及其适用域，分别测试机器人代做、被动组织、共收缩/痉挛与观测质量下物理贡献；心理参照另评，不把自报努力或运动学反算当独立连续主动力 | 校准标签须独立于预测输入/模型；静态MVC不能自动外推动态/未见患者。现有工程资料不足这些参照；若标签仍同源，C1差异不能成立 |
++| **C2：校准后的不知道是否减少错误调整** | ALP校准、TIE重标定、TBME限制/模糊控制、TFS条件性被动性和RL在线适配都是对照。不能只加confidence阈值或重命名门禁 | 区分参与状态与观测可靠性，在匹配覆盖率/拒判代价下检验错误加力/错误增难；真实参照和安全包络内才讨论授权，不以全拒绝赢指标 | C1可靠目标、独立决策评价、患者级划分及实际策略/时间日志；保底/限制模式对照不能省。误差降低不必然降低决策风险，当前未具这些条件 |
++| **C3：训练块是否增加有效主动练习** | RL联合误差/助力/难度、VAAN模式切换、TBME抵抗/辅助、ALP身体与SAM/TLX同报已存在 | 在真实可比较暴露下同时保留物理、心理、质量/症状和挑战/剂量约束，区分有效主动练习量与完成次数；不是同时报两组指标就新 | 真实患者/任务、重复块、辅助暴露、双构念参照和比较策略；工程单组轨迹/短时健康保持不足以得因果或临床收益。若只有已给资料，不能做可写方向定案 |
++
++**C1→C2→C3只是验证依赖顺序，不是新颖性/发表价值排名。** 本次新增原文使比较更具体，并排除更多泛化主张；没有把任何“本文未测”提升成整个领域没人做。
++
++## 当前材料与决定
++
++用户已确认只有已给工程资料。原件全部补齐，不再请求下载、额外索引、人像或新实验；外部材料仍不足独立物理/心理参照、真实辅助对照/时间映射和执行授权。**创新裁定及全目标最终验收仍未完成，0定案；原目标保持，受影响任务暂停，具体范围/条件由用户与老师裁定。** 未实现系统、复跑资料或启动临床/设备控制，未改R1–R5及历史原文。
++
++字面定位检查中两次初稿失败分别为RL跨栏摘录/Herein词形、肩文引句措辞；失败记录保留，按原文改正而未放宽规则。最终64段指定页字面一致；这只验证来源定位，不替代上述构念/临床/创新性判断。
+--- /dev/null
++++ b/01_参考论文/康复整合链路/A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller_Evidence_Card.md
+@@ -0,0 +1,23 @@
++# Song_TRO：原件身份、方法与推断边界
++
++> **不是全文翻译**；关键方法选择核验，不是独立复现、创新定案或患者/系统安全验收。
++
++- 题名：A Cable-Driven Upper Limb Rehabilitation Robot With Muscle-Synergy-Based Myoelectric Controller
++- DOI：`10.1109/tro.2024.3411849`；卷期年2024；期刊：IEEE Transactions on Robotics。
++- [本地出版PDF](A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller.pdf)；[权威页](https://doi.org/10.1109/tro.2024.3411849)；版本：IEEE publisher PDF,13 file pages=journal3199–3211。
++- 原件13页；SHA-256：`7e363aa8dca5100a8ea04afbb5c0fbcb81d8867924695365fbcc2d2958a8f1fe`；用户下载，仅获准移动一次，文件名/字节保持。
++- [授权/源目标/回滚留证](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json)。
++
++## 方法、参照和适用范围
++
++| 要核的项 | 原件可支持的判断 |
++|---|---|
++| 输入/输出 | 8通道EMG/MVC、NNMF、运动学反算参考力；另测六轴交互力 → 3D力模型、导纳目标、绳驱控制及跟踪/交互力指标 |
++| 反馈 | EMG→协同/力模型→导纳/工作空间→PID→新观察，已有整合 |
++| 参与测量 | 训练目标用位置经Eq9反算，不是独立主动施力真值；交互力通道须另分 |
++| 强度/剂量 | 人驱导纳及重复任务；非剂量/心理/难度最优化 |
++| 安全 | 空间限幅、张力7–10N；不是患者或任意估计误差安全证明 |
++| 人群/阴性/局限 | 8健常，跨任务不等于留人/患者泛化；Group2 y跟踪p=.170未显著，试次非独立人数 |
++| 原文位置 | PDF pp.3/5/6/9/10；S7-TRO-01–10；补取七篇_原件机制与候选裁剪.md |
++
++[方法及10段字面定位](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json)；[7篇比较与候选裁剪](../../10_研究方向/主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md)。物理/心理分开，不将模型/代理、健康/下肢或数理/限幅换成患者主动贡献、临床收益或一般安全保证。
+--- /dev/null
++++ b/01_参考论文/康复整合链路/A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller_Evidence_Card.md
+@@ -0,0 +1,23 @@
++# Song_TBCAS：原件身份、方法与推断边界
++
++> **不是全文翻译**；关键方法选择核验，不是独立复现、创新定案或患者/系统安全验收。
++
++- 题名：A Hybrid Arm-Hand Rehabilitation Robot With EMG-Based Admittance Controller
++- DOI：`10.1109/tbcas.2021.3130090`；卷期年2021；期刊：IEEE Transactions on Biomedical Circuits and Systems。
++- [本地出版PDF](A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller.pdf)；[权威页](https://doi.org/10.1109/tbcas.2021.3130090)；版本：IEEE publisher PDF,11 file pages=journal1332–1342;Dec2021。
++- 原件11页；SHA-256：`cf7bf33523cb6196da35eada7614183a9200c77e7f8d7b6a6fe22140de1b4fc6`；用户下载，仅获准移动一次，文件名/字节保持。
++- [授权/源目标/回滚留证](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json)。
++
++## 方法、参照和适用范围
++
++| 要核的项 | 原件可支持的判断 |
++|---|---|
++| 输入/输出 | 6臂+2手EMG；臂力训练输出由位置经Eq7反算；另有交互力传感器 → 3D臂力/手力、导纳目标/控制、FZCR和jerk |
++| 反馈 | 已有臂手协调/延迟补偿/导纳→新观察，不能再把模块整合作新意 |
++| 参与测量 | 运动学反算标签不变成独立主动力；手力拟合、FZCR/jerk不是心理或自主贡献金标准 |
++| 强度/剂量 | 任务重复与主动驱动；非长期挑战/剂量优化 |
++| 安全 | 空间/手开度守卫是工程限制，不是患者失效安全验证 |
++| 人群/阴性/局限 | 1健常；20试次10/10，阶数选择用到测试；手FZCR p=.055不显著，jerk两终点显著 |
++| 原文位置 | PDF pp.5–6/8–9，Eq7、TableI/Fig7；S7-BC-01–08 |
++
++[方法及8段字面定位](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json)；[7篇比较与候选裁剪](../../10_研究方向/主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md)。物理/心理分开，不将模型/代理、健康/下肢或数理/限幅换成患者主动贡献、临床收益或一般安全保证。
+--- /dev/null
++++ b/01_参考论文/康复整合链路/Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation_Evidence_Card.md
+@@ -0,0 +1,23 @@
++# Shoulder2025：原件身份、方法与推断边界
++
++> **不是全文翻译**；关键方法选择核验，不是独立复现、创新定案或患者/系统安全验收。
++
++- 题名：Assist-as-Needed Control of a Shoulder Rehabilitation Robot Using a Virtual Biomechanical Model and Online Stiffness Adaptation
++- DOI：`10.1109/tnsre.2025.3579533`；卷期年2025；期刊：IEEE Transactions on Neural Systems and Rehabilitation Engineering。
++- [本地出版PDF](Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf)；[权威页](https://doi.org/10.1109/tnsre.2025.3579533)；版本：IEEE publisher PDF,10 file pages=journal2358–2367。
++- 原件10页；SHA-256：`e71f6fb2dfc06eb87118b3056e4e82e6bc6dc67fb0554698ba3a008ceabf1768`；用户下载，仅获准移动一次，文件名/字节保持。
++- [授权/源目标/回滚留证](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json)。
++
++## 方法、参照和适用范围
++
++| 要核的项 | 原件可支持的判断 |
++|---|---|
++| 输入/输出 | 模型/机器人运动学、交互力；VBSRM逆动力学期望人体力矩 → β混合力矩、梯度刚度、PID与ADL跟踪/峰值力矩 |
++| 反馈 | 模型→混合AAN/在线刚度→新观察已有，不是首次肌骨辅助结合 |
++| 参与测量 | 模型期望人体力矩不等于独立自主力矩；β非校准参与概率，无心理量表 |
++| 强度/剂量 | ADL追踪/参数适配，未确具体动作或重复数，不证明患者剂量 |
++| 安全 | III.D稳定讨论及β/关节/力矩限幅、急停/监督；非一般被动性/估计误差/OOD安全证明 |
++| 人群/阴性/局限 | 10健常7男3女，22–38；没有患者临床结论；环境/长期适配未全面测试 |
++| 原文位置 | PDF pp.6–7/9，TableII–III/III.D/V局限；S7-SH-01–08 |
++
++[方法及8段字面定位](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json)；[7篇比较与候选裁剪](../../10_研究方向/主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md)。物理/心理分开，不将模型/代理、健康/下肢或数理/限幅换成患者主动贡献、临床收益或一般安全保证。
+--- /dev/null
++++ b/01_参考论文/康复整合链路/Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration_Evidence_Card.md
+@@ -0,0 +1,23 @@
++# Song_TIE：原件身份、方法与推断边界
++
++> **不是全文翻译**；关键方法选择核验，不是独立复现、创新定案或患者/系统安全验收。
++
++- 题名：Deep-LSTM-Based Human-Robot Collaboration Control With Static-Dynamic Calibration
++- DOI：`10.1109/tie.2024.3398675`；卷期年2024；期刊：IEEE Transactions on Industrial Electronics。
++- [本地出版PDF](Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration.pdf)；[权威页](https://doi.org/10.1109/tie.2024.3398675)；版本：IEEE publisher PDF,11 file pages=journal16165–16175;Dec2024。
++- 原件11页；SHA-256：`051062e5644209088b9c01a0eb023091e070b97400baf3cacd627fb762682615`；用户下载，仅获准移动一次，文件名/字节保持。
++- [授权/源目标/回滚留证](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json)。
++
++## 方法、参照和适用范围
++
++| 要核的项 | 原件可支持的判断 |
++|---|---|
++| 输入/输出 | 8肌激活+3关节角；静态测交互力，动态标签加入辅助估计 → 三层LSTM的3D力、导纳/绳驱轨迹及误差/时延 |
++| 反馈 | 静态预训→动态重标定→重新嵌入控制；不是持续在线训练 |
++| 参与测量 | 静态力假设与动态模型标签不同；未证独立动态自主力矩或心理参与 |
++| 强度/剂量 | 在线人驱动作；160试次不构成最佳患者剂量 |
++| 安全 | 空间/张力限制；平均3.1230ms不证明最坏期限/OOD安全 |
++| 人群/阴性/局限 | 3参与者，临床/人口细节未清报；卒中迁移属未来；TableIV y力误差变差，综合3D改善 |
++| 原文位置 | PDF pp.2/5/7/9/10；S7-TIE-01–08；原TableIV–V目视核 |
++
++[方法及8段字面定位](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json)；[7篇比较与候选裁剪](../../10_研究方向/主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md)。物理/心理分开，不将模型/代理、健康/下肢或数理/限幅换成患者主动贡献、临床收益或一般安全保证。
+--- /dev/null
++++ b/01_参考论文/康复整合链路/Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot_Evidence_Card.md
+@@ -0,0 +1,23 @@
++# Song_TBME：原件身份、方法与推断边界
++
++> **不是全文翻译**；关键方法选择核验，不是独立复现、创新定案或患者/系统安全验收。
++
++- 题名：Performance-Based Hybrid Control of a Cable-Driven Upper-Limb Rehabilitation Robot
++- DOI：`10.1109/tbme.2020.3027823`；卷期年2021；在线首发2020；期刊：IEEE Transactions on Biomedical Engineering。
++- [本地出版PDF](Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot.pdf)；[权威页](https://doi.org/10.1109/tbme.2020.3027823)；版本：IEEE publisher PDF,9 file pages=journal1351–1359;Apr2021,first publication2020。
++- 原件9页；SHA-256：`bbf68a0f81d3d54716a5e2229404d070891a33b67ea29bd31fdc30e67a00c435`；用户下载，仅获准移动一次，文件名/字节保持。
++- [授权/源目标/回滚留证](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json)。
++
++## 方法、参照和适用范围
++
++| 要核的项 | 原件可支持的判断 |
++|---|---|
++| 输入/输出 | 位置/误差/速度、4绳张力；小质量/加速度假设下Fh≈−Fc → 刚度/阻尼、模式、MAE/AAF与模式占时 |
++| 反馈 | 已有表现→辅助/抵抗/限制→新观察；模糊membership不是校准置信度 |
++| 参与测量 | AAF为张力反算代理；作者要求3D力传感器；非独立身体或心理参照 |
++| 强度/剂量 | 抵抗/辅助与重复时长已有；人为扰动非患者剂量或实际损伤 |
++| 安全 | 限制/空间/张力/急停已有，限制暴露近0；不等于故障/OOD临床验证 |
++| 人群/阴性/局限 | 10健常；Friedman/Wilcoxon+Bonferroni p<.008；邻组比较未显著；卷2021在线2020 |
++| 原文位置 | PDF pp.3/5–8，Fig10–12；S7-BM-01–09 |
++
++[方法及9段字面定位](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json)；[7篇比较与候选裁剪](../../10_研究方向/主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md)。物理/心理分开，不将模型/代理、健康/下肢或数理/限幅换成患者主动贡献、临床收益或一般安全保证。
+--- /dev/null
++++ b/01_参考论文/康复整合链路/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises_Evidence_Card.md
+@@ -0,0 +1,23 @@
++# RL2026：原件身份、方法与推断边界
++
++> **不是全文翻译**；关键方法选择核验，不是独立复现、创新定案或患者/系统安全验收。
++
++- 题名：Personalized Adaptive Assistance With Reinforcement Learning Control Enhances Engagement, Performance, and Retention in Robot-Assisted Arm-Reaching Exercises
++- DOI：`10.1109/tnsre.2025.3650096`；卷期年2026；期刊：IEEE Transactions on Neural Systems and Rehabilitation Engineering。
++- [本地出版PDF](Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf)；[权威页](https://research.unipd.it/handle/11577/3586318)；版本：IEEE publisher PDF, 11 file pages = journal532–542。
++- 原件11页；SHA-256：`4b6e21ec3be9c4d677c6ad4d9099df49d3a8198fecf7abe990a360bf93ff97e6`；用户下载，仅获准移动一次，文件名/字节保持。
++- [授权/源目标/回滚留证](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json)。
++
++## 方法、参照和适用范围
++
++| 要核的项 | 原件可支持的判断 |
++|---|---|
++| 输入/输出 | 方向误差均值/峰值与历史；15健常，catch子样本6 → 阻抗g、目标权重Uc、误差阈值/难度及短时保持 |
++| 反馈 | 原Fig3/Eq9–12已核：状态→RL权衡/辅助/挑战→新运动，已有联合适配 |
++| 参与测量 | footnote1为身体参与代理；e_neg及平均g分别为参与/辅助代理，非心理或实际机械功真值 |
++| 强度/剂量 | 4训练块，保持1/10/20min；阈值手设，不证患者剂量或长期收益 |
++| 安全 | 边界参数/同意不等于患者安全；Eq12上下界符号/文字有原件歧义，不擅改实现 |
++| 人群/阴性/局限 | 15健常；训练减误差控制器差异及部分过补偿/保持项未显著；无不引导视觉反馈对照 |
++| 原文位置 | PDF pp.5–6/8–9，Eq9–12/Fig3/5–8/TableII–IV；S7-RL-01–13；旧16段派生留史 |
++
++[方法及13段字面定位](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json)；[7篇比较与候选裁剪](../../10_研究方向/主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md)。物理/心理分开，不将模型/代理、健康/下肢或数理/限幅换成患者主动贡献、临床收益或一般安全保证。
+--- /dev/null
++++ b/01_参考论文/康复整合链路/Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot_Evidence_Card.md
+@@ -0,0 +1,23 @@
++# Song_VAAN：原件身份、方法与推断边界
++
++> **不是全文翻译**；关键方法选择核验，不是独立复现、创新定案或患者/系统安全验收。
++
++- 题名：Voluntary Assist-as-Needed Controller for an Ankle Power-Assist Rehabilitation Robot
++- DOI：`10.1109/tbme.2022.3228070`；卷期年2023；在线首发2022；期刊：IEEE Transactions on Biomedical Engineering。
++- [本地出版PDF](Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot.pdf)；[权威页](https://doi.org/10.1109/tbme.2022.3228070)；版本：IEEE publisher PDF,9 file pages=journal1795–1803;June2023,first publication2022。
++- 原件9页；SHA-256：`360e92e294b0105eec6161352d9f884792e88c82aee11ae3530a95c58858afcb`；用户下载，仅获准移动一次，文件名/字节保持。
++- [授权/源目标/回滚留证](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json)。
++
++## 方法、参照和适用范围
++
++| 要核的项 | 原件可支持的判断 |
++|---|---|
++| 输入/输出 | TA/GAS、Hill模型、角度/力矩；90/120度MVC力矩传感器校准 → 估计自愿力矩、增益K、模式、贡献比Rh/跟踪 |
++| 反馈 | 已存在力矩比例辅助与表现适配；下肢迁移须重核人群/关节 |
++| 参与测量 | 独立静态MVC校准已有；动态痉挛污染未解；Rh>1/符号约定不可补猜为概率 |
++| 强度/剂量 | 25度/.1Hz、3×30s/30s休息；抵抗/辅助改变挑战，不证明临床剂量收益 |
++| 安全 | 选择性患者短时控制可行性，不是上肢/心理/OOD安全验收 |
++| 人群/阴性/局限 | 2健常+5卒中；TableVI跨文献贡献比高但跟踪更差，无患者比较栏/纵向恢复；卷2023在线2022 |
++| 原文位置 | PDF pp.4–5/7–8，Eq19/25、TableV–VI；S7-VA-01–08 |
++
++[方法及8段字面定位](../../05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json)；[7篇比较与候选裁剪](../../10_研究方向/主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md)。物理/心理分开，不将模型/代理、健康/下肢或数理/限幅换成患者主动贡献、临床收益或一般安全保证。

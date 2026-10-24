@@ -1,0 +1,29 @@
+01_参考论文/1-s2.0-S0021929013005848-main.pdf
+01_参考论文/1-s2.0-S0021929024001969-main.pdf
+01_参考论文/1-s2.0-S0021929025004178-main.pdf
+01_参考论文/1-s2.0-S0263224115006120-main.pdf
+01_参考论文/1-s2.0-S0925231225027985-main.pdf
+01_参考论文/1-s2.0-S2210983811000204-main.pdf
+01_参考论文/1-s2.0-S2210983811000289-main.pdf
+01_参考论文/3664647.3680568 (1).pdf
+01_参考论文/Hum Ftrs   Erg Mfg Svc - 2020 - Steinebach - Accuracy evaluation of two markerless motion capture systems for measurement (1).pdf
+01_参考论文/Inverse_Estimation_of_Multiple_Muscle_Activations_From_Joint_Moment_With_Muscle_Synergy_Extraction.pdf
+01_参考论文/Journal of Anatomy - 2018 - Hik - The moment arms of the muscles spanning the glenohumeral joint  a systematic review (1).pdf
+01_参考论文/Kinematic_Data_Analysis_for_Post-Stroke_Patients_Following_Bilateral_Versus_Unilateral_Rehabilitation_With_an_Upper_Limb_Wearable_Robotic_System.pdf
+01_参考论文/Learning-Based_Inverse_Dynamics_of_Human_Motion.pdf
+01_参考论文/Review_MUBO_25thanniversary.pdf
+01_参考论文/Vision-Based_Approximate_Estimation_of_Muscle_Activation_Patterns_for_Tele-Impedance.pdf
+01_参考论文/Vision-based_Automatic_Detection_of_Compensatory_Postures_of_after-Stroke_Patients_During_Upper-extremity_Robot-assisted_Rehabilitation_A_Pilot_Study_in_Reaching_Movement.pdf
+01_参考论文/nihms240588.pdf
+01_参考论文/nihms679795.pdf
+01_参考论文/nihms693964.pdf
+01_参考论文/nihms820582.pdf
+01_参考论文/pzab010.pdf
+01_参考论文/20261001/hfm.20840.pdf
+01_参考论文/Numer Methods Biomed Eng - 2023 - Denton - Computational performance of musculoskeletal simulation in OpenSim Moco using.pdf
+01_参考论文/20261001/Numer Methods Biomed Eng - 2023 - Denton - Computational performance of musculoskeletal simulation in OpenSim Moco using.pdf
+01_参考论文/20261001/Scandinavian Med Sci Sports - 2023 - Van Hooren - The accuracy of markerless motion capture combined with computer vision.pdf
+01_参考论文/20261001/s11044-011-9297-0.pdf
+01_参考论文/20261001.zip
+01_参考论文/.DS_Store
+01_参考论文/S2210983811000204.html

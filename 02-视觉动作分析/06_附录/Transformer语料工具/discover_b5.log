@@ -1,0 +1,111 @@
+合并模式：已有 4 个线程（B1,B2,B3,B4），本次只跑 B5
+  [B5] OA  inverse dynamics from estimated pose biomechanics
+      … HTTP 429，退避 4s 后重试 (1/5)
+      … HTTP 429，退避 8s 后重试 (2/5)
+      … HTTP 429，退避 16s 后重试 (3/5)
+      … HTTP 429，退避 32s 后重试 (4/5)
+      … HTTP 429，退避 64s 后重试 (5/5)
+      ! 失败 RuntimeError("请求失败 https://api.openalex.org/works?search=inverse%20dynamics%20from%20estimated%20pose%20biomechanics&per-page=25& -> <HTTPError 429: 'Too Many Requests'>")
+  [B5] CR  inverse dynamics from estimated pose biomechanics
+  [B5] OA  vision-based inverse dynamics estimation human
+      … HTTP 429，退避 4s 后重试 (1/5)
+      … HTTP 429，退避 8s 后重试 (2/5)
+      … HTTP 429，退避 16s 后重试 (3/5)
+      … HTTP 429，退避 32s 后重试 (4/5)
+      … HTTP 429，退避 64s 后重试 (5/5)
+      ! 失败 RuntimeError("请求失败 https://api.openalex.org/works?search=vision-based%20inverse%20dynamics%20estimation%20human&per-page=25&mailt -> <HTTPError 429: 'Too Many Requests'>")
+  [B5] CR  vision-based inverse dynamics estimation human
+  [B5] OA  deep learning joint moment prediction biomechanics
+      … HTTP 429，退避 4s 后重试 (1/5)
+      … HTTP 429，退避 8s 后重试 (2/5)
+      … HTTP 429，退避 16s 后重试 (3/5)
+      … HTTP 429，退避 32s 后重试 (4/5)
+      … HTTP 429，退避 64s 后重试 (5/5)
+      ! 失败 RuntimeError("请求失败 https://api.openalex.org/works?search=deep%20learning%20joint%20moment%20prediction%20biomechanics&per-page=25 -> <HTTPError 429: 'Too Many Requests'>")
+  [B5] CR  deep learning joint moment prediction biomechanics
+  [B5] OA  markerless estimation joint kinetics
+      … HTTP 429，退避 4s 后重试 (1/5)
+      … HTTP 429，退避 8s 后重试 (2/5)
+      … HTTP 429，退避 16s 后重试 (3/5)
+      … HTTP 429，退避 32s 后重试 (4/5)
+      … HTTP 429，退避 64s 后重试 (5/5)
+      ! 失败 RuntimeError("请求失败 https://api.openalex.org/works?search=markerless%20estimation%20joint%20kinetics&per-page=25&mailto=kb-researc -> <HTTPError 429: 'Too Many Requests'>")
+  [B5] CR  markerless estimation joint kinetics
+  [B5] OA  pose to joint torque estimation deep learning
+      … HTTP 429，退避 4s 后重试 (1/5)
+      … HTTP 429，退避 8s 后重试 (2/5)
+      … HTTP 429，退避 16s 后重试 (3/5)
+      … HTTP 429，退避 32s 后重试 (4/5)
+      … HTTP 429，退避 64s 后重试 (5/5)
+      ! 失败 RuntimeError("请求失败 https://api.openalex.org/works?search=pose%20to%20joint%20torque%20estimation%20deep%20learning&per-page=25&ma -> <HTTPError 429: 'Too Many Requests'>")
+  [B5] CR  pose to joint torque estimation deep learning
+  [B5] OA  physics-informed human pose estimation refinement
+      … HTTP 429，退避 4s 后重试 (1/5)
+      … HTTP 429，退避 8s 后重试 (2/5)
+      … HTTP 429，退避 16s 后重试 (3/5)
+      … HTTP 429，退避 32s 后重试 (4/5)
+      … HTTP 429，退避 64s 后重试 (5/5)
+      ! 失败 RuntimeError("请求失败 https://api.openalex.org/works?search=physics-informed%20human%20pose%20estimation%20refinement&per-page=25&ma -> <HTTPError 429: 'Too Many Requests'>")
+  [B5] CR  physics-informed human pose estimation refinement
+  [B5] OA  forward dynamics from motion capture
+      … HTTP 429，退避 4s 后重试 (1/5)
+      … HTTP 429，退避 8s 后重试 (2/5)
+      … HTTP 429，退避 16s 后重试 (3/5)
+      … HTTP 429，退避 32s 后重试 (4/5)
+      … HTTP 429，退避 64s 后重试 (5/5)
+      ! 失败 RuntimeError("请求失败 https://api.openalex.org/works?search=forward%20dynamics%20from%20motion%20capture&per-page=25&mailto=kb-resea -> <HTTPError 429: 'Too Many Requests'>")
+  [B5] CR  forward dynamics from motion capture
+  [B5] OA  video-based muscle activation estimation
+      … HTTP 429，退避 4s 后重试 (1/5)
+      … HTTP 429，退避 8s 后重试 (2/5)
+      … HTTP 429，退避 16s 后重试 (3/5)
+      … HTTP 429，退避 32s 后重试 (4/5)
+      … HTTP 429，退避 64s 后重试 (5/5)
+      ! 失败 RuntimeError("请求失败 https://api.openalex.org/works?search=video-based%20muscle%20activation%20estimation&per-page=25&mailto=kb-res -> <HTTPError 429: 'Too Many Requests'>")
+  [B5] CR  video-based muscle activation estimation
+  [B5] OA  differentiable simulation pose optimization biomechanics
+      … HTTP 429，退避 4s 后重试 (1/5)
+      … HTTP 429，退避 8s 后重试 (2/5)
+      … HTTP 429，退避 16s 后重试 (3/5)
+      … HTTP 429，退避 32s 后重试 (4/5)
+      … HTTP 429，退避 64s 后重试 (5/5)
+      ! 失败 RuntimeError("请求失败 https://api.openalex.org/works?search=differentiable%20simulation%20pose%20optimization%20biomechanics&per-pag -> <HTTPError 429: 'Too Many Requests'>")
+  [B5] CR  differentiable simulation pose optimization biomechanics
+  [B5] OA  physics-based human pose estimation
+      … HTTP 429，退避 4s 后重试 (1/5)
+      … HTTP 429，退避 8s 后重试 (2/5)
+      … HTTP 429，退避 16s 后重试 (3/5)
+      … HTTP 429，退避 32s 后重试 (4/5)
+      … HTTP 429，退避 64s 后重试 (5/5)
+      ! 失败 RuntimeError("请求失败 https://api.openalex.org/works?search=physics-based%20human%20pose%20estimation&per-page=25&mailto=kb-research -> <HTTPError 429: 'Too Many Requests'>")
+  [B5] CR  physics-based human pose estimation
+  [B5] OA  musculoskeletal inference from video
+      … HTTP 429，退避 4s 后重试 (1/5)
+      … HTTP 429，退避 8s 后重试 (2/5)
+      … HTTP 429，退避 16s 后重试 (3/5)
+      … HTTP 429，退避 32s 后重试 (4/5)
+      … HTTP 429，退避 64s 后重试 (5/5)
+      ! 失败 RuntimeError("请求失败 https://api.openalex.org/works?search=musculoskeletal%20inference%20from%20video&per-page=25&mailto=kb-researc -> <HTTPError 429: 'Too Many Requests'>")
+  [B5] CR  musculoskeletal inference from video
+  [B5] OA  markerless motion capture biomechanics pipeline
+      … HTTP 429，退避 4s 后重试 (1/5)
+      … HTTP 429，退避 8s 后重试 (2/5)
+      … HTTP 429，退避 16s 后重试 (3/5)
+      … HTTP 429，退避 32s 后重试 (4/5)
+      … HTTP 429，退避 64s 后重试 (5/5)
+      ! 失败 RuntimeError("请求失败 https://api.openalex.org/works?search=markerless%20motion%20capture%20biomechanics%20pipeline&per-page=25&mail -> <HTTPError 429: 'Too Many Requests'>")
+  [B5] CR  markerless motion capture biomechanics pipeline
+  [B5] OA  neural network inverse dynamics optimization
+      … HTTP 429，退避 4s 后重试 (1/5)
+      … HTTP 429，退避 8s 后重试 (2/5)
+      … HTTP 429，退避 16s 后重试 (3/5)
+      … HTTP 429，退避 32s 后重试 (4/5)
+      … HTTP 429，退避 64s 后重试 (5/5)
+      ! 失败 RuntimeError("请求失败 https://api.openalex.org/works?search=neural%20network%20inverse%20dynamics%20optimization&per-page=25&mailto= -> <HTTPError 429: 'Too Many Requests'>")
+  [B5] CR  neural network inverse dynamics optimization
+  [B5] OA  physics-based motion tracking kinematic constraints
+      … HTTP 429，退避 4s 后重试 (1/5)
+      … HTTP 429，退避 8s 后重试 (2/5)
+      … HTTP 429，退避 16s 后重试 (3/5)
+      … HTTP 429，退避 32s 后重试 (4/5)
+      … HTTP 429，退避 64s 后重试 (5/5)

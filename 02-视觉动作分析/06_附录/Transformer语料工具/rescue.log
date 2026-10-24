@@ -1,0 +1,28 @@
+待抢救条目：24（另有 7 条已确认不在 arXiv，直接进人工清单）
+
+  ✗  0.00  ALiBi: Train Short, Test Long: Attention wit   仍无可靠命中
+  ?  0.77  3D Human Pose Estimation with Spatio-Tempora   -> 1805.08961v2  3D Human Pose Estimation with Relational Networks
+  ✗  0.00  4DHumans: Reconstructing 4D Humans from Mono   仍无可靠命中
+  ✗  0.00  TokenHMR: Token-based 3D Human Reconstructio   仍无可靠命中
+  ✗  0.00  PoseFormerV2: 3D Human Pose Estimation with    仍无可靠命中
+  ?  0.99  MotionAGFormer: Enhancing 3D Human Pose Esti   -> 2310.16288v1  MotionAGFormer: Enhancing 3D Human Pose Estimation w
+  ✗  0.53  A Simple Framework for Text-to-Motion Extrac   仍无可靠命中
+  ✗  0.00  FlashAttention                                 仍无可靠命中
+  ✗  0.00  TRAIN: A Deep Learning Approach to Motion An   仍无可靠命中
+  ✗  0.00  Reconstructing Human Motion from sEMG          仍无可靠命中
+  ✗  0.00  Real-time Neural-network-based prediction of   仍无可靠命中
+  ✗  0.00  MUSE: Multi-Scale Temporal Pretraining for M   仍无可靠命中
+  ✗  0.00  Multivariate representations and physiologic   仍无可靠命中
+  ✗  0.00  Muscle Synergies as a Tool for Neural Contro   仍无可靠命中
+  ✗  0.00  EMG-Driven Neuromuscular Modelling for Joint   仍无可靠命中
+  ✗  0.00  Transfer learning-based muscle synergies est   仍无可靠命中
+  ✗  0.58  A deep learning framework for reconstructing   仍无可靠命中
+  ✗  0.36  Motor Imagery EEG-based BCI for rehabilitati   仍无可靠命中
+  ?  0.77  Self-Supervised Transformers for Human Activ   -> 2307.11796v1  Unsupervised Embedding Learning for Human Activity R
+  ✗  0.00  DeepSpeed: Extreme-scale model training for    仍无可靠命中
+  ✗  0.00  Sinkhorn Operators: Provable Attention via N   仍无可靠命中
+  ✗  0.00  Conditional Positional Encoding for Video Tr   仍无可靠命中
+  ✗  0.00  TATS: Long-term Human Motion Generation with   仍无可靠命中
+  ✗  0.00  Retentive Network: A Successive Sub-Training   仍无可靠命中
+
+可救候选 3 条已写入 rescue_candidates.json —— **需人工逐条确认后才写入语料**

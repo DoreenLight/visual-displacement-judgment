@@ -2,6 +2,82 @@
 
 本目录是「视觉→关节角 Seq2Seq 翻译」研究项目的 PDF 翻译流水线脚本。
 
+> **2026-10-01 起改用本目录自建流水线**（`paper_manifest.py` + `translate_all.py` +
+> `verify_translations.py`），不再走 `run_batch_cli.sh`。原因：原 `.env` 里的
+> `OPENROUTER_MODEL=stealth/ox-alpha` 已从 OpenRouter 下线（接口 404），pdf2zh 会把
+> 错误响应当正文写入，产出「纯英文译文」。详见 STATUS.md §7.1。
+> 下方 §0–§3 保留为历史记录，§4 起为现行口径。
+
+## 现行流水线（2026-10-01）
+
+### 一键重跑
+
+```bash
+PY=/Users/xbpd/Projects/pdf2zh/.venv/bin/python
+
+$PY paper_manifest.py --list          # 1. 清单校验：29 篇 PDF → 英文抽取
+bash run_extract_missing.sh            # 2. 补跑缺失的 MinerU 英文抽取
+$PY translate_all.py --workers 8      # 3. 全文翻译（断点续跑）
+$PY translate_all.py --repair         # 4. 重跑被拒答/幻觉图污染的块
+$PY translate_all.py --fixnums        # 5. 重跑数字对不上的块（治 8.57→8.47）
+$PY translate_all.py --deecho         # 6. 删英文复读段 + 清残留 ```（纯本地，不调 API）
+$PY verify_translations.py            # 7. 逐篇质量校验（29/29 通过则退出码 0）
+```
+
+### 脚本职责
+
+| 脚本 | 职责 |
+|---|---|
+| `paper_manifest.py` | 29 篇的 PDF → 英文抽取映射清单（`--list` 可打印页数/是否已有抽取） |
+| `run_extract_missing.sh` | 对缺英文抽取的篇目跑 MinerU（`--skip-translate`），产物进 `_translation_outputs/` |
+| `translate_all.py` | MiniMax-M3 全文翻译。分块、断点续跑、拒答重试、去回显、幻觉图片清理 |
+| `verify_translations.py` | 质量校验，退出码非 0 即有未通过项 |
+
+### 翻译口径
+
+| 项 | 口径 |
+|---|---|
+| 范围 | 全文，含 References |
+| 公式 `$$...$$` | 逐字原样保留，**不进模型** |
+| 代码 ``` ``` ``` | 逐字原样保留，**不进模型** |
+| 表格 `<table>` | 整表原样保留（表头英文），**不进模型** |
+| 图片 `![](images/…)` | 逐字原样保留，**不进模型** |
+| 参考文献 | 标题译中文；作者/刊名/年份/卷期页码/DOI 保持英文 |
+| 专有名词 | 首次「中文译名（English Original）」；数据集/模型/机构名保留英文 |
+
+**为什么结构性内容不进模型**：实测模型会丢图片、丢整表、丢块公式、丢代码块。
+详见 STATUS.md §7.1。分块器在 `chunk_markdown()`，可用
+`$PY translate_all.py --dry-run` 验证「重建后与原文结构零差异」。
+
+### 四个必须知道的坑
+
+1. **拒答**：孤立碎片（单独的 `(a)`、`Table 2 Continued`、光杆小节标题）会触发模型
+   拒答。`_translate_one()` 先正常翻，检测到拒答就用 `NUDGE` 提示重试，再失败原样透传。
+   改 `REFUSAL` 正则时务必跑 `/tmp/test_refusal.py` 同级回归（32 例）——
+   单用关键词会误伤正文里的「无法…」，必须与第二人称称呼成对匹配。
+2. **英文复读**：模型会先原样贴英文再给译文。`strip_echo()` 删除，但 `_is_mathy()`
+   必须排除公式/代码块，否则会把公式当复读删掉（这个坑踩过一次）。
+3. **数字错位**：模型会改写数字（8.57→8.47）。`--fixnums` 检出后重译。
+4. **缓存命名空间**：`translate_all.py` 里 `key = f"v3::{name}"`。改分块逻辑就
+   必须升版本号，否则会命中旧结构的缓存。
+
+### 校验器口径（`verify_translations.py`）
+
+写校验器时踩过的坑，一并记下：
+
+- **中文占比只能算「正文散文」**：要排除 References（作者/刊名保持英文）、`<table>`（整表保留
+  英文）、`$$公式$$`、` ```代码``` `、图片引用。直接对全文算会被表格拉到 0.24。
+- **不能按 `## References` 截断取数**：MinerU 会把末张大表排在参考文献之后
+  （Jamsrandorj2022-EMBC 的 Table VI），一截断就把表里数据全判成丢失。
+  正确做法：正文取 References 之前，再把全文里的 `<table>` 拼回去。
+- **数字要按「值」比而不是按字符串比**：2.4 billion→24 亿、13.7 million→1370 万
+  是正确换算，逐字比会误报。日期正则也不能写宽——`\d{1,2}\.\d{1,2}` 会把 8.57 当成日期吃掉。
+- **只查「少了」不查「多了」**：模型可能把长行内式改写成行间式，块公式数变多不是缺陷。
+
+---
+
+## 历史记录：pdf2zh 原流水线（模型已失效，勿再使用）
+
 ## 0. 一次性环境检查
 
 ```bash

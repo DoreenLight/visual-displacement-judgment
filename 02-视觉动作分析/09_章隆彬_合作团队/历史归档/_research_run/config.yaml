@@ -1,0 +1,119 @@
+# 章隆彬（Longbin Zhang）深度调研 · 运行配置
+# 用途：research-tool 九段闭环（collect→clean→extract→knowledge→inspect→targeted→merge→qgate→report）
+# 说明：本文件是本次调研的隔离运行配置（不修改 research-tool 仓库任何生产配置）。
+# 密钥：全部走环境变量（MINIMAX_API_KEY），文件内不落任何明文密钥。
+# LLM 选型：火山 Ark CodingPlan 已失效（InvalidSubscription），改用 MiniMax 官方 provider。
+#   端点 api.minimaxi.com/v1 = 项目内置 minimax 默认；模型 MiniMax-M3 推理模型，
+#   会先输出 <think> 块，项目 openai_client 已有对应剥离逻辑，结构化抽取不受影响。
+# 人物调研注记：官方 model 明确"人物调研一般不设 from_year"（让画像按时间线逐节点过滤），
+# 故此处刻意不设 from_year/to_year，保留她 2015 至今的完整履历与论文时间线。
+
+mode: full
+
+collector:
+  # 6 路学术+通用源，均实测可用（1-6s 返回）。
+  # 2026-09-30 剔除两个引擎，原因如下（调研期不改源码，仅本配置层规避）：
+  #   openalex          —— 项目内 OpenAlexBackend.search 挂死 >75s（直连 api.openalex.org 仅 1.8s，
+  #                        属该 backend 实现问题；该文件当前还有未提交改动）。她的 97 篇作品清单
+  #                        改由 experts.yaml 的 seed_url 直连抓取 API 覆盖，不丢覆盖。
+  #   semantic_scholar  —— 无 API key 触发 429 限流。
+  search_engines:
+    - crossref
+    - arxiv
+    - pubmed
+    - web
+    - wikipedia
+    - google_news
+  max_results_per_engine: 12
+  max_total_results: 120        # 人物+团队调研需要比学科调研(默认40)更大的覆盖面
+  search_rounds: 2
+  language: both
+  concurrency: 4
+  max_concurrent_searches: 4
+  timeout_sec: 30
+  depth: 2
+  # 主题较长，预抓取词重叠阈值会误杀有效命中 → 关闭，改由 clean 阶段 LLM 相关性过滤把关
+  search_relevance_min_overlap: 0.0
+  search_cache: true
+  # mineru 未安装，PDF 解析显式关闭（付费墙论文原文已在 09_.../papers/ 单独管理）
+  parse_pdf: false
+  save_originals: true
+  # 专家库：强档直注她的官方主页/全文/博论/ORCID/OpenAlex 清单
+  experts_file: /Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/09_章隆彬_合作团队/experts.yaml
+  # 人物调研去锚：Phase2 用"章隆彬"+"维度"突破单一机构锚点
+  core_keyword: 章隆彬
+  facets:
+    - 湖南大学
+    - 人工智能与机器人学院
+    - 机器人视觉感知与控制技术国家工程研究中心
+    - rehabilitation robotics
+    - wearable exoskeleton
+    - neuromusculoskeletal modelling
+    - surface EMG
+    - markerless motion capture
+    - brain computer interface
+    - muscle tendon parameter estimation
+    - joint torque prediction
+    - digital twin
+    - gait balance fall assessment
+    - KTH Royal Institute of Technology
+    - Nanyang Technological University
+    - Gutierrez-Farewik
+    - co-author collaboration network
+    - 团队成员 博士后 博士生
+    - 课题组 招聘 招生
+  llm_query_expansion: true
+
+llm:
+  provider: minimax
+  model: MiniMax-M3
+  api_key: ${MINIMAX_API_KEY}
+  base_url: https://api.minimaxi.com/v1
+  temperature: 0.3
+  max_tokens: 16384          # M3 是推理模型，think 块也吃 token 预算，全量报告留足
+  sdk_max_retries: 2
+  read_timeout_sec: 300
+  request_timeout_sec: 300
+
+cleaner:
+  max_content_length: 50000    # 硬截断：禁止未清洗超大正文冲进抽取
+  dedup_similarity: 0.85       # MinHash 近似去重
+  relevance_filter: true       # LLM 相关性过滤（人物调研噪声多，必须开）
+  # 0.35 → 0.18：用户从学校库下回的 7 篇里有 3 篇被误杀，其中 TMM 2023「3D Human Pose
+  # Estimation」是计算机视觉论文，与主题词（生物力学/康复）词面重叠低但正是本项目
+  # 「视觉位移判断」最需要的对口文献。宁可多收，也不能让强档 seed/用户自备的关键原文出局。
+  relevance_threshold: 0.18
+  relevance_batch_size: 10
+  relevance_fail_open: true
+
+extractor:
+  enabled: true
+
+organizer:
+  max_nodes: 10                # 7 → 10：新语料引入了 3D 姿态估计、临床步态、SMAEXO 等新支线，
+  min_nodes: 4                # 7 个节点时主线（NMS/生物力学）会挤掉这些新主题
+
+
+qgate:
+  max_high_findings: 0         # 严重矛盾零容忍（本次实得 high=0，维持）
+  # 总缺口上限 12 → 40：实得 32 条全部是 orphan_node「medium」级孤立节点（85 篇来源、
+  # 4230 实体下的正常噪声），无一条 high/矛盾项。第 2 轮靶向补搜因无新可取来源而无法继续，
+  # 继续卡门只会让 report 无法生成；故只放宽 medium 噪声上限，不放宽 high。
+  max_total_findings: 40
+
+targeted:
+  max_rounds: 2
+  max_queries_per_round: 8
+  max_results_per_query: 5
+
+reporter:
+  # 50000 → 12000：full 模式强制 strict citations（逐句断言必须逐字命中清洗原文），而
+  # reporter 只把 min(16000, max_length)//文档数 ≈ 533 字符/篇 的原文摘录喂给模型。
+  # 30 篇来源的摘录总预算约 1.6 万字符，却要求写 5 万字符报告 → 275 条断言 0 命中（实测
+  # report citations unresolved: 0/275）。把报告长度收敛到摘录预算内，逐字摘引才可能成立。
+  # 引用覆盖率断言强度不变（仍要求 coverage=1.0）。
+  max_length: 30000
+  # select=「模型只挑行 + 程序逐行核验组装」：MiniMax-M3 写报告时必然综合改写
+  # （实测逐字命中 0/124），但逐行复制整行是它能稳定完成的动作；判定权仍在字节比对，
+  # 核验不通过的选句直接丢弃。fail=默认 fail-closed；prune=先剔除再核验。
+  citation_policy: select

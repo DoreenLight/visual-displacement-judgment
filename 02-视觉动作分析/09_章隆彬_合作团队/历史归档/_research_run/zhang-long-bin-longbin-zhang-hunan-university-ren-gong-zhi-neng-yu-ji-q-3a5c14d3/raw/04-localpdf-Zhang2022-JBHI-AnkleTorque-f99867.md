@@ -1,0 +1,310 @@
+<!-- source: https://doi.org/10.1109/jbhi.2022.3207313 -->
+<!-- title: Ankle Joint Torque Prediction Using an NMS Solver Informed-ANN Model and Transfer Learning -->
+<!-- fetched: 2026-09-30T13:46:08Z -->
+<!-- via: local_paper_fulltext(_translation_outputs/Zhang_2022_JBHI_AnkleTorque/Zhang_2022_JBHI_AnkleTorque/auto/Zhang_2022_JBHI_AnkleTorque.md) -->
+<!-- note: 原文 PDF 存于 09_章隆彬_合作团队/papers/，此为 PDF 解析后的全文 Markdown -->
+
+# Ankle Joint Torque Prediction Using an NMS Solver Informed-ANN Model and Transfer Learning
+
+Longbin Zhang , Xueyu Zhu , Elena M. Gutierrez-Farewik , and Ruoli Wang
+
+Abstract—In this work, we predicted ankle joint torque by combining a neuromusculoskeletal (NMS) solver-informed artificial neural network (hybrid-ANN) model with transfer learning based on joint angle and muscle electromyography signals. The hybrid-ANN is an ANN augmented with two kinds of features: 1) experimental measurements – muscle signals and joint angles, and 2) informative physical features extracted from the underlying NMS solver, such as individual muscle force and joint torque. The hybrid-ANN model accuracy in torque prediction was studied in both intra- and inter-subject tests, and compared to the baseline models (NMS and standard-ANN). For each prediction model, seven different cases were studied using data from gait at different speeds and from isokinetic ankle dorsi/plantarflexion motion. Additionally, we integrated a transfer learning method in inter-subject models to improve joint torque prediction accuracy by transferring the learned knowledge from previous participants to a new participant, which could be useful when training data is limited. Our results indicated that better accuracy could be obtained by integrating informative NMS features into a standard ANN model, especially in inter-subject cases; overall, the hybrid-ANN model predicted joint torque with higher accuracy than the baseline models, most notably in inter-subject prediction after adopting the transfer learning technique. We demonstrated the potential of combining physics-based NMS and standard-ANN models with a transfer learning technique in different prediction scenarios. This procedure holds great promise in applications such as assistance-asneeded exoskeleton control strategy design by incorporating the physiological joint torque of the users.
+
+Index Terms—Neuromusculoskeletal model, neural networks, generalizability, transfer learning.
+
+## I. INTRODUCTION
+
+E <sup>XOSKELETONS</sup> <sup>have</sup> <sup>been</sup> <sup>extensively</sup> <sup>investigated</sup> <sup>for</sup>their potential to regain lost motor function in persons with motor disorders [1], [2], [3]. During exoskeleton-assisted rehabilitation training, users’ active participation is essential to stimulate neuromuscular recovery [4], [5]. Therefore, one of the most important characteristics of exoskeleton control strategies is whether the exoskeleton can provide appropriate assistive torque to adapt to the users’ remaining muscle function [6]. In recent years, research in exoskeleton control strategies that incorporate the user’s torque capacity in their assistance design has grown exponentially, as this approach encourages users’ active participation in promoting motor recovery [7].
+
+Among the approaches to predict joint torque, physics-based methods are common. For instance, Durandau et al. [8] investigated a real-time electromyography (EMG)-driven neuromusculoskeletal (NMS) model to establish the transformations from EMG signals to mechanical joint torque production in intact humans. They could robustly compute forces in thirteen muscletendon units and three joint torques (knee extensor/flexor, ankle plantarflexor/dorsiflexor and subtalar pronator/supinator) simultaneously. EMG-driven NMS models typically require domain knowledge to explicitly model the relationships among variables, for instance, muscle active and passive force-length relationship, muscle force-velocity relationship, andjoint anglemusculotendon kinematics relationships. In general, it could be labor- and time-consuming to set up/calibrate the models in sophisticated steps. In addition, physics-based NMS models only make a rough estimation ofjoint dynamics, and the quality of EMGs may be affected by cross-talk and sensor placement. Other studies, such as EMG-assisted NMS models, have been investigated to further improve the prediction accuracy of models by incorporating optimization of muscle-tendon parameters, that result in estimated muscle excitations that better track measured joint torque [9], [10]. However, obtaining adjusted parameters in real-time predictions remains a challenging problem.
+
+Artificial neural networks (ANN) have frequently been used to predict joint torque due to their functionality and approximation accuracy. An ANN has computational units of multiple layers that emulate the human neuronal synapse system in the brain by considering each node as an artificial neuron, thereby creating an ability to process complex and non-linear information [11], [12], [13], [14]. Pena et al. [15] used an ANN as an alternative method to an NMS model to estimate the mappings between EMG and torque in the control strategy ofan active knee orthosis. They found that, compared to the NMS model, the ANN-based model had higher prediction accuracy. ANN is undoubtedly considered to be a powerful tool to identify the relationships between variables and output and/or to search for established patterns in data. However, an ANN is a black-box model with no concept of underlying mechanisms between variables, and thus might not be able to provide a reliable prediction for data that is outside of the training distribution [16], particularly when the amount and variation of training data are limited. To leverage the advantages ofANNs, a few recent studies have incorporated neural networks into physics-based models, for various applications such as to enhance a model’s prediction capability and facilitate neuromusculoskeletal modelling. Zhang et al. [17] constructed a neural network with informative features extracted from spectrum reconstruction solvers to model the spectrum of colloidal quantum dot spectrometers. They showed better reconstruction accuracy and robustness with the hybrid model, attributed to the solver-informed features. In a recent review paper, Saxby et al. [18] proposed how physics-based simulation integrating with machine learning methods from Big Data could be used to facilitate neuromusculoskeletal modeling, and recommend combining personalized neuromusculoskeletal model features and Big Data/machine learning methods for future research. Inspired by the above work, we recently incorporated informative features from an NMS model into a standard-ANN in ankle torque prediction during gait and isokinetic motions [19]. Our results in intra-subject prediction demonstrated that the combined model overall predicted joint torque better than both the NMS and the standard-ANN, demonstrating the benefits of incorporating informative features from physics-based NMS solver into a standard-ANN. However, the generalizability of models in inter-subject prediction has not been further analyzed.
+
+Inter-subject model generation in limb-joint torque prediction is often a challenging task. The NMS model must first be calibrated with individual experimental test to acquire personalized parameters, for instance, optimal fiber length, maximum isometric force, and tendon slack length; then the personalized model can be used to estimate muscle forces andjoint torque. As a result, one can expect poor generalization of NMS models for inter-subject prediction. In contrast, the ANN’s generalizability is mostly determined by the size of the network, given enough training data and sufficient training. However, when the training data is limited, generalizability will typically face a performance drop when the data is outside of the training distribution [16].
+
+Recently, transfer learning has been adopted to improve generalizability, especially with limited data [20], [21]. Jayaram et al. [22] proposed a framework for transfer learning in a braincomputer interface that could be applied to any desired spatiotemporal feature space based on electroencephalogram signals. Their results showed that this approach outperformed other comparable methods in dealing with both session-to-session (inter-session) and subject-to-subject (inter-subject) variability. Karri et al. [23] fine-tuned a pre-trained convolutional neural network, GoogLeNet, a model on the ImageNet database, to improve its prediction capability in identifying optical coherence tomography images with pathology. These authors illustrated the adaptation of GoogLeNet for image classification for faster convergence using less data for training. By leveraging knowledge from a pre-trained neural network on previous experiences/data, a new neural network with good performance can be obtained using relatively fewer samples. Therefore, the transfer learning technique is a potential method to improve the generalizability of joint torque prediction in inter-subject models.
+
+![](images/6d08db6017010b41b15676eea1feb62cd9434915dfeddf0bb910540b841567c1.jpg)  
+(a)
+
+![](images/81fc55327a90ecba1efb56fdffc34a51c7f4113c6cf7a5db924c897b4cf58b7c.jpg)  
+(b)  
+Fig. 1. Experiments. (a) Gait; (b) Isokinetic ankle dorsi/plantarflexion motions.
+
+The aims of this work were to investigate ankle torque prediction accuracy of an NMS solver-informed ANN in both intraand inter-subject predictions. Since the training data for some subjects can often be limited, we adopted a transfer learning technique to further improve the model’s prediction accuracy by using the knowledge acquired from previous experiences, particularly for inter-subject prediction.
+
+## II. METHODS
+
+## A. Experimental Setup
+
+Ten able-bodied participants (sex: 4F/6 M; age: 26 3 years; weight: 70.4 11.5 kg; height: 175.1 8.5 cm) were recruited among acquaintances and colleagues. The Swedish Ethical Review Authority approved this study (Dnr. 2016/286-32) and all participants gave informed written consent. All subjects were asked to perform three types of movements specifically walking, isokinetic ankle plantarflexion, and isokinetic ankle dorsiflexion. During walking, experimental data was recorded at self-selected, slow, and fast speeds (Fig. 1). The isokinetic ankle movements (both plantarflexion and dorsiflexion) were performed at two different speeds: 60◦/s and 90◦/s. Surface EMG signals (Noraxon Inc., AZ, USA) ofgastrocnemius medialis (GM), tibialis anterior (TA), and soleus (SOL) of each subject’s right leg were collected at 3000 Hz, with electrodes placed according to European recommendations for surface EMGs [24].
+
+In gait, each subject was instructed to walk at a self-selected speed $( 1 . 1 3 \pm 0 . 0 9 \mathrm { m } / \mathrm { s } )$ , then to synchronize steps according to a metronome set to 100 beats/min (slow, 1.08 0.07 m/s), and 120 beats/min (fast, $1 . 3 3 \pm 0 . 0 8 \mathrm { m / s } )$ along an instrumented 9-m walkway. At least 3 trials with valid force plate data during walking at each speed were collected. One full stance cycle of gait in each trial was later used for model calibration/training. Marker trajectories were measured by a 3D motion capture system (200 Hz, Qualisys, Gothenburg, Sweden), which were placed on the participants according to a Plug-in Gait model [25], [26]. Ground reaction forces (GRFs) during walking were measured at 3000 Hz using force plates (Kistler, Winterthur, Switzerland). During isokinetic ankle motions, each subject was asked to dorsiflex and plantarflex with a maximum effort five consecutive times, in the range between 20◦ plantarflexion and 15◦ dorsiflexion, during which motions and joint torque were recorded by a dynamometer (5000 Hz, IsoMed 2000, Hemau, Germany).
+
+![](images/b756e739ed982038922ac53fb724d4eafd8ccca36716a2f6fc9f60523f6e6489.jpg)  
+Fig. 2. Schematic structure of an NMS model consisting of four components: the muscle activation dynamics compute muscle activation level with collected EMGs; the muscle contraction dynamics calculates musculotendon force through a Hill-based muscle model; the musculotendon kinematics computes musculotendon length and moment arm of each musculotendon unit; Finally, the joint torque is calculated through the joint dynamics component.
+
+## B. Data Processing
+
+EMGs were band pass filtered (30–300 Hz), rectified, low pass filtered (6 Hz), and normalized to the maximum EMG value among all motion trials [4], [9], [27]. A low-pass Zero-lag Butterworth filter (6 Hz) was applied to measured ankle joint angle and torque during isokinetic movement tasks, as well as marker trajectories and GRFs during gait [28], [29], [30]. Ankle joint angle and torque during gait were computed using a musculoskeletal modeling system (OpenSim v3.3, SimTK, Stanford, USA) using a general pipeline consisting of scaling, inverse kinematics, and inverse dynamics [27]. We scaled a generic musculoskeletal model (OpenSim Gait2354) to a subject-specific model by using the collected marker trajectories on the specific subject to fit the subject’s anthropometry. Then the scaled musculoskeletal model was applied to reconstruct 3D joint kinematics and kinetics using the recorded marker trajectories and GRFs as inputs. The joint angles were computed through inverse kinematics by minimizing the distance between experimental and corresponding virtual markers on the model [31]. The joint torques were calculated through inverse dynamics by solving motion dynamic equations [32].
+
+## C. Joint Torque Prediction Models
+
+1) NMS Model: An open-source EMG-driven NMS model (CEINMS) developed by Pizzolato et al. [10] was used in this study, consisting of musculotendon kinematics, muscle contraction dynamics, muscle activation dynamics, and joint dynamics (Fig. 2) [33].
+
+The muscle activation dynamics component computes muscle activation with collected EMGs. The relations between EMGs e(t) and neural activation $u ( t )$ can be formulated as (1) [34].
+
+$$
+u ( t ) = \alpha \cdot e ( t - \tau ) - \beta _ { 1 } \cdot u ( t - 1 ) - \beta _ { 2 } \cdot u ( t - 2 )\tag{1}
+$$
+
+where α is the muscle gain parameter; $\beta _ { 1 }$ and $\beta _ { 2 }$ are the recursive parameters; $\alpha , \beta _ { 1 }$ and $\beta _ { 2 }$ are constrained to the following relationships to obtain a stable solution [10] [34] [35]: $\beta _ { 1 } = C _ { 1 } + C _ { 2 } , \beta _ { 2 } = C _ { 1 } \cdot C _ { 2 }$ , where $\left| C _ { 1 } \right| < 1 , \left| C _ { 2 } \right| < 1$ , and $\alpha - \beta _ { 1 } - \beta _ { 2 } = 1 . \tau$ is the electromechanical delay. The relationship between muscle activation $a ( t )$ and neural activation can be formulated as (2):
+
+$$
+a ( t ) = \frac { e ^ { B u ( t ) } - 1 } { e ^ { B } - 1 }\tag{2}
+$$
+
+where $B$ is the shape factor [9], [35].
+
+The muscle contraction dynamics component calculates musculotendon forces by a Hill-based muscle model. Each musculotendon unit (MTU) force F can be formulated as (3),
+
+$$
+F = F _ { 0 } ^ { m } [ F _ { a } ( l ) \cdot F _ { v } ( v ) \cdot a + F _ { p } ( l ) + d _ { a } \cdot v ] c o s ( \psi )\tag{3}
+$$
+
+where $F _ { 0 } ^ { m }$ is the muscle maximum isometric force; l is the fiber length and $v$ is the contraction velocity of fiber; $F _ { a } ( l )$ represents the active force-length relationship, $F _ { p } ( l )$ describes the passive force-length relationship, and $F _ { v } ( v )$ represents the force-velocity relationship; $d _ { a }$ is the muscle damping parameter and ψ is the fiber pennation angle.
+
+The musculotendon kinematics component computes the moment arms and musculotendon lengths of musculotendon units. Finally, thejoint torque was predicted through thejoint dynamics component.
+
+Subject-specific MTU parameters identification was performed for each participant during the NMS model calibration process. These parameters, including optimal fiber length, tendon slack length, shape factor B, strength coefficient, and coefficients C1 and C2, were refined by minimizing the error between estimated and measured joint torque during the calibration process. The list of calibrating parameters and boundary conditions was based on recommendations by Pizzolato et al. [10]. Optimal fiber length $l _ { 0 } ^ { m }$ and tendon slack length $l _ { s } ^ { t }$ of each MTU were constrained within 15% from their defaults. The shape factor $B$ was constrained in ( 3, 0). Coefficients $C _ { 1 }$ and $C _ { 2 }$ were constrained in ( 1, 1). The strength coefficient was constrained in (0.5,2.5) to scale the muscle maximum isometric force.
+
+2) ANN Models: Next, we constructed a standard ANN model to estimate ankle torques with the same experimental inputs in the NMS model, i.e., EMGs and joint angles as illustrated in Fig. 3. As mentioned above, the standard ANN technique is a purely data-driven method and can be expected to predict with less accuracy when encountering unseen movements [36]. To improve the generalizability of the standard-ANN model, we formed a hybrid-ANN model by leveraging more informative features—individual muscle forces and ankle torque calculated from the physics-based NMS solver (Fig. 3).
+
+Both standard- and hybrid-ANNs include an input layer, n hidden layers, and an output layer. For the inputs, the standard-ANN consists of four experimental input features, which are ankle joint angle and three muscle EMG signals. Besides these inputs, the hybrid-ANN added four additional input features: ankle torque and three muscle forces calculated from the physicsbased NMS solver. For intra-subject prediction, two hidden layers were used while four hidden layers were in inter-subject prediction without transfer learning. Finally, the ankle joint torque was estimated from the output layer.
+
+![](images/52ee3047fc5324db660d01c96d52f3d65dcb20996318ea5b440d10fd94026991.jpg)  
+Fig. 3. Architecture for standard- and hybrid-ANN models. For both standard- and hybrid-ANN models, identical experimentally measured input data were applied, i.e., three muscle EMGs and ankle joint angle. For the hybrid-ANN model, computed features through the physicsbased NMS model were added, i.e., muscle force and joint torque, to leverage more informative features from the NMS model into a standard-ANN model. n hidden layers (two hidden layers were used for intra-subject prediction and four hidden layers for inter-subject prediction without transfer learning), and ankle joint torque was predicted at the output layer.
+
+3) Transfer Learning: A transfer learning technique was adopted in both ANN models in inter-subject prediction to learn the structural similarities by pre-training a model using knowledge/information acquired from previous experiences/subjects $( S _ { 1 } , S _ { 2 } , . . . , S _ { p } )$ and transferring the acquired knowledge to a new participant (Fig. 4). We extracted layers from the pre-trained model except the output layer and then shared them to the model of the target subject (S<sub>t</sub>). we added one new hidden layer and one new output layer in the target model; then the weights of the two added layers were trained while that of the other layers were fine-tuned, with the data/information from the new participant.
+
+4) Hyper-Parameters Tuning for ANN Models: We used a “coarse-to-fine” random search [37] method to determine the hyper-parameters of ANN models. During the training, the loss function was the mean square error (mse) between estimated and actual ankle torque. A batch size of20 was used. A Xavier weight with zero bias initializer was chosen. Two hidden layers were chosen for intra-subject prediction and four hidden layers were chosen for inter-subject prediction. Each hidden layer includes ten neurons with a tanh activation function. An Adam optimizer was chosen (learning rate of $1 0 ^ { - 3 } )$ . For the transfer learning technique, a tuned learning rate of $1 0 ^ { - 4 }$ was used and $1 0 ^ { - 5 }$ for fine-tuning. We obtained the optimum model by iterating 4000 epochs with an early stop technique when the loss did not decrease in a consecutive 200 epochs.
+
+![](images/489bae07ddf6351efa7415284e957ef1e733c547a98cd5227718634cb7627320.jpg)  
+Fig. 4. The transfer learning technique adopted in ANN models in inter-subject prediction. The pre-trained model includes the knowledge acquired from previous experiences/subjects $( S _ { 1 } , S _ { 2 } , . . . , S _ { p } )$ ). The layers/knowledge from the pre-trained model were extracted except the output layer and then transferred to the model of a target subject $( S _ { t } ) .$ One new hidden layer and one new output layer were added to the target model, and then we retrained the target model using the information/data from the new user.
+
+## D. Evaluation Framework
+
+The ankle joint torque estimation accuracy of the NMS, standard-ANN and hybrid-ANN were investigated in two prediction model scenarios: intra-subject and inter-subject. In intersubject prediction, the benefit of adopting the transfer learning technique into both ANN models was also studied, and the prediction results by ANN models were compared to the NMS model in the intra-subject prediction. For each prediction model, seven different cases were investigated: $G a i t _ { f a s t } , G a i t _ { s e l f }$ $G a i t _ { s l o w } ,$ , Isok<sub>P90</sub>, Isok<sub>P60</sub>, Isok<sub>D90</sub> and $I s o k _ { D 6 0 }$ . For more descriptions of different cases in detail, see Fig. 5. The NMS model in the hybrid-ANN was calibrated as described in the calibration process of Section II C(a). It is a concern that the need for NMS model calibration may limit widespread use of the proposed hybrid-ANN model. We therefore investigated the prediction accuracy ofthe hybrid-ANN model with a non-calibrated NMS in inter-subject predictions with transfer learning technique (illustrated in Appendix).
+
+Intra-Subject Prediction: Models were calibrated/trained by using data from each motion separately, and tested on the same type motions at different speeds, for each user $( S _ { 1 } , S _ { 2 } , . . . , S _ { 1 0 } )$ individually. More specifically, we calibrated/trained models for gait at one speed and tested on remaining gait speeds; likewise for the isokinetic ankle motions. For ANN-models training, two trials were used as training data and one trial as validation data.
+
+In order to compare the models’ accuracy in intra-subject and inter-subject prediction, we reproduced previously-reported results from intra-subject prediction [19].
+
+Intra-Subject Prediction:
+
+a) Without Transfer Learning: Similar to intra-subject prediction, seven cases were included. ANN models were trained for each movement of multiple subjects except one (leave-oneout cross-validation method) and then tested on the same type motions for the remaining new subject, then iterated for each subject.
+
+![](images/573fe2d24e57766491ddac35d3d44c5fcf64be09d6fc910604633d98d3bb9eba.jpg)
+
+The training and testing data of ANN models in inter-subject prediction  
+![](images/e55d04b494e09005c7fff78417e61233c29d5da9940d757de2612cf20efc797d.jpg)  
+Fig. 5. (a) The training/calibration and testing data of NMS and ANN models for seven different cases in intra-subject prediction; and (b) the training and testing data of ANN models for seven different cases in inter-subject prediction. Intra-subject prediction: For each case, different movements were used to calibrate (NMS) or train (ANN) models. Models were calibrated/trained by using data from each motion separately, and tested on the same type motions at different speeds, for each user $( S _ { 1 } , S _ { 2 } , . . . , S _ { 1 0 } )$ individually. Inter-subject prediction without transfer learning: Models were trained for each movement of multiple subjects except one (leave-one-out cross-validation method), and then tested on the same type motions for the remaining new subject, then iterated for each subject. Inter-subject prediction with transfer learning: Models were pre-trained for each movement on multiple users except one, and were shared to a new user with a common structure. We then re-trained models with data from the same motion of the new participant $( \mathrm { i . } \mathsf { e . }$ , fewer data from the new participant), and tested on the same type motions at different speeds of the new subject, and then iterated for each subject.
+
+b) With Transfer Learning: ANN models were pretrained for each movement on multiple participants except one, and were shared to a new participant with a common structure. We then re-trained models with data from the same motion of the new participant (i.e., fewer data from the new participant), and tested on the same type motions at different speeds of the new subject, and then iterated for each subject.
+
+Prediction accuracy of each model was evaluated by normalized root mean square error (NRMSE) $E _ { N R M S }$ , which was designated as the root mean square error $E _ { R M S }$ (between the estimated and actual ankle torque) scaled by the range of actual ankle torque during corresponding motions:
+
+$$
+E _ { R M S } = \sqrt { \frac { 1 } { N } \sum _ { i = 1 } ^ { N } ( y _ { p , i } - y _ { i } ) ^ { 2 } }\tag{4}
+$$
+
+$$
+E _ { N R M S } = \frac { E _ { R M S } } { \left( y _ { m a x } - y _ { m i n } \right) } \times 1 0 0 \%\tag{5}
+$$
+
+where $y _ { p , \ast }$ <sub>i</sub> and $y _ { i }$ are the estimated and actual/measured ankle torque at time step i respectively; $y _ { m a x }$ is the maximum and $y _ { m i n }$ is minimum values of measured joint torque $y _ { i }$ during corresponding motions.
+
+Shapiro-Wilk tests were used to check data distribution normality (significance level at $p < 0 . 0 5 )$ . For abnormally distributed data, Wilcoxon signed-rank tests with Bonferroni correction were applied to study the difference of NRM-SEs predicted from the three methods (significance level at $p < 0 . 0 5 )$ .
+
+## III. RESULTS
+
+## A. Intra-Subject Prediction
+
+Overall, smaller NRMSE (Fig. 6) was observed in the hybrid-ANN model compared to both NMS and Standard-ANN.
+
+In all calibrated/trained motions, the predicted accuracy by hybrid-ANN was significantly higher than that of the NMS. (self-selected speed walking: $p = 0 . 0 2$ , fast walking: $p = 0 . 0 2$ slow walking: $p = 0 . 0 5$ , isokinetic plantarflexion 90◦/s: $p =$ $0 . 0 4$ , isokinetic plantarflexion 60◦/s: $p = 0 . 0 2$ , isokinetic dorsiflexion $9 0 ^ { \circ } / \mathrm { s } { : } p = 0 . 0 2$ , isokinetic dorsiflexion $6 0 ^ { \circ } / \mathrm { s } ; p = 0 . 0 2 )$
+
+In the tested movements, compared to NMS, the hybrid-ANN generally has a better torque prediction accuracy with only one exception (Fig. 7). In the $G a i t _ { s e l f }$ case, the prediction accuracy ofthe hybrid-ANN model was lower than that ofthe NMS model for fast and slow walking of one subject (Fig. 6).
+
+Compared to the standard-ANN, the hybrid-ANN did not always demonstrate a superior prediction accuracy. It is worth noting that a worse predicted torque agreement with actual torque by the standard-ANN model was found in some tested motions compared to the other two models, such as slow walking in $G a i t _ { s e l f }$ case $( \mathrm { F i g . } 7 B _ { 3 } )$ , isokinetic plantarflexion 60◦/s in Isok<sub>P90</sub> case $( \mathrm { F i g . } 7 D _ { 2 } )$ and isokinetic plantarflexion 90◦/s in $I s o k _ { P 6 0 }$ case $( \mathrm { F i g . } 7 E _ { 1 } )$ .
+
+Torque trajectories estimated by the NMS model sometimes displayed an offset at the beginning of the cycle which was not present in measured torque. This offset was not observed in torque predicted by the ANN models (For instance, $A _ { 1 }$ and $A _ { 3 }$ in Fig. 7).
+
+## B. Inter-Subject Prediction
+
+1) Without Transfer Learning: Overall, torque prediction accuracy from ANN models was worse than that from the subjectspecific NMS model (Fig. 8(a) and Fig. 9), wherein prediction accuracy from the hybrid-ANN was higher than the standard-ANN. In all calibrated/trained motions, the prediction accuracy by standard-ANN was significantly worse compared to NMS. (slow walking: $p = 0 . 0 2$ , self-selected speed walking: $p = 0 . 0 2$ fast walking: $p = 0 . 0 2$ , isokinetic plantarflexion 90◦/s: $p =$ 0.02, isokinetic plantarflexion $6 0 ^ { \circ } / \mathrm { s } \colon p = 0 . 0 2$ , isokinetic dorsiflexion $9 0 ^ { \circ } / \mathrm { s } { : } p = 0 . 0 3$ , isokinetic dorsiflexion $6 0 ^ { \circ } / \mathrm { s } ; p = 0 . 0 2 )$ In the tested movements, the standard-ANN generally had worse prediction accuracy than both NMS and hybrid-ANN models.
+
+![](images/d04e4d77651e675a69a2e56fc6c12012d48c4521b7e891ce4fa178a21a105fae.jpg)  
+Fig. 6. The NRMSE between the estimated and measured ankle torque across subjects during seven motions in all cases in intra-subject prediction, illustrated by violin plots. Each violin plot combines a box plot with a kernel density plot. The box plot shows the minimum, lower quartile, median, upper quartile, and maximum values of the NRMSE. Then the kernel density plot is added to show the distributions of NRMSE where the wider sections of a violin plot represent a higher probability and the smaller sections a lower probability of NRMSEs. A significan difference between the two models was indicated with , according to Wilcoxon signed-rank tests with Bonferroni correction. For each case, the motion used as calibration/training data was circled with a dashed gray box and others are testing data.
+
+2) With Transfer Learning: Overall, with transfer learning, the prediction accuracy of both ANN models was considerably improved, wherein the standard-ANN had poorer accuracy in some movements compared to the other two models, for example, in the self-selected walking speed $G a i t _ { f a s t }$ case $( \mathrm { F i g . ~ } 1 0 \ A _ { 2 } )$ , the isokinetic plantarflexion 60◦/s $I s o k _ { P 9 0 }$ case $( \mathrm { F i g . 1 0 } D _ { 2 } )$ and the isokinetic plantarflexion 90◦/s Isok<sub>P60</sub> case (Fig. 10 $E _ { 1 } )$ .
+
+In the $G a i t _ { f a s t } , G a i t _ { s e l f }$ and $G a i t _ { s l o w }$ cases, the hybrid-ANN model, in general, outperformed the other two models (Fig. 8(b)). Compared to the NMS model, significantly higher prediction accuracy was found in the same trained/calibrated motions, such as in fast walking $( p = 0 . 0 3 )$ and self-selected speed walking $( p = 0 . 0 2 )$ , and somewhat, though not significantly, higher in slow walking $( p = 0 . 1 1 )$ . Notably, in the $G a i t _ { s e l f }$ case, the worst peak plantarflexion torque agreement with actual torque by the standard-ANN model was found in the tested slow walking (Fig. 10 A<sub>2</sub>).
+
+When trained/calibrated with $I s o k _ { P 9 0 }$ and $I s o k _ { P 6 0 }$ cases (Fig. 8(b)), the hybrid-ANN model had the highest prediction accuracy in all isokinetic plantarflexion movements. Compared to the NMS, significance was found in in the same trained/calibrated isokinetic plantarflexion 60◦/s $( p =$ $0 . 0 2 )$ , and somewhat, though not significantly, better in 90◦/s $( p = 0 . 0 7 )$ .
+
+In the $I s o k _ { D 9 0 }$ and $I s o k _ { D 6 0 }$ cases, the prediction accuracy by hybrid-ANN was significantly higher compared to NMS in the same trained/calibrated movements (90◦/s: $p = 0 . 0 2$ , and 60◦/s: $p = 0 . 0 2 ; \mathrm { F i g . ~ 8 ( b ) } )$ , and somewhat better though not significantly in tested isokinetic dorsiflexion movements. Overall, ANN models generally performed better than NMS models (Fig. 10).
+
+## IV. DISCUSSION
+
+In this work, we estimated ankle torque using an NMS solver-informed ANN (hybrid-ANN) with a transfer learning technique. Besides experimental signals, the hybrid-ANN model also augments a standard-ANN with additional physics-based NMS informative features, namely individual muscle force and ankle joint torque. Specifically, we investigated the joint torque prediction accuracy of the proposed hybrid model and compared it to the two baseline models (standard ANN and NMS) in both intra-subject and inter-subject predictions. In inter-subject prediction, we adopted a transfer learning technique to improve torque prediction. Overall, we found that the hybrid-ANN predicted torque with higher accuracy than both NMS and standard-ANN, especially in inter-subject cases after adopting a transfer learning technique.
+
+![](images/48cb75ec98d437b2e63d03ac0d7bb7e6e3bcdc1cd5c078114d2c49cdb5af599a.jpg)  
+Fig. 7. One example of the predicted and measured ankle torque trajectories via models in all cases in intra-subject prediction. For each case, the motion used as calibration/training data was circled with a dashed gray box and others are testing data.
+
+Both EMG-driven NMS and ANN models are popular methods in the joint torque estimation, and each has its own benefits and limitations depending on prediction scenarios. Compared to the NMS model, a standard-ANN model has a strong approximation [15], [36] but may become less accurate with unseen motions as it is a black-box model and only aims to study the relationships between inputs and outputs based on trained movements [4], [38]. In this context, one aim was to leverage the advantages ofNMS and neural network models; in a previous study [19], we proposed a hybrid-ANN by integrating physical features from NMS solver into a standard-ANN, and the preliminary results in intra-subject prediction demonstrated that the hybrid model resulted in a more accurate joint torque estimation than both NMS and standard-ANN independently. Still, however, inter-subject models for predicting joint torques remain challenging. Therefore, in the current study, we combined an NMS solver-informed ANN model with transfer learning to further improve the prediction accuracy of ankle joint torque in both intra-subject and inter-subject predictions. We found that the hybrid-ANN model predicted torques more accurately than both NMS and standard-ANN models in general. We attribute this finding to the fact that physiological features — individual muscle force that was computed within the hybrid-ANN models — are dominant intermediate components in joint torque estimation, according to the structure of the joint dynamics (Fig. 2). Thus, incorporating these physiological features can enhance the prediction accuracy of the standard ANN models, particularly when encountering unseen motions. For instance, compared to hybrid-ANN and NMS models, torque prediction was least accurate for the standard-ANN model when tested on unseen motions—slow walking in the $G a i t _ { s e l f }$ case in intra-subject prediction (Fig. $7 B _ { 3 } )$ , especially near peak plantarflexion torque in terminal stance. The large discrepancy around peak torque is likely because the trained standard ANN model was more sensitive to EMG variation and walking speed, and testing data from other speeds may be outside of the distribution of the trained model.
+
+## A. Intra-Subject Prediction
+
+In intra-subject prediction, it is worth noting that some small offsets are predicted by the NMS model when measured torque is close to zero at the beginning of the cycle, for example, $A _ { 2 } ,$ $D _ { 2 }$ and $E _ { 1 }$ in Fig. 8. This is likely because during the NMS model calibration, the calibrated parameters, such as optimal fiber length, maximum isometric force, and tendon slack length, are refined by minimizing the error between predicted and actual torque during the whole movement cycle. When the measured torque is close to zero with non-zero EMG magnitudes, especially during fast walking, the NMS calibration optimizer may have difficulty finding an optimal solution that fulfills the initial near-zero torque and with overall small errors in the whole cycle. In addition, in the NMS model, two previous time-steps of neural activation of each MTU were needed to compute muscle neural activation ((1)). At the beginning of a cycle, the past two neural activation values were not available. Instead, they were approximated using EMG signals from two previous time-steps; therefore they may also lead to initial offsets in predicted torque. However, the initial torque offset was largely eliminated by the hybrid-ANN model, which can be regarded as a correction mapping from NMS-basedjoint torque prediction to the measured torque. That is mainly due to that the hybrid-ANN model has an additional component: adding neural networks to further train a better model by minimizing the errors between measured and predicted joint torque.
+
+Inter-subject prediction without transfer learning  
+![](images/bccf9796442e51ba7a6d9ac28465b858ec4cb673f22b1feeba1bcf1c7d97c201.jpg)
+
+![](images/f99feb9db55c5b82ab8bcf735b3bb33c248a64ba5e656391249ddd460c816378.jpg)  
+(b)  
+Fig. 8. The NRMSE between the estimated and measured ankle torque across subjects during seven motions in all cases in inter-subject predictions: (a) without transfer learning and (b) with transfer learning. Each violin plot combines a box plot with a kernel density plot. The box plot shows the minimum, lower quartile, median, upper quartile, and maximum values of the NRMSE. Then the kernel density plot is added to show the distributions of NRMSE where the wider sections of a violin plot represent a higher probability and the smaller sections a lower probability of NRMSEs. A significant difference between two models was indicated with , according to Wilcoxon signed-rank tests with Bonferroni correction. For each case, the motion used as calibration/training data was circled with a dashed gray box and others are testing data.
+
+![](images/c862d8dd7f0089eeae40fdb34e866dc3e31df2f72411e181da1041b722c702a4.jpg)  
+Fig. 9. One example of the predicted and measured ankle torque trajectories via models in all cases in inter-subject prediction without transfer learning. For each case, the motion used as calibration/training data was circled with a dashed gray box and others are testing data.
+
+Notably, in intra-subject prediction, the standard -ANN performed poorly in one subject in the $G a i t _ { s e l f }$ case when tested on fast and slow walking (Fig. 6). This may be due to the fact that the hybrid-ANN model adopted the NMS solver-informed muscle forces and joint torque as input features. However, in certain situations, the torques predicted by the NMS model were poor. As a result, it provided less informative or even misleading input features to the hybrid-ANN model, and negatively impacted its prediction accuracy. It is not surprising that the NMS model predicted poorly in some tested movements because there may be different muscle coordination patterns between the calibration and testing movements. In future work, we suggest a model that adopts alternative neural networks with uncertainty quantification, feature such as a Bayesian neural network that is able to identify a situation first and therefore guide the enrichment of training data to re-train a robust model [39].
+
+![](images/9d387b7565d7ebfd8ec6b8eea4af539b6af94621e90189c273ad560839e6c5e5.jpg)  
+Fig. 10. One example of the predicted and measured ankle torque trajectories via models in all cases in inter-subject prediction with transfer learning. For each case, the motion used as calibration/training data was circled with a dashed gray box and others are testing data.
+
+## B. Inter-Subject Prediction
+
+As expected, when transfer learning was not adopted, intersubject torque performance was generally less accurate than that of intra-subject prediction, regardless of which ANN model was used. Without transfer learning, both hybrid- and standard-ANN were trained using data from previous experiences/subjects but none from the new subject. Therefore, it is to be expected that the torque prediction would be less accurate than that from the subject-specific NMS model calibrated with data from the new subject. Furthermore, muscle coordination patterns can be expected to vary across subjects [40], [41]; thus, standard ANN models may not have sufficient generalizability without information from a new subject in the training process, particularly when training data sets with other subjects are not rich enough. However, one interesting finding was that even though the ANN models generally predicted torques less accurately than the subject-specific NMS models, the hybrid-ANN predicted torques more accurately than the standard-ANN (Fig. 9). This is mainly because the hybrid-ANN model includes more relevant input features, i.e., individual muscle force and joint torque from an NMS solver, than the standard-ANN, and can thus leverage the robustness and reliability of the NMS solver.
+
+Transfer learning technique is a popular method in intersubject cross-validation methods to improve the generalizability of neural networks, and can prevent the aforementioned performance leak by applying obtained knowledge/information from the source domain (previous subjects) to the target domain (new participant) [16]. In the current study, we adopted a transfer learning technique into the ANN models for inter-subject joint torque prediction during movements. We found that transfer learning significantly improved torque prediction accuracy in all cases. For instance, in the $G a i t _ { f a s t }$ case, without transfer learning, predicted torques by both ANN models disagreed considerably compared to measured torques (Fig. 9 A , A $A _ { 3 } )$ , but with transfer learning, both ANN models predicted torques much more accurately (Fig. 10 A<sub>1</sub>, $A _ { 2 }$ and $A _ { 3 } )$ . As another example, the hybrid-ANN model’s prediction accuracy in the $( G a i t _ { s e l f } )$ case in one subject, which was quite poor without transfer learning, was improved when transfer learning was applied and was even better than intra-subject prediction (Fig. 6 Vs Fig. 8(b)). This improvement was probably because the weights in the shared similarities/structure in the pre-trained model were used as initial weights for the model of the new user. The initial weights were reported to influence the model prediction accuracy, which is, closer similar initial weights are to the solution, the better the model prediction accuracy will be [42], [43].
+
+## C. Limitation
+
+It is important to note that we chose the classical type of ANN since it has frequently been applied in joint torque prediction thanks to its functionality and approximation accuracy [15], [44], [45]. Other ANNs that have different structures, such as long short-term memory (LSTM) networks, may have different results. Although LSTM networks can remember patterns for a period thanks its memory structure, the NMS model that we incorporated to the hybrid-ANN model also has similar function as described in (1); the NMS model also has a kind of memory, as it uses information from two previous time-steps of MTU neural activation. Furthermore, LSTM networks usually need more data to train, which limits their use in the current study, as we we have a small dataset. Our aim was to study whether a combination model of a physics-based NMS and an ANN would improve the ankle torque prediction accuracy in both intra- and inter-subject predictions. Different types of neural networks can be further analyzed in future work. Regarding execution times, the hybrid-ANN is a combination of the NMS and standard-ANN, and its execution time was dominated by the time required by the NMS model. The online execution time cost of forward evaluation of ANN is negligible. As suggested in a previous study by Sartori et al. [45] the mean delay of a real-time EMG-driven NMS model is roughly 35 ms. Therefore, hybrid-ANN models are still applicable for real-time applications. Nonetheless, there are also several limitations in this study. Only SOL, GM and TA activation signals and ankle plantar- and dorsiflexion angle were used to estimate ankle torque. Hip and knee joints, also play important roles in daily activities and will affect musculotendon dynamics of biarticular muscles. Torque prediction of the proposed NMS solver-informed ANN model on hip and knee joints can be further validated.
+
+## V. CONCLUSION
+
+In this work, we estimated ankle joint torque during gait and isokinetic ankle dorsi- and plantarflexion movements using an NMS solver-informed ANN, with experimental joint angles and muscle EMGs as inputs. In addition to the joint angle and EMG signals, the hybrid-ANN model augments a standard-ANN with informative physical features, i.e., individual muscle forces and joint torque, extracted from the underlying NMS solver. Transfer learning technique was integrated into inter-subject prediction to learn structural similarities by transferring the acquired knowledge/information from previous multiple experiences/subjects to a new participant. Our results suggested that the NMS solver-informed ANN estimated torque more accurately than both NMS and standard-ANN models, indicating the potential benefit ofincorporating informative features from physics-based NMS solver into a standard-ANN. Furthermore, the hybrid ANN further outperformed both the standard-ANN and NMS model in accuracy and robustness after applying transfer learning, particularly for inter-subject prediction. The proposed hybrid-ANN with transfer learning shows great potential use in the design of exoskeleton rehabilitation control strategies thanks to its ability to incorporate the physiological joint torque of multiple users.
+
+## APPENDIX
+
+## A. Transfer Learning With Non-Calibrated NMS Model
+
+We investigated the prediction accuracy of the hybrid-ANN model with a non-calibrated NMS in inter-subject predictions with transfer learning technique, and compared its prediction accuracy to that of the NMS model calibrated for each subject in intra-subject predictions (Fig. 11) .
+
+Overall, with transfer learning, the prediction accuracy of the hybrid-ANN model with a non-calibrated NMS was better than with the NMS model (Fig. 11). Significant difference was observed in fast walking $( p = 0 . 0 2 )$ for Case $G a i t _ { f a s t }$ , in fast walking $( p = 0 . 0 2 )$ and self-selected speed walking $( p = 0 . 0 1 )$ for Case $G a i t _ { s e l f }$ , in isokinetic dorsiflexion $9 0 ^ { \circ } / \mathrm { s } \left( p < 0 . 0 1 \right)$ for
+
+![](images/40642b7fb3a21c5c7b154fbd0bb2e8c936c9ed67e04c5596e5bcc3996cb33983.jpg)  
+Fig. 11. NRMSE between the estimated and measured ankle torque across subjects during seven motions of the hybrid-ANN model with a non-calibrated NMS in inter-subject predictions with transfer learning technique, and compared its prediction accuracy to that of the NMS model calibrated for each subject in intra-subject predictions. The box plot shows the minimum, lower quartile, median, upper quartile, and maximum values of the NRMSE. Then the kernel density plot is added to show the distributions of NRMSE where the wider sections of a violin plot represent a higher probability and the smaller sections a lower probability of NRMSEs. A significant difference between two models was indicated with , according to Wilcoxon signed-rank tests. For each case, the motion used as calibration/training data was circled with a dashed gray box and others are testing data.
+
+![](images/5c0ebd40a678c060165958619446016b166c2a2f5622c6a71220459de43f2713.jpg)  
+Fig. 12. NRMSE between the estimated and measured ankle torque across subjects during seven motions in all cases in inter-subject predictions without transfer learning, as a comparison of 4 vs. 5 hidden layers. Each violin plot combines a box plot with a kernel density plot. The box plot shows the minimum, lower quartile, median, upper quartile, and maximum values of the NRMSE. Then the kernel density plot is added to show the distributions of NRMSE where the wider sections of a violin plot represent a higher probability and the smaller sections a lower probability of NRMSEs. For each case, the motion used as calibration/training data was circled with a dashed gray box and others are testing data.
+
+Case $I s o k _ { D 9 0 }$ , and in isokinetic dorsiflexion 60◦/s $( p < 0 . 0 1 )$ for Case $I s o k _ { D 6 0 }$
+
+## B. Hidden Layer Number Selection ofthe Hybrid-ANN Model in Inter-Subject Predictions Without Transfer Learning
+
+We adopted 4 hidden layers in the hybrid-ANN model without transfer learning in inter-subject predictions. It is a concern that the two compared hybrid-ANN model between with and without transfer learning should have the same hidden layers. However, we aim to study the benefit of adopting transfer learning in intersubject prediction and followed the normal transfer learning procedure: loading the weights from a pre-trained model and fine-tuning the last few newly-added layers [18]. Considering this concern, we performed the scenarios of the hybrid-ANN without transfer learning containing 5 hidden layers that are the same as the hidden layers in the hybrid-ANN model with transfer learning. The prediction accuracy was similar and no significant difference is found between the hybrid-ANN models without transfer learning that contains 4 and 5 hidden layers (Fig. 12). Since 4 hidden layers are easier to train than 5 hidden layers, we adopted 4 hidden layers in the model without transfer learning.
+
+## REFERENCES
+
+[1] B. Chen et al., “Recent developments and challenges of lower extremity exoskeletons,” J. Orthopaedic Transl., vol. 5, pp. 26–37, 2016.
+
+[2] Z. Li, B. Huang, Z. Ye, M. Deng, and C. Yang, “Physical human–robot interaction of a robotic exoskeleton by admittance control,” IEEE Trans. Ind. Electron., vol. 65, no. 12, pp. 9614–9624, Dec. 2018.
+
+[3] M. Zhang, A. McDaid, A. J. Veale, Y. Peng, and S. Q. Xie, “Adaptive trajectory tracking control of a parallel ankle rehabilitation robot with jointspace force distribution,” IEEE Access, vol. 7, pp. 85812–85820, 2019.
+
+[4] M. Sartori, D. G. Lloyd, and D. Farina, “Neural data-driven musculoskeletal modeling for personalized neurorehabilitation technologies,” IEEE Trans. Biomed. Eng., vol. 63, no. 5, pp. 879–893, May 2016.
+
+[5] S. Yao, Y. Zhuang, Z. Li, and R. Song, “Adaptive admittance control for an ankle exoskeleton using an EMG-driven musculoskeletal model,” Front. Neurorobot., vol. 12, 2018, Art. no. 16.
+
+[6] Y. Huang, R. Song, A. Argha, A. V. Savkin, B. G. Celler, and S. W. Su, “Continuous description of human 3D motion intent through switching mechanism,” IEEE Trans. Neural Syst. Rehabil. Eng., vol. 28, no. 1, pp. 277–286, Jan. 2020.
+
+[7] S. Y. A. Mounis, N. Z. Azlan, and F. Sado, “Assist-as-needed control strategy for upper-limb rehabilitation based on subject’s functional ability,” Meas. Control, vol. 52, no. 9/10, pp. 1354–1361, 2019.
+
+[8] G. Durandau, D. Farina, and M. Sartori, “Robust real-time musculoskeletal modeling driven by electromyograms,” IEEE Trans. Biomed. Eng., vol. 65, no. 3, pp. 556–564, Mar. 2018.
+
+[9] H. X. Hoang, C. Pizzolato, L. E. Diamond, and D. G. Lloyd, “Subjectspecific calibration of neuromuscular parameters enables neuromusculoskeletal models to estimate physiologically plausible hip joint contact forces in healthy adults,” J. Biomech., vol. 80, pp. 111–120, 2018.
+
+[10] C. Pizzolato et al., “Ceinms: A toolbox to investigate the influence of different neural control solutions on the prediction of muscle excitation and joint moments during dynamic motor tasks,” J. Biomech., vol. 48, no. 14, pp. 3929–3936, 2015.
+
+[11] M. Imran and S. A. Alsuhaibani, “A neuro-fuzzy inference model for diabetic retinopathy classification,” in Intelligent Data Analysis for Biomedical Applications. New York, NY, USA: Elsevier, 2019, pp. 147–172.
+
+[12] H. S. Haeberle et al., “Artificial intelligence and machine learning in lower extremity arthroplasty: A review,” J. Arthroplasty, vol. 34, no. 10, pp. 2201–2203, 2019.
+
+[13] J.-G. Lee et al., “Deep learning in medical imaging: General overview,” Korean J. Radiol., vol. 18, no. 4, pp. 570–584, 2017.
+
+[14] H. Su, Y. Hu, H. R. Karimi, A. Knoll, G. Ferrigno, and E. De Momi, “Improved recurrent neural network-based manipulator control with remote center of motion constraints: Experimental results,” Neural Netw., vol. 131, pp. 291–299, 2020.
+
+[15] G. G. Pena, L. J. Consoni, W. M. dos Santos, and A. A. Siqueira, “Feasibility of an optimal EMG-driven adaptive impedance control applied to an active knee orthosis,” Robot. Auton. Syst., vol. 112, pp. 98–108, 2019.
+
+[16] E. Soleimani and E. Nazerfard, “Cross-subject transfer learning in human activity recognition systems using generative adversarial networks,” Neurocomputing, vol. 426, pp. 26–34, 2021.
+
+[17] J. Zhang, X. Zhu, and J. Bao, “Solver-informed neural networks for spectrum reconstruction of colloidal quantum dot spectrometers,” Opt. Express, vol. 28, no. 22, pp. 33656–33672, 2020.
+
+[18] D. J. Saxby et al., “Machine learning methods to support personalized neuromusculoskeletal modelling,” Biomech. Model. Mechanobiol., vol. 19, no. 4, pp. 1169–1185, 2020.
+
+[19] L. Zhang, X. Zhu, E. M. G. Farewik, and R. Wang, “Estimation of ankle dynamic joint torque by a neuromusculoskeletal solver-informed NN model,” in Proc. 6th IEEE Int. Conf. Adv. Robot. Mechatronics, 2021, pp. 75–80.
+
+[20] K. Weiss, T. M. Khoshgoftaar, and D. Wang, “A survey of transfer learning,” J. Big Data, vol. 3, no. 1, pp. 1–40, 2016.
+
+[21] T. Wang, Y. Chen, M. Zhang, J. Chen, and H. Snoussi, “Internal transfer learning for improving performance in human action recognition for small datasets,” IEEE Access, vol. 5, pp. 17627–17 633, 2017.
+
+[22] V. Jayaram, M. Alamgir, Y. Altun, B. Scholkopf, and M. Grosse-Wentrup, “Transfer learning in brain-computer interfaces,” IEEE Comput. Intell. Mag., vol. 11, no. 1, pp. 20–31, Feb. 2016.
+
+[23] S. P. K. Karri, D. Chakraborty, and J. Chatterjee, “Transfer learning based classification of optical coherence tomography images with diabetic macular edema and dry age-related macular degeneration,” Biomed. Opt. Express, vol. 8, no. 2, pp. 579–592, 2017.
+
+[24] H. J. Hermens et al., European Recommendationsfor Surface Electromyography. Enschede, The Netherlands: Roessingh Research and Development, 1999.
+
+[25] M. P. Kadaba, H. Ramakrishnan, and M. Wootten, “Measurement of lower extremity kinematics during level walking,” J. Orthopaedic Res., vol. 8, no. 3, pp. 383–392, 1990.
+
+[26] R. B. Davis III, S. Ounpuu, D. Tyburski, and J. R. Gage, “A gait analysis data collection and reduction technique,” Hum. Movement Sci., vol. 10, no. 5, pp. 575–587, 1991.
+
+[27] C. Pizzolato, M. Reggiani, L. Modenese, and D. Lloyd, “Real-time inverse kinematics and inverse dynamics for lower limb applications using opensim,” Comput. Methods Biomech. Biomed. Eng., vol. 20, no. 4, pp. 436–445, 2017.
+
+[28] D. A. Winter, H. G. Sidwall, and D. A. Hobson, “Measurement and reduction of noise in kinematics of locomotion,” J. Biomech., vol. 7, no. 2, pp. 157–159, 1974.
+
+[29] E. Kristianslund, T. Krosshaug, and A. J. Van den Bogert, “Effect of low pass filtering on joint moments from inverse dynamics: Implications for injury prevention,” J. Biomech., vol. 45, no. 4, pp. 666–671, 2012.
+
+[30] A. Mantoan, C. Pizzolato, M. Sartori, Z. Sawacha, C. Cobelli, and M. Reggiani, “Motonms: A matlab toolbox to process motion data for neuromusculoskeletal modeling and simulation,” Source Code Biol. Med., vol. 10, no. 1, pp. 1–14, 2015.
+
+[31] T.-W. Lu and J. O’connor, “Bone position estimation from skin marker co-ordinates using global optimisation withjoint constraints,” J. Biomech., vol. 32, no. 2, pp. 129–134, 1999.
+
+[32] M. G. Pandy, “Computer modeling and simulation of human movement,” Annu. Rev. Biomed. Eng., vol. 3, no. 1, pp. 245–273, 2001.
+
+[33] M. Sartori, M. Reggiani, D. G. Lloyd, and E. Pagello, “A neuromusculoskeletal model of the human lower limb: Towards EMG-driven actuation of multiple joints in powered orthoses,” in Proc. IEEE Int. Conf. Rehabil. Robot., 2011, pp. 1–6.
+
+[34] D. G. Lloyd and T. F. Besier, “An EMG-driven musculoskeletal model to estimate muscle forces and knee joint moments in vivo,” J. Biomech., vol. 36, no. 6, pp. 765–776, 2003.
+
+[35] T. S. Buchanan, D. G. Lloyd, K. Manal, and T. F. Besier, “Neuromusculoskeletal modeling: Estimation of muscle forces and joint moments and movements from measurements of neural command,” J. Appl. Biomech., vol. 20, no. 4, pp. 367–395, 2004.
+
+[36] L. Zhang, Z. Li, Y. Hu, C. Smith, E. M. G. Farewik, and R. Wang, “Ankle joint torque estimation using an EMG-driven neuromusculoskeletal model and an artificial neural network model,” IEEE Trans. Automat. Sci. Eng., vol. 18, no. 2, pp. 564–573, Apr. 2021.
+
+[37] J. Bergstra and Y. Bengio, “Random search for hyper-parameter optimization,” J. Mach. Learn. Res., vol. 13, no. 2, pp. 281–305, 2012.
+
+[38] M. Ezati, B. Ghannadi, and J. McPhee, “A review of simulation methods for human movement dynamics with emphasis on gait,” Multibody Syst. Dyn., vol. 47, no. 3, pp. 265–292, 2019.
+
+[39] Y. Kwon, J.-H. Won, B. J. Kim, and M. C. Paik, “Uncertainty quantification using bayesian neural networks in classification: Application to biomedical image segmentation,” Comput. Statist. Data Anal., vol. 142, 2020, Art. no. 106816.
+
+[40] A. De Rugy, G. E. Loeb, and T. J. Carroll, “Muscle coordination is habitual rather than optimal,” J. Neurosci., vol. 32, no. 21, pp. 7384–7391, 2012.
+
+[41] S. Safavynia, G. Torres-Oviedo, and L. Ting, “Muscle synergies: Implications for clinical evaluation and rehabilitation of movement,” Top. Spinal Cord Inj. Rehabil., vol. 17, no. 1, pp. 16–24, 2011.
+
+[42] T. T. Dao, “From deep learning to transfer learning for the prediction of skeletal muscle forces,” Med. Biol. Eng. Comput., vol. 57, no. 5, pp. 1049–1058, 2019.
+
+[43] G. E. Hinton and R. R. Salakhutdinov, “Reducing the dimensionality of data with neural networks,” Sci., vol. 313, no. 5786, pp. 504–507, 2006.
+
+[44] M. E. Hahn, “Feasibility ofestimating isokinetic knee torque using a neural network model,” J. Biomech., vol. 40, no. 5, pp. 1107–1114, 2007.
+
+[45] M. Jali et al., “Joint torque estimation model of semg signal for arm rehabilitation device using artificial neural network techniques,” in Advanced Computer and Communication Engineering Technology. Berlin, Germany: Springer, 2015, pp. 671–682.

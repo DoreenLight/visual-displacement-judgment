@@ -1,0 +1,204 @@
+Detecting Heel Strike and toe off Events Using Kinematic Methods and
+LSTM Models
+
+arXiv:2503.00794v3 [cs.RO] 24 Aug 2026
+
+Longbin Zhang, Zhizhang Li* , Xinyi Fu, Yi Xie, Zekun Liu, Xiaoyue Yan, Suiyuan Wang, Te Zhang,
+Hui Zhang, Kailun Yang, Tsung-Lin Wu, Prayook Jatesiktat, Ananda Sidarta, and Wei Tech Ang
+Abstract— Accurate gait event detection is crucial for gait
+analysis, rehabilitation, and assistive technology, particularly in
+exoskeleton control, where precise identification of stance and
+swing phases is essential. This study evaluated the performance
+of seven kinematics-based methods and a Long Short-Term
+Memory (LSTM) model for detecting heel strike and toe-off
+events across 4363 gait cycles from 588 able-bodied subjects.
+The results indicated that while the Zeni et al. method achieved
+the highest accuracy among kinematics-based approaches, other
+methods exhibited systematic biases or required dataset-specific
+tuning. The LSTM model performed comparably to Zeni et
+al., providing a data-driven alternative without systematic bias.
+These findings highlight the potential of deep learning-based
+approaches for gait event detection while emphasizing the need
+for further validation in clinical populations and across diverse
+gait conditions. Future research will explore the generalizability
+of these methods in pathological populations, such as individuals with post-stroke conditions and knee osteoarthritis, as
+well as their robustness across varied gait conditions and data
+collection settings to enhance their applicability in rehabilitation
+and exoskeleton control.
+
+I. I NTRODUCTION
+Exoskeletons are emerging as powerful assistive technologies designed to enhance mobility, restore gait function, and
+reduce the physical burden on users in both rehabilitation and
+everyday settings [1]–[3]. A key challenge in exoskeleton
+control is the precise timing of assistance, which relies on
+accurate gait event detection to differentiate between stance
+and swing phases [4], [5]. Misidentification of these events
+can lead to improper assistance timing, reducing efficiency,
+increasing metabolic cost, and potentially compromising user
+safety. Gait event detection is, therefore, a fundamental component of gait analysis, ensuring the precise identification of
+This work was supported by the National Natural Science Foundation
+of China under Grant 62503165, Hunan Provincial Research and Development Project under Grant 2026QK3021, Yuelushan Center for Industrial
+Innovation, and Health Commission of Hunan Province. The authors also
+acknowledge the support from Nanyang Technological University, the
+Agency for Science Technology and Research (A*STAR), and the National
+Healthcare Group (NHG). (Corresponding author: ZhiZhang Li.)
+L. Zhang is with the School of Artificial Intelligence and Robotics, Hunan
+University, Changsha, China and the School of Mechanical and Aerospace
+Engineering, Nanyang Technological University, Singapore.
+Z. Li, X. Fu, Y. Xie, Z. Liu, H. Zhang and K. Yang are with the School
+of Artificial Intelligence and Robotics, Hunan University, Changsha, China.
+X. Yan, T. Wu, P. Jatesiktat, and W. T. Ang are with the School of
+Mechanical and Aerospace Engineering, Nanyang Technological University.
+S. Wang is with the Fourth Hospital of Changsha, Hunan Normal
+University, Changsha, China.
+T. Zhang is with the Department of Stomatology, Hunan Provincial
+People’s Hospital, Hunan Normal University, Changsha, China.
+A. Sidarta is with the Rehabilitation Research Institute of Singapore,
+Lee Kong Chian School of Medicine, Nanyang Technological University,
+Singapore.
+
+key moments within the gait cycle, such as heel strike (HS)
+and toe off (TO) [6]. Accurate detection is essential for calculating spatiotemporal parameters and kinematic variables,
+which are critical for optimizing exoskeleton control strategies. Errors in gait event identification can propagate through
+the system, leading to inaccurate joint angle estimations
+and impaired motion synchronization [7], [8]. In clinical
+settings, precise gait event detection is vital for diagnosing
+gait abnormalities, monitoring rehabilitation progress, and
+tailoring interventions [9]. It also plays a crucial role in providing real-time feedback to patients, preventing secondary
+complications, and customizing assistive devices [10]. Beyond clinical applications, accurate gait event detection supports the optimization of prosthetics and orthotics, enhances
+athletic performance, and enables predictive modeling for
+fall risk [11]. Given its significance in both rehabilitation
+and assistive robotics [12], improving gait event detection
+is essential for advancing exoskeleton technology, ensuring
+smooth user-exoskeleton interaction, and enhancing mobility
+for individuals with gait impairments.
+The gold standard for identifying HS and TO in gait
+analysis involves using force plates with predefined vertical
+ground reaction force (GRF) thresholds, typically ranging
+from 5 to 20 N [13], [14], in a laboratory setup where
+subjects walk across a walkway embedded with force plates
+[15]–[17]. However, the availability of force plates and
+the ability to achieve sufficient clean foot contacts can be
+significant challenges, particularly in cases with pathological
+characteristics such as foot drag, small step size, or the use
+of walking aids [7]. Additionally, employing force plates
+often necessitates a force-sensitive walkway or multiple force
+plates, which are expensive and impractical, requiring each
+footstep to occur on a single force plate and ensuring only
+one foot contacts the plate at a time [18]. Portable alternatives, such as pressure insoles or foot switches, offer some
+flexibility but require additional equipment and modifications
+to the subject’s footwear, limiting their use in populations
+with abnormal gait patterns, especially those lacking sufficient foot clearance during the swing phase. Furthermore,
+the accuracy of these portable methods heavily depends on
+the precise placement of sensors [8]. Despite the challenges,
+force plate thresholding remains the gold standard, but there
+is a continuous need for advancements in gait event detection
+methods to improve accuracy and applicability across diverse
+clinical and research settings.
+Kinematics-based models and deep learning approaches
+are widely used for gait event detection in both healthy
+
+and pathological populations [6], [8], [16], [19]–[23]. These
+models often rely on foot or pelvis segments captured
+through motion capture systems or wearable sensors like
+IMUs [17], [24], [25]. French et al. [24] found that horizontal
+ankle-heel distance was most accurate for detecting heel
+strike during overground walking, while sacral-heel distance
+was best for toe off (TO). Voisard et al. [25] used inertial
+measurement units (IMUs) to detect gait events, showing
+high accuracy in healthy subjects (TO: 8 ms, HS: 7 ms)
+and reasonable accuracy in multiple sclerosis patients (TO:
+23 ms, HS: 15 ms). Bonci et al. [17] combined marker
+position and velocity, achieving over 99% sensitivity but
+limited by small sample sizes and marker requirements.
+Deep learning models, including Long Short-Term Memory
+(LSTM) networks, have emerged as alternatives. Lempereur
+et al. [16] used LSTM to detect gait events in children with
+gait disorders, achieving high accuracy with HS detected
+within 5.5 ms and TO within 10.7 ms. Kim et al. [6]
+achieved 89.7% detection for HS and 71.6% for TO in
+children with cerebral palsy. Filtjens et al. [26] employed
+Temporal Convolutional Networks for Parkinson’s disease,
+achieving F1-scores exceeding 0.99. Dumphart et al. [7]
+used LSTM to detect events in both healthy individuals
+and those with pathologies, reporting high detection rates
+but emphasizing the influence of marker placement and
+variability in laboratory setup. Despite advances, few studies
+have compared kinematics-based and deep learning models
+across data centers and diverse subject groups.
+The objective of this study was to detect heel strike and
+toe off events using kinematics-based methods and an LSTM
+model and to evaluate their prediction accuracy. We hypothesized that the LSTM model would achieve comparable or
+superior accuracy to traditional kinematics-based methods
+while maintaining consistency across trials.
+II. M ETHODS
+A. Experimental Setup
+A total of 4363 gait cycles from 588 able-bodied subjects
+(age: 45 ± 16.2 years; sex: 317F/271M; weight: 62.7 ±
+13.5 kg; height: 164.4 ± 9.1 cm) were collected from the
+Rehabilitation Research Institute of Singapore. The study
+was approved by the Nanyang Technological University
+Institutional Review Board (IRB-2022-382). Marker trajectories were recorded using a marker-based Miqus M3 Qualisys
+system (200 Hz) in Singapore. Ground reaction forces were
+simultaneously measured and used to identify heel strike and
+toe off events using a 20 N threshold, serving as the ground
+truth for both kinematics-based and machine learning models
+(Fig. 1).
+B. Gait Event Identification Models
+(a) Kinematics-based Models
+To identify heel strike and toe off gait events, we evaluated
+seven kinematics-based methods derived from peer-reviewed
+literature. These methods employed different biomechanical
+principles, utilizing positional, velocity, or acceleration-based
+criteria applied to key anatomical markers, including those
+
+placed on the heel, toe, and pelvis (Table I). Each approach
+had unique advantages and limitations, particularly in terms
+of sensitivity to gait variations and robustness across different
+walking conditions.
+• Positional-Based Methods:
+Zeni et al. (2008) proposed a widely used method for
+detecting HS and TO based on the local extrema of heel and
+toe marker positions relative to the pelvis. Specifically, HS
+was identified when the heel marker reached its maximum
+horizontal displacement, while TO was detected when the toe
+marker reached its minimum horizontal displacement, both
+measured relative to the pelvis (Table I).
+Desailly et al. (2009) introduced a filtering-based approach in which high-pass filtering was applied to horizontal
+heel and toe marker trajectories to eliminate low-frequency
+drift. HS was detected at the first maximum in the highpass filtered (0.5 * gait frequency) horizontal heel marker
+trajectory, while TO was identified at the last minimum in the
+high-pass filtered (1.1 * gait frequency) horizontal toe marker
+trajectory. This method was designed to enhance accuracy by
+mitigating the effects of marker noise and soft tissue artifacts.
+• Velocity-Based Methods:
+O’Connor et al. (2007) employed a velocity-based detection method, defining HS and TO based on vertical
+velocity extrema. Specifically, HS was identified at the local
+minimum and TO at the local maximum of the vertical
+velocity of the midpoint between the heel and toe markers.
+Ghoussayni et al. (2004) introduced a threshold-based
+velocity approach, where HS was detected when the sagittal
+velocity of the heel marker fell below 5 cm/s, and TO
+was identified when the sagittal velocity of the toe marker
+exceeded 5 cm/s. However, the velocity threshold recommended by Ghoussayni et al. was later found to be too low
+and was increased to 50 cm/s by Bruening et al. [15]. In this
+study, we adopt the revised threshold of 50 cm/s.
+• Acceleration-Based Methods:
+Hreljac et al. (2000) used acceleration profiles to detect
+HS and TO, incorporating vertical and horizontal acceleration components to capture gait event dynamics. HS was
+identified at the local maximum vertical acceleration of the
+heel marker, provided that the derivative of acceleration
+(jerk) was zero. Similarly, TO was detected at the local
+maximum horizontal acceleration of the toe marker, also
+under the condition that the corresponding jerk was zero.
+Hsue et al. (2007) extended acceleration-based detection
+by introducing jerk constraints (rate of change of acceleration). HS was identified at the local minimum of the heel
+marker’s horizontal acceleration, while TO was detected at
+the local maximum of the toe marker’s horizontal acceleration.
+• Hybrid Approaches:
+Bonci et al. (2022) refined Zeni’s approach by incorporating 3D velocity thresholds relative to walking speed.
+HS was initially detected using the method from Zeni et
+al. (2008) and then adjusted based on the 3D velocity of
+the heel marker: below 0.5 * walking speed for rearfoot
+
+

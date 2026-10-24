@@ -1,0 +1,12 @@
+$ python3 06_附录/自检脚本/test_relative_links.py
+test_encoded_image_path (__main__.RelativeLinks.test_encoded_image_path) ... ok
+test_encoded_unicode_spaces_and_fragment (__main__.RelativeLinks.test_encoded_unicode_spaces_and_fragment) ... ok
+test_missing_encoded_target_still_fails (__main__.RelativeLinks.test_missing_encoded_target_still_fails) ... ok
+test_missing_image_still_fails (__main__.RelativeLinks.test_missing_image_still_fails) ... ok
+test_percent_decoded_once_only (__main__.RelativeLinks.test_percent_decoded_once_only) ... ok
+test_raw_existing_path_still_supported (__main__.RelativeLinks.test_raw_existing_path_still_supported) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.004s
+
+OK

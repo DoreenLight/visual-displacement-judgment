@@ -1,0 +1,16 @@
+source	target	thread	doi
+01_参考论文/Scandinavian Med Sci Sports - 2023 - Van Hooren - The accuracy of markerless motion capture combined with computer vision.pdf	01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/The accuracy of markerless motion capture combined w.pdf	B1	10.1111/sms.14319
+01_参考论文/s11044-011-9297-0.pdf	01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/A multibody biomechanical model of the upper limb in.pdf	B2	10.1007/s11044-011-9297-0
+01_参考论文/1-s2.0-S0021929019303847-main.pdf	01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Accuracy of biplane videoradiography for quantifying.pdf	B1	10.1016/j.jbiomech.2019.05.040
+01_参考论文/20261001/shoulder-and-elbow-joint-angle-estimation-for-upper-limb-rehabilitation-tasks-using-low-cost-inertial-and-optical.pdf	01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/SHOULDER AND ELBOW JOINT ANGLE ESTIMATION FOR UPPER.pdf	B1	10.1142/s0219519417500312
+01_参考论文/Numer Methods Biomed Eng - 2023 - Denton - Computational performance of musculoskeletal simulation in OpenSim Moco using (1).pdf	01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Computational performance of musculoskeletal simulat.pdf	B2	10.1002/cnm.3777
+01_参考论文/20261001/estimation-of-muscle-forces-and-joint-moments-using-a.pdf	01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Estimation of Muscle Forces and Joint Moments Using.pdf	B2	10.1249/01.mss.0000176684.24008.6f
+01_参考论文/20261001/Journal of Biomechanics 38 (2005) doi10.1016 j.jbiomech.2004.05.042.pdf	01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/ISB recommendation on definitions of joint coordinat.pdf	B1	10.1016/j.jbiomech.2004.05.042
+01_参考论文/20261001/j.gaitpost.2009.07.111.pdf	01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/A new kinematic model of the upper extremity based o.pdf	B1	10.1016/j.gaitpost.2009.07.111
+01_参考论文/20261001/j.apmr.2007.05.012.pdf	01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Kinematic and Clinical Analyses of Upper-Extremity M.pdf	B3	10.1016/j.apmr.2007.05.012
+01_参考论文/20261001/Comparison_and_Reliability_of_Three_Goniometric_Methods_for_Measuring_Forearm_Supination_and_Pronation.pdf	01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Comparison and Reliability of Three Goniometric Methods for Measuri.pdf	ADJ	
+01_参考论文/20261001/s0749-0712%2821%2900605-3.pdf	01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Biomechanics of Pronation and Supination of the Forearm.pdf	ADJ	
+01_参考论文/20261001/1-s2.0-S0021929007701884-main.pdf	01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/An Extension to the ISB Wrist Joint Coordinate System.pdf	ADJ	
+01_参考论文/20261001/jab.28.2.127.pdf	01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Limited Forearm Motion Compensated by Thoracohumeral Kinematics.pdf	ADJ	
+01_参考论文/20261001/PIIS0268003302000347.pdf	01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Mechanism of Limitation of Pronation-Supination of the Forearm.pdf	ADJ	
+01_参考论文/Exoskeleton_for_forearm_pronation_and_supination_rehabilitation.pdf	01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Exoskeleton for Forearm Pronation and Supination Rehabilitation.pdf	ADJ	

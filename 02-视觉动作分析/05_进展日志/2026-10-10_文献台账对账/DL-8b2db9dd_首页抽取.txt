@@ -1,0 +1,197 @@
+                                                                                             J. Biomechanics,   Vol. 29, No. 10, pi      1365-1370, 1996
+                                                                                       Copyright   0   1996 Elsetier   Science Ltd. All rights reserved
+            Pergamon                                                                                                           Printed in Great Britain
+                                                  PIE sO0zr-9290(~~-0                                                       0021-9290/96      $15.00 + .oO
+
+
+
+
+                                                 TECHNICAL               NOTE
+
+
+
+           MOMENT          ARMS AND LENGTHS                   OF HUMAN   UPPER                 LIMB         MUSCLES                AS
+                                   FUNCTIONS                  OF JOINT ANGLES
+
+                              Pascale Pigeon,* L’Hocine Yahia* and Anatol G. Feldman*?
+          *Institut de ginie biomkdical, ficole Polytechnique de Montrkal; and tInstitut de R&adaptation de MontrBal,
+                                              Universitt de Montrkal, Qu&ec, Canada
+
+        Abstract-Modeling      of musculoskeletal structures requires accurate data on anatomical parameters such as
+        muscle lengths (MLs), moment arms (MAs) and those describing the upper limb position. Using a geometrical
+        model of planar arm movements with three degrees of freedom, we present, in an analytical form, the available
+        information on the relationship between MAs and MLs and joint angles for thirteen human upper limb muscles.
+        The degrees of freedom included are shoulder flexion/extension, elbow flexion/extension, and either wrist
+        flexion/extension (the forearm in supination) or radial/ulnar deviation (the forearm in mid-pronation). Previously
+        published MA/angle curves were approximated by polynomials. ML/angle curves were obtained by combining the
+        constant values of MLs (defined by the distance between the origin and insertion points for a specific upper limb
+        position) with a variable part obtained by multiplying the MA (joint radius) and the joint angle. The MAs of the
+        prime wrist movers in radial/ulnar deviation were linear functions of the joint angle (R’ 2 0.9954), while quadratic
+        polynomials accurately described their MAs during wrist flexion/extensions. The relationship between MAs and
+        the elbow angle was described by 2nd, 3rd or Sth-order polynomials (R’ 2 0.9904), with a lesser quality of fit for
+        the anconeus (R’ = 0.9349). In the full range of angular displacements, the length of wrist, elbow and shoulder
+        muscles can change by 8.5, 55 and 200%, respectively. Copyright 0 1996 Elsevier Science Ltd.
+        Keywords: Biomechanic models; Human upper limb; Moment arms; Muscle lengths; Joint angles.
+
+
+
+                       INTRODUCTION                                  MatLab Polyfit function (The MathWorks, Inc., 1992) was used
+                                                                     for the fitting. Based on these equations, we then derived the
+In some biomechanical models, motor control is essentially           equations for MLs. A ML was a function of the joint angles,
+associated with the anatomical arrangement of muscles                 MAs and also included a constant representing a portion of the
+(Feldman and Levin, 1993; Flanagan et hl., 1993; Flash and           length (L, + L3 or L1 + L3 + Ls in Fig. l(A), similar to Fig. 2 in
+Mussa-Ivaldi. 19901. These and other models reauire urecise          Winters and Stark, 1988). This constant was taken for each
+data relating’muscie lengths (MLs) and moment &ms-(MAs)              muscle from the measurements made by Seireg and Arvikar
+with joint angles. Such data have not been presented in a system-    (1989) who used Braus’ scaled diagrams (Braus, 1954). Seireg
+atic form for the human upper limb, and, in addition, were           and Arvikar (1989) modeled muscles as strings between the
+simplified by assuming that MAs are constant (Happee, 1994;          points of origin and insertion in the bone-fixed coordinate
+Zajac et nl., 1984) and MLs are linear functions of joint angles      system.They measured MLs for an erect body posture with the
+(Flanagan et al., 1993). Trigonometric models of the arm were         upper limb hanging vertically and foreann supinated. To obtain
+also used to estimate MAs (Stern, 1971; Van Zuylen et al., 1988;      a ML for any limb position, we multiplied the MA (radius of the
+Yeo, 1976). In the present report, we derive the equations for the   joint) by the joint angles and added it to the constant portion of
+relationship between the MAs, MLs and joint angles for 13             the length defined above. Thus, if a MA for a DF was described
+upper limb muscles subserving three degrees of freedom (DFs)          by a second-order polynomial, the order of the polynomial for
+for horizontal planar arm movements: shoulder flexion/exten-          the ML increased by a unit. For a laterally extended limb (when
+sion, elbow flexion/extension, and either wrist flexion/extension     the wrist radial/ulnar deviation as well as the wrist, elbow, and
+or wrist radial/ulnar deviation. The approach involves curve          shoulder flexion/extensions are zero), the ML coincided with its
+fitting previously published MA/angle data and formulation of         constant portion [qj = 0”, Fig. l(A)]. Ulnar deviations, exten-
+equations for ML/angle curves.                                        sions of the wrist, and elbow and shoulder flexions were con-
+                                                                      sidered positive and the sign of the MAs remained constant in
+                                                                      the full range of movements since no muscle changed the direc-
+                           METHODS                                    tion of its mechanical action [i.e. from flexion to extension,
+                                                                      Fig. l(B)].
+  The equations relating MAs and joint angles were obtained              Eight mono- and five bi-articular muscles contributing to
+using anatomical or model data (Amis et al., 1979; Horii et al.,      torques about the three DFs with the arm held horizontally at
+1993; Winters and Kleweno, 1993; Wood et al., 1989). The              shoulder level were considered: the flexor carpi ulnaris (FCU),
+                                                                      extensor carpi radials brevis (ECRB), anconeus (AN), brachialis
+                                                                      (BS), brachioradialis (BR), the clavicular portion of pectoralis
+                                                                      (PC) and the anterior (DA) and posterior (DP) portions of the
+   Received in final form 7 January 1996.                             deltoid muscle; the flexor carpi radialis (FCR), extensor carpi
+   Address correspondence to: Pascale Pigeon, Institut de g&nie       radialis longus (ECRL), extensor carpi ulnaris (ECU), biceps
+biom&dical, ficole Polytechnique de Mont&al, C.P. 6079, Succ.         brachii (BB) and triceps brachii (TB). The MA equations were
+Centre-Ville, Mont&al, Qukbec, Canada H3C 3A7.                        obtained based on the available data for the wrist flexion/
+
+                                                                 1365
+1366                                                                      Technical Note
+
+extension and radial/ulnar deviation (Horii et al., 1993) and for                  and MLs were described by the following equations:
+the elbow flexion/extension (Amis et al., 1979; Winters and
+Kleweno, 1993). Data for the AN, FCR, ECU and TB were                                   MADF=Xq?+X,mlq;-l+
+                                                                                           m    nJ                          “‘+xlqj+xa.                   (1)
+taken from Amis et al. (1979) and those for the BS, BR, ECRL
+and BB from Winters and Kleweno (1993). Two MA/angle BB                                    ML, = cst + ezR”(or ezF”) + ekFE+ e”,“”
+curves (Winters and Kleweno, 1993) for elbow flexion/extension,                                         3
+one for pronation and the other for supination, were averaged to                               = cst + 2 (Ym&+ Yn-14:-’ + “’ + Ylqj),
+get a curve for a mid-pronation. MAs of the DA, DP, PC, BB                                                                                                (4
+                                                                                                          j=l
+and TB (Wood et al., 1989) measured on a cadaver for one
+specific position were used for shoulder flexion/extension. MAs                    where MAiF is the moment arm, in mm, of muscle m for
+                                                                                   a particular DF; xi stands for coefficients ui, bi, ci or da for wrist
+                                                                                   radial/ulnar deviation (wRU), wrist flexion/extension (wFE),
+                                                                                   elbow flexion/extension (eFE), or shoulder flexion/extension
+                                                                                   (sFE), respectively; i varies from 0 to n; n is the order of the
+                                                                                   polynomial fitting the data; qj is the joint angle, in degrees
+                                                                                   (ql,q2,q3 for wrist radial/ulnar deviation or wrist flexion/exten-
+                                                 L2
+                                                                                   sion, elbow flexion/extension and shoulder flexion/extension,
+                             Ll             91                                     respectively), ML is the length of muscle m in mm; cst is the
+                                                                                   constant ML portion; e, is the excursion of muscle m due to
+                                      &A           .,   L3                         rotation in a specific DF; yi stands for coefficients ri, si, ti or ui for
+                                       ‘.    ..’
+                                                                                   wrist radial/ulnar deviation, wrist flexion/extension, elbow
+                                                                                   flexion/extension, and shoulder flexion/extension; j is the DF
+                    *                                                              causing the excursion.
+                                                                                      MAs were functions of a single joint angle while MLs were
+                                                                                   functions of one or two joint angles for mono- and bi-articular
+                                                                                   muscles, respectively. Since we considered only horizontal
+                                                                                   planar movements of the upper limb held at shoulder level, the
+                                                                                   wrist DF in equation (2) depended on the forearm orientation
+                                                                                   (for a mid-pronated forearm, wrist radial/ulnar deviation was
+                                                                                   the DF producing horizontal planar movements of the hand;
+                                                                                   wrist flexion/extension did the same for a supinated forearm).
+                                                                                   The goodness of fit was estimated by the coefficient of deter-
+                                                                                   mination, R2 (correlation coefficient squared). The order of the
+                                                                                   interpolation polynomial was found when RZ was not less than
+                                                                                   0.99.
+
+
+                                                                                                                  RESULTS
+
+
+                                                                                      MAs of the FCU and ECRB were interpolated by linear
+                                                                                   functions for wrist radial/ulnar deviations, and quadratic poly-
+                                                                                   nomials for wrist flexion/extensions (Table 1). The slope (ar) of
+                                                              FCR             I    MA/angle curves for ECRB and ECRL for wrist radial/ulnar
+                                                                                   deviations was small (Table 2) compared to other muscles.
+                                                                                     The MLs of single-joint wrist muscles were calculated using
+                                                                                   equation (2). For example, the ML of the FCU (Table 3) for wrist
+                                                                                   radial/ulnar deviations is given by:
+
+           -3   I       20    40       80        80     loo         120     140I
+                                                                                     MLFCu = cst + eF:t
+                                                                                              = 289.40 + 5.1871 x 10-3q: - 0.2853q1.                     (3)
+                                  Elbow angle (deg)
+
+
+                                                                                   Fig. 1. (A) Schematic representation of the relationship be-
+                                                                                   tween joint angles and MLs showing the constant portion of the
+                                                                                   length of mono- (L, + L3) and bi-articular (L, + L3 + L5)
+                                                                                   muscles as well as the changes in the length (L, and L4) due to
+                                                                                   joint rotation (qj). (B) MA/angle curves of elbow muscles. Ex-
+                                                                                   cept for the FCR, the MAs of flexors are described by third-
+                                                                                   order polynomials. Fifth-order interpolations were used for the
+                                                                                   MAs of AN and TB while a quadratic one was used for the MA
+                                                                                   of the ECU. The MA of the BB is sensitive to forearm rotation
+                                                                                   and is shown here for a mid-pronated forearm. The symbols on
+                                                                                   the curve represent the previously published MA data (Amis et
+                                                                                   al., 1979; Winters and Kleweno, 1993) used in the interpolations.
+                                                                                   (C) ML/angle curves of elbow muscles. Some flexors shorten by
+                                                                                   only 1% (FCR) whereas others by 55% (BR). Some extensor
+                                                                                   MLs increase with elbow flexion by only 3% (ECU) and others
+                                                                                   by 49% (AN). The values at 0” (hrlly extended elbow) correspond
+                                                                                   to the constant portion of MLs (Table 3). Unlike in (B), the
+                                                                                   symbols on the curve are used to distinguish between different
+                                   Elbow angle (deg)                                                            curves.
+             Table 1. Coefficients of determination (R*) of the polynomials for MAs for wrist radial/ulnar             deviation (wRU), wrist flexion/extension and elbow flexion/extension
+                                                                                                Coefficients of determination, RZ
+
+     DF                  wRU                                        Wrist flexionlextension                                                           Elbow flexion/extension
+n                  1                  2           1                 2                  3                     4                  1                 2                  3                4            5
+
+FCU            0.999s*           0.9998       0.6374           0.9913*               0.9979                0.9992
+ECRB           0.9978’           0.9978       0.9708           0.9969*               0.9996                0.9997
+AN                                                                                                                            0.8016          0.8790               0.8792           0.9056      0.9349f
+BS                                                                                                                            0.8427          0.9783               0.9988*          0.9989      0.999 1
+BR                                                                                                                            0.8528          0.9533               0.9989*          0.9994      0.9994
+FCR            0.9989*           0.9989       0.7675           0.9957*               0.9961                0.9980             0.0438          0.9975*              0.9979           0.9981      0.9995
+ECRL           0.9954;           0.9955       0.3823           0.9203                0.9944*               0.9944             0.8470          0.9596               0.9986*          0.9995      0.9996
+ECU            0.9997*           0.9998       0.7476           0.9983*               0.9987                0.9998             0.0795          0.9966*              0.9979           0.9995      0.9999
+BB                                                                                                                            0.4669          0.9612               0.9918*          0.9972      0.9988
+TB                                                                                                                            0.9154          0.9270               0.9797           0.9837      0.9904*
+
+   Note: R2 increased or remained constant with increasing order of the polynomial, n (the chosen order is indicated by an asterisk and, except for the AN, is defined as the minimal n at which
+RZ 2 0.99). Linear and quadratic interpolations were used for the wrist muscles (except for the ECRL) in radial/ulnar deviations and wrist flexion/extensions, respectively; second, third and fifth
+order polynomials were used for elbow MAs.
+
+
+                                                          Table 2. Coefficients a, bi, ci and d, of equation (1) for the MA/angle curves
+                                                                                                    Moment arm coefficients
+DF                       wRU                             Wrist flexion/extension                                                       Elbow flexion/extension                                   sFE
+Muscle            al             a0        b, x lo6      b, x lo4         b, x 10’             bo           c> x 109     c‘$x lo7      c3 x 10s         c2 x 10”         Cl x 10’         CO      do
+FCU            - 0.2972          16.349                   8.3020          - 2.6875         - 16.247
+ECRB           - 0.0842        - 10.124                 - 1.8656            2.5315           10.780
+AN                                                                                                          - 2.7306      10.448       - 14.329         8.4297           - 2.2841    - 5.3450
+BS                                                                                                                                      - 2.0530        2.3425             2.3080      5.5492
+BR                                                                                                                                      - 6.5171        10.084             1.6681     19.490
+DA                                                                                                                                                                                                33.02
+DP                                                                                                                                                                                              - 78.74
+PC                                                                                                                                                                                                50.80
+FCR            - 0.1445         - 6.6164                 10.111           - 3.6152         - 15.079                                                     - 0.3627           0.5375      0.9351
+ECRL             0.0411        - 17.475     4.7731      - 3.2685            0.0892            7.9605                                    - 3.0229         4.4347            1.2590      4.7304
+ECU            - 0.2205          19.726                 - 9.2926            3.6494            6.0834                                                     1.1491          - 1.7386    - 2.1826
+BB                                                                                                                                      - 2.9883         1.8047            4.5322     14.660      29.21
+TB                                                                                                          - 3.5171      13.277       - 19.092          12.886          - 3.0284    - 23.287   - 25.40
+   Note: The first eight muscles are mono-articular and the last five are bi-articular. Depending on forearm orientation, the MAs for either wrist radial/ulnar deviations (forearm mid-pronated) or
+wrist flexion/extensions (forearm supinated) were used. Constant values in the last column reflect the lack of experimental data on the variations of shoulder MAs during planar shoulder
+flexion/extensions. For abbreviation, some coefficients of MAs were multiplied by powers of 10 (e.g for the FCU, b, x lo4 = 8.3020, thus b, = 8.3020 x 10-4).
+

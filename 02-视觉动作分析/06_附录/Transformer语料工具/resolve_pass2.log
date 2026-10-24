@@ -1,0 +1,111 @@
+[  0] OK     1.00  Attention Is All You Need                            1706.03762v7
+[  1] OK     1.00  Universal Transformers                               1807.03819v3
+[  2] OK     1.00  BERT: Pre-training of Deep Bidirectional Transformer 1810.04805v2  ⚠年份
+[  3] UNRES  0.30  Language Models are Unsupervised Multitask Learners
+[  4] OK     1.00  Transformer-XL: Attentive Language Models Beyond a F 1901.02860v3
+[  5] REVIEW 0.75  Adaptively Sparse Transformers                       1909.00015v2
+[  6] OK     1.00  Reformer: The Efficient Transformer                  2001.04451v2
+[  7] OK     1.00  Longformer: The Long-Document Transformer            2004.05150v2
+[  8] OK     1.00  Big Bird: Transformers for Longer Sequences          2007.14062v2
+[  9] OK     1.00  Linformer: Self-Attention with Linear Complexity     2006.04768v3
+[ 10] REVIEW 0.88  Rethinking Attention with Performers                 2009.14794v4
+[ 11] OK     1.00  Funnel-Transformer: Filtering out Sequential Redunda 2006.03236v1
+[ 12] OK     1.00  An Image is Worth 16x16 Words: Transformers for Imag 2010.11929v2
+[ 13] OK     1.00  Exploring the Limits of Transfer Learning with a Uni 1910.10683v4
+[ 14] OK     1.00  Swin Transformer: Hierarchical Vision Transformer us 2103.14030v2
+[ 15] OK     1.00  RoFormer: Enhanced Transformer with Rotary Position  2104.09864v5
+[ 16] ERROR  ALiBi: Train Short, Test Long: Attention with Linear Bia -> arXiv 全部检索变体失败: all-words 无结果
+[ 17] OK     1.00  Learning Transferable Visual Models From Natural Lan 2103.00020v1
+[ 18] OK     1.00  Flamingo: a Visual Language Model for Few-Shot Learn 2204.14198v2
+[ 19] OK     1.00  Masked Autoencoders Are Scalable Vision Learners     2111.06377v3
+[ 20] OK     0.91  Is Space-Time Attention All You Need for Video Under 2102.05095v4
+[ 21] OK     1.00  TokenLearner: What Can 8 Learned Tokens Do for Image 2106.11297v4
+[ 22] OK     1.00  Denoising Diffusion Probabilistic Models             2006.11239v2
+[ 23] OK     1.00  GLIDE: Towards Photorealistic Image Generation and E 2112.10741v3
+[ 24] OK     1.00  Zero-Shot Text-to-Image Generation                   2102.12092v2
+[ 25] OK     0.92  3D Human Pose Estimation with Spatial and Temporal T 2103.10455v3
+[ 26] UNRES  0.64  3D Human Pose Estimation with Spatio-Temporal Transforme
+[ 27] OK     0.95  End-to-End Human Pose and Mesh Reconstruction with T 2012.09760v3
+[ 28] ERROR  4DHumans: Reconstructing 4D Humans from Monocular Video -> arXiv 全部检索变体失败: all-words 无结果
+[ 29] ERROR  TokenHMR: Token-based 3D Human Reconstruction with Visio -> arXiv 全部检索变体失败: all-words 无结果
+[ 30] ERROR  PoseFormerV2: 3D Human Pose Estimation with Forming and  -> arXiv 全部检索变体失败: all-words 无结果
+[ 31] OK     1.00  MotionBERT: A Unified Perspective on Learning Human  2210.06551v5
+[ 32] ERROR  MotionAGFormer: Enhancing 3D Human Pose Estimation with  -> arXiv 全部检索变体失败: all-words 无结果
+[ 33] OK     1.00  Segment Anything                                     2304.02643v1
+[ 34] OK     1.00  T2M-GPT: Generating Human Motion from Textual Descri 2301.06052v4
+[ 35] OK     1.00  Human Motion Diffusion Model                         2209.14916v2
+[ 36] OK     1.00  MotionDiffuse: Text-Driven Human Motion Generation w 2208.15001v1
+[ 37] OK     1.00  MotionGPT: Human Motion as a Foreign Language        2306.14795v2
+[ 38] ERROR  A Simple Framework for Text-to-Motion Extraction and Ana -> arXiv 全部检索变体失败: all-words 无结果
+[ 39] OK     1.00  A ConvNet for the 2020s                              2201.03545v2
+[ 40] OK     1.00  Mamba: Linear-Time Sequence Modeling with Selective  2312.00752v2
+[ 41] OK     1.00  Transformers are SSMs: Generalized Models and Effici 2405.21060v1  ⚠年份
+[ 42] OK     1.00  Efficiently Modeling Long Sequences with Structured  2111.00396v3
+[ 43] OK     1.00  Hyena Hierarchy: Towards Larger Convolutional Langua 2302.10866v3
+[ 44] UNRES  0.57  FlashAttention
+[ 45] OK     1.00  FlashAttention-2: Faster Attention with Better Paral 2307.08691v1
+[ 46] OK     1.00  Ring Attention with Blockwise Transformers for Near- 2310.01889v4
+[ 47] OK     1.00  Hydra Attention: Efficient Attention with Many Heads 2209.07484v1  ⚠年份
+[ 48] OK     1.00  PhysPT: Physics-aware Pretrained Transformer for Est 2404.04430v1  ⚠年份
+[ 49] OK     1.00  Human Motion Diffusion as a Generative Prior         2303.01418v3
+[ 50] OK     1.00  PhysDiff: Physics-Guided Human Motion Diffusion Mode 2212.02500v3  ⚠年份
+[ 51] OK     1.00  World Models                                         1803.10122v4
+[ 52] OK     1.00  Mastering Diverse Domains through World Models       2301.04104v2
+[ 53] OK     1.00  Genie: Generative Interactive Environments           2402.15391v1  ⚠年份
+[ 54] REVIEW 0.84  Pre-Trained Video Generative Models as World Simulat 2502.07825v1
+[ 55] REVIEW 0.83  TD-MPC2: Scalable, Robust World Models for Continuou 2310.16828v2
+[ 56] OK     1.00  PartNet: A Recursive Part Decomposition Network for  1903.00709v5  ⚠年份
+[ 57] OK     1.00  Titans: Learning to Memorize at Test Time            2501.00663v1
+[ 58] OK     1.00  Gated Delta Networks: Improving Mamba2 with Delta Ru 2412.06464v3
+[ 59] OK     1.00  Parallelizing Linear Transformers with the Delta Rul 2406.06484v6
+[ 60] OK     1.00  Scaling Laws for Neural Language Models              2001.08361v1
+[ 61] OK     1.00  Scaling Vision Transformers                          2106.04560v2  ⚠年份
+[ 62] ERROR  TRAIN: A Deep Learning Approach to Motion Analysis -> arXiv 全部检索变体失败: all-words 无结果
+[ 63] ERROR  Reconstructing Human Motion from sEMG -> arXiv 全部检索变体失败: all-words 无结果
+[ 64] UNRES  0.23  Real-time Neural-network-based prediction of intended fi
+[ 65] ERROR  MUSE: Multi-Scale Temporal Pretraining for Muscle Synerg -> arXiv 全部检索变体失败: all-words 无结果
+[ 66] ERROR  Multivariate representations and physiological insights  -> arXiv 全部检索变体失败: all-words 无结果
+[ 67] ERROR  Muscle Synergies as a Tool for Neural Control of Functio -> arXiv 全部检索变体失败: all-words 无结果
+[ 68] ERROR  EMG-Driven Neuromuscular Modelling for Joint Torque Esti -> arXiv 全部检索变体失败: all-words 无结果
+[ 69] ERROR  Transfer learning-based muscle synergies estimation for  -> arXiv 全部检索变体失败: all-words 无结果
+[ 70] UNRES  0.58  A deep learning framework for reconstructing muscle acti
+[ 71] UNRES  0.36  Motor Imagery EEG-based BCI for rehabilitation: deep lea
+[ 72] UNRES  0.61  Self-Supervised Transformers for Human Activity Recognit
+[ 73] OK     1.00  iTransformer: Inverted Transformers Are Effective fo 2310.06625v4
+[ 74] OK     1.00  LoRA: Low-Rank Adaptation of Large Language Models   2106.09685v2
+[ 75] OK     1.00  A Novel Transformer-Based Method for Full Lower-Limb 2506.04577v1
+[ 76] OK     1.00  Machine Learning-Based Real-Time Detection of Compen 2604.12591v1
+[ 77] OK     1.00  Upper-Limb Rehabilitation with a Dual-Mode Individua 2409.03193v1
+[ 78] ERROR  A BERT Based Method for Continuous Estimation of Cross-S -> arXiv 全部检索变体失败: all-words 无结果
+[ 79] ERROR  A Dual-Task Improved Transformer Framework for Decoding  -> arXiv 全部检索变体失败: all-words 无结果
+[ 80] ERROR  Markerless On-Device Detection of Compensatory Movement  -> arXiv 全部检索变体失败: all-words 无结果
+[ 81] ERROR  Using deep learning to detect upper limb compensation in -> arXiv 全部检索变体失败: all-words 无结果
+[ 82] ERROR  Prediction of Joint Angles for Human Elbow Motion Based  -> arXiv 全部检索变体失败: all-words 无结果
+[ 83] OK     1.00  Layer Normalization                                  1607.06450v1  ⚠年份
+[ 84] OK     1.00  RoBERTa: A Robustly Optimized BERT Pretraining Appro 1907.11692v1
+[ 85] OK     1.00  ELECTRA: Pre-training Text Encoders as Discriminator 2003.10555v1  ⚠年份
+[ 86] OK     1.00  GLU Variants Improve Transformer                     2002.05202v1
+[ 87] ERROR  DeepSpeed: Extreme-scale model training for the era of t -> arXiv 全部检索变体失败: all-words 无结果
+[ 88] OK     1.00  Efficient Memory Management for Large Language Model 2309.06180v1
+[ 89] REVIEW 0.87  SpecEE: Accelerating Large Language Model Inference  2504.08850v1
+[ 90] ERROR  Sinkhorn Operators: Provable Attention via Neural Operat -> arXiv 全部检索变体失败: all-words 无结果
+[ 91] OK     0.95  Synthesizer: Rethinking Self-Attention in Transforme 2005.00743v3
+[ 92] OK     1.00  ETC: Encoding Long and Structured Inputs in Transfor 2004.08483v5
+[ 93] ERROR  Conditional Positional Encoding for Video Transformers -> arXiv 全部检索变体失败: all-words 无结果
+[ 94] OK     1.00  VideoMAE: Masked Autoencoders are Data-Efficient Lea 2203.12602v3
+[ 95] OK     1.00  DINOv2: Learning Robust Visual Features without Supe 2304.07193v2
+[ 96] OK     1.00  ImageBind: One Embedding Space To Bind Them All      2305.05665v2
+[ 97] OK     1.00  BLIP-2: Bootstrapping Language-Image Pre-training wi 2301.12597v3
+[ 98] UNRES  0.63  LLaVA: Visual Instruction Tuning
+[ 99] OK     1.00  SAM 2: Segment Anything in Images and Videos         2408.00714v2
+[100] UNRES  0.71  InternVideo: Generalizing Video Foundation Models to Gen
+[101] REVIEW 0.81  Self-supervised Learning for Human Activity Recognit 2206.02909v3
+[102] OK     1.00  MaskGIT: Masked Generative Image Transformer         2202.04200v1
+[103] ERROR  TATS: Long-term Human Motion Generation with Time-Aware  -> arXiv 全部检索变体失败: all-words 无结果
+[104] OK     1.00  Diffusion Policy: Visuomotor Policy Learning via Act 2303.04137v5
+[105] OK     0.94  Temporal Difference Learning for Model Predictive Co 2203.04955v2  ⚠年份
+[106] UNRES  0.57  Retentive Network: A Successive Sub-Training Token-Based
+[107] UNRES  0.68  Byte Latent Transformer: Patches Scale the Inference Par
+[108] UNRES  0.56  Native Sparse Attention
+
+汇总：{'confirmed': 69, 'unresolved': 12, 'review': 6, 'error': 22}

@@ -1,0 +1,144 @@
+06_附录/生物力学语料工具/bm3_fetch_report.json
+06_附录/生物力学语料工具/bm3_probe.py
+06_附录/生物力学语料工具/build_biomech.py
+06_附录/生物力学语料工具/bm3_ingest.py
+06_附录/生物力学语料工具/fetch_epmc_supp.py
+06_附录/生物力学语料工具/discover.py
+06_附录/生物力学语料工具/biomech_download_report.json
+06_附录/生物力学语料工具/download_oa.py
+06_附录/生物力学语料工具/README.md
+06_附录/生物力学语料工具/biomech_pool.json
+06_附录/生物力学语料工具/mine_fulltext.py
+06_附录/生物力学语料工具/bm3_fetch.py
+06_附录/生物力学语料工具/recover_oa.py
+06_附录/生物力学语料工具/snowball_v9e.py
+06_附录/生物力学语料工具/build_page_biomech.py
+06_附录/生物力学语料工具/epmc_supp_report.json
+06_附录/补充材料/Pohl2026_JMIR_RAT_10.2196-87339/_来源.md
+06_附录/ID命名约定.md
+06_附录/gen_acquisition_list.py
+06_附录/自检脚本/verify_kb.sh
+06_附录/Transformer语料工具/fetch_priority_report.json
+06_附录/Transformer语料工具/build_index.py
+06_附录/Transformer语料工具/resolve_corpus.py
+06_附录/Transformer语料工具/build_page.py
+06_附录/Transformer语料工具/verify_citations.py
+06_附录/Transformer语料工具/翻译/tf_manifest.py
+06_附录/Transformer语料工具/翻译/tf_extract.sh
+06_附录/Transformer语料工具/翻译/tf_run_all.sh
+06_附录/Transformer语料工具/翻译/README.md
+06_附录/Transformer语料工具/corpus_candidates.json
+06_附录/Transformer语料工具/oa_ingest.py
+06_附录/Transformer语料工具/README.md
+06_附录/Transformer语料工具/gen_cards.py
+06_附录/Transformer语料工具/取件核查报告.json
+06_附录/Transformer语料工具/corpus_download_report.json
+06_附录/Transformer语料工具/fetch_arxiv.py
+06_附录/Transformer语料工具/corpus_resolved.json
+06_附录/Transformer语料工具/fetch_oa.py
+06_附录/Transformer语料工具/biomech_pool.bak.json
+06_附录/Transformer语料工具/corpus_resolved.json.bak_ude
+06_附录/Transformer语料工具/download_pdfs.py
+06_附录/取件清单_人工标注.json
+06_附录/缺口台账.md
+06_附录/决策模型工具/jev_web_archive_report.json
+06_附录/决策模型工具/jev_web_archive.py
+06_附录/决策模型工具/build_directions.py
+06_附录/决策模型工具/jev_candidates.json
+06_附录/决策模型工具/build_jev.py
+06_附录/决策模型工具/gen_jev_cards.py
+06_附录/决策模型工具/ingest_root_pdfs.py
+06_附录/决策模型工具/ingest_root_pdfs_report.json
+06_附录/pdf2zh调用脚本/test_refusal_detector.py
+06_附录/pdf2zh调用脚本/paper_manifest.py
+STATUS.md
+04_实验设计/D435i_四问任务包/历史归档/D435i_实验方案与风险清单.md
+04_实验设计/D435i_四问任务包/历史归档/D435i_四问可行性回答.md
+04_实验设计/ISB坐标定义抄录.md
+04_实验设计/评价指标.md
+04_实验设计/数据集与协议.md
+01_参考论文/RGB_直接竞品_2026_Chao/Jamsrandorj2023：单相机 CNN-Transformer 的步态时空参数估计/Jamsrandorj2023：单相机 CNN-Transformer 的步态时空参数估计_翻译导读.md
+01_参考论文/RGB_直接竞品_2026_Chao/Chao2026：单目 RGB 相机的下肢关节角度估计/Chao2026：单目 RGB 相机的下肢关节角度估计_Abstract_Card.md
+01_参考论文/RGB_直接竞品_2026_Chao/Chao2026：单目 RGB 相机的下肢关节角度估计/Chao2026：单目 RGB 相机的下肢关节角度估计_翻译导读.md
+01_参考论文/RGB_直接竞品_2026_Chao/Chao2026：单目 RGB 相机的下肢关节角度估计/Chao2026：单目 RGB 相机的下肢关节角度估计_reconstruction.md
+01_参考论文/TokenHMR_PoseTokens/TokenHMR：令牌化姿态表示的人体网格恢复/TokenHMR：令牌化姿态表示的人体网格恢复_翻译导读.md
+01_参考论文/RGB_角度估计_2022_EMBC/Kumar2022：深度学习从视觉系统预测下肢运动学/Kumar2022：深度学习从视觉系统预测下肢运动学_Abstract_Card.md
+01_参考论文/RGB_角度估计_2022_EMBC/Kumar2022：深度学习从视觉系统预测下肢运动学/Kumar2022：深度学习从视觉系统预测下肢运动学_翻译导读.md
+01_参考论文/RGB_角度估计_2022_EMBC/Jamsrandorj2022-EMBC：视角无关的膝肘关节角度深度学习估计/Jamsrandorj2022-EMBC：视角无关的膝肘关节角度深度学习估计_Abstract_Card.md
+01_参考论文/RGB_角度估计_2022_EMBC/Jamsrandorj2022-EMBC：视角无关的膝肘关节角度深度学习估计/Jamsrandorj2022-EMBC：视角无关的膝肘关节角度深度学习估计_reconstruction.md
+01_参考论文/RGB_角度估计_2022_EMBC/Jamsrandorj2022-EMBC：视角无关的膝肘关节角度深度学习估计/Jamsrandorj2022-EMBC：视角无关的膝肘关节角度深度学习估计_翻译导读.md
+01_参考论文/RGB_角度估计_2022_EMBC/LIST.md
+01_参考论文/RGB_角度估计_2022_EMBC/Jamsrandorj2022-Wearable：腰戴混合 CNN-RNN 的步态事件预测/Jamsrandorj2022-Wearable：腰戴混合 CNN-RNN 的步态事件预测_翻译导读.md
+01_参考论文/OpenCap_传统生物力学/MarkerlessReview2021：视频无标记动捕临床康复生物力学综述/MarkerlessReview2021：视频无标记动捕临床康复生物力学综述_翻译导读.md
+01_参考论文/OpenCap_传统生物力学/OpenCap-Monocular：单目智能手机视频捕捉人体运动动力学/OpenCap-Monocular：单目智能手机视频捕捉人体运动动力学_翻译导读.md
+01_参考论文/OpenCap_传统生物力学/OpenCap：从智能手机视频获取人体运动动力学/OpenCap：从智能手机视频获取人体运动动力学_翻译导读.md
+01_参考论文/sEMG_原始参照论文/Wei2024：基于 sEMG 的上肢康复连续运动意图预测综述/Wei2024：基于 sEMG 的上肢康复连续运动意图预测综述_翻译导读.md
+01_参考论文/sEMG_原始参照论文/Wei2026-JBHI：肌肉解剖与 Seq2Seq 翻译的 sEMG 关节运动学预测/Wei2026-JBHI：肌肉解剖与 Seq2Seq 翻译的 sEMG 关节运动学预测_翻译导读.md
+01_参考论文/sEMG_原始参照论文/Wei2026-JBHI：肌肉解剖与 Seq2Seq 翻译的 sEMG 关节运动学预测/Wei2026-JBHI：肌肉解剖与 Seq2Seq 翻译的 sEMG 关节运动学预测_reconstruction.md
+01_参考论文/METRO/METRO：Transformer 端到端人体姿态与网格重建/METRO：Transformer 端到端人体姿态与网格重建_全文翻译.md
+01_参考论文/METRO/METRO：Transformer 端到端人体姿态与网格重建/METRO：Transformer 端到端人体姿态与网格重建_翻译导读.md
+01_参考论文/METRO/LIST.md
+01_参考论文/PoseFormer_MotionBERT/PoseFormer：时空 Transformer 的 3D 人体姿态估计/PoseFormer：时空 Transformer 的 3D 人体姿态估计_翻译导读.md
+01_参考论文/PoseFormer_MotionBERT/PoseFormer：时空 Transformer 的 3D 人体姿态估计/PoseFormer：时空 Transformer 的 3D 人体姿态估计_全文翻译.md
+01_参考论文/PoseFormer_MotionBERT/MotionBERT：从异构数据源学习人体运动表征/MotionBERT：从异构数据源学习人体运动表征_全文翻译.md
+01_参考论文/PoseFormer_MotionBERT/MotionBERT：从异构数据源学习人体运动表征/MotionBERT：从异构数据源学习人体运动表征_翻译导读.md
+01_参考论文/PoseFormer_MotionBERT/MotionAGFormer：Transformer-GCNFormer 增强三维人体姿态估计/MotionAGFormer：Transformer-GCNFormer 增强三维人体姿态估计_翻译导读.md
+01_参考论文/PoseFormer_MotionBERT/PoseFormerV2：频域高效鲁棒的 3D 人体姿态估计/PoseFormerV2：频域高效鲁棒的 3D 人体姿态估计_翻译导读.md
+01_参考论文/康复整合链路/README.md
+01_参考论文/康复整合链路/index.json
+01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2022_Zhu_MotionBERT_A_Unified_Perspective_on_Learning_Human_全文翻译.md
+01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2020_Lin_End_to_End_Human_Pose_and_Mesh_全文翻译.md
+01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2021_Zheng_3D_Human_Pose_Estimation_with_Spatial_and_全文翻译.md
+01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2020_Lin_End_to_End_Human_Pose_and_Mesh_Abstract_Card.md
+01_参考论文/Transformer_发展线/README.md
+01_参考论文/Transformer_发展线/index.json
+01_参考论文/ViT_HMR_2.0/HMR2.0：4DHumans 基于 Transformer 的人体重建与跟踪/HMR2.0：4DHumans 基于 Transformer 的人体重建与跟踪_翻译导读.md
+01_参考论文/ViT_HMR_2.0/HMR2.0：4DHumans 基于 Transformer 的人体重建与跟踪/HMR2.0：4DHumans 基于 Transformer 的人体重建与跟踪_全文翻译.md
+01_参考论文/决策模型线_JEV/D3_开源复现与替代/LIST.md
+01_参考论文/决策模型线_JEV/D2_独立评测与反驳/LIST.md
+01_参考论文/决策模型线_JEV/D4_AAN辅助控制与介入决策/LIST.md
+01_参考论文/决策模型线_JEV/D1_JEV本体与SystemOne范式/LIST.md
+01_参考论文/决策模型线_JEV/D5_轻量化非Transformer路线/LIST.md
+01_参考论文/决策模型线_JEV/D6_康复侧既有实证/LIST.md
+01_参考论文/决策模型线_JEV/index.json
+01_参考论文/腕关节康复感知_D435i/运动质量评价指标/Mei2026：面向康复训练的传感器化运动质量评估与生物反馈综述/Mei2026：面向康复训练的传感器化运动质量评估与生物反馈综述_翻译导读.md
+01_参考论文/腕关节康复感知_D435i/运动质量评价指标/通过分类和平滑度分析简化自动神经康复/通过分类和平滑度分析简化自动神经康复_翻译导读.md
+01_参考论文/腕关节康复感知_D435i/运动质量评价指标/Longhi2016：卒中上肢功能评估的仪器化指标效度验证/Longhi2016：卒中上肢功能评估的仪器化指标效度验证_翻译导读.md
+01_参考论文/腕关节康复感知_D435i/运动质量评价指标/LIST.md
+01_参考论文/腕关节康复感知_D435i/深度图姿态估计精度/RealSense-Kinematics：单 RGBD 相机实时开源上肢肌肉骨骼分析/RealSense-Kinematics：单 RGBD 相机实时开源上肢肌肉骨骼分析_翻译导读.md
+01_参考论文/腕关节康复感知_D435i/深度图姿态估计精度/LIST.md
+01_参考论文/腕关节康复感知_D435i/待获取文献清单.md
+01_参考论文/腕关节康复感知_D435i/上肢代偿检测/Seo2024：可穿戴传感器居家监测卒中上肢训练质量/Seo2024：可穿戴传感器居家监测卒中上肢训练质量_翻译导读.md
+01_参考论文/腕关节康复感知_D435i/上肢代偿检测/Wang2022：卒中上肢代偿评估与检测技术系统综述/Wang2022：卒中上肢代偿评估与检测技术系统综述_翻译导读.md
+01_参考论文/腕关节康复感知_D435i/上肢代偿检测/肱二头肌弯举疲劳诱发代偿运动分析/肱二头肌弯举疲劳诱发代偿运动分析_翻译导读.md
+01_参考论文/腕关节康复感知_D435i/上肢代偿检测/LIST.md
+01_参考论文/腕关节康复感知_D435i/上肢代偿检测/Li2024：IMU 上肢活动范围测量并行效度综述/Li2024：IMU 上肢活动范围测量并行效度综述_翻译导读.md
+01_参考论文/腕关节康复感知_D435i/上肢代偿检测/自适应协作机器人减轻假肢使用者代偿运动/自适应协作机器人减轻假肢使用者代偿运动_翻译导读.md
+01_参考论文/腕关节康复感知_D435i/上肢代偿检测/骨骼数据卒中代偿检测的图卷积 LSTM 注意力网络/骨骼数据卒中代偿检测的图卷积 LSTM 注意力网络_翻译导读.md
+01_参考论文/腕关节康复感知_D435i/腕关节与前臂专项/自适应学习协作机器人上肢康复训练系统/自适应学习协作机器人上肢康复训练系统_翻译导读.md
+01_参考论文/腕关节康复感知_D435i/腕关节与前臂专项/LIST.md
+01_参考论文/腕关节康复感知_D435i/腕关节与前臂专项/改进腕部运动学模型用于人机交互/改进腕部运动学模型用于人机交互_翻译导读.md
+README.md
+INDEX.md
+00_研究背景/三语料交叉推演_发展线汇合与方向外推.md
+00_研究背景/JEV路线可行性评估.md
+00_研究背景/翻译范式论证与定位重定_2026-10-01.md
+00_研究背景/Transformer_发展线与康复迁移推演.md
+10_研究方向/R1_AAN介入决策/建议.md
+10_研究方向/README.md
+10_研究方向/主动参与与训练强度_链路研究/研究范围与指标.md
+10_研究方向/主动参与与训练强度_链路研究/文献对照_原文定位.json
+10_研究方向/主动参与与训练强度_链路研究/全文证据摘录.json
+10_研究方向/主动参与与训练强度_链路研究/近期研究_原文定位.json
+10_研究方向/主动参与与训练强度_链路研究/心理参与补核.md
+10_研究方向/主动参与与训练强度_链路研究/文献台账.json
+10_研究方向/主动参与与训练强度_链路研究/本地目标定义_原文定位.json
+10_研究方向/主动参与与训练强度_链路研究/README.md
+10_研究方向/主动参与与训练强度_链路研究/已取得最近工作_方法参照深核.md
+10_研究方向/主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md
+10_研究方向/主动参与与训练强度_链路研究/宋嵘团队追踪.md
+10_研究方向/主动参与与训练强度_链路研究/检索与筛选说明.md
+10_研究方向/主动参与与训练强度_链路研究/本地文献盘点.json
+02_创新点矩阵/创新点查重_vs_竞品.md
+02_创新点矩阵/Transformer前沿到上肢康复创新点矩阵.md
+HANDOFF.md

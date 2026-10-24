@@ -1,0 +1,31 @@
+# PMC7038487 补充材料取件清单
+
+- 取件时间：2026-10-01 15:32:27
+- 接口：`GET https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7038487/supplementaryFiles`
+- HTTP 200 / 980,824 bytes / 18 个文件
+
+## 文件
+
+- `sensors-20-00724-g001.gif`  6,323 bytes
+- `sensors-20-00724-g001.jpg`  32,154 bytes
+- `sensors-20-00724-g002.gif`  6,154 bytes
+- `sensors-20-00724-g002.jpg`  31,507 bytes
+- `sensors-20-00724-g003.gif`  10,599 bytes
+- `sensors-20-00724-g003.jpg`  53,306 bytes
+- `sensors-20-00724-g004.gif`  10,055 bytes
+- `sensors-20-00724-g004.jpg`  43,731 bytes
+- `sensors-20-00724-g005.gif`  7,404 bytes
+- `sensors-20-00724-g005.jpg`  48,230 bytes
+- `sensors-20-00724-g006.gif`  8,171 bytes
+- `sensors-20-00724-g006.jpg`  115,277 bytes
+- `sensors-20-00724-g007.gif`  9,216 bytes
+- `sensors-20-00724-g007.jpg`  56,470 bytes
+- `sensors-20-00724-g008.gif`  11,853 bytes
+- `sensors-20-00724-g008.jpg`  274,788 bytes
+- `sensors-20-00724-g009.gif`  11,801 bytes
+- `sensors-20-00724-g009.jpg`  273,353 bytes
+
+## ⚠️ 取件纪律提醒
+
+- **文件名编号 ≠ 表号编号**：本项目 Pohl 2026 那篇，正文引用的「表 S2/S3」全部在 `s002.pdf` 一份里。取件后**必须逐份打开核对表号**，不要按文件名推断。
+- 补充材料是**已入库论文的附件**，不是独立论文条目：**不要**为它造 `_Abstract_Card.md`（会犯 K8），**不要**改语料三的条目计数。

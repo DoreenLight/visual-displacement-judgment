@@ -1,7 +1,7 @@
 # 03 · Spatio-Temporal Transformer Encoder（时空编码器）
 
 > **所属**：ViKiT 组件 ③（source language 的时序编码）
-> **上游**：`Anatomy_aware_Tokenizer.md`（消费 `(B,T,R,d)`）
+> **上游**：`Anatomy_aware_Region_Encoder.md`（消费 `(B,T,R,d)`）
 > **下游**：`Cross_Modal_Decoder.md`（提供 memory）
 > **一致性基准**：`../02_创新点矩阵/ViKiT_方法概览.md` §2.2
 > **本文档定位**：Phase 2 方法设计的**实质设计文档**，含结构 / 超参 / 选型依据 / 失败模式
@@ -71,7 +71,7 @@ Memory: (B, T, R, d)
 把 R 轴直接 flatten 或 mean-pool，**只保留时间轴注意力**。
 
 > ⚠️ **结构 C 不是废案，而是必备对照**：它就是**竞品（KIST CNN-Transformer）的同构形式**。
-> 若 C ≈ A，则说明 **region 轴没有带来增益** → attribute 该发现会触发 §5 R1 风险。
+> 若 C ≈ A，则说明 **region 轴没有带来增益** → attribute 该发现会触发 §5 STE-R1 风险。
 > **必须做，且必须如实报告。**
 
 ---
@@ -154,13 +154,13 @@ $$A_{r,r'} = -\kappa \cdot d_{\text{chain}}(r, r')$$
 
 | # | 失败模式 | 症状 | 根因 | 对策 |
 |---|---|---|---|---|
-| **F1** | **分解假设不成立** | 结构 A 显著劣于结构 B | 时空耦合强（如"肘-腕"跨帧耦合） | ① 退到结构 B + 高效 attention（FlashAttention / Linformer）；② 混合：每 2 层分解 + 1 层联合 |
-| **F2** | **Region PE 学到无语义模式** | 打乱 region 顺序后性能不变 | region 轴实际未被使用 | ① **region 打乱测试**（permutation test）作为必做诊断；② 若打乱无影响 → 触发 R1 |
-| **F3** | **长序列注意力退化** | $T$ 增大性能反而下降 | $O(T^2)$ 稀释；远距离注意力噪声 | ① windowed attention；② 相对位置偏置（ALiBi）；③ 层次化下采样（先粗后细） |
-| **F4** | **RoPE 与变长推理冲突** | 训练 $T=81$、推理 $T=27$ 时崩坏 | RoPE 的频率外推性质 | ① 训练时随机采样多种 $T$（长度增强）；② 或改用可学习 PE 并固定 $T$ |
-| **F5** | **过深导致小数据过拟合** | 训练 loss 极低，验证 loss 上升 | 6 层参数 ≫ 数据量 | ① 降层；② 更强 dropout / stochastic depth；③ 先用 CMU Mocap 预训练 |
-| **F6** | **与 tokenizer 的联合不稳定** | 训练后期 loss 震荡 | 两个可学习模块互相追逐（tokenizer 在变，encoder 在追） | ① 前 5 epoch 冻结 encoder（配合 `Anatomy_aware_Tokenizer.md` §3 的冻结策略）；② 降低 encoder lr（0.5×） |
-| **F7** | **Memory 维度与 decoder 不匹配** | cross-attention 报错或对齐错误 | $R$ 轴在 decoder 处如何被消费未定义 | 见 §6 契约；decoder 侧必须显式声明是**展平**还是**保留 R 轴** |
+| **STE-F1** | **分解假设不成立** | 结构 A 显著劣于结构 B | 时空耦合强（如"肘-腕"跨帧耦合） | ① 退到结构 B + 高效 attention（FlashAttention / Linformer）；② 混合：每 2 层分解 + 1 层联合 |
+| **STE-F2** | **Region PE 学到无语义模式** | 打乱 region 顺序后性能不变 | region 轴实际未被使用 | ① **region 打乱测试**（permutation test）作为必做诊断；② 若打乱无影响 → 触发 STE-R1 |
+| **STE-F3** | **长序列注意力退化** | $T$ 增大性能反而下降 | $O(T^2)$ 稀释；远距离注意力噪声 | ① windowed attention；② 相对位置偏置（ALiBi）；③ 层次化下采样（先粗后细） |
+| **STE-F4** | **RoPE 与变长推理冲突** | 训练 $T=81$、推理 $T=27$ 时崩坏 | RoPE 的频率外推性质 | ① 训练时随机采样多种 $T$（长度增强）；② 或改用可学习 PE 并固定 $T$ |
+| **STE-F5** | **过深导致小数据过拟合** | 训练 loss 极低，验证 loss 上升 | 6 层参数 ≫ 数据量 | ① 降层；② 更强 dropout / stochastic depth；③ 先用 CMU Mocap 预训练 |
+| **STE-F6** | **与 tokenizer 的联合不稳定** | 训练后期 loss 震荡 | 两个可学习模块互相追逐（tokenizer 在变，encoder 在追） | ① 前 5 epoch 冻结 encoder（配合 `Anatomy_aware_Region_Encoder.md` §3 的冻结策略）；② 降低 encoder lr（0.5×） |
+| **STE-F7** | **Memory 维度与 decoder 不匹配** | cross-attention 报错或对齐错误 | $R$ 轴在 decoder 处如何被消费未定义 | 见 §6 契约；decoder 侧必须显式声明是**展平**还是**保留 R 轴** |
 
 ---
 
@@ -189,7 +189,7 @@ memory = encoder(V)         # memory: (B, T, R, d)   —— 保留 R 轴
 | 1 | 结构 A/B/C 三实现 | 三者可切换；参数量与 FLOPs 报告 |
 | 2 | $T$ 消融曲线 | $T \in \{9,27,45,81,121\}$ 的 MAE + jerk + 显存曲线 |
 | 3 | $L$ 消融曲线 | $L \in \{2,4,6,8\}$；**必须能回答"为何不用 KIST 的 2 层"** |
-| 4 | **Region 打乱诊断** | 输出打乱 region 顺序前后的性能差（若 ≈0 则触发 R1） |
+| 4 | **Region 打乱诊断** | 输出打乱 region 顺序前后的性能差（若 ≈0 则触发 STE-R1） |
 | 5 | attention 可视化 | 能导出"腕角预测时注意力落在哪些 region/帧"的热图 |
 | 6 | 单元测试 | 形状契约、因果性（temporal 轴不得看到未来）、mask 正确性 |
 
@@ -199,6 +199,6 @@ memory = encoder(V)         # memory: (B, T, R, d)   —— 保留 R 轴
 
 | # | 风险 | 影响 | 缓解 |
 |---|---|---|---|
-| **R1** | **结构 C（纯时间，无 region 轴）与结构 A 表现相当** | region 轴无增益 → "anatomy-aware"在 encoder 层落空 | 与 `Anatomy_aware_Tokenizer.md` R1 联动。**缓解**：论证增益应出现在**物理合法性指标**（ROM/FK）与**可解释性**上，而非仅 MAE |
-| **R2** | 分解式注意力被审稿人指为"早已有之"（如 Factorized Attention、TimeSformer） | novelty 被削弱 | **主动引用** Factorized/Separable attention 文献，把 novelty 锚定在**"R 轴是解剖单元而非空间 patch"**上 |
-| **R3** | 6 层过深，实际收益低于成本 | 无谓的算力 | 用 $L$ 消融**主动降层**并如实报告——诚实的小模型比虚胖的大模型更可信 |
+| **STE-R1** | **结构 C（纯时间，无 region 轴）与结构 A 表现相当** | region 轴无增益 → "anatomy-aware"在 encoder 层落空 | 与 `Anatomy_aware_Region_Encoder.md` STE-R1 联动。**缓解**：论证增益应出现在**物理合法性指标**（ROM/FK）与**可解释性**上，而非仅 MAE |
+| **STE-R2** | 分解式注意力被审稿人指为"早已有之"（如 Factorized Attention、TimeSformer） | novelty 被削弱 | **主动引用** Factorized/Separable attention 文献，把 novelty 锚定在**"R 轴是解剖单元而非空间 patch"**上 |
+| **STE-R3** | 6 层过深，实际收益低于成本 | 无谓的算力 | 用 $L$ 消融**主动降层**并如实报告——诚实的小模型比虚胖的大模型更可信 |

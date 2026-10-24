@@ -1,0 +1,3 @@
+$ git diff --check -- <本轮20个已修改目标>
+02-视觉动作分析/README.md:90: trailing whitespace.
++2. **Anatomy-aware Region Encoding**  

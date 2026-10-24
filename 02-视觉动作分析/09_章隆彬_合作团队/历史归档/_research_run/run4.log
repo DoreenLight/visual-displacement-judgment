@@ -1,0 +1,53 @@
+stages: ['knowledge', 'inspect', 'targeted', 'merge', 'qgate', 'report']
+work_dir: /Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/09_章隆彬_合作团队/_research_run
+[started ] knowledge    0% 开始 knowledge 构建
+[completed] knowledge  100% knowledge 完成（590.6s）
+[started ] inspect      0% 开始 inspect 检视
+[completed] inspect      0% inspect 检视完成
+[started ] qgate        0% 开始 qgate 门控评估
+[completed] qgate        0% 门控判定: CONTINUE
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://scholar.google.com/citations?user=zfHrGd0AAAAJ&hl=en                                         | ✓ | ⏱: 2.40s 
+[SCRAPE].. ◆ https://scholar.google.com/citations?user=zfHrGd0AAAAJ&hl=en                                         | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://scholar.google.com/citations?user=zfHrGd0AAAAJ&hl=en                                         | ✓ | ⏱: 2.40s 
+[FETCH]... ↓ https://www.researchgate.net/profile/Longbin-Zhang-2                                                 | ✓ | ⏱: 2.49s 
+[SCRAPE].. ◆ https://www.researchgate.net/profile/Longbin-Zhang-2                                                 | ✓ | ⏱: 0.00s 
+[ERROR]... × https://www.researchgat...profile/Longbin-Zhang-2  | Error: Blocked by anti-bot protection: Cloudflare JS challenge 
+[COMPLETE] ● https://www.researchgate.net/profile/Longbin-Zhang-2                                                 | ✗ | ⏱: 2.50s 
+[FETCH]... ↓ https://scispace.com/authors/longbin-zhang-59gqct3awz                                                | ✓ | ⏱: 3.64s 
+[SCRAPE].. ◆ https://scispace.com/authors/longbin-zhang-59gqct3awz                                                | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://scispace.com/authors/longbin-zhang-59gqct3awz                                                | ✓ | ⏱: 3.65s 
+[started ] clean        0% 开始 clean
+[completed] clean      100% clean 完成（42.5s）
+[completed] targeted     0% 核验 1 个靶向来源
+[completed] merge        0% 第 1 轮 CAS 合并完成
+[INIT].... → Crawl4AI 0.9.0 
+[INIT].... → Crawl4AI 0.9.0 
+[FETCH]... ↓ https://www.researchgate.net/profile/Longbin-Zhang-2                                                 | ✓ | ⏱: 2.34s 
+[SCRAPE].. ◆ https://www.researchgate.net/profile/Longbin-Zhang-2                                                 | ✓ | ⏱: 0.00s 
+[ERROR]... × https://www.researchgat...profile/Longbin-Zhang-2  | Error: Blocked by anti-bot protection: Cloudflare JS challenge 
+[COMPLETE] ● https://www.researchgate.net/profile/Longbin-Zhang-2                                                 | ✗ | ⏱: 2.35s 
+[FETCH]... ↓ https://scispace.com/authors/longbin-zhang-59gqct3awz                                                | ✓ | ⏱: 3.42s 
+[SCRAPE].. ◆ https://scispace.com/authors/longbin-zhang-59gqct3awz                                                | ✓ | ⏱: 0.00s 
+[COMPLETE] ● https://scispace.com/authors/longbin-zhang-59gqct3awz                                                | ✓ | ⏱: 3.43s 
+[failed  ] targeted     0% targeted 失败: 未获取可清洗的新来源，禁止构造补搜事实
+Traceback (most recent call last):
+  File "/tmp/rt_resume_rest.py", line 62, in <module>
+    asyncio.run(main())
+  File "/opt/anaconda3/envs/research-tool/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/research-tool/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/research-tool/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/tmp/rt_resume_rest.py", line 54, in main
+    "success": res.success_count,
+               ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/research-tool/lib/python3.11/site-packages/pydantic/main.py", line 1042, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'PipelineResult' object has no attribute 'success_count'

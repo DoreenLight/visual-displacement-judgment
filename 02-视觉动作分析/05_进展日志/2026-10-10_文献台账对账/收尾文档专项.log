@@ -1,0 +1,19 @@
+{
+  "note": "整理记录及STATUS/HANDOFF最终证据说明落盘后，复用verify_kb.sh原始Case1/6代码；前一次自引用文件未落盘导致3项暂态失败，本次无排除/降级",
+  "results": [
+    {
+      "case": 1,
+      "name": "Markdown 相对链接完整性",
+      "failed": 0,
+      "checked": 1231,
+      "issues": []
+    },
+    {
+      "case": 6,
+      "name": "索引一致性（日期/进度条/计数块）",
+      "failed": 0,
+      "checked": 4,
+      "issues": []
+    }
+  ]
+}

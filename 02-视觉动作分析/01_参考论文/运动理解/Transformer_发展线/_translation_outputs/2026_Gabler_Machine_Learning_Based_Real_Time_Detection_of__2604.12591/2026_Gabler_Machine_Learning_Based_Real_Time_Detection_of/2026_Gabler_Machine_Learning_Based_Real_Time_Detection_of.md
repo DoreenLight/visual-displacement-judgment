@@ -1,0 +1,465 @@
+# Machine Learning-Based Real-Time Detection of Compensatory Trunk Movements Using Trunk-Wrist Inertial Measurement Units
+
+Jannis Gabler<sup>∗</sup>, Clement Lhoste´ <sup>∗</sup>, Max Quast, Laura Mayrhuber, Andrea Ronco, Olivier Lambercy<sup>†</sup>, Paulius Viskaitis<sup>†</sup>, and Dane Donegan<sup>†</sup>
+
+Abstract— Compensatory trunk movements (CTMs) are commonly observed after stroke and can lead to maladaptive movement patterns, limiting targeted training of affected structures. Objective, continuous detection of CTMs during therapy and activities of daily living remains challenging due to the typically complex measurements setups required, as well as limited applicability for real-time use. This study investigates whether a two-inertial measurement unit configuration enables reliable, real-time CTM detection using machine learning. Data were collected from ten able-bodied participants (ETH Zurich Ethics Commission, EK 2022-N-195) performing activities of daily living under simulated impairment conditions (elbow brace restricting flexion-extension, resistance band inducing flexor-synergylike patterns), with synchronized optical motion capture (OMC) and manually annotated video recordings serving as reference. A systematic location-reduction analysis using OMC identified wrist and trunk kinematics as a minimal yet sufficient set of anatomical sensing locations. Using an extreme gradient boosting classifier (XGBoost) evaluated with leave-one-subject-out cross-validation, our two-IMU model achieved strong discriminative performance (macro-$\mathsf { F } \mathsf { 1 } = \mathsf { 0 } . 8 \mathsf { 0 } \pm \mathsf { 0 } . \mathsf { 0 } \mathsf { 7 } _ { \mathrm { : } }$ , MCC = 0.73 ± 0.08; ROC-AUC > 0.93), with performance comparable to an OMC-based model and prediction timing suitable for real-time applications. Explainability analysis revealed dominant contributions from trunk dynamics and wrist–trunk interaction features. In preliminary evaluation using recordings from four participants with neurological conditions (BASEC ID: 2025-01124 and
+
+2024-01425), the model retained good discriminative capability (ROC-AUC ≈ 0.78), but showed reduced and variable threshold-dependent performance, highlighting challenges in clinical generalization. These results support sparse wearable sensing as a viable pathway toward scalable, realtime monitoring of CTMs during therapy and daily living.
+
+Index Terms— compensatory trunk movements, inertial measurement units (IMUs), machine learning, stroke rehabilitation
+
+## I. INTRODUCTION
+
+TROKE is a leading cause of long-term upper-limb dis-S ability, with over 50% of survivors experiencing persistent sensorimotor deficits six months post injury [1]. In response, physical and occupational therapy aims to restore functional abilities for activities of daily living (ADL), yet patients often adopt compensatory movements (CMs) to offset the limited range of motion in the affected limb [2], [3]. One prevalent example are compensatory trunk movements (CTMs), in which trunk flexion, side lean, or rotation are used to compensate for deficits in elbow extension or shoulder flexion, often arising from abnormal flexor synergies [4]– [6]. Although CTMs can facilitate functional ability during task performance in the short term, they reinforce potentially maladaptive movement patterns and limit targeted training of affected structures, thereby contributing to persistent motor dysfunction and secondary musculoskeletal pain [3]. Consequently, accurate monitoring and assessment of CTMs are essential to guide rehabilitation more effectively.
+
+In this context, standardized clinical assessments such as the Fugl-Meyer Upper Extremity Assessment (FMA-UE) [7] and the Wolf Motor Function Test (WMF) [8] can indirectly inform on CMs, while the Reaching Performance Scale (RPS) directly scores CTMs [9]. Although widely used, these assessments rely on trained raters, can suffer from inter-rater variability [10], and are typically administered infrequently in supervised clinical environments. As a result, there is a lack of continuous and objective assessments capable of capturing CTMs as they emerge in naturalistic, real-world environments. This gap has motivated the development of technology-based approaches that could automate CTM detection and provide scalable alternatives to clinic-based evaluations, primarily through camera-based systems and wearable sensors [11].
+
+Multiple studies have demonstrated the feasibility of CTM detection using low-cost, camera-based skeletal tracking combined with threshold-based approaches [12], [13] or machinelearning (ML) algorithms [14]–[17]. Marker-less tracking and robustness to sensor drift represent key advantages of these systems. However, susceptibility to occlusions and the need for precise positioning or extensive calibration in multi-camera configurations limit their usability in unsupervised settings and constrain their deployment environments.
+
+Inertial measurement units (IMUs) offer a portable and lowcost alternative for CTM detection. Existing approaches range from systems employing sensors on multiple body segments to enable detailed joint-angle reconstruction [18]–[21] to simple configurations relying on a single trunk-mounted sensor [22]. Despite this diversity, existing methods exhibit several limitations. Multi-sensor approaches increase setup effort and potential wearing discomfort, and require more elaborate calibration procedures for accurate joint-angle reconstruction. In contrast, single-sensor approaches, while showing simplicity in use and setup, typically rely on restricted workspaces or comparisons with the non-affected side, constraining their use in real-life scenarios and limiting their applicability for realtime monitoring [22].
+
+To address this gap, we introduce a novel framework for real-time detection of CTMs using a sparse wearable sensing setup and ML. The approach is designed to support robust and unobtrusive monitoring of CTMs during therapy and ADL, providing a foundation for future real-time feedback applications for patients and clinicians across settings. The framework leverages a minimal two-IMU configuration (wrist and trunk) and a window-based classification pipeline to continuously infer CTM occurrence during movement execution. We hypothesized that wrist and trunk kinematics provide complementary information sufficient to discriminate CTMs from physiologically appropriate trunk involvement in unconstrained workspaces, and that this minimal sensing configuration enables robust generalization across users and movement tasks. To evaluate the proposed approach, we recorded synchronized IMU and optical motion capture (OMC) data from ten able-bodied participants performing a wide range of ADL under externally imposed constraints using an elbow brace and a resistance band, designed to approximate post-stroke movement limitations. Ground-truth labels of CTMs were obtained through manual annotation of synchronized video recordings. First, using OMC data, we performed a locationreduction analysis to identify a minimal set of anatomical locations enabling reliable CTM detection. This approach isolated location-dependent effects from sensor non-idealities and was evaluated using nested leave-one-subject-out cross-validation (LOSO-CV). In line with these results, a corresponding two-IMU model was trained and similarly evaluated. Real-time feasibility was assessed by implementing the pipeline in real time and measuring end-to-end prediction latency. Finally, preliminary clinical generalization was investigated by testing the model trained on able-bodied data on recordings from four individuals with neurological conditions performing reaching tasks and conventional upper-limb therapy.
+
+## II. METHODS
+
+## A. Able-bodied data collection
+
+Data were collected from ten able-bodied adult participants (mean age: $2 5 . 3 ~ \pm ~ 2 . 1$ years; 20% female), all of whom were included in the analyses. Participants were exclusively recruited from the student population at ETH Zurich. The study was approved by ETH Zurich Ethics Commission (EK 2022-N-195) and informed consent was obtained from all participants.
+
+A multimodal data acquisition setup was implemented to enable synchronized kinematic analysis and visual inspection by integrating marker-based OMC, IMUs, and video recordings (Fig. 1A). OMC data was collected using a 14-camera system (OptiTrack, NaturalPoint, Corvallis, USA) operating at 120 Hz and served as the reference standard for movement kinematics. Reflective cluster markers were placed on the wrist, upper arm, and a necklace positioned near the sternum to capture motion of the individual segments. IMU sensors (LSM6DSV16BX, STMicroelectronics, Geneva, Switzerland) were co-located with the wrist and necklace markers, corresponding to the intended final two-IMU configuration, also sampled at 120 Hz. In addition, two webcams positioned at $4 5 ^ { \circ }$ angles in front of the participant recorded synchronized videos at a target frame rate of 15 frames per second, to support manual annotation and visual interpretation of sensor signals.
+
+![](images/7d4fbba9c4f28558480443adda4741058f1491a5eb7cee4628886717bf3a3eab.jpg)
+
+B  
+![](images/21896e46b8d67ff8ff3266fa87d9b5a7f4259883d3c11ee59e90bd756ca3f515.jpg)
+
+C  
+![](images/c60d2d68d4c9c3479e2f1fdeeda0f64938456e24406b9b40540f53522d6c5593.jpg)  
+Fig. 1. Experimental setup for data acquisition and tasks conditions. (A) Optical motion capture (OMC) markers (black) were attached to the wrist, upper arm, and trunk, while inertial measurement units (IMU, blue) were co-mounted at the wrist and trunk. RGB cameras (red) provided synchronized video recordings from two viewpoints. Participants performed standardized activity of daily living at pre-defined target locations (“Start”, “T1-T4”) with task instructions displayed on a screen positioned in front of the participant. The axes of the anatomically aligned coordinate frame are indicated $( \mathsf { x } , \mathsf { y } , \mathsf { z } )$ . (B) Schematic of the brace condition used to restrict elbow flexion and extension. (C) Schematic of the band condition designed to induce flexor-synergy like behavior.
+
+To investigate CTM detection in able-bodied participants, tasks were performed under three movement conditions approximating a range of motor behaviors from unconstrained to stroke-like patterns: (A) unrestricted arm movement allowing natural motion; (B) constrained movement using an elbow brace limiting flexion and extension, reflecting reduced elbow mobility commonly observed after stroke (Fig. 1B) [23], [24]; and (C) movement against a diagonally oriented resistance band extending from the contra-lateral shoulder to the wrist, inducing flexor-synergy-like behavior frequently reported in stroke populations (Fig. 1C) [25], [26]. Building on these movement conditions, the protocol emphasized movement diversity over repeated execution of a limited task set, to better reflect the natural variability of ADL-related upperlimb movements. Tasks were adapted from established motor assessment procedures [8], [9], [27]–[29] and grouped into six categories: (1) Planar Reaching & Transport, (2) Drinking & Pouring, (3) Elevated Reaching & Transport, (4) Planar Sliding, (5) Fine Object Manipulation, and (6) Continuous Movements. Within each category, a set of distinct movement tasks was defined (38 in total across all categories), with each task performed once under each of the three movement conditions (see Appendix Tab. I for more detail). Movements were performed using the right arm to reduce data collection requirements.
+
+Prior to the experiment, participants were seated upright on a non-rotating chair. Table height and distance were individually adjusted to support a natural posture. Individual reaching distance (defined as the maximal arm extension achievable without trunk involvement) was measured and used to define four personalized target locations (Fig. 1A; further details in Appendix I). Three of these targets locations (T2-T4) were selected to naturally elicit trunk involvement even under the unrestricted condition, ensuring that trunk motion was also present during physiologically appropriate, non-compensatory movements. In contrast, the “Start” and “T1” targets were designed to capture movements that did not require trunk involvement in the unconstrained condition.
+
+At the beginning of each recording, participants performed a standardized calibration pose consisting of an upright trunk posture, approximately 90° elbow flexion and the forearm aligned in the left lateral direction (Fig. 1). This pose was selected due to its comfort and feasibility for individuals with typical post-stroke movement limitations and was later used to establish an anatomically aligned coordinate system for both IMU sensors. Following calibration, participants performed movement tasks based on standardized visual and verbal instructions displayed on a screen (Fig. 1A), with each task starting and ending in the calibration pose. The order of tasks was randomized for each participant to minimize anticipatory behavior and distribute potential sensor drift between task categories. This procedure was repeated for all three movement conditions, which were also randomized in advance. This resulted in uninterrupted multi-modal recordings (13–18 min per condition), reflecting real-world measurement conditions.
+
+## B. Clinical dataset
+
+To complement the able-bodied dataset and assess preliminary performance of the proposed approach with persons with neurological conditions, a clinical dataset was aggregated from two independent studies conducted in heterogeneous settings. Four patients provided written informed consent in accordance with the Declaration of Helsinki.
+
+First, three male chronic stroke patients (P18: 44 years, leftaffected, FMA = 18; P31: 65 years, left-affected, FMA = 26; P31: 59 years, right-affected, FMA = 52) were recruited from an ongoing study (BASEC ID: 2025-01124). Similar to Fig. 1, synchronized OMC, IMU and video data were collected. IMUs were placed on both wrists, as well as on the trunk. In that study, the patients performed planar reaching and transport tasks (see Appendix Tab. I) sequentially with the most affected and less affected arms. During this session, reaching movements were executed toward three target locations (left, right, and front), with five repetitions per location, followed by an additional frontal reaching task that was also repeated five times per arm (around 7min).
+
+In addition, movement data from a patient with spinal cord injury during upper-limb physical therapy (P03: male, 67 years, ARAT: 27), was included and re-analyzed for the purpose of the present study [30]. The corresponding study protocol was approved by the local cantonal medical and ethics committee (BASEC ID: 2024-01425) and registered on ClinicalTrials.gov (NCT06623721). IMUs were placed on the trained arm (right side) and on the trunk, and synchronized video recordings were acquired. Data were collected during the performance of a pegboard task and a cup-stacking task, representing activities distinct from those included previously to assess generalizability. A continuous 10-min segment was selected for analysis.
+
+## C. Data annotation
+
+To support supervised model training and performance evaluation using IMU and OMC data, a ground-truth reference was established through manual annotation of synchronized video recordings. Based on the expected biomechanical effects of the experimental constraints (elbow brace and resistance band), which primarily limited elbow flexion and extension, trunk flexion was anticipated to be the dominant CTM. Occasional trunk rotation or lateral flexion (typically observed when shoulder abduction or rotation is limited) was observed, but grouped under a single CTM class to avoid severe class imbalance. Three classes were defined: (1) Calibration (Calib), (2) Movement: No Trunk Compensation (Mov: No TC), and (3) Movement: Trunk Compensation (Mov: TC). Importantly, labels were assigned based on the movement context rather than instantaneous motion; brief pauses during task execution (e.g., when reaching a target or placing an object) were still considered part of the movement phase and annotated as Mov: No TC or Mov: TC, rather than Calib.
+
+Labeling guidelines were established to formalize these classes in a task-agnostic and workspace-independent manner (see Appendix II). Although informed by existing literature [31], [32], the guidelines were refined to emphasize the relationship between trunk and wrist movement, following principles from the RPS [9]. The core idea is that trunk motion is not inherently compensatory: large trunk excursions can be non-compensatory when required by the task or workspace and accompanied by appropriate arm extension, whereas small trunk movements can be compensatory when they substitute for insufficient elbow extension and are used to achieve the required range of motion (Fig. 2). This definition is particularly relevant for real-world, out-oflaboratory settings, where tasks are unconstrained and can naturally elicit trunk involvement even during physiologically appropriate movements. Accordingly, this labeling strategy aligns with the previously described target positions, which necessarily involve trunk contribution even in the unimpaired condition (see Sec. II-A). Since we aimed to establish a CTM framework producing continuous predictions during movement execution rather than a single label per movement sequence, the guidelines also specified rules for class onsets and offsets (e.g., when in time a CTM starts and stops). All criteria were reviewed and refined by experienced physiotherapists.
+
+For annotation, synchronized dual-view videos were stacked to reduce occlusions and ensure consistent visibility of trunk and arm kinematics. The combined videos were uploaded to Labelbox (Labelbox, Inc., San Francisco, USA), where they were annotated frame-by-frame following the finalized guidelines, with exactly one class assigned to each frame. All able-bodied recordings were labeled by one trained researcher to ensure consistency (JG), while the clinical dataset was annotated by a researcher with a background in physical therapy and experience working with neurological patients (LM).
+
+## D. Data processing and model training
+
+For each recording, raw accelerometer and gyroscope signals from the wrist and trunk IMUs were bias-corrected using predefined, axis-specific values to reduce susceptibility to drift. Then, a 6D Versatile Quaternion Filter (VQF) [33] was used to estimate sensor orientations in a global world frame and allow gravity to be removed from the accelerometer data. To align this world frame with participants’ anatomical axes, a static anatomical calibration was performed using the known Calib posture at the start of each recording (see Appendix III). The orientation of this anatomically aligned coordinate frame is shown in Fig. 1A (x: anterior, y: left-lateral, z: superior). This procedure enabled consistent interpretation of orientation data relative to the workspace while allowing both native sensorframe data and anatomically aligned representations of acceleration and angular velocity to be used (see Appendix IV). For patients, the Calib pose was also accepted with arms resting on the table and aligned with the sagittal plane; leftarm recordings were subsequently mirrored with respect to the sagittal plane to obtain right-arm–equivalent data (see Appendix III for details).
+
+The OMC data provided rigid-body marker positions and segment orientations as unit quaternions relative to the laboratory reference frame defined during system setup. This reference frame was configured to match the anatomically aligned IMU frame, enabling direct cross-modal comparison of kinematic variables. The two modalities were temporally aligned by maximizing the cross-correlation between the corresponding IMU and OMC marker orientation signals. From the synchronized OMC and IMU signals, additional kinematic data streams were derived for downstream analysis, comprising motion-related features (acceleration, angular velocity, and linear velocity), pose-related features (absolute segment orientation and relative inter-segment orientation), and spatial features based on OMC marker distances (see Appendix IV). For subsequent ML model training, video-based ground-truth labels were exported from Labelbox and mapped to both IMU and OMC time-series using nearest-neighbor interpolation, resulting in a fully synchronized and labeled multimodal dataset.
+
+![](images/66be8d7c7c89f04889a5f11551a59bae88cd1008e78ce54f327c1a08b8ed02f7.jpg)  
+(a)
+
+![](images/b5618cefca8ddcd352194e801779a47cec76f0d0fabf25d2066608568811e65e.jpg)  
+(b)
+
+![](images/da9b9368125e7fb38f856fd106c1866ed6cfa9e9fc07ace8101f71d137bb4496.jpg)  
+(c)
+
+![](images/708a915ae779d59ed208dbd3978cbff3f5eb9421fab548a20f4aa56938b4946e.jpg)  
+(d)  
+Fig. 2. Example scenarios illustrating arm–trunk coordination strategies during a forward-reaching task and the rationale for labeling compensatory trunk movements. (a) The degree of elbow extension (β) and shoulder flexion (γ) is sufficient to reach the target. Trunk flexion is therefore not required to extend the arm’s reach. (b) The degree of elbow extension (β) and shoulder flexion (γ) is insufficient to reach the target. In response, the trunk is flexed (α ↓) to extend the arm’s forward reach. (c) The degree of elbow extension (β) and shoulder flexion (γ) is maximized. The trunk is flexed to extend the arm’s forward reach toward the target. Since this trunk flexion is not compensating for limited elbow extension or shoulder flexion, it is not considered compensatory. (d) The degree of elbow extension (β) and shoulder abduction (γ) stays significantly below the required range to reach the target. Therefore, the trunk is excessively flexed (α ↓) as a compensatory strategy to extend the arm’s forward reach. Red annotations indicate trunk flexion angle (α), elbow extension (β), and shoulder flexion/abduction (γ).
+
+Based on the pre-computed kinematic data streams, we designed a pipeline for training and evaluating our CTMprediction model (Fig. 3). Each recording was segmented into sliding windows of 500 ms (60 samples) with a 375 ms overlap (75% of the window size). For each window, a set of features consisting of statistical, location similarity (pairwise comparison of kinematic streams to capture coordination, e.g., wrist–trunk), and smoothness metrics (see Appendix IV) was applied on the kinematic data streams, forming the input of our model. These features were designed to capture both kinematic amplitude and inter-segment coordination, as well as movement quality, since CTMs are hypothesized to manifest as altered coordination patterns and reduced smoothness compared to physiologically appropriate motion. The label for each window was defined as the last sample label within the window, reflecting a causal prediction setting in which the model infers the most recent movement state from past data with minimal latency. Predictions were obtained by selecting the class with the highest posterior probability. Overall, this windowing strategy enables frequent predictions while retaining sufficient temporal context.
+
+As a classifier, extreme gradient boosting (XGBoost) was selected due to its demonstrated performance and computational efficiency on tabular, hand-crafted feature sets [35]. To assess subject-independent generalization and limit the risk of overfitting given the large hyperparameter (HP) space of XG-Boost, a nested LOSO-CV scheme was implemented (Fig. 3). For this, one fold (comprising all data from one participant) served as the test set. Data from the remaining nine participants were used in an inner 3-fold CV for HP optimization. The search space was kept constant across folds, and hyperparameters were optimized using Bayesian optimization over 50 iterations. To account for the inherent class imbalance in our dataset (Calib: 34.51%, Mov: No TC: 48.84%, Mov: TC: 16.65%), we employed balanced sample weights to mitigate bias toward majority classes during training. After identifying the optimal HPs, the model was retrained on data from the nine participants and tested on the held-out participant. This procedure was repeated until each participant had served once as the test fold.
+
+## E. Data analysis
+
+Using the proposed pipeline, a series of experiments was conducted to systematically evaluate model behavior and performance under different experimental settings (Fig. 3). Across all experiments, classification performance was primarily quantified using F1-scores and Matthews correlation coefficient (MCC) as a complementary metric that is robust to class imbalance and accounts for all entries of the confusion matrix [36]. As secondary metrics, we used one-vsrest receiver operating characteristic (ROC) curves with their corresponding area under the curves (AUC) values, precision and recall, as well as confusion matrices. For the LOSO-CV evaluation, performance metrics were computed independently for each participant and summarized as mean ± standard deviation across participants, whereas confusion matrices were aggregated across all test participants.
+
+First, to test the hypothesis that wrist- and trunk-derived kinematics provide complementary information sufficient for CTM detection, we progressively reduced the marker set of the OMC-derived model and quantified the resulting change in classification performance. This analysis was performed on drift-free OMC data to isolate the effect of anatomical location from IMU-specific non-idealities such as drift and calibration inaccuracies. To statistically validate performance differences, paired Wilcoxon signed-rank tests were performed on per-subject F1 scores of the Mov: TC class, as this class reflects CTM detection performance and is therefore of primary clinical relevance. A set of planned comparisons was defined a priori. First, a comparison between the threemarker (wrist+trunk+upper arm) and two-marker (wrist+trunk)
+
+configurations was performed to assess the contribution of upper-arm kinematics. Subsequently, two additional comparisons were conducted to evaluate the effect of reducing the configuration to a single marker (wrist+trunk vs. wrist and wrist+trunk vs. trunk). To control for multiple comparisons, the Holm–Bonferroni correction was applied to control the family-wise error rate. Adjusted p-values are reported, and statistical significance was defined as $p _ { c o r r } < 0 . 0 5$ across the manuscript. For completeness, the same statistical analysis was also performed for all classes (Calib, Mov: No TC, Mov: TC) and all pairwise model comparisons.
+
+Second, we trained a model using the proposed two-IMU (wrist+trunk) configuration and evaluated it on ablebodied data, directly comparing it against the baseline OMCderived two-marker (wrist+trunk) model. Paired differences between OMC and IMU performance for each class F1- scores were assessed using Wilcoxon signed-rank tests, with Holm–Bonferroni correction applied to control the familywise error rate across multiple comparisons. In addition, we included an analysis of task-dependent performance variations to assess the robustness of the model across different movement contexts and identify potential task-specific performance differences, to reflect the broad range of tasks encountered in daily-life. Following this evaluation, a final IMU model was trained using all available able-bodied data, without a separate test set, for subsequent analyses. Hyperparameters obtained from the nested LOSO-CV were consolidated by aggregating numerical parameters using the median and categorical parameters using the most frequently selected value. This resulting model was subsequently subjected to an explainability analysis using Shapley Additive Explanations (SHAP) [34] to identify features that differentiate the two classes Mov: No TC and Mov: TC. For this, we computed the signed SHAP value difference:
+
+$$
+\Delta \mathrm{SHAP} _ {i, j} = \phi_ {i, j} ^ {(\mathrm{Mov:TC})} - \phi_ {i, j} ^ {(\mathrm{Mov:NoTC})},
+$$
+
+where $\phi _ { i , j } ^ { ( c ) }$ denotes the SHAP value of feature j for sample i with respect to class c. Positive values of $\Delta { \mathrm { S H A P } _ { i , j } }$ indicate that the feature shifts the model prediction towards Mov: TC, whereas negative values indicate a shift toward Mov: No TC, allowing to assess the directionality of each feature contribution. To quantify the overall discriminative strength of each feature independent of its directionality, we introduced a separation score, defined as the mean absolute magnitude of these differences across all samples:
+
+$$
+\operatorname{Mean} \left| \Delta \mathrm{SHAP} _ {j} \right| = \frac {1}{N} \sum_ {i = 1} ^ {N} \left| \Delta \mathrm{SHAP} _ {i, j} \right|,
+$$
+
+where N denotes the number of samples. Features were subsequently ranked in descending order of this separation score, with larger values indicating stronger class-discriminative contributions. All SHAP analyses were performed on representative subsets sampled from the able-bodied training data using a fixed background dataset. Moreover, to assess feasibility for real-time deployment, the pipeline was implemented using a ring buffer, and the computational latency of its individual components, including pre-processing, feature extraction, and model inference, was evaluated on a standard laptop computer (MacBook Pro, Apple M1 Pro, 16 GB RAM, Apple Inc., USA).
+
+![](images/54f481d18d39ed2ff0c99590fb82c14d89cd9c68f7a892ef2ffd62f95cfc1610.jpg)  
+Fig. 3. Overview of the signal processing and modeling pipeline. Inertial measurement units (IMU) and optical motion capture (OMC) signals are transformed into multiple kinematic representations (\*variables in italic are only present in OMC data), segmented into overlapping windows, and characterized using statistical, location similarity (pairwise comparison of kinematic streams to capture coordination, e.g., wrist–trunk), and smoothness metrics. Model training and evaluation are conducted within a nested leave-one-subject-out cross-validation (LOSO-CV) scheme with balanced sample weighting to mitigate class imbalance. Final evaluation on patient data, together with post-hoc $\mathsf { S H A P }$ analysis [34], supports preliminary clinical applicability and provides insight into model interpretability.
+
+Finally, we evaluated preliminary clinical applicability by testing the final model on the patient dataset using the same evaluation metrics as for the able-bodied cohort. This analysis aimed to assess whether the model, after being validated for subject independent generalization on able-bodied participants, could also generalize across domains simulated impairment to movement patterns of neurological patients. To this end, model performance was first evaluated on patient recordings obtained during reaching tasks performed in a controlled laboratory environment comparable to the able-bodied acquisition protocol. Subsequently, generalization was further assessed on patient data recorded during conventional upper-limb therapy, which involved less constrained movements and increased task variability.
+
+## III. RESULTS
+
+## A. Impact of anatomical locations on CTM detection performance
+
+To determine the minimal set of anatomical locations capable of providing stable CTM detection, we evaluated the classifier performance across different OMC marker configurations (Fig. 4; further details in Appendix V). Among the different configurations, the three-marker setup (wrist+trunk+upper arm) achieved the highest overall performance across all three classes $( \mathrm { F 1 } _ { \mathrm { m a c r o } } = 0 . 8 6 \pm 0 . 0 5 , \mathrm { M C C } = 0 . 8 1 \pm 0 . 0 8 )$ . Removing the upper-arm marker resulted in only marginal performance changes with comparable spread across folds $( \mathrm { F 1 } _ { \mathrm { m a c r o } } ~ = ~ 0 . 8 5 ~ \pm ~ 0 . 0 6 , ~ \mathrm { M C C } ~ = ~ 0 . 7 9 ~ \pm ~ 0 . 0 9 )$ , with no significant difference in $\mathrm { F 1 } _ { \mathrm { M o v : ~ T C } }$ scores between the threemarker and two-marker configurations $( p _ { c o r r } = 0 . 6 2 5 )$
+
+In contrast, single-marker configurations using only trunk or wrist data led to a more pronounced decline in classification performance. When relying exclusively on trunk information, performance decreased consistently across all classes (F1<sub>macro</sub> $= 0 . 6 6 \pm 0 . 1 2 , \mathrm { M C C } = 0 . 5 0 \pm 0 . 1 3 )$ , with particularly strong degradation observed for the Calib class $( \mathrm { F 1 } _ { \mathrm { C a l i b } } = \ 0 . 6 5 \ \pm$ 0.16). More detailed analysis of the Mov: TC class further revealed that $\mathrm { r e c a l l _ { M o v : T C } }$ remained high (wrist+trunk: 0.86 $\pm \ 0 . 1 0 .$ , trunk-only: $0 . 8 3 \pm \ : 0 . 1 6 )$ , whereas precision<sub>Mov: TC</sub> decreased more substantially (wrist+trunk: $0 . 7 2 \pm 0 . 1 7 .$ , trunkonly: $0 . 6 0 ~ \pm ~ 0 . 2 4 )$ , indicating an increased rate of falsepositive CTM predictions. Consistent with this performance gap, $\mathrm { F l } _ { \mathrm { M o v : ~ T C } }$ scores were significantly higher for the twomarker configuration than for the trunk-only configuration $( p _ { c o r r } = 0 . 0 1 2 )$
+
+For the wrist-only configuration, overall classification performance remained at a moderate level $( \mathrm { F 1 } _ { \mathrm { m a c r o } } = 0 . 7 8 \pm 0 . 0 6 ,$ $\mathsf { M C C } = 0 . 7 1 \pm 0 . 0 8 )$ , but performance changes were more class-dependent. While Calib performance remained high $( \mathrm { F 1 } _ { \mathrm { C a l i b } } = 0 . 9 2 \pm 0 . 0 6 )$ , detection performance for the Mov: TC class was reduced, with lower $\mathrm { r e c a l l _ { M o v : T C } }$ (wrist+trunk: $0 . 8 6 \pm 0 . 1 0$ , wrist-only: $0 . 7 7 \pm 0 . 0 9 )$ and precision<sub>Mov: TC</sub> (wrist+trunk: $0 . 7 2 \pm \ : 0 . 1 7 .$ wrist-only: $0 . 5 4 \pm \ : 0 . 1 3 )$ . This indicates both a higher number of missed detections and an increased false-positive rate for CTM classification. Accordingly, $\mathrm { F l } _ { \mathrm { M o v : ~ T C } }$ scores were significantly higher for the twomarker configuration than for the wrist-only configuration $( p _ { c o r r } ~ = ~ 0 . 0 1 2 )$ . For completeness, statistics for all task classes and pairwise model comparisons are reported in the Tab VI in Appendix.
+
+![](images/30c2b69e68f1c48d680a0563f0ece514e48ad39847555b077278b73784e836b0.jpg)  
+Fig. 4. Classification performance across optical motion capture marker configurations in able-bodied participants (n=10). Boxplots show fold-wise F1 scores for the three classes (Calibration, Movement: No Trunk Compensation, and Movement: Trunk Compensation) obtained using leave-one-subject-out cross-validation. Overlaid points indicate individual participant performance. Statistical comparisons on Movement: Trunk Compensation across marker configurations are indicated by brackets $( ^ { \star } p _ { c o r r } < 0 . 0 5 .$ , n.s, not significant). Results for all classes and pairwise model comparisons are reported in Tab VI.
+
+## B. Two-IMU classification performance across ADL tasks
+
+Following the OMC-based analysis, wrist and trunk were used as the minimal sensing locations for subsequent evaluation. The IMU model achieved robust overall performance $( \mathrm { F 1 } _ { \mathrm { m a c r o } } = 0 . 8 0 \pm 0 . 0 7 , \mathrm { M C C } = 0 . 7 3 \pm 0 . 0 8 )$ . While performance was slightly lower than that of the two-marker OMC reference model $( \mathrm { F 1 } _ { \mathrm { m a c r o } } ~ = ~ 0 . 8 5 ~ \pm ~ 0 . 0 6$ , MCC = $0 . 7 9 \mathrm { ~ \pm ~ } 0 . 0 9 )$ , inter-subject variability remained comparable between modalities, indicating similar generalization despite reduced sensing complexity (Fig. 5A). Across classes, mean F1 scores were modestly reduced for the IMU configuration $( \Delta \mathrm { F } 1 _ { \mathrm { C a l i b } } ~ = ~ - 0 . 0 4 , ~ \Delta \mathrm { F } 1 _ { \mathrm { M o v : ~ N o ~ T C } } ~ = ~ - 0 . 0 3 , ~ \Delta \mathrm { F } 1 _ { \mathrm { M o v : ~ T C } } ~ = ~ 0 . 0 3$ −0.09), whereas standard deviations differed by a maximum of 0.015. Statistical comparison using Wilcoxon signed-rank tests with Holm-Bonferroni correction revealed no significant difference between OMC and IMU in the Calib condition $( \mathtt { p } _ { \mathtt { c o r r } }$ $= 0 . 0 6 4 )$ . In contrast, significant differences were observed for both movement conditions, with higher performance for OMC in Mov: No TC $( \mathrm { p } _ { \mathrm { c o r r } } = 0 . 0 2 0 )$ and Mov: TC $( \mathrm { p } _ { \mathrm { c o r r } } = 0 . 0 1 2 )$ To further characterize class separability independent of the selected decision rule, we examined one-vs-rest ROC curves averaged across test folds. The resulting curves (Fig. 5B) demonstrated strong discriminative performance across all three classes, as indicated by ROC-AUC values $( \mathrm { A U C } _ { \mathrm { C a l i b } } =$ $0 . 9 7 \pm 0 . 0 5 , \mathrm { A U C _ { M o v : N o \ T C } = 0 . 9 3 \pm 0 . 0 4 , A U C _ { M o v : T C } = 0 . 9 5 }$ $\pm \ 0 . 0 2 )$
+
+Further insight into model performance was obtained from the confusion matrix in Fig. 6A, which was row-normalized to account for class imbalance. Overall, the model achieved classwise recalls >0.8, with most misclassifications occurring between the two movement classes (Mov: No TC vs. Mov: TC). Specifically, 17.8% of CTMs were misclassified as normal movements, while the reverse confusion occurred in 14.4% of cases. To characterize misclassification patterns, model performance was stratified by movement task category (Fig. 6B). Across all categories, Calib and Mov: No TC achieved consistently high mean F1 scores >0.73, with low inter-subject variability $( \mathrm { s t d } < 0 . 1 3 )$ . In contrast, performance for Mov: TC exhibited pronounced task dependence. While Planar Reaching & Transport $( \mathrm { F 1 } _ { \mathrm { M o v : ~ T C } } = 0 . 7 7 \pm 0 . 1 0 )$ and Planar Sliding $( \mathrm { F 1 } _ { \mathrm { M o v : T C } } = 0 . 7 3 \pm 0 . 1 1 )$ achieved stable performance across folds, the remaining task categories showed increased interparticipant variability (Drinking & Pouring: $\mathrm { F 1 } _ { \mathrm { M o v : T C } } = 0 . 5 8$ $\pm \ 0 . 1 7$ , Elevated Reaching & Transport: $\mathrm { F 1 } _ { \mathrm { M o v : ~ T C } } = 0 . 5 0 \pm$ 0.21, Fine Object Manipulation: $\mathrm { F 1 } _ { \mathrm { M o v : T C } } = 0 . 4 9 \pm 0 . 2 2 )$ , with several low-performing folds. In all three of these task categories, reduced F1 scores were primarily driven by decreased $\mathrm { r e c a l l _ { M o v : T C } }$ , indicating that CTMs were frequently misclassified as non-compensatory movements (percentage of CTMs misclassified as non-compensatory movements: Drinking & Pouring, 25.0%; Elevated Reaching & Transport, 41.7%; Fine Object Manipulation, 39.7%, Continuous Movements: 22.1 %).
+
+B  
+![](images/3f5d588a27bff6632187271c0a31470d000c1683b9c090d59f71f21ebf040913.jpg)
+
+![](images/f797afa608e781498b1a4e01a082ab066e27fd2f63727b4d08b28af8453c09fb.jpg)  
+Fig. 5. Two-IMU-based model performance. (A) Boxplots show foldwise F1 scores for optical motion capture (OMC) and inertial measurement unit (IMU) based setups using wrist and trunk signals in able-bodied participants $( n = 1 \dot { 0 } )$ . Overlaid points indicate individual participant performance. (B) Mean one-vs-rest receiver operating characteristic (ROC) curves across able-bodied participants $\mathbf { \bar { \rho } } ( n = \mathbf { \bar { 1 0 } } )$ for the three classes demonstrate strong discriminative performance of the IMU model.
+
+To identify the most discriminative kinematic features separating Mov: No TC and Mov: TC, SHAP-based model explainability was applied to the final IMU-based model. Features were ranked according to their separation score (Fig. 7). To assess the relative contribution of different feature groups (wrist, trunk, interaction), the separation scores Mean|∆SHAP| were aggregated within each group. Within the top-10 predictors, trunk-derived features accounted for 64% of the total separation score, wrist–trunk interaction features for 30%, and isolated wrist features for 6%. These proportions indicate that the model’s decision boundary was predominantly shaped by trunk kinematics, while coordination-based interaction features provided complementary discriminative evidence.
+
+In terms of directional effects, increased trunk flexion (orientation pitch) and overall trunk movement intensity (gyroscope magnitude) as well as altered trunk side lean (orientation roll) were consistently associated with positive ∆SHAP values, indicating increased model confidence towards the Mov: TC class. Wrist–trunk interaction features describing relative segment orientation (Dynamic Time Warping Distance, DTWD, of orientation pitch/yaw) and movement (DTWD gyro yaw and gyro magnitude difference) showed distinct patterns in their ∆SHAP distributions. Indeed, movement-related interaction features exhibited a clear directional tendency, with lower relative values (i.e. more similar movement of trunk and wrist) predominantly associated with positive ∆SHAP contributions toward Mov: TC. In contrast, orientation-based interaction features displayed more heterogeneous, bidirectional distributions, with both positive and negative contributions observed across the feature value range.
+
+![](images/fa27f04b554ef2029e321b584cd33c47433f8e442871e4054feb0f25bb570315.jpg)  
+B
+
+![](images/5f6c9a55c847a3a6b246510b2f7c82b84795c304611fdae8b7288266a57a71e1.jpg)  
+Fig. 6. Detailed analysis of IMU-based model performance. (A) Row-normalized confusion matrix summarizing class-wise prediction outcomes (recall) for Calibration (Calib), Movement: No Trunk Compensation (Mov: No TC), and Movement: Trunk Compensation (Mov: TC), aggregated across all test folds. (B) Boxplots depict fold-wise F1 scores across able-bodied participants $( n = 1 0 )$ , stratified by movement task category. Overlaid points indicate individual participant performance.
+
+Real-time suitability of the pipeline was assessed by measuring the computational latency of its individual components over $n = 5 7 1 0$ samples. Model inference required $2 9 . 2 5 \pm$ 10.93 ms, while pre-processing and feature extraction required $4 2 . 4 7 \pm 1 7 . 3 1$ ms and $4 6 . 8 6 \pm 1 6 . 6 8$ ms, respectively.
+
+## C. Patient evaluation
+
+To assess preliminary clinical generalization, the final model trained exclusively on able-bodied recordings under simulated impairment was evaluated on data from four patients. Across these recordings, the model retained strong discriminative capability, with $\mathrm { { A U C } _ { \mathrm { { m a c r o } } } }$ values of $0 . 7 8 \pm 0 . 0 6 ~ ( \mathrm { F i g . ~ 8 A }$ details in Table VII). In particular, $\mathrm { A U C } _ { \mathrm { M o v : ~ N o ~ T C } }$ remained high $( 0 . 7 8 \pm 0 . 1 0 )$ , indicating that compensatory and noncompensatory trunk movement segments remained separable in patient recording.
+
+In contrast, threshold-dependent classification metrics showed moderate performance, with $\mathrm { F 1 } _ { \mathrm { m a c r o } } = 0 . 4 3 \pm 0 . 0 6$ and $\mathrm { M C C } = 0 . 2 8 \pm 0 . 0 4$ . Movement phases were detected most consistently $( \mathrm { F } 1 _ { \mathrm { M o v : ~ N o ~ T C } } ~ = ~ 0 . 6 5 ~ \pm ~ 0 . 1 6 )$ , whereas compensation detection varied substantially across patients $\mathrm { ( p r e c i s i o n _ { M o v : \ T C } = 0 . 5 7 \pm 0 . 2 7 ) }$ ). For example, P63 achieved high $\mathrm { p r e c i s i o n } _ { \mathrm { M o v : } \mathrm { T C } } \ ( 0 . 9 6 )$ , but low $\mathrm { r e c a l l _ { M o v : T C } } ~ ( 0 . 1 1 )$ , indicating that predicted CTM events were frequently correct, but that a substantial portion of CTM time points was missed. This trend was also observed in the conventional therapy recording of P03, a more challenging and less constrained evaluation scenario. Here, the model achieved high performance for Mov: No TC $( \mathrm { p r e c i s i o n } _ { \mathrm { M o v : ~ N o ~ T C } } = 0 . 8 9 8$ , recall $\mathbf { \Delta } _ { \mathrm { N o \ T C } } = 0 . 9 6 3$ $\mathrm { F 1 } _ { \mathrm { M o v : N o ~ T C } } = 0 . 9 2 9 )$ , while CTM detection again showed relatively $\mathrm { \ h i g h { \ p r e c i s i o n } _ { M o v : \ T C } } ~ ( 0 . 6 7 4 )$ , but low $\mathrm { r e c a l l _ { M o v : } }$ TC (0.266), resulting in an $\mathrm { F l } _ { \mathrm { M o v } : }$ <sub>TC</sub> score of 0.381. A representative time-series segment of this recording is shown in Fig. 8B, illustrating the temporal evolution of model predictions relative to the ground-truth annotations.
+
+## IV. DISCUSSION
+
+In this study, we evaluated the feasibility of ML–based detection of CTMs using a minimal IMU configuration. Specifically, we hypothesized that trunk and wrist kinematics alone would provide sufficient information for robust, realtime CTM detection during ADL tasks in unconstrained workspaces. We further assessed whether this reduced sensor setup generalizes from able-bodied recordings performed under simulated impairment to preliminary clinical data acquired in laboratory and conventional upper-limb therapy settings.
+
+## A. Wrist and trunk provide complementary information
+
+Regarding the impact of sensor placement on CTM detection performance, both the OMC-based marker removal study and IMU-based SHAP feature analysis yielded consistent evidence that the most discriminative information is captured together by trunk and wrist kinematics. The two-marker configuration (wrist+trunk) achieved performance comparable to a three-marker setup (wrist+trunk+upper arm), whereas singlelocation models showed significantly reduced performance, with the trunk-only model exhibiting decreased precision due to increased false-positive CTM predictions. Featurelevel explainability further highlighted dominant trunk-derived features as well as high-ranking wrist–trunk interaction features, indicating that relative coordination patterns contribute substantially to CTM discrimination.
+
+These findings align with prior biomechanical work describing compensation as altered trunk–distal coordination [37], [38] and with IMU-based studies reporting strong performance for wrist–trunk configurations compared to trunk-only sensing [39]. While trunk kinematics constitute a primary indicator of CTMs, the reduced precision of the trunk-only model suggests limited ability to distinguish compensatory from physiologically appropriate trunk involvement. Incorporating wrist signals improves discrimination by capturing coordination and orientation cues, as observed in the SHAP analysis. Moreover, the limited incremental benefit of upperarm sensing for this classification task, despite its importance for detailed biomechanical analyses [19], [20], may be explained by redundancy with wrist-derived information. Overall, the wrist–trunk configuration represents a practical trade-off between performance and deployability, reducing instrumentation burden and calibration effort for unsupervised daily-life use.
+
+![](images/4aab86ed62898be6c6650bb42680974a398ec1a6cb19a94e23ddf7ab39ff9c79.jpg)
+
+Fig. 7. Explainability analysis using Shapley Additive Explanations (SHAP) to identify the top 10 discriminative features between Movement: No Trunk Compensation (Mov: No TC) and Movement: Trunk Compensation (Mov: TC). (A) Distributions of signed ∆SHAP values indicating directiona class support, where positive values favor Mov: TC and negative values favor Mov: No TC. Feature values are color-coded from low (blue) to high (red) based on their relative magnitude. (B) Separation score expressed as Mean|∆SHAP| per feature summarizing overall discriminative importance. Bars are color-coded by feature origin (trunk, wrist, interaction).  
+A  
+![](images/46244d74e346a346318b46013f2572a4713d3219c7bbbb17415e75017e0c4ac7.jpg)  
+Fig. 8. Detection performance with clinical dataset. (A) Mean one-vs-rest receiver operating characteristic (ROC) curves across across patients performing tasks with the most affected arm, with wrist sensor located on the most affected limb (n = 4) (B) Representative 60 s time-series excerpt showing ground-truth and predicted class labels for a patient performing conventional upper-limb therapy. Ground-truth annotations are shown as a black line, and model predictions as colored dots for the three classes (Movement: Trunk Compensation, Movement: No Trunk Compensation, and Calibration).
+
+## B. ML-based CTM detection achieves robust performance but remains task-dependent
+
+Our proposed two-IMU model achieved strong discriminative performance for CTM detection, reflected by high ROC-AUC values as well as stable macro-averaged F1 and MCC scores across able-bodied participants. Although performance was slightly lower compared to the two-marker OMC reference model, inter-subject variability remained comparable, indicating similar generalization despite reduced sensing complexity.
+
+Previous studies have demonstrated the feasibility of CTM detection across diverse sensing modalities and classification approaches. IMU-based systems have reported high performance (often >90% accuracy) using trial- or repetition-level classification on pre-segmented data [39]–[41]. However, these approaches do not provide continuous predictions during task execution, limiting their applicability for real-time monitoring in daily-life settings. Continuous CTM detection has instead primarily been achieved using camera- [16] or pressure-based systems [42], [43], which offer dense temporal information but rely on less portable sensing setups.
+
+Task-dependent performance differences were observed in the able-bodied dataset, with increased misclassifications between Mov: No TC and Mov: TC particularly for Drinking and Pouring, Elevated Reaching and Transport, and Fine Object Manipulation. These errors were mainly driven by missed CTM events, reducing recall, consistent with prior reports [39], [44]. This may be explained by weaker and more heterogeneous compensatory patterns across participants, as well as labeling ambiguities in tasks that do not reliably elicit pronounced CTMs [32]. Moreover, window-based inference is sensitive to ambiguous onset and offset transitions, which may further increase misclassification rates.
+
+## C. Generalization to patient data is feasible but variable
+
+Evaluation on patient data provided initial evidence that compensation-related kinematic signatures learned from ablebodied recordings under simulated impairment are, to some extent, transferable to real post-stroke movement patterns. Across four recordings, consistently high ROC-AUC values indicated that the model retained strong discriminative capability despite the increased heterogeneity and reduced repeatability of patient movements.
+
+In contrast, threshold-dependent metrics such as macroaveraged F1 and MCC were only moderate, consistent with prior reports highlighting the challenges of robust compensation labeling [32] and classification [17] across heterogeneous neurological populations. The mismatch between ROC-AUC and threshold-dependent metrics suggests that the model preserved discriminative information, but that differences in patient movement strategies, class prevalence, and temporal ambiguity at movement onset and offset affected the optimal decision threshold and increased classification errors. In particular, the observed combination of relatively high precision but low recall for the CTM class, similar to what was observed in several able-bodied tasks, suggests a conservative prediction behavior. This conservative prediction behavior may be beneficial, since false-positive CTM detection could incorrectly penalize normal movements, whereas missed compensation time points mainly reduce sensitivity. Importantly, the therapy recording (P03) represented a more realistic and challenging out-of-laboratory evaluation scenario. Despite these conditions, the model maintained strong movement-phase detection and moderate CTM detection performance, supporting the feasibility of real-time deployment.
+
+## D. Limitations and future work
+
+A primary limitation of this study is that the proposed ML model was developed using a small cohort of able-bodied participants, in whom CTMs were induced through externally imposed movement constraints. While such paradigms have been used in prior work [39], [45], compensatory strategies following stroke emerge from underlying neurological impairments and are therefore expected to exhibit more complex and heterogeneous kinematic signatures and inter-joint coordination patterns [2], [37]. Although the applied brace and resistance-band constraints were motivated by movement limitations commonly reported in stroke survivors [23]–[26], they likely capture only a subset of clinically observed compensation behaviors, particularly across varying impairment severity. As a consequence, models trained on able-bodied data may learn decision rules that only partially generalize to real poststroke movement patterns, which is reflected in the moderate and variable performance observed in the patient evaluation. Future work should therefore include larger and more heterogeneous patient cohorts spanning a broad range of impairment severities to enable model training and validation directly on clinical movement variability. At the same time, able-bodied recordings under simulated impairment may still serve as an efficient strategy for data augmentation, particularly when large-scale patient recordings are limited. In addition, prediction probabilities could be exploited to temporally aggregate frame-wise outputs into more robust movement-level decisions in real-time. Class-specific probability thresholds may further allow application-dependent tuning of false-positive and falsenegative CTM detections, potentially improving usability for feedback-oriented deployment.
+
+A second limitation is the use of a coarse categorical labeling scheme indicating only the presence or absence of CTMs. Grouping subtle and pronounced compensations into a single class may obscure clinically relevant differences and contribute to misclassifications at class boundaries. Employing graded compensation severity labels (e.g., 0–3), for example based on the RPS [9], could enable more fine-grained evaluation of model behavior and reveal whether detection performance varies systematically with CTM severity. Such stratification would be particularly relevant for feedback applications, where timely intervention is most critical in the presence of pronounced compensatory behavior.
+
+Despite these limitations, the proposed approach highlights the potential of minimal wearable sensing for continuous CTM monitoring. Given its real-time capability, the system could be directly extended to provide feedback, for example by combining a trunk-mounted wearable (e.g., necklace-style) with a wrist-worn device, enabling patients to receive auditory or visual cues when CTMs are detected during supervised therapy and unsupervised home training. This may extend movement-quality feedback beyond the clinic, reduce therapist workload, and support more consistent and objective feedback across settings. Moreover, continuous monitoring over longer time scales could enable objective tracking of compensation frequency and duration during daily activities, potentially supporting clinical decision-making and longitudinal assessment of rehabilitation progress.
+
+## V. CONCLUSION
+
+This study investigated the feasibility of machine learning– based detection of CTMs using a minimal wearable sensing configuration. Using OMC recordings from able-bodied participants, mimicking post-stroke movement limitations in upper-limb tasks, we identified wrist and trunk kinematics as the most informative anatomical locations for CTM detection. Building upon this analysis, we developed a two-IMU (trunk–wrist) model capable of continuous real-time inference, achieving robust and stable classification performance across able-bodied subjects. When applied to preliminary patient recordings acquired during reaching tasks and conventional upper-limb therapy, the model retained high discriminative capability but showed reduced and variable threshold-dependent performance, highlighting the challenges of generalization to heterogeneous clinical movement patterns. Future work will focus on retraining and validation with larger and more diverse patient cohorts and on integrating the proposed approach into closed-loop rehabilitation and assistive systems.
+
+## ACKNOWLEDGMENT
+
+The authors thank Abigail Vogel for her contributions to figure design and to the fabrication of wearable hardware for sensor and marker attachment. In addition, we would like to thank Alen Roady for his essential contribution to the data acquisition software. We further thank Manuel Ehrler for his work on the real-time inference pipeline and Sho Sugimoto for his support with preliminary evaluation of patient data. We are also grateful to Jeannine Muller for her support and¨ collaboration during clinical data collection.
+
+## CONFLICT OF INTEREST
+
+MQ, OL, PV and DD are affiliated with Skaaltec $\mathrm { A G } ,$ which is involved in the development/commercialization of technology described in this study. The remaining authors declare no competing interests.
+
+## APPENDIX I
+
+## WORKSPACE, TASK SETUP AND MOVEMENT TASKS
+
+This appendix provides additional methodological details and results that complement the main manuscript. The experimental workspace and task setup are illustrated in Fig. 9, while the corresponding movement tasks are summarized in Tab. I.
+
+## APPENDIX II LABELING GUIDELINES
+
+Labeling guidelines are presented in Tab. II.
+
+## APPENDIX III ANATOMICAL CALIBRATION AND LEFT ARM TRANSFORMATION
+
+Following the approach of Nguyen et al. [22], anatomical calibration was used to express all IMU-based kinematics in an anatomically aligned coordinate frame (Fig.10). This anatomical frame was initialized from the first sample of each recording while participants held the standardized calibration pose introduced in Sec. II-A. To establish this frame, we first extracted the world-frame orientation quaternion $\mathbf { q } _ { \mathrm { w o r l d } , s , 0 }$ at the first sample for each sensor $s \in$ {wrist, trunk} as estimated by the Versatile Quaternion Filter (VQF). In a second step, we assumed that during the calibration pose one local sensor axis aligns with the anatomical left–lateral direction. Due to the sensor mounting, this corresponds to the local x-axis for the wrist sensor and the local y-axis for the trunk sensor. The corresponding world-frame directions were obtained by rotating the respective pure quaternion axis vectors using the initial sensor orientation:
+
+$$
+\begin{array}{l} \mathbf {q} _ {\text {lat,wrist}} = \mathbf {q} _ {\text {world,wrist,0}} \otimes [ 0, 1, 0, 0 ] ^ {\top} \otimes \mathbf {q} _ {\text {world,wrist,0}} ^ {- 1} \\ \mathbf {q} _ {\text {lat,trunk}} = \mathbf {q} _ {\text {world,trunk,0}} \otimes [ 0, 0, 1, 0 ] ^ {\top} \otimes \mathbf {q} _ {\text {world,trunk,0}} ^ {- 1} \end{array}
+$$
+
+Dropping the real part of $\mathbf { q } _ { \mathrm { l a t } , s }$ yields the corresponding 3D direction vectors, denoted as $\tilde { \mathbf { y } } _ { \mathrm { c a l i b } , s } \in \mathbb { R } ^ { 3 }$ . For both sensors, the vertical axis of the calibrated frame was fixed as $\mathbf { z } _ { \mathrm { c a l i b } } =$ $[ 0 , 0 , 1 ] ^ { \top }$ (world up direction). A right-handed orthonormal basis was constructed via cross products:
+
+$$
+\begin{array}{l} \tilde {\mathbf {x}} _ {\text { calib }, s} = \tilde {\mathbf {y}} _ {\text { calib }, s} \times \mathbf {z} _ {\text { calib }}, \\ \mathbf {x} _ {\text { calib }, s} = \frac {\tilde {\mathbf {x}} _ {\text { calib } , s}}{\| \tilde {\mathbf {x}} _ {\text { calib } , s} \|}, \\ \mathbf {y} _ {\text { calib }, s} = \mathbf {z} _ {\text { calib }} \times \mathbf {x} _ {\text { calib }, s}, \qquad s \in \{\text { wrist }, \text { trunk } \}. \end{array}
+$$
+
+Stacking the unit axes yields the sensor-specific rotation matrix
+
+$$
+\mathbf {R} _ {\mathrm{rot}, s} = \left[ \begin{array}{c c c} \mathbf {x} _ {\mathrm{calib}, s} & \mathbf {y} _ {\mathrm{calib}, s} & \mathbf {z} _ {\mathrm{calib}} \end{array} \right],
+$$
+
+and the equivalent quaternion $\mathbf { q } _ { \mathrm { r o t } , s } ,$ representing the rotation from the calibrated anatomical frame to the VQF world frame. Any sensor orientation $\mathbf { q } _ { \mathrm { w o r l d } , s } ( t )$ expressed in the VQF world frame was then mapped into the calibrated frame by
+
+$$
+\mathbf {q} _ {\text { calib }, s} (t) = \mathbf {q} _ {\text { rot }, s} ^ {- 1} \otimes \mathbf {q} _ {\text { world }, s} (t), \quad s \in \{\text { wrist }, \text { trunk } \}.
+$$
+
+For patient recordings in which the calibration pose was performed with the arm resting on the table and aligned with the sagittal plane, the resulting anatomical frame differed by a fixed in-plane rotation. To account for this, the calibrated coordinate frame was rotated by $9 0 ^ { \circ }$ about the vertical (z) axis, ensuring consistency with the anatomical frame definition used for able-bodied recordings. This adjustment preserved the alignment of anatomical axes while accommodating the modified calibration posture:
+
+$$
+\mathbf {q} _ {z} = \left[ \begin{array}{c c c c} \cos (\theta / 2) & 0 & 0 & \sin (\theta / 2) \end{array} \right] ^ {\top}, \qquad \theta = 9 0 ^ {\circ},
+$$
+
+Such that the corrected orientation was obtained as:
+
+$$
+\mathbf {q} _ {\text { calib }, w r i s t} ^ {\prime} (t) = \mathbf {q} _ {z} \otimes \mathbf {q} _ {\text { calib }, w r i s t} (t)
+$$
+
+For patient recordings acquired from the left arm, kinematic data were mirrored with respect to the sagittal plane to obtain right-arm–equivalent representations. This step was applied to ensure consistency across subjects and to allow all recordings to be processed using a unified anatomical reference.
+
+Mirroring was implemented by reflecting the sensor signals across the sagittal plane using the reflection matrix
+
+$$
+\mathbf {R} _ {\text {mirror}} = \left[ \begin{array}{c c c} 1 & 0 & 0 \\ 0 & - 1 & 0 \\ 0 & 0 & 1 \end{array} \right].
+$$
+
+Linear acceleration signals were transformed as
+
+$$
+\mathbf {a} _ {\mathrm{mirrored}} (t) = \mathbf {a} (t) \mathbf {R} _ {\mathrm{mirror}} ^ {\top},
+$$
+
+whereas angular velocity signals were additionally signinverted to account for the pseudovector nature of rotational quantities:
+
+$$
+\boldsymbol {\omega} _ {\mathrm{mirrored}} (t) = - \boldsymbol {\omega} (t) \mathbf {R} _ {\mathrm{mirror}} ^ {\top}.
+$$
+
+This transformation preserves the physical consistency of the kinematic signals while mapping left-arm motion into a right-arm–equivalent coordinate representation.
+
+Furthermore, for some patient recordings, the trunk IMU was mounted on the sternum using a textile-based elastic fixation system. Due to variability in sensor placement across recording sessions, the initial sensor orientation relative to the trunk could differ from the reference configuration used in the able-bodied dataset.
+
+To compensate for this offset, an additional alignment step was applied to the calibrated trunk orientation quaternions ${ \mathbf { q } } _ { \mathrm { c a l i b , t r u n k } } ( t )$ . Specifically, a reference quaternion $\mathbf { q } _ { \mathrm { r e f } }$ was defined based on the average initial trunk orientation observed in the able-bodied recordings. Let $\mathbf { q } _ { \mathrm { c a l i b , t r u n k } } ( 0 )$ denote the first calibrated trunk quaternion of a given patient recording.
+
+(2)
+
+(3)
+
+(6)
+
+![](images/6e06d1824fbf3c46d694d8361445c2196e6d0aef14b7439f6ad5f268cdfd0344.jpg)  
+(A)
+
+![](images/81e78840868f8fb993dc9312fc500dd270f6fd4663497e6bef2f6e1c519ef6d3.jpg)  
+(1)
+
+![](images/aa4970099a32e9d8417bbac51528e7d32433232788831adb3e7c20b4ac625680.jpg)
+
+![](images/68050a06318be22e6d742854de3670e11bd9b3b0e0fcc213c5fea180e1847bdf.jpg)  
+(4)
+
+![](images/28aa5103f09c2ba0f504e14d82e453cf789025b89ee7b5d7b4709439e15461bf.jpg)
+
+![](images/af61695e3be5644be18a4cf725bebc84679a6c2b01d53b620ab4230b8ed833f9.jpg)  
+(B)
+
+![](images/fd36d79263d5f0be52c994caf72eeecb982548f021e970ca2d8939f05f12dbe5.jpg)
+
+Fig. 9. Experimental workspace and task setup. (a) Schematic of the workspace showing the fixed start position (10 cm from the table edge) and four target locations. Target 1 (T1) corresponds to the participant’s maximum reaching distance, while Targets 2–4 (T2–T4) are placed at predefined radial distances (25–30 cm) with 60<sup>◦</sup> angular separation. (b) Overview of task categories: (1) planar reaching and transport; (2) drinking and pouring; (3) elevated reaching and transport; (4) planar sliding; (5) fine object manipulation; and (6) continuous movements.
+
+<table><tr><td>Task Category</td><td>Objects &amp; Setup</td><td>Movement Tasks</td></tr><tr><td>Planar Reaching &amp; Transport</td><td>Single cup at Start</td><td>- Reaching to T1-T4 (Task No. 1-4)- Cup transport between Start and T1-T4 (Task No. 5-8)- Sequential transport: Start → T2 → T3 → Start and Start → T3 → T2 → Start (Task No. 9-10)- Continuous reaching between T1-T4 in pseudo-random order (Task No. 11-12)</td></tr><tr><td>Drinking &amp; Pouring</td><td>Two cups positioned to the left and right of T1</td><td>- Water pouring (right ↔ left) (Task No. 13-14)- Drinking from right and left cup (Task No. 15-16)</td></tr><tr><td>Elevated Reaching &amp; Transport</td><td>One large block at T1 and two smaller blocks on either side</td><td>- Elevation of small block onto large block with 180° flip and return (Task No. 17-18)- Transport over large block to opposite side and return (Task No. 19-20)</td></tr><tr><td>Planar Sliding</td><td>Single card at Start</td><td>- Two-handed sliding: Start → T2 → T3 → Start and Start → T3 → T2 → Start (Task No. 21-22)- Two-handed sliding: Start → T1 → Start and Start → T4 → Start (Task No. 23-24)- Single-handed sliding to T1-T4 with 180° card flip (Task No. 25-28)- Single-handed sequences: Start → T2 → T3 → Start and Start → T3 → T2 → Start (Task No. 29-30)- Continuous multi-target sliding sequences (Task No. 31-32)</td></tr><tr><td>Fine Object Manipulation</td><td>Five-drawer box at T1 and a coin placed to its right</td><td>- Coin manipulation across drawers (opening, closing, insertion, transfer) (Task No. 33-34)- Sequential opening and closing of all drawers (Task No. 35-36)</td></tr><tr><td>Continuous Movements</td><td>—</td><td>- Hand-biking motion (20-30 s) (Task No. 37)- Swimming motion (20-30 s) (Task No. 38)</td></tr></table>
+
+TABLE I  
+OVERVIEW OF TASK CATEGORIES, OBJECTS, AND MOVEMENT TASKS DEFINED RELATIVE TO TARGET LOCATIONS T1–T4 IN THE DATA ACQUISITION PROTOCOL FOR ABLE-BODIED PARTICIPANTS.
+
+If the difference between $\mathbf { q } _ { \mathrm { c a l i b , t r u n k } } ( 0 )$ and $\mathbf { q } _ { \mathrm { r e f } }$ exceeded a predefined threshold (norm of 0.1), a correction quaternion was computed as
+
+$$
+\mathbf {q} _ {\text { corr }} = \mathbf {q} _ {\text { ref }} \otimes \mathbf {q} _ {\text { calib,trunk }} (0) ^ {- 1}.
+$$
+
+The aligned trunk orientation trajectory was then obtained by left-multiplying all calibrated trunk quaternions by the correction quaternion:
+
+$$
+\mathbf {q} _ {\text { calib,trunk }} ^ {\prime} (t) = \mathbf {q} _ {\text { corr }} \otimes \mathbf {q} _ {\text { calib,trunk }} (t).
+$$
+
+This procedure ensured consistent initial alignment of the trunk IMU coordinate frame across recordings, thereby reducing variability introduced by session-specific sternum sensor placement.
+
+## APPENDIX IV
+
+## KINEMATIC DATA STREAMS AND STATISTICAL FEATURES
+
+We refer to the native IMU sensor frame as the local frame and to the anatomically aligned frame obtained through calibration (see Appendix III) as the calibrated frame. The OMC reference frame, configured to match the anatomically aligned IMU frame and enabling direct cross-modal comparison of kinematic variables, is referred to as the recording frame. Overview of the kinematic data streams is presented in Tab. III, and summary of feature category in Tab. IV.
+
+<table><tr><td>Label</td><td>Description</td></tr><tr><td>Movement: Trunk Compensation</td><td>Movement Pattern: Visible trunk displacement in the sagittal plane relative to the pelvis. Elbow extension and shoulder flexion remain below the required range, and trunk flexion compensates for limited reach.Onset: Initiation of forward trunk displacement with limited shoulder and elbow motion.Offset: Return to upright posture and stabilization.</td></tr><tr><td>Movement: No Trunk Compensation</td><td>Movement Pattern: Arm movement occurs while trunk displacement remains within the functional range required for task execution. No compensatory trunk motion is observed.Onset: Visible arm movement while the trunk remains stable.Offset: Arm returns to calibration position and posture stabilizes.</td></tr><tr><td>Calibration</td><td>Movement Pattern: Arm rests in a bent position close to the body with no visible trunk or wrist movement. Neutral alignment of shoulders, pelvis, and spine.Onset: Completion of previous task and stabilization in calibration posture.Offset: Initiation of movement via visible displacement of wrist, shoulder, or trunk.</td></tr></table>
+
+TABLE II  
+LABELING GUIDELINES FOR THE THREE MOVEMENT CLASSES, INCLUDING MOVEMENT CHARACTERISTICS AND ONSET/OFFSET DEFINITIONS.
+
+![](images/f7472af6e5de8ee0eb65ab04777f2d3e9f795d11436741495976687010d057d3.jpg)  
+Fig. 10. Coordinate frames used for IMU-based anatomical calibration: Local sensor frames are attached to each IMU and vary with segment motion, while the VQF estimates orientations in a global world frame with arbitrary yaw. A standardized calibration pose is used to define a sensor-specific anatomically aligned frame that matches the OMC recording frame, allowing consistent interpretation of sensor orientations.
+
+## APPENDIX V ABLE-BODIED MODEL EVALUATION
+
+Performance classification results for able-bodied participants using OMC and IMU are presented in Tab. V, whereas statistical pairwise model comparisons across different sensor locations (wrist, trunk, and upper arm) using OMC are reported in Tab. VI.
+
+## APPENDIX VI CLINICAL DATASET MODEL EVALUATION
+
+Clinical generalization results using sensors placed on the most affected arm during task execution are presented in Tab. VII.
+
+<table><tr><td>Modality</td><td>Kinematic data streams</td><td>Frame</td></tr><tr><td rowspan="4">IMU</td><td>Wrist/trunk acceleration (3-axis &amp; magnitude)</td><td>Local &amp; Calibrated</td></tr><tr><td>Wrist/trunk angular velocity (3-axis &amp; magnitude)</td><td>Local &amp; Calibrated</td></tr><tr><td>Absolute wrist/trunk orientation (3-axis)</td><td>Calibrated</td></tr><tr><td>Relative wrist-trunk orientation (3-axis &amp; 3D rotation angle)</td><td>Calibrated</td></tr><tr><td rowspan="6">OMC</td><td>Wrist/trunk/upper-arm acceleration (3-axis &amp; magnitude)</td><td>Recording</td></tr><tr><td>Wrist/trunk/upper-arm angular velocity (3-axis &amp; magnitude)</td><td>Recording</td></tr><tr><td>Wrist/trunk/upper-arm linear velocity (3-axis &amp; magnitude)</td><td>Recording</td></tr><tr><td>Absolute wrist/trunk/upper-arm orientation (3-axis)</td><td>Recording</td></tr><tr><td>Relative wrist-trunk/wrist-upper arm/upper arm-trunk orientation (3-axis &amp; 3D rotation angle)</td><td>Recording</td></tr><tr><td>Relative wrist-trunk/wrist-upper arm/upper arm-trunk distance (3-axis &amp; magnitude)</td><td>Recording</td></tr></table>
+
+TABLE III  
+SUMMARY OF SENSING MODALITIES AND AVAILABLE KINEMATIC DATA STREAMS AFTER PRE-PROCESSING, TOGETHER WITH THEIR RESPECTIVE COORDINATE FRAMES. THREE-AXIS QUANTITIES ARE REPRESENTED ALONG THE CARTESIAN AXES (X/Y/Z) OR ROTATIONAL AXES (ROLL/PITCH/YAW). MAGNITUDE DENOTES THE EUCLIDEAN NORM OF THE CORRESPONDING VECTOR SIGNAL. THE 3D ROTATION ANGLE REPRESENTS THE TOTAL ANGULAR DISPLACEMENT BETWEEN TWO ORIENTATIONS.
+
+<table><tr><td>Metric Category</td><td>Measures</td></tr><tr><td>Univariate channel-wise statistics</td><td>Mean, standard deviation (std), minimum (min), maximum (max), range, root mean square (RMS), mean absolute deviation (MAD), trend, skewness, kurtosis</td></tr><tr><td>Bivariate channel-wise similarity metrics (ap-plied on acceleration, absolute orientation, linear/angular velocity)</td><td>Maximum normalized cross-correlation, normalized dynamic time warping distance (DTWD)</td></tr><tr><td>Smoothness metrics (applied on acceleration and linear velocity)</td><td>Logarithmic dimensionless jerk (LDJ) for wrist &amp; trunk + LDJ ratio between wrist &amp; trunk</td></tr></table>
+
+TABLE IV
+
+SUMMARY OF FEATURE METRIC CATEGORIES APPLIED TO THE KINEMATIC DATA STREAMS AND DERIVED DESCRIPTORS LISTED IN TAB. III. UNIVARIATE METRICS ARE COMPUTED INDEPENDENTLY FOR EACH INPUT SIGNAL, WHEREAS BIVARIATE METRICS QUANTIFY RELATIONSHIPS BETWEEN PAIRS OF SIGNALS. CHANNEL-WISE METRICS ARE COMPUTED SEPARATELY FOR EACH SIGNAL COMPONENT (E.G., X/Y/Z FOR VECTOR QUANTITIES OR ROLL/PITCH/YAW FOR EULER ANGLES), WITH EACH COMPONENT TREATED AS AN INDIVIDUAL CHANNEL (I.E., A SINGLE DIMENSION OF A MULTI-DIMENSIONAL SIGNAL) WITHIN A KINEMATIC DATA STREAM. FOR 3D VECTOR SIGNALS, THE EUCLIDEAN NORM IS ADDITIONALLY TREATED AS AN EXTRA CHANNEL. ALL METRICS ARE COMPUTED WITHIN EACH ANALYSIS WINDOW OF THE SLIDING-WINDOW SEGMENTATION AND SERVE AS INPUT FEATURES FOR THE CLASSIFICATION MODEL.
+
+TABLE V  
+ABLE-BODIED CLASSIFICATION PERFORMANCE ACROSS SENSING CONFIGURATIONS USING WRIST (W), TRUNK (T), AND UPPER-ARM (UA) INFORMATION. METRICS ARE REPORTED AS MEAN ± STANDARD DEVIATION.
+
+<table><tr><td rowspan="2">Configuration</td><td rowspan="2"> $F1_{macro}$ </td><td rowspan="2">MCC</td><td colspan="3">Calib</td><td colspan="3">Mov: No TC</td><td colspan="3">Mov: TC</td></tr><tr><td>Prec</td><td>Rec</td><td>F1</td><td>Prec</td><td>Rec</td><td>F1</td><td>Prec</td><td>Rec</td><td>F1</td></tr><tr><td>IMU(W+T)</td><td>0.80 ± 0.07</td><td>0.73 ± 0.08</td><td>0.92 ± 0.06</td><td>0.86 ± 0.13</td><td>0.88 ± 0.07</td><td>0.85 ± 0.08</td><td>0.81 ± 0.12</td><td>0.82 ± 0.07</td><td>0.64 ± 0.21</td><td>0.82 ± 0.14</td><td>0.68 ± 0.11</td></tr><tr><td>OMC(W+T+UA)</td><td>0.86 ± 0.05</td><td>0.81 ± 0.08</td><td>0.95 ± 0.03</td><td>0.92 ± 0.08</td><td>0.93 ± 0.05</td><td>0.88 ± 0.07</td><td>0.88 ± 0.07</td><td>0.88 ± 0.06</td><td>0.75 ± 0.12</td><td>0.83 ± 0.13</td><td>0.78 ± 0.09</td></tr><tr><td>OMC(W+T)</td><td>0.85 ± 0.06</td><td>0.79 ± 0.09</td><td>0.95 ± 0.04</td><td>0.91 ± 0.10</td><td>0.92 ± 0.05</td><td>0.89 ± 0.07</td><td>0.84 ± 0.12</td><td>0.86 ± 0.08</td><td>0.72 ± 0.17</td><td>0.86 ± 0.10</td><td>0.77 ± 0.10</td></tr><tr><td>OMC(T)</td><td>0.66 ± 0.12</td><td>0.50 ± 0.13</td><td>0.72 ± 0.08</td><td>0.68 ± 0.26</td><td>0.65 ± 0.16</td><td>0.73 ± 0.14</td><td>0.62 ± 0.11</td><td>0.66 ± 0.10</td><td>0.60 ± 0.24</td><td>0.83 ± 0.16</td><td>0.65 ± 0.17</td></tr><tr><td>OMC(W)</td><td>0.78 ± 0.06</td><td>0.71 ± 0.08</td><td>0.95 ± 0.03</td><td>0.91 ± 0.10</td><td>0.92 ± 0.06</td><td>0.86 ± 0.07</td><td>0.77 ± 0.09</td><td>0.81 ± 0.06</td><td>0.54 ± 0.13</td><td>0.77 ± 0.09</td><td>0.62 ± 0.09</td></tr></table>
+
+TABLE VI  
+PAIRWISE MODELS COMPARISON (USING WRIST (W), TRUNK (T), AND UPPER-ARM (UA) INFORMATION) USING WILCOXON SIGNED-RANK TESTS (HOLM-CORRECTED P-VALUES). SIG.\* CORRESPONDS TO p<sub>corr</sub> < 0.05
+
+<table><tr><td>Model A</td><td>Model B</td><td>Class</td><td>p</td><td>pcorr</td><td>Sig.</td></tr><tr><td>W+T+UA</td><td>W+T</td><td>Calib</td><td>0.232</td><td>1.000</td><td></td></tr><tr><td>W+T+UA</td><td>W+T</td><td>Mov: No TC</td><td>0.193</td><td>1.000</td><td></td></tr><tr><td>W+T+UA</td><td>W+T</td><td>Mov: TC</td><td>0.625</td><td>1.000</td><td></td></tr><tr><td>W+T+UA</td><td>T</td><td>Calib</td><td>0.002</td><td>0.035</td><td>*</td></tr><tr><td>W+T+UA</td><td>T</td><td>Mov: No TC</td><td>0.002</td><td>0.035</td><td>*</td></tr><tr><td>W+T+UA</td><td>T</td><td>Mov: TC</td><td>0.004</td><td>0.039</td><td>*</td></tr><tr><td>W+T+UA</td><td>W</td><td>Calib</td><td>0.322</td><td>1.000</td><td></td></tr><tr><td>W+T+UA</td><td>W</td><td>Mov: No TC</td><td>0.002</td><td>0.035</td><td>*</td></tr><tr><td>W+T+UA</td><td>W</td><td>Mov: TC</td><td>0.002</td><td>0.035</td><td>*</td></tr><tr><td>W+T</td><td>T</td><td>Calib</td><td>0.002</td><td>0.035</td><td>*</td></tr><tr><td>W+T</td><td>T</td><td>Mov: No TC</td><td>0.002</td><td>0.035</td><td>*</td></tr><tr><td>W+T</td><td>T</td><td>Mov: TC</td><td>0.004</td><td>0.039</td><td>*</td></tr><tr><td>W+T</td><td>W</td><td>Calib</td><td>0.922</td><td>1.000</td><td></td></tr><tr><td>W+T</td><td>W</td><td>Mov: No TC</td><td>0.084</td><td>0.588</td><td></td></tr><tr><td>W+T</td><td>W</td><td>Mov: TC</td><td>0.004</td><td>0.039</td><td>*</td></tr><tr><td>T</td><td>W</td><td>Calib</td><td>0.002</td><td>0.035</td><td>*</td></tr><tr><td>T</td><td>W</td><td>Mov: No TC</td><td>0.002</td><td>0.035</td><td>*</td></tr><tr><td>T</td><td>W</td><td>Mov: TC</td><td>0.375</td><td>1.000</td><td></td></tr></table>
+
+TABLE VII  
+CLINICAL GENERALIZATION RESULTS USING SENSOR PLACED ON THE MOST AFFECTED ARM, DURING TASKS INVOLVING MOST AFFECTED LIMB.
+
+<table><tr><td rowspan="2">Patient</td><td rowspan="2"> $F1_{macro}$ </td><td rowspan="2">MCC</td><td rowspan="2"> $AUC_{macro}$ </td><td colspan="3">Calib</td><td colspan="3">Mov: No TC</td><td colspan="3">Mov: TC</td></tr><tr><td>Prec</td><td>Rec</td><td>F1</td><td>Prec</td><td>Rec</td><td>F1</td><td>Prec</td><td>Rec</td><td>F1</td></tr><tr><td>P03 (Right)</td><td>0.51</td><td>0.35</td><td>0.85</td><td>0.15</td><td>0.34</td><td>0.21</td><td>0.90</td><td>0.96</td><td>0.93</td><td>0.67</td><td>0.27</td><td>0.38</td></tr><tr><td>P18 (Left)</td><td>0.40</td><td>0.28</td><td>0.73</td><td>0.96</td><td>0.39</td><td>0.55</td><td>0.34</td><td>0.91</td><td>0.50</td><td>0.39</td><td>0.09</td><td>0.15</td></tr><tr><td>P63 (Left)</td><td>0.34</td><td>0.26</td><td>0.82</td><td>0.96</td><td>0.15</td><td>0.27</td><td>0.40</td><td>0.99</td><td>0.57</td><td>0.96</td><td>0.11</td><td>0.20</td></tr><tr><td>P31 (Right)</td><td>0.45</td><td>0.25</td><td>0.72</td><td>0.86</td><td>0.31</td><td>0.44</td><td>0.48</td><td>0.85</td><td>0.61</td><td>0.28</td><td>0.34</td><td>0.30</td></tr><tr><td>Avg ± Std</td><td>0.43±0.06</td><td>0.28±0.04</td><td>0.78±0.06</td><td>0.73±0.35</td><td>0.30±0.09</td><td>0.37±0.14</td><td>0.53±0.22</td><td>0.93±0.06</td><td>0.65±0.16</td><td>0.57±0.28</td><td>0.20±0.11</td><td>0.26±0.09</td></tr></table>
+
+## REFERENCES
+
+[1] D. O’Flaherty and K. Ali, “Recommendations for upper limb motor recovery: An overview of the UK and european rehabilitation after stroke guidelines (2023),” Healthcare, vol. 12, no. 14, p. 1433, 2024.
+
+[2] M. Levin, J. Kleim, and S. Wolf, “What do motor “recovery” and “compensation” mean in patients following stroke?” Neurorehabilitation and Neural Repair, vol. 23, pp. 313–319, May 2009.
+
+[3] T. Jones, “Motor compensation and its effects on neural reorganization after stroke,” Nature Reviews Neuroscience, vol. 18, Mar. 2017.
+
+[4] B. Kim, J. Girnis, V. Sweet, T. Nobiling, T. Agag, and C. Neville, “Impact of motor task conditions on end-point kinematics and trunk movements during goal-directed arm reach,” Scientific Reports, vol. 14, Feb. 2024.
+
+[5] M. Alt Murphy and C. Hager, “Kinematic analysis of the upper extremity after stroke—how far have we reached and what have we grasped?” Physical Therapy Reviews, vol. 20, pp. 137–155, May 2015.
+
+[6] A. Roby-Brami, A. Feydy, M. Combeaud, E. Biryukova, B. Bussel, and M. Levin, “Motor compensation and recovery for reaching in stroke patients,” Acta Neurologica Scandinavica, vol. 107, pp. 369–381, Jun. 2003.
+
+[7] J. See, L. Dodakian, C. Chou, V. Chan, A. McKenzie, D. Reinkensmeyer, and S. Cramer, “A standardized approach to the Fugl-Meyer assessment and its implications for clinical trials,” Neurorehabilitation and Neural Repair, vol. 27, Jun. 2013.
+
+[8] S. L. Wolf, P. A. Catlin, M. Ellis, A. L. Archer, B. Morgan, and A. Piacentino, “Assessing Wolf Motor Function Test as outcome measure for research in patients after stroke,” Stroke, vol. 32, no. 7, pp. 1635– 1639, 2001.
+
+[9] M. Levin, J. Desrosiers, D. Beauchemin, N. Bergeron, and A. Rochette, “Development and validation of a scale for rating motor compensations used for reaching in patients with hemiparesis: The Reaching Performance Scale,” Physical Therapy, vol. 84, pp. 8–22, Feb. 2004.
+
+[10] S. Duff, J. He, M. Nelsen, C. Lane, V. Rowe, S. Wolf, and A. Dromerick, “Interrater reliability of the Wolf Motor Function Test-Functional Ability Scale: Why it matters,” Neurorehabilitation and Neural Repair, vol. 29, Oct. 2014.
+
+[11] X. Wang, Y. Fu, B. Ye, J. Babineau, Y. Ding, and A. Mihailidis, “Technology-based compensation assessment and detection of upper extremity activities of stroke survivors: Systematic review,” Journal of Medical Internet Research, vol. 24, p. e34307, Jun. 2022.
+
+[12] E. Averell, D. Knox, and F. van Wijck, “A real-time algorithm for the detection of compensatory movements during reaching,” Journal of Rehabilitation and Assistive Technologies Engineering, vol. 9, p. 20556683221117085, Sep. 2022.
+
+[13] A. Coias, M. Lee, and A. Bernardino, “A low-cost virtual coach for 2D´ video-based compensation assessment of upper extremity rehabilitation exercises,” Journal ofNeuroEngineering and Rehabilitation, vol. 19, Jul. 2022.
+
+[14] Y. Zhi, M. Lukasik, M. Li, E. Dolatabadi, R. Wang, and B. Taati, “Automatic detection of compensation during robotic stroke rehabilitation therapy,” IEEE Journal of Translational Engineering in Health and Medicine, vol. PP, pp. 1–1, Dec. 2017.
+
+[15] N. B. Nordin, S. Q. Xie, and B. C. Wunsche, “Simple torso model for¨ upper limb compensatory assessment after stroke,” in Proc. IEEE Int. Conf. Advanced Intelligent Mechatronics (AIM), 2016, pp. 775–780.
+
+[16] H.-P. Lin, L. Zhao, D. Woolley, X. Zhang, H.-J. Cheng, W. Liang, C. Kuah, T. Plunkett, K. Chua, L. Zhang, and N. Wenderoth, “Exploring the feasibility of computer vision for detecting post-stroke compensatory movements,” in Proc. IEEE Int. Conf. Rehabil. Robot. (ICORR), Sep. 2023, pp. 1–6.
+
+[17] T. Unger, B. Kuhnis, L. Sauerzopf, M. R. Spiess, A. de Spindler, A. R.¨ Luft, C. Easthope Awai, J. G. Schonhammer, and E. Gavagnin, “Using¨ deep learning to detect upper limb compensation in individuals poststroke using consumer-grade webcams—a feasibility study,” Frontiers in Medicine, vol. 12, 2025.
+
+[18] J. Held, B. Klaassen, A. Eenhoorn, B.-J. van Beijnum, J. Buurke, P. Veltink, and A. Luft, “Inertial sensor measurements of upper-limb kinematics in stroke patients in clinic and home environment,” Frontiers in Bioengineering and Biotechnology, vol. 6, Apr. 2018.
+
+[19] A. Schwarz, M. M. C. Bhagubai, G. Wolterink, J. P. O. Held, A. R. Luft, and P. H. Veltink, “Assessment of upper limb movement impairments after stroke using wearable inertial sensing,” Sensors, vol. 20, no. 17, p. 4770, 2020.
+
+[20] A. Schwarz, J. Veerbeek, J. Held, J. Buurke, and A. Luft, “Measures of interjoint coordination post-stroke across different upper limb movement tasks,” Frontiers in Bioengineering and Biotechnology, vol. 8, p. 620805, Jan. 2021.
+
+[21] F. Wittmann, J. P. Held, O. Lambercy, M. L. Starkey, A. Curt, R. Hover,¨ R. Gassert, A. R. Luft, and R. R. Gonzenbach, “Self-directed arm therapy at home after stroke with a sensor-based virtual reality training system,” Journal ofNeuroEngineering and Rehabilitation, vol. 13, no. 1, Aug. 2016.
+
+[22] G. Nguyen, J. MacLean, and L. Stirling, “Quantification of compensatory torso motion in post-stroke patients using wearable inertial measurement units,” IEEE Sensors Journal, vol. PP, pp. 1–1, Apr. 2021.
+
+[23] R. F. Beer, J. D. Given, and J. P. A. Dewald, “Task-dependent weakness at the elbow in patients with hemiparesis,” Archives ofPhysical Medicine and Rehabilitation, vol. 80, no. 7, pp. 766–772, 1999.
+
+[24] P. H. McCrea, J. J. Eng, and A. J. Hodgson, “Biomechanics of reaching: Clinical implications for individuals with acquired brain injury,” Disability and Rehabilitation, vol. 24, pp. 534–541, Aug. 2002.
+
+[25] J. P. A. Dewald, P. S. Pope, J. D. Given, T. S. Buchanan, and W. Z. Rymer, “Abnormal muscle coactivation patterns during isometric torque generation at the elbow and shoulder in hemiparetic subjects,” Brain, vol. 118, no. 2, pp. 495–510, 1995.
+
+[26] M. D. Ellis, I. Schut, and J. P. A. Dewald, “Flexion synergy overshadows flexor spasticity during reaching in chronic moderate to severe hemiparetic stroke,” Clinical Neurophysiology, vol. 128, no. 7, pp. 1308– 1314, 2017.
+
+[27] G. M. Johansson, H. Grip, and C. Hager, “Introducing a standardized Nine Hole Peg Test in persons with stroke—kinematic analysis,” Gait & Posture, vol. 42, p. S57, Dec. 2015.
+
+[28] R. C. Lyle, “A performance test for assessment of upper limb function in physical rehabilitation treatment and research,” International Journal of Rehabilitation Research, vol. 4, no. 4, pp. 483–492, Dec. 1981.
+
+[29] R. H. Jebsen, N. Taylor, R. B. Trieschmann, M. J. Trotter, and L. A. Howard, “An objective and standardized test of hand function,” Archives of Physical Medicine and Rehabilitation, vol. 50, no. 6, pp. 311–319, 1969.
+
+[30] C. Lhoste, M. Quast, A. Ronco, A. Vogel, C. E. Awai, M. Branscheidt, O. Lambercy, P. Viskaitis, and D. Donegan, “Closed-loop movementpaired transcutaneous auricular vagus nerve stimulation for upper-limb rehabilitation: A feasibility study,” Sep. 2025, research Square preprint.
+
+[31] J. Barth, J. Klaesner, and C. Lang, “Relationships between accelerometry and general compensatory movements of the upper limb after stroke,” Journal of NeuroEngineering and Rehabilitation, vol. 17, p. 138, Oct. 2020.
+
+[32] L. Sauerzopf, C. G. C. Panduro, A. R. Luft, B. Kuhnis, E. Gavagnin,¨ T. Unger, C. E. Awai, J. G. Schonhammer, J. Degenfellner, and M. R.¨ Spiess, “Evaluating inter- and intra-rater reliability in assessing upper limb compensatory movements post-stroke: Creating a ground truth through video analysis?” Journal of NeuroEngineering and Rehabilitation, vol. 21, no. 1, Dec. 2024.
+
+[33] D. Laidig and T. Seel, “VQF: Highly accurate IMU orientation estimation with bias estimation and magnetic disturbance rejection,” Information Fusion, vol. 91, pp. 187–204, 2023.
+
+[34] S. M. Lundberg and S.-I. Lee, “A unified approach to interpreting model predictions,” in Advances in Neural Information Processing Systems (NeurIPS), 2017, pp. 4768–4777.
+
+[35] T. Chen and C. Guestrin, “XGBoost: A scalable tree boosting system,” in Proc. ACM SIGKDD Int. Conf. Knowledge Discovery and Data Mining (KDD), 2016, pp. 785–794.
+
+[36] D. Chicco and G. Jurman, “The advantages of the Matthews correlation coefficient (MCC) over F1 score and accuracy in binary classification evaluation,” BMC Genomics, vol. 21, no. 1, Jan. 2020.
+
+[37] C. Cirstea and M. Levin, “Compensatory strategies for reaching in stroke,” Brain, vol. 123, no. 5, pp. 940–953, Jun. 2000.
+
+[38] A. Roby-Brami, N. Jarrasse, and R. Parry, “Impairment and compensation in dexterous upper-limb function after stroke: From the direct consequences of pyramidal tract lesions to behavioral involvement of both upper-limbs in daily activities,” Frontiers in Human Neuroscience, vol. 15, Jun. 2021.
+
+[39] R. Ranganathan, R. Wang, B. Dong, and S. Biswas, “Identifying compensatory movement patterns in the upper extremity using a wearable sensor system,” Physiological Measurement, vol. 38, no. 12, pp. 2222– 2234, Nov. 2017.
+
+[40] K. Ding, J. Wang, X. Wang, L. Zhou, D. Xiong, and L. Guo, “System for detection and quantitative evaluation of compensatory movement in post-stroke patients based on wearable sensor and machine learning
+
+algorithm,” IEEE Sensors Journal, vol. 24, no. 14, pp. 22 830–22 842, 2024.
+
+[41] R. Ranganathan, R. Wang, R. Gebara, and S. Biswas, “Detecting compensatory trunk movements in stroke survivors using a wearable system,” in Proc. Workshop Wearable Systems and Applications, Jun. 2017, pp. 29–32.
+
+[42] S. Cai, G. Li, E. Su, X. Wei, S. Huang, K. Ma, H. Zheng, and L. Xie, “Real-time detection of compensatory patterns in patients with stroke to reduce compensation during robotic rehabilitation therapy,” IEEE Journal of Biomedical and Health Informatics, vol. 24, no. 9, pp. 2630– 2638, 2020.
+
+[43] S. Cai, X. Wei, E. Su, W. Wu, H. Zheng, and L. Xie, “Online compensation detecting for real-time reduction of compensatory motions during reaching: A pilot study with stroke survivors,” Journal of NeuroEngineering and Rehabilitation, vol. 17, Apr. 2020.
+
+[44] N. J. Seo, K. Coupland, C. Finetto, and G. Scronce, “Wearable sensor to monitor quality of upper limb task practice for stroke survivors at home,” Sensors, vol. 24, p. 554, Jan. 2024.
+
+[45] M. Berjis, M.-E. LeBel, D. Lizotte, and A. Trejos, “Selecting muscles for detection of upper-limb compensatory movements using s-EMG sensors,” IEEE Transactions on Medical Robotics and Bionics, vol. PP, pp. 1–1, Jan. 2025.

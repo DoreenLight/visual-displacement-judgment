@@ -1,0 +1,88 @@
+This article has been accepted for publication in a future issue of this journal, but has not been fully edited. Content may change prior to final publication. Citation information: DOI 10.1109/TFUZZ.2016.2566676, IEEE
+                                                                                                 Transactions on Fuzzy Systems
+
+
+
+
+           [36] H. Xiao, Z. Li, C. Yang, W. Yuan, L. Wang, “RGB-D sensor based                                                           Wei He (S’09-M’12)(S’09-M’12-SM’16) received
+                visual-target detection and tracking for an intelligent wheelchair robot                                                 his B.Eng. degree from College of Automation Sci-
+                in indoors environments,” International Journal of Control, Automation                                                   ence and Engineering, South China University of
+                and Systems, vol. 13, no. 3, pp.521–529, June 2015.                                                                      Technology (SCUT), China, in 2006, and his PhD
+           [37] Y. M. Zhao, Y. Lin, F. Xi, S. Guo, “Calibration-based iterative learning                                                 degree from Department of Electrical & Computer
+                control for path tracking of industrial robots,” IEEE Transactions on                                                    Engineering, the National University of Singapore
+                Industrial Electronics, vol. 62, no. 5, pp. 2921–2929, 2015.                                                             (NUS), Singapore, in 2011. He worked as a Re-
+           [38] S. Huang and K. K. Tan, “Intelligent friction modeling and compensation                                                  search Fellow in the Department of Electrical and
+                using neural network approximations”, IEEE Transactions on Industrial                                                    Computer Engineering, NUS, Singapore, from 2011
+                Electronics, vol. 59 , no. 8, pp. 3342– 3349, 2012 .                                                                     to 2012. He is currently working as a full professor
+           [39] R. Lian, “Intelligent controller for robotic motion control”, IEEE Trans-                                                in School of Automation and Electrical Engineering,
+                actions on Industrial Electronics, vol. 58 , no. 11, pp. 5220–5230, 2011.                      University of Science and Technology Beijing, Beijing 100083, China. He has
+           [40] K. Abidi, J.-X. Xu, “Iterative learning control for sampled-data systems:                      co-authored 1 book published in Springer and published over 100 international
+                from theory to practice”, IEEE Transactions on Industrial Electronics,                         journal and conference papers. He is a Senior Member of IEEE. He serves as
+                vol. 58, no. 7, pp. 3002–3015, 2011.                                                           an Editor of Journal of Intelligent & Robotic Systems and IEEE/CAA Journal
+           [41] C.-L. Hwang, C.-C. Chiang, Y.-W. Yeh, “Adaptive fuzzy hierarchical                             of Automatica Sinica Special Issue. His current research interests include
+                sliding-mode control for the trajectory tracking of uncertain underactu-                       robotics, distributed parameter systems and intelligent control systems.
+                ated nonlinear dynamic systems”, IEEE Transactions on Fuzzy Systems,
+                vol. 22, no. 2, pp. 286-299, 2014.
+           [42] Z. Li, Q. Ge, W. Ye, P. Yuan, “Dynamic balance optimization and control
+                of quadruped robot systems with flexible joints”, IEEE Transactions
+                on Systems, Man, and Cybernetics: Systems, In press 2015, DOI:
+                10.1109/TSMC.2015.2504552.                                                                                                    Longbin Zhang received the B.S. degree in automa-
+           [43] W. He, Y. Dong, C. Sun, “Adaptive neural impedance control of a robotic                                                       tion from Southwest University of Science and Tech-
+                manipulator with input saturation”, IEEE Transactions on Systems, Man,                                                        nology, Sichuan, China, in 2014. She is currently
+                and Cybernetics: Systems, vol. 46, no. 3, pp. 334-344, 2016.                                                                  pursuing the master’s degree with the College of
+           [44] T. Li, S. Duan, J. Liu, L. Wang, T. Huang, “A spintronic memristor-based                                                      Automation Science and Engineering, South China
+                neural network with radial basis function for robotic manipulator control                                                     University of Technology, Guangzhou, China. Her
+                implementation”, IEEE Transactions on Systems, Man, and Cybernetics:                                                          current research interests include exoskeleton robots
+                Systems, vol. 46, no. 4, pp. 582-588, 2016.                                                                                   and adaptive control.
+           [45] Z. Li, W. He, C. Yang, S. Qiu, L. Zhang and C.-Y. Su, “Teleoperation
+                control of an exoskeleton robot using brain machine interface and visual
+                compressive sensing”, The 12th World Congress on Intelligent Control
+                and Automation, Guilin, China, June 12 -17, 2016, in press.
+
+
+
+                                                                                                                                        Chenguang Yang (S’07-M’10-SM’16) received
+                                                                                                                                        the BEng degree from the College of Automa-
+                                          Shiyuan Qiu received the B.S. degree in the college                                           tion, Northwestern Polytechnical University, Xi’an,
+                                          of Information Engineering from Guangdong Uni-                                                China, in July 2005 and the PhD degree from the
+                                          versity of Technology, Guangzhou, China, in 2014.                                             Department of Electrical and Computer Engineer-
+                                          He is currently pursuing the master’s degree with                                             ing, National University of Singapore, Singapore, in
+                                          the College of Automation Science and Engineering,                                            March 2010. He also received postdoctoral training
+                                          South China University of Technology, Guangzhou,                                              in the Department of Bioengineering, Imperial Col-
+                                          China. His current research interests include ex-                                             lege London, UK from 2009 to 2010. He is a Senior
+                                          oskeleton robot and electroencephalograph (EEG)                                               Lecturer with the Zienkiewicz Centre for Compu-
+                                          signals processing.                                                                           tational Engineering, Swansea University, UK. His
+                                                                                                               current research interests include robotics, automation and computational
+                                                                                                               intelligence.
+
+
+
+                                      Zhijun Li (M’07-SM’09) received the Dr. Eng.
+                                      degree in mechatronics, Shanghai Jiao Tong Uni-
+                                      versity, P. R. China, in 2002. From 2003 to 2005,                                                 Chun-Yi Su (SM’99) is with the College of Au-
+                                      he was a postdoctoral fellow in Department of                                                     tomation Science and Engineering at the South
+                                      Mechanical Engineering and Intelligent systems,                                                   China University of Technology, Guangzhou, P. R.
+                                      The University of Electro-Communications, Tokyo,                                                  China, on leave from Concordia University, Mon-
+                                      Japan. From 2005 to 2006, he was a research fel-                                                  treal, Canada. He received his Ph.D. degrees in
+                                      low in the Department of Electrical and Computer                                                  control engineering from South China University
+                                      Engineering, National University of Singapore, and                                                of Technology in 1990. After a seven-year stint at
+                                      Nanyang Technological University, Singapore. From                                                 the University of Victoria, he joined the Concordia
+                                      2007-2011, he was an Associate Professor in the                                                   University in 1998. Dr. Su conducts research in the
+           Department of Automation, Shanghai Jiao Tong University, P. R. China. In                                                     application of automatic control theory to mechani-
+           2008 and 2015, he was a visiting scholar in Microsoft Research Asia, Beijing                                                 cal systems. He is particularly interested in control
+           and Department of Advanced Robotics, Italian Institute of Technology, Genoa,                        of systems involving hysteresis nonlinearities. Dr. Su is the author or co-
+           Italy. From 2015-2016, He is a visiting professor in Faculty Science and                            author of over 300 publications, which have appeared in journals, as book
+           Technology, the University of Macau, Macau, China. Since 2012, he is a                              chapters and in conference proceedings. Dr. Su has served as Associate Editor
+           Professor in College of Automation Science and Engineering, South China                             of IEEE Transactions on Automatic Control and IEEE Transactions on Control
+           university of Technology, Guangzhou, China. He is serving as an Editor-at-                          Systems Technology, and Journal of Control Theory & Applications. He has
+           large of Journal of Intelligent & Robotic Systems, and Associate Editors of                         been on the Editorial Board of 18 journals, including IFAC journals of Control
+           several IEEE Transactions. Dr. Li has been the General Chair of the 2016                            Engineering Practice and Mechatronics. Dr. Su has also severed for many
+           IEEE International Conference on Advanced Robotics and Mechatronics. Dr.                            conferences as an organizing committee member, including General Co-Chair
+           Li’s current research interests include service robotics, tele-operation systems,                   of the 2012 IEEE International Conference on Mechatronics and Automation,
+           nonlinear adaptive control, neural network control and optimization, etc.                           and Program Chair of the 2007 IEEE Conference on Control Applications.
+
+
+
+                                                                                                         12 See http://www.ieee.org/publications_standards/publications/rights/index.html for more information.
+  1063-6706 (c) 2016 IEEE. Personal use is permitted, but republication/redistribution requires IEEE permission.
+

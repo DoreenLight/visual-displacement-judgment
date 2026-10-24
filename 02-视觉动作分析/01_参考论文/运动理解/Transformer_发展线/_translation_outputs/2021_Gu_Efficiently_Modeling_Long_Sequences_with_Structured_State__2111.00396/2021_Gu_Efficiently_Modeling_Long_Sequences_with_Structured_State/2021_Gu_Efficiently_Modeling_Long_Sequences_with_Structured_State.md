@@ -1,0 +1,951 @@
+# Eficiently Modeling Long Sequences with Structured State Spaces
+
+Albert Gu, Karan Goel, and Christopher R´e
+
+Department of Computer Science, Stanford University
+
+{albertgu,krng}@stanford.edu, chrismre@cs.stanford.edu
+
+## Abstract
+
+A central goal of sequence modeling is designing a single principled model that can address sequence data across a range of modalities and tasks, particularly on long-range dependencies. Although conventional models including RNNs, CNNs, and Transformers have specialized variants for capturing long dependencies, they still struggle to scale to very long sequences of 10000 or more steps. A promising recent approach proposed modeling sequences by simulating the fundamental state space model (SSM) $x ^ { \prime } ( t ) = A x ( t ) +$ $B u ( t ) , y ( t ) = C x ( t ) + D u ( t )$ , and showed that for appropriate choices of the state matrix A, this system could handle long-range dependencies mathematically and empirically. However, this method has prohibitive computation and memory requirements, rendering it infeasible as a general sequence modeling solution. We propose the Structured State Space sequence model (S4) based on a new parameterization for the SSM, and show that it can be computed much more eficiently than prior approaches while preserving their theoretical strengths. Our technique involves conditioning A with a low-rank correction, allowing it to be diagonalized stably and reducing the SSM to the well-studied computation of a Cauchy kernel. S4 achieves strong empirical results across a diverse range of established benchmarks, including (i) 91% accuracy on sequential CIFAR-10 with no data augmentation or auxiliary losses, on par with a larger 2-D ResNet, (ii) substantially closing the gap to Transformers on image and language modeling tasks, while performing generation 60× faster (iii) SoTA on every task from the Long Range Arena benchmark, including solving the challenging Path-X task of length 16k that all prior work fails on, while being as eficient as all competitors.<sup>1</sup>
+
+## 1 Introduction
+
+A central problem in sequence modeling is eficiently handling data that contains long-range dependencies (LRDs). Real-world time-series data often requires reasoning over tens of thousands of time steps, while few sequence models address even thousands of time steps. For instance, results from the long-range arena (LRA) benchmark [40] highlight that sequence models today perform poorly on LRD tasks, including one (Path-X) where no model performs better than random guessing.
+
+Since LRDs are perhaps the foremost challenge for sequence models, all standard model families such as continuous-time models (CTMs), RNNs, CNNs, and Transformers include many specialized variants designed to address them. Modern examples include orthogonal and Lipschitz RNNs [1, 13] to combat vanishing gradients, dilated convolutions to increase context size [3, 28], and an increasingly vast family of eficient Transformers that reduce the quadratic dependence on sequence length [8, 22]. Despite being designed for LRDs, these solutions still perform poorly on challenging benchmarks such as LRA [40] or raw audio classification [18].
+
+An alternative approach to LRDs was recently introduced based on the state space model (SSM) (Fig. 1). SSMs are a foundational scientific model used in fields such as control theory, computational neuroscience, and many more, but have not been applicable to deep learning for concrete theoretical reasons. In particular, Gu et al. [18] showed that deep SSMs actually struggle even on simple tasks, but can perform exceptionally well when equipped with special state matrices A recently derived to solve a problem of continuous-time memorization [16, 45]. Their Linear State Space Layer (LSSL) conceptually unifies the strengths of CTM, RNN and CNN models, and provides a proof of concept that deep SSMs can address LRDs in principle.
+
+![](images/18b45cbe9fef8751d269a60576bacbcd25888f9b6d83cf30690c7ba41f66f0ae.jpg)  
+Figure 1: (Left) State Space Models (SSM) parameterized by matrices A, B, C, D map an input signal u(t) to output y(t) through a latent state x(t). (Center) Recent theory on continuous-time memorization derives special A matrices that allow SSMs to capture LRDs mathematically and empirically. (Right) SSMs can be computed either as a recurrence (left) or convolution (right). However, materializing these conceptual views requires utilizing diferent representations of its parameters (red, blue, green) which are very expensive to compute. S4 introduces a novel parameterization that eficiently swaps between these representations, allowing it to handle a wide range of tasks, be eficient at both training and inference, and excel at long sequences.
+
+Unfortunately, the LSSL is infeasible to use in practice because of prohibitive computation and memory requirements induced by the state representation. For state dimension N and sequence length L, computing the latent state requires $O ( N ^ { 2 } L )$ operations and O(NL) space – compared to a Ω(L + N) lower bound for both. Thus for reasonably sized models (e.g. N = 256 in Gu et al. [18]), the LSSL uses orders of magnitude more memory than comparably-sized RNNs or CNNs. Although theoretically eficient algorithms for the LSSL were proposed, we show that these are numerically unstable. In particular, the special A matrix is highly non-normal in the linear algebraic sense, which prevents the application of conventional algorithmic techniques. Consequently, although the LSSL showed that SSMs have strong performance, they are currently computationally impractical as a general sequence modeling solution.
+
+In this work, we introduce the Structured State Space (S4) sequence model based on the SSM that solves the critical computational bottleneck in previous work. Technically, S4 reparameterizes the structured state matrices A appearing in Gu et al. [16], Voelker et al. [45] by decomposing them as the sum of a low-rank and normal term. Additionally, instead of expanding the standard SSM in coeficient space, we compute its truncated generating function in frequency space, which can be simplified into a multipole-like evaluation. Combining these two ideas, we show that the low-rank term can be corrected by the Woodbury identity while the normal term can be diagonalized stably, ultimately reducing to a well-studied and theoretically stable Cauchy kernel [29, 30]. This results in O<sup>˜</sup>(N + L) computation and O(N + L) memory usage, which is essentially tight for sequence models. Compared to the LSSL, S4 is up to 30× faster with 400× less memory usage, while exceeding the LSSL’s performance empirically.
+
+Empirically, S4 significantly advances the state-of-the-art for LRD. On the LRA benchmark for eficient sequence models, S4 is as fast as all baselines while outperforming them by 20+ points on average. S4 is the first model to solve the dificult LRA Path-X task (length-16384), achieving 88% accuracy compared to 50% random guessing for all prior work. On speech classification with length-16000 sequences, S4 halves the test error (1.7%) of specialized Speech CNNs – by contrast, all RNN and Transformer baselines fail to learn (≥ 70% error).
+
+Towards a general-purpose sequence model. Beyond LRD, a broad goal of machine learning is to develop a single model that can be used across a wide range of problems. Models today are typically specialized to solve problems from a particular domain (e.g. images, audio, text, time-series), and enable a narrow range of capabilities (e.g. eficient training, fast generation, handling irregularly sampled data). This specialization is typically expressed via domain-specific preprocessing, inductive biases, and architectures. Sequence models provide a general framework for solving many of these problems with reduced specialization – e.g. Vision Transformers for image classification with less 2D information [12]. However, most models such as Transformers generally still require substantial specialization per task to achieve high performance.
+
+Deep SSMs in particular have conceptual strengths that suggest they may be promising as a general sequence modeling solution. These strengths include a principled approach to handling LRDs, as well as the ability to move between continuous-time, convolutional, and recurrent model representations, each with distinct capabilities (Fig. 1). Our technical contributions enable SSMs to be applied successfully to a varied set of benchmarks with minimal modification:
+
+• Large-scale generative modeling. On CIFAR-10 density estimation, S4 is competitive with the best autoregressive models (2.85 bits per dim). On WikiText-103 language modeling, S4 substantially closes the gap to Transformers (within 0.8 perplexity), setting SoTA for attention-free models.
+
+• Fast autoregressive generation. Like RNNs, S4 can use its latent state to perform 60× faster pixel/token generation than standard autoregressive models on CIFAR-10 and WikiText-103.
+
+• Sampling resolution change. Like specialized CTMs, S4 can adapt to changes in time-series sampling frequency without retraining, e.g. at 0.5× frequency on speech classification.
+
+• Learning with weaker inductive biases. With no architectural changes, S4 surpasses Speech CNNs on speech classification, outperforms the specialized Informer model on time-series forecasting problems, and matches a 2-D ResNet on sequential CIFAR with over 90% accuracy.
+
+## 2 Background: State Spaces
+
+Sections 2.1 to 2.4 describe the four properties of SSMs in Fig. 1: the classic continuous-time representation, addressing LRDs with the HiPPO framework, the discrete-time recurrent representation, and the parallelizable convolution representation. In particular, Section 2.4 introduces the SSM convolution kernel K, which is the focus of our theoretical contributions in Section 3.
+
+## 2.1 State Space Models: A Continuous-time Latent State Model
+
+The state space model is defined by the simple equation (1). It maps a 1-D input signal u(t) to an N-D latent state x(t) before projecting to a 1-D output signal y(t).
+
+$$
+\begin{array}{r} x ^ {\prime} (t) = A x (t) + B u (t) \\ y (t) = C x (t) + D u (t) \end{array}\tag{1}
+$$
+
+SSMs are broadly used in many scientific disciplines and related to latent state models such as Hidden Markov Models (HMM). Our goal is to simply use the SSM as a black-box representation in a deep sequence model, where A, B, C, D are parameters learned by gradient descent. For the remainder of this paper, we will omit the parameter D for exposition (or equivalently, assume D = 0) because the term Du can be viewed as a skip connection and is easy to compute.
+
+## 2.2 Addressing Long-Range Dependencies with HiPPO
+
+Prior work found that the basic SSM (1) actually performs very poorly in practice. Intuitively, one explanation is that linear first-order ODEs solve to an exponential function, and thus may sufer from gradients scaling exponentially in the sequence length (i.e., the vanishing/exploding gradients problem [32]). To address this problem, the LSSL leveraged the HiPPO theory of continuous-time memorization [16]. HiPPO specifies a class of certain matrices $\overset { \sim } { A } \in \mathbb { R } ^ { N \times N }$ that when incorporated into (1), allows the state x(t) to memorize the history of the input u(t). The most important matrix in this class is defined by equation (2), which we will call the HiPPO matrix. For example, the LSSL found that simply modifying an SSM from a random matrix A to equation (2) improved its performance on the sequential MNIST benchmark from 60% to 98%.
+
+(HiPPO Matrix)
+
+$$
+\boldsymbol {A} _ {n k} = - \left\{ \begin{array}{l l} (2 n + 1) ^ {1 / 2} (2 k + 1) ^ {1 / 2} & \text { if } n > k \\ n + 1 & \text { if } n = k \\ 0 & \text { if } n <   k \end{array} \right..\tag{2}
+$$
+
+## 2.3 Discrete-time SSM: The Recurrent Representation
+
+To be applied on a discrete input sequence $( u _ { 0 } , u _ { 1 } , \ldots )$ instead of continuous function $u ( t ) , \ ( 1 )$ must be discretized by a step size $\Delta$ that represents the resolution of the input. Conceptually, the inputs $u _ { k }$ can be viewed as sampling an implicit underlying continuous signal $u ( t )$ , where $u _ { k } = u ( k \Delta )$
+
+To discretize the continuous-time SSM, we follow prior work in using the bilinear method [43], which converts the state matrix A into an approximation A . The discrete SSM is
+
+$$
+\begin{array}{l l l} x _ {k} = \overline {{A}} x _ {k - 1} + \overline {{B}} u _ {k} & \overline {{A}} = (I - \Delta / 2 \cdot A) ^ {- 1} (I + \Delta / 2 \cdot A) \\ y _ {k} = \overline {{C}} x _ {k} & \overline {{B}} = (I - \Delta / 2 \cdot A) ^ {- 1} \Delta B & \overline {{C}} = C. \end{array}\tag{3}
+$$
+
+Equation (3) is now a sequence-to-sequence map $u _ { k } \mapsto y _ { k }$ instead of function-to-function. Moreover the state equation is now a recurrence in $x _ { k } ,$ allowing the discrete SSM to be computed like an RNN. Concretely, $\boldsymbol { x } _ { k } \in \mathbb { R } ^ { N }$ can be viewed as a hidden state with transition matrix A.
+
+Notationally, throughout this paper we use ${ \overline { { A } } } , { \overline { { B } } } , \ldots$ . to denote discretized SSM matrices defined by (3). Note that these matrices are a function of both A as well as a step size $\Delta ;$ we suppress this dependence for notational convenience when it is clear.
+
+## 2.4 Training SSMs: The Convolutional Representation
+
+The recurrent SSM (3) is not practical for training on modern hardware due to its sequentiality. Instead, there is a well-known connection between linear time-invariant (LTI) SSMs such as (1) and continuous convolutions. Correspondingly, (3) can actually be written as a discrete convolution.
+
+For simplicity let the initial state be $x _ { - 1 } = 0$ . Then unrolling (3) explicitly yields
+
+$$
+\begin{array}{l l l} x _ {0} = \overline {{B}} u _ {0} & x _ {1} = \overline {{A B}} u _ {0} + \overline {{B}} u _ {1} & x _ {2} = \overline {{A}} ^ {2} \overline {{B}} u _ {0} + \overline {{A B}} u _ {1} + \overline {{B}} u _ {2} \\ y _ {0} = \overline {{C B}} u _ {0} & y _ {1} = \overline {{C A B}} u _ {0} + \overline {{C B}} u _ {1} & y _ {2} = \overline {{C A}} ^ {2} \overline {{B}} u _ {0} + \overline {{C A B}} u _ {1} + \overline {{C B}} u _ {2} \end{array}
+$$
+
+This can be vectorized into a convolution (4) with an explicit formula for the convolution kernel (5).
+
+$$
+\begin{array}{l} y _ {k} = \overline {{C A}} ^ {k} \overline {{B}} u _ {0} + \overline {{C A}} ^ {k - 1} \overline {{B}} u _ {1} + \dots + \overline {{C A B}} u _ {k - 1} + \overline {{C B}} u _ {k} \\ y = \overline {{K}} * u. \end{array}\tag{4}
+$$
+
+$$
+\overline {{\boldsymbol {K}}} \in \mathbb {R} ^ {L} := \mathcal {K} _ {L} (\overline {{\boldsymbol {A}}}, \overline {{\boldsymbol {B}}}, \overline {{\boldsymbol {C}}}) := \left(\overline {{\boldsymbol {C A}}} ^ {i} \overline {{\boldsymbol {B}}}\right) _ {i \in [ L ]} = (\overline {{\boldsymbol {C B}}}, \overline {{\boldsymbol {C A B}}}, \ldots , \overline {{\boldsymbol {C A}}} ^ {L - 1} \overline {{\boldsymbol {B}}}).\tag{5}
+$$
+
+In other words, equation (4) is a single (non-circular) convolution and can be computed very eficiently with FFTs, provided that K is known. However, computing K in (5) is non-trivial and is the focus of our technical contributions in Section 3. We call K the SSM convolution kernel or filter.
+
+## 3 Method: Structured State Spaces (S4)
+
+Our technical results focus on developing the S4 parameterization and showing how to eficiently compute all views of the SSM (Section 2): the continuous representation (A, B, C) (1), the recurrent representation $( \overline { { A } } , \overline { { B } } , \overline { { C } } )$ (3), and the convolutional representation K (4).
+
+Section 3.1 motivates our approach, which is based on the linear algebraic concepts of conjugation and diagonalization, and discusses why the naive application of this approach does not work. Section 3.2 gives an overview of the key technical components of our approach and formally defines the S4 parameterization. Section 3.3 sketches the main results, showing that S4 is asymptotically eficient (up to log factors) for sequence models. Proofs are in Appendices B and C.
+
+## 3.1 Motivation: Diagonalization
+
+The fundamental bottleneck in computing the discrete-time SSM (3) is that it involves repeated matrix multiplication by A. For example, computing (5) naively as in the LSSL involves L successive multiplications by A, requiring $O ( N ^ { 2 } L )$ operations and $O ( N L )$ space.
+
+To overcome this bottleneck, we use a structural result that allows us to simplify SSMs.
+
+Lemma 3.1. Conjugation is an equivalence relation on SSMs $( A , B , C ) \sim ( V ^ { - 1 } A V , V ^ { - 1 } B , C V )$
+
+Proof. Write out the two SSMs with state denoted by x and ˜x respectively:
+
+$$
+\begin{array}{c} x ^ {\prime} = A x + B u \\ y = C x \end{array}
+$$
+
+$$
+\begin{array}{c} \tilde {x} ^ {\prime} = \boldsymbol {V} ^ {- 1} \boldsymbol {A} \boldsymbol {V} \tilde {x} + \boldsymbol {V} ^ {- 1} \boldsymbol {B} u \\ y = \boldsymbol {C V} \tilde {x} \end{array}
+$$
+
+After multiplying the right side SSM by V , the two SSMs become identical with $x = V \tilde { x }$ . Therefore these compute the exact same operator $u \mapsto y$ , but with a change of basis by V in the state x. □
+
+Lemma 3.1 motivates putting A into a canonical form by conjugation<sup>2</sup>, which is ideally more structured and allows faster computation. For example, if A were diagonal, the resulting computations become much more tractable. In particular, the desired K (equation (4)) would be a Vandermonde product which theoretically only needs $O ( ( N + L ) \log ^ { 2 } ( N + L ) )$ ) arithmetic operations [29].
+
+Unfortunately, the naive application of diagonalization does not work due to numerical issues. Werive the explicit diagonalization for the HiPPO matrix (2) and show it has entries exponentially large in the state size N, rendering the diagonalization numerically infeasible (e.g. CV in Lemma 3.1 would not be computable). We note that Gu et al. [18] proposed a diferent (unimplemented) algorithm to compute K faster than the naive algorithm. In Appendix B, we prove that it is also numerically unstable for related reasons.
+
+Lemma 3.2. The HiPPO matrix A in equation (2) is diagonalized by the matrix $\begin{array} { r } { V _ { i j } = \binom { i + j } { i - j } } \end{array}$ . In particular, $\begin{array} { r } { V _ { 3 i , i } = { \binom { 4 i } { 2 i } } \approx 2 ^ { 4 i } } \end{array}$ . Therefore V has entries of magnitude up to $2 ^ { 4 N / 3 }$
+
+## 3.2 The S4 Parameterization: Normal Plus Low-Rank
+
+The previous discussion implies that we should only conjugate by well-conditioned matrices V. The ideal scenario is when the matrix A is diagonalizable by a perfectly conditioned (i.e., unitary) matrix. By the Spectral Theorem of linear algebra, this is exactly the class of normal matrices. However, this class of matrices is restrictive; in particular, it does not contain the HiPPO matrix (2).
+
+We make the observation that although the HiPPO matrix is not normal, it can be decomposed as the sum of a normal and low-rank matrix. However, this is still not useful by itself: unlike a diagonal matrix, powering up this sum (in (5)) is still slow and not easily optimized. We overcome this bottleneck by simultaneously applying three new techniques.
+
+<div class="mineru-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Algorithm 1 S4 CONVOLUTION KERNEL (SKETCH)
+
+Input: S4 parameters $\Lambda, P, Q, B, C \in \mathbb{C}^N$ and step size $\Delta$
+
+Output: SSM convolution kernel $\overline{K} = \mathcal{K}_L(\overline{A}, \overline{B}, \overline{C})$ for $A = \Lambda - PQ^*$ (equation (5))
+
+1: $\widetilde{C} \leftarrow \left(I - \overline{A}^L\right)^* \overline{C}$ ▷ Truncate SSM generating function (SSMGF) to length $L$
+
+2: $\begin{bmatrix} k_{00}(\omega) &amp; k_{01}(\omega) \\ k_{10}(\omega) &amp; k_{11}(\omega) \end{bmatrix} \leftarrow \begin{bmatrix} \widetilde{C} &amp; Q \end{bmatrix}^* \left( \frac{2}{\Delta} \frac{1-\omega}{1+\omega} - \Lambda \right)^{-1}[B P]$ ▷ Black-box Cauchy kernel
+
+3: $\hat{K}(\omega) \leftarrow \frac{2}{1+\omega} [k_{00}(\omega) - k_{01}(\omega)(1 + k_{11}(\omega))^{-1}k_{10}(\omega)]$ ▷ Woodbury Identity
+
+4: $\hat{K} = \{\hat{K}(\omega) : \omega = \exp(2\pi i \frac{k}{L})\}$ ▷ Evaluate SSMGF at all roots of unity $\omega \in \Omega_L$
+
+5: $\overline{K} \leftarrow \text{iFFT}(\hat{K})$ ▷ Inverse Fourier Transform
+</div>
+
+• Instead of computing K directly, we compute its spectrum by evaluating its truncated generating function $\textstyle \sum _ { j = 0 } ^ { L - \bar { 1 } } \overline { { K } } _ { j } \zeta ^ { j }$ at the roots of unity ζ. K can then be found by applying an inverse FFT.
+
+• This generating function is closely related to the matrix resolvent, and now involves a matrix inverse instead of power. The low-rank term can now be corrected by applying the Woodbury identity which reduces $( A + P Q ^ { * } ) ^ { - 1 }$ in terms of $A ^ { - 1 }$ , truly reducing to the diagonal case.
+
+• Finally, we show that the diagonal matrix case is equivalent to the computation of a Cauchy kernel $\frac { 1 } { \omega _ { j } - \zeta _ { k } }$ , a well-studied problem with stable near-linear algorithms [30, 31].
+
+Our techniques apply to any matrix that can be decomposed as Normal Plus Low-Rank (NPLR).
+
+Theorem 1. All HiPPO matrices from $[ 1 6 ]$ have a NPLR representation
+
+$$
+\boldsymbol {A} = \boldsymbol {V} \boldsymbol {\Lambda} \boldsymbol {V} ^ {*} - \boldsymbol {P} \boldsymbol {Q} ^ {\top} = \boldsymbol {V} (\boldsymbol {\Lambda} - (\boldsymbol {V} ^ {*} \boldsymbol {P}) (\boldsymbol {V} ^ {*} \boldsymbol {Q}) ^ {*}) \boldsymbol {V} ^ {*}\tag{6}
+$$
+
+for unitary $V \in \mathbb { C } ^ { N \times N }$ , diagonal Λ, and low-rank factorization $\pmb { P } , \pmb { Q } \in \mathbb { R } ^ { N \times r }$ . These matrices HiPPO- LegS, LegT, LagT all satisfy r = 1 or r = 2. In particular, equation (2) is NPLR with $r = 1$
+
+## 3.3 S4 Algorithms and Computational Complexity
+
+By equation (6), note that NPLR matrices can be conjugated into diagonal plus low-rank (DPLR) form (now over C instead of R). Theorems 2 and 3 describe the complexities of SSMs where A is in DPLR form. S4 is optimal or near-optimal for both recurrent and convolutional representations.
+
+Theorem 2 (S4 Recurrence). Given any step size ∆, computing one step of the recurrence (3) can be done in O(N) operations where N is the state size.
+
+Theorem 2 follows from the fact that the inverse of a DPLR matrix is also DPLR (e.g. also by the Woodbury identity). This implies that the discretized matrix A is the product of two DPLR matrices and thus has O(N) matrix-vector multiplication. Appendix C.2 computes A in closed DPLR form.
+
+Theorem 3 (S4 Convolution). Given any step size ∆, computing the SSM convolution filter $\overline { { \kappa } }$ can be reduced to 4 Cauchy multiplies, requiring only $\widetilde O ( N + L )$ operations and O(N + L) space.
+
+Appendix C, Definition 3 formally defines Cauchy matrices, which are related to rational interpolation problems. Computing with Cauchy matrices is an extremely well-studied problem in numerical analysis, with both fast arithmetic and numerical algorithms based on the famous Fast Multipole Method (FMM) [29, 30, 31]. The computational complexities of these algorithms under various settings are described in Appendix C, Proposition 5.
+
+We reiterate that Theorem 3 is our core technical contribution, and its algorithm is the very motivation of the NPLR S4 parameterization. This algorithm is formally sketched in Algorithm 1.
+
+Table 1: Complexity of various sequence models in terms of sequence length (L), batch size (B), and hidden dimension (H); tildes denote log factors. Metrics are parameter count, training computation, training space requirement, training parallelizability, and inference computation (for 1 sample and time-step). For simplicity, the state size N of S4 is tied to H. Bold denotes model is theoretically best for that metric. Convolutions are eficient for training while recurrence is eficient for inference, while SSMs combine the strengths of both.
+
+<table><tr><td></td><td> $Convolution^3$ </td><td>Recurrence</td><td>Attention</td><td>S4</td></tr><tr><td>Parameters</td><td> $LH$ </td><td> $H^2$ </td><td> $H^2$ </td><td> $H^2$ </td></tr><tr><td>Training</td><td> $\tilde{L}H(B + H)$ </td><td> $BLH^2$ </td><td> $B(L^2H + LH^2)$ </td><td> $BH(\tilde{H} + \tilde{L}) + B\tilde{L}H$ </td></tr><tr><td>Space</td><td> $BLH$ </td><td> $BLH$ </td><td> $B(L^2 + HL)$ </td><td> $BLH$ </td></tr><tr><td>Parallel</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td></tr><tr><td>Inference</td><td> $LH^2$ </td><td> $H^2$ </td><td> $L^2H + H^2L$ </td><td> $H^2$ </td></tr></table>
+
+## 3.4 Architecture Details of the Deep S4 Layer
+
+Concretely, an S4 layer is parameterized as follows. First initialize a SSM with A set to the HiPPO matrix (2). By Lemma 3.1 and Theorem 1, this SSM is unitarily equivalent to some $( \Lambda - P Q ^ { * } , B , C )$ for some diagonal Λ and vectors $P , Q , B , C \in \mathbb { C } ^ { N \times 1 }$ . These comprise S4’s 5N trainable parameters.
+
+The overall deep neural network (DNN) architecture of S4 is similar to prior work. As defined above, S4 defines a map from $\mathbb { R } ^ { L } \to \mathbb { R } ^ { L }$ , i.e. a 1-D sequence map. Typically, DNNs operate on feature maps of size H instead of 1. S4 handles multiple features by simply defining H independent copies of itself, and then mixing the H features with a position-wise linear layer for a total of $O ( H ^ { 2 } ) + O ( H N )$ parameters per layer. Nonlinear activation functions are also inserted between these layers. Overall, S4 defines a sequence-to-sequence map of shape (batch size, sequence length, hidden dimension), exactly the same as related sequence models such as Transformers, RNNs, and CNNs.
+
+Note that the core S4 module is a linear transformation, but the addition of non-linear transformations through the depth of the network makes the overall deep SSM non-linear. This is analogous to a vanilla CNN, since convolutional layers are also linear. The broadcasting across H hidden features described in this section is also analogous to depthwise-separable convolutions. Thus, the overall deep S4 model is closely related to a depthwise-separable CNN but with global convolution kernels
+
+Finally, we note that follow-up work found that this version of S4 can sometimes sufer from numerical instabilities when the A matrix has eigenvalues on the right half-plane [14]. It introduced a slight change to the NPLR parameterization for S4 from $\Lambda - P Q ^ { * }$ to $\Lambda - P P ^ { * }$ that corrects this potential problem.
+
+Table 1 compares the complexities of the most common deep sequence modeling mechanisms.
+
+## 4 Experiments
+
+Section 4.1 benchmarks S4 against the LSSL and eficient Transformer models. Section 4.2 validates S4 on LRDs: the LRA benchmark and raw speech classification. Section 4.3 investigates whether S4 can be used as a general sequence model to perform efectively and eficiently in a wide variety of settings including image classification, image and text generation, and time series forecasting.
+
+## 4.1 S4 Eficiency Benchmarks
+
+We benchmark that S4 can be trained quickly and eficiently, both compared to the LSSL, as well as eficient Transformer variants designed for long-range sequence modeling. As outlined in Section 3, S4 is theoretically much more eficient than the LSSL, and Table 2 confirms that the S4 is orders of magnitude more speed- and memory-eficient for practical layer sizes. In fact, S4’s speed and memory use is competitive with the most eficient Transformer variants benchmarked by Tay et al. [40]—Linear Transformer [22] and Performer [8]—in a parameter-matched setting (Table 3, following the protocol of Tay et al. [40]).
+
+Table 2: Deep SSMs: The S4 parameterization with Algorithm 1 is asymptotically more eficient than the LSSL.
+
+<table><tr><td></td><td colspan="3">TRAINING STEP (MS)</td><td colspan="3">MEMORY ALLOC. (MB)</td></tr><tr><td>Dim.</td><td>128</td><td>256</td><td>512</td><td>128</td><td>256</td><td>512</td></tr><tr><td>LSSL</td><td>9.32</td><td>20.6</td><td>140.7</td><td>222.1</td><td>1685</td><td>13140</td></tr><tr><td>S4</td><td>4.77</td><td>3.07</td><td>4.75</td><td>5.3</td><td>12.6</td><td>33.5</td></tr><tr><td>Ratio</td><td>1.9×</td><td>6.7×</td><td>29.6×</td><td>42.0×</td><td>133×</td><td>392×</td></tr></table>
+
+Table 3: Benchmarks vs. eficient Transformers
+
+<table><tr><td rowspan="2"></td><td colspan="2">LENGTH 1024</td><td colspan="2">LENGTH 4096</td></tr><tr><td>Speed</td><td>Mem.</td><td>Speed</td><td>Mem.</td></tr><tr><td>Transformer</td><td>1×</td><td>1×</td><td>1×</td><td>1×</td></tr><tr><td>Performer</td><td>1.23×</td><td>0.43×</td><td>3.79×</td><td>0.086×</td></tr><tr><td>Linear Trans.</td><td>1.58×</td><td>0.37×</td><td>5.35×</td><td>0.067×</td></tr><tr><td>S4</td><td>1.58×</td><td>0.43×</td><td>5.19×</td><td>0.091×</td></tr></table>
+
+![](images/f8f57f6b5df6d9d03aab4d6e1f5e99d2a6747782d9d57bcd6ebf4da7e94e387b.jpg)
+
+![](images/4e1c22da1470b931c378bb54fd9e8ac0df6b1e8176dbd4f2032190878254da57.jpg)  
+Figure 2: Visualizations of a trained S4 model on LRA Path-X. SSM convolution kernels $\overline { { K } } \in \mathbb { R } ^ { 1 6 3 8 4 }$ are reshaped into a 128 × 128 image. $( L e f t )$ Example from the Path-X task, which involves deducing if the markers are connected by a path (Top) Filters from the first layer (Bottom) Filters from the last layer.
+
+Table 4: (Long Range Arena) (Top) Original Transformer variants in LRA. Full results in Appendix D.2. (Bottom) Other models reported in the literature. Please read Appendix D.5 before citing this table.
+
+<table><tr><td>MODEL</td><td>LISTOPS</td><td>TEXT</td><td>RETRIEVAL</td><td>IMAGE</td><td>PATHFINDER</td><td>PATH-X</td><td>AVG</td></tr><tr><td>Transformer</td><td>36.37</td><td>64.27</td><td>57.46</td><td>42.44</td><td>71.40</td><td>✕</td><td>53.66</td></tr><tr><td>Reformer</td><td>37.27</td><td>56.10</td><td>53.40</td><td>38.07</td><td>68.50</td><td>✕</td><td>50.56</td></tr><tr><td>BigBird</td><td>36.05</td><td>64.02</td><td>59.29</td><td>40.83</td><td>74.87</td><td>✕</td><td>54.17</td></tr><tr><td>Linear Trans.</td><td>16.13</td><td>65.90</td><td>53.09</td><td>42.34</td><td>75.30</td><td>✕</td><td>50.46</td></tr><tr><td>Performer</td><td>18.01</td><td>65.40</td><td>53.82</td><td>42.77</td><td>77.05</td><td>✕</td><td>51.18</td></tr><tr><td>FNet</td><td>35.33</td><td>65.11</td><td>59.61</td><td>38.67</td><td>77.80</td><td>✕</td><td>54.42</td></tr><tr><td>Nyströmformer</td><td>37.15</td><td>65.52</td><td>79.56</td><td>41.58</td><td>70.94</td><td>✕</td><td>57.46</td></tr><tr><td>Luna-256</td><td>37.25</td><td>64.57</td><td>79.29</td><td>47.38</td><td>77.72</td><td>✕</td><td>59.37</td></tr><tr><td>S4</td><td>59.60</td><td>86.82</td><td>90.90</td><td>88.65</td><td>94.20</td><td>96.35</td><td>86.09</td></tr></table>
+
+## 4.2 Learning Long Range Dependencies
+
+As described in Sections 2.2 and 3.1, S4 uses a principled approach to address LRDs based on the HiPPO theory of continuous-time memorization. Our goal in this section is to validate that S4 achieves high performance on dificult tasks that require long-range reasoning. We focus here on two problems: (i) the Long-Range Arena, a well-known benchmark designed to test eficient sequence models on LRDs, and (ii) a speech classification problem as a real-world test of LRDs.
+
+Long Range Arena (LRA). LRA [40] contains 6 tasks with lengths 1K-16K steps, encompassing modalities and objectives that require similarity, structural, and visuospatial reasoning. Table 4 compares S4 against the 11 Transformer variants from Tay et al. [40] as well as follow-up work. S4 substantially advances the SoTA, outperforming all baselines on all tasks and averaging 80.48% compared to less than 60% for every baseline. Notably, S4 solves the Path-X task, an extremely challenging task that involves reasoning about LRDs over sequences of length 128 × 128 = 16384. All previous models have failed (i.e. random guessing) due to memory or computation bottlenecks, or simply being unable to learn such long dependencies.
+
+We analyze S4’s performance on Path-X by visualizing its learned representations, in particular 1-D convolution kernels K which are the focus of our technical results in Section 3. Fig. 2 shows that S4 learns a variety of filters that display spatially consistent structure and demonstrate awareness of the 2-D nature of the data. In particular, the lower layers learn simple kernels that extract features from just a few rows of local context while ignoring the rest of the image. On the other hand, higher layers aggregate information globally across full columns of the image at varying spatial frequencies. Filters in these higher layers span the entire context (16384 pixels), confirming S4’s ability to learn LRDs.
+
+Raw Speech Classification. Speech is a typical real-world time series domain, involving signals sampled from an underlying physical process at high frequency. We perform speech classification using the SC10 subset of the Speech Commands dataset [47] (see Appendix D.5). While most sequence models for speech rely on extensive preprocessing (e.g. to MFCC features), we classify raw speech (length-16000) following Romero et al. [35]. S4 achieves 98.3% accuracy, higher than all baselines that use the 100× shorter MFCC features, and validates that a powerful LRD model is able to extract more information from the raw data and outperform hand-crafted pre-processing. Additionally, we include a baseline CNN specifically designed for raw speech, the discriminator from the WaveGAN model [11], which performs worse than S4 while having 90× more parameters and incorporating many more architectural heuristics (Appendix D.2).
+
+## 4.3 S4 as a General Sequence Model
+
+A key goal of sequence modeling research is to develop a single model that can be applied in many domains (e.g. images, audio, text, time-series) with a broad range of capabilities (e.g. eficient training, fast generation, handling irregularly sampled data). As a fundamental scientific model, SSMs are a promising candidate that come with a range of capabilities, and S4’s strong results on LRD benchmarks spanning images, text, and speech are evidence of S4’s potential as a general sequence model. In this section, we focus on understanding this question in more depth by highlighting key strengths of S4 in settings that usually require specialized models. The tasks we focus on (generative modeling, image classification, time-series forecasting) are considered as LRD tasks in the literature, and serve as additional validation that S4 handles LRDs eficiently.
+
+Table 5: (SC10 classification) Transformer, CTM, RNN, CNN, and SSM models. (MFCC) Standard preprocessed MFCC features (length 161). (Raw) Unprocessed signals (length 16000). (0 .5×) Frequency change at test time. ✗ denotes not applicable or computationally infeasible on single GPU. Please read Appendix D.5 before citing this table.
+
+<table><tr><td></td><td>MFCC</td><td>RAW</td><td>0.5×</td></tr><tr><td>Transformer</td><td>90.75</td><td>✕</td><td>✕</td></tr><tr><td>Performer</td><td>80.85</td><td>30.77</td><td>30.68</td></tr><tr><td>ODE-RNN</td><td>65.9</td><td>✕</td><td>✕</td></tr><tr><td>NRDE</td><td>89.8</td><td>16.49</td><td>15.12</td></tr><tr><td>ExpRNN</td><td>82.13</td><td>11.6</td><td>10.8</td></tr><tr><td>LipschitzRNN</td><td>88.38</td><td>✕</td><td>✕</td></tr><tr><td>CKConv</td><td>95.3</td><td>71.66</td><td>65.96</td></tr><tr><td>WaveGAN-D</td><td>✕</td><td>96.25</td><td>✕</td></tr><tr><td>LSSL</td><td>93.58</td><td>✕</td><td>✕</td></tr><tr><td>S4</td><td>93.96</td><td>98.32</td><td>96.30</td></tr></table>
+
+Table 6: (Pixel-level 1-D image classification) Comparison against reported test accuracies from prior works (Transformer, RNN, CNN, and SSM models). Extended results and citations in Appendix D.
+
+<table><tr><td></td><td>sMNIST</td><td>pMNIST</td><td>sCIFAR</td></tr><tr><td>Transformer</td><td>98.9</td><td>97.9</td><td>62.2</td></tr><tr><td>LSTM</td><td>98.9</td><td>95.11</td><td>63.01</td></tr><tr><td>r-LSTM</td><td>98.4</td><td>95.2</td><td>72.2</td></tr><tr><td>UR-LSTM</td><td>99.28</td><td>96.96</td><td>71.00</td></tr><tr><td>UR-GRU</td><td>99.27</td><td>96.51</td><td>74.4</td></tr><tr><td>HiPPO-RNN</td><td>98.9</td><td>98.3</td><td>61.1</td></tr><tr><td>LMU-FFT</td><td>-</td><td>98.49</td><td>-</td></tr><tr><td>LipschitzRNN</td><td>99.4</td><td>96.3</td><td>64.2</td></tr><tr><td>TCN</td><td>99.0</td><td>97.2</td><td>-</td></tr><tr><td>TrellisNet</td><td>99.20</td><td>98.13</td><td>73.42</td></tr><tr><td>CKConv</td><td>99.32</td><td>98.54</td><td>63.74</td></tr><tr><td>LSSL</td><td>99.53</td><td>98.76</td><td>84.65</td></tr><tr><td>S4</td><td>99.63</td><td>98.70</td><td>91.13</td></tr></table>
+
+Table 7: (CIFAR-10 density estimation) As a generic Table 8: (WikiText-103 language modeling) S4 apsequence model, S4 is competitive with previous autoregressive proaches the performance of Transformers with much models (in bits per dim.) while incorporating no 2D inductive faster generation. (Top) Transformer baseline which our bias, and has fast generation through its recurrence mode. implementation is based on, with attention replaced by S4. (Bottom) Attention-free models (RNNs and CNNs).
+
+<table><tr><td>Model</td><td>bpd</td><td>2D bias</td><td>Images / sec</td></tr><tr><td>Transformer</td><td>3.47</td><td>None</td><td>0.32 (1×)</td></tr><tr><td>Linear Transf.</td><td>3.40</td><td>None</td><td>17.85 (56×)</td></tr><tr><td>PixelCNN</td><td>3.14</td><td>2D conv.</td><td>-</td></tr><tr><td>Row PixelRNN</td><td>3.00</td><td>2D BiLSTM</td><td>-</td></tr><tr><td>PixelCNN++</td><td>2.92</td><td>2D conv.</td><td>19.19 (59.97×)</td></tr><tr><td>Image Transf.</td><td>2.90</td><td>2D local attn.</td><td>0.54 (1.7×)</td></tr><tr><td>PixelSNAIL</td><td>2.85</td><td>2D conv. + attn.</td><td>0.13 (0.4×)</td></tr><tr><td>Sparse Transf.</td><td>2.80</td><td>2D sparse attn.</td><td>-</td></tr><tr><td>S4 (base)</td><td>2.92</td><td>None</td><td>20.84 (65.1×)</td></tr><tr><td>S4 (large)</td><td>2.85</td><td>None</td><td>3.36 (10.5×)</td></tr></table>
+
+<table><tr><td>Model</td><td>Params</td><td>Test ppl.</td><td>Tokens / sec</td></tr><tr><td>Transformer</td><td>247M</td><td>20.51</td><td>0.8K (1×)</td></tr><tr><td>GLU CNN</td><td>229M</td><td>37.2</td><td>-</td></tr><tr><td>AWD-QRNN</td><td>151M</td><td>33.0</td><td>-</td></tr><tr><td>LSTM + Hebb.</td><td>-</td><td>29.2</td><td>-</td></tr><tr><td>TrellisNet</td><td>180M</td><td>29.19</td><td>-</td></tr><tr><td>Dynamic Conv.</td><td>255M</td><td>25.0</td><td>-</td></tr><tr><td>TaLK Conv.</td><td>240M</td><td>23.3</td><td>-</td></tr><tr><td>S4</td><td>249M</td><td>20.95</td><td>48K (60×)</td></tr></table>
+
+Large-scale generative modeling. We investigate two well-studied image and text benchmarks to validate the scalability, flexibility, and eficiency of S4. These tasks require much larger models than our previous tasks – up to 250M parameters.
+
+First, CIFAR density estimation is a popular benchmark for autoregressive models, where images are flattened into a sequence of 3072 RGB subpixels that are predicted one by one. Table 7 shows that with no 2D inductive bias, S4 is competitive with the best models designed for this task.
+
+Second, WikiText-103 is an established benchmark for language modeling, an important task for large-scale sequence models where tokens are predicted sequentially based on past context. Although RNNs were the model of choice for many years, Transformers are now the dominant model in such applications that contain data that is inherently discrete. We show that alternative models to Transformers can still be competitive in these settings. By simply taking a strong Transformer baseline [2] and replacing the self-attention layers, S4 substantially closes the gap to Transformers (within 0.8 ppl), setting SoTA for attention-free models by over 2 ppl.
+
+Fast autoregressive inference. A prominent limitation of autoregressive models is inference speed (e.g. generation), since they require a pass over the full context for every new sample. Several methods have been specifically crafted to overcome this limitation such as the Linear Transformer, a hybrid Transformer/RNN that switches to a stateful, recurrent view at inference time for speed.
+
+As a stateful model, SSMs automatically have this ability (Fig. 1). By switching to its recurrent representation (Section 2.3), S4 requires constant memory and computation per time step – in contrast to standard autoregressive models which scale in the context length. On both CIFAR-10 and WikiText-103, we report the throughput of various models at generation time, with S4 around 60× faster than a vanilla Transformer on both tasks (details in Appendix D.3.3).
+
+Sampling resolution change. As a continuous-time model, S4 automatically adapts to data sampled at diferent rates, a challenging setting for time series with a dedicated line of work [10, 35, 37]. Without re-training, S4 achieves 96.3% accuracy at 0.5× the frequency on Speech Commands 10 (Table 5), simply by changing its internal step size ∆ (Section 2.3).
+
+Learning with weaker inductive bias. Beyond our results on speech (Section 4.2), we further validate that S4 can be applied with minimal modifications on two domains that typically require specialized domainspecific preprocessing and architectures. First, we compare S4 to the Informer [50], a new Transformer architecture that uses a complex encoder-decoder designed for time-series forecasting problems. A simple application of S4 that treats forecasting as a masked sequence-to-sequence transformation (Fig. 5) outperforms the Informer and other baselines on 40/50 settings across 5 forecasting tasks. Notably, S4 is better on the longest setting in each task, e.g. reducing MSE by 37% when forecasting 30 days of weather data (Table 9). Finally, we evaluate S4 on pixel-level sequential image classification tasks (Table 6), popular benchmarks which were originally LRD tests for RNNs [1]. Beyond LRDs, these benchmarks point to a recent efort of the ML community to solve vision problems with reduced domain knowledge, in the spirit of models such as Vision Transformers [12] and MLP-Mixer [41] which involve patch-based models that without 2-D inductive bias. Sequential CIFAR is a particularly challenging dataset where outside of SSMs, all sequence models have a gap of over 25% to a simple 2-D CNN. By contrast, S4 is competitive with a larger ResNet18 (7.9M vs. 11.0M parameters), both with (93.16% vs. 95.62%) or without (91.12% vs. 89.46%) data augmentation. Moreover, it is much more robust to other architectural choices (e.g. 90.46% vs. 79.52% when swapping BatchNorm for LayerNorm).
+
+## 4.4 SSM Ablations: the Importance of HiPPO
+
+A critical motivation of S4 was the use of the HiPPO matrices to initialize an SSM. We consider several simplifications of S4 to ablate the importance of each of these components, including: (i) how important is the HiPPO initialization? (ii) how important is training the SSM on top of HiPPO? (iii) are the benefits of S4 captured by the NPLR parameterization without HiPPO?
+
+As a simple testbed, all experiments in this section were performed on the sequential CIFAR-10 task, whicih we found transferred well to other settings. Models were constrained to at most 100K trainable parameters and trained with a simple plateau learning rate scheduler and no regularization.
+
+Unconstrained SSMs. We first investigate generic SSMs with various initializations. We consider a random Gaussian initialization (with variance scaled down until it did not NaN), and the HiPPO initialization. We also consider a random diagonal Gaussian matrix as a potential structured method; parameterizing A as a diagonal matrix would allow substantial speedups without going through the complexity of S4’s NPLR parameterization. We consider both freezing the A matrix and training it.
+
+Fig. 3 shows both training and validation curves, from which we can make several observations. First, training the SSM improved all methods, particularly the randomly initialized ones. For all methods, training the SSM led to improvements in both training and validation curves
+
+Second, a large generalization gap exists between the initializations. In particular, note that when A is trained, all initializations are able to reach perfect training accuracy. However, their validation accuracies are separated by over 15%.
+
+NPLR SSMs. The previous experiment validates the importance of HiPPO in SSMs. This was the main motivation of the NPLR algorithm in S4, which utilizes structure of the HiPPO matrix (2) to make SSMs computationally feasible. Fig. 4a shows that random NPLR matrices still do not perform well, which validates that S4’s efectiveness primarily comes from the HiPPO initialization, not the NPLR parameterization.
+
+Finally, Fig. 4b considers the main ablations considered in this section (with trainable SSMs) and adds minor regularization. With 0.1 Dropout, the same trends still hold, and the HiPPO initialization—in other words, the full S4 method—achieves 84.27% test accuracy with just 100K parameters.
+
+Table 9: Univariate long sequence time-series forecasting results. Full results in Appendix D.3.5.
+
+<table><tr><td></td><td colspan="2">S4</td><td colspan="2">Informer</td><td colspan="2">LogTrans</td><td colspan="2">Reformer</td><td colspan="2">LSTMa</td><td colspan="2">DeepAR</td><td colspan="2">ARIMA</td><td colspan="2">Prophet</td></tr><tr><td></td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td></tr><tr><td> $ETTh_1$ </td><td>0.116</td><td>0.271</td><td>0.269</td><td>0.435</td><td>0.273</td><td>0.463</td><td>2.112</td><td>1.436</td><td>0.683</td><td>0.768</td><td>0.658</td><td>0.707</td><td>0.659</td><td>0.766</td><td>2.735</td><td>3.253</td></tr><tr><td> $ETTh_2$ </td><td>0.187</td><td>0.358</td><td>0.277</td><td>0.431</td><td>0.303</td><td>0.493</td><td>2.030</td><td>1.721</td><td>0.640</td><td>0.681</td><td>0.429</td><td>0.580</td><td>2.878</td><td>1.044</td><td>3.355</td><td>4.664</td></tr><tr><td> $ETTm_1$ </td><td>0.292</td><td>0.466</td><td>0.512</td><td>0.644</td><td>0.598</td><td>0.702</td><td>1.793</td><td>1.528</td><td>1.064</td><td>0.873</td><td>2.437</td><td>1.352</td><td>0.639</td><td>0.697</td><td>2.747</td><td>1.174</td></tr><tr><td>Weather</td><td>0.245</td><td>0.375</td><td>0.359</td><td>0.466</td><td>0.388</td><td>0.499</td><td>2.087</td><td>1.534</td><td>0.866</td><td>0.809</td><td>0.499</td><td>0.596</td><td>1.062</td><td>0.943</td><td>3.859</td><td>1.144</td></tr><tr><td>ECL</td><td>0.432</td><td>0.497</td><td>0.582</td><td>0.608</td><td>0.624</td><td>0.645</td><td>7.019</td><td>5.105</td><td>1.545</td><td>1.006</td><td>0.657</td><td>0.683</td><td>1.370</td><td>0.982</td><td>6.901</td><td>4.264</td></tr></table>
+
+![](images/45915f901365cc1ffcb4ac7eef6964912ba997a0ca642d8732a8edbed26b3d4c.jpg)
+
+![](images/afb460c8f558e3e2d51a4f894811c539b0baa2ce3b4049ba75197aa0d5da8d5f.jpg)
+
+Figure 3: CIFAR-10 classification with unconstrained, real-valued SSMs with various initializations. (Left) Train accuracy. (Right) Validation accuracy.  
+![](images/bf89332261b757f75ed9639ee632d1bed711f69d7c8214c5c983aa5c89a942b9.jpg)  
+(a)
+
+![](images/1740e9e09d848fe7fe40256b2fa417be3354b22717cfa404af88f8a5cdb90b4f.jpg)  
+(b)  
+Figure 4: CIFAR-10 validation accuracy of SSMs with diferent initializations and parameterizations. (Left) NPLR parameterization with random versus HiPPO initialization. (Right) All methods considered in this section, including minor Dropout regularization. S4 achieves SotA accuracy on sequential CIFAR-10 with just 100K parameters.
+
+## 5 Conclusion
+
+We introduce S4, a sequence model that uses a new parameterization for the state space model’s continuoustime, recurrent, and convolutional views to eficiently model LRDs in a principled manner. Results across established benchmarks evaluating a diverse range of data modalities and model capabilities suggest that S4 has the potential to be an efective general sequence modeling solution.
+
+## Acknowledgments
+
+We thank Aditya Grover and Chris Cundy for helpful discussions about earlier versions of the method. We thank Simran Arora, Sabri Eyuboglu, Bibek Paudel, and Nimit Sohoni for valuable feedback on earlier drafts of this work. This work was done with the support of Google Cloud credits under HAI proposals 540994170283 and 578192719349. We gratefully acknowledge the support of NIH under No. U54EB020405 (Mobilize), NSF under Nos. CCF1763315 (Beyond Sparsity), CCF1563078 (Volume to Velocity), and 1937301 (RTML); ONR under No. N000141712266 (Unifying Weak Supervision); ONR N00014-20-1-2480: Understanding and Applying Non-Euclidean Geometry in Machine Learning; N000142012275 (NEPTUNE); the Moore Foundation, NXP, Xilinx, LETI-CEA, Intel, IBM, Microsoft, NEC, Toshiba, TSMC, ARM, Hitachi, BASF, Accenture, Ericsson, Qualcomm, Analog Devices, the Okawa Foundation, American Family Insurance, Google Cloud, Salesforce, Total, the HAI-AWS Cloud Credits for Research program, the Stanford Data Science Initiative (SDSI), and members of the Stanford DAWN project: Facebook, Google, and VMWare. Th Mobilize Center is a Biomedical Technology Resource Center, funded by the NIH National Institute of Biomedical Imaging and Bioengineering through Grant P41EB027060. The U.S. Government is authorized to reproduce and distribute reprints for Governmental purposes notwithstanding any copyright notation thereon. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views, policies, or endorsements, either expressed or implied, of NIH, ONR, or the U.S. Government.
+
+## References
+
+[1] Martin Arjovsky, Amar Shah, and Yoshua Bengio. Unitary evolution recurrent neural networks. In The International Conference on Machine Learning (ICML), pages 1120–1128, 2016.
+
+[2] Alexei Baevski and Michael Auli. Adaptive input representations for neural language modeling. arXiv preprint arXiv:1809.10853, 2018.
+
+[3] Shaojie Bai, J Zico Kolter, and Vladlen Koltun. An empirical evaluation of generic convolutional and recurrent networks for sequence modeling. arXiv preprint arXiv:1803.01271, 2018.
+
+[4] Shaojie Bai, J Zico Kolter, and Vladlen Koltun. Trellis networks for sequence modeling. In The International Conference on Learning Representations (ICLR), 2019.
+
+[5] Shiyu Chang, Yang Zhang, Wei Han, Mo Yu, Xiaoxiao Guo, Wei Tan, Xiaodong Cui, Michael Witbrock, Mark Hasegawa-Johnson, and Thomas S Huang. Dilated recurrent neural networks. In Advances in Neural Information Processing Systems (NeurIPS), 2017.
+
+[6] Rewon Child, Scott Gray, Alec Radford, and Ilya Sutskever. Generating long sequences with sparse transformers. arXiv preprint arXiv:1904.10509, 2019.
+
+[7] Narsimha Chilkuri and Chris Eliasmith. Parallelizing legendre memory unit training. The International Conference on Machine Learning (ICML), 2021.
+
+[8] Krzysztof Choromanski, Valerii Likhosherstov, David Dohan, Xingyou Song, Andreea Gane, Tamas Sarlos, Peter Hawkins, Jared Davis, Afroz Mohiuddin, Lukasz Kaiser, et al. Rethinking attention with performers. In The International Conference on Learning Representations (ICLR), 2020.
+
+[9] Yann N Dauphin, Angela Fan, Michael Auli, and David Grangier. Language modeling with gated convolutional networks. In International conference on machine learning, pages 933–941. PMLR, 2017.
+
+[10] Edward De Brouwer, Jaak Simm, Adam Arany, and Yves Moreau. Gru-ode-bayes: Continuous modeling of sporadically-observed time series. In Advances in Neural Information Processing Systems (NeurIPS), 2019.
+
+[11] Chris Donahue, Julian McAuley, and Miller Puckette. Adversarial audio synthesis. In ICLR, 2019.
+
+[12] Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg Heigold, Sylvain Gelly, et al. An image is worth 16x16 words: Transformers for image recognition at scale. arXiv preprint arXiv:2010.11929, 2020.
+
+[13] N Benjamin Erichson, Omri Azencot, Alejandro Queiruga, Liam Hodgkinson, and Michael W Mahoney. Lipschitz recurrent neural networks. In International Conference on Learning Representations, 2021.
+
+[14] Karan Goel, Albert Gu, Chris Donahue, and Christopher R´e. It’s raw! audio generation with state-space models. arXiv preprint arXiv:2202.09729, 2022.
+
+[15] Gene H Golub and Charles F Van Loan. Matrix computations, volume 3. JHU press, 2013.
+
+[16] Albert Gu, Tri Dao, Stefano Ermon, Atri Rudra, and Christopher R´e. Hippo: Recurrent memory with optimal polynomial projections. In Advances in Neural Information Processing Systems (NeurIPS), 2020.
+
+[17] Albert Gu, Caglar Gulcehre, Tom Le Paine, Matt Hofman, and Razvan Pascanu. Improving the gating mechanism of recurrent neural networks. In The International Conference on Machine Learning (ICML), 2020.
+
+[18] Albert Gu, Isys Johnson, Karan Goel, Khaled Saab, Tri Dao, Atri Rudra, and Christopher R´e. Combining recurrent, convolutional, and continuous-time models with the structured learnable linear state space layer. In Advances in Neural Information Processing Systems (NeurIPS), 2021.
+
+[19] Albert Gu, Ankit Gupta, Karan Goel, and Christopher R´e. On the parameterization and initialization of diagonal state space models. arXiv preprint arXiv:2206.11893, 2022.
+
+[20] Albert Gu, Isys Johnson, Aman Timalsina, Atri Rudra, and Christopher R´e. How to train your hippo: State space models with generalized basis projections. arXiv preprint arXiv:2206.12037, 2022.
+
+[21] Sepp Hochreiter and J¨urgen Schmidhuber. Long short-term memory. Neural computation, 9(8):1735–1780, 1997.
+
+[22] Angelos Katharopoulos, Apoorv Vyas, Nikolaos Pappas, and Fran¸cois Fleuret. Transformers are rnns: Fast autoregressive transformers with linear attention. In International Conference on Machine Learning, pages 5156–5165. PMLR, 2020.
+
+[23] Patrick Kidger, James Morrill, James Foster, and Terry Lyons. Neural controlled diferential equations for irregular time series. arXiv preprint arXiv:2005.08926, 2020.
+
+[24] Mario Lezcano-Casado and David Mart´ınez-Rubio. Cheap orthogonal constraints in neural networks: A simple parametrization of the orthogonal and unitary group. In The International Conference on Machine Learning (ICML), 2019.
+
+[25] Shuai Li, Wanqing Li, Chris Cook, Ce Zhu, and Yanbo Gao. Independently recurrent neural network (IndRNN): Building a longer and deeper RNN. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 5457–5466, 2018.
+
+[26] Vasileios Lioutas and Yuhong Guo. Time-aware large kernel convolutions. In International Conference on Machine Learning, pages 6172–6183. PMLR, 2020.
+
+[27] Stephen Merity, Nitish Shirish Keskar, James Bradbury, and Richard Socher. Scalable language modeling: Wikitext-103 on a single gpu in 12 hours. SysML, 2018.
+
+[28] Aaron van den Oord, Sander Dieleman, Heiga Zen, Karen Simonyan, Oriol Vinyals, Alex Graves, Nal Kalchbrenner, Andrew Senior, and Koray Kavukcuoglu. Wavenet: A generative model for raw audio. arXiv preprint arXiv:1609.03499, 2016.
+
+[29] Victor Pan. Structured matrices and polynomials: unified superfast algorithms. Springer Science & Business Media, 2001.
+
+[30] Victor Pan. Fast approximate computations with cauchy matrices and polynomials. Mathematics of Computation, 86(308):2799–2826, 2017.
+
+[31] Victor Y Pan. Transformations of matrix structures work again. Linear Algebra and Its Applications, 465:107–138, 2015.
+
+[32] Razvan Pascanu, Tomas Mikolov, and Yoshua Bengio. On the dificulty of training recurrent neural networks. In International conference on machine learning, pages 1310–1318, 2013.
+
+[33] Jack Rae, Chris Dyer, Peter Dayan, and Timothy Lillicrap. Fast parametric learning with activation memorization. The International Conference on Machine Learning (ICML), 2018.
+
+[34] Prajit Ramachandran, Tom Le Paine, Pooya Khorrami, Mohammad Babaeizadeh, Shiyu Chang, Yang Zhang, Mark A Hasegawa-Johnson, Roy H Campbell, and Thomas S Huang. Fast generation for convolutional autoregressive models. arXiv preprint arXiv:1704.06001, 2017.
+
+[35] David W Romero, Anna Kuzina, Erik J Bekkers, Jakub M Tomczak, and Mark Hoogendoorn. Ckconv: Continuous kernel convolution for sequential data. arXiv preprint arXiv:2102.02611, 2021.
+
+[36] David W Romero, Robert-Jan Bruintjes, Jakub M Tomczak, Erik J Bekkers, Mark Hoogendoorn, and Jan C van Gemert. Flexconv: Continuous kernel convolutions with diferentiable kernel sizes. In The International Conference on Learning Representations (ICLR), 2022.
+
+[37] Yulia Rubanova, Tian Qi Chen, and David K Duvenaud. Latent ordinary diferential equations for irregularly-sampled time series. In Advances in Neural Information Processing Systems, pages 5321–5331, 2019.
+
+[38] T Konstantin Rusch and Siddhartha Mishra. Unicornn: A recurrent model for learning very long time dependencies. The International Conference on Machine Learning (ICML), 2021.
+
+[39] Tim Salimans, Andrej Karpathy, Xi Chen, and Diederik P Kingma. Pixelcnn++: Improving the pixelcnn with discretized logistic mixture likelihood and other modifications. arXiv preprint arXiv:1701.05517, 2017.
+
+[40] Yi Tay, Mostafa Dehghani, Samira Abnar, Yikang Shen, Dara Bahri, Philip Pham, Jinfeng Rao, Liu Yang, Sebastian Ruder, and Donald Metzler. Long range arena : A benchmark for eficient transformers. In International Conference on Learning Representations, 2021. URL https://openreview.net/forum? id=qVyeW-grC2k.
+
+[41] Ilya Tolstikhin, Neil Houlsby, Alexander Kolesnikov, Lucas Beyer, Xiaohua Zhai, Thomas Unterthiner, Jessica Yung, Daniel Keysers, Jakob Uszkoreit, Mario Lucic, et al. Mlp-mixer: An all-mlp architecture for vision. arXiv preprint arXiv:2105.01601, 2021.
+
+[42] Trieu H Trinh, Andrew M Dai, Minh-Thang Luong, and Quoc V Le. Learning longer-term dependencies in RNNs with auxiliary losses. In The International Conference on Machine Learning (ICML), 2018.
+
+[43] Arnold Tustin. A method of analysing the behaviour of linear systems in terms of time series. Journal of the Institution of Electrical Engineers-Part IIA: Automatic Regulators and Servo Mechanisms, 94(1): 130–142, 1947.
+
+[44] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosukhin. Attention is all you need. In Advances in Neural Information Processing Systems (NeurIPS), 2017.
+
+[45] Aaron Voelker, Ivana Kaji´c, and Chris Eliasmith. Legendre memory units: Continuous-time representation in recurrent neural networks. In Advances in Neural Information Processing Systems, pages 15544–15553, 2019.
+
+[46] Aaron Russell Voelker. Dynamical systems in spiking neuromorphic hardware. PhD thesis, University of Waterloo, 2019.
+
+[47] Pete Warden. Speech commands: A dataset for limited-vocabulary speech recognition. ArXiv, abs/1804.03209, 2018.
+
+[48] Max A Woodbury. Inverting modified matrices. Memorandum report, 42:106, 1950.
+
+[49] Felix Wu, Angela Fan, Alexei Baevski, Yann N Dauphin, and Michael Auli. Pay less attention with lightweight and dynamic convolutions. In The International Conference on Learning Representations (ICLR), 2019.
+
+[50] Haoyi Zhou, Shanghang Zhang, Jieqi Peng, Shuai Zhang, Jianxin Li, Hui Xiong, and Wancai Zhang. Informer: Beyond eficient transformer for long sequence time-series forecasting. In The Thirty-Fifth AAAI Conference on Artificial Intelligence, AAAI 2021, Virtual Conference, volume 35, pages 11106– 11115. AAAI Press, 2021.
+
+## A Discussion
+
+Related Work. Our work is most closely related to a line of work originally motivated by a particular biologically-inspired SSM, which led to mathematical models for addressing LRDs. Voelker et al. [45], Voelker [46] derived a non-trainable SSM motivated from approximating a neuromorphic spiking model, and Chilkuri and Eliasmith [7] showed that it could be sped up at train time with a convolutional view. Gu et al. [16] extended this special case to a general continuous-time function approximation framework with several more special cases of A matrices designed for long-range dependencies. However, instead of using a true SSM, all of these works fixed a choice of A and built RNNs around it. Most recently, Gu et al. [18] used the full (1) explicitly as a deep SSM model, exploring new conceptual views of SSMs, as well as allowing A to be trained. As mentioned in Section 1, their method used a naive instantiation of SSMs that sufered from an additional factor of N in memory and $N ^ { 2 }$ in computation.
+
+Beyond this work, our technical contributions (Section 3) on the S4 parameterization and algorithms are applicable to a broader family of SSMs including these investigated in prior works, and our techniques for working with these models may be of independent interest.
+
+Implementation. The computational core of S4’s training algorithm is the Cauchy kernel discussed in Sections 3.2 and 3.3 and Appendix C.3. As described in Appendix C.3 Proposition 5, there are many algorithms for it with difering computational complexities and sophistication. Our current implementation of S4 actually uses the naive O(NL) algorithm which is easily parallelized on GPUs and has more easily accessible libraries allowing it to be implemented; we leverage the pykeops library for memory-eficient kernel operations. However, this library is a much more general library that may not be optimized for the Cauchy kernels used here, and we believe that a dedicated CUDA implementation can be more eficient. Additionally, as discussed in this work, there are asymptotically faster and numerically stable algorithms for the Cauchy kernel (Proposition 5). However, these algorithms are currently not implemented for GPUs due to a lack of previous applications that require them. We believe that more eficient implementations of these self-contained computational kernels are possible, and that S4 (and SSMs at large) may have significant room for further improvements in eficiency.
+
+Limitations and Future Directions. In this work, we show that S4 can address a wide variety of data efectively. However, it may not necessarily be the most suitable model for all types of data. For example, Table 8 still found a gap compared to Transformers for language modeling. An interesting future direction is exploring combinations of S4 with other sequence models to complement their strengths. We are excited about other directions, including continuing to explore the benefits of S4 on audio data (e.g. pre-training or generation settings), and generalizing HiPPO and S4 to higher-dimensional data for image and video applications.
+
+## B Numerical Instability of LSSL
+
+This section proves the claims made in Section 3.1 about prior work. We first derive the explicit diagonalization of the HiPPO matrix, confirming its instability because of exponentially large entries. We then discuss the proposed theoretically fast algorithm from [18] (Theorem 2) and show that it also involves exponentially large terms and thus cannot be implemented.
+
+## B.1 HiPPO Diagonalization
+
+Proof of Lemma 3.2. The HiPPO matrix (2) is equal, up to sign and conjugation by a diagonal matrix, to
+
+$$
+\boldsymbol {A} = \left[ \begin{array}{c c c c c c c c c} 1 & & & & & & & \\ - 1 & 2 & & & & & & \\ 1 & - 3 & 3 & & & & & \\ - 1 & 3 & - 5 & 4 & & & & \\ 1 & - 3 & 5 & - 7 & 5 & & & \\ - 1 & 3 & - 5 & 7 & - 9 & 6 & & \\ 1 & - 3 & 5 & - 7 & 9 & - 1 1 & 7 & \\ - 1 & 3 & - 5 & 7 & - 9 & 1 1 & - 1 3 & 8 \\ \vdots & & & & & & & \ddots \end{array} \right] \boldsymbol {A} _ {n k} = \left\{ \begin{array}{l l} (- 1) ^ {n - k} (2 k + 1) & n > k \\ k + 1 & n = k. \\ 0 & n <   k \end{array} \right.
+$$
+
+Our goal is to show that this A is diagonalized by the matrix
+
+$$
+\boldsymbol {V} = \binom {i + j} {i - j} _ {i j} = \left[ \begin{array}{c c c c c c c} 1 & & & & & & \\ 1 & 1 & & & & & \\ 1 & 3 & 1 & & & & \\ 1 & 6 & 5 & 1 & & & \\ 1 & 1 0 & 1 5 & 7 & 1 & & \\ 1 & 1 5 & 3 5 & 2 8 & 9 & 1 & \\ \vdots & & & & & & \ddots \end{array} \right],
+$$
+
+or in other words that columns of this matrix are eigenvectors of A.
+
+Concretely, we will show that the j-th column of this matrix $\mathbf { \pmb { v } } ^ { ( j ) }$ with elements
+
+$$
+\boldsymbol {v} _ {i} ^ {(j)} = \left\{ \begin{array}{l l} 0 & i <   j \\ \binom {i + j} {i - j} = \binom {i + j} {2 j} & i \geq j \end{array} \right.
+$$
+
+is an eigenvector with eigenvalue $j + 1$ . In other words we must show that for all indices $k \in [ N ]$
+
+$$
+(\boldsymbol {A} \boldsymbol {v} ^ {(j)}) _ {k} = \sum_ {i} \boldsymbol {A} _ {k i} \boldsymbol {v} _ {i} ^ {(j)} = (j + 1) \boldsymbol {v} _ {k} ^ {(j)}.\tag{7}
+$$
+
+If $k < j$ , then for all i inside the sum, either $k < i \ \mathrm { o r } \ i < j$ . In the first case $\boldsymbol { A } _ { k i } = 0$ and in the second case $\pmb { v } _ { i } ^ { ( j ) } = 0$ , so both sides of equation (7) are equal to 0.
+
+It remains to show the case $k \geq j$ , which proceeds by induction on k. Expanding equation (7) using the formula for A yields
+
+$$
+(\boldsymbol {A} \boldsymbol {v}) _ {k} ^ {(j)} = \sum_ {i} \boldsymbol {A} _ {k i} \boldsymbol {v} _ {i} ^ {(j)} = \sum_ {i = j} ^ {k - 1} (- 1) ^ {k - i} (2 i + 1) \binom {i + j} {2 j} + (k + 1) \binom {k + j} {2 j}.
+$$
+
+In the base case $k = j .$ , the sum disappears and we are left with $( A v ^ { ( j ) } ) _ { j } = ( j + 1 ) \binom { 2 j } { 2 j } = ( j + 1 ) v _ { j } ^ { ( j ) }$ , as desired.
+
+Otherwise, the sum for $( A v ) _ { k } ^ { ( j ) }$ is the same as the sum for $( A v ) _ { k - 1 } ^ { ( j ) }$ but with sign reversed and a few edge
+
+terms. The result follows from applying the inductive hypothesis and algebraic simplification:
+
+$$
+\begin{array}{r l} & (\boldsymbol {A} \boldsymbol {v}) _ {k} ^ {(j)} = - (\boldsymbol {A} \boldsymbol {v}) _ {k - 1} ^ {(j)} - (2 k - 1) \binom {k - 1 + j} {2 j} + k \binom {k - 1 + j} {2 j} + (k + 1) \binom {k + j} {2 j} \\ & \quad = - (j + 1) \binom {k - 1 + j} {2 j} - (k - 1) \binom {k - 1 + j} {2 j} + (k + 1) \binom {k + j} {2 j} \\ & \quad = - (j + k) \binom {k - 1 + j} {2 j} + (k + 1) \binom {k + j} {2 j} \\ & \quad = - (j + k) \frac {(k - 1 + j) !}{(k - 1 - j) ! (2 j) !} + (k + 1) \binom {k + j} {2 j} \\ & \quad = - \frac {(k + j) !}{(k - 1 - j) ! (2 j) !} + (k + 1) \binom {k + j} {2 j} \\ & \quad = - (k - j) \frac {(k + j) !}{(k - j) ! (2 j) !} + (k + 1) \binom {k + j} {2 j} \\ & \quad = (j - k) (k + 1) \binom {k + j} {2 j} + (k + 1) \binom {k + j} {2 j} \\ & \quad = (j + 1) \boldsymbol {v} _ {k} ^ {(j)}. \end{array}
+$$
+
+## B.2 Fast but Unstable LSSL Algorithm
+
+Instead of diagonalization, Gu et al. [18, Theorem 2] proposed a sophisticated fast algorithm to compute
+
+$$
+K _ {L} (\overline {{\boldsymbol {A}}}, \overline {{\boldsymbol {B}}}, \overline {{\boldsymbol {C}}}) = (\overline {{\boldsymbol {C B}}}, \overline {{\boldsymbol {C A B}}}, \dots , \overline {{\boldsymbol {C A}}} ^ {L - 1} \overline {{\boldsymbol {B}}}).
+$$
+
+This algorithm runs in $O ( N \log ^ { 2 } N + L \log L )$ operations and $O ( N + L )$ space. However, we now show that this algorithm is also numerically unstable.
+
+There are several reasons for the instability of this algorithm, but most directly we can pinpoint a particular intermediate quantity that they use.
+
+Definition 1. The fast LSSL algorithm computes coeficients of $p ( x )$ , the characteristic polynomial $o f A _ { ; }$ , as an intermediate computation. Additionally, it computes the coeficients of its inverse, $p ( x ) ^ { - 1 }$ (mod $x ^ { L } )$ .
+
+We now claim that this quantity is numerically unfeasible. We narrow down to the case when ${ \overline { { A } } } = I$ is the identity matrix. Note that this case is actually in some sense the most typical case: when discretizing the continuous-time SSM to discrete-time by a step-size $\Delta .$ the discretized transition matrix A is brought closer to the identity. For example, with the Euler discretization ${ \overline { { A } } } = I + \Delta A$ , we have ${ \overline { { A } } } \to I$ as the step size $\Delta \to 0$
+
+Lemma B.1. When ${ \overline { { A } } } = I ,$ the fast LSSL algorithm requires computing terms exponentially large in $N _ { \cdot }$ .
+
+Proof. The characteristic polynomial of I is
+
+$$
+p (x) = \det | \boldsymbol {I} - x \boldsymbol {I} | = (1 - x) ^ {N}.
+$$
+
+These coeficients have size up to $\begin{array} { r } { \binom { N } { \frac { N } { 2 } } \approx \frac { 2 ^ { N } } { \sqrt { \pi N / 2 } } . } \end{array}$
+
+The inverse of $p ( x )$ has even larger coeficients. It can be calculated in closed form by the generalized binomial formula:
+
+$$
+(1 - x) ^ {- N} = \sum_ {k = 0} ^ {\infty} \binom {N + k - 1} {k} x ^ {k}.
+$$
+
+Taking this (mod $x ^ { L } )$ , the largest coeficient is
+
+$$
+\binom {N + L - 2} {L - 1} = \binom {N + L - 2} {N - 1} = \frac {(L - 1) (L - 2) \ldots (L - N + 1)}{(N - 1) !}.
+$$
+
+When $L = N - 1$ this is
+
+$$
+\binom {2 (N - 1)} {N - 1} \approx \frac {2 ^ {2 N}}{\sqrt {\pi N}}
+$$
+
+already larger than the coeficients of $( 1 - x ) ^ { N }$ , and only increases as $L$ grows.
+
+## C S4 Algorithm Details
+
+This section proves the results of Section 3.3, providing complete details of our eficient algorithms for S4. Appendices C.1 to C.3 prove Theorems 1 to 3 respectively.
+
+## C.1 NPLR Representations of HiPPO Matrices
+
+We first prove Theorem 1, showing that all HiPPO matrices for continuous-time memory fall under the S4 normal plus low-rank (NPLR) representation.
+
+Proof of Theorem 1. We consider each of the three cases HiPPO-LagT, HiPPO-LegT, and HiPPO-LegS separately. Note that the primary HiPPO matrix defined in this work (equation (2)) is the HiPPO-LegT matrix.
+
+HiPPO-LagT. The HiPPO-LagT matrix is simply
+
+$$
+\boldsymbol {A} _ {n k} = \left\{ \begin{array}{l l} 0 & n <   k \\ - \frac {1}{2} & n = k \\ - 1 & n > k \end{array} \right.
+$$
+
+$$
+\boldsymbol {A} = - \left[ \begin{array}{c c c c c} \frac {1}{2} & & & & \dots \\ 1 & \frac {1}{2} & & & \\ 1 & 1 & \frac {1}{2} & & \\ 1 & 1 & 1 & \frac {1}{2} & \\ \vdots & & & & \ddots \end{array} \right].
+$$
+
+Adding the matrix of all $\frac { 1 } { 2 }$ , which is rank 1, yields
+
+$$
+- \left[ \begin{array}{c c c c} & - \frac {1}{2} & - \frac {1}{2} & - \frac {1}{2} \\ \frac {1}{2} & & - \frac {1}{2} & - \frac {1}{2} \\ \frac {1}{2} & \frac {1}{2} & & - \frac {1}{2} \\ \frac {1}{2} & \frac {1}{2} & \frac {1}{2} \end{array} \right].
+$$
+
+This matrix is now skew-symmetric. Skew-symmetric matrices are a particular case of normal matrices with pure-imaginary eigenvalues.
+
+Gu et al. [16] also consider a case of HiPPO corresponding to the generalized Laguerre polynomials that generalizes the above HiPPO-LagT case. In this case, the matrix A (up to conjugation by a diagonal matrix) ends up being close to the above matrix, but with a diferent element on the diagonal. After adding the rank-1 correction, it becomes the above skew-symmetric matrix plus a multiple of the identity. Thus after diagonalization by the same matrix as in the LagT case, it is still reduced to diagonal plus low-rank (DPLR) form, where the diagonal is now pure imaginary plus a real constant.
+
+HiPPO-LegS. We restate the formula from equation (2) for convenience.
+
+$$
+\boldsymbol {A} _ {n k} = - \left\{ \begin{array}{l l} (2 n + 1) ^ {1 / 2} (2 k + 1) ^ {1 / 2} & \text { if } n > k \\ n + 1 & \text { if } n = k \\ 0 & \text { if } n <   k \end{array} \right..
+$$
+
+Adding $\frac { 1 } { 2 } ( 2 n + 1 ) ^ { 1 / 2 } ( 2 k + 1 ) ^ { 1 / 2 }$ to the whole matrix gives
+
+$$
+- \left\{ \begin{array}{l l} \frac {1}{2} (2 n + 1) ^ {1 / 2} (2 k + 1) ^ {1 / 2} & \text {if} n > k \\ \frac {1}{2} & \text {if} n = k \\ - \frac {1}{2} (2 n + 1) ^ {1 / 2} (2 k + 1) ^ {1 / 2} & \text {if} n <   k \end{array} \right.
+$$
+
+Note that this matrix is not skew-symmetric, but is ${ \frac { 1 } { 2 } } I + S$ where S is a skew-symmetric matrix. This is diagonalizable by the same unitary matrix that diagonalizes S.
+
+## HiPPO-LegT.
+
+Up to the diagonal scaling, the LegT matrix is
+
+$$
+\boldsymbol {A} = - \left[ \begin{array}{c c c c c} 1 & - 1 & 1 & - 1 & \ldots \\ 1 & 1 & - 1 & 1 \\ 1 & 1 & 1 & - 1 \\ 1 & 1 & 1 & 1 \\ \vdots & & & & \ddots \end{array} \right].
+$$
+
+By adding −1 to this matrix and then the matrix
+
+$$
+\left[ \begin{array}{c c c} & & \\ 2 & 2 \\ 2 & 2 \end{array} \right]
+$$
+
+the matrix becomes
+
+$$
+\left[ \begin{array}{c c c c} & - 2 & & - 2 \\ 2 & & & \\ & & & - 2 \\ 2 & & 2 \end{array} \right]
+$$
+
+which is skew-symmetric. In fact, this matrix is the inverse of the Chebyshev Jacobi.
+
+An alternative way to see this is as follows. The LegT matrix is the inverse of the matrix
+
+$$
+\left[ \begin{array}{c c c c} - 1 & 1 & & 0 \\ - 1 & & 1 \\ & - 1 & & 1 \\ & & - 1 & - 1 \end{array} \right]
+$$
+
+This can obviously be converted to a skew-symmetric matrix by adding a rank 2 term. The inverses of these matrices are also rank-2 diferences from each other by the Woodbury identity.
+
+A final form is
+
+$$
+\left[ \begin{array}{c c c c} - 1 & 1 & - 1 & 1 \\ - 1 & - 1 & 1 & - 1 \\ - 1 & - 1 & - 1 & 1 \\ - 1 & - 1 & - 1 & - 1 \end{array} \right] + \left[ \begin{array}{c c c c} 1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1 \end{array} \right] = \left[ \begin{array}{c c c c} 0 & 1 & 0 & 1 \\ - 1 & 0 & 1 & 0 \\ 0 & - 1 & 0 & 1 \\ - 1 & 0 & - 1 & 0 \end{array} \right]
+$$
+
+This has the advantage that the rank-2 correction is symmetric (like the others), but the normal skewsymmetric matrix is now 2-quasiseparable instead of 1-quasiseparable.
+
+## C.2 Computing the S4 Recurrent View
+
+We prove Theorem 2 showing the eficiency of the S4 parameterization for computing one step of the recurrent representation (Section 2.3).
+
+Recall that without loss of generality, we can assume that the state matrix $\pmb { A } = \pmb { \Lambda } - \pmb { P } \pmb { Q } ^ { * }$ is diagonal plus low-rank (DPLR), potentially over C. Our goal in this section is to explicitly write out a closed form for the discretized matrix A.
+
+Recall from equation (3) that
+
+$$
+\begin{array}{l} \overline {{\boldsymbol {A}}} = (\boldsymbol {I} - \Delta / 2 \cdot \boldsymbol {A}) ^ {- 1} (\boldsymbol {I} + \Delta / 2 \cdot \boldsymbol {A}) \\ \overline {{\boldsymbol {B}}} = (\boldsymbol {I} - \Delta / 2 \cdot \boldsymbol {A}) ^ {- 1} \Delta \boldsymbol {B}. \end{array}
+$$
+
+We first simplify both terms in the definition of A independently.
+
+Forward discretization. The first term is essentially the Euler discretization motivated in Section 2.3.
+
+$$
+\begin{array}{r l} \boldsymbol {I} + \frac {\Delta}{2} \boldsymbol {A} & = \boldsymbol {I} + \frac {\Delta}{2} (\boldsymbol {\Lambda} - \boldsymbol {P Q ^ {*}}) \\ & = \frac {\Delta}{2} \left[ \frac {2}{\Delta} \boldsymbol {I} + (\boldsymbol {\Lambda} - \boldsymbol {P Q ^ {*}}) \right] \\ & = \frac {\Delta}{2} \boldsymbol {A _ {0}} \end{array}
+$$
+
+where $\mathbf { A _ { 0 } }$ is defined as the term in the final brackets.
+
+Backward discretization. The second term is known as the Backward Euler’s method. Although this inverse term is normally dificult to deal with, in the DPLR case we can simplify it using Woodbury’s Identity (Proposition 4).
+
+$$
+\begin{array}{r l} \left(\boldsymbol {I} - \frac {\Delta}{2} \boldsymbol {A}\right) ^ {- 1} & = \left(\boldsymbol {I} - \frac {\Delta}{2} (\boldsymbol {\Lambda} - \boldsymbol {P Q} ^ {*})\right) ^ {- 1} \\ & = \frac {2}{\Delta} \left[ \frac {2}{\Delta} - \boldsymbol {\Lambda} + \boldsymbol {P Q} ^ {*} \right] ^ {- 1} \\ & = \frac {2}{\Delta} \left[ \boldsymbol {D} - \boldsymbol {D P} (\boldsymbol {I} + \boldsymbol {Q} ^ {*} \boldsymbol {D P}) ^ {- 1} \boldsymbol {Q} ^ {*} \boldsymbol {D} \right] \\ & = \frac {2}{\Delta} \boldsymbol {A _ {1}} \end{array}
+$$
+
+where $\pmb { { \cal D } } = \left( \frac { 2 } { \Delta } - { \pmb { \Lambda } } \right) ^ { - 1 }$ and $\pmb { A _ { 1 } }$ is defined as the term in the final brackets. Note that $( 1 + Q ^ { * } D P )$ is actually a scalar in the case when the low-rank term has rank 1.
+
+S4 Recurrence. Finally, the full bilinear discretization can be rewritten in terms of these matrices as
+
+$$
+\begin{array}{l} \overline {{A}} = A _ {1} A _ {0} \\ \overline {{B}} = \frac {2}{\Delta} A _ {1} \Delta B = 2 A _ {1} B. \end{array}
+$$
+
+The discrete-time SSM (3) becomes
+
+$$
+\begin{array}{r l} & {x _ {k} = \overline {{A}} x _ {k - 1} + \overline {{B}} u _ {k}} \\ & {\qquad = A _ {1} A _ {0} x _ {k - 1} + 2 A _ {1} B u _ {k}} \\ & {y _ {k} = C x _ {k}.} \end{array}
+$$
+
+Note that $\mathbf { A _ { 0 } } , \mathbf { A _ { 1 } }$ are accessed only through matrix-vector multiplications. Since they are both DPLR, they have $O ( N )$ matrix-vector multiplication, showing Theorem 2.
+
+## C.3 Computing the Convolutional View
+
+The most involved part of using SSMs eficiently is computing K. This algorithm was sketched in Section 3.2 and is the main motivation for the S4 parameterization. In this section, we define the necessary intermediate quantities and prove the main technical result.
+
+The algorithm for Theorem 3 falls in roughly three stages, leading to Algorithm 1. Assuming A has been conjugated into diagonal plus low-rank form, we successively simplify the problem of computing K by applying the techniques outlined in Section 3.2.
+
+Remark C.1. We note that for the remainder of this section, we transpose C to be a column vector of shape $\mathbb { C } ^ { N } \ o r \ \mathbb { C } ^ { N \times 1 }$ instead of matrix or row vector $\mathbb { C } ^ { 1 \times N }$ as in (1). In other words the SSM is
+
+$$
+\begin{array}{c} x ^ {\prime} (t) = A x (t) + B u (t) \\ y (t) = C ^ {*} x (t) + D u (t). \end{array}\tag{8}
+$$
+
+This convention is made so that C has the same shape as $B , P , Q$ and simplifies the implementation of $S 4$
+
+Reduction 0: Diagonalization By Lemma 3.1, we can switch the representation by conjugating with any unitary matrix. For the remainder of this section, we can assume that A is (complex) diagonal plus low-rank (DPLR).
+
+Note that unlike diagonal matrices, a DPLR matrix does not lend itself to eficient computation of $\overline { { \kappa } }$ The reason is that $\overline { { \kappa } }$ computes terms $\overline { { C } } ^ { * } \overline { { A } } ^ { i } \overline { { B } }$ which involve powers of the matrix ${ \overline { { A } } } .$ These are trivially computable when A is diagonal, but is no longer possible for even simple modifications to diagonal matrices such as DPLR.
+
+Reduction 1: SSM Generating Function To address the problem of computing powers of A, we introduce another technique. Instead of computing the SSM convolution filter K directly, we introduce a generating function on its coeficients and compute evaluations of it.
+
+Definition 2 (SSM Generating Function). We define the following quantities:
+
+• The SSM convolution function is ${ \mathcal { K } } ( { \overline { { A } } } , { \overline { { B } } } , { \overline { { C } } } ) = ( { \overline { { C } } } ^ { * } { \overline { { B } } } , { \overline { { C } } } ^ { * } { \overline { { A B } } } , \dots )$ and the (truncated) SSM filter of length L
+
+$$
+\mathcal {K} _ {L} (\overline {{\boldsymbol {A}}}, \overline {{\boldsymbol {B}}}, \overline {{\boldsymbol {C}}}) = (\overline {{\boldsymbol {C}}} ^ {*} \overline {{\boldsymbol {B}}}, \overline {{\boldsymbol {C}}} ^ {*} \overline {{\boldsymbol {A B}}}, \dots , \overline {{\boldsymbol {C}}} ^ {*} \overline {{\boldsymbol {A}}} ^ {L - 1} \overline {{\boldsymbol {B}}}) \in \mathbb {R} ^ {L}\tag{9}
+$$
+
+• The SSM generating function at node z is
+
+$$
+\hat {\mathcal {K}} (z; \overline {{{A}}}, \overline {{{B}}}, \overline {{{C}}}) \in \mathbb {C} := \sum_ {i = 0} ^ {\infty} \overline {{{C}}} ^ {*} \overline {{{A}}} ^ {i} \overline {{{B}}} z ^ {i} = \overline {{{C}}} ^ {*} (\boldsymbol {I} - \overline {{{A}}} z) ^ {- 1} \overline {{{B}}}\tag{10}
+$$
+
+and the truncated SSM generating function at node $z \ i s$
+
+$$
+\hat {\mathcal {K}} _ {L} (z; \overline {{\boldsymbol {A}}}, \overline {{\boldsymbol {B}}}, \overline {{\boldsymbol {C}}}) ^ {*} \in \mathbb {C} := \sum_ {i = 0} ^ {L - 1} \overline {{\boldsymbol {C}}} ^ {*} \overline {{\boldsymbol {A}}} ^ {i} \overline {{\boldsymbol {B}}} z ^ {i} = \overline {{\boldsymbol {C}}} ^ {*} (\boldsymbol {I} - \overline {{\boldsymbol {A}}} ^ {L} z ^ {L}) (\boldsymbol {I} - \overline {{\boldsymbol {A}}} z) ^ {- 1} \overline {{\boldsymbol {B}}}\tag{11}
+$$
+
+• The truncated SSM generating function at nodes $\Omega \in \mathbb { C } ^ { M }$ is
+
+$$
+\hat {\mathcal {K}} _ {L} (\Omega ; \overline {{\boldsymbol {A}}}, \overline {{\boldsymbol {B}}}, \overline {{\boldsymbol {C}}}) \in \mathbb {C} ^ {M} := \left(\hat {\mathcal {K}} _ {L} (\omega_ {k}; \overline {{\boldsymbol {A}}}, \overline {{\boldsymbol {B}}}, \overline {{\boldsymbol {C}}})\right) _ {k \in [ M ]}\tag{12}
+$$
+
+Intuitively, the generating function essentially converts the SSM convolution filter from the time domain to frequency domain. Importantly, it preserves the same information, and the desired SSM convolution filter can be recovered from evaluations of its generating function.
+
+Lemma C.2. The SSMfunction $\mathcal { K } _ { L } ( \overline { { A } } , \overline { { B } } , \overline { { C } } )$ can be computed from the SSM generating function $\hat { \mathcal { K } } _ { L } ( \Omega ; \overline { { A } } , \overline { { B } } , \overline { { C } } )$ at the roots of unity $\Omega = \lbrace \exp ( - 2 \pi i \frac { k } { L } : k \in [ L ] \rbrace$ stably in O(L log L) operations.
+
+Proof. For convenience define
+
+$$
+\overline {{\boldsymbol {K}}} = \mathcal {K} _ {L} (\overline {{\boldsymbol {A}}}, \overline {{\boldsymbol {B}}}, \overline {{\boldsymbol {C}}})
+$$
+
+$$
+\hat {\boldsymbol {K}} = \hat {\mathcal {K}} _ {L} (\Omega ; \overline {{\boldsymbol {A}}}, \overline {{\boldsymbol {B}}}, \overline {{\boldsymbol {C}}})
+$$
+
+$$
+\hat {\pmb {K}} (z) = \hat {\mathcal {K}} _ {L} (z; \overline {{\pmb {A}}}, \overline {{\pmb {B}}}, \overline {{\pmb {C}}}).
+$$
+
+Note that
+
+$$
+\hat {\boldsymbol {K}} _ {j} = \sum_ {k = 0} ^ {L - 1} \overline {{\boldsymbol {K}}} _ {k} \exp \left(- 2 \pi i \frac {j k}{L}\right).
+$$
+
+Note that this is exactly the same as the Discrete Fourier Transform (DFT):
+
+$$
+\hat {\boldsymbol {K}} = \mathcal {F} _ {L} \boldsymbol {K}.
+$$
+
+Therefore K can be recovered from $\hat { K }$ with a single inverse DFT, which requires $O ( L \log L )$ operations with the Fast Fourier Transform (FFT) algorithm. □
+
+Reduction 2: Woodbury Correction The primary motivation of Definition 2 is that it turns powers of A into a single inverse of A (equation (10)). While DPLR matrices cannot be powered eficiently due to the low-rank term, they can be inverted eficiently by the well-known Woodbury identity.
+
+Proposition 4 (Binomial Inverse Theorem or Woodbury matrix identity [15, 48]). Over a commutative ring ${ \mathcal { R } } ,$ let $\pmb { A } \in \mathcal { R } ^ { N \times N }$ and $U , V \in \mathcal { R } ^ { N \times p }$ . Suppose A and $A + U V ^ { * }$ are invertible. Then $I _ { p } + V ^ { * } A ^ { - 1 } U \in \mathscr { R } ^ { p \times \bar { p } }$ is invertible and
+
+$$
+\left(\boldsymbol {A} + \boldsymbol {U} \boldsymbol {V} ^ {*}\right) ^ {- 1} = \boldsymbol {A} ^ {- 1} - \boldsymbol {A} ^ {- 1} \boldsymbol {U} \left(\boldsymbol {I} _ {p} + \boldsymbol {V} ^ {*} \boldsymbol {A} ^ {- 1} \boldsymbol {U}\right) ^ {- 1} \boldsymbol {V} ^ {*} \boldsymbol {A} ^ {- 1}
+$$
+
+With this identity, we can convert the SSM generating function on a DPLR matrix A into one on just its diagonal component.
+
+Lemma C.3. Let $\pmb { A } = \pmb { \Lambda } - \pmb { P } \pmb { Q } ^ { * }$ be a diagonal plus low-rank representation. Then for any root of unity $z \in \Omega$ , the truncated generating function satisfies
+
+$$
+\hat {\boldsymbol {K}} (z) = \frac {2}{1 + z} \left[ \tilde {\boldsymbol {C}} ^ {*} \boldsymbol {R} (z) \boldsymbol {B} - \tilde {\boldsymbol {C}} ^ {*} \boldsymbol {R} (z) \boldsymbol {P} \left(1 + \boldsymbol {Q} ^ {*} \boldsymbol {R} (z) \boldsymbol {P}\right) ^ {- 1} \boldsymbol {Q} ^ {*} \boldsymbol {R} (z) \boldsymbol {B} \right]
+$$
+
+$$
+\tilde {\boldsymbol {C}} = (\boldsymbol {I} - \overline {{\boldsymbol {A}}} ^ {L}) ^ {*} \boldsymbol {C}
+$$
+
+$$
+\boldsymbol {R} (z; \boldsymbol {\Lambda}) = \left(\frac {2}{\Delta} \frac {1 - z}{1 + z} - \boldsymbol {\Lambda}\right) ^ {- 1}.
+$$
+
+Proof. Directly expanding Definition 2 yields
+
+$$
+\begin{array}{c} \mathcal {K} _ {L} (z; \overline {{A}}, \overline {{B}}, \overline {{C}}) = \overline {{C}} ^ {*} \overline {{B}} + \overline {{C}} ^ {*} \overline {{A B}} z + \dots + \overline {{C}} ^ {*} \overline {{A}} ^ {L - 1} \overline {{B}} z ^ {L - 1} \\ = \overline {{C}} ^ {*} \left(I - \overline {{A}} ^ {L}\right) \left(I - \overline {{A}} z\right) ^ {- 1} \overline {{B}} \\ = \tilde {\boldsymbol {C}} ^ {*} \left(I - \overline {{A}} z\right) ^ {- 1} \overline {{B}} \end{array}
+$$
+
+where $\tilde { C } ^ { \ast } = C ^ { \ast } \left( I - \overline { { A } } ^ { L } \right)$
+
+We can now explicitly expand the discretized SSM matrices $\overline { { A } }$ and $\overline { B }$ back in terms of the original SSM parameters A and B. Lemma C.4 provides an explicit formula, which allows further simplifying
+
+$$
+\begin{array}{l} \tilde {C} ^ {*} (I - \overline {{A}} z) ^ {- 1} \overline {{B}} = \frac {2}{1 + z} \tilde {C} ^ {*} \left(\frac {2}{\Delta} \frac {1 - z}{1 + z} - A\right) ^ {- 1} B \\ = \frac {2}{1 + z} \tilde {C} ^ {*} \left(\frac {2}{\Delta} \frac {1 - z}{1 + z} - \Lambda + P Q ^ {*}\right) ^ {- 1} B \\ = \frac {2}{1 + z} \left[ \tilde {C} ^ {*} R (z) B - \tilde {C} ^ {*} R (z) P (1 + Q ^ {*} R (z) P) ^ {- 1} Q ^ {*} R (z) B \right]. \end{array}
+$$
+
+The last line applies the Woodbury Identity (Proposition 4) where $\begin{array} { r } { \pmb { R } ( z ) = \left( \frac { 2 } { \Delta } \frac { 1 - z } { 1 + z } - \pmb { \Lambda } \right) ^ { - 1 } } \end{array}$
+
+The previous proof used the following self-contained result to back out the original SSM matrices from the discretization.
+
+Lemma C.4. Let ${ \overline { { A } } } , { \overline { { B } } }$ be the SSM matrices A, B discretized by the bilinear discretization with step size $\Delta$ . Then
+
+$$
+\boldsymbol {C} ^ {*} \left(\boldsymbol {I} - \overline {{\boldsymbol {A}}} \boldsymbol {z}\right) ^ {- 1} \overline {{\boldsymbol {B}}} = \frac {2 \Delta}{1 + z} \boldsymbol {C} ^ {*} \left[ 2 \frac {1 - z}{1 + z} - \Delta \boldsymbol {A} \right] ^ {- 1} \boldsymbol {B}
+$$
+
+Proof. Recall that the bilinear discretization that we use (equation (3)) is
+
+$$
+\begin{array}{l} \overline {{{A}}} = \left(I - \frac {\Delta}{2} A\right) ^ {- 1} \left(I + \frac {\Delta}{2} A\right) \\ \overline {{{B}}} = \left(I - \frac {\Delta}{2} A\right) ^ {- 1} \Delta B \end{array}
+$$
+
+The result is proved algebraic manipulations.
+
+$$
+\begin{array}{l} C ^ {*} \left(I - \overline {{A}} z\right) ^ {- 1} \overline {{B}} = C ^ {*} \left[ \left(I - \frac {\Delta}{2} A\right) ^ {- 1} \left(I - \frac {\Delta}{2} A\right) - \left(I - \frac {\Delta}{2} A\right) ^ {- 1} \left(I + \frac {\Delta}{2} A\right) z \right] ^ {- 1} \overline {{B}} \\ = C ^ {*} \left[ \left(I - \frac {\Delta}{2} A\right) - \left(I + \frac {\Delta}{2} A\right) z \right] ^ {- 1} \left(I - \frac {\Delta}{2} A\right) \overline {{B}} \\ = C ^ {*} \left[ I (1 - z) - \frac {\Delta}{2} A (1 + z) \right] ^ {- 1} \Delta B \\ = \frac {\Delta}{1 - z} C ^ {*} \left[ I - \frac {\Delta A}{2 \frac {1 - z}{1 + z}} \right] ^ {- 1} B \\ = \frac {2 \Delta}{1 + z} C ^ {*} \left[ 2 \frac {1 - z}{1 + z} I - \Delta A \right] ^ {- 1} B \end{array}
+$$
+
+Note that in the S4 parameterization, instead of constantly computing $\tilde { C } = \left( I - \overline { { { A } } } ^ { L } \right) ^ { * } C ,$ we can simply reparameterize our parameters to learn $\tilde { C }$ directly instead of $^ { C , }$ saving a minor computation cost and simplifying the algorithm.
+
+Reduction 3: Cauchy Kernel We have reduced the original problem of computing $\overline { { \kappa } }$ to the problem of computing the SSM generating function $\hat { \mathcal { K } } _ { L } ( \Omega ; \overline { { A } } , \overline { { B } } , \overline { { C } } )$ in the case that $\overline { { A } }$ is a diagonal matrix. We show that this is exactly the same as a Cauchy kernel, which is a well-studied problem with fast and stable numerical algorithms.
+
+Definition 3. A Cauchy matrix or kernel on nodes $\Omega = ( \omega _ { i } ) \in \mathbb { C } ^ { M }$ and $\Lambda = ( \lambda _ { j } ) \in \mathbb { C } ^ { N }$ is
+
+$$
+\boldsymbol {M} \in \mathbb {C} ^ {M \times N} = \boldsymbol {M} (\Omega , \Lambda) = (\boldsymbol {M} _ {i j}) _ {i \in [ M ], j \in [ N ]} \quad \boldsymbol {M} _ {i j} = \frac {1}{\omega_ {i} - \lambda_ {j}}.
+$$
+
+The computation time of a Cauchy matrix-vector product of size $M \times N$ is denoted by $\mathcal { C } ( M , N )$
+
+Computing with Cauchy matrices is an extremely well-studied problem in numerical analysis, with both fast arithmetic algorithms and fast numerical algorithms based on the famous Fast Multipole Method (FMM) [29, 30, 31].
+
+Proposition 5 (Cauchy). A Cauchy kernel requires $O ( M + N )$ space, and operation count
+
+$$
+\mathcal {C} (M, N) = \left\{ \begin{array}{l l} O (M N) & \text {naively} \\ O ((M + N) \log^ {2} (M + N)) & \text {in exact arithmetic} \\ O ((M + N) \log (M + N) \log \frac {1}{\varepsilon}) & \text {numerically to precision} \varepsilon . \end{array} \right.
+$$
+
+Corollary C.5. Evaluating $Q ^ { * } R ( \Omega ; \Lambda ) P$ (defined in Lemma C.3) for any set of nodes $\Omega \in \mathbb { C } ^ { L }$ , diagonal matrix Λ, and vectors P , Q can be computed in $\mathcal { C } ( L , N )$ operations and $O ( L + N )$ space, where $\begin{array} { r l } { \mathscr { C } ( L , N ) = } \end{array}$ ${ \tilde { O } } ( L + N )$ is the cost of a Cauchy matrix-vector multiplication.
+
+Proof. For any fixed $\omega \in \Omega$ , we want to compute $\begin{array} { r } { \sum _ { j } \frac { q _ { j } ^ { * } p _ { j } } { \omega - \lambda _ { j } } } \end{array}$ . Computing this over all $\omega _ { i }$ is therefore exactly a Cauchy matrix-vector multiplication. □
+
+This completes the proof of Theorem 3. In Algorithm 1, note that the work is dominated by Step 2, which has a constant number of calls to a black-box Cauchy kernel, with complexity given by Proposition 5.
+
+## D Experiment Details and Full Results
+
+This section contains full experimental procedures and extended results and citations for our experimental evaluation in Section 4. Appendix D.1 corresponds to benchmarking results in Section 4.1, Appendix D.2 corresponds to LRD experiments (LRA and Speech Commands) in Section 4.2, and Appendix D.3 corresponds to the general sequence modeling experiments (generation, image classification, forecasting) in Section 4.3.
+
+## D.1 Benchmarking
+
+Benchmarking results from Table 2 and Table 3 were tested on a single A100 GPU.
+
+Benchmarks against LSSL For a given dimension $H ,$ a single LSSL or S4 layer was constructed with H hidden features. For LSSL, the state size N was set to H as done in [18]. For S4, the state size N was set to parameter-match the LSSL, which was a state size of $\textstyle { \frac { N } { 4 } }$ due to diferences in the parameterization. Table 2 benchmarks a single forward+backward pass of a single layer.
+
+Table 10: Full results for the Long Range Arena (LRA) benchmark for long-range dependencies in sequence models. (Top): Original Transformer variants in LRA. (Bottom): Other models reported in the literature.
+
+<table><tr><td>Model</td><td>LISTOPS</td><td>TEXT</td><td>RETRIEVAL</td><td>IMAGE</td><td>PATHFINDER</td><td>PATH-X</td><td>AVG</td></tr><tr><td>Random</td><td>10.00</td><td>50.00</td><td>50.00</td><td>10.00</td><td>50.00</td><td>50.00</td><td>36.67</td></tr><tr><td>Transformer</td><td>36.37</td><td>64.27</td><td>57.46</td><td>42.44</td><td>71.40</td><td>✕</td><td>53.66</td></tr><tr><td>Local Attention</td><td>15.82</td><td>52.98</td><td>53.39</td><td>41.46</td><td>66.63</td><td>✕</td><td>46.71</td></tr><tr><td>Sparse Trans.</td><td>17.07</td><td>63.58</td><td>59.59</td><td>44.24</td><td>71.71</td><td>✕</td><td>51.03</td></tr><tr><td>Longformer</td><td>35.63</td><td>62.85</td><td>56.89</td><td>42.22</td><td>69.71</td><td>✕</td><td>52.88</td></tr><tr><td>Linformer</td><td>35.70</td><td>53.94</td><td>52.27</td><td>38.56</td><td>76.34</td><td>✕</td><td>51.14</td></tr><tr><td>Reformer</td><td>37.27</td><td>56.10</td><td>53.40</td><td>38.07</td><td>68.50</td><td>✕</td><td>50.56</td></tr><tr><td>Sinkhorn Trans.</td><td>33.67</td><td>61.20</td><td>53.83</td><td>41.23</td><td>67.45</td><td>✕</td><td>51.23</td></tr><tr><td>Synthesizer</td><td>36.99</td><td>61.68</td><td>54.67</td><td>41.61</td><td>69.45</td><td>✕</td><td>52.40</td></tr><tr><td>BigBird</td><td>36.05</td><td>64.02</td><td>59.29</td><td>40.83</td><td>74.87</td><td>✕</td><td>54.17</td></tr><tr><td>Linear Trans.</td><td>16.13</td><td>65.90</td><td>53.09</td><td>42.34</td><td>75.30</td><td>✕</td><td>50.46</td></tr><tr><td>Performer</td><td>18.01</td><td>65.40</td><td>53.82</td><td>42.77</td><td>77.05</td><td>✕</td><td>51.18</td></tr><tr><td>FNet</td><td>35.33</td><td>65.11</td><td>59.61</td><td>38.67</td><td>77.80</td><td>✕</td><td>54.42</td></tr><tr><td>Nyströmformer</td><td>37.15</td><td>65.52</td><td>79.56</td><td>41.58</td><td>70.94</td><td>✕</td><td>57.46</td></tr><tr><td>Luna-256</td><td>37.25</td><td>64.57</td><td>79.29</td><td>47.38</td><td>77.72</td><td>✕</td><td>59.37</td></tr><tr><td>S4 (original)</td><td>58.35</td><td>76.02</td><td>87.09</td><td>87.26</td><td>86.05</td><td>88.10</td><td>80.48</td></tr><tr><td>S4 (updated)</td><td>59.60</td><td>86.82</td><td>90.90</td><td>88.65</td><td>94.20</td><td>96.35</td><td>86.09</td></tr></table>
+
+Benchmarks against Eficient Transformers Following [40], the Transformer models had 4 layers, hidden dimension 256 with 4 heads, query/key/value projection dimension 128, and batch size 32, for a total of roughly 600k parameters. The S4 model was parameter tied while keeping the depth and hidden dimension constant (leading to a state size of N = 256).
+
+We note that the relative orderings of these methods can vary depending on the exact hyperparameter settings.
+
+## D.2 Long-Range Dependencies
+
+This section includes information for reproducing our experiments on the Long-Range Arena and Speech Commands long-range dependency tasks.
+
+Long Range Arena Table 10 contains extended results table with all 11 methods considered in [40].
+
+For the S4 model, hyperparameters for all datasets are reported in Table 11. For all datasets, we used the AdamW optimizer with a constant learning rate schedule with decay on validation plateau. However, the learning rate on HiPPO parameters (in particular Λ, P, Q, B, C, ∆) were reduced to a maximum starting LR of 0.001, which improves stability since the HiPPO equation is crucial to performance.
+
+The S4 state size was always fixed to N = 64.
+
+As S4 is a sequence-to-sequence model with output shape (batch, length, dimension) and LRA tasks are classification, mean pooling along the length dimension was applied after the last layer.
+
+We note that most of these results were trained for far longer than what was necessary to achieve SotA results (e.g., the Image task reaches SotA in 1 epoch). Results often keep improving with longer training times.
+
+Updated results. The above hyperparameters describe the results reported in the original paper, shown in Table 10, which have since been improved. See Appendix D.5.
+
+Hardware. All models were run on single GPU. Some tasks used an A100 GPU (notably, the Path-X experiments), which has a larger max memory of 40Gb. To reproduce these on smaller GPUs, the batch size can be reduced or gradients can be accumulated for two batches.
+
+Table 11: The values of the best hyperparameters found for classification datasets; LRA (Top) and images/speech (Bottom). LR is learning rate and WD is weight decay. BN and LN refer to Batch Normalization and Layer Normalization.
+
+<table><tr><td></td><td>Depth</td><td>Features H</td><td>Norm</td><td>Pre-norm</td><td>Dropout</td><td>LR</td><td>Batch Size</td><td>Epochs</td><td>WD</td><td>Patience</td></tr><tr><td>ListOps</td><td>6</td><td>128</td><td>BN</td><td>False</td><td>0</td><td>0.01</td><td>100</td><td>50</td><td>0.01</td><td>5</td></tr><tr><td>Text</td><td>4</td><td>64</td><td>BN</td><td>True</td><td>0</td><td>0.001</td><td>50</td><td>20</td><td>0</td><td>5</td></tr><tr><td>Retrieval</td><td>6</td><td>256</td><td>BN</td><td>True</td><td>0</td><td>0.002</td><td>64</td><td>20</td><td>0</td><td>20</td></tr><tr><td>Image</td><td>6</td><td>512</td><td>LN</td><td>False</td><td>0.2</td><td>0.004</td><td>50</td><td>200</td><td>0.01</td><td>20</td></tr><tr><td>Pathfinder</td><td>6</td><td>256</td><td>BN</td><td>True</td><td>0.1</td><td>0.004</td><td>100</td><td>200</td><td>0</td><td>10</td></tr><tr><td>Path-X</td><td>6</td><td>256</td><td>BN</td><td>True</td><td>0.0</td><td>0.0005</td><td>32</td><td>100</td><td>0</td><td>20</td></tr><tr><td>CIFAR-10</td><td>6</td><td>1024</td><td>LN</td><td>False</td><td>0.25</td><td>0.01</td><td>50</td><td>200</td><td>0.01</td><td>20</td></tr><tr><td>Speech Commands (MFCC)</td><td>4</td><td>256</td><td>LN</td><td>False</td><td>0.2</td><td>0.01</td><td>100</td><td>50</td><td>0</td><td>5</td></tr><tr><td>Speech Commands (Raw)</td><td>6</td><td>128</td><td>BN</td><td>True</td><td>0.1</td><td>0.01</td><td>20</td><td>150</td><td>0</td><td>10</td></tr></table>
+
+Speech Commands We provide details of sweeps run for baseline methods run by us—numbers for all others method are taken from Gu et al. [18]. The best hyperparameters used for S4 are included in Table 11.
+
+Transformer [44] For MFCC, we swept the number of model layers {2, 4}, dropout {0, 0.1} and learning rates {0.001, 0.0005}. We used 8 attention heads, model dimension 128, prenorm, positional encodings, and trained for 150 epochs with a batch size of 100. For Raw, the Transformer model’s memory usage made training impossible.
+
+Performer [8] For MFCC, we swept the number of model layers {2, 4}, dropout {0, 0.1} and learning rates {0.001, 0.0005}. We used 8 attention heads, model dimension 128, prenorm, positional encodings, and trained for 150 epochs with a batch size of 100. For Raw, we used a model dimension of 128, 4 attention heads, prenorm, and a batch size of 16. We reduced the number of model layers to 4, so the model would fit on the single GPU. We trained for 100 epochs with a learning rate of 0.001 and no dropout.
+
+ExpRNN [24] For MFCC, we swept hidden sizes {256, 512} and learning rates {0.001, 0.002, 0.0005}. Training was run for 200 epochs, with a single layer model using a batch size of 100. For Raw, we swept hidden sizes {32, 64} and learning rates {0.001, 0.0005} (however, ExpRNN failed to learn).
+
+LipschitzRNN [13] For MFCC, we swept hidden sizes {256, 512} and learning rates {0.001, 0.002, 0.0005}. Training was run for 150 epochs, with a single layer model using a batch size of 100. For Raw, we found that LipschitzRNN was too slow to train on a single GPU (requiring a full day for 1 epoch of training alone).
+
+WaveGAN Discriminator [11] The WaveGAN-D in Table 5 is actually our improved version of the discriminator network from the recent WaveGAN model for speech [11]. This CNN actually did not work well out-of-the-box, and we added several features to help it perform better. The final model is highly specialized compared to our model, and includes:
+
+• Downsampling or pooling between layers, induced by strided convolutions, that decrease the sequence length between layers.
+
+• A global fully-connected output layer; thus the model only works for one input sequence length and does not work on MFCC features or the frequency-shift setting in Table 5.
+
+• Batch Normalization is essential, whereas S4 works equally well with either Batch Normalization or Layer Normalization.
+
+• Almost 90× as many parameters as the S4 model (26.3M vs. 0.3M).
+
+## D.3 General Sequence Modeling
+
+This subsection corresponds to the experiments in Section 4.3. Because of the number of experiments in this section, we use subsubsection dividers for diferent tasks to make it easier to follow: CIFAR-10 density estimation (Appendix D.3.1), WikiText-103 language modeling (Appendix D.3.2), autoregressive generation (Appendix D.3.3), sequential image classification (Appendix D.3.4), and time-series forecasting (Appendix D.3.5).
+
+## D.3.1 CIFAR Density Estimation
+
+This task used a diferent backbone than the rest of our experiments. We used blocks of alternating S4 layers and position-wise feed-forward layers (in the style of Transformer blocks). Each feed-forward intermediate dimension was set to 2× the hidden size of the incoming S4 layer. Similar to Salimans et al. [39], we used a UNet-style backbone consisting of B identical blocks followed by a downsampling layer. The downsampling rates were 3, 4, 4 (the 3 chosen because the sequence consists of RGB pixels). The base model had B = 8 with starting hidden dimension 128, while the large model had B = 16 with starting hidden dimension 192.
+
+We experimented with both the mixture of logistics from [39] as well as a simpler 256-way categorical loss. We found they were pretty close and ended up using the simpler softmax loss along with using input embeddings.
+
+We used the LAMB optimizer with learning rate 0.005. The base model had no dropout, while the large model had dropout 0.1 before the linear layers inside the S4 and FF blocks.
+
+## D.3.2 WikiText-103 Language Modeling
+
+The RNN baselines included in Table 8 are the AWD-QRNN [27], an eficient linear gated RNN, and the LSTM + Cache + Hebbian + MbPA [33], the best performing pure RNN in the literature. The CNN baselines are the CNN with GLU activations [9], the TrellisNet [4], Dynamic Convolutions [49], and TaLK Convolutions [26].
+
+The Transformer baseline is [2], which uses Adaptive Inputs with a tied Adaptive Softmax. This model is a standard high-performing Transformer baseline on this benchmark, used for example by Lioutas and Guo [26] and many more.
+
+Our S4 model uses the same Transformer backbone as in [2]. The model consists of 16 blocks of S4 layers alternated with position-wise feedforward layers, with a feature dimension of 1024. Because our S4 layer has around 1/4 the number of parameters as a self-attention layer with the same dimension, we made two modifications to match the parameter count better: (i) we used a GLU activation after the S4 linear layer (Section 3.4) (ii) we used two S4 layers per block. Blocks use Layer Normalization in the pre-norm position. The embedding and softmax layers were the Adaptive Embedding from [2] with standard cutofs 20000, 40000, 200000.
+
+Evaluation was performed similarly to the basic setting in [2], Table 5, which uses sliding non-overlapping windows. Other settings are reported in [2] that include more context at training and evaluation time and improves the score. Because such evaluation protocols are orthogonal to the basic model, we do not consider them and report the base score from [2] Table 5.
+
+Instead of SGD+Momentum with multiple cosine learning rate annealing cycles, our S4 model was trained with the simpler AdamW optimizer with a single cosine learning rate cycle with a maximum of 800000 steps. The initial learning rate was set to 0.0005. We used 8 A100 GPUs with a batch size of 1 per gpu and context size 8192. We used no gradient clipping and a weight decay of 0.1. Unlike [2] which specified diferent dropout rates for diferent parameters, we used a constant dropout rate of 0.25 throughout the network, including before every linear layer and on the residual branches.
+
+## D.3.3 Autoregressive Generation Speed
+
+Protocol. To account for diferent model sizes and memory requirements for each method, we benchmark generation speed by throughput, measured in images per second (Table 7) or tokens per second (Table 8). Each model generates images on a single A100 GPU, maximizing batch size to fit in memory. (For CIFAR-10 generation we limited memory to 16Gb, to be more comparable to the Transformer and Linear Transformer results reported from [22].)
+
+Table 12: (Pixel-level image classification.) Citations refer to the original model; additional citation indicates work from which this baseline is reported.
+
+<table><tr><td>Model</td><td>sMNIST</td><td>pMNIST</td><td>sCIFAR</td></tr><tr><td>Transformer [42, 44]</td><td>98.9</td><td>97.9</td><td>62.2</td></tr><tr><td>CKConv [35]</td><td>99.32</td><td> $\underline{98.54}$ </td><td>63.74</td></tr><tr><td>TrellisNet [4]</td><td>99.20</td><td>98.13</td><td>73.42</td></tr><tr><td>TCN [3]</td><td>99.0</td><td>97.2</td><td>-</td></tr><tr><td>LSTM [17, 21]</td><td>98.9</td><td>95.11</td><td>63.01</td></tr><tr><td>r-LSTM [42]</td><td>98.4</td><td>95.2</td><td>72.2</td></tr><tr><td>Dilated GRU [5]</td><td>99.0</td><td>94.6</td><td>-</td></tr><tr><td>Dilated RNN [5]</td><td>98.0</td><td>96.1</td><td>-</td></tr><tr><td>IndRNN [25]</td><td>99.0</td><td>96.0</td><td>-</td></tr><tr><td>expRNN [24]</td><td>98.7</td><td>96.6</td><td>-</td></tr><tr><td>UR-LSTM</td><td>99.28</td><td>96.96</td><td>71.00</td></tr><tr><td>UR-GRU [17]</td><td>99.27</td><td>96.51</td><td> $\underline{74.4}$ </td></tr><tr><td>LMU [45]</td><td>-</td><td>97.15</td><td>-</td></tr><tr><td>HiPPO-RNN [16]</td><td>98.9</td><td>98.3</td><td>61.1</td></tr><tr><td>UNIcoRNN [38]</td><td>-</td><td>98.4</td><td>-</td></tr><tr><td>LMUFFT [7]</td><td>-</td><td>98.49</td><td>-</td></tr><tr><td>LipschitzRNN [13]</td><td> $\underline{99.4}$ </td><td>96.3</td><td>64.2</td></tr><tr><td>S4</td><td>99.63</td><td>98.70</td><td>91.13</td></tr></table>
+
+Baselines. The Transformer and Linear Transformer baselines reported in Table 7 are the results reported directly from Katharopoulos et al. [22]. Note that the Transformer number is the one in their Appendix, which implements the optimized cached implementation of self-attention.
+
+For all other baseline models, we used open source implementations of the models to benchmark generation speed. For the PixelCNN++, we used the fast cached version by Ramachandran et al. [34], which sped up generation by orders of magnitude from the naive implementation. This code was only available in TensorFlow, which may have slight diferences compared to the rest of the baselines which were implemented in PyTorch.
+
+We were unable to run the Sparse Transformer [6] model due to issues with their custom CUDA implementation of the sparse attention kernel, which we were unable to resolve.
+
+The Transformer baseline from Table 8 was run using a modified GPT-2 backbone from the HuggingFace repository, configured to recreate the architecture reported in [2]. These numbers are actually slightly favorable to the baseline, as we did not include the timing of the embedding or softmax layers, whereas the number reported for S4 is the full model.
+
+## D.3.4 Pixel-Level Sequential Image Classification
+
+Our models were trained with the AdamW optimizer for up to 200 epochs. Hyperparameters for the CIFAR-10 model is reported in Table 11.
+
+For our comparisons against ResNet-18, the main diferences between the base models are that S4 uses LayerNorm by default while ResNet uses BatchNorm. The last ablation in Section 4.3 swaps the normalization type, using BatchNorm for S4 and LayerNorm for ResNet, to ablate this architectural diference. The experiments with augmentation take the base model and train with mild data augmentation: horizontal flips and random crops (with symmetric padding).
+
+![](images/0f4e83f049bf75641dc10971243d22e637f119fd4d6e4cc20af5edaa95308cee.jpg)  
+Figure 5: Comparison of S4 and specialized time-series models for forecasting tasks. (Top Left) The forecasting task involves predicting future values of a time-series given past context. (Bottom Left) We perform simple forecasting using a sequence model such as S4 as a black box. (Right) Informer uses an encoder-decoder architecture designed specifically for forecasting problems involving a customized attention module (figure taken from Zhou et al. [50]).
+
+## D.3.5 Time Series Forecasting compared to Informer
+
+We include a simple figure (Fig. 5) contrasting the architecture of S4 against that of the Informer [50].
+
+In Fig. 5, the goal is to forecast a contiguous range of future predictions (Green, length F ) given a range of past context (Blue, length C ). We simply concatenate the entire context with a sequence of masks set to the length of the forecast window. This input is a single sequence of length C + F that is run through the same simple deep S4 model used throughout this work, which maps to an output of length C + F . We then use just the last F outputs as the forecasted predictions.
+
+Tables 13 and 14 contain full results on all 50 settings considered by Zhou et al. [50]. S4 sets the best results on 40 out of 50 of these settings.
+
+## D.4 Visualizations
+
+We visualize the convolutional filter K<sup>¯</sup> learned by S4 for the Pathfinder and CIFAR-10 tasks in Appendix D.4.
+
+## D.5 Reproduction
+
+Since the first version of this paper, several experiments have been updated. Please read the corresponding paragraph below before citing LRA or SC results.
+
+Long Range Arena Follow-ups to this paper expanded the theoretical understanding of S4 while improving some results. The results reported in Table 4 have been updated to results from the papers [19, 20]. More specifically, the method S4-LegS in those works refers to the same model presented in this paper, with the “-LegS” sufix referring to the initialization defined in equation (2). As such, results from the original Table 4 have been directly updated.
+
+<table><tr><td colspan="2">Methods</td><td colspan="2">S4</td><td colspan="2">Informer</td><td colspan="2"> $Informer^†$ </td><td colspan="2">LogTrans</td><td colspan="2">Reformer</td><td colspan="2">LSTMa</td><td colspan="2">DeepAR</td><td colspan="2">ARIMA</td><td colspan="2">Prophet</td></tr><tr><td colspan="2">Metric</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td></tr><tr><td rowspan="5"> $ETTh_1$ </td><td>24</td><td>0.061</td><td>0.191</td><td>0.098</td><td>0.247</td><td>0.092</td><td>0.246</td><td>0.103</td><td>0.259</td><td>0.222</td><td>0.389</td><td>0.114</td><td>0.272</td><td>0.107</td><td>0.280</td><td>0.108</td><td>0.284</td><td>0.115</td><td>0.275</td></tr><tr><td>48</td><td>0.079</td><td>0.220</td><td>0.158</td><td>0.319</td><td>0.161</td><td>0.322</td><td>0.167</td><td>0.328</td><td>0.284</td><td>0.445</td><td>0.193</td><td>0.358</td><td>0.162</td><td>0.327</td><td>0.175</td><td>0.424</td><td>0.168</td><td>0.330</td></tr><tr><td>168</td><td>0.104</td><td>0.258</td><td>0.183</td><td>0.346</td><td>0.187</td><td>0.355</td><td>0.207</td><td>0.375</td><td>1.522</td><td>1.191</td><td>0.236</td><td>0.392</td><td>0.239</td><td>0.422</td><td>0.396</td><td>0.504</td><td>1.224</td><td>0.763</td></tr><tr><td>336</td><td>0.080</td><td>0.229</td><td>0.222</td><td>0.387</td><td>0.215</td><td>0.369</td><td>0.230</td><td>0.398</td><td>1.860</td><td>1.124</td><td>0.590</td><td>0.698</td><td>0.445</td><td>0.552</td><td>0.468</td><td>0.593</td><td>1.549</td><td>1.820</td></tr><tr><td>720</td><td>0.116</td><td>0.271</td><td>0.269</td><td>0.435</td><td>0.257</td><td>0.421</td><td>0.273</td><td>0.463</td><td>2.112</td><td>1.436</td><td>0.683</td><td>0.768</td><td>0.658</td><td>0.707</td><td>0.659</td><td>0.766</td><td>2.735</td><td>3.253</td></tr><tr><td rowspan="5"> $ETTh_2$ </td><td>24</td><td>0.095</td><td>0.234</td><td>0.093</td><td>0.240</td><td>0.099</td><td>0.241</td><td>0.102</td><td>0.255</td><td>0.263</td><td>0.437</td><td>0.155</td><td>0.307</td><td>0.098</td><td>0.263</td><td>3.554</td><td>0.445</td><td>0.199</td><td>0.381</td></tr><tr><td>48</td><td>0.191</td><td>0.346</td><td>0.155</td><td>0.314</td><td>0.159</td><td>0.317</td><td>0.169</td><td>0.348</td><td>0.458</td><td>0.545</td><td>0.190</td><td>0.348</td><td>0.163</td><td>0.341</td><td>3.190</td><td>0.474</td><td>0.304</td><td>0.462</td></tr><tr><td>168</td><td>0.167</td><td>0.333</td><td>0.232</td><td>0.389</td><td>0.235</td><td>0.390</td><td>0.246</td><td>0.422</td><td>1.029</td><td>0.879</td><td>0.385</td><td>0.514</td><td>0.255</td><td>0.414</td><td>2.800</td><td>0.595</td><td>2.145</td><td>1.068</td></tr><tr><td>336</td><td>0.189</td><td>0.361</td><td>0.263</td><td>0.417</td><td>0.258</td><td>0.423</td><td>0.267</td><td>0.437</td><td>1.668</td><td>1.228</td><td>0.558</td><td>0.606</td><td>0.604</td><td>0.607</td><td>2.753</td><td>0.738</td><td>2.096</td><td>2.543</td></tr><tr><td>720</td><td>0.187</td><td>0.358</td><td>0.277</td><td>0.431</td><td>0.285</td><td>0.442</td><td>0.303</td><td>0.493</td><td>2.030</td><td>1.721</td><td>0.640</td><td>0.681</td><td>0.429</td><td>0.580</td><td>2.878</td><td>1.044</td><td>3.355</td><td>4.664</td></tr><tr><td rowspan="5"> $ETTm_1$ </td><td>24</td><td>0.024</td><td>0.117</td><td>0.030</td><td>0.137</td><td>0.034</td><td>0.160</td><td>0.065</td><td>0.202</td><td>0.095</td><td>0.228</td><td>0.121</td><td>0.233</td><td>0.091</td><td>0.243</td><td>0.090</td><td>0.206</td><td>0.120</td><td>0.290</td></tr><tr><td>48</td><td>0.051</td><td>0.174</td><td>0.069</td><td>0.203</td><td>0.066</td><td>0.194</td><td>0.078</td><td>0.220</td><td>0.249</td><td>0.390</td><td>0.305</td><td>0.411</td><td>0.219</td><td>0.362</td><td>0.179</td><td>0.306</td><td>0.133</td><td>0.305</td></tr><tr><td>96</td><td>0.086</td><td>0.229</td><td>0.194</td><td>0.372</td><td>0.187</td><td>0.384</td><td>0.199</td><td>0.386</td><td>0.920</td><td>0.767</td><td>0.287</td><td>0.420</td><td>0.364</td><td>0.496</td><td>0.272</td><td>0.399</td><td>0.194</td><td>0.396</td></tr><tr><td>288</td><td>0.160</td><td>0.327</td><td>0.401</td><td>0.554</td><td>0.409</td><td>0.548</td><td>0.411</td><td>0.572</td><td>1.108</td><td>1.245</td><td>0.524</td><td>0.584</td><td>0.948</td><td>0.795</td><td>0.462</td><td>0.558</td><td>0.452</td><td>0.574</td></tr><tr><td>672</td><td>0.292</td><td>0.466</td><td>0.512</td><td>0.644</td><td>0.519</td><td>0.665</td><td>0.598</td><td>0.702</td><td>1.793</td><td>1.528</td><td>1.064</td><td>0.873</td><td>2.437</td><td>1.352</td><td>0.639</td><td>0.697</td><td>2.747</td><td>1.174</td></tr><tr><td rowspan="5">Weather</td><td>24</td><td>0.125</td><td>0.254</td><td>0.117</td><td>0.251</td><td>0.119</td><td>0.256</td><td>0.136</td><td>0.279</td><td>0.231</td><td>0.401</td><td>0.131</td><td>0.254</td><td>0.128</td><td>0.274</td><td>0.219</td><td>0.355</td><td>0.302</td><td>0.433</td></tr><tr><td>48</td><td>0.181</td><td>0.305</td><td>0.178</td><td>0.318</td><td>0.185</td><td>0.316</td><td>0.206</td><td>0.356</td><td>0.328</td><td>0.423</td><td>0.190</td><td>0.334</td><td>0.203</td><td>0.353</td><td>0.273</td><td>0.409</td><td>0.445</td><td>0.536</td></tr><tr><td>168</td><td>0.198</td><td>0.333</td><td>0.266</td><td>0.398</td><td>0.269</td><td>0.404</td><td>0.309</td><td>0.439</td><td>0.654</td><td>0.634</td><td>0.341</td><td>0.448</td><td>0.293</td><td>0.451</td><td>0.503</td><td>0.599</td><td>2.441</td><td>1.142</td></tr><tr><td>336</td><td>0.300</td><td>0.417</td><td>0.297</td><td>0.416</td><td>0.310</td><td>0.422</td><td>0.359</td><td>0.484</td><td>1.792</td><td>1.093</td><td>0.456</td><td>0.554</td><td>0.585</td><td>0.644</td><td>0.728</td><td>0.730</td><td>1.987</td><td>2.468</td></tr><tr><td>720</td><td>0.245</td><td>0.375</td><td>0.359</td><td>0.466</td><td>0.361</td><td>0.471</td><td>0.388</td><td>0.499</td><td>2.087</td><td>1.534</td><td>0.866</td><td>0.809</td><td>0.499</td><td>0.596</td><td>1.062</td><td>0.943</td><td>3.859</td><td>1.144</td></tr><tr><td rowspan="5">ECL</td><td>48</td><td>0.222</td><td>0.350</td><td>0.239</td><td>0.359</td><td>0.238</td><td>0.368</td><td>0.280</td><td>0.429</td><td>0.971</td><td>0.884</td><td>0.493</td><td>0.539</td><td>0.204</td><td>0.357</td><td>0.879</td><td>0.764</td><td>0.524</td><td>0.595</td></tr><tr><td>168</td><td>0.331</td><td>0.421</td><td>0.447</td><td>0.503</td><td>0.442</td><td>0.514</td><td>0.454</td><td>0.529</td><td>1.671</td><td>1.587</td><td>0.723</td><td>0.655</td><td>0.315</td><td>0.436</td><td>1.032</td><td>0.833</td><td>2.725</td><td>1.273</td></tr><tr><td>336</td><td>0.328</td><td>0.422</td><td>0.489</td><td>0.528</td><td>0.501</td><td>0.552</td><td>0.514</td><td>0.563</td><td>3.528</td><td>2.196</td><td>1.212</td><td>0.898</td><td>0.414</td><td>0.519</td><td>1.136</td><td>0.876</td><td>2.246</td><td>3.077</td></tr><tr><td>720</td><td>0.428</td><td>0.494</td><td>0.540</td><td>0.571</td><td>0.543</td><td>0.578</td><td>0.558</td><td>0.609</td><td>4.891</td><td>4.047</td><td>1.511</td><td>0.966</td><td>0.563</td><td>0.595</td><td>1.251</td><td>0.933</td><td>4.243</td><td>1.415</td></tr><tr><td>960</td><td>0.432</td><td>0.497</td><td>0.582</td><td>0.608</td><td>0.594</td><td>0.638</td><td>0.624</td><td>0.645</td><td>7.019</td><td>5.105</td><td>1.545</td><td>1.006</td><td>0.657</td><td>0.683</td><td>1.370</td><td>0.982</td><td>6.901</td><td>4.264</td></tr><tr><td colspan="2">Count</td><td colspan="2">22</td><td colspan="2">5</td><td colspan="2">0</td><td colspan="2">0</td><td colspan="2">0</td><td colspan="2">0</td><td colspan="2">2</td><td colspan="2">0</td><td colspan="2">0</td></tr></table>
+
+Table 13: Univariate long sequence time-series forecasting results on four datasets (five cases).
+
+The updated results have only minor hyperparameter changes compared to the original results. The original results and hyperparameters are shown in Table 10 (Appendix D.2). Appendix B of [19] describes the changes in hyperparameters, which are also documented from the experiment configuration files in the publically available code at https://github.com/HazyResearch/state-spaces.
+
+Speech Commands The Speech Commands (SC) dataset [47] is originally a 35-class dataset of spoken English words. However, this paper was part of a line of work starting with Kidger et al. [23] that has used a smaller 10-class subset of SC [18, 23, 35, 36]. In an efort to avoid dataset fragmentation in the literature, we have since moved to the original dataset. We are now calling this 10-class subset SC10 to distinguish it from the full 35-class SC dataset. To cite S4 as a baseline for Speech Commands, please use Table 11 from [19] instead of Table 5 from this paper. In addition to using the full SC dataset, it also provides a number of much stronger baselines than the ones used in this work.
+
+WikiText-103 The original version of this paper used an S4 model with batch size 8, context size 1024 which achieved a validation perplexity of 20.88 and test perplexity of 21.28. It was later retrained with a batch size of 1 and context size 8192 which achieved a validation perplexity of 19.69 and test perplexity of 20.95, and a model checkpoint is available in the public repository. The rest of the model is essentially identical, so the results from the original table have been updated.
+
+<table><tr><td colspan="2">Methods</td><td colspan="2">S4</td><td colspan="2">Informer</td><td colspan="2"> $Informer^†$ </td><td colspan="2">LogTrans</td><td colspan="2">Reformer</td><td colspan="2">LSTMa</td><td colspan="2">LSTnet</td></tr><tr><td colspan="2">Metric</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td><td>MSE</td><td>MAE</td></tr><tr><td rowspan="5"> $ETTh_1$ </td><td>24</td><td>0.525</td><td>0.542</td><td>0.577</td><td>0.549</td><td>0.620</td><td>0.577</td><td>0.686</td><td>0.604</td><td>0.991</td><td>0.754</td><td>0.650</td><td>0.624</td><td>1.293</td><td>0.901</td></tr><tr><td>48</td><td>0.641</td><td>0.615</td><td>0.685</td><td>0.625</td><td>0.692</td><td>0.671</td><td>0.766</td><td>0.757</td><td>1.313</td><td>0.906</td><td>0.702</td><td>0.675</td><td>1.456</td><td>0.960</td></tr><tr><td>168</td><td>0.980</td><td>0.779</td><td>0.931</td><td>0.752</td><td>0.947</td><td>0.797</td><td>1.002</td><td>0.846</td><td>1.824</td><td>1.138</td><td>1.212</td><td>0.867</td><td>1.997</td><td>1.214</td></tr><tr><td>336</td><td>1.407</td><td>0.910</td><td>1.128</td><td>0.873</td><td>1.094</td><td>0.813</td><td>1.362</td><td>0.952</td><td>2.117</td><td>1.280</td><td>1.424</td><td>0.994</td><td>2.655</td><td>1.369</td></tr><tr><td>720</td><td>1.162</td><td>0.842</td><td>1.215</td><td>0.896</td><td>1.241</td><td>0.917</td><td>1.397</td><td>1.291</td><td>2.415</td><td>1.520</td><td>1.960</td><td>1.322</td><td>2.143</td><td>1.380</td></tr><tr><td rowspan="5"> $ETTh_2$ </td><td>24</td><td>0.871</td><td>0.736</td><td>0.720</td><td>0.665</td><td>0.753</td><td>0.727</td><td>0.828</td><td>0.750</td><td>1.531</td><td>1.613</td><td>1.143</td><td>0.813</td><td>2.742</td><td>1.457</td></tr><tr><td>48</td><td>1.240</td><td>0.867</td><td>1.457</td><td>1.001</td><td>1.461</td><td>1.077</td><td>1.806</td><td>1.034</td><td>1.871</td><td>1.735</td><td>1.671</td><td>1.221</td><td>3.567</td><td>1.687</td></tr><tr><td>168</td><td>2.580</td><td>1.255</td><td>3.489</td><td>1.515</td><td>3.485</td><td>1.612</td><td>4.070</td><td>1.681</td><td>4.660</td><td>1.846</td><td>4.117</td><td>1.674</td><td>3.242</td><td>2.513</td></tr><tr><td>336</td><td>1.980</td><td>1.128</td><td>2.723</td><td>1.340</td><td>2.626</td><td>1.285</td><td>3.875</td><td>1.763</td><td>4.028</td><td>1.688</td><td>3.434</td><td>1.549</td><td>2.544</td><td>2.591</td></tr><tr><td>720</td><td>2.650</td><td>1.340</td><td>3.467</td><td>1.473</td><td>3.548</td><td>1.495</td><td>3.913</td><td>1.552</td><td>5.381</td><td>2.015</td><td>3.963</td><td>1.788</td><td>4.625</td><td>3.709</td></tr><tr><td rowspan="5"> $ETTm_1$ </td><td>24</td><td>0.426</td><td>0.487</td><td>0.323</td><td>0.369</td><td>0.306</td><td>0.371</td><td>0.419</td><td>0.412</td><td>0.724</td><td>0.607</td><td>0.621</td><td>0.629</td><td>1.968</td><td>1.170</td></tr><tr><td>48</td><td>0.580</td><td>0.565</td><td>0.494</td><td>0.503</td><td>0.465</td><td>0.470</td><td>0.507</td><td>0.583</td><td>1.098</td><td>0.777</td><td>1.392</td><td>0.939</td><td>1.999</td><td>1.215</td></tr><tr><td>96</td><td>0.699</td><td>0.649</td><td>0.678</td><td>0.614</td><td>0.681</td><td>0.612</td><td>0.768</td><td>0.792</td><td>1.433</td><td>0.945</td><td>1.339</td><td>0.913</td><td>2.762</td><td>1.542</td></tr><tr><td>288</td><td>0.824</td><td>0.674</td><td>1.056</td><td>0.786</td><td>1.162</td><td>0.879</td><td>1.462</td><td>1.320</td><td>1.820</td><td>1.094</td><td>1.740</td><td>1.124</td><td>1.257</td><td>2.076</td></tr><tr><td>672</td><td>0.846</td><td>0.709</td><td>1.192</td><td>0.926</td><td>1.231</td><td>1.103</td><td>1.669</td><td>1.461</td><td>2.187</td><td>1.232</td><td>2.736</td><td>1.555</td><td>1.917</td><td>2.941</td></tr><tr><td rowspan="5">Weather</td><td>24</td><td>0.334</td><td>0.385</td><td>0.335</td><td>0.381</td><td>0.349</td><td>0.397</td><td>0.435</td><td>0.477</td><td>0.655</td><td>0.583</td><td>0.546</td><td>0.570</td><td>0.615</td><td>0.545</td></tr><tr><td>48</td><td>0.406</td><td>0.444</td><td>0.395</td><td>0.459</td><td>0.386</td><td>0.433</td><td>0.426</td><td>0.495</td><td>0.729</td><td>0.666</td><td>0.829</td><td>0.677</td><td>0.660</td><td>0.589</td></tr><tr><td>168</td><td>0.525</td><td>0.527</td><td>0.608</td><td>0.567</td><td>0.613</td><td>0.582</td><td>0.727</td><td>0.671</td><td>1.318</td><td>0.855</td><td>1.038</td><td>0.835</td><td>0.748</td><td>0.647</td></tr><tr><td>336</td><td>0.531</td><td>0.539</td><td>0.702</td><td>0.620</td><td>0.707</td><td>0.634</td><td>0.754</td><td>0.670</td><td>1.930</td><td>1.167</td><td>1.657</td><td>1.059</td><td>0.782</td><td>0.683</td></tr><tr><td>720</td><td>0.578</td><td>0.578</td><td>0.831</td><td>0.731</td><td>0.834</td><td>0.741</td><td>0.885</td><td>0.773</td><td>2.726</td><td>1.575</td><td>1.536</td><td>1.109</td><td>0.851</td><td>0.757</td></tr><tr><td rowspan="5">ECL</td><td>48</td><td>0.255</td><td>0.352</td><td>0.344</td><td>0.393</td><td>0.334</td><td>0.399</td><td>0.355</td><td>0.418</td><td>1.404</td><td>0.999</td><td>0.486</td><td>0.572</td><td>0.369</td><td>0.445</td></tr><tr><td>168</td><td>0.283</td><td>0.373</td><td>0.368</td><td>0.424</td><td>0.353</td><td>0.420</td><td>0.368</td><td>0.432</td><td>1.515</td><td>1.069</td><td>0.574</td><td>0.602</td><td>0.394</td><td>0.476</td></tr><tr><td>336</td><td>0.292</td><td>0.382</td><td>0.381</td><td>0.431</td><td>0.381</td><td>0.439</td><td>0.373</td><td>0.439</td><td>1.601</td><td>1.104</td><td>0.886</td><td>0.795</td><td>0.419</td><td>0.477</td></tr><tr><td>720</td><td>0.289</td><td>0.377</td><td>0.406</td><td>0.443</td><td>0.391</td><td>0.438</td><td>0.409</td><td>0.454</td><td>2.009</td><td>1.170</td><td>1.676</td><td>1.095</td><td>0.556</td><td>0.565</td></tr><tr><td>960</td><td>0.299</td><td>0.387</td><td>0.460</td><td>0.548</td><td>0.492</td><td>0.550</td><td>0.477</td><td>0.589</td><td>2.141</td><td>1.387</td><td>1.591</td><td>1.128</td><td>0.605</td><td>0.599</td></tr><tr><td colspan="2">Count</td><td colspan="2">18</td><td colspan="2">5</td><td colspan="2">6</td><td colspan="2">0</td><td colspan="2">0</td><td colspan="2">0</td><td colspan="2">0</td></tr></table>
+
+Table 14: Multivariate long sequence time-series forecasting results on four datasets (five cases).
+
+![](images/8854f6ba099d7f62980cc46d79bdf4b1f368b81a46e0ff8cd67a7cc281d67acc.jpg)  
+Figure 6: (Convolutional filters on Pathfinder) A random selection of filters learned by S4 in the first layer (top 2 rows) and last layer (bottom 2 rows) of the best model.

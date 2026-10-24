@@ -1,0 +1,97 @@
+==============================================================================
+知识库自检报告 (v4)  root=/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析
+==============================================================================
+[FAIL] Case 1    Markdown 相对链接完整性                失败 3     / 检查 1202
+         - 01_参考论文/康复辅助/康复整合链路/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果_Evidence_Card.md -> [本地出版PDF](Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf)
+         - 01_参考论文/康复辅助/康复整合链路/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制_Evidence_Card.md -> [本地出版PDF](Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf)
+         - 01_参考论文/康复辅助/康复整合链路/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制_Evidence_Card.md -> [原件](TFS2025_NeuroFuzzy_AAN.pdf)
+[PASS] Case 2    翻译文档图片链接完整性                     失败 0     / 检查 6527
+[PASS] Case 3    顶层目录编号唯一性                       失败 0     / 检查 13
+[PASS] Case 4    顶层目录分隔符一致性                      失败 0     / 检查 13
+[FAIL] Case 5    空目录 + 空壳目录                      失败 3     / 检查 921
+         - 01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Gagnon2001-ClinBiomech：运动学与动力学报告的关节坐标系一致性/Gagnon2001-ClinBiomech：运动学与动力学报告的关节坐标系一致性/images
+         - 01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/测量前臂旋后与旋前的三种测角仪法的比较及信度/images
+         - 09_章隆彬_合作团队/papers/背景资料/Zhang2025-FrontNeurosci：运动康复与增强技术专题社论/社论：用于人体运动康复与增强的先进技术/images
+[PASS] Case 6    索引一致性（日期/进度条/计数块）               失败 0     / 检查 4
+[FAIL] Case 7    PDF <-> 全文翻译/定位卡 配对             失败 169   / 检查 457
+         - 01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Alford2021-JHandTher：非受训者用 iPhone 应用自测腕关节活动度的信度/经最低限度培训的人员使用 iPhone 水准仪应用程序对正常手腕进行腕关节活动度远程自我测量仅在腕屈伸测量中表现出良好的信度/经最低限度培训的人员使用 iPhone 水准仪应用程序对正常手腕进行腕关节活动度远程自我测量仅在腕屈伸测量中表现出良好的信度.pdf 缺对应 经最低限度培训的人员使用 iPhone 水准仪应用程序对正常手腕进行腕关节活动度远程自我测量仅在腕屈伸测量中表现出良好的信度_Abstract_Card.md
+         - 01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Blackwell1994-JBiomech：网球反手击球中专家与新手的手腕运动学差异/专家与新手网球运动员在反手击球中手腕运动学的差异：对网球肘的影响/专家与新手网球运动员在反手击球中手腕运动学的差异：对网球肘的影响.pdf 缺对应 专家与新手网球运动员在反手击球中手腕运动学的差异：对网球肘的影响_Abstract_Card.md
+         - 01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Cleffken2007-JSESurg：肘关节量角测量重测信度的双盲方案/严格双盲方案下肘关节角度计测量的重测信度：用于区分测量误差与临床变化的区间/严格双盲方案下肘关节角度计测量的重测信度：用于区分测量误差与临床变化的区间.pdf 缺对应 严格双盲方案下肘关节角度计测量的重测信度：用于区分测量误差与临床变化的区间_Abstract_Card.md
+         - 01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Ellis1997-ClinRehab：手部关节角度测量中量角器与描线法的信度比较/关节角度测量：手部角度测量法与铅丝描记法信度的比较研究/关节角度测量：手部角度测量法与铅丝描记法信度的比较研究.pdf 缺对应 关节角度测量：手部角度测量法与铅丝描记法信度的比较研究_Abstract_Card.md
+         - 01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Gagnon2001-ClinBiomech：运动学与动力学报告的关节坐标系一致性/Gagnon2001-ClinBiomech：运动学与动力学报告的关节坐标系一致性/Gagnon2001-ClinBiomech：运动学与动力学报告的关节坐标系一致性.pdf 缺对应 Gagnon2001-ClinBiomech：运动学与动力学报告的关节坐标系一致性_Abstract_Card.md
+         - 01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Hazari2021-ConceptBiomechKinesiol：肩复合体、肘与腕的运动学与动力学/肩关节复合体、肘关节和腕关节的运动学与动力学/肩关节复合体、肘关节和腕关节的运动学与动力学.pdf 缺对应 肩关节复合体、肘关节和腕关节的运动学与动力学_Abstract_Card.md
+         - 01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/ISB 腕关节坐标系的拓展：一项体外准确性研究/ISB 腕关节坐标系的拓展：一项体外准确性研究.pdf 缺对应 ISB 腕关节坐标系的拓展：一项体外准确性研究_Abstract_Card.md
+         - 01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/ISB关于用于报告人体关节运动的各关节坐标系定义的建议——第二部分：肩部、肘部、腕部和手部/ISB关于用于报告人体关节运动的各关节坐标系定义的建议——第二部分：肩部、肘部、腕部和手部.pdf 缺对应 ISB关于用于报告人体关节运动的各关节坐标系定义的建议——第二部分：肩部、肘部、腕部和手部_Abstract_Card.md
+         - 01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Kinect 骨骼用于测量肩关节角度的效度与信度：一项可行性研究/Kinect 骨骼用于测量肩关节角度的效度与信度：一项可行性研究.pdf 缺对应 Kinect 骨骼用于测量肩关节角度的效度与信度：一项可行性研究_Abstract_Card.md
+         - 01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Williams1990-Physiotherapy：肩关节角目视估计与量角器测定的比较/目测法与量角器法在肩关节角度测定中的比较/目测法与量角器法在肩关节角度测定中的比较.pdf 缺对应 目测法与量角器法在肩关节角度测定中的比较_Abstract_Card.md
+         - 01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/上肢与躯干运动学变异性分析：RGB-D传感器的精度与可靠性/上肢与躯干运动学变异性分析：RGB-D传感器的精度与可靠性.pdf 缺对应 上肢与躯干运动学变异性分析：RGB-D传感器的精度与可靠性_Abstract_Card.md
+         - 01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/两种用于上肢测量的无标记动作捕捉系统精度评估：Kinect V2 与 Captiv/两种用于上肢测量的无标记动作捕捉系统精度评估：Kinect V2 与 Captiv.pdf 缺对应 两种用于上肢测量的无标记动作捕捉系统精度评估：Kinect V2 与 Captiv_Abstract_Card.md
+         ... 另有 157 条
+[PASS] Case 8    软链接可达性（断链检查）                    失败 0     / 检查 31
+[PASS] Case 9    LIST.md 陈旧状态字段                  失败 0     / 检查 32
+[PASS] Case 10   正文计数声明 vs 磁盘                    失败 0     / 检查 0
+[FAIL] Case 11   目录树中的子目录 PDF 计数                 失败 2     / 检查 2
+         - INDEX.md:174 「Transformer_发展线/」声称 93 篇 PDF，实际 152
+         - README.md:70 「09_章隆彬_合作团队/」声称 24 篇 PDF，实际 47
+[PASS] Case 12   正文 PDF 字节数 vs 磁盘                失败 0     / 检查 0
+[FAIL] Case 13   速读卡/精读中的「未获取」陈述                 失败 2     / 检查 662
+         - 01_参考论文/康复辅助/腕关节康复感知_D435i/上肢代偿检测/自适应协作机器人减轻假肢使用者代偿运动/通过自适应协作机器人减轻假肢使用者的代偿运动/通过自适应协作机器人减轻假肢使用者的代偿运动_全文翻译.md:120 含「锁定，」→ 图 5 对比了由参与者 3 进行的人与假肢使用者交互（HP）和优化后的机器人交接（RP）之间的交接场景。尽管人类传递者的
+         - 01_参考论文/整合系统/生物力学线/B2_肌肉骨骼动力学_与可微仿真/人体神经肌肉骨骼系统的预测性多体动力学仿真：综述/人体神经肌肉骨骼系统的预测性多体动力学仿真：综述_全文翻译.md:276 含「锁定，」→ 除了骨骼动力学之外，预测模拟中必须包含的其他物理约束是那些定义接触条件的约束，它们可以是运动学约束或动力学方程。一些研究
+[PASS] Case 14   归档包不得自述「替代包/未获原文」               失败 0     / 检查 4
+[PASS] Case 15   缺口数/用例数自述一致性                    失败 0     / 检查 6
+[PASS] Case 16   现役正文中的无结论占位                     失败 0     / 检查 363029
+[PASS] Case 17   不得把归档包当权威来源                     失败 0     / 检查 363046
+[FAIL] Case 18   语料二（Transformer）索引与定位卡          失败 34    / 检查 93
+         - A BERT Based Method for Continuous Estimation of Cross-Subject Hand Kinematics From Surface Electromyographic Signals 标为已入库但磁盘无文件：01_参考论文/运动理解/Transformer_发展线/T1_架构与注意力机制/A_BERT_Based_Method_for_Continuous_Estimation_of_Cross-Subject_Hand_Kinematics_From_Surface_Electromyographic_Signals.pdf
+         - A ConvNet for the 2020s 标为已入库但磁盘无文件：01_参考论文/运动理解/Transformer_发展线/T1_架构与注意力机制/2022_Liu_A_ConvNet_for_the_2020s.pdf
+         - A Novel Transformer-Based Method for Full Lower-Limb Joint Angles and Moments Prediction in Gait Using sEMG and IMU data 标为已入库但磁盘无文件：01_参考论文/运动理解/Transformer_发展线/T5_动作生成与离散token/2025_Daryakenari_A_Novel_Transformer_Based_Method_for_Full.pdf
+         - Attention Is All You Need 标为已入库但磁盘无文件：01_参考论文/运动理解/Transformer_发展线/T1_架构与注意力机制/2017_Vaswani_Attention_Is_All_You_Need.pdf
+         - BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding 标为已入库但磁盘无文件：01_参考论文/运动理解/Transformer_发展线/T1_架构与注意力机制/2018_Devlin_BERT_Pre_training_of_Deep_Bidirectional_Transformers.pdf
+         - Byte Latent Transformer: Patches Scale Better Than Tokens 标为已入库但磁盘无文件：01_参考论文/运动理解/Transformer_发展线/T7_状态空间与混合架构/2024_Pagnoni_Byte_Latent_Transformer_Patches_Scale_Better_Than.pdf
+         - Denoising Diffusion Probabilistic Models 标为已入库但磁盘无文件：01_参考论文/运动理解/Transformer_发展线/T5_动作生成与离散token/2020_Ho_Denoising_Diffusion_Probabilistic_Models.pdf
+         - ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators 标为已入库但磁盘无文件：01_参考论文/运动理解/Transformer_发展线/T1_架构与注意力机制/2020_Clark_ELECTRA_Pre_training_Text_Encoders_as_Discriminators.pdf
+         - Efficiently Modeling Long Sequences with Structured State Spaces 标为已入库但磁盘无文件：01_参考论文/运动理解/Transformer_发展线/T7_状态空间与混合架构/2021_Gu_Efficiently_Modeling_Long_Sequences_with_Structured_State.pdf
+         - Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer 标为已入库但磁盘无文件：01_参考论文/运动理解/Transformer_发展线/T1_架构与注意力机制/2019_Raffel_Exploring_the_Limits_of_Transfer_Learning_with.pdf
+         - GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models 标为已入库但磁盘无文件：01_参考论文/运动理解/Transformer_发展线/T5_动作生成与离散token/2021_Nichol_GLIDE_Towards_Photorealistic_Image_Generation_and_Editing.pdf
+         - GLU Variants Improve Transformer 标为已入库但磁盘无文件：01_参考论文/运动理解/Transformer_发展线/T1_架构与注意力机制/2020_Shazeer_GLU_Variants_Improve_Transformer.pdf
+         ... 另有 22 条
+[PASS] Case 20   语料三（生物力学）索引与定位卡                 失败 0     / 检查 111
+[FAIL] Case 19   纯待下载清单 ↔ 本轮纳入及全库全文              失败 6     / 检查 87
+         - 语料四已入库但全文引用无效：SalesRLAgent: A Reinforcement Learning Approach for Real-Time Sales Conversion Prediction
+         - 语料四已入库但全文引用无效：Confidence-Aware Routing for Large Language Model Reliability Enhancement: A Multi-Tier Framework
+         - 语料四已入库但全文引用无效：Edge-deployable pelvic IMU temporal convolution for real time hip and knee joint angle estimation
+         - 语料四已入库但全文引用无效：sEMG-based Regression of Hand Kinematics with Temporal Convolutional Networks on a Low-Power Edge Microcontroller
+         - 语料四已入库但全文引用无效：SE-TCN network for continuous estimation of upper limb joint angles
+         - 语料四已入库但全文引用无效：Multijoint Continuous Motion Estimation for Human Lower Limb Based on Surface Electromyography
+[PASS] Case 21   康复链路全文身份/原件哈希/证据卡               失败 0     / 检查 20
+[FAIL] Case 6.5  索引计数块 vs 磁盘复算                   失败 8     / 检查 19
+         - 计数块 pdf=70 与磁盘实际 118 不符
+         - 计数块 zh=42 与磁盘实际 209 不符
+         - 计数块 entries=70 与磁盘实际 118 不符
+         - 计数块 tf_pdf=93 与磁盘实际 152 不符
+         - 计数块 tf_zh=85 与磁盘实际 155 不符
+         - 计数块 bm_pdf=93 与磁盘实际 187 不符
+         - 计数块 jv_pdf=17 与磁盘实际 19 不符
+         - 计数块 jv_cards=18 与磁盘实际 13 不符
+==============================================================================
+附加统计（磁盘复算，供参考）
+  顶层目录数        : 13
+  论文 PDF 数       : 118
+  翻译 _全文翻译.md 数 : 209
+  深度替代包        : 4  （无）
+  论文条目总数      : 118  = PDF 118 + 仅替代包 0
+  PDF 覆盖率        : 100.0%  （内容覆盖率 = 100%）
+  速读卡            : 5
+  ── 语料二：Transformer 发展线（独立口径）──
+  TF PDF / 定位卡 / 全文译文 : 152 / 93 / 155
+  ── 语料三：生物力学与上肢运动学（独立口径）──
+  BM PDF / XML全文 / 定位卡   : 187 / 17 / 121
+  ── 语料四：决策模型线 / JEV · AAN 介入决策（独立口径）──
+  JV PDF / 定位卡              : 19 / 13
+  ── 康复整合链路（独立口径，证据卡非全文翻译）──
+  链路 PDF / XML / 证据卡     : 8 / 12 / 8
+  软链接 / 断链     : 31 / 0
+  计数块来源        : STATUS.md
+==============================================================================
+汇总：22 个用例，PASS 14 / FAIL 8
+==============================================================================
