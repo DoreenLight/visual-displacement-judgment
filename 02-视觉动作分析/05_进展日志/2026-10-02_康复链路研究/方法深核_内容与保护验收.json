@@ -1,0 +1,41 @@
+{
+  "status": "BOUNDED_EXISTING_SOURCE_DEEP_CHECK_PASS_GOAL_NOT_COMPLETE",
+  "papers": 55,
+  "originals": 48,
+  "missing_originals": 7,
+  "main_original_excerpts": 334,
+  "supplemental_method_locators": 17,
+  "RL_derived_locators_separate": 16,
+  "canonical_chain_SHA_count": 13,
+  "two_rebuild_and_before_SHA": "6925eb77b9ea616d0ec5d201557606df3516631a5f39474d8ac2f8c8b8449256",
+  "kb_pass": 22,
+  "kb_fail": 0,
+  "acquisition_regressions": 17,
+  "uri_regressions": 6,
+  "protection": [
+    {
+      "checked": 1133,
+      "authorized_navigation_differences": [
+        "01_参考论文/生物力学线/README.md",
+        "01_参考论文/生物力学线/取件入口.md",
+        "01_参考论文/Transformer_发展线/README.md",
+        "01_参考论文/Transformer_发展线/取件入口.md",
+        "01_参考论文/决策模型线_JEV/取件入口.md"
+      ],
+      "other_bytes_unchanged": 1128
+    },
+    {
+      "checked": 567,
+      "authorized_navigation_differences": [],
+      "other_bytes_unchanged": 567
+    }
+  ],
+  "semantic_check": "Labels/calibration/physical proxies/SAM-TLX; TFS reference identity/passivity conditions; DM11 corrected selector to actual threshold paragraph before acceptance, not formula-introduction paragraph",
+  "candidate_effect": "Calib+multimodal/body-psych questionnaires/torque-supervised AAN not standalone novel; narrower independent-reference and decision-risk hypotheses still unconfirmed",
+  "user_data_condition": "Only provided engineering material, no supplemental references; no new data/experiment/action authority",
+  "unresolved": [
+    "7 originals including RL figures/formulas",
+    "independent dual-construct and actual-assist validation conditions",
+    "innovation direction/final goal acceptance"
+  ]
+}

@@ -1,0 +1,230 @@
+{
+ "generated": "bm3_fetch.py（隔离版，不写共享下载报告）",
+ "items": [
+  {
+   "title": "Video-Based Markerless Motion Capture for Clinical and Rehabilitation Biomechanics: A PRISMA-ScR Scoping Review of Validated Architectures, Clinical Readiness, and Emerging Methods",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Video-Based Markerless Motion Capture for Clinical and Rehab.pdf"
+  },
+  {
+   "title": "A SWOT Analysis of Portable and Low-Cost Markerless Motion Capture Systems to Assess Lower-Limb Musculoskeletal Kinematics in Sport",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/A SWOT Analysis of Portable and Low-Cost Markerless Motion C.xml"
+  },
+  {
+   "title": "A review of 3D human pose estimation algorithms for markerless motion capture",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/A review of 3D human pose estimation algorithms for markerle.pdf"
+  },
+  {
+   "title": "Wearable systems for shoulder kinematics assessment: a systematic review",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Wearable systems for shoulder kinematics assessment_ a syste.xml"
+  },
+  {
+   "title": "Accuracy, Validity, and Reliability of Markerless Camera-Based 3D Motion Capture Systems versus Marker-Based 3D Motion Capture Systems in Gait Analysis: A Systematic Review and Meta-Analysis",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Accuracy, Validity, and Reliability of Markerless Camera-Bas.xml"
+  },
+  {
+   "title": "Accuracy of a markerless motion capture system in estimating upper extremity kinematics during boxing",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Accuracy of a markerless motion capture system in estimating.xml"
+  },
+  {
+   "title": "Comparison of modelling and tracking methods for analysing elbow and forearm kinematics",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Comparison of modelling and tracking methods for analysing e.pdf"
+  },
+  {
+   "title": "Biomechanics-aware Multi-view Markerless Motion Capture of Dexterous Hand Movements",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Biomechanics-aware Multi-view Markerless Motion Capture of D.pdf"
+  },
+  {
+   "title": "Markerless Motion Capture and Biomechanical Analysis Pipeline",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Markerless Motion Capture and Biomechanical Analysis Pipelin.pdf"
+  },
+  {
+   "title": "Flexible and static wrist units in upper limb prosthesis users: functionality scores, user satisfaction and compensatory movements",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Flexible and static wrist units in upper limb prosthesis use.xml"
+  },
+  {
+   "title": "A Systematic Review of the Associations Between Inverse Dynamics and Musculoskeletal Modeling to Investigate Joint Loading in a Clinical Environment",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/A Systematic Review of the Associations Between Inverse Dyna.pdf"
+  },
+  {
+   "title": "Muscle coactivation: definitions, mechanisms, and functions",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Muscle coactivation_ definitions, mechanisms, and functions.pdf"
+  },
+  {
+   "title": "OpenSim Moco: Musculoskeletal optimal control",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/OpenSim Moco_ Musculoskeletal optimal control.pdf"
+  },
+  {
+   "title": "Automated creation and tuning of personalised muscle paths for OpenSim musculoskeletal models of the knee joint",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Automated creation and tuning of personalised muscle paths f.pdf"
+  },
+  {
+   "title": "Muscle Contributions to Upper-Extremity Movement and Work From a Musculoskeletal Model of the Human Shoulder",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Muscle Contributions to Upper-Extremity Movement and Work Fr.pdf"
+  },
+  {
+   "title": "Sensitivity of subject-specific models to Hill muscle–tendon model parameters in simulations of gait",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Sensitivity of subject-specific models to Hill muscle–tendon.pdf"
+  },
+  {
+   "title": "Finger Muscle Attachments for an OpenSim Upper-Extremity Model",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Finger Muscle Attachments for an OpenSim Upper-Extremity Mod.pdf"
+  },
+  {
+   "title": "Development of a comprehensive musculoskeletal model of the shoulder and elbow",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Development of a comprehensive musculoskeletal model of the.xml"
+  },
+  {
+   "title": "Physics-Informed Deep Learning for Musculoskeletal Modeling: Predicting Muscle Forces and Joint Kinematics From Surface EMG",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Physics-Informed Deep Learning for Musculoskeletal Modeling_.pdf"
+  },
+  {
+   "title": "Wearable technology in stroke rehabilitation: towards improved diagnosis and treatment of upper-limb motor impairment",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Wearable technology in stroke rehabilitation_ towards improv.xml"
+  },
+  {
+   "title": "Fatigue, induced via repetitive upper-limb motor tasks, influences trunk and shoulder kinematics during an upper limb reaching task in a virtual reality environment",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Fatigue, induced via repetitive upper-limb motor tasks, infl.pdf"
+  },
+  {
+   "title": "Markerless Motion Capture in Routine Clinical Upper Limb Assessments: Validity and Insights Beyond Ordinal Scoring",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Markerless Motion Capture in Routine Clinical Upper Limb Ass.pdf"
+  },
+  {
+   "title": "Monocular Markerless Motion Capture Enables Quantitative Assessment of Upper Extremity Reachable Workspace",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Monocular Markerless Motion Capture Enables Quantitative Ass.pdf"
+  },
+  {
+   "title": "From Metrics to Meaning in Neurological Rehabilitation: Clinicians’ Perspectives on Digital Metrics of Upper Limb Functioning—A Focus Group Study",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/From Metrics to Meaning in Neurological Rehabilitation_ Clin.xml"
+  },
+  {
+   "title": "Target height influences shoulder and elbow non-use after stroke during reaching with the hand : A brief communication",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Target height influences shoulder and elbow non-use after st.pdf"
+  },
+  {
+   "title": "Item Difficulty of Fugl-Meyer Assessment for Upper Extremity in Persons With Chronic Stroke With Moderate-to-Severe Upper Limb Impairment",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Item Difficulty of Fugl-Meyer Assessment for Upper Extremity.pdf"
+  },
+  {
+   "title": "DigitCode: Symbolic Tokenization of Hand Motion by Anatomical Units",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B4_离散运动学token_与表征量化/DigitCode_ Symbolic Tokenization of Hand Motion by Anatomica.pdf"
+  },
+  {
+   "title": "Multi-View 3D Human Pose Estimation with Weakly Synchronized Images",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B4_离散运动学token_与表征量化/Multi-View 3D Human Pose Estimation with Weakly Synchronized.pdf"
+  },
+  {
+   "title": "VQ-HPS: Human Pose and Shape Estimation in a Vector-Quantized Latent Space",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B4_离散运动学token_与表征量化/VQ-HPS_ Human Pose and Shape Estimation in a Vector-Quantize.pdf"
+  },
+  {
+   "title": "BEST: BERT Pre-training for Sign Language Recognition with Coupling Tokenization",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B4_离散运动学token_与表征量化/BEST_ BERT Pre-training for Sign Language Recognition with C.pdf"
+  },
+  {
+   "title": "Robot Motion Planning in Learned Latent Spaces",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B4_离散运动学token_与表征量化/Robot Motion Planning in Learned Latent Spaces.pdf"
+  },
+  {
+   "title": "Learning 3D Human Pose from Structure and Motion",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B4_离散运动学token_与表征量化/Learning 3D Human Pose from Structure and Motion.pdf"
+  },
+  {
+   "title": "Learning Pose Grammar to Encode Human Body Configuration for 3D Pose Estimation",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B4_离散运动学token_与表征量化/Learning Pose Grammar to Encode Human Body Configuration for.pdf"
+  },
+  {
+   "title": "Machine Learning for Optical Motion Capture-Driven Musculoskeletal Modelling from Inertial Motion Capture Data",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/Machine Learning for Optical Motion Capture-Driven Musculosk.xml"
+  },
+  {
+   "title": "Applications and limitations of current markerless motion capture methods for clinical gait biomechanics",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/Applications and limitations of current markerless motion ca.xml"
+  },
+  {
+   "title": "Uncertainty-Aware Mapping from 3D Keypoints to Anatomical Landmarks for Markerless Biomechanics",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/Uncertainty-Aware Mapping from 3D Keypoints to Anatomical La.pdf"
+  },
+  {
+   "title": "Biomechanical Reconstruction with Confidence Intervals from Multiview Markerless Motion Capture",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/Biomechanical Reconstruction with Confidence Intervals from.pdf"
+  },
+  {
+   "title": "A realistic upper-limb musculoskeletal model for overall muscle activation estimation",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/A realistic upper-limb musculoskeletal model for overall mus.pdf"
+  },
+  {
+   "title": "Towards a Simplified Estimation of Muscle Activation Pattern from MRI and EMG Using Electrical Network and Graph Theory",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/Towards a Simplified Estimation of Muscle Activation Pattern.xml"
+  },
+  {
+   "title": "Evaluating Muscle Activation Models for Elbow Motion Estimation",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/Evaluating Muscle Activation Models for Elbow Motion Estimat.xml"
+  },
+  {
+   "title": "Differentiable Biomechanics Unlocks Opportunities for Markerless Motion Capture",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/Differentiable Biomechanics Unlocks Opportunities for Marker.pdf"
+  },
+  {
+   "title": "Towards Human Inverse Dynamics from Real Images: A Dataset and Benchmark for Joint Torque Estimation",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/Towards Human Inverse Dynamics from Real Images_ A Dataset a.pdf"
+  },
+  {
+   "title": "Differentiable Biomechanics for Markerless Motion Capture in Upper Limb Stroke Rehabilitation: A Comparison with Optical Motion Capture",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/Differentiable Biomechanics for Markerless Motion Capture in.pdf"
+  },
+  {
+   "title": "Optimal-state Dynamics Estimation for Physics-based Human Motion Capture from Videos",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/Optimal-state Dynamics Estimation for Physics-based Human Mo.pdf"
+  },
+  {
+   "title": "PoseAug: A Differentiable Pose Augmentation Framework for 3D Human Pose Estimation",
+   "status": "already",
+   "path": "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/PoseAug_ A Differentiable Pose Augmentation Framework for 3D.pdf"
+  }
+ ]
+}

@@ -1,0 +1,82 @@
+{
+  "records": [
+    {
+      "id": "Z20",
+      "doi": "10.1109/tie.2016.2624260",
+      "source": "01_参考论文/zhang2017.pdf",
+      "target": "09_章隆彬_合作团队/papers/康复辅助/Zhang2017-TIE：扰动观测器与自适应神经网络变刚度控制/Zhang2017-TIE：扰动观测器与自适应神经网络变刚度控制.pdf",
+      "pages": 9,
+      "sha256": "a8e92e48782fe8a1d86582ffa9a280d3d1788055518a1fb1393cded9dbeaf6c0",
+      "version": "IEEE已接受未最终编辑版本（PDF首页声明）；不是最终排版版",
+      "author_identity": "首页Longbin Zhang署名；DOI与目标一致",
+      "text_chars": 113123,
+      "references_present": true,
+      "rollback": "目标反向移动至source，不保留第二份原件"
+    },
+    {
+      "id": "Z21",
+      "doi": "10.1109/tmech.2020.3044289",
+      "source": "01_参考论文/li2021.pdf",
+      "target": "09_章隆彬_合作团队/papers/理解与辅助结合/Li2021-TMECH：稳定动态行走的下肢外骨骼人在环控制/Li2021-TMECH：稳定动态行走的下肢外骨骼人在环控制.pdf",
+      "pages": 12,
+      "sha256": "1321b246cd462498a0315984b63526d3ffa4a9fbd7517e50c45cb09bc95c6921",
+      "version": "IEEE已接受未最终编辑版本（PDF首页声明）；不是最终排版版",
+      "author_identity": "首页Longbin Zhang署名；DOI与目标一致",
+      "text_chars": 143388,
+      "references_present": true,
+      "rollback": "目标反向移动至source，不保留第二份原件"
+    },
+    {
+      "id": "Z22",
+      "doi": "10.1109/tfuzz.2016.2566676",
+      "source": "01_参考论文/qiu2017.pdf",
+      "target": "09_章隆彬_合作团队/papers/理解与辅助结合/Qiu2017-TFS：脑机接口与视觉压缩感知外骨骼遥操作/Qiu2017-TFS：脑机接口与视觉压缩感知外骨骼遥操作.pdf",
+      "pages": 12,
+      "sha256": "f17559c2573f374f3644a3fd92104159168965b49cb4b7aac4b25c99ec158bd4",
+      "version": "IEEE已接受未最终编辑版本（PDF首页声明）；不是最终排版版",
+      "author_identity": "首页Longbin Zhang署名；DOI与目标一致",
+      "text_chars": 147952,
+      "references_present": true,
+      "rollback": "目标反向移动至source，不保留第二份原件"
+    },
+    {
+      "id": "Z23",
+      "doi": "10.1109/icarm52023.2021.9536189",
+      "source": "01_参考论文/zhang2021.pdf",
+      "target": "09_章隆彬_合作团队/papers/运动理解/Zhang2021-ICARM：NMS求解器与NN的踝动态力矩估计/Zhang2021-ICARM：NMS求解器与NN的踝动态力矩估计.pdf",
+      "pages": 6,
+      "sha256": "bc2306f29e1b8fab63b98c970a99d4c3ba5744e0dda03550e98c9988ab7da1e3",
+      "version": "IEEE会议论文全文（含DOI版权信息）",
+      "author_identity": "首页Longbin Zhang署名；DOI与目标一致",
+      "text_chars": 62682,
+      "references_present": true,
+      "rollback": "目标反向移动至source，不保留第二份原件"
+    },
+    {
+      "id": "Z24",
+      "doi": "10.1109/yac71005.2026.11616179",
+      "source": "01_参考论文/EEG_Dynamics_and_Center_of_Pressure_Modulation_During_Multi-Task_Balance_Challenges_in_Older_Adults.pdf",
+      "target": "09_章隆彬_合作团队/papers/运动理解/Li2026-YAC：多任务平衡挑战的EEG与压力中心调节/Li2026-YAC：多任务平衡挑战的EEG与压力中心调节.pdf",
+      "pages": 5,
+      "sha256": "03b60d7088a10a6ee3834e92d376d7680d42f9aa7ad92fa984d697ed5aea2298",
+      "version": "IEEE会议论文全文（含DOI版权信息）",
+      "author_identity": "首页Longbin Zhang署名；DOI与目标一致",
+      "text_chars": 50390,
+      "references_present": true,
+      "rollback": "目标反向移动至source，不保留第二份原件"
+    },
+    {
+      "id": "Z25",
+      "doi": "10.1109/yac71005.2026.11615719",
+      "source": "01_参考论文/Predicting_Ground_Reaction_Forces_by_LSTM_Neural_Networks_with_Multi-modal_Data.pdf",
+      "target": "09_章隆彬_合作团队/papers/运动理解/Fu2026-YAC：多模态LSTM地面反力预测/Fu2026-YAC：多模态LSTM地面反力预测.pdf",
+      "pages": 6,
+      "sha256": "5a14c4e07f7ed1153c8321f21b48ac99ec732d5b2ec03bdedd13d7740eb88b5b",
+      "version": "IEEE会议论文全文（含DOI版权信息）",
+      "author_identity": "首页Longbin Zhang署名；DOI与目标一致",
+      "text_chars": 47987,
+      "references_present": true,
+      "rollback": "目标反向移动至source，不保留第二份原件"
+    }
+  ]
+}

@@ -1,0 +1,2989 @@
+[
+    {
+        "type": "text",
+        "text": "TRAIN SHORT, TEST LONG: ATTENTION WITH LINEAR BIASES ENABLES INPUT LENGTH EXTRAPOLATION",
+        "text_level": 1,
+        "bbox": [
+            171,
+            98,
+            823,
+            146
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ofir Press<sup>1,2</sup> Noah A. Smith<sup>1,3</sup> Mike Lewis<sup>2</sup>",
+        "bbox": [
+            181,
+            169,
+            524,
+            185
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "<sup>1</sup>Paul G. Allen School of Computer Science & Engineering, University of Washington <sup>2</sup>Facebook AI Research <sup>3</sup>Allen Institute for AI ofirp@cs.washington.edu",
+        "bbox": [
+            181,
+            198,
+            751,
+            256
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ABSTRACT",
+        "text_level": 2,
+        "bbox": [
+            450,
+            292,
+            547,
+            306
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Since the introduction of the transformer model by Vaswani et al. (2017), a fundamental question has yet to be answered: how does a model achieve extrapolation at inference time for sequences that are longer than it saw during training? We first show that extrapolation can be enabled by simply changing the position representation method, though we find that current methods do not allow for efficient extrapolation. We therefore introduce a simpler and more efficient position method, Attention with Linear Biases (ALiBi). ALiBi does not add positional embeddings to word embeddings; instead, it biases query-key attention scores with a penalty that is proportional to their distance. We show that this method trains a 1.3 billion parameter model on input sequences of length 1024 that extrapolates to input sequences of length 2048, achieving the same perplexity as a sinusoidal position embedding model trained on inputs of length 2048 but training 11% faster and using 11% less memory. ALiBi’s inductive bias towards recency also leads it to outperform multiple strong position methods on the WikiText-103 benchmark.<sup>1</sup>",
+        "bbox": [
+            228,
+            325,
+            767,
+            523
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1 INTRODUCTION",
+        "text_level": 2,
+        "bbox": [
+            174,
+            556,
+            336,
+            571
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "When constructing a transformer-based language model, a major design decision is the length of training sequences, denoted L herein, which has to date been equivalent to the length of inference sequences. More context, achieved by larger L, improves predictions at inference time. But longer sequences are more expensive to train on.",
+        "bbox": [
+            169,
+            590,
+            826,
+            648
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Before transformers, RNN language models were trained on shorter-L sequences and assumed to generalize to longer contexts at inference time (Mikolov et al., 2010; Mikolov & Zweig, 2012; Zaremba et al., 2014). Vaswani et al. (2017), introducing the transformer, speculated that it “may [...] extrapolate to sequence lengths longer than the ones encountered during training.” We define extrapolation as a model’s ability to continue performing well as the number of input tokens during validation increases beyond the number of tokens on which the the model was trained. We find that transformer language models (LMs) that use sinusoidal position embeddings have very weak extrapolation abilities; see Figure 1.",
+        "bbox": [
+            169,
+            654,
+            826,
+            766
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "We demonstrate that this failure to extrapolate is caused by the position embedding method. As shown in Figure 1, recent alternatives to the original sinusoidal position method (Su et al., 2021; Raffel et al., 2020) have improved extrapolation. However, the better of these, the T5 bias, is considerably slower than the sinusoidal approach and uses extra memory and parameters (Figure 2).",
+        "bbox": [
+            169,
+            773,
+            825,
+            830
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "We therefore introduce Attention with Linear Biases (ALiBi) to facilitate efficient extrapolation. ALiBi negatively biases attention scores with a linearly decreasing penalty proportional to the distance between the relevant key and query. Our simple approach eliminates position embeddings.",
+        "bbox": [
+            169,
+            835,
+            825,
+            878
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "arXiv:2108.12409v2 [cs.CL] 22 Apr 2022",
+        "bbox": [
+            22,
+            263,
+            58,
+            705
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "<sup>1</sup>Code & models: https://github.com/ofirpress/attention\\_with\\_linear\\_biases",
+        "bbox": [
+            191,
+            895,
+            805,
+            910
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "<sup>2</sup>Figure 7 in the appendix plots training speed, in words per second, against L.",
+        "bbox": [
+            191,
+            909,
+            658,
+            924
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            493,
+            948,
+            504,
+            959
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f6e7f8c87b1bd3aad20e90492a56992b385cae4a1b5113d00e0122afed45f465.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            176,
+            104,
+            496,
+            292
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/66a8859df85a31bef39d3720e5744aaa2fabdf562bc4b4c81811f25822ccabe9.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 1: Extrapolation: as the (validation-set’s) input sequence gets longer (x-axis), current position methods (sinusoidal, rotary, and T5) show degraded perplexity (y-axis, lower is better), but our method (§3) does not. Models were trained on WikiText-103 with sequences of $L = 5 1 2$ (left) or $L = 1 { , } 0 2 4$ (right) tokens. T5 ran out of memory on our 32GB GPU. For more detail on exact perplexities and runtimes, see Tables 2 and 3 in the appendix."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            501,
+            103,
+            818,
+            294
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Compared to a sinusoidal model trained on the same input length, our method requires no additional runtime or parameters and incurs a negligible (0–0.7%) memory increase. ALiBi can be implemented by changing only a few lines of existing transformer code.",
+        "bbox": [
+            169,
+            409,
+            825,
+            454
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Using ALiBi, a transformer LM can be trained on short-L sequences and therefore at much lower cost, and it can still be reliably applied to long sequences at runtime. For example, a 1.3 billion parameter LM trained on L = 1024 tokens with ALiBi achieves the same perplexity as a sinusoidal model trained on $L = 2 0 4 8$ when both are tested on sequences of 2048 tokens, even though our model is 11% faster and uses 11% less memory.",
+        "bbox": [
+            169,
+            459,
+            826,
+            530
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Though performance peaks at around two times the number of tokens that the model was trained on, ALiBi maintains strong performance even on sequences of length 10,000. In recently explored settings where NLP training examples are given as context to an LM (Brown et al., 2020), our approach will allow exposure to more examples. Additionally, it enables generation of longer outputs.",
+        "bbox": [
+            169,
+            536,
+            825,
+            594
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2 CURRENT APPROACHES DO NOT EXTRAPOLATE EFFICIENTLY",
+        "text_level": 2,
+        "bbox": [
+            171,
+            617,
+            723,
+            633
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We show for the first time that the sinusoidal position method, which technically should be able to extrapolate, in practice has very limited extrapolation capabilities. Though the rotary position method improves over the sinusoidal one, it still does not achieve satisfying results. Holding everything else constant, we are the first to observe that the T5 bias method leads to better extrapolation than either of these, and so we conclude that extrapolation ability depends heavily on the position embedding. Unfortunately, the T5 bias is computationally costly (Figure 2).",
+        "bbox": [
+            169,
+            651,
+            826,
+            737
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2.1 BACKGROUND AND EXPERIMENTAL SETUP",
+        "text_level": 2,
+        "bbox": [
+            171,
+            757,
+            517,
+            771
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "A transformer LM receives a list of tokens and outputs a probability distribution representing its prediction for the next token. We call the input list the current input subsequence since the inputs to language models are typically subsequences from (much longer) training or evaluation sequences. During both training and perplexity evaluation (i.e., scoring a fixed sequence), many predictions can be calculated at once; this is done using a “causal mask” that ensures each position’s prediction is influenced only by tokens to its left. Let L be the length of each input subsequence during training; it includes L predictions, which on average have access to $\\textstyle { \\frac { L + 1 } { 2 } }$ tokens of (left) context. To explore a model’s extrapolation abilities, we are interested in cases where sequences of length $L _ { \\nu a l i d } > L$ are considered at evaluation time. When L differs between inference and training, we use L to refer to the length of subsequences during training and $L _ { \\nu a l i d }$ to refer to their length at validation.",
+        "bbox": [
+            169,
+            784,
+            826,
+            926
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            493,
+            948,
+            504,
+            959
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/31fb466d8c457cd023f2d21780cb11df255dbcdebf5f72143cb9cf3a0c6a8edd.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            181,
+            104,
+            357,
+            193
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c7a6f5fd20600f326b3579986e571fc343203ac9a92bb77fc869d9ded545a9eb.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            362,
+            104,
+            537,
+            191
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/86ef8645d6060fe2ecdf81684ff3d2df07b48d950abb9fe28ba2b3e99414d988.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 2: A comparison of batched training, inference speed and memory use of the sinusoidal, rotary, T5 bias, and our ALiBi position methods. The speed differences between our method and the sinusoidal are within 1% during training and 3% for inference, which is insignificant on our hardware. ALiBi uses 100MB of extra memory when training on input lengths 1024 and 3072 in this setting. Memory usage is lower in all approaches when training on $3 0 7 \\bar { 2 }$ tokens (compared to 1024) since we break batches into multiple updates. See Table 1 in the appendix for exact numbers."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            544,
+            103,
+            820,
+            194
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Nonoverlapping Inference To train on or evaluate a sequence longer than L tokens, it is typical to segment the sequence into L-length subsequences and train on or evaluate them independently. Unless otherwise stated, we use nonoverlapping inference to report perplexity scores.",
+        "bbox": [
+            169,
+            318,
+            825,
+            363
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Extrapolation During Inference Formally, the functions that define a transformer layer are agnostic to input length;<sup>3</sup> they map from some arbitrary, unfixed number of input vectors to the same number of output vectors. When transformers are applied to data that is inherently sequential, like text, positional information is injected into the inputs in various ways.",
+        "bbox": [
+            169,
+            376,
+            825,
+            434
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Vaswani et al. (2017) discussed two options for embedding positions into vectors to be added to word embeddings: learning embeddings for specific positions and unlearned sinusoidal embeddings. They observed similar performance between these two but preferred the sinusoidal approach, which they argued might extrapolate to longer input sequences during inference. We find that this model cannot extrapolate to more than a few dozen tokens beyond L.<sup>4</sup>",
+        "bbox": [
+            169,
+            439,
+            826,
+            511
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Experiment Setup We first test the extrapolation abilities of various position methods on the WikiText-103 corpus (Merity et al., 2016) using the transformer language model of Baevski & Auli (2018). We use this model because of its prominent role in recent language modeling developments (Khandelwal et al., 2020; Press et al., 2021). The training set is about 103 million tokens from English Wikipedia (half a gigabyte). The model has 16 transformer layers of dimension 1024, with 8 heads, and a feedforward inner dimension of 4096. This model ties the word embedding and softmax matrices (Press & Wolf, 2017; Inan et al., 2017). In our experiments, other than varying the position method and training subsequence length, we modify no other hyperparameters, including the random seed and number of training epochs (205).",
+        "bbox": [
+            169,
+            525,
+            826,
+            652
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "2.2 MEASURING EXTRAPOLATION",
+        "text_level": 2,
+        "bbox": [
+            171,
+            667,
+            428,
+            683
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Sinusoidal Position Embeddings Sinusoidal position embeddings (Vaswani et al., 2017; §3.5) are constant, non-learned vectors that are added to token embeddings on input to the first layer of the transformer. They are frequently used in transformer language modeling (Baevski & Auli, 2018; Lewis et al., 2021) and machine translation (Vaswani et al., 2017; Ott et al., 2018) models. We first consider the unmodified model of Baevski & Auli (2018), which uses sinusoidal position embeddings, and train it on $L = 5 1 2$ tokens; we then run inference with it on the validation set on $L + k$ tokens, with k ranging from 0 to 15,000. Figure 1 (left) and the corresponding Table 2 (in the appendix) show that while the model improves perplexity up to $k = 2 0 .$ , performance stops improving and stays steady from k = 20 to k = 50 and then begins degrading. Similar results are obtained for a model trained with $L = 1 0 2 4$ tokens (Figure 1 (right) and Table 3 in the appendix). That model improves for up to $L _ { \\nu a l i d } = L + 5 0$ tokens, after which performance declines.",
+        "bbox": [
+            169,
+            694,
+            826,
+            849
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "<sup>3</sup>These include the embedding lookup, feedforward sublayer, and softmax layer, which act independently on vector inputs, as well as the attention sublayers, whose parameters do not depend on input length (and which must handle variable-length inputs, e.g., due to causal masking).",
+        "bbox": [
+            169,
+            858,
+            825,
+            898
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "<sup>4</sup>The learned positional embedding approach does not have a way to encode positions greater than L; L; therefore has no ability to extrapolate.",
+        "bbox": [
+            169,
+            897,
+            816,
+            924
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "",
+        "bbox": [
+            792,
+            898,
+            810,
+            910
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            493,
+            948,
+            504,
+            960
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Rotary Position Embeddings The rotary method was introduced by Su et al. (2021) and has recently been popularized by the open source GPT-3 (Brown et al., 2020) implementation GPT-J (Wang & Komatsuzaki, 2021). Instead of adding sinusoidal embeddings at the bottom of the transformer, they multiply the keys and queries of every attention layer by sinusoidal embeddings.",
+        "bbox": [
+            169,
+            103,
+            826,
+            162
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Unlike the sinusoidal or learned positional embedding approach, the rotary method injects position information into the model at every layer, not just at the initial one. In addition, it adds no position information to the values of the self-attention sublayer. The output of a self-attention sublayer is a linearly transformed, weighted sum of the input value vectors; therefore, by not inserting position information into the values, the outputs of each transformer-layer contain no explicit position information. We suspect that this segregation of position information may be beneficial for extrapolation, and we draw inspiration from it in the design of our method (§3).",
+        "bbox": [
+            169,
+            166,
+            826,
+            266
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "We apply the rotary position embedding method to our Baevski & Auli baseline.<sup>5</sup> The perplexity results (Figure 1 and Appendix Tables 2 and 3) are better than the sinusoidal approach: the model with $L = \\bar { 5 } 1 2 ( L = 1 0 \\bar { 2 } 4 )$ improves perplexity with up to k = 200 (k = 100) more tokens than it saw during training, but this comes at the cost of slower training and inference (Figure 2).",
+        "bbox": [
+            169,
+            270,
+            826,
+            329
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "T5 Bias Though most models use trained or sinusoidal position embeddings, the T5 model of Raffel et al. (2020) uses a relative position method (Shaw et al., 2018; Huang et al., 2019) that adds no position information to word embeddings (as in the previous method). Instead, it modifies the way attention values are computed. We refer to this as the “T5 bias” method.<sup>6</sup> To compute attention values in the unmodified transformer, we compute the dot product of every query with every relevant key and then softmax these attention values. In this method, we compute the attention values as before, but then we add a learned, shared bias to each query-key score that is dependent on just the distance between the query and key. Therefore, all query-key scores where the query and key distance are zero (i.e., the query and key represent the same token) get a specific learned bias, all scores where the query and key are one word away get a different learned bias, and so on, up to a certain point, from where multiple different distances share the same learned bias (which might be beneficial for extrapolation). As in the rotary method, the T5 bias injects position information into the model at every layer and integrates no explicit position information into the self-attention value vectors.",
+        "bbox": [
+            169,
+            356,
+            826,
+            553
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Raffel et al. (2020) propose that the T5 bias may allow extrapolation, but they did not report experiments testing this. Here, we show that the T5 bias does allow language models to extrapolate. We do this by again modifying the Baevski & Auli model, this time to insert the T5 bias into it.<sup>7</sup>",
+        "bbox": [
+            169,
+            558,
+            826,
+            603
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "As Figure 1 shows, the T5 bias improves perplexity with longer sequences than the ones it was trained on, i.e., k = 600 (k = 800) extra tokens for a model trained on L = 512 (L = 1024) input tokens. Unfortunately, this impressive performance comes at a cost: training is at least twice as slow as with the sinusoidal model. Therefore, this model’s extrapolation ability provides no efficiency advantage. For example, to do inference on 1024 tokens, we could either train the sinusoidal model with L = 1024 or train the T5 bias model on L = 512 tokens and extrapolate to 1024 for inference. However, the L = 1024 sinusoidal model runs at 28.5k words per second (WPS), while the L = 512 T5 bias model runs at 14.4k WPS (Appendix Table 1), so there is no speedup when training on shorter sequences with this method.<sup>8</sup>",
+        "bbox": [
+            169,
+            607,
+            828,
+            734
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_footnote",
+        "text": "<sup>5</sup>Our rotary method implementation is based on the code in https://github.com/JunnYu/ RoFormer\\_pytorch, which is linked to from the official repository of Su et al. (2021): (https: //github.com/ZhuiyiTechnology/roformer). After we finished running our experiments with the rotary method, we were informed that the runtime of the code linked above could be optimized, making it only 2% slower than the sinusoidal approach. This optimization would not change extrapolation performance.",
+        "bbox": [
+            169,
+            768,
+            826,
+            833
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_footnote",
+        "text": "<sup>6</sup>This method is similar to the one used in Parikh et al. (2016, Equation 7).",
+        "bbox": [
+            189,
+            830,
+            637,
+            847
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_footnote",
+        "text": "<sup>7</sup>Our T5 bias implementation is based on the one used in HuggingFace Transformers (Wolf et al., 2020), which in turn is based on the official Mesh Tensorflow T5 code.",
+        "bbox": [
+            169,
+            845,
+            825,
+            873
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_footnote",
+        "text": "<sup>8</sup>Narang et al. (2021) benchmarked the T5 bias as being just 8.7% slower than the sinusoidal approach; thus, while always incurring a runtime penalty, this method’s runtime could be faster depending on the choice of hardware and software frameworks used. Narang et al. used the Tensorflow T5 library running on TPUs, while we used the PyTorch Fairseq library running on GPUs.",
+        "bbox": [
+            169,
+            872,
+            826,
+            925
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            493,
+            948,
+            504,
+            959
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/b811d1ae20c53f7982d655565c39743c43348f9ba606732dff5a97fdf69e9d0f.jpg",
+        "image_caption": [
+            "Figure 3: When computing attention scores for each head, our linearly biased attention method, ALiBi, adds a constant bias (right) to each attention score $( { \\bf q } _ { i } \\cdot { \\bf k } _ { j }$ , left). As in the unmodified attention sublayer, the softmax function is then applied to these scores, and the rest of the computation is unmodified. m is a head-specific scalar that is set and not learned throughout training. We show that our method for setting m values generalizes to multiple text domains, models and training compute budgets. When using ALiBi, we do not add positional embeddings at the bottom of the network."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            344,
+            103,
+            650,
+            200
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "3 ATTENTION WITH LINEAR BIASES (ALIBI)",
+        "text_level": 2,
+        "bbox": [
+            171,
+            327,
+            566,
+            344
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "In the transformer model of Vaswani et al. (2017), position embeddings are added to the word embeddings at the bottom of the network. For an input subsequence of length $L ,$ , the attention sublayer computes the attention scores for the ith query $\\mathbf { \\bar { q } } _ { i } \\in \\mathbb { R } ^ { 1 \\times \\bar { d } } , ( 1 \\leq i \\leq L )$ in each head, given the first i keys $\\mathbf { K } \\in \\mathbb { R } ^ { i \\times d }$ , where d is the head dimension:",
+        "bbox": [
+            169,
+            357,
+            825,
+            414
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\mathrm{softmax} (\\mathbf {q} _ {i} \\mathbf {K} ^ {\\top})\n$$",
+        "text_format": "latex",
+        "bbox": [
+            441,
+            417,
+            553,
+            434
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "These attention scores are then multiplied by the values to return the output of the attention sublayer.<sup>9</sup>",
+        "bbox": [
+            171,
+            436,
+            823,
+            452
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "When using ALiBi, we do not add position embeddings at any point in the network. The only modification we apply is after the query-key dot product, where we add a static, non-learned bias:<sup>10</sup>",
+        "bbox": [
+            169,
+            457,
+            825,
+            487
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\operatorname{softmax} \\left(\\mathbf {q} _ {i} \\mathbf {K} ^ {\\top} + m \\cdot [ - (i - 1), \\dots , - 2, - 1, 0 ]\\right),\n$$",
+        "text_format": "latex",
+        "bbox": [
+            336,
+            489,
+            658,
+            506
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "where scalar m is a head-specific slope fixed before training. Figure 3 offers a visualization.",
+        "bbox": [
+            171,
+            508,
+            777,
+            523
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "For our models with 8 heads, the slopes that we used are the geometric sequence: ${ \\frac { 1 } { 2 ^ { 1 } } } , { \\frac { 1 } { 2 ^ { 2 } } } , . . . , { \\frac { 1 } { 2 ^ { 8 } } }$ For models that require 16 heads, we interpolate those 8 slopes by geometrically averaging every consecutive pair, resulting in the geometric sequence that starts at $\\frac { 1 } { \\sqrt { 2 } }$ and has the ratio of ${ \\frac { 1 } { \\sqrt { 2 } } } \\dot { : }$ $\\textstyle { \\frac { 1 } { 2 ^ { 0 . 5 } } } , { \\frac { 1 } { 2 ^ { 1 } } } , { \\frac { 1 } { 2 ^ { 1 . 5 } } } , \\dotsc , { \\frac { 1 } { 2 ^ { 8 } } }$ . In general, for n heads, our set of slopes is the geometric sequence that starts at $2 ^ { \\frac { - 8 } { n } }$ and uses that same value as its ratio.",
+        "bbox": [
+            169,
+            527,
+            825,
+            609
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "In §4, we observe that this set of slopes works on a wide variety of text domains and model sizes. Therefore, we do not believe that it is necessary to tune these slope values every time a new model is trained on a new dataset. This makes our method similar to the sinusoidal approach, where the hyperparameters (the start and end of the geometric progression of wavelengths) were set once by Vaswani et al. (2017) and then reused in different models of different sizes on different datasets.",
+        "bbox": [
+            169,
+            616,
+            825,
+            688
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "ALiBi has an inductive bias towards recency; it penalizes attention scores between distant query-key pairs, with the penalty increasing as the distance between a key and a query grows. The different heads increase their penalties at different rates, depending on the slope magnitude.",
+        "bbox": [
+            169,
+            691,
+            825,
+            736
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "We initially experimented with making the slopes trainable, but this did not yield strong extrapolation results.<sup>11</sup> A brief manual exploration of around ten slope sets led us to discover the set of slopes that we finally picked. Our main insight from this exploration is that the slope sets that work best are those with slopes in the (0, 1) range, with the slopes’ density increasing as we get closer to 0. We also found our method to be robust to slope choice. Even randomly sampling from the exponential distribution worked well in some cases (although that method had high variance).",
+        "bbox": [
+            169,
+            741,
+            826,
+            828
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Since ALiBi is a relative position method, we add position information at every layer to the keys and queries but not to the values, as is done in the T5 bias and rotary methods. We hypothesize that these properties might be beneficial for extrapolation.",
+        "bbox": [
+            171,
+            832,
+            826,
+            876
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "√<sub>dk</sub>",
+        "bbox": [
+            434,
+            896,
+            464,
+            909
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "<sup>9</sup>For simplicity we omit the key, query, value and final output projections, dropout, and the scaling factor.",
+        "bbox": [
+            189,
+            881,
+            815,
+            896
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "<sup>10</sup>The ALiBi bias is not multiplied by the scaling factor from Equation 1 of Vaswani et al. (2017).",
+        "bbox": [
+            187,
+            895,
+            795,
+            910
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "<sup>11</sup>In our experiments, trainable slopes also slowed down the training speed by 3%.",
+        "bbox": [
+            187,
+            909,
+            674,
+            924
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            493,
+            948,
+            504,
+            960
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Implementation. ALiBi is easy to implement, with all changes accomplished in a few lines of code. We implement it by modifying the mask matrix by adding the linear biases to it (in practice, when training a transformer LM, query $\\mathbf { q } _ { i }$ attends only to keys 1 to i; this is implemented by adding a mask matrix to the query-key dot product before the softmax operation is applied). This means that there is no runtime penalty when using our method since we add no operations to the network.",
+        "bbox": [
+            169,
+            104,
+            826,
+            175
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Compared to the sinusoidal model trained on the same input lengths, AliBi incurs a memory increase (up to 100MB in some of our experiments): in the unmodified transformer, the mask is of size $L \\times L ;$ when using ALiBi, the mask is a slightly larger $n \\times L \\times L$ (where n is the number of heads) since the linear biases added for each head uses a different slope. But, as we show, ALiBi enables training on much smaller sequences while still achieving (and occasionally surpassing) results obtained using sinusoidal embeddings on longer sequences, which saves multiple gigabytes of memory.",
+        "bbox": [
+            169,
+            180,
+            826,
+            267
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "4 RESULTS",
+        "text_level": 2,
+        "bbox": [
+            171,
+            284,
+            284,
+            300
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "We first show that on WikiText103 ALiBi is efficient and enables training models with short input subsequences that outperform strong baselines even when the ALiBi models extrapolate to more than six times the number of tokens that they were trained on. We then take the same hyperparameters for our method (the set of slopes) that worked on WikiText-103 and show that – with no modification – they provide strong results on a dataset in a very different domain: books. Finally, we show that a 1.3B parameter model trained with AliBi on a much larger (461 GB) dataset with much more compute provides a superior alternative to the sinusoidal method since it achieves similar perplexity scores while running faster and using less memory (since it is trained on shorter inputs).",
+        "bbox": [
+            169,
+            315,
+            826,
+            428
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "While multiple alternatives to the position methods presented in Vaswani et al. (2017) have been proposed, few have been adopted in large (1B or more parameter) LMs since that setting is much more challenging than the smaller scale experiments. GPT-3 and Jurassic-1 (Lieber et al., 2021) use the learned position embedding method from Vaswani et al., and GPT-J uses the rotary method. Our results on the 1.3B parameter model show our method’s ability to generalize to larger models, dataset sizes and training durations without retuning the hyperparameter.",
+        "bbox": [
+            169,
+            433,
+            826,
+            518
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "4.1 RESULTS ON WIKITEXT-103 AND TORONTO BOOKCORPUS",
+        "text_level": 2,
+        "bbox": [
+            171,
+            532,
+            627,
+            549
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0cb68782450a133f9a14b7d621751449ce7d68dd3a25e7a9d8c87f4bb2af9bc7.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 4: ALiBi models trained and evaluated on varying sequence lengths on the WikiText-103 validation set and the sinusoidal baseline (not evaluated on longer sequences). All of our models outperform the sinusoidal ones even when trained on fewer tokens. Appendix Table 5 has exact perplexities, more ALiBi models (trained on fewer tokens), and results for rotary and T5 bias models."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            289,
+            564,
+            707,
+            712
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "We first develop our method on the WikiText-103 corpus (Merity et al., 2016), replacing the sinusoidal position embeddings in the language model of Baevski & Auli (2018) with ALiBi.",
+        "bbox": [
+            169,
+            804,
+            823,
+            835
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Figure 4 (and the corresponding Appendix Table 5) show our results for models trained with varying numbers of input subsequence tokens (L), extrapolating to longer subsequence lengths on the validation dataset. Our first observation is that, without extrapolation, for every $L ,$ our models outperform those using the sinusoidal method, sometimes by a significant amount. For example, the Baevski & Auli model achieves $1 8 . 6 7 { \\scriptstyle \\pm 0 . 2 4 }$ (std. dev.) perplexity when trained with $L = \\bar { 3 } 0 7 2$ input tokens, but our $L = 3 0 7 2$ model achieves 17.60 perplexity (when both models evaluate with $L _ { \\nu a l i d } = 3 0 7 2 )$ .",
+        "bbox": [
+            169,
+            840,
+            825,
+            925
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            493,
+            948,
+            504,
+            960
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Our second observation is that all of our models can extrapolate, and they obtain improved perplexity scores when handling more tokens than they observed during training. For example, our model trained on 512 tokens (which achieves 19.73 perplexity when evaluating subsequences of length 512 in the development set) achieves a perplexity score of 18.40 on the development set when extrapolating to subsequences of length 3072. Surprisingly, this surpasses the score that the $L =$ 3072 sinusoidal model obtains on the development set by a statistically significant margin. Note that all our models trained on $L = 5 1 2$ to $L = 2 0 4 8$ outperform the sinusoidal baseline trained on $L = 3 0 7 2$ when extrapolating to $L _ { \\nu a l i d } = 3 0 7 2$ even though those models all take much less time to train since they train on shorter subsequences (Appendix Figure 8 compares training speed to perplexity for these models)! The $L \\ = \\ 5 1 2$ model is 1.84 times faster to train and yet still outperforms the $L = 3 0 7 2$ sinusoidal model when extrapolating to $L _ { \\nu a l i d } = 3 0 7 2$ . In addition, training the $L = 3 0 7 2$ sinusoidal model requires a GPU with more than 16 GB of memory to fit the large attention matrices, which our $L = 5 \\bar { 1 } 2$ outperforms even though it can be trained on a GPU with much less memory due to much smaller attention matrices.",
+        "bbox": [
+            169,
+            104,
+            826,
+            300
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Additionally, Table 5 (in the appendix) also shows that, for Ls of 1024 and 3072, our method performs better than the rotary and T5 bias models even when $L _ { \\nu a l i d } = L \\ ( \\mathrm { i . e . }$ ., no extrapolation is occurring). Figure 1 (and the corresponding Appendix Tables 2 and 3) more broadly explore our method vs. the other position methods. They show that the T5 bias (the best of the baselines) improves perplexity until $L _ { \\nu a l i d }$ is around 2L, but on the WikiText-103 dataset our method continually improves perplexity until at least around 3L, with the $L = 5 1 2$ model improving perplexity even when $L _ { \\nu a l i d }$ exceeds 12k tokens. Even when unable to improve perplexity given longer sequences, ALiBi always maintains strong performance as more tokens are added.",
+        "bbox": [
+            169,
+            305,
+            826,
+            417
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Appendix Table 6 shows that our results on the validation set also transfer to the test set of WikiText-103. Currently, almost all models that present results on WikiText-103 use sliding window evaluation (defined in §B) to compute perplexities. We apply that method to our (and to the sinusoidal, rotary and T5 bias) models in Appendix Table 7. We find that our $\\mathrm { L } = 3 0 7 2$ model surpasses the performance of Transformer-XL (Dai et al., 2019), the Sandwich (Press et al., 2020), and Shortformer (Press et al., 2021) models. Our results are similar to the ones obtained with staged training (Press et al., 2021) but fall short of results obtained by Routing Transformer (Roy et al., 2020) and kNN-LM (Khandelwal et al., 2020). The methods used in those models are orthogonal to ours, and we hypothesize that combining them with ours might lead to even larger performance increases.",
+        "bbox": [
+            169,
+            424,
+            826,
+            550
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "After developing our method on WikiText-103, in Appendix Section A.3, we run one set of experiments on a different domain (books) using a similar model architecture and without modifying any of the ALiBi hyperparameters (the slopes) and show that our results fully transfer to this new domain. Our models are able to both surpass the sinusoidal baseline when not extrapolating while also outperforming it when extrapolating to longer sequences.",
+        "bbox": [
+            169,
+            555,
+            826,
+            627
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "4.2 RESULTS ON THE CC100+ROBERTA CORPUS",
+        "text_level": 2,
+        "bbox": [
+            171,
+            650,
+            535,
+            664
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Our final set of experiments investigates whether ALiBi transfers to a larger model trained with a larger computational budget on a larger dataset than the ones we previously used. We show that our method achieves strong results in this more challenging setting, obtaining similar performance to the sinusoidal baseline while using significantly less memory, since we train on shorter subsequences.",
+        "bbox": [
+            169,
+            679,
+            826,
+            736
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The dataset we choose is a combination of the datasets used to train the RoBERTa (Liu et al., 2019) implementation of BERT (Devlin et al., 2019) and the English part of the CC-100 corpus introduced in Conneau et al. (2020), for a total of 461 GB. The RoBERTa training corpus—i.e., the Toronto Book Corpus (Zhu et al., 2015), English Wikipedia, CC-News (Nagel, 2016), OpenWeb-Text (Gokaslan & Cohen, 2019) and Stories (Trinh & Le, 2018))—is 161 gigabytes, and the English part of the CC-100 corpus is 300 gigabytes. The validation set contains 649K tokens.",
+        "bbox": [
+            169,
+            742,
+            826,
+            828
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Our models for this dataset have 25 transformer layers with 16 heads and a dimension of 2048, with an 8192 hidden dimension of the feedforward sublayers. These models have 1.3B parameters. We train our models for one epoch, which is 50k updates on 128 V100 GPUs.",
+        "bbox": [
+            169,
+            832,
+            825,
+            876
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "In Figure 5 (left), we compare the validation perplexity for $L _ { \\nu a l i d } = 1 0 2 4$ throughout the training process for an ALiBi model trained with $L = 5 1 \\bar { 2 }$ compared to the sinusoidal model trained with $\\bar { L } = 1 0 2 4$ . Since our model is trained on shorter sequences, it is 7% faster and uses 1.6 GB less memory. We halt training of the sinusoidal baseline when our model reaches the end of its training (one epoch). At that time, our model is just 0.06 perplexity away from the baseline even though it was trained on sequences that are half the length of those the baseline used and requires less memory.",
+        "bbox": [
+            169,
+            881,
+            826,
+            924
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            493,
+            948,
+            504,
+            959
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/cfe2b56e42384c259e752c6149e9d868c6e370525175f9f54f1ff5fd4ac604de.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            207,
+            102,
+            498,
+            270
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5fcb9b21f629cd66d33600dbb2beb02380461310ef4ae0c5595eb3212489f93f.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 5: On the left (right), a 1.3B-parameter ALiBi model trained on 512 (1024) and evaluated on 1024 (2048) tokens during training, compared to the sinusoidal baseline trained on 1024 (2048) tokens. The ALiBi models obtain strong results even though they use 6%-11% less memory since they train on shorter sequences. Appendix Table 11 shows memory use and end-of-training perplexities."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            500,
+            102,
+            789,
+            270
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            169,
+            364,
+            825,
+            409
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "In Figure 5 (right), results become even more impressive, showing that our model trained on $L =$ 1024 outperforms by 0.09 perplexity the sinusoidal model trained on $L = 2 0 4 8$ (when evaluating with $L _ { \\nu a l i d } = 2 0 4 8 )$ even though our model uses 3.1 GB less memory. Our model maintains a lead in perplexity over the sinusoidal model during the entire training process. By sampling five evenly distributed points across the training process, we compute that our $L = 1 0 2 4$ model reaches a given perplexity value, on average, 11% faster than the sinusoidal model does.",
+        "bbox": [
+            169,
+            415,
+            826,
+            500
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Since our models in these comparisons use much less memory, they allow for stacking more layers, which would further improve performance (with negligible, if any, runtime cost). To keep our experiments as straightforward as possible, however, we do not add layers to our models.",
+        "bbox": [
+            169,
+            505,
+            825,
+            549
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Appendix Table 12 presents additional results comparing our models to the sinusoidal baseline when both are trained on the same $L ,$ showing that ALiBi performs similarly to the sinusoidal baseline when not extrapolating. This contrasts with the results presented on the smaller datasets, where ALiBi consistently outperforms other position methods even when not extrapolating, suggesting that ALiBi’s inductive bias provides additional benefits for lower-resource language modeling.",
+        "bbox": [
+            169,
+            554,
+            826,
+            626
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/50127e7bb31512b19c51bd86c9d2c4d2decedd1c5e7875cc00e083d5a87d3c85.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            207,
+            638,
+            496,
+            811
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/db7009713928467c479adc7c485d50fd2a3c622868249bb78d71d5f7660de057.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 6: The ALiBi and sinusoidal models (with both $L = 5 1 2$ and 1024) trained for 50k updates (1 epoch) on the CC100+RoBERTa corpus, extrapolating on the validation set. ALiBi achieves the best results at around 2L but maintains strong performance even up to 10000 tokens in these experiments."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            500,
+            638,
+            790,
+            809
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Figure 6 shows that our models trained on $L = 5 1 2$ and $L = 1 0 2 4$ achieve the best results when extrapolating to about double the tokens that they were trained on. Specifically, the $L = 5 1 2$ model (that obtains 9.79 perplexity when $L _ { \\nu a l i d } = 5 1 2 )$ achieves its best score (9.3) when extrapolating to",
+        "bbox": [
+            169,
+            881,
+            826,
+            925
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            493,
+            948,
+            504,
+            960
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "1012 tokens, and the $L = 1 0 2 4$ model (that obtains 9.16 perplexity when $L _ { \\nu a l i d } = 1 0 2 4 )$ achieves its best score (8.9) when extrapolating to 2024 tokens.",
+        "bbox": [
+            169,
+            104,
+            825,
+            133
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "One possible explanation is that the subsequences the model observes during training are up to L tokens long. When performing inference on subsequences of length 2L, half of the subsequences the model consumes are as long as the examples seen during training. When inference is performed on subsequences of length $2 L + 1$ or longer, less than half of the predictions the model makes are on subsequences of lengths seen during training, and that might degrade performance.",
+        "bbox": [
+            169,
+            138,
+            826,
+            210
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The sinusoidal model cannot extrapolate at all in this setting, with its performance degrading for both the $L = 5 1 2$ and 1024 models as soon as one token more than L is added during evaluation.",
+        "bbox": [
+            169,
+            215,
+            825,
+            244
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "In Appendix B, we find that ALiBi’s edge over sinusoidal embeddings is largely explained by its improved avoidance of the early token curse. We posit that future work building on ALiBi might achieve further gains by more efficiently exploiting longer histories.",
+        "bbox": [
+            169,
+            251,
+            825,
+            295
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "5 RELATED WORK",
+        "text_level": 2,
+        "bbox": [
+            171,
+            321,
+            346,
+            337
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "In parallel with our work, Wennberg & Henter (2021) introduce a relative position method that, like our method, adds a bias to attention scores that is a function of the distance between the key and query elements. Unlike our ALiBi method, which uses a non-learned linear function, their method uses a radial-basis function, with multiple trainable parameters (in our experiments, this led to a slight decrease in runtime). In addition, they present experiments on text classification, not on language modeling. They do not explore extrapolation. The Distance Aware Transformer (Wu et al., 2021) multiplies attention scores by a bias that is a function of the distance between the key and query. This function uses a different, learned parameter in every head. They show results only on text classification. In our experiments (not presented), multiplying attention scores by the bias (instead of adding, as in ALiBi) degraded performance.",
+        "bbox": [
+            169,
+            358,
+            826,
+            500
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Transformer-XL (Dai et al., 2019) presented a language model that uses a cache and can attend to more tokens during inference than it was trained on (by increasing the length of the cache). However, this work presents results only where output length is limited to the L (the training length), and their relative position method is very slow (Press et al., 2021). The Longformer (Beltagy et al., 2020) adapts models trained on shorter sequences to document-level tasks. However, to achieve this they had to partially train their models on longer sequences. Our ALiBi method enables extrapolation without any additional training on longer sequences.",
+        "bbox": [
+            169,
+            503,
+            826,
+            603
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "To our knowledge, extrapolation has not been previously explored in transformer language modeling, but it has been investigated previously and concurrently with transformers on other tasks, such as machine translation (Rosendahl et al., 2019; Neishi & Yoshinaga, 2019; Newman et al., 2020; Kiyono et al., 2021), sequence-to-sequence models trained on an artificial dataset (Hupkes et al., 2020), pretrained sequence-to-sequence models tested on arithmetic tasks (Nogueira et al., 2021, Appendix C), models trained with reinforcement learning (Lampinen et al., 2021), image, speech recognition, and machine translation models (Likhomanenko et al., 2021), and protein structure prediction (Jumper et al., 2021, Appendix 1.5).",
+        "bbox": [
+            169,
+            608,
+            826,
+            720
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "6 CONCLUSION",
+        "text_level": 2,
+        "bbox": [
+            171,
+            750,
+            321,
+            763
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "We showed that the sinusoidal position embedding approach does not enable transformers to extrapolate to inputs longer than the ones they were trained on. We then established that extrapolation in transformers can be enabled by just changing the position method. We showed that our ALiBi method offers an extremely simple replacement for existing position approaches and allow models to extrapolate. In addition, when not extrapolating, our method achieves either better perplexity than the sinusoidal method (in models smaller than 1B parameters, trained on less data) or similar perplexity (in larger, billion parameter models trained on much more data). ALiBi is simple to implement and does not slow down runtime or require extra parameters (but does occasionally require a negligible amount of extra memory). Using our method, we sped up the training of a 1.3 billion parameter model evaluated on the same input sequence length as GPT-3 (2048).",
+        "bbox": [
+            169,
+            785,
+            826,
+            925
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            493,
+            948,
+            504,
+            959
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "ACKNOWLEDGMENTS",
+        "text_level": 2,
+        "bbox": [
+            171,
+            104,
+            328,
+            118
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "We thank Tim Dettmers, Gabriel Ilharco, Jungo Kasai, Hao Peng, Sewon Min, Sofia Serrano, Sam Shleifer, Luke Zettlemoyer, Julian Michael, Nikolaos Pappas, Yizhong Wang, and the anonymous reviewers for their valuable feedback and fruitful discussions.",
+        "bbox": [
+            169,
+            127,
+            826,
+            171
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            490,
+            946,
+            509,
+            960
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "REFERENCES",
+        "text_level": 2,
+        "bbox": [
+            171,
+            102,
+            287,
+            118
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Alexei Baevski and Michael Auli. Adaptive input representations for neural language modeling. CoRR, abs/1809.10853, 2018. URL http://arxiv.org/abs/1809.10853.",
+        "bbox": [
+            171,
+            126,
+            823,
+            155
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Iz Beltagy, Matthew E. Peters, and Arman Cohan. Longformer: The long-document transformer. arXiv:2004.05150, 2020.",
+        "bbox": [
+            171,
+            166,
+            823,
+            194
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei. Language models are few-shot learners, 2020.",
+        "bbox": [
+            173,
+            205,
+            825,
+            290
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Alexis Conneau, Kartikay Khandelwal, Naman Goyal, Vishrav Chaudhary, Guillaume Wenzek, Francisco Guzman, Edouard Grave, Myle Ott, Luke Zettlemoyer, and Veselin Stoyanov. Un-´ supervised cross-lingual representation learning at scale. Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, 2020. doi: 10.18653/v1/2020.acl-main.747. URL http://dx.doi.org/10.18653/v1/2020.acl-main.747.",
+        "bbox": [
+            171,
+            301,
+            825,
+            372
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Zihang Dai, Zhilin Yang, Yiming Yang, Jaime Carbonell, Quoc Le, and Ruslan Salakhutdinov. Transformer-XL: Attentive language models beyond a fixed-length context. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pp. 2978–2988, Florence, Italy, July 2019. Association for Computational Linguistics. doi: 10.18653/v1/P19-1285. URL https://aclanthology.org/P19-1285.",
+        "bbox": [
+            171,
+            382,
+            825,
+            453
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings ofthe 2019 Conference of the North American Chapter ofthe Associationfor Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pp. 4171–4186, Minneapolis, Minnesota, June 2019. Association for Computational Linguistics. doi: 10.18653/v1/N19-1423. URL https: //www.aclweb.org/anthology/N19-1423.",
+        "bbox": [
+            173,
+            464,
+            826,
+            547
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Aaron Gokaslan and Vanya Cohen. Openwebtext corpus. http://Skylion007.github.io/ OpenWebTextCorpus, 2019.",
+        "bbox": [
+            171,
+            559,
+            823,
+            588
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Cheng-Zhi Anna Huang, Ashish Vaswani, Jakob Uszkoreit, Ian Simon, Curtis Hawthorne, Noam M. Shazeer, Andrew M. Dai, M. Hoffman, M. Dinculescu, and D. Eck. Music transformer: Generating music with long-term structure. In ICLR, 2019.",
+        "bbox": [
+            173,
+            598,
+            823,
+            642
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Dieuwke Hupkes, Verna Dankers, Mathijs Mul, and Elia Bruni. Compositionality decomposed: How do neural networks generalise? Journal of Artificial Intelligence Research, 67:757–795, April 2020. doi: 10.1613/jair.1.11674. URL https://doi.org/10.1613/jair.1. 11674.",
+        "bbox": [
+            173,
+            651,
+            823,
+            707
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Hakan Inan, Khashayar Khosravi, and Richard Socher. Tying word vectors and word classifiers: A loss framework for language modeling. In ICLR, 2017. URL https://openreview.net/ forum?id=r1aPbsFle.",
+        "bbox": [
+            173,
+            719,
+            825,
+            761
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "J. Jumper, Richard Evans, A. Pritzel, Tim Green, Michael Figurnov, O. Ronneberger, Kathryn Tunyasuvunakool, Russ Bates, Augustin Z´ıdek, Anna Potapenko, A. Bridgland, Clemens Meyer, Simon A A Kohl, Andy Ballard, A. Cowie, B. Romera-Paredes, Stanislav Nikolov, Rishub Jain, J. Adler, T. Back, Stig Petersen, D. Reiman, Ellen Clancy, Michal Zielinski, Martin Steinegger, Michalina Pacholska, Tamas Berghammer, S. Bodenstein, D. Silver, Oriol Vinyals, A. Senior, K. Kavukcuoglu, P. Kohli, and D. Hassabis. Highly accurate protein structure prediction with alphafold. Nature, 596:583 – 589, 2021.",
+        "bbox": [
+            171,
+            772,
+            825,
+            871
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Urvashi Khandelwal, Omer Levy, Dan Jurafsky, Luke Zettlemoyer, and Mike Lewis. Generalization through Memorization: Nearest Neighbor Language Models. In International Conference on Learning Representations (ICLR), 2020.",
+        "bbox": [
+            173,
+            882,
+            825,
+            924
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            490,
+            948,
+            508,
+            959
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Shun Kiyono, Sosuke Kobayashi, Jun Suzuki, and Kentaro Inui. Shape: Shifted absolute position embedding for transformers. ArXiv, abs/2109.05644, 2021.",
+        "bbox": [
+            173,
+            104,
+            825,
+            133
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "Andrew Kyle Lampinen, Stephanie C. Y. Chan, Andrea Banino, and Felix Hill. Towards mental time travel: a hierarchical memory for reinforcement learning agents. CoRR, abs/2105.14039, 2021. URL https://arxiv.org/abs/2105.14039.",
+        "bbox": [
+            173,
+            141,
+            825,
+            184
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "Mike Lewis, Shruti Bhosale, Tim Dettmers, Naman Goyal, and Luke Zettlemoyer. Base layers: Simplifying training of large, sparse models, 2021.",
+        "bbox": [
+            171,
+            191,
+            825,
+            222
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "Opher Lieber, Or Sharir, Barak Lenz, and Yoav Shoham. Jurassic-1: Technical details and evaluation. Technical report, AI21 Labs, August 2021.",
+        "bbox": [
+            173,
+            229,
+            823,
+            258
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "Tatiana Likhomanenko, Qiantong Xu, Ronan Collobert, Gabriel Synnaeve, and Alex Rogozhnikov. CAPE: encoding relative positions with continuous augmented positional embeddings. CoRR, abs/2106.03143, 2021. URL https://arxiv.org/abs/2106.03143.",
+        "bbox": [
+            173,
+            266,
+            825,
+            309
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. Roberta: A robustly optimized bert pretraining approach, 2019.",
+        "bbox": [
+            173,
+            318,
+            825,
+            361
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "Stephen Merity, Caiming Xiong, James Bradbury, and Richard Socher. Pointer sentinel mixture models, 2016.",
+        "bbox": [
+            173,
+            369,
+            825,
+            398
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "Tomas Mikolov and G. Zweig. Context dependent recurrent neural network language model. 2012 IEEE Spoken Language Technology Workshop (SLT), pp. 234–239, 2012.",
+        "bbox": [
+            173,
+            406,
+            825,
+            436
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "Tomas Mikolov, M. Karafiat, L. Burget, J. Cernock ´ y, and S. Khudanpur. Recurrent neural network´ based language model. In INTERSPEECH, 2010.",
+        "bbox": [
+            173,
+            444,
+            825,
+            474
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "Sebastian Nagel. Cc-news. https://commoncrawl.org/2016/10/ news-dataset-available/, 2016.",
+        "bbox": [
+            173,
+            481,
+            823,
+            510
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "Sharan Narang, Hyung Won Chung, Yi Tay, William Fedus, Thibault Fevry, Michael Matena, Karishma Malkan, Noah Fiedel, Noam Shazeer, Zhenzhong Lan, Yanqi Zhou, Wei Li, Nan Ding, Jake Marcus, Adam Roberts, and Colin Raffel. Do transformer modifications transfer across implementations and applications?, 2021.",
+        "bbox": [
+            173,
+            518,
+            825,
+            575
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "Masato Neishi and Naoki Yoshinaga. On the relation between position information and sentence length in neural machine translation. In Proceedings of the 23rd Conference on Computational Natural Language Learning (CoNLL), pp. 328–338, Hong Kong, China, November 2019. Association for Computational Linguistics. doi: 10.18653/v1/K19-1031. URL https://aclanthology.org/K19-1031.",
+        "bbox": [
+            173,
+            584,
+            826,
+            655
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "Benjamin Newman, John Hewitt, Percy Liang, and Christopher D. Manning. The eos decision and length extrapolation. In BlackBoxNLP@EMNLP, 2020. URL https://nlp.stanford. edu/pubs/newman2020extrapolation.pdf.",
+        "bbox": [
+            173,
+            662,
+            823,
+            705
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "Rodrigo Nogueira, Zhiying Jiang, and Jimmy J. Li. Investigating the limitations of the transformers with simple arithmetic tasks. ArXiv, abs/2102.13019, 2021.",
+        "bbox": [
+            171,
+            714,
+            825,
+            743
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "Myle Ott, Sergey Edunov, David Grangier, and Michael Auli. Scaling neural machine translation. In Proceedings ofthe Third Conference on Machine Translation (WMT), 2018.",
+        "bbox": [
+            171,
+            751,
+            823,
+            781
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "Ankur Parikh, Oscar Tackstr¨ om, Dipanjan Das, and Jakob Uszkoreit. A decomposable atten-¨ tion model for natural language inference. In Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing, pp. 2249–2255, Austin, Texas, November 2016. Association for Computational Linguistics. doi: 10.18653/v1/D16-1244. URL https: //aclanthology.org/D16-1244.",
+        "bbox": [
+            173,
+            789,
+            825,
+            859
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "Ofir Press and Lior Wolf. Using the output embedding to improve language models. In Proceedings of the 15th Conference of the European Chapter of the Association for Computational Linguistics: Volume 2, Short Papers, pp. 157–163, Valencia, Spain, April 2017. Association for Computational Linguistics. URL https://www.aclweb.org/anthology/E17-2025.",
+        "bbox": [
+            173,
+            867,
+            825,
+            924
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            490,
+            948,
+            509,
+            959
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "Ofir Press, Noah A. Smith, and Omer Levy. Improving transformer models by reordering their sublayers. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pp. 2996–3005, Online, July 2020. Association for Computational Linguistics. doi: 10.18653/v1/2020.acl-main.270. URL https://www.aclweb.org/anthology/2020. acl-main.270.",
+        "bbox": [
+            173,
+            104,
+            825,
+            172
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Ofir Press, Noah A. Smith, and Mike Lewis. Shortformer: Better language modeling using shorter inputs. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pp. 5493–5505, Online, August 2021. Association for Computational Linguistics. URL https://aclanthology.org/2021.acl-long.427.",
+        "bbox": [
+            171,
+            184,
+            825,
+            255
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Jack W. Rae, Anna Potapenko, Siddhant M. Jayakumar, Chloe Hillier, and Timothy P. Lillicrap. Compressive transformers for long-range sequence modelling. In International Conference on Learning Representations, 2020. URL https://openreview.net/forum?id= SylKikSYDH.",
+        "bbox": [
+            171,
+            265,
+            825,
+            321
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu. Exploring the limits of transfer learning with a unified text-totext transformer. Journal of Machine Learning Research, 21(140):1–67, 2020. URL http: //jmlr.org/papers/v21/20-074.html.",
+        "bbox": [
+            171,
+            332,
+            825,
+            388
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Jan Rosendahl, Viet Anh Khoa Tran, Weiyue Wang, and Hermann Ney. Analysis of positional encodings for neural machine translation. In International Workshop on Spoken Language Translation, Hong Kong, China, November 2019.",
+        "bbox": [
+            171,
+            400,
+            825,
+            443
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Aurko Roy, Mohammad Saffar, Ashish Vaswani, and David Grangier. Efficient content-based sparse attention with routing transformers, 2020.",
+        "bbox": [
+            173,
+            453,
+            825,
+            482
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Peter Shaw, Jakob Uszkoreit, and Ashish Vaswani. Self-attention with relative position representations. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pp. 464–468, New Orleans, Louisiana, June 2018. Association for Computational Linguistics. doi: 10.18653/v1/N18-2074. URL https://www.aclweb.org/anthology/N18-2074.",
+        "bbox": [
+            171,
+            492,
+            825,
+            564
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Jianlin Su, Yu Lu, Shengfeng Pan, Bo Wen, and Yunfeng Liu. Roformer: Enhanced transformer with rotary position embedding, 2021.",
+        "bbox": [
+            171,
+            574,
+            825,
+            603
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Trieu H. Trinh and Quoc V. Le. A simple method for commonsense reasoning, 2018.",
+        "bbox": [
+            171,
+            613,
+            730,
+            628
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Ł ukasz Kaiser, and Illia Polosukhin. Attention is all you need. In I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, and R. Garnett (eds.), Advances in Neural Information Processing Systems, volume 30. Curran Associates, Inc., 2017. URL https://proceedings.neurips.cc/paper/2017/file/ 3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf.",
+        "bbox": [
+            171,
+            638,
+            826,
+            723
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Ben Wang and Aran Komatsuzaki. GPT-J-6B: A 6 Billion Parameter Autoregressive Language Model. https://github.com/kingoflolz/mesh-transformer-jax, May 2021.",
+        "bbox": [
+            171,
+            734,
+            823,
+            763
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Ulme Wennberg and Gustav Eje Henter. The case for translation-invariant self-attention in transformer-based language models, 2021.",
+        "bbox": [
+            173,
+            772,
+            825,
+            801
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, Remi Louf, Morgan Funtowicz, Joe Davison, Sam Shleifer, Patrick ´ von Platen, Clara Ma, Yacine Jernite, Julien Plu, Canwen Xu, Teven Le Scao, Sylvain Gugger, Mariama Drame, Quentin Lhoest, and Alexander M. Rush. Transformers: State-of-the-art natural language processing. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pp. 38–45, Online, October 2020. Association for Computational Linguistics. URL https://www.aclweb.org/anthology/ 2020.emnlp-demos.6.",
+        "bbox": [
+            173,
+            811,
+            825,
+            922
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            490,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Chuhan Wu, Fangzhao Wu, and Yongfeng Huang. DA-transformer: Distance-aware transformer. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pp. 2059–2068, Online, June 2021. Association for Computational Linguistics. doi: 10.18653/v1/2021.naacl-main.166. URL https://aclanthology.org/2021.naacl-main.166.",
+        "bbox": [
+            174,
+            104,
+            823,
+            174
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "ref_text",
+        "text": "Wojciech Zaremba, Ilya Sutskever, and Oriol Vinyals. Recurrent neural network regularization, 2014.",
+        "bbox": [
+            173,
+            183,
+            823,
+            210
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "ref_text",
+        "text": "Yukun Zhu, Ryan Kiros, Rich Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio Torralba, and Sanja Fidler. Aligning books and movies: Towards story-like visual explanations by watching movies and reading books. In Proceedings of the IEEE international conference on computer vision, pp. 19–27, 2015.",
+        "bbox": [
+            174,
+            220,
+            825,
+            276
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            490,
+            948,
+            509,
+            959
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "A APPENDIX",
+        "text_level": 2,
+        "bbox": [
+            171,
+            102,
+            300,
+            119
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "A.1 INTRODUCTION",
+        "text_level": 2,
+        "bbox": [
+            171,
+            133,
+            330,
+            148
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The training speed of transformer LMs gets slower as the input subsequence length L increases. Figure 7 visualizes this.",
+        "bbox": [
+            169,
+            159,
+            823,
+            189
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/68ad9db075a7516922161b8d20118e035de671678a7eea316c6caab265ced5d4.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 7: Training speed of our model and the sinusoidal baseline trained on different amounts of input subsequence tokens L."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            174,
+            205,
+            818,
+            373
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Table 1 contains the runtimes and memory use statistics for models using the various position methods discussed in this work.",
+        "bbox": [
+            171,
+            444,
+            823,
+            473
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "table",
+        "img_path": "images/e7bbb51f626cd8454cfd858c9d928380de01f8241723361cfdd7a7c71bd781c4.jpg",
+        "table_caption": [
+            "Table 1: The speed (during training and evaluation, in words per second) and memory usage (during training) of the rotary, T5 bias, and ALiBi models compared to the sinusoidal baseline on WikiText-103. Training and inference are batched, and speeds are shown for one V100 GPU.",
+            "Tables 2, 3, and 4 show the perplexity and runtime of models using the sinusoidal, rotary T5 bias, and ALiBi position methods when extrapolating to sequences longer than the ones they were trained on. The models used in these tables were trained on $\\dot { L } = 5 1 2$ , 1024 and 3072 tokens."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Position Method</td><td rowspan=\"2\">Train Length</td><td colspan=\"2\">Speed (↑)</td><td rowspan=\"2\">Memory (↓)</td></tr><tr><td>Train</td><td>Eval.</td></tr><tr><td rowspan=\"3\">Sinusoidal</td><td>512</td><td>28.5k</td><td>82.1k</td><td>15.3 GB</td></tr><tr><td>1024</td><td>26.0k</td><td>77.8k</td><td>19.2 GB</td></tr><tr><td>3072</td><td>15.3k</td><td>42.4k</td><td>15.1 GB</td></tr><tr><td rowspan=\"3\">Rotary</td><td>512</td><td>20.0k</td><td>43.4k</td><td>17.8 GB</td></tr><tr><td>1024</td><td>17.7k</td><td>39.4k</td><td>22.8 GB</td></tr><tr><td>3072</td><td>11.5k</td><td>29.5k</td><td>17.8 GB</td></tr><tr><td rowspan=\"3\">T5 Bias</td><td>512</td><td>14.4k</td><td>21.8k</td><td>16.9 GB</td></tr><tr><td>1024</td><td>13.0k</td><td>20.2k</td><td>20.9 GB</td></tr><tr><td>3072</td><td>4.3k</td><td>4.9k</td><td>15.9 GB</td></tr><tr><td rowspan=\"3\">ALiBi</td><td>512</td><td>28.3k</td><td>85.8k</td><td>15.3 GB</td></tr><tr><td>1024</td><td>25.8k</td><td>76.4k</td><td>19.3 GB</td></tr><tr><td>3072</td><td>15.5k</td><td>42.2k</td><td>15.2 GB</td></tr></table>",
+        "bbox": [
+            284,
+            542,
+            712,
+            770
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            490,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "table",
+        "img_path": "images/8befe441661077eeef58d90eca67419c7af7be2fd610e62e063b108307d77d21.jpg",
+        "table_caption": [
+            "Table 2: The sinusoidal, rotary, T5 bias and ALiBi models trained on L = 512 on WikiText-103 and evaluated with different values of $L _ { \\nu a l i d }$ on the validation set. Bold shows the best score for each model. Inference speeds (in words per second) are from inference on a GPU with batch size of one."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Inputs</td><td colspan=\"2\">Sinusoidal</td><td colspan=\"2\">Rotary</td><td colspan=\"2\">T5 Bias</td><td colspan=\"2\">ALiBi</td></tr><tr><td>PPL (↓)</td><td>WPS (↑)</td><td>PPL (↓)</td><td>WPS (↑)</td><td>PPL (↓)</td><td>WPS (↑)</td><td>PPL (↓)</td><td>WPS (↑)</td></tr><tr><td>512</td><td>20.05</td><td>15046</td><td>20.07</td><td>10839</td><td>19.65</td><td>11724</td><td>19.73</td><td>14726</td></tr><tr><td>513</td><td>19.98</td><td>14925</td><td>20.01</td><td>10806</td><td>19.57</td><td>10491</td><td>19.62</td><td>14965</td></tr><tr><td>522</td><td>19.93</td><td>15116</td><td>20.02</td><td>11295</td><td>19.57</td><td>9970</td><td>19.64</td><td>15316</td></tr><tr><td>532</td><td>19.91</td><td>15358</td><td>19.98</td><td>10854</td><td>19.53</td><td>10382</td><td>19.61</td><td>15383</td></tr><tr><td>542</td><td>19.91</td><td>15076</td><td>19.94</td><td>10795</td><td>19.47</td><td>12270</td><td>19.57</td><td>15301</td></tr><tr><td>552</td><td>19.91</td><td>16394</td><td>19.93</td><td>12267</td><td>19.47</td><td>13000</td><td>19.54</td><td>16540</td></tr><tr><td>562</td><td>19.91</td><td>16646</td><td>19.87</td><td>12481</td><td>19.39</td><td>12201</td><td>19.49</td><td>16385</td></tr><tr><td>572</td><td>19.95</td><td>16934</td><td>19.83</td><td>12668</td><td>19.36</td><td>12851</td><td>19.46</td><td>16881</td></tr><tr><td>582</td><td>20.13</td><td>16961</td><td>19.88</td><td>12594</td><td>19.41</td><td>13904</td><td>19.48</td><td>17064</td></tr><tr><td>592</td><td>20.18</td><td>17243</td><td>19.84</td><td>13007</td><td>19.36</td><td>13706</td><td>19.43</td><td>17289</td></tr><tr><td>602</td><td>20.40</td><td>17502</td><td>19.81</td><td>12788</td><td>19.33</td><td>14102</td><td>19.38</td><td>17141</td></tr><tr><td>612</td><td>20.59</td><td>17637</td><td>19.81</td><td>12601</td><td>19.27</td><td>14573</td><td>19.38</td><td>17661</td></tr><tr><td>712</td><td>24.86</td><td>15614</td><td>19.79</td><td>12676</td><td>19.10</td><td>13818</td><td>19.14</td><td>15637</td></tr><tr><td>812</td><td>30.82</td><td>17151</td><td>20.17</td><td>13954</td><td>18.94</td><td>14377</td><td>18.99</td><td>17210</td></tr><tr><td>912</td><td>37.42</td><td>17200</td><td>20.73</td><td>13887</td><td>18.86</td><td>15345</td><td>18.88</td><td>17619</td></tr><tr><td>1012</td><td>43.54</td><td>16304</td><td>21.37</td><td>13759</td><td>18.79</td><td>14240</td><td>18.73</td><td>16059</td></tr><tr><td>1112</td><td>50.36</td><td>16424</td><td>22.01</td><td>13891</td><td>18.77</td><td>14014</td><td>18.68</td><td>16659</td></tr><tr><td>1212</td><td>58.01</td><td>17294</td><td>23.02</td><td>15245</td><td>18.87</td><td>14589</td><td>18.67</td><td>17372</td></tr><tr><td>1312</td><td>63.62</td><td>15314</td><td>23.93</td><td>13698</td><td>18.84</td><td>13138</td><td>18.60</td><td>15698</td></tr><tr><td>1412</td><td>70.75</td><td>15663</td><td>24.81</td><td>13928</td><td>18.87</td><td>12857</td><td>18.59</td><td>15860</td></tr><tr><td>1512</td><td>76.23</td><td>15812</td><td>25.99</td><td>14248</td><td>18.91</td><td>13752</td><td>18.52</td><td>16225</td></tr><tr><td>2512</td><td>132.41</td><td>15254</td><td>31.58</td><td>13456</td><td>20.41</td><td>9948</td><td>18.41</td><td>15204</td></tr><tr><td>3512</td><td>178.97</td><td>13293</td><td>35.54</td><td>11850</td><td>22.91</td><td>7847</td><td>18.40</td><td>13329</td></tr><tr><td>4512</td><td>209.37</td><td>11767</td><td>39.15</td><td>10485</td><td>25.91</td><td>6146</td><td>18.41</td><td>11738</td></tr><tr><td>5512</td><td>240.44</td><td>10168</td><td>43.14</td><td>9020</td><td>29.54</td><td>5309</td><td>18.36</td><td>9986</td></tr><tr><td>6512</td><td>271.40</td><td>9052</td><td>47.81</td><td>8108</td><td>34.48</td><td>4680</td><td>18.35</td><td>9022</td></tr><tr><td>7512</td><td>293.02</td><td>8315</td><td>51.12</td><td>7483</td><td>39.29</td><td>4102</td><td>18.33</td><td>8324</td></tr><tr><td>8512</td><td>305.65</td><td>7259</td><td>54.98</td><td>6718</td><td>43.08</td><td>3660</td><td>18.34</td><td>7366</td></tr><tr><td>9512</td><td>336.02</td><td>6672</td><td>57.85</td><td>6211</td><td>48.90</td><td>3370</td><td>18.34</td><td>6555</td></tr><tr><td>10512</td><td>341.53</td><td>6126</td><td>60.77</td><td>5575</td><td>52.95</td><td>3010</td><td>18.32</td><td>6030</td></tr><tr><td>11512</td><td>362.74</td><td>5994</td><td>66.62</td><td>5445</td><td>61.38</td><td>2873</td><td>18.32</td><td>5882</td></tr><tr><td>12512</td><td>373.17</td><td>5421</td><td>69.70</td><td>4988</td><td>64.94</td><td>2602</td><td>18.31</td><td>5287</td></tr><tr><td>13512</td><td>382.91</td><td>5174</td><td>73.27</td><td>4692</td><td>OOM</td><td>-</td><td>18.31</td><td>4962</td></tr><tr><td>14512</td><td>399.98</td><td>4351</td><td>75.52</td><td>4103</td><td>OOM</td><td>-</td><td>18.31</td><td>4352</td></tr><tr><td>15512</td><td>406.01</td><td>4291</td><td>79.25</td><td>3969</td><td>OOM</td><td>-</td><td>18.31</td><td>4289</td></tr></table>",
+        "bbox": [
+            202,
+            297,
+            790,
+            777
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            490,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "table",
+        "img_path": "images/9aeeffee32ed105dc29aeb04ec0a627ea4c04c4fb9c0ee35a11f60680eac9c53.jpg",
+        "table_caption": [
+            "Table 3: The sinusoidal, rotary, T5 bias and ALiBi models trained on L = 1024 on WikiText-103 and evaluated with different values of $L _ { \\nu a l i d }$ on the validation set. Bold shows the best score for each model. Inference speeds (in words per second) are from inference on a GPU with batch size of one."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Inputs</td><td colspan=\"2\">Sinusoidal</td><td colspan=\"2\">Rotary</td><td colspan=\"2\">T5 Bias</td><td colspan=\"2\">ALiBi</td></tr><tr><td>PPL (↓)</td><td>WPS (↑)</td><td>PPL (↓)</td><td>WPS (↑)</td><td>PPL (↓)</td><td>WPS (↑)</td><td>PPL (↓)</td><td>WPS (↑)</td></tr><tr><td>1024</td><td>19.34</td><td>17002</td><td>19.33</td><td>14690</td><td>18.80</td><td>14973</td><td>18.66</td><td>16951</td></tr><tr><td>1025</td><td>19.33</td><td>16630</td><td>19.34</td><td>14423</td><td>18.82</td><td>14635</td><td>18.67</td><td>16690</td></tr><tr><td>1034</td><td>19.27</td><td>16589</td><td>19.28</td><td>14351</td><td>18.74</td><td>14435</td><td>18.60</td><td>16707</td></tr><tr><td>1044</td><td>19.26</td><td>16760</td><td>19.27</td><td>14491</td><td>18.72</td><td>14644</td><td>18.60</td><td>16667</td></tr><tr><td>1054</td><td>19.23</td><td>16747</td><td>19.26</td><td>14503</td><td>18.71</td><td>14800</td><td>18.58</td><td>16833</td></tr><tr><td>1064</td><td>19.21</td><td>16676</td><td>19.22</td><td>14623</td><td>18.70</td><td>14498</td><td>18.55</td><td>16941</td></tr><tr><td>1074</td><td>19.19</td><td>16879</td><td>19.19</td><td>14464</td><td>18.65</td><td>14670</td><td>18.49</td><td>16936</td></tr><tr><td>1084</td><td>19.22</td><td>16942</td><td>19.23</td><td>14650</td><td>18.70</td><td>14607</td><td>18.56</td><td>17090</td></tr><tr><td>1094</td><td>19.24</td><td>16771</td><td>19.22</td><td>14629</td><td>18.69</td><td>14517</td><td>18.54</td><td>16880</td></tr><tr><td>1104</td><td>19.28</td><td>16870</td><td>19.27</td><td>14837</td><td>18.69</td><td>14635</td><td>18.52</td><td>17009</td></tr><tr><td>1114</td><td>19.29</td><td>16795</td><td>19.27</td><td>14879</td><td>18.69</td><td>14540</td><td>18.52</td><td>17050</td></tr><tr><td>1124</td><td>19.26</td><td>17312</td><td>19.18</td><td>15121</td><td>18.62</td><td>14480</td><td>18.46</td><td>17571</td></tr><tr><td>1224</td><td>20.54</td><td>17901</td><td>19.38</td><td>15584</td><td>18.58</td><td>14956</td><td>18.40</td><td>18013</td></tr><tr><td>1324</td><td>23.13</td><td>16308</td><td>19.96</td><td>14386</td><td>18.52</td><td>13726</td><td>18.33</td><td>16422</td></tr><tr><td>1424</td><td>26.45</td><td>16217</td><td>21.27</td><td>14385</td><td>18.48</td><td>13516</td><td>18.28</td><td>16121</td></tr><tr><td>1524</td><td>29.82</td><td>16377</td><td>22.59</td><td>14693</td><td>18.42</td><td>13587</td><td>18.22</td><td>16659</td></tr><tr><td>1624</td><td>34.27</td><td>15928</td><td>24.34</td><td>14228</td><td>18.40</td><td>12979</td><td>18.17</td><td>16053</td></tr><tr><td>1724</td><td>38.24</td><td>16640</td><td>25.66</td><td>14686</td><td>18.35</td><td>12976</td><td>18.15</td><td>16607</td></tr><tr><td>1824</td><td>42.23</td><td>16840</td><td>27.63</td><td>14918</td><td>18.30</td><td>13071</td><td>18.08</td><td>16846</td></tr><tr><td>1924</td><td>46.46</td><td>15071</td><td>29.64</td><td>13452</td><td>18.31</td><td>11843</td><td>18.08</td><td>15118</td></tr><tr><td>2024</td><td>51.09</td><td>15591</td><td>31.17</td><td>13706</td><td>18.34</td><td>11906</td><td>18.05</td><td>15557</td></tr><tr><td>3024</td><td>96.46</td><td>13639</td><td>35.67</td><td>12256</td><td>18.62</td><td>8480</td><td>17.92</td><td>13668</td></tr><tr><td>4024</td><td>144.00</td><td>12441</td><td>44.30</td><td>11203</td><td>19.44</td><td>7443</td><td>17.95</td><td>12402</td></tr><tr><td>5024</td><td>182.31</td><td>11431</td><td>48.31</td><td>10324</td><td>20.47</td><td>6384</td><td>17.92</td><td>11394</td></tr><tr><td>6024</td><td>214.02</td><td>10238</td><td>54.78</td><td>9117</td><td>21.76</td><td>5577</td><td>18.01</td><td>10119</td></tr><tr><td>7024</td><td>261.86</td><td>8785</td><td>62.83</td><td>7950</td><td>23.64</td><td>4867</td><td>17.93</td><td>8779</td></tr><tr><td>8024</td><td>284.88</td><td>8132</td><td>64.91</td><td>7355</td><td>25.79</td><td>4377</td><td>17.96</td><td>8086</td></tr><tr><td>9024</td><td>310.04</td><td>7045</td><td>71.91</td><td>6380</td><td>27.54</td><td>3787</td><td>17.98</td><td>7001</td></tr><tr><td>10024</td><td>337.48</td><td>6633</td><td>77.70</td><td>6016</td><td>29.54</td><td>3582</td><td>17.97</td><td>6583</td></tr><tr><td>11024</td><td>358.43</td><td>5722</td><td>81.15</td><td>5219</td><td>31.94</td><td>3170</td><td>18.02</td><td>5641</td></tr><tr><td>12024</td><td>375.95</td><td>5560</td><td>87.51</td><td>5072</td><td>33.35</td><td>2940</td><td>18.01</td><td>5294</td></tr><tr><td>13024</td><td>393.57</td><td>4691</td><td>94.74</td><td>4383</td><td>OOM</td><td>-</td><td>17.98</td><td>4621</td></tr><tr><td>14024</td><td>403.52</td><td>4905</td><td>96.10</td><td>4546</td><td>OOM</td><td>-</td><td>18.01</td><td>4827</td></tr><tr><td>15024</td><td>431.66</td><td>4518</td><td>99.78</td><td>4170</td><td>OOM</td><td>-</td><td>17.96</td><td>4447</td></tr><tr><td>16024</td><td>453.32</td><td>4239</td><td>106.99</td><td>3878</td><td>OOM</td><td>-</td><td>17.98</td><td>4153</td></tr></table>",
+        "bbox": [
+            204,
+            297,
+            790,
+            777
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            490,
+            946,
+            509,
+            960
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "table",
+        "img_path": "images/2fdc8cf98362b4605e5c533459b18f1833f90aa02faa3aeec32cd48c122614b4.jpg",
+        "table_caption": [
+            "Table 4: The sinusoidal, rotary, T5 bias and ALiBi models trained on $L = 3 0 7 2$ on WikiText-103 and evaluated with different values of $L _ { \\nu a l i d }$ on the validation set. Bold shows the best score for each model. Inference speeds (in words per second) are from inference on a GPU with batch size of one."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Inputs</td><td colspan=\"2\">Sinusoidal</td><td colspan=\"2\">Rotary</td><td colspan=\"2\">T5 Bias</td><td colspan=\"2\">ALiBi</td></tr><tr><td>PPL (↓)</td><td>WPS (↑)</td><td>PPL (↓)</td><td>WPS (↑)</td><td>PPL (↓)</td><td>WPS (↑)</td><td>PPL (↓)</td><td>WPS (↑)</td></tr><tr><td>3072</td><td>18.67</td><td>13380</td><td>18.57</td><td>12548</td><td>18.01</td><td>8828</td><td>17.60</td><td>13866</td></tr><tr><td>3073</td><td>18.67</td><td>13773</td><td>18.57</td><td>12474</td><td>18.01</td><td>8483</td><td>17.59</td><td>13793</td></tr><tr><td>3082</td><td>18.62</td><td>13741</td><td>18.54</td><td>12388</td><td>17.95</td><td>8698</td><td>17.59</td><td>13778</td></tr><tr><td>3092</td><td>18.60</td><td>13742</td><td>18.48</td><td>12458</td><td>17.92</td><td>8361</td><td>17.55</td><td>13783</td></tr><tr><td>3102</td><td>18.65</td><td>13701</td><td>18.52</td><td>12365</td><td>17.94</td><td>8764</td><td>17.59</td><td>13747</td></tr><tr><td>3112</td><td>18.64</td><td>13809</td><td>18.51</td><td>12449</td><td>17.96</td><td>8665</td><td>17.59</td><td>13827</td></tr><tr><td>3122</td><td>18.68</td><td>13722</td><td>18.52</td><td>12432</td><td>17.98</td><td>8437</td><td>17.58</td><td>13795</td></tr><tr><td>3132</td><td>18.67</td><td>13825</td><td>18.54</td><td>12490</td><td>17.97</td><td>8653</td><td>17.58</td><td>13784</td></tr><tr><td>3142</td><td>18.69</td><td>13543</td><td>18.52</td><td>12230</td><td>17.97</td><td>8282</td><td>17.61</td><td>13572</td></tr><tr><td>3152</td><td>18.66</td><td>13520</td><td>18.56</td><td>12240</td><td>17.98</td><td>8608</td><td>17.59</td><td>13523</td></tr><tr><td>3162</td><td>18.71</td><td>13501</td><td>18.56</td><td>12253</td><td>18.04</td><td>8589</td><td>17.62</td><td>13598</td></tr><tr><td>3172</td><td>18.72</td><td>13563</td><td>18.55</td><td>12297</td><td>17.99</td><td>8583</td><td>17.59</td><td>13625</td></tr><tr><td>3272</td><td>18.87</td><td>13453</td><td>18.55</td><td>12148</td><td>17.93</td><td>8144</td><td>17.59</td><td>13482</td></tr><tr><td>3372</td><td>19.46</td><td>13533</td><td>18.50</td><td>12254</td><td>17.88</td><td>8442</td><td>17.52</td><td>13565</td></tr><tr><td>3472</td><td>20.55</td><td>13047</td><td>18.52</td><td>11868</td><td>17.95</td><td>7857</td><td>17.54</td><td>13107</td></tr><tr><td>3572</td><td>21.84</td><td>13128</td><td>18.50</td><td>11882</td><td>17.86</td><td>7814</td><td>17.50</td><td>13170</td></tr><tr><td>3672</td><td>23.04</td><td>13106</td><td>18.49</td><td>11859</td><td>17.87</td><td>7719</td><td>17.48</td><td>13196</td></tr><tr><td>3772</td><td>24.47</td><td>13287</td><td>18.54</td><td>11942</td><td>17.85</td><td>7579</td><td>17.49</td><td>13312</td></tr><tr><td>3872</td><td>25.85</td><td>12621</td><td>18.40</td><td>11272</td><td>17.82</td><td>7581</td><td>17.41</td><td>12566</td></tr><tr><td>3972</td><td>27.21</td><td>12379</td><td>18.48</td><td>11151</td><td>17.84</td><td>7483</td><td>17.41</td><td>12324</td></tr><tr><td>4072</td><td>28.59</td><td>12178</td><td>18.59</td><td>11019</td><td>17.88</td><td>6974</td><td>17.48</td><td>12212</td></tr><tr><td>5072</td><td>45.53</td><td>11076</td><td>18.80</td><td>9887</td><td>17.76</td><td>6230</td><td>17.33</td><td>10938</td></tr><tr><td>6072</td><td>65.01</td><td>10114</td><td>19.50</td><td>9049</td><td>17.68</td><td>5554</td><td>17.26</td><td>10133</td></tr><tr><td>7072</td><td>85.96</td><td>8647</td><td>20.60</td><td>7861</td><td>17.83</td><td>4820</td><td>17.22</td><td>8670</td></tr><tr><td>8072</td><td>102.74</td><td>7755</td><td>21.60</td><td>6991</td><td>18.06</td><td>4281</td><td>17.30</td><td>7729</td></tr><tr><td>9072</td><td>125.99</td><td>6953</td><td>22.14</td><td>6360</td><td>18.12</td><td>3823</td><td>17.26</td><td>6939</td></tr><tr><td>10072</td><td>133.68</td><td>6646</td><td>23.21</td><td>6068</td><td>18.37</td><td>3579</td><td>17.28</td><td>6597</td></tr><tr><td>11072</td><td>161.29</td><td>5663</td><td>24.39</td><td>5158</td><td>18.64</td><td>3119</td><td>17.26</td><td>5585</td></tr><tr><td>12072</td><td>169.55</td><td>5567</td><td>26.70</td><td>5111</td><td>18.93</td><td>2920</td><td>17.24</td><td>5397</td></tr><tr><td>13072</td><td>189.43</td><td>5044</td><td>29.33</td><td>4658</td><td>19.10</td><td>2735</td><td>17.15</td><td>4809</td></tr><tr><td>14072</td><td>203.86</td><td>4915</td><td>32.21</td><td>4616</td><td>OOM</td><td>-</td><td>17.22</td><td>4866</td></tr><tr><td>15072</td><td>221.14</td><td>4561</td><td>33.47</td><td>4292</td><td>OOM</td><td>-</td><td>17.23</td><td>4491</td></tr><tr><td>16072</td><td>231.29</td><td>4382</td><td>34.51</td><td>4099</td><td>OOM</td><td>-</td><td>17.22</td><td>4312</td></tr></table>",
+        "bbox": [
+            204,
+            310,
+            790,
+            763
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            490,
+            946,
+            509,
+            960
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "A.2 ALIBI RESULTS ON WIKITEXT-103",
+        "text_level": 2,
+        "bbox": [
+            171,
+            103,
+            468,
+            119
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a5d2d33b154e634a57de343f25f0b4a6c4273da55920c1a377d422b2b215caa8.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 8: The training speed and validation perplexity (with $L _ { \\nu a l i d } = 3 0 7 2 )$ for ALiBi models and the sinusoidal model trained with $L = 3 0 7 2$ . All our models trained on 512 or more tokens achieve better perplexity than the sinusoidal model even though all of them (except the $L = 3 0 7 2 )$ require less time and memory to train."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            339,
+            148,
+            658,
+            335
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Figure 8 depicts a cross section of Figure 4, showing our models with different train lengths and the sinusoidal baseline, all evaluated on $L _ { \\nu a l i d } = 3 0 7 2$ tokens. We observe that all our models with $5 1 2 \\leq L < 3 0 7 2$ are faster to train than the sinusoidal model with $L = 3 0 7 2$ , but they all achieve greater perplexity scores on the validation set. Our model with $L = 3 0 7 2$ trains just as fast as the sinusoidal one but bests its score by more than one perplexity point; (the standard deviation for the the sinusoidal model with L = 3072 is 0.24).",
+        "bbox": [
+            169,
+            439,
+            825,
+            523
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Table 5 shows the perplexity values obtained when 8 different ALiBi models, trained on L values between 64 and 3072, extrapolating to $L _ { \\nu a l i d }$ values longer than the ones they were trained on. In addition, we present results for the sinusoidal, rotary and T5 bias models, with $L _ { \\nu a l i d } = L$",
+        "bbox": [
+            169,
+            529,
+            825,
+            573
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "table",
+        "img_path": "images/cb062ae74ab7c768889a5499b5f4c4dbcf29ffe9d3f46a9e0acf77ff86768d6e.jpg",
+        "table_caption": [
+            "Table 5: Perplexity when ALiBi extrapolates on the WikiText-103 development set. <sup>∗</sup>For results we present for the sinusoidal, rotary and T5 bias models, $L = L _ { v a l i d }$ (so we do not test the extrapolation abilities of those baselines here)."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">ALiBiTrain Length</td><td colspan=\"8\">Evaluation Length</td></tr><tr><td>64</td><td>128</td><td>256</td><td>512</td><td>1024</td><td>1536</td><td>2048</td><td>3072</td></tr><tr><td>64</td><td>28.46</td><td>24.70</td><td>22.88</td><td>22.09</td><td>21.73</td><td>21.63</td><td>21.59</td><td>21.53</td></tr><tr><td>128</td><td>-</td><td>23.98</td><td>21.70</td><td>20.67</td><td>20.36</td><td>20.29</td><td>20.31</td><td>20.28</td></tr><tr><td>256</td><td>-</td><td>-</td><td>21.29</td><td>19.89</td><td>19.29</td><td>19.13</td><td>19.10</td><td>19.03</td></tr><tr><td>512</td><td>-</td><td>-</td><td>-</td><td>19.73</td><td>18.81</td><td>18.50</td><td>18.48</td><td>18.40</td></tr><tr><td>1024</td><td>-</td><td>-</td><td>-</td><td>-</td><td>18.66</td><td>18.20</td><td>18.05</td><td>17.96</td></tr><tr><td>1536</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>18.12</td><td>17.90</td><td>17.72</td></tr><tr><td>2048</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>17.91</td><td>17.64</td></tr><tr><td>3072</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>17.60</td></tr><tr><td>Sinusoidal*</td><td>28.03</td><td>23.81</td><td>21.45</td><td>20.05</td><td>19.34</td><td>19.05</td><td>18.87</td><td>18.67</td></tr><tr><td>Rotary*</td><td>-</td><td>-</td><td>-</td><td>20.07</td><td>19.33</td><td>-</td><td>-</td><td>18.57</td></tr><tr><td>T5 Bias*</td><td>-</td><td>-</td><td>-</td><td>19.65</td><td>18.80</td><td>-</td><td>-</td><td>18.01</td></tr></table>",
+        "bbox": [
+            222,
+            652,
+            774,
+            857
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Table 6 compares ALiBi to the sinusoidal, rotary and T5 bias baselines on the test set of WikiText-103, and Table 7 compares ALiBi to the current state of the art models on that test set.",
+        "bbox": [
+            169,
+            893,
+            823,
+            925
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            490,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "table",
+        "img_path": "images/5cafc221e5e189e66f9c5bb7e8f525d52f976a1a43db418bb03c759e00c0d81c.jpg",
+        "table_caption": [
+            "Table 6: Test perplexity and runtime on WikiText-103 for two of our ALiBi models and models that use the sinusoidal, rotary and T5 bias methods."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Model</td><td rowspan=\"2\">Param. ↓</td><td>Train</td><td colspan=\"3\">Inference</td></tr><tr><td>Speed↑</td><td>Speed ↑</td><td>Valid ↓</td><td>Test ↓</td></tr><tr><td>Sinusoidal, L = 3072</td><td>247M</td><td>15.3k</td><td>13.6k</td><td>18.67</td><td>19.38</td></tr><tr><td>Rotary, L = 3072</td><td>247M</td><td>11.5k</td><td>12.2k</td><td>18.57</td><td>19.28</td></tr><tr><td>T5 Bias, L = 3072</td><td>247M</td><td>4.3k</td><td>7.3k</td><td>18.01</td><td>18.73</td></tr><tr><td>ALibiL = 512, Lvalid = 3072</td><td>247M</td><td>28.3k</td><td>13.6k</td><td>18.40</td><td>19.08</td></tr><tr><td>L = 3072, Lvalid = 3072</td><td>247M</td><td>15.5k</td><td>13.6k</td><td>17.60</td><td>18.30</td></tr></table>",
+        "bbox": [
+            235,
+            147,
+            759,
+            279
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "table",
+        "img_path": "images/94a991f440f79bc8e0b9233a7866aa32c3e582dd66e98b051db0e7fd84818e0f.jpg",
+        "table_caption": [
+            "Table 7: Valid and test perplexity scores on WikiText-103 for two of our ALiBi models and models that use the sinusoidal, rotary and T5 bias methods with sliding window evaluation (§B and S=512 following (Baevski & Auli, 2018; Khandelwal et al., 2020; Press et al., 2021)). The sinusoidal model presents our results from training and inference with the model of Baevski & Auli."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Model</td><td>Param. ↓</td><td>Valid ↓</td><td>Test ↓</td></tr><tr><td>Adaptive Inputs (Baevski &amp; Auli, 2018)</td><td>247M</td><td>17.97</td><td>18.70</td></tr><tr><td>Transformer-XL (Dai et al., 2019)</td><td>257M</td><td>-</td><td>18.3</td></tr><tr><td>Shortformer (Press et al., 2021)</td><td>247M</td><td>17.47</td><td>18.15</td></tr><tr><td>Sandwich Transformer (Press et al., 2020)</td><td>247M</td><td>-</td><td>17.96</td></tr><tr><td>Staged Training (Press et al., 2021)</td><td>247M</td><td>-</td><td>17.56</td></tr><tr><td>Compressive Transformer (Rae et al., 2020)</td><td>329M</td><td>-</td><td>17.1</td></tr><tr><td>Routing Transformer (Roy et al., 2020)</td><td>-</td><td>-</td><td>15.8</td></tr><tr><td>kNN-LM (Khandelwal et al., 2020)</td><td>247M</td><td>15.81</td><td>15.79</td></tr><tr><td>Sinusoidal, L = 3072</td><td>247M</td><td>17.95</td><td>18.67</td></tr><tr><td>Rotary, L = 3072</td><td>247M</td><td>17.98</td><td>18.72</td></tr><tr><td>T5 Bias, L = 3072</td><td>247M</td><td>17.37</td><td>18.12</td></tr><tr><td>ALiBi L = 512, Lvalid = 3072</td><td>247M</td><td>18.30</td><td>19.01</td></tr><tr><td>L = 3072, Lvalid = 3072</td><td>247M</td><td>16.97</td><td>17.66</td></tr></table>",
+        "bbox": [
+            250,
+            378,
+            745,
+            606
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "A.3 RESULTS ON THE TORONTO BOOK CORPUS",
+        "text_level": 2,
+        "bbox": [
+            171,
+            643,
+            521,
+            659
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "To ensure that our results are not specific to the WikiText-103 corpus, we next apply our model and the baselines to a different domain while using a similar model architecture and the same ALiBi slopes as those used in the previous subsection.",
+        "bbox": [
+            169,
+            671,
+            825,
+            715
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "We emphasize that our set of slopes was chosen by running experiments on the WikiText-103 corpus, and here we apply that set of slopes to a model trained on a very different text domain. Throughout the entire process of developing this method, we ran only one set of experiments on this domain using the previously selected set of slopes.",
+        "bbox": [
+            169,
+            720,
+            826,
+            779
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Specifically, we use the Toronto BooksCorpus (Zhu et al., 2015), which has been used to train BERT (Devlin et al., 2019) (in conjuction with the English Wikipedia). The corpus is about 700M tokens (2.9 GB).",
+        "bbox": [
+            169,
+            784,
+            826,
+            827
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "We use the same train/validation/test split as Khandelwal et al. (2020) and their tokenization, which uses BERT’s vocabulary of 29K byte-pair encodings. Since the vocabulary is much smaller than WikiText-103’s, we replace the adaptive word embedding and softmax of Baevski & Auli (2018) with a tied word embedding and softmax matrix (Press & Wolf, 2017; Inan et al., 2017).",
+        "bbox": [
+            169,
+            832,
+            826,
+            890
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Our results in Figure 9 (and Table 8) replicate our success on the WikiText-103 dataset. Our model surpasses the sinusoidal baseline when trained on the same amount of input tokens (L) and, in addition, our model is able to extrapolate to longer sequences at inference. This occurs even though our set of slopes was not tuned on this dataset. This result establishes the generality of ALiBi and the particular set of slopes we found and suggests that they may be used on different text domains without further hyperparameter tuning.",
+        "bbox": [
+            169,
+            895,
+            826,
+            925
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            488,
+            946,
+            509,
+            960
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9daa2fb6b8cb1deac9e62b66af4dabc9a3faaf229481b136fd25ad591ca2c74e.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 9: ALiBi-enabled models evaluated on different input lengths on the Toronto BookCorpus. Our models extrapolate to longer sequence lengths and outperform the sinusoidal baseline even when trained on much shorter sequences."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            258,
+            103,
+            736,
+            286
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            169,
+            375,
+            826,
+            434
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Tables 9 and 10 present the perplexities for our ALiBi models, the baselines, and the current state of the art on the Toronto BookCorpus validation and test sets. Our results here mirror our results on WikiText-103: we improve over the sinusoidal baseline even when AliBi is trained on fewer tokens.",
+        "bbox": [
+            169,
+            439,
+            826,
+            483
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "table",
+        "img_path": "images/1a532c7c247e3cfdb33c7eeeec4fc584102fe27043f787ec2468625b00b7bcac.jpg",
+        "table_caption": [
+            "Table 8: ALiBi models extrapolating on the Toronto BookCorpus development set. <sup>∗</sup>For the results of the sinusoidal models, $L = L _ { \\nu a l i d }$ (so we do not test the extrapolation abilities of those models here)."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Train Length</td><td colspan=\"3\">Evaluation Length</td></tr><tr><td>512</td><td>1024</td><td>3072</td></tr><tr><td>512</td><td>14.29</td><td>13.64</td><td>13.55</td></tr><tr><td>1024</td><td>-</td><td>13.86</td><td>13.52</td></tr><tr><td>3072</td><td>-</td><td>-</td><td>13.15</td></tr><tr><td>Sinusoidal*</td><td>14.80</td><td>14.73</td><td>14.46</td></tr></table>",
+        "bbox": [
+            369,
+            555,
+            627,
+            662
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "table",
+        "img_path": "images/20b5dc0a2123057caaff2afc8a28af557fe39d8262281b4ce448517772a505b5.jpg",
+        "table_caption": [
+            "Table 9: Validation and test perplexities on the Toronto Book Corpus dataset."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Model</td><td>Param. ↓</td><td>Valid ↓</td><td>Test ↓</td></tr><tr><td>Sinusoidal, L = 3072</td><td>247M</td><td>14.46</td><td>11.67</td></tr><tr><td> $\\text{ALiBi}$  $L_{train} = 512, L_{valid} = 3072$ </td><td>247M</td><td>13.55</td><td>10.98</td></tr><tr><td> $L_{train} = 3072, L_{valid} = 3072$ </td><td>247M</td><td>13.15</td><td>10.73</td></tr></table>",
+        "bbox": [
+            289,
+            724,
+            707,
+            805
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "A.4 RESULTS ON THE CC100+ROBERTA CORPUS",
+        "text_level": 2,
+        "bbox": [
+            171,
+            842,
+            540,
+            856
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Table 11 compares our 1.3 billion parameter ALiBi models when extrapolating to two times the number of tokens that they were trained on. We use the sinusoidal model as our baseline, and train it for the same amount of time as we train the ALiBi model that we compare it to (and so since our ALiBi models run faster in this setting, the sinusoidal models complete less updates).",
+        "bbox": [
+            169,
+            867,
+            826,
+            925
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            488,
+            946,
+            508,
+            960
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "table",
+        "img_path": "images/d2f37b10ea389700686fc1fa5230de07c737a7167d35604a3c8d2fb54c040450.jpg",
+        "table_caption": [
+            "Table 10: Validation and test perplexities on the Toronto Book Corpus dataset with a sliding window (§B). Following (Baevski & Auli, 2018; Khandelwal et al., 2020; Press et al., 2020; 2021), we set the sliding window stride S=512."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Model</td><td>Param. ↓</td><td>Valid ↓</td><td>Test ↓</td></tr><tr><td>kNN-LM (Khandelwal et al., 2020)</td><td>247M</td><td>14.20</td><td>10.89</td></tr><tr><td>Shortformer (Press et al., 2021)</td><td>247M</td><td>13.40</td><td>10.88</td></tr><tr><td>Sandwich (Press et al., 2020)</td><td>247M</td><td>-</td><td>10.83</td></tr><tr><td>Staged Training (Press et al., 2021)</td><td>247M</td><td>12.80</td><td>10.48</td></tr><tr><td>Sinusoidal, L = 3072</td><td>247M</td><td>14.06</td><td>11.40</td></tr><tr><td rowspan=\"2\">ALiBi $L = 512$ ,  $L_{valid} = 3072$  $L = 3072$ ,  $L_{valid} = 3072$ </td><td>247M</td><td>13.76</td><td>11.11</td></tr><tr><td>247M</td><td>12.70</td><td>10.40</td></tr></table>",
+        "bbox": [
+            277,
+            161,
+            718,
+            308
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "table",
+        "img_path": "images/7b0c515c86b778fffb155ae62e7a1106f24cb662669e3c0aeab390cc11f2738d.jpg",
+        "table_caption": [
+            "Table 11: Perplexity, memory, and train time on the CC100+RoBERTa corpus for our ALiBi models and the sinusoidal baseline. We run our $L = 5 1 2$ (1024) model and the sinusoidal model with L = 1024 (2048) for the same amount of time. We show that our models achieve strong results even though they use 6–11% less memory.",
+            "Table 12 compares our 1.3 billion parameter ALiBi models to the sinusoidal baselines, with and without extrapolation, with all models completing 50,000 updates."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">Training</td><td colspan=\"2\">Valid PPL ↓</td></tr><tr><td>Memory ↓</td><td>Updates</td><td>Hours ↓</td><td> $L_{valid} = 1024$ </td><td> $L_{valid} = 2048$ </td></tr><tr><td>Sinusoidal,  $L_{train} = 1024$ </td><td>26.2 GB</td><td>46.7k</td><td>5.5k</td><td>9.24</td><td>-</td></tr><tr><td>ALiBi,  $L_{train} = 512$ </td><td>24.6 GB</td><td>50.0k</td><td>5.5k</td><td>9.30</td><td>-</td></tr><tr><td>Sinusoidal,  $L_{train} = 2048$ </td><td>29.3 GB</td><td>44.2k</td><td>5.9k</td><td>-</td><td>9.01</td></tr><tr><td>ALiBi,  $L_{train} = 1024$ </td><td>26.2 GB</td><td>50.0k</td><td>5.9k</td><td>-</td><td>8.92</td></tr></table>",
+        "bbox": [
+            186,
+            407,
+            810,
+            517
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "table",
+        "img_path": "images/f701c03aac8eb3836efe465f60f460c0d99bffe2d64fc50f0e0e516e9784bdb5.jpg",
+        "table_caption": [
+            "Table 12: Perplexity, train time and memory use of the sinusoidal and ALiBi models on the CC100+RoBERTa corpus when all models are trained with 50k updates."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">Training</td><td colspan=\"3\">Valid PPL ↓</td></tr><tr><td>Memory ↓</td><td>Updates</td><td>Hours ↓</td><td> $L_{valid} = 512$ </td><td> $L_{valid} = 1024$ </td><td> $L_{valid} = 2048$ </td></tr><tr><td>Sinusoidal,  $L_{train} = 512$ </td><td>24.6 GB</td><td>50.0k</td><td>5.5k</td><td>9.71</td><td>37.05</td><td>105.42</td></tr><tr><td>ALiBi,  $L_{train} = 512$ </td><td>24.6 GB</td><td>50.0k</td><td>5.5k</td><td>9.79</td><td>9.30</td><td>9.54</td></tr><tr><td>Sinusoidal,  $L_{train} = 1024$ </td><td>26.2 GB</td><td>50.0k</td><td>5.9k</td><td>-</td><td>9.15</td><td>48.85</td></tr><tr><td>ALiBi,  $L_{train} = 1024$ </td><td>26.2 GB</td><td>50.0k</td><td>5.9k</td><td>-</td><td>9.16</td><td>8.92</td></tr><tr><td>Sinusoidal,  $L_{train} = 2048$ </td><td>29.3 GB</td><td>50.0k</td><td>6.7k</td><td>-</td><td>-</td><td>8.83</td></tr><tr><td>ALiBi,  $L_{train} = 2048$ </td><td>29.4 GB</td><td>50.0k</td><td>6.7k</td><td>-</td><td>-</td><td>8.84</td></tr></table>",
+        "bbox": [
+            207,
+            646,
+            789,
+            781
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "B ANALYSIS",
+        "text_level": 2,
+        "bbox": [
+            171,
+            834,
+            297,
+            849
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "In this section we investigate why ALiBi works so effectively. We find that ALiBi’s decrease in perplexity when given longer sequences is largely explained by its improved avoidance of the early token curse. We hypothesize that future work building on ALiBi might achieve further gains by more efficiently exploiting longer histories.",
+        "bbox": [
+            169,
+            867,
+            826,
+            925
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            488,
+            946,
+            509,
+            959
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "B.1 DEFINING SLIDING WINDOW EVALUATION AND THE EARLY TOKEN CURSE",
+        "text_level": 2,
+        "bbox": [
+            171,
+            104,
+            728,
+            119
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/bdd6120343e0948dec17ea23f54b4b65cfb03f48b415d7c67030598a7b07b1d1.jpg",
+        "image_caption": [
+            "Figure 10: Sliding window evaluation (top; blue) compared to nonoverlapping evaluation (bottom; red) on a sequence of 8 words using a model with $L _ { \\nu a l i d } = 4$ . Nonoverlapping evaluation is much faster since it requires just two inference passes (as opposed to the five passes required by the siding window approach). But the sliding window approach provides more context for each prediction."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            344,
+            135,
+            650,
+            246
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Sliding Window Inference As mentioned in Section 2, nonoverlapping inference is commonly used to evaluate sequences longer than L (the number of tokens in each training subsequence). An alternative is to use a sliding window during evaluation (Baevski & Auli, 2018).",
+        "bbox": [
+            169,
+            364,
+            825,
+            409
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "A stride S is picked between 1 and $L - 1$ , and the window is advanced by S tokens after each forward $\\mathrm { p a s s . } ^ { 1 \\dot { 2 } }$ This means that $L - S$ tokens from the previous subsequence are re-encoded, and only S new tokens are output. The advantage is that all outputs in each subsequence after the first have at least $L - S$ previous tokens to condition on. However, since tokens must be re-encoded multiple times, this approach is much slower than the nonoverlapping one. When $S = 1$ , we output one token every inference pass, each using the maximal context window that the model can handle; however, this is the slowest approach. Figure 10 is a visualization of the nonoverlapping and sliding window evaluation approaches.",
+        "bbox": [
+            169,
+            414,
+            826,
+            527
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "We use sliding window inference as a tool to analyze our models, but we note that it is normally prohibitively slow in practice (Press et al., 2021).",
+        "bbox": [
+            169,
+            532,
+            823,
+            563
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Early Token Curse Splitting an evaluation set into subsequences means that predictions occuring early in each subsequence cannot access many previous context tokens (appearing at the end of the previous subsequence). The result, referred to as the early token curse (Press et al., 2021), increases $( \\mathrm { i . e . }$ , degrades) perplexity scores. A workaround is to evaluate the model using a sliding window, giving each prediction more context. This solution is slow since it requires many more forward passes of the model.",
+        "bbox": [
+            169,
+            579,
+            826,
+            664
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "B.2 EXTRAPOLATION REDUCES THE EARLY TOKEN CURSE",
+        "text_level": 2,
+        "bbox": [
+            171,
+            681,
+            593,
+            696
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "We presented results showing that our ALiBi method (and, to a lesser extent, the T5 bias) allows LMs to extrapolate during inference. Two reasons could explain why these methods enable LMs to achieve better perplexity given longer input subsequences:",
+        "bbox": [
+            169,
+            709,
+            825,
+            753
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "1. Performance improves because the models can use longer contexts to make more accurate predictions. For example, the average article length in the WikiText-103 corpus is about 3600 tokens; therefore, if a model trained on $L \\ = \\ 5 1 2$ tokens extrapolates to $L _ { \\nu a l i d } =$ 3072 tokens during inference and achieves better results, that might be because it can spot patterns occurring across more than 512 tokens.",
+        "bbox": [
+            210,
+            763,
+            826,
+            835
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "2. Performance improves because longer input sequences mean the early token curse is reduced. For example, during nonoverlapping evaluation on sequences of length $L _ { \\nu a l i d } =$ 1000, 10% of predictions have 100 tokens of context or less. If we rerun nonoverlapping evaluation on that model with $L _ { \\nu a l i d } = 2 0 0 0$ tokens, now only 5% of predictions have 100 tokens of context or less. So, by simply being able to handle longer sequences, a model can substantially reduce the early token curse and improve performance.<sup>13</sup>",
+        "bbox": [
+            207,
+            839,
+            825,
+            898
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_footnote",
+        "text": "L.",
+        "bbox": [
+            678,
+            911,
+            692,
+            922
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_footnote",
+        "text": "<sup>12</sup>Nonoverlapping inference can be viewed as sliding window inference with stride L.",
+        "bbox": [
+            187,
+            909,
+            696,
+            924
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            488,
+            946,
+            509,
+            959
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            228,
+            104,
+            825,
+            133
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "To better understand what might be occurring, we re-evaluate the development set of WikiText-103 with our models and the sinusoidal baseline with L = 512, 1024, 3072. However, this time we use sliding window evaluation with a stride of $S = 1$ , meaning that we move the sliding window just one token after every inference pass, giving each prediction the maximum number of context tokens that the model can use.",
+        "bbox": [
+            169,
+            143,
+            826,
+            215
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "chart",
+        "img_path": "images/34008cc1e2f17fcbe88ab834af91e242a8650bf842d0897128a14cf5562d1018.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 11: ALiBi models evaluated on different input lengths on WikiText-103 with sliding window evaluation (with stride $S = 1 )$ . Unlike results shown in Figure 4, where performance improves in each of our models as we increase the validation sequence length, here performance stays relatively flat as we increase $L _ { \\nu a l i d } .$ . This might mean that ALiBi increases performance when $L _ { \\nu a l i d } > L$ not because it uses longer contexts, but because fewer tokens suffer from the early token curse. Note that as in §2, the perplexity of the sinusoidal model explodes when $L _ { \\nu a l i d } > L$ even when using sliding window evaluation."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            258,
+            228,
+            736,
+            421
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "The results are shown in Figure 11 and in the corresponding Tables 13 (sinusoidal) and 15 (ALiBi).",
+        "bbox": [
+            169,
+            556,
+            823,
+            573
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Unsurprisingly, for the sinusoidal model, as in §2, increasing $L _ { \\nu a l i d }$ causes an explosion in perplexity even when using sliding window evaluation. Our ALiBi models cannot improve perplexity when looking at longer sequences in this setting, but they keep perplexity flat when $L _ { \\nu a l i d }$ increases.",
+        "bbox": [
+            169,
+            575,
+            823,
+            623
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "This leads us to believe that our perplexity improvement when increasing $L _ { \\nu a l i d }$ and using nonoverlapping evaluation is caused by explanation 2, not explanation 1. Because sliding window evaluation provides long context windows for every prediction made, it curtails the early token curse. In this setting, ALiBi’s performance remains flat when $L _ { \\nu a l i d }$ increases, leading us to hypothesize that the gains seen while increasing $L _ { \\nu a l i d }$ in §4 were the result of larger $L _ { \\nu a l i d }$ values mitigating the early token curse.",
+        "bbox": [
+            169,
+            627,
+            826,
+            712
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Our ALiBi results mirror what occurs in the model using the T5 bias: when using sliding window evaluation, perplexity remains relatively flat when evaluating longer sequences (see Table 14).",
+        "bbox": [
+            169,
+            718,
+            823,
+            748
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Our analysis reveals that when $L _ { \\nu a l i d } > L ,$ ALiBi might not be using contexts longer than the ones it was trained on. This highlights a research direction that could be pursued in future work.",
+        "bbox": [
+            169,
+            753,
+            825,
+            782
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "These findings do not lessen the value of ALiBi. When $L _ { \\nu a l i d } = L , \\mathrm { A L i B i }$ achieves either superior or similar results to the sinusoidal method and other alternatives even though it is simpler and requires no learned parameters. When evaluating $L _ { \\nu a l i d } > L$ tokens, even if ALiBi does not attend to more than L tokens, it yields better results than the other alternatives that can be used in this case, i.e., standard nonoverlapping inference (which is cheap, but does not perform as well) and the more accurate sliding window approach (which is very slow).",
+        "bbox": [
+            169,
+            789,
+            826,
+            875
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_footnote",
+        "text": "<sup>13</sup>100 tokens is an arbitrary small number used here to represent a short history context, i.e., one in which making predictions for the next output token would be harder.",
+        "bbox": [
+            169,
+            896,
+            825,
+            925
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            488,
+            946,
+            509,
+            959
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "table",
+        "img_path": "images/233d292c8a4b7f3087e891629c7383a570941f19b0e9e5882853f421af14f919.jpg",
+        "table_caption": [
+            "Table 13: Perplexities of the sinusoidal models evaluated with sliding window evaluation with stride S = 1 on the WikiText-103 validation dataset."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Train Length</td><td colspan=\"5\">Evaluation Length (S = 1)</td></tr><tr><td>512</td><td>1024</td><td>1536</td><td>2048</td><td>3072</td></tr><tr><td>512</td><td>18.35</td><td>204.42</td><td>264.74</td><td>306.19</td><td>360.12</td></tr><tr><td>1024</td><td>-</td><td>18.05</td><td>206.55</td><td>302.6</td><td>393.71</td></tr><tr><td>3072</td><td>-</td><td>-</td><td>-</td><td>-</td><td>18.03</td></tr></table>",
+        "bbox": [
+            297,
+            212,
+            700,
+            297
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "table",
+        "img_path": "images/303e217ffefc1e7de34af9ad3ef6a541c5b4b6ac65ab54351fd43347f39ec28a.jpg",
+        "table_caption": [
+            "Table 14: Perplexities of the T5 bias models evaluated with sliding window evaluation with stride S = 1 on the WikiText-103 validation dataset."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Train Length</td><td colspan=\"5\">Evaluation Length (S=1)</td></tr><tr><td>512</td><td>1024</td><td>1536</td><td>2048</td><td>3072</td></tr><tr><td>512</td><td>17.92</td><td>18.51</td><td>20.36</td><td>22.62</td><td>30.77</td></tr><tr><td>1024</td><td>-</td><td>17.65</td><td>17.87</td><td>18.51</td><td>20.66</td></tr><tr><td>3072</td><td>-</td><td>-</td><td>-</td><td>-</td><td>17.41</td></tr></table>",
+        "bbox": [
+            313,
+            489,
+            683,
+            573
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "table",
+        "img_path": "images/1b2308e034d12bf3a7acfffb521155c1eb7bc4eda6a65520f4bb545cdfa75723.jpg",
+        "table_caption": [
+            "Table 15: Perplexities of the ALiBi models evaluated with sliding window evaluation with stride S = 1 on the WikiText-103 validation dataset."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Train Length</td><td colspan=\"5\">Evaluation Length (S = 1)</td></tr><tr><td>512</td><td>1024</td><td>1536</td><td>2048</td><td>3072</td></tr><tr><td>512</td><td>17.98</td><td>17.92</td><td>18.2</td><td>18.28</td><td>18.3</td></tr><tr><td>1024</td><td>-</td><td>17.46</td><td>17.47</td><td>17.62</td><td>17.92</td></tr><tr><td>3072</td><td>-</td><td>-</td><td>-</td><td>-</td><td>16.96</td></tr></table>",
+        "bbox": [
+            313,
+            765,
+            684,
+            848
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2022",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            488,
+            946,
+            509,
+            960
+        ],
+        "page_idx": 24
+    }
+]

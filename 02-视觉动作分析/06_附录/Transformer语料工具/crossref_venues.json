@@ -1,0 +1,679 @@
+{
+  "3D Human Pose Estimation with Spatio-Temporal Transformers": {
+    "verified": true,
+    "score": 0.864,
+    "venue": "Pattern Recognition",
+    "event": "",
+    "publisher": "Elsevier BV",
+    "doi": "10.1016/j.patcog.2026.114125",
+    "year": 2026,
+    "type": "journal-article",
+    "matched_title": "3D human pose estimation with decoupled spatio-temporal hybrid transformer",
+    "database": "ScienceDirect（需订阅，部分 OA）",
+    "oa_kind": "Elsevier",
+    "alternatives": [
+      {
+        "title": "3D Human Pose Estimation with Spatio-Temporal Topological Decoupling",
+        "container": "2025 IEEE International Conference on Big Data (BigData)",
+        "doi": "10.1109/bigdata66926.2025.11401989",
+        "score": 0.778
+      },
+      {
+        "title": "STGSFormer: A 3d Human Pose Estimation Model That Integrates GCN and Self-attention in the Spatio-temporal Domain",
+        "container": "",
+        "doi": "10.21203/rs.3.rs-7065762/v1",
+        "score": 0.541
+      }
+    ]
+  },
+  "4DHumans: Reconstructing 4D Humans from Monocular Video": {
+    "verified": false,
+    "score": 0.69,
+    "venue": "",
+    "event": "2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+    "publisher": "IEEE",
+    "doi": "10.1109/cvpr52734.2025.01553",
+    "year": 2025,
+    "type": "proceedings-article",
+    "matched_title": "4D-Fly: Fast 4D Reconstruction from a Single Monocular Video",
+    "database": "**需按题名确认载体后再定位数据库**",
+    "oa_kind": "未知",
+    "alternatives": [
+      {
+        "title": "Vivid4D: Improving 4D Reconstruction from Monocular Video by Video Inpainting",
+        "container": "2025 IEEE/CVF International Conference on Computer Vision (ICCV)",
+        "doi": "10.1109/iccv51701.2025.01170",
+        "score": 0.6
+      },
+      {
+        "title": "Reconstructing Hand Shape and Appearance for Accurate Tracking from Monocular Video",
+        "container": "SIGGRAPH Asia 2023 Doctoral Consortium",
+        "doi": "10.1145/3623053.3623371",
+        "score": 0.599
+      }
+    ]
+  },
+  "A Simple Framework for Text-to-Motion Extraction and Analysis": {
+    "verified": false,
+    "score": 0.63,
+    "venue": "",
+    "event": "9th International Conference on Knowledge Discovery and Information Retrieval",
+    "publisher": "SCITEPRESS - Science and Technology Publications",
+    "doi": "10.5220/0006501402330237",
+    "year": 2017,
+    "type": "proceedings-article",
+    "matched_title": "Hadoop-based Framework for Information Extraction from Social Text",
+    "database": "**需按题名确认载体后再定位数据库**",
+    "oa_kind": "未知",
+    "alternatives": [
+      {
+        "title": "Figure 2: The framework of BERT for entity text feature extraction.",
+        "container": "",
+        "doi": "10.7717/peerj-cs.2058/fig-2",
+        "score": 0.54
+      },
+      {
+        "title": "Automatic Text Extraction in Digital Video Based on Motion Analysis",
+        "container": "Lecture Notes in Computer Science",
+        "doi": "10.1007/978-3-540-30125-7_73",
+        "score": 0.469
+      }
+    ]
+  },
+  "Video generation models as world simulators": {
+    "verified": true,
+    "score": 0.837,
+    "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+    "event": "",
+    "publisher": "Association for the Advancement of Artificial Intelligence (AAAI)",
+    "doi": "10.1609/aaai.v40i6.42465",
+    "year": 2026,
+    "type": "journal-article",
+    "matched_title": "Pre-Trained Video Generative Models as World Simulators",
+    "database": "AAAI Proceedings（开放获取）",
+    "oa_kind": "AAAI",
+    "alternatives": [
+      {
+        "title": "A comparative analysis of generative models for terrain generation in open-world video games",
+        "container": "Journal of High School Science",
+        "doi": "10.64336/001c.92856",
+        "score": 0.4
+      },
+      {
+        "title": "Comparing 2026 Video World Models: Gemini Omni and Beyond",
+        "container": "General World Models",
+        "doi": "10.1007/979-8-8688-3144-7_11",
+        "score": 0.384
+      }
+    ]
+  },
+  "TRAIN: A Deep Learning Approach to Motion Analysis": {
+    "verified": false,
+    "score": 0.705,
+    "venue": "",
+    "event": "",
+    "publisher": "Agence Bibliographique de l'Enseignement Supérieur",
+    "doi": "10.70675/a8cda552zdc96z48c1z979bzac140403e58f",
+    "year": null,
+    "type": "dissertation",
+    "matched_title": "Deep learning for human motion analysis",
+    "database": "**需按题名确认载体后再定位数据库**",
+    "oa_kind": "未知",
+    "alternatives": [
+      {
+        "title": "Deep learning-based motion analysis and object tracking",
+        "container": "",
+        "doi": "10.32469/10355/112737",
+        "score": 0.596
+      },
+      {
+        "title": "DBlur: A Deep Learning Approach for Mapping Subdiffraction Diffusion with Motion-Blurred Images",
+        "container": "",
+        "doi": "10.1021/cbmi.5c00042.s001",
+        "score": 0.545
+      }
+    ]
+  },
+  "Reconstructing Human Motion from sEMG": {
+    "verified": false,
+    "score": 0.472,
+    "venue": "",
+    "event": "",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "doi": "10.36227/techrxiv.16921444.v1",
+    "year": 2021,
+    "type": "posted-content",
+    "matched_title": "Wearable Motion Capture: Reconstructing and Predicting 3D Human Poses from Wearable Sensors",
+    "database": "**需按题名确认载体后再定位数据库**",
+    "oa_kind": "未知",
+    "alternatives": [
+      {
+        "title": "Wearable Motion Capture: Reconstructing and Predicting 3D Human Poses from Wearable Sensors",
+        "container": "",
+        "doi": "10.36227/techrxiv.16921444",
+        "score": 0.472
+      },
+      {
+        "title": "Figure 3: Dual-channel human hand motion sEMG waveforms in 90s.",
+        "container": "",
+        "doi": "10.7717/peerjcs.448/fig-3",
+        "score": 0.469
+      }
+    ]
+  },
+  "Real-time Neural-network-based prediction of intended finger movements from surface electromyography": {
+    "verified": false,
+    "score": 0.715,
+    "venue": "",
+    "event": "2011 International Conference on Control, Automation and Systems Engineering (CASE)",
+    "publisher": "IEEE",
+    "doi": "10.1109/iccase.2011.5997890",
+    "year": 2011,
+    "type": "proceedings-article",
+    "matched_title": "Artificial Neural Network Prediction of Angle Based on Surface Electromyography",
+    "database": "**需按题名确认载体后再定位数据库**",
+    "oa_kind": "未知",
+    "alternatives": [
+      {
+        "title": "Real-time Classification of Finger Movements using Two-channel Surface Electromyography",
+        "container": "Proceedings of the International Congress on Neurotechnology, Electronics and Informatics",
+        "doi": "10.5220/0004663002180223",
+        "score": 0.706
+      },
+      {
+        "title": "An LDA-Based Approach for Real-Time Simultaneous Classification of Movements Using Surface Electromyography",
+        "container": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+        "doi": "10.1109/tnsre.2018.2873839",
+        "score": 0.589
+      }
+    ]
+  },
+  "MUSE: Multi-Scale Temporal Pretraining for Muscle Synergy-based Prosthetic Control": {
+    "verified": false,
+    "score": 0.505,
+    "venue": "",
+    "event": "",
+    "publisher": "Applied Energy Innovation Institute (AEii)",
+    "doi": "10.46855/energy-proceedings-12052",
+    "year": 2026,
+    "type": "posted-content",
+    "matched_title": "A Data-driven Multi-Step Temporal Difference Pretraining Framework of DeepQ-Network for Boiler Combustion Control",
+    "database": "**需按题名确认载体后再定位数据库**",
+    "oa_kind": "未知",
+    "alternatives": [
+      {
+        "title": "A myoelectric prosthetic hand with muscle synergy–based motion determination and impedance model–based biomimetic control",
+        "container": "Science Robotics",
+        "doi": "10.1126/scirobotics.aaw6339",
+        "score": 0.495
+      },
+      {
+        "title": "Real-Time Prosthetic Hand Control Based on Muscle Synergy Decomposition of Forearm EMG Signals",
+        "container": "2026 IEEE 20th International Conference on Control and Automation (ICCA)",
+        "doi": "10.1109/icca69928.2026.11618122",
+        "score": 0.423
+      }
+    ]
+  },
+  "Multivariate representations and physiological insights for characterizing muscle activity during reaching": {
+    "verified": false,
+    "score": 0.484,
+    "venue": "",
+    "event": "",
+    "publisher": "openRxiv",
+    "doi": "10.1101/2023.05.15.540531",
+    "year": 2023,
+    "type": "posted-content",
+    "matched_title": "Muscle Coordination Matters: Insights into Motor Planning using Corticospinal Responses during Functional Reaching",
+    "database": "**需按题名确认载体后再定位数据库**",
+    "oa_kind": "未知",
+    "alternatives": [
+      {
+        "title": "The primary afferent activity cannot capture the dynamical features of muscle activity during reaching movements",
+        "container": "",
+        "doi": "10.1101/138859",
+        "score": 0.477
+      },
+      {
+        "title": "Gravitational and dynamic components of muscle torque underlie tonic and phasic muscle activity during goal-directed reaching",
+        "container": "",
+        "doi": "10.1101/138263",
+        "score": 0.433
+      }
+    ]
+  },
+  "Muscle Synergies as a Tool for Neural Control of Functional Movements": {
+    "verified": false,
+    "score": 0.583,
+    "venue": "",
+    "event": "",
+    "publisher": "Wiley",
+    "doi": "10.1002/9780470068298.ch27",
+    "year": 2006,
+    "type": "other",
+    "matched_title": "Muscle Synergies for Motor Control",
+    "database": "**需按题名确认载体后再定位数据库**",
+    "oa_kind": "未知",
+    "alternatives": [
+      {
+        "title": "Muscle Synergies Robustly Control Forces for Balance Control",
+        "container": "Conference Proceedings. 2nd International IEEE EMBS Conference on Neural Engineering, 2005.",
+        "doi": "10.1109/cne.2005.1419587",
+        "score": 0.574
+      },
+      {
+        "title": "Faculty Opinions recommendation of Are muscle synergies useful for neural control?",
+        "container": "Faculty Opinions – Post-Publication Peer Review of the Biomedical Literature",
+        "doi": "10.3410/f.718019791.793478522",
+        "score": 0.507
+      }
+    ]
+  },
+  "EMG-Driven Neuromuscular Modelling for Joint Torque Estimation Using a Multiband LSTM Network and Data Augmentation": {
+    "verified": false,
+    "score": 0.458,
+    "venue": "",
+    "event": "",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "doi": "10.1109/tnsre.2023.3315373",
+    "year": 2023,
+    "type": "journal-article",
+    "matched_title": "Estimation of Joint Torque by EMG-Driven Neuromusculoskeletal Models and LSTM Networks",
+    "database": "**需按题名确认载体后再定位数据库**",
+    "oa_kind": "未知",
+    "alternatives": [
+      {
+        "title": "Ankle Joint Torque Estimation Using an EMG-Driven Neuromusculoskeletal Model and an Artificial Neural Network Model",
+        "container": "IEEE Transactions on Automation Science and Engineering",
+        "doi": "10.1109/tase.2020.3033664",
+        "score": 0.452
+      },
+      {
+        "title": "Lowe limb joint torque estimation using EMG-driven neuromusculoskeletal models with cluster approach",
+        "container": "Gait &amp; Posture",
+        "doi": "10.1016/j.gaitpost.2022.07.174",
+        "score": 0.437
+      }
+    ]
+  },
+  "Transfer learning-based muscle synergies estimation for knee exoskeleton control": {
+    "verified": false,
+    "score": 0.497,
+    "venue": "",
+    "event": "",
+    "publisher": "MDPI AG",
+    "doi": "10.3390/machines11100937",
+    "year": 2023,
+    "type": "journal-article",
+    "matched_title": "Muscle Fatigue Regulation through Muscle Activation Control in a Knee Hybrid Exoskeleton: Simulation Study",
+    "database": "**需按题名确认载体后再定位数据库**",
+    "oa_kind": "未知",
+    "alternatives": [
+      {
+        "title": "Gait-event-based synchronization and control of a compact portable knee—ankle—foot exoskeleton robot for gait rehabilitation",
+        "container": "Wearable Exoskeleton Systems: Design, control and applications",
+        "doi": "10.1049/pbce108e_ch8",
+        "score": 0.422
+      },
+      {
+        "title": "Active Motion Control of a Knee Exoskeleton Driven by Antagonistic Pneumatic Muscle Actuators",
+        "container": "Actuators",
+        "doi": "10.3390/act9040134",
+        "score": 0.37
+      }
+    ]
+  },
+  "A deep learning framework for reconstructing muscle activation from surface electromyography during dynamic movements": {
+    "verified": false,
+    "score": 0.503,
+    "venue": "",
+    "event": "",
+    "publisher": "Japanese Society for Medical and Biological Engineering",
+    "doi": "10.14326/abe.14.352",
+    "year": 2025,
+    "type": "journal-article",
+    "matched_title": "Investigation of Muscle Activation by Two-Channel Surface Electromyography During Voluntary Simulated Periodic Limb Movements: A Pilot Study in Healthy Female Individuals",
+    "database": "**需按题名确认载体后再定位数据库**",
+    "oa_kind": "未知",
+    "alternatives": [
+      {
+        "title": "Neural muscle activation detection: A deep learning approach using surface electromyography",
+        "container": "Journal of Biomechanics",
+        "doi": "10.1016/j.jbiomech.2019.109322",
+        "score": 0.473
+      },
+      {
+        "title": "Surface Electromyography Analysis of Muscle Activation Patterns During Shoulder Examinations",
+        "container": "JSES International",
+        "doi": "10.1016/j.jseint.2025.101530",
+        "score": 0.373
+      }
+    ]
+  },
+  "Motor Imagery EEG-based BCI for rehabilitation: deep learning for decoding and visualization": {
+    "verified": false,
+    "score": 0.519,
+    "venue": "",
+    "event": "",
+    "publisher": "Elsevier BV",
+    "doi": "10.1016/j.procs.2018.08.057",
+    "year": 2018,
+    "type": "journal-article",
+    "matched_title": "Motor imagery based EEG features visualization for BCI applications",
+    "database": "**需按题名确认载体后再定位数据库**",
+    "oa_kind": "未知",
+    "alternatives": [
+      {
+        "title": "MINDGAN: EEG-Based Motor Imagery Neural Decoding via Hybrid Deep Learning Network with GAN-Based Augmentation",
+        "container": "",
+        "doi": "10.36227/techrxiv.176531991.15669329/v1",
+        "score": 0.472
+      },
+      {
+        "title": "Deep Learning in Motor Imagery Eeg Signal Decoding: A Systematic Review",
+        "container": "",
+        "doi": "10.2139/ssrn.4592138",
+        "score": 0.447
+      }
+    ]
+  },
+  "Self-Supervised Transformers for Human Activity Recognition Using Wearable Sensors": {
+    "verified": false,
+    "score": 0.682,
+    "venue": "",
+    "event": "",
+    "publisher": "Indonesian Society of Engineering and Technology",
+    "doi": "10.63891/j-mart.v2i1.127",
+    "year": 2026,
+    "type": "journal-article",
+    "matched_title": "Hybrid Weakly Self-Supervised and Multi-Task Representation Learning for Label-Efficient Human Activity Recognition Using Wearable Sensors",
+    "database": "**需按题名确认载体后再定位数据库**",
+    "oa_kind": "未知",
+    "alternatives": [
+      {
+        "title": "Human Activity Recognition: Theory Fundamentals",
+        "container": "Human Activity Recognition",
+        "doi": "10.1201/b16098-5",
+        "score": 0.516
+      },
+      {
+        "title": "Human Activity Recognition",
+        "container": "Human Activity Recognition",
+        "doi": "10.1201/b16098-7",
+        "score": 0.481
+      }
+    ]
+  },
+  "A BERT Based Method for Continuous Estimation of Cross-Subject Hand Kinematics From Surface Electromyographic Signals": {
+    "verified": true,
+    "score": 1.0,
+    "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+    "event": "",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "doi": "10.1109/tnsre.2022.3216528",
+    "year": 2023,
+    "type": "journal-article",
+    "matched_title": "A BERT Based Method for Continuous Estimation of Cross-Subject Hand Kinematics From Surface Electromyographic Signals",
+    "database": "IEEE Xplore（需订阅）",
+    "oa_kind": "IEEE",
+    "alternatives": [
+      {
+        "title": "A Scalogram Image-Based Method for Continuous Estimation of Hand Kinematics from Surface Electromyography",
+        "container": "Annals of Biomedical Engineering",
+        "doi": "10.1007/s10439-026-04285-5",
+        "score": 0.811
+      },
+      {
+        "title": "Multi-Scale Attention Patching Encoder Network: A Deployable Model for Continuous Estimation of Hand Kinematics from Surface Electromyographic Signals",
+        "container": "",
+        "doi": "10.21203/rs.3.rs-4525267/v1",
+        "score": 0.692
+      }
+    ]
+  },
+  "A Dual-Task Improved Transformer Framework for Decoding Lower Limb Sit-to-Stand Movement from sEMG and IMU Data": {
+    "verified": true,
+    "score": 1.0,
+    "venue": "Machines",
+    "event": "",
+    "publisher": "MDPI AG",
+    "doi": "10.3390/machines13100953",
+    "year": 2025,
+    "type": "journal-article",
+    "matched_title": "A Dual-Task Improved Transformer Framework for Decoding Lower Limb Sit-to-Stand Movement from sEMG and IMU Data",
+    "database": "MDPI 官网（开放获取，直接下载）",
+    "oa_kind": "MDPI",
+    "alternatives": [
+      {
+        "title": "Exploration of Lower Limb Multi-Intent Recognition Based on Improved Transformer During Sit-to-Stand Movements",
+        "container": "2025 10th International Conference on Automation, Control and Robotics Engineering (CACRE)",
+        "doi": "10.1109/cacre66141.2025.11119620",
+        "score": 0.516
+      },
+      {
+        "title": "A Fuzzy Controller for Lower Limb Exoskeletons during Sit-to-Stand and Stand-to-Sit Movement Using Wearable Sensors",
+        "container": "Sensors",
+        "doi": "10.3390/s140304342",
+        "score": 0.46
+      }
+    ]
+  },
+  "Markerless On-Device Detection of Compensatory Movement Patterns in Upper-Limb Rehabilitation Exercises from Monocular RGB Video": {
+    "verified": true,
+    "score": 0.874,
+    "venue": "Sensors",
+    "event": "",
+    "publisher": "MDPI AG",
+    "doi": "10.3390/s26165054",
+    "year": 2026,
+    "type": "journal-article",
+    "matched_title": "Markerless On-Device Detection of Compensatory Movement Patterns in Upper-Limb Rehabilitation Exercises from Monocular RGB Video: A Validation Study in Healthy Adults",
+    "database": "MDPI 官网（开放获取，直接下载）",
+    "oa_kind": "MDPI",
+    "alternatives": [
+      {
+        "title": "Compensatory Movement Detection in Upper Limb Rehabilitation With Deep Learning Methods",
+        "container": "2021 9th RSI International Conference on Robotics and Mechatronics (ICRoM)",
+        "doi": "10.1109/icrom54204.2021.9663458",
+        "score": 0.586
+      },
+      {
+        "title": "Markerless Motion Capture System to Detect Upper Limb Movement during Rehabilitation using Video Games",
+        "container": "2022 IEEE 10th International Conference on Serious Games and Applications for Health(SeGAH)",
+        "doi": "10.1109/segah54908.2022.9978581",
+        "score": 0.513
+      }
+    ]
+  },
+  "Using deep learning to detect upper limb compensation in individuals post-stroke using consumer-grade webcams": {
+    "verified": true,
+    "score": 0.916,
+    "venue": "Frontiers in Medicine",
+    "event": "",
+    "publisher": "Frontiers Media SA",
+    "doi": "10.3389/fmed.2025.1645369",
+    "year": 2025,
+    "type": "journal-article",
+    "matched_title": "Using deep learning to detect upper limb compensation in individuals post-stroke using consumer-grade webcams—A feasibility study",
+    "database": "Frontiers 官网（开放获取，直接下载）",
+    "oa_kind": "Frontiers",
+    "alternatives": [
+      {
+        "title": "Experimental validation of an upper limb benchmarking framework in healthy and post-stroke individuals: a pilot study_supp2-3414123.docx",
+        "container": "",
+        "doi": "10.1109/tnsre.2024.3414123/mm4",
+        "score": 0.426
+      },
+      {
+        "title": "Experimental validation of an upper limb benchmarking framework in healthy and post-stroke individuals: a pilot study_supp1-3414123.docx",
+        "container": "",
+        "doi": "10.1109/tnsre.2024.3414123/mm1",
+        "score": 0.426
+      }
+    ]
+  },
+  "Sinkhorn Operators: Provable Attention via Neural Operator Filters": {
+    "verified": false,
+    "score": 0.452,
+    "venue": "",
+    "event": "2023 28th International Conference on Automation and Computing (ICAC)",
+    "publisher": "IEEE",
+    "doi": "10.1109/icac57885.2023.10275301",
+    "year": 2023,
+    "type": "proceedings-article",
+    "matched_title": "Att-Sinkhorn: Multimodal Alignment with Sinkhorn-based Deep Attention Architecture",
+    "database": "**需按题名确认载体后再定位数据库**",
+    "oa_kind": "未知",
+    "alternatives": [
+      {
+        "title": "Shrunk subspaces via operator Sinkhorn iteration",
+        "container": "Proceedings of the 2023 Annual ACM-SIAM Symposium on Discrete Algorithms (SODA)",
+        "doi": "10.1137/1.9781611977554.ch62",
+        "score": 0.442
+      },
+      {
+        "title": "Heat Kernel Attention: Provable Sparsity via Diffusion Dynamics",
+        "container": "",
+        "doi": "10.2139/ssrn.5959898",
+        "score": 0.378
+      }
+    ]
+  },
+  "Conditional Positional Encoding for Video Transformers": {
+    "verified": false,
+    "score": 0.656,
+    "venue": "",
+    "event": "18th International Conference on Computer Vision Theory and Applications",
+    "publisher": "SCITEPRESS - Science and Technology Publications",
+    "doi": "10.5220/0011796100003417",
+    "year": 2023,
+    "type": "proceedings-article",
+    "matched_title": "Applying Positional Encoding to Enhance Vision-Language Transformers",
+    "database": "**需按题名确认载体后再定位数据库**",
+    "oa_kind": "未知",
+    "alternatives": [
+      {
+        "title": "Synchronized Audio-Visual Frames with Fractional Positional Encoding for Transformers in Video-to-Text Translation",
+        "container": "2022 IEEE International Conference on Image Processing (ICIP)",
+        "doi": "10.1109/icip46576.2022.9897804",
+        "score": 0.571
+      },
+      {
+        "title": "Scaffold, Not Seed -Except One: Positional Encoding and the Emergent Group Representations of Grokking Transformers",
+        "container": "",
+        "doi": "10.2139/ssrn.7331940",
+        "score": 0.482
+      }
+    ]
+  },
+  "TATS: Long-term Human Motion Generation with Time-Aware Tokenization": {
+    "verified": false,
+    "score": 0.519,
+    "venue": "",
+    "event": "2019 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+    "publisher": "IEEE",
+    "doi": "10.1109/iros40897.2019.8968587",
+    "year": 2019,
+    "type": "proceedings-article",
+    "matched_title": "Time Series Motion Generation Considering Long Short-Term Motion",
+    "database": "**需按题名确认载体后再定位数据库**",
+    "oa_kind": "未知",
+    "alternatives": [
+      {
+        "title": "GlocalNet: Class-aware Long-term Human Motion Synthesis",
+        "container": "2021 IEEE Winter Conference on Applications of Computer Vision (WACV)",
+        "doi": "10.1109/wacv48630.2021.00092",
+        "score": 0.512
+      },
+      {
+        "title": "Semiautonomous wheelchair human-aware navigation in crowded environments based on long-term pedestrians motion prediction",
+        "container": "2016 21st International Conference on Methods and Models in Automation and Robotics (MMAR)",
+        "doi": "10.1109/mmar.2016.7575291",
+        "score": 0.319
+      }
+    ]
+  },
+  "Retentive Network: A Successive Sub-Training Token-Based Architecture": {
+    "verified": false,
+    "score": 0.455,
+    "venue": "",
+    "event": "",
+    "publisher": "Elsevier",
+    "doi": "10.1016/b978-1-85617-094-9.50028-1",
+    "year": 1991,
+    "type": "book-chapter",
+    "matched_title": "SynOptics Token-Ring Support Within Network Utility Architecture",
+    "database": "**需按题名确认载体后再定位数据库**",
+    "oa_kind": "未知",
+    "alternatives": [
+      {
+        "title": "Figure 8: A simplified transformer-based architecture for multimodal token price forecasting.",
+        "container": "",
+        "doi": "10.7717/peerj-cs.3702/fig-8",
+        "score": 0.428
+      },
+      {
+        "title": "TOKEN SLOT NETWORK FOR AUTOMOTIVE CONTROL",
+        "container": "",
+        "doi": "10.4271/j2106_199104",
+        "score": 0.404
+      }
+    ]
+  },
+  "Language Models are Unsupervised Multitask Learners": {
+    "verified": false,
+    "score": 0.784,
+    "venue": "",
+    "event": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+    "publisher": "Association for Computational Linguistics",
+    "doi": "10.18653/v1/2024.emnlp-main.148",
+    "year": 2024,
+    "type": "proceedings-article",
+    "matched_title": "Instruction Pre-Training: Language Models are Supervised Multitask Learners",
+    "database": "OpenAI 官网技术报告（无 DOI、非期刊论文）",
+    "oa_kind": "其他",
+    "note": "标题匹配仅 0.78，未确认为同一篇",
+    "alternatives": [
+      {
+        "title": "Transformer protein language models are unsupervised structure learners",
+        "container": "",
+        "doi": "10.1101/2020.12.15.422761",
+        "score": 0.721
+      },
+      {
+        "title": "Making language models better human-like learners",
+        "container": "",
+        "doi": "10.32657/10356/183806",
+        "score": 0.6
+      }
+    ]
+  },
+  "Prediction of Joint Angles for Human Elbow Motion Based on sEMG": {
+    "verified": true,
+    "score": 1.0,
+    "venue": "2024 China Automation Congress (CAC)",
+    "event": "2024 China Automation Congress (CAC)",
+    "publisher": "IEEE",
+    "doi": "10.1109/CAC63892.2024.10865675",
+    "year": 2024,
+    "type": "proceedings-article",
+    "matched_title": "Prediction of Joint Angles for Human Elbow Motion Based on sEMG",
+    "database": "IEEE Xplore（需订阅）",
+    "oa_kind": "IEEE",
+    "note": "",
+    "alternatives": [
+      {
+        "title": "sEMG-Based Estimation of Knee Joint Angles and Motion Intention Recognition",
+        "container": "2017 9th International Conference on Intelligent Human-Machine Systems and Cybernetics (IHMSC)",
+        "doi": "10.1109/ihmsc.2017.199",
+        "score": 0.58
+      },
+      {
+        "title": "Mamba-based Continuous Prediction of Joint Angles using Fuzzy Entropy Features of sEMG",
+        "container": "IFAC-PapersOnLine",
+        "doi": "10.1016/j.ifacol.2025.12.467",
+        "score": 0.564
+      }
+    ]
+  }
+}

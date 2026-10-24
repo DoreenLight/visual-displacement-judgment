@@ -1,0 +1,20 @@
+{
+  "3D Human Pose Estimation with Spatio-Temporal Transformers": {
+    "arxiv_id": "1805.08961v2",
+    "canonical_title": "3D Human Pose Estimation with Relational Networks",
+    "score": 0.766,
+    "via": "3D Human Pose Estimation with"
+  },
+  "MotionAGFormer: Enhancing 3D Human Pose Estimation with a Transformer-GCN Former Network": {
+    "arxiv_id": "2310.16288v1",
+    "canonical_title": "MotionAGFormer: Enhancing 3D Human Pose Estimation with a Transformer-GCNFormer Network",
+    "score": 0.994,
+    "via": "MotionAGFormer Enhancing 3D Human Pose Estimation with"
+  },
+  "Self-Supervised Transformers for Human Activity Recognition Using Wearable Sensors": {
+    "arxiv_id": "2307.11796v1",
+    "canonical_title": "Unsupervised Embedding Learning for Human Activity Recognition Using Wearable Sensor Data",
+    "score": 0.772,
+    "via": "for Human Activity Recognition Using Wearable Sensors"
+  }
+}

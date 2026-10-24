@@ -1,0 +1,108 @@
+{
+  "status": "PASS_SCOPED_DOCUMENT_ORIGINAL_VERIFICATION",
+  "checked_at": "2026-10-04T13:38:01.597626+08:00",
+  "included": 55,
+  "originals": 55,
+  "missing_originals": 0,
+  "canonical_chain_originals": 20,
+  "new_originals": 7,
+  "new_PDF_file_pages": 74,
+  "main_original_excerpts": 398,
+  "new_original_excerpts": 64,
+  "prior_supplemental_methods_separate": 17,
+  "prior_RL_derived_separate": 16,
+  "other48_rows_sources_acquisition_unchanged": true,
+  "old13_canonical_records_and_bytes_unchanged": true,
+  "authorized7_moves_filenames_bytes_unchanged": true,
+  "nodes": 11,
+  "messages": 12,
+  "message_names": [
+    "TaskContext",
+    "RiskEnvelope",
+    "ObservationPacket",
+    "ValidityPacket",
+    "KinematicQualityState",
+    "EffortEstimate",
+    "PsychologicalEngagementState",
+    "ConstraintState",
+    "DecisionRequest",
+    "AppliedPolicyReceipt",
+    "TrainingBlockOutcome",
+    "PlanRevision"
+  ],
+  "validation_designs": 10,
+  "negative_design_scenarios": 9,
+  "acquisition_regression_tests_OK": 17,
+  "URI_regression_tests_OK": 6,
+  "KB_tests_passed": 22,
+  "KB_tests_failed": 0,
+  "list_two_regenerations_identical_sha256": "72baaffdc9d176ffc5129cec88465bcf82ead24c0565811be74da081ac87f28e",
+  "diagram": {
+    "path": "10_研究方向/主动参与与训练强度_链路研究/链路_数据反馈图.png",
+    "size": [
+      2880,
+      3020
+    ],
+    "sha256": "f12be6c38cbde0e0096ff9ad8de3a1ba7bf466c694c4e84f3614b032e22f3a5b",
+    "existing_reviewed_no_rerender": true,
+    "embedding_check_exit0": true
+  },
+  "protection": [
+    {
+      "baseline": "05_进展日志/2026-10-02_康复链路研究/原件与历史_保护基线.json",
+      "checked": 1133,
+      "authorized_prior_navigation_differences": [
+        "01_参考论文/生物力学线/README.md",
+        "01_参考论文/生物力学线/取件入口.md",
+        "01_参考论文/Transformer_发展线/README.md",
+        "01_参考论文/Transformer_发展线/取件入口.md",
+        "01_参考论文/决策模型线_JEV/取件入口.md"
+      ],
+      "other_bytes_unchanged": 1128
+    },
+    {
+      "baseline": "05_进展日志/2026-10-02_论文收尾与目录整理/迁移前保护基线.json",
+      "checked": 567,
+      "authorized_prior_navigation_differences": [],
+      "other_bytes_unchanged": 567
+    }
+  ],
+  "confirmed_innovations": 0,
+  "not_system_experiment_clinical_or_novelty_acceptance": true,
+  "remaining": [
+    "Independent physical/psychological references and real strategy exposure/authorization not established in supplied engineering material",
+    "C1–C3 direction adjudication and whole-goal acceptance unfinished"
+  ],
+  "selected_passage_source_audit": {
+    "path": "05_进展日志/2026-10-02_康复链路研究/逐条原文定位_全库范围核验.json",
+    "papers": 55,
+    "passages": 398,
+    "pdf_sources": 39,
+    "xml_sources": 16,
+    "sha_and_local_sources": "PASS",
+    "location_failures": 0,
+    "scope": "selected passages only; not full-paper review, independent replication, novelty, clinical benefit, safety, or system acceptance"
+  },
+  "DAUG": "repository ledger uninitialized; manual entry/structure/source checks only, no automated dependency-audit PASS",
+  "final_checks": {
+    "KB": "22 PASS/0 FAIL",
+    "acquisition_regression": "17 OK",
+    "URI_regression": "6 OK",
+    "embed_check": "exit0",
+    "metadata_reverse_patch_and_CAS": "PASS read-only",
+    "list_sha256": "72baaffdc9d176ffc5129cec88465bcf82ead24c0565811be74da081ac87f28e",
+    "own_transient_snapshot_and9_page_renders_removed": true,
+    "post_song_profile_format_sync": {
+      "reference_format": "09_章隆彬_合作团队/LAB_PROFILE.md + LIST.md",
+      "canonical_path_preserved": "10_研究方向/主动参与与训练强度_链路研究/宋嵘团队追踪.md",
+      "sections_checked": 8,
+      "重点论文_checked": 8,
+      "unverified_projects_devices_recruitment_not_invented": true,
+      "sha256": "531f1848934c4160fa931d8fe59a1658e77a5fd4e72eff9125cc1224c5c3a043"
+    },
+    "post_format_acquisition_regression": "17 OK",
+    "post_format_URI_regression": "6 OK",
+    "post_format_embed_check": "exit0",
+    "post_format_KB": "22 PASS/0 FAIL"
+  }
+}

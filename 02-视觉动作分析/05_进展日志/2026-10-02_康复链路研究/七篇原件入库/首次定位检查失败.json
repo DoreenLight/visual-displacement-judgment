@@ -1,0 +1,17 @@
+{
+  "status": "initial_failure_preserved",
+  "items": [
+    {
+      "uid": "S7-RL-01",
+      "expected_quote": "In essence, Uc controls the balance between two conflicting objectives in exercise training: minimizing external assistance to encourage active effort, vs. minimizing movement errors to promote correct task execution.",
+      "source_context": "In essence, Uc controls the balance between two conflicting Fig. 3. Structure of the RL-AAN controller. S(k): state vector at cycle k; r(k): immediate cost; Ṽ(k): approximated long-term cost; δa (k): actor output; ρ actor scaling factor; g(k): impedance parameter; IC: impedance controller; CDPR: cable-driven paralle",
+      "reason": "source reading-order column/page continuity, locate shorter complete on-page excerpt rather than relax equality"
+    },
+    {
+      "uid": "S7-RL-02",
+      "expected_quote": "Here, we use the expression “user engagement” to refer to the degree to which individuals actively participate in—and remain physically involved with—the motor task.",
+      "source_context": "",
+      "reason": "source reading-order column/page continuity, locate shorter complete on-page excerpt rather than relax equality"
+    }
+  ]
+}

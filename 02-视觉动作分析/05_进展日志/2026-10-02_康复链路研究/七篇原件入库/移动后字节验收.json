@@ -1,0 +1,57 @@
+{
+  "moved": 7,
+  "old_paths_absent": true,
+  "SHA_unchanged": true,
+  "other_moves": 0,
+  "items": [
+    {
+      "id": "Song_TRO",
+      "source": "01_参考论文/A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller.pdf",
+      "target": "01_参考论文/康复整合链路/A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller.pdf",
+      "sha256": "7e363aa8dca5100a8ea04afbb5c0fbcb81d8867924695365fbcc2d2958a8f1fe",
+      "pages": 13
+    },
+    {
+      "id": "Song_TBCAS",
+      "source": "01_参考论文/A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller.pdf",
+      "target": "01_参考论文/康复整合链路/A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller.pdf",
+      "sha256": "cf7bf33523cb6196da35eada7614183a9200c77e7f8d7b6a6fe22140de1b4fc6",
+      "pages": 11
+    },
+    {
+      "id": "Shoulder2025",
+      "source": "01_参考论文/Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf",
+      "target": "01_参考论文/康复整合链路/Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf",
+      "sha256": "e71f6fb2dfc06eb87118b3056e4e82e6bc6dc67fb0554698ba3a008ceabf1768",
+      "pages": 10
+    },
+    {
+      "id": "Song_TIE",
+      "source": "01_参考论文/Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration.pdf",
+      "target": "01_参考论文/康复整合链路/Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration.pdf",
+      "sha256": "051062e5644209088b9c01a0eb023091e070b97400baf3cacd627fb762682615",
+      "pages": 11
+    },
+    {
+      "id": "Song_TBME",
+      "source": "01_参考论文/Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot.pdf",
+      "target": "01_参考论文/康复整合链路/Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot.pdf",
+      "sha256": "bbf68a0f81d3d54716a5e2229404d070891a33b67ea29bd31fdc30e67a00c435",
+      "pages": 9
+    },
+    {
+      "id": "RL2026",
+      "source": "01_参考论文/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf",
+      "target": "01_参考论文/康复整合链路/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf",
+      "sha256": "4b6e21ec3be9c4d677c6ad4d9099df49d3a8198fecf7abe990a360bf93ff97e6",
+      "pages": 11
+    },
+    {
+      "id": "Song_VAAN",
+      "source": "01_参考论文/Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot.pdf",
+      "target": "01_参考论文/康复整合链路/Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot.pdf",
+      "sha256": "360e92e294b0105eec6161352d9f884792e88c82aee11ae3530a95c58858afcb",
+      "pages": 9
+    }
+  ]
+}

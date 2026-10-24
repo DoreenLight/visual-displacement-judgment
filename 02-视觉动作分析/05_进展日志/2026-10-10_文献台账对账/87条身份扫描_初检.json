@@ -1,0 +1,1900 @@
+{
+  "time": "2026-10-10T10:04:49.979646+08:00",
+  "scope": [
+    "01_参考论文",
+    "09_章隆彬_合作团队",
+    "12_宋嵘_合作团队"
+  ],
+  "examined_files": 543,
+  "excluded": [
+    ".git",
+    ".pi",
+    "__pycache__",
+    "_research_run",
+    "_translation_outputs",
+    "libs",
+    "node_modules",
+    "历史归档",
+    "_backup*"
+  ],
+  "records": [
+    {
+      "id": "L-e3829d23",
+      "identity": "arxiv:2609.18667",
+      "title": "Video-Based Markerless Motion Capture for Clinical and Rehabilitation Biomechanics: A PRISMA-ScR Scoping Review of Validated Architectures, Clinical Readiness, and Emerging Methods",
+      "doi": "",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Video-Based Markerless Motion Capture for Clinical and Rehab.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/运动理解/OpenCap_传统生物力学/MarkerlessReview2021：视频无标记动捕临床康复生物力学综述/MarkerlessReview2021：视频无标记动捕临床康复生物力学综述.pdf",
+          "sha256": "9f141a648044c3bbbccb878e5c36646a2a683914089856a86f254c528e24ccb3",
+          "bytes": 3023738
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Video-Based Markerless Motion Capture for Clinical and Rehab.pdf",
+          "sha256": "6565bee625199a227b023b33ba148f580ddf79d52a11d778c9de606c68e346eb",
+          "bytes": 2218844
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/用于临床与康复生物力学的基于视频的无标记动作捕捉：已验证架构、临床就绪度及新兴方法的 PRISMA-ScR 范围综述/用于临床与康复生物力学的基于视频的无标记动作捕捉：已验证架构、临床就绪度及新兴方法的 PRISMA-ScR 范围综述.pdf",
+          "sha256": "6565bee625199a227b023b33ba148f580ddf79d52a11d778c9de606c68e346eb",
+          "bytes": 2218844
+        }
+      ]
+    },
+    {
+      "id": "L-52edadce",
+      "identity": "doi:10.1142/s0219519417500312",
+      "title": "SHOULDER AND ELBOW JOINT ANGLE ESTIMATION FOR UPPER LIMB REHABILITATION TASKS USING LOW-COST INERTIAL AND OPTICAL SENSORS",
+      "doi": "10.1142/s0219519417500312",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/SHOULDER AND ELBOW JOINT ANGLE ESTIMATION FOR UPPER LIMB REH.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/SHOULDER AND ELBOW JOINT ANGLE ESTIMATION FOR UPPER LIMB REH.pdf",
+          "sha256": "70c0f640d797275fea449e136f97c76de5437bd203b81f4045e0198ef3386c03",
+          "bytes": 960282
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/基于低成本惯性和光学传感器用于上肢康复任务的肩部和肘部关节角度估计/基于低成本惯性和光学传感器用于上肢康复任务的肩部和肘部关节角度估计.pdf",
+          "sha256": "70c0f640d797275fea449e136f97c76de5437bd203b81f4045e0198ef3386c03",
+          "bytes": 960282
+        }
+      ]
+    },
+    {
+      "id": "L-3731e26a",
+      "identity": "doi:10.1109/jbhi.2014.2342274",
+      "title": "Inverse Estimation of Multiple Muscle Activations From Joint Moment With Muscle Synergy Extraction",
+      "doi": "10.1109/jbhi.2014.2342274",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Inverse Estimation of Multiple Muscle Activations From Joint.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Inverse Estimation of Multiple Muscle Activations From Joint.pdf",
+          "sha256": "2f9ed688591c9fb3dd4527abf448fe00cef9ea7bc2af8c26d41ef228f1600134",
+          "bytes": 1538834
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B2_肌肉骨骼动力学_与可微仿真/基于肌肉协同提取的关节力矩多肌肉激活度逆向估计/基于肌肉协同提取的关节力矩多肌肉激活度逆向估计.pdf",
+          "sha256": "2f9ed688591c9fb3dd4527abf448fe00cef9ea7bc2af8c26d41ef228f1600134",
+          "bytes": 1538834
+        }
+      ]
+    },
+    {
+      "id": "L-32c20f13",
+      "identity": "doi:10.1093/ptj/pzab010",
+      "title": "Robot-Assisted Therapy for Upper Extremity Motor Impairment After Stroke: A Systematic Review and Meta-Analysis",
+      "doi": "10.1093/ptj/pzab010",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Robot-Assisted Therapy for Upper Extremity Motor Impairment.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Robot-Assisted Therapy for Upper Extremity Motor Impairment.pdf",
+          "sha256": "e0110573b510681278b02f3297c91f7d3e1e7ac0204532e7d09352c00a26815c",
+          "bytes": 2424677
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/机器人辅助疗法改善脑卒中后上肢运动障碍：系统评价与Meta分析/机器人辅助疗法改善脑卒中后上肢运动障碍：系统评价与Meta分析.pdf",
+          "sha256": "e0110573b510681278b02f3297c91f7d3e1e7ac0204532e7d09352c00a26815c",
+          "bytes": 2424677
+        }
+      ]
+    },
+    {
+      "id": "L-860ce5df",
+      "identity": "doi:10.1186/s12984-019-0612-y",
+      "title": "Wearable technology in stroke rehabilitation: towards improved diagnosis and treatment of upper-limb motor impairment",
+      "doi": "10.1186/s12984-019-0612-y",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Wearable technology in stroke rehabilitation_ towards improv.xml",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Wearable technology in stroke rehabilitation_ towards improv.xml",
+          "sha256": "cfb538cf63b2337b735b6263ed4f36940affc3d6618784eab9dae901f1b0298e",
+          "bytes": 216341
+        }
+      ]
+    },
+    {
+      "id": "L-06083b29",
+      "identity": "doi:10.1371/journal.pone.0249403",
+      "title": "Fatigue, induced via repetitive upper-limb motor tasks, influences trunk and shoulder kinematics during an upper limb reaching task in a virtual reality environment",
+      "doi": "10.1371/journal.pone.0249403",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Fatigue, induced via repetitive upper-limb motor tasks, infl.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Fatigue, induced via repetitive upper-limb motor tasks, infl.pdf",
+          "sha256": "8a01a088227a478726483f7a59100e3da8ff277998349c7f8eed159a4b4848c5",
+          "bytes": 1969487
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/通过重复性上肢运动任务诱发的疲劳在虚拟现实环境中对上肢伸展任务期间的躯干和肩部运动学产生影响/通过重复性上肢运动任务诱发的疲劳在虚拟现实环境中对上肢伸展任务期间的躯干和肩部运动学产生影响.pdf",
+          "sha256": "8a01a088227a478726483f7a59100e3da8ff277998349c7f8eed159a4b4848c5",
+          "bytes": 1969487
+        }
+      ]
+    },
+    {
+      "id": "L-e35abf95",
+      "identity": "doi:10.1016/j.measurement.2015.11.026",
+      "title": "A clinically feasible kinematic assessment method of upper extremity motor function impairment after stroke",
+      "doi": "10.1016/j.measurement.2015.11.026",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/A clinically feasible kinematic assessment method of upper e.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/A clinically feasible kinematic assessment method of upper e.pdf",
+          "sha256": "086141f9df1eb38604fd4caae9dfa78dd6815ea9de5cd3c71d7886d864de449c",
+          "bytes": 1087406
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/中风后上肢运动功能障碍的临床可行运动学评估方法/中风后上肢运动功能障碍的临床可行运动学评估方法.pdf",
+          "sha256": "086141f9df1eb38604fd4caae9dfa78dd6815ea9de5cd3c71d7886d864de449c",
+          "bytes": 1087406
+        }
+      ]
+    },
+    {
+      "id": "L-0b49c6dc",
+      "identity": "doi:10.1109/iembs.2004.1403778",
+      "title": "Exoskeleton for forearm pronation and supination rehabilitation",
+      "doi": "10.1109/iembs.2004.1403778",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Exoskeleton for forearm pronation and supination rehabilitat.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Exoskeleton for forearm pronation and supination rehabilitat.pdf",
+          "sha256": "5116ad6bd42256a42c42b211b020ab58f93b6105c0da4e7157ec4d4db07cc774",
+          "bytes": 205341
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/用于前臂旋前与旋后康复的外骨骼/用于前臂旋前与旋后康复的外骨骼.pdf",
+          "sha256": "5116ad6bd42256a42c42b211b020ab58f93b6105c0da4e7157ec4d4db07cc774",
+          "bytes": 205341
+        }
+      ]
+    },
+    {
+      "id": "L-83fdc2f8",
+      "identity": "arxiv:2607.23608",
+      "title": "Markerless Motion Capture in Routine Clinical Upper Limb Assessments: Validity and Insights Beyond Ordinal Scoring",
+      "doi": "",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Markerless Motion Capture in Routine Clinical Upper Limb Ass.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Markerless Motion Capture in Routine Clinical Upper Limb Ass.pdf",
+          "sha256": "6f4f0dece4d6d4448ae027203a22183901d9e525752ba6c1587d5cee9526034a",
+          "bytes": 9322550
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/常规临床上肢评估中的无标记动作捕捉：超越序数评分的有效性与见解/常规临床上肢评估中的无标记动作捕捉：超越序数评分的有效性与见解.pdf",
+          "sha256": "6f4f0dece4d6d4448ae027203a22183901d9e525752ba6c1587d5cee9526034a",
+          "bytes": 9322550
+        }
+      ]
+    },
+    {
+      "id": "L-9dda282a",
+      "identity": "arxiv:2602.13176",
+      "title": "Monocular Markerless Motion Capture Enables Quantitative Assessment of Upper Extremity Reachable Workspace",
+      "doi": "",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Monocular Markerless Motion Capture Enables Quantitative Ass.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Monocular Markerless Motion Capture Enables Quantitative Ass.pdf",
+          "sha256": "16013d3771e16f776511cff5b10a87e9e9090982f2c936d76c3ef2a3d7e6c350",
+          "bytes": 2149621
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/单目无标记动作捕捉实现上肢可达工作空间的定量评估/单目无标记动作捕捉实现上肢可达工作空间的定量评估.pdf",
+          "sha256": "16013d3771e16f776511cff5b10a87e9e9090982f2c936d76c3ef2a3d7e6c350",
+          "bytes": 2149621
+        }
+      ]
+    },
+    {
+      "id": "L-2c53d083",
+      "identity": "doi:10.2196/87339",
+      "title": "From Metrics to Meaning in Neurological Rehabilitation: Clinicians’ Perspectives on Digital Metrics of Upper Limb Functioning—A Focus Group Study",
+      "doi": "10.2196/87339",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/From Metrics to Meaning in Neurological Rehabilitation_ Clin.xml",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/From Metrics to Meaning in Neurological Rehabilitation_ Clin.xml",
+          "sha256": "61b9e6a2d16f22e09b56f766cde6c318805d94bb641c0f8707761819af88cc1c",
+          "bytes": 165645
+        }
+      ]
+    },
+    {
+      "id": "L-f7650ef4",
+      "identity": "doi:10.1101/2022.12.20.22283739",
+      "title": "Target height influences shoulder and elbow non-use after stroke during reaching with the hand : A brief communication",
+      "doi": "10.1101/2022.12.20.22283739",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Target height influences shoulder and elbow non-use after st.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Target height influences shoulder and elbow non-use after st.pdf",
+          "sha256": "e7aa7baeef24e6f8289298379c9e83cfd61f6e4e36e8e78e3126923a8230023f",
+          "bytes": 1169814
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/目标高度影响卒中患者手部伸手抓握时肩关节和肘关节的废用：简讯/目标高度影响卒中患者手部伸手抓握时肩关节和肘关节的废用：简讯.pdf",
+          "sha256": "e7aa7baeef24e6f8289298379c9e83cfd61f6e4e36e8e78e3126923a8230023f",
+          "bytes": 1169814
+        }
+      ]
+    },
+    {
+      "id": "L-f696c42b",
+      "identity": "doi:10.1109/icaretech49914.2020.00019",
+      "title": "Vision-based Automatic Detection of Compensatory Postures of after-Stroke Patients During Upper-extremity Robot-assisted Rehabilitation: A Pilot Study in Reaching Movement",
+      "doi": "10.1109/icaretech49914.2020.00019",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Vision-based Automatic Detection of Compensatory Postures of.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Vision-based Automatic Detection of Compensatory Postures of.pdf",
+          "sha256": "919ab047c2e41ab599422a977a1b9b541ecb57ab1c18133b1e180a87b4798d17",
+          "bytes": 500717
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/基于视觉的脑卒中患者上肢机器人辅助康复过程中代偿姿势自动检测：伸展运动的初步研究/基于视觉的脑卒中患者上肢机器人辅助康复过程中代偿姿势自动检测：伸展运动的初步研究.pdf",
+          "sha256": "919ab047c2e41ab599422a977a1b9b541ecb57ab1c18133b1e180a87b4798d17",
+          "bytes": 500717
+        }
+      ]
+    },
+    {
+      "id": "L-756e75d3",
+      "identity": "doi:10.3389/fneur.2020.577855",
+      "title": "Item Difficulty of Fugl-Meyer Assessment for Upper Extremity in Persons With Chronic Stroke With Moderate-to-Severe Upper Limb Impairment",
+      "doi": "10.3389/fneur.2020.577855",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Item Difficulty of Fugl-Meyer Assessment for Upper Extremity.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Item Difficulty of Fugl-Meyer Assessment for Upper Extremity.pdf",
+          "sha256": "09f86ec00055350906f9ae9655ffe97b1326cf7c075d83def2206bc64b6fba42",
+          "bytes": 482368
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/中重度上肢功能障碍慢性脑卒中患者的 Fugl-Meyer 上肢评估量表项目难度研究/中重度上肢功能障碍慢性脑卒中患者的 Fugl-Meyer 上肢评估量表项目难度研究.pdf",
+          "sha256": "09f86ec00055350906f9ae9655ffe97b1326cf7c075d83def2206bc64b6fba42",
+          "bytes": 482368
+        }
+      ]
+    },
+    {
+      "id": "L-7a977203",
+      "identity": "doi:10.1016/j.apmr.2016.06.023",
+      "title": "Determining Levels of Upper Extremity Movement Impairment by Applying a Cluster Analysis to the Fugl-Meyer Assessment of the Upper Extremity in Chronic Stroke",
+      "doi": "10.1016/j.apmr.2016.06.023",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Determining Levels of Upper Extremity Movement Impairment by.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Determining Levels of Upper Extremity Movement Impairment by.pdf",
+          "sha256": "ac994a901f42e02130fc3b45c9a9a6ae855202290eca26c3027f4ea615311e27",
+          "bytes": 952769
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/应用聚类分析于慢性期脑卒中上肢Fugl-Meyer评估以确定上肢运动障碍程度/应用聚类分析于慢性期脑卒中上肢Fugl-Meyer评估以确定上肢运动障碍程度.pdf",
+          "sha256": "ac994a901f42e02130fc3b45c9a9a6ae855202290eca26c3027f4ea615311e27",
+          "bytes": 952769
+        }
+      ]
+    },
+    {
+      "id": "L-5d469430",
+      "identity": "doi:10.1155/2014/636123",
+      "title": "Kinematic Analysis of the Upper Limb Motor Strategies in Stroke Patients as a Tool towards Advanced Neurorehabilitation Strategies: A Preliminary Study",
+      "doi": "10.1155/2014/636123",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Kinematic Analysis of the Upper Limb Motor Strategies in Stroke Patien.xml",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Kinematic Analysis of the Upper Limb Motor Strategies in Stroke Patien.xml",
+          "sha256": "676e9ef742b03eace66cb4209b7d2d2769348d484f161001e997b171df01b4ef",
+          "bytes": 66820
+        }
+      ]
+    },
+    {
+      "id": "L-142f1fbb",
+      "identity": "doi:10.1123/jab.28.2.127",
+      "title": "Limited Forearm Motion Compensated by Thoracohumeral Kinematics When Performing Tasks Requiring Pronation and Supination",
+      "doi": "10.1123/jab.28.2.127",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Limited Forearm Motion Compensated by Thoracohumeral Kinemat.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Limited Forearm Motion Compensated by Thoracohumeral Kinemat.pdf",
+          "sha256": "95267fb8fee3e98b9e14e2cfd8b6d2a723c9d54335af6998702fd0a646486c93",
+          "bytes": 770251
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/执行需要旋前与旋后的任务时受限的前臂运动由胸肱关节运动学进行代偿/执行需要旋前与旋后的任务时受限的前臂运动由胸肱关节运动学进行代偿.pdf",
+          "sha256": "95267fb8fee3e98b9e14e2cfd8b6d2a723c9d54335af6998702fd0a646486c93",
+          "bytes": 770251
+        }
+      ]
+    },
+    {
+      "id": "L-46c8272a",
+      "identity": "doi:10.1109/tnsre.2012.2207462",
+      "title": "Kinematic Data Analysis for Post-Stroke Patients Following Bilateral Versus Unilateral Rehabilitation With an Upper Limb Wearable Robotic System",
+      "doi": "10.1109/tnsre.2012.2207462",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Kinematic Data Analysis for Post-Stroke Patients Following B.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Kinematic Data Analysis for Post-Stroke Patients Following B.pdf",
+          "sha256": "80337cc23b755c0e996cef0c1161a71debbb4c2c26cb328fec2aad9ae2580498",
+          "bytes": 3783306
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/脑卒中后患者采用上肢穿戴式机器人系统进行双侧与单侧康复后的运动学数据分析/脑卒中后患者采用上肢穿戴式机器人系统进行双侧与单侧康复后的运动学数据分析.pdf",
+          "sha256": "80337cc23b755c0e996cef0c1161a71debbb4c2c26cb328fec2aad9ae2580498",
+          "bytes": 3783306
+        }
+      ]
+    },
+    {
+      "id": "L-6346631d",
+      "identity": "doi:10.1016/j.apmr.2007.05.012",
+      "title": "Kinematic and Clinical Analyses of Upper-Extremity Movements After Constraint-Induced Movement Therapy in Patients With Stroke: A Randomized Controlled Trial",
+      "doi": "10.1016/j.apmr.2007.05.012",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Kinematic and Clinical Analyses of Upper-Extremity Movements.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Kinematic and Clinical Analyses of Upper-Extremity Movements.pdf",
+          "sha256": "1cb975d57c9e03f38af6d5a4f2d1c75aa78ae0c19527d488f82eac6745445e7e",
+          "bytes": 134976
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/脑卒中患者强制性使用运动疗法后上肢运动的运动学与临床分析：一项随机对照试验/脑卒中患者强制性使用运动疗法后上肢运动的运动学与临床分析：一项随机对照试验.pdf",
+          "sha256": "1cb975d57c9e03f38af6d5a4f2d1c75aa78ae0c19527d488f82eac6745445e7e",
+          "bytes": 134976
+        }
+      ]
+    },
+    {
+      "id": "L-40509a13",
+      "identity": "doi:10.1109/tmrb.2025.3605962",
+      "title": "Differentiable Biomechanics for Markerless Motion Capture in Upper Limb Stroke Rehabilitation: A Comparison with Optical Motion Capture",
+      "doi": "10.1109/tmrb.2025.3605962",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B5_视觉运动学到动力学_桥接/Differentiable Biomechanics for Markerless Motion Capture in.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B5_视觉运动学到动力学_桥接/Differentiable Biomechanics for Markerless Motion Capture in.pdf",
+          "sha256": "d4543acd0dbf30821faa11803f585165eac706fd9d189e53e889340564d7b035",
+          "bytes": 8882381
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B5_视觉运动学到动力学_桥接/可微生物力学用于上肢脑卒中康复中的无标记动作捕捉：与光学动作捕捉的比较/可微生物力学用于上肢脑卒中康复中的无标记动作捕捉：与光学动作捕捉的比较.pdf",
+          "sha256": "d4543acd0dbf30821faa11803f585165eac706fd9d189e53e889340564d7b035",
+          "bytes": 8882381
+        }
+      ]
+    },
+    {
+      "id": "L-3390a0e6",
+      "identity": "arxiv:2601.04982",
+      "title": "When to Act: Calibrated Confidence for Reliable Human Intention Prediction in Assistive Robotics",
+      "doi": "",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/When to Act_ Calibrated Confidence for Reliable Human Intent.pdf",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/何时采取行动：用于辅助机器人中可靠人类意图预测的校准置信度/何时采取行动：用于辅助机器人中可靠人类意图预测的校准置信度.pdf",
+          "sha256": "06c097dced13b18d6e6d852bd4df2391c7571a371009df7ef0caa296e342a36e",
+          "bytes": 467518
+        }
+      ]
+    },
+    {
+      "id": "L-debbc1bf",
+      "identity": "doi:10.1145/3757279.3788668",
+      "title": "A Human-in-the-Loop Confidence-Aware Failure Recovery Framework for Modular Robot Policies",
+      "doi": "10.1145/3757279.3788668",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/A Human-in-the-Loop Confidence-Aware Failure Recovery Framew.pdf",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/一种面向模块化机器人策略的人在回路置信度感知故障恢复框架/一种面向模块化机器人策略的人在回路置信度感知故障恢复框架.pdf",
+          "sha256": "37c31773085f625761f34a3926ee2d2fbf0efadd02bd2ded025ae27edc7ceb4a",
+          "bytes": 8572891
+        }
+      ]
+    },
+    {
+      "id": "L-561c1bd5",
+      "identity": "doi:10.3390/s26092740",
+      "title": "Model Predictive Control-Based Assist-as-Needed Strategy for Reducing Motor Slacking in Robot-Assisted Rehabilitation",
+      "doi": "10.3390/s26092740",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Model Predictive Control-Based Assist-as-Needed Strategy for.pdf",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于模型预测控制的按需辅助策略用于减少机器人辅助康复中的运动懈怠/基于模型预测控制的按需辅助策略用于减少机器人辅助康复中的运动懈怠.pdf",
+          "sha256": "a92fa1d6cff106cdae284a3bd40f433db28f6457d90ba4c8673fa0e0c317a25c",
+          "bytes": 1933917
+        }
+      ]
+    },
+    {
+      "id": "L-ceeff714",
+      "identity": "doi:10.1016/j.mechatronics.2025.103450",
+      "title": "Velocity field assist-as-needed controller for upper limb rehabilitation with sEMG-based spasticity detection",
+      "doi": "10.1016/j.mechatronics.2025.103450",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Velocity field assist-as-needed controller for upper limb re.pdf",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于 sEMG 痉挛检测的上肢康复速度场按需辅助控制器/基于 sEMG 痉挛检测的上肢康复速度场按需辅助控制器.pdf",
+          "sha256": "7c465a21b5c5423c36c958532aa256ba0fbe775cf7612a25c1cd03e6926cc10c",
+          "bytes": 3062969
+        }
+      ]
+    },
+    {
+      "id": "L-f2769289",
+      "identity": "doi:10.3389/fnbot.2023.1161007",
+      "title": "Assistance level quantification-based human-robot interaction space reshaping for rehabilitation training",
+      "doi": "10.3389/fnbot.2023.1161007",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Assistance level quantification-based human-robot interactio.pdf",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于助力水平量化的人机交互空间重塑用于康复训练/基于助力水平量化的人机交互空间重塑用于康复训练.pdf",
+          "sha256": "499a2672098f78bb69313a449bd52050190ff63d79a8a8b9f6909bd2e2349e71",
+          "bytes": 3774162
+        }
+      ]
+    },
+    {
+      "id": "L-c8f6fc7d",
+      "identity": "doi:10.3389/fnbot.2017.00026",
+      "title": "Effects of Assist-As-Needed Upper Extremity Robotic Therapy after Incomplete Spinal Cord Injury: A Parallel-Group Controlled Trial",
+      "doi": "10.3389/fnbot.2017.00026",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Effects of Assist-As-Needed Upper Extremity Robotic Therapy.pdf",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/按需辅助上肢机器人疗法在不完全性脊髓损伤后的疗效：一项平行对照试验/按需辅助上肢机器人疗法在不完全性脊髓损伤后的疗效：一项平行对照试验.pdf",
+          "sha256": "43b6fb4a0dc9015797a856a425b67baef4e47735917c9ed81ddcf06f22065517",
+          "bytes": 3907364
+        }
+      ]
+    },
+    {
+      "id": "L-caa2314e",
+      "identity": "doi:10.1186/s12984-023-01298-2",
+      "title": "Effects of an assist-as-needed equipped Tenodesis-Induced-Grip Exoskeleton Robot (TIGER) on upper limb function in patients with chronic stroke",
+      "doi": "10.1186/s12984-023-01298-2",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Effects of an assist-as-needed equipped Tenodesis-Induced-Gr.xml",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Effects of an assist-as-needed equipped Tenodesis-Induced-Gr.xml",
+          "sha256": "92a8cff1c762f2bdef744d629847d3f48c1cecf4d77bba160d6ca7f51cb52c4b",
+          "bytes": 111478
+        },
+        {
+          "path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Effects of an assist-as-needed equipped Tenodesis-Induced-Grip Exoskelet.xml",
+          "sha256": "92a8cff1c762f2bdef744d629847d3f48c1cecf4d77bba160d6ca7f51cb52c4b",
+          "bytes": 111478
+        }
+      ]
+    },
+    {
+      "id": "L-e3ac3705",
+      "identity": "doi:10.1109/icma65362.2025.11120720",
+      "title": "Continuous Motion Prediction for Upper Limb Rehabilitation Robotics Based on Surface Electromyography: A Spatio-Temporal Attention and Lightweight TCN Approach",
+      "doi": "10.1109/icma65362.2025.11120720",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/Continuous Motion Prediction for Upper Limb Rehabilitation R.pdf",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/基于表面肌电信号的上肢康复机器人连续运动预测：一种时空注意力与轻量级 TCN 方法/基于表面肌电信号的上肢康复机器人连续运动预测：一种时空注意力与轻量级 TCN 方法.pdf",
+          "sha256": "9bd1a904e630744155368b2eaa7bdfbf149529b889d88920930d87e0c4507084",
+          "bytes": 2552350
+        }
+      ]
+    },
+    {
+      "id": "L-e18da72b",
+      "identity": "arxiv:2411.15366",
+      "title": "Personalization of Wearable Sensor-Based Joint Kinematic Estimation Using Computer Vision for Hip Exoskeleton Applications",
+      "doi": "",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/Personalization of Wearable Sensor-Based Joint Kinematic Est.pdf",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/基于计算机视觉的可穿戴传感器关节运动学估计个性化方法在髋关节外骨骼中的应用/基于计算机视觉的可穿戴传感器关节运动学估计个性化方法在髋关节外骨骼中的应用.pdf",
+          "sha256": "daa540748b21da2fb4197c28affdbdf26c2425bcda1be2807267bc262599a8ad",
+          "bytes": 1912109
+        }
+      ]
+    },
+    {
+      "id": "L-8c0ad4e9",
+      "identity": "arxiv:2609.36154",
+      "title": "More Features Are Not More Evidence: Limits of Training-Free Human Activity Recognition with Jev",
+      "doi": "",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/决策模型线_JEV/D2_独立评测与反驳/More Features Are Not More Evidence_ Limits of Training-Free.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/决策模型线_JEV/D2_独立评测与反驳/More Features Are Not More Evidence_ Limits of Training-Free.pdf",
+          "sha256": "702adeaecf68cf48536df5582446860180f42f9ef7ffa56529a559e84ab85807",
+          "bytes": 725364
+        },
+        {
+          "path": "01_参考论文/整合系统/决策模型线_JEV/D2_独立评测与反驳/更多的特征并非更多的证据：使用 Jev 进行免训练人体活动识别的局限性/更多的特征并非更多的证据：使用 Jev 进行免训练人体活动识别的局限性.pdf",
+          "sha256": "702adeaecf68cf48536df5582446860180f42f9ef7ffa56529a559e84ab85807",
+          "bytes": 725364
+        }
+      ]
+    },
+    {
+      "id": "L-fc4e3dbd",
+      "identity": "doi:10.3390/s26165054",
+      "title": "Markerless On-Device Detection of Compensatory Movement Patterns in Upper-Limb Rehabilitation Exercises from Monocular RGB Video",
+      "doi": "10.3390/s26165054",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/运动理解/Transformer_发展线/T6_物理约束·世界模型/2026_端侧单目RGB_上肢代偿模式检测.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/运动理解/Transformer_发展线/T6_物理约束·世界模型/2026_端侧单目RGB_上肢代偿模式检测.pdf",
+          "sha256": "81e76fe44c1b2d83002bc442f16e573a8a6596300576da074f171c869677745f",
+          "bytes": 569148
+        },
+        {
+          "path": "01_参考论文/运动理解/Transformer_发展线/T6_物理约束·世界模型/基于单目 RGB 视频的上肢康复训练代偿运动模式无标记端侧检测：健康成人群体验证研究/基于单目 RGB 视频的上肢康复训练代偿运动模式无标记端侧检测：健康成人群体验证研究.pdf",
+          "sha256": "81e76fe44c1b2d83002bc442f16e573a8a6596300576da074f171c869677745f",
+          "bytes": 569148
+        }
+      ]
+    },
+    {
+      "id": "L-40c8cfa2",
+      "identity": "doi:10.1109/tbme.2008.2005946",
+      "title": "A Real-Time, 3-D Musculoskeletal Model for Dynamic Simulation of Arm Movements",
+      "doi": "10.1109/tbme.2008.2005946",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B2_肌肉骨骼动力学_与可微仿真/A Real-Time, 3-D Musculoskeletal Model for Dynamic Simulatio.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B2_肌肉骨骼动力学_与可微仿真/A Real-Time, 3-D Musculoskeletal Model for Dynamic Simulatio.pdf",
+          "sha256": "7c1ed9fe72aeecca927c6681ca9f40ea1e8a94dc83859f90df0f7938ae042245",
+          "bytes": 817964
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B2_肌肉骨骼动力学_与可微仿真/用于手臂运动动态仿真的实时三维肌骨骼模型/用于手臂运动动态仿真的实时三维肌骨骼模型.pdf",
+          "sha256": "7c1ed9fe72aeecca927c6681ca9f40ea1e8a94dc83859f90df0f7938ae042245",
+          "bytes": 817964
+        }
+      ]
+    },
+    {
+      "id": "L-d70787db",
+      "identity": "doi:10.1016/j.mechatronics.2022.102919",
+      "title": "Performance-based assistance control for robot-mediated upper-limbs rehabilitation",
+      "doi": "10.1016/j.mechatronics.2022.102919",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Performance-based assistance control for robot-mediated uppe.pdf",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于表现的机器人辅助上肢康复助力控制/基于表现的机器人辅助上肢康复助力控制.pdf",
+          "sha256": "5b3f71b8f8fb391bf86f686e3599fc8ad1ac5a8b80abe3ce352f2f4e87f43d93",
+          "bytes": 7768271
+        }
+      ]
+    },
+    {
+      "id": "L-90b8ba05",
+      "identity": "arxiv:2409.03193",
+      "title": "Upper-Limb Rehabilitation with a Dual-Mode Individualized Exoskeleton Robot: A Generative-Model-Based Solution",
+      "doi": "",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/运动理解/Transformer_发展线/T6_物理约束·世界模型/2024_Chen_Upper_Limb_Rehabilitation_with_a_Dual_Mode.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/运动理解/Transformer_发展线/T6_物理约束·世界模型/2024_Chen_Upper_Limb_Rehabilitation_with_a_Dual_Mode.pdf",
+          "sha256": "119a1f70b22d0934c3dee9f4721fa1995c475109e9a705a142330671528eb728",
+          "bytes": 4662548
+        },
+        {
+          "path": "01_参考论文/运动理解/Transformer_发展线/T6_物理约束·世界模型/基于双模式个性化外骨骼机器人的上肢康复：一种基于生成式模型的解决方案/基于双模式个性化外骨骼机器人的上肢康复：一种基于生成式模型的解决方案.pdf",
+          "sha256": "119a1f70b22d0934c3dee9f4721fa1995c475109e9a705a142330671528eb728",
+          "bytes": 4662548
+        }
+      ]
+    },
+    {
+      "id": "L-ee97e567",
+      "identity": "doi:10.3389/fmed.2025.1645369",
+      "title": "Using deep learning to detect upper limb compensation in individuals post-stroke using consumer-grade webcams",
+      "doi": "10.3389/fmed.2025.1645369",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/运动理解/Transformer_发展线/T6_物理约束·世界模型/2025_消费级摄像头_跨被试上肢代偿检测.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/运动理解/Transformer_发展线/T6_物理约束·世界模型/2025_消费级摄像头_跨被试上肢代偿检测.pdf",
+          "sha256": "2337397dc4c2db23ff1d59c4bf49ec768dfb97acdfe11df6931b135d3d04ac8d",
+          "bytes": 1367105
+        },
+        {
+          "path": "01_参考论文/运动理解/Transformer_发展线/T6_物理约束·世界模型/基于消费级网络摄像头利用深度学习检测卒中后患者上肢代偿——可行性研究/基于消费级网络摄像头利用深度学习检测卒中后患者上肢代偿——可行性研究.pdf",
+          "sha256": "2337397dc4c2db23ff1d59c4bf49ec768dfb97acdfe11df6931b135d3d04ac8d",
+          "bytes": 1367105
+        }
+      ]
+    },
+    {
+      "id": "control_review",
+      "identity": "doi:10.3389/frobt.2021.745018",
+      "title": "Review on Patient-Cooperative Control Strategies for Upper-Limb Rehabilitation Exoskeletons",
+      "doi": "10.3389/frobt.2021.745018",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/PMC8688994.xml",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/PMC8688994.xml",
+          "sha256": "73969a98de9ebd4503ef9416007be0a035638fa4d5e1dcd72289118428854c9a",
+          "bytes": 286182
+        }
+      ]
+    },
+    {
+      "id": "Marchal2009",
+      "identity": "doi:10.1186/1743-0003-6-20",
+      "title": "Review of control strategies for robotic movement training after neurologic injury",
+      "doi": "10.1186/1743-0003-6-20",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/PMC2710333.xml",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/PMC2710333.xml",
+          "sha256": "4aeaa8bccbe6ab6081215b1d4a06dd02218ac67560cdc5d5731727458d1c8ec4",
+          "bytes": 216915
+        }
+      ]
+    },
+    {
+      "id": "ALP2025",
+      "identity": "doi:10.3389/fdgth.2025.1559796",
+      "title": "Promoting active participation in robot-aided rehabilitation via machine learning and impedance control",
+      "doi": "10.3389/fdgth.2025.1559796",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/PMC11885312.xml",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/PMC11885312.xml",
+          "sha256": "c0d4eba0b9b5f25bc8ebe970c8bd21d69f990113eea63a3646de99a4d5d7d83b",
+          "bytes": 144531
+        }
+      ]
+    },
+    {
+      "id": "Song_impedance",
+      "identity": "doi:10.3389/fnbot.2022.850692",
+      "title": "Variable Impedance Control Based on Target Position and Tracking Error for Rehabilitation Robots During a Reaching Task",
+      "doi": "10.3389/fnbot.2022.850692",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/PMC8927629.xml",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/PMC8927629.xml",
+          "sha256": "23785bed668b905e2d3d0f5fab29b46f8e84ea3368727a1b4223459165933cdf",
+          "bytes": 136175
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/背景资料/Tang2022-Fronteurobot：基于目标位置与跟踪误差的康复机器人变阻抗控制/Tang2022-Fronteurobot：基于目标位置与跟踪误差的康复机器人变阻抗控制.xml",
+          "sha256": "23785bed668b905e2d3d0f5fab29b46f8e84ea3368727a1b4223459165933cdf",
+          "bytes": 136175
+        }
+      ]
+    },
+    {
+      "id": "Song_wrist",
+      "identity": "doi:10.1186/1743-0003-10-52",
+      "title": "Myoelectrically controlled wrist robot for stroke rehabilitation",
+      "doi": "10.1186/1743-0003-10-52",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/PMC3685570.xml",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/PMC3685570.xml",
+          "sha256": "445fb07bf0573194aa52de63f30adfabf1efb2f75a7ef0244f03c80a9025276b",
+          "bytes": 79935
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/背景资料/Song2013-JNER：面向卒中康复的肌电控制腕部康复机器人/Song2013-JNER：面向卒中康复的肌电控制腕部康复机器人.xml",
+          "sha256": "445fb07bf0573194aa52de63f30adfabf1efb2f75a7ef0244f03c80a9025276b",
+          "bytes": 79935
+        }
+      ]
+    },
+    {
+      "id": "Song_load",
+      "identity": "doi:10.1002/hbm.70208",
+      "title": "Effective Motor Skill Learning Induces Inverted-U Load-Dependent Activation in Contralateral Pre-Motor and Supplementary Motor Area",
+      "doi": "10.1002/hbm.70208",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/PMC11971689.xml",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/PMC11971689.xml",
+          "sha256": "ba216607e209fa0a6214a55af5e569247e1ed64d042e4086687026d558fb5555",
+          "bytes": 193934
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/背景资料/Wang2025-HBM：有效运动技能学习诱发对侧运动前区与辅助运动区的倒 U 型负荷依赖激活/Wang2025-HBM：有效运动技能学习诱发对侧运动前区与辅助运动区的倒 U 型负荷依赖激活.xml",
+          "sha256": "ba216607e209fa0a6214a55af5e569247e1ed64d042e4086687026d558fb5555",
+          "bytes": 193934
+        }
+      ]
+    },
+    {
+      "id": "participation_review",
+      "identity": "doi:10.1007/s11517-025-03315-z",
+      "title": "Patient performance assessment methods for upper extremity rehabilitation in assist-as-needed therapy strategies: a comprehensive review",
+      "doi": "10.1007/s11517-025-03315-z",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/PMC12204900.xml",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/PMC12204900.xml",
+          "sha256": "345db9936744106385e3935061749e18fcccfdb7b353fee4c55a71f3416d3a34",
+          "bytes": 174509
+        }
+      ]
+    },
+    {
+      "id": "participation_clinical",
+      "identity": "doi:10.1007/s11517-023-03014-7",
+      "title": "Clinical evaluation of a patient participation assessment system for upper extremity rehabilitation exercises",
+      "doi": "10.1007/s11517-023-03014-7",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/PMC11021326.xml",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/PMC11021326.xml",
+          "sha256": "131ac3feff3d0f63c73e19881fc43c2a1fd1d6b91d4afcd2501f00adc251eecf",
+          "bytes": 134733
+        }
+      ]
+    },
+    {
+      "id": "dose_review2026",
+      "identity": "doi:10.3389/fresc.2026.1753677",
+      "title": "Does more rehabilitation lead to better upper limb outcomes after stroke? A systematic review",
+      "doi": "10.3389/fresc.2026.1753677",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/PMC12989500.xml",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/PMC12989500.xml",
+          "sha256": "37253077c5916fc2153c459c55ea9f6484f4d845bfad4d2d7d1ab1299a9df012",
+          "bytes": 86932
+        }
+      ]
+    },
+    {
+      "id": "multimodal_gait2026",
+      "identity": "doi:10.1186/s12984-026-02050-2",
+      "title": "Multimodal engagement estimation in paediatric robot-assisted gait training: integrating physiological sensing and biomechanical interaction",
+      "doi": "10.1186/s12984-026-02050-2",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/PMC13523423.xml",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/PMC13523423.xml",
+          "sha256": "5d0ce3a9c07b752961ca52f8969f2b2cb0209dbfa865e8ad5f398218fc6040bd",
+          "bytes": 205190
+        }
+      ]
+    },
+    {
+      "id": "TFS2025",
+      "identity": "doi:10.1109/tfuzz.2025.3611266",
+      "title": "Neuro-Fuzzy Musculoskeletal Model-Driven Assist-as-Needed Control via Impedance Regulation for Rehabilitation Robots",
+      "doi": "10.1109/tfuzz.2025.3611266",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/TFS2025_NeuroFuzzy_AAN.pdf",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制.pdf",
+          "sha256": "7cd821b71b08addbc45745b1c88028d28d7b59f4c35d74ee80dca1e3065d0e21",
+          "bytes": 3644143
+        }
+      ]
+    },
+    {
+      "id": "Song_TRO",
+      "identity": "doi:10.1109/tro.2024.3411849",
+      "title": "A Cable-Driven Upper Limb Rehabilitation Robot With Muscle-Synergy-Based Myoelectric Controller",
+      "doi": "10.1109/tro.2024.3411849",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller.pdf",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/一种基于肌肉协同肌电控制器的绳驱上肢康复机器人/一种基于肌肉协同肌电控制器的绳驱上肢康复机器人.pdf",
+          "sha256": "7e363aa8dca5100a8ea04afbb5c0fbcb81d8867924695365fbcc2d2958a8f1fe",
+          "bytes": 4253871
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/背景资料/Xie2024-TRO：基于肌协同肌电控制器的线缆驱动上肢康复机器人/Xie2024-TRO：基于肌协同肌电控制器的线缆驱动上肢康复机器人.pdf",
+          "sha256": "7e363aa8dca5100a8ea04afbb5c0fbcb81d8867924695365fbcc2d2958a8f1fe",
+          "bytes": 4253871
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/背景资料/Xie2024-TRO：基于肌协同肌电控制器的线缆驱动上肢康复机器人/基于肌肉协同肌电控制器的绳索驱动上肢康复机器人/基于肌肉协同肌电控制器的绳索驱动上肢康复机器人.pdf",
+          "sha256": "7e363aa8dca5100a8ea04afbb5c0fbcb81d8867924695365fbcc2d2958a8f1fe",
+          "bytes": 4253871
+        }
+      ]
+    },
+    {
+      "id": "Song_TIE",
+      "identity": "doi:10.1109/tie.2024.3398675",
+      "title": "Deep-LSTM-Based Human-Robot Collaboration Control With Static-Dynamic Calibration",
+      "doi": "10.1109/tie.2024.3398675",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration.pdf",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/基于深度 LSTM 与静态-动态校准的人机协作控制/基于深度 LSTM 与静态-动态校准的人机协作控制.pdf",
+          "sha256": "051062e5644209088b9c01a0eb023091e070b97400baf3cacd627fb762682615",
+          "bytes": 2119267
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/背景资料/Xie2024-TIE：基于静动态校准的深度 LSTM 人机协作控制/Xie2024-TIE：基于静动态校准的深度 LSTM 人机协作控制.pdf",
+          "sha256": "051062e5644209088b9c01a0eb023091e070b97400baf3cacd627fb762682615",
+          "bytes": 2119267
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/背景资料/Xie2024-TIE：基于静动态校准的深度 LSTM 人机协作控制/基于深度长短期记忆网络与静态-动态标定的人机协作控制/基于深度长短期记忆网络与静态-动态标定的人机协作控制.pdf",
+          "sha256": "051062e5644209088b9c01a0eb023091e070b97400baf3cacd627fb762682615",
+          "bytes": 2119267
+        }
+      ]
+    },
+    {
+      "id": "Song_VAAN",
+      "identity": "doi:10.1109/tbme.2022.3228070",
+      "title": "Voluntary Assist-as-Needed Controller for an Ankle Power-Assist Rehabilitation Robot",
+      "doi": "10.1109/tbme.2022.3228070",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot.pdf",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/针对踝关节助力康复机器人的主动按需辅助控制器/针对踝关节助力康复机器人的主动按需辅助控制器.pdf",
+          "sha256": "360e92e294b0105eec6161352d9f884792e88c82aee11ae3530a95c58858afcb",
+          "bytes": 2780005
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/背景资料/Yang2023-TBME：踝关节动力辅助康复机器人的自主助行控制器/Yang2023-TBME：踝关节动力辅助康复机器人的自主助行控制器.pdf",
+          "sha256": "360e92e294b0105eec6161352d9f884792e88c82aee11ae3530a95c58858afcb",
+          "bytes": 2780005
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/背景资料/Yang2023-TBME：踝关节动力辅助康复机器人的自主助行控制器/踝关节助力康复机器人的自主按需辅助控制器/踝关节助力康复机器人的自主按需辅助控制器.pdf",
+          "sha256": "360e92e294b0105eec6161352d9f884792e88c82aee11ae3530a95c58858afcb",
+          "bytes": 2780005
+        }
+      ]
+    },
+    {
+      "id": "Song_TBME",
+      "identity": "doi:10.1109/tbme.2020.3027823",
+      "title": "Performance-Based Hybrid Control of a Cable-Driven Upper-Limb Rehabilitation Robot",
+      "doi": "10.1109/tbme.2020.3027823",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot.pdf",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/基于运动表现的绳驱动上肢康复机器人混合控制/基于运动表现的绳驱动上肢康复机器人混合控制.pdf",
+          "sha256": "bbf68a0f81d3d54716a5e2229404d070891a33b67ea29bd31fdc30e67a00c435",
+          "bytes": 1995955
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/背景资料/Li2021-TBME：基于表现型混合控制的线缆驱动上肢康复机器人/Li2021-TBME：基于表现型混合控制的线缆驱动上肢康复机器人.pdf",
+          "sha256": "bbf68a0f81d3d54716a5e2229404d070891a33b67ea29bd31fdc30e67a00c435",
+          "bytes": 1995955
+        }
+      ]
+    },
+    {
+      "id": "Song_TBCAS",
+      "identity": "doi:10.1109/tbcas.2021.3130090",
+      "title": "A Hybrid Arm-Hand Rehabilitation Robot With EMG-Based Admittance Controller",
+      "doi": "10.1109/tbcas.2021.3130090",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller.pdf",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/基于肌电导纳控制器的混合式臂-手康复机器人/基于肌电导纳控制器的混合式臂-手康复机器人.pdf",
+          "sha256": "cf7bf33523cb6196da35eada7614183a9200c77e7f8d7b6a6fe22140de1b4fc6",
+          "bytes": 4688648
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/背景资料/Xie2021-TBCAS：基于肌电导纳控制器的臂手一体化康复机器人/Xie2021-TBCAS：基于肌电导纳控制器的臂手一体化康复机器人.pdf",
+          "sha256": "cf7bf33523cb6196da35eada7614183a9200c77e7f8d7b6a6fe22140de1b4fc6",
+          "bytes": 4688648
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/背景资料/Xie2021-TBCAS：基于肌电导纳控制器的臂手一体化康复机器人/一种基于肌电导纳控制器的混合臂-手康复机器人/一种基于肌电导纳控制器的混合臂-手康复机器人.pdf",
+          "sha256": "cf7bf33523cb6196da35eada7614183a9200c77e7f8d7b6a6fe22140de1b4fc6",
+          "bytes": 4688648
+        }
+      ]
+    },
+    {
+      "id": "RL2026",
+      "identity": "doi:10.1109/tnsre.2025.3650096",
+      "title": "Personalized Adaptive Assistance With Reinforcement Learning Control Enhances Engagement, Performance, and Retention in Robot-Assisted Arm-Reaching Exercises",
+      "doi": "10.1109/tnsre.2025.3650096",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果.pdf",
+          "sha256": "4b6e21ec3be9c4d677c6ad4d9099df49d3a8198fecf7abe990a360bf93ff97e6",
+          "bytes": 7699552
+        }
+      ]
+    },
+    {
+      "id": "Shoulder2025",
+      "identity": "doi:10.1109/tnsre.2025.3579533",
+      "title": "Assist-as-Needed Control of a Shoulder Rehabilitation Robot Using a Virtual Biomechanical Model and Online Stiffness Adaptation",
+      "doi": "10.1109/tnsre.2025.3579533",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制.pdf",
+          "sha256": "e71f6fb2dfc06eb87118b3056e4e82e6bc6dc67fb0554698ba3a008ceabf1768",
+          "bytes": 977111
+        }
+      ]
+    },
+    {
+      "id": "Psy2014",
+      "identity": "doi:10.1186/1743-0003-11-64",
+      "title": "Increasing motivation in robot-aided arm rehabilitation with competitive and cooperative gameplay",
+      "doi": "10.1186/1743-0003-11-64",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/PMC4021830.xml",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/PMC4021830.xml",
+          "sha256": "76e4b939796411a9b23fb71d5e953dfee7d2486039b195657434c9b65241abd6",
+          "bytes": 142198
+        }
+      ]
+    },
+    {
+      "id": "Psy2022",
+      "identity": "doi:10.1016/j.heliyon.2022.e11764",
+      "title": "The effect of gamified robot-enhanced training on motor performance in chronic stroke survivors",
+      "doi": "10.1016/j.heliyon.2022.e11764",
+      "needs_fulltext": true,
+      "declared_path": "01_参考论文/康复辅助/康复整合链路/PMC9708787.xml",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/康复整合链路/PMC9708787.xml",
+          "sha256": "96b98aa3fb97edfd815234a42d613adf599675f719de91ccbf5aa3073d40d863",
+          "bytes": 139992
+        }
+      ]
+    },
+    {
+      "id": "DL-f380862c",
+      "identity": "doi:10.1016/s0268-0033(00)00082-6",
+      "title": "Joint coordinate systems of axes for coherence in reporting kinematic and kinetic data",
+      "doi": "10.1016/s0268-0033(00)00082-6",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Gagnon2001-ClinBiomech：运动学与动力学报告的关节坐标系一致性/Gagnon2001-ClinBiomech：运动学与动力学报告的关节坐标系一致性.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Gagnon2001-ClinBiomech：运动学与动力学报告的关节坐标系一致性/Gagnon2001-ClinBiomech：运动学与动力学报告的关节坐标系一致性.pdf",
+          "sha256": "3e663a312daf4eda2cd45aaaa2641dab69e9d4e450f9f3f0f7d65c8a05a0f7f4",
+          "bytes": 35430
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Gagnon2001-ClinBiomech：运动学与动力学报告的关节坐标系一致性/Gagnon2001-ClinBiomech：运动学与动力学报告的关节坐标系一致性/Gagnon2001-ClinBiomech：运动学与动力学报告的关节坐标系一致性.pdf",
+          "sha256": "3e663a312daf4eda2cd45aaaa2641dab69e9d4e450f9f3f0f7d65c8a05a0f7f4",
+          "bytes": 35430
+        }
+      ]
+    },
+    {
+      "id": "DL-1eef9ada",
+      "identity": "doi:10.1016/j.jse.2007.02.134",
+      "title": "Test-retest reproducibility of elbow goniometric measurements in a rigid double-blinded protocol: Intervals for distinguishing between measurement error and clinical change",
+      "doi": "10.1016/j.jse.2007.02.134",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Cleffken2007-JSESurg：肘关节量角测量重测信度的双盲方案/Cleffken2007-JSESurg：肘关节量角测量重测信度的双盲方案.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Cleffken2007-JSESurg：肘关节量角测量重测信度的双盲方案/Cleffken2007-JSESurg：肘关节量角测量重测信度的双盲方案.pdf",
+          "sha256": "ec3331866e75a952102ddea0c3c334341544f0c4d8a3983914a34683467053ba",
+          "bytes": 606649
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Cleffken2007-JSESurg：肘关节量角测量重测信度的双盲方案/严格双盲方案下肘关节角度计测量的重测信度：用于区分测量误差与临床变化的区间/严格双盲方案下肘关节角度计测量的重测信度：用于区分测量误差与临床变化的区间.pdf",
+          "sha256": "ec3331866e75a952102ddea0c3c334341544f0c4d8a3983914a34683467053ba",
+          "bytes": 606649
+        }
+      ]
+    },
+    {
+      "id": "DL-b0a9db10",
+      "identity": "doi:10.1016/j.jht.2020.05.001",
+      "title": "Remote self-measurement of wrist range of motion performed on normal wrists by a minimally trained individual using the iPhone level application only demonstrated good reliability in measuring wrist flexion and extension",
+      "doi": "10.1016/j.jht.2020.05.001",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Alford2021-JHandTher：非受训者用 iPhone 应用自测腕关节活动度的信度/Alford2021-JHandTher：非受训者用 iPhone 应用自测腕关节活动度的信度.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Alford2021-JHandTher：非受训者用 iPhone 应用自测腕关节活动度的信度/Alford2021-JHandTher：非受训者用 iPhone 应用自测腕关节活动度的信度.pdf",
+          "sha256": "c3bdfba2d81d5dc05d472731433c60f604e22a9046ff6c5843ffb2cf5b028d39",
+          "bytes": 1007591
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Alford2021-JHandTher：非受训者用 iPhone 应用自测腕关节活动度的信度/经最低限度培训的人员使用 iPhone 水准仪应用程序对正常手腕进行腕关节活动度远程自我测量仅在腕屈伸测量中表现出良好的信度/经最低限度培训的人员使用 iPhone 水准仪应用程序对正常手腕进行腕关节活动度远程自我测量仅在腕屈伸测量中表现出良好的信度.pdf",
+          "sha256": "c3bdfba2d81d5dc05d472731433c60f604e22a9046ff6c5843ffb2cf5b028d39",
+          "bytes": 1007591
+        }
+      ]
+    },
+    {
+      "id": "DL-97d9e21e",
+      "identity": "doi:10.1177/026921559701100408",
+      "title": "Joint angle measurement: a comparative study of the reliability of goniometry and wire tracing for the hand",
+      "doi": "10.1177/026921559701100408",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Ellis1997-ClinRehab：手部关节角度测量中量角器与描线法的信度比较/Ellis1997-ClinRehab：手部关节角度测量中量角器与描线法的信度比较.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Ellis1997-ClinRehab：手部关节角度测量中量角器与描线法的信度比较/Ellis1997-ClinRehab：手部关节角度测量中量角器与描线法的信度比较.pdf",
+          "sha256": "4a8067ebee059db33ec3ddc638a9d59eb24dfb2b55d4befa08157958932537c6",
+          "bytes": 600160
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Ellis1997-ClinRehab：手部关节角度测量中量角器与描线法的信度比较/关节角度测量：手部角度测量法与铅丝描记法信度的比较研究/关节角度测量：手部角度测量法与铅丝描记法信度的比较研究.pdf",
+          "sha256": "4a8067ebee059db33ec3ddc638a9d59eb24dfb2b55d4befa08157958932537c6",
+          "bytes": 600160
+        }
+      ]
+    },
+    {
+      "id": "DL-e33b7dbe",
+      "identity": "doi:10.1016/s0031-9406(10)63103-3",
+      "title": "Comparison of Visual Estimation and Goniometry in Determination of a Shoulder Joint Angle",
+      "doi": "10.1016/S0031-9406(10)63103-3",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Williams1990-Physiotherapy：肩关节角目视估计与量角器测定的比较/Williams1990-Physiotherapy：肩关节角目视估计与量角器测定的比较.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Williams1990-Physiotherapy：肩关节角目视估计与量角器测定的比较/Williams1990-Physiotherapy：肩关节角目视估计与量角器测定的比较.pdf",
+          "sha256": "af6fa838a8003b23942e55a9cc59009cc392f7256a4ee08c66dd91a60e634738",
+          "bytes": 1297756
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Williams1990-Physiotherapy：肩关节角目视估计与量角器测定的比较/目测法与量角器法在肩关节角度测定中的比较/目测法与量角器法在肩关节角度测定中的比较.pdf",
+          "sha256": "af6fa838a8003b23942e55a9cc59009cc392f7256a4ee08c66dd91a60e634738",
+          "bytes": 1297756
+        }
+      ]
+    },
+    {
+      "id": "DL-8b2db9dd",
+      "identity": "doi:10.1016/0021-9290(96)00031-0",
+      "title": "Moment arms and lengths of human upper limb muscles as functions of joint angles",
+      "doi": "10.1016/0021-9290(96)00031-0",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Pigeon1996-JBiomech：人体上肢肌肉力臂与长度随关节角的变化/Pigeon1996-JBiomech：人体上肢肌肉力臂与长度随关节角的变化.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": false,
+      "matches": []
+    },
+    {
+      "id": "DL-32affced",
+      "identity": "doi:10.1016/0021-9290(94)90062-0",
+      "title": "Wrist kinematics differ in expert and novice tennis players performing the backhand stroke: Implications for tennis elbow",
+      "doi": "10.1016/0021-9290(94)90062-0",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Blackwell1994-JBiomech：网球反手击球中专家与新手的手腕运动学差异/Blackwell1994-JBiomech：网球反手击球中专家与新手的手腕运动学差异.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Blackwell1994-JBiomech：网球反手击球中专家与新手的手腕运动学差异/Blackwell1994-JBiomech：网球反手击球中专家与新手的手腕运动学差异.pdf",
+          "sha256": "01d230e2a05b77ac88b3aa6eac8981d7795e6fc4dd64289860a8f618daba1dc5",
+          "bytes": 1040712
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Blackwell1994-JBiomech：网球反手击球中专家与新手的手腕运动学差异/专家与新手网球运动员在反手击球中手腕运动学的差异：对网球肘的影响/专家与新手网球运动员在反手击球中手腕运动学的差异：对网球肘的影响.pdf",
+          "sha256": "01d230e2a05b77ac88b3aa6eac8981d7795e6fc4dd64289860a8f618daba1dc5",
+          "bytes": 1040712
+        }
+      ]
+    },
+    {
+      "id": "DL-13a285c3",
+      "identity": "doi:10.1016/s0003-9993(99)90088-6",
+      "title": "Thoracic position effect on shoulder range of motion, strength, and three-dimensional scapular kinematics",
+      "doi": "10.1016/s0003-9993(99)90088-6",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Kebaetse1999-ArchPMR：胸廓位置对肩活动度、肌力与肩胛三维运动学的影响/Kebaetse1999-ArchPMR：胸廓位置对肩活动度、肌力与肩胛三维运动学的影响.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Kebaetse1999-ArchPMR：胸廓位置对肩活动度、肌力与肩胛三维运动学的影响/Kebaetse1999-ArchPMR：胸廓位置对肩活动度、肌力与肩胛三维运动学的影响.pdf",
+          "sha256": "ff642a116126aad3d1117af5f6e5faa4c3fef389bfc741dd8911f17e753dcfb8",
+          "bytes": 1458956
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Kebaetse1999-ArchPMR：胸廓位置对肩活动度、肌力与肩胛三维运动学的影响/胸椎姿势对肩关节活动度、力量及三维肩胛骨运动学的影响/胸椎姿势对肩关节活动度、力量及三维肩胛骨运动学的影响.pdf",
+          "sha256": "ff642a116126aad3d1117af5f6e5faa4c3fef389bfc741dd8911f17e753dcfb8",
+          "bytes": 1458956
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/Kebaletse1999-ArchPMR：胸廓位置对肩活动度、肌力与肩胛三维运动学的影响/胸椎姿势对肩关节活动度、肌力和三维肩胛骨运动学的影响/胸椎姿势对肩关节活动度、肌力和三维肩胛骨运动学的影响.pdf",
+          "sha256": "ff642a116126aad3d1117af5f6e5faa4c3fef389bfc741dd8911f17e753dcfb8",
+          "bytes": 1458956
+        }
+      ]
+    },
+    {
+      "id": "DL-891f5d18",
+      "identity": "doi:10.1034/j.1600-0404.2003.00021.x",
+      "title": "Motor compensation and recovery for reaching in stroke patients",
+      "doi": "10.1034/j.1600-0404.2003.00021.x",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Roby-Brami2003-ActaNeurolScand：卒中患者伸手运动的代偿与恢复/Roby-Brami2003-ActaNeurolScand：卒中患者伸手运动的代偿与恢复.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Roby-Brami2003-ActaNeurolScand：卒中患者伸手运动的代偿与恢复/Roby-Brami2003-ActaNeurolScand：卒中患者伸手运动的代偿与恢复.pdf",
+          "sha256": "5b9884d921772e30bb2421c71386d27ab4dd4c45203557b6f4320ab25467f02d",
+          "bytes": 647532
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Roby-Brami2003-ActaNeurolScand：卒中患者伸手运动的代偿与恢复/脑卒中患者伸手动作的运动代偿与恢复/脑卒中患者伸手动作的运动代偿与恢复.pdf",
+          "sha256": "5b9884d921772e30bb2421c71386d27ab4dd4c45203557b6f4320ab25467f02d",
+          "bytes": 647532
+        }
+      ]
+    },
+    {
+      "id": "DL-4c0d3655",
+      "identity": "doi:10.1007/978-981-16-4991-2_8",
+      "title": "Kinematics and Kinetics of Shoulder Complex, Elbow, and Wrist",
+      "doi": "10.1007/978-981-16-4991-2_8",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Hazari2021-ConceptBiomechKinesiol：肩复合体、肘与腕的运动学与动力学/Hazari2021-ConceptBiomechKinesiol：肩复合体、肘与腕的运动学与动力学.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Hazari2021-ConceptBiomechKinesiol：肩复合体、肘与腕的运动学与动力学/Hazari2021-ConceptBiomechKinesiol：肩复合体、肘与腕的运动学与动力学.pdf",
+          "sha256": "ed71b1dd1e4f66c381560398488ddca3381b4625a5c619e5003ce45e0405160e",
+          "bytes": 708393
+        },
+        {
+          "path": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Hazari2021-ConceptBiomechKinesiol：肩复合体、肘与腕的运动学与动力学/肩关节复合体、肘关节和腕关节的运动学与动力学/肩关节复合体、肘关节和腕关节的运动学与动力学.pdf",
+          "sha256": "ed71b1dd1e4f66c381560398488ddca3381b4625a5c619e5003ce45e0405160e",
+          "bytes": 708393
+        }
+      ]
+    },
+    {
+      "id": "DL-8acc2101",
+      "identity": "doi:10.1109/tmech.2020.3044289",
+      "title": "Human-in-the-Loop Control of a Wearable Lower Limb Exoskeleton for Stable Dynamic Walking",
+      "doi": "10.1109/TMECH.2020.3044289",
+      "needs_fulltext": true,
+      "declared_path": "",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "09_章隆彬_合作团队/papers/理解与辅助结合/Li2021-TMECH：稳定动态行走的下肢外骨骼人在环控制/Li2021-TMECH：稳定动态行走的下肢外骨骼人在环控制.pdf",
+          "sha256": "1321b246cd462498a0315984b63526d3ffa4a9fbd7517e50c45cb09bc95c6921",
+          "bytes": 8525471
+        },
+        {
+          "path": "09_章隆彬_合作团队/papers/理解与辅助结合/Li2021-TMECH：稳定动态行走的下肢外骨骼人在环控制/用于稳定动态行走的穿戴式下肢外骨骼人在回路控制/用于稳定动态行走的穿戴式下肢外骨骼人在回路控制.pdf",
+          "sha256": "1321b246cd462498a0315984b63526d3ffa4a9fbd7517e50c45cb09bc95c6921",
+          "bytes": 8525471
+        }
+      ]
+    },
+    {
+      "id": "DL-5e218103",
+      "identity": "doi:10.1109/tfuzz.2016.2566676",
+      "title": "Brain–Machine Interface and Visual Compressive Sensing-Based Teleoperation Control of an Exoskeleton Robot",
+      "doi": "10.1109/TFUZZ.2016.2566676",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/整合系统/章隆彬_理解与辅助结合/Qiu2017-TFUZZ：脑机接口与视觉压缩感知的外骨骼机器人遥操作控制/Qiu2017-TFUZZ：脑机接口与视觉压缩感知的外骨骼机器人遥操作控制.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": false,
+      "matches": []
+    },
+    {
+      "id": "DL-ce6e6704",
+      "identity": "doi:10.1109/tie.2016.2624260",
+      "title": "Adaptive Neural Network Based Variable Stiffness Control of Uncertain Robotic Systems Using Disturbance Observer",
+      "doi": "10.1109/TIE.2016.2624260",
+      "needs_fulltext": true,
+      "declared_path": "",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "09_章隆彬_合作团队/papers/康复辅助/Zhang2017-TIE：扰动观测器与自适应神经网络变刚度控制/Zhang2017-TIE：扰动观测器与自适应神经网络变刚度控制.pdf",
+          "sha256": "a8e92e48782fe8a1d86582ffa9a280d3d1788055518a1fb1393cded9dbeaf6c0",
+          "bytes": 3578970
+        },
+        {
+          "path": "09_章隆彬_合作团队/papers/康复辅助/Zhang2017-TIE：扰动观测器与自适应神经网络变刚度控制/基于扰动观测器的不确定机器人系统自适应神经网络变刚度控制/基于扰动观测器的不确定机器人系统自适应神经网络变刚度控制.pdf",
+          "sha256": "a8e92e48782fe8a1d86582ffa9a280d3d1788055518a1fb1393cded9dbeaf6c0",
+          "bytes": 3578970
+        }
+      ]
+    },
+    {
+      "id": "DL-3d816be7",
+      "identity": "doi:10.1109/icarm52023.2021.9536189",
+      "title": "Estimation of Ankle Dynamic Joint Torque by a Neuromusculoskeletal Solver-informed NN Model",
+      "doi": "10.1109/ICARM52023.2021.9536189",
+      "needs_fulltext": true,
+      "declared_path": "",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "09_章隆彬_合作团队/papers/运动理解/Zhang2021-ICARM：NMS求解器与NN的踝动态力矩估计/Zhang2021-ICARM：NMS求解器与NN的踝动态力矩估计.pdf",
+          "sha256": "bc2306f29e1b8fab63b98c970a99d4c3ba5744e0dda03550e98c9988ab7da1e3",
+          "bytes": 654328
+        },
+        {
+          "path": "09_章隆彬_合作团队/papers/运动理解/Zhang2021-ICARM：NMS求解器与NN的踝动态力矩估计/基于神经肌肉骨骼求解器引导的神经网络模型的踝关节动态关节力矩估计/基于神经肌肉骨骼求解器引导的神经网络模型的踝关节动态关节力矩估计.pdf",
+          "sha256": "bc2306f29e1b8fab63b98c970a99d4c3ba5744e0dda03550e98c9988ab7da1e3",
+          "bytes": 654328
+        }
+      ]
+    },
+    {
+      "id": "DL-2a6a772b",
+      "identity": "doi:10.1109/yac71005.2026.11616179",
+      "title": "EEG Dynamics and Center of Pressure Modulation During Multi-Task Balance Challenges in Older Adults",
+      "doi": "10.1109/YAC71005.2026.11616179",
+      "needs_fulltext": true,
+      "declared_path": "",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "09_章隆彬_合作团队/papers/运动理解/Li2026-YAC：多任务平衡挑战的EEG与压力中心调节/Li2026-YAC：多任务平衡挑战的EEG与压力中心调节.pdf",
+          "sha256": "03b60d7088a10a6ee3834e92d376d7680d42f9aa7ad92fa984d697ed5aea2298",
+          "bytes": 1283713
+        },
+        {
+          "path": "09_章隆彬_合作团队/papers/运动理解/Li2026-YAC：多任务平衡挑战的EEG与压力中心调节/老年人多任务平衡挑战过程中的脑电动态与压力中心调节/老年人多任务平衡挑战过程中的脑电动态与压力中心调节.pdf",
+          "sha256": "03b60d7088a10a6ee3834e92d376d7680d42f9aa7ad92fa984d697ed5aea2298",
+          "bytes": 1283713
+        }
+      ]
+    },
+    {
+      "id": "DL-b2dae467",
+      "identity": "doi:10.1109/yac71005.2026.11615719",
+      "title": "Predicting Ground Reaction Forces by LSTM Neural Networks with Multi-modal Data",
+      "doi": "10.1109/YAC71005.2026.11615719",
+      "needs_fulltext": true,
+      "declared_path": "",
+      "declared_path_exists": false,
+      "declared_identity_match": false,
+      "matches": [
+        {
+          "path": "09_章隆彬_合作团队/papers/运动理解/Fu2026-YAC：多模态LSTM地面反力预测/Fu2026-YAC：多模态LSTM地面反力预测.pdf",
+          "sha256": "5a14c4e07f7ed1153c8321f21b48ac99ec732d5b2ec03bdedd13d7740eb88b5b",
+          "bytes": 1633879
+        },
+        {
+          "path": "09_章隆彬_合作团队/papers/运动理解/Fu2026-YAC：多模态LSTM地面反力预测/基于多模态数据与LSTM神经网络预测地面反作用力/基于多模态数据与LSTM神经网络预测地面反作用力.pdf",
+          "sha256": "5a14c4e07f7ed1153c8321f21b48ac99ec732d5b2ec03bdedd13d7740eb88b5b",
+          "bytes": 1633879
+        }
+      ]
+    },
+    {
+      "id": "DL-75905616",
+      "identity": "doi:10.1109/tnsre.2020.2986295",
+      "title": "Iterative Adjustment of Stimulation Timing and Intensity During FES-Assisted Treadmill Walking for Patients After Stroke",
+      "doi": "10.1109/TNSRE.2020.2986295",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Jiang2020-TNSRE：卒中患者 FES 辅助跑台训练中刺激时相与强度的迭代调整/Jiang2020-TNSRE：卒中患者 FES 辅助跑台训练中刺激时相与强度的迭代调整.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Jiang2020-TNSRE：卒中患者 FES 辅助跑台训练中刺激时相与强度的迭代调整/Jiang2020-TNSRE：卒中患者 FES 辅助跑台训练中刺激时相与强度的迭代调整.pdf",
+          "sha256": "ae86324da198f69755c5395f93e55c1efa311bcdcfe2607e227072e9259ca91f",
+          "bytes": 1028260
+        },
+        {
+          "path": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Jiang2020-TNSRE：卒中患者 FES 辅助跑台训练中刺激时相与强度的迭代调整/脑卒中后患者FES辅助跑步机步行过程中刺激时机与强度的迭代调节/脑卒中后患者FES辅助跑步机步行过程中刺激时机与强度的迭代调节.pdf",
+          "sha256": "ae86324da198f69755c5395f93e55c1efa311bcdcfe2607e227072e9259ca91f",
+          "bytes": 1028260
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/康复辅助/Jiang2020-TNSRE：卒中患者 FES 辅助跑台训练中刺激时相与强度的迭代调整/Jiang2020-TNSRE：卒中患者 FES 辅助跑台训练中刺激时相与强度的迭代调整.pdf",
+          "sha256": "ae86324da198f69755c5395f93e55c1efa311bcdcfe2607e227072e9259ca91f",
+          "bytes": 1028260
+        }
+      ]
+    },
+    {
+      "id": "DL-de3bccd7",
+      "identity": "doi:10.1109/tnsre.2025.3535928",
+      "title": "Corticomuscular Coupling Alterations During Elbow Isometric Contraction Correlated With Clinical Scores: An fNIRS-sEMG Study in Stroke Survivors",
+      "doi": "10.1109/TNSRE.2025.3535928",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Wang2025-TNSRE：卒中患者肘等长收缩时皮层-肌电耦合改变与临床评分相关/Wang2025-TNSRE：卒中患者肘等长收缩时皮层-肌电耦合改变与临床评分相关.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Wang2025-TNSRE：卒中患者肘等长收缩时皮层-肌电耦合改变与临床评分相关/Wang2025-TNSRE：卒中患者肘等长收缩时皮层-肌电耦合改变与临床评分相关.pdf",
+          "sha256": "512692c9409066efffd5a79d692c68533fd3d659d7b0892c7d8cac3cf408c924",
+          "bytes": 1107765
+        },
+        {
+          "path": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Wang2025-TNSRE：卒中患者肘等长收缩时皮层-肌电耦合改变与临床评分相关/肘部等长收缩期间皮层-肌肉耦合变化与临床评分的相关性：一项针对脑卒中患者的 fNIRS-sEMG 研究/肘部等长收缩期间皮层-肌肉耦合变化与临床评分的相关性：一项针对脑卒中患者的 fNIRS-sEMG 研究.pdf",
+          "sha256": "512692c9409066efffd5a79d692c68533fd3d659d7b0892c7d8cac3cf408c924",
+          "bytes": 1107765
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/整合系统/Wang2025-TNSRE：卒中患者肘等长收缩时皮层-肌电耦合改变与临床评分相关/Wang2025-TNSRE：卒中患者肘等长收缩时皮层-肌电耦合改变与临床评分相关.pdf",
+          "sha256": "512692c9409066efffd5a79d692c68533fd3d659d7b0892c7d8cac3cf408c924",
+          "bytes": 1107765
+        }
+      ]
+    },
+    {
+      "id": "DL-33082445",
+      "identity": "doi:10.1109/tbme.2024.3368021",
+      "title": "Isometric Plantarflexion Moment Prediction Based on a Compartment-Specific HD-sEMG-Driven Musculoskeletal Model",
+      "doi": "10.1109/TBME.2024.3368021",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Zheng2024-TBME：基于分舱 HD-sEMG 肌骨模型的等长跖屈力矩预测/Zheng2024-TBME：基于分舱 HD-sEMG 肌骨模型的等长跖屈力矩预测.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Zheng2024-TBME：基于分舱 HD-sEMG 肌骨模型的等长跖屈力矩预测/Zheng2024-TBME：基于分舱 HD-sEMG 肌骨模型的等长跖屈力矩预测.pdf",
+          "sha256": "15b46f7bfcdb152ea2257da692fdc3a671fdfd3364d9213874e982ae36b92b8d",
+          "bytes": 3416336
+        },
+        {
+          "path": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Zheng2024-TBME：基于分舱 HD-sEMG 肌骨模型的等长跖屈力矩预测/基于分区特异性 HD-sEMG 驱动肌肉骨骼模型的等长跖屈力矩预测/基于分区特异性 HD-sEMG 驱动肌肉骨骼模型的等长跖屈力矩预测.pdf",
+          "sha256": "15b46f7bfcdb152ea2257da692fdc3a671fdfd3364d9213874e982ae36b92b8d",
+          "bytes": 3416336
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/运动理解/Zheng2024-TBME：基于分舱 HD-sEMG 肌骨模型的等长跖屈力矩预测/Zheng2024-TBME：基于分舱 HD-sEMG 肌骨模型的等长跖屈力矩预测.pdf",
+          "sha256": "15b46f7bfcdb152ea2257da692fdc3a671fdfd3364d9213874e982ae36b92b8d",
+          "bytes": 3416336
+        }
+      ]
+    },
+    {
+      "id": "DL-651cf059",
+      "identity": "doi:10.3389/fbioe.2023.1246014",
+      "title": "Hybrid and adaptive control of functional electrical stimulation to correct hemiplegic gait for patients after stroke",
+      "doi": "10.3389/fbioe.2023.1246014",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Dong2023-FrontBioengBiotech：纠正卒中后偏瘫步态的功能性电刺激混合与自适应控制/Dong2023-FrontBioengBiotech：纠正卒中后偏瘫步态的功能性电刺激混合与自适应控制.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Dong2023-FrontBioengBiotech：纠正卒中后偏瘫步态的功能性电刺激混合与自适应控制/Dong2023-FrontBioengBiotech：纠正卒中后偏瘫步态的功能性电刺激混合与自适应控制.pdf",
+          "sha256": "ac087a0964eb7a1538a4d024ea18e5706bd1e26cafad1d7bc16ceff33bc1cc55",
+          "bytes": 1870944
+        },
+        {
+          "path": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Dong2023-FrontBioengBiotech：纠正卒中后偏瘫步态的功能性电刺激混合与自适应控制/用于纠正脑卒中后患者偏瘫步态的功能性电刺激混合与自适应控制/用于纠正脑卒中后患者偏瘫步态的功能性电刺激混合与自适应控制.pdf",
+          "sha256": "ac087a0964eb7a1538a4d024ea18e5706bd1e26cafad1d7bc16ceff33bc1cc55",
+          "bytes": 1870944
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/康复辅助/Dong2023-FrontBioengBiotech：纠正卒中后偏瘫步态的功能性电刺激混合与自适应控制/Dong2023-FrontBioengBiotech：纠正卒中后偏瘫步态的功能性电刺激混合与自适应控制.pdf",
+          "sha256": "ac087a0964eb7a1538a4d024ea18e5706bd1e26cafad1d7bc16ceff33bc1cc55",
+          "bytes": 1870944
+        }
+      ]
+    },
+    {
+      "id": "DL-2fd85fd9",
+      "identity": "doi:10.1109/tmrb.2026.3682646",
+      "title": "Practical Multiple Model Switching sEMG Decoders for Motion Intention Description in Rehabilitation Robot Control",
+      "doi": "10.1109/TMRB.2026.3682646",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Huang2026-TMRB：用于康复机器人控制的实用多模型无扰切换 sEMG 解码器/Huang2026-TMRB：用于康复机器人控制的实用多模型无扰切换 sEMG 解码器.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Huang2026-TMRB：用于康复机器人控制的实用多模型无扰切换 sEMG 解码器/Huang2026-TMRB：用于康复机器人控制的实用多模型无扰切换 sEMG 解码器.pdf",
+          "sha256": "d3df6c97e7cdc1f71d84a1de6bce8faab3da5d83769ae3eaa16ccdad232fb441",
+          "bytes": 2140445
+        },
+        {
+          "path": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Huang2026-TMRB：用于康复机器人控制的实用多模型无扰切换 sEMG 解码器/用于康复机器人控制中运动意图描述的实用多模型切换 sEMG 解码器/用于康复机器人控制中运动意图描述的实用多模型切换 sEMG 解码器.pdf",
+          "sha256": "d3df6c97e7cdc1f71d84a1de6bce8faab3da5d83769ae3eaa16ccdad232fb441",
+          "bytes": 2140445
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/运动理解/Huang2026-TMRB：用于康复机器人控制的实用多模型无扰切换 sEMG 解码器/Huang2026-TMRB：用于康复机器人控制的实用多模型无扰切换 sEMG 解码器.pdf",
+          "sha256": "d3df6c97e7cdc1f71d84a1de6bce8faab3da5d83769ae3eaa16ccdad232fb441",
+          "bytes": 2140445
+        }
+      ]
+    },
+    {
+      "id": "DL-555e7e8f",
+      "identity": "doi:10.1088/1741-2552/ac18ae",
+      "title": "Stroke-induced alteration in multi-layer information transmission of cortico-motor system during elbow isometric contraction modulated by myoelectric-controlled interfaces",
+      "doi": "10.1088/1741-2552/ac18ae",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Jian2021-JNeuralEng：肌电控制接口调节下卒中皮层-运动系统多层信息传递的改变/Jian2021-JNeuralEng：肌电控制接口调节下卒中皮层-运动系统多层信息传递的改变.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Jian2021-JNeuralEng：肌电控制接口调节下卒中皮层-运动系统多层信息传递的改变/Jian2021-JNeuralEng：肌电控制接口调节下卒中皮层-运动系统多层信息传递的改变.pdf",
+          "sha256": "e21fa5cbe86b8dc3b4e95e4897fdd8c259e286d01ff74de83c3925db296a0857",
+          "bytes": 884326
+        },
+        {
+          "path": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Jian2021-JNeuralEng：肌电控制接口调节下卒中皮层-运动系统多层信息传递的改变/肌电接口调控肘部等长收缩过程中脑-运动系统多层信息传递的脑卒中诱发改变/肌电接口调控肘部等长收缩过程中脑-运动系统多层信息传递的脑卒中诱发改变.pdf",
+          "sha256": "e21fa5cbe86b8dc3b4e95e4897fdd8c259e286d01ff74de83c3925db296a0857",
+          "bytes": 884326
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/整合系统/Jian2021-JNeuralEng：肌电控制接口调节下卒中皮层-运动系统多层信息传递的改变/Jian2021-JNeuralEng：肌电控制接口调节下卒中皮层-运动系统多层信息传递的改变.pdf",
+          "sha256": "e21fa5cbe86b8dc3b4e95e4897fdd8c259e286d01ff74de83c3925db296a0857",
+          "bytes": 884326
+        }
+      ]
+    },
+    {
+      "id": "DL-45f5e368",
+      "identity": "doi:10.1002/aisy.202400505",
+      "title": "An Electromyographic‐Based Control Using Gaussian Mixture Model on an Upper‐Limb Cable‐Driven Rehabilitation Robot",
+      "doi": "10.1002/aisy.202400505",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Zheng2025-AdvIntellSys：基于高斯混合模型的上肢线缆驱动康复机器人肌电控制/Zheng2025-AdvIntellSys：基于高斯混合模型的上肢线缆驱动康复机器人肌电控制.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Zheng2025-AdvIntellSys：基于高斯混合模型的上肢线缆驱动康复机器人肌电控制/Zheng2025-AdvIntellSys：基于高斯混合模型的上肢线缆驱动康复机器人肌电控制.pdf",
+          "sha256": "db7860e46beab60006d68c9293d1cc1087df63f9d0ceebc1a6b7950b6847a132",
+          "bytes": 2496130
+        },
+        {
+          "path": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Zheng2025-AdvIntellSys：基于高斯混合模型的上肢线缆驱动康复机器人肌电控制/基于高斯混合模型的上肢绳驱动康复机器人肌电控制/基于高斯混合模型的上肢绳驱动康复机器人肌电控制.pdf",
+          "sha256": "db7860e46beab60006d68c9293d1cc1087df63f9d0ceebc1a6b7950b6847a132",
+          "bytes": 2496130
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/康复辅助/Zheng2025-AdvIntellSys：基于高斯混合模型的上肢线缆驱动康复机器人肌电控制/Zheng2025-AdvIntellSys：基于高斯混合模型的上肢线缆驱动康复机器人肌电控制.pdf",
+          "sha256": "db7860e46beab60006d68c9293d1cc1087df63f9d0ceebc1a6b7950b6847a132",
+          "bytes": 2496130
+        }
+      ]
+    },
+    {
+      "id": "DL-2ffc3818",
+      "identity": "doi:10.1109/tnsre.2024.3371465",
+      "title": "An Adaptive Hammerstein Model for FES-Induced Torque Prediction Based on Variable Forgetting Factor Recursive Least Squares Algorithm",
+      "doi": "10.1109/TNSRE.2024.3371465",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Yang2024-TNSRE：基于变遗忘因子递归最小二乘的自适应 Hammerstein FES 力矩预测模型/Yang2024-TNSRE：基于变遗忘因子递归最小二乘的自适应 Hammerstein FES 力矩预测模型.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Yang2024-TNSRE：基于变遗忘因子递归最小二乘的自适应 Hammerstein FES 力矩预测模型/Yang2024-TNSRE：基于变遗忘因子递归最小二乘的自适应 Hammerstein FES 力矩预测模型.pdf",
+          "sha256": "581cf486849903d30ad9ac90178b266d5ea698e643343849515b86c5675673c2",
+          "bytes": 14326480
+        },
+        {
+          "path": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Yang2024-TNSRE：基于变遗忘因子递归最小二乘的自适应 Hammerstein FES 力矩预测模型/基于可变遗忘因子递推最小二乘算法的 FES 诱发力矩预测自适应 Hammerstein 模型/基于可变遗忘因子递推最小二乘算法的 FES 诱发力矩预测自适应 Hammerstein 模型.pdf",
+          "sha256": "581cf486849903d30ad9ac90178b266d5ea698e643343849515b86c5675673c2",
+          "bytes": 14326480
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/运动理解/Yang2024-TNSRE：基于变遗忘因子递归最小二乘的自适应 Hammerstein FES 力矩预测模型/Yang2024-TNSRE：基于变遗忘因子递归最小二乘的自适应 Hammerstein FES 力矩预测模型.pdf",
+          "sha256": "581cf486849903d30ad9ac90178b266d5ea698e643343849515b86c5675673c2",
+          "bytes": 14326480
+        }
+      ]
+    },
+    {
+      "id": "DL-f466aa90",
+      "identity": "doi:10.1109/tnsre.2023.3348332",
+      "title": "Trajectory Deformation-Based Multi-Modal Adaptive Compliance Control for a Wearable Lower Limb Rehabilitation Robot",
+      "doi": "10.1109/TNSRE.2023.3348332",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Zhou2024-TNSRE：面向可穿戴下肢康复机器人的轨迹变形多模态自适应柔顺控制/Zhou2024-TNSRE：面向可穿戴下肢康复机器人的轨迹变形多模态自适应柔顺控制.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Zhou2024-TNSRE：面向可穿戴下肢康复机器人的轨迹变形多模态自适应柔顺控制/Zhou2024-TNSRE：面向可穿戴下肢康复机器人的轨迹变形多模态自适应柔顺控制.pdf",
+          "sha256": "434539c0e66026f97f55d2b3dfd5cd2325f41b5033c701beab40230a1deb73cd",
+          "bytes": 9736114
+        },
+        {
+          "path": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Zhou2024-TNSRE：面向可穿戴下肢康复机器人的轨迹变形多模态自适应柔顺控制/基于轨迹形变的穿戴式下肢康复机器人多模态自适应柔顺控制/基于轨迹形变的穿戴式下肢康复机器人多模态自适应柔顺控制.pdf",
+          "sha256": "434539c0e66026f97f55d2b3dfd5cd2325f41b5033c701beab40230a1deb73cd",
+          "bytes": 9736114
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/康复辅助/Zhou2024-TNSRE：面向可穿戴下肢康复机器人的轨迹变形多模态自适应柔顺控制/Zhou2024-TNSRE：面向可穿戴下肢康复机器人的轨迹变形多模态自适应柔顺控制.pdf",
+          "sha256": "434539c0e66026f97f55d2b3dfd5cd2325f41b5033c701beab40230a1deb73cd",
+          "bytes": 9736114
+        }
+      ]
+    },
+    {
+      "id": "DL-4073fc7c",
+      "identity": "doi:10.1109/tbme.2020.3012296",
+      "title": "Voluntary Control of an Ankle Joint Exoskeleton by Able-Bodied Individuals and Stroke Survivors Using EMG-Based Admittance Control Scheme",
+      "doi": "10.1109/TBME.2020.3012296",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Zhuang2021-TBME：健康人与卒中患者用肌电导纳控制踝关节外骨骼/Zhuang2021-TBME：健康人与卒中患者用肌电导纳控制踝关节外骨骼.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Zhuang2021-TBME：健康人与卒中患者用肌电导纳控制踝关节外骨骼/Zhuang2021-TBME：健康人与卒中患者用肌电导纳控制踝关节外骨骼.pdf",
+          "sha256": "4c646e08f550fd6b75f16a0cc7a3e9b1c866c979f8a592e06355f77ce8bb015e",
+          "bytes": 981611
+        },
+        {
+          "path": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Zhuang2021-TBME：健康人与卒中患者用肌电导纳控制踝关节外骨骼/基于肌电导纳控制方案的健全人与脑卒中患者踝关节外骨骼自主控制/基于肌电导纳控制方案的健全人与脑卒中患者踝关节外骨骼自主控制.pdf",
+          "sha256": "4c646e08f550fd6b75f16a0cc7a3e9b1c866c979f8a592e06355f77ce8bb015e",
+          "bytes": 981611
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/康复辅助/Zhuang2021-TBME：健康人与卒中患者用肌电导纳控制踝关节外骨骼/Zhuang2021-TBME：健康人与卒中患者用肌电导纳控制踝关节外骨骼.pdf",
+          "sha256": "4c646e08f550fd6b75f16a0cc7a3e9b1c866c979f8a592e06355f77ce8bb015e",
+          "bytes": 981611
+        }
+      ]
+    },
+    {
+      "id": "DL-b04e6000",
+      "identity": "doi:10.1109/tnsre.2020.3042221",
+      "title": "Modeling Ankle Torque and Stiffness Induced by Functional Electrical Stimulation",
+      "doi": "10.1109/TNSRE.2020.3042221",
+      "needs_fulltext": false,
+      "declared_path": "12_宋嵘_合作团队/papers/运动理解/Li2020-TNSRE：功能性电刺激诱导的踝关节力矩与刚度建模/Li2020-TNSRE：功能性电刺激诱导的踝关节力矩与刚度建模.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "12_宋嵘_合作团队/papers/运动理解/Li2020-TNSRE：功能性电刺激诱导的踝关节力矩与刚度建模/Li2020-TNSRE：功能性电刺激诱导的踝关节力矩与刚度建模.pdf",
+          "sha256": "46449551a5a21bc8fb02709ec73d908dbe12fa8ed0fdc88eb520c871fb793496",
+          "bytes": 990500
+        },
+        {
+          "path": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Li2020-TNSRE：功能性电刺激诱导的踝关节力矩与刚度建模/功能性电刺激诱发的踝关节力矩与刚度建模/功能性电刺激诱发的踝关节力矩与刚度建模.pdf",
+          "sha256": "46449551a5a21bc8fb02709ec73d908dbe12fa8ed0fdc88eb520c871fb793496",
+          "bytes": 990500
+        }
+      ]
+    },
+    {
+      "id": "DL-82faa637",
+      "identity": "doi:10.1109/tnsre.2021.3066592",
+      "title": "Human Motion Intent Description Based on Bumpless Switching Mechanism for Rehabilitation Robot",
+      "doi": "10.1109/TNSRE.2021.3066592",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Huang2021-TNSRE：基于无扰切换机制的康复机器人人体运动意图描述/Huang2021-TNSRE：基于无扰切换机制的康复机器人人体运动意图描述.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Huang2021-TNSRE：基于无扰切换机制的康复机器人人体运动意图描述/Huang2021-TNSRE：基于无扰切换机制的康复机器人人体运动意图描述.pdf",
+          "sha256": "8f56e653f60afe1a8e2bc04bb5db3111ef4dfd429d61cab051647385bcc16c29",
+          "bytes": 1514334
+        },
+        {
+          "path": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Huang2021-TNSRE：基于无扰切换机制的康复机器人人体运动意图描述/基于无扰切换机制的康复机器人人体运动意图描述/基于无扰切换机制的康复机器人人体运动意图描述.pdf",
+          "sha256": "8f56e653f60afe1a8e2bc04bb5db3111ef4dfd429d61cab051647385bcc16c29",
+          "bytes": 1514334
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/运动理解/Huang2021-TNSRE：基于无扰切换机制的康复机器人人体运动意图描述/Huang2021-TNSRE：基于无扰切换机制的康复机器人人体运动意图描述.pdf",
+          "sha256": "8f56e653f60afe1a8e2bc04bb5db3111ef4dfd429d61cab051647385bcc16c29",
+          "bytes": 1514334
+        }
+      ]
+    },
+    {
+      "id": "DL-5e148075",
+      "identity": "doi:10.1109/tnsre.2019.2949203",
+      "title": "Continuous Description of Human 3D Motion Intent Through Switching Mechanism",
+      "doi": "10.1109/TNSRE.2019.2949203",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Huang2020-TNSRE：通过切换机制连续描述人体三维运动意图/Huang2020-TNSRE：通过切换机制连续描述人体三维运动意图.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Huang2020-TNSRE：通过切换机制连续描述人体三维运动意图/Huang2020-TNSRE：通过切换机制连续描述人体三维运动意图.pdf",
+          "sha256": "182754d5ac53d2bb9e6282517dfb1140c8fbd7b353d4ecc6440eedbedd0be045",
+          "bytes": 1150447
+        },
+        {
+          "path": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Huang2020-TNSRE：通过切换机制连续描述人体三维运动意图/基于切换机制的人体三维运动意图连续描述/基于切换机制的人体三维运动意图连续描述.pdf",
+          "sha256": "182754d5ac53d2bb9e6282517dfb1140c8fbd7b353d4ecc6440eedbedd0be045",
+          "bytes": 1150447
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/运动理解/Huang2020-TNSRE：通过切换机制连续描述人体三维运动意图/Huang2020-TNSRE：通过切换机制连续描述人体三维运动意图.pdf",
+          "sha256": "182754d5ac53d2bb9e6282517dfb1140c8fbd7b353d4ecc6440eedbedd0be045",
+          "bytes": 1150447
+        }
+      ]
+    },
+    {
+      "id": "DL-a16577bf",
+      "identity": "doi:10.1088/1741-2552/abc29a",
+      "title": "Modulating and restoring inter-muscular coordination in stroke patients using two-dimensional myoelectric computer interface: a cross-sectional and longitudinal study",
+      "doi": "10.1088/1741-2552/abc29a",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Jian2021-JNeuralEng：用二维肌电接口调制并恢复卒中患者的肌间协调/Jian2021-JNeuralEng：用二维肌电接口调制并恢复卒中患者的肌间协调.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Jian2021-JNeuralEng：用二维肌电接口调制并恢复卒中患者的肌间协调/Jian2021-JNeuralEng：用二维肌电接口调制并恢复卒中患者的肌间协调.pdf",
+          "sha256": "57131bd920fd3df8b7a4d577f1762c89a01a2b953f0d1d435f5410f7fea9ee8b",
+          "bytes": 1698370
+        },
+        {
+          "path": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Jian2021-JNeuralEng：用二维肌电接口调制并恢复卒中患者的肌间协调/利用二维肌电计算机接口调节和恢复中风患者的肌间协调：一项横断面与纵向研究/利用二维肌电计算机接口调节和恢复中风患者的肌间协调：一项横断面与纵向研究.pdf",
+          "sha256": "57131bd920fd3df8b7a4d577f1762c89a01a2b953f0d1d435f5410f7fea9ee8b",
+          "bytes": 1698370
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/整合系统/Jian2021-JNeuralEng：用二维肌电接口调制并恢复卒中患者的肌间协调/Jian2021-JNeuralEng：用二维肌电接口调制并恢复卒中患者的肌间协调.pdf",
+          "sha256": "57131bd920fd3df8b7a4d577f1762c89a01a2b953f0d1d435f5410f7fea9ee8b",
+          "bytes": 1698370
+        }
+      ]
+    },
+    {
+      "id": "DL-6ae31a72",
+      "identity": "doi:10.1109/tnsre.2023.3238758",
+      "title": "Phase-Dependent Modulation of Muscle Activity and Intermuscular Coupling During Walking in Patients After Stroke",
+      "doi": "10.1109/TNSRE.2023.3238758",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Li2023-TNSRE：卒中患者步行中肌电活动与肌间耦合的相位依赖调制/Li2023-TNSRE：卒中患者步行中肌电活动与肌间耦合的相位依赖调制.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Li2023-TNSRE：卒中患者步行中肌电活动与肌间耦合的相位依赖调制/Li2023-TNSRE：卒中患者步行中肌电活动与肌间耦合的相位依赖调制.pdf",
+          "sha256": "6fa1036eb1f20b236f3535ddfb85a37b8087a5c58becb5418e6551f9a3af19d4",
+          "bytes": 7567039
+        },
+        {
+          "path": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Li2023-TNSRE：卒中患者步行中肌电活动与肌间耦合的相位依赖调制/脑卒中患者步行过程中肌肉活动与肌间耦合的时相依赖性调制/脑卒中患者步行过程中肌肉活动与肌间耦合的时相依赖性调制.pdf",
+          "sha256": "6fa1036eb1f20b236f3535ddfb85a37b8087a5c58becb5418e6551f9a3af19d4",
+          "bytes": 7567039
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/整合系统/Li2023-TNSRE：卒中患者步行中肌电活动与肌间耦合的相位依赖调制/Li2023-TNSRE：卒中患者步行中肌电活动与肌间耦合的相位依赖调制.pdf",
+          "sha256": "6fa1036eb1f20b236f3535ddfb85a37b8087a5c58becb5418e6551f9a3af19d4",
+          "bytes": 7567039
+        }
+      ]
+    },
+    {
+      "id": "DL-b8524a84",
+      "identity": "doi:10.1109/tnsre.2021.3101615",
+      "title": "Investigating the Stroke- and Aging-Related Changes in Global and Instantaneous Intermuscular Coupling Using Cross-Fuzzy Entropy",
+      "doi": "10.1109/tnsre.2021.3101615",
+      "needs_fulltext": false,
+      "declared_path": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Tian2021-TNSRE：用 Cross-Fuzzy Entropy 研究卒中与老龄相关的全局与瞬时肌间耦合变化/Tian2021-TNSRE：用 Cross-Fuzzy Entropy 研究卒中与老龄相关的全局与瞬时肌间耦合变化.pdf",
+      "declared_path_exists": true,
+      "declared_identity_match": true,
+      "matches": [
+        {
+          "path": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Tian2021-TNSRE：用 Cross-Fuzzy Entropy 研究卒中与老龄相关的全局与瞬时肌间耦合变化/Tian2021-TNSRE：用 Cross-Fuzzy Entropy 研究卒中与老龄相关的全局与瞬时肌间耦合变化.pdf",
+          "sha256": "b2cab9c88c5081e2d13d39a89132dbcaf3fa68cd4ca5fb14f817c522cf968b73",
+          "bytes": 1586489
+        },
+        {
+          "path": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Tian2021-TNSRE：用 Cross-Fuzzy Entropy 研究卒中与老龄相关的全局与瞬时肌间耦合变化/基于跨模糊熵研究脑卒中及老龄化相关的整体与瞬时肌间耦合变化/基于跨模糊熵研究脑卒中及老龄化相关的整体与瞬时肌间耦合变化.pdf",
+          "sha256": "b2cab9c88c5081e2d13d39a89132dbcaf3fa68cd4ca5fb14f817c522cf968b73",
+          "bytes": 1586489
+        },
+        {
+          "path": "12_宋嵘_合作团队/papers/整合系统/Tian2021-TNSRE：用 Cross-Fuzzy Entropy 研究卒中与老龄相关的全局与瞬时肌间耦合变化/Tian2021-TNSRE：用 Cross-Fuzzy Entropy 研究卒中与老龄相关的全局与瞬时肌间耦合变化.pdf",
+          "sha256": "b2cab9c88c5081e2d13d39a89132dbcaf3fa68cd4ca5fb14f817c522cf968b73",
+          "bytes": 1586489
+        }
+      ]
+    }
+  ],
+  "read_errors": {}
+}

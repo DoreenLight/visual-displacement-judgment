@@ -1,0 +1,12 @@
+{
+  "ALiBi: Train Short, Test Long: Attention with Linear Biases Gets Input Length Extrapolation": {
+    "aid": "2108.12409",
+    "title": "Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation",
+    "sim": 0.925
+  },
+  "MotionAGFormer: Enhancing 3D Human Pose Estimation with a Transformer-GCN Former Network": {
+    "aid": "2310.16288",
+    "title": "MotionAGFormer: Enhancing 3D Human Pose Estimation with a Transformer-GCNFormer Network",
+    "sim": 0.994
+  }
+}

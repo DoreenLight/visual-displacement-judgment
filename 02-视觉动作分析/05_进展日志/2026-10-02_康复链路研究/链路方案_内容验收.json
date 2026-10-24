@@ -1,0 +1,252 @@
+{
+  "status": "DESIGN_CONTENT_CHECKED_NOT_IMPLEMENTED",
+  "nodes": [
+    {
+      "id": "S0",
+      "status": "DESIGN_NOT_IMPLEMENTED",
+      "responsibility_io": "疾病/病程、关节、任务、能力、临床/设备授权 → `TaskContext`、`RiskEnvelope`",
+      "source_ids": [
+        "L-f7650ef4",
+        "L-c8f6fc7d",
+        "Song_wrist"
+      ],
+      "conditions_feedback": "MISSING：患者/任务、既有外部协议、ROM/力/剂量边界及设备安全模式；约束全部后续节点",
+      "validation": "V0：材料身份、授权、适用域及临床限值来源；缺项不得进入设备模式"
+    },
+    {
+      "id": "S1",
+      "status": "DESIGN_NOT_IMPLEMENTED",
+      "responsibility_io": "RGB/深度或人体IMU；如存在EMG/力及机器人状态；症状/退出 → `ObservationPacket`",
+      "source_ids": [
+        "L-e3829d23",
+        "ALP2025",
+        "Song_wrist"
+      ],
+      "conditions_feedback": "GAP：真实可用流、时钟、标定、原始/模型重建区分；接收S8实际执行后的新观察",
+      "validation": "V1：时间对齐、单位/坐标、原始数据追溯；相机本体IMU不是人体姿态"
+    },
+    {
+      "id": "S2",
+      "status": "DESIGN_NOT_IMPLEMENTED",
+      "responsibility_io": "数据、上下文、同步和标定记录 → `ValidityPacket`",
+      "source_ids": [
+        "L-e3829d23",
+        "L-e35abf95"
+      ],
+      "conditions_feedback": "GAP：丢失、延迟和质量界限；向S3/S4输出各通道有效性，不用平滑替代缺失值",
+      "validation": "V1/V2：缺流、乱序、超时、坐标/版本不匹配的负对照"
+    },
+    {
+      "id": "S3",
+      "status": "DESIGN_NOT_IMPLEMENTED",
+      "responsibility_io": "有效几何/惯性输入、任务 → `KinematicQualityState`",
+      "source_ids": [
+        "L-e35abf95",
+        "L-9dda282a",
+        "L-f696c42b",
+        "L-ee97e567"
+      ],
+      "conditions_feedback": "GAP：本项目三维与角度独立参考、病程适用标签；输出给S6和S9，不能单独产生努力结论",
+      "validation": "V3：独立角度误差、一致性、任务分层质量及跨患者验证"
+    },
+    {
+      "id": "S4",
+      "status": "DESIGN_NOT_IMPLEMENTED",
+      "responsibility_io": "有效EMG/力、机器人实际状态、标定、肌骨模型/能力参照 → `EffortEstimate`或`unobservable`",
+      "source_ids": [
+        "L-561c1bd5",
+        "ALP2025",
+        "Song_wrist",
+        "TFS2025"
+      ],
+      "conditions_feedback": "GAP：患者校准和独立努力参照，混杂分离；视觉单独不默认得到主动贡献；输出给S6/S9",
+      "validation": "V4：独立参照误差/偏差、跨人/任务泛化、适当的区间覆盖；不能拿自身模型输出当真值"
+    },
+    {
+      "id": "S5",
+      "status": "DESIGN_NOT_IMPLEMENTED",
+      "responsibility_io": "主观症状/退出、临床量表、有效生理/运动代理 → `ConstraintState`",
+      "source_ids": [
+        "L-06083b29",
+        "L-c8f6fc7d",
+        "Song_load"
+      ],
+      "conditions_feedback": "MISSING：患者疲劳/痛阈值、能力更新依据；代理未知保留不确定；安全事件优先送设备/临床停止路径",
+      "validation": "V5：事件参考及漏报、提前量、负对照；健康人倒U不能定患者阈值"
+    },
+    {
+      "id": "S6",
+      "status": "DESIGN_NOT_IMPLEMENTED",
+      "responsibility_io": "S3–S5、有效性、授权/边界、校准证据 → `DecisionRequest`及理由",
+      "source_ids": [
+        "L-561c1bd5",
+        "L-d70787db",
+        "ALP2025",
+        "TFS2025"
+      ],
+      "conditions_feedback": "GAP：校准与风险合同；未校准分数/缺努力不能触发努力驱动加负荷；输出只到S7，不直接给力矩",
+      "validation": "V6：不确定/过期/疼痛/任务变化的决策表；接受风险—覆盖率，而非只看平均预测误差"
+    },
+    {
+      "id": "S7",
+      "status": "DESIGN_NOT_IMPLEMENTED",
+      "responsibility_io": "请求、临床允许包络、设备合同 → 已应用/拒绝及`AppliedPolicyReceipt`",
+      "source_ids": [
+        "L-561c1bd5",
+        "TFS2025"
+      ],
+      "conditions_feedback": "MISSING：实际控制器/急停/失效安全模式；独立边界可否决全部请求；不得把旧增益直接用于患者",
+      "validation": "V7：将来需设备责任方的延迟、饱和、被动性/稳定性及安全验证；本次不执行"
+    },
+    {
+      "id": "S8",
+      "status": "DESIGN_NOT_IMPLEMENTED",
+      "responsibility_io": "实际应用策略、患者/设备 → 新传感流、事件、真实辅助日志",
+      "source_ids": [
+        "ALP2025",
+        "Song_wrist",
+        "TFS2025"
+      ],
+      "conditions_feedback": "MISSING：本项目运行/外部材料；实际日志回到S1，并送S9；不能把候选请求当执行事实",
+      "validation": "V7/V8：实际应用回执、端到端同步、事件日志；回放不能证明物理闭环安全"
+    },
+    {
+      "id": "S9",
+      "status": "DESIGN_NOT_IMPLEMENTED",
+      "responsibility_io": "实测状态、实际辅助、症状、任务完成 → `TrainingBlockOutcome`",
+      "source_ids": [
+        "L-c8f6fc7d",
+        "L-caa2314e",
+        "dose_review2026"
+      ],
+      "conditions_feedback": "GAP：有效练习定义与真实条件；质量有效、努力可观测和总剂量分别统计；送S10",
+      "validation": "V8：分母/覆盖率、条件及患者划分、组间比较；过程改善不等于功能收益"
+    },
+    {
+      "id": "S10",
+      "status": "DESIGN_NOT_IMPLEMENTED",
+      "responsibility_io": "S9、能力/症状变化、随访/临床反馈 → 下一任务候选及新上下文版本",
+      "source_ids": [
+        "ALP2025"
+      ],
+      "conditions_feedback": "MISSING：外部临床/随访材料；先经临床批准再更新S0，不能在线偷改模型和风险界限",
+      "validation": "V8/V9：现有材料可回顾核对；新的患者干预须另立授权任务；疗效/迁移需合适试验"
+    }
+  ],
+  "interfaces": [
+    "TaskContext",
+    "RiskEnvelope",
+    "ObservationPacket",
+    "ValidityPacket",
+    "KinematicQualityState",
+    "EffortEstimate",
+    "ConstraintState",
+    "DecisionRequest",
+    "AppliedPolicyReceipt",
+    "TrainingBlockOutcome",
+    "PlanRevision"
+  ],
+  "proposed_edges": [
+    [
+      "S0",
+      "S1"
+    ],
+    [
+      "S1",
+      "S2"
+    ],
+    [
+      "S2",
+      "S3"
+    ],
+    [
+      "S2",
+      "S4"
+    ],
+    [
+      "S2",
+      "S5"
+    ],
+    [
+      "S3",
+      "S6"
+    ],
+    [
+      "S4",
+      "S6"
+    ],
+    [
+      "S5",
+      "S6"
+    ],
+    [
+      "S6",
+      "S7"
+    ],
+    [
+      "S7",
+      "S8"
+    ],
+    [
+      "S8",
+      "S1"
+    ],
+    [
+      "S8",
+      "S9"
+    ],
+    [
+      "S3",
+      "S9"
+    ],
+    [
+      "S4",
+      "S9"
+    ],
+    [
+      "S5",
+      "S9"
+    ],
+    [
+      "S9",
+      "S10"
+    ],
+    [
+      "S10",
+      "S0"
+    ]
+  ],
+  "independent_safety": "退出/疼痛/设备异常优先，已验证设备安全合同MISSING，不输出真实控制命令",
+  "validation_items": 10,
+  "negative_scenarios": 7,
+  "figure_dimensions": [
+    2880,
+    3020
+  ],
+  "visual_inspection": "已读取PNG：浅色主路径与独立安全侧栏，文字可读，无裁切；慢反馈回S0，实际观察回S1",
+  "semantic_checks": [
+    "运动质量与主动贡献分开",
+    "努力代理及独立参照未核不称真值",
+    "请求与实际应用回执分开",
+    "校准分型/时效/单位/坐标与上下文同行",
+    "训练剂量与挑战分开，保留多目标冲突和覆盖率",
+    "失效/未知不能触发增加负荷或硬锁关节",
+    "患者/设备/时钟/阈值未提供，不虚填",
+    "复用已完成外部材料，不安排重做四包"
+  ],
+  "source_id_check": "所有引用ID在53条台账中，方法参考均有本地原件；关键依据另见文献对照/279段摘录",
+  "not_evidence_for": [
+    "软件执行正确",
+    "物理闭环稳定或安全",
+    "患者主动参与增加",
+    "患者临床疗效"
+  ],
+  "files": {
+    "完整链路方案.md": "979e5297dc79038ee36005ad1558e0cc06695de07e159ab401d85ebf5da62f75",
+    "链路接口定义.md": "1955db3d9924da60e677646497edf08b7bc05f23007af021b24eb76e1b5748b0",
+    "链路验证计划.md": "5504d02e95a6aa44109ae99f9e9c0f9780ac15b78325991bc63b740e781f67f0",
+    "链路_数据反馈图.html": "17f267ced55bdb25de5642a24e57070a3e0d474f25e69584d2128bbf0758ff55",
+    "链路_数据反馈图.png": "b19873f2b160d421e2b3742167b8036dd88f30a0740dbf7488062625b21b7df1"
+  },
+  "scope_note": "机器人辅助为条件分支，不锁设备；非机器人S7为已批准执行责任方，心理参与单独确认；未实现/未运行。"
+}

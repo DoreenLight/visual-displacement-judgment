@@ -1,0 +1,215 @@
+{
+ "purpose": "第三代引文追溯：种子 = 临床侧扫描新坐实的 F11（ACM MM 2024 Hand Labanotation）",
+ "new_in_gen3": "标记器新增 [临床/康复] 与 [记谱法] —— 前两代标不到临床侧",
+ "constraint": "前向仅 OpenCitations COCI（只吃有 DOI 的）；不绕过反爬",
+ "forward": [
+  {
+   "seed": "10.1145/3664647.3680568",
+   "why": "F11 ACM MM 2024 Hand Labanotation「Translating Motion to Notation」",
+   "n_cited": 3,
+   "resolved": 3,
+   "n_flagged": 2,
+   "flagged": [
+    {
+     "doi": "10.1002/cav.70073",
+     "title": "Skeleton‐Based Motion Recognition for Labanotation Generation Based on the Fusion of Neural Networks",
+     "year": 2025,
+     "venue": "Computer Animation and Virtual Worlds",
+     "type": "journal-article",
+     "authors": [
+      "Du Jiasheng",
+      "Wang Jiaji",
+      "Li Jianpo"
+     ],
+     "n_auth": 3,
+     "seed": "10.1145/3664647.3680568",
+     "seed_why": "F11 ACM MM 2024 Hand Labanotation「Translating Motion to Notation」",
+     "flags": " [记谱法]"
+    },
+    {
+     "doi": "10.1109/icmew68306.2025.11152122",
+     "title": "Robust 3D Human Pose Estimation with Unsynchronized Cross-View Fusion",
+     "year": 2025,
+     "venue": "2025 IEEE International Conference on Multimedia and Expo Workshops (ICMEW)",
+     "type": "proceedings-article",
+     "authors": [
+      "Liu Yuhang",
+      "Kang Huibin",
+      "Liu Hengan",
+      "Su Jiayi",
+      "Chang Keng-Lun",
+      "Lyu Jiaqing"
+     ],
+     "n_auth": 7,
+     "seed": "10.1145/3664647.3680568",
+     "seed_why": "F11 ACM MM 2024 Hand Labanotation「Translating Motion to Notation」",
+     "flags": " [视觉]"
+    }
+   ],
+   "all": [
+    {
+     "doi": "10.1002/cav.70073",
+     "title": "Skeleton‐Based Motion Recognition for Labanotation Generation Based on the Fusion of Neural Networks",
+     "year": 2025,
+     "venue": "Computer Animation and Virtual Worlds",
+     "type": "journal-article",
+     "authors": [
+      "Du Jiasheng",
+      "Wang Jiaji",
+      "Li Jianpo"
+     ],
+     "n_auth": 3,
+     "seed": "10.1145/3664647.3680568",
+     "seed_why": "F11 ACM MM 2024 Hand Labanotation「Translating Motion to Notation」",
+     "flags": " [记谱法]"
+    },
+    {
+     "doi": "10.1016/j.eswa.2025.126835",
+     "title": "An effective global structure-aware feature aggregation network for multi-modal medical clustering",
+     "year": 2025,
+     "venue": "Expert Systems with Applications",
+     "type": "journal-article",
+     "authors": [
+      "Guan Renxiang",
+      "Quan Hao",
+      "Li Deliang",
+      "Hu Dayu"
+     ],
+     "n_auth": 4,
+     "seed": "10.1145/3664647.3680568",
+     "seed_why": "F11 ACM MM 2024 Hand Labanotation「Translating Motion to Notation」",
+     "flags": ""
+    },
+    {
+     "doi": "10.1109/icmew68306.2025.11152122",
+     "title": "Robust 3D Human Pose Estimation with Unsynchronized Cross-View Fusion",
+     "year": 2025,
+     "venue": "2025 IEEE International Conference on Multimedia and Expo Workshops (ICMEW)",
+     "type": "proceedings-article",
+     "authors": [
+      "Liu Yuhang",
+      "Kang Huibin",
+      "Liu Hengan",
+      "Su Jiayi",
+      "Chang Keng-Lun",
+      "Lyu Jiaqing"
+     ],
+     "n_auth": 7,
+     "seed": "10.1145/3664647.3680568",
+     "seed_why": "F11 ACM MM 2024 Hand Labanotation「Translating Motion to Notation」",
+     "flags": " [视觉]"
+    }
+   ]
+  },
+  {
+   "seed": "10.22323/2.01010201",
+   "why": "F12 Barbacci 2002「Labanotation: a universal movement notation language」",
+   "n_cited": 4,
+   "resolved": 4,
+   "n_flagged": 2,
+   "flagged": [
+    {
+     "doi": "10.18573/mas.223",
+     "title": "From Club to Symbols: An Ethnographic Method for Developing a Notation System for Arnis",
+     "year": 2025,
+     "venue": "Martial Arts Studies",
+     "type": "journal-article",
+     "authors": [
+      "Pacres Joan Grace E."
+     ],
+     "n_auth": 1,
+     "seed": "10.22323/2.01010201",
+     "seed_why": "F12 Barbacci 2002「Labanotation: a universal movement notation language」",
+     "flags": " [记谱法]"
+    },
+    {
+     "doi": "10.1007/s10465-020-09334-7",
+     "title": "Building Emotional Resilience and Physical Stability Through Movement Therapy for Sports (MTS®): A Case for Applying MTS® as a Tool for Enhancing Athletic Performance Among Professional or Trained Athletes",
+     "year": 2020,
+     "venue": "American Journal of Dance Therapy",
+     "type": "journal-article",
+     "authors": [
+      "Patel Dilshad K."
+     ],
+     "n_auth": 1,
+     "seed": "10.22323/2.01010201",
+     "seed_why": "F12 Barbacci 2002「Labanotation: a universal movement notation language」",
+     "flags": " [临床/康复]"
+    }
+   ],
+   "all": [
+    {
+     "doi": "10.18573/mas.223",
+     "title": "From Club to Symbols: An Ethnographic Method for Developing a Notation System for Arnis",
+     "year": 2025,
+     "venue": "Martial Arts Studies",
+     "type": "journal-article",
+     "authors": [
+      "Pacres Joan Grace E."
+     ],
+     "n_auth": 1,
+     "seed": "10.22323/2.01010201",
+     "seed_why": "F12 Barbacci 2002「Labanotation: a universal movement notation language」",
+     "flags": " [记谱法]"
+    },
+    {
+     "doi": "10.1007/s10465-020-09334-7",
+     "title": "Building Emotional Resilience and Physical Stability Through Movement Therapy for Sports (MTS®): A Case for Applying MTS® as a Tool for Enhancing Athletic Performance Among Professional or Trained Athletes",
+     "year": 2020,
+     "venue": "American Journal of Dance Therapy",
+     "type": "journal-article",
+     "authors": [
+      "Patel Dilshad K."
+     ],
+     "n_auth": 1,
+     "seed": "10.22323/2.01010201",
+     "seed_why": "F12 Barbacci 2002「Labanotation: a universal movement notation language」",
+     "flags": " [临床/康复]"
+    },
+    {
+     "doi": "10.1007/978-94-007-1617-9_11",
+     "title": "Mind Your Step: Representation and the Trajectory of a Circle-Dance Project with 6–8-Year-Old Children",
+     "year": 2011,
+     "venue": "Educational Encounters: Nordic Studies in Early Childhood Didactics",
+     "type": "book-chapter",
+     "authors": [
+      "Pramling Niklas",
+      "Wallerstedt Cecilia"
+     ],
+     "n_auth": 2,
+     "seed": "10.22323/2.01010201",
+     "seed_why": "F12 Barbacci 2002「Labanotation: a universal movement notation language」",
+     "flags": ""
+    },
+    {
+     "doi": "10.1145/3427379",
+     "title": "Moving in the Cube",
+     "year": 2021,
+     "venue": "Journal on Computing and Cultural Heritage",
+     "type": "journal-article",
+     "authors": [
+      "Raheb Katerina El",
+      "Stergiou Marina",
+      "Katifori Akrivi",
+      "Ioannidis Yannis"
+     ],
+     "n_auth": 4,
+     "seed": "10.22323/2.01010201",
+     "seed_why": "F12 Barbacci 2002「Labanotation: a universal movement notation language」",
+     "flags": ""
+    }
+   ]
+  }
+ ],
+ "summary": {
+  "n_seeds": 2,
+  "n_rows": 7,
+  "n_unique_doi": 7,
+  "n_flagged_unique": 4,
+  "flag_histogram": {
+   "记谱法": 2,
+   "视觉": 1,
+   "临床/康复": 1
+  }
+ }
+}

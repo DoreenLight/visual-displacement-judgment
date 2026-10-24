@@ -1,0 +1,31 @@
+{
+  "status": "FULL_JATS_IDENTIFIED_AND_REGISTERED",
+  "papers": [
+    {
+      "id": "Psy2014",
+      "pmc": "PMC4021830",
+      "doi": "10.1186/1743-0003-11-64",
+      "title": "Increasing motivation in robot-aided arm rehabilitation with competitive and cooperative gameplay",
+      "year": 2014,
+      "sha256": "76e4b939796411a9b23fb71d5e953dfee7d2486039b195657434c9b65241abd6",
+      "paragraphs_saved": 33,
+      "licence": "Copyright © 2014 Novak et al.; licensee BioMed Central Ltd. This is an Open Access article distributed under the terms of the Creative Commons Attribution License ( http://creativecommons.org/licenses/by/2.0 ), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly credited. The Creative Commons Public Domain Dedication waiver ( http://creativecommons.org/publicdomain/zero/1.0/ ) applies to the data made available in this article, unless otherwise stated."
+    },
+    {
+      "id": "Psy2022",
+      "pmc": "PMC9708787",
+      "doi": "10.1016/j.heliyon.2022.e11764",
+      "title": "The effect of gamified robot-enhanced training on motor performance in chronic stroke survivors",
+      "year": 2022,
+      "sha256": "96b98aa3fb97edfd815234a42d613adf599675f719de91ccbf5aa3073d40d863",
+      "paragraphs_saved": 22,
+      "licence": "© 2022 The Author(s) 2022 https://creativecommons.org/licenses/by/4.0/ This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/)."
+    }
+  ],
+  "main_included": 55,
+  "local_fulltexts": 48,
+  "missing": 7,
+  "chain_xml": 12,
+  "chain_pdf": 1,
+  "old_originals_not_modified": true
+}

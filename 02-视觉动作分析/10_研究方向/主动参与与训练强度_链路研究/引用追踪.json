@@ -1,0 +1,26 @@
+{
+  "method": "仅检查已落盘XML的参考文献DOI，PDF及前向引用仍另行人工复核",
+  "edges": [
+    {
+      "citing": "control_review",
+      "cited": "Marchal2009",
+      "ref_id": "B76",
+      "doi": "10.1186/1743-0003-6-20",
+      "reference_text": "Marchal-Crespo L. Reinkensmeyer D. J. ( 2009 ). Review of Control Strategies for Robotic Movement Training After Neurologic Injury . J. Neuroengineering Rehabil. 6 . 10.1186/1743-0003-6-20 PMC2710333 19531254"
+    },
+    {
+      "citing": "control_review",
+      "cited": "L-32c20f13",
+      "ref_id": "B130",
+      "doi": "10.1093/ptj/pzab010",
+      "reference_text": "Wu J. Cheng H. Zhang J. Yang S. Cai S. ( 2021 ). Robot-Assisted Therapy for Upper Extremity Motor Impairment After Stroke: A Systematic Review and Meta-Analysis . Phys. Ther. 101 , pzab010 . 10.1093/ptj/pzab010 33454787"
+    },
+    {
+      "citing": "Song_impedance",
+      "cited": "Song_TBME",
+      "ref_id": "B26",
+      "doi": "10.1109/tbme.2020.3027823",
+      "reference_text": "Li X. Yang Q. Song R. ( 2021 ). Performance-based hybrid control of a cable-driven upper-limb rehabilitation robot . IEEE Trans. Biomed. Eng. 68 , 1351 – 1359 . 10.1109/TBME.2020.3027823 32997619"
+    }
+  ]
+}

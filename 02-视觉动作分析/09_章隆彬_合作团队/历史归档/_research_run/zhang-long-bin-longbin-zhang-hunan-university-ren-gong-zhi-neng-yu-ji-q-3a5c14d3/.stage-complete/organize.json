@@ -1,0 +1,17 @@
+{
+  "stage": "organize",
+  "status": "completed",
+  "timestamp": 1790830675.1887228,
+  "input_fingerprint": "ce174e0a3cc52c1163e96eeb2573bea517d175109fd3bd533cda2414289a6cb6",
+  "outputs_sha256": {
+    "tree/00-主表.md": "b1d1dec0bd202c50bf53c823c0bfe83b8d6f42022ed925818fdff9327aa1a061",
+    "tree/N1-章隆彬与湖南大学人工智能与机器人学院的实验室定位.md": "fa64bed80a400590fc5f07d32626862c7e2a42b605e230489b86766f43d6cd15",
+    "tree/N2-神经肌肉骨骼建模的理论基础与-Hill-type-肌肉模型.md": "e16daf8cb36b8c39df967eede6c8b44915e100fb025467e1372eb57444b2119a",
+    "tree/N3-基于-EMG-+-超声的个体化肌肉-肌腱参数标定.md": "cf365e26f130e513e95015be14f9e02d2361118d3c628d559a181b9dbd901b00",
+    "tree/N4-卒中后踝关节肌-腱力学改变的量化与对照研究.md": "5a8b26b9e1543ef13996edb22f958257c845676061f1f2837906b44f1e28d14e",
+    "tree/N5-基于-LSTM-与-NMS-模型的多关节关节力矩预测.md": "aa69f2324bdb38f808bbd1051bc2655fb217eb693d2562c187aa74201463ffe6",
+    "tree/N6-基于聚类分析的个体化运动模式建模.md": "c7aba9efab7c3b1297e6c3ee46a748f8a01e078b31708801775b138daa488432",
+    "tree/N7-下肢外骨骼的按需辅助（AAN）控制策略.md": "dee9b6badef424d63ddee90ccd44c5665ed3599821347791a95e3514dcf543a8",
+    "tree/N8-多模态实验采集与跨地域合作网络.md": "823057405a44ca5437b753415067656a943f346a5d7421f31e378881c192519c"
+  }
+}

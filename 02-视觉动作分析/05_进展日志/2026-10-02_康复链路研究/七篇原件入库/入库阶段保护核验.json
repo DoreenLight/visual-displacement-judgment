@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "protection": [
+    {
+      "baseline": "05_进展日志/2026-10-02_康复链路研究/原件与历史_保护基线.json",
+      "checked": 1133,
+      "authorized_navigation_differences": [
+        "01_参考论文/生物力学线/README.md",
+        "01_参考论文/生物力学线/取件入口.md",
+        "01_参考论文/Transformer_发展线/README.md",
+        "01_参考论文/Transformer_发展线/取件入口.md",
+        "01_参考论文/决策模型线_JEV/取件入口.md"
+      ],
+      "other_bytes_unchanged": 1128
+    },
+    {
+      "baseline": "05_进展日志/2026-10-02_论文收尾与目录整理/迁移前保护基线.json",
+      "checked": 567,
+      "authorized_navigation_differences": [],
+      "other_bytes_unchanged": 567
+    }
+  ],
+  "source": "existing baselines, not regenerated"
+}

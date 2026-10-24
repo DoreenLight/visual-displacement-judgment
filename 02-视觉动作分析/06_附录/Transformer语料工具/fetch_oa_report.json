@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "machines13100953",
+    "label": "iTransformer-DTL 坐立起身 sEMG+IMU 解码",
+    "status": "ok",
+    "path": "T5_动作生成与离散token/2025_iTransformer-DTL_坐立起身_sEMG_IMU_轨迹解码.pdf",
+    "bytes": 4583966,
+    "note": "MDPI Machines, Gold OA CC-BY, DOI 10.3390/machines13100953",
+    "url": "https://res.mdpi.com/d_attachment/machines/machines-13-00953/article_deploy/machines-13-00953.pdf"
+  },
+  {
+    "slug": "s26165054",
+    "label": "端侧单目 RGB 上肢代偿检测",
+    "status": "ok",
+    "path": "T6_物理约束·世界模型/2026_端侧单目RGB_上肢代偿模式检测.pdf",
+    "bytes": 569148,
+    "note": "MDPI Sensors, Gold OA CC-BY, DOI 10.3390/s26165054",
+    "url": "https://res.mdpi.com/d_attachment/sensors/sensors-26-05054/article_deploy/sensors-26-05054.pdf"
+  }
+]

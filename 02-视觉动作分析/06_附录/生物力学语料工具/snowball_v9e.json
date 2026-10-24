@@ -1,0 +1,1615 @@
+{
+  "purpose": "V9e 引文追溯：补「式子检索捞不到」的两个洞（术语不同的邻近工作 + 引文间接工作）",
+  "limits": "Semantic Scholar 本机 IP 硬 429（实测三次），前向只用 OpenCitations COCI；OpenCitations 只覆盖有 DOI 的条目，arXiv 预印本无 DOI 走不到前向",
+  "forward": [
+    {
+      "seed": "10.1109/TMRB.2025.3605962",
+      "seed_why": "TMRB 2026 可微生物力学（上肢+卒中，**只到肩肘**）",
+      "status": "ok",
+      "n": 6,
+      "citing": [
+        {
+          "doi": "10.3390/s25175513",
+          "title": "A Systematic Review of the Accuracy, Validity, and Reliability of Markerless Versus Marker Camera-Based 3D Motion Capture for Industrial Ergonomic Risk Analysis",
+          "year": 2025,
+          "venue": "Sensors",
+          "seed": "10.1109/TMRB.2025.3605962",
+          "seed_why": "TMRB 2026 可微生物力学（上肢+卒中，**只到肩肘**）",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.3390/mps9020031",
+          "title": "Effectiveness of Robot-Assisted Versus Conventional Occupational Therapy on Changes in Upper Extremity Function After Cervical Spinal Cord Injury (Armeo X-over Trial): Study Protocol of a Randomised Crossover Trial",
+          "year": 2026,
+          "venue": "Methods and Protocols",
+          "seed": "10.1109/TMRB.2025.3605962",
+          "seed_why": "TMRB 2026 可微生物力学（上肢+卒中，**只到肩肘**）",
+          "flags": "[上肢/腕肘肩/手]"
+        },
+        {
+          "doi": "10.3390/technologies14010028",
+          "title": "Measurement Error of Markerless Motion Capture Systems Applied to Tracking Movements in Human–Object Interaction Tasks: A Systematic Review with Best Evidence Synthesis",
+          "year": 2026,
+          "venue": "Technologies",
+          "seed": "10.1109/TMRB.2025.3605962",
+          "seed_why": "TMRB 2026 可微生物力学（上肢+卒中，**只到肩肘**）",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.2196/preprints.87339",
+          "title": "From Metrics to Meaning: Exploring Clinicians’ Perspectives on Digital Metrics of Functioning of the Upper Limb in Neurological Rehabilitation (Preprint)",
+          "year": 2025,
+          "venue": "?",
+          "seed": "10.1109/TMRB.2025.3605962",
+          "seed_why": "TMRB 2026 可微生物力学（上肢+卒中，**只到肩肘**）",
+          "flags": "[上肢/腕肘肩/手]"
+        },
+        {
+          "doi": "10.3390/app16031202",
+          "title": "Accuracy and Reliability of Markerless Human Pose Estimation for Upper Limb Kinematic Analysis Across Full and Partial Range of Motion Tasks",
+          "year": 2026,
+          "venue": "Applied Sciences",
+          "seed": "10.1109/TMRB.2025.3605962",
+          "seed_why": "TMRB 2026 可微生物力学（上肢+卒中，**只到肩肘**）",
+          "flags": "[上肢/腕肘肩/手] [视觉/单目]"
+        },
+        {
+          "doi": "10.1109/tencon66050.2025.11375551",
+          "title": "Comparative Analysis of Marker Based and Markerless Motion Capture Systems for Shoulder Joint Angle Prediction",
+          "year": 2025,
+          "venue": "TENCON 2025 - 2025 IEEE Region 10 Conference (TENCON)",
+          "seed": "10.1109/TMRB.2025.3605962",
+          "seed_why": "TMRB 2026 可微生物力学（上肢+卒中，**只到肩肘**）",
+          "flags": "[上肢/腕肘肩/手] [视觉/单目]"
+        }
+      ]
+    },
+    {
+      "seed": "10.3390/bioengineering10050510",
+      "seed_why": "Dasgupta 2023 OMC/IMC 肌肉骨骼建模",
+      "status": "ok",
+      "n": 14,
+      "citing": [
+        {
+          "doi": "10.1145/3749462",
+          "title": "KineticsSense: A Multimodal Wearable Sensor Framework for Modeling Lower-Limb Motion Kinetics",
+          "year": 2025,
+          "venue": "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies",
+          "seed": "10.3390/bioengineering10050510",
+          "seed_why": "Dasgupta 2023 OMC/IMC 肌肉骨骼建模",
+          "flags": ""
+        },
+        {
+          "doi": "10.24143/2072-9502-2025-2-27-37",
+          "title": "Design and data validation of wearable inertial sensor  for human gait capture",
+          "year": 2025,
+          "venue": "Vestnik of Astrakhan State Technical University. Series: Management, computer science and informatics",
+          "seed": "10.3390/bioengineering10050510",
+          "seed_why": "Dasgupta 2023 OMC/IMC 肌肉骨骼建模",
+          "flags": ""
+        },
+        {
+          "doi": "10.3390/s25185673",
+          "title": "Validation of Inertial Measurement Units for Measuring Lower-Extremity Kinematics During Squat–Pivot and Stoop–Twist Lifting Tasks",
+          "year": 2025,
+          "venue": "Sensors",
+          "seed": "10.3390/bioengineering10050510",
+          "seed_why": "Dasgupta 2023 OMC/IMC 肌肉骨骼建模",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/jsen.2025.3601187",
+          "title": "Smart Bodysuit Integrating Digital Twin Technology for Real-Time Human Motion Monitoring and Visualization",
+          "year": 2025,
+          "venue": "IEEE Sensors Journal",
+          "seed": "10.3390/bioengineering10050510",
+          "seed_why": "Dasgupta 2023 OMC/IMC 肌肉骨骼建模",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1016/j.bspc.2026.109810",
+          "title": "Automatic video-based monitoring of physically demanding tasks for biomechanical risk assessment",
+          "year": 2026,
+          "venue": "Biomedical Signal Processing and Control",
+          "seed": "10.3390/bioengineering10050510",
+          "seed_why": "Dasgupta 2023 OMC/IMC 肌肉骨骼建模",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1080/10255842.2025.2586143",
+          "title": "Application of a transformer encoder for the prediction of intra-abdominal pressure",
+          "year": 2025,
+          "venue": "Computer Methods in Biomechanics and Biomedical Engineering",
+          "seed": "10.3390/bioengineering10050510",
+          "seed_why": "Dasgupta 2023 OMC/IMC 肌肉骨骼建模",
+          "flags": ""
+        },
+        {
+          "doi": "10.20944/preprints202310.1514.v1",
+          "title": "Predicting Tissue Loads in Running from Inertial Measurement Units",
+          "year": 2023,
+          "venue": "?",
+          "seed": "10.3390/bioengineering10050510",
+          "seed_why": "Dasgupta 2023 OMC/IMC 肌肉骨骼建模",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/icpics62053.2024.10797215",
+          "title": "Optimizing Motion Capture Data in Animation Sequences Using Machine Learning Techniques",
+          "year": 2024,
+          "venue": "2024 IEEE 6th International Conference on Power, Intelligent Computing and Systems (ICPICS)",
+          "seed": "10.3390/bioengineering10050510",
+          "seed_why": "Dasgupta 2023 OMC/IMC 肌肉骨骼建模",
+          "flags": ""
+        },
+        {
+          "doi": "10.54254/2755-2721/2024.17920",
+          "title": "Analysis of Motion Capture Technology Research and Typical Applications",
+          "year": 2024,
+          "venue": "Applied and Computational Engineering",
+          "seed": "10.3390/bioengineering10050510",
+          "seed_why": "Dasgupta 2023 OMC/IMC 肌肉骨骼建模",
+          "flags": ""
+        },
+        {
+          "doi": "10.1038/s41598-025-02771-9",
+          "title": "The analysis of motion recognition model for badminton player movements using machine learning",
+          "year": 2025,
+          "venue": "Scientific Reports",
+          "seed": "10.3390/bioengineering10050510",
+          "seed_why": "Dasgupta 2023 OMC/IMC 肌肉骨骼建模",
+          "flags": ""
+        },
+        {
+          "doi": "10.3390/s23249836",
+          "title": "Predicting Tissue Loads in Running from Inertial Measurement Units",
+          "year": 2023,
+          "venue": "Sensors",
+          "seed": "10.3390/bioengineering10050510",
+          "seed_why": "Dasgupta 2023 OMC/IMC 肌肉骨骼建模",
+          "flags": ""
+        },
+        {
+          "doi": "10.3390/rs16163038",
+          "title": "Loop Detection Method Based on Neural Radiance Field BoW Model for Visual Inertial Navigation of UAVs",
+          "year": 2024,
+          "venue": "Remote Sensing",
+          "seed": "10.3390/bioengineering10050510",
+          "seed_why": "Dasgupta 2023 OMC/IMC 肌肉骨骼建模",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.3390/bioengineering11030275",
+          "title": "Gait Recognition and Assistance Parameter Prediction Determination Based on Kinematic Information Measured by Inertial Measurement Units",
+          "year": 2024,
+          "venue": "Bioengineering",
+          "seed": "10.3390/bioengineering10050510",
+          "seed_why": "Dasgupta 2023 OMC/IMC 肌肉骨骼建模",
+          "flags": ""
+        },
+        {
+          "doi": "10.3390/machines11050556",
+          "title": "Skeletal Modeling in Rhino Grasshopper—A Confirmed Kinematic Model",
+          "year": 2023,
+          "venue": "Machines",
+          "seed": "10.3390/bioengineering10050510",
+          "seed_why": "Dasgupta 2023 OMC/IMC 肌肉骨骼建模",
+          "flags": ""
+        }
+      ]
+    },
+    {
+      "seed": "10.1007/978-3-031-72943-0_27",
+      "seed_why": "VQ-HPS 向量量化人体姿态（ECCV 侧先例）",
+      "status": "ok",
+      "n": 5,
+      "citing": [
+        {
+          "doi": "10.1109/cvprw67362.2025.00375",
+          "title": "Short-Term 3D Human Mesh Recovery with Virtual Markers Disentanglement",
+          "year": 2025,
+          "venue": "2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)",
+          "seed": "10.1007/978-3-031-72943-0_27",
+          "seed_why": "VQ-HPS 向量量化人体姿态（ECCV 侧先例）",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/cvprw67362.2025.00373",
+          "title": "Condimen: Conditional Multi-Person Mesh Recovery",
+          "year": 2025,
+          "venue": "2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)",
+          "seed": "10.1007/978-3-031-72943-0_27",
+          "seed_why": "VQ-HPS 向量量化人体姿态（ECCV 侧先例）",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/wacv61041.2025.00617",
+          "title": "BioPose: Biomechanically-Accurate 3D Pose Estimation from Monocular Videos",
+          "year": 2025,
+          "venue": "2025 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
+          "seed": "10.1007/978-3-031-72943-0_27",
+          "seed_why": "VQ-HPS 向量量化人体姿态（ECCV 侧先例）",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1007/s11263-025-02478-4",
+          "title": "About Time: Advances, Challenges, and Outlooks of Action Understanding",
+          "year": 2025,
+          "venue": "International Journal of Computer Vision",
+          "seed": "10.1007/978-3-031-72943-0_27",
+          "seed_why": "VQ-HPS 向量量化人体姿态（ECCV 侧先例）",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/iccvw69036.2025.00007",
+          "title": "On the Use of Hierarchical Vision Foundation Models for Low-Cost Human Mesh Recovery and Pose Estimation",
+          "year": 2025,
+          "venue": "2025 IEEE/CVF International Conference on Computer Vision Workshops (ICCVW)",
+          "seed": "10.1007/978-3-031-72943-0_27",
+          "seed_why": "VQ-HPS 向量量化人体姿态（ECCV 侧先例）",
+          "flags": "[视觉/单目]"
+        }
+      ]
+    },
+    {
+      "seed": "10.1109/cvpr46437.2021.00847",
+      "seed_why": "PoseAug 可微姿态增广",
+      "status": "ok",
+      "n": 150,
+      "citing": [
+        {
+          "doi": "10.1007/978-3-031-91575-8_1",
+          "title": "EPOCH: Jointly Estimating the 3D Pose of Cameras and Humans",
+          "year": 2025,
+          "venue": "Lecture Notes in Computer Science",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/avss65446.2025.11149906",
+          "title": "Finding Optimal Viewpoints for Monocular 3D Human Pose Estimation in Dynamic 3D Gaussian Splatting Space",
+          "year": 2025,
+          "venue": "2025 IEEE International Conference on Advanced Visual and Signal-Based Systems (AVSS)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1007/s00371-025-04040-2",
+          "title": "Occlusion-aware heatmap generation for enhancing 3D human pose estimation in multi-person environments",
+          "year": 2025,
+          "venue": "The Visual Computer",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/tmm.2025.3535349",
+          "title": "Learning Pyramid-Structured Long-Range Dependencies for 3D Human Pose Estimation",
+          "year": 2025,
+          "venue": "IEEE Transactions on Multimedia",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1016/j.imavis.2025.105636",
+          "title": "BCDPose: Diffusion-based 3D Human Pose Estimation with bone-chain prior knowledge",
+          "year": 2025,
+          "venue": "Image and Vision Computing",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.3390/s25082409",
+          "title": "A Survey of the State of the Art in Monocular 3D Human Pose Estimation: Methods, Benchmarks, and Challenges",
+          "year": 2025,
+          "venue": "Sensors",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1038/s41598-025-16381-y",
+          "title": "Origin centric and part based pose decomposition for 3D human pose estimation",
+          "year": 2025,
+          "venue": "Scientific Reports",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/fg61629.2025.11099197",
+          "title": "Flexible Geometric Guidance for Probabilistic Human Pose Estimation with Diffusion Models",
+          "year": 2025,
+          "venue": "2025 IEEE 19th International Conference on Automatic Face and Gesture Recognition (FG)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/iecbes61011.2024.10991240",
+          "title": "A Real-time 3D Motion Detection System Based on A Monocular Camera",
+          "year": 2024,
+          "venue": "2024 IEEE-EMBS Conference on Biomedical Engineering and Sciences (IECBES)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/icipca65645.2025.11138795",
+          "title": "Enhancing 3D Human Pose Estimation Through Frequency-Spectral Adaptive Hierarchical Fusion Transformer",
+          "year": 2025,
+          "venue": "2025 IEEE 3rd International Conference on Image Processing and Computer Applications (ICIPCA)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/aihcir67580.2025.11405122",
+          "title": "HFPose: Hierarchical Masking and Global-Local Fusion for 3D Human Pose Estimation",
+          "year": 2025,
+          "venue": "2025 4th International Conference on Artificial Intelligence, Human-Computer Interaction and Robotics (AIHCIR)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/tpami.2025.3632829",
+          "title": "Grid Convolution for 3D Human Pose Estimation",
+          "year": 2026,
+          "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/tmm.2025.3586122",
+          "title": "Synthesizing Multi-Person and Rare Pose Images for Human Pose Estimation",
+          "year": 2025,
+          "venue": "IEEE Transactions on Multimedia",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/tcsvt.2025.3570967",
+          "title": "AITEPose: Learning an End-to-End Monocular 3D Human Pose Estimator via Auxiliary-Information-Driven Training Enhancement",
+          "year": 2025,
+          "venue": "IEEE Transactions on Circuits and Systems for Video Technology",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/mipr67560.2025.00072",
+          "title": "UniHPR: Unified Human Pose Representation via Singular Value Contrastive Learning",
+          "year": 2025,
+          "venue": "2025 IEEE 8th International Conference on Multimedia Information Processing and Retrieval (MIPR)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1016/j.imavis.2026.105913",
+          "title": "Compositional Gamba for 3D human pose estimation",
+          "year": 2026,
+          "venue": "Image and Vision Computing",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/tcsvt.2025.3610066",
+          "title": "Unsupervised Cross-Domain 3D Human Pose Estimation via Pseudo-Label-Guided Global Transforms",
+          "year": 2026,
+          "venue": "IEEE Transactions on Circuits and Systems for Video Technology",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/jsen.2025.3596065",
+          "title": "2-D-to-3-D Lifting Human Pose Estimation Based on Simple Graph Convolution Regression",
+          "year": 2025,
+          "venue": "IEEE Sensors Journal",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/smc58881.2025.11343669",
+          "title": "Practical Considerations in Building a Simulation-Based Driver Monitoring Evaluation System: Focus on Virtual Driver Generation*",
+          "year": 2025,
+          "venue": "2025 IEEE International Conference on Systems, Man, and Cybernetics (SMC)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1002/cav.70080",
+          "title": "Multi‐Agent Learning With Hierarchical Biomechanical Priors for Efficient 3D Human Pose Estimation in Virtual Reality",
+          "year": 2025,
+          "venue": "Computer Animation and Virtual Worlds",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/lra.2025.3643269",
+          "title": "Self-Supervised Learning for Object Pose Estimation Through Active Real Sample Capture",
+          "year": 2026,
+          "venue": "IEEE Robotics and Automation Letters",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/s11760-025-05019-1",
+          "title": "Research on optimization of human posture estimation and sports training feedback system based on deep learning",
+          "year": 2025,
+          "venue": "Signal, Image and Video Processing",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/978-981-97-9334-1_5",
+          "title": "Joint Data Augmentation and Representation for 3D Human Pose Estimation",
+          "year": 2024,
+          "venue": "Human Pose Analysis",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/s42979-025-03708-9",
+          "title": "An Assessment Towards 2D and 3D Human Pose Estimation and its Applications to Activity Recognition: A Review",
+          "year": 2025,
+          "venue": "SN Computer Science",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1016/j.jvcir.2025.104432",
+          "title": "Transformer-based weakly supervised 3D human pose estimation",
+          "year": 2025,
+          "venue": "Journal of Visual Communication and Image Representation",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/jiot.2024.3482256",
+          "title": "AIGC for RF-Based Human Activity Sensing",
+          "year": 2025,
+          "venue": "IEEE Internet of Things Journal",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/978-981-97-9334-1_4",
+          "title": "Bidirectional 2D-3D Transformation for 3D Human Pose Estimation",
+          "year": 2024,
+          "venue": "Human Pose Analysis",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/978-981-97-9334-1_6",
+          "title": "Spatial-temporal Feature Transform for 3D Human Pose Estimation",
+          "year": 2024,
+          "venue": "Human Pose Analysis",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/icsict62049.2024.10831177",
+          "title": "SST: Simplified Space-Time Transformer Based on Time-Assisted Spatial MSA for 3D Human Pose Estimation",
+          "year": 2024,
+          "venue": "2024 IEEE 17th International Conference on Solid-State &amp;amp; Integrated Circuit Technology (ICSICT)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/lra.2024.3520436",
+          "title": "Targeted Hard Sample Synthesis Based on Estimated Pose and Occlusion Error for Improved Object Pose Estimation",
+          "year": 2025,
+          "venue": "IEEE Robotics and Automation Letters",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/tpami.2025.3528392",
+          "title": "Towards Robust Point Cloud Recognition With Sample-Adaptive Auto-Augmentation",
+          "year": 2025,
+          "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.3390/electronics12194120",
+          "title": "Graph U-Shaped Network with Mapping-Aware Local Enhancement for Single-Frame 3D Human Pose Estimation",
+          "year": 2023,
+          "venue": "Electronics",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/978-3-031-78456-9_12",
+          "title": "Skeletal Triangulation for 3D Human Pose Estimation",
+          "year": 2024,
+          "venue": "Lecture Notes in Computer Science",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1016/j.patcog.2025.111562",
+          "title": "HMSFT: Hierarchical Multi-scale Spatial-Frequency-Temporal collaborative transformer for 3D human pose estimation",
+          "year": 2025,
+          "venue": "Pattern Recognition",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/access.2024.3514146",
+          "title": "Real-Time Reinforcement Learning for Optimal Viewpoint Selection in Monocular 3D Human Pose Estimation",
+          "year": 2024,
+          "venue": "IEEE Access",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.3390/s24248017",
+          "title": "Estimating a 3D Human Skeleton from a Single RGB Image by Fusing Predicted Depths from Multiple Virtual Viewpoints",
+          "year": 2024,
+          "venue": "Sensors",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/access.2025.3610229",
+          "title": "Self-Supervised Anomalous Pose Detection in Multi-View Human Pose Estimation for Smart Manufacturing With Non-Calibrated Cameras",
+          "year": 2025,
+          "venue": "IEEE Access",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/s00371-025-04175-2",
+          "title": "Enhancing 3D human pose estimation via spatio-temporal dual-stream fusion",
+          "year": 2025,
+          "venue": "The Visual Computer",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1016/j.aej.2025.05.067",
+          "title": "Efficient 3D human pose estimation for IoT-based motion capture using Spatiotemporal Attention",
+          "year": 2025,
+          "venue": "Alexandria Engineering Journal",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/cvidl65390.2025.11085584",
+          "title": "BlazePose-MSF: An Optimized Real-Time Human Pose Estimation Method Based on Multi-Scale Fusion",
+          "year": 2025,
+          "venue": "2025 6th International Conference on Computer Vision, Image and Deep Learning (CVIDL)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/cvprw67362.2025.00589",
+          "title": "Two Views are Better Than One: Monocular 3D Pose Estimation with Multiview Consistency",
+          "year": 2025,
+          "venue": "2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/access.2025.3566109",
+          "title": "Toward Efficient Generalization in 3D Human Pose Estimation via a Canonical Domain Approach",
+          "year": 2025,
+          "venue": "IEEE Access",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/icpr56361.2022.9956693",
+          "title": "End-to-end 3D Human Pose Estimation with Transformer",
+          "year": 2022,
+          "venue": "2022 26th International Conference on Pattern Recognition (ICPR)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/icip46576.2022.9897790",
+          "title": "Boosting the Performance of Weakly-Supervised 3d Human Pose Estimators With Pose Prior Regularizers",
+          "year": 2022,
+          "venue": "2022 IEEE International Conference on Image Processing (ICIP)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/3dv57658.2022.00068",
+          "title": "On Triangulation as a Form of Self-Supervision for 3D Human Pose Estimation",
+          "year": 2022,
+          "venue": "2022 International Conference on 3D Vision (3DV)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/tmm.2023.3326300",
+          "title": "DDAug: Differentiable Data Augmentation for Weakly Supervised Semantic Segmentation",
+          "year": 2024,
+          "venue": "IEEE Transactions on Multimedia",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/tmm.2023.3347095",
+          "title": "Frame-Padded Multiscale Transformer for Monocular 3D Human Pose Estimation",
+          "year": 2024,
+          "venue": "IEEE Transactions on Multimedia",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/apsipaasc58517.2023.10317556",
+          "title": "3D Human Skeleton Estimation from Single RGB Image Based on Fusion of Predicted Depths from Multiple Virtual-Viewpoints",
+          "year": 2023,
+          "venue": "2023 Asia Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA ASC)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/tase.2023.3279928",
+          "title": "Bi-Pose: Bidirectional 2D-3D Transformation for Human Pose Estimation From a Monocular Camera",
+          "year": 2024,
+          "venue": "IEEE Transactions on Automation Science and Engineering",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/3dv62453.2024.00085",
+          "title": "Mirror-Aware Neural Humans",
+          "year": 2024,
+          "venue": "2024 International Conference on 3D Vision (3DV)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1016/j.cviu.2023.103715",
+          "title": "PoseGU: 3D human pose estimation with novel human pose generator and unbiased learning",
+          "year": 2023,
+          "venue": "Computer Vision and Image Understanding",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/cvprw59228.2023.00539",
+          "title": "Monocular 3D Human Pose Estimation for Sports Broadcasts using Partial Sports Field Registration",
+          "year": 2023,
+          "venue": "2023 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/cvpr52733.2024.00064",
+          "title": "Hourglass Tokenizer for Efficient Transformer-Based 3D Human Pose Estimation",
+          "year": 2024,
+          "venue": "2024 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[交集机制]"
+        },
+        {
+          "doi": "10.1007/s44336-024-00002-9",
+          "title": "Data augmentation in human-centric vision",
+          "year": 2024,
+          "venue": "Vicinagearth",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1007/978-3-031-15937-4_10",
+          "title": "JointFusionNet: Parallel Learning Human Structural Local and Global Joint Features for 3D Human Pose Estimation",
+          "year": 2022,
+          "venue": "Lecture Notes in Computer Science",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/tpami.2022.3194167",
+          "title": "Out-of-Domain Human Mesh Reconstruction via Dynamic Bilevel Online Adaptation",
+          "year": 2023,
+          "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1145/3652583.3658048",
+          "title": "PoseRec: 3D Human Pose Driven Online Advertisement Recommendation for Micro-videos",
+          "year": 2024,
+          "venue": "Proceedings of the 2024 International Conference on Multimedia Retrieval",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/ivmsp54334.2022.9816196",
+          "title": "Monocular Weakly-Supervised Camera-Relative 3D Human Pose Estimation",
+          "year": 2022,
+          "venue": "2022 IEEE 14th Image, Video, and Multidimensional Signal Processing Workshop (IVMSP)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/tmm.2022.3141231",
+          "title": "Exploiting Temporal Contexts With Strided Transformer for 3D Human Pose Estimation",
+          "year": 2023,
+          "venue": "IEEE Transactions on Multimedia",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/embc48229.2022.9871036",
+          "title": "Transforming Gait: Video-Based Spatiotemporal Gait Analysis",
+          "year": 2022,
+          "venue": "2022 44th Annual International Conference of the IEEE Engineering in Medicine &amp; Biology Society (EMBC)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/wacv56688.2023.00297",
+          "title": "Learning 3D Human Pose Estimation from Dozens of Datasets using a Geometry-Aware Autoencoder to Bridge Between Skeleton Formats",
+          "year": 2023,
+          "venue": "2023 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/cac57257.2022.10056069",
+          "title": "A Plausibility Enhanced Data Augmentation Method for 3D Human Pose Estimation",
+          "year": 2022,
+          "venue": "2022 China Automation Congress (CAC)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/iv51971.2022.9827202",
+          "title": "PedRecNet: Multi-task deep neural network for full 3D human pose and orientation estimation",
+          "year": 2022,
+          "venue": "2022 IEEE Intelligent Vehicles Symposium (IV)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/s11263-023-01749-2",
+          "title": "Lifting 2D Human Pose to 3D with Domain Adapted 3D Body Concept",
+          "year": 2023,
+          "venue": "International Journal of Computer Vision",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/access.2024.3491655",
+          "title": "PE-USGC: Posture Estimation-Based Unsupervised Spatial Gaussian Clustering for Supervised Classification of Near-Duplicate Human Motion",
+          "year": 2024,
+          "venue": "IEEE Access",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/ijcnn60899.2024.10650155",
+          "title": "Learning Energy-Based Models for 3D Human Pose Estimation",
+          "year": 2024,
+          "venue": "2024 International Joint Conference on Neural Networks (IJCNN)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/cvpr52733.2024.00242",
+          "title": "SelfPose3d: Self-Supervised Multi-Person Multi-View 3d Pose Estimation",
+          "year": 2024,
+          "venue": "2024 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/cvpr52688.2022.01280",
+          "title": "MHFormer: Multi-Hypothesis Transformer for 3D Human Pose Estimation",
+          "year": 2022,
+          "venue": "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/tip.2022.3182269",
+          "title": "Boosting Monocular 3D Human Pose Estimation With Part Aware Attention",
+          "year": 2022,
+          "venue": "IEEE Transactions on Image Processing",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/icip49359.2023.10222098",
+          "title": "Multi Hybrid Extractor Network for 3D Human Pose Estimation",
+          "year": 2023,
+          "venue": "2023 IEEE International Conference on Image Processing (ICIP)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/aics60730.2023.10470580",
+          "title": "3D Human Pose Estimation Model Analysis: Gait Analytics for Autism Spectrum Disorder Detection",
+          "year": 2023,
+          "venue": "2023 31st Irish Conference on Artificial Intelligence and Cognitive Science (AICS)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/iccc56324.2022.10065723",
+          "title": "3D Pose Estimation by Synthesizing Motions",
+          "year": 2022,
+          "venue": "2022 IEEE 8th International Conference on Computer and Communications (ICCC)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.3390/s23249749",
+          "title": "PosturePose: Optimized Posture Analysis for Semi-Supervised Monocular 3D Human Pose Estimation",
+          "year": 2023,
+          "venue": "Sensors",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1007/s11760-024-03028-0",
+          "title": "PVA-GCN: point-voxel absorbing graph convolutional network for 3D human pose estimation from monocular video",
+          "year": 2024,
+          "venue": "Signal, Image and Video Processing",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1016/j.patcog.2022.109217",
+          "title": "3D hand pose estimation from a single RGB image by weighting the occlusion and classification",
+          "year": 2023,
+          "venue": "Pattern Recognition",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[上肢/腕肘肩/手]"
+        },
+        {
+          "doi": "10.1007/978-981-19-8825-7_36",
+          "title": "Classification of Yoga Poses Using Integration of Deep Learning and Machine Learning Techniques",
+          "year": 2023,
+          "venue": "Lecture Notes in Networks and Systems",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/iccv51070.2023.00810",
+          "title": "GLA-GCN: Global-local Adaptive Graph Convolutional Network for 3D Human Pose Estimation from Monocular Video",
+          "year": 2023,
+          "venue": "2023 IEEE/CVF International Conference on Computer Vision (ICCV)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1007/978-3-031-73411-3_4",
+          "title": "PoseAugment: Generative Human Pose Data Augmentation with Physical Plausibility for IMU-Based Motion Capture",
+          "year": 2024,
+          "venue": "Lecture Notes in Computer Science",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.3390/app14093578",
+          "title": "A Normalization Strategy for Weakly Supervised 3D Hand Pose Estimation",
+          "year": 2024,
+          "venue": "Applied Sciences",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[上肢/腕肘肩/手]"
+        },
+        {
+          "doi": "10.1016/j.cviu.2024.103992",
+          "title": "SlowFastFormer for 3D human pose estimation",
+          "year": 2024,
+          "venue": "Computer Vision and Image Understanding",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1016/j.cviu.2024.104147",
+          "title": "DBMHT: A double-branch multi-hypothesis transformer for 3D human pose estimation in video",
+          "year": 2024,
+          "venue": "Computer Vision and Image Understanding",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/wacv56688.2023.00294",
+          "title": "CameraPose: Weakly-Supervised Monocular 3D Human Pose Estimation by Leveraging In-the-wild 2D Annotations",
+          "year": 2023,
+          "venue": "2023 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/wacv56688.2023.00292",
+          "title": "Uplift and Upsample: Efficient 3D Human Pose Estimation with Uplifting Transformers",
+          "year": 2023,
+          "venue": "2023 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1145/3691356",
+          "title": "Digital Twin for Digital Health: Body Joint Modeling and 3D Pose Reconstruction",
+          "year": 2024,
+          "venue": "ACM Transactions on Computing for Healthcare",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.3390/s22114109",
+          "title": "Top-Down System for Multi-Person 3D Absolute Pose Estimation from Monocular Videos",
+          "year": 2022,
+          "venue": "Sensors",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/ccdc58219.2023.10326602",
+          "title": "ICRFormer: An Improving Cos-Reweighting Transformer for 3D Human Pose Estimation in Video",
+          "year": 2023,
+          "venue": "2023 35th Chinese Control and Decision Conference (CCDC)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1016/j.specom.2022.08.001",
+          "title": "Arm motion symmetry in conversation",
+          "year": 2022,
+          "venue": "Speech Communication",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/978-981-97-8508-7_5",
+          "title": "A Pose-Aware Auto-Augmentation Framework for 3D Human Pose and Shape Estimation from Partial Point Clouds",
+          "year": 2024,
+          "venue": "Lecture Notes in Computer Science",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.3390/s22041464",
+          "title": "3DMesh-GAR: 3D Human Body Mesh-Based Method for Group Activity Recognition",
+          "year": 2022,
+          "venue": "Sensors",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/978-3-031-26316-3_16",
+          "title": "Decanus to Legatus: Synthetic Training for 2D-3D Human Pose Lifting",
+          "year": 2023,
+          "venue": "Lecture Notes in Computer Science",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/s00371-023-03088-2",
+          "title": "A fused convolutional spatio-temporal progressive approach for 3D human pose estimation",
+          "year": 2023,
+          "venue": "The Visual Computer",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/978-981-97-8795-1_26",
+          "title": "MPM: A Unified 2D-3D Human Pose Representation via Masked Pose Modeling",
+          "year": 2024,
+          "venue": "Lecture Notes in Computer Science",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1145/3594315.3594340",
+          "title": "MGPose: A Graph Data Augmentation Framework for 3D Human Pose Estimation via Masking",
+          "year": 2023,
+          "venue": "Proceedings of the 2023 9th International Conference on Computing and Artificial Intelligence",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/cvpr52729.2023.00071",
+          "title": "Human Pose as Compositional Tokens",
+          "year": 2023,
+          "venue": "2023 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/978-981-99-0301-6_28",
+          "title": "Intelligent Security Video Surveillance System Based on GCN",
+          "year": 2023,
+          "venue": "Communications in Computer and Information Science",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/978-3-031-73007-8_18",
+          "title": "Human Pose Recognition via Occlusion-Preserving Abstract Images",
+          "year": 2024,
+          "venue": "Lecture Notes in Computer Science",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/icassp43922.2022.9746410",
+          "title": "Learning Monocular 3D Human Pose Estimation With Skeletal Interpolation",
+          "year": 2022,
+          "venue": "ICASSP 2022 - 2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1016/j.patcog.2024.110316",
+          "title": "Kinematics-aware spatial-temporal feature transform for 3D human pose estimation",
+          "year": 2024,
+          "venue": "Pattern Recognition",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1016/j.neucom.2024.128153",
+          "title": "Utilizing motion segmentation for optimizing the temporal adjacency matrix in 3D human pose estimation",
+          "year": 2024,
+          "venue": "Neurocomputing",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1016/j.neucom.2024.128605",
+          "title": "ESCAPE: Energy-based Selective Adaptive Correction for Out-of-distribution 3D Human Pose Estimation",
+          "year": 2025,
+          "venue": "Neurocomputing",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1016/j.neucom.2024.128049",
+          "title": "Deep learning for 3D human pose estimation and mesh recovery: A survey",
+          "year": 2024,
+          "venue": "Neurocomputing",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1145/3581783.3612368",
+          "title": "PoSynDA: Multi-Hypothesis Pose Synthesis Domain Adaptation for Robust 3D Human Pose Estimation",
+          "year": 2023,
+          "venue": "Proceedings of the 31st ACM International Conference on Multimedia",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1051/e3sconf/202452201043",
+          "title": "Multi-view 3D human pose estimation based on multi-scale feature by orthogonal projection",
+          "year": 2024,
+          "venue": "E3S Web of Conferences",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/cvprw63382.2024.00016",
+          "title": "Improving the Robustness of 3D Human Pose Estimation: A Benchmark Dataset and Learning from Noisy Input",
+          "year": 2024,
+          "venue": "2024 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/cvprw63382.2024.00763",
+          "title": "AugData Distillation for Monocular 3D Human Pose Estimation",
+          "year": 2024,
+          "venue": "2024 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.23919/cje.2022.00.365",
+          "title": "FMR-GNet: Forward Mix-Hop Spatial-Temporal Residual Graph Network for 3D Pose Estimation",
+          "year": 2024,
+          "venue": "Chinese Journal of Electronics",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1016/j.patcog.2023.110048",
+          "title": "A temporal densely connected recurrent network for event-based human pose estimation",
+          "year": 2024,
+          "venue": "Pattern Recognition",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/978-3-031-26319-4_12",
+          "title": "Cross-View Self-fusion for Self-supervised 3D Human Pose Estimation in the Wild",
+          "year": 2023,
+          "venue": "Lecture Notes in Computer Science",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/s10462-024-11019-3",
+          "title": "A survey on deep 3D human pose estimation",
+          "year": 2024,
+          "venue": "Artificial Intelligence Review",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/s00371-023-03142-z",
+          "title": "MPA-GNet: multi-scale parallel adaptive graph network for 3D human pose estimation",
+          "year": 2023,
+          "venue": "The Visual Computer",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/978-3-031-72784-9_3",
+          "title": "Mask as Supervision: Leveraging Unified Mask Information for Unsupervised 3D Pose Estimation",
+          "year": 2024,
+          "venue": "Lecture Notes in Computer Science",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1016/j.imavis.2023.104649",
+          "title": "Real-time 3D human pose estimation without skeletal a priori structures",
+          "year": 2023,
+          "venue": "Image and Vision Computing",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1016/j.eswa.2024.123545",
+          "title": "TSwinPose: Enhanced monocular 3D human pose estimation with JointFlow",
+          "year": 2024,
+          "venue": "Expert Systems with Applications",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/icvr57957.2023.10169265",
+          "title": "3D Human Pose Estimation via Graph Extended Spatio-Temporal Convolutional Network",
+          "year": 2023,
+          "venue": "2023 9th International Conference on Virtual Reality (ICVR)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/dicta56598.2022.10034635",
+          "title": "GAN-Uplift: 2D to 3D Uplift with Generative Adversarial Networks",
+          "year": 2022,
+          "venue": "2022 International Conference on Digital Image Computing: Techniques and Applications (DICTA)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/cvpr52688.2022.01080",
+          "title": "Meta Agent Teaming Active Learning for Pose Estimation",
+          "year": 2022,
+          "venue": "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/cvpr52688.2022.01288",
+          "title": "MixSTE: Seq2seq Mixed Spatio-Temporal Encoder for 3D Human Pose Estimation in Video",
+          "year": 2022,
+          "venue": "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/cvpr52688.2022.01277",
+          "title": "Ray3D: ray-based 3D human pose estimation for monocular absolute 3D localization",
+          "year": 2022,
+          "venue": "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/cvpr52688.2022.01283",
+          "title": "PoseKernelLifter: Metric Lifting of 3D Human Pose using Sound",
+          "year": 2022,
+          "venue": "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/wacv57701.2024.00330",
+          "title": "3D Human Pose Estimation with Two-step Mixed-Training Strategy",
+          "year": 2024,
+          "venue": "2024 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.3390/s23177312",
+          "title": "DUA: A Domain-Unified Approach for Cross-Dataset 3D Human Pose Estimation",
+          "year": 2023,
+          "venue": "Sensors",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/978-3-031-21232-1_13",
+          "title": "Human Pose Estimation Using Artificial Intelligence",
+          "year": 2023,
+          "venue": "Springer Series in Reliability Engineering",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1016/j.aei.2023.102092",
+          "title": "3D pose estimation and localization of construction equipment from single camera images by virtual model integration",
+          "year": 2023,
+          "venue": "Advanced Engineering Informatics",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/tip.2023.3275914",
+          "title": "Regular Splitting Graph Network for 3D Human Pose Estimation",
+          "year": 2023,
+          "venue": "IEEE Transactions on Image Processing",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/cvpr52688.2022.00277",
+          "title": "ArtiBoost: Boosting Articulated 3D Hand-Object Pose Estimation via Online Exploration and Synthesis",
+          "year": 2022,
+          "venue": "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[上肢/腕肘肩/手]"
+        },
+        {
+          "doi": "10.1109/cvpr52688.2022.01987",
+          "title": "Spatial-Temporal Parallel Transformer for Arm-Hand Dynamic Estimation",
+          "year": 2022,
+          "venue": "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[上肢/腕肘肩/手]"
+        },
+        {
+          "doi": "10.1109/cvpr52688.2022.01273",
+          "title": "AdaptPose: Cross-Dataset Adaptation for 3D Human Pose Estimation by Learnable Motion Generation",
+          "year": 2022,
+          "venue": "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/cvpr52688.2022.01074",
+          "title": "PoseTriplet: Co-evolving 3D Human Pose Estimation, Imitation, and Hallucination under Self-supervision",
+          "year": 2022,
+          "venue": "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/icpr56361.2022.9956421",
+          "title": "Exploiting Static and Dynamic Human Joint Relations for 3D Pose Estimation via Cascade Transformers",
+          "year": 2022,
+          "venue": "2022 26th International Conference on Pattern Recognition (ICPR)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1016/j.jvcir.2023.103890",
+          "title": "EMHIFormer: An Enhanced Multi-Hypothesis Interaction Transformer for 3D human pose estimation in video",
+          "year": 2023,
+          "venue": "Journal of Visual Communication and Image Representation",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/jas.2023.123375",
+          "title": "Parallel Learning: Overview and Perspective for Computational Learning Across Syn2Real and Sim2Real",
+          "year": 2023,
+          "venue": "IEEE/CAA Journal of Automatica Sinica",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1145/3503161.3547773",
+          "title": "Uncertainty-Aware 3D Human Pose Estimation from Monocular Video",
+          "year": 2022,
+          "venue": "Proceedings of the 30th ACM International Conference on Multimedia",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.32604/cmes.2023.024420",
+          "title": "3D Human Pose Estimation Using Two-Stream Architecture with Joint Training",
+          "year": 2023,
+          "venue": "Computer Modeling in Engineering &amp; Sciences",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/tcsvt.2023.3318557",
+          "title": "Dual-Path Transformer for 3D Human Pose Estimation",
+          "year": 2024,
+          "venue": "IEEE Transactions on Circuits and Systems for Video Technology",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/iccv51070.2023.01357",
+          "title": "Towards Robust and Smooth 3D Multi-Person Pose Estimation from Monocular Videos in the Wild",
+          "year": 2023,
+          "venue": "2023 IEEE/CVF International Conference on Computer Vision (ICCV)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/iccv51070.2023.00828",
+          "title": "Body Knowledge and Uncertainty Modeling for Monocular 3D Human Body Reconstruction",
+          "year": 2023,
+          "venue": "2023 IEEE/CVF International Conference on Computer Vision (ICCV)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/iccv51070.2023.01318",
+          "title": "Sample-adaptive Augmentation for Point Cloud Recognition Against Real-world Corruptions",
+          "year": 2023,
+          "venue": "2023 IEEE/CVF International Conference on Computer Vision (ICCV)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/iccv51070.2023.01347",
+          "title": "Global Adaptation meets Local Generalization: Unsupervised Domain Adaptation for 3D Human Pose Estimation",
+          "year": 2023,
+          "venue": "2023 IEEE/CVF International Conference on Computer Vision (ICCV)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/wacv57701.2024.00603",
+          "title": "Back to Optimization: Diffusion-based Zero-Shot 3D Human Pose Estimation",
+          "year": 2024,
+          "venue": "2024 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/aisp53593.2022.9760634",
+          "title": "Human Pose Estimation in 3D using heatmaps",
+          "year": 2022,
+          "venue": "2022 2nd International Conference on Artificial Intelligence and Signal Processing (AISP)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/978-3-031-20065-6_37",
+          "title": "PoseTrans: A Simple yet Effective Pose Transformation Augmentation for Human Pose Estimation",
+          "year": 2022,
+          "venue": "Lecture Notes in Computer Science",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/978-3-031-20068-7_25",
+          "title": "DH-AUG: DH Forward Kinematics Model Driven Augmentation for 3D Human Pose Estimation",
+          "year": 2022,
+          "venue": "Lecture Notes in Computer Science",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/s11263-022-01714-5",
+          "title": "Animal Pose Tracking: 3D Multimodal Dataset and Token-based Pose Optimization",
+          "year": 2022,
+          "venue": "International Journal of Computer Vision",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/tcsvt.2023.3286402",
+          "title": "FTCM: Frequency-Temporal Collaborative Module for Efficient 3D Human Pose Estimation in Video",
+          "year": 2024,
+          "venue": "IEEE Transactions on Circuits and Systems for Video Technology",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/icassp49357.2023.10097259",
+          "title": "Interweaved Graph and Attention Network for 3D Human Pose Estimation",
+          "year": 2023,
+          "venue": "ICASSP 2023 - 2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/thms.2022.3219242",
+          "title": "Vision-Based Human Pose Estimation via Deep Learning: A Survey",
+          "year": 2023,
+          "venue": "IEEE Transactions on Human-Machine Systems",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/tmm.2023.3240455",
+          "title": "MLP-JCG: Multi-Layer Perceptron With Joint-Coordinate Gating for Efficient 3D Human Pose Estimation",
+          "year": 2023,
+          "venue": "IEEE Transactions on Multimedia",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1109/lsp.2023.3339060",
+          "title": "Hierarchical Spatial-Temporal Adaptive Graph Fusion for Monocular 3D Human Pose Estimation",
+          "year": 2024,
+          "venue": "IEEE Signal Processing Letters",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": "[视觉/单目]"
+        },
+        {
+          "doi": "10.1109/tpami.2023.3243400",
+          "title": "Learning to Augment Poses for 3D Human Pose Estimation in Images and Videos",
+          "year": 2023,
+          "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        },
+        {
+          "doi": "10.1007/978-981-99-9666-7_22",
+          "title": "RAGT: Learning Robust Features for Occluded Human Pose and Shape Estimation with Attention-Guided Transformer",
+          "year": 2024,
+          "venue": "Lecture Notes in Computer Science",
+          "seed": "10.1109/cvpr46437.2021.00847",
+          "seed_why": "PoseAug 可微姿态增广",
+          "flags": ""
+        }
+      ]
+    }
+  ],
+  "backward": [],
+  "backward_scanned_files": 35
+}

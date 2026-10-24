@@ -1,0 +1,194 @@
+{
+  "schema": "rehab-literature-derived-evidence/v1",
+  "checked_at": "2026-10-03T18:34:51.414451+08:00",
+  "id": "RL2026",
+  "doi": "10.1109/tnsre.2025.3650096",
+  "year": 2026,
+  "title": "Personalized Adaptive Assistance With Reinforcement Learning Control Enhances Engagement, Performance, and Retention in Robot-Assisted Arm-Reaching Exercises",
+  "source_url": "https://research.unipd.it/retrieve/37f55428-800c-4de6-8bd5-f144d321ae85/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf",
+  "landing_url": "https://research.unipd.it/handle/11577/3586318",
+  "fetch_response_id": "mus5dupzf5fosf",
+  "text_ref": "05_进展日志/2026-10-02_康复链路研究/RL2026_派生正文.md",
+  "sha256": "8b0922bd8cd326cd9ec5090b349441bea37f9aaef95367a5d7107a15b0d23797",
+  "pages_extracted": 11,
+  "quotes_literal_checked": 16,
+  "passages": [
+    {
+      "id": "RLT-01",
+      "file_page": 1,
+      "journal_page": 532,
+      "section": "Identity",
+      "text": "Digital Object Identifier 10.1109/TNSRE.2025.3650096",
+      "kind": "derived_pdf_text_not_original_scan"
+    },
+    {
+      "id": "RLT-02",
+      "file_page": 1,
+      "journal_page": 532,
+      "section": "License",
+      "text": "© 2025 The Authors. This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 License. For more information, see https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "kind": "derived_pdf_text_not_original_scan"
+    },
+    {
+      "id": "RLT-03",
+      "file_page": 5,
+      "journal_page": 536,
+      "section": "III: trade-off cost",
+      "text": "Thus, the actor cost (9) is the squared con- vex combination of ˜ V ( k ), representing combined kinematic errors, and g ( k ), indicating the current level of robot assis- tance, with their relative importance modulated by U c ( k ).",
+      "kind": "derived_pdf_text_not_original_scan"
+    },
+    {
+      "id": "RLT-04",
+      "file_page": 5,
+      "journal_page": 536,
+      "section": "III: performance-based assistance trade-off",
+      "text": "objectives in exercise training: minimizing external assis- tance to encourage active e ort, vs. minimizing movement errors to promote correct task execution. When the user performs well, the controller increases U c , thereby accepting larger kinematic errors and further penalizing robot guid- ance, which results in a more compliant joystick.",
+      "kind": "derived_pdf_text_not_original_scan"
+    },
+    {
+      "id": "RLT-05",
+      "file_page": 5,
+      "journal_page": 536,
+      "section": "III: difficulty update, Eq12 text only",
+      "text": "Leveraging this insight, we update the level of acceptable error ( k ) based on the user performance measured over the last w cycles, according to the following law:",
+      "kind": "derived_pdf_text_not_original_scan"
+    },
+    {
+      "id": "RLT-06",
+      "file_page": 5,
+      "journal_page": 536,
+      "section": "IV.A: cohort, sentence continues on next page",
+      "text": "Fifteen healthy adults (11 males, age 18-32 years) vol- unteered for this study. Participants had no musculoskeletal",
+      "kind": "derived_pdf_text_not_original_scan"
+    },
+    {
+      "id": "RLT-07",
+      "file_page": 6,
+      "journal_page": 537,
+      "section": "IV.A: crossover/washout",
+      "text": "The study included two visits, one for each controller (ILC- AAN and RL-AAN), scheduled at least 48 hours apart to ensure a su cient washout period [46]. To account for any potential residual carry-over e ects not fully elimi- nated by the washout period, the order of the controllers was balanced across participants using a Latin square design.",
+      "kind": "derived_pdf_text_not_original_scan"
+    },
+    {
+      "id": "RLT-08",
+      "file_page": 6,
+      "journal_page": 537,
+      "section": "IV.A: breaks, not fatigue ground truth",
+      "text": "Five- minute breaks were included in-between PRE and T-1 to T-4 sessions to minimize physical and mental fatigue.",
+      "kind": "derived_pdf_text_not_original_scan"
+    },
+    {
+      "id": "RLT-09",
+      "file_page": 6,
+      "journal_page": 537,
+      "section": "IV.A: catch-trial design",
+      "text": "12 catch trials – evenly distributed across the 6 movement directions – were administered during each training session.",
+      "kind": "derived_pdf_text_not_original_scan"
+    },
+    {
+      "id": "RLT-10",
+      "file_page": 6,
+      "journal_page": 537,
+      "section": "IV.A: short-term retention",
+      "text": "three post-training sessions (PT1 to PT3), each including 60 cycles with F pert but no assistance. These sessions began 1, 10, and 20 minutes after the end of T-4 (Fig. 4), respectively, in line with previous studies [22], [48].",
+      "kind": "derived_pdf_text_not_original_scan"
+    },
+    {
+      "id": "RLT-11",
+      "file_page": 6,
+      "journal_page": 537,
+      "section": "IV.B: statistical method",
+      "text": "a linear mixed model (LMM) analysis was carried out with Controller (ILC- AAN, RL-AAN) and Session (T-1 to T-4) as independent variables.",
+      "kind": "derived_pdf_text_not_original_scan"
+    },
+    {
+      "id": "RLT-12",
+      "file_page": 8,
+      "journal_page": 539,
+      "section": "V.B footnote1: engagement construct/proxy",
+      "text": "1 Herein, we use the expression “user engagement” to refer to the degree to which individuals actively participate in—and remain physically involved with—the motor task. A non-zero ¯ e neg indicates that the participant exerted su cient force to counteract or overcome the perturbation. Thus, ¯ e neg was utilized as a proxy for engagement.",
+      "kind": "derived_pdf_text_not_original_scan"
+    },
+    {
+      "id": "RLT-13",
+      "file_page": 9,
+      "journal_page": 540,
+      "section": "VI: prior combined adaptation",
+      "text": "Finally, the RL model features a performance-based curriculum learning structure [27], [28], [29], which adjusts the level of task di culty by dynamically modifying the level of acceptable error [21], thereby allowing the RL-AAN controller to not only adjust the assistance level but also to scale task di culty based on user performance.",
+      "kind": "derived_pdf_text_not_original_scan"
+    },
+    {
+      "id": "RLT-14",
+      "file_page": 9,
+      "journal_page": 540,
+      "section": "VI: thresholds/learning-rate limitation",
+      "text": "First, the acceptable error thresholds ( low , med , and high ) were manually set to uniform values across all participants, and the network learning rates ( c , a ) were defined from pilot data. This approach intro- duces subjectivity and may not generalize well to users with heterogeneous functional impairments.",
+      "kind": "derived_pdf_text_not_original_scan"
+    },
+    {
+      "id": "RLT-15",
+      "file_page": 9,
+      "journal_page": 540,
+      "section": "VI: missing unassisted comparator",
+      "text": "In terms of experimental design, incorporating a control condition with visual feedback but no physical guidance would be valuable for elucidating how RL- and ILC-based assistance compare to unassisted practice.",
+      "kind": "derived_pdf_text_not_original_scan"
+    },
+    {
+      "id": "RLT-16",
+      "file_page": 9,
+      "journal_page": 540,
+      "section": "VI: healthy/clinical boundary",
+      "text": "While this study suggests the e ectiveness of the RL-AAN algorithm in inducing short-term motor adaptations in healthy individuals, additional work is required before this approach can be piloted in individuals post-stroke.",
+      "kind": "derived_pdf_text_not_original_scan"
+    }
+  ],
+  "source_status": "complete-body-text-extraction-only-original-pdf-missing",
+  "version_claim": "Text identifies publisher vol34(2026), pages532-542, DOI; primary PDF/figures/formula glyphs unverified",
+  "limitations": [
+    "Tool-derived text is not canonical PDF/XML original or full translation",
+    "Figure images, tables layout and corrupted math glyphs not independently verified",
+    "No clinical efficacy or psychological engagement ground truth from healthy/adaptation results"
+  ],
+  "download_attempts": [
+    "fetch_content readable:11-page text extraction",
+    "urllib direct official PDF:HTTP403; no canonical PDF written",
+    "agent_browser normal/fresh open timed out; inspection unverified, no download success",
+    "Do not use guessed IEEE document URL as identity or evidence"
+  ],
+  "no_access_bypass": true,
+  "original_download_still_required": true,
+  "searches": [
+    {
+      "response_id": "mus5cjoctag49p",
+      "queries": [
+        "\"10.1109/TRO.2024.3411849\" full text author manuscript",
+        "\"10.1109/TIE.2024.3398675\" pdf",
+        "\"Personalized Adaptive Assistance With Reinforcement Learning Control\" pdf repository"
+      ]
+    },
+    {
+      "response_id": "mus5dyxao4gk7p",
+      "queries": [
+        "\"10.1109/TBME.2022.3228070\" pdf manuscript",
+        "\"10.1109/TBME.2020.3027823\" \"10.1109/TBCAS.2021.3130090\" full text",
+        "\"10.1109/TNSRE.2025.3579533\" pdf"
+      ]
+    },
+    {
+      "response_id": "mus5f5toxj3hqo",
+      "queries": [
+        "\"Deep-LSTM-Based Human-Robot Collaboration Control With Static-Dynamic Calibration\"",
+        "\"Performance-Based Hybrid Control of a Cable-Driven Upper-Limb Rehabilitation Robot\" pdf",
+        "\"A Hybrid Arm-Hand Rehabilitation Robot With EMG-Based Admittance Controller\" pdf"
+      ]
+    },
+    {
+      "response_id": "mus8rxuei6oo3s",
+      "queries": [
+        "\"10.1109/TNSRE.2025.3650096\" pdf",
+        "\"Personalized Adaptive Assistance\" \"pdf\" \"Li\" \"Zanotto\""
+      ]
+    }
+  ],
+  "screening": "Exact title/DOI checks; institutional/author/repository paths only; search hits chiefly abstracts/bibliographic duplicates. No newly acquired canonical originals; no claim that legal fulltexts do not exist."
+}

@@ -1,0 +1,137 @@
+[
+ {
+  "file": "1-s2.0-S0021929013005848-main.pdf",
+  "bytes": 673091,
+  "dois": []
+ },
+ {
+  "file": "1-s2.0-S0021929024001969-main.pdf",
+  "bytes": 3838812,
+  "dois": []
+ },
+ {
+  "file": "1-s2.0-S0021929025002702-main.pdf",
+  "bytes": 2079656,
+  "dois": []
+ },
+ {
+  "file": "1-s2.0-S0021929025004178-main.pdf",
+  "bytes": 6188896,
+  "dois": []
+ },
+ {
+  "file": "1-s2.0-S0263224115006120-main.pdf",
+  "bytes": 1087406,
+  "dois": []
+ },
+ {
+  "file": "1-s2.0-S0925231225027985-main.pdf",
+  "bytes": 6969362,
+  "dois": []
+ },
+ {
+  "file": "1-s2.0-S0957415822001374-main.pdf",
+  "bytes": 7768271,
+  "dois": []
+ },
+ {
+  "file": "1-s2.0-S095741582500159X-main.pdf",
+  "bytes": 3062969,
+  "dois": []
+ },
+ {
+  "file": "1-s2.0-S1746809426014874-main.pdf",
+  "bytes": 2718589,
+  "dois": []
+ },
+ {
+  "file": "1-s2.0-S2210983811000204-main.pdf",
+  "bytes": 2277675,
+  "dois": []
+ },
+ {
+  "file": "1-s2.0-S2210983811000289-main.pdf",
+  "bytes": 637810,
+  "dois": []
+ },
+ {
+  "file": "2211.16016v1.pdf",
+  "bytes": 4279685,
+  "dois": []
+ },
+ {
+  "file": "2601.09949v2.pdf",
+  "bytes": 4167445,
+  "dois": [
+   "10.48550/arXiv.2601.09949",
+   "10.1371/journal.pone.0310504",
+   "10.1021/acs.iecr.5c02217"
+  ]
+ },
+ {
+  "file": "2609.36154v1.pdf",
+  "bytes": 725364,
+  "dois": [
+   "10.48550/arXiv.2609.36154"
+  ]
+ },
+ {
+  "file": "3664647.3680568.pdf",
+  "bytes": 2897325,
+  "dois": []
+ },
+ {
+  "file": "639_1.pdf",
+  "bytes": 1207817,
+  "dois": []
+ },
+ {
+  "file": "Monocular_3D_Pose_Estimation_via_Pose_Grammar_and_Data_Augmentation.pdf",
+  "bytes": 2557138,
+  "dois": [
+   "10.1109/TPAMI.2021.3087695"
+  ]
+ },
+ {
+  "file": "Progressive_Direction-Aware_Pose_Grammar_for_Human_Pose_Estimation.pdf",
+  "bytes": 3268831,
+  "dois": [
+   "10.1109/TBIOM.2023.3315509"
+  ]
+ },
+ {
+  "file": "Review_MUBO_25thanniversary.pdf",
+  "bytes": 419155,
+  "dois": []
+ },
+ {
+  "file": "nihms240588 (1).pdf",
+  "bytes": 817964,
+  "dois": []
+ },
+ {
+  "file": "nihms240588.pdf",
+  "bytes": 817964,
+  "dois": []
+ },
+ {
+  "file": "nihms679795.pdf",
+  "bytes": 95177,
+  "dois": []
+ },
+ {
+  "file": "nihms693964.pdf",
+  "bytes": 735986,
+  "dois": []
+ },
+ {
+  "file": "nihms820582.pdf",
+  "bytes": 952769,
+  "dois": []
+ },
+ {
+  "file": "sensors-25-00719.pdf",
+  "bytes": 3738402,
+  "dois": []
+ }
+]

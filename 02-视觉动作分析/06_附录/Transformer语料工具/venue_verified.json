@@ -1,0 +1,167 @@
+{
+  "verified": {
+    "A BERT Based Method for Continuous Estimation of Cross-Subject Hand Kinematics From Surface Electromyographic Signals": {
+      "verified": true,
+      "score": 1.0,
+      "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+      "event": "",
+      "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "doi": "10.1109/tnsre.2022.3216528",
+      "year": 2023,
+      "type": "journal-article",
+      "matched_title": "A BERT Based Method for Continuous Estimation of Cross-Subject Hand Kinematics From Surface Electromyographic Signals",
+      "database": "IEEE Xplore（需订阅）",
+      "oa_kind": "IEEE",
+      "alternatives": [
+        {
+          "title": "A Scalogram Image-Based Method for Continuous Estimation of Hand Kinematics from Surface Electromyography",
+          "container": "Annals of Biomedical Engineering",
+          "doi": "10.1007/s10439-026-04285-5",
+          "score": 0.811
+        },
+        {
+          "title": "Multi-Scale Attention Patching Encoder Network: A Deployable Model for Continuous Estimation of Hand Kinematics from Surface Electromyographic Signals",
+          "container": "",
+          "doi": "10.21203/rs.3.rs-4525267/v1",
+          "score": 0.692
+        }
+      ]
+    },
+    "A Dual-Task Improved Transformer Framework for Decoding Lower Limb Sit-to-Stand Movement from sEMG and IMU Data": {
+      "verified": true,
+      "score": 1.0,
+      "venue": "Machines",
+      "event": "",
+      "publisher": "MDPI AG",
+      "doi": "10.3390/machines13100953",
+      "year": 2025,
+      "type": "journal-article",
+      "matched_title": "A Dual-Task Improved Transformer Framework for Decoding Lower Limb Sit-to-Stand Movement from sEMG and IMU Data",
+      "database": "MDPI 官网（开放获取，直接下载）",
+      "oa_kind": "MDPI",
+      "alternatives": [
+        {
+          "title": "Exploration of Lower Limb Multi-Intent Recognition Based on Improved Transformer During Sit-to-Stand Movements",
+          "container": "2025 10th International Conference on Automation, Control and Robotics Engineering (CACRE)",
+          "doi": "10.1109/cacre66141.2025.11119620",
+          "score": 0.516
+        },
+        {
+          "title": "A Fuzzy Controller for Lower Limb Exoskeletons during Sit-to-Stand and Stand-to-Sit Movement Using Wearable Sensors",
+          "container": "Sensors",
+          "doi": "10.3390/s140304342",
+          "score": 0.46
+        }
+      ]
+    },
+    "Markerless On-Device Detection of Compensatory Movement Patterns in Upper-Limb Rehabilitation Exercises from Monocular RGB Video": {
+      "verified": true,
+      "score": 0.874,
+      "venue": "Sensors",
+      "event": "",
+      "publisher": "MDPI AG",
+      "doi": "10.3390/s26165054",
+      "year": 2026,
+      "type": "journal-article",
+      "matched_title": "Markerless On-Device Detection of Compensatory Movement Patterns in Upper-Limb Rehabilitation Exercises from Monocular RGB Video: A Validation Study in Healthy Adults",
+      "database": "MDPI 官网（开放获取，直接下载）",
+      "oa_kind": "MDPI",
+      "alternatives": [
+        {
+          "title": "Compensatory Movement Detection in Upper Limb Rehabilitation With Deep Learning Methods",
+          "container": "2021 9th RSI International Conference on Robotics and Mechatronics (ICRoM)",
+          "doi": "10.1109/icrom54204.2021.9663458",
+          "score": 0.586
+        },
+        {
+          "title": "Markerless Motion Capture System to Detect Upper Limb Movement during Rehabilitation using Video Games",
+          "container": "2022 IEEE 10th International Conference on Serious Games and Applications for Health(SeGAH)",
+          "doi": "10.1109/segah54908.2022.9978581",
+          "score": 0.513
+        }
+      ]
+    },
+    "Using deep learning to detect upper limb compensation in individuals post-stroke using consumer-grade webcams": {
+      "verified": true,
+      "score": 0.916,
+      "venue": "Frontiers in Medicine",
+      "event": "",
+      "publisher": "Frontiers Media SA",
+      "doi": "10.3389/fmed.2025.1645369",
+      "year": 2025,
+      "type": "journal-article",
+      "matched_title": "Using deep learning to detect upper limb compensation in individuals post-stroke using consumer-grade webcams—A feasibility study",
+      "database": "Frontiers 官网（开放获取，直接下载）",
+      "oa_kind": "Frontiers",
+      "alternatives": [
+        {
+          "title": "Experimental validation of an upper limb benchmarking framework in healthy and post-stroke individuals: a pilot study_supp2-3414123.docx",
+          "container": "",
+          "doi": "10.1109/tnsre.2024.3414123/mm4",
+          "score": 0.426
+        },
+        {
+          "title": "Experimental validation of an upper limb benchmarking framework in healthy and post-stroke individuals: a pilot study_supp1-3414123.docx",
+          "container": "",
+          "doi": "10.1109/tnsre.2024.3414123/mm1",
+          "score": 0.426
+        }
+      ]
+    },
+    "Prediction of Joint Angles for Human Elbow Motion Based on sEMG": {
+      "verified": true,
+      "score": 1.0,
+      "venue": "2024 China Automation Congress (CAC)",
+      "event": "2024 China Automation Congress (CAC)",
+      "publisher": "IEEE",
+      "doi": "10.1109/CAC63892.2024.10865675",
+      "year": 2024,
+      "type": "proceedings-article",
+      "matched_title": "Prediction of Joint Angles for Human Elbow Motion Based on sEMG",
+      "database": "IEEE Xplore（需订阅）",
+      "oa_kind": "IEEE",
+      "note": "",
+      "alternatives": [
+        {
+          "title": "sEMG-Based Estimation of Knee Joint Angles and Motion Intention Recognition",
+          "container": "2017 9th International Conference on Intelligent Human-Machine Systems and Cybernetics (IHMSC)",
+          "doi": "10.1109/ihmsc.2017.199",
+          "score": 0.58
+        },
+        {
+          "title": "Mamba-based Continuous Prediction of Joint Angles using Fuzzy Entropy Features of sEMG",
+          "container": "IFAC-PapersOnLine",
+          "doi": "10.1016/j.ifacol.2025.12.467",
+          "score": 0.564
+        }
+      ]
+    }
+  },
+  "alt_aaai": {
+    "verified": true,
+    "score": 0.837,
+    "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+    "event": "",
+    "publisher": "Association for the Advancement of Artificial Intelligence (AAAI)",
+    "doi": "10.1609/aaai.v40i6.42465",
+    "year": 2026,
+    "type": "journal-article",
+    "matched_title": "Pre-Trained Video Generative Models as World Simulators",
+    "database": "AAAI Proceedings（开放获取）",
+    "oa_kind": "AAAI",
+    "alternatives": [
+      {
+        "title": "A comparative analysis of generative models for terrain generation in open-world video games",
+        "container": "Journal of High School Science",
+        "doi": "10.64336/001c.92856",
+        "score": 0.4
+      },
+      {
+        "title": "Comparing 2026 Video World Models: Gemini Omni and Beyond",
+        "container": "General World Models",
+        "doi": "10.1007/979-8-8688-3144-7_11",
+        "score": 0.384
+      }
+    ]
+  }
+}

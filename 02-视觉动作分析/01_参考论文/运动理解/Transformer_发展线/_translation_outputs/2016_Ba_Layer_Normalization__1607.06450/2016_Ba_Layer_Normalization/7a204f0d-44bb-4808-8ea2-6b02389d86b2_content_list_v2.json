@@ -1,0 +1,4559 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Layer Normalization"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                370,
+                123,
+                625,
+                147
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Jimmy Lei Ba University of Toronto jimmy@psi.toronto.edu"
+                    }
+                ]
+            },
+            "bbox": [
+                207,
+                200,
+                374,
+                244
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Jamie Ryan Kiros University of Toronto rkiros@cs.toronto.edu"
+                    }
+                ]
+            },
+            "bbox": [
+                413,
+                200,
+                580,
+                242
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Geoffrey E. Hinton University of Toronto and Google Inc. hinton@cs.toronto.edu"
+                    }
+                ]
+            },
+            "bbox": [
+                620,
+                200,
+                785,
+                256
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Abstract"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                460,
+                292,
+                537,
+                308
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Training state-of-the-art, deep neural networks is computationally expensive. One way to reduce the training time is to normalize the activities of the neurons. A recently introduced technique called batch normalization uses the distribution of the summed input to a neuron over a mini-batch of training cases to compute a mean and variance which are then used to normalize the summed input to that neuron on each training case. This significantly reduces the training time in feedforward neural networks. However, the effect of batch normalization is dependent on the mini-batch size and it is not obvious how to apply it to recurrent neural networks. In this paper, we transpose batch normalization into layer normalization by computing the mean and variance used for normalization from all of the summed inputs to the neurons in a layer on a single training case. Like batch normalization, we also give each neuron its own adaptive bias and gain which are applied after the normalization but before the non-linearity. Unlike batch normalization, layer normalization performs exactly the same computation at training and test times. It is also straightforward to apply to recurrent neural networks by computing the normalization statistics separately at each time step. Layer normalization is very effective at stabilizing the hidden state dynamics in recurrent networks. Empirically, we show that layer normalization can substantially reduce the training time compared with previously published techniques."
+                    }
+                ]
+            },
+            "bbox": [
+                228,
+                323,
+                767,
+                585
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1 Introduction"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                173,
+                611,
+                313,
+                627
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Deep neural networks trained with some version of Stochastic Gradient Descent have been shown to substantially outperform previous approaches on various supervised learning tasks in computer vision [Krizhevsky et al., 2012] and speech processing [Hinton et al., 2012]. But state-of-the-art deep neural networks often require many days of training. It is possible to speed-up the learning by computing gradients for different subsets of the training cases on different machines or splitting the neural network itself over many machines [Dean et al., 2012], but this can require a lot of communication and complex software. It also tends to lead to rapidly diminishing returns as the degree of parallelization increases. An orthogonal approach is to modify the computations performed in the forward pass of the neural net to make learning easier. Recently, batch normalization [Ioffe and Szegedy, 2015] has been proposed to reduce training time by including additional normalization stages in deep neural networks. The normalization standardizes each summed input using its mean and its standard deviation across the training data. Feedforward neural networks trained using batch normalization converge faster even with simple SGD. In addition to training time improvement, the stochasticity from the batch statistics serves as a regularizer during training."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                642,
+                826,
+                837
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Despite its simplicity, batch normalization requires running averages of the summed input statistics. In feed-forward networks with fixed depth, it is straightforward to store the statistics separately for each hidden layer. However, the summed inputs to the recurrent neurons in a recurrent neural network (RNN) often vary with the length of the sequence so applying batch normalization to RNNs appears to require different statistics for different time-steps. Furthermore, batch normalization cannot be applied to online learning tasks or to extremely large distributed models where the minibatches have to be small"
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                840,
+                826,
+                911
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "arXiv:1607.06450v1 [stat.ML] 21 Jul 2016"
+                    }
+                ]
+            },
+            "bbox": [
+                22,
+                265,
+                58,
+                718
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                169,
+                90,
+                825,
+                119
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This paper introduces layer normalization, a simple normalization method to improve the training speed for various neural network models. Unlike batch normalization, the proposed method directly estimates the normalization statistics from the summed inputs to the neurons within a hidden layer so the normalization does not introduce any new dependencies between training cases. We show that layer normalization works well for RNNs and improves both the training time and the generalization performance of several existing RNN models."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                125,
+                826,
+                210
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2 Background"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                227,
+                310,
+                244
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A feed-forward neural network is a non-linear mapping from a input pattern x to an output vector "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "y ."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Consider the "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "l ^ { t h }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "hidden layer in a deep feed-forward, neural network, and let "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "a ^ { l }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "be the vector representation of the summed inputs to the neurons in that layer. The summed inputs are computed through a linear projection with the weight matrix "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "W ^ { l }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and the bottom-up inputs "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "h ^ { \\mathit { \\hat { l } } }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "given as follows:"
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                258,
+                826,
+                315
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "a _ {i} ^ {l} = w _ {i} ^ {l ^ {\\top}} h ^ {l} \\qquad h _ {i} ^ {l + 1} = f (a _ {i} ^ {l} + b _ {i} ^ {l})\\tag{1}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/c3383ac3a3087c9b0150d56a6d12ccb63ba65e53e252272ddb24f9361d8c27c0.jpg"
+                }
+            },
+            "bbox": [
+                377,
+                323,
+                617,
+                344
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "f ( \\cdot )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is an element-wise non-linear function and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "w _ { i } ^ { l }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is the incoming weights to the "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "i ^ { t h }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "hidden units and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "b _ { i } ^ { l }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is the scalar bias parameter. The parameters in the neural network are learnt using gradient-based optimization algorithms with the gradients being computed by back-propagation."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                345,
+                825,
+                392
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "One of the challenges of deep learning is that the gradients with respect to the weights in one layer are highly dependent on the outputs of the neurons in the previous layer especially if these outputs change in a highly correlated way. Batch normalization [Ioffe and Szegedy, 2015] was proposed to reduce such undesirable “covariate shift”. The method normalizes the summed inputs to each hidden unit over the training cases. Specifically, for the "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "i ^ { t h }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "summed input in the "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "l ^ { t h }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "layer, the batch normalization method rescales the summed inputs according to their variances under the distribution of the data"
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                396,
+                826,
+                492
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\bar {a} _ {i} ^ {l} = \\frac {g _ {i} ^ {l}}{\\sigma_ {i} ^ {l}} \\left(a _ {i} ^ {l} - \\mu_ {i} ^ {l}\\right) \\qquad \\mu_ {i} ^ {l} = \\underset {\\mathbf {x} \\sim P (\\mathbf {x})} {\\mathbb {E}} \\left[ a _ {i} ^ {l} \\right] \\qquad \\sigma_ {i} ^ {l} = \\sqrt {\\underset {\\mathbf {x} \\sim P (\\mathbf {x})} {\\mathbb {E}} \\left[ \\left(a _ {i} ^ {l} - \\mu_ {i} ^ {l}\\right) ^ {2} \\right]}\\tag{2}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/997c6880e3038fc510f5bab5bf97219e226c1e5696351ccc76146df62fcbbd88.jpg"
+                }
+            },
+            "bbox": [
+                246,
+                494,
+                746,
+                529
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\bar { a } _ { i } ^ { l }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is normalized summed inputs to the "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "i ^ { t h }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "hidden unit in the "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "{ { l } ^ { t h } }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "layer and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "g _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is a gain parameter scaling the normalized activation before the non-linear activation function. Note the expectation is under the whole training data distribution. It is typically impractical to compute the expectations in Eq. (2) exactly, since it would require forward passes through the whole training dataset with the current set of weights. Instead, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mu"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and σ are estimated using the empirical samples from the current mini-batch. This puts constraints on the size of a mini-batch and it is hard to apply to recurrent neural networks."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                535,
+                826,
+                633
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3 Layer normalization"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                651,
+                379,
+                667
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We now consider the layer normalization method which is designed to overcome the drawbacks of batch normalization."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                681,
+                825,
+                710
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Notice that changes in the output of one layer will tend to cause highly correlated changes in the summed inputs to the next layer, especially with ReLU units whose outputs can change by a lot. This suggests the “covariate shift” problem can be reduced by fixing the mean and the variance of the summed inputs within each layer. We, thus, compute the layer normalization statistics over all the hidden units in the same layer as follows:"
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                715,
+                826,
+                786
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\mu^ {l} = \\frac {1}{H} \\sum_ {i = 1} ^ {H} a _ {i} ^ {l} \\quad \\sigma^ {l} = \\sqrt {\\frac {1}{H} \\sum_ {i = 1} ^ {H} \\left(a _ {i} ^ {l} - \\mu^ {l}\\right) ^ {2}}\\tag{3}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/56f8da64b770a9711a5bc7e487c32f4e1647f253b32c6c10448242331b2299f0.jpg"
+                }
+            },
+            "bbox": [
+                341,
+                792,
+                653,
+                837
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "H"
+                    },
+                    {
+                        "type": "text",
+                        "content": "denotes the number of hidden units in a layer. The difference between Eq. (2) and Eq. (3) is that under layer normalization, all the hidden units in a layer share the same normalization terms "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mu"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\sigma ,"
+                    },
+                    {
+                        "type": "text",
+                        "content": "but different training cases have different normalization terms. Unlike batch normalization, layer normaliztion does not impose any constraint on the size of a mini-batch and it can be used in the pure online regime with batch size 1."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                842,
+                826,
+                912
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                493,
+                936,
+                504,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1 Layer normalized recurrent neural networks"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                90,
+                527,
+                106
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The recent sequence to sequence models [Sutskever et al., 2014] utilize compact recurrent neural networks to solve sequential prediction problems in natural language processing. It is common among the NLP tasks to have different sentence lengths for different training cases. This is easy to deal with in an RNN because the same weights are used at every time-step. But when we apply batch normalization to an RNN in the obvious way, we need to to compute and store separate statistics for each time step in a sequence. This is problematic if a test sequence is longer than any of the training sequences. Layer normalization does not have such problem because its normalization terms depend only on the summed inputs to a layer at the current time-step. It also has only one set of gain and bias parameters shared over all time-steps."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                117,
+                826,
+                241
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In a standard RNN, the summed inputs in the recurrent layer are computed from the current input "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mathbf { x } ^ { t }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and previous vector of hidden states "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mathbf { h } ^ { t - 1 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "which are computed as "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mathbf { a } ^ { t } = W _ { h h } h ^ { t - 1 } + W _ { x h } \\mathbf { x } ^ { t }"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". The layer normalized recurrent layer re-centers and re-scales its activations using the extra normalization terms similar to Eq. (3):"
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                247,
+                825,
+                301
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\mathbf {h} ^ {t} = f \\left[ \\frac {\\mathbf {g}}{\\sigma^ {t}} \\odot (\\mathbf {a} ^ {t} - \\mu^ {t}) + \\mathbf {b} \\right] \\quad \\mu^ {t} = \\frac {1}{H} \\sum_ {i = 1} ^ {H} a _ {i} ^ {t} \\quad \\sigma^ {t} = \\sqrt {\\frac {1}{H} \\sum_ {i = 1} ^ {H} (a _ {i} ^ {t} - \\mu^ {t}) ^ {2}}\\tag{4}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/f2874dbd41b08aac1a0e6f9128a76a09e97bfc1a473f0463cda925bd6aad1a6f.jpg"
+                }
+            },
+            "bbox": [
+                223,
+                308,
+                772,
+                353
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "W _ { h h }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is the recurrent hidden to hidden weights and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "W _ { x h }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "are the bottom up input to hidden weights. \f is the element-wise multiplication between two vectors. b and g are defined as the bias and gain parameters of the same dimension as "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mathbf { h } ^ { t }"
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                357,
+                825,
+                401
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In a standard RNN, there is a tendency for the average magnitude of the summed inputs to the recurrent units to either grow or shrink at every time-step, leading to exploding or vanishing gradients. In a layer normalized RNN, the normalization terms make it invariant to re-scaling all of the summed inputs to a layer, which results in much more stable hidden-to-hidden dynamics."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                405,
+                826,
+                463
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4 Related work"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                479,
+                318,
+                496
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Batch normalization has been previously extended to recurrent neural networks [Laurent et al., 2015, Amodei et al., 2015, Cooijmans et al., 2016]. The previous work [Cooijmans et al., 2016] suggests the best performance of recurrent batch normalization is obtained by keeping independent normalization statistics for each time-step. The authors show that initializing the gain parameter in the recurrent batch normalization layer to 0.1 makes significant difference in the final performance of the model. Our work is also related to weight normalization [Salimans and Kingma, 2016]. In weight normalization, instead of the variance, the L2 norm of the incoming weights is used to normalize the summed inputs to a neuron. Applying either weight normalization or batch normalization using expected statistics is equivalent to have a different parameterization of the original feed-forward neural network. Re-parameterization in the ReLU network was studied in the Pathnormalized SGD [Neyshabur et al., 2015]. Our proposed layer normalization method, however, is not a re-parameterization of the original neural network. The layer normalized model, thus, has different invariance properties than the other methods, that we will study in the following section."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                510,
+                826,
+                690
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "5 Analysis"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                707,
+                277,
+                724
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In this section, we investigate the invariance properties of different normalization schemes."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                737,
+                767,
+                753
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "5.1 Invariance under weights and data transformations"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                767,
+                573,
+                782
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The proposed layer normalization is related to batch normalization and weight normalization. Although, their normalization scalars are computed differently, these methods can be summarized as normalizing the summed inputs "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "a _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "to a neuron through the two scalars "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mu"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\sigma ."
+                    },
+                    {
+                        "type": "text",
+                        "content": ". They also learn an adaptive bias b and gain g for each neuron after the normalization."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                792,
+                825,
+                849
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "h _ {i} = f \\left(\\frac {g _ {i}}{\\sigma_ {i}} \\left(a _ {i} - \\mu_ {i}\\right) + b _ {i}\\right)\\tag{5}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/8c5b92c84323e39986ce50c30564adf89e8099799faf038f8b010cf35a1c7234.jpg"
+                }
+            },
+            "bbox": [
+                406,
+                852,
+                588,
+                880
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Note that for layer normalization and batch normalization, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mu"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and σ is computed according to Eq. 2 and 3. In weight normalization, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mu"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0 ,"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\sigma = \\| w \\| _ { 2 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                883,
+                825,
+                912
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                493,
+                936,
+                504,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/48cfd612e3763d79f39e6e6adedff2fbcff6a8066d8c193373eb5926dccbb142.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 1: Invariance properties under the normalization methods."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td></td><td>Weight matrix re-scaling</td><td>Weight matrix re-centering</td><td>Weight vector re-scaling</td><td>Dataset re-scaling</td><td>Dataset re-centering</td><td>Single training case re-scaling</td></tr><tr><td>Batch norm</td><td>Invariant</td><td>No</td><td>Invariant</td><td>Invariant</td><td>Invariant</td><td>No</td></tr><tr><td>Weight norm</td><td>Invariant</td><td>No</td><td>Invariant</td><td>No</td><td>No</td><td>No</td></tr><tr><td>Layer norm</td><td>Invariant</td><td>Invariant</td><td>No</td><td>Invariant</td><td>No</td><td>Invariant</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                204,
+                69,
+                792,
+                126
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Table 1 highlights the following invariance results for three normalization methods."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                169,
+                720,
+                184
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Weight re-scaling and re-centering: First, observe that under batch normalization and weight normalization, any re-scaling to the incoming weights "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "w _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "of a single neuron has no effect on the normalized summed inputs to a neuron. To be precise, under batch and weight normalization, if the weight vector is scaled by "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\delta ,"
+                    },
+                    {
+                        "type": "text",
+                        "content": "the two scalar "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mu"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and σ will also be scaled by "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\delta ."
+                    },
+                    {
+                        "type": "text",
+                        "content": "The normalized summed inputs stays the same before and after scaling. So the batch and weight normalization are invariant to the re-scaling of the weights. Layer normalization, on the other hand, is not invariant to the individual scaling of the single weight vectors. Instead, layer normalization is invariant to scaling of the entire weight matrix and invariant to a shift to all of the incoming weights in the weight matrix. Let there be two sets of model parameters "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\theta , \\theta ^ { \\prime }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "whose weight matrices "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\breve { W }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "W ^ { \\prime }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "differ by a scaling factor "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\delta"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and all of the incoming weights in "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "W ^ { \\prime }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "are also shifted by a constant vector "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\gamma ,"
+                    },
+                    {
+                        "type": "text",
+                        "content": "that is "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\breve { W } ^ { \\prime } = \\delta W + \\mathbf { 1 } \\gamma ^ { \\top }"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". Under layer normalization, the two models effectively compute the same output:"
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                190,
+                826,
+                356
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{r l} & {\\mathbf {h} ^ {\\prime} = f (\\frac {\\mathbf {g}}{\\sigma^ {\\prime}} (W ^ {\\prime} \\mathbf {x} - \\mu^ {\\prime}) + \\mathbf {b}) = f (\\frac {\\mathbf {g}}{\\sigma^ {\\prime}} ((\\delta W + \\mathbf {1} \\pmb {\\gamma} ^ {\\top}) \\mathbf {x} - \\mu^ {\\prime}) + \\mathbf {b})} \\\\ & {\\quad = f (\\frac {\\mathbf {g}}{\\sigma} (W \\mathbf {x} - \\mu) + \\mathbf {b}) = \\mathbf {h}.} \\end{array}\\tag{6}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/b0eb741b4d8541943274edce1cbcf59493044da107906b85d9673c800497ca06.jpg"
+                }
+            },
+            "bbox": [
+                279,
+                362,
+                715,
+                417
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Notice that if normalization is only applied to the input before the weights, the model will not be invariant to re-scaling and re-centering of the weights."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                425,
+                825,
+                455
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Data re-scaling and re-centering: We can show that all the normalization methods are invariant to re-scaling the dataset by verifying that the summed inputs of neurons stays constant under the changes. Furthermore, layer normalization is invariant to re-scaling of individual training cases, because the normalization scalars "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mu"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\sigma"
+                    },
+                    {
+                        "type": "text",
+                        "content": "in Eq. (3) only depend on the current input data. Let "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mathbf { x } ^ { \\prime }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "be a new data point obtained by re-scaling x by δ. Then we have,"
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                459,
+                825,
+                530
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "h _ {i} ^ {\\prime} = f (\\frac {g _ {i}}{\\sigma^ {\\prime}} \\left(w _ {i} ^ {\\top} \\mathbf {x} ^ {\\prime} - \\mu^ {\\prime}\\right) + b _ {i}) = f (\\frac {g _ {i}}{\\delta \\sigma} \\left(\\delta w _ {i} ^ {\\top} \\mathbf {x} - \\delta \\mu\\right) + b _ {i}) = h _ {i}.\\tag{7}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/e5101536667e96beb253e09011f2793bd5e6e1c8f9118f02564d1b2f36f6500e.jpg"
+                }
+            },
+            "bbox": [
+                277,
+                537,
+                715,
+                564
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "It is easy to see re-scaling individual data points does not change the model’s prediction under layer normalization. Similar to the re-centering of the weight matrix in layer normalization, we can also show that batch normalization is invariant to re-centering of the dataset."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                571,
+                826,
+                614
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "5.2 Geometry of parameter space during learning"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                631,
+                535,
+                647
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We have investigated the invariance of the model’s prediction under re-centering and re-scaling of the parameters. Learning, however, can behave very differently under different parameterizations, even though the models express the same underlying function. In this section, we analyze learning behavior through the geometry and the manifold of the parameter space. We show that the normalization scalar σ can implicitly reduce learning rate and makes learning more stable."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                657,
+                826,
+                728
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "5.2.1 Riemannian metric"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                743,
+                362,
+                758
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The learnable parameters in a statistical model form a smooth manifold that consists of all possible input-output relations of the model. For models whose output is a probability distribution, a natural way to measure the separation of two points on this manifold is the Kullback-Leibler divergence between their model output distributions. Under the KL divergence metric, the parameter space is a Riemannian manifold."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                767,
+                826,
+                837
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The curvature of a Riemannian manifold is entirely captured by its Riemannian metric, whose quadratic form is denoted as "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "d s ^ { 2 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". That is the infinitesimal distance in the tangent space at a point in the parameter space. Intuitively, it measures the changes in the model output from the parameter space along a tangent direction. The Riemannian metric under KL was previously studied [Amari, 1998] and was shown to be well approximated under second order Taylor expansion using the Fisher"
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                843,
+                826,
+                912
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                493,
+                936,
+                504,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "information matrix:"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                90,
+                305,
+                106
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "d s ^ {2} = \\mathrm{D} _ {\\mathrm{KL}} \\left[ P (y | \\mathbf {x}; \\theta) \\| P (y | \\mathbf {x}; \\theta + \\delta) \\right] \\approx \\frac {1}{2} \\delta^ {\\top} F (\\theta) \\delta ,\\tag{8}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/b9c4a1429204f3c238bda6d9dbc336c17ffd1bdb9b2ddbc13e04639313d0462e.jpg"
+                }
+            },
+            "bbox": [
+                287,
+                109,
+                666,
+                138
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "F (\\theta) = \\underset {\\mathbf {x} \\sim P (\\mathbf {x}), y \\sim P (y \\mid \\mathbf {x})} {\\mathbb {E}} \\left[ \\frac {\\partial \\log P (y \\mid \\mathbf {x} ; \\theta)}{\\partial \\theta} \\frac {\\partial \\log P (y \\mid \\mathbf {x} ; \\theta)}{\\partial \\theta} ^ {\\top} \\right],\\tag{9}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/43ffa6842454aabb0d8dbb78e11403307d06b6ac4cf27c96f16a9d1e5fba4b96.jpg"
+                }
+            },
+            "bbox": [
+                279,
+                141,
+                718,
+                181
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\delta"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is a small change to the parameters. The Riemannian metric above presents a geometric view of parameter spaces. The following analysis of the Riemannian metric provides some insight into how normalization methods could help in training neural networks."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                186,
+                825,
+                231
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "5.2.2 The geometry of normalized generalized linear models"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                243,
+                604,
+                258
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We focus our geometric analysis on the generalized linear model. The results from the following analysis can be easily applied to understand deep neural networks with block-diagonal approximation to the Fisher information matrix, where each block corresponds to the parameters for a single neuron."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                266,
+                825,
+                323
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A generalized linear model (GLM) can be regarded as parameterizing an output distribution from the exponential family using a weight vector w and bias scalar b. To be consistent with the previous sections, the log likelihood of the GLM can be written using the summed inputs a as the following:"
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                328,
+                825,
+                371
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\log P (y \\mid \\mathbf {x}; w, b) = \\frac {(a + b) y - \\eta (a + b)}{\\phi} + c (y, \\phi),\\tag{10}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/46828a6ade65a40823894bbac1fecc33363d03189de72b4e1504d755ab3d3c08.jpg"
+                }
+            },
+            "bbox": [
+                303,
+                377,
+                655,
+                407
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\mathbb {E} [ y \\mid \\mathbf {x} ] = f (a + b) = f (w ^ {\\top} \\mathbf {x} + b), \\mathrm{Var} [ y \\mid \\mathbf {x} ] = \\phi f ^ {\\prime} (a + b),\\tag{11}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/9a436640fecabbc4aa3b29eb146b955a7928dbb9a7a247666ebea987af5731f1.jpg"
+                }
+            },
+            "bbox": [
+                290,
+                412,
+                704,
+                430
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "f ( \\cdot )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is the transfer function that is the analog of the non-linearity in neural networks, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "f ^ { \\prime } ( \\cdot )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is the derivative of the transfer function, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\eta ( \\cdot )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is a real valued function and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "c ( \\cdot )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is the log partition function. "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\phi"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is a constant that scales the output variance. Assume a H-dimensional output vector "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mathbf { y } = [ y _ { 1 } , y _ { 2 } , \\cdots , y _ { H } ]"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is modeled using H independent GLMs and log "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P ( \\mathbf { y } \\mid \\mathbf { x } ; \\ W , \\mathbf { b } ) ="
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\textstyle \\sum _ { i = 1 } ^ { H }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "log "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P ( y _ { i } \\mid \\mathbf { x } ; \\ w _ { i } , b _ { i } )"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". Let W be the weight matrix whose rows are the weight vectors of the individual GLMs, b denote the bias vector of length H and vec(·) denote the Kronecker vector operator. The Fisher information matrix for the multi-dimensional GLM with respect to its parameters "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\boldsymbol { \\theta } = [ w _ { 1 } ^ { \\top } , b _ { 1 } , \\cdot \\cdot \\cdot , w _ { H } ^ { \\top } , b _ { H } ] ^ { \\top } = \\mathrm { v e c } ( [ W , \\mathbf { b } ] ^ { \\top } )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is simply the expected Kronecker product of the data features and the output covariance matrix:"
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                434,
+                825,
+                563
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "F (\\theta) = \\underset {\\mathbf {x} \\sim P (\\mathbf {x})} {\\mathbb {E}} \\left[ \\frac {\\operatorname{Cov} [ \\mathbf {y} \\mid \\mathbf {x} ]}{\\phi^ {2}} \\otimes \\left[ \\begin{array}{c c} \\mathbf {x x} ^ {\\top} & \\mathbf {x} \\\\ \\mathbf {x} ^ {\\top} & 1 \\end{array} \\right] \\right].\\tag{12}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/9619ccb465bd8f6b19bac2c6d4ea15e486d208f1736d1741e8da1a90ea224ea1.jpg"
+                }
+            },
+            "bbox": [
+                349,
+                566,
+                647,
+                603
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We obtain normalized GLMs by applying the normalization methods to the summed inputs a in the original model through "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mu"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\sigma"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". Without loss of generality, we denote "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\bar { F }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "as the Fisher information matrix under the normalized multi-dimensional GLM with the additional gain parameters "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\theta = \\mathrm { v e c } ( [ W , \\mathbf { b } , \\mathbf { g } ] ^ { \\top } )"
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                609,
+                825,
+                666
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\bar {F} (\\theta) = \\left[ \\begin{array}{c c c} \\bar {F} _ {1 1} & \\dots & \\bar {F} _ {1 H} \\\\ \\vdots & \\ddots & \\vdots \\\\ \\bar {F} _ {H 1} & \\dots & \\bar {F} _ {H H} \\end{array} \\right], \\quad \\bar {F} _ {i j} = \\underset {\\mathbf {x} \\sim P (\\mathbf {x})} {\\mathbb {E}} \\left[ \\frac {\\mathrm{Cov} [ y _ {i} , y _ {j} | \\mathbf {x} ]}{\\phi^ {2}} \\left[ \\begin{array}{c c c} \\frac {g _ {i} g _ {j}}{\\sigma_ {i} \\sigma_ {j}} \\chi_ {i} \\chi_ {j} ^ {\\top} & \\chi_ {i} \\frac {g _ {i}}{\\sigma_ {i}} & \\chi_ {i} \\frac {g _ {i} (a _ {j} - \\mu_ {j})}{\\sigma_ {i} \\sigma_ {j}} \\\\ \\chi_ {j} ^ {\\top} \\frac {g _ {j}}{\\sigma_ {j}} & 1 & \\frac {a _ {j} - \\mu_ {j}}{\\sigma_ {j}} \\\\ \\chi_ {j} ^ {\\top} \\frac {g _ {j} (a _ {i} - \\mu_ {i})}{\\sigma_ {i} \\sigma_ {j}} & \\frac {a _ {i} - \\mu_ {i}}{\\sigma_ {i}} & \\frac {(a _ {i} - \\mu_ {i}) (a _ {j} - \\mu_ {j})}{\\sigma_ {i} \\sigma_ {j}} \\end{array} \\right] \\right]\\tag{13}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/f016cbfcf55ff88861871ec51c0a1a2d6dd84025fdeeecfaf2de01cf2b5db025.jpg"
+                }
+            },
+            "bbox": [
+                169,
+                674,
+                885,
+                739
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\chi_ {i} = \\mathbf {x} - \\frac {\\partial \\mu_ {i}}{\\partial w _ {i}} - \\frac {a _ {i} - \\mu_ {i}}{\\sigma_ {i}} \\frac {\\partial \\sigma_ {i}}{\\partial w _ {i}}.\\tag{14}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/dceae43cf09a8320ff2c5a87a54ebda33a85b4c8dac67b2ae0cd1177d405adea.jpg"
+                }
+            },
+            "bbox": [
+                395,
+                757,
+                606,
+                790
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Implicit learning rate reduction through the growth of the weight vector: Notice that, comparing to standard GLM, the block "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\bar { F } _ { i j }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "along the weight vector "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "w _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "direction is scaled by the gain parameters and the normalization scalar "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\sigma _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". If the norm of the weight vector "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "w _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "grows twice as large, even though the model’s output remains the same, the Fisher information matrix will be different. The curvature along the "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "w _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "direction will change by a factor of "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\frac { 1 } { 2 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "because the "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\sigma _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "will also be twice as large. As a result, for the same parameter update in the normalized model, the norm of the weight vector effectively controls the learning rate for the weight vector. During learning, it is harder to change the orientation of the weight vector with large norm. The normalization methods, therefore, have an implicit “early stopping” effect on the weight vectors and help to stabilize learning towards convergence."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                801,
+                826,
+                912
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                493,
+                936,
+                504,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/926210f40dfb94f557bc434dbc84080b0dc294ee2b522bce650dee30bdc2ae3a.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "(a) Recall@1"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                179,
+                70,
+                385,
+                193
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/eda7153ebe6365b259b3a6cd708663f5cfb91928dbc5beaca3c15dc9dd5fd6a4.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "(b) Recall@5"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                392,
+                69,
+                598,
+                194
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1ce013543aca2411c5b518b7fc7ddbe71ca743803eed26b70b0ecf8cc213b449.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "(c) Recall@10"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                604,
+                70,
+                810,
+                194
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/fecb901831df12930d928206ddb835d4ddac5e61a3c8acd32bebba955709669f.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1: Recall@K curves using order-embeddings with and without layer normalization."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Table 2: Average results across 5 test splits for caption and image retrieval. R@K is Recall@K (high is good). Mean r is the mean rank (low is good). Sym corresponds to the symmetric baseline while OE indicates order-embeddings."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td colspan=\"9\">MSCOCO</td></tr><tr><td rowspan=\"2\">Model</td><td colspan=\"4\">Caption Retrieval</td><td colspan=\"4\">Image Retrieval</td></tr><tr><td>R@1</td><td>R@5</td><td>R@10</td><td>Mean r</td><td>R@1</td><td>R@5</td><td>R@10</td><td>Mean r</td></tr><tr><td>Sym [Vendrov et al., 2016]</td><td>45.4</td><td></td><td>88.7</td><td>5.8</td><td>36.3</td><td></td><td>85.8</td><td>9.0</td></tr><tr><td>OE [Vendrov et al., 2016]</td><td>46.7</td><td></td><td>88.9</td><td>5.7</td><td>37.9</td><td></td><td>85.9</td><td>8.1</td></tr><tr><td>OE (ours)</td><td>46.6</td><td>79.3</td><td>89.1</td><td>5.2</td><td>37.8</td><td>73.6</td><td>85.7</td><td>7.9</td></tr><tr><td>OE + LN</td><td>48.5</td><td>80.6</td><td>89.8</td><td>5.1</td><td>38.9</td><td>74.3</td><td>86.3</td><td>7.6</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                181,
+                248,
+                815,
+                342
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                169,
+                410,
+                825,
+                439
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Learning the magnitude of incoming weights: In normalized models, the magnitude of the incoming weights is explicitly parameterized by the gain parameters. We compare how the model output changes between updating the gain parameters in the normalized GLM and updating the magnitude of the equivalent weights under original parameterization during learning. The direction along the gain parameters in F<sup>¯</sup> captures the geometry for the magnitude of the incoming weights. We show that Riemannian metric along the magnitude of the incoming weights for the standard GLM is scaled by the norm of its input, whereas learning the gain parameters for the batch normalized and layer normalized models depends only on the magnitude of the prediction error. Learning the magnitude of incoming weights in the normalized model is therefore, more robust to the scaling of the input and its parameters than in the standard model. See Appendix for detailed derivations."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                444,
+                826,
+                584
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6 Experimental results"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                606,
+                380,
+                623
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We perform experiments with layer normalization on 6 tasks, with a focus on recurrent neural networks: image-sentence ranking, question-answering, contextual language modelling, generative modelling, handwriting sequence generation and MNIST classification. Unless otherwise noted, the default initialization of layer normalization is to set the adaptive gains to 1 and the biases to 0 in the experiments."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                638,
+                826,
+                709
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6.1 Order embeddings of images and language"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                729,
+                511,
+                744
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In this experiment, we apply layer normalization to the recently proposed order-embeddings model of Vendrov et al. [2016] for learning a joint embedding space of images and sentences. We follow the same experimental protocol as Vendrov et al. [2016] and modify their publicly available code to incorporate layer normalization <sup>1</sup> which utilizes Theano [Team et al., 2016]. Images and sentences from the Microsoft COCO dataset [Lin et al., 2014] are embedded into a common vector space, where a GRU [Cho et al., 2014] is used to encode sentences and the outputs of a pre-trained VGG ConvNet [Simonyan and Zisserman, 2015] (10-crop) are used to encode images. The orderembedding model represents images and sentences as a 2-level partial ordering and replaces the cosine similarity scoring function used in Kiros et al. [2014] with an asymmetric one."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                756,
+                826,
+                882
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "<sup>1</sup>https://github.com/ivendrov/order-embedding"
+                    }
+                ]
+            },
+            "bbox": [
+                192,
+                897,
+                537,
+                912
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                493,
+                936,
+                504,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f87a0b7e24dbe3b02733a27b9d8742ee5279efbb3d05db940b76653dd5cc5d64.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2: Validation curves for the attentive reader model. BN results are taken from [Cooijmans et al., 2016]."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                223,
+                71,
+                771,
+                244
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We trained two models: the baseline order-embedding model as well as the same model with layer normalization applied to the GRU. After every 300 iterations, we compute Recall@K (R@K) values on a held out validation set and save the model whenever R@K improves. The best performing models are then evaluated on 5 separate test sets, each containing 1000 images and 5000 captions, for which the mean results are reported. Both models use Adam [Kingma and Ba, 2014] with the same initial hyperparameters and both models are trained using the same architectural choices as used in Vendrov et al. [2016]. We refer the reader to the appendix for a description of how layer normalization is applied to GRU."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                285,
+                826,
+                396
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1 illustrates the validation curves of the models, with and without layer normalization. We plot R@1, R@5 and R@10 for the image retrieval task. We observe that layer normalization offers a per-iteration speedup across all metrics and converges to its best validation model in 60% of the time it takes the baseline model to do so. In Table 2, the test set results are reported from which we observe that layer normalization also results in improved generalization over the original model. The results we report are state-of-the-art for RNN embedding models, with only the structure-preserving model of Wang et al. [2016] reporting better results on this task. However, they evaluate under different conditions (1 test set instead of the mean over 5) and are thus not directly comparable."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                401,
+                826,
+                513
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6.2 Teaching machines to read and comprehend"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                526,
+                521,
+                542
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In order to compare layer normalization to the recently proposed recurrent batch normalization [Cooijmans et al., 2016], we train an unidirectional attentive reader model on the CNN corpus both introduced by Hermann et al. [2015]. This is a question-answering task where a query description about a passage must be answered by filling in a blank. The data is anonymized such that entities are given randomized tokens to prevent degenerate solutions, which are consistently permuted during training and evaluation. We follow the same experimental protocol as Cooijmans et al. [2016] and modify their public code to incorporate layer normalization <sup>2</sup> which uses Theano [Team et al., 2016]. We obtained the pre-processed dataset used by Cooijmans et al. [2016] which differs from the original experiments of Hermann et al. [2015] in that each passage is limited to 4 sentences. In Cooijmans et al. [2016], two variants of recurrent batch normalization are used: one where BN is only applied to the LSTM while the other applies BN everywhere throughout the model. In our experiment, we only apply layer normalization within the LSTM."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                551,
+                826,
+                718
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The results of this experiment are shown in Figure 2. We observe that layer normalization not only trains faster but converges to a better validation result over both the baseline and BN variants. In Cooijmans et al. [2016], it is argued that the scale parameter in BN must be carefully chosen and is set to 0.1 in their experiments. We experimented with layer normalization for both 1.0 and 0.1 scale initialization and found that the former model performed significantly better. This demonstrates that layer normalization is not sensitive to the initial scale in the same way that recurrent BN is. <sup>3</sup>"
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                723,
+                826,
+                806
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6.3 Skip-thought vectors"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                821,
+                361,
+                837
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Skip-thoughts [Kiros et al., 2015] is a generalization of the skip-gram model [Mikolov et al., 2013] for learning unsupervised distributed sentence representations. Given contiguous text, a sentence is encoded with a encoder RNN and decoder RNNs are used to predict the surrounding sentences. Kiros et al. [2015] showed that this model could produce generic sentence representations that perform well on several tasks without being fine-tuned. However, training this model is timeconsuming, requiring several days of training in order to produce meaningful results."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                845,
+                826,
+                876
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "<sup>2</sup>https://github.com/cooijmanstim/Attentive_reader/tree/bn"
+                    }
+                ]
+            },
+            "bbox": [
+                191,
+                883,
+                638,
+                898
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "<sup>3</sup>We only produce results on the validation set, as in the case of Cooijmans et al. [2016]"
+                    }
+                ]
+            },
+            "bbox": [
+                191,
+                897,
+                712,
+                912
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                493,
+                936,
+                504,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f85bf9dba108ecc9699d2dbe498e9d0eb8c111030bee154727788e5c6940bed5.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "(a) SICK(r)"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                176,
+                55,
+                380,
+                176
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a80d9ff3c2c51d98e9f94be1fe0649f186c99a8900c3792291485dd9058bf1e8.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "(b) SICK(MSE)"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                390,
+                56,
+                594,
+                176
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/4a308b13923534257e32ef1f621a98dd1b5b2efe78c51eb203243def1802a934.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "(c) MR"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                604,
+                56,
+                808,
+                176
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/08b780b24c4998230a5d3ea03d3a9bf521f7e1f996eca555129b53339fc19454.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "(d) CR"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                176,
+                196,
+                380,
+                316
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2a7ab922351de523b9f22bb7287c30505480f0756ab981ce017bf2f22f8b211e.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "(e) SUBJ"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                390,
+                196,
+                594,
+                316
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ad5cb5b598b1bd4527c1926515918461004fa41f7370365e11382f56615fcab2.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "(f) MPQA"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                604,
+                196,
+                808,
+                316
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/962e6097587cdcad6da17a2e212e6b283fb92686816ad5b1cc00946a5a024d99.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 3: Performance of skip-thought vectors with and without layer normalization on downstream tasks as a function of training iterations. The original lines are the reported results in [Kiros et al., 2015]. Plots with error use 10-fold cross validation. Best seen in color."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Table 3: Skip-thoughts results. The first two evaluation columns indicate Pearson and Spearman correlation, the third is mean squared error and the remaining indicate classification accuracy. Higher is better for all evaluations except MSE. Our models were trained for 1M iterations with the exception of (†) which was trained for 1 month (approximately 1.7M iterations)"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Method</td><td>SICK(r)</td><td>SICK(ρ)</td><td>SICK(MSE)</td><td>MR</td><td>CR</td><td>SUBJ</td><td>MPQA</td></tr><tr><td>Original [Kiros et al., 2015]</td><td>0.848</td><td>0.778</td><td>0.287</td><td>75.5</td><td>79.3</td><td>92.1</td><td>86.9</td></tr><tr><td>Ours</td><td>0.842</td><td>0.767</td><td>0.298</td><td>77.3</td><td>81.8</td><td>92.6</td><td>87.9</td></tr><tr><td>Ours + LN</td><td>0.854</td><td>0.785</td><td>0.277</td><td>79.5</td><td>82.6</td><td>93.4</td><td>89.0</td></tr><tr><td>Ours + LN †</td><td>0.858</td><td>0.788</td><td>0.270</td><td>79.4</td><td>83.1</td><td>93.7</td><td>89.3</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                178,
+                402,
+                813,
+                484
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                169,
+                571,
+                825,
+                630
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In this experiment we determine to what effect layer normalization can speed up training. Using the publicly available code of Kiros et al. [2015] <sup>4</sup>, we train two models on the BookCorpus dataset [Zhu et al., 2015]: one with and one without layer normalization. These experiments are performed with Theano [Team et al., 2016]. We adhere to the experimental setup used in Kiros et al. [2015], training a 2400-dimensional sentence encoder with the same hyperparameters. Given the size of the states used, it is conceivable layer normalization would produce slower per-iteration updates than without. However, we found that provided CNMeM <sup>5</sup> is used, there was no significant difference between the two models. We checkpoint both models after every 50,000 iterations and evaluate their performance on five tasks: semantic-relatedness (SICK) [Marelli et al., 2014], movie review sentiment (MR) [Pang and Lee, 2005], customer product reviews (CR) [Hu and Liu, 2004], subjectivity/objectivity classification (SUBJ) [Pang and Lee, 2004] and opinion polarity (MPQA) [Wiebe et al., 2005]. We plot the performance of both models for each checkpoint on all tasks to determine whether the performance rate can be improved with LN."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                633,
+                826,
+                814
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The experimental results are illustrated in Figure 3. We observe that applying layer normalization results both in speedup over the baseline as well as better final results after 1M iterations are performed as shown in Table 3. We also let the model with layer normalization train for a total of a month, resulting in further performance gains across all but one task. We note that the performance differences between the original reported results and ours are likely due to the fact that the publicly available code does not condition at each timestep of the decoder, where the original model does."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                818,
+                826,
+                875
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "<sup>4</sup>https://github.com/ryankiros/skip-thoughts"
+                    }
+                ]
+            },
+            "bbox": [
+                192,
+                883,
+                527,
+                898
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "<sup>5</sup>https://github.com/NVIDIA/cnmem"
+                    }
+                ]
+            },
+            "bbox": [
+                192,
+                897,
+                444,
+                912
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                493,
+                935,
+                504,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2d9fadafdbb6b9c8c674a66863397d1f619ea36df1bfa9ee741bf81363a59c28.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 5: Handwriting sequence generation model negative log likelihood with and without layer normalization. The models are trained with mini-batch size of 8 and sequence length of 500,"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                210,
+                65,
+                782,
+                218
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                169,
+                270,
+                825,
+                299
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6.4 Modeling binarized MNIST using DRAW"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                315,
+                503,
+                330
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We also experimented with the generative modeling on the MNIST dataset. Deep Recurrent Attention Writer (DRAW) [Gregor et al., 2015] has previously achieved the state-of-theart performance on modeling the distribution of MNIST digits. The model uses a differential attention mechanism and a recurrent neural network to sequentially generate pieces of an image. We evaluate the effect of layer normalization on a DRAW model using 64 glimpses and 256 LSTM hidden units. The model is trained with the default setting of Adam [Kingma and Ba, 2014] optimizer and the minibatch size of 128. Previous publications on binarized MNIST have used various training protocols to generate their datasets. In this experiment, we used the fixed binarization from Larochelle and Murray [2011]. The dataset has been split into 50,000 training, 10,000 validation and 10,000 test images."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                340,
+                578,
+                547
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/dd078858cc72021643a5e7dcfb2acd4f8fe4354a29842e50c667af6dae6a50cb.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4: DRAW model test negative log likelihood with and without layer normalization."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                591,
+                338,
+                820,
+                508
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4 shows the test variational bound for the first 100 epoch. It highlights the speedup benefit of applying layer nor-"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                551,
+                578,
+                580
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "malization that the layer normalized DRAW converges almost twice as fast than the baseline model. After 200 epoches, the baseline model converges to a variational log likelihood of 82.36 nats on the test data and the layer normalization model obtains 82.09 nats."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                580,
+                825,
+                625
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6.5 Handwriting sequence generation"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                638,
+                447,
+                654
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The previous experiments mostly examine RNNs on NLP tasks whose lengths are in the range of 10 to 40. To show the effectiveness of layer normalization on longer sequences, we performed handwriting generation tasks using the IAM Online Handwriting Database [Liwicki and Bunke, 2005]. IAM-OnDB consists of handwritten lines collected from 221 different writers. When given the input character string, the goal is to predict a sequence of x and y pen co-ordinates of the corresponding handwriting line on the whiteboard. There are, in total, 12179 handwriting line sequences. The input string is typically more than 25 characters and the average handwriting line has a length around 700."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                665,
+                826,
+                763
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We used the same model architecture as in Section (5.2) of Graves [2013]. The model architecture consists of three hidden layers of 400 LSTM cells, which produce 20 bivariate Gaussian mixture components at the output layer, and a size 3 input layer. The character sequence was encoded with one-hot vectors, and hence the window vectors were size 57. A mixture of 10 Gaussian functions was used for the window parameters, requiring a size 30 parameter vector. The total number of weights was increased to approximately 3.7M. The model is trained using mini-batches of size 8 and the Adam [Kingma and Ba, 2014] optimizer."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                767,
+                826,
+                864
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The combination of small mini-batch size and very long sequences makes it important to have very stable hidden dynamics. Figure 5 shows that layer normalization converges to a comparable log likelihood as the baseline model but is much faster."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                869,
+                826,
+                912
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                493,
+                935,
+                504,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/4ed1d163cbb3f191f34318245df69a0b4707676a3f7feec469d86ac896d259a4.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                251,
+                53,
+                490,
+                250
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/7a0f97bf73f87910ad658b6a597c9e60de97a8a5f29270923f6b8081729b73fd.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6: Permutation invariant MNIST 784-1000-1000-10 model negative log likelihood and test error with layer normalization and batch normalization. (Left) The models are trained with batchsize of 128. (Right) The models are trained with batch-size of 4."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                496,
+                54,
+                736,
+                250
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6.6 Permutation invariant MNIST"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                324,
+                426,
+                339
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In addition to RNNs, we investigated layer normalization in feed-forward networks. We show how layer normalization compares with batch normalization on the well-studied permutation invariant MNIST classification problem. From the previous analysis, layer normalization is invariant to input re-scaling which is desirable for the internal hidden layers. But this is unnecessary for the logit outputs where the prediction confidence is determined by the scale of the logits. We only apply layer normalization to the fully-connected hidden layers that excludes the last softmax layer."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                352,
+                826,
+                436
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All the models were trained using 55000 training data points and the Adam [Kingma and Ba, 2014] optimizer. For the smaller batch-size, the variance term for batch normalization is computed using the unbiased estimator. The experimental results from Figure 6 highlight that layer normalization is robust to the batch-sizes and exhibits a faster training convergence comparing to batch normalization that is applied to all layers."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                441,
+                826,
+                512
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6.7 Convolutional Networks"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                535,
+                383,
+                550
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We have also experimented with convolutional neural networks. In our preliminary experiments, we observed that layer normalization offers a speedup over the baseline model without normalization, but batch normalization outperforms the other methods. With fully connected layers, all the hidden units in a layer tend to make similar contributions to the final prediction and re-centering and rescaling the summed inputs to a layer works well. However, the assumption of similar contributions is no longer true for convolutional neural networks. The large number of the hidden units whose receptive fields lie near the boundary of the image are rarely turned on and thus have very different statistics from the rest of the hidden units within the same layer. We think further research is needed to make layer normalization work well in ConvNets."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                564,
+                826,
+                689
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "7 Conclusion"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                715,
+                300,
+                732
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In this paper, we introduced layer normalization to speed-up the training of neural networks. We provided a theoretical analysis that compared the invariance properties of layer normalization with batch normalization and weight normalization. We showed that layer normalization is invariant to per training-case feature shifting and scaling."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                752,
+                826,
+                809
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Empirically, we showed that recurrent neural networks benefit the most from the proposed method especially for long sequences and small mini-batches."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                814,
+                825,
+                844
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Acknowledgments"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                869,
+                331,
+                887
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research was funded by grants from NSERC, CFI, and Google."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                896,
+                620,
+                912
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                490,
+                935,
+                509,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "References"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                89,
+                269,
+                106
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Alex Krizhevsky, Ilya Sutskever, and Geoffrey E Hinton. Imagenet classification with deep convolutional neural networks. In NIPS, 2012."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                113,
+                825,
+                138
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Geoffrey Hinton, Li Deng, Dong Yu, George E Dahl, Abdel-rahman Mohamed, Navdeep Jaitly, Andrew Senior, Vincent Vanhoucke, Patrick Nguyen, Tara N Sainath, et al. Deep neural networks for acoustic modeling in speech recognition: The shared views of four research groups. IEEE, 2012."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                143,
+                825,
+                183
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Jeffrey Dean, Greg Corrado, Rajat Monga, Kai Chen, Matthieu Devin, Mark Mao, Andrew Senior, Paul Tucker, Ke Yang, Quoc V Le, et al. Large scale distributed deep networks. In NIPS, 2012."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                188,
+                823,
+                214
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Sergey Ioffe and Christian Szegedy. Batch normalization: Accelerating deep network training by reducing internal covariate shift. ICML, 2015."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                219,
+                825,
+                246
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Ilya Sutskever, Oriol Vinyals, and Quoc V Le. Sequence to sequence learning with neural networks. In Advances in neural information processing systems, pages 3104–3112, 2014."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                250,
+                825,
+                277
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Cesar Laurent, Gabriel Pereyra, Phil´ emon Brakel, Ying Zhang, and Yoshua Bengio. Batch normalized recurrent´ neural networks. arXiv preprint arXiv:1510.01378, 2015."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                282,
+                825,
+                309
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Dario Amodei, Rishita Anubhai, Eric Battenberg, Carl Case, Jared Casper, Bryan Catanzaro, Jingdong Chen, Mike Chrzanowski, Adam Coates, Greg Diamos, et al. Deep speech 2: End-to-end speech recognition in english and mandarin. arXiv preprint arXiv:1512.02595, 2015."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                314,
+                825,
+                353
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Tim Cooijmans, Nicolas Ballas, Cesar Laurent, and Aaron Courville. Recurrent batch normalization.´ arXiv preprint arXiv:1603.09025, 2016."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                357,
+                825,
+                383
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Tim Salimans and Diederik P Kingma. Weight normalization: A simple reparameterization to accelerate training of deep neural networks. arXiv preprint arXiv:1602.07868, 2016."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                388,
+                823,
+                415
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Behnam Neyshabur, Ruslan R Salakhutdinov, and Nati Srebro. Path-sgd: Path-normalized optimization in deep neural networks. In Advances in Neural Information Processing Systems, pages 2413–2421, 2015."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                420,
+                825,
+                446
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Shun-Ichi Amari. Natural gradient works efficiently in learning. Neural computation, 1998."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                450,
+                717,
+                465
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Ivan Vendrov, Ryan Kiros, Sanja Fidler, and Raquel Urtasun. Order-embeddings of images and language. ICLR, 2016."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                470,
+                823,
+                497
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "The Theano Development Team, Rami Al-Rfou, Guillaume Alain, Amjad Almahairi, Christof Angermueller, Dzmitry Bahdanau, Nicolas Ballas, Fred´ eric Bastien, Justin Bayer, Anatoly Belikov, et al. Theano: A python´ framework for fast computation of mathematical expressions. arXiv preprint arXiv:1605.02688, 2016."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                502,
+                825,
+                541
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr Dollar, and ´ C Lawrence Zitnick. Microsoft coco: Common objects in context. ECCV, 2014."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                546,
+                825,
+                573
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Kyunghyun Cho, Bart Van Merrienboer, Caglar Gulcehre, Dzmitry Bahdanau, Fethi Bougares, Holger¨ Schwenk, and Yoshua Bengio. Learning phrase representations using rnn encoder-decoder for statistical machine translation. EMNLP, 2014."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                577,
+                825,
+                616
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Karen Simonyan and Andrew Zisserman. Very deep convolutional networks for large-scale image recognition. ICLR, 2015."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                621,
+                823,
+                647
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Ryan Kiros, Ruslan Salakhutdinov, and Richard S Zemel. Unifying visual-semantic embeddings with multimodal neural language models. arXiv preprint arXiv:1411.2539, 2014."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                652,
+                823,
+                679
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "D. Kingma and J. L. Ba. Adam: a method for stochastic optimization. ICLR, 2014. arXiv:1412.6980."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                684,
+                774,
+                698
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Liwei Wang, Yin Li, and Svetlana Lazebnik. Learning deep structure-preserving image-text embeddings. CVPR, 2016."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                703,
+                823,
+                729
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Karl Moritz Hermann, Tomas Kocisky, Edward Grefenstette, Lasse Espeholt, Will Kay, Mustafa Suleyman, and Phil Blunsom. Teaching machines to read and comprehend. In NIPS, 2015."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                734,
+                823,
+                761
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Ryan Kiros, Yukun Zhu, Ruslan R Salakhutdinov, Richard Zemel, Raquel Urtasun, Antonio Torralba, and Sanja Fidler. Skip-thought vectors. In NIPS, 2015."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                766,
+                825,
+                792
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean. Efficient estimation of word representations in vector space. arXiv preprint arXiv:1301.3781, 2013."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                797,
+                825,
+                824
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Yukun Zhu, Ryan Kiros, Rich Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio Torralba, and Sanja Fidler. Aligning books and movies: Towards story-like visual explanations by watching movies and reading books. In ICCV, 2015."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                829,
+                825,
+                867
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Marco Marelli, Luisa Bentivogli, Marco Baroni, Raffaella Bernardi, Stefano Menini, and Roberto Zamparelli. Semeval-2014 task 1: Evaluation of compositional distributional semantic models on full sentences through semantic relatedness and textual entailment. SemEval-2014, 2014."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                873,
+                825,
+                911
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                488,
+                936,
+                508,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Bo Pang and Lillian Lee. Seeing stars: Exploiting class relationships for sentiment categorization with respect to rating scales. In ACL, pages 115–124, 2005."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                93,
+                823,
+                119
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Minqing Hu and Bing Liu. Mining and summarizing customer reviews. In Proceedings of the tenth ACM SIGKDD international conference on Knowledge discovery and data mining, 2004."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                125,
+                823,
+                150
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Bo Pang and Lillian Lee. A sentimental education: Sentiment analysis using subjectivity summarization based on minimum cuts. In ACL, 2004."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                155,
+                823,
+                181
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Janyce Wiebe, Theresa Wilson, and Claire Cardie. Annotating expressions of opinions and emotions in language. Language resources and evaluation, 2005."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                186,
+                823,
+                213
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "K. Gregor, I. Danihelka, A. Graves, and D. Wierstra. DRAW: a recurrent neural network for image generation. arXiv:1502.04623, 2015."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                217,
+                823,
+                244
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Hugo Larochelle and Iain Murray. The neural autoregressive distribution estimator. In AISTATS, volume 6, page 622, 2011."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                248,
+                823,
+                275
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Marcus Liwicki and Horst Bunke. Iam-ondb-an on-line english sentence database acquired from handwritten text on a whiteboard. In ICDAR, 2005."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                279,
+                823,
+                305
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Alex Graves. Generating sequences with recurrent neural networks. arXiv preprint arXiv:1308.0850, 2013."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                310,
+                807,
+                324
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                488,
+                935,
+                509,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Supplementary Material"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                89,
+                383,
+                107
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Application of layer normalization to each experiment"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                123,
+                553,
+                138
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This section describes how layer normalization is applied to each of the papers’ experiments. For notation convenience, we define layer normalization as a function mapping "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\dot { L } N : \\mathbb { R } ^ { \\dot { D } }  \\mathbb { R } ^ { D }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "with two set of adaptive parameters, gains α and biases "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\beta \\colon"
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                148,
+                825,
+                191
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "L N (\\mathbf {z}; \\pmb {\\alpha}, \\pmb {\\beta}) = \\frac {(\\mathbf {z} - \\mu)}{\\sigma} \\odot \\pmb {\\alpha} + \\pmb {\\beta},\\tag{15}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/61f28b93766cda2635dc28c248b294c3ee5902e7592e700718c43b1091e8405f.jpg"
+                }
+            },
+            "bbox": [
+                383,
+                202,
+                620,
+                233
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\mu = \\frac {1}{D} \\sum_ {i = 1} ^ {D} z _ {i}, \\quad \\sigma = \\sqrt {\\frac {1}{D} \\sum_ {i = 1} ^ {D} (z _ {i} - \\mu) ^ {2}},\\tag{16}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/7130d2662ebf7f4cef9cae7b34e235137bb3a7b1cc2fb2b0d64969697467a0f3.jpg"
+                }
+            },
+            "bbox": [
+                341,
+                237,
+                622,
+                280
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "z _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is the "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "i ^ { t h }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "element of the vector z."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                292,
+                457,
+                309
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Teaching machines to read and comprehend and handwriting sequence generation"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                325,
+                748,
+                342
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The basic LSTM equations used for these experiment are given by:"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                351,
+                614,
+                366
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\left( \\begin{array}{c} \\mathbf {f} _ {t} \\\\ \\mathbf {i} _ {t} \\\\ \\mathbf {o} _ {t} \\\\ \\mathbf {g} _ {t} \\end{array} \\right) = \\mathbf {W} _ {h} \\mathbf {h} _ {t - 1} + \\mathbf {W} _ {x} \\mathbf {x} _ {t} + b\\tag{17}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/ee5072b90cbd78c4016f33d04676f1630bc363446b2e3af7218b59e7da5bb742.jpg"
+                }
+            },
+            "bbox": [
+                348,
+                376,
+                591,
+                431
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\mathbf {c} _ {t} = \\sigma (\\mathbf {f} _ {t}) \\odot \\mathbf {c} _ {t - 1} + \\sigma (\\mathbf {i} _ {t}) \\odot \\tanh (\\mathbf {g} _ {t})\\tag{18}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/3e3a4ddd7fc21b798ee26dbdcffd105082d3e4dc002a9318acc80299a2d9609c.jpg"
+                }
+            },
+            "bbox": [
+                374,
+                436,
+                653,
+                452
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "{\\mathbf {h} _ {t}} = {\\sigma (\\mathbf {o} _ {t}) \\odot \\tanh (\\mathbf {c} _ {t})}\\tag{19}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/2ad85ab99d7465b2519851cd273ca842e21efa65a85568ad72b3800170810567.jpg"
+                }
+            },
+            "bbox": [
+                372,
+                454,
+                553,
+                469
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The version that incorporates layer normalization is modified as follows:"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                479,
+                650,
+                494
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\left( \\begin{array}{c} \\mathbf {f} _ {t} \\\\ \\mathbf {i} _ {t} \\\\ \\mathbf {o} _ {t} \\\\ \\mathbf {g} _ {t} \\end{array} \\right) = L N (\\mathbf {W} _ {h} \\mathbf {h} _ {t - 1}; \\boldsymbol {\\alpha} _ {1}, \\boldsymbol {\\beta} _ {1}) + L N (\\mathbf {W} _ {x} \\mathbf {x} _ {t}; \\boldsymbol {\\alpha} _ {2}, \\boldsymbol {\\beta} _ {2}) + b\\tag{20}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/1458e1253daeb7668780c7ad27e9a577f64780a627cf401295569195ee50cfec.jpg"
+                }
+            },
+            "bbox": [
+                289,
+                505,
+                714,
+                560
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\mathbf {c} _ {t} = \\sigma (\\mathbf {f} _ {t}) \\odot \\mathbf {c} _ {t - 1} + \\sigma (\\mathbf {i} _ {t}) \\odot \\tanh (\\mathbf {g} _ {t})\\tag{21}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/7e33083532b0ea2ca507bf55cade1e577fd5fcaeedff59feb6d12297e26908c5.jpg"
+                }
+            },
+            "bbox": [
+                313,
+                564,
+                594,
+                580
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\mathbf {h} _ {t} = \\sigma (\\mathbf {o} _ {t}) \\odot \\tanh (L N (\\mathbf {c} _ {t}; \\boldsymbol {\\alpha} _ {3}, \\boldsymbol {\\beta} _ {3}))\\tag{22}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/08ebe7d5133342f730d24d027cfde8b44530515bfae3a41b4724e2d9040e55df.jpg"
+                }
+            },
+            "bbox": [
+                313,
+                580,
+                584,
+                598
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\alpha _ { i } , \\beta _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "are the additive and multiplicative parameters, respectively. Each "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\alpha _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is initialized to a vector of zeros and each "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\beta _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is initialized to a vector of ones."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                608,
+                825,
+                636
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Order embeddings and skip-thoughts"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                654,
+                437,
+                669
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "These experiments utilize a variant of gated recurrent unit which is defined as follows:"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                679,
+                738,
+                694
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\binom{\\mathbf {z} _ {t}}{\\mathbf {r} _ {t}} = \\mathbf {W} _ {h} \\mathbf {h} _ {t - 1} + \\mathbf {W} _ {x} \\mathbf {x} _ {t}\\tag{23}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/81f17b95a499a5657b66e2492ed15e0833846ce52baea899c70d55caeee864f1.jpg"
+                }
+            },
+            "bbox": [
+                351,
+                704,
+                563,
+                736
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "{\\hat {\\mathbf {h}} _ {t}} = {\\tanh (\\mathbf {W} \\mathbf {x} _ {t} + \\sigma (\\mathbf {r} _ {t}) \\odot (\\mathbf {U h} _ {t - 1}))}\\tag{24}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/d5b1098b7fdb275b26eb928cb635c185918be7e1cd03aed21d3eac60eb8cc674.jpg"
+                }
+            },
+            "bbox": [
+                370,
+                739,
+                650,
+                758
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "{\\mathbf {h} _ {t}} = {(1 - \\sigma (\\mathbf {z} _ {t})) \\mathbf {h} _ {t - 1} + \\sigma (\\mathbf {z} _ {t}) \\hat {\\mathbf {h}} _ {t}}\\tag{25}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/335135333f5fa502ea50821896ce39d9b35284ad15cbc3f031bc6511c0f2eb80.jpg"
+                }
+            },
+            "bbox": [
+                370,
+                761,
+                620,
+                777
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Layer normalization is applied as follows:"
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                787,
+                452,
+                803
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\binom{\\mathbf {z} _ {t}}{\\mathbf {r} _ {t}} = L N (\\mathbf {W} _ {h} \\mathbf {h} _ {t - 1}; \\boldsymbol {\\alpha} _ {1}, \\boldsymbol {\\beta} _ {1}) + L N (\\mathbf {W} _ {x} \\mathbf {x} _ {t}; \\boldsymbol {\\alpha} _ {2}, \\boldsymbol {\\beta} _ {2})\\tag{26}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/e0256eb575bc009696904dd382c48978c3d257e792048c93300e6e7a8c6594c4.jpg"
+                }
+            },
+            "bbox": [
+                267,
+                813,
+                658,
+                845
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\hat {\\mathbf {h}} _ {t} = \\tanh (L N (\\mathbf {W x} _ {t}; \\boldsymbol {\\alpha} _ {3}, \\boldsymbol {\\beta} _ {3}) + \\sigma (\\mathbf {r} _ {t}) \\odot L N (\\mathbf {U h} _ {t - 1}; \\boldsymbol {\\alpha} _ {4}, \\boldsymbol {\\beta} _ {4}))\\tag{27}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/b9aa23c2a09447704032257219f58a6e48c375163757f757e046028166d08d81.jpg"
+                }
+            },
+            "bbox": [
+                285,
+                849,
+                733,
+                867
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "{\\mathbf {h} _ {t}} = {(1 - \\sigma (\\mathbf {z} _ {t})) \\mathbf {h} _ {t - 1} + \\sigma (\\mathbf {z} _ {t}) \\hat {\\mathbf {h}} _ {t}}\\tag{28}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/32b13e31b856d0720b7553b5d2d2d00eed36c7396574f846b410daa225c99f0a.jpg"
+                }
+            },
+            "bbox": [
+                285,
+                869,
+                537,
+                887
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "just as before, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\alpha _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is initialized to a vector of zeros and each "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\beta _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is initialized to a vector of ones."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                897,
+                795,
+                912
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                490,
+                935,
+                509,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Modeling binarized MNIST using DRAW"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                90,
+                465,
+                107
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The layer norm is only applied to the output of the LSTM hidden states in this experiment:"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                114,
+                767,
+                130
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The version that incorporates layer normalization is modified as follows:"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                135,
+                651,
+                150
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\left( \\begin{array}{c} \\mathbf {f} _ {t} \\\\ \\mathbf {i} _ {t} \\\\ \\mathbf {o} _ {t} \\\\ \\mathbf {g} _ {t} \\end{array} \\right) = \\mathbf {W} _ {h} \\mathbf {h} _ {t - 1} + \\mathbf {W} _ {x} \\mathbf {x} _ {t} + b\\tag{29}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/2ac35ce4692dbb8db3ac802a012b3269582879d4d96f1c53c273f89070723f2b.jpg"
+                }
+            },
+            "bbox": [
+                348,
+                152,
+                593,
+                209
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "{\\mathbf {c} _ {t}} = {\\sigma (\\mathbf {f} _ {t}) \\odot \\mathbf {c} _ {t - 1} + \\sigma (\\mathbf {i} _ {t}) \\odot \\tanh (\\mathbf {g} _ {t})}\\tag{30}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/d3a20d7a006fdb74044c8a18082365b07eb02096a3224c9bbdc8f88623d5f5a5.jpg"
+                }
+            },
+            "bbox": [
+                374,
+                212,
+                653,
+                229
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\mathbf {h} _ {t} = \\sigma (\\mathbf {o} _ {t}) \\odot \\tanh (L N (\\mathbf {c} _ {t}; \\boldsymbol {\\alpha}, \\boldsymbol {\\beta}))\\tag{31}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/57ec961148c8e2536e4adc45e0f7853ede7176c697c2a7f51a8d8bc5225f373f.jpg"
+                }
+            },
+            "bbox": [
+                372,
+                229,
+                627,
+                244
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\alpha , \\beta"
+                    },
+                    {
+                        "type": "text",
+                        "content": "are the additive and multiplicative parameters, respectively. α is initialized to a vector of zeros and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\beta"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is initialized to a vector of ones."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                248,
+                823,
+                276
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Learning the magnitude of incoming weights"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                289,
+                488,
+                305
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We now compare how gradient descent updates changing magnitude of the equivalent weights between the normalized GLM and original parameterization. The magnitude of the weights are explicitly parameterized using the gain parameter in the normalized model. Assume there is a gradient update that changes norm of the weight vectors by "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\delta _ { g }"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". We can project the gradient updates to the weight vector for the normal GLM. The KL metric, ie how much the gradient update changes the model prediction, for the normalized model depends only on the magnitude of the prediction error. Specifically,"
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                313,
+                825,
+                410
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "under batch normalization:"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                415,
+                352,
+                429
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "d s ^ {2} = \\frac {1}{2} \\operatorname{vec} ([ 0, 0, \\delta_ {g} ] ^ {\\top}) ^ {\\top} \\bar {F} (\\operatorname{vec} ([ W, \\mathbf {b}, \\mathbf {g} ] ^ {\\top}) \\operatorname{vec} ([ 0, 0, \\delta_ {g} ] ^ {\\top}) = \\frac {1}{2} \\delta_ {g} ^ {\\top} \\underset {\\mathbf {x} \\sim P (\\mathbf {x})} {\\mathbb {E}} \\left[ \\frac {\\operatorname{Cov} [ \\mathbf {y} | \\mathbf {x} ]}{\\phi^ {2}} \\right] \\delta_ {g}.\\tag{32}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/77e7454cc4bdb832c0d3483c4d4b2c133f7b1888dffe029daeaa83dc6e29a07f.jpg"
+                }
+            },
+            "bbox": [
+                187,
+                431,
+                807,
+                464
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Under layer normalization:"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                489,
+                354,
+                503
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{r l} & {d s ^ {2} = \\frac {1}{2} \\operatorname{vec} ([ 0, 0, \\delta_ {g} ] ^ {\\top}) ^ {\\top} \\bar {F} (\\operatorname{vec} ([ W, \\mathbf {b}, \\mathbf {g} ] ^ {\\top}) \\operatorname{vec} ([ 0, 0, \\delta_ {g} ] ^ {\\top})} \\\\ & {\\qquad = \\frac {1}{2} \\delta_ {g} ^ {\\top} \\frac {1}{\\phi^ {2}} \\underset {\\mathbf {x} \\sim P (\\mathbf {x})} {\\mathbb {E}} \\left[ \\begin{array}{c c c} \\operatorname{Cov} (y _ {1}, y _ {1} \\mid \\mathbf {x}) \\frac {(a _ {1} - \\mu) ^ {2}}{\\sigma^ {2}} & \\dots & \\operatorname{Cov} (y _ {1}, y _ {H} \\mid \\mathbf {x}) \\frac {(a _ {1} - \\mu) (a _ {H} - \\mu)}{\\sigma^ {2}} \\\\ \\vdots & \\ddots & \\vdots \\\\ \\operatorname{Cov} (y _ {H}, y _ {1} \\mid \\mathbf {x}) \\frac {(a _ {H} - \\mu) (a _ {1} - \\mu)}{\\sigma^ {2}} & \\dots & \\operatorname{Cov} (y _ {H}, y _ {H} \\mid \\mathbf {x}) \\frac {(a _ {H} - \\mu) ^ {2}}{\\sigma^ {2}} \\end{array} \\right] \\delta_ {g}} \\end{array}\\tag{33}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/bd24954a0a4cfaf33922a069c8c56c105f0a0714910e32db6d2fd667379270eb.jpg"
+                }
+            },
+            "bbox": [
+                183,
+                506,
+                812,
+                604
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Under weight normalization:"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                628,
+                364,
+                643
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{c} d s ^ {2} = \\frac {1}{2} \\operatorname{vec} ([ 0, 0, \\delta_ {g} ] ^ {\\top}) ^ {\\top} \\bar {F} (\\operatorname{vec} ([ W, \\mathbf {b}, \\mathbf {g} ] ^ {\\top}) \\operatorname{vec} ([ 0, 0, \\delta_ {g} ] ^ {\\top}) \\\\ = \\frac {1}{2} \\delta_ {g} ^ {\\top} \\frac {1}{\\phi^ {2}} \\underset {\\mathbf {x} \\sim P (\\mathbf {x})} {\\mathbb {E}} \\left[ \\begin{array}{c c c} \\operatorname{Cov} (y _ {1}, y _ {1}   |   \\mathbf {x}) \\frac {a _ {1} ^ {2}}{\\| w _ {1} \\| _ {2} ^ {2}} & \\dots & \\operatorname{Cov} (y _ {1}, y _ {H}   |   \\mathbf {x}) \\frac {a _ {1} a _ {H}}{\\| w _ {1} \\| _ {2} \\| w _ {H} \\| _ {2}} \\\\ \\vdots & \\ddots & \\vdots \\\\ \\operatorname{Cov} (y _ {H}, y _ {1}   |   \\mathbf {x}) \\frac {a _ {H} a _ {1}}{\\| w _ {H} \\| _ {2} \\| w _ {1} \\| _ {2}} & \\dots & \\operatorname{Cov} (y _ {H}, y _ {H}   |   \\mathbf {x}) \\frac {a _ {H} ^ {2}}{\\| w _ {H} \\| _ {2} ^ {2}} \\end{array} \\right] \\delta_ {g}. \\end{array}\\tag{34}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/59164682df6c07a204e1705c9dd58554102b86010c3064feeae095ef75a6ed01.jpg"
+                }
+            },
+            "bbox": [
+                179,
+                647,
+                787,
+                750
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Whereas, the KL metric in the standard GLM is related to its activities "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "a _ { i } = w _ { i } ^ { \\top } { \\bf x } ."
+                    },
+                    {
+                        "type": "text",
+                        "content": ", that is depended on both its current weights and input data. We project the gradient updates to the gain parameter "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\delta _ { g } i"
+                    },
+                    {
+                        "type": "text",
+                        "content": "of the "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "i ^ { t h }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "neuron to its weight vector as "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\delta _ { g i } \\frac { w _ { i } } { \\lVert w _ { i } \\rVert _ { 2 } }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "in the standard GLM model:"
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                752,
+                825,
+                797
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{l} \\frac {1}{2} \\operatorname{vec} \\left(\\left[ \\delta_ {g i} \\frac {w _ {i}}{\\| w _ {i} \\| _ {2}}, 0, \\delta_ {g j} \\frac {w _ {j}}{\\| w _ {i} \\| _ {2}}, 0 \\right] ^ {\\top}\\right) ^ {\\top} F \\left(\\left[ w _ {i} ^ {\\top}, b _ {i}, w _ {j} ^ {\\top}, b _ {j} \\right] ^ {\\top}\\right) \\operatorname{vec} \\left(\\left[ \\delta_ {g i} \\frac {w _ {i}}{\\| w _ {i} \\| _ {2}}, 0, \\delta_ {g j} \\frac {w _ {j}}{\\| w _ {j} \\| _ {2}}, 0 \\right] ^ {\\top}\\right) \\\\ = \\frac {\\delta_ {g i} \\delta_ {g j}}{2 \\phi^ {2}} \\underset {\\mathbf {x} \\sim P (\\mathbf {x})} {\\mathbb {E}} \\left[ \\operatorname{Cov} \\left(y _ {i}, y _ {j} \\mid \\mathbf {x}\\right) \\frac {a _ {i} a _ {j}}{\\| w _ {i} \\| _ {2} \\| w _ {j} \\| _ {2}} \\right] \\end{array} \\tag {35}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/3d0286321132a4889c4cf6872add208ef6c25861d7865b68e744efdca12ff6ab.jpg"
+                }
+            },
+            "bbox": [
+                186,
+                803,
+                818,
+                871
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The batch normalized and layer normalized models are therefore more robust to the scaling of the input and its parameters than the standard model."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                880,
+                823,
+                909
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                490,
+                935,
+                509,
+                946
+            ]
+        }
+    ]
+]

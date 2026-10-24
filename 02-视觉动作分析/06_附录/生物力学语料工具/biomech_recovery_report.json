@@ -1,0 +1,1293 @@
+{
+  "policy": "仅官方 OA 与作者公开预印本；不绕付费墙、不破反爬",
+  "items": [
+    {
+      "title": "The accuracy of markerless motion capture combined with computer vision techniques for measuring running kinematics",
+      "thread": "B1",
+      "doi": "10.1111/sms.14319",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "A new kinematic model of the upper extremity based on functional joint parameter determination for shoulder and elbow",
+      "thread": "B1",
+      "doi": "10.1016/j.gaitpost.2009.07.111",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "AN EXTENSION TO THE ISB WRIST JOINT COORDINATE SYSTEM: AN IN VITRO ACCURACY STUDY",
+      "thread": "B1",
+      "doi": "10.1016/s0021-9290(07)70188-4",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "BIOMECHANICS OF PRONATION AND SUPINATION OF THE FOREARM",
+      "thread": "B1",
+      "doi": "10.1016/s0749-0712(21)00605-3",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Comparison of shoulder kinematics between Theia 3D markerless motion capture and marker-based motion capture during full arm ranges of motion",
+      "thread": "B1",
+      "doi": "10.1016/j.jbiomech.2025.112905",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Accuracy, Validity, and Reliability of Markerless Camera-Based 3D Motion Capture Systems versus Marker-Based 3D Motion Capture Systems in Gait Analysis: A Systematic Review and Meta-Analysis",
+      "thread": "B1",
+      "doi": "10.3390/s24113686",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": true,
+          "note": "EuropePMC pmcid=PMC11175331 src=MED isOA=Y"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "recovered",
+      "note": "",
+      "pmc_xml": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11175331/fullTextXML",
+      "recovered_via": "europepmc_fulltext_xml",
+      "path": "B1_视觉运动学_估计与验证方法学/Accuracy, Validity, and Reliability of Markerless Camera-Bas.xml",
+      "bytes": 299446
+    },
+    {
+      "title": "Accuracy of a markerless motion capture system in estimating upper extremity kinematics during boxing",
+      "thread": "B1",
+      "doi": "10.3389/fspor.2022.939980",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": true,
+          "note": "EuropePMC pmcid=PMC9357930 src=MED isOA=Y"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "recovered",
+      "note": "",
+      "pmc_xml": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9357930/fullTextXML",
+      "recovered_via": "europepmc_fulltext_xml",
+      "path": "B1_视觉运动学_估计与验证方法学/Accuracy of a markerless motion capture system in estimating.xml",
+      "bytes": 101416
+    },
+    {
+      "title": "Analysis of Upper-Limb and Trunk Kinematic Variability: Accuracy and Reliability of an RGB-D Sensor",
+      "thread": "B1",
+      "doi": "10.3390/mti4020014",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Accuracy evaluation of two markerless motion capture systems for measurement of upper extremities: Kinect V2 and Captiv",
+      "thread": "B1",
+      "doi": "10.1002/hfm.20840",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Accuracy of biplane videoradiography for quantifying dynamic wrist kinematics",
+      "thread": "B1",
+      "doi": "10.1016/j.jbiomech.2019.05.040",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=PMC6612458 src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "A Comparative Study of Markerless Systems Based on Color-Depth Cameras, Polymer Optical Fiber Curvature Sensors, and Inertial Measurement Units: Towards Increasing the Accuracy in Joint Angle Estimation",
+      "thread": "B1",
+      "doi": "10.3390/electronics8020173",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "SHOULDER AND ELBOW JOINT ANGLE ESTIMATION FOR UPPER LIMB REHABILITATION TASKS USING LOW-COST INERTIAL AND OPTICAL SENSORS",
+      "thread": "B1",
+      "doi": "10.1142/s0219519417500312",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Validity and reliability of Kinect skeleton for measuring shoulder joint angles: a feasibility study",
+      "thread": "B1",
+      "doi": "10.1016/j.physio.2015.02.002",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=PMC4600010 src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Accuracy and repeatability of joint angles measured using a single camera markerless motion capture system",
+      "thread": "B1",
+      "doi": "10.1016/j.jbiomech.2013.11.031",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Mechanism of limitation of pronation/supination of the forearm in geometric models of deformities of the forearm bones",
+      "thread": "B1",
+      "doi": "10.1016/s0268-0033(02)00034-7",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Comparison and Reliability of Three Goniometric Methods for Measuring Forearm Supination and Pronation",
+      "thread": "B1",
+      "doi": "10.2466/pms.2001.93.2.353",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Flexible and static wrist units in upper limb prosthesis users: functionality scores, user satisfaction and compensatory movements",
+      "thread": "B1",
+      "doi": "10.1186/s12984-016-0130-0",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": true,
+          "note": "EuropePMC pmcid=PMC4791860 src=MED isOA=Y"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "recovered",
+      "note": "",
+      "pmc_xml": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4791860/fullTextXML",
+      "recovered_via": "europepmc_fulltext_xml",
+      "path": "B1_视觉运动学_估计与验证方法学/Flexible and static wrist units in upper limb prosthesis use.xml",
+      "bytes": 103019
+    },
+    {
+      "title": "Limited Forearm Motion Compensated by Thoracohumeral Kinematics When Performing Tasks Requiring Pronation and Supination",
+      "thread": "B1",
+      "doi": "10.1123/jab.28.2.127",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Exoskeleton for forearm pronation and supination rehabilitation",
+      "thread": "B1",
+      "doi": "10.1109/iembs.2004.1403778",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "The moment arms of the muscles spanning the glenohumeral joint: a systematic review",
+      "thread": "B2",
+      "doi": "10.1111/joa.12903",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Simulation of human movement: applications using OpenSim",
+      "thread": "B2",
+      "doi": "10.1016/j.piutam.2011.04.019",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Muscle synergies as a predictive framework for the EMG patterns of new hand postures",
+      "thread": "B2",
+      "doi": "10.1088/1741-2560/6/3/036004",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=PMC3151158 src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Validity of muscle activation estimated with predicted ground reaction force in inverse dynamics based musculoskeletal simulation during gait",
+      "thread": "B2",
+      "doi": "10.1016/j.jbiomech.2024.112118",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Computational performance of musculoskeletal simulation in <scp>OpenSim Moco</scp> using parallel computing",
+      "thread": "B2",
+      "doi": "10.1002/cnm.3777",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Predictive multibody dynamic simulation of human neuromusculoskeletal systems: a review",
+      "thread": "B2",
+      "doi": "10.1007/s11044-022-09852-x",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Evaluation of Direct Collocation Optimal Control Problem Formulations for Solving the Muscle Redundancy Problem",
+      "thread": "B2",
+      "doi": "10.1007/s10439-016-1591-9",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": true,
+          "note": "EuropePMC pmcid=PMC5043004 src=MED isOA=Y"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "fetch_failed",
+      "note": "not_xml",
+      "pmc_xml": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5043004/fullTextXML"
+    },
+    {
+      "title": "Inverse Estimation of Multiple Muscle Activations From Joint Moment With Muscle Synergy Extraction",
+      "thread": "B2",
+      "doi": "10.1109/jbhi.2014.2342274",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "A Probabilistic Approach to Quantify the Impact of Uncertainty Propagation in Musculoskeletal Simulations",
+      "thread": "B2",
+      "doi": "10.1007/s10439-014-1181-7",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=PMC4454420 src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "A multibody biomechanical model of the upper limb including the shoulder girdle",
+      "thread": "B2",
+      "doi": "10.1007/s11044-011-9297-0",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Development of a comprehensive musculoskeletal model of the shoulder and elbow",
+      "thread": "B2",
+      "doi": "10.1007/s11517-011-0839-7",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": true,
+          "note": "EuropePMC pmcid=PMC3223593 src=MED isOA=Y"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "recovered",
+      "note": "",
+      "pmc_xml": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3223593/fullTextXML",
+      "recovered_via": "europepmc_fulltext_xml",
+      "path": "B2_肌肉骨骼动力学_与可微仿真/Development of a comprehensive musculoskeletal model of the.xml",
+      "bytes": 115601
+    },
+    {
+      "title": "Implicit methods for efficient musculoskeletal simulation and optimal control",
+      "thread": "B2",
+      "doi": "10.1016/j.piutam.2011.04.027",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=PMC3217276 src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "A Real-Time, 3-D Musculoskeletal Model for Dynamic Simulation of Arm Movements",
+      "thread": "B2",
+      "doi": "10.1109/tbme.2008.2005946",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=PMC2971671 src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Estimation of Muscle Forces and Joint Moments Using a Forward-Inverse Dynamics Model",
+      "thread": "B2",
+      "doi": "10.1249/01.mss.0000176684.24008.6f",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Moment arms and lengths of human upper limb muscles as functions of joint angles",
+      "thread": "B2",
+      "doi": "10.1016/0021-9290(96)00031-0",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Muscle coordination retraining inspired by musculoskeletal simulations reduces knee contact force",
+      "thread": "B2",
+      "doi": "10.1038/s41598-022-13386-9",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": true,
+          "note": "EuropePMC pmcid=PMC9262899 src=MED isOA=Y"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "fetch_failed",
+      "note": "not_xml",
+      "pmc_xml": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9262899/fullTextXML"
+    },
+    {
+      "title": "Neuro-musculoskeletal simulation of instrumented contracture and spasticity assessment in children with cerebral palsy",
+      "thread": "B2",
+      "doi": "10.1186/s12984-016-0170-5",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": true,
+          "note": "EuropePMC pmcid=PMC4947289 src=MED isOA=Y"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "fetch_failed",
+      "note": "not_xml",
+      "pmc_xml": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4947289/fullTextXML"
+    },
+    {
+      "title": "Robot-Assisted Therapy for Upper Extremity Motor Impairment After Stroke: A Systematic Review and Meta-Analysis",
+      "thread": "B3",
+      "doi": "10.1093/ptj/pzab010",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Wearable technology in stroke rehabilitation: towards improved diagnosis and treatment of upper-limb motor impairment",
+      "thread": "B3",
+      "doi": "10.1186/s12984-019-0612-y",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": true,
+          "note": "EuropePMC pmcid=PMC6862815 src=MED isOA=Y"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "recovered",
+      "note": "",
+      "pmc_xml": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6862815/fullTextXML",
+      "recovered_via": "europepmc_fulltext_xml",
+      "path": "B3_上肢康复_代偿与临床评估/Wearable technology in stroke rehabilitation_ towards improv.xml",
+      "bytes": 216341
+    },
+    {
+      "title": "A clinically feasible kinematic assessment method of upper extremity motor function impairment after stroke",
+      "thread": "B3",
+      "doi": "10.1016/j.measurement.2015.11.026",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Wrist kinematics differ in expert and novice tennis players performing the backhand stroke: Implications for tennis elbow",
+      "thread": "B3",
+      "doi": "10.1016/0021-9290(94)90062-0",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Kinematics and Kinetics of Shoulder Complex, Elbow, and Wrist",
+      "thread": "B3",
+      "doi": "10.1007/978-981-16-4991-2_8",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Vision-based Automatic Detection of Compensatory Postures of after-Stroke Patients During Upper-extremity Robot-assisted Rehabilitation: A Pilot Study in Reaching Movement",
+      "thread": "B3",
+      "doi": "10.1109/icaretech49914.2020.00019",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Determining Levels of Upper Extremity Movement Impairment by Applying a Cluster Analysis to the Fugl-Meyer Assessment of the Upper Extremity in Chronic Stroke",
+      "thread": "B3",
+      "doi": "10.1016/j.apmr.2016.06.023",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=PMC5299057 src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Kinematic Analysis of the Upper Limb Motor Strategies in Stroke Patients as a Tool towards Advanced Neurorehabilitation Strategies: A Preliminary Study",
+      "thread": "B3",
+      "doi": "10.1155/2014/636123",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": true,
+          "note": "EuropePMC pmcid=PMC4017871 src=MED isOA=Y"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "fetch_failed",
+      "note": "not_xml",
+      "pmc_xml": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4017871/fullTextXML"
+    },
+    {
+      "title": "Kinematic Data Analysis for Post-Stroke Patients Following Bilateral Versus Unilateral Rehabilitation With an Upper Limb Wearable Robotic System",
+      "thread": "B3",
+      "doi": "10.1109/tnsre.2012.2207462",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Kinematic and Clinical Analyses of Upper-Extremity Movements After Constraint-Induced Movement Therapy in Patients With Stroke: A Randomized Controlled Trial",
+      "thread": "B3",
+      "doi": "10.1016/j.apmr.2007.05.012",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Motor compensation and recovery for reaching in stroke patients",
+      "thread": "B3",
+      "doi": "10.1034/j.1600-0404.2003.00021.x",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Thoracic position effect on shoulder range of motion, strength, and three-dimensional scapular kinematics",
+      "thread": "B3",
+      "doi": "10.1016/s0003-9993(99)90088-6",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Masked reconstruction model of latent space vector quantization for human skeleton-based action recognition",
+      "thread": "B4",
+      "doi": "10.1016/j.neucom.2025.132126",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "VQ-HPS: Human Pose and Shape Estimation in a Vector-Quantized Latent Space",
+      "thread": "B4",
+      "doi": "10.1007/978-3-031-72943-0_27",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 预印本 2312.08291v4，标题相似度 1.000 —— 需与正式版核对后方可引用数值"
+        }
+      ],
+      "status": "recovered",
+      "note": "",
+      "preprint_arxiv_id": "2312.08291v4",
+      "preprint_of": "正式版 DOI 10.1007/978-3-031-72943-0_27",
+      "preprint_note": "arXiv 预印本 2312.08291v4，标题相似度 1.000 —— 需与正式版核对后方可引用数值",
+      "preprint_pdf": "https://arxiv.org/pdf/2312.08291v4",
+      "recovered_via": "arxiv_preprint",
+      "path": "B4_离散运动学token_与表征量化/VQ-HPS_ Human Pose and Shape Estimation in a Vector-Quantize.pdf",
+      "bytes": 16544290
+    },
+    {
+      "title": "Learning Joint Twist Rotation for 3D Human Pose Estimation from a Single Image",
+      "thread": "B4",
+      "doi": "10.5220/0010222703790386",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Learning 3D Human Pose from Structure and Motion",
+      "thread": "B4",
+      "doi": "10.1007/978-3-030-01240-3_41",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 预印本 1711.09250v2，标题相似度 1.000 —— 需与正式版核对后方可引用数值"
+        }
+      ],
+      "status": "recovered",
+      "note": "",
+      "preprint_arxiv_id": "1711.09250v2",
+      "preprint_of": "正式版 DOI 10.1007/978-3-030-01240-3_41",
+      "preprint_note": "arXiv 预印本 1711.09250v2，标题相似度 1.000 —— 需与正式版核对后方可引用数值",
+      "preprint_pdf": "https://arxiv.org/pdf/1711.09250v2",
+      "recovered_via": "arxiv_preprint",
+      "path": "B4_离散运动学token_与表征量化/Learning 3D Human Pose from Structure and Motion.pdf",
+      "bytes": 4820767
+    },
+    {
+      "title": "Machine Learning for Optical Motion Capture-Driven Musculoskeletal Modelling from Inertial Motion Capture Data",
+      "thread": "B5",
+      "doi": "10.3390/bioengineering10050510",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": true,
+          "note": "EuropePMC pmcid=PMC10215337 src=MED isOA=Y"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 预印本 2209.14456v2，标题相似度 1.000 —— 需与正式版核对后方可引用数值"
+        }
+      ],
+      "status": "recovered",
+      "note": "",
+      "pmc_xml": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10215337/fullTextXML",
+      "preprint_arxiv_id": "2209.14456v2",
+      "preprint_of": "正式版 DOI 10.3390/bioengineering10050510",
+      "preprint_note": "arXiv 预印本 2209.14456v2，标题相似度 1.000 —— 需与正式版核对后方可引用数值",
+      "preprint_pdf": "https://arxiv.org/pdf/2209.14456v2",
+      "recovered_via": "europepmc_fulltext_xml",
+      "path": "B5_视觉运动学到动力学_桥接/Machine Learning for Optical Motion Capture-Driven Musculosk.xml",
+      "bytes": 195725
+    },
+    {
+      "title": "Applications and limitations of current markerless motion capture methods for clinical gait biomechanics",
+      "thread": "B5",
+      "doi": "10.7717/peerj.12995",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": true,
+          "note": "EuropePMC pmcid=PMC8884063 src=MED isOA=Y"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "recovered",
+      "note": "",
+      "pmc_xml": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8884063/fullTextXML",
+      "recovered_via": "europepmc_fulltext_xml",
+      "path": "B5_视觉运动学到动力学_桥接/Applications and limitations of current markerless motion ca.xml",
+      "bytes": 189129
+    },
+    {
+      "title": "Towards a Simplified Estimation of Muscle Activation Pattern from MRI and EMG Using Electrical Network and Graph Theory",
+      "thread": "B5",
+      "doi": "10.3390/s20030724",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": true,
+          "note": "EuropePMC pmcid=PMC7038487 src=MED isOA=Y"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "recovered",
+      "note": "",
+      "pmc_xml": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7038487/fullTextXML",
+      "recovered_via": "europepmc_fulltext_xml",
+      "path": "B5_视觉运动学到动力学_桥接/Towards a Simplified Estimation of Muscle Activation Pattern.xml",
+      "bytes": 137056
+    },
+    {
+      "title": "Evaluating Muscle Activation Models for Elbow Motion Estimation",
+      "thread": "B5",
+      "doi": "10.3390/s18041004",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": true,
+          "note": "EuropePMC pmcid=PMC5948752 src=MED isOA=Y"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "recovered",
+      "note": "",
+      "pmc_xml": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5948752/fullTextXML",
+      "recovered_via": "europepmc_fulltext_xml",
+      "path": "B5_视觉运动学到动力学_桥接/Evaluating Muscle Activation Models for Elbow Motion Estimat.xml",
+      "bytes": 176012
+    },
+    {
+      "title": "Continuous estimation of finger joint angles using muscle activation inputs from surface EMG signals",
+      "thread": "B5",
+      "doi": "10.1109/embc.2012.6346535",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": false,
+          "note": "EuropePMC pmcid=— src=MED isOA=N"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "A neural network model for arm trajectory formation using forward and inverse dynamics models",
+      "thread": "B5",
+      "doi": "10.1016/s0893-6080(09)80003-8",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Advancing human pose estimation through interdisciplinary physics-inspired deep learning models",
+      "thread": "B5",
+      "doi": "10.3389/fphy.2025.1558325",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Optimal-state Dynamics Estimation for Physics-based Human Motion Capture from Videos",
+      "thread": "B5",
+      "doi": "10.52202/079017-1382",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 预印本 2410.07795v4，标题相似度 1.000 —— 需与正式版核对后方可引用数值"
+        }
+      ],
+      "status": "recovered",
+      "note": "",
+      "preprint_arxiv_id": "2410.07795v4",
+      "preprint_of": "正式版 DOI 10.52202/079017-1382",
+      "preprint_note": "arXiv 预印本 2410.07795v4，标题相似度 1.000 —— 需与正式版核对后方可引用数值",
+      "preprint_pdf": "https://arxiv.org/pdf/2410.07795v4",
+      "recovered_via": "arxiv_preprint",
+      "path": "B5_视觉运动学到动力学_桥接/Optimal-state Dynamics Estimation for Physics-based Human Mo.pdf",
+      "bytes": 29075164
+    },
+    {
+      "title": "Vision-Based Approximate Estimation of Muscle Activation Patterns for Tele-Impedance",
+      "thread": "B5",
+      "doi": "10.1109/lra.2023.3293275",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "PoseAug: A Differentiable Pose Augmentation Framework for 3D Human Pose Estimation",
+      "thread": "B5",
+      "doi": "10.1109/cvpr46437.2021.00847",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 预印本 2105.02465v1，标题相似度 1.000 —— 需与正式版核对后方可引用数值"
+        }
+      ],
+      "status": "recovered",
+      "note": "",
+      "preprint_arxiv_id": "2105.02465v1",
+      "preprint_of": "正式版 DOI 10.1109/cvpr46437.2021.00847",
+      "preprint_note": "arXiv 预印本 2105.02465v1，标题相似度 1.000 —— 需与正式版核对后方可引用数值",
+      "preprint_pdf": "https://arxiv.org/pdf/2105.02465v1",
+      "recovered_via": "arxiv_preprint",
+      "path": "B5_视觉运动学到动力学_桥接/PoseAug_ A Differentiable Pose Augmentation Framework for 3D.pdf",
+      "bytes": 972735
+    },
+    {
+      "title": "Learning-Based Inverse Dynamics of Human Motion",
+      "thread": "B5",
+      "doi": "10.1109/iccvw.2017.104",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    },
+    {
+      "title": "Scaled Motion Dynamics for Markerless Motion Capture",
+      "thread": "B5",
+      "doi": "10.1109/cvpr.2007.383128",
+      "arxiv_id": "",
+      "routes": [
+        {
+          "via": "europepmc",
+          "is_oa": null,
+          "note": "EuropePMC 无记录"
+        },
+        {
+          "via": "arxiv",
+          "note": "arXiv 无相似预印本"
+        }
+      ],
+      "status": "not_recovered",
+      "note": ""
+    }
+  ]
+}

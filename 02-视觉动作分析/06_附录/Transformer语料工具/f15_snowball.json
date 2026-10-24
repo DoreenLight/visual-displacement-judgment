@@ -1,0 +1,50 @@
+[
+ {
+  "doi": "10.3390/s18092778",
+  "title": "Creating and Exploring Semantic Annotation for Behaviour Analysis",
+  "year": 2018,
+  "venue": "Sensors",
+  "type": "journal-article",
+  "tag": " 符号机制"
+ },
+ {
+  "doi": "10.1145/2948910.2948926",
+  "title": "BalOnSe",
+  "year": 2016,
+  "venue": "Proceedings of the 3rd International Symposium on Movement and Computing",
+  "type": "proceedings-article",
+  "tag": ""
+ },
+ {
+  "doi": "10.1007/978-3-030-02683-7_10",
+  "title": "Ontology-Based Intelligent Security Framework for Smart Video Surveillance",
+  "year": 2018,
+  "venue": "Advances in Intelligent Systems and Computing",
+  "type": "book-chapter",
+  "tag": " 符号机制"
+ },
+ {
+  "doi": "10.1007/978-3-319-09912-5_14",
+  "title": "Body Posture Recognition as a Discovery Problem: A Semantic-Based Framework",
+  "year": 2014,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "tag": " 符号机制"
+ },
+ {
+  "doi": "10.1007/978-3-319-25739-6_14",
+  "title": "Benesh Movement Notation for Humanoid Robots?",
+  "year": 2015,
+  "venue": "Springer Tracts in Advanced Robotics",
+  "type": "book-chapter",
+  "tag": " 符号机制"
+ },
+ {
+  "doi": "10.1007/978-3-319-60045-1_1",
+  "title": "Annotating Movement Phrases in Vietnamese Folk Dance Videos",
+  "year": 2017,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "tag": " 符号机制"
+ }
+]

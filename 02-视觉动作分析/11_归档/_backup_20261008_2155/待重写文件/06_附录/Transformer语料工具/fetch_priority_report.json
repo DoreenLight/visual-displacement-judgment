@@ -1,0 +1,88 @@
+{
+  "dest": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/生物力学线/_优先件",
+  "requested": 10,
+  "ok": 10,
+  "failed": 0,
+  "items": [
+    {
+      "arxiv_id": "2402.17192",
+      "status": "ok",
+      "path": "_优先件/2402.17192.pdf",
+      "bytes": 3567018,
+      "url": "https://arxiv.org/pdf/2402.17192",
+      "reason": "ok"
+    },
+    {
+      "arxiv_id": "2411.14992",
+      "status": "ok",
+      "path": "_优先件/2411.14992.pdf",
+      "bytes": 8882381,
+      "url": "https://arxiv.org/pdf/2411.14992",
+      "reason": "ok"
+    },
+    {
+      "arxiv_id": "2603.26844",
+      "status": "ok",
+      "path": "_优先件/2603.26844.pdf",
+      "bytes": 396936,
+      "url": "https://arxiv.org/pdf/2603.26844",
+      "reason": "ok"
+    },
+    {
+      "arxiv_id": "2609.18667",
+      "status": "ok",
+      "path": "_优先件/2609.18667.pdf",
+      "bytes": 2218844,
+      "url": "https://arxiv.org/pdf/2609.18667",
+      "reason": "ok"
+    },
+    {
+      "arxiv_id": "2607.23608",
+      "status": "ok",
+      "path": "_优先件/2607.23608.pdf",
+      "bytes": 9322550,
+      "url": "https://arxiv.org/pdf/2607.23608",
+      "reason": "ok"
+    },
+    {
+      "arxiv_id": "2607.02796",
+      "status": "ok",
+      "path": "_优先件/2607.02796.pdf",
+      "bytes": 915334,
+      "url": "https://arxiv.org/pdf/2607.02796",
+      "reason": "ok"
+    },
+    {
+      "arxiv_id": "2502.06486",
+      "status": "ok",
+      "path": "_优先件/2502.06486.pdf",
+      "bytes": 1094324,
+      "url": "https://arxiv.org/pdf/2502.06486",
+      "reason": "ok"
+    },
+    {
+      "arxiv_id": "2602.13176",
+      "status": "ok",
+      "path": "_优先件/2602.13176.pdf",
+      "bytes": 2149621,
+      "url": "https://arxiv.org/pdf/2602.13176",
+      "reason": "ok"
+    },
+    {
+      "arxiv_id": "2303.10654",
+      "status": "ok",
+      "path": "_优先件/2303.10654.pdf",
+      "bytes": 1378558,
+      "url": "https://arxiv.org/pdf/2303.10654",
+      "reason": "ok"
+    },
+    {
+      "arxiv_id": "2010.06449",
+      "status": "ok",
+      "path": "_优先件/2010.06449.pdf",
+      "bytes": 1284223,
+      "url": "https://arxiv.org/pdf/2010.06449",
+      "reason": "ok"
+    }
+  ]
+}

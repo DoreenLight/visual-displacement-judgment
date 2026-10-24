@@ -1,0 +1,664 @@
+[
+  {
+    "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4021830/fullTextXML",
+    "requested_pmc": "PMC4021830",
+    "doi": "10.1186/1743-0003-11-64",
+    "title": "Increasing motivation in robot-aided arm rehabilitation with competitive and cooperative gameplay",
+    "journal": "Journal of NeuroEngineering and Rehabilitation",
+    "pub_dates": [
+      {
+        "type": null,
+        "date": "1642014"
+      }
+    ],
+    "licence": "Copyright © 2014 Novak et al.; licensee BioMed Central Ltd.This is an Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by/2.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly credited. The Creative Commons Public Domain Dedication waiver (http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this article, unless otherwise stated.",
+    "abstract": "AbstractBackgroundSeveral strategies have been proposed to improve patient motivation and exercise intensity during robot-aided stroke rehabilitation. One relatively unexplored possibility is two-player gameplay, allowing subjects to compete or cooperate with each other to achieve a common goal. In order to explore the potential of such games, we designed a two-player game played using two ARMin arm rehabilitation robots.MethodsThe game was an air-hockey task displayed on a computer monitor and controlled using shoulder movements in the ARMin robot. Three game modes were tested: single-player (competing against computer), competitive (competing against human), and cooperative (cooperating with human against computer). All modes were played by 30 unimpaired subjects and 8 impaired chronic stroke subjects. The subjects filled out the Intrinsic Motivation Inventory questionnaire after each game mode, as well as a final questionnaire about game preferences and their personality.ResultsNearly all unimpaired subjects preferred playing the two-player game modes to the single-player one, as they enjoyed talking and interacting with another person. However, there were two distinct player groups: one liked the competitive mode but not the cooperative mode while the other liked the cooperative but not the competitive mode. Unimpaired subjects who liked the competitive mode also put significantly more effort into it than into the other modes. Results from impaired subjects were similar, with even impaired subjects over 60 years old enjoying competitive gameplay. The subjects’ personalities roughly predicted which mode they would prefer, which was especially evident in a poorly-matched impaired pair that preferred the single-player mode.ConclusionsResults indicate great potential for two-player rehabilitation games, in the form of greater enjoyment as well as potentially more intensive exercise compared to single-player games. However, the right game type needs to be chosen for each subject depending on skill and personality, along with selecting an appropriate co-player. Further studies with patients that are currently enrolled in rehabilitation programs are recommended, and the subjective measures used in our study should be augmented with objective measures such as electromyography.Keywords: Rehabilitation robotics, Virtual reality, Multiplayer games, Motivation, Social interaction",
+    "body_sections": [
+      {
+        "id": "sec5",
+        "title": "Introduction"
+      },
+      {
+        "id": "sec6",
+        "title": "Motivation and exercise intensity"
+      },
+      {
+        "id": "sec7",
+        "title": "Social interaction"
+      },
+      {
+        "id": "sec8",
+        "title": "Materials and methods"
+      },
+      {
+        "id": "sec9",
+        "title": "Subjects"
+      },
+      {
+        "id": "sec10",
+        "title": "Unimpaired subjects"
+      },
+      {
+        "id": "sec11",
+        "title": "Impaired subjects"
+      },
+      {
+        "id": "sec12",
+        "title": "Rehabilitation robots"
+      },
+      {
+        "id": "sec13",
+        "title": "Game"
+      },
+      {
+        "id": "sec14",
+        "title": "Study protocol"
+      },
+      {
+        "id": "sec15",
+        "title": "Questionnaires"
+      },
+      {
+        "id": "sec16",
+        "title": "Experience with last game mode"
+      },
+      {
+        "id": "sec17",
+        "title": "Overall game experience"
+      },
+      {
+        "id": "sec18",
+        "title": "Personality"
+      },
+      {
+        "id": "sec19",
+        "title": "Data analysis"
+      },
+      {
+        "id": "sec20",
+        "title": "Unimpaired subjects"
+      },
+      {
+        "id": "sec21",
+        "title": "Impaired subjects"
+      },
+      {
+        "id": "sec22",
+        "title": "Results"
+      },
+      {
+        "id": "sec23",
+        "title": "Unimpaired subjects"
+      },
+      {
+        "id": "sec24",
+        "title": "Game scores"
+      },
+      {
+        "id": "sec25",
+        "title": "Favorite game modes"
+      },
+      {
+        "id": "sec26",
+        "title": "Motivation in different game modes"
+      },
+      {
+        "id": "sec27",
+        "title": "Effects of personality"
+      },
+      {
+        "id": "sec28",
+        "title": "Predicting the preferred game mode"
+      },
+      {
+        "id": "sec29",
+        "title": "Impaired subjects"
+      },
+      {
+        "id": "sec30",
+        "title": "General observations"
+      },
+      {
+        "id": "sec31",
+        "title": "Pair 1"
+      },
+      {
+        "id": "sec32",
+        "title": "Pair 2"
+      },
+      {
+        "id": "sec33",
+        "title": "Pair 3"
+      },
+      {
+        "id": "sec34",
+        "title": "Pair 4"
+      },
+      {
+        "id": "sec35",
+        "title": "Discussion"
+      },
+      {
+        "id": "sec36",
+        "title": "Effect of game modes on motivation"
+      },
+      {
+        "id": "sec37",
+        "title": "Unimpaired subjects"
+      },
+      {
+        "id": "sec38",
+        "title": "Impaired subjects"
+      },
+      {
+        "id": "sec39",
+        "title": "Measuring motivation"
+      },
+      {
+        "id": "sec40",
+        "title": "Future game design possibilities"
+      },
+      {
+        "id": "sec41",
+        "title": "Improvements to the current game"
+      },
+      {
+        "id": "sec42",
+        "title": "Different two-player game concepts"
+      },
+      {
+        "id": "sec43",
+        "title": "Different patient populations"
+      },
+      {
+        "id": "sec44",
+        "title": "Online gameplay and alternative input devices"
+      },
+      {
+        "id": "sec45",
+        "title": "Conclusions"
+      },
+      {
+        "id": "sec46",
+        "title": "Consent"
+      },
+      {
+        "id": "sec47",
+        "title": "Competing interests"
+      },
+      {
+        "id": "sec48",
+        "title": "Authors’ contributions"
+      },
+      {
+        "id": "sec49",
+        "title": "Supplementary Material"
+      },
+      {
+        "id": "_ci93_",
+        "title": "Contributor Information"
+      },
+      {
+        "id": "sec50",
+        "title": "Acknowledgments"
+      },
+      {
+        "id": "ref-list1",
+        "title": "References"
+      },
+      {
+        "id": "ref-list1_sec2",
+        "title": ""
+      },
+      {
+        "id": "_ad93_",
+        "title": "Associated Data"
+      },
+      {
+        "id": "_adsm93_",
+        "title": "Supplementary Materials"
+      }
+    ],
+    "selected_paragraphs": [
+      {
+        "paragraph_index": 3,
+        "section": "Results",
+        "section_id": "sec3",
+        "text": "Nearly all unimpaired subjects preferred playing the two-player game modes to the single-player one, as they enjoyed talking and interacting with another person. However, there were two distinct player groups: one liked the competitive mode but not the cooperative mode while the other liked the cooperative but not the competitive mode. Unimpaired subjects who liked the competitive mode also put significantly more effort into it than into the other modes. Results from impaired subjects were similar, with even impaired subjects over 60 years old enjoying competitive gameplay. The subjects’ personalities roughly predicted which mode they would prefer, which was especially evident in a poorly-matched impaired pair that preferred the single-player mode.",
+        "priority": 0
+      },
+      {
+        "paragraph_index": 6,
+        "section": "Motivation and exercise intensity",
+        "section_id": "sec6",
+        "text": "Robots are being increasingly investigated in motor rehabilitation due to the limitations of conventional therapeutic approaches. One of the main application areas has been stroke rehabilitation, where multicenter clinical trials have shown that robots can achieve long-term results comparable to exercise with a therapist [1,2]. Furthermore, robot-aided rehabilitation is frequently combined with virtual reality. The reasoning for this is twofold. First, virtual reality enables a varied range of tasks that can be trained in a short time. Second, virtual reality may be able to increase patient motivation, which has been described by professionals as an important determinant of rehabilitation outcome [3].",
+        "priority": 0
+      },
+      {
+        "paragraph_index": 7,
+        "section": "Motivation and exercise intensity",
+        "section_id": "sec6",
+        "text": "Training with a combination of robot and virtual reality leads to better rehabilitation outcome than using only a robot [4,5] and may also lead to better outcome than equal doses of conventional therapy [6]. However, as noted by a recent Cochrane review [6], it is not clear which characteristics of a virtual environment are important for stroke rehabilitation. One important aspect are automated difficulty adaptation algorithms, which attempt to maximize the long-term exercise intensity [7-9]. More intensive exercise is more likely to speed up functional recovery after stroke [10], and studies of robot-aided stroke rehabilitation have shown that the robot can outperform usual care but not intensive manual therapy [1].",
+        "priority": 0
+      },
+      {
+        "paragraph_index": 8,
+        "section": "Motivation and exercise intensity",
+        "section_id": "sec6",
+        "text": "Aside from difficulty adaptation algorithms, studies have also attempted to improve motivation in stroke rehabilitation using elements such as audiovisual elements, score displays and cognitive challenges [8,11]. The stated reasoning has been that patients motivated in this way will be willing to continue exercising for longer periods, increasing the total amount of exercise. This is supported by research in other fields of physical therapy, where patients who receive additional motivation interventions exhibit better compliance with therapy regimens [12].",
+        "priority": 0
+      },
+      {
+        "paragraph_index": 9,
+        "section": "Motivation and exercise intensity",
+        "section_id": "sec6",
+        "text": "The general agreement in the stroke rehabilitation literature is that virtual reality should serve as a tool to increase motivation and exercise intensity, whether directly using difficulty adaptation or indirectly through elements that make patients willing to exercise for longer periods of time. In this paper, we will focus on one approach that is still underutilized in rehabilitation robotics: the element of social interaction.",
+        "priority": 0
+      },
+      {
+        "paragraph_index": 60,
+        "section": "Motivation in different game modes",
+        "section_id": "sec26",
+        "text": "The initial Friedman tests over all 30 subjects found an effect on game mode on all four IMI scales, as shown in Table 4. Results for only competitive and for only cooperative subjects are shown as box plots in Figure 3.",
+        "priority": 0
+      },
+      {
+        "paragraph_index": 61,
+        "section": "Motivation in different game modes",
+        "section_id": "sec26",
+        "text": "Overall Intrinsic Motivation Inventory results for unimpaired subjects",
+        "priority": 0
+      },
+      {
+        "paragraph_index": 63,
+        "section": "Motivation in different game modes",
+        "section_id": "sec26",
+        "text": "IMI scores in the three game modes. Results are split into subjects who favored the competitive mode (N = 15) and subjects who favored the cooperative mode (N = 13). Significant differences are shown with p-values. Subfigures represent the four different IMI scales.",
+        "priority": 0
+      },
+      {
+        "paragraph_index": 64,
+        "section": "Motivation in different game modes",
+        "section_id": "sec26",
+        "text": "In-game motivation was also correlated with the score achieved by the subject.",
+        "priority": 0
+      },
+      {
+        "paragraph_index": 66,
+        "section": "Motivation in different game modes",
+        "section_id": "sec26",
+        "text": "–Competitive mode: score was correlated with perceived competence (ρ = 0.65, p < 0.001) and effort/importance (ρ = 0.46, p = 0.010) as well as borderline correlated with interest/enjoyment (ρ = 0.34, p = 0.069).",
+        "priority": 0
+      },
+      {
+        "paragraph_index": 92,
+        "section": "Measuring motivation",
+        "section_id": "sec39",
+        "text": "An important point must be made about the IMI questionnaire: as partially noted in our previous study [8], several items on the questionnaire are likely to be unsuitable for use with impaired populations. The main problem are negative statements (e.g. “I did not feel nervous at all during the game”) which the subject must agree or disagree with; several impaired and even a few unimpaired subjects found them initially confusing and required additional clarification. Furthermore, the IMI does not necessarily have good discriminative power; many subjects gave the same score to all three game modes on a particular IMI item.",
+        "priority": 0
+      },
+      {
+        "paragraph_index": 93,
+        "section": "Measuring motivation",
+        "section_id": "sec39",
+        "text": "Based on our prior experiences with the IMI, we attempted to increase the IMI’s discriminative power by showing the subjects’ previous answers to them and asking them to focus on differences between game modes. Though we do not believe that this invalidates the results, we acknowledge that it is a nonstandard use of the questionnaire and may exaggerate differences or introduce biases. Rather than continue to use the IMI in this way, we recommend using it only as a between-subjects measure (e.g. to compare two groups playing different games) and developing a more discriminative, linguistically simpler motivation questionnaire for when the same subject plays multiple rehabilitation games.",
+        "priority": 0
+      },
+      {
+        "paragraph_index": 94,
+        "section": "Measuring motivation",
+        "section_id": "sec39",
+        "text": "We should also consider other, more objective ways of measuring motivation. For example, Zimmerli et al. [11] assumed that engagement (defined as “a construct driven by motivation and executed through active, effortful participation”) can be measured through electromyography, which essentially measures muscle activity. We argue, however, that motivation is not always proportional to physical activity. For instance, the cooperative mode was often chosen as the most enjoyable in our study even though we subjectively believe that it requires the least physical activity; as the playing field is split in half between players, each player only needs to block the puck half of the time. A combination of subjective and objective measurements may perhaps give the best estimate of motivation, which remains a somewhat vague term.",
+        "priority": 0
+      },
+      {
+        "paragraph_index": 1,
+        "section": "Background",
+        "section_id": "sec1",
+        "text": "Several strategies have been proposed to improve patient motivation and exercise intensity during robot-aided stroke rehabilitation. One relatively unexplored possibility is two-player gameplay, allowing subjects to compete or cooperate with each other to achieve a common goal. In order to explore the potential of such games, we designed a two-player game played using two ARMin arm rehabilitation robots.",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 2,
+        "section": "Methods",
+        "section_id": "sec2",
+        "text": "The game was an air-hockey task displayed on a computer monitor and controlled using shoulder movements in the ARMin robot. Three game modes were tested: single-player (competing against computer), competitive (competing against human), and cooperative (cooperating with human against computer). All modes were played by 30 unimpaired subjects and 8 impaired chronic stroke subjects. The subjects filled out the Intrinsic Motivation Inventory questionnaire after each game mode, as well as a final questionnaire about game preferences and their personality.",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 4,
+        "section": "Conclusions",
+        "section_id": "sec4",
+        "text": "Results indicate great potential for two-player rehabilitation games, in the form of greater enjoyment as well as potentially more intensive exercise compared to single-player games. However, the right game type needs to be chosen for each subject depending on skill and personality, along with selecting an appropriate co-player. Further studies with patients that are currently enrolled in rehabilitation programs are recommended, and the subjective measures used in our study should be augmented with objective measures such as electromyography.",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 5,
+        "section": "",
+        "section_id": "kwd-group1",
+        "text": "Keywords: Rehabilitation robotics, Virtual reality, Multiplayer games, Motivation, Social interaction",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 10,
+        "section": "Social interaction",
+        "section_id": "sec7",
+        "text": "Social interaction in the form of multiplayer gameplay has been emphasized as a potentially very important element of motor rehabilitation, both between a patient and a therapist [13] and between individual patients [14]. It has already been incorporated into games for weight loss, where cooperative gameplay can significantly increase motivation and energy expenditure [15]. This is similar to computer games in general, where playing with or against other people has repeatedly been found to be more engaging and enjoyable than playing against computer-controlled opponents [16-18].",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 11,
+        "section": "Social interaction",
+        "section_id": "sec7",
+        "text": "Although social elements were suggested for rehabilitation robots as early as 2006 [13], work on the topic has been limited. Perhaps the first technical implementation (though with no evaluation) was demonstrated by Carignan and Krebs [19], who envisioned it for patient-therapist collaboration in telerehabilitation. An evaluation of a two-robot telerehabilitation system was later performed by Johnson et al. [20] and showed that young healthy subjects prefer playing a rehabilitation task against a human than against a computer. Furthermore, a recent study has shown that patients prefer playing a two-player version of a game to a single-player version and exhibit higher range of motion in the two-player game [21]. Though these results were preliminary and did not involve a robot, they suggest that two-player rehabilitation games can lead to both higher enjoyment and more effort put into the task.",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 12,
+        "section": "Social interaction",
+        "section_id": "sec7",
+        "text": "Designing a two-player rehabilitation game, however, is not trivial, as its features may affect motivation positively or negatively. For example, a limited evaluation of a competitive game by Alankus et al. [22] showed that patients found competitive gameplay to be discouraging and awkward. Outside rehabilitation, competitive and cooperative gameplay are known to be either fun or frustrating depending on the characteristics of the game and the personality of the players [23,24]. Players who are easily upset may find losing in a competitive game to be very unpleasant, and some may simply not enjoy competing at all [23]. Cooperative gameplay may therefore be a safer choice for motor rehabilitation. However, there is one potential benefit that competitive gameplay may provide: a more intense gameplay experience [24], which may translate to more intensive exercise.",
+        "priority": 1
+      }
+    ],
+    "all_paragraphs_count": 118,
+    "source_kind": "在线公开JATS原文，归档元数据/选择段落；不是新原件规范副本"
+  },
+  {
+    "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9708787/fullTextXML",
+    "requested_pmc": "PMC9708787",
+    "doi": "10.1016/j.heliyon.2022.e11764",
+    "title": "The effect of gamified robot-enhanced training on motor performance in chronic stroke survivors",
+    "journal": "Heliyon",
+    "pub_dates": [
+      {
+        "type": "collection",
+        "date": "112022"
+      },
+      {
+        "type": "epub",
+        "date": "21112022"
+      }
+    ],
+    "licence": "© 2022 The Author(s)2022https://creativecommons.org/licenses/by/4.0/This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).",
+    "abstract": "Task-specific training constitutes a core element for evidence-based rehabilitation strategies targeted at improving upper extremity activity after stroke. Its combination with additional treatment strategies and neurotechnology-based solutions could further improve patients' outcomes. Here, we studied the effect of gamified robot-assisted upper limb motor training on motor performance, skill learning, and transfer with respect to a non-gamified control condition with a group of chronic stroke survivors. The results suggest that a gamified training strategy results in more controlled motor performance during the training phase, which is characterized by a higher accuracy (lower deviance), higher smoothness (lower jerk), but slower speed. The responder analyses indicated that mildly impaired patients benefited most from the gamification approach. In conclusion, gamified robot-assisted motor training, which is personalized to the individual capabilities of a patient, constitutes a promising investigational strategy for further improving motor performance after a stroke.",
+    "body_sections": [
+      {
+        "id": "sec1",
+        "title": "Introduction"
+      },
+      {
+        "id": "sec2",
+        "title": "Results"
+      },
+      {
+        "id": "sec2.1",
+        "title": "RQ1: Does a gamified application lead to enhanced motor performance during the training phase compared to a non-gamified application?"
+      },
+      {
+        "id": "sec2.1.1",
+        "title": "Analysis of the speed accuracy tradeoff"
+      },
+      {
+        "id": "sec2.2",
+        "title": "RQ2: Is a gamified training application leading to enhanced skill learning, when compared to a non-gamified application?"
+      },
+      {
+        "id": "sec2.3",
+        "title": "RQ3: Does the training strategy - gamified versus non-gamified - have an impact on skill transfer to simple robot manipulation?"
+      },
+      {
+        "id": "sec2.3.1",
+        "title": "Distance error"
+      },
+      {
+        "id": "sec2.3.2",
+        "title": "Speed"
+      },
+      {
+        "id": "sec2.3.3",
+        "title": "Jerk"
+      },
+      {
+        "id": "sec2.4",
+        "title": "RQ4: Is the magnitude of the gamification effect associated with patient characteristics determined by clinical motor scales and assessments?"
+      },
+      {
+        "id": "sec2.5",
+        "title": "RQ5: Which training strategy do patients prefer based on their self-assessment?"
+      },
+      {
+        "id": "sec3",
+        "title": "Discussion"
+      },
+      {
+        "id": "sec3.1",
+        "title": "Effect of gamification on motor performance"
+      },
+      {
+        "id": "sec3.2",
+        "title": "Effect of gamification on motor learning"
+      },
+      {
+        "id": "sec3.3",
+        "title": "Effect of gamification on skill transfer"
+      },
+      {
+        "id": "sec3.4",
+        "title": "Association of gamification effect with patient characteristics"
+      },
+      {
+        "id": "sec3.5",
+        "title": "Preferences of stroke patients"
+      },
+      {
+        "id": "sec3.6",
+        "title": "Limitations"
+      },
+      {
+        "id": "sec4",
+        "title": "Conclusion"
+      },
+      {
+        "id": "sec5",
+        "title": "Methods"
+      },
+      {
+        "id": "sec5.1",
+        "title": "Participants"
+      },
+      {
+        "id": "sec5.2",
+        "title": "Experimental design"
+      },
+      {
+        "id": "sec5.3",
+        "title": "Robotic platform and task"
+      },
+      {
+        "id": "sec5.4",
+        "title": "Tangible pacman game"
+      },
+      {
+        "id": "sec5.5",
+        "title": "Pre- and post-tests"
+      },
+      {
+        "id": "sec5.6",
+        "title": "Data analysis"
+      },
+      {
+        "id": "sec5.7",
+        "title": "Statistical analysis"
+      },
+      {
+        "id": "sec6",
+        "title": "Declarations"
+      },
+      {
+        "id": "sec6.1",
+        "title": "Author contribution statement"
+      },
+      {
+        "id": "sec6.2",
+        "title": "Funding statement"
+      },
+      {
+        "id": "sec6.3",
+        "title": "Data availability statement"
+      },
+      {
+        "id": "sec6.4",
+        "title": "Declaration of interest’s statement"
+      },
+      {
+        "id": "sec6.5",
+        "title": "Additional information"
+      }
+    ],
+    "selected_paragraphs": [
+      {
+        "paragraph_index": 56,
+        "section": "Participants",
+        "section_id": "sec5.1",
+        "text": "The study was carried out in accordance with the Declaration of Helsinki. Written informed consent was obtained from all participants. Approval was obtained from the cantonal ethics committee Vaud, Switzerland (project number 2017-00765).",
+        "priority": 0
+      },
+      {
+        "paragraph_index": 4,
+        "section": "Introduction",
+        "section_id": "sec1",
+        "text": "Currently, task-specific training constitutes a core element of evidence-based upper extremity rehabilitation programs [4]. Task-specific training relies on the finding that repetitive and consistent practice of meaningful and challenging tasks optimally engage intrinsic neuronal plasticity and can result in meaningful functional improvements [5]. Task-specific training can be incorporated or combined with other emerging behavioral interventions such as constraint-induced movement therapy, mirror therapy, motor imagery/mental practice [6] and neurotechnology-based solutions such as robot-assisted training [4, 7, 8]. Recently, a set of research strategies has been proposed aiming to further facilitate the design of efficient novel rehabilitation approaches and their clinical implementation [3]. Some of them are: (i) the combined application, (ii) personalization, and (iii) intensified training.",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 14,
+        "section": "RQ1: Does a gamified application lead to enhanced motor performance during the training phase compared to a non-gamified application?",
+        "section_id": "sec2.1",
+        "text": "In order to investigate the differences in motor performance between a gamified and a non-gamified training application, we ran a hierarchical model to account for the repeated measures design. At level one, we considered the training type. At level two, we accounted for the individual participants. To control for differences in the game configurations, we included the game as a covariate in the model. We found a significant main effect of training type t(271) = 13.5, p < 0.001, r = 0.63, with participants having an overall higher performance during the gamified training with a large effect size (M = 0.41, SD = 1.02 for gamified training, M = -0.41, SD = 0.78 for non-gamified training) (see Figure 2A).Figure 2Effect of gamification on motor performance. (A) Overall motor performance is expressed via a compound performance metric defined as standardized performance = speed/(deviance ∗ jerk), normalized according to z-score, see also methods section. Cross here and in other panels indicates the mean. Higher values correspond to better performance. (B) Deviance, lower values correspond to better performance. (C) Speed, higher values correspond to better performance. (D) Jerk, lower values correspond to better performance. Depicted values of individual metrics are absolute values. Each metric is significantly higher in the non-gamified case. Deviance is in mm, jerk is in mm/s3, speed is in mm/s.Figure 2",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 16,
+        "section": "RQ1: Does a gamified application lead to enhanced motor performance during the training phase compared to a non-gamified application?",
+        "section_id": "sec2.1",
+        "text": "Next, we took a closer look at the effect of gamification on the different performance metrics, namely deviance, speed, and jerk. We ran a hierarchical model for each variable to account for the repeated measures design. At the first level, we considered the training type and at level two, we accounted for the individual participants. We included the game as covariate in the model. We found a significant main effect of training type on deviance, t(272) = 2.05, p < 0.05, r = 0.12, with small effect size, on speed, t(272) = 17.8, p < 0.001, r = 0.73 with large effect size, and on jerk t(271) = 9.4, p < 0.001, r = 0.49, with intermediate effect size. In other words, during the gamified training, participants had a smaller deviance (M = 6.36 mm, SD = 0.82 for gamified training, M = 6.56 mm, SD = 1.39 for non-gamified training), slower speed (M = 111.78 mm/s, SD = 43.69 mm/s for gamified training, M = 211.26 mm/s, SD = 117.81 mm/s for non-gamified training) and smaller jerk (M = 7546.61 mm/s3, SD = 14300.55 mm/s3 for gamified training, M = 27852.33 mm/s3, SD = 27306.74 mm/s3 for non-gamified training) (see Figure 2B-D).",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 20,
+        "section": "RQ2: Is a gamified training application leading to enhanced skill learning, when compared to a non-gamified application?",
+        "section_id": "sec2.2",
+        "text": "To analyze if there was manifest learning from day 1 to day 2 within the participants, we conducted a hierarchical linear model to consider the repeated games for each participant. At the first level, we included day and training modality to test their effects on the standardized performance. We found a significant main effect of training type on performance, t(270) = 8.50, p < 0.001, r = 0.46, however, there was no significant improvement from day 1 to day 2, t(276) = 0.49, p = 0.63 and no significant interaction term between training type and day, t(268) = 1.52, p = 0.13 (see Figure 4A).Figure 4Analyses on evolution in performance across day (learning). Standardized performance separated by training type (red - gamified, blue – non-gamified). Effect of day (A) on the compound performance metric, (B) on deviance, (C) speed, and (D) jerk. Error bars indicate standard error.Figure 4",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 22,
+        "section": "RQ2: Is a gamified training application leading to enhanced skill learning, when compared to a non-gamified application?",
+        "section_id": "sec2.2",
+        "text": "In order to evaluate for effects on the isolated performance metrics we ran a hierarchical model for each of them and accounted for the repeated measures design. At the first level, we considered the training type and day, at level two, we accounted for the individual participants and similarly we included the game as covariate in the model. We found a significant effect of day on deviance t 271) = 3.26, p < 0.01, r = 0.19, with participants having a smaller deviance error on the second day (M = 0.15, SD = 1.09 for the first day, M = -0.16, SD = 0.88 for the second day of the training sessions) indicating a training type-independent improvement on the isolated metric on day 2 and suggesting a learning effect (see Figure 4B). We did not find any effect of day on speed or jerk, t(263) = 1.2, p = 0.22 and t(277) = 0.91, p = 0.36, respectively (see Figure 4C-D). We found a significant effect of training type on speed t(271) = 12.27, p < 0.001, r = 0.66 and jerk t(270) = 6.56, p < 0.001, r = 0.37 respectively, but did not find a significant effect of training type on deviance t(270) = 1.18, p = 0.24.",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 24,
+        "section": "RQ3: Does the training strategy - gamified versus non-gamified - have an impact on skill transfer to simple robot manipulation?",
+        "section_id": "sec2.3",
+        "text": "In order to investigate, if there was a skill transfer for the participants in both line following activities (linear and circular line following task, for details see in the methods section below), we computed the delta performance as the difference of post-test to pre-test performance, where the positive values indicate an increase in the values from pre-test to post-test, while negative values indicate a decrease in the values for the respective contrast. We ran a hierarchical linear model to consider the repeated tests within the participant. At the first level, we considered the training type and the delta performance. At level two, we accounted for the individual participants.",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 25,
+        "section": "RQ3: Does the training strategy - gamified versus non-gamified - have an impact on skill transfer to simple robot manipulation?",
+        "section_id": "sec2.3",
+        "text": "For each line following tests, we applied a separate analysis. We did not find a significant main effect of training modality on the delta performance of the circular test. Similarly, we did not find a significant main effect of training modality on the delta performance of the linear test when we used the compound metric, t(159) = 0.50, p = 0.61, and t(245) = 1.08, p = 0.28, respectively (Please see Figure 5A-B).Figure 5Analyses of transfer learning. Delta of compound performance metric for (A) circular line following activity and (B) linear line following activity. Error bar here and in other panels corresponds to standard error. (C, D) Distance error. (E, F) Speed. (G, H) Jerk.Figure 5",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 27,
+        "section": "RQ3: Does the training strategy - gamified versus non-gamified - have an impact on skill transfer to simple robot manipulation?",
+        "section_id": "sec2.3",
+        "text": "In a follow-up analysis we investigated the effect of gamification on skill transfer for each individual metric, we ran a hierarchical model to consider the repeated tests within the participant and at the first level of each model, we considered the training type and the difference of post-test and pre-test results of the isolated performance metrics. At level two, we accounted for the individual participants.",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 28,
+        "section": "Distance error",
+        "section_id": "sec2.3.1",
+        "text": "We did not find a significant effect of training modality on the delta distance error both for circular and linear tests, t(157) = 0.46, p = 0.64, and t(245) = 1.90, p = 0.06, respectively (see Figure 5C&D). Although there is no difference between gamified and non-gamified training modalities, we observed that in the circular test both training modalities had a negative delta (see Figure 5C), which indicates a decrease in distance error after each training modality. Upon this observation, in order to test the effect of trainings on the improvement in circular transfer activity, we run a hierarchical model to consider the repeated tests within the participant and at the first level we considered the time (pre and post) and the distance error. At level two, we accounted for the individual participants and found a significant difference between the pre-test to post-test distance error values t(325) = 2.66, p < 0.01, r = 0.15, where the post-tests after both trainings having lower distance error (M = -0.13, SD = 0.86) compared to the distance error of the pre-test (M = 0.13, SD = 1.11). This result suggests that in circular transfer activity, there is a training type-independent improvement on the isolated metric distance error. This is in line with the results of RQ2, where there is a training type-independent improvement in deviance from day 1 to day 2.",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 32,
+        "section": "RQ4: Is the magnitude of the gamification effect associated with patient characteristics determined by clinical motor scales and assessments?",
+        "section_id": "sec2.4",
+        "text": "To assess for clinical characteristics that may determine inter-subject response variability for the gamified robot-assisted motor training intervention, the stroke cohort was split in a mildly and moderately affected subgroup based on a median split (cut-off/median: 51) of the Fugl-Meyer Assessment score data for upper extremity (FMA-UE). In a first step, we ran a hierarchical model to account for the repeated measures design. At the first level, we considered the training type and the impairment level, at level two, we accounted for the individual participants. We found a significant effect of impairment level on training modality t(8) = 4.01, p < 0.01, r = 0.81, indicating that stroke patients with a mild level of impairment performed better (M = 0.51, SD = 0.92), with respect to the patients with moderate level of impairment (M = −0.63, SD = 0.69).",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 35,
+        "section": "RQ5: Which training strategy do patients prefer based on their self-assessment?",
+        "section_id": "sec2.5",
+        "text": "At the end of the experiments, the stroke survivors were asked which training strategy they preferred based on their self-assessment. The participants tended to prefer the gamified training (N = 6) with respect to the non-gamified training condition (N = 2) or prefer using both modalities according to their fatigue or level of profession in the game (N = 2) (X2 (2) = 4.8, p = 0.09).",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 37,
+        "section": "Effect of gamification on motor performance",
+        "section_id": "sec3.1",
+        "text": "What are potential mechanisms that may have contributed to the induced behavioral pattern? One possibility is that this pattern was triggered by the presence of a specific set of rules and their evolution across successive games. For instance, the “wall crash penalty rule” may have encouraged the participants to favor accuracy over speed to avoid losing prior collected fruits. Furthermore, the incrementing number of rules and the accompanying increase in training complexity could have influenced the task execution speed. For example, increasing the number of chasing robots could have confronted patients with a greater number of choices they had to make during the game. This may have led to an increase in choice reaction time, via a Hick-Hyman's law-like mechanism, and thus to a slowdown of global game speed [17]. A further question was if deliberate rule violations, e.g., intentionally violating the maze boundaries, could partially drive the observed effect. Yet, the behavioral signature of rule violations is characterized by slower initiated and executed movements with a contorted trajectory [18]. In other words, a pattern, which does not match the behavioral signature detected in the present study.",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 38,
+        "section": "Effect of gamification on motor performance",
+        "section_id": "sec3.1",
+        "text": "Reward and punishment likely further have contributed to the gamification effect. The robotic platform incorporates reward communication capabilities by design, e.g., enchanting auditory signals, when successfully collecting a fruit. Prior behavioral work has shown that similar to the here detected behavioral pattern, reward can improve the execution of reaching movements via increasing their speed while maintaining the accuracy [19]. Conversely, punishment in our case, e.g., losing a prior collected fruit when caught by a ghost, has also shown to interact with speed and accuracy measures in motor tasks [20]. Furthermore, it seems possible that mental fatigue may have contributed to the behavioral signature of gamification, especially with increasing exercise duration, as it has been linked with movement-slowing effects in prior work [21].",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 39,
+        "section": "Effect of gamification on motor performance",
+        "section_id": "sec3.1",
+        "text": "In addition, disease-related features seem to determine decisions on speed accuracy relationships. For the here studied cohort, the literature suggests that stroke patients tend to choose a slower preferred movement execution speed in relation to control subjects [22]. This pattern seems to be consistent across different activities such as performing reaching movements [23] or walking [24]. The here presented analyses further addressed these research questions by studying the linear SAT across the participating stroke survivors and by benchmarking their decision tendency also to a prior acquired cohort of age-matched control participants [15]. The results indicated that the applied training strategy gamified versus non-gamified practice did not shift or change the slope of the linear SAT across subjects. Thus, a substantial influence of the gamified practice on the SAT decision process can be ruled out.",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 42,
+        "section": "Effect of gamification on motor learning",
+        "section_id": "sec3.2",
+        "text": "Although there is no statistically significant interaction between training type and day, there might be different trends of overall performance in gamified and non-gamified training from day 1 to day 2 (Please see Figure 4A). Further long term studies are needed to explore whether patients have lower, same or higher performance after long term gameplay of both modalities and to investigate whether this might be due to patients losing interest in the non-gamified training overtime while gamified training maintains the same engagement level and performance. Long term studies with and without personalized gamification approaches should be conducted to reveal the real impact of gamified robot-mediated training on engagement and performance level by taking into account the novelty effect as well as familiarization effect [48].",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 44,
+        "section": "Effect of gamification on skill transfer",
+        "section_id": "sec3.3",
+        "text": "Specifically, we found that speed and jerk decreased from the pre-to post-test phase after the gamified training condition only, which suggests that the gamified intervention primed a smoother and slower performance in subsequent robot control activities. These support our previous findings on gamification (RQ1) resulting in more controlled task execution with smoother and slower performance and similarly provide insights on the induced behavioral pattern. Slower robot control in the post-test session for the gamified condition might indicate a training strategy dependent transfer learning effect on speed performance where the patients might learn to manipulate the robot slower and in a more controlled way during the gamified training and sustain this behavior during the transfer activity. For instance, during the gamified training patients might be getting used to more controlled task execution due to introduced game rules (e.g., loosing points upon crushing a wall) and additional active agents (ghost robots) and sustain this controlled behavior even after the training while manipulating the robot within the simple transfer activity.",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 47,
+        "section": "Preferences of stroke patients",
+        "section_id": "sec3.5",
+        "text": "The implementation of gamification in therapy is motivated by characteristics such as motivation, and engagement while ensuring the intended therapeutic effect of the interventions. However, there exist different levels of gamification using variants of several game elements, which are important variables to consider in the design process. For example, in our proposed non-gamified training modality, we removed the active agents, the game rules and the visual/audio/haptic feedback. However, it might have a slight level of gamification since it has one instruction, which can be accounted as a single game rule as: \"Please collect as many as points possible with your robot in 3 min\". On the other hand, in the gamified modality, we clearly introduce more enhanced gamification through multiple game elements, such as the autonomous ghost tracking of the patient, visual and audio feedback for patients’ actions, penalty rules, haptic informative feedback and the competitive element of losing apples when caught. Although these elements might bring attractiveness, motivation, and engagement for some patients, they might also be frustrating for other patients due to their challenging nature. The inter-individual differences in game preference could be explained by different factors such as the different sensitivity to reward and punishment or mental fatigue [46, 47].",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 49,
+        "section": "Preferences of stroke patients",
+        "section_id": "sec3.5",
+        "text": "According to the patients' self-reported comments, the gamified training modality was preferred by a subgroup of patients, because they found the gamified training more challenging and liked feedback mechanisms, felt more involved through the need of attention towards the game, preferred avoiding repetitiveness, and enjoyed observing the robot behavior and interacting with them. Conversely, the simpler, non-gamified version was preferred because these patients found the gamified modality more challenging and thought that it needed more attention during the training, and they wanted an easier training modality while they were tired or while having less proficiency in the game. These reports could be interpreted in the context of the flow theory [32]. Accordingly, a good balance is required between the perceived challenges of a task and one's perceived abilities, and for some patients the proposed gamification approach might not have balance these two, therefore might not have created a flow state, where the person performing the activity is immersed in a feeling of energized focus, involvement, and enjoyment.",
+        "priority": 1
+      },
+      {
+        "paragraph_index": 50,
+        "section": "Preferences of stroke patients",
+        "section_id": "sec3.5",
+        "text": "The present results highlight the importance of personalization, adaptation, as well as the importance of having a range of training configurations for robot-enhanced training interventions. Although our study included only 10 patients and several game elements that were adapted to each patient for their own training sessions according to their abilities, there is still a need for less-gamified options with no ghost robots, less demanding options with limited game rules for patients, who preferred the non-gamified version; while there is a need for more challenging game elements such as adaptive ghost behaviors and increased difficulty levels for the patients, who preferred the gamified version.",
+        "priority": 1
+      }
+    ],
+    "all_paragraphs_count": 98,
+    "source_kind": "在线公开JATS原文，归档元数据/选择段落；不是新原件规范副本"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "key": "control_review",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8688994/fullTextXML",
+    "error": null,
+    "bytes": 286182
+  },
+  {
+    "key": "dose_trial",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5016233/fullTextXML",
+    "error": "HTTP Error 500: ",
+    "bytes": 0
+  },
+  {
+    "key": "Marchal2009",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2710333/fullTextXML",
+    "error": null,
+    "bytes": 216915
+  },
+  {
+    "key": "ALP2025",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11885312/fullTextXML",
+    "error": null,
+    "bytes": 144531
+  },
+  {
+    "key": "Song_impedance",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8927629/fullTextXML",
+    "error": null,
+    "bytes": 136175
+  },
+  {
+    "key": "Song_wrist",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3685570/fullTextXML",
+    "error": null,
+    "bytes": 79935
+  },
+  {
+    "key": "Song_load",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11971689/fullTextXML",
+    "error": null,
+    "bytes": 193934
+  }
+]

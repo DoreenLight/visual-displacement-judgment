@@ -1,0 +1,1625 @@
+[
+    {
+        "type": "text",
+        "text": "PartNet: A Recursive Part Decomposition Network for Fine-grained and Hierarchical Shape Segmentation",
+        "text_level": 1,
+        "bbox": [
+            119,
+            128,
+            851,
+            174
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Fenggen Yu<sup>1∗</sup> Kun Liu<sup>1\\*</sup> Yan Zhang<sup>1</sup> Chenyang Zhu<sup>2</sup> Kai Xu<sup>2†</sup> <sup>1</sup>Nanjing University <sup>2</sup>National University of Defense Technology",
+        "bbox": [
+            161,
+            203,
+            813,
+            239
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Abstract",
+        "text_level": 2,
+        "bbox": [
+            233,
+            273,
+            313,
+            290
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Deep learning approaches to 3D shape segmentation are typically formulated as a multi-class labeling problem. Existing models are trained for a fixed set of labels, which greatly limits theirflexibility and adaptivity. We optfor topdown recursive decomposition and develop the first deep learning modelfor hierarchical segmentation of3D shapes, based on recursive neural networks. Starting from a full shape represented as a point cloud, our model performs recursive binary decomposition, where the decomposition network at all nodes in the hierarchy share weights. At each node, a node classifier is trained to determine the type (adjacency or symmetry) and stopping criteria of its decomposition. The features extracted in higher level nodes are recursively propagated to lower level ones. Thus, the meaningful decompositions in higher levels provide strong contextual cues constraining the segmentations in lower levels. Meanwhile, to increase the segmentation accuracy at each node, we enhance the recursive contextual feature with the shape feature extracted for the corresponding part. Our method segments a 3D shape in point cloud into an unfixed number ofparts, depending on the shape complexity, showing strong generality and flexibility. It achieves the stateof-the-art performance, both for fine-grained and semantic segmentation, on the public benchmark and a new benchmark offine-grained segmentation proposed in this work. We also demonstrate its application for fine-grained part refinements in image-to-shape reconstruction.",
+        "bbox": [
+            75,
+            305,
+            470,
+            715
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1. Introduction",
+        "text_level": 2,
+        "bbox": [
+            78,
+            744,
+            207,
+            761
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Segmentation is a long-standing problem in 3D shape analysis, on which data-driven approach has shown clear advantage over traditional geometric methods [38]. With the proliferation of deep learning techniques, researchers have been seeking for exploiting the powerful feature learning ability of deep neural networks to replace the handcrafted features used in previous data-driven approaches. In these works, deep networks are trained for multi-class labeling task, which outputs a semantic label for each geometric primitive (such as voxels [23] or points [20]).",
+        "bbox": [
+            75,
+            771,
+            470,
+            864
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/511bde5f6f570da196af5c969afe9a8652c8f88eadb9bff44e6a52595fa156b0.jpg",
+        "image_caption": [
+            "Figure 1. PartNet segments 3D point clouds in a top-down recursive fashion, leading to a hierarchy of fine-grained parts. The same model trained for Chair class can be used to segment different chair models into different number of parts, depending on the structure complexity of the input shapes."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            506,
+            284,
+            883,
+            386
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            498,
+            491,
+            893,
+            551
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "There are two issues with these existing models. First, the models are trained targeting a fixed set of labels, which greatly limits its flexibility and adaptivity. For example, a model trained to segment a chair into three semantic parts cannot be used to correctly segment a chair with four parts, even they both belong to the same shape family. Training different models for different targeted label sets is neither general nor efficient. Second, labeling all primitives simultaneously cannot exploit the hierarchical nature of shape decomposition. Hierarchical shape segmentation reduces the difficulty of shape segmentation through dividing the multi-class labeling problem into a cascade of binary labeling problems [1, 39]. On the other hand, hierarchical segmentation can utilize structural constraints across different levels: The segmentations in higher levels provide strong cues constraining those in the lower levels. This enables accurate segmentation into very fine-grained levels (Figure 1).",
+        "bbox": [
+            496,
+            553,
+            893,
+            809
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "In this work, we opt for the top-down decomposition and propose the first deep learning model for hierarchical segmentation of 3D shapes into fine-grained parts, based on recursive neural networks (RvNN). Starting from a full shape represented as a point cloud, our model performs recursive binary decomposition, where the decomposition network at all nodes in the hierarchy share weights. At each node, a node classifier is trained to determine the type of its decomposition (adjacency or symmetry node) and whether the decomposition should stop (leaf node). The features extracted in higher level nodes are recursively propagated to lower level ones through the tree structure, which we refer to as recursive context features. Therefore, the meaningful decompositions in higher levels constrain the segmentations in lower levels. Meanwhile, to increase the segmentation accuracy at each node, we enhance the recursive context feature with the part shape feature extracted for the corresponding point cloud.",
+        "bbox": [
+            496,
+            810,
+            893,
+            901
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "arXiv:1903.00709v5 [cs.CV] 15 Jan 2022",
+        "bbox": [
+            22,
+            267,
+            57,
+            705
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "\\*Joint first authors",
+        "bbox": [
+            94,
+            875,
+            197,
+            887
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "<sup>†</sup>Corresponding author: kevin.kai.xu@gmail.com",
+        "bbox": [
+            94,
+            887,
+            359,
+            901
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            480,
+            924,
+            490,
+            936
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            75,
+            90,
+            472,
+            273
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The network is trained with point sampled 3D models from ShapeNet [3] which are typically composed of semantically labeled parts. For each shape, a hierarchy is constructed with an existing rule-based method [36]. Such principled training hierarchies help the training converges faster. The loss is computed at each node, including node classification loss and binary point labeling loss.",
+        "bbox": [
+            75,
+            272,
+            470,
+            378
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Our method produces accurate segmentation, even for highly fine-grained decomposition into arbitrary number of parts, due to the flexibility of dynamic, RvNN-based architecture. Moreover, it recovers the part relations (adjacency or symmetry) which further improves the labeling accuracy, e.g., symmetric parts can be identified and thus correctly labeled (Figure 1). Our method achieves state-ofthe-art performance, both on the public benchmark and a new benchmark of fine-grained segmentation proposed in this work. We also demonstrate its utility in image-to-shape reconstruction with fine-grained structure recovery.",
+        "bbox": [
+            75,
+            378,
+            470,
+            544
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Our contributions include:",
+        "bbox": [
+            96,
+            544,
+            274,
+            558
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• A deep learning model for top-down hierarchical, finegrained segmentation of 3D shapes based on dynamic RvNN-based architecture.",
+        "bbox": [
+            94,
+            559,
+            470,
+            604
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• A part feature learning scheme which integrates both contextual information and per-part shape geometry.",
+        "bbox": [
+            94,
+            604,
+            470,
+            636
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• A benchmark for fine-grained, part instance segmentation of 3D shapes.",
+        "bbox": [
+            94,
+            636,
+            470,
+            666
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• An application of our fine-grained structure recovery for high-quality image-to-shape reconstruction.",
+        "bbox": [
+            94,
+            667,
+            468,
+            698
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2. Related work",
+        "text_level": 2,
+        "bbox": [
+            76,
+            709,
+            215,
+            724
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Learning 3D shape segmentation. Semantic segmentation of 3D shapes has gained significant research progress in recent year, benefiting from the advances in machine learning techniques [10, 24, 35, 37, 42]. A comprehensive survey on learning-based 3D shape segmentation can be found in [38]. The basic idea of these approaches is to learn a shape primitive (e.g., a triangle, a point or a voxel) classifier, based on the geometric features of the shape primitives.",
+        "bbox": [
+            75,
+            734,
+            470,
+            854
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Recently, several deep learning models have been developed for supervised segmentation of 3D shapes in various representations including volumetric grid [23, 32], point cloud [20, 11, 7], multi-view rendering [9] or surface mesh [41, 31]. The main idea is to replace the hand-crafted geometric features employed in the traditional methods with data-driven learned ones. All these models, however, are trained targeting a fixed set of semantic labels. Given a different set of targeting labels, the model has to be re-trained, using a training dataset annotated with the new labels.",
+        "bbox": [
+            75,
+            854,
+            470,
+            902
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            496,
+            90,
+            893,
+            199
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Hierarchical segmentation of 3D shapes. 3D shapes are usually modeled with parts in a hierarchical construction manner. This is evidenced in part by the wide availability of scene graphs in human-created 3D models of objects or scenes, and by the well-known hierarchical modeling paradigm of Constructive Solid Geometry (CSG) [21]. This naturally leads to the idea of hierarchical decomposition of 3D shapes. Hierarchical shape segmentation can be achieved either with a bottom-up grouping approach [1, 34], or in a top-down fashion based on a global topological analysis [22, 8, 43]. Given a pre-segmented 3D shape, Wang et al. [36] infer a hierarchical organization of the parts based on proximity and symmetry relations. Later, this heuristic method is improved with an unsupervised learning approach [30]. Yi et al. [39] propose a supervised learning approach to hierarchical segmentation of 3D shapes. Their model is, again, trained for a fixed set of semantic tags. The tag sets are determined in a pre-processing of part label analysis and organized with a pre-defined canonical hierarchy. Our method, on the other hand, does not require a prescribed canonical hierarchy and learns the decomposition hierarchies in a data-driven manner, thank to the recursively trained node classification. Our method is, to our knowledge, the first end-to-end trainable model for hierarchical shape segmentation.",
+        "bbox": [
+            496,
+            218,
+            895,
+            599
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Recursive neural networks. Recursive neural nets (RvNN) are developed by Socher et al. [25], for text and image understanding [27], and for 3D shape classification [26]. Recently, Li et al. [12] introduce a generative recursive auto-encoder for generating 3D shape structures. Given a collection of pre-segmented 3D shapes, a variational auto-encoder (VAE) model is learned with RvNNbased encoding and decoding of part structures. Following that, RvNN-based VAE is also trained for 3D scene generation [13], structure-aware single-view 3D reconstruction [18] and substructure prior learning for part group composition [44]. We are not aware of a previous work on using RvNN for hierarchical 3D shape segmentation.",
+        "bbox": [
+            496,
+            617,
+            895,
+            816
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "3. Method",
+        "text_level": 2,
+        "bbox": [
+            500,
+            829,
+            593,
+            845
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We first introduce the overall architecture of PartNet, which is a recursive part decomposition network. Several key designs in the network will then follow.",
+        "bbox": [
+            496,
+            854,
+            893,
+            902
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/0b0b83a075a4758f0a023827451288d556ad2b5d7f88b94b17941f3381602e9e.jpg",
+        "image_caption": [
+            "Figure 2. The architecture of PartNet. At each node, there are three modules devised for context propagation, hierarchy construction and point cloud segmentation, respectively. Being a recursive network, these modules are shared by all node in the hierarchy."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            81,
+            89,
+            464,
+            253
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "3.1. Recursive part decomposition network",
+        "text_level": 2,
+        "bbox": [
+            76,
+            330,
+            411,
+            348
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Figure 2 shows the architecture of PartNet. Taking a point cloud of 3D shape as input, PartNet performs a topdown decomposition and and outputs a segmented point cloud at the level of part instances. At each node, three modules are devised:",
+        "bbox": [
+            75,
+            354,
+            470,
+            431
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "• Node decoding module used to pass the global contextual information from the current node to its children. Such information constraints the segmentation of a node with higher level context.",
+        "bbox": [
+            94,
+            441,
+            470,
+            503
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "• Node classification module devised to construct the topological structure of the decomposition hierarchy. This is achieved by learning to predict the node type which determines how to decompose a node and when to stop the decomposition.",
+        "bbox": [
+            94,
+            512,
+            470,
+            589
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "• Node segmentation module used for performing actual segmentation of the point cloud of the current node. This is achieved by learning a point classification network shared across all nodes.",
+        "bbox": [
+            94,
+            599,
+            470,
+            659
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Below we elaborate the discussion on these modules.",
+        "bbox": [
+            76,
+            669,
+            429,
+            685
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Node decoding module. To bootstrap, we first extract a 128D PointNet [19] feature for the full shape point cloud, which is then duplicated and concatenated, forming a 256D the root node feature. This 256D feature is then decoded into two 128D features, one for each of its two child nodes, which we refer to as recursive context feature. At each non-root node, we also extract a 128D PointNet feature for the partial point cloud corresponding to that node, which is called part shape feature. This 128D part shape feature is then concatenated with the 128D recursive context feature passed down from the parent node, forming the current nodefeature. Please see Figure 3 for a visual explanation of these features. The decoding module is implemented with a two-layer fully connected network with tanh nonlinearity. This PointNet used in this module is referred to as Point-Net 1, to distinguish with the one to be used in the node segmentation module (see below).",
+        "bbox": [
+            75,
+            704,
+            472,
+            902
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/71d4060eee9257f86bdf9a4036aac541e9df23c6e42b19bd8ce8ee5062f27269.jpg",
+        "image_caption": [
+            "Figure 3. Network design of the node decoding module and the node classification module. The recursive contextual feature and part shapefeature are concatenated and fed into the node classifier."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            501,
+            89,
+            890,
+            175
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            496,
+            234,
+            893,
+            297
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Node classification module. At a given node, taking its current node feature as input, the node classification module predicts its node type as one of the following three ones: adjacency, symmetry or leaf. Through determining the how and whether a node is split, this module constructs the topological structure of the hierarchy. This node classification module is implemented with two fully-connected layers with tanh nonlinearity. It can be trained with the ground-truth hierarchical segmentation of a point cloud.",
+        "bbox": [
+            496,
+            314,
+            893,
+            450
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Note that when a node is classified as a symmetry node, we interpret its left child as a symmetry generator (representing a part) and its right child as symmetry parameters, similar to [12]. Applying the symmetry parameters on the symmetry generator part obtains the complete point cloud of that symmetry node. For example, the node corresponding to the spokes in the leg part of a swivel chair (Figure 1, left) is a rotational symmetry node. Its left child represents the point cloud of one of the spokes and the right child encodes the symmetry axis and symmetry fold.",
+        "bbox": [
+            496,
+            450,
+            893,
+            604
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Node segmentation module. This module performs point labeling based on both the current node feature and perpoint PointNet features. Specifically, we use another Point-",
+        "bbox": [
+            496,
+            619,
+            893,
+            667
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/3fe9892f000417e9d6155156f43e98fbde62dd674c3a350a851cd57a8e9dfa90.jpg",
+        "image_caption": [
+            "Figure 4. Network design of the node segmentation module. The concatenation of recursive contextual feature and part shape feature is enhanced with point-wise PointNet features for the purpose of point label prediction (point cloud segmentation)."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            501,
+            688,
+            890,
+            848
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Net (denoted as PointNet 2) to extract per-point feature, leading to a N × 128 feature matrix, with N being the number of points of the current node. Then for each row (point feature), we enhance it by concatenating the 256D current node feature. This results in a N×384 feature matrix, which is fed into a point classification network to produce pointwise binary labels. This point classifier is implemented with the last five layers of a PointNet. Note that these layers do not share weight with PointNet 1 or PointNet 2.",
+        "bbox": [
+            75,
+            90,
+            470,
+            227
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "For a symmetry node, only its left child, i.e., the symmetry generator, needs to be segmented. After the segmentation, the point labels are transferred to all other symmetric counterparts, based on the predicted symmetry parameters.",
+        "bbox": [
+            75,
+            228,
+            470,
+            289
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "3.2. Loss function",
+        "text_level": 2,
+        "bbox": [
+            76,
+            295,
+            218,
+            311
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "For each training point cloud, the overall loss function for PartNet, $L _ { \\mathrm { p a r t n e t } } ,$ consists of the average node classification loss and average node segmentation loss over all relevant nodes:",
+        "bbox": [
+            75,
+            319,
+            470,
+            380
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\nL _ {\\text { partnet }} = \\frac {1}{| \\mathcal {H} |} \\sum_ {n \\in \\mathcal {H}} L _ {\\text { class }} (n) + \\frac {1}{| \\mathcal {T} |} \\sum_ {n \\in \\mathcal {T}} L _ {\\text { seg }} (n)\\tag{1}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            114,
+            383,
+            431,
+            422
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "where $L _ { \\mathrm { c l a s s } } ( n )$ and $L _ { \\mathrm { s e g } } ( n )$ are the classification loss and segmentation loss of node n, respectively. Both losses are defined as the cross-entropy loss. H is the set of all nodes in the hierarchy, and T the set of all non-leaf nodes.",
+        "bbox": [
+            75,
+            430,
+            470,
+            492
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "3.3. Training details",
+        "text_level": 2,
+        "bbox": [
+            76,
+            500,
+            236,
+            515
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The PointNet 1 for node classification (Figure 3) uses six point convolution layers with 64, 128, 128, 256, 256 and 128 filters, respectively. The PointNet 2 for node segmentation (Figure 4) uses four point convolution layers with 64, 64, 128 and 128 filters, respectively. The point cloud segmentation network in Figure 4 consists of four point convolution layers, with 512, 256, 128 and 128 filters, respectively, plus the output layer with a 2 filters for binary label prediction. 20% random feature dropout are used between every two of the last three layers in all these networks. Batch normalization are used between every two layers. We use the Adam optimizer for training, with a batch size of 10 and the initial learning rate of 0.001.",
+        "bbox": [
+            75,
+            522,
+            470,
+            719
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The size of input point cloud is 2048. The training point clouds are obtained by point sampling 3D models. Gaussian noise is added for data enhancement. All PointNets use point normals to improve fine-grained part segmentation performance. Therefore, the dimension of input tensors to PartNet is 2048 × 6.",
+        "bbox": [
+            75,
+            719,
+            470,
+            810
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "4. Results and evaluations",
+        "text_level": 2,
+        "bbox": [
+            76,
+            821,
+            299,
+            839
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "4.1. Benchmark",
+        "text_level": 2,
+        "bbox": [
+            76,
+            845,
+            205,
+            863
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The Fine-grained Segmentation Benchmark (FineSeg). With the advances in deep learning based 3D shape segmentation, a benchmark for instance segmentation of finegrained parts is called for. A nice benchmark for evaluating fine-grained shape segmentation is recently proposed in a concurrent work in [17]. In this work, we propose FineSeg. The dataset contains about 3000 3D shapes over six shape categories: chair (1000), table (500), airplanes (600), sofa (600), helicopter (100) and bike (140). The models are collected from a subset of ShapeNet [3] used in the work of Sung et al. [29]. These models are consistently aligned and uniformly scaled. For those model whose segmentation is not fine-grained enough (e.g., no instance part segmentation), we manually segment the models. We then build a part hierarchy for each shape, using the method proposed in [36]. We point sample each 3D model, thus generating a ground-truth fine-grained segmentation of the corresponding 3D point cloud. The hierarchies can be used for training our recursive part decomposition network. This benchmark can be used to quantitatively evaluate fine-grained segmentation of 3D point clouds, based on Average Precision (AP) for part detection (with the IoU against ground-truth greater than a threshold). The benchmark is publicly available at: www.kevinkaixu.net/ projects/partnet.html.",
+        "bbox": [
+            75,
+            869,
+            470,
+            901
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            496,
+            90,
+            895,
+            439
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "4.2. Segmentation results and evaluation",
+        "text_level": 2,
+        "bbox": [
+            500,
+            448,
+            815,
+            464
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Our PartNet model is trained with 80% models of Fine-Seg, leaving the rest 20% for testing. The discussion of complexity and timing (for both training and testing) can be found in the supplemental material.",
+        "bbox": [
+            496,
+            470,
+            893,
+            532
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Visual results on FineSeg. We first show in Figure 5 some visual examples of fine-grained point cloud segmentation obtained by PartNet. For side-by-side comparison, we also show the ground-truth segmentation for each example. Our method produces precise fine-grained segmentation on the noisy point clouds with complicated part structures. Furthermore, once trained, the same model can be used to segment the test (unseen) point clouds into varying number of parts, demonstrating its flexibility and generality. Figure 6 demonstrates how the same model of PartNet can segment different shapes in a category into for an arbitrary number of targeting parts, depending on structure complexity. More results can be found in the supplemental material. In the supplemental material, we also show a visual comparison of hierarchical segmentation with two traditional (non-learned) baseline methods.",
+        "bbox": [
+            496,
+            549,
+            895,
+            794
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Quantitative evaluation with ablation study. In quantitative evaluation on FineSeg, we compare to two baselines which are ablated versions of our method. Specially, we are interested in the effect of the two important node features used in PartNet: recursive context feature (RCF) and part shape feature (PSF).",
+        "bbox": [
+            496,
+            809,
+            893,
+            902
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/10832577b346a840207fe355c2bcc1f0ae255e0e903db710b3aa7aac90605d2d.jpg",
+        "image_caption": [
+            "Figure 5. Fine-grained point cloud segmentation by PartNet. For comparison, we show for each shape the fine-grained segmentation result (bottom) and the corresponding ground-truth (top)."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            89,
+            90,
+            862,
+            569
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/e5d60c21ee1fc382a1dd02dc5857ed55f33d0b23df9e5cbd2f5a008b32f68318.jpg",
+        "image_caption": [
+            "Figure 6. The same PartNet model trained on the Chair set, can be used to segment different chair models into different number of parts, depending on the structure complexity of the input shapes."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            117,
+            633,
+            428,
+            792
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "In the first baseline (w/o RCF), recursive context feature is removed from both node classification (see Figure 3) and node segmentation (see Figure 4). To compensate the missing of recursive context feature, the 128D part shape feature is duplicated into a 256D feature. The ablated network is re-trained using the training set of FineSeg. In the second baseline (w/o PSF), PSF is removed only from the node classification module.",
+        "bbox": [
+            75,
+            854,
+            470,
+            902
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/1b30ae78ba89cbf26ebbc746f493a0b2c84513b51e06206a0311000b9ac8530d.jpg",
+        "table_caption": [
+            "Table 1. Comparing our full model with two baselines (w/o RCF and w/o PSF) on FineSeg. AP(%) is measured with IoU threshold being 0.25 and 0.5, respectively."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\"></td><td>mean</td><td>aero</td><td>bike</td><td>chair</td><td>heli.</td><td>sofa</td><td>table</td></tr><tr><td rowspan=\"3\">IoU &gt;0.25</td><td>Full</td><td>84.8</td><td>95.2</td><td>97.0</td><td>91.1</td><td>83.0</td><td>65.4</td><td>77.2</td></tr><tr><td>w/o RCF</td><td>79.2</td><td>92.8</td><td>92.0</td><td>87.1</td><td>71.1</td><td>61.6</td><td>70.8</td></tr><tr><td>w/o PSF</td><td>77.6</td><td>90.8</td><td>95.1</td><td>83.6</td><td>77.8</td><td>54.1</td><td>64.0</td></tr><tr><td rowspan=\"3\">IoU &gt;0.5</td><td>Full</td><td>72.8</td><td>88.0</td><td>89.4</td><td>80.5</td><td>69.4</td><td>46.7</td><td>62.6</td></tr><tr><td>w/o RCF</td><td>66.0</td><td>85.3</td><td>83.4</td><td>71.8</td><td>56.7</td><td>42.5</td><td>56.4</td></tr><tr><td>w/o PSF</td><td>64.9</td><td>85.2</td><td>88.4</td><td>65.6</td><td>57.5</td><td>36.9</td><td>55.6</td></tr></table>",
+        "bbox": [
+            509,
+            633,
+            885,
+            726
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            496,
+            794,
+            893,
+            869
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Table 1 reports AP on all six categories of the testing set, with the IoU thresholds being 0.25 and 0.5, respectively.",
+        "bbox": [
+            498,
+            869,
+            893,
+            901
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/fe4fe8b665c3fffc5351b7fc44903decde3398b2886d953e60c8b185467574b1.jpg",
+        "image_caption": [
+            "Figure 7. Training loss over iterations in the ablation study of the two key node features (RCF and PSF), on three shape categories (Bike, Sofa and Airplane). For each category (row), we plot both node segmentation loss (left) and node classification loss (right)."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            84,
+            94,
+            452,
+            435
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The consistent superiority of our full model demonstrates the importance of the two features. Figure 7 plots the training loss over iterations for the three methods, on three shape categories (Bike, Sofa and Airplane). The results show that both features are critical for fast training of the node classification module and the node segmentation module. This evidences the importance of both global context information and local shape geometry on learning hierarchical segmentation. More results are in the supplemental material.",
+        "bbox": [
+            75,
+            520,
+            470,
+            657
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "ShapeNet challenge for fine-grained segmentation. In addition, we conduct a moderate-scale stress test using ShapeNet [3] challenge for fine-grained segmentation. We randomly select a collection of shapes from ShapNet and use PartNet to segment them. Since we don’t have groundtruth fine-grained segmentation for ShapeNet models, we resort to a subjective study to evaluate our segmentation results. We ask the participants to rate the quality of finegrained segmentation in the range from 1 to 5. The user study shows that our method attains > 4.0 average ratings for all the categories tested, much higher than the results of the “w/o RCF” baseline. The details and results of this study are provided in the supplemental material. In Figure 8, we show a few visual examples, from which one can see that our method produces fine-grained segmentation these unseen shapes with complicated structures. Moreover, our method obtains the adjacency and symmetry relations of the decomposed parts, which can be used for many downstream structure-aware applications [16].",
+        "bbox": [
+            75,
+            674,
+            470,
+            902
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/0a747332b2c64ae2b6407759abeda3af5298bfb56e5f276e5a50750fc36b03ef.jpg",
+        "image_caption": [
+            "Figure 8. A few results from the ShapeNet fine-grained segmentation challenge. Besides segmentation, PartNet can also recover the relations (adjacency and symmetry) between the segmented parts. We visualize the recovered symmetry relations with colored arrows (Reflective: Red; Translational: Blue; Rotational: Green)."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            503,
+            89,
+            883,
+            421
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            498,
+            516,
+            893,
+            578
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "4.3. Comparison of semantic segmentation",
+        "text_level": 2,
+        "bbox": [
+            500,
+            588,
+            828,
+            604
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Although PartNet is designed for fine-grained segmentation, the recursive decomposition should work even better for semantic segmentation since the latter is usually a much coarser-level segmentation. We evaluate PartNet for semantic segmentation of 3D point clouds on the ShapeNet part dataset [40], through comparing with seven state-ofthe-art methods on this task. Similar to PointNet [19], we re-sample the point cloud for each shape into 2048 points. We use the same training/testing split setting as those stateof-the-arts, and compute part-wise average IoU as metric.",
+        "bbox": [
+            496,
+            612,
+            893,
+            763
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Note that PartNet does not produce semantic labels for points, so it cannot perform labeled segmentation. To enable the comparison, we add an extra module to PartNet to predict a semantic label for each part it decomposes. The part label prediction module takes the node feature of the leaf nodes as input and outputs a semantic label for all points included in that leaf node. This module is implemented with three fully-connected layers and is trained with cross-entropy loss.",
+        "bbox": [
+            496,
+            763,
+            893,
+            902
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/f574f701c27b0ab852b6bd45f0b63e866b203ec28ea23148f06d59cad916a623.jpg",
+        "table_caption": [
+            "Table 2. Comparison of semantic segmentation on the ShapeNet part dataset [40]. Metric is part-wise IoU (%)."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Method</td><td>mean</td><td>aero</td><td>bag</td><td>cap</td><td>car</td><td>chair</td><td>eph.</td><td>guitar</td><td>knife</td><td>lamp</td><td>laptop</td><td>motor</td><td>mug</td><td>pistol</td><td>rocket</td><td>skate.</td><td>table</td></tr><tr><td>PointNet [19]</td><td>83.7</td><td>83.4</td><td>78.7</td><td>82.5</td><td>74.9</td><td>89.6</td><td>73.0</td><td>91.5</td><td>85.9</td><td>80.8</td><td>95.3</td><td>65.2</td><td>93.0</td><td>81.2</td><td>57.9</td><td>72.8</td><td>80.6</td></tr><tr><td>PointNet++ [20]</td><td>85.1</td><td>82.4</td><td>79.0</td><td>87.7</td><td>77.3</td><td>90.8</td><td>71.8</td><td>91.0</td><td>85.9</td><td>83.7</td><td>95.3</td><td>71.6</td><td>94.1</td><td>81.3</td><td>58.7</td><td>76.4</td><td>82.6</td></tr><tr><td>O-CNN [32]</td><td>85.9</td><td>85.5</td><td>87.1</td><td>84.7</td><td>77.0</td><td>91.1</td><td>85.1</td><td>91.9</td><td>87.4</td><td>83.3</td><td>95.4</td><td>56.9</td><td>96.2</td><td>81.6</td><td>53.5</td><td>74.1</td><td>84.4</td></tr><tr><td>SSCN [6]</td><td>86.0</td><td>84.1</td><td>83.0</td><td>84.0</td><td>80.8</td><td>91.4</td><td>78.2</td><td>91.6</td><td>89.1</td><td>85.0</td><td>95.8</td><td>73.7</td><td>95.2</td><td>84.0</td><td>58.5</td><td>76.0</td><td>82.7</td></tr><tr><td>PCNN [2]</td><td>85.1</td><td>82.4</td><td>80.1</td><td>85.5</td><td>79.5</td><td>90.8</td><td>73.2</td><td>91.3</td><td>86.0</td><td>85.0</td><td>95.7</td><td>73.2</td><td>94.8</td><td>83.3</td><td>51.0</td><td>75.0</td><td>81.8</td></tr><tr><td>SPLATNet [28]</td><td>85.4</td><td>83.2</td><td>84.3</td><td>89.1</td><td>80.3</td><td>90.7</td><td>75.5</td><td>92.1</td><td>87.1</td><td>83.9</td><td>96.3</td><td>75.6</td><td>95.8</td><td>83.8</td><td>64.0</td><td>75.5</td><td>81.8</td></tr><tr><td>PointCNN [14]</td><td>86.1</td><td>84.1</td><td>86.4</td><td>86.0</td><td>80.8</td><td>90.6</td><td>79.7</td><td>92.3</td><td>88.4</td><td>85.3</td><td>96.1</td><td>77.2</td><td>95.3</td><td>84.2</td><td>64.2</td><td>80.0</td><td>83.0</td></tr><tr><td>Ours</td><td>87.4</td><td>87.8</td><td>86.7</td><td>89.7</td><td>80.5</td><td>91.9</td><td>75.7</td><td>91.8</td><td>85.9</td><td>83.6</td><td>97.0</td><td>74.6</td><td>97.3</td><td>83.6</td><td>64.6</td><td>78.4</td><td>85.8</td></tr></table>",
+        "bbox": [
+            84,
+            88,
+            898,
+            213
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The results are reported in Table 2. PartNet, augmented with a part label prediction module, achieves better performance in most of the categories, and the highest mean accuracy over all categories. Furthermore, our method works especially well for those categories with complex structures such as chair, table, and aeroplane, etc. We believe that the divide-and-conquer nature of recursive decomposition does help reduce the difficulty of segmentation learning. Another key benefit of recursive decomposition is that the segmentation of higher levels provides contextual cues constraining that of the lower levels. Similar results can also be observed in testing our trained model on the Princeton Segmentation Benchmark [4] (see supplemental material).",
+        "bbox": [
+            75,
+            250,
+            470,
+            445
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "For semantic segmentation, PartNet can be trained with a consistent hierarchy for all shapes in a category. The training is can be done with any hierarchy that is consistent across all training shapes. Therefore, we do not need an extra process (such as the one [36] used in fine-grained segmentation) for hierarchy construction. Taking any random hierarchy of one training shape as a “template”, we unify the hierarchies of all the other shapes based on the semantic part labels. Therefore, PartNet does not require an extra supervision of part hierarchy for training for semantic segmentation. Consequently, the comparison reported in Table 2 of the main paper is a fair one.",
+        "bbox": [
+            75,
+            445,
+            470,
+            627
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "4.4. Comparison of instance segmentation",
+        "text_level": 2,
+        "bbox": [
+            76,
+            635,
+            401,
+            652
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "SGPN [33] is the first deep learning model that learns instance segmentation on 3D point clouds. It can segment object instances and predict a class label for each instance, which is very similar to our method (augmented the label prediction module), except that SGPN cannot obtain part relations as our method does. We make a comparison to SGPN on our FineSeg dataset, using again AP with IoU thresholds of 0.25 and 0.5.",
+        "bbox": [
+            75,
+            659,
+            470,
+            779
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Figure 9 shows a few visual comparisons, where incorrectly segmented regions are marked out. Table 3 shows the quantitative comparison on our datasets. We attribute the consistent improvement over SGPN to two factors. First, the instance group learning of SGPN is based on point clustering. Such a one-shot point grouping over the entire shape is hard to learn. Our method, on the other hand, performs top-down recursive decomposition which breaks the full shape segmentation into a cascade of partial shape segmentations. Second, the point features used by SGPN are solely point convolutional features [19] while our features accounts for both local part shape and global context.",
+        "bbox": [
+            75,
+            780,
+            470,
+            901
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/e174aab7cacf441be2a423ed4ed845b4dc62c6291536a623af964ea8b4765093.jpg",
+        "image_caption": [
+            "Figure 9. Visual comparison of fine-grained part instance segmentation with SGPN [33]. Left: Ground-truths. Middle: Segmentation results by PartNet. Right: Results by SGPN. Incorrect segmentations (w.r.t. ground-truth) are marked with red circles."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            503,
+            247,
+            885,
+            612
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/89ef4e9302be8488bcb171ec26af1aac32b6bff85ce69583f8d4c3afbc80e455.jpg",
+        "table_caption": [
+            "Table 3. Comparison with SGPN [33] on fine-grained instance segmentation over the FineSeg dataset. The metric is AP (%) with IoU threshold being 0.25 and 0.5, respectively."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\"></td><td>mean</td><td>aero</td><td>bike</td><td>chair</td><td>heli.</td><td>sofa</td><td>table</td></tr><tr><td>IoU</td><td>SGPN [12]</td><td>62.2</td><td>67.8</td><td>75.8</td><td>66.2</td><td>59.4</td><td>50.4</td><td>53.6</td></tr><tr><td>&gt;0.25</td><td>Ours</td><td>84.8</td><td>95.2</td><td>97.0</td><td>91.1</td><td>83.0</td><td>65.4</td><td>77.2</td></tr><tr><td>IoU</td><td>SGPN [12]</td><td>47.0</td><td>56.7</td><td>63.7</td><td>54.6</td><td>38.9</td><td>29.5</td><td>38.4</td></tr><tr><td>&gt;0.5</td><td>Ours</td><td>72.8</td><td>88.0</td><td>89.4</td><td>80.5</td><td>69.4</td><td>46.7</td><td>62.6</td></tr></table>",
+        "bbox": [
+            506,
+            693,
+            897,
+            763
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            496,
+            840,
+            893,
+            901
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "5. Applications",
+        "text_level": 2,
+        "bbox": [
+            76,
+            89,
+            207,
+            107
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "We demonstrate an application of the fine-grained segmentation of PartNet in refining 3D point clouds reconstructed from single view images. The basic idea is a segment-and-refine process. Given a 3D point cloud reconstructed in a holistic fashion (using, e.g., the method of Fan et al. [5]), we first perform a recursive decomposition of the point cloud, resulting in a hierarchical organization of part point clouds. We then train a network to refine the part point cloud at each leaf node, yielding a high-quality point cloud for that part. These refined part point clouds together constitute a refined point cloud of the full shape.",
+        "bbox": [
+            75,
+            114,
+            470,
+            282
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The part refiner network used at each leaf node is composed of two channels of PointNet, to encode the point clouds of the part and the full shape, respectively. The resulting two features are concatenated and fed into a four layer fully-connected networks to generate a refined part point cloud. To train this refiner network, we use reconstruction loss computed as the Chamfer distance and the earth mover’s distance between point clouds [5]. To gain more training signals, we opt to train the refiner with a hierarchical reconstruction loss, through a bottom-up composition of the refined part point clouds, following the hierarchy obtained by PartNet segmentation. This way, we can compute a reconstruction loss at each node of the hierarchy, with the corresponding point cloud composed from the part point clouds within its subtree. Please refer to the supplemental material for more details on the network architecture.",
+        "bbox": [
+            75,
+            282,
+            470,
+            523
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Figure 10 shows a few examples of point cloud refinement, guided by the fine-grained, hierarchical segmentation of PartNet. Although the refinement may sometimes lose part fidelity w.r.t. the input images, it does produce highly detailed point clouds and with plausible part structure, thanks to the fine-grained part decomposition of Part-Net. See more examples in the supplemental material.",
+        "bbox": [
+            75,
+            523,
+            470,
+            630
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "6. Conclusion",
+        "text_level": 2,
+        "bbox": [
+            76,
+            643,
+            197,
+            660
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "We have presented a top-down recursive decomposition network for fine-grained segmentation of 3D point clouds. With the hierarchical decomposition scheme, our model obtains fine-grained and accurate segmentation even for highly complex shapes. Different from most existing deeplearning based segmentation models, our method segments a shape into an arbitrary number of parts, depending on its structural complexity, instead of producing a labeled segmentation with a fixed label set. Even for semantic segmentation, our model also achieves superior performance, benefiting from our divide-and-conquer segmentation learning.",
+        "bbox": [
+            75,
+            669,
+            470,
+            838
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Limitations and future work. Our current method has a few limitations. First, although PartNet segments a shape in a hierarchical fashion, the resulting segment hierarchy is not necessarily as meaningful as the those learned purposively for shapes [30, 39] or scenes [15]. Second, although our model can be used to segment different shapes into different number of parts, instead of targeting a fixed part label set. It still needs to be trained for each shape category separately. Learning a more general model for recursive decomposition of shapes from multiple classes would be a very interesting future direction to look into. Third, PartNet is trained with reasonable ground-truth hierarchies built with the method in [36]. Training with totally random hierarchy would lead to performance degrading. We show this effect in the supplemental material. Therefore, another future direction is to learn hierarchical segmentation in a unsupervised manner, without the need of building ground-truth hierarchies.",
+        "bbox": [
+            75,
+            854,
+            470,
+            901
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/a901a8823478886129341f59b7be783ebbadcea3aebcb7f8f7a9c0aef45aca7a.jpg",
+        "image_caption": [
+            "Figure 10. A few examples on refining point clouds reconstructed from single view images, guided by the fine-grained segmentation of PartNet. In each row, we show from left to right the input image, result of holistic reconstruction, fine-grained segmentation of the reconstruction, and the final refinement result by our method."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            503,
+            90,
+            882,
+            441
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            496,
+            537,
+            893,
+            751
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Acknowledgement",
+        "text_level": 2,
+        "bbox": [
+            500,
+            768,
+            661,
+            785
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "We thank the anonymous reviewers for their valuable comments. We are also grateful to Hao (Richard) Zhang for the fruitful discussions, and to Yuan Gan and Pengyu Wang for the tremendous help on data preparation. This work was supported in part by NSFC (61572507, 61532003, 61622212) and Natural Science Foundation of Hunan Province for Distinguished Young Scientists (2017JJ1002).",
+        "bbox": [
+            496,
+            794,
+            893,
+            902
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "References",
+        "text_level": 2,
+        "bbox": [
+            78,
+            89,
+            174,
+            106
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[1] M. Attene, B. Falcidieno, and M. Spagnuolo. Hierarchical mesh segmentation based on fitting primitives. The Visual Computer, 22(3):181–193, 2006. 1, 2",
+        "bbox": [
+            84,
+            114,
+            468,
+            156
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[2] M. Atzmon, H. Maron, and Y. Lipman. Point convolutional neural networks by extension operators. ACM SIGGRAPH, 2018. 7",
+        "bbox": [
+            84,
+            159,
+            468,
+            199
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[3] A. X. Chang, T. Funkhouser, L. Guibas, P. Hanrahan, Q. Huang, Z. Li, S. Savarese, M. Savva, S. Song, H. Su, et al. Shapenet: An information-rich 3d model repository. arXiv preprint arXiv:1512.03012, 2015. 2, 4, 6",
+        "bbox": [
+            84,
+            202,
+            468,
+            257
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[4] X. Chen, A. Golovinskiy, and T. Funkhouser. A benchmark for 3D mesh segmentation. ACM Transactions on Graphics (Proc. SIGGRAPH), 28(3), Aug. 2009. 7",
+        "bbox": [
+            84,
+            258,
+            468,
+            300
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[5] H. Fan, H. Su, and L. Guibas. A point set generation network for 3d object reconstruction from a single image. In IEEE Conference on Computer Vision and Pattern Recognition, pages 2463–2471, 2017. 8",
+        "bbox": [
+            84,
+            301,
+            468,
+            357
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[6] B. Graham, M. Engelcke, and L. van der Maaten. 3d semantic segmentation with submanifold sparse convolutional networks. In Proc. CVPR, pages 9224–9232, 2018. 7",
+        "bbox": [
+            86,
+            359,
+            468,
+            401
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[7] Q. Huang, W. Wang, and U. Neumann. Recurrent slice networks for 3d segmentation of point clouds. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 2626–2635, 2018. 2",
+        "bbox": [
+            84,
+            402,
+            468,
+            457
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[8] Q.-X. Huang, M. Wicke, B. Adams, and L. Guibas. Shape decomposition using modal analysis. Computer Graphics Forum, 28(2):407–416, 2009. 2",
+        "bbox": [
+            84,
+            459,
+            468,
+            501
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[9] E. Kalogerakis, M. Averkiou, S. Maji, and S. Chaudhuri. 3d shape segmentation with projective convolutional networks. In Proc. CVPR, volume 1, page 8, 2017. 2",
+        "bbox": [
+            84,
+            502,
+            468,
+            544
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[10] E. Kalogerakis, A. Hertzmann, and K. Singh. Learning 3d mesh segmentation and labeling. ACM Transactions on Graphics (Proc. SIGGRAPH), 29(4):102:1–102:12, 2010. 2",
+        "bbox": [
+            78,
+            546,
+            468,
+            587
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[11] R. Klokov and V. Lempitsky. Escape from cells: Deep kdnetworks for the recognition of 3d point cloud models. In Computer Vision (ICCV), 2017 IEEE International Conference on, pages 863–872. IEEE, 2017. 2",
+        "bbox": [
+            78,
+            589,
+            468,
+            643
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[12] J. Li, K. Xu, S. Chaudhuri, E. Yumer, H. Zhang, and L. Guibas. GRASS: Generative recursive autoencoders for shape structures. ACM Transactions on Graphics (TOG), 36(4):52, 2017. 2, 3, 7",
+        "bbox": [
+            78,
+            646,
+            470,
+            700
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[13] M. Li, A. G. Patil, K. Xu, S. Chaudhuri, O. Khan, A. Shamir, C. Tu, B. Chen, D. Cohen-Or, and H. Zhang. Grains: Generative recursive autoencoders for indoor scenes. arXiv preprint arXiv:1807.09193, 2018. 2",
+        "bbox": [
+            78,
+            703,
+            468,
+            758
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[14] Y. Li, R. Bu, M. Sun, W. Wu, X. Di, and B. Chen. Pointcnn: Convolution on x-transformed points. In S. Bengio, H. Wallach, H. Larochelle, K. Grauman, N. Cesa-Bianchi, and R. Garnett, editors, Advances in Neural Information Processing Systems 31, pages 820–830. Curran Associates, Inc., 2018. 7",
+        "bbox": [
+            78,
+            760,
+            468,
+            842
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[15] T. Liu, S. Chaudhuri, V. G. Kim, Q. Huang, N. J. Mitra, and T. Funkhouser. Creating consistent scene graphs using a probabilistic grammar. ACM Transactions on Graphics (TOG), 33(6):211, 2014. 8",
+        "bbox": [
+            78,
+            844,
+            468,
+            900
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[16] N. Mitra, M. Wand, H. R. Zhang, D. Cohen-Or, V. Kim, and Q.-X. Huang. Structure-aware shape processing. In SIG-GRAPH Asia 2013 Courses, page 1. ACM, 2013. 6",
+        "bbox": [
+            501,
+            92,
+            892,
+            133
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[17] K. Mo, S. Zhu, A. X. Chang, L. Yi, S. Tripathi, L. J. Guibas, and H. Su. Partnet: A large-scale benchmark for fine-grained and hierarchical part-level 3d object understanding. arXiv preprint arXiv:1812.02713, 2018. 4",
+        "bbox": [
+            501,
+            133,
+            892,
+            189
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[18] C. Niu, J. Li, and K. Xu. Im2struct: Recovering 3d shape structure from a single rgb image. In Proc. CVPR, pages 4521–4529, 2018. 2",
+        "bbox": [
+            501,
+            189,
+            893,
+            229
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[19] C. R. Qi, H. Su, K. Mo, and L. J. Guibas. Pointnet: Deep learning on point sets for 3d classification and segmentation. arXiv preprint arXiv:1612.00593, 2016. 3, 6, 7",
+        "bbox": [
+            501,
+            232,
+            892,
+            273
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[20] C. R. Qi, L. Yi, H. Su, and L. J. Guibas. Pointnet++: Deep hierarchical feature learning on point sets in a metric space. In Advances in Neural Information Processing Systems, pages 5099–5108, 2017. 1, 2, 7",
+        "bbox": [
+            501,
+            273,
+            893,
+            328
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[21] A. A. Requicha and H. B. Voelcker. Constructive solid geometry. 1977. 2",
+        "bbox": [
+            501,
+            329,
+            890,
+            357
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[22] M. Reuter. Hierarchical shape segmentation and registration via topological features of laplace-beltrami eigenfunctions. International Journal of Computer Vision, 89(2-3):287–308, 2010. 2",
+        "bbox": [
+            501,
+            358,
+            892,
+            411
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[23] G. Riegler, A. O. Ulusoy, and A. Geiger. Octnet: Learning deep 3d representations at high resolutions. In Proceedings ofthe IEEE Conference on Computer Vision and Pattern Recognition, volume 3, 2017. 1, 2",
+        "bbox": [
+            501,
+            412,
+            893,
+            468
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[24] O. Sidi, O. van Kaick, Y. Kleiman, H. Zhang, and D. Cohen-Or. Unsupervised co-segmentation of a set of shapes via descriptor-space spectral clustering. ACM Trans. on Graph. (SIGGRAPH Asia), 30(6), 2011. 2",
+        "bbox": [
+            501,
+            469,
+            892,
+            523
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[25] R. Socher. Recursive deep learning for natural language processing and computer vision. PhD thesis, Citeseer, 2014. 2",
+        "bbox": [
+            501,
+            525,
+            892,
+            564
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[26] R. Socher, B. Huval, B. Bath, C. D. Manning, and A. Y. Ng. Convolutional-recursive deep learning for 3d object classification. In Advances in neural information processing systems, pages 656–664, 2012. 2",
+        "bbox": [
+            501,
+            566,
+            892,
+            621
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[27] R. Socher, C. C. Lin, C. Manning, and A. Y. Ng. Parsing natural scenes and natural language with recursive neural networks. In Proceedings of the 28th international conference on machine learning (ICML-11), pages 129–136, 2011. 2",
+        "bbox": [
+            501,
+            622,
+            893,
+            676
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[28] H. Su, V. Jampani, D. Sun, S. Maji, E. Kalogerakis, M.-H. Yang, and J. Kautz. SPLATNet: Sparse lattice networks for point cloud processing. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 2530–2539, 2018. 7",
+        "bbox": [
+            501,
+            678,
+            893,
+            746
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[29] M. Sung, H. Su, V. G. Kim, S. Chaudhuri, and L. Guibas. ComplementMe: Weakly-supervised component suggestions for 3D modeling. ACM Trans. on Graph. (SIGGRAPH Asia), 2017. 4",
+        "bbox": [
+            501,
+            747,
+            893,
+            801
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[30] O. Van Kaick, K. Xu, H. Zhang, Y. Wang, S. Sun, A. Shamir, and D. Cohen-Or. Co-hierarchical analysis of shape structures. ACM Trans. on Graph. (SIGGRAPH), 32(4):69, 2013. 2, 8",
+        "bbox": [
+            501,
+            803,
+            892,
+            857
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[31] P. Wang, Y. Gan, P. Shui, F. Yu, Y. Zhang, S. Chen, and Z. Sun. 3d shape segmentation via shape fully convolutional networks. Computers & Graphics, 70:128–139, 2018. 2",
+        "bbox": [
+            501,
+            859,
+            893,
+            900
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[32] P.-S. Wang, Y. Liu, Y.-X. Guo, C.-Y. Sun, and X. Tong. O-cnn: Octree-based convolutional neural networks for 3d shape analysis. ACM Transactions on Graphics (SIG-GRAPH), 36(4), 2017. 2, 7",
+        "bbox": [
+            78,
+            92,
+            470,
+            147
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[33] W. Wang, R. Yu, Q. Huang, and U. Neumann. Sgpn: Similarity group proposal network for 3d point cloud instance segmentation. 2017. 7",
+        "bbox": [
+            78,
+            148,
+            470,
+            190
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[34] X. Wang, B. Zhou, H. Fang, X. Chen, Q. Zhao, and K. Xu. Learning to group and label fine-grained shape components. In SIGGRAPH Asia 2018 Technical Papers, page 210. ACM, 2018. 2",
+        "bbox": [
+            78,
+            191,
+            468,
+            246
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[35] Y. Wang, M. Gong, T. Wang, D. Cohen-Or, H. Zhang, and B. Chen. Projective analysis for 3d shape segmentation. ACM Transactions on Graphics (TOG), 32(6):192, 2013. 2",
+        "bbox": [
+            78,
+            248,
+            468,
+            290
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[36] Y. Wang, K. Xu, J. Li, H. Zhang, A. Shamir, L. Liu, Z. Cheng, and Y. Xiong. Symmetry hierarchy of man-made objects. Computer Graphics Forum, 30(2):287–296, 2011. 2, 4, 7, 8",
+        "bbox": [
+            78,
+            291,
+            468,
+            345
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[37] Z. Xie, K. Xu, and L. L. abd Yueshan Xiong. 3d shape segmentation and labeling via extreme learning machine. Computer Graphics Forum (Proc. SGP), 33(5):85–95, 2014. 2",
+        "bbox": [
+            78,
+            348,
+            468,
+            388
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[38] K. Xu, V. G. Kim, Q. Huang, N. Mitra, and E. Kalogerakis. Data-driven shape analysis and processing. In SIGGRAPH ASIA 2016 Courses, page 4. ACM, 2016. 1, 2",
+        "bbox": [
+            78,
+            390,
+            468,
+            431
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[39] L. Yi, L. Guibas, A. Hertzmann, V. G. Kim, H. Su, and E. Yumer. Learning hierarchical shape segmentation and labeling from online repositories. ACM Trans. on Graph. (SIGGRAPH), 2017. 1, 2, 8",
+        "bbox": [
+            78,
+            433,
+            470,
+            488
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[40] L. Yi, V. G. Kim, D. Ceylan, I.-C. Shen, M. Yan, H. Su, C. Lu, Q. Huang, A. Sheffer, and L. Guibas. A scalable active framework for region annotation in 3d shape collections. SIGGRAPH Asia, 2016. 6, 7",
+        "bbox": [
+            78,
+            489,
+            468,
+            544
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[41] L. Yi, H. Su, X. Guo, and L. J. Guibas. Syncspeccnn: Synchronized spectral cnn for 3d shape segmentation. In CVPR, pages 6584–6592, 2017. 2",
+        "bbox": [
+            78,
+            546,
+            468,
+            588
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[42] Y. Zhao, K. Xu, E. Zhu, X. Liu, X. Zhu, and J. Yin. Triangle lasso for simultaneous clustering and optimization in graph datasets. IEEE Transactions on Knowledge and Data Engineering, 31(8):1610–1623, 2018. 2",
+        "bbox": [
+            78,
+            589,
+            470,
+            643
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[43] Y. Zhou, K. Yin, H. Huang, H. Zhang, M. Gong, and D. Cohen-Or. Generalized cylinder decomposition. ACM Trans. on Graph. (SIGGRAPH Asia), 34(6):171–1, 2015. 2",
+        "bbox": [
+            78,
+            645,
+            470,
+            686
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[44] C. Zhu, K. Xu, S. Chaudhuri, R. Yi, and H. Zhang. Scores: Shape composition with recursive substructure priors. ACM Transactions on Graphics (TOG), 37(6):1–14, 2018. 2",
+        "bbox": [
+            78,
+            688,
+            470,
+            729
+        ],
+        "page_idx": 9
+    }
+]

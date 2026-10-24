@@ -1,0 +1,194 @@
+{
+  "schema": "rehab-literature-method-deep-check/v1",
+  "checked_date": "2026-10-03",
+  "source_sha256": {
+    "01_参考论文/康复整合链路/PMC11885312.xml": "c0d4eba0b9b5f25bc8ebe970c8bd21d69f990113eea63a3646de99a4d5d7d83b",
+    "01_参考论文/康复整合链路/TFS2025_NeuroFuzzy_AAN.pdf": "7cd821b71b08addbc45745b1c88028d28d7b59f4c35d74ee80dca1e3065d0e21"
+  },
+  "doi": {
+    "ALP2025": "10.3389/fdgth.2025.1559796",
+    "TFS2025": "10.1109/tfuzz.2025.3611266"
+  },
+  "versions": {
+    "ALP2025": "Canonical JATS XML",
+    "TFS2025": "White Rose accepted manuscript with cover; file page=manuscript page+1"
+  },
+  "passages": [
+    {
+      "id": "DM-01",
+      "paper_id": "ALP2025",
+      "source": "01_参考论文/康复整合链路/PMC11885312.xml",
+      "locator": "XML sec s2a2 / direct paragraph 3",
+      "topic": "Instruction-generated maximum/passive labels and isotonic calibration",
+      "text": "The choice of these models was motivated by their robustness, interpretability, and effectiveness with relatively small datasets. More complex approaches, like boosted trees or random forests, often demand larger datasets and may overfit when data is limited.",
+      "normalization": "itertext + whitespace collapse"
+    },
+    {
+      "id": "DM-02",
+      "paper_id": "ALP2025",
+      "source": "01_参考论文/康复整合链路/PMC11885312.xml",
+      "locator": "XML sec s2c / direct paragraph 1",
+      "topic": "5-fold/80%-10%-10% sample split and Brier calibration target",
+      "text": "The first experimental phase assesses the ML models capability to estimate the ALP. A k-fold cross-validation ( k = 5 ) is carried out on the collected dataset to compute the performance of the implemented classifiers in accurately predicting both the label and the score. In particular, the training set, per each fold, is composed of the 80% of the dataset, and the i-th fold (20%) is split up into a validation set (10%), used to calibrate the classifiers, and a test set (10%), on which are computed the accuracy and the Brier Score (BS). Accuracy is defined as the proportion of the correct predictions with respect to the total number of tested samples. BS measures the accuracy of probabilistic predictions ( 36 ) and it can be computed as reported in Equation (5)",
+      "normalization": "itertext + whitespace collapse"
+    },
+    {
+      "id": "DM-03",
+      "paper_id": "ALP2025",
+      "source": "01_参考论文/康复整合链路/PMC11885312.xml",
+      "locator": "XML sec s2c / list item 2",
+      "topic": "Robot mechanical work is an interaction-work proxy, shoulder flexion",
+      "text": "• Robot mechanical work ( W R ): it serves as an indicator of the user’s contribution to the system. Equation (6) reports the formula to compute the robot mechanical work. (6) W R = ∑ t = 1 T ( F ( t ) ⋅ v ( t ) ⋅ Δ t ) where T is the number of samples collected in the experiment, and F and v are the interaction force and the end-effector speed in Cartesian space computed at the time instant t , respectively. The numerical integration of this dot product yields the work done by the robot. Positive work indicates that the interaction force is aligned with the desired motion, while negative work suggests resistance to the robot’s movement. W R is specifically computed during the shoulder flexion phase, where participants actively compensate for the gravitational force.",
+      "normalization": "itertext + whitespace collapse"
+    },
+    {
+      "id": "DM-04",
+      "paper_id": "ALP2025",
+      "source": "01_参考论文/康复整合链路/PMC11885312.xml",
+      "locator": "XML sec s2c / list item 4",
+      "topic": "iEMG definition, not net active joint power",
+      "text": "• Integrated EMG ( i E M G ): since the proposed ALP-adapting robot wants to stimulate the participant to play the main role, the movement intention of the participant was measured by extracting the integral of EMG signal. In particular, the EMG was preprocessed by means of a bandpass 4th order Butterworth filter in the range [15–400] Hz. Moreover, the signal was rectified and a zero-lag 100 ms moving average filter was applied to compute the enveloped EMG (EnEMG). The formula to compute the iEMG is reported in Equation (8) (8) i E M G = ∑ t = 1 T ( E n E M G ( t ) ) where E n E M G is the enveloped EMG, T represents the total number of samples collected in an experimental phase, and t indexes the t -th sample. i E M G increase denotes a greater muscular contribution in accomplishing the motor task.",
+      "normalization": "itertext + whitespace collapse"
+    },
+    {
+      "id": "DM-05",
+      "paper_id": "ALP2025",
+      "source": "01_参考论文/康复整合链路/PMC11885312.xml",
+      "locator": "XML sec s2c / direct paragraph 6",
+      "topic": "SAM valence/arousal/dominance and NASA-TLX workload/effort",
+      "text": "Moreover, the subjective perception of the controllers on the participants is assessed by means of questionnaires. The engagement in interacting with the robot was assessed by means of the Self Assessment Mannequin (SAM) questionnaire. The SAM allows the participants to declare their Valence of the response, perceived Arousal, and perceived Dominance evoked by rehabilitation cobot use. Moreover, the NASA-TLX was administered to assess the perceived workload in interacting with the robot in the two experimental conditions. In particular, the participants were asked to rate from 0-10 their experience in terms of Mental Demand (MD), Physical Demand (PD), Temporal Demand (TD), Performance (PER), Effort (EF), and Frustration (FR).",
+      "normalization": "itertext + whitespace collapse"
+    },
+    {
+      "id": "DM-06",
+      "paper_id": "ALP2025",
+      "source": "01_参考论文/康复整合链路/PMC11885312.xml",
+      "locator": "XML sec s2b / direct paragraph 1",
+      "topic": "Healthy sample; experimental applicability",
+      "text": "To validate the proposed approach, an experiment was performed by enrolling 15 healthy participants (10 males and 5 females, 34.5 ± 14.2 mean age). All of them signed a written consent to participate in this study and the study was approved by the Ethical Commission of the UZ Brussel (BUN: 1432022000180). Specifically, the validation of the proposed approach was structured into two experimental sessions. The former session focused on collecting data from human-robot interactions to train and calibrate the machine-learning model for ALP estimation. After the model was validated offline, the latter session implemented the trained model in real-time. During this phase, ALP predictions were timely performed by processing data collected from the custom-developed multimodal interface. The interface extracted features from EMG signals and pressure data, which were provided as input to the trained model to infer the ALP. This enabled the adaptive ALP-driven impedance controller to dynamically modify the task execution time based on the participants’ estimated ALP, providing closed-loop feedback. The second phase aimed to evaluate the differences in performance and engagement achieved with the adaptive ALP-driven controller compared to a conventional impedance controller, highlighting the benefits of tailoring robot behavior to user participation.",
+      "normalization": "itertext + whitespace collapse"
+    },
+    {
+      "id": "DM-07",
+      "paper_id": "ALP2025",
+      "source": "01_参考论文/康复整合链路/PMC11885312.xml",
+      "locator": "XML sec s3 / direct paragraph 5",
+      "topic": "No ground-truth ALP in live interaction; model-output metric boundary",
+      "text": "In the second experimental session, real-time model accuracy evaluation was hindered because participants were unaware of the experiment’s purpose. They interacted naturally, making binary labels unobtainable. Therefore, the real-time model used data from all training session participants (not subject-specific) to estimate the ALP in the second session. Figure 5 shows the actual position of the robot along the z -axis ( p a z ), and the normalized E M G and pressure ( P ) collected during the second experimental session, along with the ALP estimated in real-time, of a representative EG participant. It’s important to emphasize the temporal sequence: for t ≤ t R , the demonstration trajectory is recorded, for t R < t ≤ t B , the baseline is computed, and subsequently ( t ≥ t B ), the experimental phase commences where the robot adapts based on the ALP. As soon as the adaptive modality begins, the robot stops and waits for more participant intervention before proceeding with trajectory generation.",
+      "normalization": "itertext + whitespace collapse"
+    },
+    {
+      "id": "DM-08",
+      "paper_id": "ALP2025",
+      "source": "01_参考论文/康复整合链路/PMC11885312.xml",
+      "locator": "XML sec s3 / direct paragraph 13",
+      "topic": "SAM outcome direction and significance",
+      "text": "Lastly, the results regarding the level of engagement and perceived workload are depicted in Figure 7 . The Self-Assessment Manikin (SAM) questionnaire revealed that both experimental groups experienced positive feelings and felt confident while interacting with the robot, as indicated by high values of Valence and Dominance, respectively. However, there was a significant difference in the Arousal ranking between the two groups ( p -value = 0.007). This indicates that interacting with the adaptive ALP-driven impedance controller significantly enhances the participants perceived excitement during the interaction.",
+      "normalization": "itertext + whitespace collapse"
+    },
+    {
+      "id": "DM-09",
+      "paper_id": "ALP2025",
+      "source": "01_参考论文/康复整合链路/PMC11885312.xml",
+      "locator": "XML sec s3 / direct paragraph 14",
+      "topic": "NASA-TLX effort nonsignificance vs physical demand",
+      "text": "The NASA Task Load Index (NASA-TLX) questionnaire showed that the perceived workload was rated in a comparable manner by the two participant groups. However, a not statistically significant difference in the perception of effort can be observed ( p -value = 0.31). The CG rated the effort perception as 2.8 ± 1.5 , while the EG rated it as 4.8 ± 3.0 . This may suggest that the ALP-adapting robot was perceived more effort from the participants to proceed with the therapy than the non-adapting robot.",
+      "normalization": "itertext + whitespace collapse"
+    },
+    {
+      "id": "DM-10",
+      "paper_id": "ALP2025",
+      "source": "01_参考论文/康复整合链路/PMC11885312.xml",
+      "locator": "XML sec s3 / direct paragraph 18",
+      "topic": "Clinical validation and generalization remain future work",
+      "text": "Lastly, a limitation of this study that must be acknowledged is that the ALP-based control strategy was solely validated in a controlled laboratory setting against a conventional impedance control approach. While the results underscore the potential of the proposed methodology to enhance user active participation, it is worth extending this validation to clinically relevant settings. It is recommended that subsequent studies concentrate on evaluating the clinical efficacy of the ALP-guided control strategy by involving patients with motor disabilities and assessing its impact on functional recovery and therapeutic outcomes in real-world rehabilitation settings.",
+      "normalization": "itertext + whitespace collapse"
+    },
+    {
+      "id": "DM-11",
+      "paper_id": "ALP2025",
+      "source": "01_参考论文/康复整合链路/PMC11885312.xml",
+      "locator": "XML sec s2a3 / direct paragraph 3",
+      "topic": "Adaptation target: movement time, low activity threshold, not reliability probability",
+      "text": "where A L P b is a subject-specific threshold computed in a baseline recording phase. In this way, the lower the ALP, the lower the Δ n , and the higher the time needed to complete the replay of the demonstrated trajectory. If the participant slacks, e.g., A L P ≤ A L P b , the robot will not move until the model estimates a user A L P ≥ A L P b . The choice of parameter values (0, 1, and 2) in Equation 3 represents distinct action levels based on ALP, with ( A L P b + 1 ) / 2 evenly dividing ALP ≥ A L P b . These values were not empirically determined but selected for interpretable adaptation control strategy.",
+      "normalization": "itertext + whitespace collapse"
+    },
+    {
+      "id": "DM-12",
+      "paper_id": "TFS2025",
+      "source": "01_参考论文/康复整合链路/TFS2025_NeuroFuzzy_AAN.pdf",
+      "file_page": 5,
+      "manuscript_page": 4,
+      "locator": "PDF file page 5, manuscript page 4",
+      "topic": "OpenSim inverse-dynamics torque reference (Eq19)",
+      "text": "ground truth torque values τhn obtained from OpenSim inverse dynamics.",
+      "normalization": "pdftotext default reading order + whitespace collapse"
+    },
+    {
+      "id": "DM-13",
+      "paper_id": "TFS2025",
+      "source": "01_参考论文/康复整合链路/TFS2025_NeuroFuzzy_AAN.pdf",
+      "file_page": 6,
+      "manuscript_page": 5,
+      "locator": "PDF file page 6, manuscript page 5",
+      "topic": "Passivity requires D(t)-M(q)lambda_e positive definite",
+      "text": "Theorem 1. For the robotic system described by (1), with the impedance model given by (20) and the FESN’s weight adaptation outlined in (23), the system exhibit the passivity of the dynamics between τe and sx , provided the following condition holds: D(t) − M (q)λe ≻ 0 (25)",
+      "normalization": "pdftotext default reading order + whitespace collapse"
+    },
+    {
+      "id": "DM-14",
+      "paper_id": "TFS2025",
+      "source": "01_参考论文/康复整合链路/TFS2025_NeuroFuzzy_AAN.pdf",
+      "file_page": 7,
+      "manuscript_page": 6,
+      "locator": "PDF file page 7, manuscript page 6",
+      "topic": "JTCR uses estimated torque and maximum capacity, not calibrated probability",
+      "text": "a joint torque capacity ratio (JTCR) is defined as: γ(Ψ) = 1 1 + exp(−k0 (τh (Ψ) − τm )) (35) where τm denotes the maximum human joint torque, and k0 is a slope parameter that controls the rate of transition.",
+      "normalization": "pdftotext default reading order + whitespace collapse"
+    },
+    {
+      "id": "DM-15",
+      "paper_id": "TFS2025",
+      "source": "01_参考论文/康复整合链路/TFS2025_NeuroFuzzy_AAN.pdf",
+      "file_page": 8,
+      "manuscript_page": 7,
+      "locator": "PDF file page 8, manuscript page 7",
+      "topic": "3 healthy men, not clinical efficacy cohort",
+      "text": "Three healthy subjects (S1: age 24, gender male, height, 185 cm, weight 77 kg; S2: age 26, gender male, height 174 cm, weight 66 kg; S3: age 29, gender male, height 173 cm, weight 90.3 kg) participated in the experiment.",
+      "normalization": "pdftotext default reading order + whitespace collapse"
+    },
+    {
+      "id": "DM-16",
+      "paper_id": "TFS2025",
+      "source": "01_参考论文/康复整合链路/TFS2025_NeuroFuzzy_AAN.pdf",
+      "file_page": 8,
+      "manuscript_page": 7,
+      "locator": "PDF file page 8, manuscript page 7",
+      "topic": "MVC-normalized EMG, overlapping window units",
+      "text": "Raw signals are preprocessed through second-order Butterworth band-pass filtering (25±450 Hz) for noise removal and fourth-order low-pass filtering (4 Hz) for EMG-force correlation, then normalized using peak isometric maximum voluntary contraction. Filtered sEMG data are prepared for HFTN input using a sliding window with 20-point segments and 2-point stride.",
+      "normalization": "pdftotext default reading order + whitespace collapse"
+    },
+    {
+      "id": "DM-17",
+      "paper_id": "TFS2025",
+      "source": "01_参考论文/康复整合链路/TFS2025_NeuroFuzzy_AAN.pdf",
+      "file_page": 9,
+      "manuscript_page": 8,
+      "locator": "PDF file page 9, manuscript page 8",
+      "topic": "Feature magnitude normalization, not probability calibration",
+      "text": "Regarding the imbalance between the fuzzy and transformer paths, although these two branches differ in both dimensionality (32 vs. 8) and statistical characteristics, we evaluated the impact of this imbalance by introducing L2 normalization prior to feature fusion. This adjustment effectively equalized the magnitude of the two paths, eliminating the dominance of transformer features. However, the performance improvement was marginal (R2 increase of 0.001; RMSE reduction of 0.002), indicating that the original fusion layer already learned to balance the contributions during training. This suggests that the model is capable of implicitly adjusting the relative influence of each pathway through backpropagation. Therefore, for the 8 sake of architectural simplicity and computational efficiency, we retained the original unnormalized design in the final implementation.",
+      "normalization": "pdftotext default reading order + whitespace collapse"
+    }
+  ],
+  "passages_literal_checked": 17,
+  "counts_note": "Supplement to existing334 main-original excerpts; not new papers/originals and not RL derived-body evidence. Do not conflate text passages with independent experimental samples.",
+  "judgment_limits": [
+    "No raw data rerun or image processing",
+    "Brier/isotonic target is instructed activity class, not continuous mechanical contribution truth",
+    "SAM arousal/dominance and NASA workload not one total psychological-engagement score",
+    "OpenSim torque reference derived from model; no implication that every estimate is wrong or that no independent instrument exists",
+    "No subject-held-out split demonstrated by cross-subject error bars alone",
+    "Conditional mathematical passivity not patient safety or arbitrary inference-error robustness"
+  ],
+  "innovation_state": "Confirmed0; calib+multimodal/body-psych evaluation not standalone novelty; conditions unchanged after only-engineering-material confirmation"
+}

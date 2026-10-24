@@ -1,0 +1,2787 @@
+{
+ "purpose": "「多媒体/语义运动表示」中间地带广度扫描（V9h）—— 补前几轮从未查过的第三面",
+ "why": "F15（ICMCS 2012 Benesh video ontology）证明中间地带有货，而前两轮只打了康复面与 CV 面",
+ "zones": {
+  "中间带": "语义/本体/描述语言/数据标准/定性表示 ← 真正要查的",
+  "CV": "3D 姿态估计 / markerless / 视频重建",
+  "临床": "康复 / 卒中 / 临床评估",
+  "艺术": "舞蹈 / 表演 / 记谱"
+ },
+ "queries": [
+  {
+   "label": "M1 human movement description",
+   "source": "crossref",
+   "query": "human movement description multimedia representation",
+   "n": 12,
+   "zones": {
+    "其他": 7,
+    "CV": 2,
+    "中间带": 2,
+    "临床": 1
+   }
+  },
+  {
+   "label": "M2 HMD 动作描述",
+   "source": "crossref",
+   "query": "human movement description standard annotation format",
+   "n": 12,
+   "zones": {
+    "其他": 10,
+    "艺术": 2
+   }
+  },
+  {
+   "label": "M3 arXiv HMD",
+   "source": "arxiv",
+   "query": "all:\"human movement description\"",
+   "n": 0,
+   "zones": {}
+  },
+  {
+   "label": "M4 运动本体",
+   "source": "crossref",
+   "query": "ontology human movement video semantic representation",
+   "n": 12,
+   "zones": {
+    "中间带": 12
+   }
+  },
+  {
+   "label": "M5 语义运动表示",
+   "source": "crossref",
+   "query": "semantic representation human motion understanding video",
+   "n": 12,
+   "zones": {
+    "其他": 10,
+    "中间带": 1,
+    "艺术": 1
+   }
+  },
+  {
+   "label": "M6 arXiv 运动本体",
+   "source": "arxiv",
+   "query": "all:\"ontology\" AND all:\"human movement\"",
+   "n": 0,
+   "zones": {}
+  },
+  {
+   "label": "M7 运动描述语言",
+   "source": "crossref",
+   "query": "motion description language human movement specification",
+   "n": 12,
+   "zones": {
+    "其他": 6,
+    "中间带": 6
+   }
+  },
+  {
+   "label": "M8 定性运动表示",
+   "source": "crossref",
+   "query": "qualitative motion representation human gesture description",
+   "n": 12,
+   "zones": {
+    "CV": 1,
+    "其他": 9,
+    "中间带": 2
+   }
+  },
+  {
+   "label": "M9 手势描述语言",
+   "source": "crossref",
+   "query": "gesture description language formal representation",
+   "n": 12,
+   "zones": {
+    "中间带": 3,
+    "其他": 9
+   }
+  },
+  {
+   "label": "M10 arXiv 定性运动表示",
+   "source": "arxiv",
+   "query": "all:\"qualitative\" AND all:\"motion representation\" AND all:\"human\"",
+   "n": 6,
+   "zones": {
+    "其他": 3,
+    "艺术": 3
+   }
+  },
+  {
+   "label": "M11 离散动作表示",
+   "source": "crossref",
+   "query": "discrete action representation tokenization video understanding",
+   "n": 12,
+   "zones": {
+    "其他": 10,
+    "CV": 2
+   }
+  },
+  {
+   "label": "M12 arXiv 动作 token",
+   "source": "arxiv",
+   "query": "all:\"action tokens\" AND all:\"video\"",
+   "n": 12,
+   "zones": {
+    "CV": 6,
+    "艺术": 1,
+    "其他": 5
+   }
+  },
+  {
+   "label": "M13 动捕数据标准",
+   "source": "crossref",
+   "query": "motion capture data standard interchange format human movement",
+   "n": 12,
+   "zones": {
+    "其他": 1,
+    "中间带": 11
+   }
+  },
+  {
+   "label": "M14 BVH 动捕格式语义",
+   "source": "crossref",
+   "query": "BVH motion capture format semantic annotation skeleton",
+   "n": 12,
+   "zones": {
+    "其他": 4,
+    "艺术": 6,
+    "CV": 1,
+    "中间带": 1
+   }
+  },
+  {
+   "label": "M15 arXiv 动捕标准",
+   "source": "arxiv",
+   "query": "all:\"motion capture\" AND all:\"interchange format\"",
+   "n": 0,
+   "zones": {}
+  },
+  {
+   "label": "M16 MPEG 人体动画",
+   "source": "crossref",
+   "query": "MPEG-4 human body animation parametric representation standard",
+   "n": 12,
+   "zones": {
+    "其他": 11,
+    "艺术": 1
+   }
+  },
+  {
+   "label": "M17 arXiv 数字人运动表示",
+   "source": "arxiv",
+   "query": "all:\"digital human\" AND all:\"motion representation\" AND all:\"standard\"",
+   "n": 0,
+   "zones": {}
+  }
+ ],
+ "by_zone": {
+  "中间带": [
+   {
+    "id": "10.1109/icmcs.2012.6320129",
+    "title": "An Ontology for video human movement representation based on Benesh notation",
+    "venue": "2012 International Conference on Multimedia Computing and Systems",
+    "year": 2012,
+    "type": "proceedings-article",
+    "authors": [
+     "aad Sawsan S",
+     "De Beul Dominique",
+     "Mahmoudi Said",
+     "Manneback Pierre"
+    ],
+    "n_auth": 4,
+    "abstract": "",
+    "_query": "M1 human movement description",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.1109/tmm.2026.3689446",
+    "title": "Eye Movement Classification via Global Semantic Representation with Fixation-Guided BERT",
+    "venue": "IEEE Transactions on Multimedia",
+    "year": 2026,
+    "type": "journal-article",
+    "authors": [
+     "Xia Chen",
+     "Liu Pan",
+     "Zhong Wenqi",
+     "Zhang Dingwen",
+     "Han Junwei"
+    ],
+    "n_auth": 5,
+    "abstract": "",
+    "_query": "M1 human movement description",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.1109/icmcs.2012.6320129",
+    "title": "An Ontology for video human movement representation based on Benesh notation",
+    "venue": "2012 International Conference on Multimedia Computing and Systems",
+    "year": 2012,
+    "type": "proceedings-article",
+    "authors": [
+     "aad Sawsan S",
+     "De Beul Dominique",
+     "Mahmoudi Said",
+     "Manneback Pierre"
+    ],
+    "n_auth": 4,
+    "abstract": "",
+    "_query": "M4 运动本体",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.1201/b18639-10",
+    "title": "Ontology and the Semantic Web",
+    "venue": "Multimedia Ontology",
+    "year": 2015,
+    "type": "book-chapter",
+    "authors": [],
+    "n_auth": 0,
+    "abstract": "",
+    "_query": "M4 运动本体",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.1201/b18639-3",
+    "title": "Ontology and the Semantic Web",
+    "venue": "Multimedia Ontology",
+    "year": 2015,
+    "type": "book-chapter",
+    "authors": [],
+    "n_auth": 0,
+    "abstract": "",
+    "_query": "M4 运动本体",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.1016/j.neucom.2011.05.044",
+    "title": "A comprehensive representation scheme for video semantic ontology and its applications in semantic concept detection",
+    "venue": "Neurocomputing",
+    "year": 2012,
+    "type": "journal-article",
+    "authors": [
+     "Zha Zheng-Jun",
+     "Mei Tao",
+     "Zheng Yan-Tao",
+     "Wang Zengfu",
+     "Hua Xian-Sheng"
+    ],
+    "n_auth": 5,
+    "abstract": "",
+    "_query": "M4 运动本体",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.7490/f1000research.1112740.1",
+    "title": "Ontology development for semantic representation of GeneReviews",
+    "venue": "",
+    "year": 2016,
+    "type": "posted-content",
+    "authors": [
+     "Singh Sweta",
+     "Haerian Krystl",
+     "Zhu Qian"
+    ],
+    "n_auth": 3,
+    "abstract": "Specific Mendelian conditions are rare and may only affect one in every several thousands to millions people. Comparing to other chronic diseases, there is limited accumulated information for genetic diseases. GeneReviews as a professional data resource, provides expert-authored, peer-reviewed disease descriptions (\"chapters\") for genetic conditions. However, the information presenting in GeneReviews is in unstructured data. In order to better utilize such information for further clinical decision support, in this study, we manually annotated 300 GeneReviews chapters, specifically for clinical features, treatments, tests and family risks, and applied web ontology language (OWL) to formal organize and represent annotations.",
+    "_query": "M4 运动本体",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.3724/sp.j.1087.2010.00835",
+    "title": "Research of video semantic retrieval system based on ontology",
+    "venue": "Journal of Computer Applications",
+    "year": 2010,
+    "type": "journal-article",
+    "authors": [
+     "XU Feng",
+     "ZHENG Quan"
+    ],
+    "n_auth": 2,
+    "abstract": "",
+    "_query": "M4 运动本体",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.1515/9783598441585.3.242",
+    "title": "3.1 Ontology Engineering",
+    "venue": "Knowledge Representation in the Social Semantic Web",
+    "year": 2010,
+    "type": "book-chapter",
+    "authors": [],
+    "n_auth": 0,
+    "abstract": "",
+    "_query": "M4 运动本体",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.5220/0012855900003756",
+    "title": "Visualizing OWL and RDF: Advancing Ontology Representation for Enhanced Semantic Clarity and Communication",
+    "venue": "Proceedings of the 13th International Conference on Data Science, Technology and Applications",
+    "year": 2024,
+    "type": "proceedings-article",
+    "authors": [
+     "Biagioni Giulia"
+    ],
+    "n_auth": 1,
+    "abstract": "",
+    "_query": "M4 运动本体",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.5220/0010285305500557",
+    "title": "Efficient Semantic Representation of Network Access Control Configuration for Ontology-based Security Analysis",
+    "venue": "Proceedings of the 7th International Conference on Information Systems Security and Privacy",
+    "year": 2021,
+    "type": "proceedings-article",
+    "authors": [
+     "Patzer Florian",
+     "Beyerer Jürgen"
+    ],
+    "n_auth": 2,
+    "abstract": "",
+    "_query": "M4 运动本体",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.1109/icsc50631.2021.00052",
+    "title": "Ontology-based human behavior indexing with multimodal video data",
+    "venue": "2021 IEEE 15th International Conference on Semantic Computing (ICSC)",
+    "year": 2021,
+    "type": "proceedings-article",
+    "authors": [
+     "Vizcarra Julio",
+     "Nishimura Satoshi",
+     "Fukuda Ken"
+    ],
+    "n_auth": 3,
+    "abstract": "",
+    "_query": "M4 运动本体",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.22452/rd/3vewuh",
+    "title": "Coding data for: Knowledge representation using Ontology-Based Social Semantic for Malay Manuscript Digital Library Collection",
+    "venue": "",
+    "year": null,
+    "type": "database",
+    "authors": [],
+    "n_auth": 0,
+    "abstract": "",
+    "_query": "M4 运动本体",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.1515/9783598441585.3.272",
+    "title": "3.2 Community-based Ontology Engineering",
+    "venue": "Knowledge Representation in the Social Semantic Web",
+    "year": 2010,
+    "type": "book-chapter",
+    "authors": [],
+    "n_auth": 0,
+    "abstract": "",
+    "_query": "M4 运动本体",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.32657/10356/73345",
+    "title": "Semantic representation learning for natural language understanding",
+    "venue": "",
+    "year": null,
+    "type": "dissertation",
+    "authors": [
+     " ",
+     "Zhang Yong"
+    ],
+    "n_auth": 2,
+    "abstract": "",
+    "_query": "M5 语义运动表示",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.3403/30477175",
+    "title": "Information technology � Data Format Description Language (DFDL) v1.0 Specification",
+    "venue": "",
+    "year": null,
+    "type": "standard",
+    "authors": [],
+    "n_auth": 0,
+    "abstract": "",
+    "_query": "M7 运动描述语言",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.3403/30477175u",
+    "title": "Information technology � Data Format Description Language (DFDL) v1.0 Specification",
+    "venue": "",
+    "year": null,
+    "type": "standard",
+    "authors": [],
+    "n_auth": 0,
+    "abstract": "",
+    "_query": "M7 运动描述语言",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.3403/02080951u",
+    "title": "Space data and information transfer systems. Data description language. EAST specification",
+    "venue": "",
+    "year": null,
+    "type": "standard",
+    "authors": [],
+    "n_auth": 0,
+    "abstract": "",
+    "_query": "M7 运动描述语言",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.1524/auto.2002.50.2.a1",
+    "title": "Die Spezifikationssprachen MSC und SDL / Teil 2: Specification and Description Language (SDL) (Specification and Description Language (SDL))",
+    "venue": "auto",
+    "year": 2002,
+    "type": "journal-article",
+    "authors": [
+     "Grabowski J.",
+     "Rudolph E.",
+     "Schmitt M."
+    ],
+    "n_auth": 3,
+    "abstract": "Im Telekommunikationsbereich haben sich Message Sequence Chart (MSC) und Specification and Description Language (SDL) als wichtigste Modellierungssprachen etabliert. Im ersten Teil dieses Artikels wurde die Anforderungsspezifikation mit MSC erläutert. Der vorliegende zweite Teil geht auf die Beschreibung von verteilten Systemen mit SDL ein und skizziert den Einsatz von modernen Software-Werkzeugen.",
+    "_query": "M7 运动描述语言",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.3403/02080951",
+    "title": "Space data and information transfer systems. Data description language. EAST specification",
+    "venue": "",
+    "year": null,
+    "type": "standard",
+    "authors": [],
+    "n_auth": 0,
+    "abstract": "",
+    "_query": "M7 运动描述语言",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.3403/02826006",
+    "title": "Space data and information transfer systems. Data description language. EAST specification",
+    "venue": "",
+    "year": null,
+    "type": "standard",
+    "authors": [],
+    "n_auth": 0,
+    "abstract": "",
+    "_query": "M7 运动描述语言",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.1109/afgr.2008.4813435",
+    "title": "Recognizing human actions based on silhouette energy image and global motion description",
+    "venue": "2008 8th IEEE International Conference on Automatic Face &amp; Gesture Recognition",
+    "year": 2008,
+    "type": "proceedings-article",
+    "authors": [
+     "Ahmad Mohiuddin",
+     "Lee Seong-Whan"
+    ],
+    "n_auth": 2,
+    "abstract": "",
+    "_query": "M8 定性运动表示",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.3233/978-1-61499-405-3-431",
+    "title": "Hand-gesture Description Based on Skeleton Representation and Hu Moments",
+    "venue": "Frontiers in Artificial Intelligence and Applications",
+    "year": 2014,
+    "type": "book-chapter",
+    "authors": [
+     "Favorskaya Margarita ",
+     "Nosov Alexander "
+    ],
+    "n_auth": 2,
+    "abstract": "The techniques of Human-Computer Interaction (HCI) are rapidly developed for such application as virtual computer-aided design, human-robot interaction, virtual games, remote control of devices, smart house control, among others. In this research, all stages for visual-based static hand-gestures representation were improved. A hand tracker is built based on spatio-temporal data in a static scene and uses the results of pre-processing by filters, skin classifier, morphological processing, and visual tracking. The proposed robust hand-gesture description includes two main estimations: the topological (approximated skeleton representation) and geometric (Hu moments) descriptions of hand-gesture. The Hu moments provide the accurate gestures recognition with similar topological view. The recognition accuracy using the improved (approximated) skeleton and Hu moments calculation achieved 92&amp;ndash;96 %.",
+    "_query": "M8 定性运动表示",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.70675/c8af4187z2f2bz483fza40dz4072d79784d7",
+    "title": "COLLADA Audio : A Formal Representation of Sound in Virtual Cities by a Scene Description Language",
+    "venue": "",
+    "year": null,
+    "type": "dissertation",
+    "authors": [
+     "Chan Shih-Han"
+    ],
+    "n_auth": 1,
+    "abstract": "Le son dans COLLADA : une représentation formelle du son dans les villes virtuelles avec des langages de description de scène Depuis de nombreuses années, des formats de fichier standardisés ont été conçus pour écrire, lire et échanger des descriptions de scènes 3D. Ces descriptions sont principalement faites pour des contenus visuels; les options accessibles pour les compositions audio des scènes virtuelles sont, dans les meilleurs des cas, pauvres et dans les pires, manquantes. C’est pourquoi nous proposons d’inclure une description sonore riche dans le COLLADA qui est un format standard pour d’échange d’assets numériques. La plupart des langages de description qui incluent une description sonore factorisent les éléments communs aux informations visuelles et sonores. Ces deux aspects sont par exemple décrits dans le même système de coordonnées. Cependant, dès lors qu’une description dynamique ou que des données externes sont requises, toutes les liaisons doivent être faites de manière programmée. Dans cette thèse, nous tentons de résoudre ce problème et nous proposons de donner plus de puissance créative aux sound designers même lorsque les scènes sont dynamiques ou basées sur de",
+    "_query": "M9 手势描述语言",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.1007/978-0-387-34878-0_3",
+    "title": "A Service Request Description Language",
+    "venue": "IFIP Advances in Information and Communication Technology",
+    "year": 1995,
+    "type": "book-chapter",
+    "authors": [
+     "Popien Claudia",
+     "Meyer Bernd"
+    ],
+    "n_auth": 2,
+    "abstract": "",
+    "_query": "M9 手势描述语言",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.3233/978-1-61499-405-3-431",
+    "title": "Hand-gesture Description Based on Skeleton Representation and Hu Moments",
+    "venue": "Frontiers in Artificial Intelligence and Applications",
+    "year": 2014,
+    "type": "book-chapter",
+    "authors": [
+     "Favorskaya Margarita ",
+     "Nosov Alexander "
+    ],
+    "n_auth": 2,
+    "abstract": "The techniques of Human-Computer Interaction (HCI) are rapidly developed for such application as virtual computer-aided design, human-robot interaction, virtual games, remote control of devices, smart house control, among others. In this research, all stages for visual-based static hand-gestures representation were improved. A hand tracker is built based on spatio-temporal data in a static scene and uses the results of pre-processing by filters, skin classifier, morphological processing, and visual tracking. The proposed robust hand-gesture description includes two main estimations: the topological (approximated skeleton representation) and geometric (Hu moments) descriptions of hand-gesture. The Hu moments provide the accurate gestures recognition with similar topological view. The recognition accuracy using the improved (approximated) skeleton and Hu moments calculation achieved 92&amp;ndash;96 %.",
+    "_query": "M9 手势描述语言",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.21236/ada281516",
+    "title": "Standard Simulator Data Base (SSDB) Interchange Format (SIF) Design Standard",
+    "venue": "",
+    "year": 1993,
+    "type": "report",
+    "authors": [
+     "DEPARTMENT OF DEFENSE WASHINGTON DC "
+    ],
+    "n_auth": 1,
+    "abstract": "",
+    "_query": "M13 动捕数据标准",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.1109/ieeestd.1993.115130",
+    "title": "IEEE Standard Multichannel Analyzer (MCA) Histogram Data Interchange Format for Nuclear Spectroscopy",
+    "venue": "",
+    "year": null,
+    "type": "standard",
+    "authors": [],
+    "n_auth": 0,
+    "abstract": "",
+    "_query": "M13 动捕数据标准",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.17487/rfc976",
+    "title": "UUCP mail interchange format standard",
+    "venue": "",
+    "year": 1986,
+    "type": "report",
+    "authors": [
+     "Horton M.R."
+    ],
+    "n_auth": 1,
+    "abstract": "",
+    "_query": "M13 动捕数据标准",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.1109/ieeestd.2017.7837032",
+    "title": "IEEE Standard for Digital Test Interchange Format (DTIF)",
+    "venue": "",
+    "year": null,
+    "type": "standard",
+    "authors": [],
+    "n_auth": 0,
+    "abstract": "",
+    "_query": "M13 动捕数据标准",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.1109/ieeestd.1998.89205",
+    "title": "IEEE Standard for Digital Test Interchange Format (DTIF)",
+    "venue": "",
+    "year": null,
+    "type": "standard",
+    "authors": [],
+    "n_auth": 0,
+    "abstract": "",
+    "_query": "M13 动捕数据标准",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.1007/springerreference_71022",
+    "title": "Hand Data Interchange Format, Standardization",
+    "venue": "SpringerReference",
+    "year": null,
+    "type": "reference-entry",
+    "authors": [],
+    "n_auth": 0,
+    "abstract": "",
+    "_query": "M13 动捕数据标准",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.3403/30217587u",
+    "title": "Food data. Structure and interchange format",
+    "venue": "",
+    "year": null,
+    "type": "standard",
+    "authors": [],
+    "n_auth": 0,
+    "abstract": "",
+    "_query": "M13 动捕数据标准",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.1007/springerreference_70976",
+    "title": "Biometric Data Interchange Format, Standardization",
+    "venue": "SpringerReference",
+    "year": null,
+    "type": "reference-entry",
+    "authors": [],
+    "n_auth": 0,
+    "abstract": "",
+    "_query": "M13 动捕数据标准",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.1007/springerreference_70977",
+    "title": "Finger Data Interchange Format, Standardization",
+    "venue": "SpringerReference",
+    "year": null,
+    "type": "reference-entry",
+    "authors": [],
+    "n_auth": 0,
+    "abstract": "",
+    "_query": "M13 动捕数据标准",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.3403/30217587",
+    "title": "Food data. Structure and interchange format",
+    "venue": "",
+    "year": null,
+    "type": "standard",
+    "authors": [],
+    "n_auth": 0,
+    "abstract": "",
+    "_query": "M13 动捕数据标准",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.3403/01426795",
+    "title": "Data interchange format for simulated and measured data (ISMD)",
+    "venue": "",
+    "year": null,
+    "type": "standard",
+    "authors": [],
+    "n_auth": 0,
+    "abstract": "",
+    "_query": "M13 动捕数据标准",
+    "_zone": "中间带"
+   },
+   {
+    "id": "10.18127/j20729472-202601-18",
+    "title": "Methods of semantic annotation and ontological modeling of mathematical texts in LaTeX format",
+    "venue": "Highly available systems",
+    "year": 2026,
+    "type": "journal-article",
+    "authors": [
+     "Kobuk M.G.",
+     "Ataeva O.M."
+    ],
+    "n_auth": 2,
+    "abstract": "Problem statement. This work addresses the problem of structuring scientific articles for building data corpora within the SciLibAIRU semantic ecosystem, and the transition from a document-oriented data representation to a format suitable for automated analysis and semantic search. Objective. The objective of this work is to investigate an optimal method for vector-based fuzzy search over mathematical texts and to implement it in conjunction with a parser for mathematical LaTeX texts. Results. A prototype vector search system is proposed that is capable of ingesting LaTeX versions of scientific texts and providing a fuzzy search interface over textual fragments within the SciLibAIRU library. Practical significance. The results are applicable to library and editorial information systems.",
+    "_query": "M14 BVH 动捕格式语义",
+    "_zone": "中间带"
+   }
+  ]
+ },
+ "zero_hit": [
+  {
+   "label": "M3 arXiv HMD",
+   "source": "arxiv",
+   "query": "all:\"human movement description\""
+  },
+  {
+   "label": "M6 arXiv 运动本体",
+   "source": "arxiv",
+   "query": "all:\"ontology\" AND all:\"human movement\""
+  },
+  {
+   "label": "M15 arXiv 动捕标准",
+   "source": "arxiv",
+   "query": "all:\"motion capture\" AND all:\"interchange format\""
+  },
+  {
+   "label": "M17 arXiv 数字人运动表示",
+   "source": "arxiv",
+   "query": "all:\"digital human\" AND all:\"motion representation\" AND all:\"standard\""
+  }
+ ],
+ "seen": {
+  "10.1109/mmsp.2008.4665068": {
+   "id": "10.1109/mmsp.2008.4665068",
+   "title": "Sparse human movement representation and recognition",
+   "venue": "2008 IEEE 10th Workshop on Multimedia Signal Processing",
+   "year": 2008,
+   "type": "proceedings-article",
+   "authors": [
+    "Gkalelis Nikolaos",
+    "Tefas Anastasios",
+    "Pitas Ioannis"
+   ],
+   "n_auth": 3,
+   "abstract": "",
+   "_query": "M1 human movement description",
+   "_zone": "其他"
+  },
+  "10.1109/icme.2009.5202517": {
+   "id": "10.1109/icme.2009.5202517",
+   "title": "View indepedent human movement recognition from multi-view video exploiting a circular invariant posture representation",
+   "venue": "2009 IEEE International Conference on Multimedia and Expo",
+   "year": 2009,
+   "type": "proceedings-article",
+   "authors": [
+    "Gkalelis Nikolaos",
+    "Nikolaidis Nikos",
+    "Pitas Ioannis"
+   ],
+   "n_auth": 3,
+   "abstract": "",
+   "_query": "M1 human movement description",
+   "_zone": "CV"
+  },
+  "10.1109/icmcs.2012.6320129": {
+   "id": "10.1109/icmcs.2012.6320129",
+   "title": "An Ontology for video human movement representation based on Benesh notation",
+   "venue": "2012 International Conference on Multimedia Computing and Systems",
+   "year": 2012,
+   "type": "proceedings-article",
+   "authors": [
+    "aad Sawsan S",
+    "De Beul Dominique",
+    "Mahmoudi Said",
+    "Manneback Pierre"
+   ],
+   "n_auth": 4,
+   "abstract": "",
+   "_query": "M4 运动本体",
+   "_zone": "中间带"
+  },
+  "10.1007/978-3-319-54066-5_2": {
+   "id": "10.1007/978-3-319-54066-5_2",
+   "title": "Knowledge Representation with Semantic Web Standards",
+   "venue": "Description Logics in Multimedia Reasoning",
+   "year": 2017,
+   "type": "book-chapter",
+   "authors": [
+    "Sikos Leslie F."
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M1 human movement description",
+   "_zone": "其他"
+  },
+  "10.1016/0167-9457(88)90002-4": {
+   "id": "10.1016/0167-9457(88)90002-4",
+   "title": "Visual feedback, movement learning and the representation of movement",
+   "venue": "Human Movement Science",
+   "year": 1988,
+   "type": "journal-article",
+   "authors": [
+    "Bamford R.B.",
+    "Marteniuk R.G."
+   ],
+   "n_auth": 2,
+   "abstract": "",
+   "_query": "M1 human movement description",
+   "_zone": "其他"
+  },
+  "10.1016/0167-9457(91)90048-3": {
+   "id": "10.1016/0167-9457(91)90048-3",
+   "title": "Representation and calculation of 3-D joint movement",
+   "venue": "Human Movement Science",
+   "year": 1991,
+   "type": "journal-article",
+   "authors": [
+    "Woltring Herman J."
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M1 human movement description",
+   "_zone": "其他"
+  },
+  "10.1155/2023/9789754": {
+   "id": "10.1155/2023/9789754",
+   "title": "Retracted: A Hierarchical Children’s Dance Movement Pose Estimation Method Based on Sequence Multiscale Feature Fusion Representation",
+   "venue": "Advances in Multimedia",
+   "year": 2023,
+   "type": "journal-article",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M1 human movement description",
+   "_zone": "CV"
+  },
+  "10.1016/j.humov.2008.03.005": {
+   "id": "10.1016/j.humov.2008.03.005",
+   "title": "The line copy task for kinesthesia and internal movement representation: Application in children",
+   "venue": "Human Movement Science",
+   "year": 2008,
+   "type": "journal-article",
+   "authors": [
+    "Smits-Engelsman Bouwien",
+    "Duysens Jacques"
+   ],
+   "n_auth": 2,
+   "abstract": "",
+   "_query": "M1 human movement description",
+   "_zone": "其他"
+  },
+  "10.1016/j.humov.2006.07.004": {
+   "id": "10.1016/j.humov.2006.07.004",
+   "title": "A multi-level representation paradigm for handwriting stroke generation",
+   "venue": "Human Movement Science",
+   "year": 2006,
+   "type": "journal-article",
+   "authors": [
+    "Plamondon Réjean",
+    "Djioua Moussa"
+   ],
+   "n_auth": 2,
+   "abstract": "",
+   "_query": "M1 human movement description",
+   "_zone": "临床"
+  },
+  "10.1109/tmm.2026.3689446": {
+   "id": "10.1109/tmm.2026.3689446",
+   "title": "Eye Movement Classification via Global Semantic Representation with Fixation-Guided BERT",
+   "venue": "IEEE Transactions on Multimedia",
+   "year": 2026,
+   "type": "journal-article",
+   "authors": [
+    "Xia Chen",
+    "Liu Pan",
+    "Zhong Wenqi",
+    "Zhang Dingwen",
+    "Han Junwei"
+   ],
+   "n_auth": 5,
+   "abstract": "",
+   "_query": "M1 human movement description",
+   "_zone": "中间带"
+  },
+  "10.3403/30445100u": {
+   "id": "10.3403/30445100u",
+   "title": "Health informatics � Categorial structure for representation of 3D human body position system",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M1 human movement description",
+   "_zone": "其他"
+  },
+  "10.1016/j.humov.2007.01.002": {
+   "id": "10.1016/j.humov.2007.01.002",
+   "title": "The temporal representation of in-phase and anti-phase movements",
+   "venue": "Human Movement Science",
+   "year": 2007,
+   "type": "journal-article",
+   "authors": [
+    "Spencer Rebecca M.C.",
+    "Ivry Richard B."
+   ],
+   "n_auth": 2,
+   "abstract": "",
+   "_query": "M1 human movement description",
+   "_zone": "其他"
+  },
+  "10.5594/smpte.st2016-1.2009": {
+   "id": "10.5594/smpte.st2016-1.2009",
+   "title": "Format for Active Format Description and Bar Data",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M2 HMD 动作描述",
+   "_zone": "其他"
+  },
+  "10.1007/springerreference_14843": {
+   "id": "10.1007/springerreference_14843",
+   "title": "format description statement",
+   "venue": "SpringerReference",
+   "year": null,
+   "type": "reference-entry",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M2 HMD 动作描述",
+   "_zone": "其他"
+  },
+  "10.4141/cjps88-038": {
+   "id": "10.4141/cjps88-038",
+   "title": "STANDARD FORMAT FOR THE DESCRIPTION OF NEW CULTIVARS",
+   "venue": "Canadian Journal of Plant Science",
+   "year": 1988,
+   "type": "journal-article",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "not available",
+   "_query": "M2 HMD 动作描述",
+   "_zone": "其他"
+  },
+  "10.32614/cran.package.rtemis.a3": {
+   "id": "10.32614/cran.package.rtemis.a3",
+   "title": "rtemis.a3: Amino Acid Annotation (A3) Format",
+   "venue": "CRAN: Contributed Packages",
+   "year": 2026,
+   "type": "dataset",
+   "authors": [
+    "Gennatas E.D."
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M2 HMD 动作描述",
+   "_zone": "艺术"
+  },
+  "10.1016/j.humov.2017.10.012": {
+   "id": "10.1016/j.humov.2017.10.012",
+   "title": "Walking my way? Walker gender and display format Confounds the perception of specific emotions",
+   "venue": "Human Movement Science",
+   "year": 2018,
+   "type": "journal-article",
+   "authors": [
+    "Halovic Shaun",
+    "Kroos Christian"
+   ],
+   "n_auth": 2,
+   "abstract": "",
+   "_query": "M2 HMD 动作描述",
+   "_zone": "其他"
+  },
+  "10.3403/00680343u": {
+   "id": "10.3403/00680343u",
+   "title": "Bar coding. Symbology specifications. Format description",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M2 HMD 动作描述",
+   "_zone": "其他"
+  },
+  "10.3403/00680343": {
+   "id": "10.3403/00680343",
+   "title": "Bar coding. Symbology specifications. Format description",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M2 HMD 动作描述",
+   "_zone": "其他"
+  },
+  "10.5594/s9781614826019": {
+   "id": "10.5594/s9781614826019",
+   "title": "ST 2016-1:2009 : Format for Active Format Description and Bar Data",
+   "venue": "",
+   "year": 2009,
+   "type": "edited-book",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M2 HMD 动作描述",
+   "_zone": "其他"
+  },
+  "10.1016/j.humov.2018.04.005": {
+   "id": "10.1016/j.humov.2018.04.005",
+   "title": "The effects of feedback format, and egocentric &amp; allocentric relative phase on coordination stability",
+   "venue": "Human Movement Science",
+   "year": 2018,
+   "type": "journal-article",
+   "authors": [
+    "Pickavance John",
+    "Azmoodeh Arianne",
+    "Wilson Andrew D."
+   ],
+   "n_auth": 3,
+   "abstract": "",
+   "_query": "M2 HMD 动作描述",
+   "_zone": "其他"
+  },
+  "10.17487/rfc7495": {
+   "id": "10.17487/rfc7495",
+   "title": "Enumeration Reference Format for the Incident Object Description Exchange Format (IODEF)",
+   "venue": "",
+   "year": 2015,
+   "type": "report",
+   "authors": [
+    "Montville A.",
+    "Black D."
+   ],
+   "n_auth": 2,
+   "abstract": "",
+   "_query": "M2 HMD 动作描述",
+   "_zone": "其他"
+  },
+  "10.7490/f1000research.1118642.1": {
+   "id": "10.7490/f1000research.1118642.1",
+   "title": "An annotation-free format for representing multimodal data features",
+   "venue": "",
+   "year": 2021,
+   "type": "posted-content",
+   "authors": [
+    "Chen Tyrone",
+    "Tyagi Sonika"
+   ],
+   "n_auth": 2,
+   "abstract": "Modern biological data is high-dimensional, feature-rich and generated by diverse technologies. As a result, they are represented in different formats including oligonucleotide sequences, genome coverage plots or as matrices of data. Containing independent layers of quantitative and qualitative information, they are often investigated separately. While the complexity of biological systems requires a multi-omics data perspective to obtain insight [1], merging multi-omics data remains challenging [2]. To analyse multi-omics data efficiently, we therefore require a strategy that is capable of representing (1) quantitative and qualitative data (2) at a low level while being (3) compatible with diverse biological data types. To address these three challenges, we explored the possibility of analysing low-level sequence data directly as a unifying factor. Using this technique, we recovered informative sequence based markers. Crucially, we demonstrated that this scales to multi-omics data [3]. While our preliminary analyses were conducted on quantitative data only, it is theoretically generalisable to qualitative data such as genomic shape or mutations. Currently, no known strategy exists ",
+   "_query": "M2 HMD 动作描述",
+   "_zone": "艺术"
+  },
+  "10.12731/2306-1561-2014-4-3": {
+   "id": "10.12731/2306-1561-2014-4-3",
+   "title": "Technology of Division of a Single Standard Bibliographic Description into Fields of the RUSMARC Format",
+   "venue": "Automation and Control in Technical Systems",
+   "year": 2015,
+   "type": "journal-article",
+   "authors": [
+    "Малиновский Михаил Павлович"
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M2 HMD 动作描述",
+   "_zone": "其他"
+  },
+  "10.1201/b18639-10": {
+   "id": "10.1201/b18639-10",
+   "title": "Ontology and the Semantic Web",
+   "venue": "Multimedia Ontology",
+   "year": 2015,
+   "type": "book-chapter",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M4 运动本体",
+   "_zone": "中间带"
+  },
+  "10.1201/b18639-3": {
+   "id": "10.1201/b18639-3",
+   "title": "Ontology and the Semantic Web",
+   "venue": "Multimedia Ontology",
+   "year": 2015,
+   "type": "book-chapter",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M4 运动本体",
+   "_zone": "中间带"
+  },
+  "10.1016/j.neucom.2011.05.044": {
+   "id": "10.1016/j.neucom.2011.05.044",
+   "title": "A comprehensive representation scheme for video semantic ontology and its applications in semantic concept detection",
+   "venue": "Neurocomputing",
+   "year": 2012,
+   "type": "journal-article",
+   "authors": [
+    "Zha Zheng-Jun",
+    "Mei Tao",
+    "Zheng Yan-Tao",
+    "Wang Zengfu",
+    "Hua Xian-Sheng"
+   ],
+   "n_auth": 5,
+   "abstract": "",
+   "_query": "M4 运动本体",
+   "_zone": "中间带"
+  },
+  "10.7490/f1000research.1112740.1": {
+   "id": "10.7490/f1000research.1112740.1",
+   "title": "Ontology development for semantic representation of GeneReviews",
+   "venue": "",
+   "year": 2016,
+   "type": "posted-content",
+   "authors": [
+    "Singh Sweta",
+    "Haerian Krystl",
+    "Zhu Qian"
+   ],
+   "n_auth": 3,
+   "abstract": "Specific Mendelian conditions are rare and may only affect one in every several thousands to millions people. Comparing to other chronic diseases, there is limited accumulated information for genetic diseases. GeneReviews as a professional data resource, provides expert-authored, peer-reviewed disease descriptions (\"chapters\") for genetic conditions. However, the information presenting in GeneReviews is in unstructured data. In order to better utilize such information for further clinical decision support, in this study, we manually annotated 300 GeneReviews chapters, specifically for clinical features, treatments, tests and family risks, and applied web ontology language (OWL) to formal organize and represent annotations.",
+   "_query": "M4 运动本体",
+   "_zone": "中间带"
+  },
+  "10.3724/sp.j.1087.2010.00835": {
+   "id": "10.3724/sp.j.1087.2010.00835",
+   "title": "Research of video semantic retrieval system based on ontology",
+   "venue": "Journal of Computer Applications",
+   "year": 2010,
+   "type": "journal-article",
+   "authors": [
+    "XU Feng",
+    "ZHENG Quan"
+   ],
+   "n_auth": 2,
+   "abstract": "",
+   "_query": "M4 运动本体",
+   "_zone": "中间带"
+  },
+  "10.1515/9783598441585.3.242": {
+   "id": "10.1515/9783598441585.3.242",
+   "title": "3.1 Ontology Engineering",
+   "venue": "Knowledge Representation in the Social Semantic Web",
+   "year": 2010,
+   "type": "book-chapter",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M4 运动本体",
+   "_zone": "中间带"
+  },
+  "10.5220/0012855900003756": {
+   "id": "10.5220/0012855900003756",
+   "title": "Visualizing OWL and RDF: Advancing Ontology Representation for Enhanced Semantic Clarity and Communication",
+   "venue": "Proceedings of the 13th International Conference on Data Science, Technology and Applications",
+   "year": 2024,
+   "type": "proceedings-article",
+   "authors": [
+    "Biagioni Giulia"
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M4 运动本体",
+   "_zone": "中间带"
+  },
+  "10.5220/0010285305500557": {
+   "id": "10.5220/0010285305500557",
+   "title": "Efficient Semantic Representation of Network Access Control Configuration for Ontology-based Security Analysis",
+   "venue": "Proceedings of the 7th International Conference on Information Systems Security and Privacy",
+   "year": 2021,
+   "type": "proceedings-article",
+   "authors": [
+    "Patzer Florian",
+    "Beyerer Jürgen"
+   ],
+   "n_auth": 2,
+   "abstract": "",
+   "_query": "M4 运动本体",
+   "_zone": "中间带"
+  },
+  "10.1109/icsc50631.2021.00052": {
+   "id": "10.1109/icsc50631.2021.00052",
+   "title": "Ontology-based human behavior indexing with multimodal video data",
+   "venue": "2021 IEEE 15th International Conference on Semantic Computing (ICSC)",
+   "year": 2021,
+   "type": "proceedings-article",
+   "authors": [
+    "Vizcarra Julio",
+    "Nishimura Satoshi",
+    "Fukuda Ken"
+   ],
+   "n_auth": 3,
+   "abstract": "",
+   "_query": "M4 运动本体",
+   "_zone": "中间带"
+  },
+  "10.22452/rd/3vewuh": {
+   "id": "10.22452/rd/3vewuh",
+   "title": "Coding data for: Knowledge representation using Ontology-Based Social Semantic for Malay Manuscript Digital Library Collection",
+   "venue": "",
+   "year": null,
+   "type": "database",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M4 运动本体",
+   "_zone": "中间带"
+  },
+  "10.1515/9783598441585.3.272": {
+   "id": "10.1515/9783598441585.3.272",
+   "title": "3.2 Community-based Ontology Engineering",
+   "venue": "Knowledge Representation in the Social Semantic Web",
+   "year": 2010,
+   "type": "book-chapter",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M4 运动本体",
+   "_zone": "中间带"
+  },
+  "10.48047/ecb/2023.12.s2.333": {
+   "id": "10.48047/ecb/2023.12.s2.333",
+   "title": "Human Recognization Activity and Maximum Motion Representation in Surveillance Video",
+   "venue": "EuropeanChemicalBulletin",
+   "year": 2023,
+   "type": "journal-article",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M5 语义运动表示",
+   "_zone": "其他"
+  },
+  "10.1109/tcsvt.2025.3639082/mm1": {
+   "id": "10.1109/tcsvt.2025.3639082/mm1",
+   "title": "MoAnimate: Bridging the Motion-Oriented Latent Representation Gaps in Human Video Animation_supp1-3639082.mp4",
+   "venue": "",
+   "year": null,
+   "type": "component",
+   "authors": [
+    "Tang Sheng"
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M5 语义运动表示",
+   "_zone": "其他"
+  },
+  "10.1007/978-1-4614-5486-1_5": {
+   "id": "10.1007/978-1-4614-5486-1_5",
+   "title": "Semantic Analysis",
+   "venue": "Semantic Analysis and Understanding of Human Behavior in Video Streaming",
+   "year": 2012,
+   "type": "book-chapter",
+   "authors": [
+    "Amato Alberto",
+    "Di Lecce Vincenzo",
+    "Piuri Vincenzo"
+   ],
+   "n_auth": 3,
+   "abstract": "",
+   "_query": "M5 语义运动表示",
+   "_zone": "其他"
+  },
+  "10.1117/12.631642": {
+   "id": "10.1117/12.631642",
+   "title": "Real time motion analysis toward semantic understanding of video content",
+   "venue": "Visual Communications and Image Processing 2005",
+   "year": 2005,
+   "type": "proceedings-article",
+   "authors": [
+    "Wang Yong",
+    "Zhang Tong",
+    "Tretter Daniel",
+    "Wu Peng"
+   ],
+   "n_auth": 4,
+   "abstract": "",
+   "_query": "M5 语义运动表示",
+   "_zone": "其他"
+  },
+  "10.1109/iscas45731.2020.9181054/video": {
+   "id": "10.1109/iscas45731.2020.9181054/video",
+   "title": "Video for Semantic Segmentation on Compressed Video using Block Motion Compensation and Guided Inpainting",
+   "venue": "",
+   "year": null,
+   "type": "component",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M5 语义运动表示",
+   "_zone": "其他"
+  },
+  "10.32657/10356/73345": {
+   "id": "10.32657/10356/73345",
+   "title": "Semantic representation learning for natural language understanding",
+   "venue": "",
+   "year": null,
+   "type": "dissertation",
+   "authors": [
+    " ",
+    "Zhang Yong"
+   ],
+   "n_auth": 2,
+   "abstract": "",
+   "_query": "M5 语义运动表示",
+   "_zone": "中间带"
+  },
+  "10.1109/smap.2008.22": {
+   "id": "10.1109/smap.2008.22",
+   "title": "Semantic Video Analysis Based on Estimation and Representation of Higher-Order Motion Statistics",
+   "venue": "2008 Third International Workshop on Semantic Media Adaptation and Personalization",
+   "year": 2008,
+   "type": "proceedings-article",
+   "authors": [
+    "Papadopoulos Georgios Th.",
+    "Briassouli Alexia",
+    "Mezaris Vasileios",
+    "Kompatsiaris Ioannis",
+    "Strintzis Michael G."
+   ],
+   "n_auth": 5,
+   "abstract": "",
+   "_query": "M5 语义运动表示",
+   "_zone": "其他"
+  },
+  "10.1016/j.cviu.2012.01.001": {
+   "id": "10.1016/j.cviu.2012.01.001",
+   "title": "Semantic Understanding of Human Behaviors in Image Sequences: From video-surveillance to video-hermeneutics",
+   "venue": "Computer Vision and Image Understanding",
+   "year": 2012,
+   "type": "journal-article",
+   "authors": [
+    "Gonzàlez Jordi",
+    "Moeslund Thomas B.",
+    "Wang Liang"
+   ],
+   "n_auth": 3,
+   "abstract": "",
+   "_query": "M5 语义运动表示",
+   "_zone": "其他"
+  },
+  "10.1007/978-1-4614-5486-1": {
+   "id": "10.1007/978-1-4614-5486-1",
+   "title": "Semantic Analysis and Understanding of Human Behavior in Video Streaming",
+   "venue": "",
+   "year": 2013,
+   "type": "book",
+   "authors": [
+    "Amato Alberto",
+    "Di Lecce Vincenzo",
+    "Piuri Vincenzo"
+   ],
+   "n_auth": 3,
+   "abstract": "",
+   "_query": "M5 语义运动表示",
+   "_zone": "其他"
+  },
+  "10.70675/06f08c91z80ddz448az8a2dz424ef97b76d2": {
+   "id": "10.70675/06f08c91z80ddz448az8a2dz424ef97b76d2",
+   "title": "Semantic and Discursive Representation for Natural Language Understanding",
+   "venue": "",
+   "year": null,
+   "type": "dissertation",
+   "authors": [
+    "Sileo Damien"
+   ],
+   "n_auth": 1,
+   "abstract": "Représentations sémantiques et discursives pour la compréhension automatique du langage naturel Les modèles computationnels pour la compréhension automatique des textes ont suscité un vif intérêt en raison de gains de performances inhabituels au cours des dernières années, certains d'entre eux conduisant à des scores d'évaluation surhumains. Ce succès a conduit à affirmer la création de représentations universelles de phrases. Dans cette thèse, nous questionnons cette affirmation au travers de deux angles complémentaires. Premièrement, les réseaux de neurones et les représentations vectorielles sont-ils suffisamment expressifs pour traiter du texte de sorte à pouvoir effectuer un large éventail de tâches complexes ? Dans cette thèse, nous présenterons les modèles neuronaux actuellement utilisés et les techniques d'entraînement associées. Nous proposons des critères pour l'expressivité de composition des représentations vectorielles et montrons que la suite d'évaluations et les encodeurs de phrases très répandus (SentEval/InferSent) sont limités dans leur expressivité ; des changements mineurs peuvent permettre de nouvelles compositions expressives et interprétables, mais pourraient",
+   "_query": "M5 语义运动表示",
+   "_zone": "艺术"
+  },
+  "10.1016/j.jvcir.2026.104886": {
+   "id": "10.1016/j.jvcir.2026.104886",
+   "title": "MotionViLA: A motion-aware video understanding model for video localization and question answering",
+   "venue": "Journal of Visual Communication and Image Representation",
+   "year": 2026,
+   "type": "journal-article",
+   "authors": [
+    "Ji Zehua",
+    "Lv Weifeng",
+    "Hu Junlin",
+    "Zhang Chao",
+    "Qiu Zekun"
+   ],
+   "n_auth": 6,
+   "abstract": "",
+   "_query": "M5 语义运动表示",
+   "_zone": "其他"
+  },
+  "10.7554/elife.22749.008": {
+   "id": "10.7554/elife.22749.008",
+   "title": "Video 1. A slow-motion representation of two SWIFT cycles.",
+   "venue": "",
+   "year": null,
+   "type": "component",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M5 语义运动表示",
+   "_zone": "其他"
+  },
+  "10.1016/0167-9457(96)00012-7": {
+   "id": "10.1016/0167-9457(96)00012-7",
+   "title": "Programming language for motion analysis",
+   "venue": "Human Movement Science",
+   "year": 1996,
+   "type": "journal-article",
+   "authors": [
+    "Holzreiter S.",
+    "Jennings S."
+   ],
+   "n_auth": 2,
+   "abstract": "",
+   "_query": "M7 运动描述语言",
+   "_zone": "其他"
+  },
+  "10.3403/30477175": {
+   "id": "10.3403/30477175",
+   "title": "Information technology � Data Format Description Language (DFDL) v1.0 Specification",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M7 运动描述语言",
+   "_zone": "中间带"
+  },
+  "10.3403/30477175u": {
+   "id": "10.3403/30477175u",
+   "title": "Information technology � Data Format Description Language (DFDL) v1.0 Specification",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M7 运动描述语言",
+   "_zone": "中间带"
+  },
+  "10.1016/j.humov.2008.07.002": {
+   "id": "10.1016/j.humov.2008.07.002",
+   "title": "Language comprehension and dominant hand motion simulation",
+   "venue": "Human Movement Science",
+   "year": 2009,
+   "type": "journal-article",
+   "authors": [
+    "Borghi Anna M.",
+    "Scorolli Claudia"
+   ],
+   "n_auth": 2,
+   "abstract": "",
+   "_query": "M7 运动描述语言",
+   "_zone": "其他"
+  },
+  "10.3403/30448423u": {
+   "id": "10.3403/30448423u",
+   "title": "Natural language description for abstract scenarios for automated driving systems. Specification",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M7 运动描述语言",
+   "_zone": "其他"
+  },
+  "10.3403/02080951u": {
+   "id": "10.3403/02080951u",
+   "title": "Space data and information transfer systems. Data description language. EAST specification",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M7 运动描述语言",
+   "_zone": "中间带"
+  },
+  "10.1524/auto.2002.50.2.a1": {
+   "id": "10.1524/auto.2002.50.2.a1",
+   "title": "Die Spezifikationssprachen MSC und SDL / Teil 2: Specification and Description Language (SDL) (Specification and Description Language (SDL))",
+   "venue": "auto",
+   "year": 2002,
+   "type": "journal-article",
+   "authors": [
+    "Grabowski J.",
+    "Rudolph E.",
+    "Schmitt M."
+   ],
+   "n_auth": 3,
+   "abstract": "Im Telekommunikationsbereich haben sich Message Sequence Chart (MSC) und Specification and Description Language (SDL) als wichtigste Modellierungssprachen etabliert. Im ersten Teil dieses Artikels wurde die Anforderungsspezifikation mit MSC erläutert. Der vorliegende zweite Teil geht auf die Beschreibung von verteilten Systemen mit SDL ein und skizziert den Einsatz von modernen Software-Werkzeugen.",
+   "_query": "M7 运动描述语言",
+   "_zone": "中间带"
+  },
+  "10.3403/02080951": {
+   "id": "10.3403/02080951",
+   "title": "Space data and information transfer systems. Data description language. EAST specification",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M7 运动描述语言",
+   "_zone": "中间带"
+  },
+  "10.3403/30465383u": {
+   "id": "10.3403/30465383u",
+   "title": "Formalised natural language description of scenarios for automated driving systems. Specification",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M7 运动描述语言",
+   "_zone": "其他"
+  },
+  "10.3403/02826006": {
+   "id": "10.3403/02826006",
+   "title": "Space data and information transfer systems. Data description language. EAST specification",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M7 运动描述语言",
+   "_zone": "中间带"
+  },
+  "10.3403/30448423": {
+   "id": "10.3403/30448423",
+   "title": "Natural language description for abstract scenarios for automated driving systems. Specification",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M7 运动描述语言",
+   "_zone": "其他"
+  },
+  "10.3403/30465383": {
+   "id": "10.3403/30465383",
+   "title": "Formalised natural language description of scenarios for automated driving systems. Specification",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M7 运动描述语言",
+   "_zone": "其他"
+  },
+  "10.1109/afgr.2004.1301642": {
+   "id": "10.1109/afgr.2004.1301642",
+   "title": "Monocular reconstruction of human motion by qualitative selection",
+   "venue": "Sixth IEEE International Conference on Automatic Face and Gesture Recognition, 2004. Proceedings.",
+   "year": null,
+   "type": "proceedings-article",
+   "authors": [
+    "Eriksson M.",
+    "Carlsson S."
+   ],
+   "n_auth": 2,
+   "abstract": "",
+   "_query": "M8 定性运动表示",
+   "_zone": "CV"
+  },
+  "10.1109/icpr.2014.602": {
+   "id": "10.1109/icpr.2014.602",
+   "title": "Grassmannian Representation of Motion Depth for 3D Human Gesture and Action Recognition",
+   "venue": "2014 22nd International Conference on Pattern Recognition",
+   "year": 2014,
+   "type": "proceedings-article",
+   "authors": [
+    "Slama Rim",
+    "Wannous Hazem",
+    "Daoudi Mohamed"
+   ],
+   "n_auth": 3,
+   "abstract": "",
+   "_query": "M8 定性运动表示",
+   "_zone": "其他"
+  },
+  "10.2174/1573405620666230530093026": {
+   "id": "10.2174/1573405620666230530093026",
+   "title": "Review for Optimal Human-gesture Design Methodology and Motion Representation of Medical Images using Segmentation from Depth Data and Gesture Recognition",
+   "venue": "Current Medical Imaging Formerly Current Medical Imaging Reviews",
+   "year": 2023,
+   "type": "journal-article",
+   "authors": [
+    "Gupta Anju",
+    "Kumar Sanjeev",
+    "Kumar Sanjeev"
+   ],
+   "n_auth": 3,
+   "abstract": "Abstract: Human gesture recognition and motion representation has become a vital base of current intelligent human-machine interfaces because of ubiquitous and more comfortable interaction. Human-Gesture recognition chiefly deals with recognizing meaningful, expressive body movements involving physical motions of face, head, arms, fingers, hands or body. This review article presents a concise overview of optimal human-gesture and motion representation of medical images. This paper surveys various works undertaken on human gesture design and discusses various design methodologies used for image segmentation and gesture recognition. It further provides a general idea of modeling techniques for analyzing hand gesture images and even discusses the diverse techniques involved in motion recognition. This survey provides an insight into various efforts and developments made in the gesture/motion recognition domain through analyzing and reviewing the procedures and approaches employed for identifying diverse human motions and gestures for supporting better and devising improved applications in near future.",
+   "_query": "M8 定性运动表示",
+   "_zone": "其他"
+  },
+  "10.1109/afgr.2008.4813435": {
+   "id": "10.1109/afgr.2008.4813435",
+   "title": "Recognizing human actions based on silhouette energy image and global motion description",
+   "venue": "2008 8th IEEE International Conference on Automatic Face &amp; Gesture Recognition",
+   "year": 2008,
+   "type": "proceedings-article",
+   "authors": [
+    "Ahmad Mohiuddin",
+    "Lee Seong-Whan"
+   ],
+   "n_auth": 2,
+   "abstract": "",
+   "_query": "M8 定性运动表示",
+   "_zone": "中间带"
+  },
+  "10.2139/ssrn.6527518": {
+   "id": "10.2139/ssrn.6527518",
+   "title": "Structured Motion Representation Learning for Robust Temporal Gesture Recognition",
+   "venue": "",
+   "year": 2026,
+   "type": "posted-content",
+   "authors": [
+    "Ram Kumar Vinesh Kannah",
+    "Suresh Kumar Vaishenaav"
+   ],
+   "n_auth": 2,
+   "abstract": "Gesture recognition systems have achieved significant progress through deep learning-based temporal modeling architectures; however, existing approaches primarily rely on raw spatial landmark representations and implicitly learned temporal dynamics. Such methods exhibit strong spatial bias and often fail to discriminate between gestures that share similar trajectories but differ in motion intensity, acceleration patterns, and temporal irregularity. This paper proposes a Physics-Informed Entropy-Regularized Motion Encoding (EMRE) architecture for robust temporal gesture recognition. The proposed framework explicitly models motion dynamics by computing velocity and acceleration from landmark sequences and deriving a physics-inspired motion energy formulation defined as Et = ∥vt∥ 2 + λ∥at∥ 2. To capture temporal complexity, an information-theoretic entropy measure is introduced over normalized energy distributions, enabling quantification of motion irregularity. The resulting energy-entropy feature representation is provided to a temporal Long Short-Term Memory (LSTM) classifier for sequence-level inference. Unlike conventional coordinate-driven models, the proposed architecture reduc",
+   "_query": "M8 定性运动表示",
+   "_zone": "其他"
+  },
+  "10.1007/3-540-46616-9_23": {
+   "id": "10.1007/3-540-46616-9_23",
+   "title": "Reactiva’Motion Project: Motion Synthesis Based on a Reactive Representation",
+   "venue": "Lecture Notes in Computer Science",
+   "year": 1999,
+   "type": "book-chapter",
+   "authors": [
+    "Julliard Frédéric",
+    "Gibet Sylvie"
+   ],
+   "n_auth": 2,
+   "abstract": "",
+   "_query": "M8 定性运动表示",
+   "_zone": "其他"
+  },
+  "10.1109/afgr.1998.671006": {
+   "id": "10.1109/afgr.1998.671006",
+   "title": "Description and recognition of human gestures based on the transition of curvature from motion images",
+   "venue": "Proceedings Third IEEE International Conference on Automatic Face and Gesture Recognition",
+   "year": null,
+   "type": "proceedings-article",
+   "authors": [
+    "Nishikawa A.",
+    "Ohnisi A.",
+    "Miyazaki F."
+   ],
+   "n_auth": 3,
+   "abstract": "",
+   "_query": "M8 定性运动表示",
+   "_zone": "其他"
+  },
+  "10.1109/fg.2011.5771381": {
+   "id": "10.1109/fg.2011.5771381",
+   "title": "The human motion database: A cognitive and parametric sampling of human motion",
+   "venue": "Face and Gesture 2011",
+   "year": 2011,
+   "type": "proceedings-article",
+   "authors": [
+    "Guerra-Filho Gutemberg",
+    "Biswas Arnab"
+   ],
+   "n_auth": 2,
+   "abstract": "",
+   "_query": "M8 定性运动表示",
+   "_zone": "其他"
+  },
+  "10.1021/acsaelm.5c02200.s001": {
+   "id": "10.1021/acsaelm.5c02200.s001",
+   "title": "Biomimetic Flexible Strain Sensors with Natural Network Structures for Human Motion Monitoring and Gesture Recognition",
+   "venue": "",
+   "year": null,
+   "type": "component",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M8 定性运动表示",
+   "_zone": "其他"
+  },
+  "10.1021/acsaelm.5c02200.s002": {
+   "id": "10.1021/acsaelm.5c02200.s002",
+   "title": "Biomimetic Flexible Strain Sensors with Natural Network Structures for Human Motion Monitoring and Gesture Recognition",
+   "venue": "",
+   "year": null,
+   "type": "component",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M8 定性运动表示",
+   "_zone": "其他"
+  },
+  "10.1109/tvcg.2026.3679469/mm1": {
+   "id": "10.1109/tvcg.2026.3679469/mm1",
+   "title": "ExGes: Expressive Human Motion Retrieval and Modulation for Audio-Driven Gesture Synthesis_supp1-3679469.mp4",
+   "venue": "",
+   "year": null,
+   "type": "component",
+   "authors": [
+    "Fan Zhaoxin"
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M8 定性运动表示",
+   "_zone": "其他"
+  },
+  "10.3233/978-1-61499-405-3-431": {
+   "id": "10.3233/978-1-61499-405-3-431",
+   "title": "Hand-gesture Description Based on Skeleton Representation and Hu Moments",
+   "venue": "Frontiers in Artificial Intelligence and Applications",
+   "year": 2014,
+   "type": "book-chapter",
+   "authors": [
+    "Favorskaya Margarita ",
+    "Nosov Alexander "
+   ],
+   "n_auth": 2,
+   "abstract": "The techniques of Human-Computer Interaction (HCI) are rapidly developed for such application as virtual computer-aided design, human-robot interaction, virtual games, remote control of devices, smart house control, among others. In this research, all stages for visual-based static hand-gestures representation were improved. A hand tracker is built based on spatio-temporal data in a static scene and uses the results of pre-processing by filters, skin classifier, morphological processing, and visual tracking. The proposed robust hand-gesture description includes two main estimations: the topological (approximated skeleton representation) and geometric (Hu moments) descriptions of hand-gesture. The Hu moments provide the accurate gestures recognition with similar topological view. The recognition accuracy using the improved (approximated) skeleton and Hu moments calculation achieved 92&amp;ndash;96 %.",
+   "_query": "M9 手势描述语言",
+   "_zone": "中间带"
+  },
+  "10.70675/c8af4187z2f2bz483fza40dz4072d79784d7": {
+   "id": "10.70675/c8af4187z2f2bz483fza40dz4072d79784d7",
+   "title": "COLLADA Audio : A Formal Representation of Sound in Virtual Cities by a Scene Description Language",
+   "venue": "",
+   "year": null,
+   "type": "dissertation",
+   "authors": [
+    "Chan Shih-Han"
+   ],
+   "n_auth": 1,
+   "abstract": "Le son dans COLLADA : une représentation formelle du son dans les villes virtuelles avec des langages de description de scène Depuis de nombreuses années, des formats de fichier standardisés ont été conçus pour écrire, lire et échanger des descriptions de scènes 3D. Ces descriptions sont principalement faites pour des contenus visuels; les options accessibles pour les compositions audio des scènes virtuelles sont, dans les meilleurs des cas, pauvres et dans les pires, manquantes. C’est pourquoi nous proposons d’inclure une description sonore riche dans le COLLADA qui est un format standard pour d’échange d’assets numériques. La plupart des langages de description qui incluent une description sonore factorisent les éléments communs aux informations visuelles et sonores. Ces deux aspects sont par exemple décrits dans le même système de coordonnées. Cependant, dès lors qu’une description dynamique ou que des données externes sont requises, toutes les liaisons doivent être faites de manière programmée. Dans cette thèse, nous tentons de résoudre ce problème et nous proposons de donner plus de puissance créative aux sound designers même lorsque les scènes sont dynamiques ou basées sur de",
+   "_query": "M9 手势描述语言",
+   "_zone": "中间带"
+  },
+  "10.5040/9781472542144.ch-005": {
+   "id": "10.5040/9781472542144.ch-005",
+   "title": "Formal Issues",
+   "venue": "Semantic Representation of Natural Language",
+   "year": null,
+   "type": "book-chapter",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M9 手势描述语言",
+   "_zone": "其他"
+  },
+  "10.1016/b978-0-12-108550-6.50008-2": {
+   "id": "10.1016/b978-0-12-108550-6.50008-2",
+   "title": "REFLECTIONS ON THE FORMAL DESCRIPTION OF BEHAVIOR",
+   "venue": "Representation and Understanding",
+   "year": 1975,
+   "type": "book-chapter",
+   "authors": [
+    "Becker Joseph D."
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M9 手势描述语言",
+   "_zone": "其他"
+  },
+  "10.56726/irjmets37682": {
+   "id": "10.56726/irjmets37682",
+   "title": "A FRAMEWORK DESIGN FOR SIGN LANGUAGE GESTURE RECOGNITION WITH EFFICIENT HAND GESTURE REPRESENTATION",
+   "venue": "International Research Journal of Modernization in Engineering Technology and Science",
+   "year": 2023,
+   "type": "journal-article",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M9 手势描述语言",
+   "_zone": "其他"
+  },
+  "10.1007/978-3-642-34182-3_20": {
+   "id": "10.1007/978-3-642-34182-3_20",
+   "title": "Integration of Gesture and Verbal Language: A Formal Semantics Approach",
+   "venue": "Lecture Notes in Computer Science",
+   "year": 2012,
+   "type": "book-chapter",
+   "authors": [
+    "Giorgolo Gianluca"
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M9 手势描述语言",
+   "_zone": "其他"
+  },
+  "10.7551/mitpress/6742.003.0005": {
+   "id": "10.7551/mitpress/6742.003.0005",
+   "title": "Chapter 3: The Formal Description of Agrammatism",
+   "venue": "Theoretical Perspectives on Language Deficits",
+   "year": 1990,
+   "type": "book-chapter",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M9 手势描述语言",
+   "_zone": "其他"
+  },
+  "10.1007/978-981-13-0671-6_4": {
+   "id": "10.1007/978-981-13-0671-6_4",
+   "title": "Formal Description of Tibetan Spelling Grammar",
+   "venue": "Research on Tibetan Spelling Formal Language and Automata with Application",
+   "year": 2018,
+   "type": "book-chapter",
+   "authors": [
+    "Nyima Tashi "
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M9 手势描述语言",
+   "_zone": "其他"
+  },
+  "10.1007/978-94-017-2990-1_7": {
+   "id": "10.1007/978-94-017-2990-1_7",
+   "title": "Formal Characteristics in Verbal Description and Spatial Representation",
+   "venue": "Shapes of Forms",
+   "year": 1999,
+   "type": "book-chapter",
+   "authors": [
+    "Massironi Manfredo",
+    "Levorato Maria Chiara"
+   ],
+   "n_auth": 2,
+   "abstract": "",
+   "_query": "M9 手势描述语言",
+   "_zone": "其他"
+  },
+  "10.1007/978-0-387-34878-0_3": {
+   "id": "10.1007/978-0-387-34878-0_3",
+   "title": "A Service Request Description Language",
+   "venue": "IFIP Advances in Information and Communication Technology",
+   "year": 1995,
+   "type": "book-chapter",
+   "authors": [
+    "Popien Claudia",
+    "Meyer Bernd"
+   ],
+   "n_auth": 2,
+   "abstract": "",
+   "_query": "M9 手势描述语言",
+   "_zone": "中间带"
+  },
+  "10.31009/feast.i4.12": {
+   "id": "10.31009/feast.i4.12",
+   "title": "Structural iconicity in silent gesture",
+   "venue": "FEAST. Formal and Experimental Advances in Sign language Theory",
+   "year": 2021,
+   "type": "journal-article",
+   "authors": [
+    "Bradley Chuck"
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M9 手势描述语言",
+   "_zone": "其他"
+  },
+  "10.1007/3-540-26989-4_5": {
+   "id": "10.1007/3-540-26989-4_5",
+   "title": "CANDID Specification of Commercial and Financial Contracts: A Formal Semantics Approach to Knowledge Representation, Part II: Formal Description of Economics Actors and Objects",
+   "venue": "International Handbooks on Information Systems",
+   "year": null,
+   "type": "book-chapter",
+   "authors": [
+    "Lee Ronald M."
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M9 手势描述语言",
+   "_zone": "其他"
+  },
+  "2302.11306v2": {
+   "id": "2302.11306v2",
+   "title": "Human MotionFormer: Transferring Human Motions with Vision Transformers",
+   "venue": "arXiv",
+   "year": "2023",
+   "type": "preprint",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "Human motion transfer aims to transfer motions from a target dynamic person to a source static one for motion synthesis. An accurate matching between the source person and the target motion in both large and subtle motion changes is vital for improving the transferred motion quality. In this paper, we propose Human MotionFormer, a hierarchical ViT framework that leverages global and local perceptions to capture large and subtle motion matching, respectively. It consists of two ViT encoders to extract input features (i.e., a target motion image and a source human image) and a ViT decoder with several cascaded blocks for feature matching and motion transfer. In each block, we set the target motion feature as Query and the source person as Key and Value, calculating the cross-attention maps to conduct a global feature matching. Further, we introduce a convolutional layer to improve the local perception after the global cross-attention computations. This matching process is implemented in both warping and generation branches to guide the motion transfer. During training, we propose a mutual learning loss to enable the co-supervision between warping and generation branches for better mo",
+   "_query": "M10 arXiv 定性运动表示",
+   "_zone": "其他"
+  },
+  "2510.12069v1": {
+   "id": "2510.12069v1",
+   "title": "VIDMP3: Video Editing by Representing Motion with Pose and Position Priors",
+   "venue": "arXiv",
+   "year": "2025",
+   "type": "preprint",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "Motion-preserved video editing is crucial for creators, particularly in scenarios that demand flexibility in both the structure and semantics of swapped objects. Despite its potential, this area remains underexplored. Existing diffusion-based editing methods excel in structure-preserving tasks, using dense guidance signals to ensure content integrity. While some recent methods attempt to address structure-variable editing, they often suffer from issues such as temporal inconsistency, subject identity drift, and the need for human intervention. To address these challenges, we introduce VidMP3, a novel approach that leverages pose and position priors to learn a generalized motion representation from source videos. Our method enables the generation of new videos that maintain the original motion while allowing for structural and semantic flexibility. Both qualitative and quantitative evaluations demonstrate the superiority of our approach over existing methods. The code will be made publicly available at https://github.com/sandeep-sm/VidMP3.",
+   "_query": "M10 arXiv 定性运动表示",
+   "_zone": "艺术"
+  },
+  "2607.10537v1": {
+   "id": "2607.10537v1",
+   "title": "Dance to Music Generation leveraging Pre-training with Unpaired data and Contrastive Alignment",
+   "venue": "arXiv",
+   "year": "2026",
+   "type": "preprint",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "Dance-to-music generation is a promising task for applications such as choreography support and automatic accompaniment, where temporal coordination between body movement and sound is essential. In particular, using human joint positions as the motion representation is attractive because they explicitly capture body dynamics while being lightweight, privacy-preserving, and easy to integrate with motion capture and pose-estimation pipelines. A central challenge in this setting, however, is the scarcity of high-quality paired dance-music data, since collecting accurately synchronized pairs is costly and often constrained by copyright and performance rights. This makes it difficult to train end-to-end models solely from paired data. To address this issue, we propose a dance-conditioned music generation framework that efficiently exploits both unpaired and paired data. Our method combines pretrained unimodal encoders for motion and music, beat-guided contrastive pretraining to align their feature spaces, and a ControlNet-style conditioning module on top of a pretrained text-to-audio diffusion model. Experiments on AIST++ demonstrate that the proposed techniques improve both dance-music",
+   "_query": "M10 arXiv 定性运动表示",
+   "_zone": "艺术"
+  },
+  "2602.13326v1": {
+   "id": "2602.13326v1",
+   "title": "MotionWeaver: Holistic 4D-Anchored Framework for Multi-Humanoid Image Animation",
+   "venue": "arXiv",
+   "year": "2026",
+   "type": "preprint",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "Character image animation, which synthesizes videos of reference characters driven by pose sequences, has advanced rapidly but remains largely limited to single-human settings. Existing methods struggle to generalize to multi-humanoid scenarios, which involve diverse humanoid forms, complex interactions, and frequent occlusions. We address this gap with two key innovations. First, we introduce unified motion representations that extract identity-agnostic motions and explicitly bind them to corresponding characters, enabling generalization across diverse humanoid forms and seamless extension to multi-humanoid scenarios. Second, we propose a holistic 4D-anchored paradigm that constructs a shared 4D space to fuse motion representations with video latents, and further reinforces this process with hierarchical 4D-level supervision to better handle interactions and occlusions. We instantiate these ideas in MotionWeaver, an end-to-end framework for multi-humanoid image animation. To support this setting, we curate a 46-hour dataset of multi-human videos with rich interactions, and construct a 300-video benchmark featuring paired humanoid characters. Quantitative and qualitative experiment",
+   "_query": "M10 arXiv 定性运动表示",
+   "_zone": "其他"
+  },
+  "2508.08991v1": {
+   "id": "2508.08991v1",
+   "title": "Spatial-Temporal Multi-Scale Quantization for Flexible Motion Generation",
+   "venue": "arXiv",
+   "year": "2025",
+   "type": "preprint",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "Despite significant advancements in human motion generation, current motion representations, typically formulated as discrete frame sequences, still face two critical limitations: (i) they fail to capture motion from a multi-scale perspective, limiting the capability in complex patterns modeling; (ii) they lack compositional flexibility, which is crucial for model's generalization in diverse generation tasks. To address these challenges, we introduce MSQ, a novel quantization method that compresses the motion sequence into multi-scale discrete tokens across spatial and temporal dimensions. MSQ employs distinct encoders to capture body parts at varying spatial granularities and temporally interpolates the encoded features into multiple scales before quantizing them into discrete tokens. Building on this representation, we establish a generative mask modeling model to effectively support motion editing, motion control, and conditional motion generation. Through quantitative and qualitative analysis, we show that our quantization method enables the seamless composition of motion tokens without requiring specialized design or re-training. Furthermore, extensive evaluations demonstrate ",
+   "_query": "M10 arXiv 定性运动表示",
+   "_zone": "艺术"
+  },
+  "2011.04439v1": {
+   "id": "2011.04439v1",
+   "title": "FACEGAN: Facial Attribute Controllable rEenactment GAN",
+   "venue": "arXiv",
+   "year": "2020",
+   "type": "preprint",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "The face reenactment is a popular facial animation method where the person's identity is taken from the source image and the facial motion from the driving image. Recent works have demonstrated high quality results by combining the facial landmark based motion representations with the generative adversarial networks. These models perform best if the source and driving images depict the same person or if the facial structures are otherwise very similar. However, if the identity differs, the driving facial structures leak to the output distorting the reenactment result. We propose a novel Facial Attribute Controllable rEenactment GAN (FACEGAN), which transfers the facial motion from the driving face via the Action Unit (AU) representation. Unlike facial landmarks, the AUs are independent of the facial structure preventing the identity leak. Moreover, AUs provide a human interpretable way to control the reenactment. FACEGAN processes background and face regions separately for optimized output quality. The extensive quantitative and qualitative comparisons show a clear improvement over the state-of-the-art in a single source reenactment task. The results are best illustrated in the ree",
+   "_query": "M10 arXiv 定性运动表示",
+   "_zone": "其他"
+  },
+  "10.1145/3265987.3265994": {
+   "id": "10.1145/3265987.3265994",
+   "title": "Deep Video Understanding",
+   "venue": "Proceedings of the 1st Workshop and Challenge on Comprehensive Video Understanding in the Wild",
+   "year": 2018,
+   "type": "proceedings-article",
+   "authors": [
+    "Mei Tao"
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M11 离散动作表示",
+   "_zone": "其他"
+  },
+  "10.69987/aimlr.2025.60203": {
+   "id": "10.69987/aimlr.2025.60203",
+   "title": "An Empirical Comparison of Discrete Video Tokenization Schemes for Video Question Answering and Video Captioning",
+   "venue": "Artificial Intelligence and Machine Learning Review",
+   "year": 2025,
+   "type": "journal-article",
+   "authors": [
+    "Mingzhuo Yu ",
+    "Zan Li "
+   ],
+   "n_auth": 2,
+   "abstract": "Discrete video tokenization has become a central design choice in recent multimodal large language models, shifting visual understanding from continuous patch features toward compact sequences of code indices. While rapid progress has been demonstrated on generative benchmarks, the impact of tokenizer choice on discriminative downstream tasks such as video question answering and video captioning remains under-quantified. This paper presents a controlled empirical comparison of nine discrete video tokenization schemes — VQ-VAE, VQ-GAN, VideoGPT, MAGVIT, MAGVIT-v2, OmniTokenizer, LARP, TiTok, and Cosmos Tokenizer — evaluated under a shared decoder-only language backbone on five open-ended video question answering benchmarks (MSRVTT-QA, MSVD-QA, ActivityNet-QA, NExT-QA, TGIF-QA) and two captioning benchmarks (MSR-VTT, VATEX). Across 63 tokenizer–dataset pairs, modern lookup-free and finite-scalar quantization schemes outperform the classic VQ-VAE baseline by 7.6 to 9.5 accuracy points on short-video question answering and 10.8 to 12.3 CIDEr points on captioning, while holistic query-based tokens deliver the largest gains on causal and temporal reasoning. A factor analysis separates co",
+   "_query": "M11 离散动作表示",
+   "_zone": "其他"
+  },
+  "10.2139/ssrn.5178850": {
+   "id": "10.2139/ssrn.5178850",
+   "title": "Discovernet: Unsupervised Video Object Discovery Through Discrete Visual Tokenization and Language Model-Inspired Reconstruction",
+   "venue": "",
+   "year": 2025,
+   "type": "posted-content",
+   "authors": [
+    "Joshi Amey",
+    "Joshi Gargi",
+    "Walambe Rahee",
+    "Kotecha Ketan"
+   ],
+   "n_auth": 4,
+   "abstract": "",
+   "_query": "M11 离散动作表示",
+   "_zone": "CV"
+  },
+  "10.21203/rs.3.rs-5310579/v1": {
+   "id": "10.21203/rs.3.rs-5310579/v1",
+   "title": "DiscoverNet: Unsupervised Video Object Discovery through Discrete Visual Tokenization and Language Model-Inspired Reconstruction",
+   "venue": "",
+   "year": 2024,
+   "type": "posted-content",
+   "authors": [
+    "Joshi Amey",
+    "Joshi Gargi",
+    "Walambe Rahee",
+    "Kotecha Ketan"
+   ],
+   "n_auth": 4,
+   "abstract": "Abstract Object discovery, the task of separating objects from the background without human annotations, continues to be an unsolved challenge in the field of computer vision. Existing methods face difficulties due to object-background ambiguity and slot drift, as they rely on clustering based on only low-level features. In this work, we introduce DiscoverNet, a comprehensive framework that enhances the auto-encoder representation learning approach by incorporating a scalar quantized discrete latent space and reconstruction via a masked language model (LM). Our innovative visual tokenizer enables end-to-end object discovery by harnessing the synergy between discretization and image generation using a bidirectional transformer. The proposed method fosters the development of compatible object-centric features for language models, providing interpretability and memory efficiency. Experiments conducted on synthetic and real-world datasets show that DiscoverNet surpasses current state-of-the-art methods in object discovery and can be extended to various downstream computer vision tasks, such as image and video generation and action recognition. Our approach demonstrates significant impr",
+   "_query": "M11 离散动作表示",
+   "_zone": "CV"
+  },
+  "10.1109/tpami.2026.3676982/mm1": {
+   "id": "10.1109/tpami.2026.3676982/mm1",
+   "title": "Discrete Tokenization for Multimodal LLMs: A Comprehensive Survey_supp1-3676982.pdf",
+   "venue": "",
+   "year": null,
+   "type": "component",
+   "authors": [
+    "Yang Menglin"
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M11 离散动作表示",
+   "_zone": "其他"
+  },
+  "10.1016/j.neunet.2024.106578": {
+   "id": "10.1016/j.neunet.2024.106578",
+   "title": "Cross-view motion consistent self-supervised video inter-intra contrastive for action representation understanding",
+   "venue": "Neural Networks",
+   "year": 2024,
+   "type": "journal-article",
+   "authors": [
+    "Bi Shuai",
+    "Hu Zhengping",
+    "Zhang Hehao",
+    "Di Jirui",
+    "Sun Zhe"
+   ],
+   "n_auth": 5,
+   "abstract": "",
+   "_query": "M11 离散动作表示",
+   "_zone": "其他"
+  },
+  "10.1021/acs.jcim.1c00563.s001": {
+   "id": "10.1021/acs.jcim.1c00563.s001",
+   "title": "Custom Tokenization Dictionary, CUSTODI: A General Fast, and Reversible Data-Driven Representation and Regressor",
+   "venue": "",
+   "year": null,
+   "type": "component",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M11 离散动作表示",
+   "_zone": "其他"
+  },
+  "10.1021/acs.jcim.5c00359.s001": {
+   "id": "10.1021/acs.jcim.5c00359.s001",
+   "title": "Exploring BERT for Reaction Yield Prediction: Evaluating the Impact of Tokenization, Molecular Representation, and Pretraining Data Augmentation",
+   "venue": "",
+   "year": null,
+   "type": "component",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M11 离散动作表示",
+   "_zone": "其他"
+  },
+  "10.1007/978-90-481-3529-5_3": {
+   "id": "10.1007/978-90-481-3529-5_3",
+   "title": "Action Goal Representation and Action Understanding in the Cerebral Cortex",
+   "venue": "Causality, Meaningful Complexity and Embodied Cognition",
+   "year": 2009,
+   "type": "book-chapter",
+   "authors": [
+    "Fogassi Leonardo"
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M11 离散动作表示",
+   "_zone": "其他"
+  },
+  "10.1021/acs.jcim.5c00359.s002": {
+   "id": "10.1021/acs.jcim.5c00359.s002",
+   "title": "Exploring BERT for Reaction Yield Prediction: Evaluating the Impact of Tokenization, Molecular Representation, and Pretraining Data Augmentation",
+   "venue": "",
+   "year": null,
+   "type": "component",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M11 离散动作表示",
+   "_zone": "其他"
+  },
+  "10.4018/979-8-3693-3346-4.ch016": {
+   "id": "10.4018/979-8-3693-3346-4.ch016",
+   "title": "Understanding of Decentralized Finance and Tokenization in FinTech",
+   "venue": "Advances in Finance, Accounting, and Economics",
+   "year": 2024,
+   "type": "book-chapter",
+   "authors": [
+    "Bhatia Sarin Asheetu"
+   ],
+   "n_auth": 1,
+   "abstract": "This chapter delves into the intersection of decentralized finance (DeFi) and tokenization within financial technology (FinTech). As the financial landscape continues to undergo rapid transformations, integrating decentralized and tokenized solutions has become a significant trend. This chapter explores the current state of DeFi and tokenization in Fintech and analyzes their synergies, challenges, and potential future developments with real-life case studies. The study also investigates the impact of these technologies on traditional financial systems, regulatory considerations, and the evolution of new financial instruments.",
+   "_query": "M11 离散动作表示",
+   "_zone": "其他"
+  },
+  "10.1016/j.jvcir.2026.104879": {
+   "id": "10.1016/j.jvcir.2026.104879",
+   "title": "CapVA: Towards hierarchical understanding in Text–Video Retrieval With Caption as Video Assistant",
+   "venue": "Journal of Visual Communication and Image Representation",
+   "year": 2026,
+   "type": "journal-article",
+   "authors": [
+    "Yu Zhipeng",
+    "Jiang Yangbangyan",
+    "Xu Qianqian"
+   ],
+   "n_auth": 3,
+   "abstract": "",
+   "_query": "M11 离散动作表示",
+   "_zone": "其他"
+  },
+  "2403.19578v3": {
+   "id": "2403.19578v3",
+   "title": "Keypoint Action Tokens Enable In-Context Imitation Learning in Robotics",
+   "venue": "arXiv",
+   "year": "2024",
+   "type": "preprint",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "We show that off-the-shelf text-based Transformers, with no additional training, can perform few-shot in-context visual imitation learning, mapping visual observations to action sequences that emulate the demonstrator's behaviour. We achieve this by transforming visual observations (inputs) and trajectories of actions (outputs) into sequences of tokens that a text-pretrained Transformer (GPT-4 Turbo) can ingest and generate, via a framework we call Keypoint Action Tokens (KAT). Despite being trained only on language, we show that these Transformers excel at translating tokenised visual keypoint observations into action trajectories, performing on par or better than state-of-the-art imitation learning (diffusion policies) in the low-data regime on a suite of real-world, everyday tasks. Rather than operating in the language domain as is typical, KAT leverages text-based Transformers to operate in the vision and action domains to learn general patterns in demonstration data for highly efficient imitation learning, indicating promising new avenues for repurposing natural language models for embodied tasks. Videos are available at https://www.robot-learning.uk/keypoint-action-tokens.",
+   "_query": "M12 arXiv 动作 token",
+   "_zone": "CV"
+  },
+  "2606.13674v2": {
+   "id": "2606.13674v2",
+   "title": "RepWAM: World Action Modeling with Representation Visual-Action Tokenizers",
+   "venue": "arXiv",
+   "year": "2026",
+   "type": "preprint",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "This work presents RepWAM, a representation-centric world action model (WAM) built on representation visual-action tokenizers. Existing WAMs typically inherit reconstruction-oriented video tokenizers from pretrained video generation models. Although these tokenizers preserve visual fidelity, pixel reconstruction alone provides limited guidance for learning instruction-following dynamics that connect future prediction with robot control. To address this, we explore a semantic visual-action latent space for representation-centric world action modeling. Specifically, we train a representation visual-action tokenizer that maps visual inputs into aligned visual and latent action tokens. We then pretrain our WAM to jointly model future visual states and the latent actions that connect them under language instructions, followed by adaptation to real robot trajectories for closed-loop manipulation. Experiments on real-world manipulation tasks and simulation benchmarks show that RepWAM delivers strong performance across diverse manipulation settings, while ablations highlight the value of semantic visual-action tokenization over reconstruction-oriented alternatives. These results establish ",
+   "_query": "M12 arXiv 动作 token",
+   "_zone": "CV"
+  },
+  "2510.09667v1": {
+   "id": "2510.09667v1",
+   "title": "OmniSAT: Compact Action Token, Faster Auto Regression",
+   "venue": "arXiv",
+   "year": "2025",
+   "type": "preprint",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "Existing Vision-Language-Action (VLA) models can be broadly categorized into diffusion-based and auto-regressive (AR) approaches: diffusion models capture continuous action distributions but rely on computationally heavy iterative denoising. In contrast, AR models enable efficient optimization and flexible sequence construction, making them better suited for large-scale pretraining. To further improve AR efficiency, particularly when action chunks induce extended and high-dimensional sequences, prior work applies entropy-guided and token-frequency techniques to shorten the sequence length. However, such compression struggled with \\textit{poor reconstruction or inefficient compression}. Motivated by this, we introduce an Omni Swift Action Tokenizer, which learns a compact, transferable action representation. Specifically, we first normalize value ranges and temporal horizons to obtain a consistent representation with B-Spline encoding. Then, we apply multi-stage residual quantization to the position, rotation, and gripper subspaces, producing compressed discrete tokens with coarse-to-fine granularity for each part. After pre-training on the large-scale dataset Droid, the resulting d",
+   "_query": "M12 arXiv 动作 token",
+   "_zone": "CV"
+  },
+  "2509.05695v1": {
+   "id": "2509.05695v1",
+   "title": "Leveraging Vision-Language Large Models for Interpretable Video Action Recognition with Semantic Tokenization",
+   "venue": "arXiv",
+   "year": "2025",
+   "type": "preprint",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "Human action recognition often struggles with deep semantic understanding, complex contextual information, and fine-grained distinction, limitations that traditional methods frequently encounter when dealing with diverse video data. Inspired by the remarkable capabilities of large language models, this paper introduces LVLM-VAR, a novel framework that pioneers the application of pre-trained Vision-Language Large Models (LVLMs) to video action recognition, emphasizing enhanced accuracy and interpretability. Our method features a Video-to-Semantic-Tokens (VST) Module, which innovatively transforms raw video sequences into discrete, semantically and temporally consistent \"semantic action tokens,\" effectively crafting an \"action narrative\" that is comprehensible to an LVLM. These tokens, combined with natural language instructions, are then processed by a LoRA-fine-tuned LVLM (e.g., LLaVA-13B) for robust action classification and semantic reasoning. LVLM-VAR not only achieves state-of-the-art or highly competitive performance on challenging benchmarks such as NTU RGB+D and NTU RGB+D 120, demonstrating significant improvements (e.g., 94.1% on NTU RGB+D X-Sub and 90.0% on NTU RGB+D 120 X",
+   "_query": "M12 arXiv 动作 token",
+   "_zone": "艺术"
+  },
+  "2411.02570v3": {
+   "id": "2411.02570v3",
+   "title": "TI-PREGO: Chain of Thought and In-Context Learning for Online Mistake Detection in PRocedural EGOcentric Videos",
+   "venue": "arXiv",
+   "year": "2024",
+   "type": "preprint",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "Identifying procedural errors online from egocentric videos is a critical yet challenging task across various domains, including manufacturing, healthcare, and skill-based training. The nature of such mistakes is inherently open-set, as unforeseen or novel errors may occur, necessitating robust detection systems that do not rely on prior examples of failure. Currently, however, no technique effectively detects open-set procedural mistakes online. We propose a dual branch architecture to address this problem in an online fashion: one branch continuously performs step recognition from the input egocentric video, while the other anticipates future steps based on the recognition module's output. Mistakes are detected as mismatches between the currently recognized action and the action predicted by the anticipation module. The recognition branch takes input frames, predicts the current action, and aggregates frame-level results into action tokens. The anticipation branch, specifically, leverages the solid pattern-matching capabilities of Large Language Models (LLMs) to predict action tokens based on previously predicted ones. Given the online nature of the task, we also thoroughly bench",
+   "_query": "M12 arXiv 动作 token",
+   "_zone": "其他"
+  },
+  "2605.19728v1": {
+   "id": "2605.19728v1",
+   "title": "Aero-World: Action-Conditioned Aerial Video Generation from Inertial Controls",
+   "venue": "arXiv",
+   "year": "2026",
+   "type": "preprint",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "Foundation video models produce visually impressive results, but their use in embodied AI remains limited because they are primarily trained on natural language rather than low-level control signals. This limitation is especially pronounced for aerial flight, where motion occurs in unconstrained 6-DoF space and small errors in ego-motion can produce large trajectory drift. Generating aerial videos that follow fine-grained inertial actions can support scalable training and evaluation of aerial agents by providing a controllable proxy for real-world or expensive simulation data. To address this problem, we propose \\textbf{Aero-World}, a method for converting a pretrained image-to-video diffusion model into a controllable aerial video generator. Aero-World injects sequences of translational acceleration and angular velocity into a pretrained latent diffusion transformer through an action-token stream. A frozen latent-space Physics Probe, trained independently on real video--IMU pairs, provides differentiable inertial-consistency supervision during LoRA finetuning while avoiding computationally expensive video decoding. We further propose \\textbf{AeroBench}, a benchmark for evaluating ",
+   "_query": "M12 arXiv 动作 token",
+   "_zone": "其他"
+  },
+  "2601.04061v2": {
+   "id": "2601.04061v2",
+   "title": "CLAP: Contrastive Latent Action Pretraining for Learning Vision-Language-Action Models from Human Videos",
+   "venue": "arXiv",
+   "year": "2026",
+   "type": "preprint",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "Generalist Vision-Language-Action models remain constrained by the scarcity of robotic data relative to the abundance of human video demonstrations. Existing Latent Action Models attempt to use video data but often suffer from visual entanglement, encoding noise rather than manipulation skills. To address this limitation, we propose Contrastive Latent Action Pretraining (CLAP), a framework that first uses Act-VAE to learn an executable action-token vocabulary from robot trajectories and then aligns human visual transitions with this vocabulary through contrastive learning. This alignment maps unlabeled human videos into a physically grounded latent action space rather than reconstructing appearance. Building on the aligned tokens, we train CLAP-NTP as an autoregressive VLA using robot demonstrations and pseudo-labeled human videos, preserving instruction following and object generalization. For deployment and target-domain adaptation, we further introduce a post-training strategy that combines CLAP-RF, a Rectified Flow action head for low-latency continuous action chunk prediction, with Knowledge Matching regularization to preserve pretrained semantic knowledge during fine-tuning. ",
+   "_query": "M12 arXiv 动作 token",
+   "_zone": "CV"
+  },
+  "2607.08639v2": {
+   "id": "2607.08639v2",
+   "title": "Native Video-Action Pretraining for Generalizable Robot Control",
+   "venue": "arXiv",
+   "year": "2026",
+   "type": "preprint",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "The advent of video-action models offers a promising path for robot control. Nevertheless, we argue that repurposing video generative models designed for digital content creation is inherently inadequate for physical environments. To bridge this gap, we present LingBot-VA 2.0, a video-action foundation model built from the ground up for embodiment. Four core design principles showcase its evolution from LingBot-VA. (1) Departing from traditional reconstruction-focused VAEs, we introduce a semantic visual-action tokenizer, which aligns visual representations with both semantics and actions, improving instruction following and action precision in subsequent policy learning. (2) Given the strictly causal nature of temporal dynamics, we adopt a causal pretraining paradigm, training from scratch to circumvent the catastrophic forgetting that frequently occurs when adapting bidirectional architectures. (3) To meet the demands of high-frequency inference, our model employs a sparse MoE backbone, expanding model capacity without compromising efficiency. (4) Real-time closed-loop control is realized through an enhanced asynchronous inference scheme, which predicts future latents in parallel",
+   "_query": "M12 arXiv 动作 token",
+   "_zone": "CV"
+  },
+  "2608.05706v1": {
+   "id": "2608.05706v1",
+   "title": "LAWM-3D: Learning 3D-Aware Latent Actions from Human Videos for Generalizable Robot World Models",
+   "venue": "arXiv",
+   "year": "2026",
+   "type": "preprint",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "World models enable agents to perform forward rollout and planning without real-world interaction. However, their application in open-world embodied intelligence remains limited by the high cost of action annotations and the heterogeneity of action spaces across platforms. Recently, latent action models (LAMs) have alleviated this bottleneck by learning action representations directly from unlabeled human videos in a self-supervised manner. Nevertheless, most existing LAMs rely on single-view inputs and operate primarily in 2D pixel space, raising a fundamental question: can simply incorporating multi-view videos into LAM training endow the learned latent actions with 3D-aware perception? Our study shows that the answer is negative. The primary reasons lie in future-frame appearance leakage as well as inter-camera appearance discrepancies and viewpoint variations. To address these issues, we propose LAWM-3D, which introduces three tightly coupled key designs: (1) a multi-view invariant unified action tokenization scheme for learning 3D-aware latent actions; (2) a geometric alignment constraint that anchors intermediate encoder features to a pretrained 3D foundation model, thereby e",
+   "_query": "M12 arXiv 动作 token",
+   "_zone": "CV"
+  },
+  "2609.35709v1": {
+   "id": "2609.35709v1",
+   "title": "Humanoid Loco-Manipulation With Discrete VLA Model",
+   "venue": "arXiv",
+   "year": "2026",
+   "type": "preprint",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "Vision-language-action (VLA) models using discrete action tokens have proven effective for controling robotic arms on manipulation tasks. For a humanoid, however, the whole-body action space -- legs, torso, arms, and hands -- is far higher-dimensional and heterogeneous, raising tokenization, training, and real-time inference challenges that the previous VLA models do not address. We present Holo-M, to our knowledge the first discrete VLA model for humanoid loco-manipulation that intrinsically exploits the language model by extending its vocabulary with action tokens. In this model, we devise a unified action tokenizer that decomposes the humanoid action space into four body-part-specific tokenizers -- end-effector, body, hand, and kinematics -- enabling training across drastically different embodiments and data sources, including humanoid teleoperation, ego-centric human video, and simulation. By extending the language model's vocabulary with these action tokens, we avoid the knowledge-insulation problem inherent to the models that use separate continuous action experts. To meet real-time control requirements, we decode each body part's action tokens through grouped discrete diffus",
+   "_query": "M12 arXiv 动作 token",
+   "_zone": "其他"
+  },
+  "2308.14900v2": {
+   "id": "2308.14900v2",
+   "title": "BIT: Bi-Level Temporal Modeling for Efficient Supervised Action Segmentation",
+   "venue": "arXiv",
+   "year": "2023",
+   "type": "preprint",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "We address the task of supervised action segmentation which aims to partition a video into non-overlapping segments, each representing a different action. Recent works apply transformers to perform temporal modeling at the frame-level, which suffer from high computational cost and cannot well capture action dependencies over long temporal horizons. To address these issues, we propose an efficient BI-level Temporal modeling (BIT) framework that learns explicit action tokens to represent action segments, in parallel performs temporal modeling on frame and action levels, while maintaining a low computational cost. Our model contains (i) a frame branch that uses convolution to learn frame-level relationships, (ii) an action branch that uses transformer to learn action-level dependencies with a small set of action tokens and (iii) cross-attentions to allow communication between the two branches. We apply and extend a set-prediction objective to allow each action token to represent one or multiple action segments, thus can avoid learning a large number of tokens over long videos with many segments. Thanks to the design of our action branch, we can also seamlessly leverage textual transcr",
+   "_query": "M12 arXiv 动作 token",
+   "_zone": "其他"
+  },
+  "2605.07794v1": {
+   "id": "2605.07794v1",
+   "title": "NoiseGate: Learning Per-Latent Timestep Schedules as Information Gating in World Action Models",
+   "venue": "arXiv",
+   "year": "2026",
+   "type": "preprint",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "World Action Models (WAMs) are an emerging family of policies that tie robot action generation to future-observation modeling. In this work, we focus on the joint video--action modeling paradigm, where actions and imagined future observations are co-generated along a shared denoising or flow trajectory, so that perception, prediction, and control are coupled within one generative process. Existing WAMs typically realize this paradigm with a Mixture-of-Transformers (MoT), where video and action tokens interact through shared self-attention. This architecture can in principle assign a separate timestep $t_f$ to each predicted latent frame, yet current systems collapse this degree of freedom onto a single shared scalar $t$. Under the noise-as-masking view of Diffusion Forcing, this shared schedule imposes the unjustified prior that every predicted latent is equally reliable for action generation. We instead view the per-latent schedule as a \\emph{learnable information-gating policy}: by changing a latent frame's noise level, the policy modulates the reliability of its Key/Value contribution to the action tokens. We propose \\textbf{NoiseGate}, which combines independent per-latent time",
+   "_query": "M12 arXiv 动作 token",
+   "_zone": "其他"
+  },
+  "10.21236/ada254260": {
+   "id": "10.21236/ada254260",
+   "title": "A Standard File Format for Data Interchange",
+   "venue": "",
+   "year": 1991,
+   "type": "report",
+   "authors": [
+    "McDonnel Michael"
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M13 动捕数据标准",
+   "_zone": "其他"
+  },
+  "10.21236/ada281516": {
+   "id": "10.21236/ada281516",
+   "title": "Standard Simulator Data Base (SSDB) Interchange Format (SIF) Design Standard",
+   "venue": "",
+   "year": 1993,
+   "type": "report",
+   "authors": [
+    "DEPARTMENT OF DEFENSE WASHINGTON DC "
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M13 动捕数据标准",
+   "_zone": "中间带"
+  },
+  "10.1109/ieeestd.1993.115130": {
+   "id": "10.1109/ieeestd.1993.115130",
+   "title": "IEEE Standard Multichannel Analyzer (MCA) Histogram Data Interchange Format for Nuclear Spectroscopy",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M13 动捕数据标准",
+   "_zone": "中间带"
+  },
+  "10.17487/rfc976": {
+   "id": "10.17487/rfc976",
+   "title": "UUCP mail interchange format standard",
+   "venue": "",
+   "year": 1986,
+   "type": "report",
+   "authors": [
+    "Horton M.R."
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M13 动捕数据标准",
+   "_zone": "中间带"
+  },
+  "10.1109/ieeestd.2017.7837032": {
+   "id": "10.1109/ieeestd.2017.7837032",
+   "title": "IEEE Standard for Digital Test Interchange Format (DTIF)",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M13 动捕数据标准",
+   "_zone": "中间带"
+  },
+  "10.1109/ieeestd.1998.89205": {
+   "id": "10.1109/ieeestd.1998.89205",
+   "title": "IEEE Standard for Digital Test Interchange Format (DTIF)",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M13 动捕数据标准",
+   "_zone": "中间带"
+  },
+  "10.1007/springerreference_71022": {
+   "id": "10.1007/springerreference_71022",
+   "title": "Hand Data Interchange Format, Standardization",
+   "venue": "SpringerReference",
+   "year": null,
+   "type": "reference-entry",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M13 动捕数据标准",
+   "_zone": "中间带"
+  },
+  "10.3403/30217587u": {
+   "id": "10.3403/30217587u",
+   "title": "Food data. Structure and interchange format",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M13 动捕数据标准",
+   "_zone": "中间带"
+  },
+  "10.1007/springerreference_70976": {
+   "id": "10.1007/springerreference_70976",
+   "title": "Biometric Data Interchange Format, Standardization",
+   "venue": "SpringerReference",
+   "year": null,
+   "type": "reference-entry",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M13 动捕数据标准",
+   "_zone": "中间带"
+  },
+  "10.1007/springerreference_70977": {
+   "id": "10.1007/springerreference_70977",
+   "title": "Finger Data Interchange Format, Standardization",
+   "venue": "SpringerReference",
+   "year": null,
+   "type": "reference-entry",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M13 动捕数据标准",
+   "_zone": "中间带"
+  },
+  "10.3403/30217587": {
+   "id": "10.3403/30217587",
+   "title": "Food data. Structure and interchange format",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M13 动捕数据标准",
+   "_zone": "中间带"
+  },
+  "10.3403/01426795": {
+   "id": "10.3403/01426795",
+   "title": "Data interchange format for simulated and measured data (ISMD)",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M13 动捕数据标准",
+   "_zone": "中间带"
+  },
+  "10.7717/peerj-cs.102/supp-2": {
+   "id": "10.7717/peerj-cs.102/supp-2",
+   "title": "Data S1: The raw data includes the movements used to generate the bio-motion generator. Each movement is stored in a file with BVH format containing the data of the subject that performs the movement",
+   "venue": "",
+   "year": null,
+   "type": "component",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M14 BVH 动捕格式语义",
+   "_zone": "其他"
+  },
+  "10.3923/itj.2011.1957.1963": {
+   "id": "10.3923/itj.2011.1957.1963",
+   "title": "Underlying Semantic Annotation Method for Human Motion Capture Data",
+   "venue": "Information Technology Journal",
+   "year": 2011,
+   "type": "journal-article",
+   "authors": [
+    "Feng Lin",
+    "Xu Chang-You",
+    "Jin Bo",
+    "Chen Feng",
+    "Yin Zhi-Yuan"
+   ],
+   "n_auth": 5,
+   "abstract": "",
+   "_query": "M14 BVH 动捕格式语义",
+   "_zone": "艺术"
+  },
+  "10.1109/ca.2000.889046": {
+   "id": "10.1109/ca.2000.889046",
+   "title": "Skeleton-based motion capture for robust reconstruction of human motion",
+   "venue": "Proceedings Computer Animation 2000",
+   "year": null,
+   "type": "proceedings-article",
+   "authors": [
+    "Herda L.",
+    "Fua P.",
+    "Plankers R.",
+    "Boulic R.",
+    "Thalmann D."
+   ],
+   "n_auth": 5,
+   "abstract": "",
+   "_query": "M14 BVH 动捕格式语义",
+   "_zone": "CV"
+  },
+  "10.23940/ijpe.18.01.p16.151158": {
+   "id": "10.23940/ijpe.18.01.p16.151158",
+   "title": "An Estimation Method of Skeleton Proportion for Hand’s Motion Capture",
+   "venue": "International Journal of Performability Engineering",
+   "year": 2018,
+   "type": "journal-article",
+   "authors": [
+    "Zhang Zhenning"
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M14 BVH 动捕格式语义",
+   "_zone": "其他"
+  },
+  "10.3403/30310629u": {
+   "id": "10.3403/30310629u",
+   "title": "Language resource management. Semantic annotation framework",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M14 BVH 动捕格式语义",
+   "_zone": "艺术"
+  },
+  "10.3403/30310629": {
+   "id": "10.3403/30310629",
+   "title": "Language resource management. Semantic annotation framework",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M14 BVH 动捕格式语义",
+   "_zone": "艺术"
+  },
+  "10.46510/jami.v1i2.34": {
+   "id": "10.46510/jami.v1i2.34",
+   "title": "Penggunaan Hasil Motion Capture (Data Bvh) Untuk Menganimasikan Model Karakter 3d Agar Menghasilkan Animasi Yang Humanoid",
+   "venue": "JAMI: Jurnal Ahli Muda Indonesia",
+   "year": 2020,
+   "type": "journal-article",
+   "authors": [
+    "Waspada Heri Priya",
+    "Ismanto Ismanto",
+    "Hidayah Firman"
+   ],
+   "n_auth": 3,
+   "abstract": "Abstrak&#x0D; Objektif. Proses pemodelan karakter 3D memegang peranan penting dalam menghasilkan model karakter 3D yang baik. Proses ini merupakan proses awal yang harus dilalui oleh seorang desainer dalam membuat sebuah model karakter 3D. Setelah proses pemodelan dikerjakan dengan baik agar karakter tersebut bisa dibuat bergerak maka diperlukan proses rigging. Dengan proses pemodelan dan rigging tersebut model karakter 3D bisa digunakan untuk menghasilkan animasi sesuai dengan keinginan animator. Tentunya seorang animator akan memerlukan kerja keras untuk membuat suatu adegan gerakan apabila animasi yang dibuat masih manual. Untuk itu dengan memanfaatkan data BVH, animator akan lebih ringan dalam membuat adegan animasinya. Hasil animasi karakter di tunjukkan kepada 40 responden untuk menilai dan menghasilkan rata-rata tingkat humanoid animasi karakter bernilai 65%.&#x0D; Material and Metode. Menganimasikan model karakter 3D memanfaatkan hasil motion capture (.bvh)&#x0D; Hasil. Animasi karakter 3D dengan menggunakan hasil motion capture menghasilkan animasi yang humanoid.&#x0D; Kesimpulan. Hasil motion capture merupakan susunan tulang yang sudah dilengkapi dengan hasil perekaman ge",
+   "_query": "M14 BVH 动捕格式语义",
+   "_zone": "其他"
+  },
+  "10.3403/30274844": {
+   "id": "10.3403/30274844",
+   "title": "Language resource management. Semantic annotation framework (SemAF)",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M14 BVH 动捕格式语义",
+   "_zone": "艺术"
+  },
+  "10.18127/j20729472-202601-18": {
+   "id": "10.18127/j20729472-202601-18",
+   "title": "Methods of semantic annotation and ontological modeling of mathematical texts in LaTeX format",
+   "venue": "Highly available systems",
+   "year": 2026,
+   "type": "journal-article",
+   "authors": [
+    "Kobuk M.G.",
+    "Ataeva O.M."
+   ],
+   "n_auth": 2,
+   "abstract": "Problem statement. This work addresses the problem of structuring scientific articles for building data corpora within the SciLibAIRU semantic ecosystem, and the transition from a document-oriented data representation to a format suitable for automated analysis and semantic search. Objective. The objective of this work is to investigate an optimal method for vector-based fuzzy search over mathematical texts and to implement it in conjunction with a parser for mathematical LaTeX texts. Results. A prototype vector search system is proposed that is capable of ingesting LaTeX versions of scientific texts and providing a fuzzy search interface over textual fragments within the SciLibAIRU library. Practical significance. The results are applicable to library and editorial information systems.",
+   "_query": "M14 BVH 动捕格式语义",
+   "_zone": "中间带"
+  },
+  "10.3403/30274844u": {
+   "id": "10.3403/30274844u",
+   "title": "Language resource management. Semantic annotation framework (SemAF)",
+   "venue": "",
+   "year": null,
+   "type": "standard",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M14 BVH 动捕格式语义",
+   "_zone": "艺术"
+  },
+  "10.3390/s23125423": {
+   "id": "10.3390/s23125423",
+   "title": "Method for Using IMU-Based Experimental Motion Data in BVH Format for Musculoskeletal Simulations via OpenSim",
+   "venue": "Sensors",
+   "year": 2023,
+   "type": "journal-article",
+   "authors": [
+    "Wechsler Iris",
+    "Wolf Alexander",
+    "Fleischmann Sophie",
+    "Waibel Julian",
+    "Molz Carla"
+   ],
+   "n_auth": 10,
+   "abstract": "Biomechanical simulation allows for in silico estimations of biomechanical parameters such as muscle, joint and ligament forces. Experimental kinematic measurements are a prerequisite for musculoskeletal simulations using the inverse kinematics approach. Marker-based optical motion capture systems are frequently used to collect this motion data. As an alternative, IMU-based motion capture systems can be used. These systems allow flexible motion collection without nearly any restriction regarding the environment. However, one limitation with these systems is that there is no universal way to transfer IMU data from arbitrary full-body IMU measurement systems into musculoskeletal simulation software such as OpenSim. Thus, the objective of this study was to enable the transfer of collected motion data, stored as a BVH file, to OpenSim 4.4 to visualize and analyse the motion using musculoskeletal models. By using the concept of virtual markers, the motion saved in the BVH file is transferred to a musculoskeletal model. An experimental study with three participants was conducted to verify our method’s performance. Results show that the present method is capable of (1) transferring body d",
+   "_query": "M14 BVH 动捕格式语义",
+   "_zone": "艺术"
+  },
+  "10.1007/3-540-49384-0_3": {
+   "id": "10.1007/3-540-49384-0_3",
+   "title": "Local and Global Skeleton Fitting Techniques for Optical Motion Capture",
+   "venue": "Lecture Notes in Computer Science",
+   "year": 1998,
+   "type": "book-chapter",
+   "authors": [
+    "Silaghi Marius-CĂlin",
+    "Plänkers Ralf",
+    "Boulic Ronan",
+    "Fua Pascal",
+    "Thalmann Daniel"
+   ],
+   "n_auth": 5,
+   "abstract": "",
+   "_query": "M14 BVH 动捕格式语义",
+   "_zone": "其他"
+  },
+  "10.4018/978-1-59140-299-2.ch002": {
+   "id": "10.4018/978-1-59140-299-2.ch002",
+   "title": "Virtual Character Definition and Animation within the MPEG-4 Standard",
+   "venue": "3D Modeling and Animation",
+   "year": 2004,
+   "type": "book-chapter",
+   "authors": [
+    "Preda Marius",
+    "Salomie Ioan A.",
+    "Preteux Françoise",
+    "Lafruit Gauthier"
+   ],
+   "n_auth": 4,
+   "abstract": "Besides being one of the well-known audio/video coding techniques, MPEG-4 provides additional coding tools dedicated to virtual character animation. The motivation of considering virtual character definition and animation issues within MPEG-4 is first presented. Then, it is shown how MPEG-4, Amendment 1 offers an appropriate framework for virtual human stream is presented and discussed in terms of a generic representation and additional functionalities. The biomechanical properties, modeled by means of the character skeleton that defines the bone influence on the skin region, as well as the local spatial deformations simulating muscles, are supported by specific nodes. Animating the virtual character consists in instantiating bone transformations and muscle control curves. Interpolation techniques, inverse kinematics, discrete cosine transform and arithmetic encoding techniques make it possible to provide a highly compressed animation stream. Within a dedicated modeling approach — the so-called MeshGrid — we show how the bone and muscle-based animation mechanism is applied to deform the 3D space around a humanoid.",
+   "_query": "M16 MPEG 人体动画",
+   "_zone": "其他"
+  },
+  "10.1002/0470854626.ch1": {
+   "id": "10.1002/0470854626.ch1",
+   "title": "The Origins of the MPEG‐4 Facial Animation Standard",
+   "venue": "MPEG‐4 Facial Animation",
+   "year": 2002,
+   "type": "other",
+   "authors": [
+    "Pandzic Igor S.",
+    "Forchheimer Robert"
+   ],
+   "n_auth": 2,
+   "abstract": "",
+   "_query": "M16 MPEG 人体动画",
+   "_zone": "其他"
+  },
+  "10.1002/0470854626.ch3": {
+   "id": "10.1002/0470854626.ch3",
+   "title": "MPEG‐4 Face Animation Conformance",
+   "venue": "MPEG‐4 Facial Animation",
+   "year": 2002,
+   "type": "other",
+   "authors": [
+    "Petajan Eric"
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M16 MPEG 人体动画",
+   "_zone": "其他"
+  },
+  "10.1002/0470854626.ch2": {
+   "id": "10.1002/0470854626.ch2",
+   "title": "Face Animation in MPEG‐4",
+   "venue": "MPEG‐4 Facial Animation",
+   "year": 2002,
+   "type": "other",
+   "authors": [
+    "Ostermann Jörn"
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M16 MPEG 人体动画",
+   "_zone": "其他"
+  },
+  "10.1002/0470854626.ch4": {
+   "id": "10.1002/0470854626.ch4",
+   "title": "MPEG‐4 Facial Animation Framework for the Web and Mobile Applications",
+   "venue": "MPEG‐4 Facial Animation",
+   "year": 2002,
+   "type": "other",
+   "authors": [
+    "Pandzic Igor S."
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M16 MPEG 人体动画",
+   "_zone": "其他"
+  },
+  "10.1002/0470854626.app1": {
+   "id": "10.1002/0470854626.app1",
+   "title": "Appendix 1: Evaluating MPEG‐4 Facial Animation Players",
+   "venue": "MPEG‐4 Facial Animation",
+   "year": 2002,
+   "type": "other",
+   "authors": [
+    "Ahlberg Jörgen",
+    "Pandzic Igor S.",
+    "You Liwen"
+   ],
+   "n_auth": 3,
+   "abstract": "",
+   "_query": "M16 MPEG 人体动画",
+   "_zone": "其他"
+  },
+  "10.1007/0-387-27890-7_15": {
+   "id": "10.1007/0-387-27890-7_15",
+   "title": "MPEG-4 Face and Body Animation Coding Applied to HCI",
+   "venue": "Real-Time Vision for Human-Computer Interaction",
+   "year": null,
+   "type": "book-chapter",
+   "authors": [
+    "Petajan Eric"
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M16 MPEG 人体动画",
+   "_zone": "其他"
+  },
+  "10.4018/978-1-60566-186-5.ch004": {
+   "id": "10.4018/978-1-60566-186-5.ch004",
+   "title": "Visual Speech and Gesture Coding Using the MPEG-4 Face and Body Animation Standard",
+   "venue": "Visual Speech Recognition",
+   "year": 2009,
+   "type": "book-chapter",
+   "authors": [
+    "Petajan Eric"
+   ],
+   "n_auth": 1,
+   "abstract": "Automatic Speech Recognition (ASR) is the most natural input modality from humans to machines. When the hands are busy or a full keyboard is not available, speech input is especially in demand. Since the most compelling application scenarios for ASR include noisy environments (mobile phones, public kiosks, cars), visual speech processing must be incorporated to provide robust performance. This chapter motivates and describes the MPEG-4 Face and Body Animation (FBA) standard for representing visual speech data as part of a whole virtual human specification. The super low bit-rate FBA codec included with the standard enables thin clients to access processing and communication services over any network including enhanced visual communication, animated entertainment, man-machine dialog, and audio/visual speech recognition.",
+   "_query": "M16 MPEG 人体动画",
+   "_zone": "艺术"
+  },
+  "10.1002/0470854626.ch6": {
+   "id": "10.1002/0470854626.ch6",
+   "title": "Extracting MPEG‐4 FAPs from Video",
+   "venue": "MPEG‐4 Facial Animation",
+   "year": 2002,
+   "type": "other",
+   "authors": [
+    "Ahlberg Jörgen"
+   ],
+   "n_auth": 1,
+   "abstract": "",
+   "_query": "M16 MPEG 人体动画",
+   "_zone": "其他"
+  },
+  "10.1002/0470854626.fmatter": {
+   "id": "10.1002/0470854626.fmatter",
+   "title": "Front Matter",
+   "venue": "MPEG‐4 Facial Animation",
+   "year": 2002,
+   "type": "other",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M16 MPEG 人体动画",
+   "_zone": "其他"
+  },
+  "10.1002/0470854626.ch5": {
+   "id": "10.1002/0470854626.ch5",
+   "title": "The Facial Animation Engine",
+   "venue": "MPEG‐4 Facial Animation",
+   "year": 2002,
+   "type": "other",
+   "authors": [
+    "Lavagetto Fabio",
+    "Pockaj Roberto"
+   ],
+   "n_auth": 2,
+   "abstract": "",
+   "_query": "M16 MPEG 人体动画",
+   "_zone": "其他"
+  },
+  "10.1002/0470854626.index": {
+   "id": "10.1002/0470854626.index",
+   "title": "Index",
+   "venue": "MPEG‐4 Facial Animation",
+   "year": 2002,
+   "type": "other",
+   "authors": [],
+   "n_auth": 0,
+   "abstract": "",
+   "_query": "M16 MPEG 人体动画",
+   "_zone": "其他"
+  }
+ },
+ "summary": {
+  "n_queries": 17,
+  "n_unique": 148,
+  "zone_dist": {
+   "其他": 85,
+   "CV": 12,
+   "中间带": 36,
+   "临床": 1,
+   "艺术": 14
+  },
+  "n_middle_unique": 36,
+  "arxiv_zero_hit": [
+   "M3 arXiv HMD",
+   "M6 arXiv 运动本体",
+   "M15 arXiv 动捕标准",
+   "M17 arXiv 数字人运动表示"
+  ]
+ }
+}

@@ -1,0 +1,202 @@
+[
+  {
+    "priority": "P1",
+    "title": "Language Models are Unsupervised Multitask Learners",
+    "doi": "",
+    "venue": "OpenAI 技术报告（无 arXiv）",
+    "thread": "T1",
+    "note": "GPT-2 自回归预训练"
+  },
+  {
+    "priority": "P1",
+    "title": "3D Human Pose Estimation with Spatio-Temporal Transformers",
+    "doi": "",
+    "venue": "",
+    "thread": "T4",
+    "note": "STFormer，时空并行"
+  },
+  {
+    "priority": "P1",
+    "title": "4DHumans: Reconstructing 4D Humans from Monocular Video",
+    "doi": "",
+    "venue": "",
+    "thread": "T4",
+    "note": "HMR2.0，ViT+SMPL query cross-attention"
+  },
+  {
+    "priority": "P0",
+    "title": "A Simple Framework for Text-to-Motion Extraction and Analysis",
+    "doi": "",
+    "venue": "",
+    "thread": "T5",
+    "note": "T2M，kNN 聚类离散化运动，kinematic vocabulary 的直接前身"
+  },
+  {
+    "priority": "P1",
+    "title": "Video generation models as world simulators",
+    "doi": "",
+    "venue": "",
+    "thread": "T6",
+    "note": "Sora，世界模拟器视角"
+  },
+  {
+    "priority": "P2",
+    "title": "TRAIN: A Deep Learning Approach to Motion Analysis",
+    "doi": "",
+    "venue": "",
+    "thread": "T6",
+    "note": "骨骼-肌肉协同建模，传统物理先验，NMS 溯源"
+  },
+  {
+    "priority": "P2",
+    "title": "Reconstructing Human Motion from sEMG",
+    "doi": "",
+    "venue": "",
+    "thread": "T6",
+    "note": "sEMG→动作重建，先行验证信号带宽"
+  },
+  {
+    "priority": "P2",
+    "title": "Real-time Neural-network-based prediction of intended finger movements from surface electromyography",
+    "doi": "",
+    "venue": "",
+    "thread": "T5",
+    "note": "sEMG 实时意图预测，康复控制近邻"
+  },
+  {
+    "priority": "P2",
+    "title": "MUSE: Multi-Scale Temporal Pretraining for Muscle Synergy-based Prosthetic Control",
+    "doi": "",
+    "venue": "",
+    "thread": "T5",
+    "note": "肌肉协同多尺度预训练，sEMG Transformer 化代表"
+  },
+  {
+    "priority": "P2",
+    "title": "Multivariate representations and physiological insights for characterizing muscle activity during reaching",
+    "doi": "",
+    "venue": "",
+    "thread": "T6",
+    "note": "肌肉激活表征，生理学约束"
+  },
+  {
+    "priority": "P2",
+    "title": "Muscle Synergies as a Tool for Neural Control of Functional Movements",
+    "doi": "",
+    "venue": "",
+    "thread": "T6",
+    "note": "肌肉协同空间基，受限维度，语法约束理论"
+  },
+  {
+    "priority": "P2",
+    "title": "EMG-Driven Neuromuscular Modelling for Joint Torque Estimation Using a Multiband LSTM Network and Data Augmentation",
+    "doi": "",
+    "venue": "",
+    "thread": "T6",
+    "note": "章隆彬团队 EMG+NMS+LSTM，物理+学习混合先例"
+  },
+  {
+    "priority": "P2",
+    "title": "Transfer learning-based muscle synergies estimation for knee exoskeleton control",
+    "doi": "",
+    "venue": "",
+    "thread": "T6",
+    "note": "迁移学习肌肉协同，跨被试"
+  },
+  {
+    "priority": "P2",
+    "title": "A deep learning framework for reconstructing muscle activation from surface electromyography during dynamic movements",
+    "doi": "",
+    "venue": "",
+    "thread": "T6",
+    "note": "动态肌电深层重建"
+  },
+  {
+    "priority": "P2",
+    "title": "Motor Imagery EEG-based BCI for rehabilitation: deep learning for decoding and visualization",
+    "doi": "",
+    "venue": "",
+    "thread": "T4",
+    "note": "运动想象 BCI 深度解码，康复信号另一分支"
+  },
+  {
+    "priority": "P2",
+    "title": "Self-Supervised Transformers for Human Activity Recognition Using Wearable Sensors",
+    "doi": "",
+    "venue": "",
+    "thread": "T1",
+    "note": "可穿戴自监督时序，康复传感器"
+  },
+  {
+    "priority": "P0",
+    "title": "A BERT Based Method for Continuous Estimation of Cross-Subject Hand Kinematics From Surface Electromyographic Signals",
+    "doi": "10.1109/TNSRE.2022.3216528",
+    "venue": "IEEE TNSRE",
+    "thread": "T1",
+    "note": "Lin et al., IEEE TNSRE 2023（DOI 10.1109/TNSRE.2022.3216528）：BERT 结构做跨被试手部运动学估计——手/腕域最强的 Transformer 直接竞品"
+  },
+  {
+    "priority": "P0",
+    "title": "A Dual-Task Improved Transformer Framework for Decoding Lower Limb Sit-to-Stand Movement from sEMG and IMU Data",
+    "doi": "10.3390/machines13100953",
+    "venue": "MDPI Machines",
+    "thread": "T5",
+    "note": "MDPI Machines 2025（DOI 10.3390/machines13100953）：iTransformer-DTL，可学习 query + 非自回归直接解码整段轨迹——直接冲击 Wei 2026 的自回归 Seq2Seq 路线"
+  },
+  {
+    "priority": "P0",
+    "title": "Markerless On-Device Detection of Compensatory Movement Patterns in Upper-Limb Rehabilitation Exercises from Monocular RGB Video",
+    "doi": "10.3390/s26165054",
+    "venue": "MDPI Sensors",
+    "thread": "T6",
+    "note": "Sensors 2026（DOI 10.3390/s26165054）：单目 RGB 端侧上肢代偿检测，5 项几何指标，macro-F1 0.75；ViKiT 的最直接视觉竞品"
+  },
+  {
+    "priority": "P0",
+    "title": "Using deep learning to detect upper limb compensation in individuals post-stroke using consumer-grade webcams",
+    "doi": "10.3389/fmed.2025.1645369",
+    "venue": "Frontiers in Neurology",
+    "thread": "T6",
+    "note": "Front Neurol 2025（DOI 10.3389/fmed.2025.1645369）：跨被试泛化仅约 50–70%，个体内 >90%，CNN>LSTM——对 ViKiT 跨被试协议是最硬的负面证据"
+  },
+  {
+    "priority": "P0",
+    "title": "Prediction of Joint Angles for Human Elbow Motion Based on sEMG",
+    "doi": "10.1109/CAC63892.2024.10865675",
+    "venue": "IEEE CAC",
+    "thread": "T5",
+    "note": "IEEE CAC 2024（DOI 10.1109/CAC63892.2024.10865675）：肘关节角 sEMG→Transformer 预测，MAE<0.065；肘域直接竞品"
+  },
+  {
+    "priority": "P1",
+    "title": "Sinkhorn Operators: Provable Attention via Neural Operator Filters",
+    "doi": "",
+    "venue": "",
+    "thread": "T2",
+    "note": "低秩/核注意力理论化"
+  },
+  {
+    "priority": "P1",
+    "title": "Conditional Positional Encoding for Video Transformers",
+    "doi": "",
+    "venue": "",
+    "thread": "T3",
+    "note": "视频位置编码，时序角度序列可借鉴"
+  },
+  {
+    "priority": "P0",
+    "title": "TATS: Long-term Human Motion Generation with Time-Aware Tokenization",
+    "doi": "",
+    "venue": "",
+    "thread": "T5",
+    "note": "时间感知离散化：token 粒度随时长自适应，ViKiT 固定 256 桶的直接反面教材"
+  },
+  {
+    "priority": "P1",
+    "title": "Retentive Network: A Successive Sub-Training Token-Based Architecture",
+    "doi": "",
+    "venue": "",
+    "thread": "T7",
+    "note": "RetNet 保留机制，线性复杂度"
+  }
+]

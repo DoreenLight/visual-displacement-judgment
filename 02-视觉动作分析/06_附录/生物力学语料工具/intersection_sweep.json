@@ -1,0 +1,410 @@
+{
+  "purpose": "第二阶段：证伪/证实「上肢∩视觉直接预测∩离散符号化∩生物力学 grammar 仍为空」",
+  "method_note": "arXiv 全字段检索的零命中可作空白证据；Crossref 侧被同形异义污染，不作空白证据。null 结果 = 这些式子取不到，不等于该方向不存在。",
+  "queries": [
+    {
+      "label": "X1 上肢∩视觉∩离散",
+      "query": "all:upper limb OR upper-limb OR wrist OR elbow OR shoulder OR forearm AND all:monocular OR \"single camera\" OR RGB-D OR \"markerless\" OR \"video-based\" OR visual AND all:token OR tokenization OR tokenisation OR discrete OR symbolic OR vocabulary OR \"codebook\" OR \"vector quantization\" OR VQ",
+      "status": "ok",
+      "n": 12,
+      "hits": [
+        {
+          "arxiv_id": "2202.03147v1",
+          "title": "The development of a portable elbow exoskeleton with a Twisted Strings Actuator to assist patients with upper limb inhabitation"
+        },
+        {
+          "arxiv_id": "2511.16265v1",
+          "title": "Funabot-Upper: McKibben Actuated Haptic Suit Inducing Kinesthetic Perceptions in Trunk, Shoulder, Elbow, and Wrist"
+        },
+        {
+          "arxiv_id": "2601.05074v1",
+          "title": "Compensation Effect Amplification Control (CEAC): A movement-based approach for coordinated position and velocity control of the elbow of upper-limb prostheses"
+        },
+        {
+          "arxiv_id": "1712.02336v2",
+          "title": "A Computational Approach for Human-like Motion Generation in Upper Limb Exoskeletons Supporting Scapulohumeral Rhythms"
+        },
+        {
+          "arxiv_id": "2510.05425v2",
+          "title": "Towards Online Robot Interaction Adaptation to Human Upper-limb Mobility Impairments in Return-to-Work Scenarios"
+        },
+        {
+          "arxiv_id": "2209.04937v2",
+          "title": "Toward a Framework for Adaptive Impedance Control of an Upper-limb Prosthesis"
+        },
+        {
+          "arxiv_id": "2604.20898v1",
+          "title": "A Tendon-Driven Wrist Abduction-Adduction Joint Improves Performance of a 5 DoF Upper Limb Exoskeleton -- Implementation and Experimental Evaluation"
+        },
+        {
+          "arxiv_id": "2302.00495v1",
+          "title": "Upper-limb Geometric MyoPassivity Map for Physical Human-Robot Interaction"
+        },
+        {
+          "arxiv_id": "2408.14361v1",
+          "title": "Functional kinematic and kinetic requirements of the upper limb during activities of daily living: a recommendation on necessary joint capabilities for prosthetic arms"
+        },
+        {
+          "arxiv_id": "0906.3348v1",
+          "title": "Evaluation of the global optimisation method within the upper limb kinematics analysis"
+        },
+        {
+          "arxiv_id": "1906.02458v1",
+          "title": "Kinematic &amp; Dynamic Analysis of the Human Upper Limb Using the Theory of Screws"
+        },
+        {
+          "arxiv_id": "0905.2439v1",
+          "title": "A device to assess the upper limb isometric muscle strength"
+        }
+      ]
+    },
+    {
+      "label": "X2 腕/前臂∩视觉∩离散",
+      "query": "all:wrist AND all:monocular AND all:discrete",
+      "status": "ok",
+      "n": 0,
+      "hits": []
+    },
+    {
+      "label": "X3 关节角∩视觉∩token",
+      "query": "all:\"joint angle\" AND all:monocular AND all:token",
+      "status": "ok",
+      "n": 0,
+      "hits": []
+    },
+    {
+      "label": "X4 关节角∩视觉∩离散",
+      "query": "all:\"joint angles\" AND all:video AND all:discrete",
+      "status": "ok",
+      "n": 1,
+      "hits": [
+        {
+          "arxiv_id": "2603.22102v1",
+          "title": "FreeArtGS: Articulated Gaussian Splatting Under Free-moving Scenario"
+        }
+      ]
+    },
+    {
+      "label": "Y1 离散符号化∩上肢",
+      "query": "all:upper limb OR upper-limb OR wrist OR elbow OR shoulder OR forearm AND all:token OR tokenization OR tokenisation OR discrete OR symbolic OR vocabulary OR \"codebook\" OR \"vector quantization\" OR VQ",
+      "status": "ok",
+      "n": 12,
+      "hits": [
+        {
+          "arxiv_id": "2202.03147v1",
+          "title": "The development of a portable elbow exoskeleton with a Twisted Strings Actuator to assist patients with upper limb inhabitation"
+        },
+        {
+          "arxiv_id": "2511.16265v1",
+          "title": "Funabot-Upper: McKibben Actuated Haptic Suit Inducing Kinesthetic Perceptions in Trunk, Shoulder, Elbow, and Wrist"
+        },
+        {
+          "arxiv_id": "2601.05074v1",
+          "title": "Compensation Effect Amplification Control (CEAC): A movement-based approach for coordinated position and velocity control of the elbow of upper-limb prostheses"
+        },
+        {
+          "arxiv_id": "1712.02336v2",
+          "title": "A Computational Approach for Human-like Motion Generation in Upper Limb Exoskeletons Supporting Scapulohumeral Rhythms"
+        },
+        {
+          "arxiv_id": "2510.05425v2",
+          "title": "Towards Online Robot Interaction Adaptation to Human Upper-limb Mobility Impairments in Return-to-Work Scenarios"
+        },
+        {
+          "arxiv_id": "2209.04937v2",
+          "title": "Toward a Framework for Adaptive Impedance Control of an Upper-limb Prosthesis"
+        },
+        {
+          "arxiv_id": "2604.20898v1",
+          "title": "A Tendon-Driven Wrist Abduction-Adduction Joint Improves Performance of a 5 DoF Upper Limb Exoskeleton -- Implementation and Experimental Evaluation"
+        },
+        {
+          "arxiv_id": "2302.00495v1",
+          "title": "Upper-limb Geometric MyoPassivity Map for Physical Human-Robot Interaction"
+        },
+        {
+          "arxiv_id": "2408.14361v1",
+          "title": "Functional kinematic and kinetic requirements of the upper limb during activities of daily living: a recommendation on necessary joint capabilities for prosthetic arms"
+        },
+        {
+          "arxiv_id": "0906.3348v1",
+          "title": "Evaluation of the global optimisation method within the upper limb kinematics analysis"
+        },
+        {
+          "arxiv_id": "1906.02458v1",
+          "title": "Kinematic &amp; Dynamic Analysis of the Human Upper Limb Using the Theory of Screws"
+        },
+        {
+          "arxiv_id": "0905.2439v1",
+          "title": "A device to assess the upper limb isometric muscle strength"
+        }
+      ]
+    },
+    {
+      "label": "Y2 词表∩关节角",
+      "query": "all:vocabulary AND all:\"joint angle\"",
+      "status": "ok",
+      "n": 0,
+      "hits": []
+    },
+    {
+      "label": "Y3 codebook∩运动学",
+      "query": "all:codebook AND all:kinematic",
+      "status": "ok",
+      "n": 10,
+      "hits": [
+        {
+          "arxiv_id": "2601.00590v1",
+          "title": "SafeMo: Linguistically Grounded Unlearning for Trustworthy Text-to-Motion Generation"
+        },
+        {
+          "arxiv_id": "2609.22519v1",
+          "title": "The Choreographic Genome: Amplifying the Silent Structure of Text into Dance"
+        },
+        {
+          "arxiv_id": "2603.03960v1",
+          "title": "Structural Action Transformer for 3D Dexterous Manipulation"
+        },
+        {
+          "arxiv_id": "2609.15012v2",
+          "title": "Atomic Motion Coordinate for Language-Steerable and Force-Responsive Manipulation"
+        },
+        {
+          "arxiv_id": "2607.02148v1",
+          "title": "SAMoR: Motion Modelling for Articulated Objects of Any Skeleton and Topology"
+        },
+        {
+          "arxiv_id": "2602.20577v1",
+          "title": "Efficient and Explainable End-to-End Autonomous Driving via Masked Vision-Language-Action Diffusion"
+        },
+        {
+          "arxiv_id": "2602.21133v1",
+          "title": "SOM-VQ: Topology-Aware Tokenization for Interactive Generative Models"
+        },
+        {
+          "arxiv_id": "2609.04070v1",
+          "title": "Continuous Actions from Discrete Minds: Latent-Aligned Planning for End-to-End Autonomous Driving"
+        },
+        {
+          "arxiv_id": "2603.27314v1",
+          "title": "TokenDance: Token-to-Token Music-to-Dance Generation with Bidirectional Mamba"
+        },
+        {
+          "arxiv_id": "2511.11758v2",
+          "title": "Protein Structure Tokenization via Geometric Byte Pair Encoding"
+        }
+      ]
+    },
+    {
+      "label": "Z1 生物力学∩离散",
+      "query": "all:biomechanic* AND all:token OR tokenization OR tokenisation OR discrete OR symbolic OR vocabulary OR \"codebook\" OR \"vector quantization\" OR VQ",
+      "status": "ok",
+      "n": 7,
+      "hits": [
+        {
+          "arxiv_id": "2609.02375v1",
+          "title": "3D hybrid cellular Potts model with a discrete deformable fiber network: modeling cell contraction and extracellular matrix remodeling"
+        },
+        {
+          "arxiv_id": "1705.00299v1",
+          "title": "A model for one-dimensional morphoelasticity and its application to fibroblast-populated collagen lattices"
+        },
+        {
+          "arxiv_id": "2003.03068v2",
+          "title": "Walking and running with non-specific chronic low back pain: what about the lumbar lordosis angle?"
+        },
+        {
+          "arxiv_id": "1910.04282v2",
+          "title": "Measuring lumbar back motion during functional activities using a portable strain gauge sensor-based system: a comparative evaluation and reliability study"
+        },
+        {
+          "arxiv_id": "2209.14654v2",
+          "title": "A continuum mechanical porous media model for vertebroplasty: Numerical simulations and experimental validation"
+        },
+        {
+          "arxiv_id": "2506.23163v1",
+          "title": "Importance of the numerical schemes in the CFD of the human nose"
+        },
+        {
+          "arxiv_id": "1811.09108v1",
+          "title": "Breast biomecanical modeling for compression optimization in digital breast tomosynthesis"
+        }
+      ]
+    },
+    {
+      "label": "Z2 康复∩离散",
+      "query": "all:rehabilitation AND all:token OR tokenization OR tokenisation OR discrete OR symbolic OR vocabulary OR \"codebook\" OR \"vector quantization\" OR VQ",
+      "status": "ok",
+      "n": 12,
+      "hits": [
+        {
+          "arxiv_id": "2602.21133v1",
+          "title": "SOM-VQ: Topology-Aware Tokenization for Interactive Generative Models"
+        },
+        {
+          "arxiv_id": "2602.23738v2",
+          "title": "From Continuous sEMG Signals to Discrete Muscle State Tokens: A Robust and Interpretable Representation Framework"
+        },
+        {
+          "arxiv_id": "2510.27247v1",
+          "title": "Reconstructing Unseen Sentences from Speech-related Biosignals for Open-vocabulary Neural Communication"
+        },
+        {
+          "arxiv_id": "2607.24126v1",
+          "title": "EEGForceFusion: Joint Tokenised-Continuous Representation Learning for Subject-Independent Grasp Force Decoding"
+        },
+        {
+          "arxiv_id": "2003.08767v2",
+          "title": "A Review of Computational Approaches for Evaluation of Rehabilitation Exercises"
+        },
+        {
+          "arxiv_id": "1812.03880v1",
+          "title": "Automatic Classification of Knee Rehabilitation Exercises Using a Single Inertial Sensor: a Case Study"
+        },
+        {
+          "arxiv_id": "2507.22892v1",
+          "title": "Hybrid EEG--Driven Brain--Computer Interface: A Large Language Model Framework for Personalized Language Rehabilitation"
+        },
+        {
+          "arxiv_id": "2405.11511v1",
+          "title": "Online Action Representation using Change Detection and Symbolic Programming"
+        },
+        {
+          "arxiv_id": "1902.07112v1",
+          "title": "A Soft High Force Hand Exoskeleton for Rehabilitation and Assistance of Spinal Cord Injury and Stroke Individuals"
+        },
+        {
+          "arxiv_id": "2604.00628v1",
+          "title": "StretchBot: A Neuro-Symbolic Framework for Adaptive Guidance with Assistive Robots"
+        },
+        {
+          "arxiv_id": "2609.18336v1",
+          "title": "Pose2Muscle: Structured Spatio-Temporal Decoding for Discrete Muscle Activity Estimation from Human Pose"
+        },
+        {
+          "arxiv_id": "2604.07502v1",
+          "title": "Beyond Human-Readable: Rethinking Software Engineering Conventions for the Agentic Development Era"
+        }
+      ]
+    },
+    {
+      "label": "Z3 临床关节角∩token",
+      "query": "all:\"clinical\" AND all:\"joint angle\" AND all:token",
+      "status": "ok",
+      "n": 0,
+      "hits": []
+    },
+    {
+      "label": "W1 motion vocabulary",
+      "query": "all:\"motion vocabulary\"",
+      "status": "ok",
+      "n": 10,
+      "hits": [
+        {
+          "arxiv_id": "2511.22963v3",
+          "title": "Commanding Humanoid by Free-form Language: A Large Language Action Model with Unified Motion Vocabulary"
+        },
+        {
+          "arxiv_id": "2606.27547v1",
+          "title": "Beyond MoCap: Scaling Motion Tokenizers with Synthetic Human Motion for Generative Modeling"
+        },
+        {
+          "arxiv_id": "2602.02401v2",
+          "title": "Superman: Unifying Skeleton and Vision for Human Motion Perception and Generation"
+        },
+        {
+          "arxiv_id": "2607.07952v1",
+          "title": "fog: Expressing Motion and Emotion through Function Composition of AI-Generated Code"
+        },
+        {
+          "arxiv_id": "2604.00927v1",
+          "title": "Learning Quantised Structure-Preserving Motion Representations for Dance Fingerprinting"
+        },
+        {
+          "arxiv_id": "2505.03178v1",
+          "title": "RADE: Learning Risk-Adjustable Driving Environment via Multi-Agent Conditional Diffusion"
+        },
+        {
+          "arxiv_id": "2603.23617v2",
+          "title": "M3T: Discrete Multi-Modal Motion Tokens for Sign Language Production"
+        },
+        {
+          "arxiv_id": "2608.22926v1",
+          "title": "Motion-Based Tokenization for Cross-Dataset Egocentric Gaze Modeling"
+        },
+        {
+          "arxiv_id": "2306.14795v2",
+          "title": "MotionGPT: Human Motion as a Foreign Language"
+        },
+        {
+          "arxiv_id": "2606.29148v1",
+          "title": "GPC: Large-Scale Generative Pretraining for Transferable Motor Control"
+        }
+      ]
+    },
+    {
+      "label": "W2 kinematic token",
+      "query": "all:\"kinematic token\"",
+      "status": "ok",
+      "n": 6,
+      "hits": [
+        {
+          "arxiv_id": "2601.09949v2",
+          "title": "Kinematic Tokenization: Optimization-Based Continuous-Time Tokens for Learnable Decision Policies in Noisy Time Series"
+        },
+        {
+          "arxiv_id": "2608.04130v1",
+          "title": "Radar4D-VLM: Proposal-Grounded Temporal 4D Radar Reasoning Across Frozen Language Models"
+        },
+        {
+          "arxiv_id": "2608.24334v2",
+          "title": "SeMoCo: A Semantic-First Motion Codec for Motion Language Modeling"
+        },
+        {
+          "arxiv_id": "2603.00182v1",
+          "title": "Embedding Morphology into Transformers for Cross-Robot Policy Learning"
+        },
+        {
+          "arxiv_id": "2509.18527v5",
+          "title": "FERA: A Pose-Based Framework for Rule-Grounded Multimedia Decision Support with a Foil Fencing Case Study"
+        },
+        {
+          "arxiv_id": "2608.05975v1",
+          "title": "TRACE: Learned Proprioceptive Odometry for Legged Robots under Unreliable Contact Conditions"
+        }
+      ]
+    },
+    {
+      "label": "W3 joint vocabulary",
+      "query": "all:\"joint vocabulary\"",
+      "status": "ok",
+      "n": 6,
+      "hits": [
+        {
+          "arxiv_id": "2605.04196v1",
+          "title": "The Impact of Vocabulary Overlaps on Knowledge Transfer in Multilingual Machine Translation"
+        },
+        {
+          "arxiv_id": "2309.15826v1",
+          "title": "Cross-Modal Multi-Tasking for Speech-to-Text Translation via Hard Parameter Sharing"
+        },
+        {
+          "arxiv_id": "1603.06424v1",
+          "title": "Interoperability in the OpenDreamKit Project: The Math-in-the-Middle Approach"
+        },
+        {
+          "arxiv_id": "2505.08736v2",
+          "title": "Towards Foundation Models for Experimental Readout Systems Combining Discrete and Continuous Data"
+        },
+        {
+          "arxiv_id": "2002.02109v2",
+          "title": "Multilingual acoustic word embedding models for processing zero-resource languages"
+        },
+        {
+          "arxiv_id": "2006.02295v2",
+          "title": "Improved acoustic word embeddings for zero-resource languages using multilingual transfer"
+        }
+      ]
+    }
+  ]
+}

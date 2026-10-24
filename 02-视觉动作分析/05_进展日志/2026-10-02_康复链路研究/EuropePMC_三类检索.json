@@ -1,0 +1,32 @@
+{
+  "S1_understanding": {
+    "query": "(TITLE_ABS:\"upper limb\" OR TITLE_ABS:\"upper extremity\") AND (TITLE_ABS:rehabilitation OR TITLE_ABS:stroke) AND (TITLE_ABS:\"motion intent\" OR TITLE_ABS:\"motor intent\" OR TITLE_ABS:\"movement quality\" OR TITLE_ABS:compensation) AND FIRST_PDATE:[2000-01-01 TO 2026-10-02]",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28TITLE_ABS%3A%22upper+limb%22+OR+TITLE_ABS%3A%22upper+extremity%22%29+AND+%28TITLE_ABS%3Arehabilitation+OR+TITLE_ABS%3Astroke%29+AND+%28TITLE_ABS%3A%22motion+intent%22+OR+TITLE_ABS%3A%22motor+intent%22+OR+TITLE_ABS%3A%22movement+quality%22+OR+TITLE_ABS%3Acompensation%29+AND+FIRST_PDATE%3A%5B2000-01-01+TO+2026-10-02%5D&format=json&resultType=core&pageSize=50&sort=RELEVANCE&cursorMark=%2A",
+    "error": "HTTP Error 503: "
+  },
+  "S2_assistance": {
+    "query": "(TITLE_ABS:\"upper limb\" OR TITLE_ABS:\"upper extremity\") AND TITLE_ABS:rehabilitation AND (TITLE_ABS:\"assist as needed\" OR TITLE_ABS:\"adaptive assistance\" OR TITLE_ABS:\"impedance control\") AND FIRST_PDATE:[2000-01-01 TO 2026-10-02]",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28TITLE_ABS%3A%22upper+limb%22+OR+TITLE_ABS%3A%22upper+extremity%22%29+AND+TITLE_ABS%3Arehabilitation+AND+%28TITLE_ABS%3A%22assist+as+needed%22+OR+TITLE_ABS%3A%22adaptive+assistance%22+OR+TITLE_ABS%3A%22impedance+control%22%29+AND+FIRST_PDATE%3A%5B2000-01-01+TO+2026-10-02%5D&format=json&resultType=core&pageSize=50&sort=RELEVANCE&cursorMark=%2A",
+    "error": "HTTP Error 503: "
+  },
+  "S3_integration": {
+    "query": "TITLE_ABS:rehabilitation AND TITLE_ABS:robot AND (TITLE_ABS:\"active participation\" OR TITLE_ABS:\"voluntary effort\" OR TITLE_ABS:\"patient participation\") AND FIRST_PDATE:[2000-01-01 TO 2026-10-02]",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE_ABS%3Arehabilitation+AND+TITLE_ABS%3Arobot+AND+%28TITLE_ABS%3A%22active+participation%22+OR+TITLE_ABS%3A%22voluntary+effort%22+OR+TITLE_ABS%3A%22patient+participation%22%29+AND+FIRST_PDATE%3A%5B2000-01-01+TO+2026-10-02%5D&format=json&resultType=core&pageSize=50&sort=RELEVANCE&cursorMark=%2A",
+    "error": "HTTP Error 503: "
+  },
+  "S4_dose": {
+    "query": "(TITLE_ABS:\"upper limb\" OR TITLE_ABS:\"upper extremity\") AND TITLE_ABS:stroke AND (TITLE_ABS:\"dose response\" OR TITLE_ABS:\"training intensity\" OR TITLE_ABS:\"task difficulty\") AND FIRST_PDATE:[2000-01-01 TO 2026-10-02]",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28TITLE_ABS%3A%22upper+limb%22+OR+TITLE_ABS%3A%22upper+extremity%22%29+AND+TITLE_ABS%3Astroke+AND+%28TITLE_ABS%3A%22dose+response%22+OR+TITLE_ABS%3A%22training+intensity%22+OR+TITLE_ABS%3A%22task+difficulty%22%29+AND+FIRST_PDATE%3A%5B2000-01-01+TO+2026-10-02%5D&format=json&resultType=core&pageSize=50&sort=RELEVANCE&cursorMark=%2A",
+    "error": "HTTP Error 503: "
+  },
+  "S5_Song": {
+    "query": "AUTH_LAST:Song AND (TITLE_ABS:rehabilitation OR TITLE_ABS:\"motor skill\") AND (TITLE_ABS:robot OR TITLE_ABS:EMG OR TITLE_ABS:control OR TITLE_ABS:\"load dependent\") AND FIRST_PDATE:[2000-01-01 TO 2026-10-02]",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=AUTH_LAST%3ASong+AND+%28TITLE_ABS%3Arehabilitation+OR+TITLE_ABS%3A%22motor+skill%22%29+AND+%28TITLE_ABS%3Arobot+OR+TITLE_ABS%3AEMG+OR+TITLE_ABS%3Acontrol+OR+TITLE_ABS%3A%22load+dependent%22%29+AND+FIRST_PDATE%3A%5B2000-01-01+TO+2026-10-02%5D&format=json&resultType=core&pageSize=50&sort=RELEVANCE&cursorMark=%2A",
+    "error": "HTTP Error 503: "
+  },
+  "S6_participation_review": {
+    "query": "TITLE_ABS:\"participation\" AND TITLE_ABS:\"robot\" AND TITLE_ABS:\"review\" AND FIRST_PDATE:[2000-01-01 TO 2026-10-02]",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE_ABS%3A%22participation%22+AND+TITLE_ABS%3A%22robot%22+AND+TITLE_ABS%3A%22review%22+AND+FIRST_PDATE%3A%5B2000-01-01+TO+2026-10-02%5D&format=json&resultType=core&pageSize=50&sort=RELEVANCE&cursorMark=%2A",
+    "error": "HTTP Error 503: "
+  }
+}

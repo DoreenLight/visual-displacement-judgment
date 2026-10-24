@@ -1,0 +1,196 @@
+{
+ "purpose": "「可解释/可读性 × 康复运动学」摘要级深判 —— 补上一轮只判「不撞」就放过的面",
+ "questions": {
+  "Q1": "康复领域是否已建立「离散符号化运动 → 临床可解释」这条路？",
+  "Q2": "有没有人用 grammar / 状态机表达康复动作？",
+  "Q3": "康复领域是否已借 language / translation 隐喻描述运动？"
+ },
+ "triage_rule": "HIGH = 题名+摘要同时含临床词与符号化机制词且非 XAI 大杂烩；MED = 同上但命中噪声词；LOW = 其余",
+ "queries": [
+  {
+   "label": "Q1a 离散符号化+康复",
+   "source": "crossref",
+   "query": "discrete symbolic representation movement clinical interpretability",
+   "n": 10,
+   "n_high": 0,
+   "n_med": 0
+  },
+  {
+   "label": "Q1b 符号化+物理治疗",
+   "source": "crossref",
+   "query": "symbolic representation physiotherapy movement analysis interpretable",
+   "n": 10,
+   "n_high": 1,
+   "n_med": 0
+  },
+  {
+   "label": "Q1c 可解释+运动学+康复",
+   "source": "crossref",
+   "query": "interpretable movement kinematics rehabilitation clinicians",
+   "n": 10,
+   "n_high": 0,
+   "n_med": 0
+  },
+  {
+   "label": "Q1d 可解释+动捕+临床",
+   "source": "crossref",
+   "query": "interpretable motion capture clinical assessment joint angles",
+   "n": 10,
+   "n_high": 0,
+   "n_med": 0
+  },
+  {
+   "label": "Q1e arXiv 可解释 符号 康复",
+   "source": "arxiv",
+   "query": "all:\"rehabilitation\" AND all:\"symbolic\" AND all:\"interpretable\"",
+   "n": 1,
+   "n_high": 0,
+   "n_med": 0
+  },
+  {
+   "label": "Q1f arXiv 可解释 上肢 动捕",
+   "source": "arxiv",
+   "query": "all:\"interpretable\" AND all:\"upper limb\" AND all:\"motion capture\"",
+   "n": 0,
+   "n_high": 0,
+   "n_med": 0
+  },
+  {
+   "label": "Q2a grammar+康复动作",
+   "source": "crossref",
+   "query": "grammar representation rehabilitation exercise movement",
+   "n": 10,
+   "n_high": 0,
+   "n_med": 0
+  },
+  {
+   "label": "Q2b 状态机+康复动作",
+   "source": "crossref",
+   "query": "finite state machine rehabilitation movement analysis exercise",
+   "n": 10,
+   "n_high": 0,
+   "n_med": 0
+  },
+  {
+   "label": "Q2c 运动技能+语法",
+   "source": "crossref",
+   "query": "motor skill grammar representation human movement",
+   "n": 10,
+   "n_high": 0,
+   "n_med": 0
+  },
+  {
+   "label": "Q2d arXiv grammar 康复 动作",
+   "source": "arxiv",
+   "query": "all:\"grammar\" AND all:\"rehabilitation\" AND all:\"movement\"",
+   "n": 0,
+   "n_high": 0,
+   "n_med": 0
+  },
+  {
+   "label": "Q3a 运动+语言+康复",
+   "source": "crossref",
+   "query": "movement as language rehabilitation motor control representation",
+   "n": 10,
+   "n_high": 0,
+   "n_med": 0
+  },
+  {
+   "label": "Q3b 翻译+运动控制",
+   "source": "crossref",
+   "query": "translation analogy motor control movement representation",
+   "n": 10,
+   "n_high": 1,
+   "n_med": 0
+  },
+  {
+   "label": "Q3c arXiv translation 康复 运动控制",
+   "source": "arxiv",
+   "query": "all:\"translation\" AND all:\"motor control\" AND all:\"representation\"",
+   "n": 6,
+   "n_high": 0,
+   "n_med": 0
+  },
+  {
+   "label": "Q4a 临床可解释性+动作",
+   "source": "crossref",
+   "query": "clinician interpretability rating movement analysis model output",
+   "n": 10,
+   "n_high": 0,
+   "n_med": 0
+  },
+  {
+   "label": "Q4b 康复+透明模型",
+   "source": "crossref",
+   "query": "transparent interpretable model physiotherapy decision support",
+   "n": 10,
+   "n_high": 0,
+   "n_med": 0
+  },
+  {
+   "label": "Q4c arXiv 临床 信任 模型 康复",
+   "source": "arxiv",
+   "query": "all:\"clinician\" AND all:\"trust\" AND all:\"machine learning\" AND all:\"rehabilitation\"",
+   "n": 0,
+   "n_high": 0,
+   "n_med": 0
+  }
+ ],
+ "HIGH": [
+  {
+   "doi": "10.1016/s0031-9406(05)67172-6",
+   "title": "A Guide to Clinical Gait Analysis Using Benesh Movement Notation",
+   "venue": "Physiotherapy",
+   "year": 1997,
+   "type": "journal-article",
+   "authors": [
+    "Harrison Marilyn A"
+   ],
+   "abstract": "",
+   "_query": "Q1b 符号化+物理治疗",
+   "_triage": "HIGH"
+  },
+  {
+   "doi": "10.1016/b978-0-443-45068-6.00014-7",
+   "title": "Translation of motor control principles to functional movement improvement after stroke",
+   "venue": "Progress in Motor Control",
+   "year": 2026,
+   "type": "book-chapter",
+   "authors": [
+    "Levin Mindy F."
+   ],
+   "abstract": "",
+   "_query": "Q3b 翻译+运动控制",
+   "_triage": "HIGH"
+  }
+ ],
+ "MED": [],
+ "zero_hit": [
+  {
+   "label": "Q1f arXiv 可解释 上肢 动捕",
+   "source": "arxiv",
+   "query": "all:\"interpretable\" AND all:\"upper limb\" AND all:\"motion capture\""
+  },
+  {
+   "label": "Q2d arXiv grammar 康复 动作",
+   "source": "arxiv",
+   "query": "all:\"grammar\" AND all:\"rehabilitation\" AND all:\"movement\""
+  },
+  {
+   "label": "Q4c arXiv 临床 信任 模型 康复",
+   "source": "arxiv",
+   "query": "all:\"clinician\" AND all:\"trust\" AND all:\"machine learning\" AND all:\"rehabilitation\""
+  }
+ ],
+ "summary": {
+  "n_queries": 16,
+  "n_high": 2,
+  "n_med": 0,
+  "n_zero_hit": 3,
+  "arxiv_zero_hit": [
+   "Q1f arXiv 可解释 上肢 动捕",
+   "Q2d arXiv grammar 康复 动作",
+   "Q4c arXiv 临床 信任 模型 康复"
+  ]
+ }
+}

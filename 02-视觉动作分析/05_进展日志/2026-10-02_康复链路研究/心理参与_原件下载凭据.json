@@ -1,0 +1,178 @@
+[
+  {
+    "data": {
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 10555201366498914000
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "path": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC4021830.xml"
+    },
+    "details": {
+      "artifactVerification": {
+        "artifacts": [
+          {
+            "absolutePath": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC4021830.xml",
+            "exists": true,
+            "kind": "download",
+            "path": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC4021830.xml",
+            "requestedPath": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC4021830.xml",
+            "retentionState": "live",
+            "sizeBytes": 142198,
+            "state": "verified",
+            "status": "saved",
+            "storageScope": "explicit-path",
+            "updatedAtMs": 1791010796127.41
+          }
+        ],
+        "missingCount": 0,
+        "pendingCount": 0,
+        "unverifiedCount": 0,
+        "verified": true,
+        "verifiedCount": 1
+      },
+      "artifacts": [
+        {
+          "absolutePath": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC4021830.xml",
+          "artifactType": "download",
+          "command": "download",
+          "cwd": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析",
+          "exists": true,
+          "extension": ".xml",
+          "kind": "download",
+          "namespace": "",
+          "path": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC4021830.xml",
+          "requestedPath": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC4021830.xml",
+          "session": "piab-script-3129bad5-88dd-4c0f-ade8-315a42ae2796",
+          "sizeBytes": 142198,
+          "status": "saved",
+          "subcommand": "#paper-xml-download",
+          "updatedAtMs": 1791010796127.41
+        }
+      ],
+      "pageChangeSummary": {
+        "artifactCount": 1,
+        "changeType": "artifact",
+        "command": "download",
+        "nextActionIds": [
+          "use-saved-artifact"
+        ],
+        "observed": true,
+        "savedFilePath": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC4021830.xml",
+        "summary": "download → artifact → /Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC4021830.xml"
+      },
+      "resultCategory": "success",
+      "successCategory": "artifact-saved"
+    },
+    "nextActions": [
+      {
+        "artifactPath": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC4021830.xml",
+        "id": "use-saved-artifact",
+        "reason": "Use the saved artifact path from the structured result instead of scraping it from text.",
+        "safety": "Verify artifact metadata such as exists/status before treating the file as durable.",
+        "tool": "agent_browser"
+      }
+    ],
+    "ok": true,
+    "resultCategory": "success",
+    "successCategory": "artifact-saved",
+    "summary": "Downloaded file verified: /Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC4021830.xml",
+    "text": "Downloaded file verified: /Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC4021830.xml\nArtifact type: download\nRequested path: /Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC4021830.xml\nAbsolute path: /Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC4021830.xml\nExists: true\nSize: 138.9 KiB\nSize bytes: 142198\nStatus: saved\nSession: piab-script-3129bad5-88dd-4c0f-ade8-315a42ae2796\nCWD: /Users/xbpd/Projects/视觉位移判断/02-视觉动作分析\nMachine data: details.artifacts[0]"
+  },
+  {
+    "data": {
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 10555201366498914000
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "path": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC9708787.xml"
+    },
+    "details": {
+      "artifactVerification": {
+        "artifacts": [
+          {
+            "absolutePath": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC9708787.xml",
+            "exists": true,
+            "kind": "download",
+            "path": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC9708787.xml",
+            "requestedPath": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC9708787.xml",
+            "retentionState": "live",
+            "sizeBytes": 139992,
+            "state": "verified",
+            "status": "saved",
+            "storageScope": "explicit-path",
+            "updatedAtMs": 1791010797454.308
+          }
+        ],
+        "missingCount": 0,
+        "pendingCount": 0,
+        "unverifiedCount": 0,
+        "verified": true,
+        "verifiedCount": 1
+      },
+      "artifacts": [
+        {
+          "absolutePath": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC9708787.xml",
+          "artifactType": "download",
+          "command": "download",
+          "cwd": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析",
+          "exists": true,
+          "extension": ".xml",
+          "kind": "download",
+          "namespace": "",
+          "path": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC9708787.xml",
+          "requestedPath": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC9708787.xml",
+          "session": "piab-script-3129bad5-88dd-4c0f-ade8-315a42ae2796",
+          "sizeBytes": 139992,
+          "status": "saved",
+          "subcommand": "#paper-xml-download",
+          "updatedAtMs": 1791010797454.308
+        }
+      ],
+      "pageChangeSummary": {
+        "artifactCount": 1,
+        "changeType": "artifact",
+        "command": "download",
+        "nextActionIds": [
+          "use-saved-artifact"
+        ],
+        "observed": true,
+        "savedFilePath": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC9708787.xml",
+        "summary": "download → artifact → /Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC9708787.xml"
+      },
+      "resultCategory": "success",
+      "successCategory": "artifact-saved"
+    },
+    "nextActions": [
+      {
+        "artifactPath": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC9708787.xml",
+        "id": "use-saved-artifact",
+        "reason": "Use the saved artifact path from the structured result instead of scraping it from text.",
+        "safety": "Verify artifact metadata such as exists/status before treating the file as durable.",
+        "tool": "agent_browser"
+      }
+    ],
+    "ok": true,
+    "resultCategory": "success",
+    "successCategory": "artifact-saved",
+    "summary": "Downloaded file verified: /Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC9708787.xml",
+    "text": "Downloaded file verified: /Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC9708787.xml\nArtifact type: download\nRequested path: /Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC9708787.xml\nAbsolute path: /Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/康复整合链路/PMC9708787.xml\nExists: true\nSize: 136.7 KiB\nSize bytes: 139992\nStatus: saved\nSession: piab-script-3129bad5-88dd-4c0f-ade8-315a42ae2796\nCWD: /Users/xbpd/Projects/视觉位移判断/02-视觉动作分析\nMachine data: details.artifacts[0]"
+  }
+]

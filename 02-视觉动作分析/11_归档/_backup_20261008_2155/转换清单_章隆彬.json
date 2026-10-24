@@ -1,0 +1,46 @@
+[
+ {
+  "pdf": "09_章隆彬_合作团队/papers/康复辅助/Zhang2017-TIE：扰动观测器与自适应神经网络变刚度控制/Zhang2017-TIE：扰动观测器与自适应神经网络变刚度控制.pdf",
+  "stem": "Zhang2017-TIE：扰动观测器与自适应神经网络变刚度控制"
+ },
+ {
+  "pdf": "09_章隆彬_合作团队/papers/理解与辅助结合/Li2021-TMECH：稳定动态行走的下肢外骨骼人在环控制/Li2021-TMECH：稳定动态行走的下肢外骨骼人在环控制.pdf",
+  "stem": "Li2021-TMECH：稳定动态行走的下肢外骨骼人在环控制"
+ },
+ {
+  "pdf": "09_章隆彬_合作团队/papers/理解与辅助结合/Qiu2017-TFS：脑机接口与视觉压缩感知外骨骼遥操作/Qiu2017-TFS：脑机接口与视觉压缩感知外骨骼遥操作.pdf",
+  "stem": "Qiu2017-TFS：脑机接口与视觉压缩感知外骨骼遥操作"
+ },
+ {
+  "pdf": "09_章隆彬_合作团队/papers/理解与辅助结合/Zhang2021-FrontNeurorobot：膝外骨骼辅助策略与交互建模/Zhang2021-FrontNeurorobot：膝外骨骼辅助策略与交互建模.pdf",
+  "stem": "Zhang2021-FrontNeurorobot：膝外骨骼辅助策略与交互建模"
+ },
+ {
+  "pdf": "09_章隆彬_合作团队/papers/背景资料/Zhang2021-KTH：可穿戴外骨骼设计的生物力学参数估计博士论文/Zhang2021-KTH：可穿戴外骨骼设计的生物力学参数估计博士论文.pdf",
+  "stem": "Zhang2021-KTH：可穿戴外骨骼设计的生物力学参数估计博士论文"
+ },
+ {
+  "pdf": "09_章隆彬_合作团队/papers/背景资料/Zhang2025-FrontNeurosci：运动康复与增强技术专题社论/Zhang2025-FrontNeurosci：运动康复与增强技术专题社论.pdf",
+  "stem": "Zhang2025-FrontNeurosci：运动康复与增强技术专题社论"
+ },
+ {
+  "pdf": "09_章隆彬_合作团队/papers/运动理解/Fu2026-YAC：多模态LSTM地面反力预测/Fu2026-YAC：多模态LSTM地面反力预测.pdf",
+  "stem": "Fu2026-YAC：多模态LSTM地面反力预测"
+ },
+ {
+  "pdf": "09_章隆彬_合作团队/papers/运动理解/Li2026-YAC：多任务平衡挑战的EEG与压力中心调节/Li2026-YAC：多任务平衡挑战的EEG与压力中心调节.pdf",
+  "stem": "Li2026-YAC：多任务平衡挑战的EEG与压力中心调节"
+ },
+ {
+  "pdf": "09_章隆彬_合作团队/papers/运动理解/Wang2024-FrontBioeng：卒中后踝肌个体化结构与收缩特性/Wang2024-FrontBioeng：卒中后踝肌个体化结构与收缩特性.pdf",
+  "stem": "Wang2024-FrontBioeng：卒中后踝肌个体化结构与收缩特性"
+ },
+ {
+  "pdf": "09_章隆彬_合作团队/papers/运动理解/Zhang2021-ICARM：NMS求解器与NN的踝动态力矩估计/Zhang2021-ICARM：NMS求解器与NN的踝动态力矩估计.pdf",
+  "stem": "Zhang2021-ICARM：NMS求解器与NN的踝动态力矩估计"
+ },
+ {
+  "pdf": "09_章隆彬_合作团队/papers/运动理解/Zhang2025-arXiv：运动学与LSTM的足跟触地离地事件检测/Zhang2025-arXiv：运动学与LSTM的足跟触地离地事件检测.pdf",
+  "stem": "Zhang2025-arXiv：运动学与LSTM的足跟触地离地事件检测"
+ }
+]

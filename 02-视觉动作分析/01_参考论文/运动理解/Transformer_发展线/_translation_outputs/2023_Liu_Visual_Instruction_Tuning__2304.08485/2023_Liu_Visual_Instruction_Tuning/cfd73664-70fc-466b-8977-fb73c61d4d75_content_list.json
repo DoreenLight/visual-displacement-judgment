@@ -1,0 +1,2460 @@
+[
+    {
+        "type": "text",
+        "text": "Visual Instruction Tuning",
+        "text_level": 1,
+        "bbox": [
+            341,
+            121,
+            655,
+            148
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Haotian Liu<sup>1∗</sup>, Chunyuan Li<sup>2∗</sup>, Qingyang Wu<sup>3</sup>, Yong Jae Lee<sup>1</sup> <sup>1</sup>University of Wisconsin–Madison <sup>2</sup>Microsoft Research <sup>3</sup>Columbia University https://llava-vl.github.io",
+        "bbox": [
+            218,
+            199,
+            779,
+            244
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Abstract",
+        "text_level": 2,
+        "bbox": [
+            460,
+            279,
+            537,
+            295
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Instruction tuning large language models (LLMs) using machine-generated instruction-following data has been shown to improve zero-shot capabilities on new tasks, but the idea is less explored in the multimodal field. We present the first attempt to use language-only GPT-4 to generate multimodal language-image instruction-following data. By instruction tuning on such generated data, we introduce LLaVA: Large Language and Vision Assistant, an end-to-end trained large multimodal model that connects a vision encoder and an LLM for generalpurpose visual and language understanding. To facilitate future research on visual instruction following, we construct two evaluation benchmarks with diverse and challenging application-oriented tasks. Our experiments show that LLaVA demonstrates impressive multimodal chat abilities, sometimes exhibiting the behaviors of multimodal GPT-4 on unseen images/instructions, and yields a 85.1% relative score compared with GPT-4 on a synthetic multimodal instruction-following dataset. When fine-tuned on Science QA, the synergy of LLaVA and GPT-4 achieves a new state-of-the-art accuracy of 92.53%. We make GPT-4 generated visual instruction tuning data, our model, and code publicly available.",
+        "bbox": [
+            228,
+            309,
+            767,
+            532
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1 Introduction",
+        "text_level": 2,
+        "bbox": [
+            173,
+            554,
+            313,
+            570
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Humans interact with the world through many channels such as vision and language, as each individual channel has a unique advantage in representing and communicating certain concepts, and thus facilitates a better understanding of the world. One of the core aspirations in artificial intelligence is to develop a general-purpose assistant that can effectively follow multi-modal vision-and-language instructions, aligned with human intent to complete various real-world tasks in the wild [4, 27, 26].",
+        "bbox": [
+            171,
+            585,
+            825,
+            656
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "To this end, the community has witnessed an emergent interest in developing language-augmented foundation vision models [27, 16], with strong capabilities in open-world visual understanding such as classification [40, 21, 57, 54, 39], detection [29, 62, 33], segmentation [25, 63, 58] and captioning [50, 28], as well as visual generation and editing [42, 43, 56, 15, 44, 30]. We refer readers to the Computer Vision in the Wild reading list for a more up-to-date literature compilation [12]. In this line of work, each task is solved independently by one single large vision model, with the task instruction implicitly considered in the model design. Further, language is only utilized to describe the image content. While this allows language to play an important role in mapping visual signals to language semantics—a common channel for human communication, it leads to models that usually have a fixed interface with limited interactivity and adaptability to the user’s instructions.",
+        "bbox": [
+            169,
+            661,
+            826,
+            801
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Large language models (LLM), on the other hand, have shown that language can play a wider role: a universal interface for a general-purpose assistant, where various task instructions can be explicitly represented in language and guide the end-to-end trained neural assistant to switch to the task of interest to solve it. For example, the recent success of ChatGPT [35] and GPT-4 [36] have demonstrated the power of aligned LLMs in following human instructions, and have stimulated tremendous interest in developing open-source LLMs. Among them, LLaMA [49] is an opensource LLM that matches the performance of GPT-3. Alpaca [48], Vicuna [9], GPT-4-LLM [38] utilize various machine-generated high-quality instruction-following samples to improve the LLM’s alignment ability, reporting impressive performance compared with proprietary LLMs. Importantly, this line of work is text-only.",
+        "bbox": [
+            169,
+            806,
+            826,
+            904
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "arXiv:2304.08485v2 [cs.CV] 11 Dec 2023",
+        "bbox": [
+            22,
+            260,
+            58,
+            705
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "37th Conference on Neural Information Processing Systems (NeurIPS 2023).",
+        "bbox": [
+            171,
+            922,
+            630,
+            936
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            169,
+            90,
+            826,
+            133
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In this paper, we present visual instruction-tuning, the first attempt to extend instruction-tuning to the language-image multimodal space, to pave the way towards building a general-purpose visual assistant. In particular, our paper makes the following contributions:",
+        "bbox": [
+            169,
+            140,
+            826,
+            183
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• Multimodal instruction-following data. One key challenge is the lack of vision-language instruction-following data. We present a data reformation perspective and pipeline to convert image-text pairs into an appropriate instruction-following format, using ChatGPT/GPT-4.",
+        "bbox": [
+            191,
+            188,
+            825,
+            229
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• Large multimodal models. We develop a large multimodal model (LMM), by connecting the open-set visual encoder of CLIP [40] with the language decoder Vicuna [9], and fine-tuning end-to-end on our generated instructional vision-language data. Our empirical study validates the effectiveness of using generated data for LMM instruction-tuning, and suggests practical tips for building a general-purpose instruction-following visual agent. When ensembled with GPT-4, our approach achieves SoTA on the Science QA [34] multimodal reasoning dataset.",
+        "bbox": [
+            191,
+            232,
+            825,
+            316
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• Multimodal instruction-following benchmark. We present LLaVA-Bench with two challenging benchmarks, with a diverse selection of paired images, instructions and detailed annotations.",
+        "bbox": [
+            191,
+            316,
+            825,
+            345
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• Open-source. We release the following assets to the public: the generated multimodal instruction data, the codebase, the model checkpoints, and a visual chat demo.",
+        "bbox": [
+            191,
+            347,
+            825,
+            376
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2 Related Work",
+        "text_level": 2,
+        "bbox": [
+            171,
+            387,
+            323,
+            404
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Multimodal Instruction-following Agents. In computer vision, existing works that build instructionfollowing agents can be broadly categorized into two classes: (i) End-to-end trained models, which are separately explored for each specific research topic. For example, the vision-language navigation task [3, 19] and Habitat [47] require the embodied AI agent to follow natural language instructions and take a sequence of actions to complete goals in visual environments. In the image editing domain, given an input image and a written instruction that tells the agent what to do, InstructPix2Pix [6] edits images by following the human instructions. (ii) A system that coordinates various models via LangChain [1] / LLMs [35], such as Visual ChatGPT [53], X-GPT [63], MM-REACT [55], VisProg [18], and ViperGPT [46]. While sharing the same goal in building instruction-following agents, we focus on developing an end-to-end trained language-vision multimodal model for multiple tasks.",
+        "bbox": [
+            169,
+            411,
+            826,
+            564
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Instruction Tuning. In the natural language processing (NLP) community, to enable LLMs such as GPT-3 [7], T5 [41], PaLM [10], and OPT [60] to follow natural language instructions and complete real-world tasks, researchers have explored methods for LLM instruction-tuning [37, 52, 51], leading to instruction-tuned counterparts such as InstructGPT [37]/ChatGPT [35], FLAN-T5 [11], FLAN-PaLM [11], and OPT-IML [22], respectively. It turns out that this simple approach can effectively improve the zero- and few-shot generalization abilities of LLMs. It is thus natural to borrow the idea from NLP to computer vision. More broadly, the teacher-student distillation ideas with foundation models have been studied in other topics such as image classification [14]. Flamingo [2] can be viewed as the GPT-3 moment in the multimodal domain, due to its strong performance on zero-shot task transfer and in-context-learning. Other LMMs trained on imagetext pairs include BLIP-2 [28], FROMAGe [24], and KOSMOS-1 [20]. PaLM-E [13] is an LMM for embodied AI. Based on the recent “best” open-source LLM LLaMA, OpenFlamingo [5] and LLaMA-Adapter [59] are open-source efforts that enable LLaMA to use image inputs, paving the way to build open-source multimodal LLMs. While these models present promising task transfer generalization performance, they are not explicitly tuned with vision-language instruction data, and their performance in multimodal tasks usually falls short compared to language-only tasks. In this paper, we aim to fill this gap and study its effectiveness. Finally, note that visual instruction tuning is different from visual prompt tuning [23]: the former aims to improve the model’s instructionfollowing abilities, while the latter aims to improve the parameter-efficiency in model adaptation.",
+        "bbox": [
+            169,
+            569,
+            828,
+            835
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "3 GPT-assisted Visual Instruction Data Generation",
+        "text_level": 2,
+        "bbox": [
+            171,
+            851,
+            616,
+            869
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The community has witnessed a surge in the amount of public multimodal data such as image-text pairs, ranging from CC [8] to LAION [45]. However, when it comes to multimodal instructionfollowing data, the available amount is limited, partially because the process for creating such data is time-consuming and less well-defined when human crowd-scouring is considered. Inspired by the success of recent GPT models in text-annotation tasks [17], we propose to leverage ChatGPT/GPT-4 for multimodal instruction-following data collection, based on the widely existing image-pair data.",
+        "bbox": [
+            169,
+            883,
+            826,
+            912
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            493,
+            936,
+            504,
+            948
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/717d5aaf881c3533d5e7dbbeed85c8d139bac8ff5410e3922be36ac4e96875b4.jpg",
+        "image_caption": [
+            "Table 1: One example to illustrate the instruction-following data. The top block shows the contexts such as captions and boxes used to prompt GPT, and the bottom block shows the three types of responses. Note that the visual image is not used to prompt GPT, we only show it here as a reference."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            173,
+            89,
+            821,
+            402
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            171,
+            481,
+            825,
+            539
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "For an image $\\mathbf { X } _ { \\mathbb { v } }$ and its associated caption $\\mathbf { X } _ { \\mathsf { c } } ,$ it is natural to create a set of questions $\\mathbf { X } _ { \\mathtt { q } }$ with the intent to instruct the assistant to describe the image content. We prompt GPT-4 to curate such a list of questions (see details in Appendix). Therefore, a simple way to expand an image-text pair to its instruction-following version is Human : $\\mathbf { X } _ { \\mathfrak { q } } \\mathbf { X } _ { \\mathfrak { r } }$ <STOP> Assistant : $\\mathbf { \\bar { X } } _ { \\mathbf { c } } .$ <STOP>. Though cheap to construct, this simple expanded version lacks diversity and in-depth reasoning in both the instructions and responses.",
+        "bbox": [
+            171,
+            542,
+            825,
+            628
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "To mitigate this issue, we leverage language-only GPT-4 or ChatGPT as the strong teacher (both accept only text as input), to create instruction-following data involving visual content. Specifically, in order to encode an image into its visual features to prompt a text-only GPT, we use two types of symbolic representations: (i) Captions typically describe the visual scene from various perspectives; (ii) Bounding boxes usually localize the objects in the scene, and each box encodes the object concept and its spatial location. One example is shown in the top block of Table 14.",
+        "bbox": [
+            171,
+            632,
+            826,
+            718
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "This symbolic representation allows us to encode the image as an LLM-recognizable sequence. We use COCO images [31] and generate three types of instruction-following data. One example per type is shown in the bottom block of Table 14. For each type, we first manually design a few examples. They are the only human annotations we have during data collection, and are used as seed examples in in-context-learning to query GPT-4.",
+        "bbox": [
+            171,
+            722,
+            826,
+            794
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "• Conversation. We design a conversation between the assistant and a person asking questions about this photo. The answers are in a tone as if the assistant is seeing the image and answering the question. A diverse set of questions are asked about the visual content of the image, including the object types, counting the objects, object actions, object locations, relative positions between objects. Only questions that have definite answers are considered. Please see Appendix for the detailed prompt.",
+        "bbox": [
+            192,
+            797,
+            825,
+            882
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "• Detailed description. To include a rich and comprehensive description for an image, we create a list of questions with such an intent. We prompt GPT-4 then curate the list (see detailed prompts and curation process in Appendix). For each image, we randomly sample one question from the list to ask GPT-4 to generate the detailed description.",
+        "bbox": [
+            192,
+            883,
+            826,
+            912
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            493,
+            936,
+            504,
+            948
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            204,
+            90,
+            823,
+            119
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "• Complex reasoning. The above two types focus on the visual content itself, based on which we further create in-depth reasoning questions. The answers typically require a step-by-step reasoning process by following rigorous logic.",
+        "bbox": [
+            192,
+            122,
+            825,
+            165
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "We collect 158K unique language-image instruction-following samples in total, including 58K in conversations, 23K in detailed description, and 77k in complex reasoning, respectively. We ablated the use of ChatGPT and GPT-4 in our early experiments, and found that GPT-4 consistently provides higher quality instruction-following data, such as spatial reasoning.",
+        "bbox": [
+            169,
+            169,
+            826,
+            228
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "4 Visual Instruction Tuning",
+        "text_level": 2,
+        "bbox": [
+            171,
+            244,
+            423,
+            262
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "4.1 Architecture",
+        "text_level": 2,
+        "bbox": [
+            171,
+            275,
+            303,
+            289
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The primary goal is to effectively leverage the capabilities of both the pre-trained LLM and visual model. The network archtecture is illustrated in Figure 1. We choose Vicuna [9] as our LLM $f _ { \\phi } ( \\cdot )$ parameterized by $\\phi ,$ as it has the best instruction following capabilities in language tasks among publicly available checkpoints [48, 9, 38].",
+        "bbox": [
+            169,
+            300,
+            825,
+            357
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/a7e10baa1a36b9294115b785e98124c7bba490cad7af522beaf7145ea9af8e00.jpg",
+        "image_caption": [
+            "Figure 1: LLaVA network architecture."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            267,
+            358,
+            725,
+            477
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "For an input image $\\mathbf { X } _ { \\mathbb { v } }$ , we consider the pre-trained CLIP visual encoder ViT-L/14 [40], which provides the visual feature $\\mathbf { Z } _ { \\mathsf { v } } = g ( \\mathbf { X } _ { \\mathsf { v } } )$ . The grid features before and after the last Transformer layer are considered in our experiments. We consider a simple linear layer to connect image features into the word embedding space. Specifically, we apply a trainable projection matrix W to convert $\\mathbf { Z } _ { \\mathbf { \\bar { v } } }$ into language embedding tokens $\\mathbf { H } _ { \\mathbf { v } }$ , which have the same dimensionality as the word embedding space in the language model:",
+        "bbox": [
+            169,
+            502,
+            826,
+            587
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\mathbf {H} _ {\\mathrm{v}} = \\mathbf {W} \\cdot \\mathbf {Z} _ {\\mathrm{v}}, \\text {   with   } \\mathbf {Z} _ {\\mathrm{v}} = g (\\mathbf {X} _ {\\mathrm{v}})\\tag{1}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            383,
+            585,
+            612,
+            601
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Thus, we have a sequence of visual tokens $\\mathbf { H } _ { \\mathbb { v } }$ . Note that our simple projection scheme is lightweight, which allows us to iterate data centric experiments quickly. More sophisticated schemes to connect the image and language representations can also be considered, such as gated cross-attention in Flamingo [2] and Q-former in BLIP-2 [28]. We leave exploring possibly more effective and sophisticated architecture designs for LLaVA as future work.",
+        "bbox": [
+            169,
+            603,
+            826,
+            674
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "4.2 Training",
+        "text_level": 2,
+        "bbox": [
+            171,
+            688,
+            274,
+            703
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "For each image $\\mathbf { X } _ { \\mathtt { V } } .$ , we generate multi-turn conversation data $( \\mathbf { X _ { q } ^ { 1 } } , \\mathbf { X _ { a } ^ { 1 } } , \\cdots , \\mathbf { X _ { q } ^ { \\cal T } } , \\mathbf { X _ { a } ^ { \\cal T } } )$ , where $T$ is the total number of turns. We organize them as a sequence, by treating all answers as the assistant’s response, and the instruction $\\mathbf { X } _ { \\mathrm { i n s t r u c t } } ^ { t ^ { - } }$ at the t-th turn as:",
+        "bbox": [
+            169,
+            713,
+            825,
+            757
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\mathbf {X} _ {\\text { instruct }} ^ {t} = \\left\\{ \\begin{array}{l l} & \\text { Randomly   choose } [ \\mathbf {X} _ {\\mathrm{q}} ^ {1}, \\mathbf {X} _ {\\mathrm{v}} ] \\text { or } [ \\mathbf {X} _ {\\mathrm{v}}, \\mathbf {X} _ {\\mathrm{q}} ^ {1} ], \\text { the   first   turn } t = 1 \\\\ & \\mathbf {X} _ {\\mathrm{q}} ^ {t}, \\quad \\text { the   remaining   turns } t > 1 \\end{array} \\right.\\tag{2}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            230,
+            761,
+            763,
+            794
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "This leads to the unified format for the multimodal instruction-following sequence illustrated in Table 2. We perform instruction-tuning of the LLM on the prediction tokens, using its original auto-regressive training objective.",
+        "bbox": [
+            169,
+            805,
+            825,
+            848
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Specifically, for a sequence of length $L ,$ we compute the probability of the target answers $\\mathbf { X } _ { \\mathsf { a } }$ by:",
+        "bbox": [
+            171,
+            854,
+            808,
+            869
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\np (\\mathbf {X} _ {\\mathrm{a}} | \\mathbf {X} _ {\\mathrm{v}}, \\mathbf {X} _ {\\mathrm{instruct}}) = \\prod_ {i = 1} ^ {L} p _ {\\boldsymbol {\\theta}} (\\boldsymbol {x} _ {i} | \\mathbf {X} _ {\\mathrm{v}}, \\mathbf {X} _ {\\mathrm{instruct}, <   i}, \\mathbf {X} _ {\\mathrm{a}, <   i}),\\tag{3}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            295,
+            875,
+            699,
+            915
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            493,
+            936,
+            504,
+            946
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "code",
+        "sub_type": "algorithm",
+        "code_caption": [
+            "Table 2: The input sequence used to train the model. Only two conversation turns are illustrated here; in practice, the number of turns varies based on the instruction-following data. In our current implementation, we follow Vicuna-v0 [9] to set the system message $\\bf { X _ { s y s t e m - m e s s a g e } }$ and we set $\\langle \\mathsf { S T O P } \\rangle = \\# \\# \\#$ . The model is trained to predict the assistant answers and where to stop, and thus only green sequence/tokens are used to compute the loss in the auto-regressive model."
+        ],
+        "code_body": "<div class=\"mineru-algorithm\" style=\"white-space: pre-wrap; font-family:monospace;\">\n$X_{system-message} &lt; STOP&gt;$ \n\nHuman :  $X_{instruct}^{1} &lt; STOP&gt;$  Assistant:  $X_{a}^{1} &lt; STOP&gt;$ \n\nHuman :  $X_{instruct}^{2} &lt; STOP&gt;$  Assistant:  $X_{a}^{2} &lt; STOP&gt;$  …\n</div>",
+        "bbox": [
+            174,
+            89,
+            818,
+            155
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "where θ is the trainable parameters, $\\mathbf { X } _ { \\mathrm { i n s t r u c t } , < i }$ and $\\mathbf { X } _ { \\mathsf { a } , < i }$ are the instruction and answer tokens in all turns before the current prediction token $x _ { i } ,$ , respectively. Please see Table 2 for an illustration of the prediction tokens. For the conditionals in (3), we explicitly add $\\mathbf { X } _ { \\mathbb { v } }$ to emphasize the fact that the image is grounded for all answers, and we omit X<sub>system-message</sub> and all previous <STOP> for better readability. For LLaVA model training, we consider a two-stage instruction-tuning procedure.",
+        "bbox": [
+            169,
+            241,
+            826,
+            313
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Stage 1: Pre-training for Feature Alignment. To strike a balance between concept coverage and training efficiency, we filter CC3M to 595K image-text pairs. Please see Appendix for details of the filtering process. These pairs are converted to the instruction-following data using the naive expansion method describe in Section 3. Each sample can be treated as a single-turn conversation. To construct the input $\\mathbf { X } _ { \\mathrm { i n s t r u c t } }$ in (2), for an image $\\bar { \\mathbf { X } } _ { \\mathrm { v } } ,$ a question $\\mathbf { X } _ { \\mathtt { q } }$ is randomly sampled, which is a language instruction to request the assistant to describe the image briefly. The ground-truth prediction answer $\\mathbf { X } _ { \\mathsf { a } }$ is the original caption. In training, we keep both the visual encoder and LLM weights frozen, and maximize the likelihood of (3) with trainable parameters $\\mathbf { \\nabla } \\theta = \\mathbf { W }$ (the projection matrix) only. In this way, the image features H can be aligned with the pre-trained LLM word embedding. This stage can be understood as training a compatible visual tokenizer for the frozen LLM.",
+        "bbox": [
+            169,
+            325,
+            826,
+            465
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Stage 2: Fine-tuning End-to-End. We always keep the visual encoder weights frozen, and continue to update both the pre-trained weights of the projection layer and LLM in LLaVA; i.e., the trainable parameters are $\\pmb { \\theta } = \\{ \\mathbf { W } , \\phi \\}$ in (3). We consider two specific use case scenarios:",
+        "bbox": [
+            169,
+            477,
+            825,
+            522
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "• Multimodal Chatbot. We develop a Chatbot by fine-tuning on the 158K language-image instruction-following data in Section 3. Among the three types of responses, conversation is multi-turn while the other two are single-turn. They are uniformly sampled in training.",
+        "bbox": [
+            191,
+            526,
+            825,
+            569
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "• Science QA. We study our method on the ScienceQA benchmark [34], the first large-scale multimodal science question dataset that annotates the answers with detailed lectures and explanations. Each question is provided a context in the form of natural language or an image. The assistant provides the reasoning process in natural language and selects the answer among multiple choices. For training in (2), we organize the data as a single turn conversation, the question & context as $\\mathbf { X } _ { \\mathrm { i n s t r u c t } }$ , and reasoning & answer as $\\mathbf { X } _ { \\mathsf { a } }$",
+        "bbox": [
+            192,
+            570,
+            826,
+            655
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "5 Experiments",
+        "text_level": 2,
+        "bbox": [
+            171,
+            672,
+            313,
+            690
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "We assess the performance of LLaVA in instruction-following and visual reasoning capabilities with two primary experimental settings: multimodal chatbot and the ScienceQA dataset, respectively. We train all models with 8× A100s, following Vicuna’s hyperparameters [9]. We pre-train our model on the filtered CC-595K subset for 1 epoch with a learning rate of 2e-3 and a batch size of 128, and fine-tune on the proposed LLaVA-Instruct-158K dataset for 3 epochs, with a learning rate of 2e-5 and a batch size of 32. See Appendix for more training details.",
+        "bbox": [
+            169,
+            703,
+            826,
+            789
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "5.1 Multimodal Chatbot",
+        "text_level": 2,
+        "bbox": [
+            171,
+            801,
+            359,
+            818
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "We developed a chatbot demo to show the image understanding and conversation abilities of LLaVA, and to study how well LLaVA is able to digest visual inputs and exhibit instruction-following capabilities. We first use the examples in the original GPT-4 paper [36], shown in Table 3 (more examples in Appendix), that require in-depth image understanding. For comparisons, we quote the prompt and response of the multimodal GPT-4 from their paper, and query BLIP-2 and OpenFlamingo model checkpoints to get their response.",
+        "bbox": [
+            169,
+            827,
+            826,
+            912
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            493,
+            936,
+            504,
+            948
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/f864571c2e1f4160d373b145f136504a1a80ba93647a8c60c76cbd7b4aa4ad9a.jpg",
+        "table_caption": [
+            "Visual input example, Extreme Ironing:",
+            "Table 3: Example prompt from GPT-4 paper [36] to compare visual reasoning and chat capabilities. Compared to BLIP-2 [28] and OpenFlamingo [5], LLaVA accurately follows the user’s instructions, instead of simply describing the scene. LLaVA offers a more comprehensive response than GPT-4. Even when merely asked to describe the image, LLaVA identifies atypical aspects of the image."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\"><img src=\"images/2d27ef52a26458b47d3596a7d8e7da790e49c037fb91438330d45a70adf34ddc.jpg\"/></td></tr><tr><td>User</td><td>Source: https://www.barnorama.com/wp-content/uploads/2016/12/03-Confusing-Pictures.jpg</td></tr><tr><td>LLaVA</td><td>What is unusual about this image?The unusual aspect of this image is a man ironing clothes on the back of a minivan or van. This is not a typical place to perform this activity, as one would usually iron clothes in a more stationary and safe location, such as a home, using a regular ironing board. The scene depicted in the image is peculiar as it involves a makeshift ironing setup on a vehicle, which can be both unsafe and unconventional. Additionally, it is not clear how the man is able to maintain balance and stability while ironing clothes in such an unstable environment.[Start a new conversation, and clear the history]</td></tr><tr><td>User</td><td>What&#x27;s happening in the scene?</td></tr><tr><td>LLaVA</td><td>The image depicts a man standing on top of a yellow SUV in a busy city street. He is holding a portable ladder, seemingly ironing clothes while standing on the vehicle. Around the scene, there are other cars, a traffic light, and a fire hydrant. Additionally, there are two other people in the vicinity, one close to the man on the car and another further away. The man on the ladder appears to be attracting attention due to his unconventional choice of ironing his clothes on top of a moving car. The city street around him is bustling with activity, adding to the unique nature of the scene.</td></tr><tr><td>User</td><td>What is unusual about this image?</td></tr><tr><td>GPT-4 [36]</td><td>The unusual thing about this image is that a man is ironing clothes on an ironing board attached to the roof of a moving taxi.</td></tr><tr><td>User</td><td>What is unusual about this image?</td></tr><tr><td>BLIP-2</td><td>a man is sitting on the back of a yellow cab</td></tr><tr><td>User</td><td>What is unusual about this image?</td></tr><tr><td>OpenFlamingo</td><td>The man is drying his clothes on the hood of his car.</td></tr></table>",
+        "bbox": [
+            174,
+            84,
+            813,
+            565
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Surprisingly, although LLaVA is trained with a small multimodal instruction-following dataset (∼80K unique images), it demonstrates quite similar reasoning results with multimodal GPT-4 on these examples. Note that while these images are out-of-domain for LLaVA, LLaVA is still able to understand the scenes and follow the question instruction to provide a reasonable response. In contrast, BLIP-2 and OpenFlamingo focus on describing the image, instead of following the user instruction to answer in an appropriate manner.",
+        "bbox": [
+            169,
+            645,
+            826,
+            729
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Quantitative Evaluation. To gain a systematic understanding of the performance of LLaVA, we propose a quantitative metric to measure the model’s instruction-following capability on multimodal data. Inspired by [9], we leverage GPT-4 to measure the quality of generated responses. Specifically, we create triplets consisting of image, ground-truth textual descriptions, and question. The candidate models (e.g., LLaVA) predict the answers based on the question and the image. To provide an approximate theoretical upper bound, we create a reference prediction based on the question and the ground-truth textual descriptions, using the text-only GPT-4. After obtaining the responses from both models, we feed the question, visual information (in the format of textual descriptions), and the generated responses from both assistants, to the judge (i.e., text-only GPT-4). It evaluates the helpfulness, relevance, accuracy, and level of detail of the responses from the assistants, and gives an overall score on a scale of 1 to 10, where a higher score indicates better overall performance. It is also asked to provide a comprehensive explanation for the evaluation, for us to better understand the models. We report relative scores w.r.t. the text-only GPT-4 model that uses the textural ground truth description as visual input. We create two benchmarks to evaluate the model’s performance.",
+        "bbox": [
+            169,
+            744,
+            826,
+            914
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            493,
+            936,
+            504,
+            948
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/bd01156091cd1d573807792c2b8372023b7c175f7dedeb5c67a1afea08294525.jpg",
+        "table_caption": [
+            "Table 4: Ablation on LLaVA-Bench (COCO) with different training data. We report relative scores w.r.t. a text-only GPT-4 model that uses ground truth image captions and bounding boxes as visual input. We prompt GPT-4 with the answers from our model outputs and the answers by GPT-4 (text-only), and let it compare between both responses and give a rating with an explanation."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>Conversation</td><td>Detail description</td><td>Complex reasoning</td><td>All</td></tr><tr><td>Full data</td><td>83.1</td><td>75.3</td><td>96.5</td><td>85.1</td></tr><tr><td>Detail + Complex</td><td>81.5 (-1.6)</td><td>73.3 (-2.0)</td><td>90.8 (-5.7)</td><td>81.9 (-3.2)</td></tr><tr><td>Conv + 5% Detail + 10% Complex</td><td>81.0 (-2.1)</td><td>68.4 (-7.1)</td><td>91.5 (-5.0)</td><td>80.5 (-4.4)</td></tr><tr><td>Conversation</td><td>76.5 (-6.6)</td><td>59.8 (-16.2)</td><td>84.9 (-12.4)</td><td>73.8 (-11.3)</td></tr><tr><td>No Instruction Tuning</td><td>22.0 (-61.1)</td><td>24.0 (-51.3)</td><td>18.5 (-78.0)</td><td>21.5 (-63.6)</td></tr></table>",
+        "bbox": [
+            184,
+            88,
+            808,
+            172
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/b2325cc67c297bb9ff0883eeb93808bbd0e02bc83032cc0f87684084c93b638d.jpg",
+        "table_caption": [
+            "Table 5: Instruction-following capability comparison using relative scores on LLaVA-Bench (In-the-Wild). The results are reported in the format of $m e a n \\pm s t d .$ For the first three rows, we report three inference runs. LLaVA performs significantly better than others. <sup>†</sup> For a given set of LLaVA decoding sequences, we evaluate by querying GPT-4 three times; GPT-4 gives a consistent evaluation."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>Conversation</td><td>Detail description</td><td>Complex reasoning</td><td>All</td></tr><tr><td>OpenFlamingo [5]</td><td>19.3 ± 0.5</td><td>19.0 ± 0.5</td><td>19.1 ± 0.7</td><td>19.1 ± 0.4</td></tr><tr><td>BLIP-2 [28]</td><td>54.6 ± 1.4</td><td>29.1 ± 1.2</td><td>32.9 ± 0.7</td><td>38.1 ± 1.0</td></tr><tr><td>LLaVA</td><td>57.3 ± 1.9</td><td>52.5 ± 6.3</td><td>81.7 ± 1.8</td><td>67.3 ± 2.0</td></tr><tr><td> $LLaVA^†$ </td><td>58.8 ± 0.6</td><td>49.2 ± 0.8</td><td>81.4 ± 0.3</td><td>66.7 ± 0.3</td></tr></table>",
+        "bbox": [
+            225,
+            248,
+            767,
+            321
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            169,
+            398,
+            825,
+            429
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "LLaVA-Bench (COCO). We randomly select 30 images from COCO-Val-2014, and for each image, we generate three types of questions (conversation, detailed description, complex reasoning) using the proposed data generation pipeline in Sec. 3, totaling 90 questions. This benchmark studies the model’s alignment behavior and capabilities with consistent visual inputs. We vary the training datasets to study the effectiveness of different types of instruction-following data, and show the results in Table 4. First, with instruction tuning, the model’s ability of following user instructions improves significantly by over 50 points. Second, adding a small amount of detailed description and complex reasoning questions contributes to a considerable improvement of the model’s overall capability by 7 points. Furthermore, it also improves the model’s performance on conversational questions, suggesting that improvements in reasoning capabilities complement conversational abilities. Finally, we show that having all three types of data yields the best performance at 85.1%.",
+        "bbox": [
+            169,
+            444,
+            826,
+            599
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "LLaVA-Bench (In-the-Wild). To evaluate the model’s capability in more challenging tasks and generalizability to novel domains, we collect a diverse set of 24 images with 60 questions in total, including indoor and outdoor scenes, memes, paintings, sketches, etc., and associate each image with a highly-detailed and manually-curated description and a proper selection of questions. We compare LLaVA, BLIP, and OpenFlamingo in Table 5. Thanks to visual instruction tuning, LLaVA achieves significantly better performance compared with BLIP-2 (+29%) and OpenFlamingo (+48%). Compared to the text-only GPT-4 that has access to ground-truth labels, LLaVA achieves an impressive 81.7% performance on complex reasoning questions, with an overall score of 67.3%.",
+        "bbox": [
+            169,
+            614,
+            828,
+            729
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Limitations. This LLaVA-Bench (In-the-Wild) is designed to be challenging and to reveal a model’s weaknesses. We provide two examples with associated captions and questions in Table 6. For the ramen example (left), to correctly answer the name of the restaurant, it requires the model to have a large knowledge coverage and multilingual understanding capability; to correctly describe the side dishes, the model may need to retrieve relevant multimodal information from Internet. For the fridge example (right), perceiving the correct brand of the yogurt requires the model to process high resolution images and possess extensive knowledge coverage. We also observed an interesting failure of LLaVA, as it responds with yes when asked if strawberry-flavored yogurt is present, even though the fridge contains only yogurt and strawberries. This indicates that, at times, LLaVA perceives the image as a “bag of patches”, failing to grasp the complex semantics within the image. We hope LLaVA serves as a solid baseline on the benchmarks, on which our findings can inspire future work in developing more capable LMMs.",
+        "bbox": [
+            169,
+            744,
+            826,
+            914
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            493,
+            935,
+            504,
+            948
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/53658fcb8c4a1d2cf39742542d89de386f471480db7337aeeb152311ab794322.jpg",
+        "table_caption": [
+            "Challenging examples from LLaVA-Bench (In-the-Wild):",
+            "Table 6: Challenging examples from LLaVA-Bench (In-the-Wild), we provide extremely-detailed annotation for each image for an accurate evaluation. Some questions require the model to extract details from high resolution image and to have a broad knowledge coverage."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td><img src=\"images/ace3e74e7b5690c9f9c11d30331b3c922514382b15b790c10453506d8ed3b230.jpg\"/></td><td><img src=\"images/ce721d92edfc6f1a8e3312f1a4b313ead4b72a477eef3f0dc8e0c88526223bb3.jpg\"/></td></tr><tr><td>ICHIRAN Ramen [source]</td><td>Filled fridge [source]</td></tr><tr><td>Annotation</td><td>A close-up photo of a meal at ICHIRAN. The chashu ramen bowl with a spoon is placed in the center. The ramen is seasoned with chili sauce, chopped scallions, and served with two pieces of chashu. Chopsticks are placed to the right of the bowl, still in their paper wrap, not yet opened. The ramen is also served with nori on the left. On top, from left to right, the following sides are served: a bowl of orange spice (possibly garlic sauce), a plate of smoke-flavored stewed pork with chopped scallions, and a cup of matcha green tea.</td><td>An open refrigerator filled with a variety of food items. In the left part of the compartment, towards the front, there is a plastic box of strawberries with a small bag of baby carrots on top. Towards the back, there is a stack of sauce containers. In the middle part of the compartment, towards the front, there is a green plastic box, and there is an unidentified plastic bag placed on it. Towards the back, there is a carton of milk. In the right part of the compartment, towards the front, there is a box of blueberries with three yogurts stacked on top. The large bottle of yogurt is Fage non-fat yogurt, and one of the smaller cups is Fage blueberry yogurt. The brand and flavor of the other smaller cup are unknown. Towards the back, there is a container with an unknown content.</td></tr><tr><td>Question 1</td><td>What&#x27;s the name of the restaurant?</td><td>What is the brand of the blueberry-flavored yogurt?</td></tr><tr><td>Question 2</td><td>Describe this photo in detail.</td><td>Is there strawberry-flavored yogurt in the fridge?</td></tr></table>",
+        "bbox": [
+            178,
+            90,
+            802,
+            479
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "5.2 ScienceQA",
+        "text_level": 2,
+        "bbox": [
+            171,
+            556,
+            290,
+            571
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "ScienceQA [34] contains 21k multimodal multiple choice questions with rich domain diversity across 3 subjects, 26 topics, 127 categories, and 379 skills. The benchmark dataset is split into training, validation, and test splits with 12726, 4241, and 4241 examples, respectively. We consider two representative methods, including GPT-3.5 model (text-davinci-002) with and without chainof-thought (CoT), LLaMA-Adapter [59], as well as multimodal chain-of-thought (MM-CoT) [61], which is the current SoTA method on this dataset. For more baseline numbers, please see [34].",
+        "bbox": [
+            169,
+            585,
+            826,
+            672
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The results are reported in Table 7. For LLaVA, we use the visual features before the last layer, ask the model to first predict reasons and then the answer, and train it for 12 epochs. It yields 90.92% accuracy, which is quite close to the SoTA 91.68%. To explore the limit of LLMs, we also prompt GPT-4 using 2-shot in-context-learning and achieve 82.69% accuracy, which is a 7.52% absolute gain compared with 75.17% from GPT-3.5. For a substantial number of questions, we note that GPT-4 fails simply because it reports that there is insufficient context such as images or plots. We consider two schemes to combine the outcomes from our model and GPT-4. (i) A GPT-4 complement. Whenever GPT-4 fails to provide answers, we use the prediction from our method. This schemes yields 90.97% accuracy, which is almost the same as applying our method alone. (ii) GPT-4 as the judge. Whenever GPT-4 and LLaVA produce different answers, we prompt GPT-4 again, asking it to provide its own final answer based on the question and two outcomes. The spirit is similar with CoT, but with the external knowledge from the other model. Surprisingly, this scheme is able to provide consistent improvement over all question classes, and achieves a new SoTA accuracy of 92.53%. Interestingly, the text-only GPT-4, which cannot process images, improves the overall performance of the model on questions that have an image as context. This is because some of these questions do not actually require the image context for a correct answer. The GPT-4 judge can identify such cases and correct some of the errors that LLaVA makes. See the example in Appendix. To the best of our knowledge,",
+        "bbox": [
+            169,
+            676,
+            828,
+            914
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            493,
+            935,
+            504,
+            948
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/c20dfc422df3b35fe0a5e39999a68c444c4f372f25eeca2b250eefe9346f0a73.jpg",
+        "table_caption": [
+            "Table 7: Accuracy (%) on Science QA dataset. Question categories: NAT = natural science, SOC = social science, LAN = language science, TXT = text context, IMG = image context, NO = no context, G1-6 = grades 1-6, G7-12 = grades 7-12. <sup>†</sup>Text-only GPT-4, our eval. Our novel model ensembling with the text-only GPT-4 consistently improves the model’s performance under all categories, setting the new SoTA performance.",
+            "this is the first time that GPT-4 is used for model ensembling. We hope this finding can encourage future research to explore more effective methods to leverage LLMs for model ensembling."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Method</td><td colspan=\"3\">Subject</td><td colspan=\"3\">Context Modality</td><td colspan=\"2\">Grade</td><td rowspan=\"2\">Average</td></tr><tr><td>NAT</td><td>SOC</td><td>LAN</td><td>TXT</td><td>IMG</td><td>NO</td><td>G1-6</td><td>G7-12</td></tr><tr><td colspan=\"10\">Representative &amp; SoTA methods with numbers reported in the literature</td></tr><tr><td>Human [34]</td><td>90.23</td><td>84.97</td><td>87.48</td><td>89.60</td><td>87.50</td><td>88.10</td><td>91.59</td><td>82.42</td><td>88.40</td></tr><tr><td>GPT-3.5 [34]</td><td>74.64</td><td>69.74</td><td>76.00</td><td>74.44</td><td>67.28</td><td>77.42</td><td>76.80</td><td>68.89</td><td>73.97</td></tr><tr><td>GPT-3.5 w/ CoT [34]</td><td>75.44</td><td>70.87</td><td>78.09</td><td>74.68</td><td>67.43</td><td>79.93</td><td>78.23</td><td>69.68</td><td>75.17</td></tr><tr><td>LLaMA-Adapter [59]</td><td>84.37</td><td>88.30</td><td>84.36</td><td>83.72</td><td>80.32</td><td>86.90</td><td>85.83</td><td>84.05</td><td>85.19</td></tr><tr><td>MM-CoT $_{Base}$  [61]</td><td>87.52</td><td>77.17</td><td>85.82</td><td>87.88</td><td>82.90</td><td>86.83</td><td>84.65</td><td>85.37</td><td>84.91</td></tr><tr><td>MM-CoT $_{Large}$  [61]</td><td>95.91</td><td>82.00</td><td>90.82</td><td>95.26</td><td>88.80</td><td>92.89</td><td>92.44</td><td>90.31</td><td>91.68</td></tr><tr><td colspan=\"10\">Results with our own experiment runs</td></tr><tr><td>GPT-4 $^{\\dagger}$ </td><td>84.06</td><td>73.45</td><td>87.36</td><td>81.87</td><td>70.75</td><td>90.73</td><td>84.69</td><td>79.10</td><td>82.69</td></tr><tr><td>LLaVA</td><td>90.36</td><td>95.95</td><td>88.00</td><td>89.49</td><td>88.00</td><td>90.66</td><td>90.93</td><td>90.90</td><td>90.92</td></tr><tr><td>LLaVA+GPT-4 $^{\\dagger}$  (complement)</td><td>90.36</td><td>95.50</td><td>88.55</td><td>89.05</td><td>87.80</td><td>91.08</td><td>92.22</td><td>88.73</td><td>90.97</td></tr><tr><td>LLaVA+GPT-4 $^{\\dagger}$  (judge)</td><td>91.56</td><td>96.74</td><td>91.09</td><td>90.62</td><td>88.99</td><td>93.52</td><td>92.73</td><td>92.16</td><td>92.53</td></tr></table>",
+        "bbox": [
+            178,
+            89,
+            834,
+            277
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Ablations. We ablate several design choices on ScienceQA in Table 8. (i) Visual features. We tried using the last layer feature from CLIP vision encoder, which yields 89.96% and is 0.96% lower than the feature before the last layer. We hypothesize that this is because CLIP’s last layer features may focus more on global and abstract image properties compared to the layer before it, which can focus more on localized properties that are useful for under-",
+        "bbox": [
+            169,
+            411,
+            486,
+            550
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/ff809545b7d5425e67aade6e07517a2f7124b60b3e16f59409c3680d504a6a44.jpg",
+        "table_caption": [
+            "Table 8: Design choice ablations (%). The difference with the best variant is reported in red text."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Visual features</td><td>Before</td><td>Last</td></tr><tr><td>Best variant</td><td>90.92</td><td>89.96 (-0.96)</td></tr><tr><td>Predict answer first</td><td>-</td><td>89.77 (-1.15)</td></tr><tr><td>Training from scratch</td><td>85.81 (-5.11)</td><td>-</td></tr><tr><td>7B model size</td><td>89.84 (-1.08)</td><td>-</td></tr></table>",
+        "bbox": [
+            509,
+            414,
+            807,
+            489
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "standing specific image details. (ii) Chain-of-thought. To decide the order between the answer and reasoning process in the model prediction, we run both variants and observe that answer-first reports the best number 89.77% accuracy in 12 epochs, while reasoning-first can quickly reach 89.77% accuracy in 6 epochs, but no further improvement with more training. Training the model for 24 epochs does not improve the performance. We conclude that CoT-like reasoning-first strategy can largely improve convergence, but contributes relatively little to the final performance. (iii) Pre-training. We skip pre-training and directly train on Science QA from scratch – performance drops to 85.81% accuracy. The 5.11% absolute degradation indicates the importance of our pre-training stage, in aligning multimodal features while preserving the vast pre-trained knowledge. (iv) Model size. We keep all configurations the same as our best 13B model, and train a 7B model. This yields 89.84% accuracy, which is 1.08% lower than 90.92%, demonstrating the importance of model scale.",
+        "bbox": [
+            169,
+            550,
+            828,
+            704
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "6 Conclusion",
+        "text_level": 2,
+        "bbox": [
+            171,
+            720,
+            300,
+            738
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "This paper demonstrated the effectiveness of visual instruction tuning. We presented an automatic pipeline to create language-image instruction-following data, based on which we train LLaVA, a multimodal model to follow human intent to complete visual tasks. It achieves the new SoTA accuracy when fine-tuned on ScienceQA, and excellent visual chat capabilities when fine-tuned on multimodal chat data. Besides, we present the first benchmark to study multimodal instructionfollowing capability. This paper is an initial step in visual instruction tuning, and mainly focuses on real-life tasks. For more quantitative results of LLaVA on academic benchmarks, please refer to the improved baselines with visual instruction tuning [32]. We hope our work can inspire future research on building more capable multimodal models.",
+        "bbox": [
+            169,
+            752,
+            826,
+            878
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Acknowledgements. We thank Baolin Peng and Pan Lu for valuable discussions on instruction-tuning language models and Science QA, respectively. We thank the LLaMA team for giving us access to their models, and open-source projects, including Alpaca and Vicuna. This work was supported in part by NSF CAREER IIS2150012, and Institute of Information & communications Technology Planning & Evaluation(IITP) grants funded by the Korea government(MSIT) (No. 2022-0-00871, Development of AI Autonomy and Knowledge Enhancement for AI Agent Collaboration) and (No. RS-2022-00187238, Development of Large Korean Language Model Technology for Efficient Pre-training).",
+        "bbox": [
+            169,
+            883,
+            826,
+            912
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            491,
+            935,
+            504,
+            946
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            169,
+            90,
+            826,
+            176
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "References",
+        "text_level": 2,
+        "bbox": [
+            173,
+            194,
+            269,
+            210
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[1] Langchain. https://github.com/hwchase17/langchain, 2022. 2",
+        "bbox": [
+            179,
+            217,
+            676,
+            233
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[2] Jean-Baptiste Alayrac, Jeff Donahue, Pauline Luc, Antoine Miech, Iain Barr, Yana Hasson, Karel Lenc, Arthur Mensch, Katie Millican, Malcolm Reynolds, et al. Flamingo: a visual language model for few-shot learning. arXiv preprint arXiv:2204.14198, 2022. 2, 4",
+        "bbox": [
+            181,
+            239,
+            825,
+            282
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[3] Peter Anderson, Qi Wu, Damien Teney, Jake Bruce, Mark Johnson, Niko Sünderhauf, Ian Reid, Stephen Gould, and Anton Van Den Hengel. Vision-and-language navigation: Interpreting visually-grounded navigation instructions in real environments. In Proceedings of the IEEE conference on computer vision and pattern recognition, 2018. 2",
+        "bbox": [
+            181,
+            291,
+            825,
+            347
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[4] Amanda Askell, Yuntao Bai, Anna Chen, Dawn Drain, Deep Ganguli, Tom Henighan, Andy Jones, Nicholas Joseph, Ben Mann, Nova DasSarma, et al. A general language assistant as a laboratory for alignment. arXiv preprint arXiv:2112.00861, 2021. 1",
+        "bbox": [
+            181,
+            354,
+            825,
+            398
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[5] Anas Awadalla, Irena Gao, Joshua Gardner, Jack Hessel, Yusuf Hanafy, Wanrong Zhu, Kalyani Marathe, Yonatan Bitton, Samir Gadre, Jenia Jitsev, Simon Kornblith, Pang Wei Koh, Gabriel Ilharco, Mitchell Wortsman, and Ludwig Schmidt. Openflamingo, March 2023. 2, 6, 7",
+        "bbox": [
+            181,
+            405,
+            823,
+            448
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[6] Tim Brooks, Aleksander Holynski, and Alexei A Efros. Instruct pix2pix: Learning to follow image editing instructions. arXiv preprint arXiv:2211.09800, 2022. 2",
+        "bbox": [
+            181,
+            455,
+            823,
+            484
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[7] Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901, 2020. 2",
+        "bbox": [
+            181,
+            493,
+            825,
+            535
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[8] Soravit Changpinyo, Piyush Sharma, Nan Ding, and Radu Soricut. Conceptual 12m: Pushing web-scale image-text pre-training to recognize long-tail visual concepts. In CVPR, 2021. 2",
+        "bbox": [
+            181,
+            542,
+            823,
+            573
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[9] Wei-Lin Chiang, Zhuohan Li, Zi Lin, Ying Sheng, Zhanghao Wu, Hao Zhang, Lianmin Zheng, Siyuan Zhuang, Yonghao Zhuang, Joseph E. Gonzalez, Ion Stoica, and Eric P. Xing. Vicuna: An open-source chatbot impressing gpt-4 with 90%\\* chatgpt quality, March 2023. 1, 2, 4, 5, 6",
+        "bbox": [
+            181,
+            580,
+            826,
+            623
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[10] Aakanksha Chowdhery, Sharan Narang, Jacob Devlin, Maarten Bosma, Gaurav Mishra, Adam Roberts, Paul Barham, Hyung Won Chung, Charles Sutton, Sebastian Gehrmann, et al. Palm: Scaling language modeling with pathways. arXiv preprint arXiv:2204.02311, 2022. 2",
+        "bbox": [
+            174,
+            630,
+            826,
+            674
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[11] Hyung Won Chung, Le Hou, Shayne Longpre, Barret Zoph, Yi Tay, William Fedus, Eric Li, Xuezhi Wang, Mostafa Dehghani, Siddhartha Brahma, et al. Scaling instruction-finetuned language models. arXiv preprint arXiv:2210.11416, 2022. 2",
+        "bbox": [
+            173,
+            681,
+            825,
+            724
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[12] CVinW. Computer vision in the wild. https://github.com/ Computer-Vision-in-the-Wild/CVinW\\_Readings, 2022. 1",
+        "bbox": [
+            174,
+            731,
+            825,
+            760
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[13] Danny Driess, Fei Xia, Mehdi SM Sajjadi, Corey Lynch, Aakanksha Chowdhery, Brian Ichter, Ayzaan Wahid, Jonathan Tompson, Quan Vuong, Tianhe Yu, et al. PaLM-E: An embodied multimodal language model. arXiv preprint arXiv:2303.03378, 2023. 2",
+        "bbox": [
+            174,
+            768,
+            825,
+            811
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[14] Fartash Faghri, Hadi Pouransari, Sachin Mehta, Mehrdad Farajtabar, Ali Farhadi, Mohammad Rastegari, and Oncel Tuzel. Reinforce data, multiply impact: Improved model accuracy and robustness with dataset reinforcement. arXiv preprint arXiv:2303.08983, 2023. 2",
+        "bbox": [
+            173,
+            819,
+            825,
+            861
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[15] Oran Gafni, Adam Polyak, Oron Ashual, Shelly Sheynin, Devi Parikh, and Yaniv Taigman. Make-a-scene: Scene-based text-to-image generation with human priors. ArXiv, abs/2203.13131, 2022. 1",
+        "bbox": [
+            174,
+            869,
+            826,
+            909
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            490,
+            935,
+            509,
+            948
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[16] Zhe Gan, Linjie Li, Chunyuan Li, Lijuan Wang, Zicheng Liu, Jianfeng Gao, et al. Visionlanguage pre-training: Basics, recent advances, and future trends. Foundations and Trends® in Computer Graphics and Vision, 2022. 1",
+        "bbox": [
+            173,
+            90,
+            826,
+            133
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "[17] Fabrizio Gilardi, Meysam Alizadeh, and Maël Kubli. Chatgpt outperforms crowd-workers for text-annotation tasks. arXiv preprint arXiv:2303.15056, 2023. 3",
+        "bbox": [
+            173,
+            143,
+            825,
+            172
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "[18] Tanmay Gupta and Aniruddha Kembhavi. Visual programming: Compositional visual reasoning without training. arXiv preprint arXiv:2211.11559, 2022. 2",
+        "bbox": [
+            173,
+            181,
+            825,
+            210
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "[19] Weituo Hao, Chunyuan Li, Xiujun Li, Lawrence Carin, and Jianfeng Gao. Towards learning a generic agent for vision-and-language navigation via pre-training. In CVPR, 2020. 2",
+        "bbox": [
+            173,
+            219,
+            825,
+            250
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "[20] Shaohan Huang, Li Dong, Wenhui Wang, Yaru Hao, Saksham Singhal, Shuming Ma, Tengchao Lv, Lei Cui, Owais Khan Mohammed, Qiang Liu, et al. Language is not all you need: Aligning perception with language models. arXiv preprint arXiv:2302.14045, 2023. 2",
+        "bbox": [
+            173,
+            258,
+            825,
+            301
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "[21] Gabriel Ilharco, Mitchell Wortsman, Ross Wightman, Cade Gordon, Nicholas Carlini, Rohan Taori, Achal Dave, Vaishaal Shankar, Hongseok Namkoong, John Miller, Hannaneh Hajishirzi, Ali Farhadi, and Ludwig Schmidt. Openclip. July 2021. If you use this software, please cite it as below. 1",
+        "bbox": [
+            173,
+            310,
+            826,
+            364
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "[22] Srinivasan Iyer, Xi Victoria Lin, Ramakanth Pasunuru, Todor Mihaylov, Dániel Simig, Ping Yu, Kurt Shuster, Tianlu Wang, Qing Liu, Punit Singh Koura, et al. Opt-iml: Scaling language model instruction meta learning through the lens of generalization. arXiv preprint arXiv:2212.12017, 2022. 2",
+        "bbox": [
+            173,
+            376,
+            826,
+            431
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "[23] Menglin Jia, Luming Tang, Bor-Chun Chen, Claire Cardie, Serge Belongie, Bharath Hariharan, and Ser-Nam Lim. Visual prompt tuning. In ECCV, 2022. 2",
+        "bbox": [
+            173,
+            441,
+            826,
+            472
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "[24] Jing Yu Koh, Ruslan Salakhutdinov, and Daniel Fried. Grounding language models to images for multimodal generation. arXiv preprint arXiv:2301.13823, 2023. 2",
+        "bbox": [
+            173,
+            479,
+            825,
+            508
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "[25] Boyi Li, Kilian Q Weinberger, Serge Belongie, Vladlen Koltun, and René Ranftl. Languagedriven semantic segmentation. ICLR, 2022. 1",
+        "bbox": [
+            173,
+            518,
+            826,
+            547
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "[26] Chunyuan Li, Zhe Gan, Zhengyuan Yang, Jianwei Yang, Linjie Li, Lijuan Wang, and Jianfeng Gao. Multimodal foundation models: From specialists to general-purpose assistants. arXiv preprint arXiv:2309.10020, 2023. 1",
+        "bbox": [
+            173,
+            556,
+            825,
+            599
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "[27] Chunyuan Li, Haotian Liu, Liunian Harold Li, Pengchuan Zhang, Jyoti Aneja, Jianwei Yang, Ping Jin, Houdong Hu, Zicheng Liu, Yong Jae Lee, and Jianfeng Gao. ELEVATER: A benchmark and toolkit for evaluating language-augmented visual models. In NeurIPS Track on Datasets and Benchmarks, 2022. 1",
+        "bbox": [
+            173,
+            608,
+            826,
+            665
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "[28] Junnan Li, Dongxu Li, Silvio Savarese, and Steven Hoi. Blip-2: Bootstrapping languageimage pre-training with frozen image encoders and large language models. arXiv preprint arXiv:2301.12597, 2023. 1, 2, 4, 6, 7",
+        "bbox": [
+            173,
+            674,
+            826,
+            717
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "[29] Liunian Harold Li, Pengchuan Zhang, Haotian Zhang, Jianwei Yang, Chunyuan Li, Yiwu Zhong, Lijuan Wang, Lu Yuan, Lei Zhang, Jenq-Neng Hwang, et al. Grounded language-image pre-training. In CVPR, 2022. 1",
+        "bbox": [
+            173,
+            726,
+            825,
+            770
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "[30] Yuheng Li, Haotian Liu, Qingyang Wu, Fangzhou Mu, Jianwei Yang, Jianfeng Gao, Chunyuan Li, and Yong Jae Lee. Gligen: Open-set grounded text-to-image generation. arXiv preprint arXiv:2301.07093, 2023. 1",
+        "bbox": [
+            173,
+            779,
+            825,
+            821
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "[31] Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr Dollár, and C Lawrence Zitnick. Microsoft COCO: Common objects in context. In ECCV, 2014. 3",
+        "bbox": [
+            173,
+            830,
+            826,
+            873
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "[32] Haotian Liu, Chunyuan Li, Yuheng Li, and Yong Jae Lee. Improved baselines with visual instruction tuning, 2023. 9, 14",
+        "bbox": [
+            173,
+            883,
+            825,
+            911
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            488,
+            936,
+            508,
+            948
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "[33] Shilong Liu, Zhaoyang Zeng, Tianhe Ren, Feng Li, Hao Zhang, Jie Yang, Chunyuan Li, Jianwei Yang, Hang Su, Jun Zhu, et al. Grounding dino: Marrying dino with grounded pre-training for open-set object detection. arXiv preprint arXiv:2303.05499, 2023. 1",
+        "bbox": [
+            173,
+            90,
+            825,
+            133
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "[34] Pan Lu, Swaroop Mishra, Tanglin Xia, Liang Qiu, Kai-Wei Chang, Song-Chun Zhu, Oyvind Tafjord, Peter Clark, and Ashwin Kalyan. Learn to explain: Multimodal reasoning via thought chains for science question answering. Advances in Neural Information Processing Systems, 2022. 2, 5, 8, 9",
+        "bbox": [
+            173,
+            142,
+            826,
+            198
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "[35] OpenAI. ChatGPT. https://openai.com/blog/chatgpt/, 2023. 1, 2",
+        "bbox": [
+            171,
+            205,
+            697,
+            223
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "[36] OpenAI. Gpt-4 technical report, 2023. 1, 5, 6, 15",
+        "bbox": [
+            173,
+            229,
+            537,
+            246
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "[37] Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, et al. Training language models to follow instructions with human feedback. Advances in Neural Information Processing Systems, 35:27730–27744, 2022. 2",
+        "bbox": [
+            173,
+            253,
+            826,
+            309
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "[38] Baolin Peng, Chunyuan Li, Pengcheng He, Michel Galley, and Jianfeng Gao. Instruction tuning with GPT-4. arXiv preprint arXiv:2304.03277, 2023. 1, 4",
+        "bbox": [
+            173,
+            318,
+            825,
+            348
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "[39] Hieu Pham, Zihang Dai, Golnaz Ghiasi, Kenji Kawaguchi, Hanxiao Liu, Adams Wei Yu, Jiahui Yu, Yi-Ting Chen, Minh-Thang Luong, Yonghui Wu, et al. Combined scaling for open-vocabulary image classification. arXiv preprint arXiv: 2111.10050, 2021. 1",
+        "bbox": [
+            173,
+            354,
+            826,
+            398
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "[40] Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, et al. Learning transferable visual models from natural language supervision. arXiv preprint arXiv:2103.00020, 2021. 1, 2, 4",
+        "bbox": [
+            173,
+            406,
+            826,
+            450
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "[41] Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J Liu. Exploring the limits of transfer learning with a unified text-to-text transformer. The Journal of Machine Learning Research, 2020. 2",
+        "bbox": [
+            171,
+            457,
+            826,
+            501
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "[42] Aditya Ramesh, Prafulla Dhariwal, Alex Nichol, Casey Chu, and Mark Chen. Hierarchical text-conditional image generation with clip latents. ArXiv, abs/2204.06125, 2022. 1",
+        "bbox": [
+            173,
+            508,
+            825,
+            537
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "[43] Robin Rombach, A. Blattmann, Dominik Lorenz, Patrick Esser, and Björn Ommer. Highresolution image synthesis with latent diffusion models. CVPR, pages 10674–10685, 2022. 1",
+        "bbox": [
+            173,
+            545,
+            826,
+            585
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "[44] Chitwan Saharia, William Chan, Saurabh Saxena, Lala Li, Jay Whang, Emily L. Denton, Seyed Kamyar Seyed Ghasemipour, Burcu Karagol Ayan, Seyedeh Sara Mahdavi, Raphael Gontijo Lopes, Tim Salimans, Jonathan Ho, David J. Fleet, and Mohammad Norouzi. Photorealistic text-to-image diffusion models with deep language understanding. ArXiv, abs/2205.11487, 2022. 1",
+        "bbox": [
+            173,
+            595,
+            826,
+            666
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "[45] Christoph Schuhmann, Romain Beaumont, Richard Vencu, Cade Gordon, Ross Wightman, Mehdi Cherti, Theo Coombes, Aarush Katta, Clayton Mullis, Mitchell Wortsman, et al. Laion-5b: An open large-scale dataset for training next generation image-text models. arXiv preprint arXiv:2210.08402, 2022. 2",
+        "bbox": [
+            173,
+            674,
+            826,
+            731
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "[46] Dídac Surís, Sachit Menon, and Carl Vondrick. Vipergpt: Visual inference via python execution for reasoning. arXiv preprint arXiv:2303.08128, 2023. 2",
+        "bbox": [
+            171,
+            739,
+            825,
+            768
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "[47] Andrew Szot, Alex Clegg, Eric Undersander, Erik Wijmans, Yili Zhao, John Turner, Noah Maestre, Mustafa Mukadam, Devendra Chaplot, Oleksandr Maksymets, Aaron Gokaslan, Vladimir Vondrus, Sameer Dharur, Franziska Meier, Wojciech Galuba, Angel Chang, Zsolt Kira, Vladlen Koltun, Jitendra Malik, Manolis Savva, and Dhruv Batra. Habitat 2.0: Training home assistants to rearrange their habitat. In Advances in Neural Information Processing Systems (NeurIPS), 2021. 2",
+        "bbox": [
+            171,
+            776,
+            826,
+            861
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "[48] Rohan Taori, Ishaan Gulrajani, Tianyi Zhang, Yann Dubois, Xuechen Li, Carlos Guestrin, Percy Liang, and Tatsunori B. Hashimoto. Stanford alpaca: An instruction-following llama model. https://github.com/tatsu-lab/stanford\\_alpaca, 2023. 1, 4",
+        "bbox": [
+            173,
+            869,
+            826,
+            912
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            490,
+            935,
+            509,
+            948
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "[49] Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, et al. Llama: Open and efficient foundation language models. arXiv preprint arXiv:2302.13971, 2023. 1",
+        "bbox": [
+            173,
+            90,
+            826,
+            133
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "[50] Jianfeng Wang, Zhengyuan Yang, Xiaowei Hu, Linjie Li, Kevin Lin, Zhe Gan, Zicheng Liu, Ce Liu, and Lijuan Wang. Git: A generative image-to-text transformer for vision and language. arXiv preprint arXiv:2205.14100, 2022. 1",
+        "bbox": [
+            173,
+            142,
+            826,
+            185
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "[51] Yizhong Wang, Yeganeh Kordi, Swaroop Mishra, Alisa Liu, Noah A Smith, Daniel Khashabi, and Hannaneh Hajishirzi. Self-instruct: Aligning language model with self generated instructions. arXiv preprint arXiv:2212.10560, 2022. 2",
+        "bbox": [
+            173,
+            194,
+            826,
+            236
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "[52] Yizhong Wang, Swaroop Mishra, Pegah Alipoormolabashi, Yeganeh Kordi, Amirreza Mirzaei, Anjana Arunkumar, Arjun Ashok, Arut Selvan Dhanasekaran, Atharva Naik, David Stap, et al. Benchmarking generalization via in-context instructions on 1,600+ language tasks. arXiv preprint arXiv:2204.07705, 2022. 2",
+        "bbox": [
+            171,
+            244,
+            826,
+            301
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "[53] Chenfei Wu, Shengming Yin, Weizhen Qi, Xiaodong Wang, Zecheng Tang, and Nan Duan. Visual chatgpt: Talking, drawing and editing with visual foundation models. arXiv preprint arXiv:2303.04671, 2023. 2",
+        "bbox": [
+            173,
+            310,
+            826,
+            352
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "[54] Jianwei Yang, Chunyuan Li, Pengchuan Zhang, Bin Xiao, Lu Yuan, Ce Liu, and Jianfeng Gao. Unified contrastive learning in image-text-label space. CVPR, 2022. 1",
+        "bbox": [
+            171,
+            361,
+            826,
+            391
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "[55] Zhengyuan Yang, Linjie Li, Jianfeng Wang, Kevin Lin, Ehsan Azarnasab, Faisal Ahmed, Zicheng Liu, Ce Liu, Michael Zeng, and Lijuan Wang. Mm-react: Prompting chatgpt for multimodal reasoning and action. arXiv preprint arXiv:2303.11381, 2023. 2",
+        "bbox": [
+            173,
+            398,
+            826,
+            443
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "[56] Jiahui Yu, Yuanzhong Xu, Jing Yu Koh, Thang Luong, Gunjan Baid, Zirui Wang, Vijay Vasudevan, Alexander Ku, Yinfei Yang, Burcu Karagol Ayan, Benton C. Hutchinson, Wei Han, Zarana Parekh, Xin Li, Han Zhang, Jason Baldridge, and Yonghui Wu. Scaling autoregressive models for content-rich text-to-image generation. ArXiv, abs/2206.10789, 2022. 1",
+        "bbox": [
+            173,
+            450,
+            826,
+            508
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "[57] Lu Yuan, Dongdong Chen, Yi-Ling Chen, Noel Codella, Xiyang Dai, Jianfeng Gao, Houdong Hu, Xuedong Huang, Boxin Li, Chunyuan Li, et al. Florence: A new foundation model for computer vision. arXiv preprint arXiv:2111.11432, 2021. 1",
+        "bbox": [
+            171,
+            516,
+            826,
+            559
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "[58] Hao Zhang, Feng Li, Xueyan Zou, Shilong Liu, Chunyuan Li, Jianfeng Gao, Jianwei Yang, and Lei Zhang. A simple framework for open-vocabulary segmentation and detection. arXiv preprint arXiv:2303.08131, 2023. 1",
+        "bbox": [
+            171,
+            566,
+            826,
+            609
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "[59] Renrui Zhang, Jiaming Han, Aojun Zhou, Xiangfei Hu, Shilin Yan, Pan Lu, Hongsheng Li, Peng Gao, and Yu Qiao. Llama-adapter: Efficient fine-tuning of language models with zero-init attention. arXiv preprint arXiv:2303.16199, 2023. 2, 8, 9",
+        "bbox": [
+            171,
+            618,
+            826,
+            662
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "[60] Susan Zhang, Stephen Roller, Naman Goyal, Mikel Artetxe, Moya Chen, Shuohui Chen, Christopher Dewan, Mona Diab, Xian Li, Xi Victoria Lin, et al. OPT: Open pre-trained transformer language models. arXiv preprint arXiv:2205.01068, 2022. 2",
+        "bbox": [
+            173,
+            669,
+            826,
+            713
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "[61] Zhuosheng Zhang, Aston Zhang, Mu Li, Hai Zhao, George Karypis, and Alex Smola. Multimodal chain-of-thought reasoning in language models. arXiv preprint arXiv:2302.00923, 2023. 8, 9",
+        "bbox": [
+            173,
+            720,
+            826,
+            763
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "[62] Yiwu Zhong, Jianwei Yang, Pengchuan Zhang, Chunyuan Li, Noel Codella, Liunian Harold Li, Luowei Zhou, Xiyang Dai, Lu Yuan, Yin Li, et al. Regionclip: Region-based language-image pretraining. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 16793–16803, 2022. 1",
+        "bbox": [
+            173,
+            773,
+            826,
+            830
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "[63] Xueyan Zou, Zi-Yi Dou, Jianwei Yang, Zhe Gan, Linjie Li, Chunyuan Li, Xiyang Dai, Harkirat Behl, Jianfeng Wang, Lu Yuan, et al. Generalized decoding for pixel, image, and language. arXiv preprint arXiv:2212.11270, 2022. 1, 2",
+        "bbox": [
+            173,
+            838,
+            826,
+            881
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            488,
+            935,
+            509,
+            948
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "A Broader Impact",
+        "text_level": 2,
+        "bbox": [
+            171,
+            90,
+            346,
+            107
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The broader impact of LLaVA, a general-purpose visual assistant, has potential benefits and risks associated with its deployment and release. Some considerations are unique to LLaVA due to its visual nature, while others share similarities with existing instruction-following LLMs (e.g., Alpaca, Vicuna, etc.). As LLaVA is built upon LLaMA, Vicuna, and CLIP, it inherits some of the issues associated with LLMs and vision encoders. In the following, we outline both the risks and mitigation strategies in place for the release of this model.",
+        "bbox": [
+            169,
+            122,
+            826,
+            207
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Malicious input. To minimize potential misuse and harmful consequences, we employ two precautionary measures for LLaVA: (1) OpenAI Filter API for user input text to prevent harmful or inappropriate text instructions from being processed by the model, and (2) NSFW Filter for uploaded user images to detect and block Not Safe For Work (NSFW) content or any other potentially harmful image inputs.",
+        "bbox": [
+            169,
+            222,
+            826,
+            292
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Hallucination. Similar to LLMs, LLaVA might generate outputs that aren’t grounded in facts or input data. This raises concerns about inferences made, especially in critical applications (e.g., medical).",
+        "bbox": [
+            169,
+            306,
+            826,
+            349
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Biases. Bias can be transferred from the base models to LLaVA, both from the vision encoder (CLIP) and the language decoder (LLaMA/Vicuna). This may lead to biased outcomes or unfair representations of diverse content.",
+        "bbox": [
+            169,
+            367,
+            826,
+            410
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Energy consumption. Though energy consumption is not a primary concern for LLaVA due to a smaller pretraining dataset (see details in Sec. C), it may become a concern when scaling up the pretraining dataset or increasing the model size, e.g., to a larger LLaMA version like the 65B model.",
+        "bbox": [
+            169,
+            425,
+            826,
+            470
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Evaluation complexities. Assessing the performance of LLaVA is challenging as it involves both language and visual tasks. Our evaluation benchmark covers several aspects, including accuracy, concept coverage, reasoning ability, and creativity. However, additional aspects need consideration, such as the degree of visual content hallucination and fine-grained understanding of visual content. While text-only GPT-4 based multimodal evaluation is consistent and accurate in our study, its robustness in different situations and capability to evaluate other unexplored aspects are subjects for future work.",
+        "bbox": [
+            169,
+            484,
+            828,
+            582
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Despite these risks, we believe that the benefits of releasing LLaVA to the research community outweigh the potential harm. It allows for ongoing investigation and improvement of the model and engages the community in developing better mitigation strategies to address these concerns. Moreover, the release of LLaVA can spur the development of new applications and research directions, ultimately contributing to the progress and responsible deployment of foundation models in vision-language tasks.",
+        "bbox": [
+            169,
+            588,
+            826,
+            672
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "B More Results",
+        "text_level": 2,
+        "bbox": [
+            171,
+            691,
+            321,
+            709
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "We present more qualitative results of LLaVA to analyze its emergent behaviors and observed weaknesses. For more quantitative results of LLaVA on academic benchmarks, please refer to the improved baselines with visual instruction tuning [32]. In Table 9, LLaVA demonstrates a similar behavior as GPT-4 in another example from its paper. Similar to the GPT-4 live demo by OpenAI, LLaVA is capable of generating the HTML/JS/CSS code for an interactive joke website based on a simplified user input sketch in Fig. 2, despite a minor error. As shown in Fig. 3, LLaVA can follow user’s instructions in a conversational style and provide detailed responses or creative writings. Furthermore, LLaVA is able to relate the visual content to the textual knowledge from the pretrained LLM, as demonstrated in Fig. 4 and Fig. 5.",
+        "bbox": [
+            169,
+            724,
+            826,
+            851
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "One interesting emergent behavior of LLaVA is that it is able to understand visual contents that are not covered in the training. For example, in Fig. 6, it is able to recognize Elon Musk both in a headshot and in a humorous meme where he is dressed as a doge, even though Elon Musk never appears in the training data for either the visual feature alignment or visual instruction tuning stages of",
+        "bbox": [
+            169,
+            854,
+            826,
+            912
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            490,
+            935,
+            509,
+            948
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "LLaVA. LLaVA also demonstrates impressive OCR (optical character recognition) ability in Table 9 and Fig. 2, which is rarely covered in our training data.",
+        "bbox": [
+            169,
+            90,
+            825,
+            121
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "We hope these additional results and observations showcase the potential of LLaVA in various application areas. In future work, it is important to investigate these emergent behaviors more thoroughly and to understand the underlying mechanisms that enable LLaVA to demonstrate such generalization abilities. This will pave the way towards building better LMMs, including enhancing robustness, reducing biases, and improving the alignment and the scope of the learned vision-language representations.",
+        "bbox": [
+            169,
+            126,
+            826,
+            210
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "table",
+        "img_path": "images/4a93d350629c15ae0d6ca86b246f21973ac01b31526e64b11359f78cffb3c54a.jpg",
+        "table_caption": [
+            "Table 9: Example prompt comparing LLaVA, GPT-4, BLIP-2, and OpenFlamingo’s visual reasoning capabilities in understanding the humor. BLIP-2 and OpenFlamingo fail to follow the user’s instructions. LLaVA and GPT-4 both explain the meme and its humor, while GPT-4 produces a more concise answer."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\">Visual input example, Chicken Nugget Map:</td></tr><tr><td rowspan=\"2\"></td><td>Sometimes I just look at pictures of the earth from space and I marvel at how beautiful it all is.</td></tr><tr><td><img src=\"images/1881f8376a277408ead27e83c6cc2ebad51b9715b583b153535fa1d3eea9adb2.jpg\"/></td></tr><tr><td>User LLaVA</td><td>Can you explain this meme in detail?The meme in the image is a creative and humorous take on food, with a focus on chicken nuggets, as the center of the universe. The meme begins with the phrase &quot;Sometimes I just look at pictures of the Earth from space and I marvel at how beautiful it all is...&quot; The main image features a tray of cooked chicken nuggets, with the chicken pieces positioned to resemble the continents and islands on a world map. The meme playfully suggests that the chicken nuggets represent the Earth, and the various locations depicted in the photo are actually chicken nugget versions of different places. The punchline of the meme appears in smaller text at the bottom, reading &quot;I mean, it&#x27;s not the real Earth, but how beautiful it is all is.&quot; This lighthearted and entertaining meme combines food and humor, using the image of chicken nuggets to create a funny and imaginative representation of the world.</td></tr><tr><td>User GPT-4 [36]</td><td>Can you explain this meme?This meme is a joke that combines two unrelated things: pictures of the earth from space and chicken nuggets. The text of the meme suggests that the image below is a beautiful picture of the earth from space. However, the image is actually of chicken nuggets arranged to vaguely resemble a map of the world. The humor in this meme comes from the unexpected juxtaposition of the text and the image. The text sets up an expectation of a majestic image of the earth, but the image is actually something mundane and silly.</td></tr><tr><td>User BLIP-2</td><td>Can you explain this meme in detail?sometimes i just look at pictures of the earth from space and marvel how beautiful it is</td></tr><tr><td>User OpenFlamingo</td><td>Can you explain this meme in detail?It&#x27;s a picture of a chicken nugget on the International Space Station.</td></tr></table>",
+        "bbox": [
+            176,
+            224,
+            812,
+            676
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            488,
+            935,
+            509,
+            948
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/52c75981a74067e7758349de20c10835324c568ebbe5e548db31d58b3938d117.jpg",
+        "image_caption": [
+            "Figure 2: LLaVA generates HTML/JS code for an interactive website based on user sketch inputs. The interactive interface works after fixing a minor error (in red) in the generated output. There is room for improvement in LLaVA’s output, such as splitting the joke and punchline into two rows, and only revealing the punchline upon button click, to better reflect the user’s intent."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            165,
+            181,
+            825,
+            724
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            490,
+            935,
+            509,
+            948
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/ec6e580118f066c47dda889dbddb8a8dfa7f28469eb6cbb5c8a9e1e04658eee4.jpg",
+        "image_caption": [
+            "Figure 3: LLaVA is capable of recognizing the visual content following the user’s intent, without directly prompting for visual recognition. It also provides a detailed response when prompted with a follow-up request, and the generated response is closely related to the provided visual content."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            169,
+            200,
+            826,
+            825
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            490,
+            935,
+            509,
+            948
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "image",
+        "img_path": "images/c9d3a9ac99b346e21472c291c58de6fc2080b60cea15d3da70461ef279ab388b.jpg",
+        "image_caption": [
+            "Figure 4: LLaVA relates the movie scenes to the textual knowledge from the pretrained LLM."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            156,
+            3,
+            826,
+            309
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "image",
+        "img_path": "images/61f8134d21e99152e9b802f7c14d421371dfd30f54b3d940b005b61f759c1fe8.jpg",
+        "image_caption": [
+            "Figure 5: LLaVA recognizes the famous art work, Mona Lisa, by Leonardo da Vinci. When we start a new conversation, it also explains the humourous artwork created on the web, mimicking the Mona Lisa."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            173,
+            382,
+            825,
+            775
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            490,
+            935,
+            509,
+            948
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "image",
+        "img_path": "images/8e0ca96d484fdbc1d689cc1d89be6ca09f43fe73e67655fcfc0fc8aef08e2bfd.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            174,
+            75,
+            823,
+            329
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/c4b229020afe8a0869a6be3acdc6116a28ee823105ea4d9695d8b06790fe8ec6.jpg",
+        "image_caption": [
+            "Figure 6: An interesting emergent behavior of LLaVA is its ability to recognize Elon Musk both in a headshot and in a humorous meme where he is dressed as a doge. This implies that the pre-trained CLIP vision encoder may have seen images of Elon Musk. However, it is still surprising because Elon Musk never appears in the training data for either the visual feature alignment or visual instruction tuning stages of LLaVA, which indicates that the base language model generalizes to unseen visual concepts.",
+            "Table 10: One example on how the text-only GPT-4 acts as a judge to ensemble the predictions from LLaVA and a text-only GPT-4, and gives a correct final answer."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            173,
+            441,
+            823,
+            869
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "LLaVA The name of the man in the photo is Elon Musk.",
+        "bbox": [
+            174,
+            152,
+            419,
+            196
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            490,
+            935,
+            509,
+            948
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "C Training Details",
+        "text_level": 2,
+        "bbox": [
+            171,
+            89,
+            346,
+            107
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "We pre-train our model on the filtered CC-595K subset for 1 epoch with a learning rate of 2e-3 and a batch size of 128, and fine-tune on the proposed LLaVA-Instruct-158K dataset for 3 epochs, with a learning rate of 2e-5 and a batch size of 32. Following Vicuna, we use the Adam optimizer with no weight decay and a cosine learning rate with a warmup ratio of 3%. During finetuning, FSDP (Full Shard Data Parallel) and gradient checkpointing is used to save GPU memory, and offloading is not used. BF16 and TF32 are enabled to achieve a balance between speed and precision.",
+        "bbox": [
+            169,
+            119,
+            826,
+            205
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "We train all models with 8× A100s. Pretraining on CC-595K completes within 4 hours. Finetuning on Instruct-158K completes within 10 hours. Finetuning on ScienceQA completes within 4 hours.",
+        "bbox": [
+            169,
+            209,
+            825,
+            239
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "D Assets",
+        "text_level": 2,
+        "bbox": [
+            171,
+            258,
+            264,
+            273
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Our source code, generated instruction-tuning data, proposed benchmark are uploaded to the anonymized GitHub repository: LLaVA-Annonymous/LLaVA.",
+        "bbox": [
+            169,
+            289,
+            825,
+            318
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "1. Source Code: link",
+        "bbox": [
+            210,
+            329,
+            356,
+            344
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "2. README: link",
+        "bbox": [
+            210,
+            347,
+            341,
+            362
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "3. Instructions to launch the demo: link",
+        "bbox": [
+            209,
+            366,
+            478,
+            381
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "4. All prompts and few shot examples for querying GPT-4: link",
+        "bbox": [
+            209,
+            383,
+            633,
+            401
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "5. LLaVA-Instruct-158K: link",
+        "bbox": [
+            210,
+            404,
+            416,
+            419
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "6. LLaVA-Bench: COCO, In-The-Wild",
+        "bbox": [
+            210,
+            422,
+            478,
+            438
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "7. Model checkpoints. The size of the model checkpoints after compression is 25GB, which exceeds the 5GB limit of GitHub LFS (Large File Storage). We’ll release the checkpoint to the public, or upon request with reviewers for this submission.",
+        "bbox": [
+            210,
+            440,
+            825,
+            484
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "E Data",
+        "text_level": 2,
+        "bbox": [
+            171,
+            502,
+            251,
+            518
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Instructions for brief image description. The list of instructions used to briefly describe the image content are shown in Table 11. They present the same meaning with natural language variance.",
+        "bbox": [
+            169,
+            532,
+            823,
+            564
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/64d910e185183f37ac3bdbfaa21bf9ed0dea92088df391b10ffb050adb12c40f.jpg",
+        "image_caption": [
+            "Table 11: The list of instructions for brief image description."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            176,
+            575,
+            818,
+            767
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Instructions for detailed image description. The list of instructions used to describe the image content in detail are shown in Table 12. They present the same meaning with natural language variance.",
+        "bbox": [
+            169,
+            811,
+            825,
+            854
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "CC3M. We extract noun-phrases using Spacy for each caption over the whole CC3M dataset, and count the frequency of each unique noun-phrase. We skip noun-phrases whose frequency is smaller than 3, as they are usually rare combinations concept and attributes that has already been covered by other captions. We then start from the noun-phrases with lowest remaining frequency, add the captions that contain this noun-phrase to the candidate pool. If the frequency of the noun-phrase is larger than 100, we randomly choose a subset of size 100 out of all its captions. This results in around 595K image-text pairs.",
+        "bbox": [
+            169,
+            869,
+            826,
+            912
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            488,
+            935,
+            509,
+            948
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/f9b2305be28dd36e6cedf37b9f6a88478558f166e50ac9a90c51104a43008a28.jpg",
+        "image_caption": [
+            "Table 12: The list of instructions for detailed image description."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            174,
+            89,
+            818,
+            356
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            169,
+            405,
+            825,
+            462
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The comparison of noun-phrase statistics before and after filtering CC3M is shown in Figure 7. The filtered dataset shows a good coverage of concepts whose frequency is higher from 3, but with a smaller number of image-text pairs.",
+        "bbox": [
+            169,
+            467,
+            826,
+            511
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "chart",
+        "img_path": "images/792167ee927276f8469f8f2be86e9887f15a9477245bfc681c6098fdf0cd2ce8.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 7: Comparison of noun-phrase statistics before and after filtering CC3M. The total number of unique noun-phrases are reported in the legend."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            197,
+            527,
+            784,
+            648
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "F Prompts",
+        "text_level": 2,
+        "bbox": [
+            171,
+            699,
+            282,
+            718
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The prompt used to generate image-based conversation from ChatGPT/GPT-4 is shown in Table 13.",
+        "bbox": [
+            169,
+            729,
+            826,
+            748
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            488,
+            935,
+            508,
+            949
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [
+            "Table 13: For each query, we illustrate the prompt construction process for ChatGPT/GPT-4 to collect query[‘response’] from query[‘context’], using few-shot in-context-learning, where examples are from fewshot\\_samples, each example including input sample[‘context’] and output sample[‘response’]. Note that messages is the final prompt. In this example, we provide the prompt used to generate the conversation response, please see also see its in-context-learning examples in Table 15 and Table 16 for details. We recommend readers to check out the codebase for the prompts to generated two other types of responses, including detailed decription and complex reasoning."
+        ],
+        "code_body": "```python\nmessages = [ { \"role\": \"system\", \"content\": f\"\"\"You are an AI visual assistant, and you are seeing a single image. What you see are provided with five sentences, describing the same image you are looking at. Answer all questions as you are seeing the image.\n\nDesign a conversation between you and a person asking about this photo. The answers should be in a tone that a visual AI assistant is seeing the image and answering the question. Ask diverse questions and give corresponding answers.\n\nInclude questions asking about the visual content of the image, including the object types, counting the objects, object actions, object locations, relative positions between objects, etc. Only include questions that have definite answers:\n(1) one can see the content in the image that the question asks about and can answer confidently;\n(2) one can determine confidently from the image that it is not in the image. Do not ask any question that cannot be answered confidently.\n\nAlso include complex questions that are relevant to the content in the image, for example, asking about background knowledge of the objects in the image, asking to discuss about events happening in the image, etc. Again, do not ask about uncertain details. Provide detailed answers when answering complex questions. For example, give detailed examples or reasoning steps to make the content more convincing and well-organized. You can include multiple paragraphs if necessary.\"\"\"\n]\nfor sample in fewshot_samples:\n    messages.append({ \"role\": \"user\", \"content\": sample['context']})\n    messages.append({ \"role\": \"assistant\", \"content\": sample['response'] })\nmessages.append({ \"role\": \"user\", \"content\": '\\n'.join(query)})\n```",
+        "bbox": [
+            174,
+            270,
+            816,
+            609
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            488,
+            935,
+            509,
+            948
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/5dfe6910cffc192c21fcb2d07063d57b5f69e84ca4505376849cc153e2628540.jpg",
+        "image_caption": [
+            "Table 14: One example to illustrate the instruction-following data. The top block shows the contexts such as captions and boxes used to prompt GPT, and the bottom block shows the three types of responses. Note that the visual image is not used to prompt GPT, we only show it here as a reference."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            173,
+            203,
+            821,
+            739
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            488,
+            935,
+            509,
+            948
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/5d056a85723b2ed70295f1da119abacd0930d04caa2a194e8d261d337997fcd1.jpg",
+        "image_caption": [
+            "Table 15: One example used in in-context-learning to construct visual conversation data."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            176,
+            239,
+            818,
+            733
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            488,
+            935,
+            509,
+            948
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "image",
+        "img_path": "images/514d23cdd787b0eb8f7ad3604be0c7444725a7b1ff693f4cc2414fb1daed974a.jpg",
+        "image_caption": [
+            "Table 16: One example used in in-context-learning to construct visual conversation data."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            174,
+            167,
+            820,
+            801
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            488,
+            935,
+            509,
+            948
+        ],
+        "page_idx": 24
+    }
+]

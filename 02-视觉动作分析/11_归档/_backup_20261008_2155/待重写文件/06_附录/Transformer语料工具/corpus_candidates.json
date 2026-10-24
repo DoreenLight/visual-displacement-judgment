@@ -1,0 +1,944 @@
+{
+  "meta": {
+    "purpose": "Transformer 发展线语料候选清单（双轴：时间阶段 × 技术线程）。此文件是**候选种子**，预期标题交给 arXiv API 解析成规范 ID 与元数据；最终权威清单是入库后的 index.json 与各线程 LIST.md。",
+    "axes": {
+      "stage": {
+        "S0": "奠基期 2017-2018（原始架构与通用化）",
+        "S1": "效率与规模化 2019-2020（预训练语言模型 + 稀疏/线性注意力）",
+        "S2": "多模态与长序列 2021-2022（视觉/语言多模态 + 长上下文外推 + 视频）",
+        "S3": "生成式与效率革命 2023（动作生成扩散 + 状态空间模型兴起）",
+        "S4": "具身·世界模型·物理 2024-2025（物理约束人体运动 + 世界模型）",
+        "S5": "混合架构与测试时学习 2025-2026（线性注意力复兴 + 测试时记忆）"
+      },
+      "thread": {
+        "T1": "架构与注意力机制",
+        "T2": "效率与长序列",
+        "T3": "位置编码与长度外推",
+        "T4": "视觉·多模态·人体",
+        "T5": "动作生成与离散 token",
+        "T6": "物理约束·世界模型",
+        "T7": "状态空间与混合架构"
+      }
+    },
+    "relevance": {
+      "高": "对康复（sEMG/视觉→关节角、实时预测、离散 token、物理约束）迁移价值直接高",
+      "中": "有借鉴价值（方法或思路）",
+      "低": "里程碑/背景为主，迁移间接"
+    },
+    "rehab_lane": {
+      "腕/手": "腕关节/手部运动学",
+      "肘": "肘关节",
+      "肩": "肩关节",
+      "代偿": "代偿动作识别",
+      "上肢": "上肢整体",
+      "步态": "下肢步态",
+      "关节角": "多关节角度"
+    }
+  },
+  "papers": [
+    {
+      "title": "Attention Is All You Need",
+      "year": 2017,
+      "stage": "S0",
+      "thread": "T1",
+      "relevance": "低",
+      "note": "Transformer 原始论文，SEQ2SEQ 自回归+交叉注意力范式源头，ViKiT 的一切起点"
+    },
+    {
+      "title": "Universal Transformers",
+      "year": 2018,
+      "stage": "S0",
+      "thread": "T1",
+      "relevance": "低",
+      "note": "自适应计算深度，启发 STU/可变计算"
+    },
+    {
+      "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+      "year": 2019,
+      "stage": "S1",
+      "thread": "T1",
+      "relevance": "低",
+      "note": "双向编码器范式"
+    },
+    {
+      "title": "Language Models are Unsupervised Multitask Learners",
+      "year": 2019,
+      "stage": "S1",
+      "thread": "T1",
+      "relevance": "低",
+      "note": "GPT-2 官方技术报告，**未收录于 arXiv**（仅 openai.com），须人工取件；标记为预训练规模化分水岭",
+      "venue_hint": "OpenAI 技术报告（无 arXiv）"
+    },
+    {
+      "title": "Transformer-XL: Attentive Language Models beyond a Fixed-Length Context",
+      "year": 2019,
+      "stage": "S1",
+      "thread": "T2",
+      "relevance": "中",
+      "note": "分段记忆机制，长时序建模参照"
+    },
+    {
+      "title": "Generating Long Sequences with Sparse Transformers",
+      "year": 2019,
+      "stage": "S1",
+      "thread": "T2",
+      "relevance": "低",
+      "note": "Child et al. 2019，稀疏注意力先驱（分层/跨步长分层注意力）",
+      "arxiv_id": "1904.10509v1",
+      "doi": ""
+    },
+    {
+      "title": "Reformer: The Efficient Transformer",
+      "year": 2020,
+      "stage": "S1",
+      "thread": "T2",
+      "relevance": "低",
+      "note": "LSH+可逆残差，效率派"
+    },
+    {
+      "title": "Longformer: The Long-Document Transformer",
+      "year": 2020,
+      "stage": "S1",
+      "thread": "T2",
+      "relevance": "中",
+      "note": "滑窗+全局token，长序列稀疏模式"
+    },
+    {
+      "title": "Big Bird: Transformers for Longer Sequences",
+      "year": 2020,
+      "stage": "S1",
+      "thread": "T2",
+      "relevance": "中",
+      "note": "块稀疏注意力"
+    },
+    {
+      "title": "Linformer: Self-Attention with Linear Complexity",
+      "year": 2020,
+      "stage": "S1",
+      "thread": "T2",
+      "relevance": "低",
+      "note": "低秩投影降复杂度"
+    },
+    {
+      "title": "Rethinking Attention with Performers",
+      "year": 2020,
+      "stage": "S1",
+      "thread": "T2",
+      "relevance": "低",
+      "note": "核方法线性注意力",
+      "arxiv_id": "2009.14794v4",
+      "doi": ""
+    },
+    {
+      "title": "Funnel-Transformer: Filtering out Sequential Redundancy for Efficient Language Processing",
+      "year": 2020,
+      "stage": "S1",
+      "thread": "T2",
+      "relevance": "低",
+      "note": "漏斗式逐层降采样"
+    },
+    {
+      "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+      "year": 2020,
+      "stage": "S1",
+      "thread": "T4",
+      "relevance": "中",
+      "note": "ViT，纯注意力视觉骨干，ViKiT tokenizer 上游"
+    },
+    {
+      "title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "year": 2019,
+      "stage": "S1",
+      "thread": "T1",
+      "relevance": "低",
+      "note": "T5，文本到文本统一"
+    },
+    {
+      "title": "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows",
+      "year": 2021,
+      "stage": "S2",
+      "thread": "T4",
+      "relevance": "中",
+      "note": "层次化窗口注意力，多尺度特征，anatomy tokenizer 可借鉴"
+    },
+    {
+      "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding",
+      "year": 2021,
+      "stage": "S2",
+      "thread": "T3",
+      "relevance": "高",
+      "note": "旋转位置编码，视觉时序角度建模友好，长度外推强"
+    },
+    {
+      "title": "Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation",
+      "year": 2022,
+      "stage": "S2",
+      "thread": "T3",
+      "relevance": "中",
+      "note": "ZeRO/DeepScale 内存优化：大规模训练系统；与 Scaling Laws 配套阅读"
+    },
+    {
+      "title": "Learning Transferable Visual Models From Natural Language Supervision",
+      "year": 2021,
+      "stage": "S2",
+      "thread": "T4",
+      "relevance": "低",
+      "note": "CLIP，图文对比预训练"
+    },
+    {
+      "title": "Flamingo: a Visual Language Model for Few-Shot Learning",
+      "year": 2022,
+      "stage": "S2",
+      "thread": "T4",
+      "relevance": "低",
+      "note": "交错块注意力，冻结感知编码器"
+    },
+    {
+      "title": "Masked Autoencoders Are Scalable Vision Learners",
+      "year": 2021,
+      "stage": "S2",
+      "thread": "T4",
+      "relevance": "低",
+      "note": "MAE 自监督视觉"
+    },
+    {
+      "title": "TimeSformer: Is Space-Time Attention All You Need for Video Understanding?",
+      "year": 2021,
+      "stage": "S2",
+      "thread": "T4",
+      "relevance": "高",
+      "note": "分解时空注意力，ViKiT encoder 直接前身"
+    },
+    {
+      "title": "TokenLearner: What Can 8 Learned Tokens Do for Images and Videos?",
+      "year": 2021,
+      "stage": "S2",
+      "thread": "T2",
+      "relevance": "中",
+      "note": "自适应少量 token，动态 token 化思路"
+    },
+    {
+      "title": "Denoising Diffusion Probabilistic Models",
+      "year": 2020,
+      "stage": "S1",
+      "thread": "T5",
+      "relevance": "中",
+      "note": "DDPM，动作扩散生成源头"
+    },
+    {
+      "title": "GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models",
+      "year": 2021,
+      "stage": "S2",
+      "thread": "T5",
+      "relevance": "低",
+      "note": "文本引导扩散"
+    },
+    {
+      "title": "Zero-Shot Text-to-Image Generation",
+      "year": 2021,
+      "stage": "S2",
+      "thread": "T5",
+      "relevance": "低",
+      "note": "DALL-E，离散 token 生成范式"
+    },
+    {
+      "title": "PoseFormer: 3D Human Pose Estimation with Spatial and Temporal Transformers",
+      "year": 2021,
+      "stage": "S2",
+      "thread": "T4",
+      "relevance": "高",
+      "note": "空间+时间分解注意力，ViKiT 时空 encoder 蓝本"
+    },
+    {
+      "title": "3D Human Pose Estimation with Spatio-Temporal Transformers",
+      "year": 2021,
+      "stage": "S2",
+      "thread": "T4",
+      "relevance": "高",
+      "note": "STFormer，时空并行"
+    },
+    {
+      "title": "METRO: End-to-End Human Pose and Mesh Reconstruction with Transformers",
+      "year": 2020,
+      "stage": "S1",
+      "thread": "T4",
+      "relevance": "中",
+      "note": "早期 image→mesh Transformer"
+    },
+    {
+      "title": "4DHumans: Reconstructing 4D Humans from Monocular Video",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T4",
+      "relevance": "中",
+      "note": "HMR2.0，ViT+SMPL query cross-attention"
+    },
+    {
+      "title": "TokenHMR: Advancing Human Mesh Recovery with a Tokenized Pose Representation",
+      "year": 2024,
+      "stage": "S4",
+      "thread": "T4",
+      "relevance": "高",
+      "note": "ZeRO/DeepScale 内存优化：大规模训练系统；与 Scaling Laws 配套阅读"
+    },
+    {
+      "title": "PoseFormerV2: Exploring Frequency Domain for Efficient and Robust 3D Human Pose Estimation",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T4",
+      "relevance": "中",
+      "note": "ZeRO/DeepScale 内存优化：大规模训练系统；与 Scaling Laws 配套阅读"
+    },
+    {
+      "title": "MotionBERT: A Unified Perspective on Learning Human Motion Representations",
+      "year": 2022,
+      "stage": "S2",
+      "thread": "T4",
+      "relevance": "高",
+      "note": "统一运动表征含运动学知识，双向自回归"
+    },
+    {
+      "title": "MotionAGFormer: Enhancing 3D Human Pose Estimation with a Transformer-GCNFormer Network",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T4",
+      "relevance": "中",
+      "note": "ZeRO/DeepScale 内存优化：大规模训练系统；与 Scaling Laws 配套阅读"
+    },
+    {
+      "title": "Segment Anything",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T4",
+      "relevance": "低",
+      "note": "SAM，提示驱动分割"
+    },
+    {
+      "title": "T2M-GPT: Generating Human Motion from Textual Descriptions with Discrete Representations",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T5",
+      "relevance": "高",
+      "note": "离散运动 token+GPT，kinematic vocabulary 直接前身"
+    },
+    {
+      "title": "Human Motion Diffusion Model",
+      "year": 2022,
+      "stage": "S2",
+      "thread": "T5",
+      "relevance": "高",
+      "note": "MDM，动作扩散生成，多样性"
+    },
+    {
+      "title": "MotionDiffuse: Text-Driven Human Motion Generation with Diffusion Model",
+      "year": 2022,
+      "stage": "S2",
+      "thread": "T5",
+      "relevance": "中",
+      "note": "文本驱动动作生成"
+    },
+    {
+      "title": "MotionGPT: Human Motion as a Foreign Language",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T5",
+      "relevance": "高",
+      "note": "把人体运动视为'外语'，token 化运动，翻译隐喻直接对应"
+    },
+    {
+      "title": "Generating Diverse and Natural 3D Human Motions From Text",
+      "year": 2022,
+      "stage": "S2",
+      "thread": "T5",
+      "relevance": "高",
+      "note": "T2M 框架原文：用 kNN 聚类把连续动作量化成 motion snippet code（离散动作词表），两阶段 text2length + text2motion；是「动作有了词表」的直接证据。CVF 开放获取"
+    },
+    {
+      "title": "A ConvNet for the 2020s",
+      "year": 2022,
+      "stage": "S2",
+      "thread": "T1",
+      "relevance": "低",
+      "note": "ConvNeXt，卷积复兴对照"
+    },
+    {
+      "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T7",
+      "relevance": "高",
+      "note": "选择性状态空间，线性时间长序列，实时预测潜力"
+    },
+    {
+      "title": "Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T7",
+      "relevance": "中",
+      "note": "Mamba-2，SSM 与 Transformer 的对偶统一"
+    },
+    {
+      "title": "Efficiently Modeling Long Sequences with Structured State Spaces",
+      "year": 2021,
+      "stage": "S2",
+      "thread": "T7",
+      "relevance": "中",
+      "note": "S4，结构化状态空间"
+    },
+    {
+      "title": "Hyena Hierarchy: Towards Larger Convolutional Language Models",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T7",
+      "relevance": "低",
+      "note": "隐式长卷积"
+    },
+    {
+      "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+      "year": 2022,
+      "stage": "S2",
+      "thread": "T2",
+      "relevance": "中",
+      "note": "ZeRO/DeepScale 内存优化：大规模训练系统；与 Scaling Laws 配套阅读",
+      "doi_hint": null
+    },
+    {
+      "title": "FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T2",
+      "relevance": "低",
+      "note": "FA2 加速"
+    },
+    {
+      "title": "Ring Attention with Blockwise Transformers for Near-Infinite Context",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T2",
+      "relevance": "低",
+      "note": "环形设备并行超长上下文"
+    },
+    {
+      "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+      "year": 2020,
+      "stage": "S1",
+      "thread": "T2",
+      "relevance": "低",
+      "note": "多头线性",
+      "arxiv_id": "2205.14135v2",
+      "doi": ""
+    },
+    {
+      "title": "PhysPT: Physics-aware Pretrained Transformer for Estimating Human Dynamics from Monocular Videos",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T6",
+      "relevance": "高",
+      "note": "物理感知预训练 Transformer，从单目视频估计人体动力学；biomechanical grammar 的最强外部先例"
+    },
+    {
+      "title": "Human Motion Diffusion as a Generative Prior",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T6",
+      "relevance": "中",
+      "note": "运动学/动力学约束的扩散先验"
+    },
+    {
+      "title": "PhysDiff: Physics-Guided Human Motion Diffusion Model",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T6",
+      "relevance": "中",
+      "note": "物理引导的动作扩散：把动力学可行性写进生成过程，而非事后惩罚"
+    },
+    {
+      "title": "World Models",
+      "year": 2018,
+      "stage": "S0",
+      "thread": "T6",
+      "relevance": "低",
+      "note": "可学习动力学世界模型开山"
+    },
+    {
+      "title": "Mastering Diverse Domains through World Models",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T6",
+      "relevance": "低",
+      "note": "DreamerV3，通用世界模型"
+    },
+    {
+      "title": "Genie: Generative Interactive Environments",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T6",
+      "relevance": "低",
+      "note": "可交互生成世界"
+    },
+    {
+      "title": "Pre-Trained Video Generative Models as World Simulators",
+      "year": 2024,
+      "stage": "S4",
+      "thread": "T6",
+      "relevance": "中",
+      "note": "世界模型视角的视频生成预训练。**注意：这不是 Sora 报告本身**，是检索「Video generation models as world simulators」时命中的近题论文，已标注为替代项",
+      "doi": "10.1609/aaai.v40i6.42465"
+    },
+    {
+      "title": "TD-MPC2: Scalable, Robust World Models for Continuous Control",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T6",
+      "relevance": "低",
+      "note": "TD 世界模型，可控预测",
+      "arxiv_id": "2310.16828v2",
+      "doi": ""
+    },
+    {
+      "title": "PartNet: A Recursive Part Decomposition Network for Fine-grained and Hierarchical Shape Segmentation",
+      "year": 2018,
+      "stage": "S0",
+      "thread": "T4",
+      "relevance": "低",
+      "note": "层次化部件分割，解剖先验的早期思路"
+    },
+    {
+      "title": "Titans: Learning to Memorize at Test Time",
+      "year": 2024,
+      "stage": "S4",
+      "thread": "T7",
+      "relevance": "中",
+      "note": "测试时记忆，长期个体化在线适应（康复个体差异）启发"
+    },
+    {
+      "title": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "year": 2024,
+      "stage": "S4",
+      "thread": "T7",
+      "relevance": "中",
+      "note": "delta rule 线性注意力"
+    },
+    {
+      "title": "Parallelizing Linear Transformers with the Delta Rule over Sequence Length",
+      "year": 2024,
+      "stage": "S4",
+      "thread": "T7",
+      "relevance": "低",
+      "note": "DeltaNet，并行 delta 规则"
+    },
+    {
+      "title": "Scaling Laws for Neural Language Models",
+      "year": 2020,
+      "stage": "S1",
+      "thread": "T1",
+      "relevance": "中",
+      "note": "规模律，决定算力/数据/模型配比，效率取舍的理论依据"
+    },
+    {
+      "title": "Scaling Vision Transformers",
+      "year": 2022,
+      "stage": "S2",
+      "thread": "T4",
+      "relevance": "中",
+      "note": "视觉规模律，算力/数据/模型配比的理论依据"
+    },
+    {
+      "title": "TRAIN: A Deep Learning Approach to Motion Analysis",
+      "year": 2018,
+      "stage": "S0",
+      "thread": "T6",
+      "relevance": "中",
+      "note": "骨骼-肌肉协同建模，传统物理先验，NMS 溯源"
+    },
+    {
+      "title": "Reconstructing Human Motion from sEMG",
+      "year": 2021,
+      "stage": "S2",
+      "thread": "T6",
+      "relevance": "高",
+      "note": "sEMG→动作重建，先行验证信号带宽"
+    },
+    {
+      "title": "Real-time Neural-network-based prediction of intended finger movements from surface electromyography",
+      "year": 2021,
+      "stage": "S2",
+      "thread": "T5",
+      "relevance": "高",
+      "note": "sEMG 实时意图预测，康复控制近邻"
+    },
+    {
+      "title": "MUSE: Multi-Scale Temporal Pretraining for Muscle Synergy-based Prosthetic Control",
+      "year": 2024,
+      "stage": "S4",
+      "thread": "T5",
+      "relevance": "高",
+      "note": "肌肉协同多尺度预训练，sEMG Transformer 化代表"
+    },
+    {
+      "title": "Multivariate representations and physiological insights for characterizing muscle activity during reaching",
+      "year": 2020,
+      "stage": "S1",
+      "thread": "T6",
+      "relevance": "中",
+      "note": "肌肉激活表征，生理学约束"
+    },
+    {
+      "title": "Muscle Synergies as a Tool for Neural Control of Functional Movements",
+      "year": 2020,
+      "stage": "S1",
+      "thread": "T6",
+      "relevance": "中",
+      "note": "肌肉协同空间基，受限维度，语法约束理论"
+    },
+    {
+      "title": "EMG-Driven Neuromuscular Modelling for Joint Torque Estimation Using a Multiband LSTM Network and Data Augmentation",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T6",
+      "relevance": "高",
+      "note": "章隆彬团队 EMG+NMS+LSTM，物理+学习混合先例"
+    },
+    {
+      "title": "Transfer learning-based muscle synergies estimation for knee exoskeleton control",
+      "year": 2022,
+      "stage": "S2",
+      "thread": "T6",
+      "relevance": "中",
+      "note": "迁移学习肌肉协同，跨被试"
+    },
+    {
+      "title": "A deep learning framework for reconstructing muscle activation from surface electromyography during dynamic movements",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T6",
+      "relevance": "中",
+      "note": "动态肌电深层重建"
+    },
+    {
+      "title": "Motor Imagery EEG-based BCI for rehabilitation: deep learning for decoding and visualization",
+      "year": 2020,
+      "stage": "S1",
+      "thread": "T4",
+      "relevance": "中",
+      "note": "运动想象 BCI 深度解码，康复信号另一分支"
+    },
+    {
+      "title": "Self-Supervised Transformers for Human Activity Recognition Using Wearable Sensors",
+      "year": 2021,
+      "stage": "S2",
+      "thread": "T1",
+      "relevance": "中",
+      "note": "可穿戴自监督时序，康复传感器"
+    },
+    {
+      "title": "iTransformer: Inverted Transformers Are Effective for Time Series Forecasting",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T7",
+      "relevance": "高",
+      "note": "把注意力建在「变量维」而非「时间维」，正是关节角这类多变量序列的合适归纳偏置；MDPI iTransformer-DTL 即沿此路线做 sEMG/IMU 解码",
+      "lane": "关节角"
+    },
+    {
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "year": 2021,
+      "stage": "S2",
+      "thread": "T1",
+      "relevance": "高",
+      "note": "参数高效适配：康复个体差异极大，逐被试微调而不动预训练权重的标准路径",
+      "lane": "个体化"
+    },
+    {
+      "title": "A Novel Transformer-Based Method for Full Lower-Limb Joint Angles and Moments Prediction in Gait Using sEMG and IMU data",
+      "year": 2025,
+      "stage": "S5",
+      "thread": "T5",
+      "relevance": "高",
+      "note": "sEMG+IMU 双模态 Transformer 预测全下肢关节角与关节力矩，长时程实时；与 Wei 2026 同赛道的新对手",
+      "lane": "步态"
+    },
+    {
+      "title": "Machine Learning-Based Real-Time Detection of Compensatory Trunk Movements Using Trunk-Wrist Inertial Measurement Units",
+      "year": 2026,
+      "stage": "S5",
+      "thread": "T6",
+      "relevance": "高",
+      "note": "ETH Zurich，腕+躯干双 IMU 实时检测代偿性躯干运动（XGBoost，macro-F1 0.80）；TP-03 肩肘代偿的直接基线——且它没用 Transformer，说明该任务尚未被注意力架构攻克",
+      "lane": "代偿"
+    },
+    {
+      "title": "Upper-Limb Rehabilitation with a Dual-Mode Individualized Exoskeleton Robot: A Generative-Model-Based Solution",
+      "year": 2024,
+      "stage": "S4",
+      "thread": "T6",
+      "relevance": "中",
+      "note": "清华，扩散模型生成个体化助力轨迹 + 异常检测网络，上肢外骨骼的生成式控制路线",
+      "lane": "上肢"
+    },
+    {
+      "title": "A BERT Based Method for Continuous Estimation of Cross-Subject Hand Kinematics From Surface Electromyographic Signals",
+      "year": 2023,
+      "stage": "S2",
+      "thread": "T1",
+      "relevance": "高",
+      "note": "Lin et al., IEEE TNSRE 2023：BERT 结构做跨被试手部运动学估计——腕/手域最强 Transformer 直接竞品（用户经学校数据库取得）",
+      "lane": "腕/手",
+      "doi": "10.1109/TNSRE.2022.3216528",
+      "venue_hint": "IEEE Transactions on Neural Systems and Rehabilitation Engineering, 2023"
+    },
+    {
+      "title": "A Dual-Task Improved Transformer Framework for Decoding Lower Limb Sit-to-Stand Movement from sEMG and IMU Data",
+      "year": 2025,
+      "stage": "S5",
+      "thread": "T5",
+      "relevance": "高",
+      "note": "iTransformer-DTL：可学习 query + 非自回归直接解码整段轨迹，与 Wei 2026 的自回归 Seq2Seq 构成路线竞争",
+      "lane": "步态",
+      "doi": "10.3390/machines13100953",
+      "venue_hint": "MDPI Machines"
+    },
+    {
+      "title": "Markerless On-Device Detection of Compensatory Movement Patterns in Upper-Limb Rehabilitation Exercises from Monocular RGB Video",
+      "year": 2026,
+      "stage": "S5",
+      "thread": "T6",
+      "relevance": "高",
+      "note": "单目 RGB 端侧上肢代偿检测（5 项几何指标）；ViKiT 的最直接视觉竞品",
+      "lane": "代偿",
+      "doi": "10.3390/s26165054",
+      "venue_hint": "MDPI Sensors"
+    },
+    {
+      "title": "Using deep learning to detect upper limb compensation in individuals post-stroke using consumer-grade webcams",
+      "year": 2025,
+      "stage": "S5",
+      "thread": "T6",
+      "relevance": "高",
+      "note": "个体内 >90% / 跨被涉约 50-70%（原文自述，未复现）：对跨被试协议的负面证据",
+      "lane": "代偿",
+      "doi": "10.3389/fmed.2025.1645369",
+      "venue_hint": "Frontiers in Neurology"
+    },
+    {
+      "title": "Prediction of Joint Angles for Human Elbow Motion Based on sEMG",
+      "year": 2024,
+      "stage": "S4",
+      "thread": "T5",
+      "relevance": "高",
+      "note": "肘关节角 sEMG→Transformer 预测，MAE<0.065（原文自述，未复现）——肘域直接竞品（用户经学校数据库取得）",
+      "lane": "肘",
+      "doi": "10.1109/CAC63892.2024.10865675",
+      "venue_hint": "2024 China Automation Congress (CAC)"
+    },
+    {
+      "title": "Layer Normalization",
+      "year": 2018,
+      "stage": "S0",
+      "thread": "T1",
+      "relevance": "低",
+      "note": "批归一化替代方案，训练稳定性起点"
+    },
+    {
+      "title": "RoBERTa: A Robustly Optimized BERT Pretraining Approach",
+      "year": 2019,
+      "stage": "S1",
+      "thread": "T1",
+      "relevance": "低",
+      "note": "预训练配方优化"
+    },
+    {
+      "title": "ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators",
+      "year": 2019,
+      "stage": "S1",
+      "thread": "T1",
+      "relevance": "低",
+      "note": "判别式预训练，算力高效"
+    },
+    {
+      "title": "GLU Variants Improve Transformer",
+      "year": 2020,
+      "stage": "S1",
+      "thread": "T1",
+      "relevance": "低",
+      "note": "门控线性单元，稳定性小改动"
+    },
+    {
+      "title": "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models",
+      "year": 2019,
+      "stage": "S1",
+      "thread": "T2",
+      "relevance": "中",
+      "note": "ZeRO/DeepScale 内存优化：大规模训练系统；与 Scaling Laws 配套阅读"
+    },
+    {
+      "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T2",
+      "relevance": "中",
+      "note": "vLLM 分页显存管理，推理侧工程"
+    },
+    {
+      "title": "Fast Inference from Transformers via Speculative Decoding",
+      "year": 2022,
+      "stage": "S2",
+      "thread": "T2",
+      "relevance": "低",
+      "note": "投机解码，加速自回归",
+      "arxiv_id": ""
+    },
+    {
+      "title": "Sinkhorn Operators: Provable Attention via Neural Operator Filters",
+      "year": 2020,
+      "stage": "S1",
+      "thread": "T2",
+      "relevance": "低",
+      "note": "低秩/核注意力理论化"
+    },
+    {
+      "title": "Rethinking Attention with Performers",
+      "year": 2020,
+      "stage": "S1",
+      "thread": "T2",
+      "relevance": "低",
+      "note": "FFN 替代注意力的实验",
+      "arxiv_id": "2009.14794v4",
+      "doi": ""
+    },
+    {
+      "title": "ETC: Encoding Long and Structured Inputs in Transformers",
+      "year": 2020,
+      "stage": "S1",
+      "thread": "T2",
+      "relevance": "中",
+      "note": "全局+局部混合，长输入"
+    },
+    {
+      "title": "Conditional Positional Encoding for Video Transformers",
+      "year": 2021,
+      "stage": "S2",
+      "thread": "T3",
+      "relevance": "中",
+      "note": "视频位置编码，时序角度序列可借鉴"
+    },
+    {
+      "title": "VideoMAE: Masked Autoencoders are Data-Efficient Learners for Self-Supervised Video Pre-Training",
+      "year": 2022,
+      "stage": "S2",
+      "thread": "T4",
+      "relevance": "中",
+      "note": "视频自监督，视觉 backbone 选型"
+    },
+    {
+      "title": "DINOv2: Learning Robust Visual Features without Supervision",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T4",
+      "relevance": "中",
+      "note": "自监督视觉特征，冻结骨干更稳"
+    },
+    {
+      "title": "ImageBind: One Embedding Space To Bind Them All",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T4",
+      "relevance": "高",
+      "note": "跨模态共享嵌入空间，正是 RGB-D+IMU+sEMG 融合的候选架构"
+    },
+    {
+      "title": "BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T4",
+      "relevance": "低",
+      "note": "冻结编码器 + 轻量适配"
+    },
+    {
+      "title": "Visual Instruction Tuning",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T4",
+      "relevance": "低",
+      "note": "视觉指令微调",
+      "arxiv_id": "2304.08485v2",
+      "doi": ""
+    },
+    {
+      "title": "SAM 2: Segment Anything in Images and Videos",
+      "year": 2024,
+      "stage": "S4",
+      "thread": "T4",
+      "relevance": "中",
+      "note": "视频分割，anatomy region 提取的自动化路线"
+    },
+    {
+      "title": "InternVideo: General Video Foundation Models via Generative and Discriminative Learning",
+      "year": 2022,
+      "stage": "S2",
+      "thread": "T4",
+      "relevance": "中",
+      "note": "视频基础模型，跨模态泛化",
+      "arxiv_id": ""
+    },
+    {
+      "title": "ColloSSL: Collaborative Self-Supervised Learning for Human Activity Recognition",
+      "year": 2020,
+      "stage": "S1",
+      "thread": "T4",
+      "relevance": "中",
+      "note": "可穿戴自监督，康复传感器表征",
+      "arxiv_id": ""
+    },
+    {
+      "title": "MaskGIT: Masked Generative Image Transformer",
+      "year": 2022,
+      "stage": "S2",
+      "thread": "T5",
+      "relevance": "中",
+      "note": "并行 token 生成（去自回归）"
+    },
+    {
+      "title": "TATS: Long-term Human Motion Generation with Time-Aware Tokenization",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T5",
+      "relevance": "高",
+      "note": "⚠️ 已撤回：题名检索不到，记忆失真"
+    },
+    {
+      "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
+      "year": 2023,
+      "stage": "S3",
+      "thread": "T6",
+      "relevance": "中",
+      "note": "扩散策略，动作序列生成范式"
+    },
+    {
+      "title": "TD-MPC: Temporal Difference Learning for Model Predictive Control",
+      "year": 2021,
+      "stage": "S2",
+      "thread": "T6",
+      "relevance": "低",
+      "note": "可学习模型预测控制"
+    },
+    {
+      "title": "Byte Latent Transformer: Patches Scale Better Than Tokens",
+      "year": 2024,
+      "stage": "S4",
+      "thread": "T7",
+      "relevance": "低",
+      "note": "字节级 latent 降推理开销",
+      "arxiv_id": ""
+    },
+    {
+      "title": "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention",
+      "year": 2025,
+      "stage": "S5",
+      "thread": "T7",
+      "relevance": "中",
+      "note": "硬件对齐稀疏注意力，长上下文效率新解",
+      "arxiv_id": ""
+    }
+  ]
+}

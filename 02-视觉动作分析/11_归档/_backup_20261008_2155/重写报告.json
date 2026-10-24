@@ -1,0 +1,622 @@
+{
+ "group_map": {
+  "Transformer_发展线": "运动理解",
+  "PoseFormer_MotionBERT": "运动理解",
+  "ViT_HMR_2.0": "运动理解",
+  "METRO": "运动理解",
+  "TokenHMR_PoseTokens": "运动理解",
+  "OpenCap_传统生物力学": "运动理解",
+  "RGB_角度估计_2022_EMBC": "运动理解",
+  "RGB_直接竞品_2026_Chao": "运动理解",
+  "康复整合链路": "康复辅助",
+  "腕关节康复感知_D435i": "康复辅助",
+  "生物力学线": "整合系统",
+  "决策模型线_JEV": "整合系统",
+  "sEMG_原始参照论文": "整合系统"
+ },
+ "files_changed": 120,
+ "escaping_links_fixed": 31,
+ "root_literals_fixed": 1130,
+ "detail": [
+  {
+   "file": "00_研究背景/JEV路线可行性评估.md",
+   "escaping": 0,
+   "root": 5
+  },
+  {
+   "file": "00_研究背景/Transformer_发展线与康复迁移推演.md",
+   "escaping": 0,
+   "root": 2
+  },
+  {
+   "file": "00_研究背景/翻译范式论证与定位重定_2026-10-01.md",
+   "escaping": 0,
+   "root": 2
+  },
+  {
+   "file": "01_参考论文/康复辅助/康复整合链路/A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller_Evidence_Card.md",
+   "escaping": 3,
+   "root": 0
+  },
+  {
+   "file": "01_参考论文/康复辅助/康复整合链路/A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller_Evidence_Card.md",
+   "escaping": 3,
+   "root": 0
+  },
+  {
+   "file": "01_参考论文/康复辅助/康复整合链路/Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation_Evidence_Card.md",
+   "escaping": 3,
+   "root": 0
+  },
+  {
+   "file": "01_参考论文/康复辅助/康复整合链路/Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration_Evidence_Card.md",
+   "escaping": 3,
+   "root": 0
+  },
+  {
+   "file": "01_参考论文/康复辅助/康复整合链路/Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot_Evidence_Card.md",
+   "escaping": 3,
+   "root": 0
+  },
+  {
+   "file": "01_参考论文/康复辅助/康复整合链路/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises_Evidence_Card.md",
+   "escaping": 3,
+   "root": 0
+  },
+  {
+   "file": "01_参考论文/康复辅助/康复整合链路/README.md",
+   "escaping": 4,
+   "root": 0
+  },
+  {
+   "file": "01_参考论文/康复辅助/康复整合链路/TFS2025_NeuroFuzzy_AAN_Evidence_Card.md",
+   "escaping": 2,
+   "root": 0
+  },
+  {
+   "file": "01_参考论文/康复辅助/康复整合链路/Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot_Evidence_Card.md",
+   "escaping": 3,
+   "root": 0
+  },
+  {
+   "file": "01_参考论文/康复辅助/康复整合链路/index.json",
+   "escaping": 0,
+   "root": 20
+  },
+  {
+   "file": "01_参考论文/康复辅助/腕关节康复感知_D435i/上肢代偿检测/LIST.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/康复辅助/腕关节康复感知_D435i/上肢代偿检测/Li2024：IMU 上肢活动范围测量并行效度综述/Li2024：IMU 上肢活动范围测量并行效度综述_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/康复辅助/腕关节康复感知_D435i/上肢代偿检测/Seo2024：可穿戴传感器居家监测卒中上肢训练质量/Seo2024：可穿戴传感器居家监测卒中上肢训练质量_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/康复辅助/腕关节康复感知_D435i/上肢代偿检测/Wang2022：卒中上肢代偿评估与检测技术系统综述/Wang2022：卒中上肢代偿评估与检测技术系统综述_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/康复辅助/腕关节康复感知_D435i/上肢代偿检测/肱二头肌弯举疲劳诱发代偿运动分析/肱二头肌弯举疲劳诱发代偿运动分析_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/康复辅助/腕关节康复感知_D435i/上肢代偿检测/自适应协作机器人减轻假肢使用者代偿运动/自适应协作机器人减轻假肢使用者代偿运动_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/康复辅助/腕关节康复感知_D435i/上肢代偿检测/骨骼数据卒中代偿检测的图卷积 LSTM 注意力网络/骨骼数据卒中代偿检测的图卷积 LSTM 注意力网络_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/康复辅助/腕关节康复感知_D435i/待获取文献清单.md",
+   "escaping": 0,
+   "root": 8
+  },
+  {
+   "file": "01_参考论文/康复辅助/腕关节康复感知_D435i/深度图姿态估计精度/LIST.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/康复辅助/腕关节康复感知_D435i/深度图姿态估计精度/RealSense-Kinematics：单 RGBD 相机实时开源上肢肌肉骨骼分析/RealSense-Kinematics：单 RGBD 相机实时开源上肢肌肉骨骼分析_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/康复辅助/腕关节康复感知_D435i/腕关节与前臂专项/LIST.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/康复辅助/腕关节康复感知_D435i/腕关节与前臂专项/改进腕部运动学模型用于人机交互/改进腕部运动学模型用于人机交互_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/康复辅助/腕关节康复感知_D435i/腕关节与前臂专项/自适应学习协作机器人上肢康复训练系统/自适应学习协作机器人上肢康复训练系统_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/康复辅助/腕关节康复感知_D435i/运动质量评价指标/LIST.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/康复辅助/腕关节康复感知_D435i/运动质量评价指标/Longhi2016：卒中上肢功能评估的仪器化指标效度验证/Longhi2016：卒中上肢功能评估的仪器化指标效度验证_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/康复辅助/腕关节康复感知_D435i/运动质量评价指标/Mei2026：面向康复训练的传感器化运动质量评估与生物反馈综述/Mei2026：面向康复训练的传感器化运动质量评估与生物反馈综述_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/康复辅助/腕关节康复感知_D435i/运动质量评价指标/通过分类和平滑度分析简化自动神经康复/通过分类和平滑度分析简化自动神经康复_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/整合系统/sEMG_原始参照论文/Wei2024：基于 sEMG 的上肢康复连续运动意图预测综述/Wei2024：基于 sEMG 的上肢康复连续运动意图预测综述_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/整合系统/sEMG_原始参照论文/Wei2026-JBHI：肌肉解剖与 Seq2Seq 翻译的 sEMG 关节运动学预测/Wei2026-JBHI：肌肉解剖与 Seq2Seq 翻译的 sEMG 关节运动学预测_reconstruction.md",
+   "escaping": 0,
+   "root": 2
+  },
+  {
+   "file": "01_参考论文/整合系统/sEMG_原始参照论文/Wei2026-JBHI：肌肉解剖与 Seq2Seq 翻译的 sEMG 关节运动学预测/Wei2026-JBHI：肌肉解剖与 Seq2Seq 翻译的 sEMG 关节运动学预测_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/整合系统/决策模型线_JEV/D1_JEV本体与SystemOne范式/LIST.md",
+   "escaping": 0,
+   "root": 2
+  },
+  {
+   "file": "01_参考论文/整合系统/决策模型线_JEV/D2_独立评测与反驳/LIST.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/整合系统/决策模型线_JEV/D3_开源复现与替代/LIST.md",
+   "escaping": 0,
+   "root": 2
+  },
+  {
+   "file": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/LIST.md",
+   "escaping": 0,
+   "root": 8
+  },
+  {
+   "file": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/LIST.md",
+   "escaping": 0,
+   "root": 7
+  },
+  {
+   "file": "01_参考论文/整合系统/决策模型线_JEV/D6_康复侧既有实证/LIST.md",
+   "escaping": 0,
+   "root": 3
+  },
+  {
+   "file": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+   "escaping": 0,
+   "root": 63
+  },
+  {
+   "file": "01_参考论文/整合系统/决策模型线_JEV/取件入口.md",
+   "escaping": 1,
+   "root": 0
+  },
+  {
+   "file": "01_参考论文/整合系统/生物力学线/取件入口.md",
+   "escaping": 1,
+   "root": 0
+  },
+  {
+   "file": "01_参考论文/运动理解/METRO/METRO：Transformer 端到端人体姿态与网格重建/METRO：Transformer 端到端人体姿态与网格重建_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/运动理解/OpenCap_传统生物力学/MarkerlessReview2021：视频无标记动捕临床康复生物力学综述/MarkerlessReview2021：视频无标记动捕临床康复生物力学综述_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/运动理解/OpenCap_传统生物力学/OpenCap-Monocular：单目智能手机视频捕捉人体运动动力学/OpenCap-Monocular：单目智能手机视频捕捉人体运动动力学_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/运动理解/OpenCap_传统生物力学/OpenCap：从智能手机视频获取人体运动动力学/OpenCap：从智能手机视频获取人体运动动力学_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/运动理解/PoseFormer_MotionBERT/MotionAGFormer：Transformer-GCNFormer 增强三维人体姿态估计/MotionAGFormer：Transformer-GCNFormer 增强三维人体姿态估计_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/运动理解/PoseFormer_MotionBERT/MotionBERT：从异构数据源学习人体运动表征/MotionBERT：从异构数据源学习人体运动表征_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/运动理解/PoseFormer_MotionBERT/PoseFormerV2：频域高效鲁棒的 3D 人体姿态估计/PoseFormerV2：频域高效鲁棒的 3D 人体姿态估计_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/运动理解/PoseFormer_MotionBERT/PoseFormer：时空 Transformer 的 3D 人体姿态估计/PoseFormer：时空 Transformer 的 3D 人体姿态估计_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/运动理解/RGB_直接竞品_2026_Chao/Chao2026：单目 RGB 相机的下肢关节角度估计/Chao2026：单目 RGB 相机的下肢关节角度估计_reconstruction.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/运动理解/RGB_直接竞品_2026_Chao/Chao2026：单目 RGB 相机的下肢关节角度估计/Chao2026：单目 RGB 相机的下肢关节角度估计_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/运动理解/RGB_直接竞品_2026_Chao/Jamsrandorj2023：单相机 CNN-Transformer 的步态时空参数估计/Jamsrandorj2023：单相机 CNN-Transformer 的步态时空参数估计_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/运动理解/RGB_角度估计_2022_EMBC/Jamsrandorj2022-EMBC：视角无关的膝肘关节角度深度学习估计/Jamsrandorj2022-EMBC：视角无关的膝肘关节角度深度学习估计_reconstruction.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/运动理解/RGB_角度估计_2022_EMBC/Jamsrandorj2022-EMBC：视角无关的膝肘关节角度深度学习估计/Jamsrandorj2022-EMBC：视角无关的膝肘关节角度深度学习估计_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/运动理解/RGB_角度估计_2022_EMBC/Jamsrandorj2022-Wearable：腰戴混合 CNN-RNN 的步态事件预测/Jamsrandorj2022-Wearable：腰戴混合 CNN-RNN 的步态事件预测_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/运动理解/RGB_角度估计_2022_EMBC/Kumar2022：深度学习从视觉系统预测下肢运动学/Kumar2022：深度学习从视觉系统预测下肢运动学_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/运动理解/TokenHMR_PoseTokens/TokenHMR：令牌化姿态表示的人体网格恢复/TokenHMR：令牌化姿态表示的人体网格恢复_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/运动理解/Transformer_发展线/README.md",
+   "escaping": 1,
+   "root": 1
+  },
+  {
+   "file": "01_参考论文/运动理解/Transformer_发展线/index.json",
+   "escaping": 0,
+   "root": 93
+  },
+  {
+   "file": "01_参考论文/运动理解/Transformer_发展线/取件入口.md",
+   "escaping": 1,
+   "root": 0
+  },
+  {
+   "file": "01_参考论文/运动理解/ViT_HMR_2.0/HMR2.0：4DHumans 基于 Transformer 的人体重建与跟踪/HMR2.0：4DHumans 基于 Transformer 的人体重建与跟踪_翻译导读.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "02_创新点矩阵/Transformer前沿到上肢康复创新点矩阵.md",
+   "escaping": 0,
+   "root": 2
+  },
+  {
+   "file": "02_创新点矩阵/创新点查重_vs_竞品.md",
+   "escaping": 0,
+   "root": 2
+  },
+  {
+   "file": "04_实验设计/D435i_四问任务包/历史归档/D435i_四问可行性回答.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "04_实验设计/D435i_四问任务包/历史归档/D435i_实验方案与风险清单.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "04_实验设计/ISB坐标定义抄录.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "04_实验设计/数据集与协议.md",
+   "escaping": 0,
+   "root": 3
+  },
+  {
+   "file": "04_实验设计/评价指标.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "06_附录/Transformer语料工具/README.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "06_附录/Transformer语料工具/build_index.py",
+   "escaping": 0,
+   "root": 6
+  },
+  {
+   "file": "06_附录/Transformer语料工具/build_page.py",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "06_附录/Transformer语料工具/corpus_resolved.json",
+   "escaping": 0,
+   "root": 8
+  },
+  {
+   "file": "06_附录/Transformer语料工具/download_pdfs.py",
+   "escaping": 0,
+   "root": 2
+  },
+  {
+   "file": "06_附录/Transformer语料工具/fetch_arxiv.py",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "06_附录/Transformer语料工具/fetch_oa.py",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "06_附录/Transformer语料工具/gen_cards.py",
+   "escaping": 0,
+   "root": 2
+  },
+  {
+   "file": "06_附录/Transformer语料工具/verify_citations.py",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "06_附录/Transformer语料工具/翻译/README.md",
+   "escaping": 0,
+   "root": 4
+  },
+  {
+   "file": "06_附录/Transformer语料工具/翻译/tf_extract.sh",
+   "escaping": 0,
+   "root": 2
+  },
+  {
+   "file": "06_附录/Transformer语料工具/翻译/tf_manifest.py",
+   "escaping": 0,
+   "root": 3
+  },
+  {
+   "file": "06_附录/Transformer语料工具/翻译/tf_run_all.sh",
+   "escaping": 0,
+   "root": 2
+  },
+  {
+   "file": "06_附录/gen_acquisition_list.py",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "06_附录/决策模型工具/build_directions.py",
+   "escaping": 0,
+   "root": 7
+  },
+  {
+   "file": "06_附录/决策模型工具/build_jev.py",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "06_附录/决策模型工具/gen_jev_cards.py",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "06_附录/决策模型工具/jev_candidates.json",
+   "escaping": 0,
+   "root": 19
+  },
+  {
+   "file": "06_附录/决策模型工具/jev_web_archive.py",
+   "escaping": 0,
+   "root": 2
+  },
+  {
+   "file": "06_附录/生物力学语料工具/README.md",
+   "escaping": 0,
+   "root": 3
+  },
+  {
+   "file": "06_附录/生物力学语料工具/bm3_fetch.py",
+   "escaping": 0,
+   "root": 3
+  },
+  {
+   "file": "06_附录/生物力学语料工具/bm3_ingest.py",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "06_附录/生物力学语料工具/bm3_probe.py",
+   "escaping": 0,
+   "root": 2
+  },
+  {
+   "file": "06_附录/生物力学语料工具/build_biomech.py",
+   "escaping": 0,
+   "root": 6
+  },
+  {
+   "file": "06_附录/生物力学语料工具/build_page_biomech.py",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "06_附录/生物力学语料工具/download_oa.py",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "06_附录/生物力学语料工具/fetch_epmc_supp.py",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "06_附录/生物力学语料工具/mine_fulltext.py",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "06_附录/生物力学语料工具/recover_oa.py",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "06_附录/生物力学语料工具/snowball_v9e.py",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "06_附录/缺口台账.md",
+   "escaping": 0,
+   "root": 16
+  },
+  {
+   "file": "06_附录/自检脚本/verify_kb.sh",
+   "escaping": 0,
+   "root": 7
+  },
+  {
+   "file": "06_附录/补充材料/Pohl2026_JMIR_RAT_10.2196-87339/_来源.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "10_研究方向/R1_AAN介入决策/建议.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "10_研究方向/README.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "10_研究方向/主动参与与训练强度_链路研究/全文证据摘录.json",
+   "escaping": 0,
+   "root": 6
+  },
+  {
+   "file": "10_研究方向/主动参与与训练强度_链路研究/宋嵘团队追踪.md",
+   "escaping": 0,
+   "root": 14
+  },
+  {
+   "file": "10_研究方向/主动参与与训练强度_链路研究/已取得最近工作_方法参照深核.md",
+   "escaping": 0,
+   "root": 2
+  },
+  {
+   "file": "10_研究方向/主动参与与训练强度_链路研究/心理参与补核.md",
+   "escaping": 0,
+   "root": 2
+  },
+  {
+   "file": "10_研究方向/主动参与与训练强度_链路研究/文献台账.json",
+   "escaping": 0,
+   "root": 141
+  },
+  {
+   "file": "10_研究方向/主动参与与训练强度_链路研究/文献对照_原文定位.json",
+   "escaping": 0,
+   "root": 55
+  },
+  {
+   "file": "10_研究方向/主动参与与训练强度_链路研究/本地文献盘点.json",
+   "escaping": 0,
+   "root": 483
+  },
+  {
+   "file": "10_研究方向/主动参与与训练强度_链路研究/本地目标定义_原文定位.json",
+   "escaping": 0,
+   "root": 4
+  },
+  {
+   "file": "10_研究方向/主动参与与训练强度_链路研究/检索与筛选说明.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "10_研究方向/主动参与与训练强度_链路研究/研究范围与指标.md",
+   "escaping": 0,
+   "root": 4
+  },
+  {
+   "file": "10_研究方向/主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md",
+   "escaping": 0,
+   "root": 1
+  },
+  {
+   "file": "10_研究方向/主动参与与训练强度_链路研究/近期研究_原文定位.json",
+   "escaping": 0,
+   "root": 4
+  },
+  {
+   "file": "HANDOFF.md",
+   "escaping": 0,
+   "root": 5
+  },
+  {
+   "file": "INDEX.md",
+   "escaping": 0,
+   "root": 19
+  },
+  {
+   "file": "STATUS.md",
+   "escaping": 0,
+   "root": 11
+  }
+ ]
+}

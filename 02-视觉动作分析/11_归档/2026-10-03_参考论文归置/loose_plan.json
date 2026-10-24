@@ -1,0 +1,266 @@
+[
+ {
+  "path": "01_参考论文/1-s2.0-S0021929013005848-main.pdf",
+  "doi": "10.1016/j.jbiomech.2013.11.031",
+  "action": "DELETE_SAMEDOI",
+  "why": "同 DOI 已有 生物力学线/B1_视觉运动学_估计与验证方法学/Accuracy and repeatability of joint angles measured using a.pdf"
+ },
+ {
+  "path": "01_参考论文/1-s2.0-S0021929019303847-main.pdf",
+  "doi": "10.1016/j.jbiomech.2019.05.040",
+  "action": "MOVE",
+  "why": "语料三 B1/M1（等级 A）尚无磁盘全文"
+ },
+ {
+  "path": "01_参考论文/1-s2.0-S0021929024001969-main.pdf",
+  "doi": "10.1016/j.jbiomech.2024.112118",
+  "action": "DELETE_SAMEDOI",
+  "why": "同 DOI 已有 生物力学线/B2_肌肉骨骼动力学_与可微仿真/Validity of muscle activation estimated with predicted groun.pdf"
+ },
+ {
+  "path": "01_参考论文/1-s2.0-S0021929025004178-main.pdf",
+  "doi": "10.1016/j.jbiomech.2025.112905",
+  "action": "DELETE_SAMEDOI",
+  "why": "同 DOI 已有 生物力学线/B1_视觉运动学_估计与验证方法学/Comparison of shoulder kinematics between Theia 3D markerles.pdf"
+ },
+ {
+  "path": "01_参考论文/1-s2.0-S0263224115006120-main.pdf",
+  "doi": "10.1016/j.measurement.2015.11.026",
+  "action": "DELETE_SAMEDOI",
+  "why": "同 DOI 已有 生物力学线/B3_上肢康复_代偿与临床评估/A clinically feasible kinematic assessment method of upper e.pdf"
+ },
+ {
+  "path": "01_参考论文/1-s2.0-S0925231225027985-main.pdf",
+  "doi": "10.1016/j.neucom.2025.132126",
+  "action": "DELETE_SAMEDOI",
+  "why": "同 DOI 已有 生物力学线/B4_离散运动学token_与表征量化/Masked reconstruction model of latent space vector quantizat.pdf"
+ },
+ {
+  "path": "01_参考论文/1-s2.0-S2210983811000204-main.pdf",
+  "doi": "10.1016/j.piutam.2011.04.019",
+  "action": "DELETE_SAMEDOI",
+  "why": "同 DOI 已有 生物力学线/B2_肌肉骨骼动力学_与可微仿真/Simulation of human movement_ applications using OpenSim.pdf"
+ },
+ {
+  "path": "01_参考论文/1-s2.0-S2210983811000289-main.pdf",
+  "doi": "10.1016/j.piutam.2011.04.027",
+  "action": "DELETE_SAMEDOI",
+  "why": "同 DOI 已有 生物力学线/B2_肌肉骨骼动力学_与可微仿真/Implicit methods for efficient musculoskeletal simulation an.pdf"
+ },
+ {
+  "path": "01_参考论文/3664647.3680568 (1).pdf",
+  "doi": "10.1145/3664647",
+  "action": "DELETE_BYTE",
+  "why": "与 生物力学线/B1_视觉运动学_估计与验证方法学/Translating Motion to Notation_ Hand Labanotation for Intuit.pdf 字节相同"
+ },
+ {
+  "path": "01_参考论文/Exoskeleton_for_forearm_pronation_and_supination_rehabilitation.pdf",
+  "doi": "",
+  "action": "ADJUDICATE",
+  "why": "既不在语料三索引，也无全库同 DOI 副本"
+ },
+ {
+  "path": "01_参考论文/Hum Ftrs   Erg Mfg Svc - 2020 - Steinebach - Accuracy evaluation of two markerless motion capture systems for measurement (1).pdf",
+  "doi": "10.1002/hfm.20840",
+  "action": "DELETE_SAMEDOI",
+  "why": "同 DOI 已有 生物力学线/B1_视觉运动学_估计与验证方法学/Accuracy evaluation of two markerless motion capture systems.pdf"
+ },
+ {
+  "path": "01_参考论文/Inverse_Estimation_of_Multiple_Muscle_Activations_From_Joint_Moment_With_Muscle_Synergy_Extraction.pdf",
+  "doi": "10.1109/jbhi.2014.2342274",
+  "action": "DELETE_SAMEDOI",
+  "why": "同 DOI 已有 生物力学线/B2_肌肉骨骼动力学_与可微仿真/Inverse Estimation of Multiple Muscle Activations From Joint.pdf"
+ },
+ {
+  "path": "01_参考论文/Journal of Anatomy - 2018 - Hik - The moment arms of the muscles spanning the glenohumeral joint  a systematic review (1).pdf",
+  "doi": "10.1111/joa.12903",
+  "action": "DELETE_BYTE",
+  "why": "与 生物力学线/B2_肌肉骨骼动力学_与可微仿真/The moment arms of the muscles spanning the glenohumeral joi.pdf 字节相同"
+ },
+ {
+  "path": "01_参考论文/Kinematic_Data_Analysis_for_Post-Stroke_Patients_Following_Bilateral_Versus_Unilateral_Rehabilitation_With_an_Upper_Limb_Wearable_Robotic_System.pdf",
+  "doi": "10.1109/tnsre.2012.2207462",
+  "action": "DELETE_SAMEDOI",
+  "why": "同 DOI 已有 生物力学线/B3_上肢康复_代偿与临床评估/Kinematic Data Analysis for Post-Stroke Patients Following B.pdf"
+ },
+ {
+  "path": "01_参考论文/Learning-Based_Inverse_Dynamics_of_Human_Motion.pdf",
+  "doi": "10.1109/iccvw.2017.104",
+  "action": "DELETE_SAMEDOI",
+  "why": "同 DOI 已有 生物力学线/B5_视觉运动学到动力学_桥接/Learning-Based Inverse Dynamics of Human Motion.pdf"
+ },
+ {
+  "path": "01_参考论文/Numer Methods Biomed Eng - 2023 - Denton - Computational performance of musculoskeletal simulation in OpenSim Moco using (1).pdf",
+  "doi": "10.1002/cnm.3777",
+  "action": "MOVE",
+  "why": "语料三 B2/M2（等级 A）尚无磁盘全文"
+ },
+ {
+  "path": "01_参考论文/Numer Methods Biomed Eng - 2023 - Denton - Computational performance of musculoskeletal simulation in OpenSim Moco using.pdf",
+  "doi": "10.1002/cnm.3777",
+  "action": "MOVE",
+  "why": "语料三 B2/M2（等级 A）尚无磁盘全文"
+ },
+ {
+  "path": "01_参考论文/Review_MUBO_25thanniversary.pdf",
+  "doi": "",
+  "action": "DELETE_BYTE",
+  "why": "与 生物力学线/B2_肌肉骨骼动力学_与可微仿真/Predictive Multibody Dynamic Simulation of Human Neuromuscul.pdf 字节相同"
+ },
+ {
+  "path": "01_参考论文/Scandinavian Med Sci Sports - 2023 - Van Hooren - The accuracy of markerless motion capture combined with computer vision.pdf",
+  "doi": "10.1111/sms.14319",
+  "action": "MOVE",
+  "why": "语料三 B1/M0（等级 A）尚无磁盘全文"
+ },
+ {
+  "path": "01_参考论文/Vision-Based_Approximate_Estimation_of_Muscle_Activation_Patterns_for_Tele-Impedance.pdf",
+  "doi": "10.1109/lra.2023.3293275",
+  "action": "DELETE_SAMEDOI",
+  "why": "同 DOI 已有 生物力学线/B5_视觉运动学到动力学_桥接/Vision-Based Approximate Estimation of Muscle Activation Pat.pdf"
+ },
+ {
+  "path": "01_参考论文/Vision-based_Automatic_Detection_of_Compensatory_Postures_of_after-Stroke_Patients_During_Upper-extremity_Robot-assisted_Rehabilitation_A_Pilot_Study_in_Reaching_Movement.pdf",
+  "doi": "10.1109/icaretech49914.2020.00019",
+  "action": "DELETE_SAMEDOI",
+  "why": "同 DOI 已有 生物力学线/B3_上肢康复_代偿与临床评估/Vision-based Automatic Detection of Compensatory Postures of.pdf"
+ },
+ {
+  "path": "01_参考论文/nihms240588.pdf",
+  "doi": "10.1109/tbme.2008.2005946",
+  "action": "DELETE_BYTE",
+  "why": "与 生物力学线/B2_肌肉骨骼动力学_与可微仿真/A Real-Time, 3-D Musculoskeletal Model for Dynamic Simulatio.pdf 字节相同"
+ },
+ {
+  "path": "01_参考论文/nihms679795.pdf",
+  "doi": "10.1016/j.physio.2015.02.002",
+  "action": "DELETE_BYTE",
+  "why": "与 生物力学线/B1_视觉运动学_估计与验证方法学/Validity and reliability of Kinect skeleton for measuring sh.pdf 字节相同"
+ },
+ {
+  "path": "01_参考论文/nihms693964.pdf",
+  "doi": "10.1007/s10439-014-1181-7",
+  "action": "DELETE_BYTE",
+  "why": "与 生物力学线/B2_肌肉骨骼动力学_与可微仿真/A Probabilistic Approach to Quantify the Impact of Uncertain.pdf 字节相同"
+ },
+ {
+  "path": "01_参考论文/nihms820582.pdf",
+  "doi": "10.1016/j.apmr.2016.06.023",
+  "action": "DELETE_BYTE",
+  "why": "与 生物力学线/B3_上肢康复_代偿与临床评估/Determining Levels of Upper Extremity Movement Impairment by.pdf 字节相同"
+ },
+ {
+  "path": "01_参考论文/pzab010.pdf",
+  "doi": "10.1093/ptj/pzab010",
+  "action": "DELETE_SAMEDOI",
+  "why": "同 DOI 已有 生物力学线/B3_上肢康复_代偿与临床评估/Robot-Assisted Therapy for Upper Extremity Motor Impairment.pdf"
+ },
+ {
+  "path": "01_参考论文/s11044-011-9297-0.pdf",
+  "doi": "10.1007/s11044-011-9297-0",
+  "action": "MOVE",
+  "why": "语料三 B2/M2（等级 B）尚无磁盘全文"
+ },
+ {
+  "path": "01_参考论文/20261001/0021-9290%2894%2990062-0.pdf",
+  "doi": "",
+  "action": "ADJUDICATE",
+  "why": "既不在语料三索引，也无全库同 DOI 副本"
+ },
+ {
+  "path": "01_参考论文/20261001/1-s2.0-S0021929007701884-main.pdf",
+  "doi": "",
+  "action": "ADJUDICATE",
+  "why": "既不在语料三索引，也无全库同 DOI 副本"
+ },
+ {
+  "path": "01_参考论文/20261001/Comparison_and_Reliability_of_Three_Goniometric_Methods_for_Measuring_Forearm_Supination_and_Pronation.pdf",
+  "doi": "",
+  "action": "ADJUDICATE",
+  "why": "既不在语料三索引，也无全库同 DOI 副本"
+ },
+ {
+  "path": "01_参考论文/20261001/Journal of Biomechanics 38 (2005) doi10.1016 j.jbiomech.2004.05.042.pdf",
+  "doi": "10.1016/j.jbiomech.2004.05.042",
+  "action": "MOVE",
+  "why": "语料三 B1/M0（等级 A）尚无磁盘全文"
+ },
+ {
+  "path": "01_参考论文/20261001/Numer Methods Biomed Eng - 2023 - Denton - Computational performance of musculoskeletal simulation in OpenSim Moco using.pdf",
+  "doi": "10.1002/cnm.3777",
+  "action": "MOVE",
+  "why": "语料三 B2/M2（等级 A）尚无磁盘全文"
+ },
+ {
+  "path": "01_参考论文/20261001/PIIS0268003302000347.pdf",
+  "doi": "",
+  "action": "ADJUDICATE",
+  "why": "既不在语料三索引，也无全库同 DOI 副本"
+ },
+ {
+  "path": "01_参考论文/20261001/Scandinavian Med Sci Sports - 2023 - Van Hooren - The accuracy of markerless motion capture combined with computer vision.pdf",
+  "doi": "10.1111/sms.14319",
+  "action": "MOVE",
+  "why": "语料三 B1/M0（等级 A）尚无磁盘全文"
+ },
+ {
+  "path": "01_参考论文/20261001/estimation-of-muscle-forces-and-joint-moments-using-a.pdf",
+  "doi": "10.1249/01.mss.0000176684.24008.6f",
+  "action": "MOVE",
+  "why": "语料三 B2/M2（等级 A）尚无磁盘全文"
+ },
+ {
+  "path": "01_参考论文/20261001/hfm.20840.pdf",
+  "doi": "10.1002/hfm.20840",
+  "action": "DELETE_SAMEDOI",
+  "why": "同 DOI 已有 生物力学线/B1_视觉运动学_估计与验证方法学/Accuracy evaluation of two markerless motion capture systems.pdf"
+ },
+ {
+  "path": "01_参考论文/20261001/j.apmr.2007.05.012.pdf",
+  "doi": "10.1016/j.apmr.2007.05.012",
+  "action": "MOVE",
+  "why": "语料三 B3/M4（等级 A）尚无磁盘全文"
+ },
+ {
+  "path": "01_参考论文/20261001/j.gaitpost.2009.07.111.pdf",
+  "doi": "10.1016/j.gaitpost.2009.07.111",
+  "action": "MOVE",
+  "why": "语料三 B1/M0（等级 A）尚无磁盘全文"
+ },
+ {
+  "path": "01_参考论文/20261001/jab.28.2.127.pdf",
+  "doi": "",
+  "action": "ADJUDICATE",
+  "why": "既不在语料三索引，也无全库同 DOI 副本"
+ },
+ {
+  "path": "01_参考论文/20261001/s0268-0033%2800%2900082-6.pdf",
+  "doi": "",
+  "action": "ADJUDICATE",
+  "why": "既不在语料三索引，也无全库同 DOI 副本"
+ },
+ {
+  "path": "01_参考论文/20261001/s0268-0033%2802%2900034-7.pdf",
+  "doi": "",
+  "action": "ADJUDICATE",
+  "why": "既不在语料三索引，也无全库同 DOI 副本"
+ },
+ {
+  "path": "01_参考论文/20261001/s0749-0712%2821%2900605-3.pdf",
+  "doi": "",
+  "action": "ADJUDICATE",
+  "why": "既不在语料三索引，也无全库同 DOI 副本"
+ },
+ {
+  "path": "01_参考论文/20261001/s11044-011-9297-0.pdf",
+  "doi": "10.1007/s11044-011-9297-0",
+  "action": "MOVE",
+  "why": "语料三 B2/M2（等级 B）尚无磁盘全文"
+ },
+ {
+  "path": "01_参考论文/20261001/shoulder-and-elbow-joint-angle-estimation-for-upper-limb-rehabilitation-tasks-using-low-cost-inertial-and-optical.pdf",
+  "doi": "10.1142/s0219519417500312",
+  "action": "MOVE",
+  "why": "语料三 B1/M1（等级 B）尚无磁盘全文"
+ }
+]

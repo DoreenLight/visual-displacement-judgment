@@ -1,0 +1,20 @@
+{
+  "schema": "rehab-research-material-decision/v1",
+  "checked_date": "2026-10-03",
+  "user_question": "公开分支之外，既有资料是否包含独立的物理贡献、心理参与评价参照，以及真实辅助记录？",
+  "user_answer_verbatim": "只有已给工程资料",
+  "interpretation_by_assistant": "当前无额外参照索引可用；只以已读指定分支材料核验，不推定世界上不存在其他资料，不推定参与者健康或临床身份。已读分支未给出可核独立身心参照及真实辅助暴露。",
+  "construct_decision_retained": "物理主动贡献与心理参与分别评价；原目标不变",
+  "candidate_state": {
+    "C1": "不可进入当前论文方向定案：独立物理/心理参照及混杂验证条件不足",
+    "C2": "不可进入当前论文方向定案：C1条件、独立错误调整参照及真实应用记录不足",
+    "C3": "不可进入当前论文方向定案：可比较患者训练/真实辅助暴露不足；RL2026已有泛化联合适配先例"
+  },
+  "confirmed_innovations": 0,
+  "literature_pending_originals": 7,
+  "important_distinction": "补原件可核已有工作差异，但不会自动提供患者双构念验证条件；两类缺口分别处理。",
+  "status": "INNOVATION_AND_WHOLE_GOAL_ACCEPTANCE_UNRESOLVED_PAUSE_REQUIRED",
+  "next_decision_owner": "用户/老师",
+  "next_decision": "在原目标不变时确认可用验证条件后再裁；若只能依现有工程资料改变范围，由用户明确变更目标，助手不自动收窄。",
+  "no_new_collection_or_rerun_requested": true
+}

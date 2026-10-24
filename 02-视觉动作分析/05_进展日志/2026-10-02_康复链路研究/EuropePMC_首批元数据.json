@@ -1,0 +1,2825 @@
+{
+  "control_review": {
+    "query": "DOI:10.3389/frobt.2021.745018",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.3389%2Ffrobt.2021.745018&format=json&resultType=core&pageSize=3",
+    "result": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "DOI:10.3389/frobt.2021.745018",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 3,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "34950707",
+            "source": "MED",
+            "pmid": "34950707",
+            "pmcid": "PMC8688994",
+            "fullTextIdList": {
+              "fullTextId": [
+                "PMC8688994"
+              ]
+            },
+            "doi": "10.3389/frobt.2021.745018",
+            "title": "Review on Patient-Cooperative Control Strategies for Upper-Limb Rehabilitation Exoskeletons.",
+            "authorString": "Dalla Gasperina S, Roveda L, Pedrocchi A, Braghin F, Gandolla M.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Dalla Gasperina S",
+                  "lastName": "Dalla Gasperina",
+                  "firstName": "Stefano",
+                  "initials": "S",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-3466-8397"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "NearLab, Department of Electronics, Information and Bioengineering, Politecnico di Milano, Milan, Italy."
+                      },
+                      {
+                        "affiliation": "WE-COBOT Lab, Polo Territoriale di Lecco, Politecnico di Milano, Lecco, Italy."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Roveda L",
+                  "lastName": "Roveda",
+                  "firstName": "Loris",
+                  "initials": "L",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Istituto Dalle Molle di studi sull'Intelligenza Artificiale (IDSIA), USI-SUPSI, Lugano, Switzerland."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Pedrocchi A",
+                  "lastName": "Pedrocchi",
+                  "firstName": "Alessandra",
+                  "initials": "A",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "NearLab, Department of Electronics, Information and Bioengineering, Politecnico di Milano, Milan, Italy."
+                      },
+                      {
+                        "affiliation": "WE-COBOT Lab, Polo Territoriale di Lecco, Politecnico di Milano, Lecco, Italy."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Braghin F",
+                  "lastName": "Braghin",
+                  "firstName": "Francesco",
+                  "initials": "F",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "WE-COBOT Lab, Polo Territoriale di Lecco, Politecnico di Milano, Lecco, Italy."
+                      },
+                      {
+                        "affiliation": "Department of Mechanical Engineering, Politecnico di Milano, Milan, Italy."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Gandolla M",
+                  "lastName": "Gandolla",
+                  "firstName": "Marta",
+                  "initials": "M",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "WE-COBOT Lab, Polo Territoriale di Lecco, Politecnico di Milano, Lecco, Italy."
+                      },
+                      {
+                        "affiliation": "Department of Mechanical Engineering, Politecnico di Milano, Milan, Italy."
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "authorIdList": {
+              "authorId": [
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-3466-8397"
+                }
+              ]
+            },
+            "dataLinksTagsList": {
+              "dataLinkstag": [
+                "altmetrics",
+                "supporting_data"
+              ]
+            },
+            "journalInfo": {
+              "volume": "8",
+              "journalIssueId": 3127435,
+              "dateOfPublication": "2021 ",
+              "monthOfPublication": 0,
+              "yearOfPublication": 2021,
+              "journal": {
+                "medlineAbbreviation": "Front Robot AI",
+                "title": "Frontiers in robotics and AI",
+                "essn": "2296-9144",
+                "issn": "2296-9144",
+                "isoabbreviation": "Front Robot AI",
+                "nlmid": "101749350"
+              },
+              "printPublicationDate": "2021-01-01"
+            },
+            "pubYear": "2021",
+            "pageInfo": "745018",
+            "abstractText": "Technology-supported rehabilitation therapy for neurological patients has gained increasing interest since the last decades. The literature agrees that the goal of robots should be to induce motor plasticity in subjects undergoing rehabilitation treatment by providing the patients with repetitive, intensive, and task-oriented treatment. As a key element, robot controllers should adapt to patients' status and recovery stage. Thus, the design of effective training modalities and their hardware implementation play a crucial role in robot-assisted rehabilitation and strongly influence the treatment outcome. The objective of this paper is to provide a multi-disciplinary vision of patient-cooperative control strategies for upper-limb rehabilitation exoskeletons to help researchers bridge the gap between human motor control aspects, desired rehabilitation training modalities, and their hardware implementations. To this aim, we propose a three-level classification based on 1) \"high-level\" training modalities, 2) \"low-level\" control strategies, and 3) \"hardware-level\" implementation. Then, we provide examples of literature upper-limb exoskeletons to show how the three levels of implementation have been combined to obtain a given high-level behavior, which is specifically designed to promote motor relearning during the rehabilitation treatment. Finally, we emphasize the need for the development of compliant control strategies, based on the collaboration between the exoskeleton and the wearer, we report the key findings to promote the desired physical human-robot interaction for neurorehabilitation, and we provide insights and suggestions for future works.",
+            "affiliation": "NearLab, Department of Electronics, Information and Bioengineering, Politecnico di Milano, Milan, Italy.",
+            "publicationStatus": "epublish",
+            "language": "eng",
+            "pubModel": "Electronic-eCollection",
+            "pubTypeList": {
+              "pubType": [
+                "review-article",
+                "Review",
+                "Journal Article"
+              ]
+            },
+            "grantsList": {
+              "grant": [
+                {
+                  "agency": "Regione Lombardia",
+                  "orderIn": 0
+                }
+              ]
+            },
+            "keywordList": {
+              "keyword": [
+                "Neurorehabilitation",
+                "Rehabilitation Robotics",
+                "Motor Recovery",
+                "Robot Control",
+                "Physical Human-robot Interaction",
+                "Upper-limb Exoskeletons"
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "pdf",
+                  "site": "Unpaywall",
+                  "url": "https://www.frontiersin.org/articles/10.3389/frobt.2021.745018/pdf"
+                },
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.3389/frobt.2021.745018"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "html",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC8688994"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "pdf",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC8688994?pdf=render"
+                }
+              ]
+            },
+            "isOpenAccess": "Y",
+            "inEPMC": "Y",
+            "inPMC": "Y",
+            "citedByCount": 36,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "Y",
+            "hasBook": "N",
+            "hasSuppl": "N",
+            "hasLabsLinks": "Y",
+            "hasData": "Y",
+            "license": "cc by",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "Y",
+            "tmAccessionTypeList": {
+              "accessionType": [
+                "doi"
+              ]
+            },
+            "dateOfCreation": "2021-12-24",
+            "dateOfRevision": "2021-12-25",
+            "electronicPublicationDate": "2021-12-07",
+            "firstPublicationDate": "2021-12-07",
+            "firstIndexDate": "2021-12-25",
+            "fullTextReceivedDate": "2025-02-04",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  },
+  "participation_review": {
+    "query": "DOI:10.2196/44948",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.2196%2F44948&format=json&resultType=core&pageSize=3",
+    "result": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "DOI:10.2196/44948",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 3,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "38718385",
+            "source": "MED",
+            "pmid": "38718385",
+            "pmcid": "PMC11112465",
+            "fullTextIdList": {
+              "fullTextId": [
+                "PMC11112465"
+              ]
+            },
+            "doi": "10.2196/44948",
+            "title": "Characteristic Changes of the Stance-Phase Plantar Pressure Curve When Walking Uphill and Downhill: Cross-Sectional Study.",
+            "authorString": "Wolff C, Steinheimer P, Warmerdam E, Dahmen T, Slusallek P, Schlinkmann C, Chen F, Orth M, Pohlemann T, Ganse B.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Wolff C",
+                  "lastName": "Wolff",
+                  "firstName": "Christian",
+                  "initials": "C",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0009-0004-0556-3336"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "German Research Center for Artificial Intelligence (DFKI), Saarbrücken, Germany."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Steinheimer P",
+                  "lastName": "Steinheimer",
+                  "firstName": "Patrick",
+                  "initials": "P",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0001-8138-9035"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Trauma, Hand and Reconstructive Surgery, Departments and Institutes of Surgery, Saarland University, Homburg/Saar, Germany."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Warmerdam E",
+                  "lastName": "Warmerdam",
+                  "firstName": "Elke",
+                  "initials": "E",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-2343-7761"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Innovative Implant Development (Fracture Healing), Departments and Institutes of Surgery, Saarland University, Homburg/Saar, Germany."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Dahmen T",
+                  "lastName": "Dahmen",
+                  "firstName": "Tim",
+                  "initials": "T",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0003-4060-7192"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "German Research Center for Artificial Intelligence (DFKI), Saarbrücken, Germany."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Slusallek P",
+                  "lastName": "Slusallek",
+                  "firstName": "Philipp",
+                  "initials": "P",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-2189-2429"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "German Research Center for Artificial Intelligence (DFKI), Saarbrücken, Germany."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Schlinkmann C",
+                  "lastName": "Schlinkmann",
+                  "firstName": "Christian",
+                  "initials": "C",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0009-0002-7638-3039"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "German Research Center for Artificial Intelligence (DFKI), Saarbrücken, Germany."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Chen F",
+                  "lastName": "Chen",
+                  "firstName": "Fei",
+                  "initials": "F",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0001-7890-0330"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "German Research Center for Artificial Intelligence (DFKI), Saarbrücken, Germany."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Orth M",
+                  "lastName": "Orth",
+                  "firstName": "Marcel",
+                  "initials": "M",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0001-8239-2463"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Trauma, Hand and Reconstructive Surgery, Departments and Institutes of Surgery, Saarland University, Homburg/Saar, Germany."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Pohlemann T",
+                  "lastName": "Pohlemann",
+                  "firstName": "Tim",
+                  "initials": "T",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-1288-0696"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Trauma, Hand and Reconstructive Surgery, Departments and Institutes of Surgery, Saarland University, Homburg/Saar, Germany."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Ganse B",
+                  "lastName": "Ganse",
+                  "firstName": "Bergita",
+                  "initials": "B",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-9512-2910"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Trauma, Hand and Reconstructive Surgery, Departments and Institutes of Surgery, Saarland University, Homburg/Saar, Germany."
+                      },
+                      {
+                        "affiliation": "Innovative Implant Development (Fracture Healing), Departments and Institutes of Surgery, Saarland University, Homburg/Saar, Germany."
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "authorIdList": {
+              "authorId": [
+                {
+                  "type": "ORCID",
+                  "value": "0000-0001-7890-0330"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0001-8138-9035"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0001-8239-2463"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-1288-0696"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-2189-2429"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-2343-7761"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-9512-2910"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0003-4060-7192"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0009-0002-7638-3039"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0009-0004-0556-3336"
+                }
+              ]
+            },
+            "dataLinksTagsList": {
+              "dataLinkstag": [
+                "altmetrics"
+              ]
+            },
+            "journalInfo": {
+              "volume": "26",
+              "journalIssueId": 3763093,
+              "dateOfPublication": "2024 May",
+              "monthOfPublication": 5,
+              "yearOfPublication": 2024,
+              "journal": {
+                "medlineAbbreviation": "J Med Internet Res",
+                "title": "Journal of medical Internet research",
+                "essn": "1438-8871",
+                "issn": "1439-4456",
+                "nlmid": "100959882",
+                "isoabbreviation": "J Med Internet Res"
+              },
+              "printPublicationDate": "2024-05-01"
+            },
+            "pubYear": "2024",
+            "pageInfo": "e44948",
+            "abstractText": "<h4>Background</h4>Monitoring of gait patterns by insoles is popular to study behavior and activity in the daily life of people and throughout the rehabilitation process of patients. Live data analyses may improve personalized prevention and treatment regimens, as well as rehabilitation. The M-shaped plantar pressure curve during the stance phase is mainly defined by the loading and unloading slope, 2 maxima, 1 minimum, as well as the force during defined periods. When monitoring gait continuously, walking uphill or downhill could affect this curve in characteristic ways.<h4>Objective</h4>For walking on a slope, typical changes in the stance phase curve measured by insoles were hypothesized.<h4>Methods</h4>In total, 40 healthy participants of both sexes were fitted with individually calibrated insoles with 16 pressure sensors each and a recording frequency of 100 Hz. Participants walked on a treadmill at 4 km/h for 1 minute in each of the following slopes: -20%, -15%, -10%, -5%, 0%, 5%, 10%, 15%, and 20%. Raw data were exported for analyses. A custom-developed data platform was used for data processing and parameter calculation, including step detection, data transformation, and normalization for time by natural cubic spline interpolation and force (proportion of body weight). To identify the time-axis positions of the desired maxima and minimum among the available extremum candidates in each step, a Gaussian filter was applied (σ=3, kernel size 7). Inconclusive extremum candidates were further processed by screening for time plausibility, maximum or minimum pool filtering, and monotony. Several parameters that describe the curve trajectory were computed for each step. The normal distribution of data was tested by the Kolmogorov-Smirnov and Shapiro-Wilk tests.<h4>Results</h4>Data were normally distributed. An analysis of variance with the gait parameters as dependent and slope as independent variables revealed significant changes related to the slope for the following parameters of the stance phase curve: the mean force during loading and unloading, the 2 maxima and the minimum, as well as the loading and unloading slope (all P<.001). A simultaneous increase in the loading slope, the first maximum and the mean loading force combined with a decrease in the mean unloading force, the second maximum, and the unloading slope is characteristic for downhill walking. The opposite represents uphill walking. The minimum had its peak at horizontal walking and values dropped when walking uphill and downhill alike. It is therefore not a suitable parameter to distinguish between uphill and downhill walking.<h4>Conclusions</h4>While patient-related factors, such as anthropometrics, injury, or disease shape the stance phase curve on a longer-term scale, walking on slopes leads to temporary and characteristic short-term changes in the curve trajectory.",
+            "affiliation": "German Research Center for Artificial Intelligence (DFKI), Saarbrücken, Germany.",
+            "publicationStatus": "epublish",
+            "language": "eng",
+            "pubModel": "Electronic",
+            "pubTypeList": {
+              "pubType": [
+                "Research Support, Non-U.S. Gov't",
+                "research-article",
+                "Journal Article"
+              ]
+            },
+            "meshHeadingList": {
+              "meshHeading": [
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Foot",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PH",
+                        "qualifierName": "physiology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Humans"
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Gait",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PH",
+                        "qualifierName": "physiology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Walking",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PH",
+                        "qualifierName": "physiology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Cross-Sectional Studies"
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Pressure"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Adult"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Female"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Male"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Young Adult"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Biomechanical Phenomena"
+                }
+              ]
+            },
+            "keywordList": {
+              "keyword": [
+                "Movement",
+                "Sensors",
+                "Sensor",
+                "Monitoring",
+                "Injury",
+                "Rehabilitation",
+                "Treatment",
+                "Gait",
+                "slope",
+                "Podiatry",
+                "Personalized Medicine",
+                "Gait Analysis",
+                "Ground Reaction Forces",
+                "Movement Analysis",
+                "Postoperative Treatment",
+                "Digital Health",
+                "Podiatric Medicine",
+                "Wearables",
+                "Pedography",
+                "Baropedography"
+              ]
+            },
+            "subsetList": {
+              "subset": [
+                {
+                  "code": "IM",
+                  "name": "Index Medicus"
+                }
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "doi",
+                  "site": "Unpaywall",
+                  "url": "https://doi.org/10.2196/44948"
+                },
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.2196/44948"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "html",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC11112465"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "pdf",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC11112465?pdf=render"
+                }
+              ]
+            },
+            "isOpenAccess": "Y",
+            "inEPMC": "Y",
+            "inPMC": "Y",
+            "citedByCount": 7,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "Y",
+            "hasBook": "N",
+            "hasSuppl": "Y",
+            "hasLabsLinks": "Y",
+            "hasData": "Y",
+            "license": "cc by",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "N",
+            "dateOfCompletion": "2024-05-08",
+            "dateOfCreation": "2024-05-08",
+            "dateOfRevision": "2025-06-12",
+            "electronicPublicationDate": "2024-05-08",
+            "firstPublicationDate": "2024-05-08",
+            "firstIndexDate": "2024-05-09",
+            "fullTextReceivedDate": "2025-02-05",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  },
+  "intensity_review": {
+    "query": "DOI:10.1161/STROKEAHA.121.034348",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1161%2FSTROKEAHA.121.034348&format=json&resultType=core&pageSize=3",
+    "result": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "DOI:10.1161/STROKEAHA.121.034348",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 3,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "34601901",
+            "source": "MED",
+            "pmid": "34601901",
+            "doi": "10.1161/strokeaha.121.034348",
+            "title": "Timing and Dose of Upper Limb Motor Intervention After Stroke: A Systematic Review.",
+            "authorString": "Hayward KS, Kramer SF, Dalton EJ, Hughes GR, Brodtmann A, Churilov L, Cloud G, Corbett D, Jolliffe L, Kaffenberger T, Rethnam V, Thijs V, Ward N, Lannin N, Bernhardt J.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Hayward KS",
+                  "lastName": "Hayward",
+                  "firstName": "Kathryn S",
+                  "initials": "KS",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0001-5240-3264"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Departments of Physiotherapy and Medicine, Florey Institute of Neuroscience and Mental Health (K.S.H.), University of Melbourne, Heidelberg, Australia."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Kramer SF",
+                  "lastName": "Kramer",
+                  "firstName": "Sharon F",
+                  "initials": "SF",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0003-2795-6259"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Centre for Quality and Patient Safety Research, Institute for Health Transformation, and Alfred Health Partnership, Deakin University, Burwood, Australia (S.F.K.)."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Dalton EJ",
+                  "lastName": "Dalton",
+                  "firstName": "Emily J",
+                  "initials": "EJ",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0003-3920-8530"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Physiotherapy (E.J.D.), University of Melbourne, Heidelberg, Australia."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Hughes GR",
+                  "lastName": "Hughes",
+                  "firstName": "Gemma R",
+                  "initials": "GR",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-3077-4256"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Physiotherapy, Austin Health, Heidelberg, Australia (G.R.H.)."
+                      },
+                      {
+                        "affiliation": "Florey Institute of Neuroscience and Mental Health, University of Melbourne, Heidelberg, Australia (G.R.H., A.B., T.K., V.R., V.T., J.B.)."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Brodtmann A",
+                  "lastName": "Brodtmann",
+                  "firstName": "Amy",
+                  "initials": "A",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0001-9466-2862"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Florey Institute of Neuroscience and Mental Health, University of Melbourne, Heidelberg, Australia (G.R.H., A.B., T.K., V.R., V.T., J.B.)."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Churilov L",
+                  "lastName": "Churilov",
+                  "firstName": "Leonid",
+                  "initials": "L",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-9807-6606"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Melbourne Medical School, University of Melbourne, Parkville, Australia (L.C.)."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Cloud G",
+                  "lastName": "Cloud",
+                  "firstName": "Geoffrey",
+                  "initials": "G",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-8365-6907"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Neuroscience, Central Clinical School, Monash University and Alfred Health, Melbourne, Australia (G.C., N.L.)."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Corbett D",
+                  "lastName": "Corbett",
+                  "firstName": "Dale",
+                  "initials": "D",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0003-0217-4576"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Cellular and Molecular Medicine and Canadian Partnership for Stroke Recovery, University of Ottawa, Canada (D.C.)."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Jolliffe L",
+                  "lastName": "Jolliffe",
+                  "firstName": "Laura",
+                  "initials": "L",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-1369-9442"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Neuroscience, Central Clinical School, Monash University, Melbourne, Australia (L.J.)."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Kaffenberger T",
+                  "lastName": "Kaffenberger",
+                  "firstName": "Tina",
+                  "initials": "T",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0001-9848-2666"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Florey Institute of Neuroscience and Mental Health, University of Melbourne, Heidelberg, Australia (G.R.H., A.B., T.K., V.R., V.T., J.B.)."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Rethnam V",
+                  "lastName": "Rethnam",
+                  "firstName": "Venesha",
+                  "initials": "V",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-0493-8536"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Florey Institute of Neuroscience and Mental Health, University of Melbourne, Heidelberg, Australia (G.R.H., A.B., T.K., V.R., V.T., J.B.)."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Thijs V",
+                  "lastName": "Thijs",
+                  "firstName": "Vincent",
+                  "initials": "V",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-6614-8417"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Florey Institute of Neuroscience and Mental Health, University of Melbourne, Heidelberg, Australia (G.R.H., A.B., T.K., V.R., V.T., J.B.)."
+                      },
+                      {
+                        "affiliation": "Neurology, Austin Health, Heidelberg, Australia (V.T.)."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Ward N",
+                  "lastName": "Ward",
+                  "firstName": "Nick",
+                  "initials": "N",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-7688-9649"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Clinical and Movement Neuroscience, UCL Queen Square Institute of Neurology, The National Hospital for Neurology and Neurosurgery, London, United Kingdom (N.W.)."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Lannin N",
+                  "lastName": "Lannin",
+                  "firstName": "Natasha",
+                  "initials": "N",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-2066-8345"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Neuroscience, Central Clinical School, Monash University and Alfred Health, Melbourne, Australia (G.C., N.L.)."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Bernhardt J",
+                  "lastName": "Bernhardt",
+                  "firstName": "Julie",
+                  "initials": "J",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-2787-8484"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Florey Institute of Neuroscience and Mental Health, University of Melbourne, Heidelberg, Australia (G.R.H., A.B., T.K., V.R., V.T., J.B.)."
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "authorIdList": {
+              "authorId": [
+                {
+                  "type": "ORCID",
+                  "value": "0000-0001-5240-3264"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0001-9466-2862"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0001-9848-2666"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-0493-8536"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-1369-9442"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-2066-8345"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-2787-8484"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-3077-4256"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-6614-8417"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-7688-9649"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-8365-6907"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-9807-6606"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0003-0217-4576"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0003-2795-6259"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0003-3920-8530"
+                }
+              ]
+            },
+            "dataLinksTagsList": {
+              "dataLinkstag": [
+                "altmetrics"
+              ]
+            },
+            "journalInfo": {
+              "issue": "11",
+              "volume": "52",
+              "journalIssueId": 3260967,
+              "dateOfPublication": "2021 Nov",
+              "monthOfPublication": 11,
+              "yearOfPublication": 2021,
+              "journal": {
+                "medlineAbbreviation": "Stroke",
+                "title": "Stroke",
+                "essn": "1524-4628",
+                "issn": "0039-2499",
+                "nlmid": "0235266",
+                "isoabbreviation": "Stroke"
+              },
+              "printPublicationDate": "2021-11-01"
+            },
+            "pubYear": "2021",
+            "pageInfo": "3706-3717",
+            "abstractText": "This systematic review aimed to investigate timing, dose, and efficacy of upper limb intervention during the first 6 months poststroke. Three online databases were searched up to July 2020. Titles/abstracts/full-text were reviewed independently by 2 authors. Randomized and nonrandomized studies that enrolled people within the first 6 months poststroke, aimed to improve upper limb recovery, and completed preintervention and postintervention assessments were included. Risk of bias was assessed using Cochrane reporting tools. Studies were examined by timing (recovery epoch), dose, and intervention type. Two hundred and sixty-one studies were included, representing 228 (n=9704 participants) unique data sets. The number of studies completed increased from one (n=37 participants) between 1980 and 1984 to 91 (n=4417 participants) between 2015 and 2019. Timing of intervention start has not changed (median 38 days, interquartile range [IQR], 22-66) and study sample size remains small (median n=30, IQR 20-48). Most studies were rated high risk of bias (62%). Study participants were enrolled at different recovery epochs: 1 hyperacute (<24 hours), 13 acute (1-7 days), 176 early subacute (8-90 days), 34 late subacute (91-180 days), and 4 were unable to be classified to an epoch. For both the intervention and control groups, the median dose was 45 (IQR, 600-1430) min/session, 1 (IQR, 1-1) session/d, 5 (IQR, 5-5) d/wk for 4 (IQR, 3-5) weeks. The most common interventions tested were electromechanical (n=55 studies), electrical stimulation (n=38 studies), and constraint-induced movement (n=28 studies) therapies. Despite a large and growing body of research, intervention dose and sample size of included studies were often too small to detect clinically important effects. Furthermore, interventions remain focused on subacute stroke recovery with little change in recent decades. A united research agenda that establishes a clear biological understanding of timing, dose, and intervention type is needed to progress stroke recovery research. Prospective Register of Systematic Reviews ID: CRD42018019367/CRD42018111629.",
+            "affiliation": "Departments of Physiotherapy and Medicine, Florey Institute of Neuroscience and Mental Health (K.S.H.), University of Melbourne, Heidelberg, Australia.",
+            "publicationStatus": "ppublish",
+            "language": "eng",
+            "pubModel": "Print-Electronic",
+            "pubTypeList": {
+              "pubType": [
+                "Research Support, Non-U.S. Gov't",
+                "Systematic Review",
+                "Journal Article"
+              ]
+            },
+            "meshHeadingList": {
+              "meshHeading": [
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Upper Extremity"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Humans"
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Recovery of Function"
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Time-to-Treatment"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Stroke Rehabilitation",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "MT",
+                        "qualifierName": "methods"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "keywordList": {
+              "keyword": [
+                "Intensity",
+                "Upper extremity",
+                "Time",
+                "Systematic review",
+                "Stroke Rehabilitation"
+              ]
+            },
+            "subsetList": {
+              "subset": [
+                {
+                  "code": "IM",
+                  "name": "Index Medicus"
+                }
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.1161/STROKEAHA.121.034348"
+                }
+              ]
+            },
+            "isOpenAccess": "N",
+            "inEPMC": "N",
+            "inPMC": "N",
+            "citedByCount": 54,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "N",
+            "hasBook": "N",
+            "hasSuppl": "N",
+            "hasLabsLinks": "Y",
+            "hasData": "N",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "N",
+            "dateOfCompletion": "2022-01-07",
+            "dateOfCreation": "2021-10-04",
+            "dateOfRevision": "2022-01-07",
+            "electronicPublicationDate": "2021-10-04",
+            "firstPublicationDate": "2021-10-04",
+            "firstIndexDate": "2021-10-05",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  },
+  "dose_trial": {
+    "query": "DOI:10.1002/ana.24734",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1002%2Fana.24734&format=json&resultType=core&pageSize=3",
+    "result": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "DOI:10.1002/ana.24734",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 3,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "27447365",
+            "source": "MED",
+            "pmid": "27447365",
+            "pmcid": "PMC5016233",
+            "fullTextIdList": {
+              "fullTextId": [
+                "PMC5016233"
+              ]
+            },
+            "doi": "10.1002/ana.24734",
+            "title": "Dose response of task-specific upper limb training in people at least 6 months poststroke: A phase II, single-blind, randomized, controlled trial.",
+            "authorString": "Lang CE, Strube MJ, Bland MD, Waddell KJ, Cherry-Allen KM, Nudo RJ, Dromerick AW, Birkenmeier RL.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Lang CE",
+                  "lastName": "Lang",
+                  "firstName": "Catherine E",
+                  "initials": "CE",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-7120-0136"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Program in Physical Therapy, Washington University School of Medicine, St. Louis, MO. langc@wustl.edu."
+                      },
+                      {
+                        "affiliation": "Program in Occupational Therapy, Washington University School of Medicine, St. Louis, MO. langc@wustl.edu."
+                      },
+                      {
+                        "affiliation": "Department of Neurology, Washington University School of Medicine, St. Louis, MO. langc@wustl.edu."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Strube MJ",
+                  "lastName": "Strube",
+                  "firstName": "Michael J",
+                  "initials": "MJ",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Psychological and Brain Sciences, Washington University, St. Louis, MO."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Bland MD",
+                  "lastName": "Bland",
+                  "firstName": "Marghuretta D",
+                  "initials": "MD",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Program in Physical Therapy, Washington University School of Medicine, St. Louis, MO."
+                      },
+                      {
+                        "affiliation": "Program in Occupational Therapy, Washington University School of Medicine, St. Louis, MO."
+                      },
+                      {
+                        "affiliation": "Department of Neurology, Washington University School of Medicine, St. Louis, MO."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Waddell KJ",
+                  "lastName": "Waddell",
+                  "firstName": "Kimberly J",
+                  "initials": "KJ",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-8137-2900"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Program in Physical Therapy, Washington University School of Medicine, St. Louis, MO."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Cherry-Allen KM",
+                  "lastName": "Cherry-Allen",
+                  "firstName": "Kendra M",
+                  "initials": "KM",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Program in Physical Therapy, Washington University School of Medicine, St. Louis, MO."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Nudo RJ",
+                  "lastName": "Nudo",
+                  "firstName": "Randolph J",
+                  "initials": "RJ",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-4674-0907"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Rehabilitation Medicine, Kansas University Medical Center, Kansas City, KS."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Dromerick AW",
+                  "lastName": "Dromerick",
+                  "firstName": "Alexander W",
+                  "initials": "AW",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Rehabilitation Medicine, Georgetown University and MedStar National Rehabilitation Hospital, Washington, DC."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Birkenmeier RL",
+                  "lastName": "Birkenmeier",
+                  "firstName": "Rebecca L",
+                  "initials": "RL",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Program in Physical Therapy, Washington University School of Medicine, St. Louis, MO."
+                      },
+                      {
+                        "affiliation": "Program in Occupational Therapy, Washington University School of Medicine, St. Louis, MO."
+                      },
+                      {
+                        "affiliation": "Department of Neurology, Washington University School of Medicine, St. Louis, MO."
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "authorIdList": {
+              "authorId": [
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-4674-0907"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-7120-0136"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-8137-2900"
+                }
+              ]
+            },
+            "dataLinksTagsList": {
+              "dataLinkstag": [
+                "altmetrics",
+                "recommended_reviews"
+              ]
+            },
+            "journalInfo": {
+              "issue": "3",
+              "volume": "80",
+              "journalIssueId": 2448635,
+              "dateOfPublication": "2016 Sep",
+              "monthOfPublication": 9,
+              "yearOfPublication": 2016,
+              "journal": {
+                "medlineAbbreviation": "Ann Neurol",
+                "title": "Annals of neurology",
+                "essn": "1531-8249",
+                "issn": "0364-5134",
+                "nlmid": "7707449",
+                "isoabbreviation": "Ann Neurol"
+              },
+              "printPublicationDate": "2016-09-01"
+            },
+            "pubYear": "2016",
+            "pageInfo": "342-354",
+            "abstractText": "<h4>Objective</h4>The objectives of this work were to (1) determine whether higher doses of motor therapy in chronic poststroke hemiparesis result in better outcomes, compared to lower doses, and (2) evaluate potential modifiers of the dose-response relationship.<h4>Methods</h4>Eighty-five adults with upper extremity paresis ≥6 months poststroke were randomized to one of four dose groups in this single-blind, parallel, randomized, control trial. The dosing parameter manipulated was amount of task-specific training, as indexed by the number of task repetitions. Groups received 3,200, 6,400, 9,600, or individualized maximum (IM) repetitions, during 1-hour sessions, 4 days/week for 8 weeks. The intervention was an individualized, progressive, task-specific upper-limb training program designed to improve upper-limb functional motor capacity. The primary outcome was the slope of the Action Research Arm Test (ARAT) during the intervention. Effects of dose and potential modifiers of the dose-response relationship were evaluated with hierarchical linear models.<h4>Results</h4>ARAT scores for the 3,200, 9,600, and IM groups improved over time as indicated by slopes (ΔARAT/week, mean ± standard errors) of 0.40 ± 0.15, 0.31 ± 0.16, and 0.66 ± 0.14, respectively (p < 0.05). The slope of the 6,400 group was smaller (-0.05 ± 0.15) and significantly different from the 3,200 and IM groups (p < 0.001). Initial motor capacity, neglect, and other tested characteristics did not modify the dose-response relationship.<h4>Interpretation</h4>Overall, treatment effects were small. There was no evidence of a dose-response effect of task-specific training on functional capacity in people with long-standing upper-limb paresis poststroke. Ann Neurol 2016;80:342-354.",
+            "affiliation": "Program in Physical Therapy, Washington University School of Medicine, St. Louis, MO. langc@wustl.edu.",
+            "publicationStatus": "ppublish",
+            "language": "eng",
+            "pubModel": "Print-Electronic",
+            "pubTypeList": {
+              "pubType": [
+                "Clinical Trial, Phase II",
+                "research-article",
+                "Randomized Controlled Trial",
+                "Journal Article"
+              ]
+            },
+            "grantsList": {
+              "grant": [
+                {
+                  "agency": "National Institutes of Health",
+                  "grantId": "R01 HD068290",
+                  "orderIn": 0
+                },
+                {
+                  "agency": "NICHD NIH HHS",
+                  "acronym": "HD",
+                  "grantId": "R37 HD068290",
+                  "orderIn": 0
+                },
+                {
+                  "agency": "NICHD NIH HHS",
+                  "acronym": "HD",
+                  "grantId": "R01 HD068290",
+                  "orderIn": 0
+                }
+              ]
+            },
+            "meshHeadingList": {
+              "meshHeading": [
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Upper Extremity",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "PP",
+                        "qualifierName": "physiopathology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Humans"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Paresis",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "ET",
+                        "qualifierName": "etiology"
+                      },
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "RH",
+                        "qualifierName": "rehabilitation"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Exercise Therapy",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "MT",
+                        "qualifierName": "methods"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Single-Blind Method"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Time Factors"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Aged"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Middle Aged"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Female"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Male"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Stroke",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "CO",
+                        "qualifierName": "complications"
+                      },
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "TH",
+                        "qualifierName": "therapy"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Stroke Rehabilitation",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "MT",
+                        "qualifierName": "methods"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Outcome and Process Assessment, Health Care"
+                }
+              ]
+            },
+            "subsetList": {
+              "subset": [
+                {
+                  "code": "IM",
+                  "name": "Index Medicus"
+                }
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.1002/ana.24734"
+                },
+                {
+                  "availability": "Free",
+                  "availabilityCode": "F",
+                  "documentStyle": "html",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC5016233"
+                },
+                {
+                  "availability": "Free",
+                  "availabilityCode": "F",
+                  "documentStyle": "pdf",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC5016233?pdf=render"
+                },
+                {
+                  "availability": "Free",
+                  "availabilityCode": "F",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.1002/ana.24734"
+                }
+              ]
+            },
+            "commentCorrectionList": {
+              "commentCorrection": [
+                {
+                  "source": "MED",
+                  "id": "27447540",
+                  "reference": "Ann Neurol. 2016 Sep;80(3):339-41. doi: 10.1002/ana.24735",
+                  "type": "Comment in",
+                  "orderIn": 1
+                }
+              ]
+            },
+            "isOpenAccess": "N",
+            "inEPMC": "Y",
+            "inPMC": "Y",
+            "citedByCount": 182,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "Y",
+            "hasBook": "N",
+            "hasSuppl": "N",
+            "hasLabsLinks": "Y",
+            "hasData": "N",
+            "authMan": "Y",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "Y",
+            "manuscriptId": "NIHMS805668",
+            "hasTMAccessionNumbers": "N",
+            "dateOfCompletion": "2017-06-05",
+            "dateOfCreation": "2016-07-23",
+            "dateOfRevision": "2022-09-19",
+            "electronicPublicationDate": "2016-08-16",
+            "firstPublicationDate": "2016-08-16",
+            "firstIndexDate": "2016-07-24",
+            "fullTextReceivedDate": "2025-02-05",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  },
+  "Marchal2009": {
+    "query": "DOI:10.1186/1743-0003-6-20",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1186%2F1743-0003-6-20&format=json&resultType=core&pageSize=3",
+    "result": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "DOI:10.1186/1743-0003-6-20",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 3,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "19531254",
+            "source": "MED",
+            "pmid": "19531254",
+            "pmcid": "PMC2710333",
+            "fullTextIdList": {
+              "fullTextId": [
+                "PMC2710333"
+              ]
+            },
+            "doi": "10.1186/1743-0003-6-20",
+            "title": "Review of control strategies for robotic movement training after neurologic injury.",
+            "authorString": "Marchal-Crespo L, Reinkensmeyer DJ.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Marchal-Crespo L",
+                  "lastName": "Marchal-Crespo",
+                  "firstName": "Laura",
+                  "initials": "L",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-8008-5803"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Mechanical and Aerospace Engineering, University of California, Irvine, CA, USA. lmarchal@uci.edu"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Reinkensmeyer DJ",
+                  "lastName": "Reinkensmeyer",
+                  "firstName": "David J",
+                  "initials": "DJ"
+                }
+              ]
+            },
+            "authorIdList": {
+              "authorId": [
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-8008-5803"
+                }
+              ]
+            },
+            "dataLinksTagsList": {
+              "dataLinkstag": [
+                "altmetrics",
+                "wikipedia",
+                "supporting_data"
+              ]
+            },
+            "journalInfo": {
+              "volume": "6",
+              "journalIssueId": 2467319,
+              "dateOfPublication": "2009 Jun",
+              "monthOfPublication": 6,
+              "yearOfPublication": 2009,
+              "journal": {
+                "medlineAbbreviation": "J Neuroeng Rehabil",
+                "title": "Journal of neuroengineering and rehabilitation",
+                "essn": "1743-0003",
+                "issn": "1743-0003",
+                "nlmid": "101232233",
+                "isoabbreviation": "J Neuroeng Rehabil"
+              },
+              "printPublicationDate": "2009-06-01"
+            },
+            "pubYear": "2009",
+            "pageInfo": "20",
+            "abstractText": "There is increasing interest in using robotic devices to assist in movement training following neurologic injuries such as stroke and spinal cord injury. This paper reviews control strategies for robotic therapy devices. Several categories of strategies have been proposed, including, assistive, challenge-based, haptic simulation, and coaching. The greatest amount of work has been done on developing assistive strategies, and thus the majority of this review summarizes techniques for implementing assistive strategies, including impedance-, counterbalance-, and EMG- based controllers, as well as adaptive controllers that modify control parameters based on ongoing participant performance. Clinical evidence regarding the relative effectiveness of different types of robotic therapy controllers is limited, but there is initial evidence that some control strategies are more effective than others. It is also now apparent there may be mechanisms by which some robotic control approaches might actually decrease the recovery possible with comparable, non-robotic forms of training. In future research, there is a need for head-to-head comparison of control algorithms in randomized, controlled clinical trials, and for improved models of human motor recovery to provide a more rational framework for designing robotic therapy control strategies.",
+            "affiliation": "Department of Mechanical and Aerospace Engineering, University of California, Irvine, CA, USA. lmarchal@uci.edu",
+            "publicationStatus": "epublish",
+            "language": "eng",
+            "pubModel": "Electronic",
+            "pubTypeList": {
+              "pubType": [
+                "review-article",
+                "Review",
+                "Journal Article",
+                "Research Support, N.I.H., Extramural"
+              ]
+            },
+            "grantsList": {
+              "grant": [
+                {
+                  "agency": "NCRR NIH HHS",
+                  "acronym": "RR",
+                  "grantId": "M01 RR000827",
+                  "orderIn": 0
+                },
+                {
+                  "agency": "NCRR NIH HHS",
+                  "acronym": "RR",
+                  "grantId": "M01RR00827",
+                  "orderIn": 0
+                },
+                {
+                  "agency": "NICHD NIH HHS",
+                  "acronym": "HD",
+                  "grantId": "N01-HD-3-3352",
+                  "orderIn": 0
+                }
+              ]
+            },
+            "meshHeadingList": {
+              "meshHeading": [
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Humans"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Trauma, Nervous System",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "RH",
+                        "qualifierName": "rehabilitation"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Electromyography",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "MT",
+                        "qualifierName": "methods"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Musculoskeletal Manipulations",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "MT",
+                        "qualifierName": "methods"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Robotics",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "MT",
+                        "qualifierName": "methods"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Algorithms"
+                }
+              ]
+            },
+            "subsetList": {
+              "subset": [
+                {
+                  "code": "IM",
+                  "name": "Index Medicus"
+                }
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.1186/1743-0003-6-20"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "html",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC2710333"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "pdf",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC2710333?pdf=render"
+                }
+              ]
+            },
+            "isOpenAccess": "Y",
+            "inEPMC": "Y",
+            "inPMC": "Y",
+            "citedByCount": 452,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "Y",
+            "hasBook": "N",
+            "hasSuppl": "Y",
+            "hasLabsLinks": "Y",
+            "hasData": "Y",
+            "license": "cc by",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "Y",
+            "tmAccessionTypeList": {
+              "accessionType": [
+                "doi"
+              ]
+            },
+            "dateOfCompletion": "2009-08-27",
+            "dateOfCreation": "2009-06-18",
+            "dateOfRevision": "2022-04-10",
+            "electronicPublicationDate": "2009-06-16",
+            "firstPublicationDate": "2009-06-16",
+            "firstIndexDate": "2009-12-23",
+            "fullTextReceivedDate": "2025-02-05",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  },
+  "ALP2025": {
+    "query": "DOI:10.3389/fdgth.2025.1559796",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.3389%2Ffdgth.2025.1559796&format=json&resultType=core&pageSize=3",
+    "result": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "DOI:10.3389/fdgth.2025.1559796",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 3,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "40060032",
+            "source": "MED",
+            "pmid": "40060032",
+            "pmcid": "PMC11885312",
+            "fullTextIdList": {
+              "fullTextId": [
+                "PMC11885312"
+              ]
+            },
+            "doi": "10.3389/fdgth.2025.1559796",
+            "title": "Promoting active participation in robot-aided rehabilitation via machine learning and impedance control.",
+            "authorString": "Tamantini C, Patrice Langlois K, de Winter J, Ali Mohamadi PH, Beckwée D, Swinnen E, Verstraten T, Vanderborght B, Zollo L.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Tamantini C",
+                  "lastName": "Tamantini",
+                  "firstName": "Christian",
+                  "initials": "C",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0001-6238-2241"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Research Unit of Advanced Robotics and Human-Centred Technologies, Università Campus Bio-Medico di Roma, Rome, Italy."
+                      },
+                      {
+                        "affiliation": "Institute of Cognitive Sciences and Technologies, National Research Council of Italy, Rome, Italy."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Patrice Langlois K",
+                  "lastName": "Patrice Langlois",
+                  "firstName": "Kevin",
+                  "initials": "K",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Robotics and MultiBody Mechanics Research Group, Vrije Universiteit Brussel, Brussels, Belgium."
+                      },
+                      {
+                        "affiliation": "IMEC, Leuven, Belgium."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "de Winter J",
+                  "lastName": "de Winter",
+                  "firstName": "Joris",
+                  "initials": "J",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Robotics and MultiBody Mechanics Research Group, Vrije Universiteit Brussel, Brussels, Belgium."
+                      },
+                      {
+                        "affiliation": "Flanders Make, Leuven, Belgium."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Ali Mohamadi PH",
+                  "lastName": "Ali Mohamadi",
+                  "firstName": "Parham Haji",
+                  "initials": "PH",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Robotics and MultiBody Mechanics Research Group, Vrije Universiteit Brussel, Brussels, Belgium."
+                      },
+                      {
+                        "affiliation": "IMEC, Leuven, Belgium."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Beckwée D",
+                  "lastName": "Beckwée",
+                  "firstName": "David",
+                  "initials": "D",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Rehabilitation Research Group, Department of Physiotherapy, Human Physiology and Anatomy, Faculty of Physical Education and Physiotherapy, Vrije Universiteit Brussel, Brussels, Belgium."
+                      },
+                      {
+                        "affiliation": "Brussels Human Robotic Research Center (BruBotics), Vrije Universiteit Brussel, Brussels, Belgium."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Swinnen E",
+                  "lastName": "Swinnen",
+                  "firstName": "Eva",
+                  "initials": "E",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-3771-9479"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Rehabilitation Research Group, Department of Physiotherapy, Human Physiology and Anatomy, Faculty of Physical Education and Physiotherapy, Vrije Universiteit Brussel, Brussels, Belgium."
+                      },
+                      {
+                        "affiliation": "Brussels Human Robotic Research Center (BruBotics), Vrije Universiteit Brussel, Brussels, Belgium."
+                      },
+                      {
+                        "affiliation": "Center for Neurosciences (C4N), Vrije Universiteit Brussel, Brussels, Belgium."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Verstraten T",
+                  "lastName": "Verstraten",
+                  "firstName": "Tom",
+                  "initials": "T",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Robotics and MultiBody Mechanics Research Group, Vrije Universiteit Brussel, Brussels, Belgium."
+                      },
+                      {
+                        "affiliation": "Flanders Make, Leuven, Belgium."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Vanderborght B",
+                  "lastName": "Vanderborght",
+                  "firstName": "Bram",
+                  "initials": "B",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Robotics and MultiBody Mechanics Research Group, Vrije Universiteit Brussel, Brussels, Belgium."
+                      },
+                      {
+                        "affiliation": "IMEC, Leuven, Belgium."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Zollo L",
+                  "lastName": "Zollo",
+                  "firstName": "Loredana",
+                  "initials": "L",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Research Unit of Advanced Robotics and Human-Centred Technologies, Università Campus Bio-Medico di Roma, Rome, Italy."
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "authorIdList": {
+              "authorId": [
+                {
+                  "type": "ORCID",
+                  "value": "0000-0001-6238-2241"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-3771-9479"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-7991-0976"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0009-0001-9522-5987"
+                }
+              ]
+            },
+            "dataLinksTagsList": {
+              "dataLinkstag": [
+                "altmetrics",
+                "supporting_data"
+              ]
+            },
+            "journalInfo": {
+              "volume": "7",
+              "journalIssueId": 3897144,
+              "dateOfPublication": "2025 ",
+              "monthOfPublication": 0,
+              "yearOfPublication": 2025,
+              "journal": {
+                "medlineAbbreviation": "Front Digit Health",
+                "title": "Frontiers in digital health",
+                "essn": "2673-253X",
+                "issn": "2673-253X",
+                "nlmid": "101771889",
+                "isoabbreviation": "Front Digit Health"
+              },
+              "printPublicationDate": "2025-01-01"
+            },
+            "pubYear": "2025",
+            "pageInfo": "1559796",
+            "abstractText": "<h4>Introduction</h4>Active patient participation is crucial for effective robot-assisted rehabilitation. Quantifying the user's Active Level of Participation (ALP) during therapy and developing human-robot interaction strategies that promote engagement can improve rehabilitation outcomes. However, existing methods for estimating participation are often unimodal and do not provide continuous participation assessment.<h4>Methods</h4>This study proposes a novel approach for estimating ALP during upper-limb robot-aided rehabilitation by leveraging machine learning within a multimodal framework. The system integrates pressure sensing at the human-robot interface and muscle activity monitoring to provide a more comprehensive assessment of user participation. The estimated ALP is used to dynamically adapt task execution time, enabling an adaptive ALP-driven impedance control strategy. The proposed approach was tested in a laboratory setting using a collaborative robot equipped with the sensorized interface. A comparative analysis was conducted against a conventional impedance controller, commonly used in robot-aided rehabilitation scenarios.<h4>Results</h4>The results demonstrated that participants using the ALP-driven impedance control exhibited significantly higher positive mechanical work and greater muscle activation compared to the control group. Additionally, subjective feedback indicated increased engagement and confidence when interacting with the adaptive system.<h4>Discussion</h4>Closing the robot's control loop by adapting to ALP effectively enhanced human-robot interaction and motivated participants to engage more actively in their therapy. These findings suggest that ALP-driven control strategies may improve user involvement in robot-assisted rehabilitation, warranting further investigation in clinically relevant settings.",
+            "affiliation": "Research Unit of Advanced Robotics and Human-Centred Technologies, Università Campus Bio-Medico di Roma, Rome, Italy.",
+            "publicationStatus": "epublish",
+            "language": "eng",
+            "pubModel": "Electronic-eCollection",
+            "pubTypeList": {
+              "pubType": [
+                "research-article",
+                "Journal Article"
+              ]
+            },
+            "keywordList": {
+              "keyword": [
+                "Artificial intelligence",
+                "Rehabilitation Robotics",
+                "Multimodal Monitoring",
+                "Medical Robots And Systems",
+                "Human-centered Robotics"
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.3389/fdgth.2025.1559796"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "html",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC11885312"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "pdf",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC11885312?pdf=render"
+                }
+              ]
+            },
+            "isOpenAccess": "Y",
+            "inEPMC": "Y",
+            "inPMC": "Y",
+            "citedByCount": 3,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "Y",
+            "hasBook": "N",
+            "hasSuppl": "N",
+            "hasLabsLinks": "Y",
+            "hasData": "Y",
+            "license": "cc by",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "Y",
+            "tmAccessionTypeList": {
+              "accessionType": [
+                "doi"
+              ]
+            },
+            "dateOfCreation": "2025-03-10",
+            "dateOfRevision": "2025-03-11",
+            "electronicPublicationDate": "2025-02-21",
+            "firstPublicationDate": "2025-02-21",
+            "firstIndexDate": "2025-03-11",
+            "fullTextReceivedDate": "2025-12-04",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  },
+  "Song_wrist": {
+    "query": "EXT_ID:PMC3685570 AND SRC:PMC",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3APMC3685570+AND+SRC%3APMC&format=json&resultType=core&pageSize=3",
+    "result": {
+      "version": "6.9",
+      "hitCount": 0,
+      "request": {
+        "queryString": "EXT_ID:PMC3685570 AND SRC:PMC",
+        "internalQuery": "EXT_ID:PMC3685570 AND SRC:PMC",
+        "resultType": "CORE",
+        "cursorMark": "*",
+        "pageSize": 3,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": []
+      }
+    }
+  },
+  "Song_load": {
+    "query": "EXT_ID:PMC11971689 AND SRC:PMC",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3APMC11971689+AND+SRC%3APMC&format=json&resultType=core&pageSize=3",
+    "result": {
+      "version": "6.9",
+      "hitCount": 0,
+      "request": {
+        "queryString": "EXT_ID:PMC11971689 AND SRC:PMC",
+        "internalQuery": "EXT_ID:PMC11971689 AND SRC:PMC",
+        "resultType": "CORE",
+        "cursorMark": "*",
+        "pageSize": 3,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": []
+      }
+    }
+  },
+  "Song_impedance": {
+    "query": "DOI:10.3389/fnbot.2022.850692",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.3389%2Ffnbot.2022.850692&format=json&resultType=core&pageSize=3",
+    "result": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "DOI:10.3389/fnbot.2022.850692",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 3,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "35308312",
+            "source": "MED",
+            "pmid": "35308312",
+            "pmcid": "PMC8927629",
+            "fullTextIdList": {
+              "fullTextId": [
+                "PMC8927629"
+              ]
+            },
+            "doi": "10.3389/fnbot.2022.850692",
+            "title": "Variable Impedance Control Based on Target Position and Tracking Error for Rehabilitation Robots During a Reaching Task.",
+            "authorString": "Tang R, Yang Q, Song R.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Tang R",
+                  "lastName": "Tang",
+                  "firstName": "Rongrong",
+                  "initials": "R",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "The Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Sun Yat-sen University, Guangzhou, China."
+                      },
+                      {
+                        "affiliation": "The Shenzhen Research Institute, Sun Yat-sen University, Guangzhou, China."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Yang Q",
+                  "lastName": "Yang",
+                  "firstName": "Qianqian",
+                  "initials": "Q",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "The Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Sun Yat-sen University, Guangzhou, China."
+                      },
+                      {
+                        "affiliation": "The Shenzhen Research Institute, Sun Yat-sen University, Guangzhou, China."
+                      },
+                      {
+                        "affiliation": "The School of Mechatronic Engineering, Guangdong Polytechnic Normal University, Guangzhou, China."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Song R",
+                  "lastName": "Song",
+                  "firstName": "Rong",
+                  "initials": "R",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "The Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Sun Yat-sen University, Guangzhou, China."
+                      },
+                      {
+                        "affiliation": "The Shenzhen Research Institute, Sun Yat-sen University, Guangzhou, China."
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "journalInfo": {
+              "volume": "16",
+              "journalIssueId": 3312703,
+              "dateOfPublication": "2022 ",
+              "monthOfPublication": 0,
+              "yearOfPublication": 2022,
+              "journal": {
+                "medlineAbbreviation": "Front Neurorobot",
+                "title": "Frontiers in neurorobotics",
+                "essn": "1662-5218",
+                "issn": "1662-5218",
+                "nlmid": "101477958",
+                "isoabbreviation": "Front Neurorobot"
+              },
+              "printPublicationDate": "2022-01-01"
+            },
+            "pubYear": "2022",
+            "pageInfo": "850692",
+            "abstractText": "To obtain an anthropomorphic performance in physical human-robot interaction during a reaching task, a variable impedance control (vIC) algorithm with human-like characteristics is proposed in this article. The damping value of the proposed method is varied with the target position as well as through the tracking error. The proposed control algorithm is compared with the impedance control algorithm with constant parameters (IC) and another vIC algorithm, which is only changed with the tracking error (vIC-e). The different control algorithms are validated through the simulation study, and are experimentally implemented on a cable-driven rehabilitation robot. The results show that the proposed vIC can improve the tracking accuracy and trajectory smoothness, and reduce the interaction force at the same time.",
+            "affiliation": "The Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Sun Yat-sen University, Guangzhou, China.",
+            "publicationStatus": "epublish",
+            "language": "eng",
+            "pubModel": "Electronic-eCollection",
+            "pubTypeList": {
+              "pubType": [
+                "research-article",
+                "Journal Article"
+              ]
+            },
+            "keywordList": {
+              "keyword": [
+                "Variable Impedance",
+                "Rehabilitation Robot",
+                "Reaching Task",
+                "Tracking Error",
+                "Target Position",
+                "Smooth Trajectory"
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.3389/fnbot.2022.850692"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "html",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC8927629"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "pdf",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC8927629?pdf=render"
+                }
+              ]
+            },
+            "isOpenAccess": "Y",
+            "inEPMC": "Y",
+            "inPMC": "Y",
+            "citedByCount": 0,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "Y",
+            "hasBook": "N",
+            "hasSuppl": "N",
+            "hasLabsLinks": "N",
+            "hasData": "N",
+            "license": "cc by",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "N",
+            "dateOfCreation": "2022-03-21",
+            "dateOfRevision": "2022-03-22",
+            "electronicPublicationDate": "2022-03-03",
+            "firstPublicationDate": "2022-03-03",
+            "firstIndexDate": "2022-03-21",
+            "fullTextReceivedDate": "2022-03-19",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  },
+  "Song_TRO": {
+    "query": "DOI:10.1109/TRO.2024.3411849",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1109%2FTRO.2024.3411849&format=json&resultType=core&pageSize=3",
+    "result": {
+      "version": "6.9",
+      "hitCount": 0,
+      "request": {
+        "queryString": "DOI:10.1109/TRO.2024.3411849",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 3,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": []
+      }
+    }
+  },
+  "Song_TBME": {
+    "query": "DOI:10.1109/TBME.2020.3027823",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1109%2FTBME.2020.3027823&format=json&resultType=core&pageSize=3",
+    "result": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "DOI:10.1109/TBME.2020.3027823",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 3,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "32997619",
+            "source": "MED",
+            "pmid": "32997619",
+            "doi": "10.1109/tbme.2020.3027823",
+            "title": "Performance-Based Hybrid Control of a Cable-Driven Upper-Limb Rehabilitation Robot.",
+            "authorString": "Li X, Yang Q, Song R.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Li X",
+                  "lastName": "Li",
+                  "firstName": "Xianming",
+                  "initials": "X"
+                },
+                {
+                  "fullName": "Yang Q",
+                  "lastName": "Yang",
+                  "firstName": "Qianqian",
+                  "initials": "Q",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-9311-444X"
+                  }
+                },
+                {
+                  "fullName": "Song R",
+                  "lastName": "Song",
+                  "firstName": "Rong",
+                  "initials": "R"
+                }
+              ]
+            },
+            "authorIdList": {
+              "authorId": [
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-9311-444X"
+                }
+              ]
+            },
+            "journalInfo": {
+              "issue": "4",
+              "volume": "68",
+              "journalIssueId": 3135303,
+              "dateOfPublication": "2021 Apr",
+              "monthOfPublication": 4,
+              "yearOfPublication": 2021,
+              "journal": {
+                "medlineAbbreviation": "IEEE Trans Biomed Eng",
+                "title": "IEEE transactions on bio-medical engineering",
+                "essn": "1558-2531",
+                "issn": "0018-9294",
+                "isoabbreviation": "IEEE Trans Biomed Eng",
+                "nlmid": "0012737"
+              },
+              "printPublicationDate": "2021-04-01"
+            },
+            "pubYear": "2021",
+            "pageInfo": "1351-1359",
+            "abstractText": "Patients after stroke may have different rehabilitation needs due to various levels of disability. To satisfy such needs, a performance-based hybrid control is proposed for a cable-driven upper-limb rehabilitation robot (CDULRR). The controller includes three working modes, i.e., resistance mode, assistance mode and restriction mode, which are switched by the tracking error since it is a common index to represent motor performance. In resistance mode, the proper damping force would be provided for subjects, which is in the opposite direction to the actual velocity. In assistance mode, a method of adjusting stiffness coefficient by fuzzy logic is adopted to provide suitable assistance to help subjects. In restriction mode, the damping force is applied again to limit the movement and ensure the safety. To verify the effectiveness of the controller, the task-oriented experiments with different disturbance were conducted by ten healthy subjects. The experiments results demonstrated that the controller can adjust working modes by the subjects' motor performance. It was found that, as the increasing disturbance led to a decrease in the motor performance, the robot provided more assistance in the trainings. Adaptive adjustment of damping force and stiffness coefficient allowed the controller to induce more active effort.",
+            "publicationStatus": "ppublish",
+            "language": "eng",
+            "pubModel": "Print-Electronic",
+            "pubTypeList": {
+              "pubType": [
+                "Research Support, Non-U.S. Gov't",
+                "Journal Article"
+              ]
+            },
+            "grantsList": {
+              "grant": [
+                {
+                  "agency": "Guangdong Science and Technology Plan",
+                  "grantId": "2017B020210011",
+                  "orderIn": 0
+                },
+                {
+                  "agency": "National Key R&amp;amp;D Program of China",
+                  "grantId": "2018YFC2001600",
+                  "orderIn": 0
+                },
+                {
+                  "agency": "Shenzhen Science and Technology Plan",
+                  "grantId": "JCYJ20170818155028942",
+                  "orderIn": 0
+                },
+                {
+                  "agency": "Guangdong Science and Technology Plan",
+                  "grantId": "2017B010110015",
+                  "orderIn": 0
+                }
+              ]
+            },
+            "meshHeadingList": {
+              "meshHeading": [
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Upper Extremity"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Humans"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Movement"
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Robotics"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Fuzzy Logic"
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Stroke Rehabilitation"
+                }
+              ]
+            },
+            "subsetList": {
+              "subset": [
+                {
+                  "code": "IM",
+                  "name": "Index Medicus"
+                }
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.1109/TBME.2020.3027823"
+                }
+              ]
+            },
+            "isOpenAccess": "N",
+            "inEPMC": "N",
+            "inPMC": "N",
+            "citedByCount": 9,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "N",
+            "hasBook": "N",
+            "hasSuppl": "N",
+            "hasLabsLinks": "N",
+            "hasData": "N",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "N",
+            "dateOfCompletion": "2021-06-25",
+            "dateOfCreation": "2020-09-30",
+            "dateOfRevision": "2021-06-25",
+            "electronicPublicationDate": "2021-03-18",
+            "firstPublicationDate": "2021-03-18",
+            "firstIndexDate": "2020-10-15",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  },
+  "Song_TBCAS": {
+    "query": "DOI:10.1109/TBCAS.2021.3130090",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1109%2FTBCAS.2021.3130090&format=json&resultType=core&pageSize=3",
+    "result": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "DOI:10.1109/TBCAS.2021.3130090",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 3,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "34813476",
+            "source": "MED",
+            "pmid": "34813476",
+            "doi": "10.1109/tbcas.2021.3130090",
+            "title": "A Hybrid Arm-Hand Rehabilitation Robot With EMG-Based Admittance Controller.",
+            "authorString": "Xie C, Yang Q, Huang Y, Su S, Xu T, Song R.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Xie C",
+                  "lastName": "Xie",
+                  "firstName": "Chenglin",
+                  "initials": "C",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0003-3867-3908"
+                  }
+                },
+                {
+                  "fullName": "Yang Q",
+                  "lastName": "Yang",
+                  "firstName": "Qianqian",
+                  "initials": "Q",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-9311-444X"
+                  }
+                },
+                {
+                  "fullName": "Huang Y",
+                  "lastName": "Huang",
+                  "firstName": "Yao",
+                  "initials": "Y",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-3100-0738"
+                  }
+                },
+                {
+                  "fullName": "Su S",
+                  "lastName": "Su",
+                  "firstName": "Steven",
+                  "initials": "S",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-5720-8852"
+                  }
+                },
+                {
+                  "fullName": "Xu T",
+                  "lastName": "Xu",
+                  "firstName": "Ting",
+                  "initials": "T"
+                },
+                {
+                  "fullName": "Song R",
+                  "lastName": "Song",
+                  "firstName": "Rong",
+                  "initials": "R"
+                }
+              ]
+            },
+            "authorIdList": {
+              "authorId": [
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-3100-0738"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-5720-8852"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-9311-444X"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0003-3867-3908"
+                }
+              ]
+            },
+            "journalInfo": {
+              "issue": "6",
+              "volume": "15",
+              "journalIssueId": 3314924,
+              "dateOfPublication": "2021 Dec",
+              "monthOfPublication": 12,
+              "yearOfPublication": 2021,
+              "journal": {
+                "medlineAbbreviation": "IEEE Trans Biomed Circuits Syst",
+                "title": "IEEE transactions on biomedical circuits and systems",
+                "essn": "1940-9990",
+                "issn": "1932-4545",
+                "nlmid": "101312520",
+                "isoabbreviation": "IEEE Trans Biomed Circuits Syst"
+              },
+              "printPublicationDate": "2021-12-01"
+            },
+            "pubYear": "2021",
+            "pageInfo": "1332-1342",
+            "abstractText": "Reach-and-grasp is one of the most fundamental activities in daily life, while few rehabilitation robots provide integrated and active training of the arm and hand for patients after stroke to improve their mobility. In this study, a novel hybrid arm-hand rehabilitation robot (HAHRR) was built for the reach-and-grasp task. This hybrid structure consisted of a cable-driven module for three-dimensional arm motion and an exoskeleton for hand motion, which enabled assistance of the arm and hand simultaneously. To implement active compliance control, an EMG-based admittance controller was applied to the HAHRR. Experimental results showed that the HAHRR with the EMG-based admittance controller could not only assist the subject in fulfilling the reach-and-grasp task, but also generate smoother trajectories compared with the force-sensing-based admittance controller. These findings also suggested that the proposed approach might be applicable to post-stroke arm-hand rehabilitation training.",
+            "publicationStatus": "ppublish",
+            "language": "eng",
+            "pubModel": "Print-Electronic",
+            "pubTypeList": {
+              "pubType": [
+                "Research Support, Non-U.S. Gov't",
+                "Journal Article"
+              ]
+            },
+            "grantsList": {
+              "grant": [
+                {
+                  "agency": "Shenzhen Science and Technology Plan Project",
+                  "grantId": "GJHZ20200731095211034",
+                  "orderIn": 0
+                },
+                {
+                  "agency": "National Key Research and Development Program of China",
+                  "grantId": "2018YFC2001600",
+                  "orderIn": 0
+                },
+                {
+                  "agency": "Guangdong Science and Technology Department",
+                  "grantId": "2020B1212060077",
+                  "orderIn": 0
+                }
+              ]
+            },
+            "meshHeadingList": {
+              "meshHeading": [
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Arm"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Hand"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Humans"
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Robotics"
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Exoskeleton Device"
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Stroke Rehabilitation",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "MT",
+                        "qualifierName": "methods"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "subsetList": {
+              "subset": [
+                {
+                  "code": "IM",
+                  "name": "Index Medicus"
+                }
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.1109/TBCAS.2021.3130090"
+                }
+              ]
+            },
+            "isOpenAccess": "N",
+            "inEPMC": "N",
+            "inPMC": "N",
+            "citedByCount": 11,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "N",
+            "hasBook": "N",
+            "hasSuppl": "N",
+            "hasLabsLinks": "N",
+            "hasData": "N",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "N",
+            "dateOfCompletion": "2022-03-30",
+            "dateOfCreation": "2021-11-23",
+            "dateOfRevision": "2022-04-01",
+            "electronicPublicationDate": "2022-02-17",
+            "firstPublicationDate": "2021-12-01",
+            "firstIndexDate": "2021-12-01",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  }
+}

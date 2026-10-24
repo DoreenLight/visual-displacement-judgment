@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12989500/fullTextXML",
+    "bytes": 86932,
+    "doi": "10.3389/fresc.2026.1753677",
+    "status": "success"
+  },
+  {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13523423/fullTextXML",
+    "bytes": 205190,
+    "doi": "10.1186/s12984-026-02050-2",
+    "status": "success"
+  }
+]

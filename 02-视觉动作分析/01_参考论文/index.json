@@ -1,0 +1,410 @@
+{
+  "schema": "reference-corpus-index/v1",
+  "generated": "2026-10-08 三分法重组后重建；勿手改计数，改动请重跑 06_附录/自检脚本/verify_kb.sh",
+  "counts_note": "本文件为导航快照，权威计数见 verify_kb.sh 的「附加统计」块；语料二/三/四与康复整合链路各自独立口径，不可相加。",
+  "root_layout": [
+    "运动理解",
+    "康复辅助",
+    "整合系统",
+    "_translation_outputs",
+    "09_章隆彬_合作团队(软链接)"
+  ],
+  "groups": [
+    {
+      "id": "motion_understanding",
+      "name": "运动理解",
+      "role": "看懂：从图像/信号读出运动学与肌肉状态",
+      "members": [
+        {
+          "dir": "Transformer_发展线",
+          "corpus": "语料二",
+          "axes": "时间阶段 S0-S5 × 技术线程 T1-T7",
+          "pdf": 93,
+          "xml": 0,
+          "entry": "README.md",
+          "index": "index.json",
+          "fetch": "取件入口.md",
+          "threads": [
+            {
+              "id": "T1",
+              "name": "架构与注意力机制",
+              "pdf": 13,
+              "list": "T1_架构与注意力机制/LIST.md",
+              "path": "运动理解/Transformer_发展线/T1_架构与注意力机制/LIST.md"
+            },
+            {
+              "id": "T2",
+              "name": "效率与长序列",
+              "pdf": 18,
+              "list": "T2_效率与长序列/LIST.md",
+              "path": "运动理解/Transformer_发展线/T2_效率与长序列/LIST.md"
+            },
+            {
+              "id": "T3",
+              "name": "位置编码与长度外推",
+              "pdf": 2,
+              "list": "T3_位置编码与长度外推/LIST.md",
+              "path": "运动理解/Transformer_发展线/T3_位置编码与长度外推/LIST.md"
+            },
+            {
+              "id": "T4",
+              "name": "视觉·多模态·人体",
+              "pdf": 23,
+              "list": "T4_视觉·多模态·人体/LIST.md",
+              "path": "运动理解/Transformer_发展线/T4_视觉·多模态·人体/LIST.md"
+            },
+            {
+              "id": "T5",
+              "name": "动作生成与离散 token",
+              "pdf": 13,
+              "list": "T5_动作生成与离散token/LIST.md",
+              "path": "运动理解/Transformer_发展线/T5_动作生成与离散token/LIST.md"
+            },
+            {
+              "id": "T6",
+              "name": "物理约束·世界模型",
+              "pdf": 14,
+              "list": "T6_物理约束·世界模型/LIST.md",
+              "path": "运动理解/Transformer_发展线/T6_物理约束·世界模型/LIST.md"
+            },
+            {
+              "id": "T7",
+              "name": "状态空间与混合架构",
+              "pdf": 10,
+              "list": "T7_状态空间与混合架构/LIST.md",
+              "path": "运动理解/Transformer_发展线/T7_状态空间与混合架构/LIST.md"
+            }
+          ],
+          "path": "运动理解/Transformer_发展线",
+          "entry_path": "运动理解/Transformer_发展线/README.md",
+          "index_path": "运动理解/Transformer_发展线/index.json",
+          "fetch_path": "运动理解/Transformer_发展线/取件入口.md"
+        },
+        {
+          "dir": "PoseFormer_MotionBERT",
+          "pdf": 4,
+          "entry": "LIST.md",
+          "path": "运动理解/PoseFormer_MotionBERT",
+          "entry_path": "运动理解/PoseFormer_MotionBERT/LIST.md"
+        },
+        {
+          "dir": "RGB_直接竞品_2026_Chao",
+          "role": "直接竞品（RGB→下肢关节角）",
+          "pdf": 2,
+          "entry": "LIST.md",
+          "path": "运动理解/RGB_直接竞品_2026_Chao",
+          "entry_path": "运动理解/RGB_直接竞品_2026_Chao/LIST.md"
+        },
+        {
+          "dir": "RGB_角度估计_2022_EMBC",
+          "pdf": 3,
+          "entry": "LIST.md",
+          "path": "运动理解/RGB_角度估计_2022_EMBC",
+          "entry_path": "运动理解/RGB_角度估计_2022_EMBC/LIST.md"
+        },
+        {
+          "dir": "OpenCap_传统生物力学",
+          "pdf": 3,
+          "entry": "LIST.md",
+          "path": "运动理解/OpenCap_传统生物力学",
+          "entry_path": "运动理解/OpenCap_传统生物力学/LIST.md"
+        },
+        {
+          "dir": "TokenHMR_PoseTokens",
+          "role": "最贴近翻译范式",
+          "pdf": 1,
+          "entry": "LIST.md",
+          "path": "运动理解/TokenHMR_PoseTokens",
+          "entry_path": "运动理解/TokenHMR_PoseTokens/LIST.md"
+        },
+        {
+          "dir": "ViT_HMR_2.0",
+          "pdf": 1,
+          "entry": "LIST.md",
+          "path": "运动理解/ViT_HMR_2.0",
+          "entry_path": "运动理解/ViT_HMR_2.0/LIST.md"
+        },
+        {
+          "dir": "METRO",
+          "pdf": 1,
+          "entry": "LIST.md",
+          "path": "运动理解/METRO",
+          "entry_path": "运动理解/METRO/LIST.md"
+        },
+        {
+          "dir": "宋嵘_意图解码与力矩模型",
+          "path": "运动理解/宋嵘_意图解码与力矩模型",
+          "role": "宋嵘团队意图解码与肌肉力矩模型（2026-10-08 归位）",
+          "pdf": 5,
+          "xml": 0,
+          "entry": "per-paper _抽取_en.md",
+          "entry_path": "运动理解/宋嵘_意图解码与力矩模型/per-paper _抽取_en.md",
+          "added": "2026-10-08",
+          "artifact_tier": "英文结构化抽取（_抽取_en.md，含图）；中文全文翻译未做"
+        }
+      ]
+    },
+    {
+      "id": "rehab_assistance",
+      "name": "康复辅助",
+      "role": "帮到：辅助量决策、任务挑战与训练强度",
+      "members": [
+        {
+          "dir": "康复整合链路",
+          "corpus": "康复整合链路（独立口径）",
+          "artifact": "每份出版 PDF 配同名 _Evidence_Card.md；证据卡不是全文翻译",
+          "pdf": 8,
+          "xml": 12,
+          "entry": "README.md",
+          "index": "index.json",
+          "path": "康复辅助/康复整合链路",
+          "entry_path": "康复辅助/康复整合链路/README.md",
+          "index_path": "康复辅助/康复整合链路/index.json"
+        },
+        {
+          "dir": "腕关节康复感知_D435i",
+          "pdf": 12,
+          "entry": "待获取文献清单.md",
+          "topics": [
+            {
+              "name": "上肢代偿检测",
+              "pdf": 6,
+              "list": "上肢代偿检测/LIST.md",
+              "path": "康复辅助/腕关节康复感知_D435i/上肢代偿检测/LIST.md"
+            },
+            {
+              "name": "运动质量评价指标",
+              "pdf": 3,
+              "list": "运动质量评价指标/LIST.md",
+              "path": "康复辅助/腕关节康复感知_D435i/运动质量评价指标/LIST.md"
+            },
+            {
+              "name": "腕关节与前臂专项",
+              "pdf": 2,
+              "list": "腕关节与前臂专项/LIST.md",
+              "path": "康复辅助/腕关节康复感知_D435i/腕关节与前臂专项/LIST.md"
+            },
+            {
+              "name": "深度图姿态估计精度",
+              "pdf": 1,
+              "list": "深度图姿态估计精度/LIST.md",
+              "path": "康复辅助/腕关节康复感知_D435i/深度图姿态估计精度/LIST.md"
+            }
+          ],
+          "path": "康复辅助/腕关节康复感知_D435i",
+          "entry_path": "康复辅助/腕关节康复感知_D435i/待获取文献清单.md"
+        },
+        {
+          "dir": "宋嵘_辅助与训练强度",
+          "path": "康复辅助/宋嵘_辅助与训练强度",
+          "role": "宋嵘团队辅助与训练强度（2026-10-08 归位）",
+          "pdf": 5,
+          "xml": 0,
+          "entry": "per-paper _抽取_en.md",
+          "entry_path": "康复辅助/宋嵘_辅助与训练强度/per-paper _抽取_en.md",
+          "added": "2026-10-08",
+          "artifact_tier": "英文结构化抽取（_抽取_en.md，含图）；中文全文翻译未做"
+        }
+      ]
+    },
+    {
+      "id": "integration_system",
+      "name": "整合系统",
+      "role": "接上：跨两段的接口、决策模型与桥接方法学",
+      "members": [
+        {
+          "dir": "生物力学线",
+          "corpus": "语料三",
+          "axes": "线程 B1-B5 × 证据范式 M0-M4",
+          "pdf": 83,
+          "xml": 17,
+          "entry": "README.md",
+          "index": "index.json",
+          "fetch": "取件入口.md",
+          "threads": [
+            {
+              "id": "B1",
+              "name": "视觉运动学_估计与验证方法学",
+              "pdf": 25,
+              "xml": 5,
+              "list": "B1_视觉运动学_估计与验证方法学/LIST.md",
+              "path": "整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/LIST.md"
+            },
+            {
+              "id": "B2",
+              "name": "肌肉骨骼动力学_与可微仿真",
+              "pdf": 20,
+              "xml": 5,
+              "list": "B2_肌肉骨骼动力学_与可微仿真/LIST.md",
+              "path": "整合系统/生物力学线/B2_肌肉骨骼动力学_与可微仿真/LIST.md"
+            },
+            {
+              "id": "B3",
+              "name": "上肢康复_代偿与临床评估",
+              "pdf": 13,
+              "xml": 3,
+              "list": "B3_上肢康复_代偿与临床评估/LIST.md",
+              "path": "整合系统/生物力学线/B3_上肢康复_代偿与临床评估/LIST.md"
+            },
+            {
+              "id": "B4",
+              "name": "离散运动学token_与表征量化",
+              "pdf": 11,
+              "xml": 0,
+              "list": "B4_离散运动学token_与表征量化/LIST.md",
+              "path": "整合系统/生物力学线/B4_离散运动学token_与表征量化/LIST.md"
+            },
+            {
+              "id": "B5",
+              "name": "视觉运动学到动力学_桥接",
+              "pdf": 14,
+              "xml": 4,
+              "list": "B5_视觉运动学到动力学_桥接/LIST.md",
+              "path": "整合系统/生物力学线/B5_视觉运动学到动力学_桥接/LIST.md"
+            }
+          ],
+          "path": "整合系统/生物力学线",
+          "entry_path": "整合系统/生物力学线/README.md",
+          "index_path": "整合系统/生物力学线/index.json",
+          "fetch_path": "整合系统/生物力学线/取件入口.md"
+        },
+        {
+          "dir": "决策模型线_JEV",
+          "corpus": "语料四",
+          "pdf": 17,
+          "xml": 2,
+          "entry": "README.md",
+          "index": "index.json",
+          "fetch": "取件入口.md",
+          "verdict": "JEV 作为主路线不可行（arXiv 2609.36154：macro-F1 0.038/0.118/0.089 对监督模型 0.686-0.907）；仅三点可迁移",
+          "threads": [
+            {
+              "id": "D1",
+              "name": "JEV本体与SystemOne范式",
+              "pdf": 1,
+              "list": "D1_JEV本体与SystemOne范式/LIST.md",
+              "path": "整合系统/决策模型线_JEV/D1_JEV本体与SystemOne范式/LIST.md"
+            },
+            {
+              "id": "D2",
+              "name": "独立评测与反驳",
+              "pdf": 1,
+              "list": "D2_独立评测与反驳/LIST.md",
+              "path": "整合系统/决策模型线_JEV/D2_独立评测与反驳/LIST.md"
+            },
+            {
+              "id": "D3",
+              "name": "开源复现与替代",
+              "pdf": 2,
+              "list": "D3_开源复现与替代/LIST.md",
+              "path": "整合系统/决策模型线_JEV/D3_开源复现与替代/LIST.md"
+            },
+            {
+              "id": "D4",
+              "name": "AAN辅助控制与介入决策",
+              "pdf": 7,
+              "xml": 2,
+              "list": "D4_AAN辅助控制与介入决策/LIST.md",
+              "path": "整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/LIST.md"
+            },
+            {
+              "id": "D5",
+              "name": "轻量化非Transformer路线",
+              "pdf": 6,
+              "list": "D5_轻量化非Transformer路线/LIST.md",
+              "path": "整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/LIST.md"
+            },
+            {
+              "id": "D6",
+              "name": "康复侧既有实证",
+              "pdf": 0,
+              "list": "D6_康复侧既有实证/LIST.md",
+              "path": "整合系统/决策模型线_JEV/D6_康复侧既有实证/LIST.md"
+            }
+          ],
+          "path": "整合系统/决策模型线_JEV",
+          "entry_path": "整合系统/决策模型线_JEV/README.md",
+          "index_path": "整合系统/决策模型线_JEV/index.json",
+          "fetch_path": "整合系统/决策模型线_JEV/取件入口.md"
+        },
+        {
+          "dir": "sEMG_原始参照论文",
+          "pdf": 2,
+          "entry": "LIST.md",
+          "path": "整合系统/sEMG_原始参照论文",
+          "entry_path": "整合系统/sEMG_原始参照论文/LIST.md"
+        },
+        {
+          "dir": "宋嵘_双参与与肌间耦合",
+          "path": "整合系统/宋嵘_双参与与肌间耦合",
+          "role": "宋嵘团队双参与与肌间耦合（2026-10-08 归位）",
+          "pdf": 5,
+          "xml": 0,
+          "entry": "per-paper _抽取_en.md",
+          "entry_path": "整合系统/宋嵘_双参与与肌间耦合/per-paper _抽取_en.md",
+          "added": "2026-10-08",
+          "artifact_tier": "英文结构化抽取（_抽取_en.md，含图）；中文全文翻译未做"
+        },
+        {
+          "dir": "章隆彬_理解与辅助结合",
+          "path": "整合系统/章隆彬_理解与辅助结合",
+          "role": "章隆彬团队理解—辅助结合（其余 5 篇原件在 09_ 内，不重复取）",
+          "pdf": 1,
+          "xml": 0,
+          "entry": "per-paper _抽取_en.md",
+          "entry_path": "整合系统/章隆彬_理解与辅助结合/per-paper _抽取_en.md",
+          "added": "2026-10-08",
+          "artifact_tier": "英文结构化抽取（_抽取_en.md，含图）；中文全文翻译未做"
+        }
+      ]
+    }
+  ],
+  "external_links": [
+    {
+      "path": "09_章隆彬_合作团队",
+      "type": "symlink",
+      "target": "../09_章隆彬_合作团队",
+      "owner": "湖南大学 章隆彬 团队",
+      "read_only_here": true,
+      "nav": [
+        "README.md"
+      ],
+      "count_policy": "不在本索引声明篇数；该目录由独立会话持续编辑，以其自身台账为准",
+      "nav_note": "该目录由独立会话持续重组（子目录与文件名会变动），索引只深链稳定入口 README.md，避免其变动即造成断链。"
+    },
+    {
+      "path": "12_宋嵘_合作团队",
+      "type": "symlink",
+      "target": "../12_宋嵘_合作团队",
+      "owner": "中山大学 宋嵘 团队",
+      "read_only_here": true,
+      "nav": [
+        "README.md",
+        "LAB_PROFILE.md",
+        "P0三篇精读_阻塞复核.md"
+      ],
+      "count_policy": "不在本索引声明篇数；宋嵘 16 篇新件已按运动理解/康复辅助/整合系统三段收录于本语料，其中 15 篇为实体、1 篇（SongN9）为指向 12_ 的软链",
+      "nav_note": "12_ 目录按「一篇一个文件夹」组织，每篇含 <slug>.pdf + <slug>.md + images/；宋嵘三段目录沿用章隆彬论文的 <作者><年>-<刊>：<中文题名>/ + _抽取_en.md + .pdf + images/ 版式。"
+    }
+  ],
+  "derived": [
+    {
+      "path": "_translation_outputs",
+      "kind": "根级抽取/翻译产物",
+      "entries": 22,
+      "citable": false
+    },
+    {
+      "path": "_抽取_en.md（各论文目录内）",
+      "kind": "英文结构化抽取层（MinerU，含图）",
+      "papers": 26,
+      "images": 341,
+      "citable": true,
+      "note": "不是中文翻译；Case 7 合法孪生，已纳入 Case 2 图片校验与 Case 13 陈旧声明校验"
+    }
+  ],
+  "single_fetch_entry": "../06_附录/待下载论文总清单.md",
+  "self_check": "bash 06_附录/自检脚本/verify_kb.sh",
+  "paths_relative_to": "01_参考论文/",
+  "path_field_note": "path / *_path 字段相对 01_参考论文/ 根层；dir / entry / index / fetch / list 保留局部名以便人工阅读。"
+}

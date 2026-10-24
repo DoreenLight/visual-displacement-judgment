@@ -1,0 +1,25 @@
+{
+  "comparison_rows": 53,
+  "local_sources": 46,
+  "bibliography_only": [
+    "Song_TRO",
+    "Song_TIE",
+    "Song_VAAN",
+    "Song_TBME",
+    "Song_TBCAS",
+    "RL2026",
+    "Shoulder2025"
+  ],
+  "literal_passages_verified": 279,
+  "unverified_mechanisms_not_used_as_absence": true,
+  "semantic_checks": [
+    "输入输出、反馈、参与、强度、安全和局限逐条分开",
+    "单目角度不当主动贡献",
+    "肌电/作用力代理不当独立真值",
+    "Frullo入组17/完成14，balanced设计及p9无不良事件范围",
+    "MPC单名健康人+合成profile，不当临床效果",
+    "ALP时间适配与TFS变量阻抗不混淆",
+    "缺全文7项不推断机制缺失"
+  ],
+  "limits": "摘要/选择段落判读，不是逐页系统综述或独立复现；未核安全性不当成安全/全文未报告"
+}

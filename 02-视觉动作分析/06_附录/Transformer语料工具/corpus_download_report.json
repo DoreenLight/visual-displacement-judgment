@@ -1,0 +1,623 @@
+{
+  "items": [
+    {
+      "arxiv_id": "1706.03762v7",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T1_架构与注意力机制/2017_Vaswani_Attention_Is_All_You_Need.pdf",
+      "bytes": 2215244,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "1807.03819v3",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T1_架构与注意力机制/2018_Dehghani_Universal_Transformers.pdf",
+      "bytes": 2371799,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "1810.04805v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T1_架构与注意力机制/2018_Devlin_BERT_Pre_training_of_Deep_Bidirectional_Transformers.pdf",
+      "bytes": 775166,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "1901.02860v3",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T2_效率与长序列/2019_Dai_Transformer_XL_Attentive_Language_Models_Beyond_a.pdf",
+      "bytes": 4570910,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "1904.10509v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T2_效率与长序列/2019_Child_Generating_Long_Sequences_with_Sparse_Transformers.pdf",
+      "bytes": 4436935,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2001.04451v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T2_效率与长序列/2020_Kitaev_Reformer_The_Efficient_Transformer.pdf",
+      "bytes": 658515,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2004.05150v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T2_效率与长序列/2020_Beltagy_Longformer_The_Long_Document_Transformer.pdf",
+      "bytes": 539211,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2007.14062v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T2_效率与长序列/2020_Zaheer_Big_Bird_Transformers_for_Longer_Sequences.pdf",
+      "bytes": 1153823,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2006.04768v3",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T2_效率与长序列/2020_Wang_Linformer_Self_Attention_with_Linear_Complexity.pdf",
+      "bytes": 922879,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2009.14794v4",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T2_效率与长序列/2020_Choromanski_Rethinking_Attention_with_Performers.pdf",
+      "bytes": 5880177,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2006.03236v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T2_效率与长序列/2020_Dai_Funnel_Transformer_Filtering_out_Sequential_Redundancy_for.pdf",
+      "bytes": 484760,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2010.11929v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2020_Dosovitskiy_An_Image_is_Worth_16x16_Words_Transformers.pdf",
+      "bytes": 3743814,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "1910.10683v4",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T1_架构与注意力机制/2019_Raffel_Exploring_the_Limits_of_Transfer_Learning_with.pdf",
+      "bytes": 1190021,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2103.14030v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2021_Liu_Swin_Transformer_Hierarchical_Vision_Transformer_using_Shift.pdf",
+      "bytes": 1360315,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2104.09864v5",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T3_位置编码与长度外推/2021_Su_RoFormer_Enhanced_Transformer_with_Rotary_Position_Embedding.pdf",
+      "bytes": 599289,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2108.12409v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T3_位置编码与长度外推/2021_Press_Train_Short_Test_Long_Attention_with_Linear.pdf",
+      "bytes": 759030,
+      "reason": "",
+      "title": "Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation",
+      "thread": "T3",
+      "stage": "S2",
+      "year": 2021
+    },
+    {
+      "arxiv_id": "2103.00020v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2021_Radford_Learning_Transferable_Visual_Models_From_Natural_Language.pdf",
+      "bytes": 6813639,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2204.14198v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2022_Alayrac_Flamingo_a_Visual_Language_Model_for_Few.pdf",
+      "bytes": 31579390,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2111.06377v3",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2021_He_Masked_Autoencoders_Are_Scalable_Vision_Learners.pdf",
+      "bytes": 7445748,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2102.05095v4",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2021_Bertasius_Is_Space_Time_Attention_All_You_Need.pdf",
+      "bytes": 8708681,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2106.11297v4",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T2_效率与长序列/2021_Ryoo_TokenLearner_What_Can_8_Learned_Tokens_Do.pdf",
+      "bytes": 1466735,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2006.11239v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T5_动作生成与离散token/2020_Ho_Denoising_Diffusion_Probabilistic_Models.pdf",
+      "bytes": 10267274,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2112.10741v3",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T5_动作生成与离散token/2021_Nichol_GLIDE_Towards_Photorealistic_Image_Generation_and_Editing.pdf",
+      "bytes": 21259715,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2102.12092v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T5_动作生成与离散token/2021_Ramesh_Zero_Shot_Text_to_Image_Generation.pdf",
+      "bytes": 10126551,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2103.10455v3",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2021_Zheng_3D_Human_Pose_Estimation_with_Spatial_and.pdf",
+      "bytes": 3739723,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2012.09760v3",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2020_Lin_End_to_End_Human_Pose_and_Mesh.pdf",
+      "bytes": 5369725,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2404.16752v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2024_Dwivedi_TokenHMR_Advancing_Human_Mesh_Recovery_with_a.pdf",
+      "bytes": 10179977,
+      "reason": "",
+      "title": "TokenHMR: Advancing Human Mesh Recovery with a Tokenized Pose Representation",
+      "thread": "T4",
+      "stage": "S4",
+      "year": 2024
+    },
+    {
+      "arxiv_id": "2303.17472v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2023_Zhao_PoseFormerV2_Exploring_Frequency_Domain_for_Efficient_and.pdf",
+      "bytes": 23267742,
+      "reason": "",
+      "title": "PoseFormerV2: Exploring Frequency Domain for Efficient and Robust 3D Human Pose Estimation",
+      "thread": "T4",
+      "stage": "S3",
+      "year": 2023
+    },
+    {
+      "arxiv_id": "2210.06551v5",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2022_Zhu_MotionBERT_A_Unified_Perspective_on_Learning_Human.pdf",
+      "bytes": 7080825,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2310.16288v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2023_Mehraban_MotionAGFormer_Enhancing_3D_Human_Pose_Estimation_with.pdf",
+      "bytes": 1802563,
+      "reason": "",
+      "title": "MotionAGFormer: Enhancing 3D Human Pose Estimation with a Transformer-GCNFormer Network",
+      "thread": "T4",
+      "stage": "S3",
+      "year": 2023
+    },
+    {
+      "arxiv_id": "2304.02643v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2023_Kirillov_Segment_Anything.pdf",
+      "bytes": 15644599,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2301.06052v4",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T5_动作生成与离散token/2023_Zhang_T2M_GPT_Generating_Human_Motion_from_Textual.pdf",
+      "bytes": 8092306,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2209.14916v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T5_动作生成与离散token/2022_Tevet_Human_Motion_Diffusion_Model.pdf",
+      "bytes": 12058408,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2208.15001v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T5_动作生成与离散token/2022_Zhang_MotionDiffuse_Text_Driven_Human_Motion_Generation_with.pdf",
+      "bytes": 2072174,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2306.14795v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T5_动作生成与离散token/2023_Jiang_MotionGPT_Human_Motion_as_a_Foreign_Language.pdf",
+      "bytes": 4379413,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2201.03545v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T1_架构与注意力机制/2022_Liu_A_ConvNet_for_the_2020s.pdf",
+      "bytes": 751927,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2312.00752v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T7_状态空间与混合架构/2023_Gu_Mamba_Linear_Time_Sequence_Modeling_with_Selective.pdf",
+      "bytes": 1168615,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2405.21060v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T7_状态空间与混合架构/2024_Dao_Transformers_are_SSMs_Generalized_Models_and_Efficient.pdf",
+      "bytes": 3209170,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2111.00396v3",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T7_状态空间与混合架构/2021_Gu_Efficiently_Modeling_Long_Sequences_with_Structured_State.pdf",
+      "bytes": 3386172,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2302.10866v3",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T7_状态空间与混合架构/2023_Poli_Hyena_Hierarchy_Towards_Larger_Convolutional_Language_Models.pdf",
+      "bytes": 3400262,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2205.14135v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T2_效率与长序列/2022_Dao_FlashAttention_Fast_and_Memory_Efficient_Exact_Attention.pdf",
+      "bytes": 2630825,
+      "reason": "",
+      "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+      "thread": "T2",
+      "stage": "S2",
+      "year": 2022
+    },
+    {
+      "arxiv_id": "2307.08691v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T2_效率与长序列/2023_Dao_FlashAttention_2_Faster_Attention_with_Better_Parallelism.pdf",
+      "bytes": 1660578,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2310.01889v4",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T2_效率与长序列/2023_Liu_Ring_Attention_with_Blockwise_Transformers_for_Near.pdf",
+      "bytes": 1766025,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2209.07484v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T2_效率与长序列/2022_Bolya_Hydra_Attention_Efficient_Attention_with_Many_Heads.pdf",
+      "bytes": 11339048,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2404.04430v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T6_物理约束·世界模型/2024_Zhang_PhysPT_Physics_aware_Pretrained_Transformer_for_Estimating.pdf",
+      "bytes": 7145383,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2303.01418v3",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T6_物理约束·世界模型/2023_Shafir_Human_Motion_Diffusion_as_a_Generative_Prior.pdf",
+      "bytes": 3433197,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2212.02500v3",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T6_物理约束·世界模型/2022_Yuan_PhysDiff_Physics_Guided_Human_Motion_Diffusion_Model.pdf",
+      "bytes": 16447323,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "1803.10122v4",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T6_物理约束·世界模型/2018_Ha_World_Models.pdf",
+      "bytes": 3147467,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2301.04104v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T6_物理约束·世界模型/2023_Hafner_Mastering_Diverse_Domains_through_World_Models.pdf",
+      "bytes": 2874717,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2402.15391v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T6_物理约束·世界模型/2024_Bruce_Genie_Generative_Interactive_Environments.pdf",
+      "bytes": 42346194,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2502.07825v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T6_物理约束·世界模型/2024_anon_Pre_Trained_Video_Generative_Models_as_World.pdf",
+      "bytes": 1459850,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2310.16828v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T6_物理约束·世界模型/2023_Hansen_TD_MPC2_Scalable_Robust_World_Models_for.pdf",
+      "bytes": 7858004,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "1903.00709v5",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2019_Yu_PartNet_A_Recursive_Part_Decomposition_Network_for.pdf",
+      "bytes": 9791156,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2501.00663v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T7_状态空间与混合架构/2024_Behrouz_Titans_Learning_to_Memorize_at_Test_Time.pdf",
+      "bytes": 3657065,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2412.06464v3",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T7_状态空间与混合架构/2024_Yang_Gated_Delta_Networks_Improving_Mamba2_with_Delta.pdf",
+      "bytes": 442953,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2406.06484v6",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T7_状态空间与混合架构/2024_Yang_Parallelizing_Linear_Transformers_with_the_Delta_Rule.pdf",
+      "bytes": 474845,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2001.08361v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T1_架构与注意力机制/2020_Kaplan_Scaling_Laws_for_Neural_Language_Models.pdf",
+      "bytes": 2493004,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2106.04560v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2021_Zhai_Scaling_Vision_Transformers.pdf",
+      "bytes": 855476,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2310.06625v4",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T7_状态空间与混合架构/2023_Liu_iTransformer_Inverted_Transformers_Are_Effective_for_Time.pdf",
+      "bytes": 6345202,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2106.09685v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T1_架构与注意力机制/2021_Hu_LoRA_Low_Rank_Adaptation_of_Large_Language.pdf",
+      "bytes": 1609513,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2506.04577v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T5_动作生成与离散token/2025_Daryakenari_A_Novel_Transformer_Based_Method_for_Full.pdf",
+      "bytes": 2588284,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2604.12591v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T6_物理约束·世界模型/2026_Gabler_Machine_Learning_Based_Real_Time_Detection_of.pdf",
+      "bytes": 15875324,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2409.03193v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T6_物理约束·世界模型/2024_Chen_Upper_Limb_Rehabilitation_with_a_Dual_Mode.pdf",
+      "bytes": 4662548,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "1607.06450v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T1_架构与注意力机制/2016_Ba_Layer_Normalization.pdf",
+      "bytes": 612446,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "1907.11692v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T1_架构与注意力机制/2019_Liu_RoBERTa_A_Robustly_Optimized_BERT_Pretraining_Approach.pdf",
+      "bytes": 209675,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2003.10555v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T1_架构与注意力机制/2020_Clark_ELECTRA_Pre_training_Text_Encoders_as_Discriminators.pdf",
+      "bytes": 497999,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2002.05202v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T1_架构与注意力机制/2020_Shazeer_GLU_Variants_Improve_Transformer.pdf",
+      "bytes": 109135,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "1910.02054v3",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T2_效率与长序列/2019_Rajbhandari_ZeRO_Memory_Optimizations_Toward_Training_Trillion_Parameter.pdf",
+      "bytes": 779206,
+      "reason": "",
+      "title": "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models",
+      "thread": "T2",
+      "stage": "S1",
+      "year": 2019
+    },
+    {
+      "arxiv_id": "2309.06180v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T2_效率与长序列/2023_Kwon_Efficient_Memory_Management_for_Large_Language_Model.pdf",
+      "bytes": 1459631,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2211.17192v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T2_效率与长序列/2022_Leviathan_Fast_Inference_from_Transformers_via_Speculative_Decoding.pdf",
+      "bytes": 574982,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2005.00743v3",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T2_效率与长序列/2020_Tay_Synthesizer_Rethinking_Self_Attention_in_Transformer_Models.pdf",
+      "bytes": 726782,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2004.08483v5",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T2_效率与长序列/2020_Ainslie_ETC_Encoding_Long_and_Structured_Inputs_in.pdf",
+      "bytes": 689430,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2203.12602v3",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2022_Tong_VideoMAE_Masked_Autoencoders_are_Data_Efficient_Learners.pdf",
+      "bytes": 6487986,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2304.07193v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2023_Oquab_DINOv2_Learning_Robust_Visual_Features_without_Supervision.pdf",
+      "bytes": 8049044,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2305.05665v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2023_Girdhar_ImageBind_One_Embedding_Space_To_Bind_Them.pdf",
+      "bytes": 5482135,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2301.12597v3",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2023_Li_BLIP_2_Bootstrapping_Language_Image_Pre_training.pdf",
+      "bytes": 6737540,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2304.08485v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2023_Liu_Visual_Instruction_Tuning.pdf",
+      "bytes": 5906135,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2408.00714v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2024_Ravi_SAM_2_Segment_Anything_in_Images_and.pdf",
+      "bytes": 12709657,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2212.03191v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2022_Wang_InternVideo_General_Video_Foundation_Models_via_Generative.pdf",
+      "bytes": 831105,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2202.00758v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T4_视觉·多模态·人体/2022_Jain_ColloSSL_Collaborative_Self_Supervised_Learning_for_Human.pdf",
+      "bytes": 9345272,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2202.04200v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T5_动作生成与离散token/2022_Chang_MaskGIT_Masked_Generative_Image_Transformer.pdf",
+      "bytes": 27178546,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2303.04137v5",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T6_物理约束·世界模型/2023_Chi_Diffusion_Policy_Visuomotor_Policy_Learning_via_Action.pdf",
+      "bytes": 6192199,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2203.04955v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T6_物理约束·世界模型/2022_Hansen_Temporal_Difference_Learning_for_Model_Predictive_Control.pdf",
+      "bytes": 12584890,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2412.09871v1",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T7_状态空间与混合架构/2024_Pagnoni_Byte_Latent_Transformer_Patches_Scale_Better_Than.pdf",
+      "bytes": 2388447,
+      "reason": "already"
+    },
+    {
+      "arxiv_id": "2502.11089v2",
+      "status": "ok",
+      "path": "01_参考论文/Transformer_发展线/T7_状态空间与混合架构/2025_Yuan_Native_Sparse_Attention_Hardware_Aligned_and_Natively.pdf",
+      "bytes": 1435777,
+      "reason": "already"
+    }
+  ]
+}

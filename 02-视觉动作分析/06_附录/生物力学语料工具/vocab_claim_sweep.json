@@ -1,0 +1,605 @@
+{
+  "purpose": "核心新颖性主张「离散运动学词表（临床关节角）仍开放」的定向撞红扫描",
+  "note": "null 结果也是结论：说明这些式子在 Crossref/arXiv 公开索引里取不到，但不等于「不存在」——入库仍须走可复现链并做多源交叉证实",
+  "queries": [
+    {
+      "label": "A1 关节角+离散符号",
+      "source": "crossref",
+      "query": "joint angle discretization vocabulary codebook",
+      "status": "ok",
+      "n": 8,
+      "hits": [
+        {
+          "doi": "10.1109/twc.2024.3385749",
+          "title": "Near-Field Beam Training: Joint Angle and Range Estimation With DFT Codebook",
+          "year": 2024,
+          "venue": "IEEE Transactions on Wireless Communications"
+        },
+        {
+          "doi": "10.21437/eurospeech.1989-223",
+          "title": "Large-vocabulary speech recognition with speaker-adapted codebook and HMM parameters",
+          "year": 1989,
+          "venue": "First European Conference on Speech Communication and Technology (Eurospeech 1989)"
+        },
+        {
+          "doi": "10.1109/isit62367.2026.11653609",
+          "title": "Beamforming Codebook Optimization for Angle-of-Arrival Estimation",
+          "year": 2026,
+          "venue": "2026 IEEE International Symposium on Information Theory (ISIT)"
+        },
+        {
+          "doi": "10.1109/ijcnn.2010.5596516",
+          "title": "Multi-resolution state-space discretization for Q-Learning with pseudo-randomized discretization",
+          "year": 2010,
+          "venue": "The 2010 International Joint Conference on Neural Networks (IJCNN)"
+        },
+        {
+          "doi": "10.1155/2014/697245",
+          "title": "Research on Vocabulary Sizes and Codebook Universality",
+          "year": 2014,
+          "venue": "Abstract and Applied Analysis"
+        },
+        {
+          "doi": "10.7717/peerj.12066/fig-4",
+          "title": "Figure 4: Joint angle definitions.",
+          "year": null,
+          "venue": "?"
+        },
+        {
+          "doi": "10.7717/peerj.16571/supp-1",
+          "title": "Supplemental Information 1: Joint angle description.",
+          "year": null,
+          "venue": "?"
+        },
+        {
+          "doi": "10.7717/peerj.6078/fig-7",
+          "title": "Figure 7: Joint angle reconstruction error.",
+          "year": null,
+          "venue": "?"
+        }
+      ]
+    },
+    {
+      "label": "A2 关节角+离散token",
+      "source": "crossref",
+      "query": "joint angle discrete tokens sequence",
+      "status": "ok",
+      "n": 8,
+      "hits": [
+        {
+          "doi": "10.2139/ssrn.6069188",
+          "title": "Emotions as Discrete Tokens for Credit Assignment",
+          "year": 2026,
+          "venue": "?"
+        },
+        {
+          "doi": "10.1109/tpami.2025.3643619/mm1",
+          "title": "Recent Advances in Discrete Speech Tokens: A Review_supp1-3643619.pdf",
+          "year": null,
+          "venue": "?"
+        },
+        {
+          "doi": "10.2139/ssrn.6631513",
+          "title": "DHOI: Text-Driven Grasp Generation via Contact Tokens and Discrete Diffusion",
+          "year": 2026,
+          "venue": "?"
+        },
+        {
+          "doi": "10.1109/asiajcis.2016.18",
+          "title": "Defense Joint Attacks Based on Stochastic Discrete Sequence Anomaly Detection",
+          "year": 2016,
+          "venue": "2016 11th Asia Joint Conference on Information Security (AsiaJCIS)"
+        },
+        {
+          "doi": "10.1037/e537102012-102",
+          "title": "Acknowledgment tokens: Navigating joint projects",
+          "year": 2001,
+          "venue": "PsycEXTRA Dataset"
+        },
+        {
+          "doi": "10.18653/v1/d19-1001",
+          "title": "Attending to Future Tokens for Bidirectional Sequence Generation",
+          "year": 2019,
+          "venue": "Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)"
+        },
+        {
+          "doi": "10.1016/j.dam.2011.01.020",
+          "title": "Deterministic symmetric rendezvous with tokens in a synchronous torus",
+          "year": 2011,
+          "venue": "Discrete Applied Mathematics"
+        },
+        {
+          "doi": "10.1109/jurse.2011.5764731",
+          "title": "Spectral classification of WorldView-2 multi-angle sequence",
+          "year": 2011,
+          "venue": "2011 Joint Urban Remote Sensing Event"
+        }
+      ]
+    },
+    {
+      "label": "A3 临床角度+token",
+      "source": "crossref",
+      "query": "clinical joint angle tokenization",
+      "status": "ok",
+      "n": 8,
+      "hits": [
+        {
+          "doi": "10.1109/iucs.2010.5666651",
+          "title": "Joint tokenization, parsing, and translation",
+          "year": 2010,
+          "venue": "2010 4th International Universal Communication Symposium"
+        },
+        {
+          "doi": "10.1302/2046-3758.28.2000157",
+          "title": "Clinical tibiofemoral angle in south Indian children",
+          "year": 2013,
+          "venue": "Bone &amp; Joint Research"
+        },
+        {
+          "doi": "10.7717/peerj.12066/fig-4",
+          "title": "Figure 4: Joint angle definitions.",
+          "year": null,
+          "venue": "?"
+        },
+        {
+          "doi": "10.1109/jcsse54890.2022.9836268",
+          "title": "Tokenization-based data augmentation for text classification",
+          "year": 2022,
+          "venue": "2022 19th International Joint Conference on Computer Science and Software Engineering (JCSSE)"
+        },
+        {
+          "doi": "10.7717/peerj.16571/supp-1",
+          "title": "Supplemental Information 1: Joint angle description.",
+          "year": null,
+          "venue": "?"
+        },
+        {
+          "doi": "10.7717/peerj.6078/fig-7",
+          "title": "Figure 7: Joint angle reconstruction error.",
+          "year": null,
+          "venue": "?"
+        },
+        {
+          "doi": "10.7717/peerj.21581/fig-5",
+          "title": "Figure 5: Knee joint angle comparison.",
+          "year": null,
+          "venue": "?"
+        },
+        {
+          "doi": "10.7717/peerj.16571/supp-2",
+          "title": "Supplemental Information 2: Joint angle statistics.",
+          "year": null,
+          "venue": "?"
+        }
+      ]
+    },
+    {
+      "label": "A4 运动学+codebook",
+      "source": "crossref",
+      "query": "kinematics codebook discrete representation",
+      "status": "ok",
+      "n": 8,
+      "hits": [
+        {
+          "doi": "10.1016/j.array.2026.101073",
+          "title": "A discrete articulatory codebook for imagined-speech EEG: Weakly supervised mapping to surrogate kinematics",
+          "year": 2026,
+          "venue": "Array"
+        },
+        {
+          "doi": "10.1117/1.jei.35.2.023039",
+          "title": "Codebook-guided prediction network for discrete representation and reconstruction in scene text image super-resolution",
+          "year": 2026,
+          "venue": "Journal of Electronic Imaging"
+        },
+        {
+          "doi": "10.2139/ssrn.4671725",
+          "title": "Edvae: Mitigating Codebook Collapse with Evidential Discrete Variational Autoencoders",
+          "year": 2023,
+          "venue": "?"
+        },
+        {
+          "doi": "10.1109/dcc.1992.227449",
+          "title": "Variable precision representation for efficient VQ codebook storage",
+          "year": null,
+          "venue": "Data Compression Conference, 1992."
+        },
+        {
+          "doi": "10.14711/thesis-b1213370",
+          "title": "The use of discrete distributions with a very large codebook for automatic speech recognition and speaker verification",
+          "year": null,
+          "venue": "?"
+        },
+        {
+          "doi": "10.1007/springerreference_12624",
+          "title": "discrete representation",
+          "year": null,
+          "venue": "SpringerReference"
+        },
+        {
+          "doi": "10.1006/jvci.1996.0016",
+          "title": "Fast Search Algorithms for VQ Codebook Generation",
+          "year": 1996,
+          "venue": "Journal of Visual Communication and Image Representation"
+        },
+        {
+          "doi": "10.1017/9781316832301.005",
+          "title": "Kinematics of Discrete Systems",
+          "year": 2017,
+          "venue": "Advanced Analytical Dynamics"
+        }
+      ]
+    },
+    {
+      "label": "A5 角度序列+VQ",
+      "source": "crossref",
+      "query": "vector quantization joint angle sequence",
+      "status": "ok",
+      "n": 8,
+      "hits": [
+        {
+          "doi": "10.1109/ijcnn.1989.118313",
+          "title": "Adaptive image sequence coding with neural network vector quantization",
+          "year": 1989,
+          "venue": "International Joint Conference on Neural Networks"
+        },
+        {
+          "doi": "10.24963/ijcai.2024/510",
+          "title": "LongVQ: Long Sequence Modeling with Vector Quantization on Structured Memory",
+          "year": 2024,
+          "venue": "Proceedings of the Thirty-ThirdInternational Joint Conference on Artificial Intelligence"
+        },
+        {
+          "doi": "10.5220/0011389600003332",
+          "title": "Explaining Reject Options of Learning Vector Quantization Classifiers",
+          "year": 2022,
+          "venue": "Proceedings of the 14th International Joint Conference on Computational Intelligence"
+        },
+        {
+          "doi": "10.1109/icassp.1989.266828",
+          "title": "Image sequence coding by vector quantization",
+          "year": null,
+          "venue": "International Conference on Acoustics, Speech, and Signal Processing"
+        },
+        {
+          "doi": "10.5220/0006398304070412",
+          "title": "Vector Quantization based Steganography for Secure Speech Communication System",
+          "year": 2017,
+          "venue": "Proceedings of the 14th International Joint Conference on e-Business and Telecommunications"
+        },
+        {
+          "doi": "10.1016/b978-0-444-89587-5.50036-0",
+          "title": "An Image Sequence Coder Based on Vector Quantization and Progressive Transmission",
+          "year": 1992,
+          "venue": "Signal Processing"
+        },
+        {
+          "doi": "10.1016/b978-0-444-89587-5.50037-2",
+          "title": "WAVELET TRANSFORM AND LATTICE VECTOR QUANTIZATION FOR IMAGE SEQUENCE CODING",
+          "year": 1992,
+          "venue": "Signal Processing"
+        },
+        {
+          "doi": "10.1016/0165-1684(87)90121-6",
+          "title": "Image sequence coding using classified and temporal adaptive vector quantization",
+          "year": 1987,
+          "venue": "Signal Processing"
+        }
+      ]
+    },
+    {
+      "label": "B1 关节角+语言模型",
+      "source": "crossref",
+      "query": "joint angle language model translation",
+      "status": "ok",
+      "n": 8,
+      "hits": [
+        {
+          "doi": "10.4324/9781315760315-4",
+          "title": "Language and Translation",
+          "year": 2014,
+          "venue": "Translation"
+        },
+        {
+          "doi": "10.24963/ijcai.2019/106",
+          "title": "Connectionist Temporal Modeling of Video and Language: a Joint Model for Translation and Sign Labeling",
+          "year": 2019,
+          "venue": "Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence"
+        },
+        {
+          "doi": "10.4324/9781315760315-8",
+          "title": "Translation into the Foreign Language",
+          "year": 2014,
+          "venue": "Translation"
+        },
+        {
+          "doi": "10.4324/9781315841144-15",
+          "title": "Towards a model of translation competence",
+          "year": 2014,
+          "venue": "Translation into the Second Language"
+        },
+        {
+          "doi": "10.46569/20.500.12680/j3860f21v",
+          "title": "Validity of the MoveNet Deep Learning Model for Joint Angle Estimation",
+          "year": null,
+          "venue": "?"
+        },
+        {
+          "doi": "10.3115/v1/w14-6812",
+          "title": "Local Phrase Reordering Model for Chinese-English Patent Machine Translation",
+          "year": 2014,
+          "venue": "Proceedings of The Third CIPS-SIGHAN Joint Conference on Chinese Language Processing"
+        },
+        {
+          "doi": "10.18653/v1/d15-1248",
+          "title": "A Joint Dependency Model of Morphological and Syntactic Structure for Statistical Machine Translation",
+          "year": 2015,
+          "venue": "Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing"
+        },
+        {
+          "doi": "10.1109/wi-iat.2013.183",
+          "title": "Algebraic Model and Implementation of Translation between Logic and Natural Language",
+          "year": 2013,
+          "venue": "2013 IEEE/WIC/ACM International Joint Conferences on Web Intelligence (WI) and Intelligent Agent Technologies (IAT)"
+        }
+      ]
+    },
+    {
+      "label": "B2 运动学语言",
+      "source": "crossref",
+      "query": "kinematic language human motion",
+      "status": "ok",
+      "n": 8,
+      "hits": [
+        {
+          "doi": "10.2307/j.ctvr695gt.4",
+          "title": "MOTION AND IMAGE IN KINEMATIC TEXTS",
+          "year": 2020,
+          "venue": "Kinematic Rhetoric"
+        },
+        {
+          "doi": "10.1063/1.56316",
+          "title": "Some issues of the human arm motion obtained from its kinematic model",
+          "year": 1998,
+          "venue": "AIP Conference Proceedings"
+        },
+        {
+          "doi": "10.1007/978-3-319-30808-1_28-1",
+          "title": "Kinematic Foot Models for Instrumented Gait Analysis",
+          "year": 2016,
+          "venue": "Handbook of Human Motion"
+        },
+        {
+          "doi": "10.1007/978-3-319-14418-4_28",
+          "title": "Kinematic Foot Models for Instrumented Gait Analysis",
+          "year": 2018,
+          "venue": "Handbook of Human Motion"
+        },
+        {
+          "doi": "10.2307/j.ctvr695gt.7",
+          "title": "COMPOSING KINEMATIC TEXTS",
+          "year": 2020,
+          "venue": "Kinematic Rhetoric"
+        },
+        {
+          "doi": "10.1007/978-3-319-30808-1_162-1",
+          "title": "Three-Dimensional Human Kinematic Estimation Using Magneto-Inertial Measurement Units",
+          "year": 2017,
+          "venue": "Handbook of Human Motion"
+        },
+        {
+          "doi": "10.1007/978-3-319-14418-4_162",
+          "title": "Three-Dimensional Human Kinematic Estimation Using Magneto-Inertial Measurement Units",
+          "year": 2018,
+          "venue": "Handbook of Human Motion"
+        },
+        {
+          "doi": "10.1016/0021-9290(94)91282-3",
+          "title": "Kinematic singularities in human arm motion",
+          "year": 1994,
+          "venue": "Journal of Biomechanics"
+        }
+      ]
+    },
+    {
+      "label": "B3 视觉到角度+翻译",
+      "source": "crossref",
+      "query": "visual to joint angle translation model",
+      "status": "ok",
+      "n": 8,
+      "hits": [
+        {
+          "doi": "10.46569/20.500.12680/j3860f21v",
+          "title": "Validity of the MoveNet Deep Learning Model for Joint Angle Estimation",
+          "year": null,
+          "venue": "?"
+        },
+        {
+          "doi": "10.33915/etd.10956",
+          "title": "Verification of three-dimensional biomechanical model joint angle outputs using a computer generated avatar.",
+          "year": null,
+          "venue": "?"
+        },
+        {
+          "doi": "10.1007/springerreference_184131",
+          "title": "Visual Angle",
+          "year": null,
+          "venue": "SpringerReference"
+        },
+        {
+          "doi": "10.7717/peerjcs.764/fig-10",
+          "title": "Figure 10: The results of the 3D ellipsoid reconstruction over the synthetic model with super quadrics and joint angle estimation.",
+          "year": null,
+          "venue": "?"
+        },
+        {
+          "doi": "10.1016/b978-0-12-189750-5.50021-x",
+          "title": "VISUAL ANGLE",
+          "year": 1970,
+          "venue": "Visual Perception"
+        },
+        {
+          "doi": "10.1016/s0031-9406(10)63103-3",
+          "title": "Comparison of Visual Estimation and Goniometry in Determination of a Shoulder Joint Angle",
+          "year": 1990,
+          "venue": "Physiotherapy"
+        },
+        {
+          "doi": "10.21437/interspeech.2024-675",
+          "title": "Modality Translation Learning for Joint Speech-Text Model",
+          "year": 2024,
+          "venue": "Interspeech 2024"
+        },
+        {
+          "doi": "10.1016/s0031-9406(05)65665-9",
+          "title": "Comparison of Visual Estimation and Goniometry for Assessment of Metacarpophalangeal Joint Angle",
+          "year": 1999,
+          "venue": "Physiotherapy"
+        }
+      ]
+    },
+    {
+      "label": "B4 生物力学语言",
+      "source": "crossref",
+      "query": "biomechanical language grammar joint",
+      "status": "ok",
+      "n": 8,
+      "hits": [
+        {
+          "doi": "10.1017/cbo9780511814129.005",
+          "title": "Language Surveys",
+          "year": null,
+          "venue": "Reading Greek"
+        },
+        {
+          "doi": "10.1075/slcs.156.15hay",
+          "title": "Activity, participation, and joint turn construction",
+          "year": 2014,
+          "venue": "Studies in Language Companion Series"
+        },
+        {
+          "doi": "10.3115/1603899.1603904",
+          "title": "Learning a lexicalized grammar for German",
+          "year": 1998,
+          "venue": "Proceedings of the Joint Conferences on New Methods in Language Processing and Computational Natural Language Learning - NeMLaP3/CoNLL '98"
+        },
+        {
+          "doi": "10.12731/ofernio.2017.22605",
+          "title": "Communicative German Language Grammar (intermediate level)",
+          "year": 2017,
+          "venue": "Communicative English Language Grammar (intermediate level)"
+        },
+        {
+          "doi": "10.1017/9781108693707.007",
+          "title": "The Grammar of Interactional Language",
+          "year": 2021,
+          "venue": "The Grammar of Interactional Language"
+        },
+        {
+          "doi": "10.1515/9783110806649-003",
+          "title": "CHAPTER II. Social Grammar of Language",
+          "year": 1977,
+          "venue": "Towards a Social Grammar of Language"
+        },
+        {
+          "doi": "10.1017/cbo9780511814129.004",
+          "title": "Reference Grammar",
+          "year": null,
+          "venue": "Reading Greek"
+        },
+        {
+          "doi": "10.1302/3114-220911",
+          "title": "Biomechanical Comparison of Graft Preparation Techniques for Distal Radioulnar Joint Reconstruction",
+          "year": 2022,
+          "venue": "OrthoMedia"
+        }
+      ]
+    },
+    {
+      "label": "C1 arXiv kinematic token",
+      "source": "arxiv",
+      "query": "all:\"joint angle\" AND all:\"token\"",
+      "status": "ok",
+      "n": 5,
+      "hits": [
+        {
+          "arxiv_id": "2603.09930v2",
+          "title": "Fine-grained Motion Retrieval via Joint-Angle Motion Images and Token-Patch Late Interaction"
+        },
+        {
+          "arxiv_id": "2608.03127v1",
+          "title": "DigitCode: Symbolic Tokenization of Hand Motion by Anatomical Units"
+        },
+        {
+          "arxiv_id": "2509.13349v2",
+          "title": "Label-Efficient Grasp Joint Prediction with Point-JEPA"
+        },
+        {
+          "arxiv_id": "2606.27317v1",
+          "title": "OctoSense: Self-Supervised Learning for Multimodal Robot Perception"
+        },
+        {
+          "arxiv_id": "2606.09813v1",
+          "title": "iMaC: Translating Actions into Motion and Contact Images for Embodied World Models"
+        }
+      ]
+    },
+    {
+      "label": "C2 arXiv motion tokenization",
+      "source": "arxiv",
+      "query": "all:\"motion tokenization\" AND all:\"joint\"",
+      "status": "ok",
+      "n": 8,
+      "hits": [
+        {
+          "arxiv_id": "2602.06548v1",
+          "title": "NECromancer: Breathing Life into Skeletons via BVH Animation"
+        },
+        {
+          "arxiv_id": "2512.03918v1",
+          "title": "UniMo: Unifying 2D Video and 3D Human Motion with an Autoregressive Framework"
+        },
+        {
+          "arxiv_id": "2605.07354v1",
+          "title": "Task-Oriented Communication for Human Action Understanding via Edge-Cloud Co-Inference"
+        },
+        {
+          "arxiv_id": "2410.10780v4",
+          "title": "MaskControl: Spatio-Temporal Control for Masked Motion Synthesis"
+        },
+        {
+          "arxiv_id": "2407.14502v1",
+          "title": "M2D2M: Multi-Motion Generation from Text with Discrete Diffusion Models"
+        },
+        {
+          "arxiv_id": "2512.18814v1",
+          "title": "EchoMotion: Unified Human Video and Motion Generation via Dual-Modality Diffusion Transformer"
+        },
+        {
+          "arxiv_id": "2309.16534v1",
+          "title": "MotionLM: Multi-Agent Motion Forecasting as Language Modeling"
+        },
+        {
+          "arxiv_id": "2211.16016v1",
+          "title": "UDE: A Unified Driving Engine for Human Motion Generation"
+        }
+      ]
+    },
+    {
+      "label": "C3 arXiv kinematic vocabulary",
+      "source": "arxiv",
+      "query": "all:\"kinematic vocabulary\"",
+      "status": "ok",
+      "n": 0,
+      "hits": []
+    },
+    {
+      "label": "C4 arXiv angle quantization",
+      "source": "arxiv",
+      "query": "all:\"angle\" AND all:\"vector quantization\" AND all:\"pose\"",
+      "status": "ok",
+      "n": 0,
+      "hits": []
+    }
+  ]
+}

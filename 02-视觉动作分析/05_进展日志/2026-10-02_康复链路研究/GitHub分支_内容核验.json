@@ -1,0 +1,156 @@
+{
+  "status": "REMOTE_DOCUMENTS_AND_DERIVED_SCHEMA_CHECKED_NOT_RAW_REVALIDATION",
+  "user_decisions": {
+    "participation": "物理主动贡献与心理参与分别评价",
+    "priority": "补材料后裁定"
+  },
+  "repository": "https://github.com/xiangbianpangde/visual-displacement-judgment",
+  "branch": "d435i-analysis-20261001",
+  "commit": "5192efef18ba8eb491c50c1e90439cef13d2dceb",
+  "tree_sha": "3f0f39360f201edfdce4a44c1824d3f5e47105af",
+  "access_date": "2026-10-03",
+  "source_files": [
+    {
+      "path": "02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/closeout_review_v1/review_20261001_v1/MASTER_REVIEW.md",
+      "size": 3253,
+      "blob_sha": "b8592bd51afd77a3b7a4e6570198316e1f0efe33"
+    },
+    {
+      "path": "02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/closeout_review_v1/review_20261001_v1/summary.json",
+      "size": 16513,
+      "blob_sha": "b5e4cb591bed2dcd0e072a34013cee0e04a7ce8d"
+    },
+    {
+      "path": "02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/offline_reanalysis_v1/README.md",
+      "size": 2286,
+      "blob_sha": "2e772364046148bd3263605c160c76421f70e0d1"
+    },
+    {
+      "path": "02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/offline_reanalysis_v1/REPORT.md",
+      "size": 12581,
+      "blob_sha": "829416a10e0e1244e19231a0e5c95190a961fdbf"
+    },
+    {
+      "path": "02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/offline_reanalysis_v1/analysis_20261001_v1/group_summary.json",
+      "size": 1495,
+      "blob_sha": "174c3428110b14598e07484a9172174ac6e7fed4"
+    },
+    {
+      "path": "02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/offline_reanalysis_v1/analysis_20261001_v1/trial_metrics.csv",
+      "size": 8628,
+      "blob_sha": "57e310c3961bb9f416e05ef57659c76941890807"
+    },
+    {
+      "path": "02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/realtime_feedback_v5/ANGLE_DEFINITIONS.md",
+      "size": 10432,
+      "blob_sha": "46c089fe936217215226c91e25295076a6c07ffa"
+    },
+    {
+      "path": "02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/realtime_feedback_v5/README.md",
+      "size": 8198,
+      "blob_sha": "f2b7262d5b63ccbb738b8da3d0e8cb15fd1ed5cd"
+    },
+    {
+      "path": "02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/realtime_feedback_v5/connection_fix_check.json",
+      "size": 230,
+      "blob_sha": "9d4d98351578081555e3474e68150985032c3d1b"
+    },
+    {
+      "path": "02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/realtime_feedback_v5/existing_comparison.json",
+      "size": 1174,
+      "blob_sha": "3b235a94a87b437161b86c15697e03aa48b768cf"
+    },
+    {
+      "path": "02-视觉动作分析/HANDOFF.md",
+      "size": 22963,
+      "blob_sha": "111220288ede62435d2bcc68ae2869069e4f8c2b"
+    },
+    {
+      "path": "02-视觉动作分析/INDEX.md",
+      "size": 21169,
+      "blob_sha": "666a92cd871afb41c4336e5c69e2f4fd7f12eac0"
+    },
+    {
+      "path": "02-视觉动作分析/README.md",
+      "size": 17001,
+      "blob_sha": "7ed944179431f5b69ed570d6897595601ecf1646"
+    }
+  ],
+  "derived_check": {
+    "source": "closeout_review_v1/review_20261001_v1/summary.json",
+    "revision": "closeout-review/v1",
+    "retained_trials": 25,
+    "excluded_trials": 4,
+    "participant_id_count": 1,
+    "task_trial_counts": {
+      "1": 3,
+      "2": 3,
+      "3": 4,
+      "4": 3,
+      "5": 3,
+      "6": 3,
+      "7": 3,
+      "8": 3
+    },
+    "reported_pairs": 29938,
+    "sum_pairs": 29938,
+    "reported_analysis_records": 18310,
+    "sum_analysis_records": 18310,
+    "formal_angle_valid_frames": 0,
+    "raw_hash_checked_files_reported": 59976,
+    "missing_reference_trials": 25,
+    "missing_camera_placement_trials": 25,
+    "missing_clock_mapping_trials": 25,
+    "top_keys": [
+      "revision",
+      "review_id",
+      "checked_at",
+      "participants",
+      "retained_trials",
+      "excluded_trials",
+      "task_trial_counts",
+      "captured_rgb_depth_pairs",
+      "analysis_records",
+      "keypoint_rows",
+      "formal_angle_valid_frames",
+      "raw_hash_checked_files",
+      "hash_scope",
+      "structural_issues",
+      "all_original_thresholds",
+      "selection_index_sha256",
+      "exclusion_manifest_sha256",
+      "pooled_host_receive_to_output_p95_ms",
+      "trial_inventory",
+      "package_verdicts",
+      "qualification",
+      "point_availability_checks",
+      "static_stability_checks",
+      "quality_gated_trials",
+      "tp03_independent_label_count",
+      "tp03_formal_event_onset_count"
+    ]
+  },
+  "reported_formal_verdicts": {
+    "TP-01": "FAIL",
+    "TP-02": "BLOCKED",
+    "TP-03": "BLOCKED",
+    "TP-04": "BLOCKED"
+  },
+  "reported_patient_health_type": "UNKNOWN",
+  "reported_raw_upload": "人体原始资料/照片录像/环境会话运行日志不随分支上传",
+  "not_performed": [
+    "git checkout/reset/pull",
+    "启动相机或8090",
+    "运行其程序/实验",
+    "原始59976文件哈希复核",
+    "人像读取/上传",
+    "改本地4包为完成或通过"
+  ],
+  "reuse": "版本、字段、丢失/有效性、候选角/计数与工程经验可参考；需独立测量/人群/控制与身心参与数据才证目标收益",
+  "not_conclusions": [
+    "缺文件名不能证明其他未上传本地材料不存在",
+    "25重复试次不是25患者",
+    "肩肘运动参与提示不是心理投入/主动物理贡献",
+    "报告软件回归成功不是本助手复跑或临床验证"
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "schema": "authorized-original-ingest/v1",
+  "created_at": "2026-10-04T11:27:32.055082+08:00",
+  "authoritative_input_directory": "01_参考论文",
+  "destination": "01_参考论文/康复整合链路",
+  "no_old_originals_moved": true,
+  "items": [
+    {
+      "id": "Song_TRO",
+      "title": "A Cable-Driven Upper Limb Rehabilitation Robot With Muscle-Synergy-Based Myoelectric Controller",
+      "doi": "10.1109/tro.2024.3411849",
+      "year": 2024,
+      "venue": "IEEE Transactions on Robotics",
+      "database": "IEEE Xplore",
+      "landing_url": "https://doi.org/10.1109/tro.2024.3411849",
+      "source": "01_参考论文/A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller.pdf",
+      "target": "01_参考论文/康复整合链路/A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller.pdf",
+      "sha256": "7e363aa8dca5100a8ea04afbb5c0fbcb81d8867924695365fbcc2d2958a8f1fe",
+      "bytes": 4253871,
+      "pages": 13,
+      "text_pages": 13,
+      "version": "IEEE publisher PDF, title/DOI/publication header and licensed-download footer checked",
+      "authorization": "User explicitly approved move of listed7 PDFs only, keep filenames/bytes",
+      "old_local_callers": [],
+      "historical_URL_filename_mentions": "RL source URL mentions only; preserved as source provenance, not local callers"
+    },
+    {
+      "id": "Song_TBCAS",
+      "title": "A Hybrid Arm-Hand Rehabilitation Robot With EMG-Based Admittance Controller",
+      "doi": "10.1109/tbcas.2021.3130090",
+      "year": 2021,
+      "venue": "IEEE Transactions on Biomedical Circuits and Systems",
+      "database": "IEEE Xplore",
+      "landing_url": "https://doi.org/10.1109/tbcas.2021.3130090",
+      "source": "01_参考论文/A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller.pdf",
+      "target": "01_参考论文/康复整合链路/A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller.pdf",
+      "sha256": "cf7bf33523cb6196da35eada7614183a9200c77e7f8d7b6a6fe22140de1b4fc6",
+      "bytes": 4688648,
+      "pages": 11,
+      "text_pages": 11,
+      "version": "IEEE publisher PDF, title/DOI/publication header and licensed-download footer checked",
+      "authorization": "User explicitly approved move of listed7 PDFs only, keep filenames/bytes",
+      "old_local_callers": [],
+      "historical_URL_filename_mentions": "RL source URL mentions only; preserved as source provenance, not local callers"
+    },
+    {
+      "id": "Shoulder2025",
+      "title": "Assist-as-Needed Control of a Shoulder Rehabilitation Robot Using a Virtual Biomechanical Model and Online Stiffness Adaptation",
+      "doi": "10.1109/tnsre.2025.3579533",
+      "year": 2025,
+      "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+      "database": "IEEE Xplore",
+      "landing_url": "https://doi.org/10.1109/tnsre.2025.3579533",
+      "source": "01_参考论文/Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf",
+      "target": "01_参考论文/康复整合链路/Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf",
+      "sha256": "e71f6fb2dfc06eb87118b3056e4e82e6bc6dc67fb0554698ba3a008ceabf1768",
+      "bytes": 977111,
+      "pages": 10,
+      "text_pages": 10,
+      "version": "IEEE publisher PDF, title/DOI/publication header and licensed-download footer checked",
+      "authorization": "User explicitly approved move of listed7 PDFs only, keep filenames/bytes",
+      "old_local_callers": [],
+      "historical_URL_filename_mentions": "RL source URL mentions only; preserved as source provenance, not local callers"
+    },
+    {
+      "id": "Song_TIE",
+      "title": "Deep-LSTM-Based Human-Robot Collaboration Control With Static-Dynamic Calibration",
+      "doi": "10.1109/tie.2024.3398675",
+      "year": 2024,
+      "venue": "IEEE Transactions on Industrial Electronics",
+      "database": "IEEE Xplore",
+      "landing_url": "https://doi.org/10.1109/tie.2024.3398675",
+      "source": "01_参考论文/Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration.pdf",
+      "target": "01_参考论文/康复整合链路/Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration.pdf",
+      "sha256": "051062e5644209088b9c01a0eb023091e070b97400baf3cacd627fb762682615",
+      "bytes": 2119267,
+      "pages": 11,
+      "text_pages": 11,
+      "version": "IEEE publisher PDF, title/DOI/publication header and licensed-download footer checked",
+      "authorization": "User explicitly approved move of listed7 PDFs only, keep filenames/bytes",
+      "old_local_callers": [],
+      "historical_URL_filename_mentions": "RL source URL mentions only; preserved as source provenance, not local callers"
+    },
+    {
+      "id": "Song_TBME",
+      "title": "Performance-Based Hybrid Control of a Cable-Driven Upper-Limb Rehabilitation Robot",
+      "doi": "10.1109/tbme.2020.3027823",
+      "year": 2021,
+      "venue": "IEEE Transactions on Biomedical Engineering",
+      "database": "IEEE Xplore",
+      "landing_url": "https://doi.org/10.1109/tbme.2020.3027823",
+      "source": "01_参考论文/Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot.pdf",
+      "target": "01_参考论文/康复整合链路/Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot.pdf",
+      "sha256": "bbf68a0f81d3d54716a5e2229404d070891a33b67ea29bd31fdc30e67a00c435",
+      "bytes": 1995955,
+      "pages": 9,
+      "text_pages": 9,
+      "version": "IEEE publisher PDF, title/DOI/publication header and licensed-download footer checked",
+      "authorization": "User explicitly approved move of listed7 PDFs only, keep filenames/bytes",
+      "old_local_callers": [],
+      "historical_URL_filename_mentions": "RL source URL mentions only; preserved as source provenance, not local callers"
+    },
+    {
+      "id": "RL2026",
+      "title": "Personalized Adaptive Assistance With Reinforcement Learning Control Enhances Engagement, Performance, and Retention in Robot-Assisted Arm-Reaching Exercises",
+      "doi": "10.1109/tnsre.2025.3650096",
+      "year": 2026,
+      "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+      "database": "IEEE Xplore；Padova IRIS（开放PDF）",
+      "landing_url": "https://research.unipd.it/handle/11577/3586318",
+      "source": "01_参考论文/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf",
+      "target": "01_参考论文/康复整合链路/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf",
+      "sha256": "4b6e21ec3be9c4d677c6ad4d9099df49d3a8198fecf7abe990a360bf93ff97e6",
+      "bytes": 7699552,
+      "pages": 11,
+      "text_pages": 11,
+      "version": "IEEE publisher PDF, title/DOI/publication header and licensed-download footer checked",
+      "authorization": "User explicitly approved move of listed7 PDFs only, keep filenames/bytes",
+      "old_local_callers": [],
+      "historical_URL_filename_mentions": "RL source URL mentions only; preserved as source provenance, not local callers"
+    },
+    {
+      "id": "Song_VAAN",
+      "title": "Voluntary Assist-as-Needed Controller for an Ankle Power-Assist Rehabilitation Robot",
+      "doi": "10.1109/tbme.2022.3228070",
+      "year": 2023,
+      "venue": "IEEE Transactions on Biomedical Engineering",
+      "database": "IEEE Xplore",
+      "landing_url": "https://doi.org/10.1109/tbme.2022.3228070",
+      "source": "01_参考论文/Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot.pdf",
+      "target": "01_参考论文/康复整合链路/Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot.pdf",
+      "sha256": "360e92e294b0105eec6161352d9f884792e88c82aee11ae3530a95c58858afcb",
+      "bytes": 2780005,
+      "pages": 9,
+      "text_pages": 9,
+      "version": "IEEE publisher PDF, title/DOI/publication header and licensed-download footer checked",
+      "authorization": "User explicitly approved move of listed7 PDFs only, keep filenames/bytes",
+      "old_local_callers": [],
+      "historical_URL_filename_mentions": "RL source URL mentions only; preserved as source provenance, not local callers"
+    }
+  ],
+  "rollback": [
+    {
+      "source": "01_参考论文/康复整合链路/A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller.pdf",
+      "target": "01_参考论文/A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller.pdf",
+      "sha256": "7e363aa8dca5100a8ea04afbb5c0fbcb81d8867924695365fbcc2d2958a8f1fe"
+    },
+    {
+      "source": "01_参考论文/康复整合链路/A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller.pdf",
+      "target": "01_参考论文/A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller.pdf",
+      "sha256": "cf7bf33523cb6196da35eada7614183a9200c77e7f8d7b6a6fe22140de1b4fc6"
+    },
+    {
+      "source": "01_参考论文/康复整合链路/Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf",
+      "target": "01_参考论文/Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf",
+      "sha256": "e71f6fb2dfc06eb87118b3056e4e82e6bc6dc67fb0554698ba3a008ceabf1768"
+    },
+    {
+      "source": "01_参考论文/康复整合链路/Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration.pdf",
+      "target": "01_参考论文/Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration.pdf",
+      "sha256": "051062e5644209088b9c01a0eb023091e070b97400baf3cacd627fb762682615"
+    },
+    {
+      "source": "01_参考论文/康复整合链路/Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot.pdf",
+      "target": "01_参考论文/Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot.pdf",
+      "sha256": "bbf68a0f81d3d54716a5e2229404d070891a33b67ea29bd31fdc30e67a00c435"
+    },
+    {
+      "source": "01_参考论文/康复整合链路/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf",
+      "target": "01_参考论文/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf",
+      "sha256": "4b6e21ec3be9c4d677c6ad4d9099df49d3a8198fecf7abe990a360bf93ff97e6"
+    },
+    {
+      "source": "01_参考论文/康复整合链路/Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot.pdf",
+      "target": "01_参考论文/Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot.pdf",
+      "sha256": "360e92e294b0105eec6161352d9f884792e88c82aee11ae3530a95c58858afcb"
+    }
+  ],
+  "caller_check": "Literal names searched in md/json/py/html; no old local references; RL historical institutional URLs unchanged. Mainmanifest/coreindex/entry references to be updated.",
+  "not_experiment_or_novelty_verification": true
+}

@@ -1,0 +1,3829 @@
+{
+  "meta": {
+    "corpus_id": "biomech",
+    "title": "语料三：生物力学与上肢运动学（Biomechanics & Upper-Limb Kinematics）",
+    "purpose": "为「视觉→关节角 Seq2Seq 翻译（ViKiT）」论文补齐两块知识底座：(1) 视觉运动学估计与验证方法学；(2) 肌肉骨骼动力学与可微仿真。并按用户已锁定的四项决定（上肢腕肘肩 / 连续主头+离散 token 辅助头 / 动力学既做约束又做输出目标且接可微仿真 / 公开数据集预训练+D435i 自采微调）细化。",
+    "why_new_corpus": "语料二（Transformer 发展线，85 篇）经标题关键词实测：muscle|tendon|OpenSim|musculoskeletal|activation 命中 0 篇；inverse dynamics|joint torque|joint contact|ground reaction 命中 0 篇；physics-inform|diff physics|differentiable simul 命中 0 篇；gait|locomotion 命中 1 篇；rehabil|stroke|clinical 命中 1 篇。缺口是真实的，不是检索失败。",
+    "source_policy": "OpenAlex + Crossref + PubMed 三源交叉；仅取官方 OA 位置；不做付费墙绕过；未裁定条目不得进入语料。",
+    "axes": {
+      "lens": {
+        "M0": "综述·标准·证据汇总",
+        "M1": "测量与验证（精度/信度/有效性研究）",
+        "M2": "模型与仿真（肌肉骨骼模型、逆动力学、仿真器）",
+        "M3": "方法与算法（学习模型、token 化、可微优化）",
+        "M4": "临床与康复（代偿、功能评定、上肢康复工程）"
+      },
+      "thread": {
+        "B1": "视觉运动学_估计与验证方法学",
+        "B2": "肌肉骨骼动力学_与可微仿真",
+        "B3": "上肢康复_代偿与临床评估",
+        "B4": "离散运动学token_与表征量化",
+        "B5": "视觉运动学到动力学_桥接"
+      }
+    },
+    "relevance": {
+      "高": "直接支撑既定研究决定或构成新颖性威胁",
+      "中": "方法或论证可借鉴",
+      "低": "背景/里程碑，迁移间接"
+    },
+    "counts_strictly_separated": {
+      "理论搜索空间_检索式条数": 90,
+      "实际命中_候选池去重条数": 3567,
+      "人工裁定_候选清单条数": 92,
+      "实际入库_PDF数": "待下载后由下载报告复算，不得在此预填"
+    },
+    "curation": "全部条目由 select_candidates.py 的 PICKS 表人工裁定；每条必须能在短名单内被判别式唯一命中，否则计入 missed 并须回修。"
+  },
+  "papers": [
+    {
+      "idx": 0,
+      "title": "Accuracy of a markerless motion capture system in estimating upper extremity kinematics during boxing",
+      "year": 2022,
+      "doi": "10.3389/fspor.2022.939980",
+      "venue": "Frontiers in Sports and Active Living",
+      "thread": "B1",
+      "lens": "M1",
+      "relevance": "高",
+      "note": "上肢标记无关动捕精度实证，与本项目研究范围最直接对应",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 62,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Accuracy of a markerless motion capture system in estimating upper extremity kinematics during boxing",
+      "cited_by_verified": 63,
+      "url_verified": "https://doi.org/10.3389/fspor.2022.939980",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "",
+      "oa_landing": "https://doi.org/10.3389/fspor.2022.939980",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 1,
+      "title": "SHOULDER AND ELBOW JOINT ANGLE ESTIMATION FOR UPPER LIMB REHABILITATION TASKS USING LOW-COST INERTIAL AND OPTICAL SENSORS",
+      "year": 2017,
+      "doi": "10.1142/s0219519417500312",
+      "venue": "Journal of Mechanics in Medicine and Biology",
+      "thread": "B1",
+      "lens": "M1",
+      "relevance": "高",
+      "note": "标题即「上肢康复的肩肘角估计」，与题目主题同构；说明该任务至少 2017 已被做，novelty 需另找",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 12,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "SHOULDER AND ELBOW JOINT ANGLE ESTIMATION FOR UPPER LIMB REHABILITATION TASKS USING LOW-COST INERTIAL AND OPTICAL SENSORS",
+      "cited_by_verified": 12,
+      "url_verified": "https://doi.org/10.1142/s0219519417500312",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 2,
+      "title": "AN EXTENSION TO THE ISB WRIST JOINT COORDINATE SYSTEM: AN IN VITRO ACCURACY STUDY",
+      "year": 2007,
+      "doi": "10.1016/s0021-9290(07)70188-4",
+      "venue": "Journal of Biomechanics",
+      "thread": "B1",
+      "lens": "M0",
+      "relevance": "高",
+      "note": "★ 腕关节坐标系标准。决定「腕角」的物理定义，是词表单元设计的地基；未读此文不应定义腕 DoF",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 1,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "AN EXTENSION TO THE ISB WRIST JOINT COORDINATE SYSTEM: AN IN VITRO ACCURACY STUDY",
+      "cited_by_verified": 1,
+      "url_verified": "https://doi.org/10.1016/s0021-9290(07)70188-4",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 3,
+      "title": "A new kinematic model of the upper extremity based on functional joint parameter determination for shoulder and elbow",
+      "year": 2009,
+      "doi": "10.1016/j.gaitpost.2009.07.111",
+      "venue": "Gait & Posture",
+      "thread": "B1",
+      "lens": "M0",
+      "relevance": "高",
+      "note": "★ 上肢功能性关节参数的运动学模型，直接决定坐标轴/自由度如何取",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 82,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "A new kinematic model of the upper extremity based on functional joint parameter determination for shoulder and elbow",
+      "cited_by_verified": 72,
+      "url_verified": "https://doi.org/10.1016/j.gaitpost.2009.07.111",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 4,
+      "title": "BIOMECHANICS OF PRONATION AND SUPINATION OF THE FOREARM",
+      "year": 2001,
+      "doi": "10.1016/s0749-0712(21)00605-3",
+      "venue": "Hand Clinics",
+      "thread": "B1",
+      "lens": "M0",
+      "relevance": "高",
+      "note": "★ 前臂旋前旋后是腕关节最主要的 2 个 DoF，也是多数数据集缺失的部分",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 72,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "BIOMECHANICS OF PRONATION AND SUPINATION OF THE FOREARM",
+      "cited_by_verified": 72,
+      "url_verified": "https://doi.org/10.1016/s0749-0712(21)00605-3",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 5,
+      "title": "Mechanism of limitation of pronation/supination of the forearm in geometric models of deformities of the forearm bones",
+      "year": 2002,
+      "doi": "10.1016/s0268-0033(02)00034-7",
+      "venue": "Clinical Biomechanics",
+      "thread": "B1",
+      "lens": "M1",
+      "relevance": "中",
+      "note": "旋前旋后的几何限制机制，决定 ROM 语法边界的物理来源",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 57,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Mechanism of limitation of pronation/supination of the forearm in geometric models of deformities of the forearm bones",
+      "cited_by_verified": 57,
+      "url_verified": "https://doi.org/10.1016/s0268-0033(02)00034-7",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 6,
+      "title": "Limited Forearm Motion Compensated by Thoracohumeral Kinematics When Performing Tasks Requiring Pronation and Supination",
+      "year": 2012,
+      "doi": "10.1123/jab.28.2.127",
+      "venue": "Journal of Applied Biomechanics",
+      "thread": "B1",
+      "lens": "M4",
+      "relevance": "高",
+      "note": "★ 腕活动受限由胸肱关节代偿 —— 与本项目 D435i「肩肘代偿」任务包直接同构",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 14,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Limited Forearm Motion Compensated by Thoracohumeral Kinematics When Performing Tasks Requiring Pronation and Supination",
+      "cited_by_verified": 14,
+      "url_verified": "https://doi.org/10.1123/jab.28.2.127",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 7,
+      "title": "Accuracy of biplane videoradiography for quantifying dynamic wrist kinematics",
+      "year": 2019,
+      "doi": "10.1016/j.jbiomech.2019.05.040",
+      "venue": "Journal of Biomechanics",
+      "thread": "B1",
+      "lens": "M1",
+      "relevance": "中",
+      "note": "腕关节动态运动学的精度研究，提供腕角误差的量级参照",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 36,
+      "found_oa": true,
+      "selected_from": "pool:B1",
+      "canonical_title": "Accuracy of biplane videoradiography for quantifying dynamic wrist kinematics",
+      "cited_by_verified": 33,
+      "url_verified": "https://doi.org/10.1016/j.jbiomech.2019.05.040",
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_pdf": "",
+      "oa_landing": "https://doi.org/10.1016/j.jbiomech.2019.05.040",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 8,
+      "title": "Comparison of shoulder kinematics between Theia 3D markerless motion capture and marker-based motion capture during full arm ranges of motion",
+      "year": 2025,
+      "doi": "10.1016/j.jbiomech.2025.112905",
+      "venue": "Journal of Biomechanics",
+      "thread": "B1",
+      "lens": "M1",
+      "relevance": "高",
+      "note": "2025 年新工作，商业系统 vs 光学动捕，可作对标基线",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 9,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Comparison of shoulder kinematics between Theia 3D markerless motion capture and marker-based motion capture during full arm ranges of motion",
+      "cited_by_verified": 9,
+      "url_verified": "https://doi.org/10.1016/j.jbiomech.2025.112905",
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_pdf": "",
+      "oa_landing": "https://doi.org/10.1016/j.jbiomech.2025.112905",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 9,
+      "title": "Validity and reliability of Kinect skeleton for measuring shoulder joint angles: a feasibility study",
+      "year": 2015,
+      "doi": "10.1016/j.physio.2015.02.002",
+      "venue": "Physiotherapy",
+      "thread": "B1",
+      "lens": "M1",
+      "relevance": "高",
+      "note": "深度相机（Kinect）测肩角的效度与信度 —— 与 D435i 同属 RGB-D 路线，是最贴近的设备类先例",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 111,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Validity and reliability of Kinect skeleton for measuring shoulder joint angles: a feasibility study",
+      "cited_by_verified": 88,
+      "url_verified": "https://doi.org/10.1016/j.physio.2015.02.002",
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_pdf": "",
+      "oa_landing": "https://www.ncbi.nlm.nih.gov/pmc/articles/4600010",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 10,
+      "title": "Accuracy and repeatability of joint angles measured using a single camera markerless motion capture system",
+      "year": 2014,
+      "doi": "10.1016/j.jbiomech.2013.11.031",
+      "venue": "Journal of Biomechanics",
+      "thread": "B1",
+      "lens": "M1",
+      "relevance": "高",
+      "note": "单相机关节角精度与重复性（137 引），单目路线的核心参照",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 137,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Accuracy and repeatability of joint angles measured using a single camera markerless motion capture system",
+      "cited_by_verified": 137,
+      "url_verified": "https://doi.org/10.1016/j.jbiomech.2013.11.031",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 11,
+      "title": "Analysis of Upper-Limb and Trunk Kinematic Variability: Accuracy and Reliability of an RGB-D Sensor",
+      "year": 2020,
+      "doi": "10.3390/mti4020014",
+      "venue": "Multimodal Technologies and Interaction",
+      "thread": "B1",
+      "lens": "M1",
+      "relevance": "高",
+      "note": "上肢+躯干运动学的精度与信度，覆盖躯干干扰（代偿来源）",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 34,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Analysis of Upper-Limb and Trunk Kinematic Variability: Accuracy and Reliability of an RGB-D Sensor",
+      "cited_by_verified": 31,
+      "url_verified": "https://doi.org/10.3390/mti4020014",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "https://www.mdpi.com/2414-4088/4/2/14/pdf?version=1588235841",
+      "oa_landing": "https://doi.org/10.3390/mti4020014",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 12,
+      "title": "Accuracy evaluation of two markerless motion capture systems for measurement of upper extremities: Kinect V2 and Captiv",
+      "year": 2020,
+      "doi": "10.1002/hfm.20840",
+      "venue": "Human Factors and Ergonomics in Manufacturing & Service Industries",
+      "thread": "B1",
+      "lens": "M1",
+      "relevance": "中",
+      "note": "两套标记无关系统的横向精度对比",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 33,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Accuracy evaluation of two markerless motion capture systems for measurement of upper extremities: Kinect V2 and Captiv",
+      "cited_by_verified": 33,
+      "url_verified": "https://doi.org/10.1002/hfm.20840",
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_pdf": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/hfm.20840",
+      "oa_landing": "https://doi.org/10.1002/hfm.20840",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 13,
+      "title": "A Comparative Study of Markerless Systems Based on Color-Depth Cameras, Polymer Optical Fiber Curvature Sensors, and Inertial Measurement Units: Towards Increasing the Accuracy in Joint Angle Estimation",
+      "year": 2019,
+      "doi": "10.3390/electronics8020173",
+      "venue": "Electronics",
+      "thread": "B1",
+      "lens": "M1",
+      "relevance": "高",
+      "note": "★ 基于彩色-深度相机的系统对比 —— 与 D435i（RGB-D）设备形态最接近",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 25,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "A Comparative Study of Markerless Systems Based on Color-Depth Cameras, Polymer Optical Fiber Curvature Sensors, and Inertial Measurement Units: Towards Increasing the Accuracy in Joint Angle Estimation",
+      "cited_by_verified": 23,
+      "url_verified": "https://doi.org/10.3390/electronics8020173",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "https://www.mdpi.com/2079-9292/8/2/173/pdf?version=1549101350",
+      "oa_landing": "https://doi.org/10.3390/electronics8020173",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 14,
+      "title": "Wearable systems for shoulder kinematics assessment: a systematic review",
+      "year": 2019,
+      "doi": "10.1186/s12891-019-2930-4",
+      "venue": "BMC Musculoskeletal Disorders",
+      "thread": "B1",
+      "lens": "M0",
+      "relevance": "高",
+      "note": "肩关节角可穿戴测量系统综述（127 引），给出该子领域方法版图",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 127,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Wearable systems for shoulder kinematics assessment: a systematic review",
+      "cited_by_verified": 112,
+      "url_verified": "https://doi.org/10.1186/s12891-019-2930-4",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "https://bmcmusculoskeletdisord.biomedcentral.com/track/pdf/10.1186/s12891-019-2930-4",
+      "oa_landing": "https://doi.org/10.1186/s12891-019-2930-4",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 15,
+      "title": "Comparison of modelling and tracking methods for analysing elbow and forearm kinematics",
+      "year": 2019,
+      "doi": "10.1177/0954411919872400",
+      "venue": "Proceedings of the Institution of Mechanical Engineers Part H Journal of Engineering in Medicine",
+      "thread": "B1",
+      "lens": "M2",
+      "relevance": "高",
+      "note": "肘与前臂的建模 vs 追踪方法对比，兼跨 M1/M2",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 8,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Comparison of modelling and tracking methods for analysing elbow and forearm kinematics",
+      "cited_by_verified": 7,
+      "url_verified": "https://doi.org/10.1177/0954411919872400",
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_pdf": "https://lirias.kuleuven.be/retrieve/7c56f0b8-3935-4b2a-8d95-0e7557ccc115",
+      "oa_landing": "https://lirias.kuleuven.be/handle/123456789/641754",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 16,
+      "title": "Comparison and Reliability of Three Goniometric Methods for Measuring Forearm Supination and Pronation",
+      "year": 2001,
+      "doi": "10.2466/pms.93.6.353-355",
+      "venue": "Perceptual and Motor Skills",
+      "thread": "B1",
+      "lens": "M1",
+      "relevance": "中",
+      "note": "量角器法的前臂测量信度 —— 视觉法要对照的**临床金标准**",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 15,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "COMPARISON AND RELIABILITY OF THREE GONIOMETRIC METHODS FOR MEASURING FOREARM SUPINATION AND PRONATION",
+      "cited_by_verified": 1,
+      "url_verified": "https://doi.org/10.2466/pms.93.6.353-355",
+      "doi_conflicts": [
+        {
+          "登记DOI": "10.2466/pms.2001.93.2.353",
+          "crossref返回DOI": "10.2466/pms.93.6.353-355",
+          "title_match": 1.0
+        }
+      ],
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "doi_conflict",
+      "evidence_grade": "C（登记 DOI 与来源返回不一致，须人工裁定）"
+    },
+    {
+      "idx": 17,
+      "title": "Accuracy, Validity, and Reliability of Markerless Camera-Based 3D Motion Capture Systems versus Marker-Based 3D Motion Capture Systems in Gait Analysis: A Systematic Review and Meta-Analysis",
+      "year": 2024,
+      "doi": "10.3390/s24113686",
+      "venue": "Sensors",
+      "thread": "B1",
+      "lens": "M1",
+      "relevance": "中",
+      "note": "2024 年相机式标记无关动捕的效度/信度",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 152,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Accuracy, Validity, and Reliability of Markerless Camera-Based 3D Motion Capture Systems versus Marker-Based 3D Motion Capture Systems in Gait Analysis: A Systematic Review and Meta-Analysis",
+      "cited_by_verified": 174,
+      "url_verified": "https://doi.org/10.3390/s24113686",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "https://www.mdpi.com/1424-8220/24/11/3686/pdf?version=1717668048",
+      "oa_landing": "https://doi.org/10.3390/s24113686",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 18,
+      "title": "The accuracy of markerless motion capture combined with computer vision techniques for measuring running kinematics",
+      "year": 2023,
+      "doi": "10.1111/sms.14319",
+      "venue": "Scandinavian Journal of Medicine and Science in Sports",
+      "thread": "B1",
+      "lens": "M0",
+      "relevance": "中",
+      "note": "CV 技术 + 标记无关动捕的准确度综述",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 84,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "The accuracy of markerless motion capture combined with computer vision techniques for measuring running kinematics",
+      "cited_by_verified": 81,
+      "url_verified": "https://doi.org/10.1111/sms.14319",
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_pdf": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/sms.14319",
+      "oa_landing": "https://doi.org/10.1111/sms.14319",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 19,
+      "title": "A SWOT Analysis of Portable and Low-Cost Markerless Motion Capture Systems to Assess Lower-Limb Musculoskeletal Kinematics in Sport",
+      "year": 2022,
+      "doi": "10.3389/fspor.2021.809898",
+      "venue": "Frontiers in Sports and Active Living",
+      "thread": "B1",
+      "lens": "M0",
+      "relevance": "低",
+      "note": "低成本标记无关系统的 SWOT，背景性",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 58,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "A SWOT Analysis of Portable and Low-Cost Markerless Motion Capture Systems to Assess Lower-Limb Musculoskeletal Kinematics in Sport",
+      "cited_by_verified": 54,
+      "url_verified": "https://doi.org/10.3389/fspor.2021.809898",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "",
+      "oa_landing": "https://doi.org/10.3389/fspor.2021.809898",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 20,
+      "title": "Exoskeleton for forearm pronation and supination rehabilitation",
+      "year": null,
+      "doi": "10.1109/iembs.2004.1403778",
+      "venue": "The 26th Annual International Conference of the IEEE Engineering in Medicine and Biology Society",
+      "thread": "B1",
+      "lens": "M4",
+      "relevance": "中",
+      "note": "前臂旋前旋后康复外骨骼 —— 腕 DoF 的应用出口",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 6,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Exoskeleton for forearm pronation and supination rehabilitation",
+      "cited_by_verified": 6,
+      "url_verified": "https://doi.org/10.1109/iembs.2004.1403778",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 21,
+      "title": "Flexible and static wrist units in upper limb prosthesis users: functionality scores, user satisfaction and compensatory movements",
+      "year": 2016,
+      "doi": "10.1186/s12984-016-0130-0",
+      "venue": "Journal of NeuroEngineering and Rehabilitation",
+      "thread": "B1",
+      "lens": "M4",
+      "relevance": "低",
+      "note": "假肢腕单元功能，背景性",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 63,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Flexible and static wrist units in upper limb prosthesis users: functionality scores, user satisfaction and compensatory movements",
+      "cited_by_verified": 49,
+      "url_verified": "https://doi.org/10.1186/s12984-016-0130-0",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "https://jneuroengrehab.biomedcentral.com/counter/pdf/10.1186/s12984-016-0130-0",
+      "oa_landing": "https://doi.org/10.1186/s12984-016-0130-0",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 22,
+      "title": "OpenSim Moco: Musculoskeletal optimal control",
+      "year": 2020,
+      "doi": "10.1371/journal.pcbi.1008493",
+      "venue": "PLoS Computational Biology",
+      "thread": "B2",
+      "lens": "M2",
+      "relevance": "高",
+      "note": "★ OpenSim 官方最优控制模块，是「可微/优化路线」的事实标准工具",
+      "found_via": [
+        "openalex",
+        "crossref"
+      ],
+      "found_cited_by": 278,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "OpenSim Moco: Musculoskeletal optimal control",
+      "cited_by_verified": 238,
+      "url_verified": "https://doi.org/10.1371/journal.pcbi.1008493",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1008493&type=printable",
+      "oa_landing": "https://doi.org/10.1371/journal.pcbi.1008493",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 23,
+      "title": "Physics-Informed Deep Learning for Musculoskeletal Modeling: Predicting Muscle Forces and Joint Kinematics From Surface EMG",
+      "year": 2022,
+      "doi": "10.1109/tnsre.2022.3226860",
+      "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+      "thread": "B2",
+      "lens": "M3",
+      "relevance": "高",
+      "note": "★★ 物理信息深度学习做肌肉骨骼建模（173 引，TNSRE）—— 物理约束与学习模型的既有桥梁",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 173,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Physics-Informed Deep Learning for Musculoskeletal Modeling: Predicting Muscle Forces and Joint Kinematics From Surface EMG",
+      "cited_by_verified": 173,
+      "url_verified": "https://doi.org/10.1109/tnsre.2022.3226860",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "https://ieeexplore.ieee.org/ielx7/7333/10031624/09970372.pdf",
+      "oa_landing": "https://doi.org/10.1109/tnsre.2022.3226860",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 24,
+      "title": "A Systematic Review of the Associations Between Inverse Dynamics and Musculoskeletal Modeling to Investigate Joint Loading in a Clinical Environment",
+      "year": 2020,
+      "doi": "10.3389/fbioe.2020.603907",
+      "venue": "Frontiers in Bioengineering and Biotechnology",
+      "thread": "B2",
+      "lens": "M0",
+      "relevance": "高",
+      "note": "★ 逆动力学与肌肉激活关系的系统综述 —— 决定「角度→力矩/激活」这一跃迁的证据基础",
+      "found_via": [
+        "openalex",
+        "crossref"
+      ],
+      "found_cited_by": 78,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "A Systematic Review of the Associations Between Inverse Dynamics and Musculoskeletal Modeling to Investigate Joint Loading in a Clinical Environment",
+      "cited_by_verified": 68,
+      "url_verified": "https://doi.org/10.3389/fbioe.2020.603907",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "https://www.frontiersin.org/articles/10.3389/fbioe.2020.603907/pdf",
+      "oa_landing": "https://doi.org/10.3389/fbioe.2020.603907",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 25,
+      "title": "Estimation of Muscle Forces and Joint Moments Using a Forward-Inverse Dynamics Model",
+      "year": 2005,
+      "doi": "10.1249/01.mss.0000176684.24008.6f",
+      "venue": "Medicine & Science in Sports & Exercise",
+      "thread": "B2",
+      "lens": "M2",
+      "relevance": "高",
+      "note": "★★ 前向-逆向动力学联立估力矩（206 引）—— 肌肉冗余问题的经典处理",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 206,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Estimation of Muscle Forces and Joint Moments Using a Forward-Inverse Dynamics Model",
+      "cited_by_verified": 156,
+      "url_verified": "https://doi.org/10.1249/01.mss.0000176684.24008.6f",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 26,
+      "title": "Inverse Estimation of Multiple Muscle Activations From Joint Moment With Muscle Synergy Extraction",
+      "year": 2015,
+      "doi": "10.1109/jbhi.2014.2342274",
+      "venue": "IEEE Journal of Biomedical and Health Informatics",
+      "thread": "B2",
+      "lens": "M2",
+      "relevance": "高",
+      "note": "★★ 由关节力矩反解多肌肉激活 —— 「输出侧冗余」的直接先例，是路径B的理论依据",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 29,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Inverse Estimation of Multiple Muscle Activations From Joint Moment With Muscle Synergy Extraction",
+      "cited_by_verified": 29,
+      "url_verified": "https://doi.org/10.1109/jbhi.2014.2342274",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 27,
+      "title": "Development of a comprehensive musculoskeletal model of the shoulder and elbow",
+      "year": 2011,
+      "doi": "10.1007/s11517-011-0839-7",
+      "venue": "Medical & Biological Engineering & Computing",
+      "thread": "B2",
+      "lens": "M2",
+      "relevance": "高",
+      "note": "★ 肩关节综合肌肉骨骼模型（144 引）—— 上肢动力学模型的几何来源",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 144,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Development of a comprehensive musculoskeletal model of the shoulder and elbow",
+      "cited_by_verified": 118,
+      "url_verified": "https://doi.org/10.1007/s11517-011-0839-7",
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_pdf": "https://link.springer.com/content/pdf/10.1007/s11517-011-0839-7.pdf",
+      "oa_landing": "https://doi.org/10.1007/s11517-011-0839-7",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 28,
+      "title": "Muscle Contributions to Upper-Extremity Movement and Work From a Musculoskeletal Model of the Human Shoulder",
+      "year": 2019,
+      "doi": "10.3389/fnbot.2019.00090",
+      "venue": "Frontiers in Neurorobotics",
+      "thread": "B2",
+      "lens": "M2",
+      "relevance": "高",
+      "note": "上肢运动与做功的肌肉贡献分解 —— 可作动力学第二输出头的可解释性模板",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 82,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Muscle Contributions to Upper-Extremity Movement and Work From a Musculoskeletal Model of the Human Shoulder",
+      "cited_by_verified": 76,
+      "url_verified": "https://doi.org/10.3389/fnbot.2019.00090",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "https://www.frontiersin.org/articles/10.3389/fnbot.2019.00090/pdf",
+      "oa_landing": "https://doi.org/10.3389/fnbot.2019.00090",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 29,
+      "title": "A Real-Time, 3-D Musculoskeletal Model for Dynamic Simulation of Arm Movements",
+      "year": 2008,
+      "doi": "10.1109/tbme.2008.2005946",
+      "venue": "IEEE Transactions on Biomedical Engineering",
+      "thread": "B2",
+      "lens": "M2",
+      "relevance": "高",
+      "note": "★ 手臂运动实时三维肌肉骨骼模型（IEEE TBME，103 引）",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 103,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "A Real-Time, 3-D Musculoskeletal Model for Dynamic Simulation of Arm Movements",
+      "cited_by_verified": 80,
+      "url_verified": "https://doi.org/10.1109/tbme.2008.2005946",
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_pdf": "",
+      "oa_landing": "https://www.ncbi.nlm.nih.gov/pmc/articles/2971671",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 30,
+      "title": "Sensitivity of subject-specific models to Hill muscle–tendon model parameters in simulations of gait",
+      "year": 2016,
+      "doi": "10.1016/j.jbiomech.2016.04.008",
+      "venue": "Journal of Biomechanics",
+      "thread": "B2",
+      "lens": "M2",
+      "relevance": "高",
+      "note": "★★ 被试特异模型对 Hill 肌肉腱参数的敏感性 —— 直接支撑「群体标签 vs 被试特异」这一取舍",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 66,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Sensitivity of subject-specific models to Hill muscle–tendon model parameters in simulations of gait",
+      "cited_by_verified": 61,
+      "url_verified": "https://doi.org/10.1016/j.jbiomech.2016.04.008",
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_pdf": "https://ris.utwente.nl/ws/files/7003901/1-s2.0-S0021929016304444-main.pdf",
+      "oa_landing": "https://research.utwente.nl/en/publications/ff3bf80e-9936-4a8a-8a54-be64ca6c90bb",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 31,
+      "title": "Moment arms and lengths of human upper limb muscles as functions of joint angles",
+      "year": 1996,
+      "doi": "10.1016/0021-9290(96)00031-0",
+      "venue": "Journal of Biomechanics",
+      "thread": "B2",
+      "lens": "M2",
+      "relevance": "高",
+      "note": "★ 上肢肌肉力臂与长度随关节角的函数关系（126 引）—— 动力学先验数据",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 126,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Moment arms and lengths of human upper limb muscles as functions of joint angles",
+      "cited_by_verified": 107,
+      "url_verified": "https://doi.org/10.1016/0021-9290(96)00031-0",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 32,
+      "title": "The moment arms of the muscles spanning the glenohumeral joint: a systematic review",
+      "year": 2018,
+      "doi": "10.1111/joa.12903",
+      "venue": "Journal of Anatomy",
+      "thread": "B2",
+      "lens": "M0",
+      "relevance": "中",
+      "note": "肩关节跨越肌肉力臂的系统综述",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 77,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "The moment arms of the muscles spanning the glenohumeral joint: a systematic review",
+      "cited_by_verified": 73,
+      "url_verified": "https://doi.org/10.1111/joa.12903",
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_pdf": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/joa.12903",
+      "oa_landing": "https://doi.org/10.1111/joa.12903",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 33,
+      "title": "Predictive multibody dynamic simulation of human neuromusculoskeletal systems: a review",
+      "year": 2022,
+      "doi": "10.1007/s11044-022-09852-x",
+      "venue": "Multibody System Dynamics",
+      "thread": "B2",
+      "lens": "M2",
+      "relevance": "中",
+      "note": "神经肌肉系统预测性多体动力学仿真",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 55,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Predictive multibody dynamic simulation of human neuromusculoskeletal systems: a review",
+      "cited_by_verified": 47,
+      "url_verified": "https://doi.org/10.1007/s11044-022-09852-x",
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_pdf": "https://upcommons.upc.edu/bitstreams/ea26e532-6b6b-4589-a245-869e685185c0/download",
+      "oa_landing": "https://hdl.handle.net/2117/377476",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 34,
+      "title": "A Probabilistic Approach to Quantify the Impact of Uncertainty Propagation in Musculoskeletal Simulations",
+      "year": 2014,
+      "doi": "10.1007/s10439-014-1181-7",
+      "venue": "Annals of Biomedical Engineering",
+      "thread": "B2",
+      "lens": "M2",
+      "relevance": "中",
+      "note": "不确定性传播的量化 —— 群体标签的误差上限论证",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 97,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "A Probabilistic Approach to Quantify the Impact of Uncertainty Propagation in Musculoskeletal Simulations",
+      "cited_by_verified": 91,
+      "url_verified": "https://doi.org/10.1007/s10439-014-1181-7",
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_pdf": "",
+      "oa_landing": "https://www.ncbi.nlm.nih.gov/pmc/articles/4454420",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 35,
+      "title": "Simulation of human movement: applications using OpenSim",
+      "year": 2011,
+      "doi": "10.1016/j.piutam.2011.04.019",
+      "venue": "Procedia IUTAM",
+      "thread": "B2",
+      "lens": "M0",
+      "relevance": "中",
+      "note": "OpenSim 应用综述",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 91,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Simulation of human movement: applications using OpenSim",
+      "cited_by_verified": 76,
+      "url_verified": "https://doi.org/10.1016/j.piutam.2011.04.019",
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_pdf": "https://www.sciencedirect.com/science/article/pii/S2210983811000204/pdf",
+      "oa_landing": "https://doi.org/10.1016/j.piutam.2011.04.019",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 36,
+      "title": "Evaluation of Direct Collocation Optimal Control Problem Formulations for Solving the Muscle Redundancy Problem",
+      "year": 2016,
+      "doi": "10.1007/s10439-016-1591-9",
+      "venue": "Annals of Biomedical Engineering",
+      "thread": "B2",
+      "lens": "M2",
+      "relevance": "中",
+      "note": "直接配点法最优控制问题构造评测 —— 「优化式」路线的具体方法学",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 366,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Evaluation of Direct Collocation Optimal Control Problem Formulations for Solving the Muscle Redundancy Problem",
+      "cited_by_verified": 336,
+      "url_verified": "https://doi.org/10.1007/s10439-016-1591-9",
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_pdf": "https://link.springer.com/content/pdf/10.1007/s10439-016-1591-9.pdf",
+      "oa_landing": "https://doi.org/10.1007/s10439-016-1591-9",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 37,
+      "title": "Neuro-musculoskeletal simulation of instrumented contracture and spasticity assessment in children with cerebral palsy",
+      "year": 2016,
+      "doi": "10.1186/s12984-016-0170-5",
+      "venue": "Journal of NeuroEngineering and Rehabilitation",
+      "thread": "B2",
+      "lens": "M4",
+      "relevance": "高",
+      "note": "★ 痉挛与挛缩的神经肌肉骨骼仿真 —— 康复交叉点，病理运动学的建模入口",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 97,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Neuro-musculoskeletal simulation of instrumented contracture and spasticity assessment in children with cerebral palsy",
+      "cited_by_verified": 83,
+      "url_verified": "https://doi.org/10.1186/s12984-016-0170-5",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "https://jneuroengrehab.biomedcentral.com/track/pdf/10.1186/s12984-016-0170-5",
+      "oa_landing": "https://doi.org/10.1186/s12984-016-0170-5",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 38,
+      "title": "Muscle coordination retraining inspired by musculoskeletal simulations reduces knee contact force",
+      "year": 2022,
+      "doi": "10.1038/s41598-022-13386-9",
+      "venue": "Scientific Reports",
+      "thread": "B2",
+      "lens": "M4",
+      "relevance": "中",
+      "note": "仿真启发的肌肉协调再训练 —— 动力学走向临床应用的实例",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 117,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Muscle coordination retraining inspired by musculoskeletal simulations reduces knee contact force",
+      "cited_by_verified": 114,
+      "url_verified": "https://doi.org/10.1038/s41598-022-13386-9",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "https://www.nature.com/articles/s41598-022-13386-9.pdf",
+      "oa_landing": "https://doi.org/10.1038/s41598-022-13386-9",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 39,
+      "title": "Muscle coactivation: definitions, mechanisms, and functions",
+      "year": 2018,
+      "doi": "10.1152/jn.00084.2018",
+      "venue": "Journal of Neurophysiology",
+      "thread": "B2",
+      "lens": "M0",
+      "relevance": "中",
+      "note": "肌肉共激活定义与机制（345 引）—— 冗余解的非唯一性来源",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 345,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Muscle coactivation: definitions, mechanisms, and functions",
+      "cited_by_verified": 305,
+      "url_verified": "https://doi.org/10.1152/jn.00084.2018",
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_pdf": "https://www.physiology.org/doi/pdf/10.1152/jn.00084.2018",
+      "oa_landing": "https://doi.org/10.1152/jn.00084.2018",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 40,
+      "title": "Muscle synergies as a predictive framework for the EMG patterns of new hand postures",
+      "year": 2009,
+      "doi": "10.1088/1741-2560/6/3/036004",
+      "venue": "Journal of Neural Engineering",
+      "thread": "B2",
+      "lens": "M0",
+      "relevance": "中",
+      "note": "肌肉协同作为 EMG 模式的预测框架（158 引）—— 低维结构假设的来源",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 158,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Muscle synergies as a predictive framework for the EMG patterns of new hand postures",
+      "cited_by_verified": 137,
+      "url_verified": "https://doi.org/10.1088/1741-2560/6/3/036004",
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_pdf": "https://iopscience.iop.org/article/10.1088/1741-2560/6/3/036004/pdf",
+      "oa_landing": "https://doi.org/10.1088/1741-2560/6/3/036004",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 41,
+      "title": "Validity of muscle activation estimated with predicted ground reaction force in inverse dynamics based musculoskeletal simulation during gait",
+      "year": 2024,
+      "doi": "10.1016/j.jbiomech.2024.112118",
+      "venue": "Journal of Biomechanics",
+      "thread": "B2",
+      "lens": "M1",
+      "relevance": "中",
+      "note": "用预测地面反力估肌肉激活的有效性 —— 标签误差的实证",
+      "found_via": [
+        "crossref",
+        "pubmed"
+      ],
+      "found_cited_by": 4,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Validity of muscle activation estimated with predicted ground reaction force in inverse dynamics based musculoskeletal simulation during gait",
+      "cited_by_verified": 4,
+      "url_verified": "https://doi.org/10.1016/j.jbiomech.2024.112118",
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_pdf": "",
+      "oa_landing": "https://doi.org/10.1016/j.jbiomech.2024.112118",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 42,
+      "title": "Computational performance of musculoskeletal simulation in OpenSim Moco using parallel computing",
+      "year": 2023,
+      "doi": "10.1002/cnm.3777",
+      "venue": "International Journal for Numerical Methods in Biomedical Engineering",
+      "thread": "B2",
+      "lens": "M2",
+      "relevance": "中",
+      "note": "OpenSim Moco 的计算性能 —— 可行性核算",
+      "found_via": [
+        "openalex",
+        "crossref"
+      ],
+      "found_cited_by": 7,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Computational performance of musculoskeletal simulation in <scp>OpenSim Moco</scp> using parallel computing",
+      "cited_by_verified": 7,
+      "url_verified": "https://doi.org/10.1002/cnm.3777",
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_pdf": "",
+      "oa_landing": "https://doi.org/10.1002/cnm.3777",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          0.96
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 43,
+      "title": "Automated creation and tuning of personalised muscle paths for OpenSim musculoskeletal models of the knee joint",
+      "year": 2020,
+      "doi": "10.1007/s10237-020-01398-1",
+      "venue": "Biomechanics and Modeling in Mechanobiology",
+      "thread": "B2",
+      "lens": "M2",
+      "relevance": "中",
+      "note": "个体化肌肉路径自动生成与调参 —— 被试特异化的工程手段",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 49,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Automated creation and tuning of personalised muscle paths for OpenSim musculoskeletal models of the knee joint",
+      "cited_by_verified": 42,
+      "url_verified": "https://doi.org/10.1007/s10237-020-01398-1",
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_pdf": "https://lirias.kuleuven.be/retrieve/e466fe9f-2690-4003-a467-4fddb2643b22",
+      "oa_landing": "https://lirias.kuleuven.be/handle/123456789/662168",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 44,
+      "title": "A multibody biomechanical model of the upper limb including the shoulder girdle",
+      "year": 2012,
+      "doi": "10.1007/s11044-011-9297-0",
+      "venue": "Multibody System Dynamics",
+      "thread": "B2",
+      "lens": "M2",
+      "relevance": "中",
+      "note": "含肩关节的上肢多体生物力学模型",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 76,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "A multibody biomechanical model of the upper limb including the shoulder girdle",
+      "cited_by_verified": 64,
+      "url_verified": "https://doi.org/10.1007/s11044-011-9297-0",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 45,
+      "title": "Finger Muscle Attachments for an OpenSim Upper-Extremity Model",
+      "year": 2015,
+      "doi": "10.1371/journal.pone.0121712",
+      "venue": "PLoS ONE",
+      "thread": "B2",
+      "lens": "M2",
+      "relevance": "低",
+      "note": "OpenSim 上肢模型的指部肌肉附着点",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 32,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Finger Muscle Attachments for an OpenSim Upper-Extremity Model",
+      "cited_by_verified": 21,
+      "url_verified": "https://doi.org/10.1371/journal.pone.0121712",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0121712&type=printable",
+      "oa_landing": "https://doi.org/10.1371/journal.pone.0121712",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 46,
+      "title": "Implicit methods for efficient musculoskeletal simulation and optimal control",
+      "year": 2011,
+      "doi": "10.1016/j.piutam.2011.04.027",
+      "venue": "Procedia IUTAM",
+      "thread": "B2",
+      "lens": "M2",
+      "relevance": "低",
+      "note": "隐式方法加速肌肉骨骼仿真",
+      "found_via": [
+        "openalex",
+        "crossref"
+      ],
+      "found_cited_by": 203,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Implicit methods for efficient musculoskeletal simulation and optimal control",
+      "cited_by_verified": 177,
+      "url_verified": "https://doi.org/10.1016/j.piutam.2011.04.027",
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_pdf": "https://www.sciencedirect.com/science/article/pii/S2210983811000289/pdf",
+      "oa_landing": "https://doi.org/10.1016/j.piutam.2011.04.027",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 47,
+      "title": "Vision-based Automatic Detection of Compensatory Postures of after-Stroke Patients During Upper-extremity Robot-assisted Rehabilitation: A Pilot Study in Reaching Movement",
+      "year": 2020,
+      "doi": "10.1109/icaretech49914.2020.00019",
+      "venue": "2020 International Conference on Assistive and Rehabilitation Technologies (iCareTech)",
+      "thread": "B3",
+      "lens": "M4",
+      "relevance": "高",
+      "note": "★★★ 视觉自动检测代偿姿势 —— 与本项目 TP-03 肩肘代偿任务包同题",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 6,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Vision-based Automatic Detection of Compensatory Postures of after-Stroke Patients During Upper-extremity Robot-assisted Rehabilitation: A Pilot Study in Reaching Movement",
+      "cited_by_verified": 6,
+      "url_verified": "https://doi.org/10.1109/icaretech49914.2020.00019",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 48,
+      "title": "Motor compensation and recovery for reaching in stroke patients",
+      "year": 2003,
+      "doi": "10.1034/j.1600-0404.2003.00021.x",
+      "venue": "Acta Neurologica Scandinavica",
+      "thread": "B3",
+      "lens": "M4",
+      "relevance": "高",
+      "note": "★★ 卒中取物任务的运动代偿与恢复（280 引）—— 代偿机制的基础文献",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 280,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Motor compensation and recovery for reaching in stroke patients",
+      "cited_by_verified": 232,
+      "url_verified": "https://doi.org/10.1034/j.1600-0404.2003.00021.x",
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_pdf": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1034/j.1600-0404.2003.00021.x",
+      "oa_landing": "https://doi.org/10.1034/j.1600-0404.2003.00021.x",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 49,
+      "title": "Kinematics and Kinetics of Shoulder Complex, Elbow, and Wrist",
+      "year": 2021,
+      "doi": "10.1007/978-981-16-4991-2_8",
+      "venue": "Conceptual Biomechanics and Kinesiology",
+      "thread": "B3",
+      "lens": "M4",
+      "relevance": "高",
+      "note": "★ 肩复合体+肘+腕的运动学与动力学，腕肘肩一次覆盖的框架性文献",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 2,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Kinematics and Kinetics of Shoulder Complex, Elbow, and Wrist",
+      "cited_by_verified": 2,
+      "url_verified": "https://doi.org/10.1007/978-981-16-4991-2_8",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 50,
+      "title": "A clinically feasible kinematic assessment method of upper extremity motor function impairment after stroke",
+      "year": 2016,
+      "doi": "10.1016/j.measurement.2015.11.026",
+      "venue": "Measurement",
+      "thread": "B3",
+      "lens": "M1",
+      "relevance": "高",
+      "note": "★ 临床可行的上肢运动学评定方法 —— 决定「能不能进临床」的可行性门槛",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 56,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "A clinically feasible kinematic assessment method of upper extremity motor function impairment after stroke",
+      "cited_by_verified": 56,
+      "url_verified": "https://doi.org/10.1016/j.measurement.2015.11.026",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 51,
+      "title": "Kinematic and Clinical Analyses of Upper-Extremity Movements After Constraint-Induced Movement Therapy in Patients With Stroke: A Randomized Controlled Trial",
+      "year": 2007,
+      "doi": "10.1016/j.apmr.2007.05.012",
+      "venue": "Archives of Physical Medicine and Rehabilitation",
+      "thread": "B3",
+      "lens": "M4",
+      "relevance": "高",
+      "note": "卒中后上肢运动的运动学与临床分析（139 引）",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 139,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Kinematic and Clinical Analyses of Upper-Extremity Movements After Constraint-Induced Movement Therapy in Patients With Stroke: A Randomized Controlled Trial",
+      "cited_by_verified": 103,
+      "url_verified": "https://doi.org/10.1016/j.apmr.2007.05.012",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 52,
+      "title": "Kinematic Data Analysis for Post-Stroke Patients Following Bilateral Versus Unilateral Rehabilitation With an Upper Limb Wearable Robotic System",
+      "year": 2012,
+      "doi": "10.1109/tnsre.2012.2207462",
+      "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+      "thread": "B3",
+      "lens": "M4",
+      "relevance": "高",
+      "note": "双侧训练后卒中患者的运动学数据分析（TNSRE，133 引）",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 133,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Kinematic Data Analysis for Post-Stroke Patients Following Bilateral Versus Unilateral Rehabilitation With an Upper Limb Wearable Robotic System",
+      "cited_by_verified": 109,
+      "url_verified": "https://doi.org/10.1109/tnsre.2012.2207462",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 53,
+      "title": "Kinematic Analysis of the Upper Limb Motor Strategies in Stroke Patients as a Tool towards Advanced Neurorehabilitation Strategies: A Preliminary Study",
+      "year": 2014,
+      "doi": "10.1155/2014/636123",
+      "venue": "BioMed Research International",
+      "thread": "B3",
+      "lens": "M4",
+      "relevance": "中",
+      "note": "卒中上肢运动策略的运动学分析",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 72,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Kinematic Analysis of the Upper Limb Motor Strategies in Stroke Patients as a Tool towards Advanced Neurorehabilitation Strategies: A Preliminary Study",
+      "cited_by_verified": 59,
+      "url_verified": "https://doi.org/10.1155/2014/636123",
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_pdf": "https://downloads.hindawi.com/journals/bmri/2014/636123.pdf",
+      "oa_landing": "https://doi.org/10.1155/2014/636123",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 54,
+      "title": "Determining Levels of Upper Extremity Movement Impairment by Applying a Cluster Analysis to the Fugl-Meyer Assessment of the Upper Extremity in Chronic Stroke",
+      "year": 2017,
+      "doi": "10.1016/j.apmr.2016.06.023",
+      "venue": "Archives of Physical Medicine and Rehabilitation",
+      "thread": "B3",
+      "lens": "M4",
+      "relevance": "高",
+      "note": "用应用/传感器判定上肢运动损伤等级（342 引）—— 连续量表 vs 序数评分的核心问题",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 342,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Determining Levels of Upper Extremity Movement Impairment by Applying a Cluster Analysis to the Fugl-Meyer Assessment of the Upper Extremity in Chronic Stroke",
+      "cited_by_verified": 342,
+      "url_verified": "https://doi.org/10.1016/j.apmr.2016.06.023",
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_pdf": "",
+      "oa_landing": "https://www.ncbi.nlm.nih.gov/pmc/articles/5299057",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 55,
+      "title": "Item Difficulty of Fugl-Meyer Assessment for Upper Extremity in Persons With Chronic Stroke With Moderate-to-Severe Upper Limb Impairment",
+      "year": 2020,
+      "doi": "10.3389/fneur.2020.577855",
+      "venue": "Frontiers in Neurology",
+      "thread": "B3",
+      "lens": "M4",
+      "relevance": "中",
+      "note": "Fugl-Meyer 上肢量表条目难度 —— 量表本身的局限，支撑改用连续运动学指标的动机",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 56,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Item Difficulty of Fugl-Meyer Assessment for Upper Extremity in Persons With Chronic Stroke With Moderate-to-Severe Upper Limb Impairment",
+      "cited_by_verified": 56,
+      "url_verified": "https://doi.org/10.3389/fneur.2020.577855",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "https://www.frontiersin.org/articles/10.3389/fneur.2020.577855/pdf",
+      "oa_landing": "https://doi.org/10.3389/fneur.2020.577855",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 56,
+      "title": "Target height influences shoulder and elbow non-use after stroke during reaching with the hand : A brief communication",
+      "year": 2022,
+      "doi": "10.1101/2022.12.20.22283739",
+      "venue": "",
+      "thread": "B3",
+      "lens": "M4",
+      "relevance": "高",
+      "note": "★ 目标高度影响卒中后肩肘废用 —— 代偿对任务条件的敏感性",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 1,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Target height influences shoulder and elbow non-use after stroke during reaching with the hand : A brief communication",
+      "cited_by_verified": 1,
+      "url_verified": "https://doi.org/10.1101/2022.12.20.22283739",
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_pdf": "https://www.medrxiv.org/content/medrxiv/early/2022/12/21/2022.12.20.22283739.full.pdf",
+      "oa_landing": "https://doi.org/10.1101/2022.12.20.22283739",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 57,
+      "title": "Thoracic position effect on shoulder range of motion, strength, and three-dimensional scapular kinematics",
+      "year": 1999,
+      "doi": "10.1016/s0003-9993(99)90088-6",
+      "venue": "Archives of Physical Medicine and Rehabilitation",
+      "thread": "B3",
+      "lens": "M4",
+      "relevance": "中",
+      "note": "胸段位置对肩 ROM 的影响（365 引）—— 躯干-肩耦合，代偿的结构性来源",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 365,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Thoracic position effect on shoulder range of motion, strength, and three-dimensional scapular kinematics",
+      "cited_by_verified": 365,
+      "url_verified": "https://doi.org/10.1016/s0003-9993(99)90088-6",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 58,
+      "title": "Wrist kinematics differ in expert and novice tennis players performing the backhand stroke: Implications for tennis elbow",
+      "year": 1994,
+      "doi": "10.1016/0021-9290(94)90062-0",
+      "venue": "Journal of Biomechanics",
+      "thread": "B3",
+      "lens": "M1",
+      "relevance": "中",
+      "note": "腕运动学的专家-新手差异 —— 腕角估计的效度场景",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 72,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Wrist kinematics differ in expert and novice tennis players performing the backhand stroke: Implications for tennis elbow",
+      "cited_by_verified": 72,
+      "url_verified": "https://doi.org/10.1016/0021-9290(94)90062-0",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 59,
+      "title": "Wearable technology in stroke rehabilitation: towards improved diagnosis and treatment of upper-limb motor impairment",
+      "year": 2019,
+      "doi": "10.1186/s12984-019-0612-y",
+      "venue": "Journal of NeuroEngineering and Rehabilitation",
+      "thread": "B3",
+      "lens": "M0",
+      "relevance": "中",
+      "note": "卒中康复可穿戴技术综述（277 引）",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 277,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Wearable technology in stroke rehabilitation: towards improved diagnosis and treatment of upper-limb motor impairment",
+      "cited_by_verified": 247,
+      "url_verified": "https://doi.org/10.1186/s12984-019-0612-y",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "https://jneuroengrehab.biomedcentral.com/track/pdf/10.1186/s12984-019-0612-y",
+      "oa_landing": "https://doi.org/10.1186/s12984-019-0612-y",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 60,
+      "title": "Robot-Assisted Therapy for Upper Extremity Motor Impairment After Stroke: A Systematic Review and Meta-Analysis",
+      "year": 2021,
+      "doi": "10.1093/ptj/pzab010",
+      "venue": "Physical Therapy",
+      "thread": "B3",
+      "lens": "M0",
+      "relevance": "中",
+      "note": "上肢运动损伤的机器人辅助治疗综述（105 引）",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 105,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Robot-Assisted Therapy for Upper Extremity Motor Impairment After Stroke: A Systematic Review and Meta-Analysis",
+      "cited_by_verified": 99,
+      "url_verified": "https://doi.org/10.1093/ptj/pzab010",
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_pdf": "https://academic.oup.com/ptj/article-pdf/101/4/pzab010/41911649/pzab010.pdf",
+      "oa_landing": "https://doi.org/10.1093/ptj/pzab010",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 61,
+      "title": "Fatigue, induced via repetitive upper-limb motor tasks, influences trunk and shoulder kinematics during an upper limb reaching task in a virtual reality environment",
+      "year": 2021,
+      "doi": "10.1371/journal.pone.0249403",
+      "venue": "PLOS ONE",
+      "thread": "B3",
+      "lens": "M1",
+      "relevance": "低",
+      "note": "重复上肢任务诱发疲劳的影响 —— 运动质量指标之一",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 27,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Fatigue, induced via repetitive upper-limb motor tasks, influences trunk and shoulder kinematics during an upper limb reaching task in a virtual reality environment",
+      "cited_by_verified": 27,
+      "url_verified": "https://doi.org/10.1371/journal.pone.0249403",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0249403&type=printable",
+      "oa_landing": "https://doi.org/10.1371/journal.pone.0249403",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 62,
+      "title": "VQ-HPS: Human Pose and Shape Estimation in a Vector-Quantized Latent Space",
+      "year": 2024,
+      "doi": "10.1007/978-3-031-72943-0_27",
+      "venue": "Lecture notes in computer science",
+      "thread": "B4",
+      "lens": "M3",
+      "relevance": "高",
+      "note": "★ 向量量化潜空间做人体姿态与形状估计 —— 与「离散词表」最接近的 CV 先例",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 9,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "VQ-HPS: Human Pose and Shape Estimation in a Vector-Quantized Latent Space",
+      "cited_by_verified": 11,
+      "url_verified": "https://doi.org/10.1007/978-3-031-72943-0_27",
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_pdf": "https://upcommons.upc.edu/bitstreams/f07246cb-e80b-44e5-9c1e-8385891bdd47/download",
+      "oa_landing": "https://hdl.handle.net/2117/425811",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 63,
+      "title": "Masked reconstruction model of latent space vector quantization for human skeleton-based action recognition",
+      "year": 2026,
+      "doi": "10.1016/j.neucom.2025.132126",
+      "venue": "Neurocomputing",
+      "thread": "B4",
+      "lens": "M3",
+      "relevance": "高",
+      "note": "★ 2026 年，掩码重建 + 潜空间 VQ 做人体 —— 需查是否已含运动学 token",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 1,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Masked reconstruction model of latent space vector quantization for human skeleton-based action recognition",
+      "cited_by_verified": 1,
+      "url_verified": "https://doi.org/10.1016/j.neucom.2025.132126",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 64,
+      "title": "Learning 3D Human Pose from Structure and Motion",
+      "year": 2018,
+      "doi": "10.1007/978-3-030-01240-3_41",
+      "venue": "Lecture notes in computer science",
+      "thread": "B4",
+      "lens": "M3",
+      "relevance": "中",
+      "note": "从结构与运动学习 3D 人体姿态 —— 表征学习基线",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 249,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_pdf": "https://link.springer.com/content/pdf/10.1007/978-3-030-01240-3_41.pdf",
+      "oa_landing": "https://doi.org/10.1007/978-3-030-01240-3_41",
+      "confirm_sources": [
+        "unpaywall"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          0.52
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 65,
+      "title": "Robot Motion Planning in Learned Latent Spaces",
+      "year": 2019,
+      "doi": "10.1109/lra.2019.2901898",
+      "venue": "IEEE Robotics and Automation Letters",
+      "thread": "B4",
+      "lens": "M3",
+      "relevance": "中",
+      "note": "学习潜空间中的机器人运动规划 —— 离散潜空间用于控制",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 158,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "Robot Motion Planning in Learned Latent Spaces",
+      "cited_by_verified": 127,
+      "url_verified": "https://doi.org/10.1109/lra.2019.2901898",
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_pdf": "https://ieeexplore.ieee.org/ielx7/7083369/8668830/08653875.pdf",
+      "oa_landing": "https://doi.org/10.1109/lra.2019.2901898",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 66,
+      "title": "Learning Joint Twist Rotation for 3D Human Pose Estimation from a Single Image",
+      "year": 2021,
+      "doi": "10.5220/0010222703790386",
+      "venue": "Proceedings of the 16th International Joint Conference on Computer Vision, Imaging and Computer Graphics Theory and Applications",
+      "thread": "B4",
+      "lens": "M3",
+      "relevance": "中",
+      "note": "关节扭转量学习 —— 与「绕自身轴旋转」这一腕 DoF 表征直接相关",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 1,
+      "found_oa": false,
+      "selected_from": "pool:B5",
+      "canonical_title": "Learning Joint Twist Rotation for 3D Human Pose Estimation from a Single Image",
+      "cited_by_verified": 1,
+      "url_verified": "https://doi.org/10.5220/0010222703790386",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "",
+      "oa_landing": "https://doi.org/10.5220/0010222703790386",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 67,
+      "title": "BEST: BERT Pre-training for Sign Language Recognition with Coupling Tokenization",
+      "year": 2023,
+      "doi": "10.1609/aaai.v37i3.25470",
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "thread": "B4",
+      "lens": "M3",
+      "relevance": "低",
+      "note": "手语识别的耦合 tokenization —— 手部运动 token 化的邻近先例，跨领域参照",
+      "found_via": [
+        "openalex"
+      ],
+      "found_cited_by": 55,
+      "found_oa": true,
+      "selected_from": "shortlist",
+      "canonical_title": "BEST: BERT Pre-training for Sign Language Recognition with Coupling Tokenization",
+      "cited_by_verified": 48,
+      "url_verified": "https://doi.org/10.1609/aaai.v37i3.25470",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "https://ojs.aaai.org/index.php/AAAI/article/download/25470/25242",
+      "oa_landing": "https://doi.org/10.1609/aaai.v37i3.25470",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 68,
+      "title": "Differentiable Biomechanics Unlocks Opportunities for Markerless Motion Capture",
+      "year": 2025,
+      "doi": "10.1109/icorr66766.2025.11063174",
+      "venue": "2025 International Conference On Rehabilitation Robotics (ICORR)",
+      "thread": "B5",
+      "lens": "M3",
+      "relevance": "高",
+      "note": "★★★ 可微生物力学用于 MMC 的开创工作（arXiv 2402.17192 / ICORR 2025）—— 本项目方法学侧最重要的先行",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 10,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "arxiv_id": "2402.17192",
+      "canonical_title": "Differentiable Biomechanics Unlocks Opportunities for Markerless Motion Capture",
+      "abstract": "Recent developments have created differentiable physics simulators designed for machine learning pipelines that can be accelerated on a GPU. While these can simulate biomechanical models, these opportunities have not been exploited for biomechanics research or markerless motion capture. We show that these simulators can be used to fit inverse kinematics to markerless motion capture data, including scaling the model to fit the anthropomorphic measurements of an individual. This is performed end-to-end with an implicit representation of the movement trajectory, which is propagated through the forward kinematic model to minimize the error from the 3D markers reprojected into the images. The differential optimizer yields other opportunities, such as adding bundle adjustment during trajectory optimization to refine the extrinsic camera parameters or meta-optimization to improve the base model jointly over trajectories from multiple participants. This approach improves the reprojection error from markerless motion capture over prior methods and produces accurate spatial step parameters compared to an instrumented walkway for control and clinical populations.",
+      "authors": [
+        "R. James Cotton"
+      ],
+      "arxiv_published": "2024-02-27T04:18:15Z",
+      "arxiv_journal_ref": "",
+      "categories": [
+        "cs.CV"
+      ],
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "arxiv"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "arxiv",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 69,
+      "title": "Differentiable Biomechanics for Markerless Motion Capture in Upper Limb Stroke Rehabilitation: A Comparison With Optical Motion Capture_supp1-3605962.mp4",
+      "year": "2024",
+      "doi": "10.1109/tmrb.2025.3605962/mm1",
+      "venue": "",
+      "thread": "B5",
+      "lens": "M3",
+      "relevance": "高",
+      "note": "★★★ 上肢卒中可微生物力学 + 与光学动捕对比（IEEE TMRB 2026, 15 引）—— 已决定降级为「验证协议」来源",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 0,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "arxiv_id": "2411.14992",
+      "canonical_title": "Differentiable Biomechanics for Markerless Motion Capture in Upper Limb Stroke Rehabilitation: A Comparison with Optical Motion Capture",
+      "abstract": "Marker-based Optical Motion Capture (OMC) paired with biomechanical modeling is currently considered the most precise and accurate method for measuring human movement kinematics. However, combining differentiable biomechanical modeling with Markerless Motion Capture (MMC) offers a promising approach to motion capture in clinical settings, requiring only minimal equipment, such as synchronized webcams, and minimal effort for data collection. This study compares key kinematic outcomes from biomechanically modeled MMC and OMC data in 15 stroke patients performing the drinking task, a functional task recommended for assessing upper limb movement quality. We observed a high level of agreement in kinematic trajectories between MMC and OMC, as indicated by high correlations (median r above 0.95 for the majority of kinematic trajectories) and median RMSE values ranging from 2-5 degrees for joint angles, 0.04 m/s for end-effector velocity, and 6 mm for trunk displacement. Trial-to-trial biases between OMC and MMC were consistent within participant sessions, with interquartile ranges of bias around 1-3 degrees for joint angles, 0.01 m/s in end-effector velocity, and approximately 3mm for trunk displacement. Our findings indicate that our MMC for arm tracking is approaching the accuracy of marker-based methods, supporting its potential for use in clinical settings. MMC could provide valuable insights into movement rehabilitation in stroke patients, potentially enhancing the effectiveness of rehabilitation strategies.",
+      "authors": [
+        "Tim Unger",
+        "Arash Sal Moslehian",
+        "J. D. Peiffer",
+        "Johann Ullrich",
+        "Roger Gassert",
+        "Olivier Lambercy",
+        "R. James Cotton",
+        "Chris Awai Easthope"
+      ],
+      "arxiv_published": "2024-11-22T15:02:29Z",
+      "arxiv_journal_ref": "",
+      "categories": [
+        "cs.CV"
+      ],
+      "confirm_sources": [
+        "arxiv"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "arxiv",
+          0.937
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 70,
+      "title": "Vision-Based Approximate Estimation of Muscle Activation Patterns for Tele-Impedance",
+      "year": 2023,
+      "doi": "10.1109/lra.2023.3293275",
+      "venue": "IEEE Robotics and Automation Letters",
+      "thread": "B5",
+      "lens": "M3",
+      "relevance": "高",
+      "note": "★★★ 视觉近似估计肌肉激活模式（IEEE RA-L 2023）—— 直接占据「视觉→肌肉激活」输出头",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 8,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Vision-Based Approximate Estimation of Muscle Activation Patterns for Tele-Impedance",
+      "cited_by_verified": 8,
+      "url_verified": "https://doi.org/10.1109/lra.2023.3293275",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 71,
+      "title": "Towards Human Inverse Dynamics from Real Images: A Dataset and Benchmark for Joint Torque Estimation",
+      "year": 2025,
+      "doi": "10.1101/2025.10.03.679772",
+      "venue": "",
+      "thread": "B5",
+      "lens": "M3",
+      "relevance": "高",
+      "note": "★★ 从真实图像做人体逆动力学：数据集与基准（2025）—— 直接占据「视觉→逆动力学」",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 0,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Towards Human Inverse Dynamics from Real Images: A Dataset and Benchmark for Joint Torque Estimation",
+      "cited_by_verified": 0,
+      "url_verified": "https://doi.org/10.1101/2025.10.03.679772",
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_pdf": "https://www.biorxiv.org/content/biorxiv/early/2025/10/04/2025.10.03.679772.full.pdf",
+      "oa_landing": "https://doi.org/10.1101/2025.10.03.679772",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 72,
+      "title": "Learning-Based Inverse Dynamics of Human Motion",
+      "year": 2017,
+      "doi": "10.1109/iccvw.2017.104",
+      "venue": "2017 IEEE International Conference on Computer Vision Workshops (ICCVW)",
+      "thread": "B5",
+      "lens": "M3",
+      "relevance": "高",
+      "note": "基于学习的运动逆动力学（ICCVW 2017）—— 视觉/姿态→关节力的学习先例",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 4,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [],
+      "n_confirm": 0,
+      "title_scores": [
+        [
+          "crossref",
+          0.885
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "review",
+      "evidence_grade": "C（相似度 0.74-0.90，须人工复核）"
+    },
+    {
+      "idx": 73,
+      "title": "Machine Learning for Optical Motion Capture-Driven Musculoskeletal Modelling from Inertial Motion Capture Data",
+      "year": 2023,
+      "doi": "10.3390/bioengineering10050510",
+      "venue": "Bioengineering",
+      "thread": "B5",
+      "lens": "M0",
+      "relevance": "中",
+      "note": "动捕驱动的肌肉骨骼建模之机器学习综述",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 19,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Machine Learning for Optical Motion Capture-Driven Musculoskeletal Modelling from Inertial Motion Capture Data",
+      "cited_by_verified": 19,
+      "url_verified": "https://doi.org/10.3390/bioengineering10050510",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "https://www.mdpi.com/2306-5354/10/5/510/pdf?version=1682321680",
+      "oa_landing": "https://doi.org/10.3390/bioengineering10050510",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 74,
+      "title": "Evaluating Muscle Activation Models for Elbow Motion Estimation",
+      "year": 2018,
+      "doi": "10.3390/s18041004",
+      "venue": "Sensors",
+      "thread": "B5",
+      "lens": "M2",
+      "relevance": "高",
+      "note": "肘运动估计的肌肉激活模型评测 —— 群体模型标签的误差证据",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 30,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Evaluating Muscle Activation Models for Elbow Motion Estimation",
+      "cited_by_verified": 30,
+      "url_verified": "https://doi.org/10.3390/s18041004",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "https://www.mdpi.com/1424-8220/18/4/1004/pdf?version=1525345554",
+      "oa_landing": "https://doi.org/10.3390/s18041004",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 75,
+      "title": "Optimal-state Dynamics Estimation for Physics-based Human Motion Capture from Videos",
+      "year": 2024,
+      "doi": "10.52202/079017-1382",
+      "venue": "Advances in Neural Information Processing Systems 37",
+      "thread": "B5",
+      "lens": "M3",
+      "relevance": "中",
+      "note": "物理驱动人体动捕的最优状态动力学估计（NeurIPS 2024）",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 0,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Optimal-state Dynamics Estimation for Physics-based Human Motion Capture from Videos",
+      "cited_by_verified": 0,
+      "url_verified": "https://doi.org/10.52202/079017-1382",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 76,
+      "title": "Applications and limitations of current markerless motion capture methods for clinical gait biomechanics",
+      "year": 2022,
+      "doi": "10.7287/peerj.12995v0.2/reviews/1",
+      "venue": "PeerJ",
+      "thread": "B5",
+      "lens": "M0",
+      "relevance": "高",
+      "note": "★ 现有标记无关动捕的应用与局限（380 引）—— 必引的总览",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 380,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Peer Review #1 of \"Applications and limitations of current markerless motion capture methods for clinical gait biomechanics (v0.2)\"",
+      "cited_by_verified": 0,
+      "url_verified": "https://doi.org/10.7287/peerj.12995v0.2/reviews/1",
+      "doi_conflicts": [
+        {
+          "登记DOI": "10.7717/peerj.12995",
+          "crossref返回DOI": "10.7287/peerj.12995v0.2/reviews/1",
+          "title_match": 0.904
+        }
+      ],
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "",
+      "oa_landing": "https://doi.org/10.7287/peerj.12995v0.2/reviews/1",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          0.904
+        ],
+        [
+          "unpaywall_title",
+          0.904
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "doi_conflict",
+      "evidence_grade": "C（登记 DOI 与来源返回不一致，须人工裁定）"
+    },
+    {
+      "idx": 77,
+      "title": "PoseAug: A Differentiable Pose Augmentation Framework for 3D Human Pose Estimation",
+      "year": 2021,
+      "doi": "10.1109/cvpr46437.2021.00847",
+      "venue": "2021 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+      "thread": "B5",
+      "lens": "M3",
+      "relevance": "中",
+      "note": "可微姿态增强（CVPR 2021）—— 可微优化在人体任务中的可迁移性证据",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 163,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "PoseAug: A Differentiable Pose Augmentation Framework for 3D Human Pose Estimation",
+      "cited_by_verified": 163,
+      "url_verified": "https://doi.org/10.1109/cvpr46437.2021.00847",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 78,
+      "title": "Advancing human pose estimation through interdisciplinary physics-inspired deep learning models",
+      "year": 2025,
+      "doi": "10.3389/fphy.2025.1558325",
+      "venue": "Frontiers in Physics",
+      "thread": "B5",
+      "lens": "M3",
+      "relevance": "中",
+      "note": "跨学科物理启发的人体姿态估计（2025）",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 0,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Advancing human pose estimation through interdisciplinary physics-inspired deep learning models",
+      "cited_by_verified": 0,
+      "url_verified": "https://doi.org/10.3389/fphy.2025.1558325",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "",
+      "oa_landing": "https://doi.org/10.3389/fphy.2025.1558325",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 79,
+      "title": "Towards a Simplified Estimation of Muscle Activation Pattern from MRI and EMG Using Electrical Network and Graph Theory",
+      "year": 2020,
+      "doi": "10.3390/s20030724",
+      "venue": "Sensors",
+      "thread": "B5",
+      "lens": "M2",
+      "relevance": "中",
+      "note": "简化的肌肉激活模式估计（Sensors 2020）",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 7,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Towards a Simplified Estimation of Muscle Activation Pattern from MRI and EMG Using Electrical Network and Graph Theory",
+      "cited_by_verified": 7,
+      "url_verified": "https://doi.org/10.3390/s20030724",
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_pdf": "",
+      "oa_landing": "https://doi.org/10.3390/s20030724",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 80,
+      "title": "A realistic upper-limb musculoskeletal model for overall muscle activation estimation",
+      "year": 2023,
+      "doi": "10.21203/rs.3.rs-2802018/v1",
+      "venue": "",
+      "thread": "B5",
+      "lens": "M2",
+      "relevance": "高",
+      "note": "★ 面向整体肌肉激活的逼真上肢肌肉骨骼模型 —— 群体模型标签的来源候选",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 1,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "A realistic upper-limb musculoskeletal model for overall muscle activation estimation",
+      "cited_by_verified": 1,
+      "url_verified": "https://doi.org/10.21203/rs.3.rs-2802018/v1",
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_pdf": "https://www.researchsquare.com/article/rs-2802018/latest.pdf",
+      "oa_landing": "http://dx.doi.org/10.21203/rs.3.rs-2802018/v1",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 81,
+      "title": "Continuous estimation of finger joint angles using muscle activation inputs from surface EMG signals",
+      "year": 2012,
+      "doi": "10.1109/embc.2012.6346535",
+      "venue": "2012 Annual International Conference of the IEEE Engineering in Medicine and Biology Society",
+      "thread": "B5",
+      "lens": "M2",
+      "relevance": "中",
+      "note": "由肌肉激活连续估计指关节角 —— 冗余问题的简化范例",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 20,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Continuous estimation of finger joint angles using muscle activation inputs from surface EMG signals",
+      "cited_by_verified": 20,
+      "url_verified": "https://doi.org/10.1109/embc.2012.6346535",
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_pdf": "",
+      "oa_landing": "https://naist.repo.nii.ac.jp/records/7819",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 82,
+      "title": "Scaled Motion Dynamics for Markerless Motion Capture",
+      "year": 2007,
+      "doi": "10.1109/cvpr.2007.383128",
+      "venue": "2007 IEEE Conference on Computer Vision and Pattern Recognition",
+      "thread": "B5",
+      "lens": "M3",
+      "relevance": "中",
+      "note": "CVPR 2007，尺度化运动动力学 —— 视觉+动力学的早期融合尝试",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 28,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "Scaled Motion Dynamics for Markerless Motion Capture",
+      "cited_by_verified": 28,
+      "url_verified": "https://doi.org/10.1109/cvpr.2007.383128",
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_pdf": "https://pure.mpg.de/pubman/item/item_1328064_4/component/file_3590325/639_1.pdf",
+      "oa_landing": "http://hdl.handle.net/11858/00-001M-0000-000F-2099-7",
+      "confirm_sources": [
+        "crossref",
+        "unpaywall"
+      ],
+      "n_confirm": 2,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ],
+        [
+          "unpaywall_title",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed",
+      "evidence_grade": "A（≥2 个独立来源确认标题）"
+    },
+    {
+      "idx": 83,
+      "title": "A neural network model for arm trajectory formation using forward and inverse dynamics models",
+      "year": 1993,
+      "doi": "10.1016/s0893-6080(09)80003-8",
+      "venue": "Neural Networks",
+      "thread": "B5",
+      "lens": "M2",
+      "relevance": "中",
+      "note": "用前向动力学形成手臂轨迹的神经网络模型",
+      "found_via": [
+        "crossref"
+      ],
+      "found_cited_by": 124,
+      "found_oa": false,
+      "selected_from": "shortlist",
+      "canonical_title": "A neural network model for arm trajectory formation using forward and inverse dynamics models",
+      "cited_by_verified": 124,
+      "url_verified": "https://doi.org/10.1016/s0893-6080(09)80003-8",
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_pdf": "",
+      "oa_landing": "",
+      "confirm_sources": [
+        "crossref"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "crossref",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 84,
+      "title": "",
+      "arxiv_id": "2607.23608",
+      "year": "2026",
+      "doi": "",
+      "venue": "",
+      "thread": "B3",
+      "lens": "M4",
+      "relevance": "高",
+      "note": "★★ 临床常规评估中嵌入 MMC（20 患者/47 次/1174 任务），证明连续运动学指标比 ARAT 序数评分更灵敏 —— 自采 D435i 数据的临床价值论证先例。",
+      "found_via": [
+        "arxiv-direct"
+      ],
+      "found_cited_by": 0,
+      "found_oa": true,
+      "selected_from": "arxiv_priority",
+      "canonical_title": "Markerless Motion Capture in Routine Clinical Upper Limb Assessments: Validity and Insights Beyond Ordinal Scoring",
+      "abstract": "The Action Research Arm Test (ARAT) is a widely-used upper limb outcome measure in neurorehabilitation, but its ordinal scoring is subjective and suffers from limited sensitivity and specificity. We evaluated whether artificial-intelligence (AI)-based markerless motion capture (MMC), embedded into ARAT assessments during clinical routine, accurately reconstructs upper limb movement and yields valid, objective kinematic metrics carrying clinically meaningful information beyond the ordinal score. Across 47 sessions from 20 mixed-neurological patients (1,174 ARAT tasks), biomechanical reconstruction was accurate and robust across impairment levels, and kinematic metrics showed the discrimination pattern expected of a construct-valid measure. In longitudinal case studies, the metrics added the specificity and sensitivity the ordinal score lacks: a domain decomposition exposed patient-specific recovery profiles underlying equal ARAT gains (specificity), and kinematic improvement continued to be detected after the ARAT had saturated (sensitivity). MMC in clinical routine can thus provide valid, objective, sensitive, and specific kinematic measurement complementing ordinal scoring.",
+      "authors": [
+        "Tim Unger",
+        "Olivier Lambercy",
+        "Roger Gassert",
+        "Andreas R. Luft",
+        "R. James Cotton",
+        "Chris Easthope Awai"
+      ],
+      "arxiv_published": "2026-07-26T11:29:26Z",
+      "arxiv_journal_ref": "",
+      "categories": [
+        "cs.CV"
+      ],
+      "confirm_sources": [
+        "arxiv"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "arxiv",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 85,
+      "title": "",
+      "arxiv_id": "2603.26844",
+      "year": "2026",
+      "doi": "",
+      "venue": "",
+      "thread": "B5",
+      "lens": "M1",
+      "relevance": "高",
+      "note": "★★ 3D 关键点→解剖标志物的不确定性量化（ρ≈0.63，ROC-AUC 0.92）。离散 token 辅助头做置信度/可拒识别的直接方法学参照。",
+      "found_via": [
+        "arxiv-direct"
+      ],
+      "found_cited_by": 0,
+      "found_oa": true,
+      "selected_from": "arxiv_priority",
+      "canonical_title": "Uncertainty-Aware Mapping from 3D Keypoints to Anatomical Landmarks for Markerless Biomechanics",
+      "abstract": "Markerless biomechanics increasingly relies on 3D skeletal keypoints extracted from video, yet downstream biomechanical mappings typically treat these estimates as deterministic, providing no principled mechanism for frame-wise quality control. In this work, we investigate predictive uncertainty as a quantitative measure of confidence for mapping 3D pose keypoints to 3D anatomical landmarks, a critical step preceding inverse kinematics and musculoskeletal analysis. Within a temporal learning framework, we model both uncertainty arising from observation noise and uncertainty related to model limitations. Using synchronized motion capture ground truth on AMASS, we evaluate uncertainty at frame and joint level through error--uncertainty rank correlation, risk--coverage analysis, and catastrophic outlier detection. Across experiments, uncertainty estimates, particularly those associated with model uncertainty, exhibit a strong monotonic association with landmark error (Spearman $ρ\\approx 0.63$), enabling selective retention of reliable frames (error reduced to $\\approx 16.8$ mm at 10% coverage) and accurate detection of severe failures (ROC-AUC $\\approx 0.92$ for errors $&gt;50$ mm). Reliability ranking remains stable under controlled input degradation, including Gaussian noise and simulated missing joints. In contrast, uncertainty attributable to observation noise provides limited additional benefit in this setting, suggesting that dominant failures in keypoint-to-landmark mapping are driven primarily by model uncertainty. Our results establish predictive uncertainty as a practical, frame-wise tool for automatic quality control in markerless biomechanical pipelines.",
+      "authors": [
+        "Cesare Davide Pace",
+        "Alessandro Marco De Nunzio",
+        "Claudio De Stefano",
+        "Francesco Fontanella",
+        "Mario Molinara"
+      ],
+      "arxiv_published": "2026-03-27T09:42:23Z",
+      "arxiv_journal_ref": "",
+      "categories": [
+        "eess.IV",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "confirm_sources": [
+        "arxiv"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "arxiv",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 86,
+      "title": "",
+      "arxiv_id": "2609.18667",
+      "year": "2026",
+      "doi": "",
+      "venue": "",
+      "thread": "B1",
+      "lens": "M0",
+      "relevance": "高",
+      "note": "★★ 临床/康复场景视频 MMC 的 PRISMA-ScR 范围综述（117 项已验证研究，检索至 2026-07）。本语料 B1 线程的总览锚点，也是「是否已饱和」的判定依据。",
+      "found_via": [
+        "arxiv-direct"
+      ],
+      "found_cited_by": 0,
+      "found_oa": true,
+      "selected_from": "arxiv_priority",
+      "canonical_title": "Video-Based Markerless Motion Capture for Clinical and Rehabilitation Biomechanics: A PRISMA-ScR Scoping Review of Validated Architectures, Clinical Readiness, and Emerging Methods",
+      "abstract": "Background.. Video-based markerless motion capture promises movement analysis without the cost, space and skin-marker constraints of optoelectronic systems, with particular potential for clinical and rehabilitation settings. Whether validated pipelines yet deliver clinically acceptable biomechanics, and how they relate to the underlying computer-vision research, remains unclear. Methods. We conducted a scoping review following the PRISMA extension for Scoping Reviews, with a registered protocol and searches of PubMed, Scopus and IEEE Xplore (January 2015 to February 2026; the computer-vision scan was updated to July 2026). A dual-tier design paired a primary corpus of validated biomechanical studies with a complementary, curated and deliberately non-exhaustive corpus of emerging computer-vision work, used qualitatively. We charted study characteristics, pipeline architecture, validation methods and joint-angle accuracy. Results. We included 117 studies, most published from 2024 onward and conducted on healthy adults walking in a laboratory. Pipelines formed five architectural families across monocular and multi-camera modalities; most reported raw joint angles without biomechanical refinement. Sagittal lower-limb agreement clustered around 5 to 6{\\textdegree}, generally short of clinical acceptability, while out-of-plane kinematics, kinetics, and pathological or older populations were rarely validated. Emerging computer-vision building blocks (foundation-model mesh recovery, differentiable inverse kinematics, video-based kinetics) were almost absent from validated studies. Conclusions. Video-based markerless capture is not yet interchangeable with marker-based systems for clinical joint kinematics, and it remains barely validated where rehabilitation needs it most: older and pathological populations, out-of-plane kinematics, and kinetics. Mapping this evidence gap onto emerging computer-vision advances, we propose hypothesis-generating design guidelines, not a validated method, to steer the next generation of pipelines toward accessible, clinically meaningful movement analysis.",
+      "authors": [
+        "Florian Delaplace",
+        "Elodie Piche",
+        "Frédéric Chorin",
+        "Raphael Zory"
+      ],
+      "arxiv_published": "2026-09-16T13:44:08Z",
+      "arxiv_journal_ref": "",
+      "categories": [
+        "cs.CV",
+        "physics.med-ph"
+      ],
+      "confirm_sources": [
+        "arxiv"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "arxiv",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 87,
+      "title": "",
+      "arxiv_id": "2607.02796",
+      "year": "2026",
+      "doi": "",
+      "venue": "",
+      "thread": "B1",
+      "lens": "M3",
+      "relevance": "高",
+      "note": "★ 生物力学感知的 dexterous hand 多视角 MMC —— 腕/手 DoF 表征的最近先行。",
+      "found_via": [
+        "arxiv-direct"
+      ],
+      "found_cited_by": 0,
+      "found_oa": true,
+      "selected_from": "arxiv_priority",
+      "canonical_title": "Biomechanics-aware Multi-view Markerless Motion Capture of Dexterous Hand Movements",
+      "abstract": "Markerless motion capture (MMC) techniques have been widely beneficial in biomechanical analysis of human movement; however, application to complex motions of the hand lags other musculoskeletal systems. The primary goal of this study was to evaluate the performance of a biomechanical reconstruction method that implements a gradient-based optimization approach with a biomechanical model in the loop for tracking dexterous, unconstrained hand movements using MMC. Using a custom, 8-camera setup, we acquired 121 video recordings from 6 participants performing 11 different tasks that spanned 6 hand postures, 5 object manipulation tasks, and involved motion of the proximal upper limb joints. Performance of the proposed MMC pipeline was directly compared to a more commonly adopted two-stage reconstruction method that first triangulates 2D keypoints from computer vision pose estimation algorithms to 3D and then enforces biomechanical constraints by solving a constrained inverse kinematics problem. Relative performance was assessed qualitatively by visual inspection and quantitatively using a computer vision metric. Our method generated solutions for all 121 video recordings; the two-stage method did not converge for 15% of the recordings. Across the remaining videos, our method produced more biomechanically plausible hand kinematics than the two-stage method and was more robust to occlusion effects during tasks that involved objects. The relative robustness of the end-to-end method suggests that it is more effective in utilizing the available 2D digital keypoint information. Automatic and biomechanically meaningful tracking of hand kinematics during dexterous movements has the potential to support clinical evaluation, rehabilitation monitoring, and studies of human motor control.",
+      "authors": [
+        "Pouyan Firouzabadi",
+        "J. D. Peiffer",
+        "Kunal Shah",
+        "Anton Sobinov",
+        "Lee E. Miller",
+        "R. James Cotton",
+        "Wendy M. Murray"
+      ],
+      "arxiv_published": "2026-07-02T22:14:59Z",
+      "arxiv_journal_ref": "",
+      "categories": [
+        "cs.CV"
+      ],
+      "confirm_sources": [
+        "arxiv"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "arxiv",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 88,
+      "title": "",
+      "arxiv_id": "2502.06486",
+      "year": "2025",
+      "doi": "",
+      "venue": "",
+      "thread": "B5",
+      "lens": "M1",
+      "relevance": "中",
+      "note": "多视角 MMC 的生物力学重建与置信区间 —— 不确定性传递的下游版本。",
+      "found_via": [
+        "arxiv-direct"
+      ],
+      "found_cited_by": 0,
+      "found_oa": true,
+      "selected_from": "arxiv_priority",
+      "canonical_title": "Biomechanical Reconstruction with Confidence Intervals from Multiview Markerless Motion Capture",
+      "abstract": "Advances in multiview markerless motion capture (MMMC) promise high-quality movement analysis for clinical practice and research. While prior validation studies show MMMC performs well on average, they do not provide what is needed in clinical practice or for large-scale utilization of MMMC -- confidence intervals over specific kinematic estimates from a specific individual analyzed using a possibly unique camera configuration. We extend our previous work using an implicit representation of trajectories optimized end-to-end through a differentiable biomechanical model to learn the posterior probability distribution over pose given all the detected keypoints. This posterior probability is learned through a variational approximation and estimates confidence intervals for individual joints at each moment in a trial, showing confidence intervals generally within 10-15 mm of spatial error for virtual marker locations, consistent with our prior validation studies. Confidence intervals over joint angles are typically only a few degrees and widen for more distal joints. The posterior also models the correlation structure over joint angles, such as correlations between hip and pelvis angles. The confidence intervals estimated through this method allow us to identify times and trials where kinematic uncertainty is high.",
+      "authors": [
+        "R. James Cotton",
+        "Fabian Sinz"
+      ],
+      "arxiv_published": "2025-02-10T14:04:57Z",
+      "arxiv_journal_ref": "",
+      "categories": [
+        "cs.CV"
+      ],
+      "confirm_sources": [
+        "arxiv"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "arxiv",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 89,
+      "title": "",
+      "arxiv_id": "2602.13176",
+      "year": "2026",
+      "doi": "",
+      "venue": "",
+      "thread": "B3",
+      "lens": "M4",
+      "relevance": "中",
+      "note": "单目 MMC 用于上肢可达空间的定量评估 —— 单目路线 + 上肢的可行性证据。",
+      "found_via": [
+        "arxiv-direct"
+      ],
+      "found_cited_by": 0,
+      "found_oa": true,
+      "selected_from": "arxiv_priority",
+      "canonical_title": "Monocular Markerless Motion Capture Enables Quantitative Assessment of Upper Extremity Reachable Workspace",
+      "abstract": "To validate a clinically accessible approach for quantifying the Upper Extremity Reachable Workspace (UERW) using a single (monocular) camera and Artificial Intelligence (AI)-driven Markerless Motion Capture (MMC) for biomechanical analysis. Objective assessment and validation of these techniques for specific clinically oriented tasks are crucial for their adoption in clinical motion analysis. AI-driven monocular MMC reduces the barriers to adoption in the clinic and has the potential to reduce the overhead for analysis of this common clinical assessment. Nine adult participants with no impairments performed the standardized UERW task, which entails reaching targets distributed across a virtual sphere centered on the torso, with targets displayed in a VR headset. Movements were simultaneously captured using a marker-based motion capture system and a set of eight FLIR cameras. We performed monocular video analysis on two of these video camera views to compare a frontal and offset camera configurations. The frontal camera orientation demonstrated strong agreement with the marker-based reference, exhibiting a minimal mean bias of $0.61 \\pm 0.12$ \\% reachspace reached per octanct (mean $\\pm$ standard deviation). In contrast, the offset camera view underestimated the percent workspace reached ($-5.66 \\pm 0.45$ \\% reachspace reached). Conclusion: The findings support the feasibility of a frontal monocular camera configuration for UERW assessment, particularly for anterior workspace evaluation where agreement with marker-based motion capture was highest. The overall performance demonstrates clinical potential for practical, single-camera assessments. This study provides the first validation of monocular MMC system for the assessment of the UERW task. By reducing technical complexity, this approach enables broader implementation of quantitative upper extremity mobility assessment.",
+      "authors": [
+        "Seth Donahue",
+        "J. D. Peiffer",
+        "R. Tyler Richardson",
+        "Yishan Zhong",
+        "Shaun Q. Y. Tan",
+        "Benoit Marteau",
+        "Stephanie R. Russo",
+        "May D. Wang",
+        "R. James Cotton",
+        "Ross Chafetz"
+      ],
+      "arxiv_published": "2026-02-13T18:36:27Z",
+      "arxiv_journal_ref": "",
+      "categories": [
+        "cs.CV"
+      ],
+      "confirm_sources": [
+        "arxiv"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "arxiv",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 90,
+      "title": "",
+      "arxiv_id": "2303.10654",
+      "year": "2023",
+      "doi": "",
+      "venue": "",
+      "thread": "B1",
+      "lens": "M3",
+      "relevance": "中",
+      "note": "MMC 与生物力学分析流水线 —— 工程基线。",
+      "found_via": [
+        "arxiv-direct"
+      ],
+      "found_cited_by": 0,
+      "found_oa": true,
+      "selected_from": "arxiv_priority",
+      "canonical_title": "Markerless Motion Capture and Biomechanical Analysis Pipeline",
+      "abstract": "Markerless motion capture using computer vision and human pose estimation (HPE) has the potential to expand access to precise movement analysis. This could greatly benefit rehabilitation by enabling more accurate tracking of outcomes and providing more sensitive tools for research. There are numerous steps between obtaining videos to extracting accurate biomechanical results and limited research to guide many critical design decisions in these pipelines. In this work, we analyze several of these steps including the algorithm used to detect keypoints and the keypoint set, the approach to reconstructing trajectories for biomechanical inverse kinematics and optimizing the IK process. Several features we find important are: 1) using a recent algorithm trained on many datasets that produces a dense set of biomechanically-motivated keypoints, 2) using an implicit representation to reconstruct smooth, anatomically constrained marker trajectories for IK, 3) iteratively optimizing the biomechanical model to match the dense markers, 4) appropriate regularization of the IK process. Our pipeline makes it easy to obtain accurate biomechanical estimates of movement in a rehabilitation hospital.",
+      "authors": [
+        "R. James Cotton",
+        "Allison DeLillo",
+        "Anthony Cimorelli",
+        "Kunal Shah",
+        "J. D. Peiffer",
+        "Shawana Anarwala",
+        "Kayan Abdou",
+        "Tasos Karakostas"
+      ],
+      "arxiv_published": "2023-03-19T13:31:57Z",
+      "arxiv_journal_ref": "",
+      "categories": [
+        "cs.CV"
+      ],
+      "confirm_sources": [
+        "arxiv"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "arxiv",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    },
+    {
+      "idx": 91,
+      "title": "",
+      "arxiv_id": "2010.06449",
+      "year": "2020",
+      "doi": "",
+      "venue": "",
+      "thread": "B1",
+      "lens": "M0",
+      "relevance": "中",
+      "note": "标记无关动捕用 3D 人体姿态估计算法综述 —— 计算机视觉侧的方法版图。",
+      "found_via": [
+        "arxiv-direct"
+      ],
+      "found_cited_by": 0,
+      "found_oa": true,
+      "selected_from": "arxiv_priority",
+      "canonical_title": "A review of 3D human pose estimation algorithms for markerless motion capture",
+      "abstract": "Human pose estimation is a very active research field, stimulated by its important applications in robotics, entertainment or health and sports sciences, among others. Advances in convolutional networks triggered noticeable improvements in 2D pose estimation, leading modern 3D markerless motion capture techniques to an average error per joint of 20 mm. However, with the proliferation of methods, it is becoming increasingly difficult to make an informed choice. Here, we review the leading human pose estimation methods of the past five years, focusing on metrics, benchmarks and method structures. We propose a taxonomy based on accuracy, speed and robustness that we use to classify de methods and derive directions for future research.",
+      "authors": [
+        "Yann Desmarais",
+        "Denis Mottet",
+        "Pierre Slangen",
+        "Philippe Montesinos"
+      ],
+      "arxiv_published": "2020-10-13T15:07:01Z",
+      "arxiv_journal_ref": "",
+      "categories": [
+        "cs.CV"
+      ],
+      "confirm_sources": [
+        "arxiv"
+      ],
+      "n_confirm": 1,
+      "title_scores": [
+        [
+          "arxiv",
+          1.0
+        ]
+      ],
+      "n_candidates_returned": 1,
+      "status": "confirmed_single",
+      "evidence_grade": "B（单来源确认标题，>=0.90）"
+    }
+  ]
+}

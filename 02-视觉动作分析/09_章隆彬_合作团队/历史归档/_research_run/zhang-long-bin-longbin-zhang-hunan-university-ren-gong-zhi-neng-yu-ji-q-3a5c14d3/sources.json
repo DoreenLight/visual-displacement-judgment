@@ -1,0 +1,268 @@
+[
+  {
+    "url": "https://doi.org/10.1109/tbme.2024.3352556",
+    "title": "EMG-Constrained and Ultrasound-Informed Muscle-Tendon Parameter Estimation in Post-Stroke Hemiparesis",
+    "fetchedAt": "2026-09-30T13:46:08Z",
+    "content_hash": "sha256:67236b13f2ad70a5488dad58f36a6f83027cd1e15de3f40899d236e2096dbb0e",
+    "artifact_path": "clean/01-localpdf-Zhang2024-TBME-MuscleTendon-ce7829.md"
+  },
+  {
+    "url": "https://doi.org/10.1109/tnsre.2023.3315373",
+    "title": "Estimation of Joint Torque by EMG-Driven Neuromusculoskeletal Models and LSTM Networks",
+    "fetchedAt": "2026-09-30T13:46:08Z",
+    "content_hash": "sha256:04e2b8dce4976ab3112a0195999ed96f7e0d0edb3a182fc7eb4dc6b1ba0fcdf8",
+    "artifact_path": "clean/02-localpdf-Zhang2023-TNSRE-JointTorqueLSTM-6e28bd.md"
+  },
+  {
+    "url": "https://doi.org/10.3389/fnins.2023.1254088",
+    "title": "Neuromusculoskeletal Model-Informed Machine Learning-Based Control of a Knee Exoskeleton With Uncertainties Quantification",
+    "fetchedAt": "2026-09-30T13:46:08Z",
+    "content_hash": "sha256:b26d6648adcea2197d48d4367ac6454a04aae0a4ad9e5e0cca30cb8e413ddb60",
+    "artifact_path": "clean/03-localpdf-Zhang2023-FrontNeurosci-NMSExoControl-292e4a.md"
+  },
+  {
+    "url": "https://doi.org/10.1109/jbhi.2022.3207313",
+    "title": "Ankle Joint Torque Prediction Using an NMS Solver Informed-ANN Model and Transfer Learning",
+    "fetchedAt": "2026-09-30T13:46:08Z",
+    "content_hash": "sha256:cb45598bbb54c74f593a4014e4f4c9155304604bbd9a38c4f0bbb8d64e0ff577",
+    "artifact_path": "clean/04-localpdf-Zhang2022-JBHI-AnkleTorque-f99867.md"
+  },
+  {
+    "url": "https://doi.org/10.1109/tnsre.2022.3156786",
+    "title": "Lower-Limb Joint Torque Prediction Using LSTM Neural Networks and Transfer Learning",
+    "fetchedAt": "2026-09-30T13:46:08Z",
+    "content_hash": "sha256:194b79205e068a808766a0a3208b06f9577539110528aa1e1e6e94e13d3a7a32",
+    "artifact_path": "clean/05-localpdf-Zhang2022-TNSRE-LowerLimbTorque-fd1150.md"
+  },
+  {
+    "url": "https://doi.org/10.1109/jbhi.2025.3543095",
+    "title": "Towards Clinical Application of Enhanced Timed Up and Go With Markerless Motion Capture and Machine Learning for Balance and Gait Assessment",
+    "fetchedAt": "2026-09-30T13:46:22Z",
+    "content_hash": "sha256:1c6359bfb8a27293caa0aa0be3d8a834ec03ce3da2be59cac8cd8c87664243ea",
+    "artifact_path": "clean/06-localpdf-Zhang2025-JBHI-MarkerlessTUG-89b427.md"
+  },
+  {
+    "url": "https://robotics.hnu.edu.cn/info/1176/3002.htm",
+    "title": "07-robotics.hnu.edu.cn-a344c9",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:75fb868740e72ae676e04169cec1db41886a21ca4f806d6f4b06bb9c64920e8e",
+    "artifact_path": "clean/07-robotics.hnu.edu.cn-a344c9.md"
+  },
+  {
+    "url": "https://grzy.hnu.edu.cn/site/index/zhanglongbin",
+    "title": "08-grzy.hnu.edu.cn-da34b8",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:d50903dba3f6c39ac222139140d238bc28b0cc46de36499d9ae81197d188374b",
+    "artifact_path": "clean/08-grzy.hnu.edu.cn-da34b8.md"
+  },
+  {
+    "url": "https://robotics.hnu.edu.cn/szdw/jsjj2.htm",
+    "title": "09-robotics.hnu.edu.cn-2842fc",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:4d48ec3e1092c79eb085db075cc3f00f7a5982912fe2c062115db589b5d0a862",
+    "artifact_path": "clean/09-robotics.hnu.edu.cn-2842fc.md"
+  },
+  {
+    "url": "https://api.openalex.org/authors/A5002794703",
+    "title": "11-api.openalex.org-ef8cd0",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:52deb3819925ae956cde3d1618a60bc12b88a126ce8ff9c1eef4b2b4a592c72c",
+    "artifact_path": "clean/11-api.openalex.org-ef8cd0.md"
+  },
+  {
+    "url": "https://api.openalex.org/works?filter=author.id:A5002794703&per-page=50&sort=publication_date:desc",
+    "title": "12-api.openalex.org-fc55b3",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:c4787f535fd7f974d01b1c21cf40c8a5d1955e4b02ee5a3cd6e215f14e6b9ff9",
+    "artifact_path": "clean/12-api.openalex.org-fc55b3.md"
+  },
+  {
+    "url": "https://arxiv.org/abs/2503.00794",
+    "title": "15-arxiv.org-d1dfa3",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:96ebd90033da190a986b65d322c4d7a96f8b9be078ff2b89a27c417bb2252a5f",
+    "artifact_path": "clean/15-arxiv.org-d1dfa3.md"
+  },
+  {
+    "url": "https://loop.frontiersin.org/people/1121302/overview",
+    "title": "18-loop.frontiersin.org-273865",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:1169583a5a143f0f5239272895992631d85c572d9b021dfdb4a2a161b7f655fb",
+    "artifact_path": "clean/18-loop.frontiersin.org-273865.md"
+  },
+  {
+    "url": "https://doi.org/10.5772/5175",
+    "title": "Upper-Limb Robotic Rehabilitation Exoskeleton: Tremor Suppression",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:d7dec8a707d5eb6b77f4ec2c428625f4ed823712d7f80100a589c65d7cac9e9c",
+    "artifact_path": "clean/32-doi.org-177662.md"
+  },
+  {
+    "url": "https://doi.org/10.5772/5176",
+    "title": "Lower-Limb Wearable Exoskeleton",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:b82cb6c8ae4c589bb17aa62ceef51606a9aa216b56155c2e66a209abaf597d2e",
+    "artifact_path": "clean/33-doi.org-fd3ec2.md"
+  },
+  {
+    "url": "https://doi.org/10.3390/robotics7020028",
+    "title": "Lower Limb Exoskeleton for Rehabilitation with Improved Postural Equilibrium",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:9f764955faf5c420caf271115277730195b8d9b9bfad4b161d6511510e4a2f7c",
+    "artifact_path": "clean/34-doi.org-c822b9.md"
+  },
+  {
+    "url": "https://doi.org/10.1007/s11370-026-00697-3",
+    "title": "Handmaid: design and evaluation of a hand exoskeleton with active backdrive for neuromuscular rehabilitation",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:dd98382edb36e45a1a649a0fc8b358d6e89c8fbadcb906dd505f435fc8297f89",
+    "artifact_path": "clean/35-doi.org-84544e.md"
+  },
+  {
+    "url": "https://doi.org/10.3390/math14132400",
+    "title": "A Refined 2D Lagrangian-Based Model for Joint Torque Estimation in Lower-Limb Exoskeleton Applications",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:2252dd917de29d9650ebd84b46c3f7b9d8cc8ce84632989a2d70c2ec9dbb73a4",
+    "artifact_path": "clean/36-doi.org-c25521.md"
+  },
+  {
+    "url": "https://doi.org/10.31224/osf.io/j4rbg",
+    "title": "Assessment of spatiotemporal gait parameters using a deep learning algorithm-based markerless motion capture system",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:4f6f876a77005520d56f95b5ce8feef7954476e794c705aecc2c543b5cb85ce0",
+    "artifact_path": "clean/37-doi.org-6d4fe6.md"
+  },
+  {
+    "url": "https://doi.org/10.1101/2024.12.17.628985",
+    "title": "A Low-Cost Markerless motion capture system to automate Functional Gait Assessment: Feasibility Study",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:5a551b085a6874b89d374058e6c2928661f289748ba7cf8681f131c583f2de6a",
+    "artifact_path": "clean/38-doi.org-37620a.md"
+  },
+  {
+    "url": "https://doi.org/10.14733/cadaps.2024.392-423",
+    "title": "A Review of Human Pose Estimation Methods in Markerless Motion Capture",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:6bad391cfec88ed8613fce31446c9855fd0f3fd9f3c976d10313269080ca67f7",
+    "artifact_path": "clean/39-doi.org-e42cc4.md"
+  },
+  {
+    "url": "https://doi.org/10.21203/rs.3.rs-9347103/v1",
+    "title": "Validated Multi-Camera Markerless Motion Capture with Real-Time Data Analytics for Gait Stability Assessment",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:d7851e545c7339e82675d3e2e1c16d94eda0c4a11e1f1b5872cc519aef2ec82d",
+    "artifact_path": "clean/41-doi.org-03e8a2.md"
+  },
+  {
+    "url": "https://doi.org/10.3389/fbioe.2026.1869878",
+    "title": "Gait assessment using a 2D video-based pose estimation app in comparison to a markerless motion capture system in subjects with osteoarthritis of the knee – a pilot study",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:6d3c3884df9aa523686fdaea708299c10b57e2f870f7fc58bdaf05514c5b90fe",
+    "artifact_path": "clean/42-doi.org-46db4d.md"
+  },
+  {
+    "url": "https://doi.org/10.5772/intechopen.115174",
+    "title": "Neural Networks to Control Voluntary Movements in a Lower Limb Exoskeleton Using Electromyographic Signals",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:ee950e1b927e4397a65a16d9033ae97c56e848889c1498d3b76b3dc06b59f16e",
+    "artifact_path": "clean/43-doi.org-f31175.md"
+  },
+  {
+    "url": "https://doi.org/10.3389/fneur.2024.1394424",
+    "title": "Effects of motor imagery-based brain-computer interface-controlled electrical stimulation on lower limb function in hemiplegic patients in the acute phase of stroke: a randomized controlled study",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:d0b5bd1f0a76783e795fc235216b39df08ce10d16ee16a457c4d2a82278fd3ba",
+    "artifact_path": "clean/44-doi.org-a7ec7c.md"
+  },
+  {
+    "url": "https://doi.org/10.3390/electronics12224697",
+    "title": "A Decoding Method Using Riemannian Local Linear Feature Construction for a Lower-Limb Motor Imagery Brain–Computer Interface System",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:00cd69ec2cfbe9d8d9704d59a59b82a27ea7a251681f39aab3fb396a71c569cc",
+    "artifact_path": "clean/45-doi.org-1f59f3.md"
+  },
+  {
+    "url": "https://doi.org/10.5772/27638",
+    "title": "Clinical Implications of Muscle-Tendon &amp; -Force Interplay: Surface Electromyography Recordings of m. vastus lateralis in Renal Failure Patients Undergoing Dialysis and of m. gastrocnemius in Individuals with Achilles Tendon Damage",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:4d0b35929601478af93e774010e844dbaee77683b6ff090690f44b8895a3e068",
+    "artifact_path": "clean/46-doi.org-ac2f08.md"
+  },
+  {
+    "url": "https://doi.org/10.31224/osf.io/hy36f",
+    "title": "Automated creation and tuning of personalised muscle paths for OpenSim musculoskeletal models via the Musculoskeletal Atlas Project Client",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:b2e002d69a2a3dd29c2d37e338f9e6e3dc9a1edb7a6300497850276bafa3b084",
+    "artifact_path": "clean/47-doi.org-46486d.md"
+  },
+  {
+    "url": "https://doi.org/10.3724/sp.j.1329.2025.01015",
+    "title": "Tibiofemoral Joint Contact Force Estimation Based on OpenSim Musculoskeletal Modeling",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:b8de542b236ede99cc28153d4bf66d6c9190a52a5376ab42d8e8db697d38a3a8",
+    "artifact_path": "clean/48-doi.org-153ad8.md"
+  },
+  {
+    "url": "https://doi.org/10.11113/jmeditec.v1n1.31",
+    "title": "Simulation of Lower Limb Muscle Moment and Total Muscle Fiber Force Using OpenSim for Knee Osteoarthritis",
+    "fetchedAt": "2026-09-30T14:14:37Z",
+    "content_hash": "sha256:b52f64a97778d72315313380a67e4cfe8e57300765f6fd50cb096fb166dd86bb",
+    "artifact_path": "clean/49-doi.org-d7ce40.md"
+  },
+  {
+    "url": "https://scholar.google.com/citations?user=zfHrGd0AAAAJ&hl=en",
+    "title": "Longbin Zhang - Google Scholar",
+    "fetchedAt": "2026-09-30T23:47:34Z",
+    "content_hash": "sha256:dc29204df093a11fd04af84d73b9749ffec63084b66131bf9d2a244b377cbef0",
+    "artifact_path": "clean/85-scholar.google.com-619db2.md"
+  },
+  {
+    "url": "https://doi.org/10.1109/tmm.2023.3321438",
+    "title": "Global and Local Spatio-Temporal Encoder for 3D Human Pose Estimation",
+    "fetchedAt": "2026-10-01T03:49:39Z",
+    "content_hash": "sha256:7cc372ba750191183c6c75c307de79e542bc1e2549e7341c1fa12b5fc56e194a",
+    "artifact_path": "clean/86-localpdf-Zhang2023-TMM-3DPoseEstimator-3335ea.md"
+  },
+  {
+    "url": "https://doi.org/10.1109/icorr66766.2025.11063123",
+    "title": "Muscle Activation and Postural Sway in Response to Task Complexity: A Study of Balance Control in Older Adults",
+    "fetchedAt": "2026-10-01T03:49:39Z",
+    "content_hash": "sha256:fbf8b42034e8a714d99dfe79a75cd3522fc6385839195e89d0588cfc37d5e19f",
+    "artifact_path": "clean/87-localpdf-Zhang2025-ICORR-PosturalSway-a34c4a.md"
+  },
+  {
+    "url": "https://doi.org/10.1109/icorr66766.2025.11063171",
+    "title": "Design and Evaluation of a Single-Sided Mobility Assistive Exoskeleton (SMAEXO) for Hemiplegia",
+    "fetchedAt": "2026-10-01T03:49:39Z",
+    "content_hash": "sha256:68842ed7a7ff88ebc593562bfad4f4007425ffff372c24c87c69ae55a2e4811f",
+    "artifact_path": "clean/88-localpdf-Zhang2025-ICORR-SMAEXO-2209bb.md"
+  },
+  {
+    "url": "https://doi.org/10.1109/tase.2020.3033664",
+    "title": "Ankle Joint Torque Estimation Using an EMG-Driven Neuromusculoskeletal Model and an Artificial Neural Network Model",
+    "fetchedAt": "2026-10-01T03:49:39Z",
+    "content_hash": "sha256:0863184ac49e8207a8aa8198fd03dffb6d7e5d24faacb11c7f0b989440788fa4",
+    "artifact_path": "clean/89-localpdf-Zhang2021-TASE-AnkleTorque-ed0375.md"
+  },
+  {
+    "url": "https://doi.org/10.1016/j.jbiomech.2025.112758",
+    "title": "Do gait patterns normalize concurrently with the recovery of foot arches in children with flatfoot? A prospective cohort study",
+    "fetchedAt": "2026-10-01T03:49:39Z",
+    "content_hash": "sha256:73826beaa03c2b46fc60eecd572cc0663b7bc5591b6fff5cd36e7f25e69f378c",
+    "artifact_path": "clean/90-localpdf-Zhang2025-JBiomech-FootArches-25c0eb.md"
+  },
+  {
+    "url": "https://doi.org/10.1016/j.gaitpost.2023.07.273",
+    "title": "An approach to establishing the thresholds of plantar loading in obese children",
+    "fetchedAt": "2026-10-01T03:49:39Z",
+    "content_hash": "sha256:b5dae25a5ad867eea52b890ebb4459a57a0f317326f328e37c617337c8aeb781",
+    "artifact_path": "clean/91-localpdf-Zhang2023-GaitPosture-PlantarLoading-564ccd.md"
+  },
+  {
+    "url": "https://doi.org/10.1109/icarm58088.2023.10218934",
+    "title": "Knee Joint Torque Prediction with Uncertainties by a Neuromusculoskeletal Solver-informed Gaussian Process Model",
+    "fetchedAt": "2026-10-01T03:49:39Z",
+    "content_hash": "sha256:611379c6e80fc446c6feeb41937f392a5a388dd362210ff8c7bc64c235c65756",
+    "artifact_path": "clean/92-localpdf-Zhang2023-ICARM-KneeTorqueGP-3815ce.md"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "status": "initial_failure_preserved",
+  "items": [
+    {
+      "uid": "S7-SH-01",
+      "entered_page": 7,
+      "quote": "Ten healthy volunteers",
+      "actual_matching_pages": []
+    },
+    {
+      "uid": "S7-SH-02",
+      "entered_page": 7,
+      "quote": "aged between 22 and 38 years",
+      "actual_matching_pages": []
+    }
+  ]
+}

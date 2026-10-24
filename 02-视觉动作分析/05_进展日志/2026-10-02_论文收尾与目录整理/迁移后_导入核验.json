@@ -1,0 +1,28 @@
+{
+  "passed": [
+    "bm3_fetch.py",
+    "bm3_ingest.py",
+    "bm3_probe.py",
+    "build_biomech.py",
+    "build_page_biomech.py",
+    "curate.py",
+    "discover.py",
+    "download_oa.py",
+    "fetch_epmc_supp.py",
+    "mine_fulltext.py",
+    "patch_arxiv_abs.py",
+    "recover_oa.py",
+    "resolve_multisource.py",
+    "select_candidates.py",
+    "snowball_gen2.py",
+    "snowball_gen3.py",
+    "snowball_v9e.py",
+    "sweep_clinical.py",
+    "sweep_intersection.py",
+    "sweep_middle.py",
+    "sweep_vocab_claim.py",
+    "sweep_xai_rehab.py"
+  ],
+  "network": "socket connects blocked",
+  "bytecode": "disabled"
+}

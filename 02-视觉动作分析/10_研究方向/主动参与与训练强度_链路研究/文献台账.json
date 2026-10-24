@@ -1,0 +1,3915 @@
+{
+ "schema": "rehab-chain-research/v1",
+ "checked_at": "2026-10-03",
+ "fulltext_checked_at": "2026-10-10",
+ "scope": "上肢主动参与（物理贡献/心理参与分别评价）与训练挑战/剂量，兼可迁移方法",
+ "cutoff": "2026-10-02",
+ "papers": [
+  {
+   "title": "Video-Based Markerless Motion Capture for Clinical and Rehabilitation Biomechanics: A PRISMA-ScR Scoping Review of Validated Architectures, Clinical Readiness, and Emerging Methods",
+   "doi": "",
+   "arxiv_id": "2609.18667",
+   "year": 2026,
+   "venue": "",
+   "corpus": "生物力学线",
+   "thread": "B1",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Video-Based Markerless Motion Capture for Clinical and Rehab.pdf",
+   "version_note": "★★ 临床/康复场景视频 MMC 的 PRISMA-ScR 范围综述（117 项已验证研究，检索至 2026-07）。本语料 B1 线程的总览锚点，也是「是否已饱和」的判定依据。",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-e3829d23",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://arxiv.org/abs/2609.18667",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "SHOULDER AND ELBOW JOINT ANGLE ESTIMATION FOR UPPER LIMB REHABILITATION TASKS USING LOW-COST INERTIAL AND OPTICAL SENSORS",
+   "doi": "10.1142/s0219519417500312",
+   "arxiv_id": "",
+   "year": 2017,
+   "venue": "Journal of Mechanics in Medicine and Biology",
+   "corpus": "生物力学线",
+   "thread": "B1",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/SHOULDER AND ELBOW JOINT ANGLE ESTIMATION FOR UPPER LIMB REH.pdf",
+   "version_note": "标题即「上肢康复的肩肘角估计」，与题目主题同构；说明该任务至少 2017 已被做，novelty 需另找",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-52edadce",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1142/s0219519417500312",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Inverse Estimation of Multiple Muscle Activations From Joint Moment With Muscle Synergy Extraction",
+   "doi": "10.1109/jbhi.2014.2342274",
+   "arxiv_id": "",
+   "year": 2015,
+   "venue": "IEEE Journal of Biomedical and Health Informatics",
+   "corpus": "生物力学线",
+   "thread": "B2",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Inverse Estimation of Multiple Muscle Activations From Joint.pdf",
+   "version_note": "★★ 由关节力矩反解多肌肉激活 —— 「输出侧冗余」的直接先例，是路径B的理论依据",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-3731e26a",
+   "role": "mechanism-support",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1109/jbhi.2014.2342274",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Robot-Assisted Therapy for Upper Extremity Motor Impairment After Stroke: A Systematic Review and Meta-Analysis",
+   "doi": "10.1093/ptj/pzab010",
+   "arxiv_id": "",
+   "year": 2021,
+   "venue": "Physical Therapy",
+   "corpus": "生物力学线",
+   "thread": "B3",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Robot-Assisted Therapy for Upper Extremity Motor Impairment.pdf",
+   "version_note": "上肢运动损伤的机器人辅助治疗综述（105 引）",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-32c20f13",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1093/ptj/pzab010",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Wearable technology in stroke rehabilitation: towards improved diagnosis and treatment of upper-limb motor impairment",
+   "doi": "10.1186/s12984-019-0612-y",
+   "arxiv_id": "",
+   "year": 2019,
+   "venue": "Journal of NeuroEngineering and Rehabilitation",
+   "corpus": "生物力学线",
+   "thread": "B3",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Wearable technology in stroke rehabilitation_ towards improv.xml",
+   "version_note": "卒中康复可穿戴技术综述（277 引）",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-860ce5df",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1186/s12984-019-0612-y",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Fatigue, induced via repetitive upper-limb motor tasks, influences trunk and shoulder kinematics during an upper limb reaching task in a virtual reality environment",
+   "doi": "10.1371/journal.pone.0249403",
+   "arxiv_id": "",
+   "year": 2021,
+   "venue": "PLOS ONE",
+   "corpus": "生物力学线",
+   "thread": "B3",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Fatigue, induced via repetitive upper-limb motor tasks, infl.pdf",
+   "version_note": "重复上肢任务诱发疲劳的影响 —— 运动质量指标之一",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-06083b29",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1371/journal.pone.0249403",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "A clinically feasible kinematic assessment method of upper extremity motor function impairment after stroke",
+   "doi": "10.1016/j.measurement.2015.11.026",
+   "arxiv_id": "",
+   "year": 2016,
+   "venue": "Measurement",
+   "corpus": "生物力学线",
+   "thread": "B3",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/A clinically feasible kinematic assessment method of upper e.pdf",
+   "version_note": "★ 临床可行的上肢运动学评定方法 —— 决定「能不能进临床」的可行性门槛",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-e35abf95",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1016/j.measurement.2015.11.026",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Exoskeleton for forearm pronation and supination rehabilitation",
+   "doi": "10.1109/iembs.2004.1403778",
+   "arxiv_id": "",
+   "year": 2004,
+   "venue": "26th Annual International Conference of the IEEE Engineering in Medicine and Biology Society",
+   "corpus": "生物力学线",
+   "thread": "B3",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Exoskeleton for forearm pronation and supination rehabilitat.pdf",
+   "version_note": "Andreasen DS, Aviles AA, Allen SK, Guthrie KB, Jennings BRJ, Sprigle SH。Crossref 核：IEEE EMBC 2004, vol 3, pp. 2714-2717。脊髓损伤/脑卒中后前臂旋前旋后康复外骨骼；传感器可测关节 ROM。📌 **相关性低但仍登记**：它证明**旋前/旋后被康复工程界当作可独立建模、可独立训练、需独立测量 ROM 的关节自由度** —— 对 V6c 的定性支撑，**但无任何精度或视觉成分**，不得进对照表。",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-0b49c6dc",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1109/iembs.2004.1403778",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Markerless Motion Capture in Routine Clinical Upper Limb Assessments: Validity and Insights Beyond Ordinal Scoring",
+   "doi": "",
+   "arxiv_id": "2607.23608",
+   "year": 2026,
+   "venue": "",
+   "corpus": "生物力学线",
+   "thread": "B3",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Markerless Motion Capture in Routine Clinical Upper Limb Ass.pdf",
+   "version_note": "★★ 临床常规评估中嵌入 MMC（20 患者/47 次/1174 任务），证明连续运动学指标比 ARAT 序数评分更灵敏 —— 自采 D435i 数据的临床价值论证先例。",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-83fdc2f8",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://arxiv.org/abs/2607.23608",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Monocular Markerless Motion Capture Enables Quantitative Assessment of Upper Extremity Reachable Workspace",
+   "doi": "",
+   "arxiv_id": "2602.13176",
+   "year": 2026,
+   "venue": "",
+   "corpus": "生物力学线",
+   "thread": "B3",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Monocular Markerless Motion Capture Enables Quantitative Ass.pdf",
+   "version_note": "单目 MMC 用于上肢可达空间的定量评估 —— 单目路线 + 上肢的可行性证据。",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-9dda282a",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://arxiv.org/abs/2602.13176",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "From Metrics to Meaning in Neurological Rehabilitation: Clinicians’ Perspectives on Digital Metrics of Upper Limb Functioning—A Focus Group Study",
+   "doi": "10.2196/87339",
+   "arxiv_id": "",
+   "year": 2026,
+   "venue": "JMIR Rehabilitation and Assistive Technologies",
+   "corpus": "生物力学线",
+   "thread": "B3",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/From Metrics to Meaning in Neurological Rehabilitation_ Clin.xml",
+   "version_note": "★★ 【原为 JMIR 预印本 10.2196/preprints.87339（2025-11-07），已正式发表于 JMIR Rehabil Assist Technol 2026】11 名神经康复临床医师（PT/OT/运动科学/医师，临床经验 4–26 年）焦点小组，系统评估 17 个运动学指标 + 10 个真实场景表现指标。**对本项目有双重意义**：(a) 正面 —— 临床侧确实缺「可解释的结构化客观参考值」，Theme 5 明写临床依赖「simply look」，这正是 grammar 层要补的位置；(b) 风险 —— 临床医师并不熟悉 jerk / interjoint coordination（10 人中仅 4–5 人给出评分），且全文 0 次提及 joint angle，说明「离散符号词表 + 力学术语」对临床端**不天然直觉**。已取得 Europe PMC 发表版全文 XML（PMC13293569）",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-2c53d083",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.2196/87339",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Target height influences shoulder and elbow non-use after stroke during reaching with the hand : A brief communication",
+   "doi": "10.1101/2022.12.20.22283739",
+   "arxiv_id": "",
+   "year": 2022,
+   "venue": "",
+   "corpus": "生物力学线",
+   "thread": "B3",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Target height influences shoulder and elbow non-use after st.pdf",
+   "version_note": "★ 目标高度影响卒中后肩肘废用 —— 代偿对任务条件的敏感性",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-f7650ef4",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1101/2022.12.20.22283739",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Vision-based Automatic Detection of Compensatory Postures of after-Stroke Patients During Upper-extremity Robot-assisted Rehabilitation: A Pilot Study in Reaching Movement",
+   "doi": "10.1109/icaretech49914.2020.00019",
+   "arxiv_id": "",
+   "year": 2020,
+   "venue": "2020 International Conference on Assistive and Rehabilitation Technologies (iCareTech)",
+   "corpus": "生物力学线",
+   "thread": "B3",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Vision-based Automatic Detection of Compensatory Postures of.pdf",
+   "version_note": "★★★ 视觉自动检测代偿姿势 —— 与本项目 TP-03 肩肘代偿任务包同题",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-f696c42b",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1109/icaretech49914.2020.00019",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Item Difficulty of Fugl-Meyer Assessment for Upper Extremity in Persons With Chronic Stroke With Moderate-to-Severe Upper Limb Impairment",
+   "doi": "10.3389/fneur.2020.577855",
+   "arxiv_id": "",
+   "year": 2020,
+   "venue": "Frontiers in Neurology",
+   "corpus": "生物力学线",
+   "thread": "B3",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Item Difficulty of Fugl-Meyer Assessment for Upper Extremity.pdf",
+   "version_note": "Fugl-Meyer 上肢量表条目难度 —— 量表本身的局限，支撑改用连续运动学指标的动机",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-756e75d3",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.3389/fneur.2020.577855",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Determining Levels of Upper Extremity Movement Impairment by Applying a Cluster Analysis to the Fugl-Meyer Assessment of the Upper Extremity in Chronic Stroke",
+   "doi": "10.1016/j.apmr.2016.06.023",
+   "arxiv_id": "",
+   "year": 2017,
+   "venue": "Archives of Physical Medicine and Rehabilitation",
+   "corpus": "生物力学线",
+   "thread": "B3",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Determining Levels of Upper Extremity Movement Impairment by.pdf",
+   "version_note": "用应用/传感器判定上肢运动损伤等级（342 引）—— 连续量表 vs 序数评分的核心问题",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-7a977203",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1016/j.apmr.2016.06.023",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper",
+   "title_aliases": [
+    "Determining Levels of Upper Extremity Movement Impairment by Applying Cluster Analysis to Upper Extremity Fugl-Meyer Assessment in Chronic Stroke"
+   ],
+   "version": "作者接受稿：首页期刊/DOI一致，题名存在措辞差异",
+   "alias_verified_from": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Determining Levels of Upper Extremity Movement Impairment by.pdf PDF第1页"
+  },
+  {
+   "title": "Kinematic Analysis of the Upper Limb Motor Strategies in Stroke Patients as a Tool towards Advanced Neurorehabilitation Strategies: A Preliminary Study",
+   "doi": "10.1155/2014/636123",
+   "arxiv_id": "",
+   "year": 2014,
+   "venue": "BioMed Research International",
+   "corpus": "生物力学线",
+   "thread": "B3",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Kinematic Analysis of the Upper Limb Motor Strategies in Stroke Patien.xml",
+   "version_note": "卒中上肢运动策略的运动学分析",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-5d469430",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1155/2014/636123",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Limited Forearm Motion Compensated by Thoracohumeral Kinematics When Performing Tasks Requiring Pronation and Supination",
+   "doi": "10.1123/jab.28.2.127",
+   "arxiv_id": "",
+   "year": 2012,
+   "venue": "Journal of Applied Biomechanics",
+   "corpus": "生物力学线",
+   "thread": "B3",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Limited Forearm Motion Compensated by Thoracohumeral Kinemat.pdf",
+   "version_note": "★★ 【代偿机制的直接一手证据 + 前臂旋转真实 ROM 实测】Pereira BP, Thambyah A, Lee T。Crossref 核：J Appl Biomech 2012;28(2):127-138。📌 **原文数值**：6 名健康者，用夹具分别固定于**固定旋后**与**中立位**，完成 5 项需要旋前/旋后的日常任务；**正常前臂旋转 ROM = 77.6°（SD = 30.8°）**，固定旋后降至 11.3°（SD 2.9°）、中立位 18.2°（SD 6.2°）；代偿发生在**肩**——外展内收 +57.3° / +62.8°、前屈后伸 +24.3° / +18.2°、内外旋 +37.1° / +44.2°（均 p<.001 或 p<.05）；**肘几乎不代偿（p = .14）**。🎯 **对本项目的两处直接价值**：① **代偿发生在肩、发生在近端而非远端** —— 这与 `创新点查重_vs_竞品.md` 里「近端代偿」那条论证同向，且给出了**方向与量级**，可作 B3 代偿线的对照文献；② 🚨 **它直接修正 M11 的一个假设** —— M11（符号重测稳定性）原先按 **240°** 的ROM 跨度估算符号粒度，本条实测**前臂旋前/旋后正常仅 77.6°**，**240° 这个取值明显偏大**；但 M11 的 σ 仍须逐关节取值（见 E12 与 Alford），**本条只提供 ROM 跨度，不提供重测 σ**，两者不可混用。",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-142f1fbb",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1123/jab.28.2.127",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Kinematic Data Analysis for Post-Stroke Patients Following Bilateral Versus Unilateral Rehabilitation With an Upper Limb Wearable Robotic System",
+   "doi": "10.1109/tnsre.2012.2207462",
+   "arxiv_id": "",
+   "year": 2012,
+   "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+   "corpus": "生物力学线",
+   "thread": "B3",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Kinematic Data Analysis for Post-Stroke Patients Following B.pdf",
+   "version_note": "双侧训练后卒中患者的运动学数据分析（TNSRE，133 引）",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-46c8272a",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1109/tnsre.2012.2207462",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Kinematic and Clinical Analyses of Upper-Extremity Movements After Constraint-Induced Movement Therapy in Patients With Stroke: A Randomized Controlled Trial",
+   "doi": "10.1016/j.apmr.2007.05.012",
+   "arxiv_id": "",
+   "year": 2007,
+   "venue": "Archives of Physical Medicine and Rehabilitation",
+   "corpus": "生物力学线",
+   "thread": "B3",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Kinematic and Clinical Analyses of Upper-Extremity Movements.pdf",
+   "version_note": "卒中后上肢运动的运动学与临床分析（139 引）",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-6346631d",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1016/j.apmr.2007.05.012",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Differentiable Biomechanics for Markerless Motion Capture in Upper Limb Stroke Rehabilitation: A Comparison with Optical Motion Capture",
+   "doi": "10.1109/tmrb.2025.3605962",
+   "arxiv_id": "2411.14992",
+   "year": 2024,
+   "venue": "",
+   "corpus": "生物力学线",
+   "thread": "B5",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B5_视觉运动学到动力学_桥接/Differentiable Biomechanics for Markerless Motion Capture in.pdf",
+   "version_note": "★★★ 上肢卒中可微生物力学 + 与光学动捕对比（IEEE TMRB 2026, 15 引）—— 已决定降级为「验证协议」来源",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/生物力学线/index.json",
+   "id": "L-40509a13",
+   "role": "mechanism-support",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1109/tmrb.2025.3605962",
+   "source_records": [
+    "01_参考论文/整合系统/生物力学线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "When to Act: Calibrated Confidence for Reliable Human Intention Prediction in Assistive Robotics",
+   "doi": "",
+   "arxiv_id": "2601.04982",
+   "year": 2026,
+   "venue": "arXiv 预印本（cs.RO）",
+   "corpus": "决策模型线_JEV",
+   "thread": "D4",
+   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/何时采取行动：用于辅助机器人中可靠人类意图预测的校准置信度/何时采取行动：用于辅助机器人中可靠人类意图预测的校准置信度.pdf",
+   "version_note": "★★ **与本项目新方向几乎完全对应的论文，标题就是「何时行动」。**\n核心主张：「错误的辅助比没有辅助更糟」（Wrong assistance can be worse than no assistance）。\n**它把置信度阈值变成可解释、可调节的定量安全参数**，这正是 AAN 决策层缺的东西。\n注意其自陈局限：需真实用户闭环验证；校准在病理运动等域偏移下的稳定性仍需检验 —— **对卒中患者恰好就是域偏移**。",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+   "id": "L-3390a0e6",
+   "role": "assistance/integration",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://arxiv.org/abs/2601.04982",
+   "source_records": [
+    "01_参考论文/整合系统/决策模型线_JEV/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "A Human-in-the-Loop Confidence-Aware Failure Recovery Framework for Modular Robot Policies",
+   "doi": "10.1145/3757279.3788668",
+   "arxiv_id": "2602.10289",
+   "year": 2026,
+   "venue": "ACM/IEEE HRI 2026, pp. 346-355（DOI 10.1145/3757279.3788668）",
+   "corpus": "决策模型线_JEV",
+   "thread": "D4",
+   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/一种面向模块化机器人策略的人在回路置信度感知故障恢复框架/一种面向模块化机器人策略的人在回路置信度感知故障恢复框架.pdf",
+   "version_note": "★★ **本语料证据等级最高的一篇**（同行评审会议论文，非预印本）。\n**关键设计是「两个决策分离」**：问哪个模块 vs 是否要问人。\n迁移到 AAN：把「是否介入」与「介入哪个自由度/哪个方向」拆成两个独立校准决策 —— 这比单阈值更贴合上肢腕-肘-肩的多关节结构。",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+   "id": "L-debbc1bf",
+   "role": "assistance/integration",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1145/3757279.3788668",
+   "source_records": [
+    "01_参考论文/整合系统/决策模型线_JEV/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Model Predictive Control-Based Assist-as-Needed Strategy for Reducing Motor Slacking in Robot-Assisted Rehabilitation",
+   "doi": "10.3390/s26092740",
+   "arxiv_id": "",
+   "year": 2026,
+   "venue": "Sensors (MDPI) 26(9): 2740（Gold OA CC-BY）",
+   "corpus": "决策模型线_JEV",
+   "thread": "D4",
+   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于模型预测控制的按需辅助策略用于减少机器人辅助康复中的运动懈怠/基于模型预测控制的按需辅助策略用于减少机器人辅助康复中的运动懈怠.pdf",
+   "version_note": "★ **指出了误差型 AAN 的结构性缺陷**：助力和用户主动贡献被单一误差系数耦合，「主动出力减少被辅助通道吸收，伪装成小误差」。\n**这正是「用置信度而非误差做介入决策」的论据** —— 误差可以伪装，参与度不能。\n双通道导纳 + 凸 MPC + 能量罐保证无源性。",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+   "id": "L-561c1bd5",
+   "role": "assistance/integration",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.3390/s26092740",
+   "source_records": [
+    "01_参考论文/整合系统/决策模型线_JEV/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Velocity field assist-as-needed controller for upper limb rehabilitation with sEMG-based spasticity detection",
+   "doi": "10.1016/j.mechatronics.2025.103450",
+   "arxiv_id": "",
+   "year": 2026,
+   "venue": "Mechatronics 114: 103450",
+   "corpus": "决策模型线_JEV",
+   "thread": "D4",
+   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于 sEMG 痉挛检测的上肢康复速度场按需辅助控制器/基于 sEMG 痉挛检测的上肢康复速度场按需辅助控制器.pdf",
+   "version_note": "**「什么时候介入」不只有一层**：除了「患者能力不足要帮」，还有「检测到痉挛要减速保护」。\n这支持把介入决策拆成**多个原子问题**（能力不足 / 疲劳 / 痉挛 / 代偿出现），每个独立校准 —— 正是 JEV 式原语该干的事。",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+   "id": "L-ceeff714",
+   "role": "assistance/integration",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1016/j.mechatronics.2025.103450",
+   "source_records": [
+    "01_参考论文/整合系统/决策模型线_JEV/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Assistance level quantification-based human-robot interaction space reshaping for rehabilitation training",
+   "doi": "10.3389/fnbot.2023.1161007",
+   "arxiv_id": "",
+   "year": 2023,
+   "venue": "Frontiers in Neurorobotics 17: 1161007（开放获取）",
+   "corpus": "决策模型线_JEV",
+   "thread": "D4",
+   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于助力水平量化的人机交互空间重塑用于康复训练/基于助力水平量化的人机交互空间重塑用于康复训练.pdf",
+   "version_note": "**已有人把 sEMG 接到 AAN 决策上**，用的正是本项目关心的 sEMG 通路。\n其局限：SVM/KF 不是校准过的概率，分类器输出不能直接当安全阈值用 —— 这正是 D4 主张「必须自己校准」的现实佐证。",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+   "id": "L-f2769289",
+   "role": "assistance/integration",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.3389/fnbot.2023.1161007",
+   "source_records": [
+    "01_参考论文/整合系统/决策模型线_JEV/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Effects of Assist-As-Needed Upper Extremity Robotic Therapy after Incomplete Spinal Cord Injury: A Parallel-Group Controlled Trial",
+   "doi": "10.3389/fnbot.2017.00026",
+   "arxiv_id": "",
+   "year": 2017,
+   "venue": "Neural Engineering and Rehabilitation（PMC5469353，开放全文）",
+   "corpus": "决策模型线_JEV",
+   "thread": "D4",
+   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/按需辅助上肢机器人疗法在不完全性脊髓损伤后的疗效：一项平行对照试验/按需辅助上肢机器人疗法在不完全性脊髓损伤后的疗效：一项平行对照试验.pdf",
+   "version_note": "★★ **这是本语料最该被记住的一篇「泼冷水」文献。**\n它用 RCT 级别的方法学给出：**AAN 控制器在主要功能终点上并未显著优于简单的主动触发式固定辅助。**\n作者自陈是 stage-two 概念验证研究、未证明功能获益。\n**对本项目的含义**：介入决策层不能只报「我的 AAN 更好」，必须预先定义主要终点并诚实报告阴性结果。\n另注：作者之一 Fabrizio Sergi 亦为 Neurorobotics 那篇的共同作者。",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+   "id": "L-c8f6fc7d",
+   "role": "assistance/integration",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.3389/fnbot.2017.00026",
+   "source_records": [
+    "01_参考论文/整合系统/决策模型线_JEV/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Effects of an assist-as-needed equipped Tenodesis-Induced-Grip Exoskeleton Robot (TIGER) on upper limb function in patients with chronic stroke",
+   "doi": "10.1186/s12984-023-01298-2",
+   "arxiv_id": "",
+   "year": 2024,
+   "venue": "Journal of NeuroEngineering and Rehabilitation 21: 3（开放获取，PMC38173006）",
+   "corpus": "决策模型线_JEV",
+   "thread": "D4",
+   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/Effects of an assist-as-needed equipped Tenodesis-Induced-Gr.xml",
+   "version_note": "⚠️ **2026-10-02 核实：原「FMA-UE 多改善 4.5 分」的二手引述方向有误，已按原始研究改写。**\n本文是**单臂**前瞻性干预研究（无平行对照组），16 例慢性期卒中患者完成 9 周训练。\n组内前后对比看起来是阳性（+3.9 分），但作者自己与「原始 TIGER」的既有数据做了跨研究比较，结论是 **AAN 版并未优于原型机，反而更差（p=0.008）**。\n对照组来自 Kuo 等 2021 的单盲 RCT（Disability and Rehabilitation 44(23):7078–7086，DOI 10.1080/09638288.2021.1980915，NCT03713476 同源注册号）：34 例入组、32 例完成，TIGER 组 FMA-UE 总分 ANCOVA p=0.006、腕 p=0.037、手 p=0.006 —— 那是**原型机本身有效**的证据。\n\n**对本项目的意义（比原记录重要得多）**：\n1. 「AAN 能改善 FMA-UE」这个前提**不成立**。原型机有效 ≠ AAN 模式有效。\n2. 原记录把「+4.5 分」当成 AAN 的收益，实际是跨研究比较口径不严产生的幻影。\n3. 这与 Frullo 2017（AAN vs 常规训练，ARAT 两组均无显著变化）**方向一致**，两个独立 RCT 体系都指向「AAN 的临床增益未被证实」。\n4. 因此 R1 不能承诺「更好的 AAN 决策 → 更好的临床结局」，而应把主要终点定在**决策层自身的可测指标**（介入时机准确率、误报率、协助剂量、患者主观负担），并把功能量表作为次要终点。\n\n**[2026-10-02 全文已取得]**：经 Europe PMC 官方 OA 通道（PMC10765635）取回 JATS 全文 XML（111 KB），\n原文逐字核验通过：FMA-UE 34.6±11.5→38.5±13.4、single-arm prospective interventional study、\n`the original TIGER exhibited greater improvements ... (GEE, p = 0.008)`、9 周训练、BBT 5.9→9.5 (p=0.004)、\nAOU 0.35→0.48 (p=0.02)、注册号 NCT03713476。\n**本文所有数字已从「摘要级」升级为「全文级」核验。**\n（出版商 Springer 直链返回 Client Challenge 挑战页，未绕过；改走 Europe PMC 官方聚合通道。）",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+   "id": "L-caa2314e",
+   "role": "assistance/integration",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1186/s12984-023-01298-2",
+   "source_records": [
+    "01_参考论文/整合系统/决策模型线_JEV/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Continuous Motion Prediction for Upper Limb Rehabilitation Robotics Based on Surface Electromyography: A Spatio-Temporal Attention and Lightweight TCN Approach",
+   "doi": "10.1109/icma65362.2025.11120720",
+   "arxiv_id": "",
+   "year": 2025,
+   "venue": "IEEE ICMA 2025",
+   "corpus": "决策模型线_JEV",
+   "thread": "D5",
+   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/基于表面肌电信号的上肢康复机器人连续运动预测：一种时空注意力与轻量级 TCN 方法/基于表面肌电信号的上肢康复机器人连续运动预测：一种时空注意力与轻量级 TCN 方法.pdf",
+   "version_note": "已用作者实验室公开的6页IEEE ICMA 2025正式PDF核对题名、作者、DOI、摘要及表I/II。原Zenodo 17850061错配，已撤下。比较数字须区分本实验TCN基线与表II文献比较；6名健康成人的离线结果不能直接当作卒中患者闭环疗效证据。1.5 ms为摘要报告的单次预测延迟，不等于整套系统闭环时延。",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+   "id": "L-e3ac3705",
+   "role": "mechanism-support",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1109/icma65362.2025.11120720",
+   "source_records": [
+    "01_参考论文/整合系统/决策模型线_JEV/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Personalization of Wearable Sensor-Based Joint Kinematic Estimation Using Computer Vision for Hip Exoskeleton Applications",
+   "doi": "",
+   "arxiv_id": "2411.15366",
+   "year": 2024,
+   "venue": "arXiv 预印本（后有会议版）",
+   "corpus": "决策模型线_JEV",
+   "thread": "D5",
+   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/基于计算机视觉的可穿戴传感器关节运动学估计个性化方法在髋关节外骨骼中的应用/基于计算机视觉的可穿戴传感器关节运动学估计个性化方法在髋关节外骨骼中的应用.pdf",
+   "version_note": "**直击本项目已知难点**（跨被试泛化只有 50–70%）。用计算机视觉姿态估计产生的标签 + TCN 迁移，是绕开「每个新被试都要重新标定」的可行路径。\n**且它同时命中了 AAN 决策层的一个前置问题**：决策阈值如果因被试而异，就必须先解决个体化，否则阈值不可迁移。",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+   "id": "L-e18da72b",
+   "role": "mechanism-support",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://arxiv.org/abs/2411.15366",
+   "source_records": [
+    "01_参考论文/整合系统/决策模型线_JEV/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "More Features Are Not More Evidence: Limits of Training-Free Human Activity Recognition with Jev",
+   "doi": "",
+   "arxiv_id": "2609.36154",
+   "year": 2026,
+   "venue": "arXiv 预印本（与 D2 同篇）",
+   "corpus": "决策模型线_JEV",
+   "thread": "D6",
+   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D2_独立评测与反驳/More Features Are Not More Evidence_ Limits of Training-Free.pdf",
+   "version_note": "**交叉索引**，PDF 见 D2。此处只标注它在康复语境下的意义：目前唯一一篇把 JEV 放到人体活动识别任务上做的公开评测。",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+   "id": "L-8c0ad4e9",
+   "role": "mechanism-support（非康复疗效证据）",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://arxiv.org/abs/2609.36154",
+   "source_records": [
+    "01_参考论文/整合系统/决策模型线_JEV/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Markerless On-Device Detection of Compensatory Movement Patterns in Upper-Limb Rehabilitation Exercises from Monocular RGB Video",
+   "doi": "10.3390/s26165054",
+   "arxiv_id": "",
+   "year": 2026,
+   "venue": "Sensors (MDPI)",
+   "corpus": "决策模型线_JEV",
+   "thread": "D6",
+   "local_fulltext": "01_参考论文/运动理解/Transformer_发展线/T6_物理约束·世界模型/2026_端侧单目RGB_上肢代偿模式检测.pdf",
+   "version_note": "**语料三已入库**，此处交叉索引不重复收 PDF。意义：康复代偿识别这个任务上，端侧卷积路线已能到 macro-F1 0.75。\n**其判别输出正是 D4 介入决策层的天然输入之一**（代偿出现与否）。",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+   "id": "L-fc4e3dbd",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.3390/s26165054",
+   "source_records": [
+    "01_参考论文/整合系统/决策模型线_JEV/index.json",
+    "01_参考论文/运动理解/Transformer_发展线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "A Real-Time, 3-D Musculoskeletal Model for Dynamic Simulation of Arm Movements",
+   "doi": "10.1109/tbme.2008.2005946",
+   "arxiv_id": "",
+   "year": 2008,
+   "venue": "IEEE TBME",
+   "corpus": "决策模型线_JEV",
+   "thread": "D6",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B2_肌肉骨骼动力学_与可微仿真/A Real-Time, 3-D Musculoskeletal Model for Dynamic Simulatio.pdf",
+   "version_note": "**语料三待取件清单 A 组条目**，交叉索引。\n其三维肌肉骨骼模型可为 D4 的介入决策提供「本次需要的力矩是多少」这一物理量。",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+   "id": "L-40c8cfa2",
+   "role": "understanding",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1109/tbme.2008.2005946",
+   "source_records": [
+    "01_参考论文/整合系统/决策模型线_JEV/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Performance-based assistance control for robot-mediated upper-limbs rehabilitation",
+   "doi": "10.1016/j.mechatronics.2022.102919",
+   "arxiv_id": "",
+   "year": 2023,
+   "venue": "Mechatronics 89: 102919",
+   "corpus": "决策模型线_JEV",
+   "thread": "D4",
+   "local_fulltext": "01_参考论文/整合系统/决策模型线_JEV/D4_AAN辅助控制与介入决策/基于表现的机器人辅助上肢康复助力控制/基于表现的机器人辅助上肢康复助力控制.pdf",
+   "version_note": "**这是 AAN 介入时机最直接的工程实现，且揭示了一个关键事实：现行控制律用的是「表现（performance）」而非「意图（intent）」。**\n\n机制：单控制器覆盖三个康复阶段，靠跟踪误差这一单一标量做模式切换；作者自陈参数需按被试个性化调整。\n\n**对本项目的意义**：\n1. R1 想做的「介入时机判断」，工程上已有朴素基线 —— 阈值判据。**任何复杂决策模型都必须先打败它**，否则只是把一个 if-else 换成神经网络。\n2. 它只用**单一标量误差**，不预测意图、不建模阶段 —— 留出的正是 R1 的空间。\n3. 但也给出反面提醒：5 名健康被试、无临床终点，作者明说结论仅为 preliminary。\n**这是工程可行性证据，不是临床有效性证据**，不能与 Kuo 2024 的临床结论并列引用。\n4. 印证了 R1 的边界：介入决策是控制问题，不是表征学习问题 —— JEV 式语言决策模型在这里没有输入接口。",
+   "screening": "included",
+   "index_reference": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+   "id": "L-d70787db",
+   "role": "assistance/integration",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.1016/j.mechatronics.2022.102919",
+   "source_records": [
+    "01_参考论文/整合系统/决策模型线_JEV/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Upper-Limb Rehabilitation with a Dual-Mode Individualized Exoskeleton Robot: A Generative-Model-Based Solution",
+   "doi": "",
+   "arxiv_id": "2409.03193v1",
+   "year": 2024,
+   "venue": "arXiv 预印本",
+   "corpus": "Transformer_发展线",
+   "thread": "T6",
+   "local_fulltext": "01_参考论文/运动理解/Transformer_发展线/T6_物理约束·世界模型/2024_Chen_Upper_Limb_Rehabilitation_with_a_Dual_Mode.pdf",
+   "version_note": "清华，扩散模型生成个体化助力轨迹 + 异常检测网络，上肢外骨骼的生成式控制路线",
+   "screening": "included",
+   "index_reference": "01_参考论文/运动理解/Transformer_发展线/index.json",
+   "id": "L-90b8ba05",
+   "role": "mechanism-support",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://arxiv.org/abs/2409.03193v1",
+   "source_records": [
+    "01_参考论文/运动理解/Transformer_发展线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "title": "Using deep learning to detect upper limb compensation in individuals post-stroke using consumer-grade webcams",
+   "doi": "10.3389/fmed.2025.1645369",
+   "arxiv_id": "",
+   "year": 2025,
+   "venue": "Frontiers in Medicine, 2025, Gold OA CC-BY",
+   "corpus": "Transformer_发展线",
+   "thread": "T6",
+   "local_fulltext": "01_参考论文/运动理解/Transformer_发展线/T6_物理约束·世界模型/2025_消费级摄像头_跨被试上肢代偿检测.pdf",
+   "version_note": "个体内 >90% / 跨被涉约 50-70%（原文自述，未复现）：对跨被试协议的负面证据",
+   "screening": "included",
+   "index_reference": "01_参考论文/运动理解/Transformer_发展线/index.json",
+   "id": "L-ee97e567",
+   "role": "mechanism-support",
+   "include_reason": "与运动理解、患者运动质量或辅助链路相关，后续逐篇提取而非把旧注释当原文结论",
+   "needs_fulltext": true,
+   "database": "未核实（旧索引）",
+   "landing_url": "https://doi.org/10.3389/fmed.2025.1645369",
+   "source_records": [
+    "01_参考论文/运动理解/Transformer_发展线/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "control_review",
+   "title": "Review on Patient-Cooperative Control Strategies for Upper-Limb Rehabilitation Exoskeletons",
+   "doi": "10.3389/frobt.2021.745018",
+   "year": 2021,
+   "venue": "Frontiers in robotics and AI",
+   "authors": "Dalla Gasperina S, Roveda L, Pedrocchi A, Braghin F, Gandolla M.",
+   "database": "PubMed / Europe PMC",
+   "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8688994/",
+   "fulltext_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8688994/fullTextXML",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/PMC8688994.xml",
+   "format": "JATS XML",
+   "sha256": "73969a98de9ebd4503ef9416007be0a035638fa4d5e1dcd72289118428854c9a",
+   "screening": "included",
+   "include_reason": "控制策略分类、参与适配与反例追踪入口",
+   "needs_fulltext": true,
+   "source_records": [
+    "01_参考论文/康复辅助/康复整合链路/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "Marchal2009",
+   "title": "Review of control strategies for robotic movement training after neurologic injury",
+   "doi": "10.1186/1743-0003-6-20",
+   "year": 2009,
+   "venue": "Journal of neuroengineering and rehabilitation",
+   "authors": "Marchal-Crespo L, Reinkensmeyer DJ.",
+   "database": "PubMed / Europe PMC",
+   "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2710333/",
+   "fulltext_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2710333/fullTextXML",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/PMC2710333.xml",
+   "format": "JATS XML",
+   "sha256": "4aeaa8bccbe6ab6081215b1d4a06dd02218ac67560cdc5d5731727458d1c8ec4",
+   "screening": "included",
+   "include_reason": "辅助、抵抗、slacking与控制综述基础",
+   "needs_fulltext": true,
+   "source_records": [
+    "01_参考论文/康复辅助/康复整合链路/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "ALP2025",
+   "title": "Promoting active participation in robot-aided rehabilitation via machine learning and impedance control",
+   "doi": "10.3389/fdgth.2025.1559796",
+   "year": 2025,
+   "venue": "Frontiers in digital health",
+   "authors": "Tamantini C, Patrice Langlois K, de Winter J, Ali Mohamadi PH, Beckwée D, Swinnen E, Verstraten T, Vanderborght B, Zollo L.",
+   "database": "PubMed / Europe PMC",
+   "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11885312/",
+   "fulltext_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11885312/fullTextXML",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/PMC11885312.xml",
+   "format": "JATS XML",
+   "sha256": "c0d4eba0b9b5f25bc8ebe970c8bd21d69f990113eea63a3646de99a4d5d7d83b",
+   "screening": "included",
+   "include_reason": "直接参与感知与自适应阻抗的整合反例",
+   "needs_fulltext": true,
+   "source_records": [
+    "01_参考论文/康复辅助/康复整合链路/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "Song_impedance",
+   "title": "Variable Impedance Control Based on Target Position and Tracking Error for Rehabilitation Robots During a Reaching Task",
+   "doi": "10.3389/fnbot.2022.850692",
+   "year": 2022,
+   "venue": "Frontiers in neurorobotics",
+   "authors": "Tang R, Yang Q, Song R.",
+   "database": "PubMed / Europe PMC",
+   "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8927629/",
+   "fulltext_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8927629/fullTextXML",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/PMC8927629.xml",
+   "format": "JATS XML",
+   "sha256": "23785bed668b905e2d3d0f5fab29b46f8e84ea3368727a1b4223459165933cdf",
+   "screening": "included",
+   "include_reason": "宋嵘团队目标位置/误差驱动辅助的完整实现",
+   "needs_fulltext": true,
+   "source_records": [
+    "01_参考论文/康复辅助/康复整合链路/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "Song_wrist",
+   "title": "Myoelectrically controlled wrist robot for stroke rehabilitation",
+   "doi": "10.1186/1743-0003-10-52",
+   "year": 2013,
+   "venue": "Journal of neuroengineering and rehabilitation",
+   "authors": "Song R, Tong KY, Hu X, Zhou W.",
+   "database": "PubMed / Europe PMC",
+   "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3685570/",
+   "fulltext_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3685570/fullTextXML",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/PMC3685570.xml",
+   "format": "JATS XML",
+   "sha256": "445fb07bf0573194aa52de63f30adfabf1efb2f75a7ef0244f03c80a9025276b",
+   "screening": "included",
+   "include_reason": "宋嵘团队EMG连续驱动辅助与抵抗的临床整合先例",
+   "needs_fulltext": true,
+   "source_records": [
+    "01_参考论文/康复辅助/康复整合链路/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "Song_load",
+   "title": "Effective Motor Skill Learning Induces Inverted-U Load-Dependent Activation in Contralateral Pre-Motor and Supplementary Motor Area",
+   "doi": "10.1002/hbm.70208",
+   "year": 2025,
+   "venue": "Human brain mapping",
+   "authors": "Wang X, Liang X, Ku Y, Zhan Y, Song R.",
+   "database": "PubMed / Europe PMC",
+   "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11971689/",
+   "fulltext_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11971689/fullTextXML",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/PMC11971689.xml",
+   "format": "JATS XML",
+   "sha256": "ba216607e209fa0a6214a55af5e569247e1ed64d042e4086687026d558fb5555",
+   "screening": "included",
+   "include_reason": "宋嵘团队负荷—脑活动非单调关系：强度解释边界",
+   "needs_fulltext": true,
+   "source_records": [
+    "01_参考论文/康复辅助/康复整合链路/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "participation_review",
+   "title": "Patient performance assessment methods for upper extremity rehabilitation in assist-as-needed therapy strategies: a comprehensive review",
+   "doi": "10.1007/s11517-025-03315-z",
+   "year": 2025,
+   "venue": "Medical & Biological Engineering & Computing",
+   "database": "PubMed / Europe PMC",
+   "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12204900/",
+   "fulltext_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12204900/fullTextXML",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/PMC12204900.xml",
+   "format": "JATS XML",
+   "sha256": "345db9936744106385e3935061749e18fcccfdb7b353fee4c55a71f3416d3a34",
+   "screening": "included",
+   "include_reason": "参与评估综述/临床方法及剂量反例，需全文证据对照",
+   "needs_fulltext": true,
+   "source_records": [
+    "01_参考论文/康复辅助/康复整合链路/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "participation_clinical",
+   "title": "Clinical evaluation of a patient participation assessment system for upper extremity rehabilitation exercises",
+   "doi": "10.1007/s11517-023-03014-7",
+   "year": 2024,
+   "venue": "Medical & Biological Engineering & Computing",
+   "database": "PubMed / Europe PMC",
+   "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11021326/",
+   "fulltext_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11021326/fullTextXML",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/PMC11021326.xml",
+   "format": "JATS XML",
+   "sha256": "131ac3feff3d0f63c73e19881fc43c2a1fd1d6b91d4afcd2501f00adc251eecf",
+   "screening": "included",
+   "include_reason": "参与评估综述/临床方法及剂量反例，需全文证据对照",
+   "needs_fulltext": true,
+   "source_records": [
+    "01_参考论文/康复辅助/康复整合链路/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "dose_review2026",
+   "title": "Does more rehabilitation lead to better upper limb outcomes after stroke? A systematic review",
+   "doi": "10.3389/fresc.2026.1753677",
+   "year": 2026,
+   "venue": "Frontiers in Rehabilitation Sciences",
+   "database": "PubMed / Europe PMC",
+   "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12989500/",
+   "fulltext_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12989500/fullTextXML",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/PMC12989500.xml",
+   "format": "JATS XML",
+   "sha256": "37253077c5916fc2153c459c55ea9f6484f4d845bfad4d2d7d1ab1299a9df012",
+   "screening": "included",
+   "include_reason": "剂量系统综述/多模态参与估计的迁移边界",
+   "publication_dates": [
+    "02-3-2026",
+    "2026"
+   ],
+   "needs_fulltext": true,
+   "source_records": [
+    "01_参考论文/康复辅助/康复整合链路/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "multimodal_gait2026",
+   "title": "Multimodal engagement estimation in paediatric robot-assisted gait training: integrating physiological sensing and biomechanical interaction",
+   "doi": "10.1186/s12984-026-02050-2",
+   "year": 2026,
+   "venue": "Journal of NeuroEngineering and Rehabilitation",
+   "database": "PubMed / Europe PMC",
+   "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13523423/",
+   "fulltext_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13523423/fullTextXML",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/PMC13523423.xml",
+   "format": "JATS XML",
+   "sha256": "5d0ce3a9c07b752961ca52f8969f2b2cb0209dbfa865e8ad5f398218fc6040bd",
+   "screening": "included",
+   "include_reason": "儿科脑瘫步态多模态参与估计；只作方法迁移对照，不外推到成人上肢",
+   "publication_dates": [
+    "18-6-2026",
+    "2026"
+   ],
+   "role": "migration-boundary",
+   "needs_fulltext": true,
+   "source_records": [
+    "01_参考论文/康复辅助/康复整合链路/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "TFS2025",
+   "title": "Neuro-Fuzzy Musculoskeletal Model-Driven Assist-as-Needed Control via Impedance Regulation for Rehabilitation Robots",
+   "doi": "10.1109/tfuzz.2025.3611266",
+   "year": 2025,
+   "venue": "IEEE Transactions on Fuzzy Systems",
+   "database": "IEEE Xplore；公开作者仓储",
+   "landing_url": "https://eprints.whiterose.ac.uk/id/eprint/231974/",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制.pdf",
+   "format": "pdf",
+   "version": "Accepted Version（机构仓储作者接受稿）",
+   "sha256": "7cd821b71b08addbc45745b1c88028d28d7b59f4c35d74ee80dca1e3065d0e21",
+   "screening": "included",
+   "include_reason": "完整上肢估计/辅助/参与链路的最近反例；不可直接称新整合创新",
+   "needs_fulltext": true,
+   "source_records": [
+    "01_参考论文/康复辅助/康复整合链路/index.json"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "Song_TRO",
+   "title": "A Cable-Driven Upper Limb Rehabilitation Robot With Muscle-Synergy-Based Myoelectric Controller",
+   "doi": "10.1109/tro.2024.3411849",
+   "year": 2024,
+   "venue": "IEEE Transactions on Robotics",
+   "authors": [
+    {
+     "ORCID": "https://orcid.org/0000-0003-3867-3908",
+     "authenticated-orcid": false,
+     "given": "Chenglin",
+     "family": "Xie",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Shenzhen Campus of Sun Yat-sen University, Shenzhen, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Yueling",
+     "family": "Lyu",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Shenzhen Campus of Sun Yat-sen University, Shenzhen, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-8384-0002",
+     "authenticated-orcid": false,
+     "given": "Guoxin",
+     "family": "Li",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Mechanical Engineering, Translational Research Center, Shanghai Yangzhi Rehabilitation Hospital, Tongji University, Shanghai, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-4375-653X",
+     "authenticated-orcid": false,
+     "given": "Raymond Kai-Yu",
+     "family": "Tong",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Biomedical Engineering, The Chinese University of Hong Kong, Hong Kong"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-8574-6650",
+     "authenticated-orcid": false,
+     "given": "Haisheng",
+     "family": "Xia",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Mechanical Engineering, Translational Research Center, Shanghai Yangzhi Rehabilitation Hospital, Tongji University, Shanghai, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-3662-116X",
+     "authenticated-orcid": false,
+     "given": "Rong",
+     "family": "Song",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Shenzhen Campus of Sun Yat-sen University, Shenzhen, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-3909-488X",
+     "authenticated-orcid": false,
+     "given": "Zhijun",
+     "family": "Li",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Mechanical Engineering, Translational Research Center, Shanghai Yangzhi Rehabilitation Hospital, Tongji University, Shanghai, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/tro.2024.3411849",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/一种基于肌肉协同肌电控制器的绳驱上肢康复机器人/一种基于肌肉协同肌电控制器的绳驱上肢康复机器人.pdf",
+   "screening": "included",
+   "role": "assistance/integration",
+   "include_reason": "宋嵘团队重点对照",
+   "needs_fulltext": true,
+   "acquisition_status": "用户提供出版PDF；原件身份/页结构/SHA及关键正文方法补核通过；不等于创新性/临床/系统验收",
+   "source_records": [
+    "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json",
+    "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
+    "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+   ],
+   "kind": "paper",
+   "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+  },
+  {
+   "id": "Song_TIE",
+   "title": "Deep-LSTM-Based Human-Robot Collaboration Control With Static-Dynamic Calibration",
+   "doi": "10.1109/tie.2024.3398675",
+   "year": 2024,
+   "venue": "IEEE Transactions on Industrial Electronics",
+   "authors": [
+    {
+     "ORCID": "https://orcid.org/0000-0003-3867-3908",
+     "authenticated-orcid": false,
+     "given": "Chenglin",
+     "family": "Xie",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Shenzhen Campus of Sun Yat-sen University, Shenzhen, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-3909-488X",
+     "authenticated-orcid": false,
+     "given": "Zhijun",
+     "family": "Li",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Mechanical Engineering, Translational Research Center, and Shanghai Yangzhi Rehabilitation Hospital, Tongji University, Shanghai, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-3662-116X",
+     "authenticated-orcid": false,
+     "given": "Rong",
+     "family": "Song",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Shenzhen Campus of Sun Yat-sen University, Shenzhen, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/tie.2024.3398675",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/基于深度 LSTM 与静态-动态校准的人机协作控制/基于深度 LSTM 与静态-动态校准的人机协作控制.pdf",
+   "screening": "included",
+   "role": "assistance/integration",
+   "include_reason": "宋嵘团队重点对照",
+   "needs_fulltext": true,
+   "acquisition_status": "用户提供出版PDF；原件身份/页结构/SHA及关键正文方法补核通过；不等于创新性/临床/系统验收",
+   "source_records": [
+    "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json",
+    "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
+    "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+   ],
+   "kind": "paper",
+   "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+  },
+  {
+   "id": "Song_VAAN",
+   "title": "Voluntary Assist-as-Needed Controller for an Ankle Power-Assist Rehabilitation Robot",
+   "doi": "10.1109/tbme.2022.3228070",
+   "year": 2023,
+   "venue": "IEEE Transactions on Biomedical Engineering",
+   "authors": [
+    {
+     "ORCID": "https://orcid.org/0000-0001-6260-8036",
+     "authenticated-orcid": false,
+     "given": "Renyu",
+     "family": "Yang",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Sun Yat-sen University, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Zhihang",
+     "family": "Shen",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Information Center, Sun Yat-sen University Cancer Center, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Yueling",
+     "family": "Lyu",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Sun Yat-sen University, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Yu",
+     "family": "Zhuang",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Sun Yat-sen University, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-9340-9061",
+     "authenticated-orcid": false,
+     "given": "Le",
+     "family": "Li",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Institute of Medical Research, Northwestern Polytechnical University, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-3662-116X",
+     "authenticated-orcid": false,
+     "given": "Rong",
+     "family": "Song",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Sun Yat-sen University, Guangzhou, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/tbme.2022.3228070",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/针对踝关节助力康复机器人的主动按需辅助控制器/针对踝关节助力康复机器人的主动按需辅助控制器.pdf",
+   "screening": "included",
+   "role": "assistance/integration",
+   "include_reason": "宋嵘团队重点对照",
+   "needs_fulltext": true,
+   "acquisition_status": "用户提供出版PDF；原件身份/页结构/SHA及关键正文方法补核通过；不等于创新性/临床/系统验收",
+   "source_records": [
+    "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json",
+    "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
+    "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+   ],
+   "kind": "paper",
+   "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json",
+   "journal_year": 2023,
+   "first_online_year": 2022
+  },
+  {
+   "id": "Song_TBME",
+   "title": "Performance-Based Hybrid Control of a Cable-Driven Upper-Limb Rehabilitation Robot",
+   "doi": "10.1109/tbme.2020.3027823",
+   "year": 2021,
+   "venue": "IEEE Transactions on Biomedical Engineering",
+   "authors": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-9303-9769",
+     "authenticated-orcid": false,
+     "given": "Xianming",
+     "family": "Li",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-9311-444X",
+     "authenticated-orcid": false,
+     "given": "Qianqian",
+     "family": "Yang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-3662-116X",
+     "authenticated-orcid": false,
+     "given": "Rong",
+     "family": "Song",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/tbme.2020.3027823",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/基于运动表现的绳驱动上肢康复机器人混合控制/基于运动表现的绳驱动上肢康复机器人混合控制.pdf",
+   "screening": "included",
+   "role": "assistance/integration",
+   "include_reason": "宋嵘团队重点对照",
+   "needs_fulltext": true,
+   "acquisition_status": "用户提供出版PDF；原件身份/页结构/SHA及关键正文方法补核通过；不等于创新性/临床/系统验收",
+   "source_records": [
+    "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json",
+    "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
+    "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+   ],
+   "kind": "paper",
+   "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json",
+   "journal_year": 2021,
+   "first_online_year": 2020
+  },
+  {
+   "id": "Song_TBCAS",
+   "title": "A Hybrid Arm-Hand Rehabilitation Robot With EMG-Based Admittance Controller",
+   "doi": "10.1109/tbcas.2021.3130090",
+   "year": 2021,
+   "venue": "IEEE Transactions on Biomedical Circuits and Systems",
+   "authors": [
+    {
+     "ORCID": "https://orcid.org/0000-0003-3867-3908",
+     "authenticated-orcid": false,
+     "given": "Chenglin",
+     "family": "Xie",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-9311-444X",
+     "authenticated-orcid": false,
+     "given": "Qianqian",
+     "family": "Yang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Yao",
+     "family": "Huang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-5720-8852",
+     "authenticated-orcid": false,
+     "given": "Steven",
+     "family": "Su",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Ting",
+     "family": "Xu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-3662-116X",
+     "authenticated-orcid": false,
+     "given": "Rong",
+     "family": "Song",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/tbcas.2021.3130090",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/基于肌电导纳控制器的混合式臂-手康复机器人/基于肌电导纳控制器的混合式臂-手康复机器人.pdf",
+   "screening": "included",
+   "role": "assistance/integration",
+   "include_reason": "宋嵘团队重点对照",
+   "needs_fulltext": true,
+   "acquisition_status": "用户提供出版PDF；原件身份/页结构/SHA及关键正文方法补核通过；不等于创新性/临床/系统验收",
+   "source_records": [
+    "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json",
+    "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
+    "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+   ],
+   "kind": "paper",
+   "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+  },
+  {
+   "id": "RL2026",
+   "title": "Personalized Adaptive Assistance With Reinforcement Learning Control Enhances Engagement, Performance, and Retention in Robot-Assisted Arm-Reaching Exercises",
+   "doi": "10.1109/tnsre.2025.3650096",
+   "year": 2026,
+   "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+   "authors": [
+    {
+     "ORCID": "https://orcid.org/0009-0005-4216-2416",
+     "authenticated-orcid": false,
+     "given": "Andy",
+     "family": "Li",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Wearable Robotic Systems Laboratory, Stevens Institute of Technology, Hoboken, NJ, USA"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-0324-5359",
+     "authenticated-orcid": false,
+     "given": "Riccardo",
+     "family": "Minto",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Industrial Engineering, University of Padova, Padua, Italy"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0009-0001-0275-6659",
+     "authenticated-orcid": false,
+     "given": "Maximillan",
+     "family": "Dölling",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Institute of Mechatronic Systems, Leibniz University Hannover, Hannover, Germany"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-2452-221X",
+     "authenticated-orcid": false,
+     "given": "Giovanni",
+     "family": "Boschetti",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Industrial Engineering, University of Padova, Padua, Italy"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-3514-6889",
+     "authenticated-orcid": false,
+     "given": "Damiano",
+     "family": "Zanotto",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Wearable Robotic Systems Laboratory, Stevens Institute of Technology, Hoboken, NJ, USA"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "database": "IEEE Xplore；Padova IRIS（开放PDF）",
+   "landing_url": "https://research.unipd.it/handle/11577/3586318",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果.pdf",
+   "screening": "included",
+   "role": "assistance/integration",
+   "include_reason": "近期AAN/适配闭环直接对照",
+   "needs_fulltext": true,
+   "acquisition_status": "用户提供出版PDF；原件身份/页结构/SHA及关键正文方法补核通过；不等于创新性/临床/系统验收",
+   "source_records": [
+    "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json",
+    "05_进展日志/2026-10-02_康复链路研究/RL2026_公开正文补核.json",
+    "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
+    "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+   ],
+   "kind": "paper",
+   "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+  },
+  {
+   "id": "Shoulder2025",
+   "title": "Assist-as-Needed Control of a Shoulder Rehabilitation Robot Using a Virtual Biomechanical Model and Online Stiffness Adaptation",
+   "doi": "10.1109/tnsre.2025.3579533",
+   "year": 2025,
+   "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+   "authors": [
+    {
+     "ORCID": "https://orcid.org/0000-0001-8558-0208",
+     "authenticated-orcid": false,
+     "given": "Muhammad Faizan",
+     "family": "Shah",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Faculty of Science and Technology, University of Canberra, Canberra, ACT, Australia"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-1330-6186",
+     "authenticated-orcid": false,
+     "given": "Prashant K.",
+     "family": "Jamwal",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Electrical and Computer Engineering, Nazarbayev University, Astana, Kazakhstan"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-4883-0786",
+     "authenticated-orcid": false,
+     "given": "Mergen H.",
+     "family": "Ghayesh",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Electrical and Mechanical Engineering, The University of Adelaide, Adelaide, SA, Australia"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-4352-0212",
+     "authenticated-orcid": false,
+     "given": "Shahid",
+     "family": "Hussain",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Faculty of Science and Technology, University of Canberra, Canberra, ACT, Australia"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/tnsre.2025.3579533",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制.pdf",
+   "screening": "included",
+   "role": "assistance/integration",
+   "include_reason": "近期AAN/适配闭环直接对照",
+   "needs_fulltext": true,
+   "acquisition_status": "用户提供出版PDF；原件身份/页结构/SHA及关键正文方法补核通过；不等于创新性/临床/系统验收",
+   "source_records": [
+    "05_进展日志/2026-10-02_康复链路研究/Crossref_本轮纳入候选身份.json",
+    "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json",
+    "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+   ],
+   "kind": "paper",
+   "method_review_ref": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/七篇原件_方法与候选核对.json"
+  },
+  {
+   "id": "Psy2014",
+   "title": "Increasing motivation in robot-aided arm rehabilitation with competitive and cooperative gameplay",
+   "doi": "10.1186/1743-0003-11-64",
+   "year": 2014,
+   "venue": "Journal of NeuroEngineering and Rehabilitation",
+   "authors": "Novak Domen; Nagle Aniket; Keller Urs; Riener Robert",
+   "database": "PubMed / Europe PMC",
+   "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4021830/",
+   "fulltext_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4021830/fullTextXML",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/PMC4021830.xml",
+   "format": "JATS XML",
+   "sha256": "76e4b939796411a9b23fb71d5e953dfee7d2486039b195657434c9b65241abd6",
+   "screening": "included",
+   "include_reason": "用户确认物理与心理参与分别评价后，补核心理测量及训练模式整合反例",
+   "kind": "paper",
+   "role": "integration",
+   "needs_fulltext": true,
+   "corpus": "康复整合链路",
+   "source_records": [
+    "01_参考论文/康复辅助/康复整合链路/index.json",
+    "2026-10-03心理参与补检索"
+   ]
+  },
+  {
+   "id": "Psy2022",
+   "title": "The effect of gamified robot-enhanced training on motor performance in chronic stroke survivors",
+   "doi": "10.1016/j.heliyon.2022.e11764",
+   "year": 2022,
+   "venue": "Heliyon",
+   "authors": "Ozgur Arzu Guneysu; Wessel Maximilian J.; Olsen Jennifer K.; Cadic-Melchior Andéol Geoffroy; Zufferey Valérie; Johal Wafa; Dominijanni Giulia; Turlan Jean-Luc; Mühl Andreas; Bruno Barbara; Vuadens Philippe; Dillenbourg Pierre; Hummel Friedhelm C.",
+   "database": "PubMed / Europe PMC",
+   "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9708787/",
+   "fulltext_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9708787/fullTextXML",
+   "local_fulltext": "01_参考论文/康复辅助/康复整合链路/PMC9708787.xml",
+   "format": "JATS XML",
+   "sha256": "96b98aa3fb97edfd815234a42d613adf599675f719de91ccbf5aa3073d40d863",
+   "screening": "included",
+   "include_reason": "用户确认物理与心理参与分别评价后，补核心理测量及训练模式整合反例",
+   "kind": "paper",
+   "role": "integration",
+   "needs_fulltext": true,
+   "corpus": "康复整合链路",
+   "source_records": [
+    "01_参考论文/康复辅助/康复整合链路/index.json",
+    "2026-10-03心理参与补检索"
+   ]
+  },
+  {
+   "id": "DL-f380862c",
+   "title": "Joint coordinate systems of axes for coherence in reporting kinematic and kinetic data",
+   "doi": "10.1016/s0268-0033(00)00082-6",
+   "arxiv_id": "",
+   "year": 2001,
+   "venue": "Clinical Biomechanics",
+   "corpus": "生物力学线",
+   "thread": "B1",
+   "priority": "P1",
+   "source_team": "语料三下载报告",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Gagnon2001-ClinBiomech：运动学与动力学报告的关节坐标系一致性/Gagnon2001-ClinBiomech：运动学与动力学报告的关节坐标系一致性.pdf",
+   "version_note": "上肢关节坐标系一致性，视觉运动学报告口径依据；此前状态 unknown ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "ScienceDirect / Elsevier",
+   "landing_url": "https://doi.org/10.1016/s0268-0033(00)00082-6",
+   "source_records": [
+    "语料三下载报告"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-1eef9ada",
+   "title": "Test-retest reproducibility of elbow goniometric measurements in a rigid double-blinded protocol: Intervals for distinguishing between measurement error and clinical change",
+   "doi": "10.1016/j.jse.2007.02.134",
+   "arxiv_id": "",
+   "year": 2007,
+   "venue": "Journal of Shoulder and Elbow Surgery",
+   "corpus": "生物力学线",
+   "thread": "B1",
+   "priority": "P1",
+   "source_team": "语料三下载报告",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Cleffken2007-JSESurg：肘关节量角测量重测信度的双盲方案/Cleffken2007-JSESurg：肘关节量角测量重测信度的双盲方案.pdf",
+   "version_note": "肘关节量角器重测信度，腕肘角度估计的测量误差基线；此前状态 unknown ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "ScienceDirect / Elsevier",
+   "landing_url": "https://doi.org/10.1016/j.jse.2007.02.134",
+   "source_records": [
+    "语料三下载报告"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-b0a9db10",
+   "title": "Remote self-measurement of wrist range of motion performed on normal wrists by a minimally trained individual using the iPhone level application only demonstrated good reliability in measuring wrist flexion and extension",
+   "doi": "10.1016/j.jht.2020.05.001",
+   "arxiv_id": "",
+   "year": 2021,
+   "venue": "Journal of Hand Therapy",
+   "corpus": "生物力学线",
+   "thread": "B1",
+   "priority": "P1",
+   "source_team": "语料三下载报告",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Alford2021-JHandTher：非受训者用 iPhone 应用自测腕关节活动度的信度/Alford2021-JHandTher：非受训者用 iPhone 应用自测腕关节活动度的信度.pdf",
+   "version_note": "腕 ROM 远程自测，腕关节专项的可迁移性参照；此前状态 unknown ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "ScienceDirect / Elsevier",
+   "landing_url": "https://doi.org/10.1016/j.jht.2020.05.001",
+   "source_records": [
+    "语料三下载报告"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-97d9e21e",
+   "title": "Joint angle measurement: a comparative study of the reliability of goniometry and wire tracing for the hand",
+   "doi": "10.1177/026921559701100408",
+   "arxiv_id": "",
+   "year": 1997,
+   "venue": "Clinical Rehabilitation",
+   "corpus": "生物力学线",
+   "thread": "B1",
+   "priority": "P1",
+   "source_team": "语料三下载报告",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Ellis1997-ClinRehab：手部关节角度测量中量角器与描线法的信度比较/Ellis1997-ClinRehab：手部关节角度测量中量角器与描线法的信度比较.pdf",
+   "version_note": "关节角度测量方法比较信度；此前状态 unknown ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "SAGE Journals",
+   "landing_url": "https://doi.org/10.1177/026921559701100408",
+   "source_records": [
+    "语料三下载报告"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-e33b7dbe",
+   "title": "Comparison of Visual Estimation and Goniometry in Determination of a Shoulder Joint Angle",
+   "doi": "10.1016/S0031-9406(10)63103-3",
+   "arxiv_id": "",
+   "year": 1990,
+   "venue": "Physiotherapy",
+   "corpus": "生物力学线",
+   "thread": "B1",
+   "priority": "P2",
+   "source_team": "语料三下载报告",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Williams1990-Physiotherapy：肩关节角目视估计与量角器测定的比较/Williams1990-Physiotherapy：肩关节角目视估计与量角器测定的比较.pdf",
+   "version_note": "目视估计与量角器对照，视觉角度估计的评价参照；此前状态 unknown ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "ScienceDirect / Elsevier",
+   "landing_url": "https://doi.org/10.1016/S0031-9406(10)63103-3",
+   "source_records": [
+    "语料三下载报告"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-8b2db9dd",
+   "title": "Moment arms and lengths of human upper limb muscles as functions of joint angles",
+   "doi": "10.1016/0021-9290(96)00031-0",
+   "arxiv_id": "",
+   "year": 1996,
+   "venue": "Journal of Biomechanics",
+   "corpus": "生物力学线",
+   "thread": "B2",
+   "priority": "P1",
+   "source_team": "语料三下载报告",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Pigeon1996-JBiomech：人体上肢肌肉力臂与长度随关节角的变化/Pigeon1996-JBiomech：人体上肢肌肉力臂与长度随关节角的变化.pdf",
+   "version_note": "上肢肌肉力臂与长度，肌骨动力学建模输入；此前 not_oa ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "ScienceDirect / Elsevier",
+   "landing_url": "https://doi.org/10.1016/0021-9290(96)00031-0",
+   "source_records": [
+    "语料三下载报告"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-32affced",
+   "title": "Wrist kinematics differ in expert and novice tennis players performing the backhand stroke: Implications for tennis elbow",
+   "doi": "10.1016/0021-9290(94)90062-0",
+   "arxiv_id": "",
+   "year": 1994,
+   "venue": "Journal of Biomechanics",
+   "corpus": "生物力学线",
+   "thread": "B1",
+   "priority": "P2",
+   "source_team": "语料三下载报告",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Blackwell1994-JBiomech：网球反手击球中专家与新手的手腕运动学差异/Blackwell1994-JBiomech：网球反手击球中专家与新手的手腕运动学差异.pdf",
+   "version_note": "腕运动学（专家/新手），腕关节专项背景；此前 not_oa ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "ScienceDirect / Elsevier",
+   "landing_url": "https://doi.org/10.1016/0021-9290(94)90062-0",
+   "source_records": [
+    "语料三下载报告"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-13a285c3",
+   "title": "Thoracic position effect on shoulder range of motion, strength, and three-dimensional scapular kinematics",
+   "doi": "10.1016/s0003-9993(99)90088-6",
+   "arxiv_id": "",
+   "year": 1999,
+   "venue": "Archives of Physical Medicine and Rehabilitation",
+   "corpus": "生物力学线",
+   "thread": "B3",
+   "priority": "P2",
+   "source_team": "语料三下载报告",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Kebaetse1999-ArchPMR：胸廓位置对肩活动度、肌力与肩胛三维运动学的影响/Kebaetse1999-ArchPMR：胸廓位置对肩活动度、肌力与肩胛三维运动学的影响.pdf",
+   "version_note": "胸廓位置对上肢 ROM 与肌力的影响，代偿评估的干扰因素；此前 not_oa ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "ScienceDirect / Elsevier",
+   "landing_url": "https://doi.org/10.1016/s0003-9993(99)90088-6",
+   "source_records": [
+    "语料三下载报告"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-891f5d18",
+   "title": "Motor compensation and recovery for reaching in stroke patients",
+   "doi": "10.1034/j.1600-0404.2003.00021.x",
+   "arxiv_id": "",
+   "year": 2003,
+   "venue": "Acta Neurologica Scandinavica",
+   "corpus": "生物力学线",
+   "thread": "B3",
+   "priority": "P0",
+   "source_team": "语料三下载报告",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B3_上肢康复_代偿与临床评估/Roby-Brami2003-ActaNeurolScand：卒中患者伸手运动的代偿与恢复/Roby-Brami2003-ActaNeurolScand：卒中患者伸手运动的代偿与恢复.pdf",
+   "version_note": "卒中伸手运动的代偿与恢复，直接对应上肢代偿检测；此前状态 blocked ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "Wiley Online Library",
+   "landing_url": "https://doi.org/10.1034/j.1600-0404.2003.00021.x",
+   "source_records": [
+    "语料三下载报告"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-4c0d3655",
+   "title": "Kinematics and Kinetics of Shoulder Complex, Elbow, and Wrist",
+   "doi": "10.1007/978-981-16-4991-2_8",
+   "arxiv_id": "",
+   "year": 2021,
+   "venue": "Conceptual Biomechanics and Kinesiology",
+   "corpus": "生物力学线",
+   "thread": "B1",
+   "priority": "P2",
+   "source_team": "语料三下载报告",
+   "local_fulltext": "01_参考论文/整合系统/生物力学线/B1_视觉运动学_估计与验证方法学/Hazari2021-ConceptBiomechKinesiol：肩复合体、肘与腕的运动学与动力学/Hazari2021-ConceptBiomechKinesiol：肩复合体、肘与腕的运动学与动力学.pdf",
+   "version_note": "肩肘腕运动学与动力学综述章；此前 not_oa ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "SpringerLink",
+   "landing_url": "https://doi.org/10.1007/978-981-16-4991-2_8",
+   "source_records": [
+    "语料三下载报告"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-8acc2101",
+   "title": "Human-in-the-Loop Control of a Wearable Lower Limb Exoskeleton for Stable Dynamic Walking",
+   "doi": "10.1109/TMECH.2020.3044289",
+   "arxiv_id": "",
+   "year": 2021,
+   "venue": "IEEE/ASME Transactions on Mechatronics",
+   "corpus": "章隆彬_合作团队",
+   "thread": "结合",
+   "priority": "高",
+   "source_team": "09 章隆彬 PAPER_GAP_LIST",
+   "local_fulltext": "09_章隆彬_合作团队/papers/理解与辅助结合/Li2021-TMECH：稳定动态行走的下肢外骨骼人在环控制/Li2021-TMECH：稳定动态行走的下肢外骨骼人在环控制.pdf",
+   "version_note": "Z21；下肢外骨骼人在环控制，连接理解与执行控制；此前 IEEE HTTP 418",
+   "screening": "included",
+   "index_reference": null,
+   "role": "assistance",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/TMECH.2020.3044289",
+   "source_records": [
+    "09 章隆彬 PAPER_GAP_LIST"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-5e218103",
+   "title": "Brain–Machine Interface and Visual Compressive Sensing-Based Teleoperation Control of an Exoskeleton Robot",
+   "doi": "10.1109/TFUZZ.2016.2566676",
+   "arxiv_id": "",
+   "year": 2017,
+   "venue": "IEEE Transactions on Fuzzy Systems",
+   "corpus": "章隆彬_合作团队",
+   "thread": "结合",
+   "priority": "高",
+   "source_team": "09 章隆彬 PAPER_GAP_LIST",
+   "local_fulltext": "01_参考论文/整合系统/章隆彬_理解与辅助结合/Qiu2017-TFUZZ：脑机接口与视觉压缩感知的外骨骼机器人遥操作控制/Qiu2017-TFUZZ：脑机接口与视觉压缩感知的外骨骼机器人遥操作控制.pdf",
+   "title_aliases": ["Brain Machine Interface and Visual Compressive Sensing based Teleoperation Control of an Exokeleton Robot"],
+   "alias_verified_from": "05_进展日志/2026-10-10_文献台账对账/DL-5e218103_首页抽取.txt；PDF首页DOI一致，12页接受稿，SHA与Z22用户补件记录一致；保留稿件原始拼写。",
+   "version_note": "Z22；脑机接口与视觉压缩感知遥操作；此前 IEEE HTTP 418。源清单标注 TFS，Crossref 核实为 IEEE Transactions on Fuzzy Systems ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "assistance",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/TFUZZ.2016.2566676",
+   "source_records": [
+    "09 章隆彬 PAPER_GAP_LIST"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-ce6e6704",
+   "title": "Adaptive Neural Network Based Variable Stiffness Control of Uncertain Robotic Systems Using Disturbance Observer",
+   "doi": "10.1109/TIE.2016.2624260",
+   "arxiv_id": "",
+   "year": 2017,
+   "venue": "IEEE Transactions on Industrial Electronics",
+   "corpus": "章隆彬_合作团队",
+   "thread": "结合",
+   "priority": "高",
+   "source_team": "09 章隆彬 PAPER_GAP_LIST",
+   "local_fulltext": "09_章隆彬_合作团队/papers/康复辅助/Zhang2017-TIE：扰动观测器与自适应神经网络变刚度控制/Zhang2017-TIE：扰动观测器与自适应神经网络变刚度控制.pdf",
+   "version_note": "Z20；扰动观测器与自适应神经网络变刚度控制；此前 IEEE HTTP 418",
+   "screening": "included",
+   "index_reference": null,
+   "role": "assistance",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/TIE.2016.2624260",
+   "source_records": [
+    "09 章隆彬 PAPER_GAP_LIST"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-3d816be7",
+   "title": "Estimation of Ankle Dynamic Joint Torque by a Neuromusculoskeletal Solver-informed NN Model",
+   "doi": "10.1109/ICARM52023.2021.9536189",
+   "arxiv_id": "",
+   "year": 2021,
+   "venue": "2021 6th IEEE International Conference on Advanced Robotics and Mechatronics (ICARM)",
+   "corpus": "章隆彬_合作团队",
+   "thread": "理解",
+   "priority": "中",
+   "source_team": "09 章隆彬 PAPER_GAP_LIST",
+   "local_fulltext": "09_章隆彬_合作团队/papers/运动理解/Zhang2021-ICARM：NMS求解器与NN的踝动态力矩估计/Zhang2021-ICARM：NMS求解器与NN的踝动态力矩估计.pdf",
+   "version_note": "Z23；NMS 求解器与神经网络的踝动态力矩估计，视觉→动力学桥接；此前 IEEE 418 / ResearchGate 403。Crossref 核实为 ICARM 2021",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/ICARM52023.2021.9536189",
+   "source_records": [
+    "09 章隆彬 PAPER_GAP_LIST"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-2a6a772b",
+   "title": "EEG Dynamics and Center of Pressure Modulation During Multi-Task Balance Challenges in Older Adults",
+   "doi": "10.1109/YAC71005.2026.11616179",
+   "arxiv_id": "",
+   "year": 2026,
+   "venue": "2026 41st Youth Academic Annual Conference of Chinese Association of Automation (YAC)",
+   "corpus": "章隆彬_合作团队",
+   "thread": "理解",
+   "priority": "中",
+   "source_team": "09 章隆彬 PAPER_GAP_LIST",
+   "local_fulltext": "09_章隆彬_合作团队/papers/运动理解/Li2026-YAC：多任务平衡挑战的EEG与压力中心调节/Li2026-YAC：多任务平衡挑战的EEG与压力中心调节.pdf",
+   "version_note": "Z24；多任务平衡挑战下的 EEG 与压力中心调节；此前 IEEE HTTP 418",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/YAC71005.2026.11616179",
+   "source_records": [
+    "09 章隆彬 PAPER_GAP_LIST"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-b2dae467",
+   "title": "Predicting Ground Reaction Forces by LSTM Neural Networks with Multi-modal Data",
+   "doi": "10.1109/YAC71005.2026.11615719",
+   "arxiv_id": "",
+   "year": 2026,
+   "venue": "2026 41st Youth Academic Annual Conference of Chinese Association of Automation (YAC)",
+   "corpus": "章隆彬_合作团队",
+   "thread": "理解",
+   "priority": "中",
+   "source_team": "09 章隆彬 PAPER_GAP_LIST",
+   "local_fulltext": "09_章隆彬_合作团队/papers/运动理解/Fu2026-YAC：多模态LSTM地面反力预测/Fu2026-YAC：多模态LSTM地面反力预测.pdf",
+   "version_note": "Z25；多模态 LSTM 地面反力预测；此前 IEEE HTTP 418",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/YAC71005.2026.11615719",
+   "source_records": [
+    "09 章隆彬 PAPER_GAP_LIST"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-75905616",
+   "title": "Iterative Adjustment of Stimulation Timing and Intensity During FES-Assisted Treadmill Walking for Patients After Stroke",
+   "doi": "10.1109/TNSRE.2020.2986295",
+   "arxiv_id": "",
+   "year": 2020,
+   "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+   "corpus": "宋嵘_合作团队",
+   "thread": "辅助与训练强度",
+   "priority": "P0",
+   "source_team": "12 宋嵘 LIST P0",
+   "local_fulltext": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Jiang2020-TNSRE：卒中患者 FES 辅助跑台训练中刺激时相与强度的迭代调整/Jiang2020-TNSRE：卒中患者 FES 辅助跑台训练中刺激时相与强度的迭代调整.pdf",
+   "version_note": "10 例卒中 + 对照，自适应 FES 强度/时相调整；全台账唯一同时具备患者/真实辅助/强度自适应的条目 ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "assistance",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/TNSRE.2020.2986295",
+   "source_records": [
+    "12 宋嵘 LIST P0"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-de3bccd7",
+   "title": "Corticomuscular Coupling Alterations During Elbow Isometric Contraction Correlated With Clinical Scores: An fNIRS-sEMG Study in Stroke Survivors",
+   "doi": "10.1109/TNSRE.2025.3535928",
+   "arxiv_id": "",
+   "year": 2025,
+   "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+   "corpus": "宋嵘_合作团队",
+   "thread": "双参与",
+   "priority": "P0",
+   "source_team": "12 宋嵘 LIST P0",
+   "local_fulltext": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Wang2025-TNSRE：卒中患者肘等长收缩时皮层-肌电耦合改变与临床评分相关/Wang2025-TNSRE：卒中患者肘等长收缩时皮层-肌电耦合改变与临床评分相关.pdf",
+   "version_note": "上肢肘部皮层-肌电耦合与 FMA 临床评分相关；C1 缺独立心理/神经参照的最对口一篇 ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/TNSRE.2025.3535928",
+   "source_records": [
+    "12 宋嵘 LIST P0"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-33082445",
+   "title": "Isometric Plantarflexion Moment Prediction Based on a Compartment-Specific HD-sEMG-Driven Musculoskeletal Model",
+   "doi": "10.1109/TBME.2024.3368021",
+   "arxiv_id": "",
+   "year": 2024,
+   "venue": "IEEE Transactions on Biomedical Engineering",
+   "corpus": "宋嵘_合作团队",
+   "thread": "双参与",
+   "priority": "P0",
+   "source_team": "12 宋嵘 LIST P0",
+   "local_fulltext": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Zheng2024-TBME：基于分舱 HD-sEMG 肌骨模型的等长跖屈力矩预测/Zheng2024-TBME：基于分舱 HD-sEMG 肌骨模型的等长跖屈力矩预测.pdf",
+   "version_note": "HD-sEMG 分舱肌骨模型力矩预测；C1 物理参照候选。须核清「预测力矩≠主动贡献」 ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/TBME.2024.3368021",
+   "source_records": [
+    "12 宋嵘 LIST P0"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-651cf059",
+   "title": "Hybrid and adaptive control of functional electrical stimulation to correct hemiplegic gait for patients after stroke",
+   "doi": "10.3389/fbioe.2023.1246014",
+   "arxiv_id": "",
+   "year": 2023,
+   "venue": "Frontiers in Bioengineering and Biotechnology",
+   "corpus": "宋嵘_合作团队",
+   "thread": "辅助与训练强度",
+   "priority": "P1",
+   "source_team": "12 宋嵘 LIST P1",
+   "local_fulltext": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Dong2023-FrontBioengBiotech：纠正卒中后偏瘫步态的功能性电刺激混合与自适应控制/Dong2023-FrontBioengBiotech：纠正卒中后偏瘫步态的功能性电刺激混合与自适应控制.pdf",
+   "version_note": "FES 混合自适应控制纠正偏瘫步态；源清单标注开放获取（PMC10441235），可能无需订阅 ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "assistance",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "Frontiers（出版方开放获取平台）",
+   "landing_url": "https://doi.org/10.3389/fbioe.2023.1246014",
+   "source_records": [
+    "12 宋嵘 LIST P1"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-2fd85fd9",
+   "title": "Practical Multiple Model Switching sEMG Decoders for Motion Intention Description in Rehabilitation Robot Control",
+   "doi": "10.1109/TMRB.2026.3682646",
+   "arxiv_id": "",
+   "year": 2026,
+   "venue": "IEEE Transactions on Medical Robotics and Bionics",
+   "corpus": "宋嵘_合作团队",
+   "thread": "运动理解",
+   "priority": "P1",
+   "source_team": "12 宋嵘 LIST P1",
+   "local_fulltext": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Huang2026-TMRB：用于康复机器人控制的实用多模型无扰切换 sEMG 解码器/Huang2026-TMRB：用于康复机器人控制的实用多模型无扰切换 sEMG 解码器.pdf",
+   "version_note": "该团队 2026 最新方法，多模型无扰切换解码；影响运动理解段基线选择与查新 ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/TMRB.2026.3682646",
+   "source_records": [
+    "12 宋嵘 LIST P1"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-555e7e8f",
+   "title": "Stroke-induced alteration in multi-layer information transmission of cortico-motor system during elbow isometric contraction modulated by myoelectric-controlled interfaces",
+   "doi": "10.1088/1741-2552/ac18ae",
+   "arxiv_id": "",
+   "year": 2021,
+   "venue": "Journal of Neural Engineering",
+   "corpus": "宋嵘_合作团队",
+   "thread": "双参与",
+   "priority": "P1",
+   "source_team": "12 宋嵘 LIST P1",
+   "local_fulltext": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Jian2021-JNeuralEng：肌电控制接口调节下卒中皮层-运动系统多层信息传递的改变/Jian2021-JNeuralEng：肌电控制接口调节下卒中皮层-运动系统多层信息传递的改变.pdf",
+   "version_note": "卒中皮层-运动系统多层信息传递随肌电接口维度改变；为「可干预参照」范式 ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IOPscience",
+   "landing_url": "https://doi.org/10.1088/1741-2552/ac18ae",
+   "source_records": [
+    "12 宋嵘 LIST P1"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-45f5e368",
+   "title": "An Electromyographic‐Based Control Using Gaussian Mixture Model on an Upper‐Limb Cable‐Driven Rehabilitation Robot",
+   "doi": "10.1002/aisy.202400505",
+   "arxiv_id": "",
+   "year": 2025,
+   "venue": "Advanced Intelligent Systems",
+   "corpus": "宋嵘_合作团队",
+   "thread": "辅助与训练强度",
+   "priority": "P2",
+   "source_team": "12 宋嵘 LIST P2",
+   "local_fulltext": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Zheng2025-AdvIntellSys：基于高斯混合模型的上肢线缆驱动康复机器人肌电控制/Zheng2025-AdvIntellSys：基于高斯混合模型的上肢线缆驱动康复机器人肌电控制.pdf",
+   "version_note": "上肢线缆驱动机器人 GMM 抗疲劳增量校准；C2 重标定触发条件依据 ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "assistance",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "Wiley Online Library",
+   "landing_url": "https://doi.org/10.1002/aisy.202400505",
+   "source_records": [
+    "12 宋嵘 LIST P2"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-2ffc3818",
+   "title": "An Adaptive Hammerstein Model for FES-Induced Torque Prediction Based on Variable Forgetting Factor Recursive Least Squares Algorithm",
+   "doi": "10.1109/TNSRE.2024.3371465",
+   "arxiv_id": "",
+   "year": 2024,
+   "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+   "corpus": "宋嵘_合作团队",
+   "thread": "运动理解",
+   "priority": "P2",
+   "source_team": "12 宋嵘 LIST P2",
+   "local_fulltext": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Yang2024-TNSRE：基于变遗忘因子递归最小二乘的自适应 Hammerstein FES 力矩预测模型/Yang2024-TNSRE：基于变遗忘因子递归最小二乘的自适应 Hammerstein FES 力矩预测模型.pdf",
+   "version_note": "FES 诱发力矩的 Hammerstein 在线预测，真实辅助下的力矩模型 ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/TNSRE.2024.3371465",
+   "source_records": [
+    "12 宋嵘 LIST P2"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-f466aa90",
+   "title": "Trajectory Deformation-Based Multi-Modal Adaptive Compliance Control for a Wearable Lower Limb Rehabilitation Robot",
+   "doi": "10.1109/TNSRE.2023.3348332",
+   "arxiv_id": "",
+   "year": 2024,
+   "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+   "corpus": "宋嵘_合作团队",
+   "thread": "辅助与训练强度",
+   "priority": "P2",
+   "source_team": "12 宋嵘 LIST P2",
+   "local_fulltext": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Zhou2024-TNSRE：面向可穿戴下肢康复机器人的轨迹变形多模态自适应柔顺控制/Zhou2024-TNSRE：面向可穿戴下肢康复机器人的轨迹变形多模态自适应柔顺控制.pdf",
+   "version_note": "人主导/机器人主导/软停三模式，按能力调辅助的范式 ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "assistance",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/TNSRE.2023.3348332",
+   "source_records": [
+    "12 宋嵘 LIST P2"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-4073fc7c",
+   "title": "Voluntary Control of an Ankle Joint Exoskeleton by Able-Bodied Individuals and Stroke Survivors Using EMG-Based Admittance Control Scheme",
+   "doi": "10.1109/TBME.2020.3012296",
+   "arxiv_id": "",
+   "year": 2021,
+   "venue": "IEEE Transactions on Biomedical Engineering",
+   "corpus": "宋嵘_合作团队",
+   "thread": "辅助与训练强度",
+   "priority": "P2",
+   "source_team": "12 宋嵘 LIST P2",
+   "local_fulltext": "01_参考论文/康复辅助/宋嵘_辅助与训练强度/Zhuang2021-TBME：健康人与卒中患者用肌电导纳控制踝关节外骨骼/Zhuang2021-TBME：健康人与卒中患者用肌电导纳控制踝关节外骨骼.pdf",
+   "version_note": "踝外骨骼 EMG 导纳主动控制比例，健康+卒中混编 ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "assistance",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/TBME.2020.3012296",
+   "source_records": [
+    "12 宋嵘 LIST P2"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-b04e6000",
+   "title": "Modeling Ankle Torque and Stiffness Induced by Functional Electrical Stimulation",
+   "doi": "10.1109/TNSRE.2020.3042221",
+   "arxiv_id": "",
+   "year": 2020,
+   "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+   "corpus": "宋嵘_合作团队",
+   "thread": "运动理解",
+   "priority": "P3",
+   "source_team": "12 宋嵘 LIST P3",
+   "local_fulltext": "12_宋嵘_合作团队/papers/运动理解/Li2020-TNSRE：功能性电刺激诱导的踝关节力矩与刚度建模/Li2020-TNSRE：功能性电刺激诱导的踝关节力矩与刚度建模.pdf",
+   "version_note": "FES 诱发踝力矩与刚度建模，补覆盖密度 ｜2026-10-09 已取得原文并转为带图英文 md；2026-10-09 路径随 12_ 目录改版更新为 <作者><年>-<刊>：<中文题名>/ 版式。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/TNSRE.2020.3042221",
+   "source_records": [
+    "12 宋嵘 LIST P3"
+   ],
+   "kind": "paper",
+   "sha256": "46449551a5a21bc8fb02709ec73d908dbe12fa8ed0fdc88eb520c871fb793496"
+  },
+  {
+   "id": "DL-82faa637",
+   "title": "Human Motion Intent Description Based on Bumpless Switching Mechanism for Rehabilitation Robot",
+   "doi": "10.1109/TNSRE.2021.3066592",
+   "arxiv_id": "",
+   "year": 2021,
+   "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+   "corpus": "宋嵘_合作团队",
+   "thread": "运动理解",
+   "priority": "P3",
+   "source_team": "12 宋嵘 LIST P3",
+   "local_fulltext": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Huang2021-TNSRE：基于无扰切换机制的康复机器人人体运动意图描述/Huang2021-TNSRE：基于无扰切换机制的康复机器人人体运动意图描述.pdf",
+   "version_note": "康复机器人运动意图描述的无扰切换机制 ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/TNSRE.2021.3066592",
+   "source_records": [
+    "12 宋嵘 LIST P3"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-5e148075",
+   "title": "Continuous Description of Human 3D Motion Intent Through Switching Mechanism",
+   "doi": "10.1109/TNSRE.2019.2949203",
+   "arxiv_id": "",
+   "year": 2020,
+   "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+   "corpus": "宋嵘_合作团队",
+   "thread": "运动理解",
+   "priority": "P3",
+   "source_team": "12 宋嵘 LIST P3",
+   "local_fulltext": "01_参考论文/运动理解/宋嵘_意图解码与力矩模型/Huang2020-TNSRE：通过切换机制连续描述人体三维运动意图/Huang2020-TNSRE：通过切换机制连续描述人体三维运动意图.pdf",
+   "version_note": "三维运动意图的切换机制连续描述 ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/TNSRE.2019.2949203",
+   "source_records": [
+    "12 宋嵘 LIST P3"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-a16577bf",
+   "title": "Modulating and restoring inter-muscular coordination in stroke patients using two-dimensional myoelectric computer interface: a cross-sectional and longitudinal study",
+   "doi": "10.1088/1741-2552/abc29a",
+   "arxiv_id": "",
+   "year": 2021,
+   "venue": "Journal of Neural Engineering",
+   "corpus": "宋嵘_合作团队",
+   "thread": "双参与",
+   "priority": "P3",
+   "source_team": "12 宋嵘 LIST P3",
+   "local_fulltext": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Jian2021-JNeuralEng：用二维肌电接口调制并恢复卒中患者的肌间协调/Jian2021-JNeuralEng：用二维肌电接口调制并恢复卒中患者的肌间协调.pdf",
+   "version_note": "二维肌电接口调制与恢复卒中患者肌间协调；共收缩/代偿分离的候选证据 ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IOPscience",
+   "landing_url": "https://doi.org/10.1088/1741-2552/abc29a",
+   "source_records": [
+    "12 宋嵘 LIST P3"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-6ae31a72",
+   "title": "Phase-Dependent Modulation of Muscle Activity and Intermuscular Coupling During Walking in Patients After Stroke",
+   "doi": "10.1109/TNSRE.2023.3238758",
+   "arxiv_id": "",
+   "year": 2023,
+   "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+   "corpus": "宋嵘_合作团队",
+   "thread": "双参与",
+   "priority": "P3",
+   "source_team": "12 宋嵘 LIST P3",
+   "local_fulltext": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Li2023-TNSRE：卒中患者步行中肌电活动与肌间耦合的相位依赖调制/Li2023-TNSRE：卒中患者步行中肌电活动与肌间耦合的相位依赖调制.pdf",
+   "version_note": "卒中步行中肌电活动与肌间耦合的相位依赖调制 ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/TNSRE.2023.3238758",
+   "source_records": [
+    "12 宋嵘 LIST P3"
+   ],
+   "kind": "paper"
+  },
+  {
+   "id": "DL-b8524a84",
+   "title": "Investigating the Stroke- and Aging-Related Changes in Global and Instantaneous Intermuscular Coupling Using Cross-Fuzzy Entropy",
+   "doi": "10.1109/tnsre.2021.3101615",
+   "arxiv_id": "",
+   "year": 2021,
+   "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+   "corpus": "宋嵘_合作团队",
+   "thread": "双参与",
+   "priority": "P3",
+   "source_team": "12 宋嵘 LIST P3",
+   "local_fulltext": "01_参考论文/整合系统/宋嵘_双参与与肌间耦合/Tian2021-TNSRE：用 Cross-Fuzzy Entropy 研究卒中与老龄相关的全局与瞬时肌间耦合变化/Tian2021-TNSRE：用 Cross-Fuzzy Entropy 研究卒中与老龄相关的全局与瞬时肌间耦合变化.pdf",
+   "version_note": "⚠️ DOI 纠正：源清单登记的 10.1109/TNSRE.2021.3079572 在 Crossref 与 doi.org 均不存在（404），经题名检索确认真实 DOI 为本条；按纠正后的 DOI 取件 ｜2026-10-08 已取得原文并归位，英文结构化抽取见同名 _抽取_en.md（含图）。",
+   "screening": "included",
+   "index_reference": null,
+   "role": "understanding",
+   "include_reason": "纳入本轮链路研究；此前因反爬/非OA/未取件而无全文，现已可取",
+   "needs_fulltext": true,
+   "database": "IEEE Xplore",
+   "landing_url": "https://doi.org/10.1109/tnsre.2021.3101615",
+   "source_records": [
+    "12 宋嵘 LIST P3"
+   ],
+   "kind": "paper"
+  }
+ ],
+ "legacy_screening": [
+  {
+   "title": "Wrist kinematics differ in expert and novice tennis players performing the backhand stroke: Implications for tennis elbow",
+   "doi": "10.1016/0021-9290(94)90062-0",
+   "decision": "待身份去重/范围筛选，不自动进入用户待下载清单",
+   "reason": "旧线程归属不等于新目标必须取得全文"
+  },
+  {
+   "title": "Performance-based assistance control for robot-mediated upper-limbs rehabilitation",
+   "doi": "10.1016/j.mechatronics.2022.102919",
+   "decision": "待身份去重/范围筛选，不自动进入用户待下载清单",
+   "reason": "旧线程归属不等于新目标必须取得全文"
+  },
+  {
+   "title": "Kinematics and Kinetics of Shoulder Complex, Elbow, and Wrist",
+   "doi": "10.1007/978-981-16-4991-2_8",
+   "decision": "待身份去重/范围筛选，不自动进入用户待下载清单",
+   "reason": "旧线程归属不等于新目标必须取得全文"
+  },
+  {
+   "title": "Motor compensation and recovery for reaching in stroke patients",
+   "doi": "10.1034/j.1600-0404.2003.00021.x",
+   "decision": "待身份去重/范围筛选，不自动进入用户待下载清单",
+   "reason": "旧线程归属不等于新目标必须取得全文"
+  },
+  {
+   "title": "Thoracic position effect on shoulder range of motion, strength, and three-dimensional scapular kinematics",
+   "doi": "10.1016/s0003-9993(99)90088-6",
+   "decision": "待身份去重/范围筛选，不自动进入用户待下载清单",
+   "reason": "旧线程归属不等于新目标必须取得全文"
+  }
+ ],
+ "search_screening": [
+  {
+   "query_id": "S1_understanding",
+   "title": "Effects of Virtual Reality-Based Intervention Combined With Conventional Therapy on Upper-Limb Function in Children With Hemiplegic Cerebral Palsy: Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+   "doi": "10.2196/98694",
+   "first_publication_date": "2026-08-26",
+   "pmid": "42647858",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Evaluation of an intensive, private, community, upper limb rehabilitation program for people with chronic stroke: a mixed methods case series.",
+   "doi": "10.3389/fresc.2026.1809550",
+   "first_publication_date": "2026-06-12",
+   "pmid": "42367676",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Feasibility of the Virtual Peg Insertion Test to assess upper limb function in Parkinson’s Disease: A longitudinal pilot study",
+   "doi": "10.21203/rs.3.rs-9657734/v1",
+   "first_publication_date": "2026-06-19",
+   "pmid": "PPR1255800",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Finger-Equipped Electrode Electrical Stimulation for Severe Upper-Limb Paresis in the Acute Phase of Stroke: A Retrospective Case Series.",
+   "doi": "10.7759/cureus.93838",
+   "first_publication_date": "2025-10-04",
+   "pmid": "41189846",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Upper-Limb Kinematic Variables are correlated with Fugl-Meyer Assessment Sub Scales During a Hand-to-Mouth Functional Task in Post-Stroke Individuals",
+   "doi": "10.21203/rs.3.rs-8270137/v1",
+   "first_publication_date": "2025-12-16",
+   "pmid": "PPR1134630",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Towards routine biomechanical data collection in stroke rehabilitation: a usability comparison of IMU and markerless motion capture systems for functional upper-limb assessments.",
+   "doi": "10.1186/s12984-026-02075-7",
+   "first_publication_date": "2026-07-07",
+   "pmid": "42415139",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Measuring motor intent for BCI control-A comparative analysis of signal quality of simultaneously recorded vECoG and scalp EEG.",
+   "doi": "10.1088/1741-2552/ae9eef",
+   "first_publication_date": "2026-09-17",
+   "pmid": "42750660",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Sensor Inputs and Closed-Loop Neuromodulation in Spinal Cord Injury: From Animal Models to Clinical Translation.",
+   "doi": "10.3390/s26144480",
+   "first_publication_date": "2026-07-15",
+   "pmid": "42515364",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "From Metrics to Meaning in Neurological Rehabilitation: Clinicians' Perspectives on Digital Metrics of Upper Limb Functioning-A Focus Group Study.",
+   "doi": "10.2196/87339",
+   "first_publication_date": "2026-06-24",
+   "pmid": "42341326",
+   "decision": "included seed",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Early Upper Limb Function in Infants Under Three Months: Associations with Shoulder Biomechanics and General Movement Patterns.",
+   "doi": "10.3390/pediatric17060131",
+   "first_publication_date": "2025-12-03",
+   "pmid": "41441316",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Relationship between adjustability of grasping force and upper limb/hand function in individuals with cerebrovascular disorders.",
+   "doi": "10.1038/s41598-026-38384-z",
+   "first_publication_date": "2026-02-04",
+   "pmid": "41639569",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Surface electromyography evaluation for decoding hand motor intent in children with congenital upper limb deficiency.",
+   "doi": "10.1038/s41598-024-82519-z",
+   "first_publication_date": "2024-12-30",
+   "pmid": "39738577",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Targeted Muscle Reinnervation for Intuitive Prosthetic Control.",
+   "doi": "10.1002/mus.70340",
+   "first_publication_date": "2026-07-07",
+   "pmid": "42415501",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Wearable robotic device for upper limb recovery and predictive algorithms to emPOWER the rehabilitation of stroke survivors: a protocol of safety and RCT study (POWER).",
+   "doi": "10.3389/fneur.2026.1858025",
+   "first_publication_date": "2026-09-14",
+   "pmid": "42807228",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Pilot biomechanical study of complex upper-limb movements in patients with RSA using inertial sensors: Feasibility of sport-specific gestures.",
+   "doi": "10.1177/17585732261419033",
+   "first_publication_date": "2026-02-10",
+   "pmid": "41685344",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "The Effects of Varying Intensities of Unilateral Handgrip Fatigue on Bilateral Movement.",
+   "doi": "10.3390/brainsci16010047",
+   "first_publication_date": "2025-12-29",
+   "pmid": "41594767",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "A Novel Feedback-Based Compensation Reduction With Upper Body Reconstruction for Upper-Limb Rehabilitation.",
+   "doi": "10.1109/tnsre.2026.3689896",
+   "first_publication_date": "2026-01-01",
+   "pmid": "42081413",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Evaluation of s-EMG Sensor Locations for Upper-Limb Compensatory Movement Detection.",
+   "doi": "10.1109/tnsre.2026.3663991",
+   "first_publication_date": "2026-01-01",
+   "pmid": "41678485",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Towards Routine Biomechanical Data Collection in Neurorehabilitation: A Usability Comparison of IMU and Markerless Motion Capture Systems for Upper-Limb Assessments",
+   "doi": "10.21203/rs.3.rs-8711156/v1",
+   "first_publication_date": "2026-02-17",
+   "pmid": "PPR1156145",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Outcomes of a Clinic-Based PCIMT Program on Upper Extremity Movement Quality.",
+   "doi": "10.5014/ajot.2026.051327",
+   "first_publication_date": "2026-03-01",
+   "pmid": "41631744",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Closed-loop error damping in human BCI using pre-error motor cortex activity",
+   "doi": "10.64898/2026.02.25.707999",
+   "first_publication_date": "2026-02-26",
+   "pmid": "PPR1222227",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Lower limb motor effects of DBS neurofeedback in Parkinson's disease assessed through IMU-based UPDRS movement quality metrics.",
+   "doi": "10.1038/s41598-025-28378-8",
+   "first_publication_date": "2025-11-27",
+   "pmid": "41310106",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Evaluating upper limb movement smoothness metrics derived from markerless 3D motion tracking in children with neurological disorders.",
+   "doi": "10.1186/s12984-026-02020-8",
+   "first_publication_date": "2026-05-21",
+   "pmid": "42169003",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Effects of Upper Limb Robot Therapy with Action Observation Training on Subacute Stroke Patients: A Randomised Controlled Trial.",
+   "doi": "10.1080/00222895.2025.2497376",
+   "first_publication_date": "2025-04-28",
+   "pmid": "40658116",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Constraint-Induced Movement Therapy in the Rehabilitation of Adults After Stroke: An Umbrella Review.",
+   "doi": "10.3390/jcm15062451",
+   "first_publication_date": "2026-03-23",
+   "pmid": "41899381",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Magnetic NeuroRing: a portable adaptive brain-computer interface for real-time transcranial magnetic stimulation in post-stroke motor rehabilitation.",
+   "doi": "10.1038/s44385-025-00055-5",
+   "first_publication_date": "2026-01-16",
+   "pmid": "42032248",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "How few channels suffice? A hierarchical validation framework for minimal-channel wearable sEMG in upper-limb rehabilitation gesture recognition.",
+   "doi": "10.1186/s12984-026-02039-x",
+   "first_publication_date": "2026-06-12",
+   "pmid": "42286700",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Cortically Interfaced Human Avatar Enables Remote Volitional Grasp and Shared Discriminative Touch",
+   "doi": "10.1101/2025.09.21.25336267",
+   "first_publication_date": "2025-09-22",
+   "pmid": "PPR1088492",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "A Novel Non-Euclidean Adaptive Descriptor for Limb Motion Intent Decoding in EMG-Pattern Recognition System.",
+   "doi": "10.1109/embc58623.2025.11252991",
+   "first_publication_date": "2025-07-01",
+   "pmid": "41336351",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S1_understanding",
+   "title": "Sustained changes in upper-limb joint synergies using a robot-assisted, implicit training environment",
+   "doi": "10.21203/rs.3.rs-9270731/v1",
+   "first_publication_date": "2026-05-29",
+   "pmid": "PPR1241817",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Model Predictive Control-Based Assist-as-Needed Strategy for Reducing Motor Slacking in Robot-Assisted Rehabilitation.",
+   "doi": "10.3390/s26092740",
+   "first_publication_date": "2026-04-28",
+   "pmid": "42122463",
+   "decision": "included seed",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Intelligent Robot-Aided, Task-Oriented Physiotherapy Method for Upper Limb Rehabilitation: Development and Usability Study.",
+   "doi": "10.2196/92898",
+   "first_publication_date": "2026-09-01",
+   "pmid": "42687798",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Assist-as-Needed Impedance and Admittance Switching Control for an Upper-Limb Compliant Rehabilitation Orthosis.",
+   "doi": "10.1109/embc58623.2025.11251751",
+   "first_publication_date": "2025-07-01",
+   "pmid": "41336439",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Personalized Adaptive Assistance With Reinforcement Learning Control Enhances Engagement, Performance, and Retention in Robot-Assisted Arm-Reaching Exercises.",
+   "doi": "10.1109/tnsre.2025.3650096",
+   "first_publication_date": "2026-01-01",
+   "pmid": "41474998",
+   "decision": "included seed",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "A greedy assist-as-needed controller for end-effect upper limb rehabilitation robot based on 3-DOF potential field constraints.",
+   "doi": "10.3389/frobt.2024.1404814",
+   "first_publication_date": "2024-10-14",
+   "pmid": "39479563",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Patient's Healthy-Limb Motion Characteristic-Based Assist-As-Needed Control Strategy for Upper-Limb Rehabilitation Robots.",
+   "doi": "10.3390/s24072082",
+   "first_publication_date": "2024-03-25",
+   "pmid": "38610293",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Sensor-driven control strategies for post-stroke shoulder rehabilitation exoskeletons: A systematic review.",
+   "doi": "10.1016/j.mex.2025.103648",
+   "first_publication_date": "2025-09-28",
+   "pmid": "41140624",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Patient’s Healthy Limb Motion Characteristics Based Assist-as-Needed Control Strategy for Upper-Limb Rehabilitation Robot",
+   "doi": "10.20944/preprints202401.1235.v1",
+   "first_publication_date": "2024-01-16",
+   "pmid": "PPR788571",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Haptic interaction with a human partner for ankle training in chronic stroke: a pilot study.",
+   "doi": "10.1186/s12984-025-01840-4",
+   "first_publication_date": "2025-12-18",
+   "pmid": "41413829",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Assistance level quantification-based human-robot interaction space reshaping for rehabilitation training.",
+   "doi": "10.3389/fnbot.2023.1161007",
+   "first_publication_date": "2023-05-02",
+   "pmid": "37205055",
+   "decision": "included seed",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Haptic interaction with a human partner for ankle training in chronic stroke: a pilot study",
+   "doi": "10.21203/rs.3.rs-7376392/v1",
+   "first_publication_date": "2025-08-20",
+   "pmid": "PPR1069976",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Effects of an assist-as-needed equipped Tenodesis-Induced-Grip Exoskeleton Robot (TIGER) on upper limb function in patients with chronic stroke.",
+   "doi": "10.1186/s12984-023-01298-2",
+   "first_publication_date": "2024-01-03",
+   "pmid": "38173006",
+   "decision": "included seed",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Using Robot-Based Variables during Upper Limb Robot-Assisted Training in Subacute Stroke Patients to Quantify Treatment Dose.",
+   "doi": "10.3390/s22082989",
+   "first_publication_date": "2022-04-13",
+   "pmid": "35458975",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Classification of error-related potentials evoked during stroke rehabilitation training.",
+   "doi": "10.1088/1741-2552/ac1d32",
+   "first_publication_date": "2021-09-02",
+   "pmid": "34384052",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Does assist-as-needed upper limb robotic therapy promote participation in repetitive activity-based motor training in sub-acute stroke patients with severe paresis?",
+   "doi": "10.3233/nre-171454",
+   "first_publication_date": "2017-01-01",
+   "pmid": "28527224",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Prediction of Passive Torque on Human Shoulder Joint Based on BPANN.",
+   "doi": "10.1155/2020/8839791",
+   "first_publication_date": "2020-08-26",
+   "pmid": "32908611",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "A Human-Robot Cooperative and Personalized Compliant Joint Controller for Upper-Limb Rehabilitation Robots: The Elbow Joint Validation",
+   "doi": "10.21203/rs.3.rs-595139/v1",
+   "first_publication_date": "2021-06-18",
+   "pmid": "PPR358811",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Influence of muscle fatigue on electromyogram-kinematic correlation during robot-assisted upper limb training.",
+   "doi": "10.1177/2055668320903014",
+   "first_publication_date": "2020-01-01",
+   "pmid": "32206337",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "A Greedy Assist-as-Needed Controller for Upper Limb Rehabilitation.",
+   "doi": "10.1109/tnnls.2019.2892157",
+   "first_publication_date": "2019-02-05",
+   "pmid": "30736008",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Kinematic Redundancy Analysis during Goal-Directed Motion for Trajectory Planning of an Upper-Limb Exoskeleton Robot.",
+   "doi": "10.1109/embc.2019.8857716",
+   "first_publication_date": "2019-07-01",
+   "pmid": "31947042",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Upper limb robotic rehabilitation for chronic stroke survivors: a single-group preliminary study.",
+   "doi": "10.1589/jpts.30.580",
+   "first_publication_date": "2018-04-20",
+   "pmid": "29706710",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Kinematic Parameters for Tracking Patient Progress during Upper Limb Robot-Assisted Rehabilitation: An Observational Study on Subacute Stroke Subjects.",
+   "doi": "10.1155/2019/4251089",
+   "first_publication_date": "2019-10-21",
+   "pmid": "31772604",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Dynamic Modeling and Interactive Performance of PARM: A Parallel Upper-Limb Rehabilitation Robot Using Impedance Control for Patients after Stroke.",
+   "doi": "10.1155/2018/8647591",
+   "first_publication_date": "2018-04-05",
+   "pmid": "29850004",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Online adaptive assistance control in robot-based neurorehabilitation therapy.",
+   "doi": "10.1109/icorr.2017.8009318",
+   "first_publication_date": "2017-07-01",
+   "pmid": "28813890",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Using robot fully assisted functional movements in upper-limb rehabilitation of chronic stroke patients: preliminary results.",
+   "doi": "10.23736/s1973-9087.16.04407-5",
+   "first_publication_date": "2016-11-09",
+   "pmid": "27827517",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Effects of Assist-As-Needed Upper Extremity Robotic Therapy after Incomplete Spinal Cord Injury: A Parallel-Group Controlled Trial.",
+   "doi": "10.3389/fnbot.2017.00026",
+   "first_publication_date": "2017-06-13",
+   "pmid": "28659784",
+   "decision": "included seed",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "The eWrist - A wearable wrist exoskeleton with sEMG-based force control for stroke rehabilitation.",
+   "doi": "10.1109/icorr.2017.8009334",
+   "first_publication_date": "2017-07-01",
+   "pmid": "28813906",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Performance-based robotic assistance during rhythmic arm exercises.",
+   "doi": "10.1186/s12984-016-0189-7",
+   "first_publication_date": "2016-09-13",
+   "pmid": "27623806",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Robot-aided therapy on the upper limb of subacute and chronic stroke patients: a biomechanical approach.",
+   "doi": "10.1109/icorr.2011.5975422",
+   "first_publication_date": "2011-06-01",
+   "pmid": "22275623",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S2_assistance",
+   "title": "Comparison of three-dimensional, assist-as-needed robotic arm/hand movement training provided with Pneu-WREX to conventional tabletop therapy after chronic stroke.",
+   "doi": "10.1097/phm.0b013e31826bce79",
+   "first_publication_date": "2012-11-01",
+   "pmid": "23080039",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Personalized Adaptive Assistance With Reinforcement Learning Control Enhances Engagement, Performance, and Retention in Robot-Assisted Arm-Reaching Exercises.",
+   "doi": "10.1109/tnsre.2025.3650096",
+   "first_publication_date": "2026-01-01",
+   "pmid": "41474998",
+   "decision": "included seed",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Soft Wearable Robot Adaptive to Individual Shoulder Differences for Respiratory Rehabilitation.",
+   "doi": "10.1109/embc58623.2025.11254276",
+   "first_publication_date": "2025-07-01",
+   "pmid": "41337043",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Effects of Visual and Verbal Feedback on Active Patient Participation During Robot-Assisted Gait Training.",
+   "doi": "10.1109/icorr66766.2025.11063211",
+   "first_publication_date": "2025-05-01",
+   "pmid": "40644238",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Effective unilateral/bilateral robot-assisted training for upper limb motor function rehabilitation: a cross-sectional study.",
+   "doi": "10.3389/fnhum.2025.1571624",
+   "first_publication_date": "2025-06-18",
+   "pmid": "40606491",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Socially assistive robots in child healthcare: evaluating internal and external emotion regulation interventions.",
+   "doi": "10.3389/frobt.2025.1628795",
+   "first_publication_date": "2025-11-07",
+   "pmid": "41280717",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Multimodal engagement estimation in paediatric robot-assisted gait training: integrating physiological sensing and biomechanical interaction.",
+   "doi": "10.1186/s12984-026-02050-2",
+   "first_publication_date": "2026-06-18",
+   "pmid": "42316377",
+   "decision": "included seed",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Reducing Upper-Limb Muscle Effort with Model-Based Gravity Compensation During Robot-Assisted Movement.",
+   "doi": "10.3390/s25103032",
+   "first_publication_date": "2025-05-12",
+   "pmid": "40431827",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Assist-as-Needed Control of a Shoulder Rehabilitation Robot Using a Virtual Biomechanical Model and Online Stiffness Adaptation.",
+   "doi": "10.1109/tnsre.2025.3579533",
+   "first_publication_date": "2025-01-01",
+   "pmid": "40512637",
+   "decision": "included seed",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "A greedy assist-as-needed controller for end-effect upper limb rehabilitation robot based on 3-DOF potential field constraints.",
+   "doi": "10.3389/frobt.2024.1404814",
+   "first_publication_date": "2024-10-14",
+   "pmid": "39479563",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Social robots as conversational catalysts: Enhancing long-term human-human interaction at home.",
+   "doi": "10.1126/scirobotics.adk3307",
+   "first_publication_date": "2025-03-12",
+   "pmid": "40073083",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Assist-as-needed Hip Exoskeleton Control for Gait Asymmetry Correction via Human-in-the-loop Optimization.",
+   "doi": "10.1109/tbme.2026.3660874",
+   "first_publication_date": "2026-02-03",
+   "pmid": "41632673",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Promoting active participation in robot-aided rehabilitation via machine learning and impedance control.",
+   "doi": "10.3389/fdgth.2025.1559796",
+   "first_publication_date": "2025-02-21",
+   "pmid": "40060032",
+   "decision": "included seed",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Force/position-based velocity control strategy for the lower limb rehabilitation robot during active training: design and validation.",
+   "doi": "10.3389/fbioe.2023.1335071",
+   "first_publication_date": "2024-01-08",
+   "pmid": "38260744",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Engagement, motivation, or sustained attention? Rethinking the effects of technology in autism.",
+   "doi": "10.3389/fdgth.2026.1802286",
+   "first_publication_date": "2026-04-17",
+   "pmid": "42078178",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Voluntary Assist-as-Needed Controller for an Ankle Power-Assist Rehabilitation Robot.",
+   "doi": "10.1109/tbme.2022.3228070",
+   "first_publication_date": "2023-05-19",
+   "pmid": "37015472",
+   "decision": "included seed",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Effectiveness and Adherence of a Robot-Enhanced Imitation Therapy in Autistic Children.",
+   "doi": "10.1109/icorr66766.2025.11062960",
+   "first_publication_date": "2025-05-01",
+   "pmid": "40644262",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "[Research on mode adjustment control strategy of upper limb rehabilitation robot based on fuzzy recognition of interaction force].",
+   "doi": "10.7507/1001-5515.202207018",
+   "first_publication_date": "2024-02-01",
+   "pmid": "38403608",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Non-pharmacological interventions for gait rehabilitation in children with neurodisability - A bibliometric and visualization analysis.",
+   "doi": "10.26444/aaem/212385",
+   "first_publication_date": "2025-11-07",
+   "pmid": "41906502",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Specific Instructions Are Important: A Cross-sectional Study on Device Parameters and Instruction Types While Walking With a Robot in Children and Adolescents.",
+   "doi": "10.1097/phm.0000000000002472",
+   "first_publication_date": "2024-02-29",
+   "pmid": "38422409",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Integrating subject-specific workspace constraint and performance-based control strategy in robot-assisted rehabilitation.",
+   "doi": "10.3389/fnins.2024.1473755",
+   "first_publication_date": "2024-10-30",
+   "pmid": "39539493",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "A rehabilitation robot control framework with adaptation of training tasks and robotic assistance.",
+   "doi": "10.3389/fbioe.2023.1244550",
+   "first_publication_date": "2023-10-02",
+   "pmid": "37849981",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Effectiveness of Intelligent Control Strategies in Robot-Assisted Rehabilitation-A Systematic Review.",
+   "doi": "10.1109/tnsre.2024.3396065",
+   "first_publication_date": "2024-05-10",
+   "pmid": "38696295",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Monitoring Active Patient Participation During Robotic Rehabilitation: Comparison Between a Robot-Based Metric and an EMG-Based Metric.",
+   "doi": "10.1109/tnsre.2023.3323390",
+   "first_publication_date": "2023-10-26",
+   "pmid": "37844007",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Testing robot-based assist-as-needed therapy for improving active participation of a patient during early neurorehabilitation: a case study.",
+   "doi": "10.1109/icorr55369.2022.9896495",
+   "first_publication_date": "2022-07-01",
+   "pmid": "36176105",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "A systematic investigation of detectors for low signal-to-noise ratio EMG signals",
+   "doi": "10.12688/f1000research.132382.4",
+   "first_publication_date": "2024-04-18",
+   "pmid": "PPR839020",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Eye-tracking metrics as a new tool to assess patient's adherence to robot-assisted gait training.",
+   "doi": "10.1109/embc58623.2025.11253525",
+   "first_publication_date": "2025-07-01",
+   "pmid": "41336196",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Immersive Virtual Reality during Robot-Assisted Gait Training: Validation of a New Device in Stroke Rehabilitation.",
+   "doi": "10.3390/medicina58121805",
+   "first_publication_date": "2022-12-07",
+   "pmid": "36557007",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Research on a New Rehabilitation Robot for Balance Disorders.",
+   "doi": "10.1109/tnsre.2023.3312692",
+   "first_publication_date": "2023-10-16",
+   "pmid": "37676800",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "Overground Walking With a Transparent Exoskeleton Shows Changes in Spatiotemporal Gait Parameters.",
+   "doi": "10.1109/jtehm.2023.3323381",
+   "first_publication_date": "2023-10-10",
+   "pmid": "38088995",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S3_integration",
+   "title": "A Systematic Investigation of Detectors for Low Signal-to-Noise Ratio EMG Signals",
+   "doi": "10.1101/2023.03.06.23286833",
+   "first_publication_date": "2023-03-06",
+   "pmid": "PPR627117",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Clinical efficacy and cortical network modulation of a multimodal sensory feedback upper-limb rehabilitation robot for post-stroke upper-limb recovery: a randomized controlled trial.",
+   "doi": "10.3389/fneur.2026.1820579",
+   "first_publication_date": "2026-09-04",
+   "pmid": "42761004",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Fast occupational upper-limb radiation dose prediction using machine learning and Monte Carlo simulation.",
+   "doi": "10.1088/1361-6498/ae63da",
+   "first_publication_date": "2026-05-14",
+   "pmid": "42025179",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Beta activity reflects change in upper limb activity rather than impairment following high-dose high-intensity upper limb neurorehabilitation in chronic stroke",
+   "doi": "10.64898/2026.03.19.26348794",
+   "first_publication_date": "2026-03-20",
+   "pmid": "PPR1267241",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Stroke survivors' experience using mechanically-assisted devices as a component of their upper limb motor rehabilitation program.",
+   "doi": "10.1080/09638288.2026.2727006",
+   "first_publication_date": "2026-09-15",
+   "pmid": "42741820",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Dose-response effects of transcranial direct current stimulation on upper-limb recovery after stroke: A systematic review and meta-analysis.",
+   "doi": "10.1177/17474930261452617",
+   "first_publication_date": "2026-05-13",
+   "pmid": "42129613",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Exercise intervention improves the modified Barthel index, Berg balance scale, and Fugl-Meyer assessment of upper limb motor function in stroke patients: a systematic review and meta-analysis.",
+   "doi": "10.1186/s13102-026-01764-z",
+   "first_publication_date": "2026-05-22",
+   "pmid": "42174719",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Identifying Gaps in Rehabilitation Strategies for Chronic Stroke: A Systematic Review of Evidence in Patients With and Without Nerve Transfer.",
+   "doi": "10.1177/10538135261454931",
+   "first_publication_date": "2026-07-09",
+   "pmid": "42423505",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "The effect of non-immersive virtual reality on upper limb motor function and activities of daily living in stroke patients: a systematic review and meta-analysis.",
+   "doi": "10.3389/fneur.2026.1822985",
+   "first_publication_date": "2026-06-30",
+   "pmid": "42453809",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Does more rehabilitation lead to better upper limb outcomes after stroke? A systematic review.",
+   "doi": "10.3389/fresc.2026.1753677",
+   "first_publication_date": "2026-03-02",
+   "pmid": "41847569",
+   "decision": "included seed",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Effects of mind-body training on upper-limb function in stroke patients: a multilevel dose-response meta-analysis.",
+   "doi": "10.3389/fmed.2026.1827942",
+   "first_publication_date": "2026-06-12",
+   "pmid": "42369155",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Focal Muscle Vibration for Upper Limb Spasticity After Stroke: A Systematic Review and Meta-Analysis.",
+   "doi": "10.1016/j.apmr.2026.08.011",
+   "first_publication_date": "2026-08-26",
+   "pmid": "42648695",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Safety and efficacy of recombinant botulinum toxin type A (Eveotox®) in patients with post-stroke upper limb spasticity: Results from a Phase Ib/II clinical trial.",
+   "doi": "10.1016/j.toxicon.2026.109225",
+   "first_publication_date": "2026-07-23",
+   "pmid": "42492662",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Muscle-Specific Dosing of OnabotulinumtoxinA in Post-Stroke Upper-Limb Spasticity: A Descriptive Literature Review.",
+   "doi": "10.3390/toxins18040192",
+   "first_publication_date": "2026-04-21",
+   "pmid": "42043056",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Effects of Virtual Reality-Based Intervention Combined With Conventional Therapy on Upper-Limb Function in Children With Hemiplegic Cerebral Palsy: Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+   "doi": "10.2196/98694",
+   "first_publication_date": "2026-08-26",
+   "pmid": "42647858",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Effects of Brain-Computer Interface-Controlled Hand Robot Training on Post-Stroke Recovery of Upper Limb Motor Functions: A Meta-Analysis of Dose-Matched Randomized Controlled Trials.",
+   "doi": "10.3390/brainsci16060552",
+   "first_publication_date": "2026-05-22",
+   "pmid": "42352561",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Home-based therapy for upper limb activity in children and adolescents with unilateral cerebral palsy: systematic review and meta-analysis.",
+   "doi": "10.1080/09638288.2026.2659554",
+   "first_publication_date": "2026-05-08",
+   "pmid": "42104635",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Comparison of Upper Limb Motor Therapy Outcomes in Post-Stroke Patients: A Randomized Controlled Trial of Therapist-Led Versus Robot-Assisted Rehabilitation",
+   "doi": "10.21203/rs.3.rs-8795941/v1",
+   "first_publication_date": "2026-02-27",
+   "pmid": "PPR1159621",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Bridging Research and Practice: A Preliminary Detailed Analysis of Current Upper Limb Occupational Therapy Dose and Content in Publicly Funded Poststroke Rehabilitation.",
+   "doi": "10.1016/j.arrct.2025.100525",
+   "first_publication_date": "2025-09-21",
+   "pmid": "41477074",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Surgical antibiotic prophylaxis in clean elective upper limb soft-tissue surgery in a resource-limited setting: a randomized, double-blind, placebo-controlled trial.",
+   "doi": "10.1080/14787210.2026.2672549",
+   "first_publication_date": "2026-05-18",
+   "pmid": "42139662",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Technology-Assisted Rehabilitation Gym for at-home Training (TARGeT) for stroke survivors: A study protocol for evaluating feasibility, safety, usability, clinical benefit, and costs.",
+   "doi": "10.1371/journal.pone.0355160",
+   "first_publication_date": "2026-09-02",
+   "pmid": "42685043",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "A structural causal model for robot-assisted upper-limb neurorehabilitation.",
+   "doi": "10.3389/fresc.2026.1819379",
+   "first_publication_date": "2026-07-14",
+   "pmid": "42523754",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Silent ascent of injury: Cervical cord involvement in subacute posttraumatic ascending myelopathy.",
+   "doi": "10.25259/sni_467_2026",
+   "first_publication_date": "2026-07-03",
+   "pmid": "42559303",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Motor Outcomes of Robot-Assisted Versus Conventional Occupational Therapy for Upper-Limb Recovery in Subacute Stroke: A Retrospective Cohort Study with Exploratory Neurocognitive Outcomes.",
+   "doi": "10.3390/jcm15093512",
+   "first_publication_date": "2026-05-04",
+   "pmid": "42123246",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Combined activity-based therapy and transcutaneous spinal cord stimulation as an intensification and supplemental approach for upper limb sensorimotor recovery: a randomised controlled trial protocol for in-patients with subacute spinal cord injury.",
+   "doi": "10.1136/bmjopen-2026-117320",
+   "first_publication_date": "2026-08-14",
+   "pmid": "42601092",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "The Impact of Sex on the Median Effective Dose of Dexmedetomidine for Preoperative Sedation in Adults Undergoing Upper Limb Surgery: An Up-and-Down Sequential Allocation Study.",
+   "doi": "10.2147/dddt.s576010",
+   "first_publication_date": "2026-04-29",
+   "pmid": "42089008",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Higher Doses of Intensive Upper Limb Rehabilitation for Moderate to Severe Impairment in Acute, Subacute Stroke: Phase I Dose Escalation Study.",
+   "doi": "10.1177/15459683251338797",
+   "first_publication_date": "2025-06-28",
+   "pmid": "40579997",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Spinal cord stimulation for upper limb motor function in people with chronic post-stroke hemiparesis: a feasibility trial.",
+   "doi": "10.1038/s41591-026-04435-1",
+   "first_publication_date": "2026-06-04",
+   "pmid": "42243548",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Predictors of ultrasound-guided brachial plexus block failure in upper limb surgery: a retrospective cohort study",
+   "doi": "10.21203/rs.3.rs-10351042/v1",
+   "first_publication_date": "2026-07-25",
+   "pmid": "PPR1285538",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Immersive Virtual Reality-Based Rehabilitation for Upper Limb Recovery in Acute and Subacute Stroke Patients: A Feasibility Study.",
+   "doi": "10.1002/pri.70151",
+   "first_publication_date": "2026-01-01",
+   "pmid": "41416487",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S4_dose",
+   "title": "Comparative Evaluation of Post-operative Analgesia Using Visual Analogue Score (VAS) With a Low Dose of Clonidine (0.5 mcg/kg) as an Adjuvant to 0.2% Ropivacaine in Ultrasound-Guided Supraclavicular Block in Upper Limb Surgeries.",
+   "doi": "10.7759/cureus.104270",
+   "first_publication_date": "2026-02-25",
+   "pmid": "41909409",
+   "decision": "retained candidate: not fulltext-screened",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S5_Song",
+   "title": "Voluntary Assist-as-Needed Controller for an Ankle Power-Assist Rehabilitation Robot.",
+   "doi": "10.1109/tbme.2022.3228070",
+   "first_publication_date": "2023-05-19",
+   "pmid": "37015472",
+   "decision": "included seed",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S6_review",
+   "title": "Patient performance assessment methods for upper extremity rehabilitation in assist-as-needed therapy strategies: a comprehensive review.",
+   "doi": "10.1007/s11517-025-03315-z",
+   "first_publication_date": "2025-02-07",
+   "pmid": "39918767",
+   "decision": "included seed",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  },
+  {
+   "query_id": "S6_review",
+   "title": "[Electronic data processing of patient performance assessment and nursing care documentation on the surgical intensive care unit].",
+   "doi": "",
+   "first_publication_date": "1997-01-01",
+   "pmid": "9574438",
+   "decision": "excluded: scope",
+   "source": "EuropePMC_三类检索_简化复试.json",
+   "reason": "有限目的性地图：未逐篇全文纳入者不进入用户取件待办"
+  }
+ ],
+ "notes": [
+  "这是本轮纳入台账，不承诺穷尽；原研究库未移动。",
+  "needs_fulltext表示本研究是否需要全文，不是当前缺件状态；已取得的必需全文仍为true，由生成器实时核对正文身份，避免false让记录被跳过。",
+  "2026-10-10对87条完成原件身份对账（71 PDF/16 XML），修复17条失效路径并回填5条空路径；不改变纳入ID、DOI或研究裁定。逐条SHA/版本例外与复算证据见05_进展日志/2026-10-10_文献台账对账/整理记录.md；不是87篇方法精读或独立复现。",
+  "全文缺失的关键对照不能据摘要推断具体机制或创新空白。",
+  "正式下载判定必须再核对全库及候选文件内容，不能只看该字段。",
+  "2026-10-03用户确认双参与目标，补纳2份心理/游戏化JATS原文；首批53+补核2=55，48本地全文、7缺全文；不新增用户待取件。"
+ ]
+}

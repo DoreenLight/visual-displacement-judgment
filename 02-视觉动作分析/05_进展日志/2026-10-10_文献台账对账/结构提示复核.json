@@ -1,0 +1,210 @@
+{
+  "scope": "最终87条对账.json中简单references正则未匹配的23份PDF；只解释结构线索，不宣称逐页人工审计",
+  "records": [
+    {
+      "id": "L-9dda282a",
+      "sha256": "16013d3771e16f776511cff5b10a87e9e9090982f2c936d76c3ef2a3d7e6c350",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "8 in a neuromuscular population. Journal of Pediatric Orthopaedics, 45(5):294–299, May 2025. [28] Alessandro Panattoni, Francesco Betti, Fabio Gualandi, Giovanni Saggio, Gianluca Costante, and Marco Grimaldi. Hand tracking for clinical applications: Validation of the google mediapipe framework for finger tapping assessment. Biomedical Signal Processing and Control, 96:106603, 2024. [29] Elisa Pantzar-Castilla, Andrea Cereatti, G. Figari, N. Valeri, G. Paolini, U. Della Croce, A. Magnuson, and J. Riad. Knee joint sagittal plane movement in cerebral palsy: a comparative study of 2-dimensional markerless video and 3-dimensional gait analysis. Acta Orthopaedica, 89(6):656–661, Dec 2018. [30] M.L. Pearl, F. Van De Bunt, M. Pearl, et al. Assessing shoulder motion in children: age limitations to mallet and abc loops. Clin Orthop Relat Res, 472(2):740–748, 2014. [31] J. D. Peiffer, K. Shah, I. Djuraskovic, S. Anarwala, K. Abdou, R. Patel, P. Jayabalan, B. Pennicooke, and R. J. Cotton. Portable biomechanics laboratory: Clinically accessible movement analysis from a handheld smartphone. arXiv preprint, 2025. [32] P. A. Pierzchlewicz, C. O. da Silva, R. J. Cotton, and F. H. Sinz. Platypose: Calibrated zero-shot multi-hypothesis 3d human motion estimation, 2024. [33] R. T. Richardson, S. A. Russo, R. S. Chafetz, S. Warshauer, E. Nice, S. H. Kozin, D. A. Zlotolow, and J. G. Richards. Reachable workspace with real-time motion capture feedback to quantify upper extremity function: A study o",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "L-40509a13",
+      "sha256": "d4543acd0dbf30821faa11803f585165eac706fd9d189e53e889340564d7b035",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "of marker placement and significantly reduces costs and application complexity, requiring only a minimal setup with consumer-grade cameras. Our results show promise for clinical application, suggesting that MMC could enable the collection of accurate, precise movement data in routine clinical settings, providing a valuable tool for novel, more precise biomarkers in movement rehabilitation. ACKNOWLEDGMENT We sincerely thank the participants of this study. R EFERENCES [1] G. Kwakkel, N. A. Lannin, K. Borschmann, C. English, M. Ali, L. Churilov, G. Saposnik, C. Winstein, E. E. Van Wegen, S. L. Wolf, J. W. Krakauer, and J. Bernhardt, “Standardized measurement of sensorimotor recovery in stroke trials: Consensus-based core recommendations from the Stroke Recovery and Rehabilitation Roundtable,” International Journal of Stroke, vol. 12, pp. 451–461, July 2017. [2] E. S. Lawrence, C. Coshall, R. Dundas, J. Stewart, A. G. Rudd, R. Howard, . Charles, and D. A. Wolfe, “Estimates of the Prevalence of Acute Stroke Impairments and Disability in a Multiethnic Population,” pp. 1279–1284, 2001. [3] G. Kwakkel, E. E. H. V. Wegen, J. H. Burridge, C. J. Winstein, L. E. H. v. Dokkum, M. A. Murphy, M. F. Levin, and J. W. Krakauer, “Standardized measurement of quality of upper limb movement after stroke: Consensus-based core recommendations from the Second Stroke Recovery and Rehabilitation Roundtable,” International Journal of Stroke, vol. 14, pp. 783–791, Oct. 2019. Publisher: SAGE Publications ",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "L-3390a0e6",
+      "sha256": "06c097dced13b18d6e6d852bd4df2391c7571a371009df7ef0caa296e342a36e",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "parameter. Typical operating points include: a balanced mode with coverage around 0.5 and precision around 0.65, and a conservative mode with coverage around 0.25 and precision close to 0.80. These simulations show that post-hoc calibration does not increase raw accuracy but is crucial for making confidence thresholds behave as meaningful, fold-stable safety parameters in a closed-loop setting. V. C ONCLUSION The central claim of this paper is that probability reliability is more critical than raw accuracy for safe assistive triggering. On EGTEA Gaze+, our lightweight multimodal GRU achieved ≈ 40% Top 1 accuracy, similar to a comparison Transformer, indicating that short horizon ambiguity in the data rather than model capacity is the primary bottleneck. Modality ablations further show that hand and scene features dominate prediction, while the gaze channel provides a moderate boost and degrades gracefully when removed. Raw model confidence is, however, severely overconfident (ECE ≈ 0.40). Post hoc calibration with Isotonic Regression reduces this miscalibration to 0.04 without affecting accuracy, transforming the confidence score into a trustworthy control signal. Selective prediction driven by this calibrated confidence consistently improves the accuracy–coverage curve, validating the confidence driven ACT/H OLD gate. From a safety perspective, the calibrated gate directly addresses the balance between false assists and missed assists. Aligning numerical scores with empirica",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "L-e3ac3705",
+      "sha256": "9bd1a904e630744155368b2eaa7bdfbf149529b889d88920930d87e0c4507084",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "prosthetic control, making our method suitable for practical rehabilitation systems. Despite the promising results, the proposed method currently has some limitations. The model was validated and run on a GPU and had not yet been implemented on portable hardware, such as embedded systems or edge devices. Deploying the model on lightweight, portable devices would make it more suitable for home-based rehabilitation applications. Additionally, this method has been validated only for simple periodic movements of the elbow joint, which involves relatively few muscles. It remains unclear whether this approach can achieve comparable performance in situations involving other joints with more and redundant muscles, or if the movements become random or less structured. Exploring the model’s effectiveness in these more complex scenarios presents an important direction for future research. [4] L. Song, C. Ju, H. Cui et al., ”Research on Control Strategy Technology of Upper Limb Exoskeleton Robots: Review,” Machines, vol. 13, no. 3, Art. no. 3, Mar. 2025. [5] S. P. Sitole and F. C. Sup, “Continuous Prediction of Human Joint Mechanics Using EMG Signals: A Review of Model-Based and Model-Free Approaches,” IEEE Trans. Med. Robot. Bionics, vol. 5, pp. 528-546, 2023. [6] Z. Wei, Z.Q. Zhang and S.Q. Xie, “Continuous Motion Intention Prediction Using sEMG for Upper-Limb Rehabilitation: A Systematic Review of Model-Based and Model-Free Approaches,” IEEE Trans. Neural Syst. Rehabil. Eng., vol. 32,",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "L-e18da72b",
+      "sha256": "daa540748b21da2fb4197c28affdbdf26c2425bcda1be2807267bc262599a8ad",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "Furthermore, we will expand the size of our AB dataset to enhance the pre-trained model’s ability to generalize across diverse gait patterns from different subjects, creating a more robust baseline model that can be further adapted to irregular gait patterns. Lastly, we will implement our wearable sensorbased joint kinematic estimation framework for enhancing robotic hip exoskeleton control in real time. V. C ONCLUSION We developed a lower-limb joint kinematic estimation framework using a wearable IMU sensor-based TCN model. Additionally, we adapted this model using computer visionbased HPE method. With transfer learning, using a dataset of only 1–2 gait cycles of a new gait pattern, the adapted estimation model achieved improvements of 9.7% and 19.9% in RMSE compared to the models trained solely on the AB dataset and the SK dataset, respectively. This pipeline holds promise as a real-time joint kinematic estimation tool that can be quickly adapted to new gait patterns without requiring a specialized setup. R EFERENCES [1] P. B. Shull, W. Jirattigalachote, M. A. Hunt, M. R. Cutkosky, and S. L. Delp, “Quantified self and human movement: A review on the clinical impact of wearable sensing and feedback for gait analysis and intervention,” Gait & Posture, vol. 40, no. 1, pp. 11–19, 2014. [2] L. C. Benson, C. A. Clermont, E. Bošnjak, and R. Ferber, “The use of wearable devices for walking and running gait analysis outside of the lab: A systematic review,” Gait & Posture, vol. 63,",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "TFS2025",
+      "sha256": "7cd821b71b08addbc45745b1c88028d28d7b59f4c35d74ee80dca1e3065d0e21",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "IEEE TRANSACTIONS ON FUZZY SYSTEMS [26] C. Lin et al., ºContinuous Estimation of Hand Kinematics From Electromyographic Signals Based on Power-and Time-Efficient Transformer Deep Learning Network,º IEEE Trans. Neural Syst. Rehabil. Eng., vol. 33, pp. 58-67, 2025 [27] Z. Wang, C. Chen, H. Chen, Y. Zhou, X. Wang and X. Wu, ºDual Transformer Network for Predicting Joint Angles and Torques From Multi-Channel EMG Signals in the Lower Limbs,º IEEE J. Biomed. Health Informat., doi: 10.1109/JBHI.2025.3555255 [28] W. Zhong, X. Fu and M. Zhang, ºA Muscle Synergy-Driven ANFIS Approach to Predict Continuous Knee Joint Movement,º IEEE Trans. Fuzzy Syst., vol. 30, no. 6, pp. 1553-1563, June 2022 [29] J. Lu, G. Ma and G. Zhang, ºFuzzy Machine Learning: A Comprehensive Framework and Systematic Review,º IEEE Trans. Fuzzy Syst., vol. 32, no. 7, pp. 3861-3878, July 2024 [30] H. Xia, M. Pi, L. Jin, R. Song and Z. Li, ºHuman Collaborative Control of Lower-Limb Prosthesis Based on Game Theory and Fuzzy Approximation,º IEEE Transactions on Cybernetics, vol. 55, no. 1, pp. 247-258, Jan. 2025 [31] C. Chen, Y. Cao, X. Chen, D. Wu, C. Xiong and J. Huang, ºA Fused Deep Fuzzy Neural Network Controller and Its Application to Pneumatic Flexible Joint,º IEEE/ASME Trans. Mechatron., vol. 28, no. 6, pp. 32143225, Dec. 2023 [32] E. T. Wolbrecht, V. Chan, D. J. Reinkensmeyer and J. E. Bobrow, ªOptimizing Compliant, Model-Based Robotic Assistance to Promote Neurorehabilitation,º IEEE Trans. Neural Syst. Rehabil.",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "RL2026",
+      "sha256": "4b6e21ec3be9c4d677c6ad4d9099df49d3a8198fecf7abe990a360bf93ff97e6",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "542 IEEE TRANSACTIONS ON NEURAL SYSTEMS AND REHABILITATION ENGINEERING, VOL. 34, 2026 [23] X. Gao, J. Si, Y. Wen, M. Li, and H. Huang, “Reinforcement learning control of robotic knee with human-in-the-loop by flexible policy iteration,” IEEE Trans. Neural Netw. Learn. Syst., vol. 33, no. 10, pp. 5873–5887, Oct. 2022. [24] Q. Zhang et al., “Imposing healthy hip motion pattern and range by exoskeleton control for individualized assistance,” IEEE Robot. Autom. Lett., vol. 7, no. 4, pp. 11126–11133, Oct. 2022. [25] Q. Zhang, D. Zanotto, M. Sharifi, M. Kim, and Z. Li, Closing the Loop Between Wearable Robots and Machine Learning: A New Paradigm for Steering Assistance Personalization Control. Cham, Switzerland: Springer, 2024, pp. 65–101. [26] M. Sharifi, S. Tripathi, Y. Chen, Q. Zhang, and M. Tavakoli, “Reinforcement learning methods for assistive and rehabilitation robotic systems: A survey,” IEEE Trans. Syst., Man, Cybern., Syst., vol. 55, no. 7, pp. 4534–4551, Jul. 2025. [27] S. Luo, H. Kasaei, and L. Schomaker, “Accelerating reinforcement learning for reaching using continuous curriculum learning,” in Proc. Int. Joint Conf. Neural Netw. (IJCNN), Jul. 2020, pp. 1–8. [28] J. Weng, E. Hashemi, and A. Arami, “Natural walking with musculoskeletal models using deep reinforcement learning,” IEEE Robot. Autom. Lett., vol. 6, no. 2, pp. 4156–4162, Apr. 2021. [29] K. Or et al., “Curriculum-reinforcement learning on simulation platform of tendon-driven high-degree of freedom underactuat",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "Shoulder2025",
+      "sha256": "e71f6fb2dfc06eb87118b3056e4e82e6bc6dc67fb0554698ba3a008ceabf1768",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "SHAH et al.: AAN CONTROL OF A SHOULDER REHABILITATION ROBOT USING A VIRTUAL BIOMECHANICAL MODEL R EFERENCES [1] H. J. Asl, M. Yamashita, T. Narikiyo, and M. Kawanishi, “Field-based assist-as-needed control schemes for rehabilitation robots,” IEEE/ASME Trans. Mechatronics, vol. 25, no. 4, pp. 2100–2111, Aug. 2020, doi: 10.1109/TMECH.2020.2992090. [2] S. Samuelkamaleshkumar et al., “Comparative scoping review: Robotassisted upper limb stroke rehabilitation in low- and middle-income countries versus high-income nations,” Arch. Phys. Med. Rehabil., vol. 106, no. 3, pp. 424–432, Mar. 2025. [3] K. C. Tseng, L. Wang, C. Hsieh, and A. M. Wong, “Portable robots for upper-limb rehabilitation after stroke: A systematic review and metaanalysis,” Ann. Med., vol. 56, no. 1, Dec. 2024, Art. no. 2337735. [4] S. Cai, P. Xie, G. Li, and L. Xie, “Compensation-corrective adaptive control strategy for upper-limb rehabilitation robots,” Robot. Auto. Syst., vol. 177, Jul. 2024, Art. no. 104701. [5] M. F. Shah, S. Hussain, R. Goecke, and P. K. Jamwal, “Mechanism design and control of shoulder rehabilitation robots: A review,” IEEE Trans. Med. Robot. Bionics, vol. 5, no. 4, pp. 780–792, Nov. 2023, doi: 10.1109/TMRB.2023.3310086. [6] S. Khalid, F. Alnajjar, M. Gochoo, A. Renawi, and S. Shimoda, “Robotic assistive and rehabilitation devices leading to motor recovery in upper limb: A systematic review,” Disab. Rehabil., Assistive Technol., vol. 18, no. 5, pp. 658–672, Jul. 2023. [7] T. Proietti, V. Croc",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "DL-8acc2101",
+      "sha256": "1321b246cd462498a0315984b63526d3ffa4a9fbd7517e50c45cb09bc95c6921",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "This article has been accepted for publication in a future issue of this journal, but has not been fully edited. Content may change prior to final publication. Citation information: DOI 10.1109/TMECH.2020.3044289, IEEE/ASME Transactions on Mechatronics Zhijun Li (M’07-SM’09) received the Ph.D. degree in mechatronics, Shanghai Jiao Tong University, P. R. China, in 2002. From 2003 to 2005, he was a postdoctoral fellow in Department of Mechanical Engineering and Intelligent systems, The University of Electro-Communications, Tokyo, Japan. From 2005 to 2006, he was a research fellow in the Department of Electrical and Computer Engineering, National University of Singapore, and Nanyang Technological University, Singapore. From 2017, he is a Professor in Department of Automation, University of Science and Technology, Hefei, China. From 2019, he is the Vice Dean of School of Information Science and Technology, University of Science and Technology of China, China. From 2016, he has been the Co-Chairs of IEEE SMC Technical Committee on Bio-mechatronics and Bio-robotics Systems (B 2 S), and IEEE RAS Technical Committee on Neuro-Robotics Systems. Dr. Li’s current research interests include wearable robotics, teleoperation systems, nonlinear control, neural network optimization, etc. Tao Zhang received the B.S. degree in Automation from Xidian Univ., Xian, China, in 2019. He is currently working toward the Master degree in automation with the University of Science and Technology of China,",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "DL-5e218103",
+      "sha256": "f17559c2573f374f3644a3fd92104159168965b49cb4b7aac4b25c99ec158bd4",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "This article has been accepted for publication in a future issue of this journal, but has not been fully edited. Content may change prior to final publication. Citation information: DOI 10.1109/TFUZZ.2016.2566676, IEEE Transactions on Fuzzy Systems [36] H. Xiao, Z. Li, C. Yang, W. Yuan, L. Wang, “RGB-D sensor based visual-target detection and tracking for an intelligent wheelchair robot in indoors environments,” International Journal of Control, Automation and Systems, vol. 13, no. 3, pp.521–529, June 2015. [37] Y. M. Zhao, Y. Lin, F. Xi, S. Guo, “Calibration-based iterative learning control for path tracking of industrial robots,” IEEE Transactions on Industrial Electronics, vol. 62, no. 5, pp. 2921–2929, 2015. [38] S. Huang and K. K. Tan, “Intelligent friction modeling and compensation using neural network approximations”, IEEE Transactions on Industrial Electronics, vol. 59 , no. 8, pp. 3342– 3349, 2012 . [39] R. Lian, “Intelligent controller for robotic motion control”, IEEE Transactions on Industrial Electronics, vol. 58 , no. 11, pp. 5220–5230, 2011. [40] K. Abidi, J.-X. Xu, “Iterative learning control for sampled-data systems: from theory to practice”, IEEE Transactions on Industrial Electronics, vol. 58, no. 7, pp. 3002–3015, 2011. [41] C.-L. Hwang, C.-C. Chiang, Y.-W. Yeh, “Adaptive fuzzy hierarchical sliding-mode control for the trajectory tracking of uncertain underactuated nonlinear dynamic systems”, IEEE Transactions on Fuzzy Systems, vol. 22, no. 2, pp. 286-299,",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "DL-ce6e6704",
+      "sha256": "a8e92e48782fe8a1d86582ffa9a280d3d1788055518a1fb1393cded9dbeaf6c0",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "This article has been accepted for publication in a future issue of this journal, but has not been fully edited. Content may change prior to final publication. Citation information: DOI 10.1109/TIE.2016.2624260, IEEE Transactions on Industrial Electronics IEEE TRANSACTIONS ON INDUSTRIAL ELECTRONICS [5] O. M. Anubi, C. Crane, “A new semiactive variable stiffness suspension system using combined skyhook and nonlinear energy sink-based controllers,” IEEE Trans. Control Syst. Technol., vol. 23, no. 3, pp. 937-947, May 2015. [6] L. C. Visser, R. Carloni, S. Stramigioli, “Energy-efficient variable stiffness actuators,” IEEE Trans. Robot., vol. 27, no. 5, pp. 865-875, Oct. 2011. [7] B-S Kim, J-B Song, “Design and control of a variable stiffness actuator based on adjustable moment arm,” IEEE Trans. Robot., vol. 28, no. 5, pp. 1145-1151, Oct. 2012. [8] F. Petit, W. Friedl, H. Hoppner, M. Grebenstein, “Analysis and synthesis of the bidirectional antagonistic variable stiffness mechanism,” IEEE/ASME Trans. Mechatronics, vol. 29, no. 1, pp. 169-186, Apr. 2015. [9] C. Mitsantisuk, S. Katsura, K. Ohishi, “Kalman-filter-based sensor integration of variable power assist control based on human stiffness estimation” IEEE Trans. Ind. Electron., vol. 56, no. 10, pp. 3897-3905, Oct. 2009. [10] E. Psomopoulou, A. Theodorakopoulos, Z. Doulgeri, G. A. Rovithakis, “Prescribed performance tracking of a variable stiffness actuated robot,” IEEE Trans. Control Syst. Technol., vol. 23, no. 5, pp. 1914-192",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "DL-3d816be7",
+      "sha256": "bc2306f29e1b8fab63b98c970a99d4c3ba5744e0dda03550e98c9988ab7da1e3",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "[13] Z. Li, C.-Y. Su, L. Wang, Z. Chen, and T. Chai, “Nonlinear disturbance observer-based control design for a robotic exoskeleton incorporating fuzzy approximation,” IEEE Transactions on Industrial Electronics, vol. 62, no. 9, pp. 5763–5775, 2015. [14] Y. Hu, H. Su, J. Fu, H. R. Karimi, G. Ferrigno, E. De Momi, and A. Knoll, “Nonlinear model predictive control for mobile medical robot using neural optimization,” IEEE Transactions on Industrial Electronics, pp. 1–10, 2020. [15] H. Su, Y. Hu, H. R. Karimi, A. Knoll, G. Ferrigno, and E. De Momi, “Improved recurrent neural network-based manipulator control with remote center of motion constraints: Experimental results,” Neural Networks, vol. 131, pp. 291–299, 2020. [16] L. Zhang, Z. Li, and C. Yang, “Adaptive neural network based variable stiffness control of uncertain robotic systems using disturbance observer,” IEEE Transactions on Industrial Electronics, vol. 64, no. 3, pp. 2236–2245, 2016. [17] W. Qi, H. Su, and A. Aliverti, “A smartphone-based adaptive recognition and real-time monitoring system for human activities,” IEEE Transactions on Human-Machine Systems, vol. 50, no. 5, pp. 414– 423, 2020. [18] S. E. Ovur, X. Zhou, W. Qi, L. Zhang, Y. Hu, H. Su, G. Ferrigno, and E. De Momi, “A novel autonomous learning framework to enhance semg-based hand gesture recognition using depth information,” Biomedical Signal Processing and Control, vol. 66, pp. 1–9, 2021. [19] Y. Hu, H. Su, G. Chen, G. Ferrigno, E. De Momi, and A. Knoll, “",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "DL-2a6a772b",
+      "sha256": "03b60d7088a10a6ee3834e92d376d7680d42f9aa7ad92fa984d697ed5aea2298",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "[7] J. M. Guirguis-Blake, L. A. Perdue, E. L. Coppola, and S. I. Bean, “Interventions to prevent falls in older adults: updated evidence report and systematic review for the us preventive services task force,” Jama, vol. 332, no. 1, pp. 58–69, 2024. [8] J. Wang, Y. Li, G.-Y. Yang, and K. Jin, “Age-related dysfunction in balance: a comprehensive review of causes, consequences, and interventions,” Aging and Disease, 2024. [9] S. L. Pavão, A. N. dos Santos, M. H. Woollacott, and N. A. C. F. Rocha, “Assessment of postural control in children with cerebral palsy: a review,” Research in Developmental Disabilities, vol. 34, no. 5, pp. 1367–1375, 2013. [10] F. Quijoux, A. Nicolaı̈, I. Chairi, I. Bargiotas, D. Ricard, A. Yelnik, L. Oudre, F. Bertin-Hugault, P.-P. Vidal, N. Vayatis et al., “A review of center of pressure (cop) variables to quantify standing balance in elderly people: Algorithms and open-access code,” Physiological reports, vol. 9, no. 22, pp. 1–32, 2021. [11] A. Hua, G. Wang, J. Bai, Z. Hao, J. Liu, J. Meng, and J. Wang, “Nonlinear dynamics of postural control system under visual-vestibular habituation balance practice: evidence from eeg, emg and center of pressure signals,” Frontiers in Human Neuroscience, vol. 18, pp. 1–10, 2024. [12] F. Barollo, M. Hassan, H. Petersen, I. Rigoni, C. Ramon, P. Gargiulo, and A. Fratini, “Cortical pathways during postural control: new insights from functional eeg source connectivity,” IEEE Transactions on Neural Systems and Rehabilita",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "DL-b2dae467",
+      "sha256": "5a14c4e07f7ed1153c8321f21b48ac99ec732d5b2ec03bdedd13d7740eb88b5b",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "hemiplegia treated with botulinum toxin type A in ankle plantar ﬂexors,” Journal of rural medicine, vol. 19, no. 3, pp. 174-180, 2024. [2] Md Nazmul Islam Shuzan, Muhammad E.H. Chowdhury, Mamun Bin Ibne Reaz, et al., ”Machine learning-based classiﬁcation of healthy and impaired gaits using 3D GRF signals,” Biomedical Signal Processing and Control, vol. 81, pp. 104448, 2023. [3] Joel Kearney, Henrike Greaves, Mark A. Robinson, et al., ”Comparison of Theia3D and the conventional gait model in typically developing children and adults in a clinical gait laboratory,” Journal of Biomechanics, vol. 193, pp. 112995, 2025. [4] Guillaume M. Meurisse, Dierick, et al., ”Determination of the vertical ground reaction forces acting upon individual limbs during healthy and clinical gait,” Gait & Posture, vol. 43, no. 1, pp. 245-250, 2016. [5] Taylor P. Trentadue, Daniel Schmitt, ”Fourier Analysis of the Vertical Ground Reaction Force During Walking: Applications for Quantifying Differences in Gait Strategies,” Journal of applied biomechanics, vol. 40, no. 3, pp. 250-258, 2024. [6] H. Debelle, C. Maganaris, T. O’Brien, ”Controlling the ground reaction force angle characterises better recovery following a single forward falling slip in young and older adults,” Gait & Posture, vol. 81, no. 1, pp. 77-78, 2020. [7] R. R. Holt, D. Simpson, J. R. Jenner, et al., ”Ground reaction force after a sideways push as a measure of balance in recovery from stroke,” Clinical Rehabilitation, vol. 14, no. 1, pp",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "DL-de3bccd7",
+      "sha256": "512692c9409066efffd5a79d692c68533fd3d659d7b0892c7d8cac3cf408c924",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "704 IEEE TRANSACTIONS ON NEURAL SYSTEMS AND REHABILITATION ENGINEERING, VOL. 33, 2025 [36] E. Bullmore and O. Sporns, “The economy of brain network organization,” Nature Rev. Neurosci., vol. 13, no. 5, pp. 336–349, Apr. 2012. [37] G. Zhou, Y. Chen, X. Wang, H. Wei, Q. Huang, and L. Li, “The correlations between kinematic profiles and cerebral hemodynamics suggest changes of motor coordination in single and bilateral finger movement,” Frontiers Human Neurosci., vol. 16, Aug. 2022, Art. no. 957364. [38] E. Bullmore and O. Sporns, “Complex brain networks: Graph theoretical analysis of structural and functional systems,” Nature Rev. Neurosci., vol. 10, no. 3, pp. 186–198, Mar. 2009. [39] D. S. Bassett and E. T. Bullmore, “Small-world brain networks revisited,” Neuroscientist, vol. 23, no. 5, pp. 499–516, Sep. 2017. [40] M. Rubinov and O. Sporns, “Complex network measures of brain connectivity: Uses and interpretations,” NeuroImage, vol. 52, no. 3, pp. 1059–1069, Sep. 2010. [41] H. Yang et al., “Disrupted intrinsic functional brain topology in patients with major depressive disorder,” Mol Psychiatry, vol. 26, no. 12, pp. 7363–7371, 2021. [42] S. Achard and E. Bullmore, “Efficiency and cost of economical brain functional networks,” PLoS Comput. Biol., vol. 3, no. 2, p. e17, Feb. 2007. [43] V. Latora and M. Marchiori, “Efficient behavior of small-world networks,” Phys. Rev. Lett., vol. 87, no. 19, Oct. 2001, Art. no. 198701. [44] T. Schreiber, “Measuring information transfer,” Phys.",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "DL-2fd85fd9",
+      "sha256": "d3df6c97e7cdc1f71d84a1de6bce8faab3da5d83769ae3eaa16ccdad232fb441",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "HUANG et al.: PRACTICAL MULTIPLE MODEL SWITCHING sEMG DECODERS [7] H.-J. Yu, A. Y. Lee, and Y. Choi, “Human elbow joint angle estimation using electromyogram signal processing,” IET Signal Process., vol. 5, no. 8, pp. 767–775, Dec. 2011. [8] L. Bi, A. G. Feleke, and C. Guan, “A review on EMG-based motor intention prediction of continuous human upper limb motion for human–robot collaboration,” Biomed. Signal Process. Control, vol. 51, pp. 113–127, May 2019. [9] T. Zhang, H. Chu, and Y. Zou, “An online human dynamic arm strength perception method based on surface electromyography signals for human–robot collaboration,” IEEE Trans. Instrum. Meas., vol. 72, pp. 1–14, 2023. [10] A. Ajoudani, N. Tsagarakis, and A. Bicchi, “Tele-impedance: Teleoperation with impedance regulation using a body–machine interface,” Int. J. Robot. Res., vol. 31, no. 13, pp. 1642–1656, Nov. 2012. [11] S. Buscaglione, A. Noccaro, N. Tagliamonte, G. Ticchiarelli, G. Di Pino, and D. Formica, “Tele-impedance control of a virtual avatar based on EMG and M-IMU sensors: A proof-of-concept,” Sci. Rep., vol. 14, no. 1, p. 18543, Aug. 2024. [12] P. K. Artemiadis and K. J. Kyriakopoulos, “EMG-based control of a robot arm using low-dimensional embeddings,” IEEE Trans. Robot., vol. 26, no. 2, pp. 393–398, Apr. 2010. [13] Q. Zhang, R. Hosoda, and G. Venture, “Human joint motion estimation for electromyography (EMG)-based dynamic motion control,” in Proc. 35th Annu. Int. Conf. IEEE Eng. Med. Biol. Soc. (EMBC), Jul. 2013",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "DL-45f5e368",
+      "sha256": "db7860e46beab60006d68c9293d1cc1087df63f9d0ceebc1a6b7950b6847a132",
+      "reference_heading_variants": [],
+      "last_page_excerpt": "[33] A. Pouget, J. M. Beck, W. J. Ma, P. E. Latham, Nat. Neurosci. 2013, 16, 1170. [34] Y. Huang, K. Englehart, B. Hudgins, A. Chan, IEEE Trans. Biomed. Eng. 2005, 52, 1801. [35] Q. Ding, J. Han, X. Zhao, Y. Chen, IEEE Trans. Ind. Electron. 2015, 62, 4994. [36] J. Zheng, Z. Li, L. Huang, Y. Gao, B. Wang, M. Peng, Y. Wang, IEEE Sens. J. 2022, 22, 19556. [37] M. Maaref, A. Rezazadeh, K. Shamaei, M. Tavakoli, IEEE J. Sel. Top. Signal Process. 2016, 10, 904. [38] R. J. Escarabajal, J. L. Pulloquinga, P. Zamora-Ortiz, Á Valera, V. Mata, M. Vallés, IEEE Rob. Autom. Lett. 2023, 8, 4283. [39] E. L. Glader, B. Stegmayr, K. Asplund, Stroke 2002, 33, 1327. [40] K. Gui, H. Liu, D. Zhang, IEEE/ASME Trans. Mechatron. 2019, 24, 483. [41] I. Kyranou, S. Vijayakumar, M. S. Erden, Front. Neurorob. 2018, 12, 58. [42] L. Xu, X. Chen, S. Cao, X. Zhang, X. Chen, IEEE Trans. Neural Syst. Rehabil. Eng. 2018, 26, 2153. [43] Z. Q. Tang, H. L. Heung, X. Q. Shi, K. Y. Tong, Z. Li, IEEE Trans. Biomed. Eng. 2022, 69, 1016. [44] X. Li, Q. Yang, R. Song, IEEE Trans. Biomed. Eng. 2021, 68, 1351. [45] A. K. Tanwani, S. Calinon, IEEE Rob. Autom. Lett. 2016, 1, 235. [46] S. Calinon, A. Billard, 2007 2nd ACM/IEEE International Conference on Human-Robot Interaction (HRI). Arlington, VA 2007, pp. 255–262. Adv. Intell. Syst. 2025, 7, 2400505 2400505 (13 of 13) [47] M. Deng, Z. Li, Y. Kang, C. L. P. Chen, X. Chu, IEEE Trans. Cybern. 2020, 50, 112. [48] Y. Li, S. S. Ge, IEEE/ASME Trans. Mechatron. 2014, 19, 1007. [49",
+      "assessment": "编号参考文献直接列在末页，无单独References标题；非缺件"
+    },
+    {
+      "id": "DL-2ffc3818",
+      "sha256": "581cf486849903d30ad9ac90178b266d5ea698e643343849515b86c5675673c2",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "1118 IEEE TRANSACTIONS ON NEURAL SYSTEMS AND REHABILITATION ENGINEERING, VOL. 32, 2024 [18] Y. Li, M. Zheng, Q. Yang, and R. Song, “Comparison of two models used to describe the ankle torque in response to functional electrical stimulation,” in Proc. IEEE 4th Int. Conf. Adv. Robot. Mechatronics (ICARM), Jul. 2019, pp. 894–898, doi: 10.1109/ICARM.2019. 8834236. [19] H. Y. Zhou, L. K. Huang, Y. M. Gao, Ž. L. Vasic, M. Cifrek, and M. Du, “Estimating the ankle angle induced by FES via the neural network-based Hammerstein model,” IEEE Access, vol. 7, pp. 141277–141286, 2019, doi: 10.1109/ACCESS.2019.2943453. [20] Z. Cai, E.-W. Bai, and R. K. Shields, “Fatigue and non-fatigue mathematical muscle models during functional electrical stimulation of paralyzed muscle,” Biomed. Signal Process. Control, vol. 5, no. 2, pp. 87–93, Apr. 2010, doi: 10.1016/j.bspc.2009.12.001. [21] Q. Zhang, M. Hayashibe, P. Fraisse, and D. Guiraud, “FES-induced torque prediction with evoked EMG sensing for muscle fatigue tracking,” IEEE/ASME Trans. Mechatronics, vol. 16, no. 5, pp. 816–826, Oct. 2011, doi: 10.1109/TMECH.2011.2160809. [22] Y. Cao, X. Chen, M. Zhang, and J. Huang, “Adaptive position constrained assist-as-needed control for rehabilitation robots,” IEEE Trans. Ind. Electron., vol. 71, no. 4, pp. 4059–4068, Apr. 2024, doi: 10.1109/TIE.2023.3273270. [23] H. Al-Duwaish, M. N. Karim, and V. Chandrasekar, “Hammerstein model identification by multilayer feedforward neural networks,” Int. J. Syst. Sci.,",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "DL-f466aa90",
+      "sha256": "434539c0e66026f97f55d2b3dfd5cd2325f41b5033c701beab40230a1deb73cd",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "324 IEEE TRANSACTIONS ON NEURAL SYSTEMS AND REHABILITATION ENGINEERING, VOL. 32, 2024 [17] S. K. Banala, S. H. Kim, S. K. Agrawal, and J. P. Scholz, “Robot assisted gait training with active leg exoskeleton (ALEX),” IEEE Trans. Neural Syst. Rehabil. Eng., vol. 17, no. 1, pp. 2–8, Feb. 2009, doi: 10.1109/TNSRE.2008.2008280. [18] A. Martínez, B. Lawson, C. Durrough, and M. Goldfarb, “A velocityfield-based controller for assisting leg movement during walking with a bilateral hip and knee lower limb exoskeleton,” IEEE Trans. Robot., vol. 35, no. 2, pp. 307–316, Apr. 2019, doi: 10.1109/TRO.2018.2883819. [19] Z. Li et al., “Human-in-the-loop control of a wearable lower limb exoskeleton for stable dynamic walking,” IEEE/ASME Trans. Mechatronics, vol. 26, no. 5, pp. 2700–2711, Oct. 2021, doi: 10.1109/TMECH.2020.3044289. [20] J. Zhang and C. C. Cheah, “Passivity and stability of human–robot interaction control for upper-limb rehabilitation robots,” IEEE Trans. Robot., vol. 31, no. 2, pp. 233–245, Apr. 2015, doi: 10.1109/TRO.2015.2392451. [21] X. Li, Y. Pan, G. Chen, and H. Yu, “Multi-modal control scheme for rehabilitation robotic exoskeletons,” Int. J. Robot. Res., vol. 36, nos. 5–7, pp. 759–777, Feb. 2017, doi: 10.1177/0278364917691111. [22] X. Li, Q. Yang, and R. Song, “Performance-based hybrid control of a cable-driven upper-limb rehabilitation robot,” IEEE Trans. Biomed. Eng., vol. 68, no. 4, pp. 1351–1359, Apr. 2021, doi: 10.1109/TBME.2020.3027823. [23] J. Xu et al., “A multi-mo",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "DL-b04e6000",
+      "sha256": "46449551a5a21bc8fb02709ec73d908dbe12fa8ed0fdc88eb520c871fb793496",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "LI et al.: MODELING ANKLE TORQUE AND STIFFNESS INDUCED BY FUNCTIONAL ELECTRICAL STIMULATION [31] E.-W. Bai, Z. Cai, S. Dudley-Javorosk, and R. K. Shields, “Identification of a modified Wiener–Hammerstein system and its application in electrically stimulated paralyzed skeletal muscle modeling,” Automatica, vol. 45, no. 3, pp. 736–743, Mar. 2009. [32] E. S. Tehrani, K. Jalaleddini, and R. E. Kearney, “Ankle joint intrinsic dynamics is more complex than a mass-spring-damper model,” IEEE Trans. Neural Syst. Rehabil. Eng., vol. 25, no. 9, pp. 1568–1580, Sep. 2017. [33] H. Rouhani, M. R. Popovic, M. Same, Y. Q. Li, and K. Masani, “Identification of ankle plantar-flexors dynamics in response to electrical stimulation,” Med. Eng. Phys., vol. 38, no. 11, pp. 1166–1171, Nov. 2016. [34] J. Bobet, E. R. Gossen, and R. B. Stein, “A comparison of models of force production during stimulated isometric ankle dorsiflexion in humans,” IEEE Trans. Neural Syst. Rehabil. Eng., vol. 13, no. 4, pp. 444–451, Dec. 2005. [35] A. Roy, L. W. Forrester, R. F. Macko, and H. I. Krebs, “Changes in passive ankle stiffness and its effects on gait function in people with chronic stroke,” J. Rehabil. Res. Develop., vol. 50, no. 4, p. 555, 2013. [36] S. M. Zinder, K. P. Granata, S. J. Shultz, and B. M. Gansneder, “Ankle bracing and the neuromuscular factors influencing joint stiffness,” J. Athletic Training, vol. 44, no. 4, pp. 363–369, Jul. 2009. [37] M. A. Golkar, E. S. Tehrani, and R. E. Kearney, “Linear para",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "DL-82faa637",
+      "sha256": "8f56e653f60afe1a8e2bc04bb5db3111ef4dfd429d61cab051647385bcc16c29",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "682 IEEE TRANSACTIONS ON NEURAL SYSTEMS AND REHABILITATION ENGINEERING, VOL. 29, 2021 [15] A. Denève, S. Moughamir, L. Afilal, and J. Zaytoon, “Control system design of a 3-DOF upper limbs rehabilitation robot,” Comput. Methods Programs Biomed., vol. 89, no. 2, pp. 202–214, Feb. 2008. [16] J. Hespanha, D. Liberzon, A. S. Morse, B. D. Anderson, T. S. Brinsmead, and F. De Bruyne, “Multiple model adaptive control. Part 2: Switching,” Int. J. Robust Nonlinear Control, IFAC-Affiliated J., vol. 11, no. 5, pp. 479–496, 2001. [17] A. S. Morse, “Control using logic-based switching,” in Trends in Control. London, U.K.: Springer, 1995, pp. 69–113. [18] K. J. Åström, “Control system design,” Dept. Mech. Environ. Eng., Univ. California Santa Barbara, Santa Barbara, CA, USA, Lect. Notes ME 155A, 2002, vol. 333. [19] L. Zaccarian and A. R. Teel, “A common framework for anti-windup, bumpless transfer and reliable designs,” Automatica, vol. 38, no. 10, pp. 1735–1744, Oct. 2002. [20] J. Yamé, M. Kinnaert, and T. Delwiche, “Parametrization of MIMO multi-controller schemes for bumpless switching,” in Proc. Eur. Control Conf. (ECC), Jul. 2007, pp. 4130–4137. [21] B. D. O. Anderson, S. W. Su, and T. S. Brinsmead, “Multirealization of linear systems,” IEEE Trans. Circuits Syst. II, Exp. Briefs, vol. 52, no. 8, pp. 442–446, Aug. 2005. [22] S. W. Su, B. D. O. Anderson, and T. S. Brinsmead, “Minimal multirealization of MIMO linear systems,” IEEE Trans. Autom. Control, vol. 51, no. 4, pp. 690–695, Apr.",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "DL-5e148075",
+      "sha256": "182754d5ac53d2bb9e6282517dfb1140c8fbd7b353d4ecc6440eedbedd0be045",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "This article has been accepted for publication in a future issue of this journal, but has not been fully edited. Content may change prior to final publication. Citation information: DOI 10.1109/TNSRE.2019.2949203, IEEE Transactions on Neural Systems and Rehabilitation Engineering 10 ACKNOWLEDGMENT This work was supported by the Australia-China Joint Institute for Health Technology and Innovation established by Sun Yat-sen University and University of Technology Sydney. We also thank the anonymous reviewers whose comments/suggestions helped us improve and clarify this manuscript. R EFERENCES [1] M. Lotze, C. Braun, N. Birbaumer, S. Anders, and L. G. Cohen, “Motor learning elicited by voluntary drive,” Brain, vol. 126, no. 4, pp. 866–872, 2003. [2] R. Riener, M. Guidali, U. Keller, A. Duschau-Wicke, V. Klamroth, and T. Nef, “Transferring armin to the clinics and industry,” Topics in spinal cord injury rehabilitation, vol. 17, no. 1, pp. 54–59, 2011. [3] S. J. Ball, I. E. Brown, and S. H. Scott, “Medarm: a rehabilitation robot with 5dof at the shoulder complex,” in Advanced intelligent mechatronics, 2007 IEEE/ASME international conference on. IEEE, 2007, pp. 1–6. [4] S. Masiero, A. Celia, G. Rosati, and M. Armani, “Robotic-assisted rehabilitation of the upper limb after acute stroke,” Archives of physical medicine and rehabilitation, vol. 88, no. 2, pp. 142–149, 2007. [5] D. Zanotto, G. Rosati, S. Minto, and A. Rossi, “Sophia-3: A semiadaptive cable-driven rehabilitation device ",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    },
+    {
+      "id": "DL-6ae31a72",
+      "sha256": "6fa1036eb1f20b236f3535ddfb85a37b8087a5c58becb5418e6551f9a3af19d4",
+      "reference_heading_variants": [
+        "R EFERENCES"
+      ],
+      "last_page_excerpt": "LI et al.: PHASE-DEPENDENT MODULATION OF MUSCLE ACTIVITY AND INTERMUSCULAR COUPLING [9] Y. Fan and Y. Yin, “Active and progressive exoskeleton rehabilitation using multisource information fusion from EMG and force-position EPP,” IEEE Trans. Biomed. Eng., vol. 60, no. 12, pp. 3314–3321, Jun. 2013. [10] R. Luo, S. Sun, X. Zhang, Z. Tang, and W. Wang, “A low-cost endto-end sEMG-based gait sub-phase recognition system,” IEEE Trans. Neural Syst. Rehabil. Eng., vol. 28, no. 1, pp. 267–276, Jan. 2020. [11] N. J. Cronin, S. Kumpulainen, T. Joutjarvi, T. Finni, and H. Piitulainen, “Spatial variability of muscle activity during human walking: The effects of different EMG normalization approaches,” Neuroscience, vol. 300, pp. 19–28, Aug. 2015. [12] G. Rasool, B. Afsharipour, N. L. Suresh, and W. Z. Rymer, “Spatial analysis of multichannel surface EMG in hemiplegic stroke,” IEEE Trans. Neural Syst. Rehabil. Eng., vol. 25, no. 10, pp. 1802–1811, Oct. 2017. [13] E. A. Clancy, L. Liu, P. Liu, and D. V. Z. Moyer, “Identification of constant-posture EMG–torque relationship about the elbow using nonlinear dynamic models,” IEEE Trans. Biomed. Eng., vol. 59, no. 1, pp. 205–212, Jan. 2012. [14] H. Azami, M. Rostaghi, D. Abásolo, and J. Escudero, “Refined composite multiscale dispersion entropy and its application to biomedical signals,” IEEE Trans. Biomed. Eng., vol. 64, no. 12, pp. 2872–2879, Dec. 2017. [15] M. D. Costa and A. L. Goldberger, “Generalized multiscale entropy analysis: Application ",
+      "assessment": "提取为R EFERENCES，末页为参考文献/作者简介"
+    }
+  ]
+}

@@ -1,0 +1,589 @@
+{
+  "status": "executed_local_checks_passed",
+  "scope": "Split BM workflow from TF; preserve 12 top-level responsibilities",
+  "moves": [
+    {
+      "from": "06_附录/Transformer语料工具/bm3_fetch.py",
+      "to": "06_附录/生物力学语料工具/bm3_fetch.py",
+      "sha256_before": "cb142e033a421c3809fc5d73b2ca602f37331790428e28de512e299ab7493d69",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/bm3_ingest.py",
+      "to": "06_附录/生物力学语料工具/bm3_ingest.py",
+      "sha256_before": "c9ab93acf0011c012b72fa0829060dedc719bbadb31ecb4b8e2dfffce330cec9",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/bm3_probe.py",
+      "to": "06_附录/生物力学语料工具/bm3_probe.py",
+      "sha256_before": "e62b61cd3f4a160f7321e78019d85d574459a1e0f7cef8816787cd7aeaa5586b",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/build_biomech.py",
+      "to": "06_附录/生物力学语料工具/build_biomech.py",
+      "sha256_before": "526c5e48a9ec40b18c1a8dd8e0e46b42cfa2d7863088b7d28d7bc955a2b9cb05",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/build_page_biomech.py",
+      "to": "06_附录/生物力学语料工具/build_page_biomech.py",
+      "sha256_before": "5586a6c425ee1ef4dd7f367f662e6b3aa0475e4a8585527f8bda760d379a72d0",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/curate.py",
+      "to": "06_附录/生物力学语料工具/curate.py",
+      "sha256_before": "9a1263ca037958b17f9632132fe15af4212f68956eb5f549895a1bf82f36e74e",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/discover.py",
+      "to": "06_附录/生物力学语料工具/discover.py",
+      "sha256_before": "67873a87c7be7ac1416521238784630e0697d43f05c5993f61a2429d66c778b8",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/download_oa.py",
+      "to": "06_附录/生物力学语料工具/download_oa.py",
+      "sha256_before": "f0af53cdc471001ef9c7ad8211b966ce2ff8031ab3f65b00e2de752e0eb5a807",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/fetch_epmc_supp.py",
+      "to": "06_附录/生物力学语料工具/fetch_epmc_supp.py",
+      "sha256_before": "b6c652f71f636e14a8040bebeb27d05f6fe9ea7b111b375af012de4d28f9c7b9",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/mine_fulltext.py",
+      "to": "06_附录/生物力学语料工具/mine_fulltext.py",
+      "sha256_before": "18b18162650f1b0714c28f97d2eb6252df3339666e6ef686161482828ed37c6a",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/patch_arxiv_abs.py",
+      "to": "06_附录/生物力学语料工具/patch_arxiv_abs.py",
+      "sha256_before": "a25457cf33e125d4a89e77bf2a27561ee3f84de23813bc0ddac214838efe969d",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/recover_oa.py",
+      "to": "06_附录/生物力学语料工具/recover_oa.py",
+      "sha256_before": "78cfde592f561ad67888de82c3c8ac48431caabfce119d884e46f4bf775fa70f",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/resolve_multisource.py",
+      "to": "06_附录/生物力学语料工具/resolve_multisource.py",
+      "sha256_before": "9efcd311d30fc290f884ffbbe842f259ee369351ee57c63ed7366221c2fba053",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/select_candidates.py",
+      "to": "06_附录/生物力学语料工具/select_candidates.py",
+      "sha256_before": "cea09d24e9e677527dda50881b4955ab1e442496c37e18749bb9050ba564ce8b",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/snowball_gen2.py",
+      "to": "06_附录/生物力学语料工具/snowball_gen2.py",
+      "sha256_before": "2aa50475e946a5b72b9a628693c7253fb405237e3a664fdeace7f85367860828",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/snowball_gen3.py",
+      "to": "06_附录/生物力学语料工具/snowball_gen3.py",
+      "sha256_before": "8fae1bd0c6c013d33161030e09bb707bf236ec7696e28051f9be2c60b08cf5f8",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/snowball_v9e.py",
+      "to": "06_附录/生物力学语料工具/snowball_v9e.py",
+      "sha256_before": "7df4f9e75f324fdf97f7294ce4110c18bf8d178648ffe58d3b198c6333339605",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/sweep_clinical.py",
+      "to": "06_附录/生物力学语料工具/sweep_clinical.py",
+      "sha256_before": "f0fdef6daf0fe6c28e0565ed050a85e2b265f2f2ab3a4d2bd78dc6c1122b92e2",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/sweep_intersection.py",
+      "to": "06_附录/生物力学语料工具/sweep_intersection.py",
+      "sha256_before": "c3137d2d985289e395cc714a4321fa4d9e4f2741563f11a13cc012f3af972cbf",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/sweep_middle.py",
+      "to": "06_附录/生物力学语料工具/sweep_middle.py",
+      "sha256_before": "e224f36bc7715761a8c04790add0e44a9411a33be83e5b137298973d11a24807",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/sweep_vocab_claim.py",
+      "to": "06_附录/生物力学语料工具/sweep_vocab_claim.py",
+      "sha256_before": "56d67591f3fdd58293ed4b1fe4e001aa983ca102706e43522ab89e49b384e2db",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/sweep_xai_rehab.py",
+      "to": "06_附录/生物力学语料工具/sweep_xai_rehab.py",
+      "sha256_before": "f34e74913222da19cc0cd4f4fd1f12676733ed02ef344b19d2882bef4910dcb4",
+      "reason": "BM workflow"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/biomech_candidates.json",
+      "to": "06_附录/生物力学语料工具/biomech_candidates.json",
+      "sha256_before": "baeb7bea6e3ce1b72668fcc630468ed19543ddf09420da46b45f5ba296813d6e",
+      "reason": "BM workflow data / stage report"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/biomech_download_report.json",
+      "to": "06_附录/生物力学语料工具/biomech_download_report.json",
+      "sha256_before": "d3fda661fd8d632d4b73f050711066ec1062d3f57b429191e68f411ec6aa3ca0",
+      "reason": "BM workflow data / stage report"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/biomech_pool.json",
+      "to": "06_附录/生物力学语料工具/biomech_pool.json",
+      "sha256_before": "2f965ce480a4ab1667dc3bb089bd1063478af7ee5310adaa1ad47fd412066408",
+      "reason": "BM workflow data / stage report"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/biomech_recovery_report.json",
+      "to": "06_附录/生物力学语料工具/biomech_recovery_report.json",
+      "sha256_before": "830899f79e2477491fce6c433c7cca672a6bab8b840fe708f1fd24e32ae88183",
+      "reason": "BM workflow data / stage report"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/biomech_resolved.json",
+      "to": "06_附录/生物力学语料工具/biomech_resolved.json",
+      "sha256_before": "bef46855ab67f0c8d306b114be74ae87b15e28c570950a57bfc5fa5ebdf5d7e6",
+      "reason": "BM workflow data / stage report"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/biomech_seeds.json",
+      "to": "06_附录/生物力学语料工具/biomech_seeds.json",
+      "sha256_before": "1000587d7c5fb8fa12b11203a806763632b18f61cf3f848381ab0fde57e49ac2",
+      "reason": "BM workflow data / stage report"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/biomech_shortlist.json",
+      "to": "06_附录/生物力学语料工具/biomech_shortlist.json",
+      "sha256_before": "993aa90a9e867a9434372809788f8f2e8b5a9b1f6be8724b80029edb3d84f791",
+      "reason": "BM workflow data / stage report"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/bm3_fetch_report.json",
+      "to": "06_附录/生物力学语料工具/bm3_fetch_report.json",
+      "sha256_before": "724dec47b03a2ee1cf805b849b2395cad38a11ed0b28fc1dc770b8ca50f3fd4c",
+      "reason": "BM workflow data / stage report"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/bm3_missing.json",
+      "to": "06_附录/生物力学语料工具/bm3_missing.json",
+      "sha256_before": "156af7a0cbad11af7850c5872b24f9123d83cef7b623bde6a4d1e07748ed0ea2",
+      "reason": "BM workflow data / stage report"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/epmc_supp_report.json",
+      "to": "06_附录/生物力学语料工具/epmc_supp_report.json",
+      "sha256_before": "1c51f3e92e14a0332778aaf848bbcb8c95c2a6af8c73f9d80074925ae573dd2e",
+      "reason": "BM workflow data / stage report"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/clinical_sweep.json",
+      "to": "06_附录/生物力学语料工具/clinical_sweep.json",
+      "sha256_before": "9e15bb8ef403b1b8a961493e40bf91a8e744bf59bda278cfef36f5e3cfd78ecb",
+      "reason": "BM workflow data / stage report"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/intersection_sweep.json",
+      "to": "06_附录/生物力学语料工具/intersection_sweep.json",
+      "sha256_before": "f864771a591af32099fce2cf4033a056aaa48f226bbce04dc4b327c4d6f56935",
+      "reason": "BM workflow data / stage report"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/middle_sweep.json",
+      "to": "06_附录/生物力学语料工具/middle_sweep.json",
+      "sha256_before": "cf047e6f2546d57ead74ceb947e54dd3f14ad9ef7513af3990bacb0ea0db37d0",
+      "reason": "BM workflow data / stage report"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/snowball_gen2.json",
+      "to": "06_附录/生物力学语料工具/snowball_gen2.json",
+      "sha256_before": "c2b8af554d28b3dacba47640306c697afdc9aecb7b243af9c5f135d040bc09af",
+      "reason": "BM workflow data / stage report"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/snowball_gen3.json",
+      "to": "06_附录/生物力学语料工具/snowball_gen3.json",
+      "sha256_before": "19771673697c05cdc880fb81ae496f0e27719919854b91c31159c2636c59dff7",
+      "reason": "BM workflow data / stage report"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/snowball_v9e.json",
+      "to": "06_附录/生物力学语料工具/snowball_v9e.json",
+      "sha256_before": "c39a68900722e7897dcc991df6b8b58b2f164ce292b975acfbd58649e7ede0e2",
+      "reason": "BM workflow data / stage report"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/vocab_claim_sweep.json",
+      "to": "06_附录/生物力学语料工具/vocab_claim_sweep.json",
+      "sha256_before": "3cad04df386d8501f94957ccb48a5bd5689206ec49744e2423b09b87512364ef",
+      "reason": "BM workflow data / stage report"
+    },
+    {
+      "from": "06_附录/Transformer语料工具/xai_rehab_sweep.json",
+      "to": "06_附录/生物力学语料工具/xai_rehab_sweep.json",
+      "sha256_before": "41b7ef00876610afe75d87301cb61ce5551600638937892d6978c7a43ff6ea02",
+      "reason": "BM workflow data / stage report"
+    }
+  ],
+  "additions": [
+    "06_附录/生物力学语料工具/README.md"
+  ],
+  "reference_scan": {
+    "criterion": "literal Transformer语料工具 in current text files; excludes archives, backups, private/cache and generated research runs; not proof of dynamic coverage",
+    "hits": [
+      {
+        "file": "INDEX.md",
+        "line": 28,
+        "text": "| **语料二翻译流水线** | [`06_附录/Transformer语料工具/翻译/README.md`](06_附录/Transformer语料工具/翻译/README.md) （隔离版；不触碰主语料共享文件）|"
+      },
+      {
+        "file": "HANDOFF.md",
+        "line": 169,
+        "text": "| [`06_附录/Transformer语料工具/翻译/`](06_附录/Transformer语料工具/翻译/README.md) | 语料二隔离版翻译流水线（MinerU 抽取 + MiniMax-M3 全文翻译 + 质量校验） |"
+      },
+      {
+        "file": "HANDOFF.md",
+        "line": 170,
+        "text": "| [`06_附录/Transformer语料工具/`](06_附录/Transformer语料工具/) | 语料构建与自校验脚本（可复现） |"
+      },
+      {
+        "file": "05_进展日志/2026-10-01_Transformer发展线语料库与上肢康复推演.md",
+        "line": 19,
+        "text": "| 7 | 语料构建与自校验脚本（6 个） | `06_附录/Transformer语料工具/` | 可复现 |"
+      },
+      {
+        "file": "05_进展日志/2026-10-01_Transformer发展线语料库与上肢康复推演.md",
+        "line": 96,
+        "text": "cd 06_附录/Transformer语料工具"
+      },
+      {
+        "file": "06_附录/gen_acquisition_list.py",
+        "line": 51,
+        "text": "TOOLS = HERE / 'Transformer语料工具'"
+      },
+      {
+        "file": "06_附录/gen_acquisition_list.py",
+        "line": 468,
+        "text": "          'python3 06_附录/Transformer语料工具/build_biomech.py   # 语料三 index.json / LIST.md / 定位卡',"
+      },
+      {
+        "file": "06_附录/gen_acquisition_list.py",
+        "line": 469,
+        "text": "          'python3 06_附录/Transformer语料工具/build_index.py     # 语料二 index.json / LIST.md',"
+      },
+      {
+        "file": "06_附录/取件清单_人工标注.json",
+        "line": 110,
+        "text": "  \"浏览器取件通用手法\": \"先开落地页过验证 → 再开 `/pdf` 触发下载。已封装成 `06_附录/Transformer语料工具/bm3_ingest.py`（含时间戳与体积护栏，防止抓错文件）。\","
+      },
+      {
+        "file": "06_附录/缺口台账.md",
+        "line": 260,
+        "text": "| **F22** | 🟢🟢 **新发现的第二条合法免费 OA 通路（方法资产，非撞车）** | **Europe PMC 补充材料接口** —— `GET https://www.ebi.ac.uk/europepmc/webservices/rest/<PMCID>/supplementaryFiles`→ `HTTP 200 / application-zip`，**无反爬、无需订阅、无 cookie** | 🟢 **本轮新建 `fetch_epmc_supp.py` 并全库实测**（语料三 12 个 PMCID 全部落盘，原件在 `06_附录/补充材料/`）。📌 **它是被一次误判逼出来的**：V9g 判「须人工取件」的理由是「JATS 正文不含补充材料」+「JMIR 直连反爬」，**两条都是对的，但都不是结论** —— 真正的接口压根没试。**该条目挂了整整一轮，而它从头到尾都是公开可取的。** ⚠️ **同期另一条官方通道结论不同，两条都要记**：`ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=<PMCID>` 实测 **13/13 全部 404（非反爬）**。📌 **同 F18 的性质**：这是可复用的取件资产，**每发现一条合法 OA 通路就应写进 `Transformer语料工具/README.md`，别只留在某轮的对话里**。⚠️ **三个坑已写进工具文件头与 `06_附录/补充材料/README.md`**：①「某通路走不通」≠「该通路不存在」；②**HTTP 200 ≠ 有补充材料**（见 K15）；③**文件名编号 "
+      },
+      {
+        "file": "06_附录/缺口台账.md",
+        "line": 397,
+        "text": "| **K4** | **预印本纪律在 build 环节丢失**（2026-10-01 补）| `recover_oa.py` 已在报告里写「需与正式版核对后方可引用数值」，但 `build_biomech.py` **只读下载报告、不读恢复报告**；且预印本 PDF 与正式版 PDF **文件名完全一样**，索引里也无从区分 —— 后续任何人或 `mine_fulltext.py` 可能把预印本当正式版引用数值。 **已修**：增读恢复报告，判据 = `^arXiv 预印本 <id>，` **且**盘上是 PDF；写入 `index.json` 的 `preprint_of` + `note`；4 张定位卡加警示横幅。**实测 4 条被标记**（Dasgupta 因盘上是正式版 XML 正确未标）。两个坑见 `Transformer语料工具/README.md` 附节 | [x] |"
+      },
+      {
+        "file": "06_附录/待下载论文总清单.md",
+        "line": 220,
+        "text": "> 通用手法：先开落地页过验证 → 再开 `/pdf` 触发下载。已封装成 `06_附录/Transformer语料工具/bm3_ingest.py`（含时间戳与体积护栏，防止抓错文件）。"
+      },
+      {
+        "file": "06_附录/待下载论文总清单.md",
+        "line": 261,
+        "text": "python3 06_附录/Transformer语料工具/build_biomech.py   # 语料三 index.json / LIST.md / 定位卡"
+      },
+      {
+        "file": "06_附录/待下载论文总清单.md",
+        "line": 262,
+        "text": "python3 06_附录/Transformer语料工具/build_index.py     # 语料二 index.json / LIST.md"
+      },
+      {
+        "file": "00_研究背景/第二代引文追溯_snowball_gen2.md",
+        "line": 9,
+        "text": "> **执行工具**：`06_附录/Transformer语料工具/snowball_gen2.py` → `snowball_gen2.json`"
+      },
+      {
+        "file": "00_研究背景/临床侧撞红扫描_sweep_clinical.md",
+        "line": 14,
+        "text": "> **执行工具**：`06_附录/Transformer语料工具/sweep_clinical.py` → `clinical_sweep.json`"
+      },
+      {
+        "file": "00_研究背景/中间地带扫描_sweep_middle.md",
+        "line": 13,
+        "text": "> **执行工具**：`06_附录/Transformer语料工具/sweep_middle.py` → `middle_sweep.json`"
+      },
+      {
+        "file": "06_附录/补充材料/README.md",
+        "line": 115,
+        "text": "python3 06_附录/Transformer语料工具/fetch_epmc_supp.py --from-corpus"
+      },
+      {
+        "file": "06_附录/补充材料/README.md",
+        "line": 118,
+        "text": "python3 06_附录/Transformer语料工具/fetch_epmc_supp.py --pmcid PMCxxxx --probe"
+      },
+      {
+        "file": "06_附录/补充材料/README.md",
+        "line": 121,
+        "text": "06_附录/Transformer语料工具/epmc_supp_report.json"
+      },
+      {
+        "file": "06_附录/自检脚本/verify_kb.sh",
+        "line": 828,
+        "text": "            '_B', str(ROOT / '06_附录' / 'Transformer语料工具' / 'build_biomech.py'))"
+      },
+      {
+        "file": "06_附录/Transformer语料工具/build_index.py",
+        "line": 104,
+        "text": "        'generated': '由 06_附录/Transformer语料工具/build_index.py 生成，勿手改',"
+      },
+      {
+        "file": "06_附录/Transformer语料工具/build_index.py",
+        "line": 122,
+        "text": "    r.append('> **生成方式**：全部条目由 `06_附录/Transformer语料工具/` 的脚本从 arXiv 官方 API 解析生成，标题相似度 ≥ 0.90 才自动采信。')"
+      },
+      {
+        "file": "06_附录/Transformer语料工具/build_index.py",
+        "line": 209,
+        "text": "    r.append('cd 06_附录/Transformer语料工具')"
+      },
+      {
+        "file": "06_附录/Transformer语料工具/fetch_epmc_supp.py",
+        "line": 201,
+        "text": "    ap.add_argument('--report', default='06_附录/Transformer语料工具/epmc_supp_report.json')"
+      },
+      {
+        "file": "06_附录/Transformer语料工具/README.md",
+        "line": 5,
+        "text": "> **运行位置**：`06_附录/Transformer语料工具/`（工作目录即本目录）。"
+      },
+      {
+        "file": "06_附录/Transformer语料工具/README.md",
+        "line": 25,
+        "text": "cd 06_附录/Transformer语料工具"
+      },
+      {
+        "file": "06_附录/Transformer语料工具/README.md",
+        "line": 92,
+        "text": "cd 06_附录/Transformer语料工具"
+      },
+      {
+        "file": "06_附录/Transformer语料工具/bm3_fetch.py",
+        "line": 8,
+        "text": "  - 报告只写 06_附录/Transformer语料工具/bm3_fetch_report.json"
+      },
+      {
+        "file": "06_附录/Transformer语料工具/翻译/tf_extract.sh",
+        "line": 26,
+        "text": "    \"tfm\", Path(\"/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/06_附录/Transformer语料工具/翻译/tf_manifest.py\"))"
+      },
+      {
+        "file": "06_附录/Transformer语料工具/翻译/README.md",
+        "line": 42,
+        "text": "cd 06_附录/Transformer语料工具/翻译"
+      },
+      {
+        "file": "01_参考论文/Transformer_发展线/README.md",
+        "line": 5,
+        "text": "> **生成方式**：全部条目由 `06_附录/Transformer语料工具/` 的脚本从 arXiv 官方 API 解析生成，标题相似度 ≥ 0.90 才自动采信。"
+      },
+      {
+        "file": "01_参考论文/Transformer_发展线/README.md",
+        "line": 99,
+        "text": "cd 06_附录/Transformer语料工具"
+      },
+      {
+        "file": "01_参考论文/Transformer_发展线/index.json",
+        "line": 2,
+        "text": "  \"generated\": \"由 06_附录/Transformer语料工具/build_index.py 生成，勿手改\","
+      }
+    ]
+  },
+  "rollback": {
+    "inverse_moves": [
+      {
+        "from": "06_附录/生物力学语料工具/xai_rehab_sweep.json",
+        "to": "06_附录/Transformer语料工具/xai_rehab_sweep.json"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/vocab_claim_sweep.json",
+        "to": "06_附录/Transformer语料工具/vocab_claim_sweep.json"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/snowball_v9e.json",
+        "to": "06_附录/Transformer语料工具/snowball_v9e.json"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/snowball_gen3.json",
+        "to": "06_附录/Transformer语料工具/snowball_gen3.json"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/snowball_gen2.json",
+        "to": "06_附录/Transformer语料工具/snowball_gen2.json"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/middle_sweep.json",
+        "to": "06_附录/Transformer语料工具/middle_sweep.json"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/intersection_sweep.json",
+        "to": "06_附录/Transformer语料工具/intersection_sweep.json"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/clinical_sweep.json",
+        "to": "06_附录/Transformer语料工具/clinical_sweep.json"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/epmc_supp_report.json",
+        "to": "06_附录/Transformer语料工具/epmc_supp_report.json"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/bm3_missing.json",
+        "to": "06_附录/Transformer语料工具/bm3_missing.json"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/bm3_fetch_report.json",
+        "to": "06_附录/Transformer语料工具/bm3_fetch_report.json"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/biomech_shortlist.json",
+        "to": "06_附录/Transformer语料工具/biomech_shortlist.json"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/biomech_seeds.json",
+        "to": "06_附录/Transformer语料工具/biomech_seeds.json"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/biomech_resolved.json",
+        "to": "06_附录/Transformer语料工具/biomech_resolved.json"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/biomech_recovery_report.json",
+        "to": "06_附录/Transformer语料工具/biomech_recovery_report.json"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/biomech_pool.json",
+        "to": "06_附录/Transformer语料工具/biomech_pool.json"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/biomech_download_report.json",
+        "to": "06_附录/Transformer语料工具/biomech_download_report.json"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/biomech_candidates.json",
+        "to": "06_附录/Transformer语料工具/biomech_candidates.json"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/sweep_xai_rehab.py",
+        "to": "06_附录/Transformer语料工具/sweep_xai_rehab.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/sweep_vocab_claim.py",
+        "to": "06_附录/Transformer语料工具/sweep_vocab_claim.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/sweep_middle.py",
+        "to": "06_附录/Transformer语料工具/sweep_middle.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/sweep_intersection.py",
+        "to": "06_附录/Transformer语料工具/sweep_intersection.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/sweep_clinical.py",
+        "to": "06_附录/Transformer语料工具/sweep_clinical.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/snowball_v9e.py",
+        "to": "06_附录/Transformer语料工具/snowball_v9e.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/snowball_gen3.py",
+        "to": "06_附录/Transformer语料工具/snowball_gen3.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/snowball_gen2.py",
+        "to": "06_附录/Transformer语料工具/snowball_gen2.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/select_candidates.py",
+        "to": "06_附录/Transformer语料工具/select_candidates.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/resolve_multisource.py",
+        "to": "06_附录/Transformer语料工具/resolve_multisource.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/recover_oa.py",
+        "to": "06_附录/Transformer语料工具/recover_oa.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/patch_arxiv_abs.py",
+        "to": "06_附录/Transformer语料工具/patch_arxiv_abs.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/mine_fulltext.py",
+        "to": "06_附录/Transformer语料工具/mine_fulltext.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/fetch_epmc_supp.py",
+        "to": "06_附录/Transformer语料工具/fetch_epmc_supp.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/download_oa.py",
+        "to": "06_附录/Transformer语料工具/download_oa.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/discover.py",
+        "to": "06_附录/Transformer语料工具/discover.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/curate.py",
+        "to": "06_附录/Transformer语料工具/curate.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/build_page_biomech.py",
+        "to": "06_附录/Transformer语料工具/build_page_biomech.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/build_biomech.py",
+        "to": "06_附录/Transformer语料工具/build_biomech.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/bm3_probe.py",
+        "to": "06_附录/Transformer语料工具/bm3_probe.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/bm3_ingest.py",
+        "to": "06_附录/Transformer语料工具/bm3_ingest.py"
+      },
+      {
+        "from": "06_附录/生物力学语料工具/bm3_fetch.py",
+        "to": "06_附录/Transformer语料工具/bm3_fetch.py"
+      }
+    ],
+    "note": "Before execution capture byte snapshots for all edited callers; restore those snapshots (not git reset), then inverse moves; remove added README and empty target only."
+  }
+}

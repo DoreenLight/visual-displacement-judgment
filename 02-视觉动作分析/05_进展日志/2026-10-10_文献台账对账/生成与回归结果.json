@@ -1,0 +1,45 @@
+{
+  "time": "2026-10-10T15:47:50.533504+08:00",
+  "runs": [
+    {
+      "label": "生成器回归",
+      "command": [
+        "python3",
+        "06_附录/自检脚本/test_acquisition_list.py"
+      ],
+      "exit_code": 0,
+      "list_sha256_before": "72baaffdc9d176ffc5129cec88465bcf82ead24c0565811be74da081ac87f28e",
+      "list_sha256_after": "72baaffdc9d176ffc5129cec88465bcf82ead24c0565811be74da081ac87f28e"
+    },
+    {
+      "label": "相对链接回归",
+      "command": [
+        "python3",
+        "06_附录/自检脚本/test_relative_links.py"
+      ],
+      "exit_code": 0,
+      "list_sha256_before": "72baaffdc9d176ffc5129cec88465bcf82ead24c0565811be74da081ac87f28e",
+      "list_sha256_after": "72baaffdc9d176ffc5129cec88465bcf82ead24c0565811be74da081ac87f28e"
+    },
+    {
+      "label": "下载清单生成_第一次",
+      "command": [
+        "python3",
+        "06_附录/gen_acquisition_list.py"
+      ],
+      "exit_code": 0,
+      "list_sha256_before": "72baaffdc9d176ffc5129cec88465bcf82ead24c0565811be74da081ac87f28e",
+      "list_sha256_after": "72baaffdc9d176ffc5129cec88465bcf82ead24c0565811be74da081ac87f28e"
+    },
+    {
+      "label": "下载清单生成_第二次",
+      "command": [
+        "python3",
+        "06_附录/gen_acquisition_list.py"
+      ],
+      "exit_code": 0,
+      "list_sha256_before": "72baaffdc9d176ffc5129cec88465bcf82ead24c0565811be74da081ac87f28e",
+      "list_sha256_after": "72baaffdc9d176ffc5129cec88465bcf82ead24c0565811be74da081ac87f28e"
+    }
+  ]
+}

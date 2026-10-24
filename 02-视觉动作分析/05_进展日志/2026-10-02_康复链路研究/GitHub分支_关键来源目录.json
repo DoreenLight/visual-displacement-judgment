@@ -1,0 +1,42 @@
+{
+  "data": {
+    "lifecycle": {
+      "effectiveLaunch": {
+        "browserLaunched": true,
+        "engine": "chrome",
+        "launchHash": 10555201366498914000
+      },
+      "launched": false,
+      "relaunchedBrowser": false,
+      "restartedBackground": false,
+      "restoreStatus": "not_configured",
+      "reused": true,
+      "saveStatus": "not_attempted"
+    },
+    "origin": "https://api.github.com/repos/xiangbianpangde/visual-displacement-judgment/git/trees/3f0f39360f201edfdce4a44c1824d3f5e47105af?recursive=1",
+    "result": "{\"commit\":\"5192efef18ba8eb491c50c1e90439cef13d2dceb\",\"tree_sha\":\"3f0f39360f201edfdce4a44c1824d3f5e47105af\",\"truncated\":false,\"selected\":[{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/closeout_review_v1/review_20261001_v1/MASTER_REVIEW.md\",\"size\":3253,\"blob_sha\":\"b8592bd51afd77a3b7a4e6570198316e1f0efe33\"},{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/closeout_review_v1/review_20261001_v1/summary.json\",\"size\":16513,\"blob_sha\":\"b5e4cb591bed2dcd0e072a34013cee0e04a7ce8d\"},{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/offline_reanalysis_v1/README.md\",\"size\":2286,\"blob_sha\":\"2e772364046148bd3263605c160c76421f70e0d1\"},{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/offline_reanalysis_v1/REPORT.md\",\"size\":12581,\"blob_sha\":\"829416a10e0e1244e19231a0e5c95190a961fdbf\"},{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/offline_reanalysis_v1/analysis_20261001_v1/group_summary.json\",\"size\":1495,\"blob_sha\":\"174c3428110b14598e07484a9172174ac6e7fed4\"},{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/offline_reanalysis_v1/analysis_20261001_v1/trial_metrics.csv\",\"size\":8628,\"blob_sha\":\"57e310c3961bb9f416e05ef57659c76941890807\"},{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/realtime_feedback_v5/ANGLE_DEFINITIONS.md\",\"size\":10432,\"blob_sha\":\"46c089fe936217215226c91e25295076a6c07ffa\"},{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/realtime_feedback_v5/README.md\",\"size\":8198,\"blob_sha\":\"f2b7262d5b63ccbb738b8da3d0e8cb15fd1ed5cd\"},{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/realtime_feedback_v5/connection_fix_check.json\",\"size\":230,\"blob_sha\":\"9d4d98351578081555e3474e68150985032c3d1b\"},{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/realtime_feedback_v5/existing_comparison.json\",\"size\":1174,\"blob_sha\":\"3b235a94a87b437161b86c15697e03aa48b768cf\"},{\"path\":\"02-视觉动作分析/HANDOFF.md\",\"size\":22963,\"blob_sha\":\"111220288ede62435d2bcc68ae2869069e4f8c2b\"},{\"path\":\"02-视觉动作分析/INDEX.md\",\"size\":21169,\"blob_sha\":\"666a92cd871afb41c4336e5c69e2f4fd7f12eac0\"},{\"path\":\"02-视觉动作分析/README.md\",\"size\":17001,\"blob_sha\":\"7ed944179431f5b69ed570d6897595601ecf1646\"}],\"experiment_docs_count\":1030,\"channel_filename_matches\":[],\"channel_filename_match_count\":0,\"filename_match_limit\":\"文件名筛查，不据此断言未上传材料不存在\"}"
+  },
+  "details": {
+    "resultCategory": "success",
+    "successCategory": "completed"
+  },
+  "nextActions": [
+    {
+      "id": "inspect-after-mutation",
+      "params": {
+        "args": [
+          "snapshot",
+          "-i"
+        ]
+      },
+      "reason": "Refresh interactive refs after a browser mutation, navigation, scroll, or rerender.",
+      "safety": "Do not reuse prior @refs until a fresh snapshot confirms they still exist.",
+      "tool": "agent_browser"
+    }
+  ],
+  "ok": true,
+  "resultCategory": "success",
+  "successCategory": "completed",
+  "summary": "Eval result: {\"commit\":\"5192efef18ba8eb491c50c1e90439cef13d2dceb\",\"tree_sha\":\"3f0f39360f201edfdce4a44c1824d3f5e47105af\",\"truncated\":false,\"selected\":[{\"path\":\"02-视觉动作分析/04_…",
+  "text": "{\"commit\":\"5192efef18ba8eb491c50c1e90439cef13d2dceb\",\"tree_sha\":\"3f0f39360f201edfdce4a44c1824d3f5e47105af\",\"truncated\":false,\"selected\":[{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/closeout_review_v1/review_20261001_v1/MASTER_REVIEW.md\",\"size\":3253,\"blob_sha\":\"b8592bd51afd77a3b7a4e6570198316e1f0efe33\"},{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/closeout_review_v1/review_20261001_v1/summary.json\",\"size\":16513,\"blob_sha\":\"b5e4cb591bed2dcd0e072a34013cee0e04a7ce8d\"},{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/offline_reanalysis_v1/README.md\",\"size\":2286,\"blob_sha\":\"2e772364046148bd3263605c160c76421f70e0d1\"},{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/offline_reanalysis_v1/REPORT.md\",\"size\":12581,\"blob_sha\":\"829416a10e0e1244e19231a0e5c95190a961fdbf\"},{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/offline_reanalysis_v1/analysis_20261001_v1/group_summary.json\",\"size\":1495,\"blob_sha\":\"174c3428110b14598e07484a9172174ac6e7fed4\"},{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/offline_reanalysis_v1/analysis_20261001_v1/trial_metrics.csv\",\"size\":8628,\"blob_sha\":\"57e310c3961bb9f416e05ef57659c76941890807\"},{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/realtime_feedback_v5/ANGLE_DEFINITIONS.md\",\"size\":10432,\"blob_sha\":\"46c089fe936217215226c91e25295076a6c07ffa\"},{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/realtime_feedback_v5/README.md\",\"size\":8198,\"blob_sha\":\"f2b7262d5b63ccbb738b8da3d0e8cb15fd1ed5cd\"},{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/realtime_feedback_v5/connection_fix_check.json\",\"size\":230,\"blob_sha\":\"9d4d98351578081555e3474e68150985032c3d1b\"},{\"path\":\"02-视觉动作分析/04_实验设计/D435i_感知验证/TP-D435I-01/realtime_feedback_v5/existing_comparison.json\",\"size\":1174,\"blob_sha\":\"3b235a94a87b437161b86c15697e03aa48b768cf\"},{\"path\":\"02-视觉动作分析/HANDOFF.md\",\"size\":22963,\"blob_sha\":\"111220288ede62435d2bcc68ae2869069e4f8c2b\"},{\"path\":\"02-视觉动作分析/INDEX.md\",\"size\":21169,\"blob_sha\":\"666a92cd871afb41c4336e5c69e2f4fd7f12eac0\"},{\"path\":\"02-视觉动作分析/README.md\",\"size\":17001,\"blob_sha\":\"7ed944179431f5b69ed570d6897595601ecf1646\"}],\"experiment_docs_count\":1030,\"channel_filename_matches\":[],\"channel_filename_match_count\":0,\"filename_match_limit\":\"文件名筛查，不据此断言未上传材料不存在\"}\n\nOrigin: https://api.github.com/repos/xiangbianpangde/visual-displacement-judgment/git/trees/3f0f39360f201edfdce4a44c1824d3f5e47105af?recursive=1"
+}

@@ -1,0 +1,5395 @@
+{
+  "Song_TRO": {
+    "url": "https://api.crossref.org/works/10.1109%2FTRO.2024.3411849",
+    "result": {
+      "status": "ok",
+      "message-type": "work",
+      "message-version": "1.0.0",
+      "message": {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              10,
+              1
+            ]
+          ],
+          "date-time": "2026-10-01T20:16:05Z",
+          "timestamp": 1790885765709,
+          "version": "4.1.0"
+        },
+        "reference-count": 61,
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2024,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "2024-01-01T00:00:00Z",
+              "timestamp": 1704067200000
+            },
+            "content-version": "vor",
+            "delay-in-days": 0,
+            "URL": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2024,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "2024-01-01T00:00:00Z",
+              "timestamp": 1704067200000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-029"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2024,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "2024-01-01T00:00:00Z",
+              "timestamp": 1704067200000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-037"
+          }
+        ],
+        "funder": [
+          {
+            "name": "National Key Research and Development Program of China",
+            "award": [
+              "2022YFE0201900"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2022YFE0201900"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "National Key Research and Development Program of China",
+            "award": [
+              "2021YFF0501600"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2021YFF0501600"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "ANSO Collaborative Research",
+            "award": [
+              "ANSO-CR-PP-2020-03"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "ANSO-CR-PP-2020-03"
+                ]
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100003453",
+            "name": "Natural Science Foundation of Guangdong Province",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "2023A1515011021"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2023A1515011021"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100003453",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "name": "Shenzhen Science and Technology Research Program",
+            "award": [
+              "SGDX20210823103405040"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "SGDX20210823103405040"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Guangdong Science and Technology Plan Project",
+            "award": [
+              "2020B1212060077"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2020B1212060077"
+                ]
+              }
+            ]
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "short-container-title": [
+          "IEEE Trans. Robot."
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "DOI": "10.1109/tro.2024.3411849",
+        "type": "journal-article",
+        "created": {
+          "date-parts": [
+            [
+              2024,
+              6,
+              10
+            ]
+          ],
+          "date-time": "2024-06-10T13:36:05Z",
+          "timestamp": 1718026565000
+        },
+        "page": "3199-3211",
+        "source": "Crossref",
+        "is-referenced-by-count": 34,
+        "title": [
+          "A Cable-Driven Upper Limb Rehabilitation Robot With Muscle-Synergy-Based Myoelectric Controller"
+        ],
+        "prefix": "10.1109",
+        "volume": "40",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-3867-3908",
+            "authenticated-orcid": false,
+            "given": "Chenglin",
+            "family": "Xie",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Shenzhen Campus of Sun Yat-sen University, Shenzhen, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yueling",
+            "family": "Lyu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Shenzhen Campus of Sun Yat-sen University, Shenzhen, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-8384-0002",
+            "authenticated-orcid": false,
+            "given": "Guoxin",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Mechanical Engineering, Translational Research Center, Shanghai Yangzhi Rehabilitation Hospital, Tongji University, Shanghai, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-4375-653X",
+            "authenticated-orcid": false,
+            "given": "Raymond Kai-Yu",
+            "family": "Tong",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Biomedical Engineering, The Chinese University of Hong Kong, Hong Kong"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-8574-6650",
+            "authenticated-orcid": false,
+            "given": "Haisheng",
+            "family": "Xia",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Mechanical Engineering, Translational Research Center, Shanghai Yangzhi Rehabilitation Hospital, Tongji University, Shanghai, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3662-116X",
+            "authenticated-orcid": false,
+            "given": "Rong",
+            "family": "Song",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Shenzhen Campus of Sun Yat-sen University, Shenzhen, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-3909-488X",
+            "authenticated-orcid": false,
+            "given": "Zhijun",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Mechanical Engineering, Translational Research Center, Shanghai Yangzhi Rehabilitation Hospital, Tongji University, Shanghai, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "263",
+        "reference": [
+          {
+            "key": "ref1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/1747493020909545"
+          },
+          {
+            "key": "ref2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/S1474-4422(19)30034-1"
+          },
+          {
+            "key": "ref3",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.jht.2011.01.002"
+          },
+          {
+            "key": "ref4",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s10846-010-9462-3"
+          },
+          {
+            "key": "ref5",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.medengphy.2011.10.004"
+          },
+          {
+            "key": "ref6",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.bspc.2019.101723"
+          },
+          {
+            "key": "ref7",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fneur.2017.00679"
+          },
+          {
+            "key": "ref8",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TSMCB.2012.2214381"
+          },
+          {
+            "key": "ref9",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1115/1.3140701"
+          },
+          {
+            "key": "ref10",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.23919/ACC.1984.4788393"
+          },
+          {
+            "key": "ref11",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/LRA.2018.2885165"
+          },
+          {
+            "key": "ref12",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/08839002016002003"
+          },
+          {
+            "key": "ref13",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TMECH.2012.2214228"
+          },
+          {
+            "key": "ref14",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TIE.2018.2821649"
+          },
+          {
+            "key": "ref15",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1080/01691864.2018.1546617"
+          },
+          {
+            "key": "ref16",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ACCESS.2019.2963881"
+          },
+          {
+            "key": "ref17",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.isatra.2021.05.039"
+          },
+          {
+            "key": "ref18",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1089/soro.2020.0090"
+          },
+          {
+            "key": "ref19",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TBME.2012.2198821"
+          },
+          {
+            "key": "ref20",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.jelekin.2013.07.007"
+          },
+          {
+            "key": "ref21",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TBME.2020.3012296"
+          },
+          {
+            "key": "ref22",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2008.926860"
+          },
+          {
+            "key": "ref23",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TITB.2010.2040832"
+          },
+          {
+            "key": "ref24",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TIE.2014.2387337"
+          },
+          {
+            "key": "ref25",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TBCAS.2021.3130090"
+          },
+          {
+            "key": "ref26",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2019.2949203"
+          },
+          {
+            "key": "ref27",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TAI.2021.3091038"
+          },
+          {
+            "key": "ref28",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1073/pnas.0901512106"
+          },
+          {
+            "key": "ref29",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1126/scirobotics.aaw6339"
+          },
+          {
+            "key": "ref30",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.brainresrev.2007.08.004"
+          },
+          {
+            "key": "ref31",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s11517-021-02429-4"
+          },
+          {
+            "key": "ref32",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1152/jn.00499.2021"
+          },
+          {
+            "key": "ref33",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1152/jn.00559.2009"
+          },
+          {
+            "key": "ref34",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2009.2039378"
+          },
+          {
+            "key": "ref35",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2017.00280"
+          },
+          {
+            "key": "ref36",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3390/info11040219"
+          },
+          {
+            "key": "ref37",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1186/s12984-018-0469-5"
+          },
+          {
+            "key": "ref38",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2013.2278411"
+          },
+          {
+            "key": "ref39",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/44565"
+          },
+          {
+            "key": "ref40",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2021.3118591"
+          },
+          {
+            "key": "ref41",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/s41598-021-84536-8"
+          },
+          {
+            "key": "ref42",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1371/journal.pone.0272813"
+          },
+          {
+            "key": "ref43",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ACCESS.2019.2932956"
+          },
+          {
+            "key": "ref44",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/S0021-9290(03)00152-0"
+          },
+          {
+            "key": "ref45",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.csda.2006.11.006"
+          },
+          {
+            "key": "ref46",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.jfoodeng.2007.10.022"
+          },
+          {
+            "key": "ref47",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.bspc.2019.02.011"
+          },
+          {
+            "key": "ref48",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TIE.2020.2991999"
+          },
+          {
+            "key": "ref49",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.jbiomech.2017.08.006"
+          },
+          {
+            "key": "ref50",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1126/science.1857964"
+          },
+          {
+            "key": "ref51",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TKDE.2012.51"
+          },
+          {
+            "key": "ref52",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1088/1741-2552/aa9666"
+          },
+          {
+            "key": "ref53",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.bspc.2022.104178"
+          },
+          {
+            "key": "ref54",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TASE.2020.2967093"
+          },
+          {
+            "key": "ref55",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1115/1.4039145"
+          },
+          {
+            "key": "ref56",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1152/jn.00415.2020"
+          },
+          {
+            "key": "ref57",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2017.2676765"
+          },
+          {
+            "key": "ref58",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TSMCB.2010.2045120"
+          },
+          {
+            "key": "ref59",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fncir.2017.00098"
+          },
+          {
+            "key": "ref60",
+            "first-page": "8",
+            "article-title": "The MoorePenrose or generalized inverse",
+            "author": "Campbell",
+            "year": "1991",
+            "journal-title": "Generalized Inverses Linear Transformations"
+          },
+          {
+            "key": "ref61",
+            "article-title": "Moore-Penrose pseudoinverseproofs",
+            "year": "2014"
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Robotics"
+        ],
+        "original-title": [],
+        "link": [
+          {
+            "URL": "http://xplorestaging.ieee.org/ielx8/8860/10365208/10552403.pdf?arnumber=10552403",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2024,
+              6,
+              29
+            ]
+          ],
+          "date-time": "2024-06-29T01:14:01Z",
+          "timestamp": 1719623641000
+        },
+        "score": 1,
+        "resource": {
+          "primary": {
+            "URL": "https://ieeexplore.ieee.org/document/10552403/"
+          }
+        },
+        "subtitle": [],
+        "short-title": [],
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "references-count": 61,
+        "URL": "https://doi.org/10.1109/tro.2024.3411849",
+        "relation": {},
+        "ISSN": [
+          "1552-3098",
+          "1941-0468"
+        ],
+        "issn-type": [
+          {
+            "value": "1552-3098",
+            "type": "print"
+          },
+          {
+            "value": "1941-0468",
+            "type": "electronic"
+          }
+        ],
+        "subject": [],
+        "published": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "Song_TIE": {
+    "url": "https://api.crossref.org/works/10.1109%2FTIE.2024.3398675",
+    "result": {
+      "status": "ok",
+      "message-type": "work",
+      "message-version": "1.0.0",
+      "message": {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              9,
+              10
+            ]
+          ],
+          "date-time": "2026-09-10T16:20:49Z",
+          "timestamp": 1789057249668,
+          "version": "build-2803163510"
+        },
+        "reference-count": 39,
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "issue": "12",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2024,
+                  12,
+                  1
+                ]
+              ],
+              "date-time": "2024-12-01T00:00:00Z",
+              "timestamp": 1733011200000
+            },
+            "content-version": "vor",
+            "delay-in-days": 0,
+            "URL": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2024,
+                  12,
+                  1
+                ]
+              ],
+              "date-time": "2024-12-01T00:00:00Z",
+              "timestamp": 1733011200000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-029"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2024,
+                  12,
+                  1
+                ]
+              ],
+              "date-time": "2024-12-01T00:00:00Z",
+              "timestamp": 1733011200000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-037"
+          }
+        ],
+        "funder": [
+          {
+            "DOI": "10.13039/501100012166",
+            "name": "National Key Research and Development Program of China",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "2022YFE0201900"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2022YFE0201900"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100012166",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "name": "ANSO Collaborative Research project",
+            "award": [
+              "ANSO-CR-PP-2020-03"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "ANSO-CR-PP-2020-03"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Guangdong Science and Technology Plan Project",
+            "award": [
+              "2020B1212060077"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2020B1212060077"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Shenzhen Science and Technology Research Program",
+            "award": [
+              "SGDX20210823103405040"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "SGDX20210823103405040"
+                ]
+              }
+            ]
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "short-container-title": [
+          "IEEE Trans. Ind. Electron."
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1109/tie.2024.3398675",
+        "type": "journal-article",
+        "created": {
+          "date-parts": [
+            [
+              2024,
+              6,
+              6
+            ]
+          ],
+          "date-time": "2024-06-06T13:27:09Z",
+          "timestamp": 1717680429000
+        },
+        "page": "16165-16175",
+        "source": "Crossref",
+        "is-referenced-by-count": 13,
+        "title": [
+          "Deep-LSTM-Based Human-Robot Collaboration Control With Static-Dynamic Calibration"
+        ],
+        "prefix": "10.1109",
+        "volume": "71",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-3867-3908",
+            "authenticated-orcid": false,
+            "given": "Chenglin",
+            "family": "Xie",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Shenzhen Campus of Sun Yat-sen University, Shenzhen, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-3909-488X",
+            "authenticated-orcid": false,
+            "given": "Zhijun",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Mechanical Engineering, Translational Research Center, and Shanghai Yangzhi Rehabilitation Hospital, Tongji University, Shanghai, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3662-116X",
+            "authenticated-orcid": false,
+            "given": "Rong",
+            "family": "Song",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Shenzhen Campus of Sun Yat-sen University, Shenzhen, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "263",
+        "reference": [
+          {
+            "key": "ref1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.bspc.2019.02.011"
+          },
+          {
+            "key": "ref2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.rcim.2022.102359"
+          },
+          {
+            "key": "ref3",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1126/scirobotics.aaw6339"
+          },
+          {
+            "key": "ref4",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/LRA.2021.3051562"
+          },
+          {
+            "key": "ref5",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TCDS.2021.3098350"
+          },
+          {
+            "key": "ref6",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ACCESS.2019.2963881"
+          },
+          {
+            "key": "ref7",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TMRB.2020.2970222"
+          },
+          {
+            "key": "ref8",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.isatra.2021.05.039"
+          },
+          {
+            "key": "ref9",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.eswa.2011.06.043"
+          },
+          {
+            "key": "ref10",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TCYB.2020.3016595"
+          },
+          {
+            "key": "ref11",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICIEVicIVPR48672.2020.9306613"
+          },
+          {
+            "key": "ref12",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1186/s12984-019-0559-z"
+          },
+          {
+            "key": "ref13",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TBME.2020.3012296"
+          },
+          {
+            "key": "ref14",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2009.2039378"
+          },
+          {
+            "key": "ref15",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TIE.2014.2387337"
+          },
+          {
+            "key": "ref16",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2016.2639527"
+          },
+          {
+            "key": "ref17",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TBCAS.2021.3130090"
+          },
+          {
+            "key": "ref18",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.5772/56717"
+          },
+          {
+            "key": "ref19",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2017.00280"
+          },
+          {
+            "key": "ref20",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TCYB.2022.3166604"
+          },
+          {
+            "key": "ref21",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.bspc.2022.103787"
+          },
+          {
+            "key": "ref22",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1088/1741-2552/ac1adc"
+          },
+          {
+            "key": "ref23",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s11517-018-1940-y"
+          },
+          {
+            "key": "ref24",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ACCESS.2019.2956951"
+          },
+          {
+            "key": "ref25",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICARM54641.2022.9959157"
+          },
+          {
+            "key": "ref26",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.jelekin.2012.10.011"
+          },
+          {
+            "key": "ref27",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TII.2018.2875729"
+          },
+          {
+            "key": "ref28",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1186/1475-925X-13-37"
+          },
+          {
+            "key": "ref29",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/S1050-6411(00)00027-4"
+          },
+          {
+            "key": "ref30",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.bspc.2015.02.009"
+          },
+          {
+            "key": "ref31",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1123/jab.20.4.367"
+          },
+          {
+            "issue": "4",
+            "key": "ref32",
+            "first-page": "359",
+            "article-title": "Muscle and tendon: Properties, models, scaling, and application to biomechanics and motor control",
+            "volume": "17",
+            "author": "Zajac",
+            "year": "1989",
+            "journal-title": "Crit. Rev. Biomed. Eng."
+          },
+          {
+            "key": "ref33",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2019.2949203"
+          },
+          {
+            "key": "ref34",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/S0021-9290(03)00152-0"
+          },
+          {
+            "key": "ref35",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3901/cjme.2015.1120.137"
+          },
+          {
+            "key": "ref36",
+            "first-page": "1",
+            "article-title": "Adam: A method for stochastic optimization",
+            "volume-title": "Proc. 3rd Int. Conf. Learn. Representations",
+            "author": "Kingma",
+            "year": "2015"
+          },
+          {
+            "key": "ref37",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TAI.2021.3091038"
+          },
+          {
+            "key": "ref38",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/RO-MAN46459.2019.8956388"
+          },
+          {
+            "key": "ref39",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.jelekin.2007.03.006"
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Industrial Electronics"
+        ],
+        "original-title": [],
+        "link": [
+          {
+            "URL": "http://xplorestaging.ieee.org/ielx8/41/10723150/10551282.pdf?arnumber=10551282",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2024,
+              11,
+              26
+            ]
+          ],
+          "date-time": "2024-11-26T19:57:49Z",
+          "timestamp": 1732651069000
+        },
+        "score": 1,
+        "resource": {
+          "primary": {
+            "URL": "https://ieeexplore.ieee.org/document/10551282/"
+          }
+        },
+        "subtitle": [],
+        "short-title": [],
+        "issued": {
+          "date-parts": [
+            [
+              2024,
+              12
+            ]
+          ]
+        },
+        "references-count": 39,
+        "journal-issue": {
+          "issue": "12"
+        },
+        "URL": "https://doi.org/10.1109/tie.2024.3398675",
+        "relation": {},
+        "ISSN": [
+          "0278-0046",
+          "1557-9948"
+        ],
+        "issn-type": [
+          {
+            "value": "0278-0046",
+            "type": "print"
+          },
+          {
+            "value": "1557-9948",
+            "type": "electronic"
+          }
+        ],
+        "subject": [],
+        "published": {
+          "date-parts": [
+            [
+              2024,
+              12
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "Song_VAAN": {
+    "url": "https://api.crossref.org/works/10.1109%2FTBME.2022.3228070",
+    "result": {
+      "status": "ok",
+      "message-type": "work",
+      "message-version": "1.0.0",
+      "message": {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              9,
+              10
+            ]
+          ],
+          "date-time": "2026-09-10T23:04:52Z",
+          "timestamp": 1789081492648,
+          "version": "build-2803163510"
+        },
+        "reference-count": 53,
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "issue": "6",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2023,
+                  6,
+                  1
+                ]
+              ],
+              "date-time": "2023-06-01T00:00:00Z",
+              "timestamp": 1685577600000
+            },
+            "content-version": "vor",
+            "delay-in-days": 0,
+            "URL": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2023,
+                  6,
+                  1
+                ]
+              ],
+              "date-time": "2023-06-01T00:00:00Z",
+              "timestamp": 1685577600000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-029"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2023,
+                  6,
+                  1
+                ]
+              ],
+              "date-time": "2023-06-01T00:00:00Z",
+              "timestamp": 1685577600000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-037"
+          }
+        ],
+        "funder": [
+          {
+            "name": "National Key R&amp;D Program of China",
+            "award": [
+              "2022YFE0201900"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2022YFE0201900"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Guangdong Science and Technology Plan Project",
+            "award": [
+              "2020B1212060077"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2020B1212060077"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Shenzhen Science and Technology Research Program",
+            "award": [
+              "SGDX20210823103405040"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "SGDX20210823103405040"
+                ]
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100003453",
+            "name": "Natural Science Foundation of Guangdong Province",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "2020A1515010735"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2020A1515010735"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100003453",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100001809",
+            "name": "National Natural Science Foundation of China",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "32071316"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "32071316"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100001809",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "short-container-title": [
+          "IEEE Trans. Biomed. Eng."
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/tbme.2022.3228070",
+        "type": "journal-article",
+        "created": {
+          "date-parts": [
+            [
+              2022,
+              12,
+              9
+            ]
+          ],
+          "date-time": "2022-12-09T13:40:09Z",
+          "timestamp": 1670593209000
+        },
+        "page": "1795-1803",
+        "source": "Crossref",
+        "is-referenced-by-count": 26,
+        "title": [
+          "Voluntary Assist-as-Needed Controller for an Ankle Power-Assist Rehabilitation Robot"
+        ],
+        "prefix": "10.1109",
+        "volume": "70",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-6260-8036",
+            "authenticated-orcid": false,
+            "given": "Renyu",
+            "family": "Yang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Sun Yat-sen University, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Zhihang",
+            "family": "Shen",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Information Center, Sun Yat-sen University Cancer Center, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yueling",
+            "family": "Lyu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Sun Yat-sen University, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yu",
+            "family": "Zhuang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Sun Yat-sen University, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-9340-9061",
+            "authenticated-orcid": false,
+            "given": "Le",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Medical Research, Northwestern Polytechnical University, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3662-116X",
+            "authenticated-orcid": false,
+            "given": "Rong",
+            "family": "Song",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Sun Yat-sen University, Guangzhou, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "263",
+        "reference": [
+          {
+            "key": "ref13",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2008.918389"
+          },
+          {
+            "key": "ref12",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TSMC.2017.2771227"
+          },
+          {
+            "key": "ref15",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2008.2008280"
+          },
+          {
+            "key": "ref14",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TMECH.2014.2340697"
+          },
+          {
+            "key": "ref53",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNNLS.2019.2892157"
+          },
+          {
+            "key": "ref52",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TMECH.2012.2214228"
+          },
+          {
+            "key": "ref11",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1186/1743-0003-6-20"
+          },
+          {
+            "key": "ref10",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/3516.789685"
+          },
+          {
+            "key": "ref17",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TBME.2020.3027823"
+          },
+          {
+            "key": "ref16",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/0278364917691111"
+          },
+          {
+            "key": "ref19",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2016.2583464"
+          },
+          {
+            "key": "ref18",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1044/1092-4388(2008/018)"
+          },
+          {
+            "key": "ref51",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TMECH.2020.3022165"
+          },
+          {
+            "key": "ref50",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1097/01.NPT.0000281945.55816.e1"
+          },
+          {
+            "key": "ref46",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2015.2503726"
+          },
+          {
+            "key": "ref45",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/LRA.2017.2768124"
+          },
+          {
+            "key": "ref48",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICRA.2015.7139888"
+          },
+          {
+            "key": "ref47",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/1545968317721975"
+          },
+          {
+            "key": "ref42",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3109/02699052.2010.506855"
+          },
+          {
+            "key": "ref41",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TIE.2017.2733425"
+          },
+          {
+            "key": "ref44",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TSMCB.2012.2222374"
+          },
+          {
+            "key": "ref43",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-3-319-28603-7_9"
+          },
+          {
+            "key": "ref49",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1161/01.STR.0000127785.73065.34"
+          },
+          {
+            "key": "ref8",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1186/s12984-018-0394-7"
+          },
+          {
+            "key": "ref7",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1097/PHM.0b013e318269d9a3"
+          },
+          {
+            "key": "ref9",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.mechatronics.2015.04.005"
+          },
+          {
+            "key": "ref4",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2007.903919"
+          },
+          {
+            "key": "ref3",
+            "article-title": "A multimedia holistic rehabilitation method for patients after stroke",
+            "volume": "12",
+            "author": "probosz",
+            "year": "2009",
+            "journal-title": "CyberPsychol Behav"
+          },
+          {
+            "key": "ref6",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.jfranklin.2009.02.009"
+          },
+          {
+            "key": "ref5",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2012.2189496"
+          },
+          {
+            "key": "ref40",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2016.2532478"
+          },
+          {
+            "key": "ref35",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1115/1.2796019"
+          },
+          {
+            "key": "ref34",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/S0021-9290(03)00010-1"
+          },
+          {
+            "key": "ref37",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1115/1.3138494"
+          },
+          {
+            "key": "ref36",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/S0021-9290(03)00152-0"
+          },
+          {
+            "key": "ref31",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TMRB.2021.3105141"
+          },
+          {
+            "key": "ref30",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/LRA.2017.2737478"
+          },
+          {
+            "key": "ref33",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1123/jab.20.4.367"
+          },
+          {
+            "key": "ref32",
+            "author": "craig",
+            "year": "1986",
+            "journal-title": "Introduction to Robotics Mechanics and Control"
+          },
+          {
+            "key": "ref2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TMECH.2010.2041245"
+          },
+          {
+            "key": "ref1",
+            "doi-asserted-by": "crossref",
+            "first-page": "439",
+            "DOI": "10.1016/S1474-4422(19)30034-1",
+            "article-title": "Global, regional, and national burden of stroke, 1990&#x2013;2016: A systematic analysis for the global burden of disease study 2016",
+            "volume": "18",
+            "author": "collaborators",
+            "year": "2019",
+            "journal-title": "Lancet Neurol"
+          },
+          {
+            "key": "ref39",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1682/JRRD.2011.09.0172"
+          },
+          {
+            "key": "ref38",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2008.926860"
+          },
+          {
+            "key": "ref24",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2008.926707"
+          },
+          {
+            "key": "ref23",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1023/A:1024494031121"
+          },
+          {
+            "key": "ref26",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TBME.2013.2295381"
+          },
+          {
+            "key": "ref25",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TBME.2012.2198821"
+          },
+          {
+            "key": "ref20",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnbot.2018.00016"
+          },
+          {
+            "key": "ref22",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1002/mus.21948"
+          },
+          {
+            "key": "ref21",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TMECH.2013.2264533"
+          },
+          {
+            "key": "ref28",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TII.2018.2875729"
+          },
+          {
+            "key": "ref27",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.compbiomed.2009.09.002"
+          },
+          {
+            "key": "ref29",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TBME.2020.3012296"
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Biomedical Engineering"
+        ],
+        "original-title": [],
+        "link": [
+          {
+            "URL": "http://xplorestaging.ieee.org/ielx7/10/10129246/09978653.pdf?arnumber=9978653",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2023,
+              6,
+              12
+            ]
+          ],
+          "date-time": "2023-06-12T14:00:08Z",
+          "timestamp": 1686578408000
+        },
+        "score": 1,
+        "resource": {
+          "primary": {
+            "URL": "https://ieeexplore.ieee.org/document/9978653/"
+          }
+        },
+        "subtitle": [],
+        "short-title": [],
+        "issued": {
+          "date-parts": [
+            [
+              2023,
+              6
+            ]
+          ]
+        },
+        "references-count": 53,
+        "journal-issue": {
+          "issue": "6"
+        },
+        "URL": "https://doi.org/10.1109/tbme.2022.3228070",
+        "relation": {},
+        "ISSN": [
+          "0018-9294",
+          "1558-2531"
+        ],
+        "issn-type": [
+          {
+            "value": "0018-9294",
+            "type": "print"
+          },
+          {
+            "value": "1558-2531",
+            "type": "electronic"
+          }
+        ],
+        "subject": [],
+        "published": {
+          "date-parts": [
+            [
+              2023,
+              6
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "Song_TBME": {
+    "url": "https://api.crossref.org/works/10.1109%2FTBME.2020.3027823",
+    "result": {
+      "status": "ok",
+      "message-type": "work",
+      "message-version": "1.0.0",
+      "message": {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              8,
+              19
+            ]
+          ],
+          "date-time": "2026-08-19T19:09:50Z",
+          "timestamp": 1787166590817,
+          "version": "build-2736575974"
+        },
+        "reference-count": 47,
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "issue": "4",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2021,
+                  4,
+                  1
+                ]
+              ],
+              "date-time": "2021-04-01T00:00:00Z",
+              "timestamp": 1617235200000
+            },
+            "content-version": "vor",
+            "delay-in-days": 0,
+            "URL": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2021,
+                  4,
+                  1
+                ]
+              ],
+              "date-time": "2021-04-01T00:00:00Z",
+              "timestamp": 1617235200000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-029"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2021,
+                  4,
+                  1
+                ]
+              ],
+              "date-time": "2021-04-01T00:00:00Z",
+              "timestamp": 1617235200000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-037"
+          }
+        ],
+        "funder": [
+          {
+            "name": "National Key R&amp;D Program of China",
+            "award": [
+              "2018YFC2001600"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2018YFC2001600"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Shenzhen Science and Technology Plan",
+            "award": [
+              "JCYJ20170818155028942"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "JCYJ20170818155028942"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Guangdong Science and Technology Plan",
+            "award": [
+              "2017B010110015"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2017B010110015"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Guangdong Science and Technology Plan",
+            "award": [
+              "2017B020210011"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2017B020210011"
+                ]
+              }
+            ]
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "short-container-title": [
+          "IEEE Trans. Biomed. Eng."
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1109/tbme.2020.3027823",
+        "type": "journal-article",
+        "created": {
+          "date-parts": [
+            [
+              2020,
+              9,
+              30
+            ]
+          ],
+          "date-time": "2020-09-30T20:22:10Z",
+          "timestamp": 1601497330000
+        },
+        "page": "1351-1359",
+        "source": "Crossref",
+        "is-referenced-by-count": 60,
+        "title": [
+          "Performance-Based Hybrid Control of a Cable-Driven Upper-Limb Rehabilitation Robot"
+        ],
+        "prefix": "10.1109",
+        "volume": "68",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-9303-9769",
+            "authenticated-orcid": false,
+            "given": "Xianming",
+            "family": "Li",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-9311-444X",
+            "authenticated-orcid": false,
+            "given": "Qianqian",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3662-116X",
+            "authenticated-orcid": false,
+            "given": "Rong",
+            "family": "Song",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "263",
+        "reference": [
+          {
+            "key": "ref39",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1097/00002060-200007000-00009"
+          },
+          {
+            "key": "ref38",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2004.843173"
+          },
+          {
+            "key": "ref33",
+            "first-page": "1",
+            "article-title": "Velocity-control performance with a fingertip controlled admittance-type haptic device",
+            "volume": "1",
+            "author": "arbuckle",
+            "year": "2012",
+            "journal-title": "Grad Theses Diss"
+          },
+          {
+            "key": "ref32",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2006.870638"
+          },
+          {
+            "key": "ref31",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2010.2090064"
+          },
+          {
+            "key": "ref30",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2006.878967"
+          },
+          {
+            "key": "ref37",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICORR.2005.1501106"
+          },
+          {
+            "key": "ref36",
+            "doi-asserted-by": "crossref",
+            "first-page": "231",
+            "DOI": "10.3901/CJME.2015.1120.137",
+            "article-title": "Rapid optimization of tension distribution for cable-driven parallel manipulators with redundant cables",
+            "volume": "29",
+            "author": "bo",
+            "year": "2016",
+            "journal-title": "Chin J Mech Eng"
+          },
+          {
+            "key": "ref35",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3390/robotics8010017"
+          },
+          {
+            "key": "ref34",
+            "first-page": "430",
+            "article-title": "Design of a new 5 DOF wire-based robot for rehabilitation",
+            "author": "rosati",
+            "year": "0",
+            "journal-title": "Proc Int Conf Rehabil Robot"
+          },
+          {
+            "key": "ref10",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TSMC.2015.2497205"
+          },
+          {
+            "key": "ref40",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1161/01.STR.0000127785.73065.34"
+          },
+          {
+            "key": "ref11",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TMECH.2007.901934"
+          },
+          {
+            "key": "ref12",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s42235-019-0040-5"
+          },
+          {
+            "key": "ref13",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1155/2018/8647591"
+          },
+          {
+            "key": "ref14",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TMECH.2017.2717874"
+          },
+          {
+            "key": "ref15",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.apmr.2006.10.032"
+          },
+          {
+            "key": "ref16",
+            "doi-asserted-by": "crossref",
+            "first-page": "560",
+            "DOI": "10.1109/TNSRE.2007.908560",
+            "article-title": "Design, implementation and clinical tests of a wire-based robot for neurorehabilitation",
+            "volume": "15",
+            "author": "giulio",
+            "year": "2007",
+            "journal-title": "IEEE Trans Neural Syst Rehabil Eng"
+          },
+          {
+            "key": "ref17",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2014.2301532"
+          },
+          {
+            "key": "ref18",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2012.2189496"
+          },
+          {
+            "key": "ref19",
+            "first-page": "1",
+            "article-title": "Design of a 7-DOF cable-driven arm exoskeleton (CAREX-7) and a controller for dexterous motion training or assistance",
+            "volume": "22",
+            "author": "xiang",
+            "year": "2016",
+            "journal-title": "IEEE/ASME Trans Mechatronics"
+          },
+          {
+            "key": "ref28",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.mechatronics.2007.09.004"
+          },
+          {
+            "key": "ref4",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/1545968307305457"
+          },
+          {
+            "key": "ref27",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2011.2168170"
+          },
+          {
+            "key": "ref3",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1056/NEJMoa0911341"
+          },
+          {
+            "key": "ref6",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/86.662623"
+          },
+          {
+            "key": "ref29",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ROBOT.2004.1302503"
+          },
+          {
+            "key": "ref5",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1186/1743-0003-11-3"
+          },
+          {
+            "key": "ref8",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1017/S0263574702004617"
+          },
+          {
+            "key": "ref7",
+            "first-page": "663",
+            "article-title": "Development of robots for rehabilitation therapy: The Palo Alto VA/Stanford experience",
+            "volume": "37",
+            "author": "burgar",
+            "year": "2000",
+            "journal-title": "J Rehabil Res Develop"
+          },
+          {
+            "key": "ref2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1080/09638280500534861"
+          },
+          {
+            "key": "ref9",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-3-642-03889-1_35"
+          },
+          {
+            "key": "ref1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1111/ijs.12245"
+          },
+          {
+            "key": "ref46",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.15837/ijccc.2020.4.3814"
+          },
+          {
+            "key": "ref20",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3390/electronics8080826"
+          },
+          {
+            "key": "ref45",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.compeleceng.2019.106465"
+          },
+          {
+            "key": "ref22",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1161/01.STR.31.6.1360"
+          },
+          {
+            "key": "ref47",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2005.847354"
+          },
+          {
+            "key": "ref21",
+            "doi-asserted-by": "crossref",
+            "first-page": "646",
+            "DOI": "10.3389/fneur.2017.00646",
+            "article-title": "Sliding mode tracking control of a wire-driven upper-limb rehabilitation robot with nonlinear disturbance observer",
+            "volume": "8",
+            "author": "jie",
+            "year": "2017",
+            "journal-title": "Front Neurol"
+          },
+          {
+            "key": "ref42",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2008.2008280"
+          },
+          {
+            "key": "ref24",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/LRA.2017.2737478"
+          },
+          {
+            "key": "ref41",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1097/01.NPT.0000281945.55816.e1"
+          },
+          {
+            "key": "ref23",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2008.918389"
+          },
+          {
+            "key": "ref44",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s12555-015-0049-4"
+          },
+          {
+            "key": "ref26",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TSMC.2017.2771227"
+          },
+          {
+            "key": "ref43",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2009.2033061"
+          },
+          {
+            "key": "ref25",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s00221-005-0097-8"
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Biomedical Engineering"
+        ],
+        "original-title": [],
+        "link": [
+          {
+            "URL": "http://xplorestaging.ieee.org/ielx7/10/9381734/09210229.pdf?arnumber=9210229",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2022,
+              5,
+              10
+            ]
+          ],
+          "date-time": "2022-05-10T14:53:34Z",
+          "timestamp": 1652194414000
+        },
+        "score": 1,
+        "resource": {
+          "primary": {
+            "URL": "https://ieeexplore.ieee.org/document/9210229/"
+          }
+        },
+        "subtitle": [],
+        "short-title": [],
+        "issued": {
+          "date-parts": [
+            [
+              2021,
+              4
+            ]
+          ]
+        },
+        "references-count": 47,
+        "journal-issue": {
+          "issue": "4"
+        },
+        "URL": "https://doi.org/10.1109/tbme.2020.3027823",
+        "relation": {},
+        "ISSN": [
+          "0018-9294",
+          "1558-2531"
+        ],
+        "issn-type": [
+          {
+            "value": "0018-9294",
+            "type": "print"
+          },
+          {
+            "value": "1558-2531",
+            "type": "electronic"
+          }
+        ],
+        "subject": [],
+        "published": {
+          "date-parts": [
+            [
+              2021,
+              4
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "Song_TBCAS": {
+    "url": "https://api.crossref.org/works/10.1109%2FTBCAS.2021.3130090",
+    "result": {
+      "status": "ok",
+      "message-type": "work",
+      "message-version": "1.0.0",
+      "message": {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              9,
+              10
+            ]
+          ],
+          "date-time": "2026-09-10T23:04:39Z",
+          "timestamp": 1789081479317,
+          "version": "build-2803163510"
+        },
+        "reference-count": 61,
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "issue": "6",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2021,
+                  12,
+                  1
+                ]
+              ],
+              "date-time": "2021-12-01T00:00:00Z",
+              "timestamp": 1638316800000
+            },
+            "content-version": "vor",
+            "delay-in-days": 0,
+            "URL": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2021,
+                  12,
+                  1
+                ]
+              ],
+              "date-time": "2021-12-01T00:00:00Z",
+              "timestamp": 1638316800000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-029"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2021,
+                  12,
+                  1
+                ]
+              ],
+              "date-time": "2021-12-01T00:00:00Z",
+              "timestamp": 1638316800000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-037"
+          }
+        ],
+        "funder": [
+          {
+            "name": "National Key Research and Development Program of China",
+            "award": [
+              "2018YFC2001600"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2018YFC2001600"
+                ]
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100007162",
+            "name": "Guangdong Science and Technology Department",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "2020B1212060077"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2020B1212060077"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100007162",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "name": "Shenzhen Science and Technology Plan Project",
+            "award": [
+              "GJHZ20200731095211034"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "GJHZ20200731095211034"
+                ]
+              }
+            ]
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "short-container-title": [
+          "IEEE Trans. Biomed. Circuits Syst."
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1109/tbcas.2021.3130090",
+        "type": "journal-article",
+        "created": {
+          "date-parts": [
+            [
+              2021,
+              11,
+              23
+            ]
+          ],
+          "date-time": "2021-11-23T21:23:54Z",
+          "timestamp": 1637702634000
+        },
+        "page": "1332-1342",
+        "source": "Crossref",
+        "is-referenced-by-count": 62,
+        "title": [
+          "A Hybrid Arm-Hand Rehabilitation Robot With EMG-Based Admittance Controller"
+        ],
+        "prefix": "10.1109",
+        "volume": "15",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-3867-3908",
+            "authenticated-orcid": false,
+            "given": "Chenglin",
+            "family": "Xie",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-9311-444X",
+            "authenticated-orcid": false,
+            "given": "Qianqian",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yao",
+            "family": "Huang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-5720-8852",
+            "authenticated-orcid": false,
+            "given": "Steven",
+            "family": "Su",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Ting",
+            "family": "Xu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3662-116X",
+            "authenticated-orcid": false,
+            "given": "Rong",
+            "family": "Song",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "263",
+        "reference": [
+          {
+            "key": "ref39",
+            "first-page": "359",
+            "article-title": "Muscle and tendon: Properties, models, scaling, and application to biomechanics and motor control",
+            "volume": "17",
+            "author": "zajac",
+            "year": "1989",
+            "journal-title": "Crit Rev Biomed Eng"
+          },
+          {
+            "key": "ref38",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2019.2949203"
+          },
+          {
+            "key": "ref33",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2009.2039378"
+          },
+          {
+            "key": "ref32",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1142/S0219843616500316"
+          },
+          {
+            "key": "ref31",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1186/s12984-019-0559-z"
+          },
+          {
+            "key": "ref30",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TII.2018.2875729"
+          },
+          {
+            "key": "ref37",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICARM49381.2020.9195326"
+          },
+          {
+            "key": "ref36",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1186/1743-0003-11-126"
+          },
+          {
+            "key": "ref35",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TIE.2014.2387337"
+          },
+          {
+            "key": "ref34",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TITB.2010.2040832"
+          },
+          {
+            "key": "ref60",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/s41598-018-29091-5"
+          },
+          {
+            "key": "ref61",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2008.926707"
+          },
+          {
+            "key": "ref28",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnbot.2018.00016"
+          },
+          {
+            "key": "ref27",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TMECH.2012.2214228"
+          },
+          {
+            "key": "ref29",
+            "first-page": "1",
+            "article-title": "Real-time EMG driven lower limb actuated orthosis for assistance as needed movement strategy",
+            "author": "walid",
+            "year": "2013",
+            "journal-title": "Proc Robot Sci Syst Conf"
+          },
+          {
+            "key": "ref2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TOH.2015.2417570"
+          },
+          {
+            "key": "ref1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1111/ijs.12245"
+          },
+          {
+            "key": "ref20",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1682/JRRD.2005.02.0048"
+          },
+          {
+            "key": "ref22",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICORR.2007.4428454"
+          },
+          {
+            "key": "ref21",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1080/17483107.2019.1629110"
+          },
+          {
+            "key": "ref24",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.mechatronics.2015.04.005"
+          },
+          {
+            "key": "ref23",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.mechmachtheory.2013.06.005"
+          },
+          {
+            "key": "ref26",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1115/1.3140713"
+          },
+          {
+            "key": "ref25",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/RBME.2016.2552201"
+          },
+          {
+            "key": "ref50",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2016.2639527"
+          },
+          {
+            "key": "ref51",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2008.926860"
+          },
+          {
+            "key": "ref59",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2009.2019787"
+          },
+          {
+            "key": "ref58",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1186/1743-0003-11-111"
+          },
+          {
+            "key": "ref57",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TMECH.2014.2305842"
+          },
+          {
+            "key": "ref56",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TBCAS.2019.2950145"
+          },
+          {
+            "key": "ref55",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2018.2848549"
+          },
+          {
+            "key": "ref54",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2019.2910011"
+          },
+          {
+            "key": "ref53",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.23736/S1973-9087.18.05308-X"
+          },
+          {
+            "key": "ref52",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1123/jab.20.4.367"
+          },
+          {
+            "key": "ref10",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1142/S0129065717500095"
+          },
+          {
+            "key": "ref11",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.5772/57261"
+          },
+          {
+            "key": "ref40",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fneur.2017.00679"
+          },
+          {
+            "key": "ref12",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/86.662623"
+          },
+          {
+            "key": "ref13",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2007.908560"
+          },
+          {
+            "key": "ref14",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1023/A:1024436732030"
+          },
+          {
+            "key": "ref15",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2014.2301532"
+          },
+          {
+            "key": "ref16",
+            "first-page": "663",
+            "article-title": "Development of robots for rehabilitation therapy: The palo alto VA/Stanford experience",
+            "volume": "37",
+            "author": "burgar",
+            "year": "2000",
+            "journal-title": "J Rehabil Res Develop"
+          },
+          {
+            "key": "ref17",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNNLS.2019.2892157"
+          },
+          {
+            "key": "ref18",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3390/app10196684"
+          },
+          {
+            "key": "ref19",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.2522/ptj.20090160"
+          },
+          {
+            "key": "ref4",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/LRA.2018.2885165"
+          },
+          {
+            "key": "ref3",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.medengphy.2011.10.004"
+          },
+          {
+            "key": "ref6",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/0269215511431473"
+          },
+          {
+            "key": "ref5",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s10072-017-2995-5"
+          },
+          {
+            "key": "ref8",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TMECH.2007.901934"
+          },
+          {
+            "key": "ref7",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1056/NEJMoa0911341"
+          },
+          {
+            "key": "ref49",
+            "first-page": "593",
+            "article-title": "Development of autonomous assistive devices - Analysis of change of human motion patterns",
+            "author": "kita",
+            "year": "2006",
+            "journal-title": "Proc IEEE Int Conf Syst Man Cybern"
+          },
+          {
+            "key": "ref9",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICVR.2008.4625154"
+          },
+          {
+            "key": "ref46",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ACCESS.2020.3033301"
+          },
+          {
+            "key": "ref45",
+            "doi-asserted-by": "crossref",
+            "first-page": "231",
+            "DOI": "10.3901/CJME.2015.1120.137",
+            "article-title": "Rapid optimization of tension distribution for cable-driven parallel manipulators with redundant cables",
+            "volume": "29",
+            "author": "bo",
+            "year": "2016",
+            "journal-title": "Chin J Mech Eng"
+          },
+          {
+            "key": "ref48",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2013.2243470"
+          },
+          {
+            "key": "ref47",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1080/01691864.2020.1713886"
+          },
+          {
+            "key": "ref42",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/S0021-9290(03)00152-0"
+          },
+          {
+            "key": "ref41",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.compbiomed.2009.09.002"
+          },
+          {
+            "key": "ref44",
+            "doi-asserted-by": "crossref",
+            "first-page": "229",
+            "DOI": "10.1163/016918610X538561",
+            "article-title": "Control system design for an upper-limb rehabilitation robot",
+            "volume": "25",
+            "author": "xu",
+            "year": "2012",
+            "journal-title": "Adv Robot"
+          },
+          {
+            "key": "ref43",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-3-642-40852-6_50"
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Biomedical Circuits and Systems"
+        ],
+        "original-title": [],
+        "link": [
+          {
+            "URL": "http://xplorestaging.ieee.org/ielx7/4156126/9715158/09625809.pdf?arnumber=9625809",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2022,
+              5,
+              10
+            ]
+          ],
+          "date-time": "2022-05-10T14:52:48Z",
+          "timestamp": 1652194368000
+        },
+        "score": 1,
+        "resource": {
+          "primary": {
+            "URL": "https://ieeexplore.ieee.org/document/9625809/"
+          }
+        },
+        "subtitle": [],
+        "short-title": [],
+        "issued": {
+          "date-parts": [
+            [
+              2021,
+              12
+            ]
+          ]
+        },
+        "references-count": 61,
+        "journal-issue": {
+          "issue": "6"
+        },
+        "URL": "https://doi.org/10.1109/tbcas.2021.3130090",
+        "relation": {},
+        "ISSN": [
+          "1932-4545",
+          "1940-9990"
+        ],
+        "issn-type": [
+          {
+            "value": "1932-4545",
+            "type": "print"
+          },
+          {
+            "value": "1940-9990",
+            "type": "electronic"
+          }
+        ],
+        "subject": [],
+        "published": {
+          "date-parts": [
+            [
+              2021,
+              12
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "RL2026": {
+    "url": "https://api.crossref.org/works/10.1109%2FTNSRE.2025.3650096",
+    "result": {
+      "status": "ok",
+      "message-type": "work",
+      "message-version": "1.0.0",
+      "message": {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              9,
+              18
+            ]
+          ],
+          "date-time": "2026-09-18T18:46:15Z",
+          "timestamp": 1789757175231,
+          "version": "4.0.1"
+        },
+        "reference-count": 64,
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2026,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "2026-01-01T00:00:00Z",
+              "timestamp": 1767225600000
+            },
+            "content-version": "vor",
+            "delay-in-days": 0,
+            "URL": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2026,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "2026-01-01T00:00:00Z",
+              "timestamp": 1767225600000
+            },
+            "content-version": "am",
+            "delay-in-days": 0,
+            "URL": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+          }
+        ],
+        "funder": [
+          {
+            "DOI": "10.13039/100000001",
+            "name": "National Science Foundation",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "CMMI-1944203"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "CMMI-1944203"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000001",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "short-container-title": [
+          "IEEE Trans. Neural Syst. Rehabil. Eng."
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2026
+            ]
+          ]
+        },
+        "DOI": "10.1109/tnsre.2025.3650096",
+        "type": "journal-article",
+        "created": {
+          "date-parts": [
+            [
+              2025,
+              12,
+              31
+            ]
+          ],
+          "date-time": "2025-12-31T18:45:53Z",
+          "timestamp": 1767206753000
+        },
+        "page": "532-542",
+        "source": "Crossref",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Personalized Adaptive Assistance With Reinforcement Learning Control Enhances Engagement, Performance, and Retention in Robot-Assisted Arm-Reaching Exercises"
+        ],
+        "prefix": "10.1109",
+        "volume": "34",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0005-4216-2416",
+            "authenticated-orcid": false,
+            "given": "Andy",
+            "family": "Li",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Wearable Robotic Systems Laboratory, Stevens Institute of Technology, Hoboken, NJ, USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-0324-5359",
+            "authenticated-orcid": false,
+            "given": "Riccardo",
+            "family": "Minto",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Industrial Engineering, University of Padova, Padua, Italy"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0001-0275-6659",
+            "authenticated-orcid": false,
+            "given": "Maximillan",
+            "family": "Dölling",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Mechatronic Systems, Leibniz University Hannover, Hannover, Germany"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-2452-221X",
+            "authenticated-orcid": false,
+            "given": "Giovanni",
+            "family": "Boschetti",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Industrial Engineering, University of Padova, Padua, Italy"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3514-6889",
+            "authenticated-orcid": false,
+            "given": "Damiano",
+            "family": "Zanotto",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Wearable Robotic Systems Laboratory, Stevens Institute of Technology, Hoboken, NJ, USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "263",
+        "reference": [
+          {
+            "key": "ref1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-3-319-28603-7_1"
+          },
+          {
+            "key": "ref2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnsys.2019.00074"
+          },
+          {
+            "key": "ref3",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-3-031-08995-4_2"
+          },
+          {
+            "key": "ref4",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1586/17434440.2014.882766"
+          },
+          {
+            "key": "ref5",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.ijmedinf.2018.12.001"
+          },
+          {
+            "key": "ref6",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1186/1743-0003-6-5"
+          },
+          {
+            "key": "ref7",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1186/1743-0003-4-8"
+          },
+          {
+            "key": "ref8",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2012.2211492"
+          },
+          {
+            "key": "ref9",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2005.848628"
+          },
+          {
+            "key": "ref10",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2008.2008280"
+          },
+          {
+            "key": "ref11",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2014.2360822"
+          },
+          {
+            "key": "ref12",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/MCS.2011.2173261"
+          },
+          {
+            "key": "ref13",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/frobt.2018.00104"
+          },
+          {
+            "key": "ref14",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2008.918389"
+          },
+          {
+            "key": "ref15",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TSMCB.2012.2222374"
+          },
+          {
+            "key": "ref16",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/BIOROB.2014.6913854"
+          },
+          {
+            "key": "ref17",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TCST.2021.3107483"
+          },
+          {
+            "key": "ref18",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.neunet.2014.01.012"
+          },
+          {
+            "key": "ref19",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/MRA.2023.3282434"
+          },
+          {
+            "key": "ref20",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/IROS40897.2019.8968464"
+          },
+          {
+            "key": "ref21",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/BioRob49111.2020.9224392"
+          },
+          {
+            "key": "ref22",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TMRB.2021.3137971"
+          },
+          {
+            "key": "ref23",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNNLS.2021.3071727"
+          },
+          {
+            "key": "ref24",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/LRA.2022.3196105"
+          },
+          {
+            "key": "ref25",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-3-031-66656-8_4"
+          },
+          {
+            "key": "ref26",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TSMC.2025.3555598"
+          },
+          {
+            "key": "ref27",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/IJCNN48605.2020.9207427"
+          },
+          {
+            "key": "ref28",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/LRA.2021.3067617"
+          },
+          {
+            "key": "ref29",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/frobt.2023.1066518"
+          },
+          {
+            "key": "ref30",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/86.662623"
+          },
+          {
+            "key": "ref31",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1146/annurev-neuro-080317-062245"
+          },
+          {
+            "key": "ref32",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2014.2301532"
+          },
+          {
+            "key": "ref33",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1115/IMECE2008-67273"
+          },
+          {
+            "key": "ref34",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1523/jneurosci.05-07-01688.1985"
+          },
+          {
+            "key": "ref35",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2012.2187462"
+          },
+          {
+            "key": "ref36",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1186/1743-0003-1-5"
+          },
+          {
+            "key": "ref37",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-981-10-5263-7_12"
+          },
+          {
+            "key": "ref38",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1186/1743-0003-6-20"
+          },
+          {
+            "key": "ref39",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3200/JMBR.40.6.545-557"
+          },
+          {
+            "key": "ref40",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/72.914523"
+          },
+          {
+            "key": "ref41",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1155/2014/285248"
+          },
+          {
+            "key": "ref42",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/MCS.2012.2214134"
+          },
+          {
+            "key": "ref43",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNNLS.2015.2490698"
+          },
+          {
+            "key": "ref44",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1126/science.153.3731.34"
+          },
+          {
+            "key": "ref45",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.automatica.2015.06.001"
+          },
+          {
+            "key": "ref46",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/s41598-019-39900-0"
+          },
+          {
+            "key": "ref47",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fpsyg.2013.00479"
+          },
+          {
+            "key": "ref48",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2013.2242902"
+          },
+          {
+            "key": "ref49",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1093/acprof:oso/9780195152968.001.0001"
+          },
+          {
+            "key": "ref50",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3390/s20215989"
+          },
+          {
+            "key": "ref51",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TMECH.2020.2992090"
+          },
+          {
+            "key": "ref52",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/LRA.2017.2768124"
+          },
+          {
+            "key": "ref53",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ISMR48347.2022.9807562"
+          },
+          {
+            "key": "ref54",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TMECH.2016.2551725"
+          },
+          {
+            "key": "ref55",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNNLS.2019.2892157"
+          },
+          {
+            "key": "ref56",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3390/s21134372"
+          },
+          {
+            "key": "ref57",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.caeai.2022.100089"
+          },
+          {
+            "key": "ref58",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CCA.2015.7320733"
+          },
+          {
+            "key": "ref59",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1155/2014/354906"
+          },
+          {
+            "key": "ref60",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.medengphy.2022.103880"
+          },
+          {
+            "key": "ref61",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2016.00477"
+          },
+          {
+            "key": "ref62",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1152/jn.00455.2022"
+          },
+          {
+            "key": "ref63",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1186/s12984-022-01058-8"
+          },
+          {
+            "key": "ref64",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1186/s12984-025-01662-4"
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Neural Systems and Rehabilitation Engineering"
+        ],
+        "original-title": [],
+        "link": [
+          {
+            "URL": "https://ieeexplore.ieee.org/ielam/7333/11311371/11320909-aam.pdf",
+            "content-type": "application/pdf",
+            "content-version": "am",
+            "intended-application": "syndication"
+          },
+          {
+            "URL": "http://xplorestaging.ieee.org/ielx8/7333/11311371/11320909.pdf?arnumber=11320909",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2026,
+              1,
+              16
+            ]
+          ],
+          "date-time": "2026-01-16T20:51:40Z",
+          "timestamp": 1768596700000
+        },
+        "score": 1,
+        "resource": {
+          "primary": {
+            "URL": "https://ieeexplore.ieee.org/document/11320909/"
+          }
+        },
+        "subtitle": [],
+        "short-title": [],
+        "issued": {
+          "date-parts": [
+            [
+              2026
+            ]
+          ]
+        },
+        "references-count": 64,
+        "URL": "https://doi.org/10.1109/tnsre.2025.3650096",
+        "relation": {},
+        "ISSN": [
+          "1534-4320",
+          "1558-0210"
+        ],
+        "issn-type": [
+          {
+            "value": "1534-4320",
+            "type": "print"
+          },
+          {
+            "value": "1558-0210",
+            "type": "electronic"
+          }
+        ],
+        "subject": [],
+        "published": {
+          "date-parts": [
+            [
+              2026
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "Shoulder2025": {
+    "url": "https://api.crossref.org/works/10.1109%2FTNSRE.2025.3579533",
+    "result": {
+      "status": "ok",
+      "message-type": "work",
+      "message-version": "1.0.0",
+      "message": {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              8,
+              24
+            ]
+          ],
+          "date-time": "2026-08-24T16:29:12Z",
+          "timestamp": 1787588952224,
+          "version": "build-2736575974"
+        },
+        "reference-count": 43,
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2025,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "2025-01-01T00:00:00Z",
+              "timestamp": 1735689600000
+            },
+            "content-version": "vor",
+            "delay-in-days": 0,
+            "URL": "https://creativecommons.org/licenses/by/4.0/legalcode"
+          }
+        ],
+        "funder": [
+          {
+            "name": "University of Canberra HDR Scholarship (UC HDR) funded through Australian Research Training Program",
+            "award": [
+              "111024CRP2007"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "111024CRP2007"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Nazarbayev University, Kazakhstan, through the Collaborative Research Program",
+            "award": [
+              "111024CRP2007"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "111024CRP2007"
+                ]
+              }
+            ]
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "short-container-title": [
+          "IEEE Trans. Neural Syst. Rehabil. Eng."
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "DOI": "10.1109/tnsre.2025.3579533",
+        "type": "journal-article",
+        "created": {
+          "date-parts": [
+            [
+              2025,
+              6,
+              13
+            ]
+          ],
+          "date-time": "2025-06-13T17:53:11Z",
+          "timestamp": 1749837191000
+        },
+        "page": "2358-2367",
+        "source": "Crossref",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Assist-as-Needed Control of a Shoulder Rehabilitation Robot Using a Virtual Biomechanical Model and Online Stiffness Adaptation"
+        ],
+        "prefix": "10.1109",
+        "volume": "33",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-8558-0208",
+            "authenticated-orcid": false,
+            "given": "Muhammad Faizan",
+            "family": "Shah",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Faculty of Science and Technology, University of Canberra, Canberra, ACT, Australia"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-1330-6186",
+            "authenticated-orcid": false,
+            "given": "Prashant K.",
+            "family": "Jamwal",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Electrical and Computer Engineering, Nazarbayev University, Astana, Kazakhstan"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-4883-0786",
+            "authenticated-orcid": false,
+            "given": "Mergen H.",
+            "family": "Ghayesh",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Electrical and Mechanical Engineering, The University of Adelaide, Adelaide, SA, Australia"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-4352-0212",
+            "authenticated-orcid": false,
+            "given": "Shahid",
+            "family": "Hussain",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Faculty of Science and Technology, University of Canberra, Canberra, ACT, Australia"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "263",
+        "reference": [
+          {
+            "key": "ref1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/tmech.2020.2992090"
+          },
+          {
+            "key": "ref2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.apmr.2024.09.014"
+          },
+          {
+            "key": "ref3",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1080/07853890.2024.2337735"
+          },
+          {
+            "key": "ref4",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.robot.2024.104701"
+          },
+          {
+            "key": "ref5",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/tmrb.2023.3310086"
+          },
+          {
+            "key": "ref6",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1080/17483107.2021.1906960"
+          },
+          {
+            "key": "ref7",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/RBME.2016.2552201"
+          },
+          {
+            "key": "ref8",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3390/machines13050429"
+          },
+          {
+            "key": "ref9",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ACCESS.2020.3036596"
+          },
+          {
+            "key": "ref10",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/thms.2017.2700634"
+          },
+          {
+            "key": "ref11",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1088/2516-1091/ac8193"
+          },
+          {
+            "key": "ref12",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TIE.2018.2821649"
+          },
+          {
+            "key": "ref13",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s41315-018-0064-8"
+          },
+          {
+            "key": "ref14",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TSMC.2024.3506495"
+          },
+          {
+            "key": "ref15",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1080/14737175.2021.1847646"
+          },
+          {
+            "key": "ref16",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/frobt.2021.745018"
+          },
+          {
+            "key": "ref17",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/tnsre.2016.2532478"
+          },
+          {
+            "key": "ref18",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TIE.2016.2580123"
+          },
+          {
+            "key": "ref19",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2024.3396065"
+          },
+          {
+            "key": "ref20",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s40141-014-0056-z"
+          },
+          {
+            "key": "ref21",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3390/app10196684"
+          },
+          {
+            "key": "ref22",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3390/machines10020076"
+          },
+          {
+            "key": "ref23",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3390/app10196976"
+          },
+          {
+            "key": "ref24",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/0954411919898293"
+          },
+          {
+            "key": "ref25",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2015.2503726"
+          },
+          {
+            "key": "ref26",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1163/156855307780851975"
+          },
+          {
+            "key": "ref27",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/0020294019866844"
+          },
+          {
+            "key": "ref28",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-3-662-66868-9_2"
+          },
+          {
+            "key": "ref29",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/IEMTRONICS52119.2021.9422660"
+          },
+          {
+            "key": "ref30",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-3-030-94702-6_4"
+          },
+          {
+            "key": "ref31",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3390/app10062101"
+          },
+          {
+            "key": "ref32",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1152/jn.00670.2012"
+          },
+          {
+            "issue": "3",
+            "key": "ref33",
+            "first-page": "192",
+            "article-title": "Ranges of motion as basis for robot-assisted post-stroke rehabilitation",
+            "volume": "8",
+            "author": "Major",
+            "year": "2016",
+            "journal-title": "Hum. Veterinary Med."
+          },
+          {
+            "key": "ref34",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/access.2021.3080299"
+          },
+          {
+            "key": "ref35",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1145/2506095.2506121"
+          },
+          {
+            "key": "ref36",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1080/15397734.2024.2414764"
+          },
+          {
+            "key": "ref37",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/M2VIP62491.2024.10746170"
+          },
+          {
+            "key": "ref38",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1080/15397734.2025.2468730"
+          },
+          {
+            "key": "ref39",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/INMIC64792.2024.11004307"
+          },
+          {
+            "key": "ref40",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-3-319-91217-2_20"
+          },
+          {
+            "key": "ref41",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-981-96-3311-1_19"
+          },
+          {
+            "key": "ref42",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1115/1.3140713"
+          },
+          {
+            "key": "ref43",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fbioe.2023.1332689"
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Neural Systems and Rehabilitation Engineering"
+        ],
+        "original-title": [],
+        "link": [
+          {
+            "URL": "http://xplorestaging.ieee.org/ielx8/7333/10806469/11036249.pdf?arnumber=11036249",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2025,
+              6,
+              26
+            ]
+          ],
+          "date-time": "2025-06-26T04:33:23Z",
+          "timestamp": 1750912403000
+        },
+        "score": 1,
+        "resource": {
+          "primary": {
+            "URL": "https://ieeexplore.ieee.org/document/11036249/"
+          }
+        },
+        "subtitle": [],
+        "short-title": [],
+        "issued": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "references-count": 43,
+        "URL": "https://doi.org/10.1109/tnsre.2025.3579533",
+        "relation": {},
+        "ISSN": [
+          "1534-4320",
+          "1558-0210"
+        ],
+        "issn-type": [
+          {
+            "value": "1534-4320",
+            "type": "print"
+          },
+          {
+            "value": "1558-0210",
+            "type": "electronic"
+          }
+        ],
+        "subject": [],
+        "published": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "TFS2025": {
+    "url": "https://api.crossref.org/works/10.1109%2FTFUZZ.2025.3611266",
+    "result": {
+      "status": "ok",
+      "message-type": "work",
+      "message-version": "1.0.0",
+      "message": {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              9,
+              25
+            ]
+          ],
+          "date-time": "2026-09-25T16:18:22Z",
+          "timestamp": 1790353102400,
+          "version": "4.1.0"
+        },
+        "reference-count": 43,
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "issue": "12",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2025,
+                  12,
+                  1
+                ]
+              ],
+              "date-time": "2025-12-01T00:00:00Z",
+              "timestamp": 1764547200000
+            },
+            "content-version": "vor",
+            "delay-in-days": 0,
+            "URL": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2025,
+                  12,
+                  1
+                ]
+              ],
+              "date-time": "2025-12-01T00:00:00Z",
+              "timestamp": 1764547200000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-029"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2025,
+                  12,
+                  1
+                ]
+              ],
+              "date-time": "2025-12-01T00:00:00Z",
+              "timestamp": 1764547200000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-037"
+          }
+        ],
+        "funder": [
+          {
+            "name": "U.K. Research and Innovation (UKRI) Horizon Europe Guarantee",
+            "award": [
+              "EP/Z001234/1"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "EP/Z001234/1"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "U.K. Research and Innovation (UKRI) Horizon Europe Guarantee",
+            "award": [
+              "EP/Y027930/1"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "EP/Y027930/1"
+                ]
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100000288",
+            "name": "Royal Society",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "IEC/NSF/211360"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "IEC/NSF/211360"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100000288",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100001809",
+            "name": "National Natural Science Foundation of China",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "62333007"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "62333007"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100001809",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100001809",
+            "name": "National Natural Science Foundation of China",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "U24A20280"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "U24A20280"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100001809",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "short-container-title": [
+          "IEEE Trans. Fuzzy Syst."
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1109/tfuzz.2025.3611266",
+        "type": "journal-article",
+        "created": {
+          "date-parts": [
+            [
+              2025,
+              9,
+              19
+            ]
+          ],
+          "date-time": "2025-09-19T17:39:59Z",
+          "timestamp": 1758303599000
+        },
+        "page": "4277-4288",
+        "source": "Crossref",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Neuro-Fuzzy Musculoskeletal Model-Driven Assist-as-Needed Control via Impedance Regulation for Rehabilitation Robots"
+        ],
+        "prefix": "10.1109",
+        "volume": "33",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-3486-5518",
+            "authenticated-orcid": false,
+            "given": "Yu",
+            "family": "Cao",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Electronic and Electrical Engineering, University of Leeds, Leeds, U.K."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0008-4808-1221",
+            "authenticated-orcid": false,
+            "given": "Shuhao",
+            "family": "Ma",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Electronic and Electrical Engineering, University of Leeds, Leeds, U.K."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-0603-5525",
+            "authenticated-orcid": false,
+            "given": "Mengshi",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Hubei Key Laboratory of Brain-inspired Intelligent Systems, School of Artificial Intelligence and Automation, Huazhong University of Science and Technology, Wuhan, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-0594-373X",
+            "authenticated-orcid": false,
+            "given": "Jindong",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "ESTUN Medical Technology Ltd., Nanjing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6267-8824",
+            "authenticated-orcid": false,
+            "given": "Jian",
+            "family": "Huang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Hubei Key Laboratory of Brain-inspired Intelligent Systems, School of Artificial Intelligence and Automation, Huazhong University of Science and Technology, Wuhan, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-0204-3867",
+            "authenticated-orcid": false,
+            "given": "Zhi-Qiang",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Electronic and Electrical Engineering, University of Leeds, Leeds, U.K."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "263",
+        "reference": [
+          {
+            "key": "ref1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1126/scirobotics.adk6743"
+          },
+          {
+            "key": "ref2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s11071-024-09579-8"
+          },
+          {
+            "key": "ref3",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ROBOT.2006.1642237"
+          },
+          {
+            "key": "ref4",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/M2VIP62491.2024.10746215"
+          },
+          {
+            "key": "ref5",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2009.2033061"
+          },
+          {
+            "key": "ref6",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/LRA.2024.3398565"
+          },
+          {
+            "key": "ref7",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2015.2503726"
+          },
+          {
+            "key": "ref8",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.robot.2020.103667"
+          },
+          {
+            "key": "ref9",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TIE.2023.3273270"
+          },
+          {
+            "key": "ref10",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/LRA.2017.2737478"
+          },
+          {
+            "key": "ref11",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/tmech.2024.3445314"
+          },
+          {
+            "key": "ref12",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2024.3411849"
+          },
+          {
+            "key": "ref13",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/LRA.2023.3330678"
+          },
+          {
+            "key": "ref14",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1145/3522739"
+          },
+          {
+            "key": "ref15",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2020.3038051"
+          },
+          {
+            "key": "ref16",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/tmech.2025.3562670"
+          },
+          {
+            "key": "ref17",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2024.3375320"
+          },
+          {
+            "key": "ref18",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2022.3226860"
+          },
+          {
+            "key": "ref19",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/JSEN.2019.2933603"
+          },
+          {
+            "key": "ref20",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/JBHI.2023.3347672"
+          },
+          {
+            "key": "ref21",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/THMS.2023.3319356"
+          },
+          {
+            "key": "ref22",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.bspc.2023.105030"
+          },
+          {
+            "key": "ref23",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/JBHI.2023.3304639"
+          },
+          {
+            "key": "ref24",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/tim.2024.3373045"
+          },
+          {
+            "key": "ref25",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.sbsr.2025.100749"
+          },
+          {
+            "key": "ref26",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2024.3514938"
+          },
+          {
+            "key": "ref27",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/jbhi.2025.3555255"
+          },
+          {
+            "key": "ref28",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TFUZZ.2022.3158727"
+          },
+          {
+            "key": "ref29",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TFUZZ.2024.3387429"
+          },
+          {
+            "key": "ref30",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TCYB.2024.3483148"
+          },
+          {
+            "key": "ref31",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TMECH.2023.3259985"
+          },
+          {
+            "key": "ref32",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNSRE.2008.918389"
+          },
+          {
+            "key": "ref33",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/IROS40897.2019.8968464"
+          },
+          {
+            "key": "ref34",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/MRA.2023.3282434"
+          },
+          {
+            "key": "ref35",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/LRA.2017.2768124"
+          },
+          {
+            "key": "ref36",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2025.3562488"
+          },
+          {
+            "key": "ref37",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TRO.2016.2593492"
+          },
+          {
+            "key": "ref38",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNNLS.2021.3113044"
+          },
+          {
+            "key": "ref39",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TMECH.2020.2992090"
+          },
+          {
+            "key": "ref40",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TASE.2025.3552446"
+          },
+          {
+            "key": "ref41",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TIE.2013.2253072"
+          },
+          {
+            "key": "ref42",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TFUZZ.2023.3305606"
+          },
+          {
+            "key": "ref43",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TFUZZ.2016.2574915"
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Fuzzy Systems"
+        ],
+        "original-title": [],
+        "link": [
+          {
+            "URL": "http://xplorestaging.ieee.org/ielx8/91/11273049/11173998.pdf?arnumber=11173998",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2025,
+              12,
+              3
+            ]
+          ],
+          "date-time": "2025-12-03T18:45:55Z",
+          "timestamp": 1764787555000
+        },
+        "score": 1,
+        "resource": {
+          "primary": {
+            "URL": "https://ieeexplore.ieee.org/document/11173998/"
+          }
+        },
+        "subtitle": [],
+        "short-title": [],
+        "issued": {
+          "date-parts": [
+            [
+              2025,
+              12
+            ]
+          ]
+        },
+        "references-count": 43,
+        "journal-issue": {
+          "issue": "12"
+        },
+        "URL": "https://doi.org/10.1109/tfuzz.2025.3611266",
+        "relation": {},
+        "ISSN": [
+          "1063-6706",
+          "1941-0034"
+        ],
+        "issn-type": [
+          {
+            "value": "1063-6706",
+            "type": "print"
+          },
+          {
+            "value": "1941-0034",
+            "type": "electronic"
+          }
+        ],
+        "subject": [],
+        "published": {
+          "date-parts": [
+            [
+              2025,
+              12
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "intensity_review": {
+    "url": "https://api.crossref.org/works/10.1161%2FSTROKEAHA.121.034348",
+    "result": {
+      "status": "ok",
+      "message-type": "work",
+      "message-version": "1.0.0",
+      "message": {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              10,
+              2
+            ]
+          ],
+          "date-time": "2026-10-02T13:26:34Z",
+          "timestamp": 1790947594152,
+          "version": "4.1.0"
+        },
+        "reference-count": 50,
+        "publisher": "Ovid Technologies (Wolters Kluwer Health)",
+        "issue": "11",
+        "content-domain": {
+          "domain": [
+            "www.ahajournals.org"
+          ],
+          "crossmark-restriction": true
+        },
+        "short-container-title": [
+          "Stroke"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              11
+            ]
+          ]
+        },
+        "abstract": "<jats:p>This systematic review aimed to investigate timing, dose, and efficacy of upper limb intervention during the first 6 months poststroke. Three online databases were searched up to July 2020. Titles/abstracts/full-text were reviewed independently by 2 authors. Randomized and nonrandomized studies that enrolled people within the first 6 months poststroke, aimed to improve upper limb recovery, and completed preintervention and postintervention assessments were included. Risk of bias was assessed using Cochrane reporting tools. Studies were examined by timing (recovery epoch), dose, and intervention type. Two hundred and sixty-one studies were included, representing 228 (n=9704 participants) unique data sets. The number of studies completed increased from one (n=37 participants) between 1980 and 1984 to 91 (n=4417 participants) between 2015 and 2019. Timing of intervention start has not changed (median 38 days, interquartile range [IQR], 22–66) and study sample size remains small (median n=30, IQR 20–48). Most studies were rated high risk of bias (62%). Study participants were enrolled at different recovery epochs: 1 hyperacute (&lt;24 hours), 13 acute (1–7 days), 176 early subacute (8–90 days), 34 late subacute (91–180 days), and 4 were unable to be classified to an epoch. For both the intervention and control groups, the median dose was 45 (IQR, 600–1430) min/session, 1 (IQR, 1–1) session/d, 5 (IQR, 5–5) d/wk for 4 (IQR, 3–5) weeks. The most common interventions tested were electromechanical (n=55 studies), electrical stimulation (n=38 studies), and constraint-induced movement (n=28 studies) therapies. Despite a large and growing body of research, intervention dose and sample size of included studies were often too small to detect clinically important effects. Furthermore, interventions remain focused on subacute stroke recovery with little change in recent decades. A united research agenda that establishes a clear biological understanding of timing, dose, and intervention type is needed to progress stroke recovery research. Prospective Register of Systematic Reviews ID: CRD42018019367/CRD42018111629.</jats:p>",
+        "DOI": "10.1161/strokeaha.121.034348",
+        "type": "journal-article",
+        "created": {
+          "date-parts": [
+            [
+              2021,
+              10,
+              4
+            ]
+          ],
+          "date-time": "2021-10-04T13:17:39Z",
+          "timestamp": 1633353459000
+        },
+        "page": "3706-3717",
+        "update-policy": "https://doi.org/10.1161/crossmarkpolicy",
+        "source": "Crossref",
+        "is-referenced-by-count": 77,
+        "title": [
+          "Timing and Dose of Upper Limb Motor Intervention After Stroke: A Systematic Review"
+        ],
+        "prefix": "10.1161",
+        "volume": "52",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-5240-3264",
+            "authenticated-orcid": true,
+            "given": "Kathryn S.",
+            "family": "Hayward",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Departments of Physiotherapy and Medicine, Florey Institute of Neuroscience and Mental Health (K.S.H.), University of Melbourne, Heidelberg, Australia."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-2795-6259",
+            "authenticated-orcid": true,
+            "given": "Sharon F.",
+            "family": "Kramer",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Centre for Quality and Patient Safety Research, Institute for Health Transformation, and Alfred Health Partnership, Deakin University, Burwood, Australia (S.F.K.)."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3920-8530",
+            "authenticated-orcid": true,
+            "given": "Emily J.",
+            "family": "Dalton",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Physiotherapy (E.J.D.), University of Melbourne, Heidelberg, Australia."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-3077-4256",
+            "authenticated-orcid": true,
+            "given": "Gemma R.",
+            "family": "Hughes",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Physiotherapy, Austin Health, Heidelberg, Australia (G.R.H.)."
+              },
+              {
+                "name": "Florey Institute of Neuroscience and Mental Health, University of Melbourne, Heidelberg, Australia (G.R.H., A.B., T.K., V.R., V.T., J.B.)."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-9466-2862",
+            "authenticated-orcid": true,
+            "given": "Amy",
+            "family": "Brodtmann",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Florey Institute of Neuroscience and Mental Health, University of Melbourne, Heidelberg, Australia (G.R.H., A.B., T.K., V.R., V.T., J.B.)."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-9807-6606",
+            "authenticated-orcid": true,
+            "given": "Leonid",
+            "family": "Churilov",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Melbourne Medical School, University of Melbourne, Parkville, Australia (L.C.)."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-8365-6907",
+            "authenticated-orcid": true,
+            "given": "Geoffrey",
+            "family": "Cloud",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Neuroscience, Central Clinical School, Monash University and Alfred Health, Melbourne, Australia (G.C., N.L.)."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-0217-4576",
+            "authenticated-orcid": true,
+            "given": "Dale",
+            "family": "Corbett",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Cellular and Molecular Medicine and Canadian Partnership for Stroke Recovery, University of Ottawa, Canada (D.C.)."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-1369-9442",
+            "authenticated-orcid": true,
+            "given": "Laura",
+            "family": "Jolliffe",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Neuroscience, Central Clinical School, Monash University, Melbourne, Australia (L.J.)."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-9848-2666",
+            "authenticated-orcid": true,
+            "given": "Tina",
+            "family": "Kaffenberger",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Florey Institute of Neuroscience and Mental Health, University of Melbourne, Heidelberg, Australia (G.R.H., A.B., T.K., V.R., V.T., J.B.)."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-0493-8536",
+            "authenticated-orcid": true,
+            "given": "Venesha",
+            "family": "Rethnam",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Florey Institute of Neuroscience and Mental Health, University of Melbourne, Heidelberg, Australia (G.R.H., A.B., T.K., V.R., V.T., J.B.)."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6614-8417",
+            "authenticated-orcid": true,
+            "given": "Vincent",
+            "family": "Thijs",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Florey Institute of Neuroscience and Mental Health, University of Melbourne, Heidelberg, Australia (G.R.H., A.B., T.K., V.R., V.T., J.B.)."
+              },
+              {
+                "name": "Neurology, Austin Health, Heidelberg, Australia (V.T.)."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Nick",
+            "family": "Ward",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Clinical and Movement Neuroscience, UCL Queen Square Institute of Neurology, The National Hospital for Neurology and Neurosurgery, London, United Kingdom (N.W.)."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-2066-8345",
+            "authenticated-orcid": true,
+            "given": "Natasha",
+            "family": "Lannin",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Neuroscience, Central Clinical School, Monash University and Alfred Health, Melbourne, Australia (G.C., N.L.)."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-2787-8484",
+            "authenticated-orcid": true,
+            "given": "Julie",
+            "family": "Bernhardt",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Florey Institute of Neuroscience and Mental Health, University of Melbourne, Heidelberg, Australia (G.R.H., A.B., T.K., V.R., V.T., J.B.)."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "276",
+        "reference": [
+          {
+            "key": "e_1_3_5_2_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/0003-9993(94)90161-9"
+          },
+          {
+            "key": "e_1_3_5_3_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1186/1471-2377-12-162"
+          },
+          {
+            "key": "e_1_3_5_4_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/15459683211028240"
+          },
+          {
+            "key": "e_1_3_5_5_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/s0003-9993(95)80568-0"
+          },
+          {
+            "key": "e_1_3_5_6_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/S1474-4422(19)30415-6"
+          },
+          {
+            "key": "e_1_3_5_7_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1111/j.1747-4949.2012.00942.x"
+          },
+          {
+            "key": "e_1_3_5_8_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/1747493019879657"
+          },
+          {
+            "key": "e_1_3_5_9_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.46743/1540-580X/2012.1419"
+          },
+          {
+            "key": "e_1_3_5_10_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1186/s13643-019-1093-6"
+          },
+          {
+            "key": "e_1_3_5_11_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1136/bmj.n71"
+          },
+          {
+            "key": "e_1_3_5_12_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1523/JNEUROSCI.3834-03.2004"
+          },
+          {
+            "key": "e_1_3_5_13_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/1545968317697034"
+          },
+          {
+            "key": "e_1_3_5_14_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/nrn2735"
+          },
+          {
+            "key": "e_1_3_5_15_2",
+            "volume-title": "Covidence systematic review software, Veritas Health Innovation",
+            "unstructured": "Covidence systematic review software, Veritas Health Innovation, Melbourne, Australia. https://support.covidence.org/help/how-can-i-cite-covidence."
+          },
+          {
+            "key": "e_1_3_5_16_2",
+            "unstructured": "U.S. Food and Drug Administration. Step 3: clinical research. 2018. https://www.fda.gov/patients/drug-development-process/step-3-clinical-research."
+          },
+          {
+            "key": "e_1_3_5_17_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/1747493017711816"
+          },
+          {
+            "key": "e_1_3_5_18_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1161/STROKEAHA.114.004695"
+          },
+          {
+            "key": "e_1_3_5_19_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1161/STROKEAHA.120.032496"
+          },
+          {
+            "key": "e_1_3_5_20_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.jphys.2016.08.006"
+          },
+          {
+            "key": "e_1_3_5_21_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1002/14651858.CD010820.pub2"
+          },
+          {
+            "key": "e_1_3_5_22_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/1747493017711813"
+          },
+          {
+            "key": "e_1_3_5_23_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.2522/ptj.20110009"
+          },
+          {
+            "key": "e_1_3_5_24_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/1545968308331146"
+          },
+          {
+            "key": "e_1_3_5_25_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/1545968308331144"
+          },
+          {
+            "key": "e_1_3_5_26_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1053/apmr.2001.18668"
+          },
+          {
+            "key": "e_1_3_5_27_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1136/bmj.d5928"
+          },
+          {
+            "key": "e_1_3_5_28_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1136/bmj.i4919"
+          },
+          {
+            "key": "e_1_3_5_29_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1136/bmj.g1687"
+          },
+          {
+            "key": "e_1_3_5_30_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1097/WCO.0000000000000025"
+          },
+          {
+            "key": "e_1_3_5_31_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1136/bmjopen-2015-008378"
+          },
+          {
+            "key": "e_1_3_5_32_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/1545968307305302"
+          },
+          {
+            "key": "e_1_3_5_33_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1001/jama.296.17.2095"
+          },
+          {
+            "key": "e_1_3_5_34_2",
+            "unstructured": "SSNAP School of Population Health and Environmental Sciences King’s College London on behalf of the Intercollegiate Stroke Working Party. SSNAP Annual Public Report 2018. Accessed May 7 2021. https://www.strokeaudit.org/Documents/National/Clinical/Apr2017Mar2018/Apr2017Mar2018-AnnualReport.aspx. Published 2019."
+          },
+          {
+            "key": "e_1_3_5_35_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.physio.2016.10.393"
+          },
+          {
+            "key": "e_1_3_5_36_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.rehab.2021.101487"
+          },
+          {
+            "key": "e_1_3_5_37_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fneur.2019.01148"
+          },
+          {
+            "key": "e_1_3_5_38_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/1747493017711815"
+          },
+          {
+            "key": "e_1_3_5_39_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/S0140-6736(04)17034-7"
+          },
+          {
+            "key": "e_1_3_5_40_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.2522/ptj.2008.88.4.423"
+          },
+          {
+            "key": "e_1_3_5_41_2",
+            "unstructured": "International Council for Haromisation of Technical Requirements for Pharmaceuticals for Human Use (ICH). ICH harmonised guidelines integrated addendum to ich e6(r1): guideline for good clinical practice. Accessed May 7 2021. https://database.ich.org/sites/default/files/E6_R2_Addendum.pdf. Published 2016."
+          },
+          {
+            "key": "e_1_3_5_42_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/S0140-6736(15)60690-0"
+          },
+          {
+            "key": "e_1_3_5_43_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1155/2018/8087372"
+          },
+          {
+            "key": "e_1_3_5_44_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.apmr.2017.12.024"
+          },
+          {
+            "key": "e_1_3_5_45_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1186/s13063-018-2838-6"
+          },
+          {
+            "key": "e_1_3_5_46_2",
+            "volume-title": "Economic Evaluation of Investigator-Initiated Clinical Trials Conducted by Networks",
+            "author": "Australian Clinical Trials Alliance",
+            "year": "2017",
+            "unstructured": "Australian Clinical Trials Alliance. Economic Evaluation of Investigator-Initiated Clinical Trials Conducted by Networks. ACSQHC. 2017."
+          },
+          {
+            "key": "e_1_3_5_47_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1161/STROKEAHA.116.015501"
+          },
+          {
+            "key": "e_1_3_5_48_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/1747493019872147"
+          },
+          {
+            "key": "e_1_3_5_49_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/1747493019851287"
+          },
+          {
+            "key": "e_1_3_5_50_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1161/01.str.32.6.1349"
+          },
+          {
+            "key": "e_1_3_5_51_2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/1747493016643851"
+          }
+        ],
+        "container-title": [
+          "Stroke"
+        ],
+        "original-title": [],
+        "language": "en",
+        "link": [
+          {
+            "URL": "https://www.ahajournals.org/doi/full/10.1161/STROKEAHA.121.034348",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2024,
+              5,
+              13
+            ]
+          ],
+          "date-time": "2024-05-13T10:52:24Z",
+          "timestamp": 1715597544000
+        },
+        "score": 1,
+        "resource": {
+          "primary": {
+            "URL": "https://www.ahajournals.org/doi/10.1161/STROKEAHA.121.034348"
+          }
+        },
+        "subtitle": [],
+        "short-title": [],
+        "issued": {
+          "date-parts": [
+            [
+              2021,
+              11
+            ]
+          ]
+        },
+        "references-count": 50,
+        "journal-issue": {
+          "issue": "11",
+          "published-print": {
+            "date-parts": [
+              [
+                2021,
+                11
+              ]
+            ]
+          }
+        },
+        "alternative-id": [
+          "10.1161/STROKEAHA.121.034348"
+        ],
+        "URL": "https://doi.org/10.1161/strokeaha.121.034348",
+        "relation": {},
+        "ISSN": [
+          "0039-2499",
+          "1524-4628"
+        ],
+        "issn-type": [
+          {
+            "value": "0039-2499",
+            "type": "print"
+          },
+          {
+            "value": "1524-4628",
+            "type": "electronic"
+          }
+        ],
+        "subject": [],
+        "published": {
+          "date-parts": [
+            [
+              2021,
+              11
+            ]
+          ]
+        },
+        "assertion": [
+          {
+            "value": "2021-10-04",
+            "order": 2,
+            "name": "published",
+            "label": "Published",
+            "group": {
+              "name": "publication_history",
+              "label": "Publication History"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

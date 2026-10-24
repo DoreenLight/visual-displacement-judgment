@@ -1,0 +1,54 @@
+{
+  "snapshot_targets": 21,
+  "changed_target_count": 20,
+  "changed_targets": [
+    "10_研究方向/主动参与与训练强度_链路研究/文献台账.json",
+    "06_附录/取件导读.md",
+    "06_附录/gen_acquisition_list.py",
+    "06_附录/自检脚本/test_acquisition_list.py",
+    "README.md",
+    "INDEX.md",
+    "STATUS.md",
+    "HANDOFF.md",
+    "10_研究方向/README.md",
+    "10_研究方向/主动参与与训练强度_链路研究/README.md",
+    "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+    "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+    "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+    "01_参考论文/整合系统/决策模型线_JEV/index.json",
+    "01_参考论文/康复辅助/康复整合链路/index.json",
+    "01_参考论文/康复辅助/康复整合链路/README.md",
+    "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+    "01_参考论文/康复辅助/康复整合链路/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制_Evidence_Card.md",
+    "01_参考论文/康复辅助/康复整合链路/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果_Evidence_Card.md",
+    "01_参考论文/康复辅助/康复整合链路/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制_Evidence_Card.md"
+  ],
+  "unchanged_targets": [
+    "06_附录/待下载论文总清单.md"
+  ],
+  "trailing_whitespace": [
+    {
+      "path": "README.md",
+      "line": 87,
+      "existed_before": true
+    },
+    {
+      "path": "README.md",
+      "line": 90,
+      "existed_before": true
+    },
+    {
+      "path": "README.md",
+      "line": 93,
+      "existed_before": true
+    },
+    {
+      "path": "README.md",
+      "line": 98,
+      "existed_before": true
+    }
+  ],
+  "new_trailing_whitespace": 0,
+  "git_diff_check_exit": 2,
+  "git_diff_check_output": "02-视觉动作分析/README.md:90: trailing whitespace.\n+2. **Anatomy-aware Region Encoding**  \n"
+}

@@ -1,0 +1,38 @@
+{
+  "status": "INDEPENDENT_STAGE_CHECKS_PASS_INNOVATION_AND_GOAL_PENDING",
+  "knowledge_cases": 22,
+  "knowledge_fail": 0,
+  "relative_links_checked": 654,
+  "download_regressions": 17,
+  "uri_regressions": 6,
+  "current_doc_hashes": 9,
+  "historical_hashes": 3,
+  "protection": [
+    {
+      "baseline": "05_进展日志/2026-10-02_康复链路研究/原件与历史_保护基线.json",
+      "checked": 1133,
+      "authorized_existing_navigation_changes": [
+        "01_参考论文/生物力学线/README.md",
+        "01_参考论文/生物力学线/取件入口.md",
+        "01_参考论文/Transformer_发展线/README.md",
+        "01_参考论文/Transformer_发展线/取件入口.md",
+        "01_参考论文/决策模型线_JEV/取件入口.md"
+      ],
+      "other_bytes_unchanged": 1128
+    },
+    {
+      "baseline": "05_进展日志/2026-10-02_论文收尾与目录整理/迁移前保护基线.json",
+      "checked": 567,
+      "authorized_existing_navigation_changes": [],
+      "other_bytes_unchanged": 567
+    }
+  ],
+  "candidate_questions": 3,
+  "confirmed_directions": 0,
+  "not_completed": [
+    "创新方向定案：关键原文/参与构念/外部条件不足",
+    "全目标最终交付验收：等待用户裁定"
+  ],
+  "current_manifest_only_change": "仅根Agent依赖哈希单行，原清单及差异证据保留；4包状态未改",
+  "no_system_or_experiments_executed": true
+}

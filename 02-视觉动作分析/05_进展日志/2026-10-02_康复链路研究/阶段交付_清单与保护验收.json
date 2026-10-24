@@ -1,0 +1,38 @@
+{
+  "status": "STAGE_VERIFICATION_ONLY_GOAL_NOT_COMPLETE",
+  "builders": [
+    "06_附录/生物力学语料工具/build_biomech.py",
+    "06_附录/Transformer语料工具/build_index.py",
+    "06_附录/决策模型工具/build_jev.py",
+    "06_附录/gen_acquisition_list.py"
+  ],
+  "rebuild_rounds": 2,
+  "generated_files_checked": 433,
+  "second_round_byte_identical": true,
+  "download_count": 7,
+  "download_ids": [
+    "Song_TRO",
+    "Song_TIE",
+    "Song_VAAN",
+    "Song_TBME",
+    "Song_TBCAS",
+    "RL2026",
+    "Shoulder2025"
+  ],
+  "four_fields_checked": true,
+  "fulltext_filter": "按当前台账与全库身份/可接受版本扫描；已取得条目0",
+  "different_cwd_byte_identical": true,
+  "three_pointer_templates_consistent": true,
+  "old_section_anchors": 0,
+  "changed_during_rebuild": [],
+  "protected_baseline": 1133,
+  "authorized_navigation_changes_vs_original_baseline": [
+    "01_参考论文/Transformer_发展线/README.md",
+    "01_参考论文/Transformer_发展线/取件入口.md",
+    "01_参考论文/决策模型线_JEV/取件入口.md",
+    "01_参考论文/生物力学线/README.md",
+    "01_参考论文/生物力学线/取件入口.md"
+  ],
+  "other_protected_files_unchanged": 1128,
+  "url_check_scope": "核地址字段/HTTP形态与已留存检索证据，本次为本地核查，不宣称重新在线连通验证"
+}

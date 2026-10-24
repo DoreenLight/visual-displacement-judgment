@@ -1,0 +1,240 @@
+{
+  "checked_at": "2026-10-08",
+  "items": [
+    {
+      "id": "NEW01",
+      "label": "Zhang2021-FrontNeurorobot：膝外骨骼辅助策略与交互建模",
+      "doi": "10.3389/fnbot.2021.620928",
+      "status": "identity_checked_fulltext",
+      "path": "09_章隆彬_合作团队/papers/Zhang2021-FrontNeurorobot：膝外骨骼辅助策略与交互建模/Zhang2021-FrontNeurorobot：膝外骨骼辅助策略与交互建模.pdf",
+      "sha256": "0f9968b7415bb3a1e9b326608b4de7ef5751969e0300a7a0c250c2e1aad8fa10",
+      "pdfinfo": "Title:           Modeling and Simulation of a Human Knee Exoskeleton's Assistive Strategies and Interaction\nSubject:         Exoskeletons are increasingly used in rehabilitation and daily life in patients with motor disorders after neurological injuries.\nKeywords:        anybody, conditional contact elements, damping factor, interactive forces, human-exoskeleton interaction\nAuthor:          Elena M. Gutierrez-Farewik\nCreator:         LaTeX with hyperref package + hypdvips\nProducer:        dvips + MiKTeX GPL Ghostscript  9.0\nCreationDate:    Mon Mar  1 23:52:20 2021 CST\nModDate:         Tue Mar  2 00:01:39 2021 CST\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           12\nEncrypted:       no\nPage size:       595.26 x 779.52 pts\nPage rot:        0\nFile size:       1794731 bytes\nOptimized:       no\nPDF version:     1.6\n",
+      "text_ok": true,
+      "attempts": [
+        {
+          "url": "https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2021.620928/pdf",
+          "result": "pdf_received",
+          "final_url": "https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2021.620928/pdf",
+          "bytes": 1794731
+        }
+      ],
+      "identity_check": "PDF title/Longbin Zhang/DOI or XML article metadata verified"
+    },
+    {
+      "id": "NEW02",
+      "label": "Wang2024-FrontBioeng：卒中后踝肌个体化结构与收缩特性",
+      "doi": "10.3389/fbioe.2024.1453604",
+      "status": "identity_checked_fulltext",
+      "path": "09_章隆彬_合作团队/papers/Wang2024-FrontBioeng：卒中后踝肌个体化结构与收缩特性/Wang2024-FrontBioeng：卒中后踝肌个体化结构与收缩特性.pdf",
+      "sha256": "70f68db75c082381d258ccf2f134f7bcfb5c31dd2745d9e8c22780f001cceac9",
+      "pdfinfo": "Creator:         Arbortext Advanced Print Publisher 9.1.510/W Unicode\nProducer:        Acrobat Distiller 7.0 (Windows)\nCreationDate:    Thu Nov 21 23:39:41 2024 CST\nModDate:         Thu Nov 21 23:39:41 2024 CST\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           12\nEncrypted:       no\nPage size:       595.276 x 841.89 pts (A4)\nPage rot:        0\nFile size:       2001231 bytes\nOptimized:       no\nPDF version:     1.4\n",
+      "text_ok": true,
+      "attempts": [
+        {
+          "url": "https://public-pages-files-2025.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2024.1453604/pdf",
+          "result": "pdf_received",
+          "final_url": "https://public-pages-files-2025.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2024.1453604/pdf",
+          "bytes": 2001231
+        }
+      ],
+      "identity_check": "PDF title/Longbin Zhang/DOI or XML article metadata verified"
+    },
+    {
+      "id": "NEW03",
+      "label": "Zhang2025-FrontNeurosci：运动康复与增强技术专题社论",
+      "doi": "10.3389/fnins.2025.1581451",
+      "status": "identity_checked_fulltext",
+      "path": "09_章隆彬_合作团队/papers/Zhang2025-FrontNeurosci：运动康复与增强技术专题社论/Zhang2025-FrontNeurosci：运动康复与增强技术专题社论.pdf",
+      "sha256": "f7ffe6b533e64aaf952ca2cdfbfd6adbe9e285ee45c42ddb6c3604c3ba916cac",
+      "pdfinfo": "Title:           Editorial: Advanced technology for human movement rehabilitation and enhancement\nSubject:         Zhang L, Hu Y, Zhang M, Wang R, Gutierrez-Farewik EM and Ang WT (2025) Editorial: Advanced technology for human movement rehabilitation and enhancement. Front. Neurosci. 19:1581451. doi: 10.3389/fnins.2025.1581451\nKeywords:        wearable exoskeletons; artificial intelligence; virtual reality; advancing rehabilitation strategies; neuromuscular diseases\nAuthor:          Longbin Zhang\nCreator:         LaTeX with hyperref package + hypdvips\nProducer:        dvips + MiKTeX GPL Ghostscript  9.0\nCreationDate:    Mon Mar 24 09:05:19 2025 CST\nModDate:         Mon Mar 24 09:30:31 2025 CST\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           3\nEncrypted:       no\nPage size:       595.26 x 842.116 pts (A4)\nPage rot:        0\nFile size:       85200 bytes\nOptimized:       no\nPDF version:     1.6\n",
+      "text_ok": true,
+      "attempts": [
+        {
+          "url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2025.1581451/pdf",
+          "result": "pdf_received",
+          "final_url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2025.1581451/pdf",
+          "bytes": 85200
+        }
+      ],
+      "identity_check": "PDF title/Longbin Zhang/DOI or XML article metadata verified"
+    },
+    {
+      "id": "NEW04",
+      "label": "Zhang2025-arXiv：运动学与LSTM的足跟触地离地事件检测",
+      "doi": "arXiv:2503.00794",
+      "status": "identity_checked_fulltext",
+      "path": "09_章隆彬_合作团队/papers/Zhang2025-arXiv：运动学与LSTM的足跟触地离地事件检测/Zhang2025-arXiv：运动学与LSTM的足跟触地离地事件检测.pdf",
+      "sha256": "7c6124232675e047fb2dda6c2038fb79e532553114ca17d3c3647abb4a9e5210",
+      "pdfinfo": "Title:           Detecting Heel Strike and toe off Events Using Kinematic Methods and LSTM Models\nAuthor:          Longbin Zhang; Zhizhang Li; Xinyi Fu; Yi Xie; Zekun Liu; Xiaoyue Yan; Suiyuan Wang; Te Zhang; Hui Zhang; Kailun Yang; Tsung-Lin Wu; Prayook Jatesiktat; Ananda Sidarta; Wei Tech Ang\nCreator:         arXiv GenPDF (tex2pdf:4af3385)\nProducer:        pikepdf 8.15.1\nCustom Metadata: yes\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           6\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       689072 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "text_ok": true,
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2503.00794",
+          "result": "pdf_received",
+          "final_url": "https://arxiv.org/pdf/2503.00794",
+          "bytes": 689072
+        }
+      ],
+      "identity_check": "PDF title/Longbin Zhang/DOI or XML article metadata verified"
+    },
+    {
+      "id": "NEW05",
+      "label": "Zhang2021-KTH：可穿戴外骨骼设计的生物力学参数估计博士论文",
+      "doi": "DiVA:1599588",
+      "status": "identity_checked_fulltext",
+      "path": "09_章隆彬_合作团队/papers/Zhang2021-KTH：可穿戴外骨骼设计的生物力学参数估计博士论文/Zhang2021-KTH：可穿戴外骨骼设计的生物力学参数估计博士论文.pdf",
+      "sha256": "51d4ab69973358c67bf99d6738de1648912ece97cf8ea86ad9ada88b8fe4c387",
+      "pdfinfo": "Producer:        Adobe PDF Library 18.0.3\nCreationDate:    Fri Oct  1 16:47:48 2021 CST\nModDate:         Fri Oct  1 21:06:07 2021 CST\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            AcroForm\nJavaScript:      no\nPages:           52\nEncrypted:       no\nPage size:       479.055 x 677.48 pts\nPage rot:        0\nFile size:       1352423 bytes\nOptimized:       no\nPDF version:     1.6\n",
+      "text_ok": true,
+      "attempts": [
+        {
+          "url": "https://kth.diva-portal.org/smash/get/diva2:1599588/FULLTEXT03.pdf",
+          "result": "pdf_received",
+          "final_url": "https://kth.diva-portal.org/smash/get/diva2:1599588/FULLTEXT03.pdf",
+          "bytes": 1352423
+        }
+      ],
+      "identity_check": "PDF title/Longbin Zhang/DOI or XML article metadata verified"
+    },
+    {
+      "id": "NEW06",
+      "label": "Yang2025-Medicine：以步行速度评价下肢功能的文献计量综述",
+      "doi": "10.1097/md.0000000000042756",
+      "status": "identity_checked_fulltext",
+      "attempts": [
+        {
+          "url": "https://journals.lww.com/md-journal/_layouts/15/oaks.journals/downloadpdf.aspx?an=00005792-202505230-00015",
+          "result": "not_pdf",
+          "content_type": "text/html; charset=utf-8"
+        },
+        {
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=PMC12173329",
+          "result": "failed",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12173329/fullTextXML",
+          "result": "xml_received",
+          "bytes": 131241,
+          "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12173329/fullTextXML"
+        }
+      ],
+      "path": "09_章隆彬_合作团队/papers/Yang2025-Medicine：以步行速度评价下肢功能的文献计量综述/Yang2025-Medicine：以步行速度评价下肢功能的文献计量综述_全文.xml",
+      "sha256": "806c2ac2602f31e73da70e8e9e8cb099dbe6e7f411a17e6cb6d242d0c91549ac",
+      "format": "xml",
+      "identity_check": "PDF title/Longbin Zhang/DOI or XML article metadata verified"
+    },
+    {
+      "id": "NEW07",
+      "label": "Zhang2017-TIE：扰动观测器与自适应神经网络变刚度控制",
+      "doi": "10.1109/tie.2016.2624260",
+      "status": "blocked",
+      "pdfinfo": "Producer:        iTextSharp™ 5.4.0 ©2000-2012 1T3XT BVBA (AGPL-version)\nCreationDate:    Wed Nov  8 15:51:15 2017 CST\nModDate:         Wed Nov  8 15:51:33 2017 CST\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           10\nEncrypted:       no\nPage size:       600.05 x 800 pts\nPage rot:        0\nFile size:       4098521 bytes\nOptimized:       yes\nPDF version:     1.4\n",
+      "text_ok": true,
+      "attempts": [
+        {
+          "url": "https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&arnumber=7731156",
+          "result": "failed",
+          "error": "HTTP Error 418: Unknown Code"
+        },
+        {
+          "url": "https://pdfs.semanticscholar.org/134d/83894787dfc9a26d67f1eb7b852ec79eb008.pdf",
+          "result": "rejected_wrong_paper",
+          "final_url": "https://pdfs.semanticscholar.org/134d/83894787dfc9a26d67f1eb7b852ec79eb008.pdf",
+          "bytes": 4098521,
+          "observed_doi": "10.1155/2017/5361246"
+        },
+        {
+          "url": "https://cronfa.swan.ac.uk/Record/cronfa30812/Download/0030812-15112016191813.pdf",
+          "result": "failed",
+          "error": "<urlopen error _ssl.c:983: The handshake operation timed out>"
+        },
+        {
+          "url": "https://cronfa.swansea.ac.uk/Record/cronfa30812/Download/0030812-15112016191813.pdf",
+          "result": "failed",
+          "error": "<urlopen error _ssl.c:983: The handshake operation timed out>"
+        }
+      ]
+    },
+    {
+      "id": "NEW08",
+      "label": "Li2021-TMECH：稳定动态行走的下肢外骨骼人在环控制",
+      "doi": "10.1109/tmech.2020.3044289",
+      "status": "blocked",
+      "attempts": [
+        {
+          "url": "https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&arnumber=9295388",
+          "result": "failed",
+          "error": "HTTP Error 418: Unknown Code"
+        }
+      ]
+    },
+    {
+      "id": "NEW09",
+      "label": "Qiu2017-TFS：脑机接口与视觉压缩感知外骨骼遥操作",
+      "doi": "10.1109/tfuzz.2016.2566676",
+      "status": "blocked",
+      "attempts": [
+        {
+          "url": "https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=Brain-Machine%20Interface%20and%20Visual%20Compressive%20Sensing-Based%20Teleoperation",
+          "result": "failed",
+          "error": "HTTP Error 418: Unknown Code"
+        },
+        {
+          "url": "https://cronfa.swan.ac.uk/Record/cronfa28341/Download/0028341-28062016233428.pdf",
+          "result": "failed",
+          "error": "<urlopen error _ssl.c:983: The handshake operation timed out>"
+        },
+        {
+          "url": "https://cronfa.swansea.ac.uk/Record/cronfa28341/Download/0028341-28062016233428.pdf",
+          "result": "failed",
+          "error": "<urlopen error _ssl.c:983: The handshake operation timed out>"
+        }
+      ]
+    },
+    {
+      "id": "NEW10",
+      "label": "Zhang2021-ICARM：NMS求解器与NN的踝动态力矩估计",
+      "doi": "10.1109/icarm52023.2021.9536189",
+      "status": "blocked",
+      "attempts": [
+        {
+          "url": "https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&arnumber=9536189",
+          "result": "failed",
+          "error": "HTTP Error 418: Unknown Code"
+        },
+        {
+          "url": "https://www.researchgate.net/publication/354620563_Estimation_of_Ankle_Dynamic_Joint_Torque_by_a_Neuromusculoskeletal_Solver-informed_NN_Model",
+          "result": "failed",
+          "error": "HTTP Error 403: Forbidden"
+        }
+      ]
+    },
+    {
+      "id": "NEW11",
+      "label": "Li2026-YAC：多任务平衡挑战的EEG与压力中心调节",
+      "doi": "10.1109/yac71005.2026.11616179",
+      "status": "blocked",
+      "attempts": [
+        {
+          "url": "https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&arnumber=11616179",
+          "result": "failed",
+          "error": "HTTP Error 418: Unknown Code"
+        }
+      ]
+    },
+    {
+      "id": "NEW12",
+      "label": "Fu2026-YAC：多模态LSTM地面反力预测",
+      "doi": "10.1109/yac71005.2026.11615719",
+      "status": "blocked",
+      "attempts": [
+        {
+          "url": "https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&arnumber=11615719",
+          "result": "failed",
+          "error": "HTTP Error 418: Unknown Code"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "status": "initial_failure_preserved",
+  "command_assertion_line": 22,
+  "cause": "Verifier expected # 待下载论文总清单, but established generator title is # 需要你下载的论文. Body is correctly empty except 当前无待下载论文。",
+  "repair": "Match observed existing generator title; do not edit generator/list or relax body/acquisition requirements."
+}

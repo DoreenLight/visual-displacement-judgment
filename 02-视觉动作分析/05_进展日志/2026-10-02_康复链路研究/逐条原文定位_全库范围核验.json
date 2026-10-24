@@ -1,0 +1,463 @@
+{
+  "schema": "selected-passage-source-audit/v1",
+  "checked_at": "2026-10-07T16:07:01.718663+08:00",
+  "scope": "All locator records and stored passages checked against declared local PDF page or local XML text after NFKC/dehyphenation/whitespace normalization. This validates selected evidence locations only; it is not a full-paper reading, independent replication, novelty, clinical benefit, or system validation claim.",
+  "papers_checked": 55,
+  "passages_checked": 398,
+  "source_extensions": {
+    ".pdf": 39,
+    ".xml": 16
+  },
+  "status_counts": {
+    "fulltext_with_selected_passages": 46,
+    "fulltext_with_selected_method_passages": 7,
+    "local_fulltext": 2
+  },
+  "all_local_sources_present_and_sha256_match": true,
+  "literal_or_normalized_match_failures": 0,
+  "failures": [],
+  "records": [
+    {
+      "id": "L-e3829d23",
+      "source": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Video-Based Markerless Motion Capture for Clinical and Rehab.pdf",
+      "sha256": "6565bee625199a227b023b33ba148f580ddf79d52a11d778c9de606c68e346eb",
+      "status": "fulltext_with_selected_passages",
+      "passages": 5,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-52edadce",
+      "source": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/SHOULDER AND ELBOW JOINT ANGLE ESTIMATION FOR UPPER LIMB REH.pdf",
+      "sha256": "70c0f640d797275fea449e136f97c76de5437bd203b81f4045e0198ef3386c03",
+      "status": "fulltext_with_selected_passages",
+      "passages": 5,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-3731e26a",
+      "source": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Inverse Estimation of Multiple Muscle Activations From Joint.pdf",
+      "sha256": "2f9ed688591c9fb3dd4527abf448fe00cef9ea7bc2af8c26d41ef228f1600134",
+      "status": "fulltext_with_selected_passages",
+      "passages": 4,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-32c20f13",
+      "source": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Robot-Assisted Therapy for Upper Extremity Motor Impairment.pdf",
+      "sha256": "e0110573b510681278b02f3297c91f7d3e1e7ac0204532e7d09352c00a26815c",
+      "status": "fulltext_with_selected_passages",
+      "passages": 4,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-860ce5df",
+      "source": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Wearable technology in stroke rehabilitation_ towards improv.xml",
+      "sha256": "cfb538cf63b2337b735b6263ed4f36940affc3d6618784eab9dae901f1b0298e",
+      "status": "fulltext_with_selected_passages",
+      "passages": 15,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-06083b29",
+      "source": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Fatigue, induced via repetitive upper-limb motor tasks, infl.pdf",
+      "sha256": "8a01a088227a478726483f7a59100e3da8ff277998349c7f8eed159a4b4848c5",
+      "status": "fulltext_with_selected_passages",
+      "passages": 5,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-e35abf95",
+      "source": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/A clinically feasible kinematic assessment method of upper e.pdf",
+      "sha256": "086141f9df1eb38604fd4caae9dfa78dd6815ea9de5cd3c71d7886d864de449c",
+      "status": "fulltext_with_selected_passages",
+      "passages": 3,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-0b49c6dc",
+      "source": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Exoskeleton for forearm pronation and supination rehabilitat.pdf",
+      "sha256": "5116ad6bd42256a42c42b211b020ab58f93b6105c0da4e7157ec4d4db07cc774",
+      "status": "fulltext_with_selected_passages",
+      "passages": 5,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-83fdc2f8",
+      "source": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Markerless Motion Capture in Routine Clinical Upper Limb Ass.pdf",
+      "sha256": "6f4f0dece4d6d4448ae027203a22183901d9e525752ba6c1587d5cee9526034a",
+      "status": "fulltext_with_selected_passages",
+      "passages": 4,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-9dda282a",
+      "source": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Monocular Markerless Motion Capture Enables Quantitative Ass.pdf",
+      "sha256": "16013d3771e16f776511cff5b10a87e9e9090982f2c936d76c3ef2a3d7e6c350",
+      "status": "fulltext_with_selected_passages",
+      "passages": 3,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-2c53d083",
+      "source": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/From Metrics to Meaning in Neurological Rehabilitation_ Clin.xml",
+      "sha256": "61b9e6a2d16f22e09b56f766cde6c318805d94bb641c0f8707761819af88cc1c",
+      "status": "fulltext_with_selected_passages",
+      "passages": 7,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-f7650ef4",
+      "source": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Target height influences shoulder and elbow non-use after st.pdf",
+      "sha256": "e7aa7baeef24e6f8289298379c9e83cfd61f6e4e36e8e78e3126923a8230023f",
+      "status": "fulltext_with_selected_passages",
+      "passages": 4,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-f696c42b",
+      "source": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Vision-based Automatic Detection of Compensatory Postures of.pdf",
+      "sha256": "919ab047c2e41ab599422a977a1b9b541ecb57ab1c18133b1e180a87b4798d17",
+      "status": "fulltext_with_selected_passages",
+      "passages": 5,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-756e75d3",
+      "source": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Item Difficulty of Fugl-Meyer Assessment for Upper Extremity.pdf",
+      "sha256": "09f86ec00055350906f9ae9655ffe97b1326cf7c075d83def2206bc64b6fba42",
+      "status": "fulltext_with_selected_passages",
+      "passages": 6,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-7a977203",
+      "source": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Determining Levels of Upper Extremity Movement Impairment by.pdf",
+      "sha256": "ac994a901f42e02130fc3b45c9a9a6ae855202290eca26c3027f4ea615311e27",
+      "status": "fulltext_with_selected_passages",
+      "passages": 5,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-5d469430",
+      "source": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Kinematic Analysis of the Upper Limb Motor Strategies in Stroke Patien.xml",
+      "sha256": "676e9ef742b03eace66cb4209b7d2d2769348d484f161001e997b171df01b4ef",
+      "status": "fulltext_with_selected_passages",
+      "passages": 7,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-142f1fbb",
+      "source": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Limited Forearm Motion Compensated by Thoracohumeral Kinemat.pdf",
+      "sha256": "95267fb8fee3e98b9e14e2cfd8b6d2a723c9d54335af6998702fd0a646486c93",
+      "status": "fulltext_with_selected_passages",
+      "passages": 3,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-46c8272a",
+      "source": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Kinematic Data Analysis for Post-Stroke Patients Following B.pdf",
+      "sha256": "80337cc23b755c0e996cef0c1161a71debbb4c2c26cb328fec2aad9ae2580498",
+      "status": "fulltext_with_selected_passages",
+      "passages": 4,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-6346631d",
+      "source": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Kinematic and Clinical Analyses of Upper-Extremity Movements.pdf",
+      "sha256": "1cb975d57c9e03f38af6d5a4f2d1c75aa78ae0c19527d488f82eac6745445e7e",
+      "status": "fulltext_with_selected_passages",
+      "passages": 5,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-40509a13",
+      "source": "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/Differentiable Biomechanics for Markerless Motion Capture in.pdf",
+      "sha256": "d4543acd0dbf30821faa11803f585165eac706fd9d189e53e889340564d7b035",
+      "status": "fulltext_with_selected_passages",
+      "passages": 4,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-3390a0e6",
+      "source": "01_参考论文/决策模型线_JEV/D4_AAN辅助控制与介入决策/When to Act_ Calibrated Confidence for Reliable Human Intent.pdf",
+      "sha256": "06c097dced13b18d6e6d852bd4df2391c7571a371009df7ef0caa296e342a36e",
+      "status": "fulltext_with_selected_passages",
+      "passages": 4,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-debbc1bf",
+      "source": "01_参考论文/决策模型线_JEV/D4_AAN辅助控制与介入决策/A Human-in-the-Loop Confidence-Aware Failure Recovery Framew.pdf",
+      "sha256": "37c31773085f625761f34a3926ee2d2fbf0efadd02bd2ded025ae27edc7ceb4a",
+      "status": "fulltext_with_selected_passages",
+      "passages": 3,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-561c1bd5",
+      "source": "01_参考论文/决策模型线_JEV/D4_AAN辅助控制与介入决策/Model Predictive Control-Based Assist-as-Needed Strategy for.pdf",
+      "sha256": "a92fa1d6cff106cdae284a3bd40f433db28f6457d90ba4c8673fa0e0c317a25c",
+      "status": "fulltext_with_selected_passages",
+      "passages": 5,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-ceeff714",
+      "source": "01_参考论文/决策模型线_JEV/D4_AAN辅助控制与介入决策/Velocity field assist-as-needed controller for upper limb re.pdf",
+      "sha256": "7c465a21b5c5423c36c958532aa256ba0fbe775cf7612a25c1cd03e6926cc10c",
+      "status": "fulltext_with_selected_passages",
+      "passages": 5,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-f2769289",
+      "source": "01_参考论文/决策模型线_JEV/D4_AAN辅助控制与介入决策/Assistance level quantification-based human-robot interactio.pdf",
+      "sha256": "499a2672098f78bb69313a449bd52050190ff63d79a8a8b9f6909bd2e2349e71",
+      "status": "fulltext_with_selected_passages",
+      "passages": 4,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-c8f6fc7d",
+      "source": "01_参考论文/决策模型线_JEV/D4_AAN辅助控制与介入决策/Effects of Assist-As-Needed Upper Extremity Robotic Therapy.pdf",
+      "sha256": "43b6fb4a0dc9015797a856a425b67baef4e47735917c9ed81ddcf06f22065517",
+      "status": "fulltext_with_selected_passages",
+      "passages": 8,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-caa2314e",
+      "source": "01_参考论文/决策模型线_JEV/D4_AAN辅助控制与介入决策/Effects of an assist-as-needed equipped Tenodesis-Induced-Gr.xml",
+      "sha256": "92a8cff1c762f2bdef744d629847d3f48c1cecf4d77bba160d6ca7f51cb52c4b",
+      "status": "fulltext_with_selected_passages",
+      "passages": 10,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-e3ac3705",
+      "source": "01_参考论文/决策模型线_JEV/D5_轻量化非Transformer路线/Continuous Motion Prediction for Upper Limb Rehabilitation R.pdf",
+      "sha256": "9bd1a904e630744155368b2eaa7bdfbf149529b889d88920930d87e0c4507084",
+      "status": "fulltext_with_selected_passages",
+      "passages": 5,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-e18da72b",
+      "source": "01_参考论文/决策模型线_JEV/D5_轻量化非Transformer路线/Personalization of Wearable Sensor-Based Joint Kinematic Est.pdf",
+      "sha256": "daa540748b21da2fb4197c28affdbdf26c2425bcda1be2807267bc262599a8ad",
+      "status": "fulltext_with_selected_passages",
+      "passages": 3,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-8c0ad4e9",
+      "source": "01_参考论文/决策模型线_JEV/D2_独立评测与反驳/More Features Are Not More Evidence_ Limits of Training-Free.pdf",
+      "sha256": "702adeaecf68cf48536df5582446860180f42f9ef7ffa56529a559e84ab85807",
+      "status": "fulltext_with_selected_passages",
+      "passages": 5,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-fc4e3dbd",
+      "source": "01_参考论文/Transformer_发展线/T6_物理约束·世界模型/2026_端侧单目RGB_上肢代偿模式检测.pdf",
+      "sha256": "81e76fe44c1b2d83002bc442f16e573a8a6596300576da074f171c869677745f",
+      "status": "fulltext_with_selected_passages",
+      "passages": 5,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-40c8cfa2",
+      "source": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/A Real-Time, 3-D Musculoskeletal Model for Dynamic Simulatio.pdf",
+      "sha256": "7c1ed9fe72aeecca927c6681ca9f40ea1e8a94dc83859f90df0f7938ae042245",
+      "status": "fulltext_with_selected_passages",
+      "passages": 5,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-d70787db",
+      "source": "01_参考论文/决策模型线_JEV/D4_AAN辅助控制与介入决策/Performance-based assistance control for robot-mediated uppe.pdf",
+      "sha256": "5b3f71b8f8fb391bf86f686e3599fc8ad1ac5a8b80abe3ce352f2f4e87f43d93",
+      "status": "fulltext_with_selected_passages",
+      "passages": 6,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-90b8ba05",
+      "source": "01_参考论文/Transformer_发展线/T6_物理约束·世界模型/2024_Chen_Upper_Limb_Rehabilitation_with_a_Dual_Mode.pdf",
+      "sha256": "119a1f70b22d0934c3dee9f4721fa1995c475109e9a705a142330671528eb728",
+      "status": "fulltext_with_selected_passages",
+      "passages": 5,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "L-ee97e567",
+      "source": "01_参考论文/Transformer_发展线/T6_物理约束·世界模型/2025_消费级摄像头_跨被试上肢代偿检测.pdf",
+      "sha256": "2337397dc4c2db23ff1d59c4bf49ec768dfb97acdfe11df6931b135d3d04ac8d",
+      "status": "fulltext_with_selected_passages",
+      "passages": 4,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "control_review",
+      "source": "01_参考论文/康复整合链路/PMC8688994.xml",
+      "sha256": "73969a98de9ebd4503ef9416007be0a035638fa4d5e1dcd72289118428854c9a",
+      "status": "fulltext_with_selected_passages",
+      "passages": 4,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "Marchal2009",
+      "source": "01_参考论文/康复整合链路/PMC2710333.xml",
+      "sha256": "4aeaa8bccbe6ab6081215b1d4a06dd02218ac67560cdc5d5731727458d1c8ec4",
+      "status": "fulltext_with_selected_passages",
+      "passages": 5,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "ALP2025",
+      "source": "01_参考论文/康复整合链路/PMC11885312.xml",
+      "sha256": "c0d4eba0b9b5f25bc8ebe970c8bd21d69f990113eea63a3646de99a4d5d7d83b",
+      "status": "fulltext_with_selected_passages",
+      "passages": 9,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "Song_impedance",
+      "source": "01_参考论文/康复整合链路/PMC8927629.xml",
+      "sha256": "23785bed668b905e2d3d0f5fab29b46f8e84ea3368727a1b4223459165933cdf",
+      "status": "fulltext_with_selected_passages",
+      "passages": 9,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "Song_wrist",
+      "source": "01_参考论文/康复整合链路/PMC3685570.xml",
+      "sha256": "445fb07bf0573194aa52de63f30adfabf1efb2f75a7ef0244f03c80a9025276b",
+      "status": "fulltext_with_selected_passages",
+      "passages": 10,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "Song_load",
+      "source": "01_参考论文/康复整合链路/PMC11971689.xml",
+      "sha256": "ba216607e209fa0a6214a55af5e569247e1ed64d042e4086687026d558fb5555",
+      "status": "fulltext_with_selected_passages",
+      "passages": 8,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "participation_review",
+      "source": "01_参考论文/康复整合链路/PMC12204900.xml",
+      "sha256": "345db9936744106385e3935061749e18fcccfdb7b353fee4c55a71f3416d3a34",
+      "status": "fulltext_with_selected_passages",
+      "passages": 18,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "participation_clinical",
+      "source": "01_参考论文/康复整合链路/PMC11021326.xml",
+      "sha256": "131ac3feff3d0f63c73e19881fc43c2a1fd1d6b91d4afcd2501f00adc251eecf",
+      "status": "fulltext_with_selected_passages",
+      "passages": 13,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "dose_review2026",
+      "source": "01_参考论文/康复整合链路/PMC12989500.xml",
+      "sha256": "37253077c5916fc2153c459c55ea9f6484f4d845bfad4d2d7d1ab1299a9df012",
+      "status": "fulltext_with_selected_passages",
+      "passages": 9,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "multimodal_gait2026",
+      "source": "01_参考论文/康复整合链路/PMC13523423.xml",
+      "sha256": "5d0ce3a9c07b752961ca52f8969f2b2cb0209dbfa865e8ad5f398218fc6040bd",
+      "status": "fulltext_with_selected_passages",
+      "passages": 10,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "TFS2025",
+      "source": "01_参考论文/康复整合链路/TFS2025_NeuroFuzzy_AAN.pdf",
+      "sha256": "7cd821b71b08addbc45745b1c88028d28d7b59f4c35d74ee80dca1e3065d0e21",
+      "status": "fulltext_with_selected_passages",
+      "passages": 4,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "Song_TRO",
+      "source": "01_参考论文/康复整合链路/A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller.pdf",
+      "sha256": "7e363aa8dca5100a8ea04afbb5c0fbcb81d8867924695365fbcc2d2958a8f1fe",
+      "status": "fulltext_with_selected_method_passages",
+      "passages": 10,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "Song_TIE",
+      "source": "01_参考论文/康复整合链路/Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration.pdf",
+      "sha256": "051062e5644209088b9c01a0eb023091e070b97400baf3cacd627fb762682615",
+      "status": "fulltext_with_selected_method_passages",
+      "passages": 8,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "Song_VAAN",
+      "source": "01_参考论文/康复整合链路/Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot.pdf",
+      "sha256": "360e92e294b0105eec6161352d9f884792e88c82aee11ae3530a95c58858afcb",
+      "status": "fulltext_with_selected_method_passages",
+      "passages": 8,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "Song_TBME",
+      "source": "01_参考论文/康复整合链路/Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot.pdf",
+      "sha256": "bbf68a0f81d3d54716a5e2229404d070891a33b67ea29bd31fdc30e67a00c435",
+      "status": "fulltext_with_selected_method_passages",
+      "passages": 9,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "Song_TBCAS",
+      "source": "01_参考论文/康复整合链路/A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller.pdf",
+      "sha256": "cf7bf33523cb6196da35eada7614183a9200c77e7f8d7b6a6fe22140de1b4fc6",
+      "status": "fulltext_with_selected_method_passages",
+      "passages": 8,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "RL2026",
+      "source": "01_参考论文/康复整合链路/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf",
+      "sha256": "4b6e21ec3be9c4d677c6ad4d9099df49d3a8198fecf7abe990a360bf93ff97e6",
+      "status": "fulltext_with_selected_method_passages",
+      "passages": 13,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "Shoulder2025",
+      "source": "01_参考论文/康复整合链路/Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf",
+      "sha256": "e71f6fb2dfc06eb87118b3056e4e82e6bc6dc67fb0554698ba3a008ceabf1768",
+      "status": "fulltext_with_selected_method_passages",
+      "passages": 8,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "Psy2014",
+      "source": "01_参考论文/康复整合链路/PMC4021830.xml",
+      "sha256": "76e4b939796411a9b23fb71d5e953dfee7d2486039b195657434c9b65241abd6",
+      "status": "local_fulltext",
+      "passages": 33,
+      "scope": "selected_passages_only_not_full_paper_review"
+    },
+    {
+      "id": "Psy2022",
+      "source": "01_参考论文/康复整合链路/PMC9708787.xml",
+      "sha256": "96b98aa3fb97edfd815234a42d613adf599675f719de91ccbf5aa3073d40d863",
+      "status": "local_fulltext",
+      "passages": 22,
+      "scope": "selected_passages_only_not_full_paper_review"
+    }
+  ],
+  "full_paper_review_claim": false,
+  "independent_construct_or_clinical_claim": false
+}

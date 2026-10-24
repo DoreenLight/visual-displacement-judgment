@@ -1,0 +1,49 @@
+{
+  "trash": [
+    {
+      "from": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Exoskeleton for forearm pronation and supination rehabilitat.pdf",
+      "sha256": "d6c826fca33cc8b648fb4dec43d3ec5197c3ca065b864b93caff7491d1168d0b",
+      "reason": "与 B3 同篇同内容重复副本（Andreasen 2004 IEEE EMBS），卡与正本均在 B3"
+    }
+  ],
+  "rename": [
+    {
+      "from": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/An Extension to the ISB Wrist Joint Coordinate System.pdf",
+      "to": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/AN EXTENSION TO THE ISB WRIST JOINT COORDINATE SYSTEM_ AN IN.pdf",
+      "sha256": "2231712ab90557be494ec97bd22931d4a27e68b13c31a8951a4eea7c6562b1af",
+      "rule": "pdfinfo-doi"
+    },
+    {
+      "from": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Comparison and Reliability of Three Goniometric Methods for Measuri.pdf",
+      "to": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Comparison and Reliability of Three Goniometric Methods for.pdf",
+      "sha256": "ca4bf699442c30c70d0e47a94b50825e0670c79cfb6feec305b75cec17afc4c0",
+      "rule": "title-prefix"
+    },
+    {
+      "from": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Mechanism of Limitation of Pronation-Supination of the Forearm.pdf",
+      "to": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Mechanism of limitation of pronation_supination of the forea.pdf",
+      "sha256": "31e158a02c9bca96d0241f9ca7935cbfb5aa3bd7e8e3c9b7a67c34da5af45719",
+      "rule": "title-prefix"
+    },
+    {
+      "from": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Exoskeleton for Forearm Pronation and Supination Rehabilitation.pdf",
+      "to": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Exoskeleton for forearm pronation and supination rehabilitat.pdf",
+      "sha256": "5116ad6bd42256a42c42b211b020ab58f93b6105c0da4e7157ec4d4db07cc774",
+      "rule": "title-prefix"
+    },
+    {
+      "from": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Limited Forearm Motion Compensated by Thoracohumeral Kinematics.pdf",
+      "to": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Limited Forearm Motion Compensated by Thoracohumeral Kinemat.pdf",
+      "sha256": "95267fb8fee3e98b9e14e2cfd8b6d2a723c9d54335af6998702fd0a646486c93",
+      "rule": "title-prefix"
+    },
+    {
+      "from": "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/Continuous estimation of finger joint angles using muscle activation inp.pdf",
+      "to": "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/Continuous estimation of finger joint angles using muscle ac.pdf",
+      "sha256": "28d5fea37193c8e04e6fe998772c999d2372de96b487f71fb7af07cdbd7cbf94",
+      "rule": "title-prefix"
+    }
+  ],
+  "unmatched": [],
+  "crossdir": []
+}

@@ -1,0 +1,676 @@
+{
+ "purpose": "临床/康复侧定向撞红扫描 —— 补「只查了 CV 侧」的系统性盲区",
+ "discipline": [
+  "Crossref 零命中不可信（同形异义污染，教训 K2）；只有 arXiv 零命中可作空白证据",
+  "不绕过反爬；只走 Crossref / arXiv 公开 API",
+  "本工具只报「会不会撞」，不入库 —— 入库仍须走 curate→select→resolve→build"
+ ],
+ "queries": [
+  {
+   "label": "A1 Labanotation+康复",
+   "source": "crossref",
+   "query": "Labanotation rehabilitation upper limb",
+   "n": 8,
+   "n_flagged": 0
+  },
+  {
+   "label": "A2 Labanotation+物理治疗",
+   "source": "crossref",
+   "query": "Labanotation physical therapy movement analysis",
+   "n": 8,
+   "n_flagged": 5
+  },
+  {
+   "label": "A3 Labanotation+卒中",
+   "source": "crossref",
+   "query": "Labanotation stroke rehabilitation notation",
+   "n": 8,
+   "n_flagged": 7
+  },
+  {
+   "label": "A4 记谱法+上肢",
+   "source": "crossref",
+   "query": "movement notation system upper limb clinical",
+   "n": 8,
+   "n_flagged": 1
+  },
+  {
+   "label": "A5 记谱法+临床评估",
+   "source": "crossref",
+   "query": "dance notation clinical movement assessment",
+   "n": 8,
+   "n_flagged": 7
+  },
+  {
+   "label": "A6 arXiv Labanotation 康复",
+   "source": "arxiv",
+   "query": "all:\"Labanotation\" AND (all:\"rehabilitation\" OR all:\"stroke\")",
+   "n": 0,
+   "n_flagged": 0
+  },
+  {
+   "label": "A7 arXiv Labanotation 上肢",
+   "source": "arxiv",
+   "query": "all:\"Labanotation\" AND all:\"upper limb\"",
+   "n": 0,
+   "n_flagged": 0
+  },
+  {
+   "label": "A8 arXiv motion notation 康复",
+   "source": "arxiv",
+   "query": "all:\"motion notation\" AND all:\"rehabilitation\"",
+   "n": 0,
+   "n_flagged": 0
+  },
+  {
+   "label": "B1 康复+符号化动作",
+   "source": "crossref",
+   "query": "symbolic representation movement rehabilitation therapy",
+   "n": 8,
+   "n_flagged": 0
+  },
+  {
+   "label": "B2 上肢+语法+技能",
+   "source": "crossref",
+   "query": "grammar skill representation upper limb rehabilitation",
+   "n": 8,
+   "n_flagged": 0
+  },
+  {
+   "label": "B3 离散码本+康复动作",
+   "source": "crossref",
+   "query": "discrete codebook rehabilitation movement representation",
+   "n": 8,
+   "n_flagged": 6
+  },
+  {
+   "label": "B4 arXiv 康复 token 动作",
+   "source": "arxiv",
+   "query": "all:\"rehabilitation\" AND all:\"token\" AND all:\"movement representation\"",
+   "n": 0,
+   "n_flagged": 0
+  },
+  {
+   "label": "C1 上肢+数字生物标志物",
+   "source": "crossref",
+   "query": "digital biomarkers upper limb neurological rehabilitation",
+   "n": 8,
+   "n_flagged": 2
+  },
+  {
+   "label": "C2 digital measures 上肢",
+   "source": "crossref",
+   "query": "digital measures of functioning upper limb rehabilitation",
+   "n": 8,
+   "n_flagged": 2
+  },
+  {
+   "label": "C3 数字指标+运动学+临床",
+   "source": "crossref",
+   "query": "digital kinematic metrics clinical interpretation rehabilitation",
+   "n": 8,
+   "n_flagged": 2
+  },
+  {
+   "label": "C4 数字表型+卒中上肢",
+   "source": "crossref",
+   "query": "digital phenotype upper limb stroke quantitative",
+   "n": 8,
+   "n_flagged": 0
+  },
+  {
+   "label": "D1 康复+语言模型",
+   "source": "crossref",
+   "query": "language model rehabilitation movement assessment",
+   "n": 8,
+   "n_flagged": 1
+  },
+  {
+   "label": "D2 运动+机器翻译",
+   "source": "crossref",
+   "query": "machine translation human movement clinical",
+   "n": 8,
+   "n_flagged": 8
+  },
+  {
+   "label": "D3 康复+自然语言+运动",
+   "source": "crossref",
+   "query": "natural language movement rehabilitation physiotherapy",
+   "n": 8,
+   "n_flagged": 0
+  },
+  {
+   "label": "D4 arXiv 康复 翻译 动作",
+   "source": "arxiv",
+   "query": "all:\"rehabilitation\" AND all:\"translation\" AND all:\"joint angle\"",
+   "n": 0,
+   "n_flagged": 0
+  },
+  {
+   "label": "E1 可解释+运动学+临床",
+   "source": "crossref",
+   "query": "interpretable kinematics clinical decision support",
+   "n": 8,
+   "n_flagged": 7
+  },
+  {
+   "label": "E2 可解释AI+康复评估",
+   "source": "crossref",
+   "query": "explainable AI rehabilitation assessment clinicians",
+   "n": 8,
+   "n_flagged": 8
+  },
+  {
+   "label": "E3 物理治疗+可解释+模型",
+   "source": "crossref",
+   "query": "physiotherapy interpretable model patient interpretation",
+   "n": 8,
+   "n_flagged": 2
+  },
+  {
+   "label": "E4 arXiv 可解释 上肢 康复",
+   "source": "arxiv",
+   "query": "all:\"interpretable\" AND all:\"upper limb\" AND all:\"rehabilitation\"",
+   "n": 5,
+   "n_flagged": 0
+  }
+ ],
+ "hits": [
+  {
+   "doi": "10.1093/ptj/34.11.596a",
+   "title": "Labanotation; The System For Recording Movement",
+   "venue": "Physical Therapy",
+   "year": 1954,
+   "type": "journal-article",
+   "_query": "A2 Labanotation+物理治疗"
+  },
+  {
+   "doi": "10.1093/ptj/42.5.343a",
+   "title": "Labanotation: The System for Recording Movement",
+   "venue": "Physical Therapy",
+   "year": 1962,
+   "type": "journal-article",
+   "_query": "A2 Labanotation+物理治疗"
+  },
+  {
+   "doi": "10.4324/9780203823866-8",
+   "title": "INTRODUCTION TO LABANOTATION",
+   "venue": "Labanotation",
+   "year": 2015,
+   "type": "book-chapter",
+   "_query": "A2 Labanotation+物理治疗"
+  },
+  {
+   "doi": "10.4324/9780203823866-10",
+   "title": "FUNDAMENTALS OF LABANOTATION",
+   "venue": "Labanotation",
+   "year": 2015,
+   "type": "book-chapter",
+   "_query": "A2 Labanotation+物理治疗"
+  },
+  {
+   "doi": "10.4324/9780203823866-9",
+   "title": "THE APPROACH TO MOVEMENT NOTATION",
+   "venue": "Labanotation",
+   "year": 2015,
+   "type": "book-chapter",
+   "_query": "A2 Labanotation+物理治疗"
+  },
+  {
+   "doi": "10.4324/9780203823866-9",
+   "title": "THE APPROACH TO MOVEMENT NOTATION",
+   "venue": "Labanotation",
+   "year": 2015,
+   "type": "book-chapter",
+   "_query": "A3 Labanotation+卒中"
+  },
+  {
+   "doi": "10.22323/2.01010201",
+   "title": "Labanotation: a universal movement notation language",
+   "venue": "Journal of Science Communication",
+   "year": 2002,
+   "type": "journal-article",
+   "_query": "A3 Labanotation+卒中"
+  },
+  {
+   "doi": "10.4324/9780203823866-7",
+   "title": "A BRIEF HISTORY OF DANCE NOTATION",
+   "venue": "Labanotation",
+   "year": 2015,
+   "type": "book-chapter",
+   "_query": "A3 Labanotation+卒中"
+  },
+  {
+   "doi": "10.1080/01472526.2015.1085227",
+   "title": "Benesh Movement Notation and Labanotation: From Inception to Establishment (1919–1977)",
+   "venue": "Dance Chronicle",
+   "year": 2015,
+   "type": "journal-article",
+   "_query": "A3 Labanotation+卒中"
+  },
+  {
+   "doi": "10.4324/9780203823866-8",
+   "title": "INTRODUCTION TO LABANOTATION",
+   "venue": "Labanotation",
+   "year": 2015,
+   "type": "book-chapter",
+   "_query": "A3 Labanotation+卒中"
+  },
+  {
+   "doi": "10.1145/3664647.3680568",
+   "title": "Translating Motion to Notation: Hand Labanotation for Intuitive and Comprehensive Hand Movement Documentation",
+   "venue": "Proceedings of the 32nd ACM International Conference on Multimedia",
+   "year": 2024,
+   "type": "proceedings-article",
+   "_query": "A3 Labanotation+卒中"
+  },
+  {
+   "doi": "10.4324/9780203823866-10",
+   "title": "FUNDAMENTALS OF LABANOTATION",
+   "venue": "Labanotation",
+   "year": 2015,
+   "type": "book-chapter",
+   "_query": "A3 Labanotation+卒中"
+  },
+  {
+   "doi": "10.1515/9783110813814-003",
+   "title": "PART II. THE ESHKOL-WACHMANN MOVEMENT NOTATION SYSTEM",
+   "venue": "A New Dictionary of Sign Language",
+   "year": 1977,
+   "type": "book-chapter",
+   "_query": "A4 记谱法+上肢"
+  },
+  {
+   "doi": "10.2307/1478176",
+   "title": "Dance Notation: The Process of Recording Movement<i>by</i>Ann Hutchinson Guest. New York: Dance Horizons1984. xiv + 226<i>pp., illustrations, dance notation. $29.95</i>. - Movement Study and Benesh Movement Notation<i>by</i>Julia McGuinness-Scott. New York: Oxford University Press, 1985. 148<i>pp., dance notation. $9.95 paperbound</i>.",
+   "venue": "Dance Research Journal",
+   "year": 1988,
+   "type": "journal-article",
+   "_query": "A5 记谱法+临床评估"
+  },
+  {
+   "doi": "10.1515/9783110749878-037",
+   "title": "Chapter 37 Eshkol-Wachman Movement Notation: Movement Speaking Its Own Language",
+   "venue": "Dance Spreads Its Wings",
+   "year": 2021,
+   "type": "book-chapter",
+   "_query": "A5 记谱法+临床评估"
+  },
+  {
+   "doi": "10.1515/9783110861839.113",
+   "title": "CHAPTER III Formation of Laban's Movement and Dance Notation Principles",
+   "venue": "Body - Space - Expression",
+   "year": 1987,
+   "type": "book-chapter",
+   "_query": "A5 记谱法+临床评估"
+  },
+  {
+   "doi": "10.1080/23734833.2026.2621631",
+   "title": "Visual Planning for Ballet Teachers: Building a Movement Library with Benesh Movement Notation",
+   "venue": "Dance Education in Practice",
+   "year": 2026,
+   "type": "journal-article",
+   "_query": "A5 记谱法+临床评估"
+  },
+  {
+   "doi": "10.4324/9780203823866-7",
+   "title": "A BRIEF HISTORY OF DANCE NOTATION",
+   "venue": "Labanotation",
+   "year": 2015,
+   "type": "book-chapter",
+   "_query": "A5 记谱法+临床评估"
+  },
+  {
+   "doi": "10.30687/va/2385-2720/2019/05/005",
+   "title": "The Electric Body\n Ecstasy, Spasm and Instability in Dance: Movement Notation from Vladimir Stepanov to Vaslav Nijinsky",
+   "venue": "Venezia Arti",
+   "year": 2019,
+   "type": "journal-article",
+   "_query": "A5 记谱法+临床评估"
+  },
+  {
+   "doi": "10.56107/ijpa.v4i1.247",
+   "title": "AUGMENTED REALITY DANCE LEARNING MEDIA: LABAN NOTATION MOVEMENT LITERACY FOR JUNIOR HIGH SCHOOL STUDENTS",
+   "venue": "International Journal of Performing Arts (IJPA)",
+   "year": 2025,
+   "type": "journal-article",
+   "_query": "A5 记谱法+临床评估"
+  },
+  {
+   "doi": "10.1117/1.jei.35.2.023039",
+   "title": "Codebook-guided prediction network for discrete representation and reconstruction in scene text image super-resolution",
+   "venue": "Journal of Electronic Imaging",
+   "year": 2026,
+   "type": "journal-article",
+   "_query": "B3 离散码本+康复动作"
+  },
+  {
+   "doi": "10.1037/h0091527",
+   "title": "Review of MMPI-168 codebook.",
+   "venue": "Rehabilitation Psychology",
+   "year": 1986,
+   "type": "journal-article",
+   "_query": "B3 离散码本+康复动作"
+  },
+  {
+   "doi": "10.2139/ssrn.4671725",
+   "title": "Edvae: Mitigating Codebook Collapse with Evidential Discrete Variational Autoencoders",
+   "venue": "",
+   "year": 2023,
+   "type": "posted-content",
+   "_query": "B3 离散码本+康复动作"
+  },
+  {
+   "doi": "10.1109/dcc.1992.227449",
+   "title": "Variable precision representation for efficient VQ codebook storage",
+   "venue": "Data Compression Conference, 1992.",
+   "year": null,
+   "type": "proceedings-article",
+   "_query": "B3 离散码本+康复动作"
+  },
+  {
+   "doi": "10.14711/thesis-b1213370",
+   "title": "The use of discrete distributions with a very large codebook for automatic speech recognition and speaker verification",
+   "venue": "",
+   "year": null,
+   "type": "dissertation",
+   "_query": "B3 离散码本+康复动作"
+  },
+  {
+   "doi": "10.1006/jvci.1996.0016",
+   "title": "Fast Search Algorithms for VQ Codebook Generation",
+   "venue": "Journal of Visual Communication and Image Representation",
+   "year": 1996,
+   "type": "journal-article",
+   "_query": "B3 离散码本+康复动作"
+  },
+  {
+   "doi": "10.2196/preprints.87339",
+   "title": "From Metrics to Meaning: Exploring Clinicians’ Perspectives on Digital Metrics of Functioning of the Upper Limb in Neurological Rehabilitation (Preprint)",
+   "venue": "",
+   "year": 2025,
+   "type": "posted-content",
+   "_query": "C1 上肢+数字生物标志物"
+  },
+  {
+   "doi": "10.2196/87339",
+   "title": "From Metrics to Meaning in Neurological Rehabilitation: Clinicians’ Perspectives on Digital Metrics of Upper Limb Functioning—A Focus Group Study",
+   "venue": "JMIR Rehabilitation and Assistive Technologies",
+   "year": 2026,
+   "type": "journal-article",
+   "_query": "C1 上肢+数字生物标志物"
+  },
+  {
+   "doi": "10.2196/preprints.87339",
+   "title": "From Metrics to Meaning: Exploring Clinicians’ Perspectives on Digital Metrics of Functioning of the Upper Limb in Neurological Rehabilitation (Preprint)",
+   "venue": "",
+   "year": 2025,
+   "type": "posted-content",
+   "_query": "C2 digital measures 上肢"
+  },
+  {
+   "doi": "10.2196/87339",
+   "title": "From Metrics to Meaning in Neurological Rehabilitation: Clinicians’ Perspectives on Digital Metrics of Upper Limb Functioning—A Focus Group Study",
+   "venue": "JMIR Rehabilitation and Assistive Technologies",
+   "year": 2026,
+   "type": "journal-article",
+   "_query": "C2 digital measures 上肢"
+  },
+  {
+   "doi": "10.2196/preprints.87339",
+   "title": "From Metrics to Meaning: Exploring Clinicians’ Perspectives on Digital Metrics of Functioning of the Upper Limb in Neurological Rehabilitation (Preprint)",
+   "venue": "",
+   "year": 2025,
+   "type": "posted-content",
+   "_query": "C3 数字指标+运动学+临床"
+  },
+  {
+   "doi": "10.2196/87339",
+   "title": "From Metrics to Meaning in Neurological Rehabilitation: Clinicians’ Perspectives on Digital Metrics of Upper Limb Functioning—A Focus Group Study",
+   "venue": "JMIR Rehabilitation and Assistive Technologies",
+   "year": 2026,
+   "type": "journal-article",
+   "_query": "C3 数字指标+运动学+临床"
+  },
+  {
+   "doi": "10.1177/10519815261476647",
+   "title": "The role of (voluntary) large language model use and individual needs in shaping work design",
+   "venue": "WORK: A Journal of Prevention, Assessment &amp; Rehabilitation",
+   "year": 2026,
+   "type": "journal-article",
+   "_query": "D1 康复+语言模型"
+  },
+  {
+   "doi": "10.1515/9783110802474.123",
+   "title": "Translation problems and translation strategies involved in human and machine translation: Empirical studies",
+   "venue": "Machine Translation and Translation Theory",
+   "year": null,
+   "type": "book-chapter",
+   "_query": "D2 运动+机器翻译"
+  },
+  {
+   "doi": "10.4324/9781315760315-9",
+   "title": "Machine Translation versus Human Translation",
+   "venue": "Translation",
+   "year": 2014,
+   "type": "book-chapter",
+   "_query": "D2 运动+机器翻译"
+  },
+  {
+   "doi": "10.1075/ata.xx.05gil",
+   "title": "Recent claims of human-machine parity in translation highlight core\n\t\t\t\t\t\tissues surrounding the human evaluation of machine translation",
+   "venue": "American Translators Association Scholarly Monograph Series",
+   "year": 2023,
+   "type": "book-chapter",
+   "_query": "D2 运动+机器翻译"
+  },
+  {
+   "doi": "10.1515/9783110802474.35",
+   "title": "The importance of functional markers in (human) translation",
+   "venue": "Machine Translation and Translation Theory",
+   "year": null,
+   "type": "book-chapter",
+   "_query": "D2 运动+机器翻译"
+  },
+  {
+   "doi": "10.4324/9781315147536-3",
+   "title": "Norms and controlled language for machine translation",
+   "venue": "The Human Factor in Machine Translation",
+   "year": 2018,
+   "type": "book-chapter",
+   "_query": "D2 运动+机器翻译"
+  },
+  {
+   "doi": "10.6035/monti.2026.18.07",
+   "title": "How close are LLMs to human judgment in assessing machine translation quality?",
+   "venue": "MonTi Monografías de Traducción e Interpretación",
+   "year": 2026,
+   "type": "journal-article",
+   "_query": "D2 运动+机器翻译"
+  },
+  {
+   "doi": "10.4324/9781315147536-2",
+   "title": "Localizing websites using machine translation",
+   "venue": "The Human Factor in Machine Translation",
+   "year": 2018,
+   "type": "book-chapter",
+   "_query": "D2 运动+机器翻译"
+  },
+  {
+   "doi": "10.4324/9781003321538-12",
+   "title": "Balancing Machine and Human Learning in Translation",
+   "venue": "Machine Learning in Translation",
+   "year": 2023,
+   "type": "book-chapter",
+   "_query": "D2 运动+机器翻译"
+  },
+  {
+   "doi": "10.70675/eb5aedbbz4ce5z485bzb909zb52664f493f9",
+   "title": "Research on hybrid interpretable clinical decision support systems",
+   "venue": "",
+   "year": null,
+   "type": "dissertation",
+   "_query": "E1 可解释+运动学+临床"
+  },
+  {
+   "doi": "10.62311/nesx/rb-978-81-999639-5-5",
+   "title": "Clinical AI at Scale: Interpretable Prediction, Decision Support, and Safety Governance",
+   "venue": "",
+   "year": 2026,
+   "type": "reference-book",
+   "_query": "E1 可解释+运动学+临床"
+  },
+  {
+   "doi": "10.2139/ssrn.4637897",
+   "title": "Explainable Artificial Intelligence (XAI) in healthcare: Interpretable Models for Clinical Decision Support",
+   "venue": "",
+   "year": 2023,
+   "type": "posted-content",
+   "_query": "E1 可解释+运动学+临床"
+  },
+  {
+   "doi": "10.1016/j.dss.2021.113664",
+   "title": "Interpretable data science for decision making",
+   "venue": "Decision Support Systems",
+   "year": 2021,
+   "type": "journal-article",
+   "_query": "E1 可解释+运动学+临床"
+  },
+  {
+   "doi": "10.3390/diagnostics12020463",
+   "title": "Interpretable Clinical Decision Support System for Audiology Based on Predicted Common Audiological Functional Parameters (CAFPAs)",
+   "venue": "Diagnostics",
+   "year": 2022,
+   "type": "journal-article",
+   "_query": "E1 可解释+运动学+临床"
+  },
+  {
+   "doi": "10.1016/j.dss.2024.114264",
+   "title": "Decomposing the hazard function into interpretable readmission risk components",
+   "venue": "Decision Support Systems",
+   "year": 2024,
+   "type": "journal-article",
+   "_query": "E1 可解释+运动学+临床"
+  },
+  {
+   "doi": "10.2139/ssrn.6382918",
+   "title": "iCo-MeD: An Interpretable NLP Clinical Decision Support System with Copula-based Latent Mediator Denoising",
+   "venue": "",
+   "year": 2026,
+   "type": "posted-content",
+   "_query": "E1 可解释+运动学+临床"
+  },
+  {
+   "doi": "10.1142/9789811284113_0007",
+   "title": "Explainable AI and Interpretability in Medical AI Models",
+   "venue": "Artificial Intelligence in Medicine",
+   "year": 2024,
+   "type": "book-chapter",
+   "_query": "E2 可解释AI+康复评估"
+  },
+  {
+   "doi": "10.1177/10519815261456685",
+   "title": "Decoding digital burnout in the maritime workforce: An explainable ai approach to digital ageing and deprivation",
+   "venue": "WORK: A Journal of Prevention, Assessment &amp; Rehabilitation",
+   "year": 2026,
+   "type": "journal-article",
+   "_query": "E2 可解释AI+康复评估"
+  },
+  {
+   "doi": "10.2196/preprints.53207",
+   "title": "How Explainable Artificial Intelligence Can Increase or Decrease Clinicians’ Trust in AI Applications in Health Care: Systematic Review (Preprint)",
+   "venue": "",
+   "year": 2023,
+   "type": "posted-content",
+   "_query": "E2 可解释AI+康复评估"
+  },
+  {
+   "doi": "10.2196/53207",
+   "title": "How Explainable Artificial Intelligence Can Increase or Decrease Clinicians’ Trust in AI Applications in Health Care: Systematic Review",
+   "venue": "JMIR AI",
+   "year": 2024,
+   "type": "journal-article",
+   "_query": "E2 可解释AI+康复评估"
+  },
+  {
+   "doi": "10.5220/0014831500004021",
+   "title": "An Explainable AI Framework for Engineering Education Assessment as an Alternative to Generative AI-Based Grading",
+   "venue": "Proceedings of the 18th International Conference on Computer Supported Education",
+   "year": 2026,
+   "type": "proceedings-article",
+   "_query": "E2 可解释AI+康复评估"
+  },
+  {
+   "doi": "10.32920/25336324.v1",
+   "title": "Deep Learning and Explainable AI Methods for Surgical Skills Assessment",
+   "venue": "",
+   "year": 2024,
+   "type": "posted-content",
+   "_query": "E2 可解释AI+康复评估"
+  },
+  {
+   "doi": "10.32920/25336324",
+   "title": "Deep Learning and Explainable AI Methods for Surgical Skills Assessment",
+   "venue": "",
+   "year": 2024,
+   "type": "posted-content",
+   "_query": "E2 可解释AI+康复评估"
+  },
+  {
+   "doi": "10.2139/ssrn.4194675",
+   "title": "Explaining Graph Convolutional Network Predictions for Clinicians - an Explainable AI Approach to Alzheimer's Disease Classification",
+   "venue": "",
+   "year": 2022,
+   "type": "posted-content",
+   "_query": "E2 可解释AI+康复评估"
+  },
+  {
+   "doi": "10.7717/peerj.9885/fig-5",
+   "title": "Figure 5: Interpretation of the neural network (NNet2) with local interpretable model-agnostic explanations.",
+   "venue": "",
+   "year": null,
+   "type": "component",
+   "_query": "E3 物理治疗+可解释+模型"
+  },
+  {
+   "doi": "10.5220/0007399203800387",
+   "title": "Prediction of Acute Kidney Injury in Cardiac Surgery Patients: Interpretation using Local Interpretable Model-agnostic Explanations",
+   "venue": "Proceedings of the 12th International Joint Conference on Biomedical Engineering Systems and Technologies",
+   "year": 2019,
+   "type": "proceedings-article",
+   "_query": "E3 物理治疗+可解释+模型"
+  }
+ ],
+ "zero_hit_queries": [
+  {
+   "label": "A6 arXiv Labanotation 康复",
+   "source": "arxiv",
+   "query": "all:\"Labanotation\" AND (all:\"rehabilitation\" OR all:\"stroke\")"
+  },
+  {
+   "label": "A7 arXiv Labanotation 上肢",
+   "source": "arxiv",
+   "query": "all:\"Labanotation\" AND all:\"upper limb\""
+  },
+  {
+   "label": "A8 arXiv motion notation 康复",
+   "source": "arxiv",
+   "query": "all:\"motion notation\" AND all:\"rehabilitation\""
+  },
+  {
+   "label": "B4 arXiv 康复 token 动作",
+   "source": "arxiv",
+   "query": "all:\"rehabilitation\" AND all:\"token\" AND all:\"movement representation\""
+  },
+  {
+   "label": "D4 arXiv 康复 翻译 动作",
+   "source": "arxiv",
+   "query": "all:\"rehabilitation\" AND all:\"translation\" AND all:\"joint angle\""
+  }
+ ],
+ "summary": {
+  "n_queries": 24,
+  "n_zero_hit": 5,
+  "n_flagged_unique": 50
+ }
+}

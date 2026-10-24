@@ -1,0 +1,21 @@
+{
+  "callers": [
+    "06_附录/gen_acquisition_list.py",
+    "06_附录/自检脚本/verify_kb.sh",
+    "06_附录/Transformer语料工具/README.md",
+    "06_附录/取件清单_人工标注.json",
+    "06_附录/缺口台账.md",
+    "00_研究背景/第二代引文追溯_snowball_gen2.md",
+    "00_研究背景/临床侧撞红扫描_sweep_clinical.md",
+    "00_研究背景/中间地带扫描_sweep_middle.md",
+    "06_附录/补充材料/README.md",
+    "Agent.md",
+    "HANDOFF.md",
+    "INDEX.md",
+    "README.md",
+    "STATUS.md",
+    "06_附录/待下载论文总清单.md"
+  ],
+  "snapshot_files": 175,
+  "snapshot": "迁移前回滚快照.zip"
+}

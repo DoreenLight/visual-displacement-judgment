@@ -1,0 +1,70 @@
+{
+  "status": "PARTIAL_BODY_EVIDENCE_CHECKS_PASS_GOAL_NOT_COMPLETE",
+  "manifest": 55,
+  "local_originals": 48,
+  "still_missing_originals": 7,
+  "bibliography_only": 6,
+  "derived_body_only": 1,
+  "original_excerpts": 334,
+  "derived_RL_excerpts": 16,
+  "derived_SHA": "8b0922bd8cd326cd9ec5090b349441bea37f9aaef95367a5d7107a15b0d23797",
+  "pending_ids": [
+    "Song_TRO",
+    "Song_TIE",
+    "Song_VAAN",
+    "Song_TBME",
+    "Song_TBCAS",
+    "RL2026",
+    "Shoulder2025"
+  ],
+  "derived_text_not_counted_by_generator": true,
+  "acquisition_before_two_rebuilds_SHA": "6925eb77b9ea616d0ec5d201557606df3516631a5f39474d8ac2f8c8b8449256",
+  "kb_pass": 22,
+  "kb_fail": 0,
+  "kb_failed_initial_log": "RL正文补核_完整自检.log:Case16 flagged wording 待用户; fixed with concrete PDF/figure/formula acquisition requirement, not removed blocker or relaxed check.",
+  "kb_final_log": "RL正文补核_修订后完整自检.log",
+  "acquisition_regressions": 17,
+  "uri_regressions": 6,
+  "chain_originals_sha_verified": 13,
+  "messages": [
+    "TaskContext",
+    "RiskEnvelope",
+    "ObservationPacket",
+    "ValidityPacket",
+    "KinematicQualityState",
+    "EffortEstimate",
+    "PsychologicalEngagementState",
+    "ConstraintState",
+    "DecisionRequest",
+    "AppliedPolicyReceipt",
+    "TrainingBlockOutcome",
+    "PlanRevision"
+  ],
+  "protection": [
+    {
+      "baseline": "05_进展日志/2026-10-02_康复链路研究/原件与历史_保护基线.json",
+      "checked": 1133,
+      "authorized_navigation_differences": [
+        "01_参考论文/生物力学线/README.md",
+        "01_参考论文/生物力学线/取件入口.md",
+        "01_参考论文/Transformer_发展线/README.md",
+        "01_参考论文/Transformer_发展线/取件入口.md",
+        "01_参考论文/决策模型线_JEV/取件入口.md"
+      ],
+      "other_bytes_unchanged": 1128
+    },
+    {
+      "baseline": "05_进展日志/2026-10-02_论文收尾与目录整理/迁移前保护基线.json",
+      "checked": 567,
+      "authorized_navigation_differences": [],
+      "other_bytes_unchanged": 567
+    }
+  ],
+  "candidate_effect": "C3 broad RL/AAN/personalization/assistance+difficulty novelty claims removed as known prior art; C1/C2 add proxy/adaptation comparator. Narrow dual-construct conditions remain hypotheses, confirmed0.",
+  "unresolved": [
+    "7 canonical originals including RL figures/formulas",
+    "independent physical/psychological reference and clinical applicability",
+    "actual assistance exposure and authority",
+    "innovation/final direction and whole-goal acceptance"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "registered_originals": 20,
+  "new": 7,
+  "XML": 12,
+  "PDF": 8,
+  "new_cards": [
+    "01_参考论文/康复整合链路/A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller_Evidence_Card.md",
+    "01_参考论文/康复整合链路/A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller_Evidence_Card.md",
+    "01_参考论文/康复整合链路/Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation_Evidence_Card.md",
+    "01_参考论文/康复整合链路/Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration_Evidence_Card.md",
+    "01_参考论文/康复整合链路/Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot_Evidence_Card.md",
+    "01_参考论文/康复整合链路/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises_Evidence_Card.md",
+    "01_参考论文/康复整合链路/Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot_Evidence_Card.md"
+  ],
+  "scope": "Identity/structure only; not all mechanism/content accepted"
+}

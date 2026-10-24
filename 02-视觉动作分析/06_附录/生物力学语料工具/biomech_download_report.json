@@ -1,0 +1,1060 @@
+{
+ "dest": "/Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/01_参考论文/生物力学线",
+ "summary": {
+  "ok": 28,
+  "failed": 25,
+  "not_oa": 38
+ },
+ "policy": "仅官方 OA 位置；非 OA 不下载、不绕过付费墙",
+ "items": [
+  {
+   "key": "2609.18667",
+   "title": "Video-Based Markerless Motion Capture for Clinical and Rehabilitation Biomechanics: A PRISMA-ScR Scoping Review of Validated Architectures, Clinical Readiness, and Emerging Methods",
+   "thread": "B1",
+   "status": "ok",
+   "path": "B1_视觉运动学_估计与验证方法学/Video-Based Markerless Motion Capture for Clinical and Rehab.pdf",
+   "bytes": 2218844,
+   "url": "",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.1111/sms.14319",
+   "title": "The accuracy of markerless motion capture combined with computer vision techniques for measuring running kinematics",
+   "thread": "B1",
+   "status": "failed",
+   "path": "B1_视觉运动学_估计与验证方法学/The accuracy of markerless motion capture combined with computer.pdf",
+   "bytes": 0,
+   "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/sms.14319",
+   "tried": [
+    "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/sms.14319"
+   ],
+   "used_url": "",
+   "reason": "not_pdf_magic"
+  },
+  {
+   "key": "10.3389/fspor.2021.809898",
+   "title": "A SWOT Analysis of Portable and Low-Cost Markerless Motion Capture Systems to Assess Lower-Limb Musculoskeletal Kinematics in Sport",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "2010.06449",
+   "title": "A review of 3D human pose estimation algorithms for markerless motion capture",
+   "thread": "B1",
+   "status": "ok",
+   "path": "B1_视觉运动学_估计与验证方法学/A review of 3D human pose estimation algorithms for markerle.pdf",
+   "bytes": 1284223,
+   "url": "",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.1186/s12891-019-2930-4",
+   "title": "Wearable systems for shoulder kinematics assessment: a systematic review",
+   "thread": "B1",
+   "status": "failed",
+   "path": "B1_视觉运动学_估计与验证方法学/Wearable systems for shoulder kinematics assessment_ a systemati.pdf",
+   "bytes": 0,
+   "url": "https://bmcmusculoskeletdisord.biomedcentral.com/track/pdf/10.1186/s12891-019-2930-4",
+   "tried": [
+    "https://bmcmusculoskeletdisord.biomedcentral.com/track/pdf/10.1186/s12891-019-2930-4"
+   ],
+   "used_url": "",
+   "reason": "too_small:3038"
+  },
+  {
+   "key": "10.1016/j.gaitpost.2009.07.111",
+   "title": "A new kinematic model of the upper extremity based on functional joint parameter determination for shoulder and elbow",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1016/s0021-9290(07)70188-4",
+   "title": "AN EXTENSION TO THE ISB WRIST JOINT COORDINATE SYSTEM: AN IN VITRO ACCURACY STUDY",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1016/s0749-0712(21)00605-3",
+   "title": "BIOMECHANICS OF PRONATION AND SUPINATION OF THE FOREARM",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1016/j.jbiomech.2025.112905",
+   "title": "Comparison of shoulder kinematics between Theia 3D markerless motion capture and marker-based motion capture during full arm ranges of motion",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.3390/s24113686",
+   "title": "Accuracy, Validity, and Reliability of Markerless Camera-Based 3D Motion Capture Systems versus Marker-Based 3D Motion Capture Systems in Gait Analysis: A Systematic Review and Meta-Analysis",
+   "thread": "B1",
+   "status": "failed",
+   "path": "B1_视觉运动学_估计与验证方法学/Accuracy, Validity, and Reliability of Markerless Camera-Based 3.pdf",
+   "bytes": 0,
+   "url": "https://www.mdpi.com/1424-8220/24/11/3686/pdf?version=1717668048",
+   "tried": [
+    "https://www.mdpi.com/1424-8220/24/11/3686/pdf?version=1717668048"
+   ],
+   "used_url": "",
+   "reason": "too_small:2271"
+  },
+  {
+   "key": "10.3389/fspor.2022.939980",
+   "title": "Accuracy of a markerless motion capture system in estimating upper extremity kinematics during boxing",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.3390/mti4020014",
+   "title": "Analysis of Upper-Limb and Trunk Kinematic Variability: Accuracy and Reliability of an RGB-D Sensor",
+   "thread": "B1",
+   "status": "failed",
+   "path": "B1_视觉运动学_估计与验证方法学/Analysis of Upper-Limb and Trunk Kinematic Variability_ Accu.pdf",
+   "bytes": 0,
+   "url": "https://www.mdpi.com/2414-4088/4/2/14/pdf?version=1588235841",
+   "tried": [
+    "https://www.mdpi.com/2414-4088/4/2/14/pdf?version=1588235841"
+   ],
+   "used_url": "",
+   "reason": "too_small:2258"
+  },
+  {
+   "key": "10.1002/hfm.20840",
+   "title": "Accuracy evaluation of two markerless motion capture systems for measurement of upper extremities: Kinect V2 and Captiv",
+   "thread": "B1",
+   "status": "failed",
+   "path": "B1_视觉运动学_估计与验证方法学/Accuracy evaluation of two markerless motion capture systems for.pdf",
+   "bytes": 0,
+   "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/hfm.20840",
+   "tried": [
+    "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/hfm.20840"
+   ],
+   "used_url": "",
+   "reason": "not_pdf_magic"
+  },
+  {
+   "key": "10.1016/j.jbiomech.2019.05.040",
+   "title": "Accuracy of biplane videoradiography for quantifying dynamic wrist kinematics",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.3390/electronics8020173",
+   "title": "A Comparative Study of Markerless Systems Based on Color-Depth Cameras, Polymer Optical Fiber Curvature Sensors, and Inertial Measurement Units: Towards Increasing the Accuracy in Joint Angle Estimation",
+   "thread": "B1",
+   "status": "failed",
+   "path": "B1_视觉运动学_估计与验证方法学/A Comparative Study of Markerless Systems Based on Color-Dep.pdf",
+   "bytes": 0,
+   "url": "https://www.mdpi.com/2079-9292/8/2/173/pdf?version=1549101350",
+   "tried": [
+    "https://www.mdpi.com/2079-9292/8/2/173/pdf?version=1549101350"
+   ],
+   "used_url": "",
+   "reason": "too_small:2260"
+  },
+  {
+   "key": "10.1142/s0219519417500312",
+   "title": "SHOULDER AND ELBOW JOINT ANGLE ESTIMATION FOR UPPER LIMB REHABILITATION TASKS USING LOW-COST INERTIAL AND OPTICAL SENSORS",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1016/j.physio.2015.02.002",
+   "title": "Validity and reliability of Kinect skeleton for measuring shoulder joint angles: a feasibility study",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1016/j.jbiomech.2013.11.031",
+   "title": "Accuracy and repeatability of joint angles measured using a single camera markerless motion capture system",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1016/s0268-0033(02)00034-7",
+   "title": "Mechanism of limitation of pronation/supination of the forearm in geometric models of deformities of the forearm bones",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1177/0954411919872400",
+   "title": "Comparison of modelling and tracking methods for analysing elbow and forearm kinematics",
+   "thread": "B1",
+   "status": "ok",
+   "path": "B1_视觉运动学_估计与验证方法学/Comparison of modelling and tracking methods for analysing e.pdf",
+   "bytes": 1002283,
+   "url": "https://lirias.kuleuven.be/retrieve/7c56f0b8-3935-4b2a-8d95-0e7557ccc115",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "2607.02796",
+   "title": "Biomechanics-aware Multi-view Markerless Motion Capture of Dexterous Hand Movements",
+   "thread": "B1",
+   "status": "ok",
+   "path": "B1_视觉运动学_估计与验证方法学/Biomechanics-aware Multi-view Markerless Motion Capture of D.pdf",
+   "bytes": 915334,
+   "url": "",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "2303.10654",
+   "title": "Markerless Motion Capture and Biomechanical Analysis Pipeline",
+   "thread": "B1",
+   "status": "ok",
+   "path": "B1_视觉运动学_估计与验证方法学/Markerless Motion Capture and Biomechanical Analysis Pipelin.pdf",
+   "bytes": 1378558,
+   "url": "",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.1186/s12984-016-0130-0",
+   "title": "Flexible and static wrist units in upper limb prosthesis users: functionality scores, user satisfaction and compensatory movements",
+   "thread": "B1",
+   "status": "failed",
+   "path": "B1_视觉运动学_估计与验证方法学/Flexible and static wrist units in upper limb prosthesis users_.pdf",
+   "bytes": 0,
+   "url": "https://jneuroengrehab.biomedcentral.com/counter/pdf/10.1186/s12984-016-0130-0",
+   "tried": [
+    "https://jneuroengrehab.biomedcentral.com/counter/pdf/10.1186/s12984-016-0130-0"
+   ],
+   "used_url": "",
+   "reason": "too_small:3038"
+  },
+  {
+   "key": "10.1123/jab.28.2.127",
+   "title": "Limited Forearm Motion Compensated by Thoracohumeral Kinematics When Performing Tasks Requiring Pronation and Supination",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1109/iembs.2004.1403778",
+   "title": "Exoskeleton for forearm pronation and supination rehabilitation",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.3389/fbioe.2020.603907",
+   "title": "A Systematic Review of the Associations Between Inverse Dynamics and Musculoskeletal Modeling to Investigate Joint Loading in a Clinical Environment",
+   "thread": "B2",
+   "status": "ok",
+   "path": "B2_肌肉骨骼动力学_与可微仿真/A Systematic Review of the Associations Between Inverse Dyna.pdf",
+   "bytes": 2432966,
+   "url": "https://www.frontiersin.org/articles/10.3389/fbioe.2020.603907/pdf",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.1111/joa.12903",
+   "title": "The moment arms of the muscles spanning the glenohumeral joint: a systematic review",
+   "thread": "B2",
+   "status": "failed",
+   "path": "B2_肌肉骨骼动力学_与可微仿真/The moment arms of the muscles spanning the glenohumeral joint_.pdf",
+   "bytes": 0,
+   "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/joa.12903",
+   "tried": [
+    "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/joa.12903"
+   ],
+   "used_url": "",
+   "reason": "not_pdf_magic"
+  },
+  {
+   "key": "10.1152/jn.00084.2018",
+   "title": "Muscle coactivation: definitions, mechanisms, and functions",
+   "thread": "B2",
+   "status": "ok",
+   "path": "B2_肌肉骨骼动力学_与可微仿真/Muscle coactivation_ definitions, mechanisms, and functions.pdf",
+   "bytes": 1011490,
+   "url": "https://www.physiology.org/doi/pdf/10.1152/jn.00084.2018",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.1016/j.piutam.2011.04.019",
+   "title": "Simulation of human movement: applications using OpenSim",
+   "thread": "B2",
+   "status": "failed",
+   "path": "B2_肌肉骨骼动力学_与可微仿真/Simulation of human movement_ applications using OpenSim.pdf",
+   "bytes": 0,
+   "url": "https://www.sciencedirect.com/science/article/pii/S2210983811000204/pdf",
+   "tried": [
+    "https://www.sciencedirect.com/science/article/pii/S2210983811000204/pdf"
+   ],
+   "used_url": "",
+   "reason": "http_403"
+  },
+  {
+   "key": "10.1088/1741-2560/6/3/036004",
+   "title": "Muscle synergies as a predictive framework for the EMG patterns of new hand postures",
+   "thread": "B2",
+   "status": "ok",
+   "path": "B2_肌肉骨骼动力学_与可微仿真/Muscle synergies as a predictive framework for the EMG patte.xml",
+   "bytes": 133734,
+   "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=3151158&retmode=xml",
+   "tried": [
+    "https://iopscience.iop.org/article/10.1088/1741-2560/6/3/036004/pdf"
+   ],
+   "used_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=3151158&retmode=xml",
+   "reason": "本次取得 NIHMS314824 作者稿 JATS XML（PMC3151158），不是出版社排版PDF；NCBI标记开放作者稿，允许文本挖掘/合理使用，保留版权，不作CC再分发。",
+   "fulltext_version": "nih_author_manuscript"
+  },
+  {
+   "key": "10.1016/j.jbiomech.2024.112118",
+   "title": "Validity of muscle activation estimated with predicted ground reaction force in inverse dynamics based musculoskeletal simulation during gait",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1002/cnm.3777",
+   "title": "Computational performance of musculoskeletal simulation in <scp>OpenSim Moco</scp> using parallel computing",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1007/s11044-022-09852-x",
+   "title": "Predictive multibody dynamic simulation of human neuromusculoskeletal systems: a review",
+   "thread": "B2",
+   "status": "failed",
+   "path": "B2_肌肉骨骼动力学_与可微仿真/Predictive multibody dynamic simulation of human neuromusculoske.pdf",
+   "bytes": 0,
+   "url": "https://upcommons.upc.edu/bitstreams/ea26e532-6b6b-4589-a245-869e685185c0/download",
+   "tried": [
+    "https://upcommons.upc.edu/bitstreams/ea26e532-6b6b-4589-a245-869e685185c0/download"
+   ],
+   "used_url": "",
+   "reason": "http_418"
+  },
+  {
+   "key": "10.1371/journal.pcbi.1008493",
+   "title": "OpenSim Moco: Musculoskeletal optimal control",
+   "thread": "B2",
+   "status": "ok",
+   "path": "B2_肌肉骨骼动力学_与可微仿真/OpenSim Moco_ Musculoskeletal optimal control.pdf",
+   "bytes": 2612933,
+   "url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1008493&type=printable",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.1007/s10237-020-01398-1",
+   "title": "Automated creation and tuning of personalised muscle paths for OpenSim musculoskeletal models of the knee joint",
+   "thread": "B2",
+   "status": "ok",
+   "path": "B2_肌肉骨骼动力学_与可微仿真/Automated creation and tuning of personalised muscle paths f.pdf",
+   "bytes": 1664673,
+   "url": "https://lirias.kuleuven.be/retrieve/e466fe9f-2690-4003-a467-4fddb2643b22",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.3389/fnbot.2019.00090",
+   "title": "Muscle Contributions to Upper-Extremity Movement and Work From a Musculoskeletal Model of the Human Shoulder",
+   "thread": "B2",
+   "status": "ok",
+   "path": "B2_肌肉骨骼动力学_与可微仿真/Muscle Contributions to Upper-Extremity Movement and Work Fr.pdf",
+   "bytes": 832094,
+   "url": "https://www.frontiersin.org/articles/10.3389/fnbot.2019.00090/pdf",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.1016/j.jbiomech.2016.04.008",
+   "title": "Sensitivity of subject-specific models to Hill muscle–tendon model parameters in simulations of gait",
+   "thread": "B2",
+   "status": "ok",
+   "path": "B2_肌肉骨骼动力学_与可微仿真/Sensitivity of subject-specific models to Hill muscle–tendon.pdf",
+   "bytes": 3597921,
+   "url": "https://ris.utwente.nl/ws/files/7003901/1-s2.0-S0021929016304444-main.pdf",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.1007/s10439-016-1591-9",
+   "title": "Evaluation of Direct Collocation Optimal Control Problem Formulations for Solving the Muscle Redundancy Problem",
+   "thread": "B2",
+   "status": "ok",
+   "path": "B2_肌肉骨骼动力学_与可微仿真/Evaluation of Direct Collocation Optimal Control Problem Formulations.xml",
+   "bytes": 192416,
+   "url": "https://link.springer.com/content/pdf/10.1007/s10439-016-1591-9.pdf",
+   "tried": [
+    "https://link.springer.com/content/pdf/10.1007/s10439-016-1591-9.pdf"
+   ],
+   "used_url": "https://www.ebi.ac.uk/europepmc/webservices/rest//fullTextXML",
+   "reason": "既有 JATS 全文经 XML 解析、body 和 DOI 校验，补正报告路径；不移动既有文件",
+   "checked_at": "2026-10-02T14:52:25.355007+08:00"
+  },
+  {
+   "key": "10.1109/jbhi.2014.2342274",
+   "title": "Inverse Estimation of Multiple Muscle Activations From Joint Moment With Muscle Synergy Extraction",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1371/journal.pone.0121712",
+   "title": "Finger Muscle Attachments for an OpenSim Upper-Extremity Model",
+   "thread": "B2",
+   "status": "ok",
+   "path": "B2_肌肉骨骼动力学_与可微仿真/Finger Muscle Attachments for an OpenSim Upper-Extremity Mod.pdf",
+   "bytes": 3582121,
+   "url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0121712&type=printable",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.1007/s10439-014-1181-7",
+   "title": "A Probabilistic Approach to Quantify the Impact of Uncertainty Propagation in Musculoskeletal Simulations",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1007/s11044-011-9297-0",
+   "title": "A multibody biomechanical model of the upper limb including the shoulder girdle",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1007/s11517-011-0839-7",
+   "title": "Development of a comprehensive musculoskeletal model of the shoulder and elbow",
+   "thread": "B2",
+   "status": "failed",
+   "path": "B2_肌肉骨骼动力学_与可微仿真/Development of a comprehensive musculoskeletal model of the shou.pdf",
+   "bytes": 0,
+   "url": "https://link.springer.com/content/pdf/10.1007/s11517-011-0839-7.pdf",
+   "tried": [
+    "https://link.springer.com/content/pdf/10.1007/s11517-011-0839-7.pdf"
+   ],
+   "used_url": "",
+   "reason": "too_small:3038"
+  },
+  {
+   "key": "10.1016/j.piutam.2011.04.027",
+   "title": "Implicit methods for efficient musculoskeletal simulation and optimal control",
+   "thread": "B2",
+   "status": "failed",
+   "path": "B2_肌肉骨骼动力学_与可微仿真/Implicit methods for efficient musculoskeletal simulation and op.pdf",
+   "bytes": 0,
+   "url": "https://www.sciencedirect.com/science/article/pii/S2210983811000289/pdf",
+   "tried": [
+    "https://www.sciencedirect.com/science/article/pii/S2210983811000289/pdf"
+   ],
+   "used_url": "",
+   "reason": "http_403"
+  },
+  {
+   "key": "10.1109/tbme.2008.2005946",
+   "title": "A Real-Time, 3-D Musculoskeletal Model for Dynamic Simulation of Arm Movements",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1249/01.mss.0000176684.24008.6f",
+   "title": "Estimation of Muscle Forces and Joint Moments Using a Forward-Inverse Dynamics Model",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1016/0021-9290(96)00031-0",
+   "title": "Moment arms and lengths of human upper limb muscles as functions of joint angles",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1109/tnsre.2022.3226860",
+   "title": "Physics-Informed Deep Learning for Musculoskeletal Modeling: Predicting Muscle Forces and Joint Kinematics From Surface EMG",
+   "thread": "B2",
+   "status": "ok",
+   "path": "B2_肌肉骨骼动力学_与可微仿真/Physics-Informed Deep Learning for Musculoskeletal Modeling_.pdf",
+   "bytes": 2009555,
+   "url": "https://ieeexplore.ieee.org/ielx7/7333/10031624/09970372.pdf",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.1038/s41598-022-13386-9",
+   "title": "Muscle coordination retraining inspired by musculoskeletal simulations reduces knee contact force",
+   "thread": "B2",
+   "status": "ok",
+   "path": "B2_肌肉骨骼动力学_与可微仿真/Muscle coordination retraining inspired by musculoskeletal simulations.xml",
+   "bytes": 184848,
+   "url": "https://www.nature.com/articles/s41598-022-13386-9.pdf",
+   "tried": [
+    "https://www.nature.com/articles/s41598-022-13386-9.pdf"
+   ],
+   "used_url": "https://www.ebi.ac.uk/europepmc/webservices/rest//fullTextXML",
+   "reason": "既有 JATS 全文经 XML 解析、body 和 DOI 校验，补正报告路径；不移动既有文件",
+   "checked_at": "2026-10-02T14:52:25.355007+08:00"
+  },
+  {
+   "key": "10.1186/s12984-016-0170-5",
+   "title": "Neuro-musculoskeletal simulation of instrumented contracture and spasticity assessment in children with cerebral palsy",
+   "thread": "B2",
+   "status": "ok",
+   "path": "B2_肌肉骨骼动力学_与可微仿真/Neuro-musculoskeletal simulation of instrumented contracture and spast.xml",
+   "bytes": 114081,
+   "url": "https://jneuroengrehab.biomedcentral.com/track/pdf/10.1186/s12984-016-0170-5",
+   "tried": [
+    "https://jneuroengrehab.biomedcentral.com/track/pdf/10.1186/s12984-016-0170-5"
+   ],
+   "used_url": "https://www.ebi.ac.uk/europepmc/webservices/rest//fullTextXML",
+   "reason": "既有 JATS 全文经 XML 解析、body 和 DOI 校验，补正报告路径；不移动既有文件",
+   "checked_at": "2026-10-02T14:52:25.355007+08:00"
+  },
+  {
+   "key": "10.1093/ptj/pzab010",
+   "title": "Robot-Assisted Therapy for Upper Extremity Motor Impairment After Stroke: A Systematic Review and Meta-Analysis",
+   "thread": "B3",
+   "status": "failed",
+   "path": "B3_上肢康复_代偿与临床评估/Robot-Assisted Therapy for Upper Extremity Motor Impairment Afte.pdf",
+   "bytes": 0,
+   "url": "https://academic.oup.com/ptj/article-pdf/101/4/pzab010/41911649/pzab010.pdf",
+   "tried": [
+    "https://academic.oup.com/ptj/article-pdf/101/4/pzab010/41911649/pzab010.pdf"
+   ],
+   "used_url": "",
+   "reason": "http_403"
+  },
+  {
+   "key": "10.1186/s12984-019-0612-y",
+   "title": "Wearable technology in stroke rehabilitation: towards improved diagnosis and treatment of upper-limb motor impairment",
+   "thread": "B3",
+   "status": "failed",
+   "path": "B3_上肢康复_代偿与临床评估/Wearable technology in stroke rehabilitation_ towards improved d.pdf",
+   "bytes": 0,
+   "url": "https://jneuroengrehab.biomedcentral.com/track/pdf/10.1186/s12984-019-0612-y",
+   "tried": [
+    "https://jneuroengrehab.biomedcentral.com/track/pdf/10.1186/s12984-019-0612-y"
+   ],
+   "used_url": "",
+   "reason": "too_small:3038"
+  },
+  {
+   "key": "10.1371/journal.pone.0249403",
+   "title": "Fatigue, induced via repetitive upper-limb motor tasks, influences trunk and shoulder kinematics during an upper limb reaching task in a virtual reality environment",
+   "thread": "B3",
+   "status": "ok",
+   "path": "B3_上肢康复_代偿与临床评估/Fatigue, induced via repetitive upper-limb motor tasks, infl.pdf",
+   "bytes": 1969487,
+   "url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0249403&type=printable",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.1016/j.measurement.2015.11.026",
+   "title": "A clinically feasible kinematic assessment method of upper extremity motor function impairment after stroke",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1016/0021-9290(94)90062-0",
+   "title": "Wrist kinematics differ in expert and novice tennis players performing the backhand stroke: Implications for tennis elbow",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "2607.23608",
+   "title": "Markerless Motion Capture in Routine Clinical Upper Limb Assessments: Validity and Insights Beyond Ordinal Scoring",
+   "thread": "B3",
+   "status": "ok",
+   "path": "B3_上肢康复_代偿与临床评估/Markerless Motion Capture in Routine Clinical Upper Limb Ass.pdf",
+   "bytes": 9322550,
+   "url": "",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "2602.13176",
+   "title": "Monocular Markerless Motion Capture Enables Quantitative Assessment of Upper Extremity Reachable Workspace",
+   "thread": "B3",
+   "status": "ok",
+   "path": "B3_上肢康复_代偿与临床评估/Monocular Markerless Motion Capture Enables Quantitative Ass.pdf",
+   "bytes": 2149621,
+   "url": "",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.1101/2022.12.20.22283739",
+   "title": "Target height influences shoulder and elbow non-use after stroke during reaching with the hand : A brief communication",
+   "thread": "B3",
+   "status": "ok",
+   "path": "B3_上肢康复_代偿与临床评估/Target height influences shoulder and elbow non-use after st.pdf",
+   "bytes": 1169814,
+   "url": "https://www.medrxiv.org/content/medrxiv/early/2022/12/21/2022.12.20.22283739.full.pdf",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.1007/978-981-16-4991-2_8",
+   "title": "Kinematics and Kinetics of Shoulder Complex, Elbow, and Wrist",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1109/icaretech49914.2020.00019",
+   "title": "Vision-based Automatic Detection of Compensatory Postures of after-Stroke Patients During Upper-extremity Robot-assisted Rehabilitation: A Pilot Study in Reaching Movement",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.3389/fneur.2020.577855",
+   "title": "Item Difficulty of Fugl-Meyer Assessment for Upper Extremity in Persons With Chronic Stroke With Moderate-to-Severe Upper Limb Impairment",
+   "thread": "B3",
+   "status": "ok",
+   "path": "B3_上肢康复_代偿与临床评估/Item Difficulty of Fugl-Meyer Assessment for Upper Extremity.pdf",
+   "bytes": 482368,
+   "url": "https://www.frontiersin.org/articles/10.3389/fneur.2020.577855/pdf",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.1016/j.apmr.2016.06.023",
+   "title": "Determining Levels of Upper Extremity Movement Impairment by Applying a Cluster Analysis to the Fugl-Meyer Assessment of the Upper Extremity in Chronic Stroke",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1155/2014/636123",
+   "title": "Kinematic Analysis of the Upper Limb Motor Strategies in Stroke Patients as a Tool towards Advanced Neurorehabilitation Strategies: A Preliminary Study",
+   "thread": "B3",
+   "status": "ok",
+   "path": "B3_上肢康复_代偿与临床评估/Kinematic Analysis of the Upper Limb Motor Strategies in Stroke Patien.xml",
+   "bytes": 66820,
+   "url": "https://downloads.hindawi.com/journals/bmri/2014/636123.pdf",
+   "tried": [
+    "https://downloads.hindawi.com/journals/bmri/2014/636123.pdf"
+   ],
+   "used_url": "https://www.ebi.ac.uk/europepmc/webservices/rest//fullTextXML",
+   "reason": "既有 JATS 全文经 XML 解析、body 和 DOI 校验，补正报告路径；不移动既有文件",
+   "checked_at": "2026-10-02T14:52:25.355007+08:00"
+  },
+  {
+   "key": "10.1109/tnsre.2012.2207462",
+   "title": "Kinematic Data Analysis for Post-Stroke Patients Following Bilateral Versus Unilateral Rehabilitation With an Upper Limb Wearable Robotic System",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1016/j.apmr.2007.05.012",
+   "title": "Kinematic and Clinical Analyses of Upper-Extremity Movements After Constraint-Induced Movement Therapy in Patients With Stroke: A Randomized Controlled Trial",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1034/j.1600-0404.2003.00021.x",
+   "title": "Motor compensation and recovery for reaching in stroke patients",
+   "thread": "B3",
+   "status": "failed",
+   "path": "B3_上肢康复_代偿与临床评估/Motor compensation and recovery for reaching in stroke patients.pdf",
+   "bytes": 0,
+   "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1034/j.1600-0404.2003.00021.x",
+   "tried": [
+    "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1034/j.1600-0404.2003.00021.x"
+   ],
+   "used_url": "",
+   "reason": "not_pdf_magic"
+  },
+  {
+   "key": "10.1016/s0003-9993(99)90088-6",
+   "title": "Thoracic position effect on shoulder range of motion, strength, and three-dimensional scapular kinematics",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1016/j.neucom.2025.132126",
+   "title": "Masked reconstruction model of latent space vector quantization for human skeleton-based action recognition",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1007/978-3-031-72943-0_27",
+   "title": "VQ-HPS: Human Pose and Shape Estimation in a Vector-Quantized Latent Space",
+   "thread": "B4",
+   "status": "failed",
+   "path": "B4_离散运动学token_与表征量化/VQ-HPS_ Human Pose and Shape Estimation in a Vector-Quantize.pdf",
+   "bytes": 16544290,
+   "url": "https://upcommons.upc.edu/bitstreams/f07246cb-e80b-44e5-9c1e-8385891bdd47/download",
+   "tried": [
+    "https://upcommons.upc.edu/bitstreams/f07246cb-e80b-44e5-9c1e-8385891bdd47/download"
+   ],
+   "used_url": "",
+   "reason": "http_418"
+  },
+  {
+   "key": "10.1609/aaai.v37i3.25470",
+   "title": "BEST: BERT Pre-training for Sign Language Recognition with Coupling Tokenization",
+   "thread": "B4",
+   "status": "ok",
+   "path": "B4_离散运动学token_与表征量化/BEST_ BERT Pre-training for Sign Language Recognition with C.pdf",
+   "bytes": 613797,
+   "url": "https://ojs.aaai.org/index.php/AAAI/article/download/25470/25242",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.5220/0010222703790386",
+   "title": "Learning Joint Twist Rotation for 3D Human Pose Estimation from a Single Image",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "B4_离散运动学token_与表征量化/Learning Joint Twist Rotation for 3D Human Pose Estimation f.pdf",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1109/lra.2019.2901898",
+   "title": "Robot Motion Planning in Learned Latent Spaces",
+   "thread": "B4",
+   "status": "ok",
+   "path": "B4_离散运动学token_与表征量化/Robot Motion Planning in Learned Latent Spaces.pdf",
+   "bytes": 2354416,
+   "url": "https://ieeexplore.ieee.org/ielx7/7083369/8668830/08653875.pdf",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.1007/978-3-030-01240-3_41",
+   "title": "Learning 3D Human Pose from Structure and Motion",
+   "thread": "B4",
+   "status": "failed",
+   "path": "B4_离散运动学token_与表征量化/Learning 3D Human Pose from Structure and Motion.pdf",
+   "bytes": 0,
+   "url": "https://link.springer.com/content/pdf/10.1007/978-3-030-01240-3_41.pdf",
+   "tried": [
+    "https://link.springer.com/content/pdf/10.1007/978-3-030-01240-3_41.pdf"
+   ],
+   "used_url": "",
+   "reason": "too_small:3038"
+  },
+  {
+   "key": "10.3390/bioengineering10050510",
+   "title": "Machine Learning for Optical Motion Capture-Driven Musculoskeletal Modelling from Inertial Motion Capture Data",
+   "thread": "B5",
+   "status": "failed",
+   "path": "B5_视觉运动学到动力学_桥接/Machine Learning for Optical Motion Capture-Driven Musculoskelet.pdf",
+   "bytes": 0,
+   "url": "https://www.mdpi.com/2306-5354/10/5/510/pdf?version=1682321680",
+   "tried": [
+    "https://www.mdpi.com/2306-5354/10/5/510/pdf?version=1682321680"
+   ],
+   "used_url": "",
+   "reason": "too_small:2266"
+  },
+  {
+   "key": "2603.26844",
+   "title": "Uncertainty-Aware Mapping from 3D Keypoints to Anatomical Landmarks for Markerless Biomechanics",
+   "thread": "B5",
+   "status": "ok",
+   "path": "B5_视觉运动学到动力学_桥接/Uncertainty-Aware Mapping from 3D Keypoints to Anatomical La.pdf",
+   "bytes": 396936,
+   "url": "",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "2502.06486",
+   "title": "Biomechanical Reconstruction with Confidence Intervals from Multiview Markerless Motion Capture",
+   "thread": "B5",
+   "status": "ok",
+   "path": "B5_视觉运动学到动力学_桥接/Biomechanical Reconstruction with Confidence Intervals from.pdf",
+   "bytes": 1094324,
+   "url": "",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.21203/rs.3.rs-2802018/v1",
+   "title": "A realistic upper-limb musculoskeletal model for overall muscle activation estimation",
+   "thread": "B5",
+   "status": "ok",
+   "path": "B5_视觉运动学到动力学_桥接/A realistic upper-limb musculoskeletal model for overall mus.pdf",
+   "bytes": 4138728,
+   "url": "https://www.researchsquare.com/article/rs-2802018/latest.pdf",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.3390/s20030724",
+   "title": "Towards a Simplified Estimation of Muscle Activation Pattern from MRI and EMG Using Electrical Network and Graph Theory",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.3390/s18041004",
+   "title": "Evaluating Muscle Activation Models for Elbow Motion Estimation",
+   "thread": "B5",
+   "status": "failed",
+   "path": "B5_视觉运动学到动力学_桥接/Evaluating Muscle Activation Models for Elbow Motion Estimation.pdf",
+   "bytes": 0,
+   "url": "https://www.mdpi.com/1424-8220/18/4/1004/pdf?version=1525345554",
+   "tried": [
+    "https://www.mdpi.com/1424-8220/18/4/1004/pdf?version=1525345554"
+   ],
+   "used_url": "",
+   "reason": "too_small:2269"
+  },
+  {
+   "key": "10.1109/embc.2012.6346535",
+   "title": "Continuous estimation of finger joint angles using muscle activation inputs from surface EMG signals",
+   "status": "ok",
+   "reason": "用户经学校数据库取得（Unpaywall 无 OA 直链）",
+   "path": "B5_视觉运动学到动力学_桥接/Continuous estimation of finger joint angles using muscle activation inp.pdf",
+   "bytes": 10501062,
+   "url": ""
+  },
+  {
+   "key": "10.1016/s0893-6080(09)80003-8",
+   "title": "A neural network model for arm trajectory formation using forward and inverse dynamics models",
+   "status": "ok",
+   "reason": "本次取得同题同作者ATR技术报告 TR-H-0001（1992-05-21，38页），不是1993期刊排版版；引用期刊版具体数值或页码前须核对版本。",
+   "path": "B5_视觉运动学到动力学_桥接/A neural network model for arm trajectory formation using fo.pdf",
+   "bytes": 715213,
+   "url": "https://results.atr.jp/35th/techreport/TR-H-0001/TR-H-0001.pdf",
+   "thread": "B5",
+   "used_url": "https://results.atr.jp/35th/techreport/TR-H-0001/TR-H-0001.pdf",
+   "fulltext_version": "technical_report"
+  },
+  {
+   "key": "10.1109/icorr66766.2025.11063174",
+   "title": "Differentiable Biomechanics Unlocks Opportunities for Markerless Motion Capture",
+   "thread": "B5",
+   "status": "ok",
+   "path": "B5_视觉运动学到动力学_桥接/Differentiable Biomechanics Unlocks Opportunities for Marker.pdf",
+   "bytes": 3567018,
+   "url": "",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.1101/2025.10.03.679772",
+   "title": "Towards Human Inverse Dynamics from Real Images: A Dataset and Benchmark for Joint Torque Estimation",
+   "thread": "B5",
+   "status": "ok",
+   "path": "B5_视觉运动学到动力学_桥接/Towards Human Inverse Dynamics from Real Images_ A Dataset a.pdf",
+   "bytes": 3050358,
+   "url": "",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.3389/fphy.2025.1558325",
+   "title": "Advancing human pose estimation through interdisciplinary physics-inspired deep learning models",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "B5_视觉运动学到动力学_桥接/Advancing human pose estimation through interdisciplinary ph.pdf",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.52202/079017-1382",
+   "title": "Optimal-state Dynamics Estimation for Physics-based Human Motion Capture from Videos",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "2402.17192",
+   "title": "Differentiable Biomechanics Unlocks Opportunities for Markerless Motion Capture",
+   "thread": "B5",
+   "status": "ok",
+   "path": "B5_视觉运动学到动力学_桥接/Differentiable Biomechanics Unlocks Opportunities for Marker.pdf",
+   "bytes": 3567018,
+   "url": "",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "2411.14992",
+   "title": "Differentiable Biomechanics for Markerless Motion Capture in Upper Limb Stroke Rehabilitation: A Comparison with Optical Motion Capture",
+   "thread": "B5",
+   "status": "ok",
+   "path": "B5_视觉运动学到动力学_桥接/Differentiable Biomechanics for Markerless Motion Capture in.pdf",
+   "bytes": 8882381,
+   "url": "",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "10.1109/lra.2023.3293275",
+   "title": "Vision-Based Approximate Estimation of Muscle Activation Patterns for Tele-Impedance",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1109/cvpr46437.2021.00847",
+   "title": "PoseAug: A Differentiable Pose Augmentation Framework for 3D Human Pose Estimation",
+   "status": "not_oa",
+   "reason": "Unpaywall 未提供 OA PDF 直链",
+   "path": "",
+   "bytes": 0,
+   "url": ""
+  },
+  {
+   "key": "10.1109/cvpr.2007.383128",
+   "title": "Scaled Motion Dynamics for Markerless Motion Capture",
+   "thread": "B5",
+   "status": "failed",
+   "path": "B5_视觉运动学到动力学_桥接/Scaled Motion Dynamics for Markerless Motion Capture.pdf",
+   "bytes": 0,
+   "url": "https://pure.mpg.de/pubman/item/item_1328064_4/component/file_3590325/639_1.pdf",
+   "tried": [
+    "https://pure.mpg.de/pubman/item/item_1328064_4/component/file_3590325/639_1.pdf"
+   ],
+   "used_url": "",
+   "reason": "http_403"
+  },
+  {
+   "key": "10.1109/tmrb.2025.3605962/mm1",
+   "title": "Differentiable Biomechanics for Markerless Motion Capture in Upper Limb Stroke Rehabilitation: A Comparison With Optical Motion Capture_supp1-3605962.mp4",
+   "thread": "B5",
+   "status": "ok",
+   "path": "B5_视觉运动学到动力学_桥接/Differentiable Biomechanics for Markerless Motion Capture in.pdf",
+   "bytes": 8882381,
+   "url": "",
+   "used_url": "",
+   "reason": "磁盘已存在且通过校验"
+  },
+  {
+   "key": "2601.09949",
+   "title": "Kinematic Tokenization: Optimization-Based Continuous-Time Tokens for Learnable Decision Policies in Noisy Time Series",
+   "thread": "B4",
+   "status": "ok",
+   "path": "B4_离散运动学token_与表征量化/Kinematic Tokenization_ Optimization-Based Continuous-Time T.pdf",
+   "bytes": 4167445,
+   "url": "https://arxiv.org/pdf/2601.09949",
+   "used_url": "https://arxiv.org/pdf/2601.09949",
+   "reason": "arXiv 官方直取"
+  },
+  {
+   "key": "2603.09930",
+   "title": "Fine-grained Motion Retrieval via Joint-Angle Motion Images and Token-Patch Late Interaction",
+   "thread": "B4",
+   "status": "ok",
+   "path": "B4_离散运动学token_与表征量化/Fine-grained Motion Retrieval via Joint-Angle Motion Images.pdf",
+   "bytes": 2530109,
+   "url": "https://arxiv.org/pdf/2603.09930",
+   "used_url": "https://arxiv.org/pdf/2603.09930",
+   "reason": "arXiv 官方直取"
+  },
+  {
+   "key": "10.5935/medicalexpress.2014.02.08",
+   "title": "Reliability Index of inter- and intra-rater of manual goniometry and\n                        computerized biophotogrammetry to assess the range of motion of internal and\n                        external shoulder rotation",
+   "status": "ok",
+   "path": "B1_视觉运动学_估计与验证方法学/Reliability Index of inter- and intra-rater of manual goniom.pdf",
+   "bytes": 105759,
+   "used_url": "https://www.scielo.br/j/medical/a/zPtQYpvgsXvv6dBnkr3ZKKn/?format=pdf&lang=en&ilang=pt_BR",
+   "reason": "SciELO 官方开放 PDF；5页；题名、DOI及作者核验",
+   "checked_at": "2026-10-02T14:52:25.355007+08:00"
+  },
+  {
+   "key": "2608.03127",
+   "title": "DigitCode: Symbolic Tokenization of Hand Motion by Anatomical Units",
+   "status": "arxiv_pending",
+   "reason": "arXiv 预印本，PDF 未入库；2026-10-02 交叉推演判定为 P0 取件",
+   "path": "",
+   "bytes": 0,
+   "url": "https://arxiv.org/abs/2608.03127"
+  }
+ ]
+}

@@ -1,0 +1,440 @@
+{
+  "tool": "fetch_epmc_supp.py",
+  "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/{pmcid}/supplementaryFiles",
+  "second_channel": "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id={pmcid}",
+  "n_targets": 13,
+  "n_with_supplementary": 12,
+  "results": [
+    {
+      "pmcid": "PMC8821890",
+      "epmc_status": 200,
+      "epmc_bytes": 131022,
+      "epmc_type": "application/zip",
+      "has_supplementary": true,
+      "members": [
+        "Table_1.DOCX",
+        "fspor-03-809898-g0001.jpg",
+        "fspor-03-809898-g0001.gif"
+      ],
+      "ncbi_oa_status": 404,
+      "source_xml": [
+        "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/A SWOT Analysis of Portable and Low-Cost Markerless Motion C.xml"
+      ],
+      "saved_to": "06_附录/补充材料/PMC8821890/PMC8821890",
+      "files": [
+        "Table_1.DOCX",
+        "fspor-03-809898-g0001.jpg",
+        "fspor-03-809898-g0001.gif"
+      ]
+    },
+    {
+      "pmcid": "PMC9357930",
+      "epmc_status": 200,
+      "epmc_bytes": 716026,
+      "epmc_type": "application/zip",
+      "has_supplementary": true,
+      "members": [
+        "fspor-04-939980-g0003.jpg",
+        "fspor-04-939980-g0001.jpg",
+        "fspor-04-939980-g0002.jpg",
+        "fspor-04-939980-g0002.gif",
+        "fspor-04-939980-g0004.jpg",
+        "fspor-04-939980-g0001.gif",
+        "fspor-04-939980-g0003.gif",
+        "fspor-04-939980-g0004.gif",
+        "Data_Sheet_1.pdf"
+      ],
+      "ncbi_oa_status": 404,
+      "source_xml": [
+        "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Accuracy of a markerless motion capture system in estimating.xml"
+      ],
+      "saved_to": "06_附录/补充材料/PMC9357930/PMC9357930",
+      "files": [
+        "fspor-04-939980-g0003.jpg",
+        "fspor-04-939980-g0001.jpg",
+        "fspor-04-939980-g0002.jpg",
+        "fspor-04-939980-g0002.gif",
+        "fspor-04-939980-g0004.jpg",
+        "fspor-04-939980-g0001.gif",
+        "fspor-04-939980-g0003.gif",
+        "fspor-04-939980-g0004.gif",
+        "Data_Sheet_1.pdf"
+      ]
+    },
+    {
+      "pmcid": "PMC11175331",
+      "epmc_status": 200,
+      "epmc_bytes": 185699,
+      "epmc_type": "application/zip",
+      "has_supplementary": true,
+      "members": [
+        "sensors-24-03686-g001.gif",
+        "sensors-24-03686-g002.jpg",
+        "sensors-24-03686-g001.jpg",
+        "sensors-24-03686-g002.gif"
+      ],
+      "ncbi_oa_status": 404,
+      "source_xml": [
+        "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Accuracy, Validity, and Reliability of Markerless Camera-Bas.xml"
+      ],
+      "saved_to": "06_附录/补充材料/PMC11175331/PMC11175331",
+      "files": [
+        "sensors-24-03686-g001.gif",
+        "sensors-24-03686-g002.jpg",
+        "sensors-24-03686-g001.jpg",
+        "sensors-24-03686-g002.gif"
+      ]
+    },
+    {
+      "pmcid": "PMC4791860",
+      "epmc_status": 200,
+      "epmc_bytes": 65901,
+      "epmc_type": "application/zip",
+      "has_supplementary": true,
+      "members": [
+        "12984_2016_130_Fig1_HTML.jpg",
+        "12984_2016_130_Fig1_HTML.gif"
+      ],
+      "ncbi_oa_status": 404,
+      "source_xml": [
+        "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Flexible and static wrist units in upper limb prosthesis use.xml"
+      ],
+      "saved_to": "06_附录/补充材料/PMC4791860/PMC4791860",
+      "files": [
+        "12984_2016_130_Fig1_HTML.jpg",
+        "12984_2016_130_Fig1_HTML.gif"
+      ]
+    },
+    {
+      "pmcid": "PMC6858749",
+      "epmc_status": 200,
+      "epmc_bytes": 216245,
+      "epmc_type": "application/zip",
+      "has_supplementary": true,
+      "members": [
+        "12891_2019_2930_Fig1_HTML.gif",
+        "12891_2019_2930_Fig2_HTML.jpg",
+        "12891_2019_2930_Fig3_HTML.jpg",
+        "12891_2019_2930_Fig2_HTML.gif",
+        "12891_2019_2930_Fig3_HTML.gif",
+        "12891_2019_2930_Fig1_HTML.jpg"
+      ],
+      "ncbi_oa_status": 404,
+      "source_xml": [
+        "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Wearable systems for shoulder kinematics assessment_ a syste.xml"
+      ],
+      "saved_to": "06_附录/补充材料/PMC6858749/PMC6858749",
+      "files": [
+        "12891_2019_2930_Fig1_HTML.gif",
+        "12891_2019_2930_Fig2_HTML.jpg",
+        "12891_2019_2930_Fig3_HTML.jpg",
+        "12891_2019_2930_Fig2_HTML.gif",
+        "12891_2019_2930_Fig3_HTML.gif",
+        "12891_2019_2930_Fig1_HTML.jpg"
+      ]
+    },
+    {
+      "pmcid": "PMC3223593",
+      "epmc_status": 200,
+      "epmc_bytes": 730459,
+      "epmc_type": "application/zip",
+      "has_supplementary": true,
+      "members": [
+        "11517_2011_839_MOESM1_ESM.doc",
+        "11517_2011_839_Fig1_HTML.jpg",
+        "11517_2011_839_Fig1_HTML.gif",
+        "11517_2011_839_Fig3b_HTML.gif",
+        "11517_2011_839_Fig4_HTML.jpg",
+        "11517_2011_839_Article_Equ3.gif",
+        "11517_2011_839_Article_Equ2.gif",
+        "11517_2011_839_Fig4_HTML.gif",
+        "11517_2011_839_Fig3a_HTML.jpg",
+        "11517_2011_839_Fig2_HTML.gif",
+        "11517_2011_839_Fig3b_HTML.jpg",
+        "11517_2011_839_Article_IEq3.gif",
+        "11517_2011_839_Article_IEq2.gif",
+        "11517_2011_839_Fig2_HTML.jpg",
+        "11517_2011_839_Fig3a_HTML.gif",
+        "11517_2011_839_Article_Equ1.gif",
+        "11517_2011_839_Article_IEq1.gif"
+      ],
+      "ncbi_oa_status": 404,
+      "source_xml": [
+        "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Development of a comprehensive musculoskeletal model of the.xml"
+      ],
+      "saved_to": "06_附录/补充材料/PMC3223593/PMC3223593",
+      "files": [
+        "11517_2011_839_MOESM1_ESM.doc",
+        "11517_2011_839_Fig1_HTML.jpg",
+        "11517_2011_839_Fig1_HTML.gif",
+        "11517_2011_839_Fig3b_HTML.gif",
+        "11517_2011_839_Fig4_HTML.jpg",
+        "11517_2011_839_Article_Equ3.gif",
+        "11517_2011_839_Article_Equ2.gif",
+        "11517_2011_839_Fig4_HTML.gif",
+        "11517_2011_839_Fig3a_HTML.jpg",
+        "11517_2011_839_Fig2_HTML.gif",
+        "11517_2011_839_Fig3b_HTML.jpg",
+        "11517_2011_839_Article_IEq3.gif",
+        "11517_2011_839_Article_IEq2.gif",
+        "11517_2011_839_Fig2_HTML.jpg",
+        "11517_2011_839_Fig3a_HTML.gif",
+        "11517_2011_839_Article_Equ1.gif",
+        "11517_2011_839_Article_IEq1.gif"
+      ]
+    },
+    {
+      "pmcid": "PMC13293569",
+      "epmc_status": 200,
+      "epmc_bytes": 805093,
+      "epmc_type": "application/zip",
+      "has_supplementary": true,
+      "members": [
+        "rehab-v13-e87339-g002.webp",
+        "rehab-v13-e87339-g003.webp",
+        "rehab-v13-e87339-s002.pdf",
+        "rehab-v13-e87339-g003.gif",
+        "rehab-v13-e87339-s003.pdf",
+        "rehab-v13-e87339-g001.gif",
+        "rehab-v13-e87339-g002.gif",
+        "rehab-v13-e87339-g001.webp",
+        "rehab-v13-e87339-s001.pdf",
+        "rehab-v13-e87339-s004.pdf"
+      ],
+      "ncbi_oa_status": 404,
+      "source_xml": [
+        "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/From Metrics to Meaning in Neurological Rehabilitation_ Clin.xml"
+      ],
+      "saved_to": "06_附录/补充材料/PMC13293569/PMC13293569",
+      "files": [
+        "rehab-v13-e87339-g002.webp",
+        "rehab-v13-e87339-g003.webp",
+        "rehab-v13-e87339-s002.pdf",
+        "rehab-v13-e87339-g003.gif",
+        "rehab-v13-e87339-s003.pdf",
+        "rehab-v13-e87339-g001.gif",
+        "rehab-v13-e87339-g002.gif",
+        "rehab-v13-e87339-g001.webp",
+        "rehab-v13-e87339-s001.pdf",
+        "rehab-v13-e87339-s004.pdf"
+      ]
+    },
+    {
+      "pmcid": "PMC13568687",
+      "epmc_status": 200,
+      "epmc_bytes": 201,
+      "epmc_type": "application/xml",
+      "has_supplementary": false,
+      "ncbi_oa_status": 404,
+      "source_xml": [
+        "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/From Metrics to Meaning in Neurological Rehabilitation_ Clin.xml"
+      ]
+    },
+    {
+      "pmcid": "PMC6862815",
+      "epmc_status": 200,
+      "epmc_bytes": 223898,
+      "epmc_type": "application/zip",
+      "has_supplementary": true,
+      "members": [
+        "12984_2019_612_Fig4_HTML.gif",
+        "12984_2019_612_Fig2_HTML.jpg",
+        "12984_2019_612_Fig1_HTML.jpg",
+        "12984_2019_612_Fig4_HTML.jpg",
+        "12984_2019_612_Fig2_HTML.gif",
+        "12984_2019_612_Fig3_HTML.gif",
+        "12984_2019_612_Fig3_HTML.jpg",
+        "12984_2019_612_Fig1_HTML.gif"
+      ],
+      "ncbi_oa_status": 404,
+      "source_xml": [
+        "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Wearable technology in stroke rehabilitation_ towards improv.xml"
+      ],
+      "saved_to": "06_附录/补充材料/PMC6862815/PMC6862815",
+      "files": [
+        "12984_2019_612_Fig4_HTML.gif",
+        "12984_2019_612_Fig2_HTML.jpg",
+        "12984_2019_612_Fig1_HTML.jpg",
+        "12984_2019_612_Fig4_HTML.jpg",
+        "12984_2019_612_Fig2_HTML.gif",
+        "12984_2019_612_Fig3_HTML.gif",
+        "12984_2019_612_Fig3_HTML.jpg",
+        "12984_2019_612_Fig1_HTML.gif"
+      ]
+    },
+    {
+      "pmcid": "PMC8884063",
+      "epmc_status": 200,
+      "epmc_bytes": 1418210,
+      "epmc_type": "application/zip",
+      "has_supplementary": true,
+      "members": [
+        "peerj-10-12995-g002.gif",
+        "peerj-10-12995-g002.jpg",
+        "peerj-10-12995-g005.jpg",
+        "peerj-10-12995-g001.jpg",
+        "peerj-10-12995-g004.jpg",
+        "peerj-10-12995-g003.jpg",
+        "peerj-10-12995-g004.gif",
+        "peerj-10-12995-g003.gif",
+        "peerj-10-12995-g005.gif",
+        "peerj-10-12995-g001.gif"
+      ],
+      "ncbi_oa_status": 404,
+      "source_xml": [
+        "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/Applications and limitations of current markerless motion ca.xml"
+      ],
+      "saved_to": "06_附录/补充材料/PMC8884063/PMC8884063",
+      "files": [
+        "peerj-10-12995-g002.gif",
+        "peerj-10-12995-g002.jpg",
+        "peerj-10-12995-g005.jpg",
+        "peerj-10-12995-g001.jpg",
+        "peerj-10-12995-g004.jpg",
+        "peerj-10-12995-g003.jpg",
+        "peerj-10-12995-g004.gif",
+        "peerj-10-12995-g003.gif",
+        "peerj-10-12995-g005.gif",
+        "peerj-10-12995-g001.gif"
+      ]
+    },
+    {
+      "pmcid": "PMC5948752",
+      "epmc_status": 200,
+      "epmc_bytes": 397410,
+      "epmc_type": "application/zip",
+      "has_supplementary": true,
+      "members": [
+        "sensors-18-01004-g003.gif",
+        "sensors-18-01004-g003.jpg",
+        "sensors-18-01004-g004.gif",
+        "sensors-18-01004-g007.gif",
+        "sensors-18-01004-g007.jpg",
+        "sensors-18-01004-g006.jpg",
+        "sensors-18-01004-g002.gif",
+        "sensors-18-01004-g001.jpg",
+        "sensors-18-01004-g005.jpg",
+        "sensors-18-01004-g002.jpg",
+        "sensors-18-01004-g004.jpg",
+        "sensors-18-01004-g005.gif",
+        "sensors-18-01004-g001.gif",
+        "sensors-18-01004-g006.gif"
+      ],
+      "ncbi_oa_status": 404,
+      "source_xml": [
+        "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/Evaluating Muscle Activation Models for Elbow Motion Estimat.xml"
+      ],
+      "saved_to": "06_附录/补充材料/PMC5948752/PMC5948752",
+      "files": [
+        "sensors-18-01004-g003.gif",
+        "sensors-18-01004-g003.jpg",
+        "sensors-18-01004-g004.gif",
+        "sensors-18-01004-g007.gif",
+        "sensors-18-01004-g007.jpg",
+        "sensors-18-01004-g006.jpg",
+        "sensors-18-01004-g002.gif",
+        "sensors-18-01004-g001.jpg",
+        "sensors-18-01004-g005.jpg",
+        "sensors-18-01004-g002.jpg",
+        "sensors-18-01004-g004.jpg",
+        "sensors-18-01004-g005.gif",
+        "sensors-18-01004-g001.gif",
+        "sensors-18-01004-g006.gif"
+      ]
+    },
+    {
+      "pmcid": "PMC10215337",
+      "epmc_status": 200,
+      "epmc_bytes": 1563366,
+      "epmc_type": "application/zip",
+      "has_supplementary": true,
+      "members": [
+        "bioengineering-10-00510-g005.jpg",
+        "bioengineering-10-00510-g001.gif",
+        "bioengineering-10-00510-g003.jpg",
+        "bioengineering-10-00510-g005.gif",
+        "bioengineering-10-00510-g006.gif",
+        "bioengineering-10-00510-g001.jpg",
+        "bioengineering-10-00510-g003.gif",
+        "bioengineering-10-00510-s001.zip",
+        "bioengineering-10-00510-g002.gif",
+        "bioengineering-10-00510-g004.jpg",
+        "bioengineering-10-00510-g002.jpg",
+        "bioengineering-10-00510-g006.jpg",
+        "bioengineering-10-00510-g004.gif"
+      ],
+      "ncbi_oa_status": 404,
+      "source_xml": [
+        "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/Machine Learning for Optical Motion Capture-Driven Musculosk.xml"
+      ],
+      "saved_to": "06_附录/补充材料/PMC10215337/PMC10215337",
+      "files": [
+        "bioengineering-10-00510-g005.jpg",
+        "bioengineering-10-00510-g001.gif",
+        "bioengineering-10-00510-g003.jpg",
+        "bioengineering-10-00510-g005.gif",
+        "bioengineering-10-00510-g006.gif",
+        "bioengineering-10-00510-g001.jpg",
+        "bioengineering-10-00510-g003.gif",
+        "bioengineering-10-00510-s001.zip",
+        "bioengineering-10-00510-g002.gif",
+        "bioengineering-10-00510-g004.jpg",
+        "bioengineering-10-00510-g002.jpg",
+        "bioengineering-10-00510-g006.jpg",
+        "bioengineering-10-00510-g004.gif"
+      ]
+    },
+    {
+      "pmcid": "PMC7038487",
+      "epmc_status": 200,
+      "epmc_bytes": 980824,
+      "epmc_type": "application/zip",
+      "has_supplementary": true,
+      "members": [
+        "sensors-20-00724-g007.gif",
+        "sensors-20-00724-g001.gif",
+        "sensors-20-00724-g004.gif",
+        "sensors-20-00724-g008.jpg",
+        "sensors-20-00724-g005.jpg",
+        "sensors-20-00724-g006.gif",
+        "sensors-20-00724-g003.gif",
+        "sensors-20-00724-g001.jpg",
+        "sensors-20-00724-g009.jpg",
+        "sensors-20-00724-g006.jpg",
+        "sensors-20-00724-g004.jpg",
+        "sensors-20-00724-g003.jpg",
+        "sensors-20-00724-g002.jpg",
+        "sensors-20-00724-g005.gif",
+        "sensors-20-00724-g008.gif",
+        "sensors-20-00724-g007.jpg",
+        "sensors-20-00724-g009.gif",
+        "sensors-20-00724-g002.gif"
+      ],
+      "ncbi_oa_status": 404,
+      "source_xml": [
+        "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/Towards a Simplified Estimation of Muscle Activation Pattern.xml"
+      ],
+      "saved_to": "06_附录/补充材料/PMC7038487/PMC7038487",
+      "files": [
+        "sensors-20-00724-g007.gif",
+        "sensors-20-00724-g001.gif",
+        "sensors-20-00724-g004.gif",
+        "sensors-20-00724-g008.jpg",
+        "sensors-20-00724-g005.jpg",
+        "sensors-20-00724-g006.gif",
+        "sensors-20-00724-g003.gif",
+        "sensors-20-00724-g001.jpg",
+        "sensors-20-00724-g009.jpg",
+        "sensors-20-00724-g006.jpg",
+        "sensors-20-00724-g004.jpg",
+        "sensors-20-00724-g003.jpg",
+        "sensors-20-00724-g002.jpg",
+        "sensors-20-00724-g005.gif",
+        "sensors-20-00724-g008.gif",
+        "sensors-20-00724-g007.jpg",
+        "sensors-20-00724-g009.gif",
+        "sensors-20-00724-g002.gif"
+      ]
+    }
+  ]
+}

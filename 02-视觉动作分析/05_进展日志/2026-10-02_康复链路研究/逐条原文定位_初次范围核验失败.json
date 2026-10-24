@@ -1,0 +1,20 @@
+{
+  "schema": "selected-passage-source-audit-failure/v1",
+  "status": "corrected_and_preserved",
+  "scope": "55条定位记录、398条已保存选段的来源范围核验；仅验证声明页/本地XML中的选择证据，不宣称55篇全篇精读。",
+  "initial_checked_papers": 55,
+  "initial_checked_passages": 398,
+  "initial_failures": [
+    {
+      "id": "L-561c1bd5",
+      "locator": "PDF page 2, participants occurrence (selected text)",
+      "reason": "选段从原文断词/行末连字符中间截取，规范化后未匹配声明页",
+      "initial_text_tail": "...Recent studies have incorporated optimization-based formulations or participation-",
+      "source_page_text": "...Recent studies have incorporated optimization-based formulations or participation-\nparticipation-aware AAN side..."
+    }
+  ],
+  "correction": "去掉选段末尾不构成完整词的行末连字符，并把同一选段的开头从断词片段恢复为 predefined；未修改PDF原件。",
+  "corrected_record": "10_研究方向/主动参与与训练强度_链路研究/文献对照_原文定位.json",
+  "final_audit": "逐条原文定位_全库范围核验.json",
+  "final_result": "55篇、398段、39 PDF/16 XML，SHA/本地文件通过，声明位置匹配0失败；full-paper-review-claim=false。"
+}

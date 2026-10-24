@@ -1,0 +1,168 @@
+{
+  "scope": "authorized7 ingest/research derivatives/root navigation only, not original bytes or unrelated dirty changes",
+  "reverse_check": "PASS; not applied",
+  "paths": {
+    "10_研究方向/主动参与与训练强度_链路研究/文献台账.json": {
+      "before_sha256": "38f349f785e09e59421c41da13ed884ae2beaa47088ef3f5d38e4ae63e239fa1",
+      "after_sha256": "37149a8ad770da7edd93bad6aa2bafcfd11268aead6f6d7cc711627d292a2c02",
+      "created_in_this_task": false
+    },
+    "10_研究方向/主动参与与训练强度_链路研究/文献对照_原文定位.json": {
+      "before_sha256": "e4f8b74e658cedbdc4aab6cc50d3d56bc456a850b181a7bb5d24f8fef7a6505c",
+      "after_sha256": "4a7cefe18eeeb6209b8fead0e14bfbf85d3eaf1f2e3ec25619d306df30162994",
+      "created_in_this_task": false
+    },
+    "10_研究方向/主动参与与训练强度_链路研究/文献对照_判读.json": {
+      "before_sha256": "b53d21b0764a8c5e5371efacc1ac0739acbc86ed7636cccd6043e0176e537cae",
+      "after_sha256": "de8e13a8b2c4c54b94abe3bbab1fa26baa4491bea04f41b8decd9ca86629dd2f",
+      "created_in_this_task": false
+    },
+    "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md": {
+      "before_sha256": "d4763eb8432f1ff3bcf6a6675af4ef4ec20df586fe795b07e526182e42fa4b34",
+      "after_sha256": "8c3b0bc49789dafa7d3b6122d603320b62289b3680526eda30f5ddf9f5fda18a",
+      "created_in_this_task": false
+    },
+    "01_参考论文/康复整合链路/index.json": {
+      "before_sha256": "177d61d3d1c1f3588e27f5ce4986912f4a22ab734e6ddbc8c15c8aae7d98ed31",
+      "after_sha256": "4ecfe79a5ff8bb1fdbe57eaf8a2236e1f23c5a04a75114e575c5b9bc64f51525",
+      "created_in_this_task": false
+    },
+    "01_参考论文/康复整合链路/README.md": {
+      "before_sha256": "7f8caef2f5cb8e8cd9edc46b8d19005fe4f1b6dce0f8aae1823d2d3e7e5a37cd",
+      "after_sha256": "5242efed5635ba66527b09622e9780a2bb7fc8d9ab2064dfa34e6080bebc0d71",
+      "created_in_this_task": false
+    },
+    "06_附录/待下载论文总清单.md": {
+      "before_sha256": "6925eb77b9ea616d0ec5d201557606df3516631a5f39474d8ac2f8c8b8449256",
+      "after_sha256": "72baaffdc9d176ffc5129cec88465bcf82ead24c0565811be74da081ac87f28e",
+      "created_in_this_task": false
+    },
+    "README.md": {
+      "before_sha256": "d92a827b107eb473c7e4dda15ef58eac24862e3d59add08331bf65b962d21b3d",
+      "after_sha256": "26182f3c2d528ba63bc1a4dec98bc30910aca67a5255039b02cee7a595185811",
+      "created_in_this_task": false
+    },
+    "INDEX.md": {
+      "before_sha256": "2defe9bb101c5b9e38aed156574e0a1923e7cc96585e65fbda88725fef032629",
+      "after_sha256": "8e5ed26d108acd6ba0481db78e5cc6a6eb9293304a9f58ae7294b6cc4620d0a7",
+      "created_in_this_task": false
+    },
+    "STATUS.md": {
+      "before_sha256": "c9044cfd0949001fd5ac7558c563d996274f71b286d3277d6c7424dad709beb2",
+      "after_sha256": "ff44fb8133c01f3f768f9e6a9a10ec172e3562aab694aa714a2b99231e19948d",
+      "created_in_this_task": false
+    },
+    "HANDOFF.md": {
+      "before_sha256": "11afa3c88ae2bbca9c18fc666a52243de79aa1e5746e8e8448b4056c1eb2d7fa",
+      "after_sha256": "033802bd82f2c371830a7ba21229e987f58febeb900712cd9120ed5ce633a5e0",
+      "created_in_this_task": false
+    },
+    "10_研究方向/README.md": {
+      "before_sha256": "497b6aaa381fb54556e49fe0ddb869fa71a8116a011d5320b8dc260fe4d24fdd",
+      "after_sha256": "b12a2e2499906b98e4dc7d20a6a07e3c9442e9aa86717e414afdbfe703027ed1",
+      "created_in_this_task": false
+    },
+    "10_研究方向/主动参与与训练强度_链路研究/README.md": {
+      "before_sha256": "a1c129c1926af0607c6f74a18af88dd542023337153c0bdf355eff20799e7121",
+      "after_sha256": "589b0fb9b270fda997e9b702cb971c5e0f64fa9ffb94ccec019ae91402db65e4",
+      "created_in_this_task": false
+    },
+    "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md": {
+      "before_sha256": "dec674d82735763162a41f201fd81e6b74396b49971bd1aff3c40d6ddfdc917b",
+      "after_sha256": "754dab61545ce189a796441bdfb68c768cc897adf0407be7848d1b77398452ef",
+      "created_in_this_task": false
+    },
+    "10_研究方向/主动参与与训练强度_链路研究/检索与筛选说明.md": {
+      "before_sha256": "92934d4f92a3aba7ee6486137e20e6e196b33a54cabd49737123d64f87819d7a",
+      "after_sha256": "cc029757bf9124d5c1908dfdc2c63082304728f1ab0d143d8e8153f31f73fcac",
+      "created_in_this_task": false
+    },
+    "10_研究方向/主动参与与训练强度_链路研究/研究范围与指标.md": {
+      "before_sha256": "615f7e9883f8578ddf66086bcfb707fc1a87c4181699a4d057c10ef472f4da62",
+      "after_sha256": "45411f466ad632dec3a5d2264c3b0e6daf97f0bc4678a9715958ddf575d1accb",
+      "created_in_this_task": false
+    },
+    "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md": {
+      "before_sha256": "c4a63f7d0ca736504e03c8f64391d4a5d856eee90e816ab112c801624b172d17",
+      "after_sha256": "26b0e0c407583880e32b105f93a2e1b60a02c6bb7031531685d2c7c94805ef42",
+      "created_in_this_task": false
+    },
+    "10_研究方向/主动参与与训练强度_链路研究/宋嵘团队追踪.md": {
+      "before_sha256": "e313c12cda25d439b35e6fe8bf3334e9ff5ecbbd58d558ba7a59c0a36b66295e",
+      "after_sha256": "b9bd9e2d7fe0ae9e1eee5adfc5d376e59427145d49f0d9236538df9b5236a6d0",
+      "created_in_this_task": false
+    },
+    "10_研究方向/主动参与与训练强度_链路研究/完整链路方案.md": {
+      "before_sha256": "16e9ac43e688038c59242bc88bfbcb42e783bf837fd0210e914c8d70c34bae7a",
+      "after_sha256": "4dc92c6520cd11b821d099bed3d4e95878cd641ef8ec759b1e93cbd9b71a98e8",
+      "created_in_this_task": false
+    },
+    "10_研究方向/主动参与与训练强度_链路研究/链路接口定义.md": {
+      "before_sha256": "2247cbd9f6828bd63be3427f8dd69423574eff5dd73fa43a6f5b354dc2af7d10",
+      "after_sha256": "42b755cfc2b9867ccce0ad8ba6956df150f1316c8e9c30c70721929dc66691b5",
+      "created_in_this_task": false
+    },
+    "10_研究方向/主动参与与训练强度_链路研究/链路验证计划.md": {
+      "before_sha256": "0e4baf1f68b14113927a1d994d870d52ddb46bd95c4b62e4a36eff43542c5448",
+      "after_sha256": "c7ab2ebfcaccfbed767f868d5b263571b36c0001041ccb7b72dc9dec07d152b5",
+      "created_in_this_task": false
+    },
+    "10_研究方向/主动参与与训练强度_链路研究/已取得最近工作_方法参照深核.md": {
+      "before_sha256": "f4056034702e9846dbccc57b8d3c94a0f42d3e3ecaf7d056966ec5014a98bd10",
+      "after_sha256": "70769a5ee2b572f1be744224e95423ede4560b06ac9cd54ad65b4e8b5ba468eb",
+      "created_in_this_task": false
+    },
+    "10_研究方向/主动参与与训练强度_链路研究/RL2026_正文补核与候选裁剪.md": {
+      "before_sha256": "1850e1ce73daac1acc7c498f65ae402cbb237bdb71151532161029da9efb9acf",
+      "after_sha256": "00e9b8351ebfe691b299632fb0893466d066a9ba76b9d2d072003f67f30ff054",
+      "created_in_this_task": false
+    },
+    "10_研究方向/主动参与与训练强度_链路研究/心理参与补核.md": {
+      "before_sha256": "9cdcb9331747e17b82120aa07ff3511a1d28ae6484a73121807c1321bc976b4a",
+      "after_sha256": "d3844ec97ce02d0ac52139f2d3cb330e965ab2e278c3ac4204b0464e90ad230b",
+      "created_in_this_task": false
+    },
+    "10_研究方向/主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md": {
+      "before_sha256": null,
+      "after_sha256": "e056de4d9fa7b332b4478083cfcb08c3cc06eb9117f53cc5874f92cfb9757953",
+      "created_in_this_task": true
+    },
+    "01_参考论文/康复整合链路/A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller_Evidence_Card.md": {
+      "before_sha256": null,
+      "after_sha256": "d3d0b268afd6834a1cc612e2f0e2b53f9c4de9eef9cd34be7e515b449915aee4",
+      "created_in_this_task": true
+    },
+    "01_参考论文/康复整合链路/A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller_Evidence_Card.md": {
+      "before_sha256": null,
+      "after_sha256": "c129403605c9fa120c7bb4a11f4ab510f08108b6a32154494b5997ef7aa8ae25",
+      "created_in_this_task": true
+    },
+    "01_参考论文/康复整合链路/Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation_Evidence_Card.md": {
+      "before_sha256": null,
+      "after_sha256": "afa8882294cc3936c4d6890eeb7dc02185a2f7414b2fb0c97b621cd9ffb1cb6d",
+      "created_in_this_task": true
+    },
+    "01_参考论文/康复整合链路/Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration_Evidence_Card.md": {
+      "before_sha256": null,
+      "after_sha256": "efd98a3f6625838d2d8752801578d269a22369b857cbf9d187c918533855a7a8",
+      "created_in_this_task": true
+    },
+    "01_参考论文/康复整合链路/Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot_Evidence_Card.md": {
+      "before_sha256": null,
+      "after_sha256": "e6db0492686547e8f97d7e915e592cc8525e2d7a65ead68e48f28fa3f6f3fd69",
+      "created_in_this_task": true
+    },
+    "01_参考论文/康复整合链路/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises_Evidence_Card.md": {
+      "before_sha256": null,
+      "after_sha256": "5a46a36417f216aa24af34c03d5df058c671b1c8d608ddfb855d3abdb615c6e9",
+      "created_in_this_task": true
+    },
+    "01_参考论文/康复整合链路/Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot_Evidence_Card.md": {
+      "before_sha256": null,
+      "after_sha256": "0d655605a7197a4142b7dae3d30b43acf3166319dd546dc85632d6831c6a8aba",
+      "created_in_this_task": true
+    }
+  },
+  "patch": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/元数据修改与回滚.patch",
+  "originals_reverse_manifest": "05_进展日志/2026-10-02_康复链路研究/七篇原件入库/原件移动与回滚清单.json"
+}

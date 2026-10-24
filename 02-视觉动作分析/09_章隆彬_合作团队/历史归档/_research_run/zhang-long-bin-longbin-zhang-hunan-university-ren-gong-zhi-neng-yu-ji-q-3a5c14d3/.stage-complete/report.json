@@ -1,0 +1,11 @@
+{
+  "stage": "report",
+  "status": "completed",
+  "timestamp": 1790831235.677856,
+  "input_fingerprint": "1bc830ba171b6e21e43cb39f951bc4b41158a9cffa450ebf0c2bc293f12c8ec0",
+  "citation_coverage": 1.0,
+  "report_outputs_sha256": {
+    "report.md": "53a7e267659945456e64333ec0bfe97b11befb777ee4df46f4fbddb976be4750",
+    "sources.json": "3e13eda46981aec0bdf15e31e30c9b73d702d49494d05f3472d408e85bd37cd6"
+  }
+}

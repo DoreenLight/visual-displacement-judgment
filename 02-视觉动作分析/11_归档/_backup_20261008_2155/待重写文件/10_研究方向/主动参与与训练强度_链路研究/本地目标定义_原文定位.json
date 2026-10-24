@@ -1,0 +1,509 @@
+[
+  {
+    "name": "Frullo",
+    "doi": "10.3389/fnbot.2017.00026",
+    "source": "01_参考论文/决策模型线_JEV/D4_AAN辅助控制与介入决策/Effects of Assist-As-Needed Upper Extremity Robotic Therapy.pdf",
+    "head": "                                                                                                                                                ORIGINAL RESEARCH\n                                                                                                                                                published: 13 June 2017\n                                                                                                                                         doi: 10.3389/fnbot.2017.00026\n\n\n\n\n                                             Effects of Assist-As-Needed Upper\n                                             Extremity Robotic Therapy after\n                                             Incomplete Spinal Cord Injury:\n                                             A Parallel-Group Controlled Trial\n                                             John Michael Frullo 1 , Jared Elinger 1 , Ali Utku Pehlivan 1 , Kyle Fitle 1 , Kathryn Nedley 2 ,\n                                             Gerard E. Francisco 2,3 , Fabrizio Sergi 4 * and Marcia K. O’Malley 1,2\n                                             1\n                                              Department of Mechanical Engineering, Rice University, Houston, TX, United States, 2 TIRR Memorial Hermann, Houston,\n                                             TX, United States, 3 Department of Physical Medicine and Rehabilitation, University of Texas Health Science Center, Houston,\n                                             TX, United States, 4 Department of Biomedical Engineering, University of Delaware, Newark, DE, United States\n\n\n                                             Background: Robotic rehabilitation of the upper limb following neurological injury has\n                                             been supported through several large clinical studies for individuals with chronic stroke.\n                                             The application of robotic rehabilitation to the treatment of other neurologica",
+    "passages": [
+      {
+        "page": 1,
+        "pattern": "primary outcome",
+        "quote": "       Fabrizio Sergi      challenge during therapy via analysis of longitudinal robotic metrics. For the selected\n                       fabs@udel.edu         primary outcome measure, the pre–post difference in ARAT score, no statistically\n                                             significant change was measured in either group of subjects. Ancillary analysis of\n            Received: 14 March 2017\n             Accepted: 18 May 2017\n                                             secondary outcome measures obtained via robotic testing indicates gradual improvement\n            Published: 13 June 2017         "
+      },
+      {
+        "page": 2,
+        "pattern": "participat",
+        "quote": " delivered by robotic interaction modes\nas incomplete paraplegia and 15.8% as complete tetraplegia. As a                         aimed at maximizing the active participation of the subject would\nresult of the injury, two-thirds of SCI survivors are left with some                     be a catalyst for the process of neural plasticity underlying motor\nfunctional deficit to the upper extremity, which contributes to                          recovery after stroke (Mehrholz et al., 2013).\nreduced independence in activities of daily living. Improvements                            As robot-aided recovery after "
+      },
+      {
+        "page": 2,
+        "pattern": "intens",
+        "quote": " studies (Lewis and Byblow, 2002; Hogan et al., 2006), suggesting\nof survivors categorized as complete paraplegia, 21.4% categorized                       that intensive therapy delivered by robotic interaction modes\nas incomplete paraplegia and 15.8% as complete tetraplegia. As a                         aimed at maximizing the active participation of the subject would\nresult of the injury, two-thirds of SCI survivors are left with some                     be a catalyst for the process of neural plasticity underlying motor\nfunctional deficit to the upper extremity, which contributes to              "
+      },
+      {
+        "page": 3,
+        "pattern": "participat",
+        "quote": "t 6 months prior to enroll-\nmore in depth assessing the differential effects of a specific control                   ment), while exclusion criteria were prior participation in robotic\nmode (Lo, 2012).                                                                         rehabilitation studies for the upper arm, any planned alteration in\n   In this study, we evaluate the effect of two different interactive                    medication for muscle tone for the duration of the study, arthritis,\nschemes implemented on the MAHI Exo-II robotic upper limb                                excessive shoulder pa"
+      },
+      {
+        "page": 3,
+        "pattern": "primary outcome",
+        "quote": "d for a 2-sample t-test to detect a\ndevelopment of more sophisticated interaction controllers for                            mean difference of 3 points in the primary outcome measure, i.e.,\nupper extremity rehabilitation therapy.                                                  the ARAT scale (see outcome measures section below), with 90%\n                                                                                         power, assuming a common standard deviation of 2 points in the\n2. MATERIALS AND METHODS                                                                 ARAT score (calculated from the "
+      },
+      {
+        "page": 4,
+        "pattern": "participat",
+        "quote": "s has 90% power to test                        2.3. Protocol\nsignificant differences in the increase in ARAT score of 1.5, with a                  Each subject participated in a total of fifteen visits. The first\ntype I error rate of 0.05.                                                            two visits involved screening for inclusion and exclusion criteria\n                                                                                      and a baseline assessment on primary and secondary outcome\n2.2. Participants                                                                     measures, in "
+      },
+      {
+        "page": 5,
+        "pattern": "intens",
+        "quote": "s; however, the subject torso was not constrained                    on the regression matrix Y(x) and unknown parameters θ:\nto maximize subject comfort in the intensive therapy program.\nSimilarly, we found that by using soft constraints and velcro straps,                                           Y(x)θ̂ = Ĝ(x) − F̂p ,                             (4)\nsubjects could operate comfortably the robot without requiring\nhighly accurate alignment of the robotic degrees of freedom to                       and the adaptation law\nthe subject joints. The time required for fitting a new subject in\n              "
+      },
+      {
+        "page": 5,
+        "pattern": "fatigue",
+        "quote": "a session-by-session basis,                    ability estimation algorithm employed in this study is a model-\nbased on the subject’s qualitative assessment of fatigue over the                    based estimator based on the adaptive controller (Slotine and Li,\ncourse of the session and the 90-min duration constraint.                            1987). The controller is based on the general form of the dynamic\n                                                                                     equations of a human-interacting manipulator in the task space\n2.4. Exoskeleton and Control Modes            "
+      },
+      {
+        "page": 7,
+        "pattern": "dose",
+        "quote": "bject’s capability of performing repeated exercise, which is asso-        determine their magnitudes, directions in relation to the desired\nciated with therapy dose. Finally, for the ST group, we considered          target, and proximity to the previous and subsequent suprathresh-\nthe evolution of the force threshold, as percent of a joint-specific        old regions. Analysis of suprathreshold regions after ttar allowed\nmaximum value, that the subject was required to apply before                for the inclusion of regions in the movement toward the desired\n\n\nFrontiers in Neurorobotics | www.fron"
+      },
+      {
+        "page": 7,
+        "pattern": "intens",
+        "quote": "          triggering the position control mode, a parameter also related to\nThe controller is identical to one developed for upper-limb robotic         therapy intensity.\nrehabilitation following chronic stroke (Lum et al., 2002) and later\nimplemented on the MAHI Exo-II rehabilitation robot (Gupta                  2.5.2. Clinical Measures\net al., 2008).                                                              The primary outcome measure for this study was the Action\n   The ST controller is implemented as a two-state machine. In              Research Arm Test (ARAT). The test has a variety of nin"
+      },
+      {
+        "page": 7,
+        "pattern": "primary outcome",
+        "quote": "HI Exo-II rehabilitation robot (Gupta                  2.5.2. Clinical Measures\net al., 2008).                                                              The primary outcome measure for this study was the Action\n   The ST controller is implemented as a two-state machine. In              Research Arm Test (ARAT). The test has a variety of nineteen\nthe first state, the robot is position controlled to keep the start         tasks divided into grasp, pinch grip, and gross arm movement\nposition (center or periphery), and the subject is visually cued to         portions. The subject’s motions are graded on a sca"
+      },
+      {
+        "page": 7,
+        "pattern": "fatigue",
+        "quote": "ased on a session-by-session basis,              2012). The fourth metric is the Graded Redefined Assessment\ndepending on subject ability and comfort (pain and fatigue are              of Strength, Sensibility and Prehension Test (GRASSP), which\nrecorded before and after each session to ensure excessive levels           measures a subject’s strength, sensation, and prehension in tasks\nof each are avoided). This is done to progressively increase the            relating to activities of daily life. The test measures a subject’s\nchallenge to the subject to encourage active involvement during            "
+      },
+      {
+        "page": 7,
+        "pattern": "contribution",
+        "quote": " to evaluate the adaptation of                maneuver a series of objects on a scale of zero to five with five\nrobotic therapy in response to changing patient contribution, both          being the maximal score. The subject is then graded on a scale\nin terms of task assistance and challenge, and in terms of therapy          from zero to four for the ability to grasp a cylindrical object, a\nintensity.                                                                  lateral key pinch, and a tip to tip pinch (Kalsi-Ryan et al., 2012).\n   To quantify task assistance and challenge in the AAN group, we\nanalyze"
+      },
+      {
+        "page": 9,
+        "pattern": "intens",
+        "quote": "                       Robotic Rehabilitation for Spinal Cord Injury\n\n\n\ntherapy sessions. Given the multitude of measurements for each              and therapy intensity. In validation of both controllers, no adverse\nsubject, we deemed inappropriate to discard data acquired from              events (i.e., injury or excessive fatigue reported by subjects) were\na given subject due to a few missing data points. Therefore, we             reported in this study during the therapy sessions.\nestablished to exclude from the analysis a given subject if data\nwere missing for at least three sessions for that s"
+      },
+      {
+        "page": 9,
+        "pattern": "primary outcome",
+        "quote": "  No significant effect of the within-subject factor (session) was\nadjusting the threshold level to increase or decrease challenge on          observed for the primary outcome measure, i.e., the change in\na session-by-session basis. As such, different metrics were used            ARAT score (p = 0.128). As such, the null hypothesis of this\nto test how the two controllers modulated assistance, challenge,            study is not falsified. The results of the mixed-design ANOVA\n\n\nFrontiers in Neurorobotics | www.frontiersin.org                        9                                            June 2017 | Volu"
+      },
+      {
+        "page": 9,
+        "pattern": "fatigue",
+        "quote": "ty. In validation of both controllers, no adverse\nsubject, we deemed inappropriate to discard data acquired from              events (i.e., injury or excessive fatigue reported by subjects) were\na given subject due to a few missing data points. Therefore, we             reported in this study during the therapy sessions.\nestablished to exclude from the analysis a given subject if data\nwere missing for at least three sessions for that specific subject.         3.1.1. Task Assistance and Challenge\nOtherwise, we replaced the subject’s missing data with the subject          Via the linear regression anal"
+      },
+      {
+        "page": 9,
+        "pattern": "no significant",
+        "quote": "he performance of the subject. The behavior of               3.2. Clinical Measures\nthe ST controller can be modulated manually by the therapist by             No significant effect of the within-subject factor (session) was\nadjusting the threshold level to increase or decrease challenge on          observed for the primary outcome measure, i.e., the change in\na session-by-session basis. As such, different metrics were used            ARAT score (p = 0.128). As such, the null hypothesis of this\nto test how the two controllers modulated assistance, challenge,            study is not falsified. The results of"
+      },
+      {
+        "page": 10,
+        "pattern": "primary outcome",
+        "quote": "-subject variable (experimental group), were                          measured on a session-by-session basis, and a differential effect\nmeasured neither in the primary outcome measure nor in other                               of the experimental group (i.e., AAN or ST). Analysis of the\nclinical measures.                                                                         robotic measures provides results in contrast to those deriving\n                                                                                           from clinical measures.\n3.3. Robotic Measures                                    "
+      },
+      {
+        "page": 10,
+        "pattern": "no significant",
+        "quote": ", although the result has not been corrected for                         p = 0.352) for SAL, respectively. These results demonstrate both\nmultiple comparisons. No significant interactions, including the                           an overall positive effect of the treatment on the outcome measure\neffect of the between-subject variable (experimental group), were                          measured on a session-by-session basis, and a differential effect\nmeasured neither in the primary outcome measure nor in other                               of the experimental group (i.e., AAN or ST). Analysis of the\nclinical "
+      },
+      {
+        "page": 11,
+        "pattern": "participat",
+        "quote": "rror for the group.\n\n\n\nconfidence interval are displayed in Table 5. Bolded values in the                       affecting upper extremity function available to participate in a 3-\ntable indicate that the regression slope is positive at p < 0.05.                        month long rehabilitation program) prevented achievement of the\n                                                                                         sample size that had been identified to detect a significant effect in\n4. DISCUSSION                                                                            the clinical primary outcome"
+      },
+      {
+        "page": 11,
+        "pattern": "primary outcome",
+        "quote": "hat had been identified to detect a significant effect in\n4. DISCUSSION                                                                            the clinical primary outcome measure (i.e., pre–post ARAT score\n                                                                                         being greater in the AAN group relative to the control group).\nThis paper presented a parallel-group, controlled trial (PGCT) to                        As a result, the null hypothesis of this clinical study could not\nevaluate the effects of assist-as-needed (AAN) assistance in robot-                      be rejec"
+      },
+      {
+        "page": 13,
+        "pattern": "intens",
+        "quote": "es the number of subjects\n  who completed the task at each session for that measure. Error bars extend to ± the standard error for the group.\n\n\n\n4.1.2. Therapy Intensity                                                                diminish the number of reps they could complete on a given\nFrom Figure 6, there is an observable increase in the number of                         day. It is worth noting that data included in Figure 6 represents\nrepetitions from training session T1 to T10 for both the AAN                            the change in number of repetitions with respect to the baseline,\nand ST"
+      },
+      {
+        "page": 13,
+        "pattern": "fatigue",
+        "quote": "ects were undergoing multiple trainings per week,                         gram is the force threshold Fth that the subject is required to pro-\nso they might be fatigued or stiff on any given day, which would                        duce for each repetition, in the ST control group. Also this metric\n\n\nFrontiers in Neurorobotics | www.frontiersin.org                                   13                                                  June 2017 | Volume 11 | Article 26\n"
+      },
+      {
+        "page": 14,
+        "pattern": "intens",
+        "quote": "be increasing over the therapy program for subjects                                     4.2. Clinical Measures\nin the ST group, further confirming that therapy intensity was                                       Clinical assessments were conducted prior to the start of the\ngradually increased on a session-by-session basis in the ST group.                                   therapy protocol, then at the conclusion of the therapy ses-\n                                                                                                     sions. Retention was assessed by conducting these assessments\n       "
+      },
+      {
+        "page": 14,
+        "pattern": "primary outcome",
+        "quote": " extracted in the analysis\n      MAPR                 (9, 108)     2.22      0.076          1.34             0.265              of the effect of session in the primary outcome measure, i.e., the\n      SAL                  (9, 108)     3.22      0.034          2.75             0.058              ARAT score, nor of the interaction between session and group.\nPS    Norm speed           (9, 90)      2.63      0.009          1.02             0.428\n                                                                                                     From analysis of the ARAT clinical metric at each session, it\n      "
+      },
+      {
+        "page": 14,
+        "pattern": "no significant",
+        "quote": "      analyzing the retention at follow-up assessments.\nElbow Norm speed           (9, 108)     2.43      0.062          0.95             0.444                 No significant effect of session was extracted in the analysis\n      MAPR                 (9, 108)     2.22      0.076          1.34             0.265              of the effect of session in the primary outcome measure, i.e., the\n      SAL                  (9, 108)     3.22      0.034          2.75             0.058              ARAT score, nor of the interaction between session and group.\nPS    Norm speed           (9, 90)      2.63      0.009     "
+      },
+      {
+        "page": 15,
+        "pattern": "primary outcome",
+        "quote": "nse of perception. As the GRASSP                            tive to trends that can only be observed through the longitudi-\nSens metric was not considered as a primary outcome measure,                            nal analysis. By comparing all of the therapy sessions, we have\nfurther research is necessary to draw any conclusions from this                         many more data points which allow for a general trend to be\nfinding.                                                                                observed with diminished influence of day-to-day variations in\n   Changes in MAS relative to baseline a"
+      },
+      {
+        "page": 15,
+        "pattern": "fatigue",
+        "quote": "s, which illustrate how subjects can perform differ-\nrobotic therapy. A possible explanation would be that the forced                        ently depending on fatigue or other factors from one day to the\nrepetitions caused the subject to engage their arms more than                           next. These fluctuations could also be occurring in the baseline\nthey were used to, which resulted in more familiarity with the                          and follow-up analysis, making pre–post comparisons insensi-\narm and thus a heightened sense of perception. As the GRASSP                            tive to tren"
+      },
+      {
+        "page": 16,
+        "pattern": "contribution",
+        "quote": "ble upon request to scientist interested in\n   The results presented in this paper highlight its two major                                  secondary analyses.\ncontributions. First, we presented data to validate the opera-\ntion of our assist-as-needed (AAN) robotic controller to adjust                                 ETHICS STATEMENT\ncontroller gains and allotted times for movement completion to\nmodulate the challenge and assistance provided to the subject                                   This study was reviewed and approved by the institutional review\nin an automated fashion. The automated nature of ass"
+      }
+    ]
+  },
+  {
+    "name": "TIGER",
+    "doi": "10.1186/s12984-023-01298-2",
+    "source": "01_参考论文/决策模型线_JEV/D4_AAN辅助控制与介入决策/Effects of an assist-as-needed equipped Tenodesis-Induced-Gr.xml",
+    "head": "286\njneurorehab\nJournal of NeuroEngineering and Rehabilitation\nJ Neuroeng Rehabil\nBMC\nPMC10765635\n10765635\n10765635\n38173006\n10.1186/s12984-023-01298-2\nEffects of an assist-as-needed equipped Tenodesis-Induced-Grip Exoskeleton Robot (TIGER) on upper limb function in patients with chronic stroke\nHsu\nHsiu-Yun\n1\n2\n#\nKoh\nChia-Lin\n2\n#\nYang\nKang-Chin\n3\nLin\nYu-Ching\n1\n4\nHsu\nChieh-Hsiang\n2\n3\nSu\nFong-Chin\n3\n5\nKuo\nLi-Chieh\n2\n3\n5\n✉\n1\nDepartment of Physical Medicine and Rehabilitation, National Cheng Kung University Hospital, College of Medicine, National Cheng Kung University, Tainan, Taiwan \n2\nDepartment of Occupational Therapy, College of Medicine, National Cheng Kung University, No.1, University Road, Tainan, 701 Taiwan \n3\nMedical Device Innovation Center, National Cheng Kung University, Tainan, Taiwan \n4\nDepartment of Physical Medicine and Rehabilitation, College of Medicine, National Cheng Kung University, Tainan, Taiwan \n5\nDepartment of Biomedical Engineering, College of Engineering, National Cheng Kung University, Tainan, Taiwan \n✉\nCorresponding author.\n#\nContributed equally.\n3\n1\n2024\n21\n5\n5\n4\n1\n2024\n© The Author(s) 2024\nOpen Access\n This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit \nhttp://creativecommons.org/licenses/by/4.0/\n. The Creativ",
+    "passages": [
+      {
+        "page": null,
+        "pattern": "participat",
+        "quote": "ate the training outcomes for stroke rehabilitation. The design of the AAN-equipped TIGER aligns with neurorehabilitation principles by emphasizing active user participation and engagement. Additionally, it fosters repetitive training to stimulate neuroplasticity and facilitate functional recovery. The secondary objective was to explore the factors affecting training outcomes of using the TIGER to help chronic stroke patients with hemiplegia recover UE function, and the third one was to compare training effects on the motor and functional performance of the affected UE between using the AAN-equipped TIG"
+      },
+      {
+        "page": null,
+        "pattern": "intens",
+        "quote": "wever, it has been suggested that the need for effective and accessible interventions for stroke rehabilitation is largely unmet [\n3\n].\nThe application of high-intensity, task-specific regimens to the rehabilitation of stroke survivors shows promise. The beneficial effects of this approach have been attributed to the synaptic plasticity induced by means of exposure to an enriched environment [\n4\n], proprioceptive stimulation [\n5\n], and motor learning [\n6\n]. This approach aligns with the development and utilization of distal hand robotics, potentially offering a targeted and intensified method for re"
+      },
+      {
+        "page": null,
+        "pattern": "primary outcome",
+        "quote": "training program consisting of 10 min in the AAN control mode and 10 min in the functional mode. The training sessions took place twice a week for 9 weeks. The primary outcome was the change score of the Fugl–Meyer Assessment of the Upper Extremity (FMA-UE), and the secondary outcomes were the change score of the Box and Blocks Test (BBT), the amount of use (AOU) and quality of movement (QOM) scales of the Motor Activity Log (MAL), the Semmes–Weinstein Monofilament (SWM) test, and the Modified Ashworth Scale (MAS) for fingers and wrist joints. The Generalized Estimating Equations (GEE) and stepwise regressio"
+      },
+      {
+        "page": null,
+        "pattern": "contribution",
+        "quote": "on is supported by the recent finding that deficits in body functions and structures impact the improvement of people’s performance [\n44\n].\nDespite the several contributions of this study, it also had some limitations. First, it did not have a randomized control trial design, which precluded making more specific comparisons of the training effects between the passive mode and AAN control mode of the TIGER. Another limitation is that a 10-min AAN setting might not be adequate to generate significant results. It is essential to perform a thorough assessment to ascertain the optimal therapy regimen, consider"
+      },
+      {
+        "page": null,
+        "pattern": "no significant",
+        "quote": "om 16 patients were included in the comparison of the effects of being trained with the AAN-equipped TIGER with those of being trained with the original TIGER. No significant between-group differences in the demographic and baseline clinical characteristics of the participants in both studies were found (see Table \n1\n). In addition, no harm or adverse events were reported during the interventions.\nTable 1\nBaseline demographic and clinical characteristics of the recruited participants of the current and our previous study [\n13\n] of TIGER. \n(Reprinted by the permission of the Taylor &Francis Ltd)\nOriginal-TIG"
+      }
+    ]
+  },
+  {
+    "name": "MPC",
+    "doi": "10.3390/s26092740",
+    "source": "01_参考论文/决策模型线_JEV/D4_AAN辅助控制与介入决策/Model Predictive Control-Based Assist-as-Needed Strategy for.pdf",
+    "head": "Article\n\nModel Predictive Control-Based Assist-as-Needed Strategy for\nReducing Motor Slacking in Robot-Assisted Rehabilitation\nChoonggun Kim 1 , Youngjin Moon 2                       and Jaesoon Choi 2, *\n\n                                         1   Department of Mechanical Engineering, Sogang University, Seoul 04107, Republic of Korea;\n                                             kcg1755@sogang.ac.kr\n                                         2   Department of Biomedical Engineering, Asan Medical Center, University of Ulsan College of Medicine,\n                                             Seoul 05505, Republic of Korea; jacobian@amc.seoul.kr\n                                         *   Correspondence: fides@amc.seoul.kr;\n\n                                         Abstract\n                                         This study proposes a model predictive control (MPC)-based Assist-as-Needed (AAN)\n                                         strategy for upper-limb rehabilitation robots, with particular emphasis on mitigating motor\n                                         slacking. In conventional error-based AAN approaches, robotic assistance is regulated\n                                         through a single coefficient tied to the tracking error; thus, a reduction in voluntary effort is\n                                         absorbed into the assistive channel and remains obscured by a small tracking error. The\n                                         proposed method decouples this mechanism by introducing a two-channel admittance\n                                         structure, in which the robotic-assistance gain Ak and the user-participation-reflection\n                                         gain Bk are jointly optimized within a single convex MPC formulation. The cost function\n                                         addresses trajectory tracking, participation-aware force alignment, assistance suppression,\n                                         and passivit",
+    "passages": [
+      {
+        "page": 1,
+        "pattern": "participat",
+        "quote": "this mechanism by introducing a two-channel admittance\n                                         structure, in which the robotic-assistance gain Ak and the user-participation-reflection\n                                         gain Bk are jointly optimized within a single convex MPC formulation. The cost function\n                                         addresses trajectory tracking, participation-aware force alignment, assistance suppression,\n                                         and passivity, enforced through energy-tank constraints. The controller was validated\n                                    "
+      },
+      {
+        "page": 1,
+        "pattern": "intens",
+        "quote": "ncy, physical demand, and inconsistent\nThis article is an open access article\ndistributed under the terms and\n                                         training intensity [3]. Robot-assisted rehabilitation addresses these limitations through\nconditions of the Creative Commons       superior repeatability, reproducibility, and the capacity for intensive, quantifiable prac-\nAttribution (CC BY) license.             tice [4]. Research has since advanced toward adaptive systems that tailor assistance to\n\n\nSensors 2026, 26, 2740                                                                               "
+      },
+      {
+        "page": 1,
+        "pattern": "slacking",
+        "quote": "Article\n\nModel Predictive Control-Based Assist-as-Needed Strategy for\nReducing Motor Slacking in Robot-Assisted Rehabilitation\nChoonggun Kim 1 , Youngjin Moon 2                       and Jaesoon Choi 2, *\n\n                                         1   Department of Mechanical Engineering, Sogang University, Seoul 04107, Republic of Korea;\n                                             kcg1755@sogang.ac.kr\n                                         2   Department of Biomedical Engineering, Asan Medical Center, University of Ulsan Col"
+      },
+      {
+        "page": 1,
+        "pattern": "contribution",
+        "quote": "limb rehabilitation robot. The first experiment\n                                         confirmed differential adaptation of Ak and Bk across three instructed contribution levels,\n                                         with the participation ratio increasing from 0.103 to 0.879 as the contribution shifted from\n                                         insufficient to appropriate. The second experiment compared the controller with an error-\n                                         based AAN baseline and a forgetting-factor AAN baseline under an induced motor-slacking\n                                     "
+      },
+      {
+        "page": 2,
+        "pattern": "participat",
+        "quote": "                                                     2 of 16\n\n\n\n                         patient-specific performance while enabling quantitative assessment of participation and\n                         therapeutic outcomes [5,6].\n                               Existing control strategies for upper-limb rehabilitation robots fall into two categories.\n                         The first, encompassing position-tracking, impedance, and admittance control, ensures sta-\n                         ble execution of predefined reference trajectories [7,8], providing safe, predictable motion\n                       "
+      },
+      {
+        "page": 2,
+        "pattern": "slacking",
+        "quote": "n forces [5,11,12].\n                               Despite these developments, both paradigms remain structurally susceptible to motor\n                         slacking. Tracking-based control focuses on reproducing the desired motion irrespective of\n                         the patient’s active contribution and is therefore prone to inducing passive dependence\n                         on the robotic system [7,13]. Although AAN is intended to reduce unnecessary assistance,\n                         many existing designs continue to prioritize task completion and trajectory-error mini-\n                 "
+      },
+      {
+        "page": 2,
+        "pattern": "contribution",
+        "quote": "                       slacking. Tracking-based control focuses on reproducing the desired motion irrespective of\n                         the patient’s active contribution and is therefore prone to inducing passive dependence\n                         on the robotic system [7,13]. Although AAN is intended to reduce unnecessary assistance,\n                         many existing designs continue to prioritize task completion and trajectory-error mini-\n                         mization [9]: larger tracking deviations elicit stronger restorative forces or higher assistive\n                         stiffness, e"
+      },
+      {
+        "page": 3,
+        "pattern": "participat",
+        "quote": "ling a single\n                         assistive channel, the proposed framework regulates the robotic-assistance gain Ak and the\n                         user-participation-reflection gain Bk as two independent decision variables within a single\n                         convex MPC formulation. The main contributions are as follows:\n                         •    Motor slacking is operationally formalized as a reduction in the task-direction pro-\n                              jection of the voluntary interaction force, yielding a measurable control quantity on\n                              which the cont"
+      },
+      {
+        "page": 3,
+        "pattern": "slacking",
+        "quote": "               tecture for upper-limb rehabilitation robots that limits the controller-side compensation\n                         mechanism through which motor slacking can emerge. Rather than scheduling a single\n                         assistive channel, the proposed framework regulates the robotic-assistance gain Ak and the\n                         user-participation-reflection gain Bk as two independent decision variables within a single\n                         convex MPC formulation. The main contributions are as follows:\n                         •    Motor slacking is operationally formalized a"
+      },
+      {
+        "page": 3,
+        "pattern": "contribution",
+        "quote": "          user-participation-reflection gain Bk as two independent decision variables within a single\n                         convex MPC formulation. The main contributions are as follows:\n                         •    Motor slacking is operationally formalized as a reduction in the task-direction pro-\n                              jection of the voluntary interaction force, yielding a measurable control quantity on\n                              which the controller objectives are directly constructed [13,17].\n                         •    A two-channel convex MPC formulation is developed in which user p"
+      },
+      {
+        "page": 4,
+        "pattern": "participat",
+        "quote": "-varying continuous-time gains Ac (t) and Bc (t) independently modulate\n                         the contributions of the robot-assistance channel and the user-participation channel, re-\n                         spectively. In particular, Ac (t) = 1 and Bc (t) = 0 correspond to a robot-dominant task-\n                         guarantee mode, whereas Ac (t) = 0 and Bc (t) = 1 correspond to a human-driven compli-\n                         ant mode. Intermediate values continuously interpolate between these two limiting cases,\n                         thereby allowing the controller to balance task completio"
+      },
+      {
+        "page": 4,
+        "pattern": "contribution",
+        "quote": "                (2)\n\n                              The time-varying continuous-time gains Ac (t) and Bc (t) independently modulate\n                         the contributions of the robot-assistance channel and the user-participation channel, re-\n                         spectively. In particular, Ac (t) = 1 and Bc (t) = 0 correspond to a robot-dominant task-\n                         guarantee mode, whereas Ac (t) = 0 and Bc (t) = 1 correspond to a human-driven compli-\n                         ant mode. Intermediate values continuously interpolate between these two limiting cases,\n                         "
+      },
+      {
+        "page": 5,
+        "pattern": "participat",
+        "quote": "  ẍ a = Mv−1 (− Bv ẋ a + Ac (t) Frobot + Bc (t) Finter )        (3)\n\n                         where Ac (t) and Bc (t) denote the instantaneous assistance and participation gains in\n                         continuous time. For MPC prediction, these gains are sampled at each control step and\n                         represented by Ak and Bk , respectively. In addition, the predicted assistive force is treated\n                         as an exogenous quantity in the prediction model such that the state-update equation\n                         remains affine in the optimization variables. A detailed just"
+      },
+      {
+        "page": 5,
+        "pattern": "slacking",
+        "quote": "que command τ act , thereby driving the robot to realize the desired\n                         rehabilitation motion.\n\n                         3. Reduced Motor Slacking Assist-as-Needed Control\n                              To address motor slacking in conventional AAN control, this paper proposes the\n                         Reduced Motor Slacking AAN (RMS-AAN) framework, which preserves active user partic-\n                         ipation while maintaining stable task execution. The controller is formulated as an MPC\n                         problem over a horizon N, jointly optimizing the assistanc"
+      },
+      {
+        "page": 5,
+        "pattern": "contribution",
+        "quote": "                    The second objective is participation reflection, which encourages the controller to preserve\n                         task-direction human contribution when the user is actively assisting the motion. The third\n                         objective is assist suppression, which penalizes unnecessarily robot-dominant behavior and\n                         reduces abrupt gain variation. As these objectives are partially conflicting, they are balanced\n                         through a convex quadratic program (QP) with explicit gain and passivity constraints.\n\n                         3.1. Mo"
+      },
+      {
+        "page": 6,
+        "pattern": "participat",
+        "quote": "         3.2. Design of the RMS-AAN Cost Function\n                                           The proposed cost function is designed such that tracking quality, participation reflec-\n                                      tion, and assist suppression are handled explicitly but within a single convex optimiza-\n                                      tion problem.\n                                           Tracking performance is quantified by the position and velocity errors between the\n                                      reference and predicted trajectories. An ℓ2 -norm-based cost is adopted because it in"
+      },
+      {
+        "page": 6,
+        "pattern": "slacking",
+        "quote": "enote the task-direction projection of the user interac-\n                                     tion force, where tk+i is the unit task-progress direction. Motor slacking is operationally\n                                     associated with a reduction in hk+i|k under matched task conditions. To preserve this\n                                     task-direction human contribution at the controller level, an alignment cost is introduced:\n\n                                                                      N −1 \u0010                                                  \u00112\n                                        "
+      },
+      {
+        "page": 6,
+        "pattern": "contribution",
+        "quote": "                associated with a reduction in hk+i|k under matched task conditions. To preserve this\n                                     task-direction human contribution at the controller level, an alignment cost is introduced:\n\n                                                                      N −1 \u0010                                                  \u00112\n                                                             Jalign = ∑ S Bk+i|k t⊤                      ⊤\n                                                                                  k +i Finter,k +i |k − tk +i F̂robot,k +i |k                   "
+      },
+      {
+        "page": 7,
+        "pattern": "contribution",
+        "quote": "ot,k+i|k , is intentional: the robot term is the task-achieving reference channel, while the\n                         human term is the channel whose reflected contribution is regulated.\n                               Since Finter may fluctuate over time, a zero-order hold approximation is applied over\n                         the short prediction horizon:\n\n                                                    Finter,k+i|k ≈ Finter,k ,                 i = 0, 1, . . . , N − 1                          (8)\n\n                              This approximation is acceptable because the QP is re-solved at every samp"
+      },
+      {
+        "page": 9,
+        "pattern": "participat",
+        "quote": "                 This section evaluates whether the proposed controller realizes AAN behavior while\n                         explicitly reflecting reduced user participation. The goal is to verify whether the two-\n                         channel structure in Section 3 yields differentiated adaptation of Ak and Bk under con-\n                         trolled and reproducible conditions. As shown in Figure 3, the experimental platform\n                         consisted of a 5-DOF mobile upper-limb rehabilitation robot and a game-based visual\n                         interface. The evaluation focused on pl"
+      },
+      {
+        "page": 10,
+        "pattern": "contribution",
+        "quote": "                     The target trajectory was a circular path with a radius of 0.12 m, repeated nine times\n                         over 270 s. The instructed contribution condition was changed every 90 s, resulting in three\n                         sequential conditions: insufficient, appropriate, and excessive task-direction contribution.\n\n                         4.1. Experimental Validation of Assist-as-Needed Behavior\n                              Figure 4 shows that the actual trajectory followed the reference circular path stably\n                         across all three intervals, with the larges"
+      },
+      {
+        "page": 11,
+        "pattern": "participat",
+        "quote": "hus improved as user contribution increased, rather than degrading as an error-driven\n                             AAN law that trades tracking performance for participation would predict.\n\n\n\n\n                             Figure 4. Trajectory-tracking results under three levels of user contribution: (a) insufficient, (b) appro-\n                             priate, and (c) excessive.\n\n\n\n\n                             Figure 5. Time-domain responses for experimental validation of Assist-as-Needed behavior: (a) position\n                             error, (b) gain trajectories Ak and Bk , (c) interaction-fo"
+      },
+      {
+        "page": 11,
+        "pattern": "contribution",
+        "quote": "                                                                                                 11 of 16\n\n\n\n                             thus improved as user contribution increased, rather than degrading as an error-driven\n                             AAN law that trades tracking performance for participation would predict.\n\n\n\n\n                             Figure 4. Trajectory-tracking results under three levels of user contribution: (a) insufficient, (b) appro-\n                             priate, and (c) excessive.\n\n\n\n\n                             Figure 5. Time-domain responses for experimental valid"
+      },
+      {
+        "page": 12,
+        "pattern": "participat",
+        "quote": "\n                              To test whether these internal gain changes reflect an actual shift in user effort, the task-\n                         direction participation ratio ρhuman = t⊤ ( Bk Finter )/t⊤ Fmix was computed from measured\n                         forces outside the optimization loop. It evolved as 0.103 → 0.879 → 1.000 across the three\n                         intervals, closely tracking the internally optimized Bk . This agreement confirms that the\n                         gain trajectories reflect genuine task-direction human contribution rather than an artifact of\n                 "
+      },
+      {
+        "page": 12,
+        "pattern": "slacking",
+        "quote": "                     t⊤ Fmix remained bounded, consistent with stable task execution.\n\n                         4.2. Comparative Evaluation Under Induced Motor Slacking\n                              Figures 6 and 7 compare three controllers under induced motor slacking: the error-\n                         based AAN (GAAN), the forgetting-factor AAN of Wolbrecht et al., and the proposed\n                         RMS-AAN. An identical synthesized interaction-force profile was applied to all three\n                         controllers. The task direction t followed the reference-velocity direction, and the"
+      },
+      {
+        "page": 12,
+        "pattern": "contribution",
+        "quote": "closely tracking the internally optimized Bk . This agreement confirms that the\n                         gain trajectories reflect genuine task-direction human contribution rather than an artifact of\n                         the cost formulation.\n                              Figure 5c,d corroborate these findings. The interaction-force norm ∥Finter ∥ grew\n                         across intervals, and the dominant task-direction component shifted from t⊤ ( Ak Frobot )\n                         to t⊤ ( Bk Finter ), becoming predominantly negative in the third interval. The net robot\n                       "
+      },
+      {
+        "page": 13,
+        "pattern": "participat",
+        "quote": "ing-error evolution. RMS-AAN uses Fmix = Ak Frobot + Bk Finter and jointly optimizes\n                         Ak and Bk , explicitly separating assistance from participation reflection.\n                              All three controllers preserved the overall circular trajectory in Figure 6, but the\n                         time-domain responses in Figure 7 reveal clear structural differences. From 10 to 20 s,\n                         the measured contribution dropped to about 0.45. GAAN rapidly drove AGAAN toward 1,\n                         compensating almost immediately and masking the low-participat"
+      },
+      {
+        "page": 13,
+        "pattern": "slacking",
+        "quote": " 16\n\n\n\n\n                         Figure 7. Time-domain comparison of GAAN, Wolbrecht-AAN, and the proposed RMS-AAN\n                         under induced motor slacking: (a) scheduled contribution c(t) (dashed) vs. measured task-direction\n                         contribution ratio (solid); (b) position error with the low-error threshold; (c) gain trajectories AGAAN ,\n                         AWolbrecht-AAN , ARMS-AAN , and BRMS-AAN ; (d) assist share.\n\n                              The three controllers differ in how they respond to the imposed contribution reduction.\n                         GAAN de"
+      },
+      {
+        "page": 13,
+        "pattern": "contribution",
+        "quote": "         Figure 7. Time-domain comparison of GAAN, Wolbrecht-AAN, and the proposed RMS-AAN\n                         under induced motor slacking: (a) scheduled contribution c(t) (dashed) vs. measured task-direction\n                         contribution ratio (solid); (b) position error with the low-error threshold; (c) gain trajectories AGAAN ,\n                         AWolbrecht-AAN , ARMS-AAN , and BRMS-AAN ; (d) assist share.\n\n                              The three controllers differ in how they respond to the imposed contribution reduction.\n                         GAAN determines assistance solely f"
+      },
+      {
+        "page": 14,
+        "pattern": "participat",
+        "quote": "   RMS-AAN\n                          RMS position error (mm)                   32.46                   22.24                    31.85\n                          Participation ratio ρhuman                0.595                   0.535                    0.282\n\n\n                              These results should be interpreted as controller-level evidence under controlled\n                         conditions. The single-participant setting and the imposed slacking profile were deliberate\n                         choices that ensured identical inputs across controllers; thus, the observed differences\n        "
+      },
+      {
+        "page": 14,
+        "pattern": "slacking",
+        "quote": "                                                            14 of 16\n\n\n\n                         Table 4. Metrics comparison across methods under induced motor slacking.\n\n                                     Metric                       GAAN               Wolbrecht-AAN               RMS-AAN\n                          RMS position error (mm)                   32.46                   22.24                    31.85\n                          Participation ratio ρhuman                0.595                   0.535                    0.282\n\n\n                              These results should be interpreted as"
+      },
+      {
+        "page": 14,
+        "pattern": "contribution",
+        "quote": "oposed an MPC-based AAN control framework for upper-limb reha-\n                         bilitation robots that explicitly addresses motor slacking. The primary contribution is to\n                         operationalize motor slacking as an adaptive reduction in task-direction human contri-\n                         bution under matched task conditions. RMS-AAN decouples the robot-assistance and\n                         user-participation channels within a single QP-compatible MPC that jointly handles tra-\n                         jectory tracking, participation alignment, assistance suppression, error-resp"
+      },
+      {
+        "page": 15,
+        "pattern": "participat",
+        "quote": "r\n      robot-assisted upper extremity rehabilitation following stroke. PLoS ONE 2023, 18, e0292627. [CrossRef]\n6.    Odemis, E.; Baysal, C.V. Development of a participation assessment system based on multimodal evaluation of user responses for\n      upper limb rehabilitation. Biomed. Signal Process. Control 2021, 70, 103066. [CrossRef]\n7.    Marchal-Crespo, L.; Reinkensmeyer, D.J. Review of control strategies for robotic movement training after neurologic injury. J.\n      Neuroeng. Rehabil. 2009, 6, 20. [CrossRef]\n8.    Proietti, T.; Crocher, V.; Roby-Brami, A.; Jarrasse, N. Upper-limb robotic exoskele"
+      },
+      {
+        "page": 15,
+        "pattern": "slacking",
+        "quote": "egy for\n      upper-limb rehabilitation robots. Sensors 2024, 24, 2082. [CrossRef] [PubMed]\n13.   Reinkensmeyer, D.J.; Akoner, O.M.; Ferris, D.P.; Gordon, K.E. Slacking by the human motor system: Computational models\n      and implications for robotic orthoses. In Proceedings of the 2009 Annual International Conference of the IEEE Engineering in\n      Medicine and Biology Society, Minneapolis, MN, USA, 3–6 September 2009; pp. 2129–2132. [CrossRef]\n14.   dos Santos, W.M.; Siqueira, A.A.G. Optimal impedance via model predictive control for robot-aided rehabilitation. Control Eng.\n      Pract. 2019, 93, "
+      }
+    ]
+  },
+  {
+    "name": "Fatigue",
+    "doi": "10.1371/journal.pone.0249403",
+    "source": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Fatigue, induced via repetitive upper-limb motor tasks, infl.pdf",
+    "head": "PLOS ONE\n\n                                                          RESEARCH ARTICLE\n\n                                                          Fatigue, induced via repetitive upper-limb\n                                                          motor tasks, influences trunk and shoulder\n                                                          kinematics during an upper limb reaching\n                                                          task in a virtual reality environment\n                                                          Frédérique Dupuis ID1,2, Gisela Sole ID3, Craig Wassinger4, Mathieu Bielmann2, Laurent\n                                                          J. Bouyer ID1,2, Jean-Sébastien Roy ID1,2*\na1111111111                                               1 Faculty of Medicine, Université Laval, Quebec City, Canada, 2 Centre for Interdisciplinary Research in\na1111111111                                               Rehabilitation and Social Integration, Quebec City, Canada, 3 Centre for Health, Activity and Rehabilitation\na1111111111                                               Research, School of Physiotherapy, University of Otago, Dunedin, New Zealand, 4 Department of Physical\na1111111111                                               Therapy, East Tennessee State University, Johnson City, TN, United States of America\na1111111111                                               * Jean-Sebastien.Roy@fmed.ulaval.ca\n\n\n\n\n                                                          Abstract\n    OPEN ACCESS\n\nCitation: Dupuis F, Sole G, Wassinger C, Bielmann\nM, Bouyer LJ, Roy J-S (2021) Fatigue, induced via         Background\nrepetitive upper-limb motor tasks, influences trunk       Efficient shoulder movement depends on the ability of central nervous system to integrate\nand shoulder kinematics during an upper limb\nreaching task in a virtual reality environment. PLoS\n                                                          sensory information and to c",
+    "passages": [
+      {
+        "page": 1,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE\n\n                                                          RESEARCH ARTICLE\n\n                                                          Fatigue, induced via repetitive upper-limb\n                                                          motor tasks, influences trunk and shoulder\n                                                          kinematics during an upper limb reaching\n                                                          task in a virtual reality environment\n                                                          Frédérique Dupuis ID1,2, Gisela Sole ID3, Craig "
+      },
+      {
+        "page": 2,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                               Fatigue impacts shoulder movements\n\n\n\nrequest is made, the ethics committee will analyze   elevation were also observed in the Fatigue group (Group x Time interaction, p < 0.05). The\nthe request (mainly look at the objectives behind    Control group improved their movement speed and accuracy in post-experimental phase,\nthe request) and then give a decision.\n                                                     while the Fatigue group showed a d"
+      },
+      {
+        "page": 3,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                    Fatigue impacts shoulder movements\n\n\n\n                                            could increase mechanical load on the shoulder joint and lead to injuries, it is important to\n                                            better understand how fatigue influences shoulder movements, to assess its potential harmful\n                                            effects and improve preventive interventions.\n                                            "
+      },
+      {
+        "page": 4,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                                          Fatigue impacts shoulder movements\n\n\n\n                                                    During the task, electromyographic, spatiotemporal and kinematic data of the upper limb\n                                                  were collected.\n\n\n                                                  Reaching task\n                                                  The task was conducted in a VRE, created with Unreal Engine (Epic games international,\n"
+      },
+      {
+        "page": 5,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                    Fatigue impacts shoulder movements\n\n\n\n                                            in random order, and participants were instructed to reach that target as fast and accurately as\n                                            possible, using the most direct path, and placing the virtual ball in the palm of their virtual\n                                            hand on the middle of the target. The reaching target then disappeared, and the part"
+      },
+      {
+        "page": 6,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                     Fatigue impacts shoulder movements\n\n\n\n                                            agonist in shoulder flexion and abduction. They are also highly implicated in shoulder move-\n                                            ment above 90˚ elevation [30] and their EMG activities correlate with physical demands of\n                                            working tasks [31]. The skin was cleaned using alcohol prior to electrode placement. The Sur-\n"
+      },
+      {
+        "page": 7,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                                            Fatigue impacts shoulder movements\n\n\n\n\n          Fig 2. Spatiotemporal data collection. a. Example of spatiotemporal data collection while reaching target 3. iANG: initial angle of endpoint deviation, this\n          angle was calculated using the shortest line between two targets [home and reaching targets] and the line corresponding to the initial peak of acceleration);\n          fERR: final error, the shortest arc distance between the ideal "
+      },
+      {
+        "page": 8,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                                  Fatigue impacts shoulder movements\n\n\n\n                                            under the curve representing total movement error which is the summation of the rectangular\n                                            trapezoids perpendicular to the ideal trajectory line and the actual trajectory line (Fig 2).\n\n                                            Statistical analyses\n                                            Baseline demographic data"
+      },
+      {
+        "page": 8,
+        "pattern": "no significant",
+        "quote": "y healthy participants were included: 20 in each group. Table 1 presents their baseline\n                                            characteristics; there were no significant differences between the groups (p > 0.05).\n\n                                            Fatigue\n                                               Perceived fatigue. Participants in both groups started the Baseline phase with a mean per-\n                                            ceived level of fatigue of 0 and ended this phase with a mean score of 3±1on the Borg scale.\n                                            Participants in the Fati"
+      },
+      {
+        "page": 9,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                                    Fatigue impacts shoulder movements\n\n\n\nTable 2. EMG signals of the two groups during baseline and experimental phase.\n                                                                    Anterior Deltoid                                        Middle Deltoid\n                                            Amplitude (V)�10−5                         MDF (Hz)          Amplitude (V)�10−5                  MDF (Hz)\nControl Baseline\n                        "
+      },
+      {
+        "page": 9,
+        "pattern": "no significant",
+        "quote": "he middle deltoid EMG amplitude\n                                                       increased significantly during the trials (p = 0.001). There was however no significant Time x\n                                                       Group interaction for the mean median power frequency of the middle deltoid (p = 0.768). A\n                                                       Time effect (p = 0.009) was observed for the MDF of the middle deltoid as it increased in both\n                                                       groups (p < 0.01; Table 2).\n\n\n                                                   "
+      },
+      {
+        "page": 10,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                      Fatigue impacts shoulder movements\n\n\n\n                                            and total joints angular excursions) in the fatigued state, while the Control group did not show\n                                            significant changes between phases.\n                                                Changes in initial joint angles in the fatigued state included increased trunk flexion\n                                            (p < 0.04"
+      },
+      {
+        "page": 11,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                               Fatigue impacts shoulder movements\n\n\n\nTable 3. Mean total joint excursions during baseline and experimental phase of both groups.\n                    Target   Initial joint angles Mean (SD)     p       Final joint angles Mean (SD)     p       Total angular excursion Mean (SD)     p\nTrunk LF                                                      0.001�                                   0.05�                                         0.002�\n Control"
+      },
+      {
+        "page": 12,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                                 Fatigue impacts shoulder movements\n\n\n\nTable 3. (Continued)\n\n                    Target   Initial joint angles Mean (SD)      p       Final joint angles Mean (SD)      p       Total angular excursion Mean (SD)     p\nElbow flexion                                                  0.006�                                    0.082                                         0.048�\nControl Baseline       1              25.1 (15.6)                         "
+      },
+      {
+        "page": 13,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                                         Fatigue impacts shoulder movements\n\n\n\nTable 3. (Continued)\n\n                       Target   Initial joint angles Mean (SD)            p      Final joint angles Mean (SD)      p       Total angular excursion Mean (SD)        p\nSC elevation                                                          <0.0001�                                  <0.0001�                                          0.009�\n Control Baseline         1                 -5.5 (4."
+      },
+      {
+        "page": 14,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                                       Fatigue impacts shoulder movements\n\n\n\n\n                   Fig 3. Inter-joint coordination at baseline and post-experimental phase. Inter-joint coordination while reaching target 2 (120˚ scaption). a.\n                   Trunk lateral flexion (LF) vs sternoclavicular (SC) elevation and b. Glenohumeral (GH) flexion vs elbow flexion. Trunk lateral flexion: positive value\n                   represents a LF ipsilateral to the reaching arm. Significa"
+      },
+      {
+        "page": 15,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                                                 Fatigue impacts shoulder movements\n\n\n\nTable 4. Spatiotemporal data mean difference between baseline and experimental condition of both groups.\nSpatiotemporal data                                    Target 1                         Target 2                        Target 3                          Target 4\niANG Mean difference\n                               Control                -1.38(1.70)                    -3.15(1.76) �                    -5"
+      },
+      {
+        "page": 15,
+        "pattern": "no significant",
+        "quote": "imental phase. Data are presented as mean difference (SEM).\n• Significant Time effect and Time x Group effect, p<0.05, for iANG, Time and Area under the curve. No significant difference for fERR (Time effect: p = 0.226; and\nTime x Group effect: p = 0,33)\n• � Significant increase of performance for controls compared to baseline, p < 0.05.\n• †Significant decrease of performance compared to baseline, p < 0.05.\n\nhttps://doi.org/10.1371/journal.pone.0249403.t004\n\n\n                                                           The reaching strategy (total joint angular excursions) also significantly differed in the\n "
+      },
+      {
+        "page": 16,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                                  Fatigue impacts shoulder movements\n\n\n\n\n                                            Fig 4. Spatiotemporal data during baseline and post-experimental condition of both groups. Data are presented as\n                                            mean±SD of Baseline and Experimental condition for both groups. a: iANG, initial angle of endpoint deviation (˚); b:\n                                            Area, area under the curve (m2); c: Time, time"
+      },
+      {
+        "page": 16,
+        "pattern": "no significant",
+        "quote": " fERR, final error, arc sign (m).\n                                            Significant Time effect and Time x Group effect, p<0.05, for iANG, Time and Area. No significant difference for fERR\n                                            (Time effect: p = 0.226; and Time x Group effect: p = 0,33). � Significant increase of performance for controls compared\n                                            to baseline, p < 0.05. †Significant decrease of performance compared to baseline, p < 0.05.\n                                            https://doi.org/10.1371/journal.pone.0249403.g004\n\n\n\n\nPLOS ONE | https://d"
+      },
+      {
+        "page": 17,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                    Fatigue impacts shoulder movements\n\n\n\n                                            accuracy (iANG, fERR, Area) remained stable during post-experimental phase, the fatigue\n                                            group decreased their movement speed likely to accurately complete the task.\n                                                As the Control Group improved their performance, but not the Fatigue Group [37, 41], the\n                   "
+      },
+      {
+        "page": 18,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                         Fatigue impacts shoulder movements\n\n\n\n                                               There are also some limitations to our study. First, all participants were young (between\n                                            18–40 years old) and free from shoulder pain. Therefore, generalization to older populations\n                                            or to populations with shoulder pain is limited. Secondly, participants performed the task "
+      },
+      {
+        "page": 18,
+        "pattern": "contribution",
+        "quote": "                                          programming and the spatiotemporal data collection and analysis.\n\n\n                                            Author Contributions\n                                            Conceptualization: Frédérique Dupuis, Jean-Sébastien Roy.\n                                            Data curation: Frédérique Dupuis.\n                                            Funding acquisition: Jean-Sébastien Roy.\n                                            Investigation: Frédérique Dupuis.\n                                            Methodology: Frédérique Dupuis.\n         "
+      },
+      {
+        "page": 19,
+        "pattern": "intens",
+        "quote": "ion and Extension\n                                                   Maximal Voluntary Contractions on Corticospinal Excitability to Forearm Muscles during Low-Intensity\n                                                   Hand-Gripping. Brain Sci. 2020; 10(7):445. https://doi.org/10.3390/brainsci10070445 PMID: 32668568.\n                                            16.    Cote JN, Raymond D, Mathieu PA, Feldman AG, Levin MF. Differences in multi-joint kinematic patterns\n                                                   of repetitive hammering in healthy, fatigued and shoulder-injured individuals. Clin"
+      },
+      {
+        "page": 19,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                              Fatigue impacts shoulder movements\n\n\n\n                                              2.   Veeger HEJ, van der Helm FCT. Shoulder function: The perfect compromise between mobility and sta-\n                                                   bility. Journal of Biomechanics. 2007; 40(10):2119–29. https://doi.org/10.1016/j.jbiomech.2006.10.016\n                                                   PMID: 17222853\n                                         "
+      },
+      {
+        "page": 20,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                             Fatigue impacts shoulder movements\n\n\n\n                                            21.   Huysmans MA, Hoozemans MJM, van der Beek AJ, de Looze MP, van Dieën JH. Fatigue effects on\n                                                  tracking performance and muscle activity. 18(3):410–9.\n                                            22.   Mendez-Rebolledo G, Gatica-Rojas V, Guzman-Munoz E, Martinez-Valdes E, Guzman-Venegas R,\n                       "
+      },
+      {
+        "page": 21,
+        "pattern": "fatigue",
+        "quote": "PLOS ONE                                                                                                            Fatigue impacts shoulder movements\n\n\n\n                                            41.   Kawato M. Internal models for motor control and trajectory planning. Curr Opin Neurobiol. 1999; 9\n                                                  (6):718–27. Epub 1999/12/23. https://doi.org/10.1016/s0959-4388(99)00028-8 PMID: 10607637.\n                                            42.   Sadler CM, Cressman EK. Central fatigue mechanisms are responsible for"
+      }
+    ]
+  }
+]

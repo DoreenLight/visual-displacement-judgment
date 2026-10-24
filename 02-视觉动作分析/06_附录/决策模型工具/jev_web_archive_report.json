@@ -1,0 +1,295 @@
+{
+ "generated": "jev_web_archive.py",
+ "ok": 13,
+ "blocked": 0,
+ "items": [
+  {
+   "title": "Laya：开源非自回归 System 1 决策模型（ConvAI Innovations）",
+   "url": "https://huggingface.co/convaiinnovations/laya/raw/main/README.md",
+   "status": "ok",
+   "http": 200,
+   "bytes": 23187,
+   "sha256_16": "00355613796b3f58",
+   "path": "01_参考论文/决策模型线_JEV/D3_开源复现与替代/Laya：开源非自回归 System 1 决策模型（ConvAI Innovations）_网页存档.md",
+   "text_chars": 22960,
+   "checked_at": "2026-10-02T15:53:46",
+   "history": []
+  },
+  {
+   "title": "System One 开源生态：Nimble / Kev / OpenThai / OpenJev / fast-browser-use",
+   "url": "https://blog.invidelabs.com/system-one-models-jev-laya-open-alternatives/",
+   "status": "ok",
+   "path": "01_参考论文/决策模型线_JEV/D3_开源复现与替代/System One 开源生态：Nimble _ Kev _ OpenThai _ OpenJev _ fast-bro_网页存档.md",
+   "text_chars": 12234,
+   "verification": "磁盘既有快照与当前具体来源匹配；不是本轮重新下载",
+   "http": 200,
+   "bytes": 54315,
+   "sha256_16": "da70d8e94782bb0e"
+  },
+  {
+   "title": "JEV 社区实测汇总：选项顺序敏感、国际象棋纯随机、校准无公开数据",
+   "url": "https://regolo.ai/jev-and-system-one-models-benchmarks-open-source-alternatives-and-when-to-use-them",
+   "status": "ok",
+   "path": "01_参考论文/决策模型线_JEV/D2_独立评测与反驳/JEV 社区实测汇总：选项顺序敏感、国际象棋纯随机、校准无公开数据_网页存档.md",
+   "text_chars": 17956,
+   "verification": "磁盘既有快照与当前具体来源匹配；不是本轮重新下载",
+   "http": 200,
+   "bytes": 149950,
+   "sha256_16": "76b9313e41971752"
+  },
+  {
+   "title": "akhilaaa3/Jev-Omni（HuggingFace 社区模型核查）",
+   "url": "https://huggingface.co/akhilaaa3/Jev-Omni",
+   "status": "ok",
+   "path": "01_参考论文/决策模型线_JEV/D2_独立评测与反驳/akhilaaa3_Jev-Omni（HuggingFace 社区模型核查）_网页存档.md",
+   "text_chars": 71237,
+   "verification": "磁盘既有快照与当前具体来源匹配；不是本轮重新下载",
+   "http": 200,
+   "bytes": 249912,
+   "sha256_16": "2ac049b771a6d93b"
+  },
+  {
+   "title": "Archer Hume 对 JEV 的黑盒探测记录",
+   "url": "https://archerhume.com/posts/jevs-architecture-unmasked/",
+   "status": "ok",
+   "http": 200,
+   "bytes": 295827,
+   "sha256_16": "4cb59ac6dce023e5",
+   "path": "01_参考论文/决策模型线_JEV/D2_独立评测与反驳/Archer Hume 对 JEV 的黑盒探测记录_网页存档.md",
+   "text_chars": 42054,
+   "checked_at": "2026-10-02T15:53:46",
+   "history": []
+  },
+  {
+   "title": "TypeSafe OpenAPI 3.1.0 规格（接口权威契约）",
+   "url": "https://api.typesafe.ai/openapi.json",
+   "status": "ok",
+   "http": 200,
+   "bytes": 14158,
+   "sha256_16": "a191f8a7df6bd6fe",
+   "path": "01_参考论文/决策模型线_JEV/D2_独立评测与反驳/TypeSafe OpenAPI 3.1.0 规格（接口权威契约）_网页存档.md",
+   "text_chars": 14149
+  },
+  {
+   "title": "Assistance level quantification-based human-robot interaction space reshaping for rehabilitation training",
+   "url": "https://journal.frontiersin.org/article/10.3389/fnbot.2023.1161007",
+   "status": "ok",
+   "path": "01_参考论文/决策模型线_JEV/D4_AAN辅助控制与介入决策/Assistance level quantification-based human-robot interactio_网页存档.md",
+   "text_chars": 97508,
+   "verification": "磁盘既有快照与当前具体来源匹配；不是本轮重新下载",
+   "http": 200,
+   "bytes": 1304919,
+   "sha256_16": "7cbcc7b9d4c03ef1"
+  },
+  {
+   "title": "UDE: A Unified Driving Engine for Human Motion Generation",
+   "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Zhou_UDE_A_Unified_Driving_Engine_for_Human_Motion_Generation_CVPR_2023_paper.html",
+   "status": "ok",
+   "path": "01_参考论文/决策模型线_JEV/D1_JEV本体与SystemOne范式/Jev_ A Unified Driving Engine for Human Motion Generation_网页存档.md",
+   "text_chars": 2800,
+   "verification": "磁盘既有快照与当前具体来源匹配；不是本轮重新下载",
+   "http": 200,
+   "bytes": 5987,
+   "sha256_16": "6eabfe2f5bdedda4"
+  },
+  {
+   "title": "Jev 发布博文与 Workflow Evals（TypeSafe AI，2026-09-15）",
+   "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+   "status": "ok",
+   "http": 200,
+   "bytes": 257471,
+   "sha256_16": "0f7993b165437e42",
+   "path": "01_参考论文/决策模型线_JEV/D1_JEV本体与SystemOne范式/Jev 发布博文与 Workflow Evals（TypeSafe AI，2026-09-15）_网页存档.md",
+   "text_chars": 14025,
+   "checked_at": "2026-10-02T15:53:46",
+   "history": []
+  },
+  {
+   "title": "Kinematic Tokenization: Optimization-Based Continuous-Time Tokens for Learnable Decision Policies in Noisy Time Series",
+   "url": "https://arxiv.org/abs/2601.09949",
+   "status": "ok",
+   "path": "01_参考论文/决策模型线_JEV/D5_轻量化非Transformer路线/Kinematic Tokenization_ Optimization-Based Continuous-Time T_网页存档.md",
+   "text_chars": 5626,
+   "verification": "磁盘既有快照与当前具体来源匹配；不是本轮重新下载",
+   "http": 200,
+   "bytes": 42881,
+   "sha256_16": "eb00c98def227366"
+  },
+  {
+   "title": "Multijoint Continuous Motion Estimation for Human Lower Limb Based on Surface Electromyography",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11820049/",
+   "status": "ok",
+   "path": "01_参考论文/决策模型线_JEV/D5_轻量化非Transformer路线/Multijoint Continuous Motion Estimation for Human Lower Limb_网页存档.md",
+   "text_chars": 61349,
+   "verification": "磁盘既有快照与当前具体来源匹配；不是本轮重新下载",
+   "http": 200,
+   "bytes": 206207,
+   "sha256_16": "bc68ddd141c83e18"
+  },
+  {
+   "title": "A Real-Time, 3-D Musculoskeletal Model for Dynamic Simulation of Arm Movements",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2971671",
+   "status": "ok",
+   "path": "01_参考论文/决策模型线_JEV/D6_康复侧既有实证/A Real-Time, 3-D Musculoskeletal Model for Dynamic Simulatio_网页存档.md",
+   "text_chars": 48141,
+   "verification": "磁盘既有快照与当前具体来源匹配；不是本轮重新下载",
+   "http": 200,
+   "bytes": 180515,
+   "sha256_16": "969799a57da2e70f"
+  },
+  {
+   "title": "More Features Are Not More Evidence: Limits of Training-Free Human Activity Recognition with Jev",
+   "url": "https://arxiv.org/abs/2609.36154",
+   "status": "ok",
+   "path": "01_参考论文/决策模型线_JEV/D6_康复侧既有实证/More Features Are Not More Evidence（康复视角摘录）_网页存档.md",
+   "text_chars": 5897,
+   "verification": "磁盘既有快照与当前具体来源匹配；不是本轮重新下载",
+   "http": 200,
+   "bytes": 43241,
+   "sha256_16": "fc0999f7b05c8b51"
+  },
+  {
+   "title": "Jev API 官方文档（typesafe.ai）",
+   "url": "https://api.typesafe.ai/docs",
+   "status": "contract_reference",
+   "path": "01_参考论文/决策模型线_JEV/D2_独立评测与反驳/TypeSafe OpenAPI 3.1.0 规格（接口权威契约）_网页存档.md",
+   "verification": "Swagger UI 公开HTML指向 /openapi.json；接口契约已存档：01_参考论文/决策模型线_JEV/D2_独立评测与反驳/TypeSafe OpenAPI 3.1.0 规格（接口权威契约）_网页存档.md。UI空壳不当作正文。"
+  },
+  {
+   "title": "Velocity field assist-as-needed controller for upper limb rehabilitation with sEMG-based spasticity detection",
+   "url": "https://www.sciencedirect.com/science/article/pii/s095741582500159x",
+   "status": "fulltext_available",
+   "path": "01_参考论文/决策模型线_JEV/D4_AAN辅助控制与介入决策/Velocity field assist-as-needed controller for upper limb re.pdf",
+   "history": [
+    {
+     "title": "Velocity field assist-as-needed controller for upper limb rehabilitation with sEMG-based spasticity detection",
+     "url": "https://www.sciencedirect.com/science/article/pii/s095741582500159x",
+     "status": "blocked",
+     "http": 403,
+     "bytes": 832805,
+     "error": "空壳或反爬挑战页"
+    }
+   ],
+   "verification": "旧网页抓取阻塞保留在history；当前已核验论文原件，勿继续当作全文缺口。"
+  },
+  {
+   "title": "Effects of Assist-As-Needed Upper Extremity Robotic Therapy after Incomplete Spinal Cord Injury: A Parallel-Group Controlled Trial",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5469353/",
+   "status": "fulltext_available",
+   "path": "01_参考论文/决策模型线_JEV/D4_AAN辅助控制与介入决策/Effects of Assist-As-Needed Upper Extremity Robotic Therapy.pdf",
+   "history": [
+    {
+     "title": "Effects of Assist-As-Needed Upper Extremity Robotic Therapy after Incomplete Spinal Cord Injury: A Parallel-Group Controlled Trial",
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5469353/",
+     "status": "blocked",
+     "http": 200,
+     "bytes": 20416,
+     "error": "空壳或反爬挑战页"
+    }
+   ],
+   "verification": "旧网页抓取阻塞保留在history；当前已核验论文原件，勿继续当作全文缺口。"
+  },
+  {
+   "title": "TIGER 随机对照研究：外骨骼 AAN 训练的 FMA-UE 增益（二手引述）",
+   "status": "retired_mismatched_reference",
+   "history": [
+    {
+     "title": "TIGER 随机对照研究：外骨骼 AAN 训练的 FMA-UE 增益（二手引述）",
+     "url": "https://ieeexplore.ieee.org/document/11271063/references",
+     "status": "blocked",
+     "http": 202,
+     "bytes": 0,
+     "error": "空壳或反爬挑战页"
+    }
+   ],
+   "replacement_title": "Effects of an assist-as-needed equipped Tenodesis-Induced-Grip Exoskeleton Robot (TIGER) on upper limb function in patients with chronic stroke",
+   "path": "01_参考论文/决策模型线_JEV/D4_AAN辅助控制与介入决策/Effects of an assist-as-needed equipped Tenodesis-Induced-Gr.xml"
+  },
+  {
+   "title": "Edge-deployable pelvic IMU temporal convolution for real time hip and knee joint angle estimation",
+   "url": "https://doi.org/10.1016/j.bspc.2026.110933",
+   "status": "fulltext_available",
+   "path": "01_参考论文/决策模型线_JEV/D5_轻量化非Transformer路线/Edge-deployable pelvic IMU temporal convolution for real tim.pdf",
+   "history": [
+    {
+     "title": "Edge-deployable pelvic IMU temporal convolution for real time hip and knee joint angle estimation",
+     "url": "https://doi.org/10.1016/j.bspc.2026.110933",
+     "status": "blocked",
+     "http": 200,
+     "bytes": 2713,
+     "error": "空壳或反爬挑战页"
+    }
+   ],
+   "verification": "旧网页抓取阻塞保留在history；当前已核验论文原件，勿继续当作全文缺口。"
+  },
+  {
+   "title": "sEMG-based Regression of Hand Kinematics with Temporal Convolutional Networks on a Low-Power Edge Microcontroller",
+   "url": "https://ieeexplore.ieee.org/document/9524188",
+   "status": "fulltext_available",
+   "path": "01_参考论文/决策模型线_JEV/D5_轻量化非Transformer路线/sEMG-based Regression of Hand Kinematics with Temporal Convo.pdf",
+   "history": [
+    {
+     "title": "sEMG-based Regression of Hand Kinematics with Temporal Convolutional Networks on a Low-Power Edge Microcontroller",
+     "url": "https://ieeexplore.ieee.org/document/9524188",
+     "status": "blocked",
+     "http": 202,
+     "bytes": 0,
+     "error": "空壳或反爬挑战页"
+    }
+   ],
+   "verification": "旧网页抓取阻塞保留在history；当前已核验论文原件，勿继续当作全文缺口。"
+  },
+  {
+   "title": "SE-TCN network for continuous estimation of upper limb joint angles",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36899579/",
+   "status": "fulltext_available",
+   "path": "01_参考论文/决策模型线_JEV/D5_轻量化非Transformer路线/SE-TCN network for continuous estimation of upper limb joint.pdf",
+   "history": [
+    {
+     "title": "SE-TCN network for continuous estimation of upper limb joint angles",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36899579/",
+     "status": "blocked",
+     "http": 203,
+     "bytes": 5590,
+     "error": "空壳或反爬挑战页"
+    }
+   ],
+   "verification": "旧网页抓取阻塞保留在history；当前已核验论文原件，勿继续当作全文缺口。"
+  },
+  {
+   "title": "Continuous Motion Prediction for Upper Limb Rehabilitation Robotics Based on Surface Electromyography: A Spatio-Temporal Attention and Lightweight TCN Approach",
+   "url": "https://doi.org/10.1109/icma65362.2025.11120720",
+   "status": "superseded_by_fulltext",
+   "history": [
+    {
+     "title": "Continuous Motion Prediction for Upper Limb Rehabilitation Robotics Based on Surface Electromyography: A Spatio-Temporal Attention and Lightweight TCN Approach",
+     "url": "https://doi.org/10.5281/zenodo.17850061",
+     "status": "blocked",
+     "http": 403,
+     "bytes": 763,
+     "error": "空壳或反爬挑战页"
+    }
+   ],
+   "verification": "作者所在GUOLab官网公开PDF，6页；已核验题名、Weiyu Chen作者及IEEE DOI 11120720；不是此前错配Zenodo记录。"
+  },
+  {
+   "title": "Markerless On-Device Detection of Compensatory Movement Patterns in Upper-Limb Rehabilitation Exercises from Monocular RGB Video",
+   "url": "https://doi.org/10.3390/s26165054",
+   "status": "superseded_by_fulltext",
+   "history": [
+    {
+     "title": "Markerless On-Device Detection of Compensatory Movement Patterns in Upper-Limb Rehabilitation Exercises from Monocular RGB Video",
+     "url": "https://doi.org/10.3390/s26165054",
+     "status": "blocked",
+     "http": 403,
+     "bytes": 400,
+     "error": "空壳或反爬挑战页"
+    }
+   ],
+   "verification": "2026-10-02T15:04:22：全文已在库，保留原件路径，不重复下载。"
+  }
+ ],
+ "checked_at": "2026-10-02T15:53:46",
+ "disk_snapshots": 13,
+ "count_scope": "ok 为当前可对应候选条目的磁盘网页快照；superseded_by_fulltext保留旧阻塞历史；接口UI复用契约不重复计数。"
+}

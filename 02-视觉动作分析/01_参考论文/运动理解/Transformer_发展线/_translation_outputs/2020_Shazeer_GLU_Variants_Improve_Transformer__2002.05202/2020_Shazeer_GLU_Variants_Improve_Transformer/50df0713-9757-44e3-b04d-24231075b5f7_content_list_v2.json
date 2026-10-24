@@ -1,0 +1,1182 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "GLU Variants Improve Transformer"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                253,
+                109,
+                754,
+                135
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Noam Shazeer Google noam@google.com"
+                    }
+                ]
+            },
+            "bbox": [
+                419,
+                180,
+                578,
+                233
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "February 14, 2020"
+                    }
+                ]
+            },
+            "bbox": [
+                421,
+                244,
+                576,
+                262
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Abstract"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                462,
+                292,
+                535,
+                306
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Gated Linear Units [Dauphin et al., 2016] consist of the component-wise product of two linear projections, one of which is first passed through a sigmoid function. Variations on GLU are possible, using diferent nonlinear (or even linear) functions in place of sigmoid. We test these variants in the feedforward sublayers of the Transformer [Vaswani et al., 2017] sequence-to-sequence model, and find that some of them yield quality improvements over the typically-used ReLU or GELU activations."
+                    }
+                ]
+            },
+            "bbox": [
+                151,
+                311,
+                846,
+                383
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1 Introduction"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                114,
+                405,
+                303,
+                422
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Transformer [Vaswani et al., 2017] sequence-to-sequence model alternates between multi-head attention, and what it calls \"position-wise feed-forward networks\" (FFN). The FFN takes a vector x (the hidden representation at a particular position in the sequence) and passes it through two learned linear transformations, (represented by the matrices "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "W _ { 1 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "W _ { 2 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and bias vectors "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "b _ { 1 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "b _ { 2 } )"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". A rectified-linear (ReLU) [Glorot et al., 2011] activation function applied between the two linear transformations."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                436,
+                887,
+                513
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\operatorname{FFN} (x, W _ {1}, W _ {2}, b _ {1}, b _ {2}) = \\max (0, x W _ {1} + b _ {1}) W _ {2} + b _ {2}\\tag{1}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/d00ec2b9ceb9e87734032fd4ebc621b5cf7cd5c396fcd7368cc2bf9a314b00b0.jpg"
+                }
+            },
+            "bbox": [
+                313,
+                526,
+                683,
+                542
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Following the T5 codebase [Rafel et al., 2019] <sup>1</sup>, we use a version with no bias:"
+                    }
+                ]
+            },
+            "bbox": [
+                137,
+                549,
+                710,
+                565
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\mathrm{FFN} _ {\\mathrm{ReLU}} (x, W _ {1}, W _ {2}) = \\max (x W _ {1}, 0) W _ {2}\\tag{2}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/8413b22a9f90c73050bea125480055e3e0325eddb0bdecc7cc1093b9c357497b.jpg"
+                }
+            },
+            "bbox": [
+                352,
+                579,
+                643,
+                595
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Subsequent work has proposed replacing the ReLU with other nonlinear activation functions such as Gaussian Error Linear Units, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mathrm { { G E L U } } ( x ) = x \\Phi ( x )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "[Hendrycks and Gimpel, 2016], and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mathrm { S w i s h } _ { \\beta } ( x ) = x \\sigma ( \\beta x )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "[Ramachandran et al., 2017]."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                602,
+                883,
+                648
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{c} \\mathrm{FFN} _ {\\mathrm{GELU}} (x, W _ {1}, W _ {2}) = \\mathrm{GELU} (x W _ {1}) W _ {2} \\\\ \\mathrm{FFN} _ {\\mathrm{Swish}} (x, W _ {1}, W _ {2}) = \\mathrm{Swish} _ {1} (x W _ {1}) W _ {2} \\end{array}\\tag{3}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/0139f7f8353af027acbf443ae66e2b711d93ab4485d6fcabb49734a27f31558b.jpg"
+                }
+            },
+            "bbox": [
+                349,
+                671,
+                645,
+                707
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2 Gated Linear Units (GLU) and Variants"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                724,
+                625,
+                744
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "[Dauphin et al., 2016] introduced Gated Linear Units (GLU), a neural network layer defined as the componentwise product of two linear transformations of the input, one of which is sigmoid-activated. They also suggest omitting the activation, which they call a \"bilinear\" layer and attribute to [Mnih and Hinton, 2007]."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                756,
+                887,
+                804
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{c} \\operatorname{GLU} (x, W, V, b, c) = \\sigma (x W + b) \\otimes (x V + c) \\\\ \\operatorname{Bilinear} (x, W, V, b, c) = (x W + b) \\otimes (x V + c) \\end{array}\\tag{4}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/49d55bab2903e5779afc3f2103db1e871f402bbe83bc74239a1448c854cb52a5.jpg"
+                }
+            },
+            "bbox": [
+                331,
+                825,
+                663,
+                862
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We can also define GLU variants using other activation functions:"
+                    }
+                ]
+            },
+            "bbox": [
+                137,
+                872,
+                612,
+                888
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "arXiv:2002.05202v1 [cs.LG] 12 Feb 2020"
+                    }
+                ]
+            },
+            "bbox": [
+                22,
+                238,
+                58,
+                679
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "<sup>1</sup>Also in the interest of ML fairness."
+                    }
+                ]
+            },
+            "bbox": [
+                130,
+                895,
+                354,
+                909
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "1"
+                    }
+                ]
+            },
+            "bbox": [
+                493,
+                950,
+                504,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{c} \\operatorname{ReGLU} (x, W, V, b, c) = \\max (0, x W + b) \\otimes (x V + c) \\\\ \\operatorname{GEGLU} (x, W, V, b, c) = \\operatorname{GELU} (x W + b) \\otimes (x V + c) \\\\ \\operatorname{SwiGLU} (x, W, V, b, c, \\beta) = \\operatorname{Swish} _ {\\beta} (x W + b) \\otimes (x V + c) \\end{array}\\tag{5}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/b50872a6ac7b45daba514cf2e79fdb4f4294ec16e15c1fa2794e3903af9a8f90.jpg"
+                }
+            },
+            "bbox": [
+                300,
+                114,
+                694,
+                169
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In this paper, we propose additional variations on the Transformer FFN layer which use GLU or one of its variants in place of the first linear transformation and the activation function. Again, we omit the bias terms."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                180,
+                885,
+                224
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{c} \\mathrm{FFN} _ {\\mathrm{GLU}} (x, W, V, W _ {2}) = (\\sigma (x W) \\otimes x V) W _ {2} \\\\ \\mathrm{FFN} _ {\\mathrm{Bilinear}} (x, W, V, W _ {2}) = (x W \\otimes x V) W _ {2} \\\\ \\mathrm{FFN} _ {\\mathrm{ReGLU}} (x, W, V, W _ {2}) = (\\max (0, x W) \\otimes x V) W _ {2} \\\\ \\mathrm{FFN} _ {\\mathrm{GEGLU}} (x, W, V, W _ {2}) = (\\mathrm{GELU} (x W) \\otimes x V) W _ {2} \\\\ \\mathrm{FFN} _ {\\mathrm{SwiGLU}} (x, W, V, W _ {2}) = (\\mathrm{Swish} _ {1} (x W) \\otimes x V) W _ {2} \\end{array}\\tag{6}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/28f65bf790a62437440c1abf47807f31d68a6d38732e71d132860be020edfa98.jpg"
+                }
+            },
+            "bbox": [
+                313,
+                250,
+                683,
+                343
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All of these layers have three weight matrices, as opposed to two for the original FFN. To keep the number of parameters and the amount of computation constant, we reduce the number of hidden units "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "d _ { f f }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "(the second dimension of W and V and the first dimension of "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "W _ { 2 } )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "by a factor of "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\textstyle { \\frac { 2 } { 3 } }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "when comparing these layers to the original two-matrix version."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                352,
+                885,
+                414
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3 Experiments on Text-to-Text Transfer Transformer (T5)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                435,
+                810,
+                455
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We test the FFN variants we have described on the transfer-learning setup from [Rafel et al., 2019]. An encoder-decoder transformer model [Vaswani et al., 2017] is trained on a denoising objective of predicting missing text segments, and subsequently fine-tuned on various language understanding tasks."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                465,
+                885,
+                513
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1 Model Architecture"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                530,
+                359,
+                547
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We use the same code base, model architecture, and training task as the base model from [Rafel et al., 2019]. The encoder and decoder each consist of 12 layers, with "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "d _ { m o d e l } = 7 6 8"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". For the attention layers, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "h = 1 2"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "d _ { k } = d _ { v } = 6 4"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". The FFN layers have hidden size "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "d _ { f f } = 3 0 7 2"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". As we describe above, for the GLU-variant-based FFN layers, which have thee weight matrices instead of two, we reduce the hidden layer to "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "d _ { f f } = 2 0 4 8"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", so as to maintain the same parameter and operation counts as the base model."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                555,
+                885,
+                633
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/c848c5e69094b2d5466c5130ca7a373cf774519c6d25232f0ad7ae4eb1f43d3d.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 1: Heldout-set log-perplexity for Transformer models on the segment-filling task from [Rafel et al., 2019]. All models are matched for parameters and computation."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Training Steps</td><td>65,536</td><td>524,288</td></tr><tr><td> $FFN_{ReLU(baseline)}$ </td><td>1.997 (0.005)</td><td>1.677</td></tr><tr><td> $FFN_{GELU}$ </td><td>1.983 (0.005)</td><td>1.679</td></tr><tr><td> $FFN_{Swish}$ </td><td>1.994 (0.003)</td><td>1.683</td></tr><tr><td> $FFN_{GLU}$ </td><td>1.982 (0.006)</td><td>1.663</td></tr><tr><td> $FFN_{Bilinear}$ </td><td>1.960 (0.005)</td><td>1.648</td></tr><tr><td> $FFN_{GEGLU}$ </td><td>1.942 (0.004)</td><td>1.633</td></tr><tr><td> $FFN_{SwiGLU}$ </td><td>1.944 (0.010)</td><td>1.636</td></tr><tr><td> $FFN_{ReGLU}$ </td><td>1.953 (0.003)</td><td>1.645</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                323,
+                691,
+                674,
+                832
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                491,
+                950,
+                504,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.2 Pre-Training and Perplexity Results"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                89,
+                519,
+                107
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Identically to [Rafel et al., 2019], we pre-train for 524,288 steps on the span-filling objective on the C4 dataset. Each training batch consists of 128 examples, each of which has an input of 512 tokens and an output of 114 tokens, the output containing multiple spans of tokens which were deleted from the input<sup>2</sup>. Similarly to [Rafel et al., 2019], we use the Adafactor optimizer [Shazeer and Stern, 2018] and an inversesquare-root learning-rate schedule. We also decay the learning rate linearly for the final 10 percent of the training steps. Our main departure from [Rafel et al., 2019] is that we use no dropout during pre-training. We find this to produce superior results. We compute the log-perplexity on the training objective on a heldout shard of C4, which we believe to be a good indicator of model quality. For each model architecture, we also trained four models for a shorter period (65,536 steps) to measure inter-run variability. The results are listed in table 1. The GEGLU and SwiGLU variants produce the best perplexities."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                114,
+                888,
+                267
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.3 Fine-Tuning"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                284,
+                287,
+                301
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We then fine-tune each fully-trained model once on an examples-proportional mixture of the Stanford Question-Answering Dataset (SQuAD) [Rajpurkar et al., 2016] and all the language understanding tasks in the GLUE [Wang et al., 2018] and SuperGlue [Wang et al., 2019] benchmarks.<sup>3</sup> Fine-tuning consists of 131072 steps with a learning rate of 10<sup>−3</sup>. As in training, the input sequences for each step have a combined length of approximately 65,536 tokens. Following [Rafel et al., 2019], we use a dropout rate of 0.1 on the layer outputs, feed-forward hidden-layers and attention weights. The embedding matrices are fixed during fine-tuning."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                309,
+                887,
+                414
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Tables 2, 3 and 4 show results on the development sets. For each task, we report the best score of any of the checkpoints recorded during fine-tuning. While the results are noisy, the new GLU-variants perform best on most of the tasks. For comparison, at the bottom of each of the tables we list the reuslts from [Rafel et al., 2019]. The model is identical to our "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mathrm { F F N } _ { \\mathrm { R e L U } }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "model. Their results are notably worse, which we believe was caused by their use of dropout during pre-training. Also listed are the inter-run standard deviations measured by [Rafel et al., 2019]."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                414,
+                887,
+                506
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/ab11de68fc80a61e7ebf77727bc9da5c2c9f695d245c0a2199006cd001ee185f.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 2: GLUE Language-Understanding Benchmark [Wang et al., 2018] (dev)."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td></td><td>Score Average</td><td>CoLA MCC</td><td>SST-2 Acc</td><td>MRPC F1</td><td>MRPC Acc</td><td>STSB PCC</td><td>STSB SCC</td><td>QQP F1</td><td>QQP Acc</td><td>MNLIIm Acc</td><td>MNLIImm Acc</td><td>QNLI Acc</td><td>RTE Acc</td></tr><tr><td> $FFN_{ReLU}$ </td><td>83.80</td><td>51.32</td><td>94.04</td><td>93.08</td><td>90.20</td><td>89.64</td><td>89.42</td><td>89.01</td><td>91.75</td><td>85.83</td><td>86.42</td><td>92.81</td><td>80.14</td></tr><tr><td> $FFN_{GELU}$ </td><td>83.86</td><td>53.48</td><td>94.04</td><td>92.81</td><td>90.20</td><td>89.69</td><td>89.49</td><td>88.63</td><td>91.62</td><td>85.89</td><td>86.13</td><td>92.39</td><td>80.51</td></tr><tr><td> $FFN_{Swish}$ </td><td>83.60</td><td>49.79</td><td>93.69</td><td>92.31</td><td>89.46</td><td>89.20</td><td>88.98</td><td>88.84</td><td>91.67</td><td>85.22</td><td>85.02</td><td>92.33</td><td>81.23</td></tr><tr><td> $FFN_{GLU}$ </td><td>84.20</td><td>49.16</td><td>94.27</td><td>92.39</td><td>89.46</td><td>89.46</td><td>89.35</td><td>88.79</td><td>91.62</td><td>86.36</td><td>86.18</td><td>92.92</td><td>84.12</td></tr><tr><td> $FFN_{GEGLU}$ </td><td>84.12</td><td>53.65</td><td>93.92</td><td>92.68</td><td>89.71</td><td>90.26</td><td>90.13</td><td>89.11</td><td>91.85</td><td>86.15</td><td>86.17</td><td>92.81</td><td>79.42</td></tr><tr><td> $FFN_{Bilinear}$ </td><td>83.79</td><td>51.02</td><td>94.38</td><td>92.28</td><td>89.46</td><td>90.06</td><td>89.84</td><td>88.95</td><td>91.69</td><td>86.90</td><td>87.08</td><td>92.92</td><td>81.95</td></tr><tr><td> $FFN_{SwiGLU}$ </td><td>84.36</td><td>51.59</td><td>93.92</td><td>92.23</td><td>88.97</td><td>90.32</td><td>90.13</td><td>89.14</td><td>91.87</td><td>86.45</td><td>86.47</td><td>92.93</td><td>83.39</td></tr><tr><td> $FFN_{ReGLU}$ </td><td>84.67</td><td>56.16</td><td>94.38</td><td>92.06</td><td>89.22</td><td>89.97</td><td>89.85</td><td>88.86</td><td>91.72</td><td>86.20</td><td>86.40</td><td>92.68</td><td>81.59</td></tr><tr><td>[Raffel et al., 2019]</td><td>83.28</td><td>53.84</td><td>92.68</td><td>92.07</td><td>88.92</td><td>88.02</td><td>87.94</td><td>88.67</td><td>91.56</td><td>84.24</td><td>84.57</td><td>90.48</td><td>76.28</td></tr><tr><td>ibid. stddev.</td><td>0.235</td><td>1.111</td><td>0.569</td><td>0.729</td><td>1.019</td><td>0.374</td><td>0.418</td><td>0.108</td><td>0.070</td><td>0.291</td><td>0.231</td><td>0.361</td><td>1.393</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                117,
+                549,
+                877,
+                688
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4 Conclusions"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                739,
+                295,
+                757
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We have extended the GLU family of layers and proposed their use in Transformer. In a transfer-learning setup, the new variants seem to produce better perplexities for the de-noising objective used in pre-training, as well as better results on many downstream language-understanding tasks. These architectures are simple to implement, and have no apparent computational drawbacks. We ofer no explanation as to why these architectures seem to work; we attribute their success, as all else, to divine benevolence."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                768,
+                887,
+                847
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "<sup>2</sup>Each training step took approximately 0.15 seconds on a 32-core TPUv2 cluster."
+                    }
+                ]
+            },
+            "bbox": [
+                127,
+                854,
+                635,
+                867
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "<sup>3</sup>This departs from [Rafel et al., 2019], who fine-tuned separately on the diferent tasks. We chose one fine-tuning run for simplicity."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                866,
+                885,
+                892
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                491,
+                950,
+                504,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/7e00c9ac1b6fe6f31a7f55fcc19b55d9dafe33abb89378e9cf9ffc5d0386aee8.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 3: SuperGLUE Language-Understanding Benchmark [Wang et al., 2019] (dev)."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td></td><td>Score Average</td><td>BoolQ Acc</td><td>CB F1</td><td>CB Acc</td><td>CoPA Acc</td><td>MultiRC F1</td><td>MultiRC EM</td><td>ReCoRD F1</td><td>ReCoRD EM</td><td>RTE Acc</td><td>WiC Acc</td><td>WSC Acc</td></tr><tr><td> $FFN_{ReLU}$ </td><td>72.76</td><td>80.15</td><td>83.37</td><td>89.29</td><td>70.00</td><td>76.93</td><td>39.14</td><td>73.73</td><td>72.91</td><td>83.39</td><td>67.71</td><td>77.88</td></tr><tr><td> $FFN_{GELU}$ </td><td>72.98</td><td>80.64</td><td>86.24</td><td>91.07</td><td>74.00</td><td>75.93</td><td>38.61</td><td>72.96</td><td>72.03</td><td>81.59</td><td>68.34</td><td>75.96</td></tr><tr><td> $FFN_{Swish}$ </td><td>72.40</td><td>80.43</td><td>77.75</td><td>83.93</td><td>67.00</td><td>76.34</td><td>39.14</td><td>73.34</td><td>72.36</td><td>81.95</td><td>68.18</td><td>81.73</td></tr><tr><td> $FFN_{GLU}$ </td><td>73.95</td><td>80.95</td><td>77.26</td><td>83.93</td><td>73.00</td><td>76.07</td><td>39.03</td><td>74.22</td><td>73.50</td><td>84.12</td><td>67.71</td><td>87.50</td></tr><tr><td> $FFN_{GEGLU}$ </td><td>73.96</td><td>81.19</td><td>82.09</td><td>87.50</td><td>72.00</td><td>77.43</td><td>41.03</td><td>75.28</td><td>74.60</td><td>83.39</td><td>67.08</td><td>83.65</td></tr><tr><td> $FFN_{Bilinear}$ </td><td>73.81</td><td>81.53</td><td>82.49</td><td>89.29</td><td>76.00</td><td>76.04</td><td>40.92</td><td>74.97</td><td>74.10</td><td>82.67</td><td>69.28</td><td>78.85</td></tr><tr><td> $FFN_{SwiGLU}$ </td><td>74.56</td><td>81.19</td><td>82.39</td><td>89.29</td><td>73.00</td><td>75.56</td><td>38.72</td><td>75.35</td><td>74.55</td><td>85.20</td><td>67.24</td><td>86.54</td></tr><tr><td> $FFN_{ReGLU}$ </td><td>73.66</td><td>80.89</td><td>86.37</td><td>91.07</td><td>67.00</td><td>75.32</td><td>40.50</td><td>75.07</td><td>74.18</td><td>84.48</td><td>67.40</td><td>79.81</td></tr><tr><td>[Raffel et al., 2019]</td><td>71.36</td><td>76.62</td><td>91.22</td><td>91.96</td><td>66.20</td><td>66.13</td><td>25.78</td><td>69.05</td><td>68.16</td><td>75.34</td><td>68.04</td><td>78.56</td></tr><tr><td>ibid. stddev.</td><td>0.416</td><td>0.365</td><td>3.237</td><td>2.560</td><td>2.741</td><td>0.716</td><td>1.011</td><td>0.370</td><td>0.379</td><td>1.228</td><td>0.850</td><td>2.029</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                120,
+                119,
+                875,
+                263
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/247584f4ed5eb433929909ecf081062563eaa31d528ec58e9df639df50df1901.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 4: SQuAD [Rajpurkar et al., 2016] v1.1 (dev)."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td></td><td>EM</td><td>F1</td></tr><tr><td> $FFN_{ReLU}$ </td><td>83.18</td><td>90.87</td></tr><tr><td> $FFN_{GELU}$ </td><td>83.09</td><td>90.79</td></tr><tr><td> $FFN_{Swish}$ </td><td>83.25</td><td>90.76</td></tr><tr><td> $FFN_{GLU}$ </td><td>82.88</td><td>90.69</td></tr><tr><td> $FFN_{GEGLU}$ </td><td>83.55</td><td>91.12</td></tr><tr><td> $FFN_{Bilinear}$ </td><td>83.82</td><td>91.06</td></tr><tr><td> $FFN_{SwiGLU}$ </td><td>83.42</td><td>91.03</td></tr><tr><td> $FFN_{ReLU}$ </td><td>83.53</td><td>91.18</td></tr><tr><td>[Raffel et al., 2019]</td><td>80.88</td><td>88.81</td></tr><tr><td>ibid. Standard Deviation</td><td>0.343</td><td>0.226</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                375,
+                319,
+                622,
+                450
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "References"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                484,
+                243,
+                503
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Yann N. Dauphin, Angela Fan, Michael Auli, and David Grangier. Language modeling with gated convolutional networks. CoRR, abs/1612.08083, 2016. URL http://arxiv.org/abs/1612.08083."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                516,
+                885,
+                547
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Xavier Glorot, Antoine Bordes, and Yoshua Bengio. Deep sparse rectifier neural networks. In Proceedings of the fourteenth international conference on artificial intelligence and statistics, pages 315–323, 2011."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                556,
+                883,
+                588
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Dan Hendrycks and Kevin Gimpel. Bridging nonlinearities and stochastic regularizers with gaussian error linear units. CoRR, abs/1606.08415, 2016. URL http://arxiv.org/abs/1606.08415."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                597,
+                883,
+                628
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Andriy Mnih and Geofrey Hinton. Three new graphical models for statistical language modelling. In Proceedings of the 24th international conference on Machine learning, pages 641–648, 2007."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                637,
+                883,
+                669
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Colin Rafel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter Liu. Exploring the limits of transfer learning with a unified text-to-text transformer. arXiv e-prints, 2019."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                676,
+                885,
+                723
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. Squad: 100,000+ questions for machine comprehension of text. arXiv preprint arXiv:1606.05250, 2016."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                732,
+                883,
+                763
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Prajit Ramachandran, Barret Zoph, and Quoc V Le. Searching for activation functions. arXiv preprint arXiv:1710.05941, 2017."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                772,
+                885,
+                804
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Noam Shazeer and Mitchell Stern. Adafactor: Adaptive learning rates with sublinear memory cost. arXiv preprint arXiv:1804.04235, 2018."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                813,
+                885,
+                844
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosukhin. Attention is all you need. In NIPS, 2017."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                853,
+                885,
+                883
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                493,
+                950,
+                504,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Alex Wang, Amapreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R. Bowman. GLUE: A multi-task benchmark and analysis platform for natural language understanding. arXiv preprint arXiv:1804.07461, 2018."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                90,
+                885,
+                136
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Alex Wang, Yada Pruksachatkun, Nikita Nangia, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R. Bowman. Superglue: A stickier benchmark for general-purpose language understanding systems. arXiv preprint arXiv:1905.00537, 2019."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                146,
+                885,
+                191
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                493,
+                950,
+                504,
+                963
+            ]
+        }
+    ]
+]

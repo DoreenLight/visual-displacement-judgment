@@ -1,0 +1,5046 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "MaskGIT: Masked Generative Image Transformer"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                227,
+                112,
+                743,
+                133
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Huiwen Chang Han Zhang Lu Jiang Ce Liu<sup>˚</sup> William T. Freeman Google Research"
+                    }
+                ]
+            },
+            "bbox": [
+                194,
+                162,
+                774,
+                199
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/c8569890f4b21333d5e94436d4c8a2f2ba84ce74a56f1b12a9bde1ea974d5381.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1. Example generation by MaskGIT on image synthesis and manipulation tasks. We show that MaskGIT is a flexible model that can generate high-quality samples on (a) class-conditional synthesis, (b) class-conditional image manipulation, e.g. replacing selected objects in the bounding box with ones from the given classes, and (c) image extrapolation. Examples shown here have resolutions 512ˆ512, 512ˆ512, and 512ˆ2560 in the three columns, respectively. Zoom in to see the details."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                81,
+                226,
+                890,
+                388
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Abstract"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                233,
+                467,
+                313,
+                483
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Generative transformers have experienced rapid popularity growth in the computer vision community in synthesizing high-fidelity and high-resolution images. The best generative transformer models sofar, however, still treat an image naively as a sequence oftokens, and decode an image sequentially following the raster scan ordering (i.e. lineby-line). We find this strategy neither optimal nor efficient. This paper proposes a novel image synthesis paradigm using a bidirectional transformer decoder, which we term MaskGIT. During training, MaskGIT learns to predict randomly masked tokens by attending to tokens in all directions. At inference time, the model begins with generating all tokens of an image simultaneously, and then refines the image iteratively conditioned on the previous generation. Our experiments demonstrate that MaskGIT significantly outperforms the state-of-the-art transformer model on the ImageNet dataset, and accelerates autoregressive decoding by up to 64x. Besides, we illustrate that MaskGIT can be easily extended to various image editing tasks, such as inpainting, extrapolation, and image manipulation."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                498,
+                470,
+                803
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1. Introduction"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                808,
+                210,
+                824
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Deep image synthesis as a field has seen a lot of progress in recent years. Currently holding state-of-the-art results are Generative Adversarial Networks (GANs), which are capable of synthesizing high-fidelity images at blazing speeds. They suffer from, however, well known issues include training instability and mode collapse, which lead to a lack of sample diversity. Addressing these issues still remains open research problems."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                833,
+                470,
+                878
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                496,
+                469,
+                893,
+                544
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Inspired by the success of Transformer [48] and GPT [5] in NLP, generative transformer models have received growing interests in image synthesis [7, 15, 37]. Generally, these approaches aim at modeling an image like a sequence and leveraging the existing autoregressive models to generate image. Images are generated in two stages; the first stage is to quantize an image to a sequence of discrete tokens (or visual words). In the second stage, an autoregressive model (e.g., transformer) is learned to generate image tokens sequentially based on the previously generated result (i.e. autoregressive decoding). Unlike the subtle min-max optimization used in GANs, these models are learned by maximum likelihood estimation. Because of the design differences, existing works have demonstrated their advantages over GANs in offering stabilized training and improved distribution coverage or diversity."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                547,
+                893,
+                791
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Existing works on generative transformers mostly focus on the first stage, i.e. how to quantize images such that information loss is minimized, and share the same second stage borrowed from NLP. Consequently, even the stateof-the-art generative transformers [15, 35] still treat an image naively as a sequence, where an image is flattened into a 1D sequence of tokens following a raster scan order-"
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                794,
+                893,
+                901
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "arXiv:2202.04200v1 [cs.CV] 8 Feb 2022"
+                    }
+                ]
+            },
+            "bbox": [
+                22,
+                268,
+                57,
+                699
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "<sup>˚</sup> Currently affiliated with Microsoft Azure AI."
+                    }
+                ]
+            },
+            "bbox": [
+                99,
+                887,
+                354,
+                900
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "1"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                924,
+                490,
+                936
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/a51e888134db952c6f78e6ccbcd5de8f754d8c54a19ee37cc0f535408e8a0173.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                120,
+                75,
+                844,
+                339
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "\u0015\u000f\u001e\u0013\u001c\u0017\u001e\u0013 \u0007\u0018 \u0018\u0017\u0017\u001e\u0017 \u0016\u001e\u0015\u0014\u0013\u0019\u001b\u0012 \u0010\u0019\u001a\u000f\u0011\u0006\u0018\f\u0005\u0004\u0003"
+                    }
+                ]
+            },
+            "bbox": [
+                122,
+                248,
+                222,
+                306
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2. Comparison between sequential decoding and MaskGIT’s scheduled parallel decoding. Rows 1 and 3 are the input latent masks at each iteration, and rows 2 and 4 are samples generated by each model at that iteration. Our decoding starts with all unknown codes (marked in lighter gray), and gradually fills up the latent representation with more and more scattered predictions in parallel (marked in darker gray), where the number of predicted tokens increases sharply over iterations. MaskGIT finishes its decoding in 8 iterations compared to the 256 rounds the sequential method takes."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                345,
+                893,
+                416
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ing, i.e. from left to right line-by-line (cf. Figure 2). We find this representation neither optimal nor efficient for images. Unlike text, images are not sequential. Imagine how an artwork is created. A painter starts with a sketch and then progressively refines it by filling or tweaking the details, which is in clear contrast to the line-by-line printing used in previous work [7, 15]. Additionally, treating image as a flat sequence means that the autoregressive sequence length grows quadratically, easily forming an extremely long sequence–longer than any natural language sentence. This poses challenges for not only modeling long-term correlation but also renders the decoding intractable. For example, it takes a considerable 30 seconds to generate a single image on a GPU autoregressively with 32x32 tokens."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                431,
+                470,
+                643
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This paper introduces a new bidirectional transformer for image synthesis called Masked Generative Image Transformer (MaskGIT). During training, MaskGIT is trained on a similar proxy task to the mask prediction in BERT [11]. At inference time, MaskGIT adopts a novel non-autoregressive decoding method to synthesize an image in constant number of steps. Specifically, at each iteration, the model predicts all tokens simultaneously in parallel but only keeps the most confident ones. The remaining tokens are masked out and will be re-predicted in the next iteration. The mask ratio is decreased until all tokens are generated with a few iterations of refinement. As illustrated in Figure 2, MaskGIT’s decoding is an order-of-magnitude faster than the autoregresive decoding as it only takes 8 steps, instead of 256 steps, to generate an image and the predictions within each step are parallelizable. Moreover, instead of conditioning only on previous tokens in the order of raster scan, bidirectional self-attention allows the model to generate new tokens from generated tokens in all directions. We find that the mask scheduling (i.e. fraction of the image masked each iteration) significantly affects generation quality. We propose to use the cosine schedule and substantiate its efficacy in the ablation study."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                643,
+                472,
+                902
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                496,
+                431,
+                893,
+                521
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "On the ImageNet benchmark, we empirically demonstrate that MaskGIT is both significantly faster (by up to 64x) and capable of generating higher quality samples than the state-of-the-art autoregressive transformer, i.e. VQ-GAN, on class-conditional generation with 256ˆ256 and 512ˆ512 resolution. Even compared with the leading GAN model, i.e. BigGAN, and diffusion model, i.e. ADM [12], MaskGIT offers comparable sample quality while yielding more favourable diversity. Notably, our model establishes new state-of-the-arts on classification accuracy score (CAS) [36] and on FID [23] for synthesizing 512ˆ512 images. To our knowledge, this paper provides the first evidence demonstrating the efficacy of the masked modeling for image generation on the common ImageNet benchmark."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                522,
+                893,
+                734
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Furthermore, MaskGIT’s multidirectional nature makes it readily extendable to image manipulation tasks that are otherwise difficult for autoregressive models. Fig. 1 shows a new application of class-conditional image editing in which MaskGIT re-generates content inside the bounding box based on the given class while keeping the context (outside of the box) unchanged. This task, which is either infeasible for autoregressive model or difficult for GAN models, is trivial for our model. Quantitatively, we demonstrate this flexibility by applying MaskGIT to image inpainting, and image extrapolation in arbitrary directions. Even though our model is not designed for such tasks, it obtains comparable performance to the dedicated models on each task."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                734,
+                895,
+                902
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                478,
+                924,
+                491,
+                936
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                75,
+                90,
+                470,
+                122
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2. Related Work"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                76,
+                133,
+                220,
+                150
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.1. Image Synthesis"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                76,
+                159,
+                238,
+                175
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Deep generative models [12, 17, 29, 34, 41, 45, 46, 53] have achieved lots of successes in image synthesis tasks. GAN based methods demonstrate amazing capability in yielding high-fidelity samples [4, 17, 27, 44, 53]. In contrast, likelihood-based methods, such as Variational Autoencoders (VAEs) [29, 45], Diffusion Models [12, 24, 41] and Autoregressive Models [34, 46], offer distribution coverage and hence can generate more diverse samples [41, 45, 46]."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                181,
+                470,
+                318
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "However, maximizing likelihood directly in pixel space can be challenging. So instead, VQVAE [37, 47] proposes to generate images in latent space in two stages. In the first stage, which is known as tokenization, it tries to compress images into discrete latent space, and primarily consists of three components:"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                318,
+                470,
+                407
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• an encoder E that learns to tokenize images "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x \\in"
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mathbb { R } ^ { H \\times W \\times 3 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "into latent embedding "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "E ( x )"
+                    }
+                ]
+            },
+            "bbox": [
+                94,
+                409,
+                468,
+                438
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• a codebook "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mathbf { e } _ { k } \\in \\mathbb { R } ^ { D } , k \\in { 1 , 2 , \\cdots , K }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "which serves for a nearest neighbor look up used to quantize the embedding into visual tokens, and"
+                    }
+                ]
+            },
+            "bbox": [
+                94,
+                439,
+                470,
+                484
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• a decoder G which predicts the reconstructed image xˆ from the visual tokens e."
+                    }
+                ]
+            },
+            "bbox": [
+                94,
+                484,
+                470,
+                516
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the second stage, it first predicts the latent priors of the visual tokens using deep autoregressive models, and then uses the decoder from the first stage to map the token sequences into image pixels. Several approaches have followed this paradigm due to the efficacy of the two-stage approach. DALL-E [35] uses Transformers [48] to improve token prediction in the second stage. VQGAN [15] adds adversarial loss and perceptual loss [26,54] in the first stage to improve the image fidelity. A contemporary work to ours, VIM [51], proposes to use a VIT backbone [13] to further improve the tokenization stage. Since these approaches still employ an auto-regressive model, the decoding time in the second stage scales with the token sequence length."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                521,
+                470,
+                719
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.2. Masked Modeling with Bi-directional Transformers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                76,
+                726,
+                468,
+                757
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The transformer architecture [48], was first proposed in NLP, and has recently extended its reach to computer vision [6, 13]. Transformer consists of multiple self-attention layers, allowing interactions between all pairs of elements in the sequence to be captured. In particular, BERT [11] introduces the masked language modeling (MLM) task for language representation learning. The bi-directional selfattention used in BERT [11] allows the masked tokens in MLM to be predicted utilizing context from both directions."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                763,
+                470,
+                902
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/da1ed48215fcba314c455021092a4b8dc4fb9b48462f634b2d0c7dc38c080261.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 3. Pipeline Overview. MaskGIT follows a two-stage design, with 1) a tokenizer that tokenizes images into visual tokens, and 2) a bidirectional tranformer model that performs MVTM, i.e. learns to predict visual tokens masked at random."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                500,
+                87,
+                890,
+                215
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In vision, the masked modeling in BERT [11] has been extended to image representation learning [2, 21] with images quantized to discrete tokens. However, few works have successfully applied the same masked modeling to image generation [56] because of the difficulty in performing autoregressive decoding using bi-directional attentions. To our knowledge, this paper provides the first evidence demonstrating the efficacy of masked modeling for image generation on the common ImageNet benchmark. Our work is inspired by bi-directional machine translation [16, 19, 20] in NLP, and our novelty lies in the proposed new masking strategy and decoding algorithm which, as substantiated by our experiments, are essential for image generation."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                299,
+                893,
+                498
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3. Method"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                500,
+                508,
+                591,
+                526
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our goal is to design a new image synthesis paradigm utilizing parallel decoding and bi-directional generation."
+                    }
+                ]
+            },
+            "bbox": [
+                498,
+                534,
+                893,
+                565
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We follow the two-stage recipe discussed in 2.1, as illustrated in Figure 3. Since our goal is to improve the second stage, we employ the same setup for the first stage as in the VQGAN model [15], and leave potential improvements to the tokenization step to future work."
+                    }
+                ]
+            },
+            "bbox": [
+                498,
+                565,
+                893,
+                641
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For the second stage, we propose to learn a bidirectional transformer by Masked Visual Token Modeling (MVTM). We introduce MVTM training in 3.1 and the sampling procedure in 3.2. We then discuss the key technique of masking design in 3.3."
+                    }
+                ]
+            },
+            "bbox": [
+                498,
+                641,
+                893,
+                717
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1. MVTM in Training"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                500,
+                724,
+                687,
+                742
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Let "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mathbf { Y } = [ y _ { i } ] _ { i = 1 } ^ { N }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "denote the latent tokens obtained by inputting the image to the VQ-encoder, where N is the length of the reshaped token matrix, and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mathbf { M } = [ m _ { i } ] _ { i = { \\frac { N } { \\alpha } } } ^ { N }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "the corresponding binary mask. During training, we sample a subset of tokens and replace them with a special [MASK] token. The token "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "y _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is replaced with [MASK] if "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "m _ { i } ~ = ~ 1"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", otherwise, when "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "m _ { i } = 0 , y _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "will be left intact."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                750,
+                893,
+                854
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The sampling procedure is parameterized by a mask scheduling function "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\gamma ( r ) \\in ( 0 , 1 ]"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", and executes as follows: we first sample a ratio from 0 to 1, then uniformly select "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\lceil \\gamma ( r ) \\cdot N \\rceil"
+                    },
+                    {
+                        "type": "text",
+                        "content": "tokens in Y to place masks, where N is the length. The mask scheduling significantly affects the quality of image generation and will be discussed in 3.3."
+                    }
+                ]
+            },
+            "bbox": [
+                498,
+                854,
+                893,
+                901
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                478,
+                924,
+                491,
+                936
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                76,
+                90,
+                470,
+                136
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Denote "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "Y _ { \\overline { { \\mathbf { M } } } }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "the result after applying mask M to Y. The training objective is to minimize the negative log-likelihood of the masked tokens:"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                137,
+                470,
+                183
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\mathcal {L} _ {\\mathrm{mask}} = - \\underset {\\mathbf {Y} \\in \\mathcal {D}} {\\mathbb {E}} \\bigg [ \\sum_ {\\forall i \\in [ 1, N ], m _ {i} = 1} \\log p (y _ {i} | Y _ {\\overline {{\\mathbf {M}}}}) \\bigg ],\\tag{1}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/4648089d0f957d6c09a47dda11e3489fcb396bafe483b3c05a3cd3f725377937.jpg"
+                }
+            },
+            "bbox": [
+                117,
+                190,
+                426,
+                227
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Concretely, we feed the masked "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "Y _ { \\overline { { \\mathbf { M } } } }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "into a multi-layer bidirectional transformer to predict the probabilities "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P ( y _ { i } | Y _ { \\overline { { \\mathbf { M } } } } )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "for each masked token, where the negative log-likelihood is computed as the cross-entropy between the ground-truth one-hot token and predicted token. Notice the key difference to autoregressive modeling: the conditional dependency in MVTM has two directions, which allows image generation to utilize richer contexts by attending to all tokens in the image."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                238,
+                470,
+                376
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.2. Iterative Decoding"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                76,
+                385,
+                256,
+                402
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In autoregressive decoding, tokens are generated sequentially based on previously generated output. This process is not parallelizable and thus very slow for image because the image token length, e.g. 256 or 1024, is typically much larger than that of language. We introduce a novel decoding method where all tokens in the image are generated simultaneously in parallel. This is feasible due to the bi-directional self-attention of MTVM."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                409,
+                470,
+                530
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In theory, our model is able to infer all tokens and generate the entire image in a single pass. We find this challenging due to inconsistency with the training task. Below, the proposed iterative decoding is introduced. To generate an image at inference time, we start from a blank canvas with all the tokens masked out, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "i . e . \\ : Y _ { \\mathbf { M } } ^ { ( 0 ) }"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". For iteration t, our algorithm runs as follows:"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                531,
+                470,
+                640
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. Predict. Given the masked tokens "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "Y _ { \\mathbf { M } } ^ { ( t ) }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "at the current iteration, our model predicts the probabilities, denoted as "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "p ^ { ( t ) } \\in \\mathbb { R } ^ { N \\times K }"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", for all the masked locations in parallel."
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                646,
+                470,
+                709
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. Sample. At each masked location i, we sample a token "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "y _ { i } ^ { ( t ) }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "based on its prediction probabilities "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "p _ { i } ^ { ( t ) } \\in \\mathbb { R } ^ { K }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "over all possible tokens in the codebook. After a token "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "y _ { i } ^ { ( t ) }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is sampled, its corresponding prediction score is used as a “confidence” score indicating the model’s belief of this prediction. For the unmasked position in "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "Y _ { \\mathbf { M } } ^ { ( t ) }"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", we simply set its confidence score to 1.0."
+                    }
+                ]
+            },
+            "bbox": [
+                86,
+                719,
+                470,
+                832
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3. Mask Schedule. We compute the number of tokens to mask according to the mask scheduling function "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\gamma"
+                    },
+                    {
+                        "type": "text",
+                        "content": "by "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\begin{array} { r } { n = \\lceil \\gamma ( \\frac { t } { T } ) N \\rceil } \\end{array}"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", where N is the input length and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "T"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is the total number of iterations."
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                839,
+                470,
+                900
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "4. Mask. We obtain "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "Y _ { \\mathbf { M } } ^ { ( t + 1 ) }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "by masking n tokens in "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "Y _ { \\mathbf { M } } ^ { ( t ) }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "The mask "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mathbf { M } ^ { ( t + 1 ) }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "for iteration t`1 is calculated from:"
+                    }
+                ]
+            },
+            "bbox": [
+                511,
+                89,
+                890,
+                121
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "m _ {i} ^ {(t + 1)} = \\left\\{ \\begin{array}{l l} 1, & \\text {if c_{i} <  sorted_{j} (c_{j})[n].} \\\\ 0, & \\text {otherwise.} \\end{array} \\right.,",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/9f25a37405a411e97b512bfc68545902fc38586ff5b313980b2cf5d30d61a83f.jpg"
+                }
+            },
+            "bbox": [
+                576,
+                126,
+                846,
+                161
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "c _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is the confidence score for the i-th token."
+                    }
+                ]
+            },
+            "bbox": [
+                531,
+                167,
+                864,
+                183
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The decoding algorithm synthesizes an image in T steps. At each iteration, the model predicts all tokens simultaneously but only keeps the most confident ones. The remaining tokens are masked out and re-predicted in the next iteration. The mask ratio is made decreasing until all tokens are generated within T iterations. In practice, the masking tokens are randomly sampled with temperature annealing to encourage more diversity, and we will discuss its effect in 4.4. Figure 2 illustrates an example of our decoding process. It generates an image in "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "T = 8"
+                    },
+                    {
+                        "type": "text",
+                        "content": "iterations, where the unmasked tokens at each iteration are highlighted in the grid, e.g. when t “ 1 we only keep 1 token and mask out the rest."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                196,
+                893,
+                378
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.3. Masking Design"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                500,
+                386,
+                661,
+                404
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We find that the quality of image generation is significantly affected by the masking design. We model the masking procedure by a mask scheduling function "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\gamma ( \\cdot )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "that computes the mask ratio for the given latent tokens. As discussed, the function "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\gamma"
+                    },
+                    {
+                        "type": "text",
+                        "content": "is used in both training and inference. During inference time, it takes the input of "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0 / T , 1 / T , \\cdot \\cdot \\cdot , ( T - 1 ) / T"
+                    },
+                    {
+                        "type": "text",
+                        "content": "indicating the progress in decoding. In training, we randomly sample a ratio r in r0, 1q to simulate the various decoding scenarios."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                409,
+                893,
+                546
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BERT uses a fixed mask ratio of 15% [11], i.e., it always masks 15% of the tokens, which is unsuitable for our task since our decoder needs to generate images from scratch. New masking scheduling is thus needed. Before discussing specific schemes, we first examine the property of the mask scheduling function. First, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\gamma ( r )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "needs to be a continuous function bounded between 0 and 1 for "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "r \\in [ 0 , 1 ]"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". Second, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\gamma ( r )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "should be (monotonically) decreasing with respect to r, and it holds that "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\gamma ( 0 ) \\to 1"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\gamma ( 1 )  0"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". The second property ensures the convergence of our decoding algorithm."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                546,
+                893,
+                712
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This paper considers common functions and makes simple transformations so that they satisfy the properties. Figure 8 visualizes these functions which are divided into three groups:"
+                    }
+                ]
+            },
+            "bbox": [
+                498,
+                712,
+                893,
+                773
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Linear function is a straightforward solution, which masks an equal amount of tokens each time."
+                    }
+                ]
+            },
+            "bbox": [
+                517,
+                776,
+                893,
+                806
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Concave function captures the intuition that image generation follows a less-to-more information flow. In the beginning, most tokens are masked so the model only needs to make a few correct predictions for which the model feel confident. Towards the end, the mask ratio sharply drops, forcing the model to make a lot more correct predictions. The effective information is increasing in this process. The concave family includes cosine, square, cubic, and exponential."
+                    }
+                ]
+            },
+            "bbox": [
+                517,
+                809,
+                893,
+                901
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                478,
+                924,
+                491,
+                935
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                107,
+                90,
+                470,
+                137
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Convex function, conversely, implements a more-toless process. The model needs to finalize a vast majority of tokens within the first couple of iterations. This family includes square root and logarithmic."
+                    }
+                ]
+            },
+            "bbox": [
+                94,
+                140,
+                470,
+                200
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We empirically compare the above mask scheduling functions in 4.4 and find the cosine function works the best in all of our experiments."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                204,
+                470,
+                250
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4. Experiments"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                76,
+                263,
+                210,
+                281
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In this section, we empirically evaluate MaskGIT on image generation in terms of quality, efficiency and flexibility. In 4.2, we evaluate MaskGIT on the standard class-conditional image generation tasks on ImageNet [10] 256ˆ256 and 512ˆ512. In 4.3, we show MaskGIT’s versatility by demonstrating its performance on three image editing tasks, image inpainting, outpainting, and editing. In 4.4, we verify the necessity of our design of mask scheduling. We will release the code and model for reproducible research."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                289,
+                470,
+                441
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.1. Experimental Setup"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                76,
+                450,
+                267,
+                467
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For each dataset, we only train a single autoencoder, decoder, and codebook with 1024 tokens on cropped 256x256 images for all the experiments. The image is always compressed by a fixed factor of 16, i.e. from "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "H \\times W"
+                    },
+                    {
+                        "type": "text",
+                        "content": "to a grid of tokens in the size of "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "h \\times w"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", where "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "h { = } H / 1 6"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "w { = } W / 1 6"
+                    },
+                    {
+                        "type": "text",
+                        "content": "We find that this autoencoder, together with the codebook, can be reused to synthesize 512ˆ512 images."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                474,
+                470,
+                580
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All models in this work have the same configuration: 24 layers, 8 attention heads, 768 embedding dimensions and 3072 hidden dimensions. Our models use learnable positional embedding [48], LayerNorm [1], and truncated normal initialization (stddev=0.02). We employ the following training hyperparameters: label smoothing=0.1, dropout rate=0.1, Adam optimizer [28] with "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\beta _ { 1 } { = } 0 . 9"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\beta _ { 2 } { = } 0 . 9 6"
+                    },
+                    {
+                        "type": "text",
+                        "content": "We use RandomResizeAndCrop for data augmentation. All models are trained on 4x4 TPU devices with a batch size of 256. ImageNet models are trained for 300 epochs while the Places2 model is trained for 200 epochs."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                580,
+                470,
+                747
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.2. Class-conditional Image Synthesis"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                76,
+                756,
+                377,
+                772
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We evaluate the performance of our model on classconditional image synthesis on ImageNet 256ˆ256 and 512ˆ512. Our main results are summarized in Table 1."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                779,
+                470,
+                824
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Quality. On ImageNet 256ˆ256, without any special sampling strategies such as beam-search, top-k or nucleus sampling heuristics [25] or classifier guidance [37], we significantly outperform VQGAN [15] in both Frechet Incep-´ tion Distance (FID) [23] (6.18 vs 15.78) and Inception"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                825,
+                470,
+                901
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1970dab82f4d2b3f432800516b85c6eb189b130dff1bb6124045d17d9eb57d67.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4. Transformer wall-clock runtime comparison between VQGAN [15] and ours. All results are run on a single GPU."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                500,
+                90,
+                893,
+                226
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Score (IS) (182.1 vs 78.3). We also report the results with classifier-based rejection sampling in the appendix B."
+                    }
+                ]
+            },
+            "bbox": [
+                498,
+                287,
+                893,
+                318
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We also train a VQGAN baseline with the same tokenizer and hyperparameters as MaskGIT’s in order to further highlight the difference between bi-directional and unidirectional transformers, and find that on both resolutions, MaskGIT still outperforms our implemented baseline by a significant margin."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                319,
+                893,
+                410
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Furthermore, MaskGIT improves BigGAN’s FIDs on both resolutions, achieving a new state-of-the-art on 512ˆ512 with an FID of 7.32."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                411,
+                893,
+                457
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Speed. We evaluate model speed by assessing the number of steps, i.e. forward passes, each model requires to generate a sample. As shown in Table 1, MaskGIT requires the fewest steps among all non-GAN-based models on both resolutions."
+                    }
+                ]
+            },
+            "bbox": [
+                498,
+                458,
+                893,
+                534
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To further substantiate the speed difference between MaskGIT and autoregressive models, we perform a runtime comparison between MaskGIT and VQGAN’s decoding processes. As illustrated in Figure 4, MaskGIT significantly accelerates VQGAN by 30-64x, with a speedup that gets more pronounced as the image resolution (and thus the input token length) grows."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                535,
+                893,
+                642
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Diversity. We consider Classification Accuracy Score (CAS) [36] and Precision/Recall [30] as two metrics for evaluating sample diversity, in addition to sample quality."
+                    }
+                ]
+            },
+            "bbox": [
+                498,
+                642,
+                893,
+                688
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "CAS involves first training a ResNet-50 classifier [22] solely on the samples generated by the candidate model, and then measuring the classifier’s classification accuracy on the ImageNet validation set. The last two columns in Table 1 present the CAS results, where the scores of the classifier trained on real ImageNet training data are included for reference (76.6% and 93.1% for the top-1 and top-5 accuracy). For image resolution 256ˆ256, we follow the common practice of using data augmentation RandAugment [9], and report the scores trained without augmentation in the appendix B. We find that MaskGIT significantly outperforms prior work VQVAE-2 and VQGAN, establishing a new state-of-the-art of CAS on the ImageNet benchmark on both resolutions."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                689,
+                895,
+                901
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                478,
+                924,
+                491,
+                936
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/f5fe86cccf916a5b3770c10a4ffa214bfeaf0255b7fc73b115d3270beeddcd35.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 1. Quantitative comparison with state-of-the-art generative models on ImageNet 256ˆ256 and 512ˆ512. “# steps” refers to the number of neural network runs needed to generate a sample. <sup>˚</sup> denotes the model we train with the same architecture and setup with ours; <sup>˝</sup> denotes values taken from prior publications; <sup>:</sup> estimated based on the pytorch implementation [39]."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Model</td><td>FID ↓</td><td>IS ↑</td><td>Prec ↑</td><td>Rec ↑</td><td># params</td><td># steps</td><td colspan=\"2\">CAS ×100 ↑</td></tr><tr><td>ImageNet 256×256</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Top-1 (76.6)</td><td>Top-5 (93.1)</td></tr><tr><td>DCTransformer [32]°</td><td>36.51</td><td>n/a</td><td>0.36</td><td>0.67</td><td>738M</td><td>&gt;1024</td><td></td><td></td></tr><tr><td>BigGAN-deep [4]</td><td>6.95</td><td>198.2</td><td>0.87</td><td>0.28</td><td>160M</td><td>1</td><td>43.99</td><td>67.89</td></tr><tr><td>Improved DDPM [33]°</td><td>12.26</td><td>n/a</td><td>0.70</td><td>0.62</td><td>280M</td><td>250</td><td></td><td></td></tr><tr><td>ADM [12]°</td><td>10.94</td><td>101.0</td><td>0.69</td><td>0.63</td><td>554M</td><td>250</td><td></td><td></td></tr><tr><td>VQVAE-2 [37]°</td><td>31.11</td><td>~45</td><td>0.36</td><td>0.57</td><td>13.5B†</td><td>5120</td><td>54.83</td><td>77.59</td></tr><tr><td>VQGAN [15]°</td><td>15.78</td><td>78.3</td><td>n/a</td><td>n/a</td><td>1.4B</td><td>256</td><td></td><td></td></tr><tr><td>VQGAN*</td><td>18.65</td><td>80.4</td><td>0.78</td><td>0.26</td><td>227M</td><td>256</td><td>53.10</td><td>76.18</td></tr><tr><td>MaskGIT (Ours)</td><td>6.18</td><td>182.1</td><td>0.80</td><td>0.51</td><td>227M</td><td>8</td><td>63.14</td><td>84.45</td></tr><tr><td colspan=\"9\">ImageNet 512×512</td></tr><tr><td>BigGAN-deep [4]</td><td>8.43</td><td>232.5</td><td>0.88</td><td>0.29</td><td>160M</td><td>1</td><td>44.02</td><td>68.22</td></tr><tr><td>ADM [12]°</td><td>23.24</td><td>58.06</td><td>0.73</td><td>0.60</td><td>559M</td><td>250</td><td></td><td></td></tr><tr><td>VQGAN*</td><td>26.52</td><td>66.8</td><td>0.73</td><td>0.31</td><td>227M</td><td>1024</td><td>51.29</td><td>74.24</td></tr><tr><td>MaskGIT (Ours)</td><td>7.32</td><td>156.0</td><td>0.78</td><td>0.50</td><td>227M</td><td>12</td><td>63.43</td><td>84.79</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                93,
+                89,
+                870,
+                342
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/cf71f9a7dbb4611e5bc9f226f712e669fcbcf200e24097bd9a2a81974deb05f0.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "BigGAN-deep (FID=6.95)"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                94,
+                400,
+                349,
+                847
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/eb581762e533a8b2680c3eb272771e0126e9e7a90b7daa51af1ad3dfc10e4080.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "MaskGIT (FID=6.18)"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                354,
+                400,
+                609,
+                848
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/9dbd8422cd31cf86d384889351442427af18e435e249aa872b6c631a6fc9cf63.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Training Set"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Figure 5. Sample Diversity Comparison between our proposed method MaskGIT and BigGAN-deep [4] on ImageNet 256ˆ256. The class ids of the samples from top to bottom are 009, 980 and 993 respectively. Please refer to appendix for more comparisons."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                614,
+                398,
+                870,
+                847
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                478,
+                930,
+                493,
+                943
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "—— MaskGIT (Our Samples) ——"
+                    }
+                ]
+            },
+            "bbox": [
+                197,
+                593,
+                437,
+                608
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/c4c45df412c6e3716f0619017dec1dae383d548661530b6617e177e3e98242e4.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Input"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Figure 6. Class-conditional image editing. Given input images on the left of each pair, and a target class ”tiger cat”, MaskGIT replaces the bounding boxed regions with tiger cats, suggesting the composition ability of our model."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                86,
+                88,
+                455,
+                305
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/504867f3bb99ca50588c0b086db52f5400fb079ee951e6a620925fbd2fa87642.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 7. Inpainting and outpainting. Given a single input image, MaskGIT synthesizes diverse results for inpainting (first row) and outpainting in different directions (last two rows)."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                86,
+                371,
+                455,
+                589
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Precision/Recall results in Table 1 show that MaskGIT achieves better coverage (Recall) compared to BigGAN, and better sample quality (Precision) compared to likelihood-based models such as VQVAE-2 and diffusion models. Compared to our baseline VQGAN, we improve the diversity as measured by recall while slightly boosting its precision."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                671,
+                470,
+                777
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In contrast to BigGAN’s samples, MaskGIT’s samples are more diverse with more varied lighting, poses, scales and context as shown in Figure 5. More comparisons are available in the appendix B."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                777,
+                470,
+                839
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.3. Image Editing Applications"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                76,
+                845,
+                326,
+                864
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In this subsection, we present direct applications of MaskGIT on three image editing tasks: class-conditional image editing, image inpainting, and outpainting. All three tasks can be almost trivially translated to ones that MaskGIT can handle if we consider the task as just a constraint on the initial binary mask M MaskGIT uses in its iterative decoding, as discussed in 3.2. We show that without modifications to the architecture or any task-specific training, MaskGIT is capable of generating very compelling results on all three applications. Furthermore, MaskGIT obtains comparable performance to dedicated models on both inpainting and outpainiting, even though it is not designed specifically for either task."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                869,
+                470,
+                901
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/53513544e0192a96b9d457998e5d345900b0e1c1db15f8c18cb7be28389c20b1.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 2. Quantitative Comparisons for Inpainting and Outpainting on Places2. <sup>512</sup> evaluated on 512ˆ512 samples while others evaluated on the corresponding 256ˆ256 ones, consistent with their training; <sup>˝</sup> taken from the prior work; <sup>:</sup> evaluated using the released model trained on a subset of Places2; <sup>˛</sup> evaluated using the TFHub model [18]."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Task</td><td>Model</td><td>FID ↓</td><td>IS ↑</td></tr><tr><td rowspan=\"5\">OutpaintingRight 50%</td><td>Boundless [43] $^{\\square}$ </td><td>35.02</td><td>6.15</td></tr><tr><td>In&amp;Out [8] $^{\\square}$ </td><td>23.57</td><td>7.18</td></tr><tr><td>InfinityGAN [31]</td><td>10.60</td><td>5.57</td></tr><tr><td>Boundless [43] TF $^{\\diamond}$ </td><td>7.80</td><td>5.99</td></tr><tr><td>MaskGIT (Ours) $^{512}$ </td><td>6.78</td><td>11.69</td></tr><tr><td rowspan=\"5\">InpaintingCenter 50% × 50%</td><td>DeepFill [52]</td><td>11.51</td><td>22.55</td></tr><tr><td>ICT [49] $^{\\dagger}$ </td><td>13.63</td><td>17.70</td></tr><tr><td>HiFill [50] $^{512}$ </td><td>16.60</td><td>19.93</td></tr><tr><td>CoModGAN [57] $^{512}$ </td><td>7.13</td><td>21.82</td></tr><tr><td>MaskGIT (Ours) $^{512}$ </td><td>7.92</td><td>22.95</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                517,
+                89,
+                870,
+                251
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                498,
+                334,
+                893,
+                500
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Class-conditional Image Editing. We define a new classconditional image editing task to showcase MaskGIT’s flexibility. In this task, the model regenerates content specified inside a bounding box on the given class while preserving the context, i.e. content outside of the box. It is infeasible for autoregressive methods due to the violation to their prediction orders."
+                    }
+                ]
+            },
+            "bbox": [
+                498,
+                500,
+                893,
+                606
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For MaskGIT, however, it is a trivial task if we consider the bounding box region as the input of initial mask to the iterative decoding algorithm. Figure 6 shows a few example results. More can be found in the appendix C."
+                    }
+                ]
+            },
+            "bbox": [
+                498,
+                606,
+                893,
+                667
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In these examples, we observe that MaskGIT can reasonably replace the selected object while preserving, or to some extend even completing, the context in the background. Furthermore, we find that MaskGIT seems to be capable of synthesizing unnatural yet plausible combinations unseen in the ImageNet training set, e.g. a flying cat, cat in a soup bowl, and cat in a flower. This suggests that MaskGIT has incidentally learned useful representations for composition, which may be further exploited in related tasks in future works."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                667,
+                893,
+                819
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Image Inpainting. Image inpainting or image completion is a fundamental image editing task to synthesize contents in missing regions so that the completion looks visually realistic. Traditional patch-based methods [3] work well on texture regions, while deep learning based methods [14, 38, 50, 52, 57] have been demonstrated to synthesize images requiring better semantic coherence. Both approaches have been are extensively studied in computer vision."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                824,
+                893,
+                902
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                478,
+                924,
+                491,
+                936
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                75,
+                90,
+                470,
+                151
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We extend MaskGIT to this problem by tokenizing the masked image and interpreting the inpainting mask as the initial mask in our iterative decoding. We then composite the output image by linearly blending it with the input based on the masking boundary following [8]. To match the training of our baselines, we train MaskGIT on the 512ˆ512 center-cropped images from the Places2 [58] dataset. All hyperparameters are kept the same as the MaskGIT model trained on ImageNet."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                152,
+                470,
+                287
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We compare MaskGIT against common GAN-based baselines, including DeepFillv2 [52] and HiFill [50], on inpainting with a central "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5 0 \\% \\times 5 0 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "mask, which are evaluated on the Places2 validation set. Table 2 summarizes the quantitative comparisons. MaskGIT beats both Deep-Fill and HiFill in FID and IS by a significant margin, while achieving scores close to the state-of-the-art inpainting approach CoModGAN [57]. We show more qualitative comparisons with CoModGAN in the appendix E."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                287,
+                470,
+                424
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Image Outpainting. Outpainting, or image extrapolation, is an image editing task that has received increased attention recently. It is seen as a more challenging task than inpainting due to the fewer constraints from surrounding pixels and thus more uncertainty in the predicted regions. Our adaptation of the problem and the model used in the following evaluation is the same as in inpainting."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                430,
+                470,
+                536
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We compare against common GAN-based baselines, including Boundless [43], In&Out [8], InfinityGAN [31], and CoModGAN [57] on extrapolating rightward with a 50% ratio. We evaluate on the image set generously provided by the authors of InfinityGAN [31] and In&Out [8]."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                536,
+                470,
+                611
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Table 2 summarizes the quantitative comparisons. MaskGIT beats all baselines and achieves state-of-theart FID and IS. As the examples in Figure 7 illustrate, MaskGIT is also capable of synthesizing diverse results given the same input with different seeds. We observe that MaskGIT completes objects and global structures particularly well, and hypothesize that this is thanks to the model learning useful representations with the global attentions in the transformer."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                612,
+                470,
+                748
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.4. Ablation Studies"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                76,
+                756,
+                243,
+                772
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We conduct ablation experiments using the default setting on ImageNet 256ˆ256."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                779,
+                468,
+                810
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Mask scheduling. A key design of MaskGIT is the mask scheduling function used in both training and iterative decoding. We compare the functions discussed in 3.3, visualize them in Figure 8, and summarize the results in Table 3."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                810,
+                470,
+                869
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We observe that concave functions generally obtain better FID and IS than linear, followed by the convex functions. While cosine and square perform similarly relative to other functions, cosine slightly edges out square in all scores, making cosine the default in our model."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                869,
+                470,
+                901
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/dcd3641f8a0b9ef6f26d2d2aead6f6ec0f31eabd08963ce21c5820e4ae32c504.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 3. Ablation results on the mask scheduling functions. We report the best FID, IS, and Negative Log-Likelihood loss for each candidate scheduling function."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td> $\\gamma$ </td><td>T</td><td>FID ↓</td><td>IS ↑</td><td>NLL</td></tr><tr><td>Exponential</td><td>8</td><td>7.89</td><td>156.3</td><td>4.83</td></tr><tr><td>Cubic</td><td>9</td><td>7.26</td><td>165.2</td><td>4.63</td></tr><tr><td>Square</td><td>10</td><td>6.35</td><td>179.9</td><td>4.38</td></tr><tr><td>Cosine</td><td>10</td><td>6.06</td><td>181.5</td><td>4.22</td></tr><tr><td>Linear</td><td>16</td><td>7.51</td><td>113.2</td><td>3.75</td></tr><tr><td>Square Root</td><td>32</td><td>12.33</td><td>99.0</td><td>3.34</td></tr><tr><td>Logarithmic</td><td>60</td><td>29.17</td><td>47.9</td><td>3.08</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                560,
+                90,
+                823,
+                204
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/468e349452a8a43506cc30a082c50380ab78975e367a17a4edcee6dce0433236.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                500,
+                265,
+                700,
+                372
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1aa1292a2afd5af01b6d64634059b8354d483cdfad184199a86e23a9c1cc425d.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 8. Choices of Mask Scheduling Functions "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\gamma \\big ( \\frac { t } { T } \\big )"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", and number of iterations T. On the left, we visualize seven functions we consider for γ. On the right, we show line graphs of models FID scores against the number of decoding iterations T. Among the candidates, we find that cosine achieves the best FID."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                700,
+                266,
+                892,
+                371
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                496,
+                470,
+                893,
+                517
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We hypothesize that concave functions perform favorably because they 1) challenge training with more difficult cases (i.e. encouraging larger mask ratios), and 2) appropriately prioritize the less-to-more prediction throughout the decoding. That said, over-prioritization seems to be costly as well, as shown by the cubic function being worse than square, and exponential being much worse than all other concave functions."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                518,
+                893,
+                641
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Iteration number. We study the effect of the number of iterations (T) on our model by running all candidate masking functions with different Ts. As shown in Figure 8, under the same setting, more iterations are not necessarily better: as T increases, aside from the logarithmic function which performs poorly throughout, all other functions hit a “sweet spot” where the model’s performance peaks before it worsens again. The sweet spot also gets “delayed” as functions get less concave. As shown, among functions that achieve strong FIDs (i.e. cosine, square, and linear), cosine not only has the strongest overall score, but also the earliest sweet spot at a total of 8 to 12 iterations. We hypothesize that such sweet spots exist because too many iterations may discourage the model from keeping less confident predictions, which worsens the token diversity. We think further study on the masking design would be interesting for future work."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                643,
+                895,
+                901
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                478,
+                924,
+                491,
+                936
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "5. Conclusion"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                76,
+                90,
+                196,
+                106
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In this paper, we propose MaskGIT, a novel image synthesis paradigm using a bidirectional transformer decoder. Trained on Masked Visual Token Modeling, MaskGIT learns to generate samples using an iterative decoding process within a constant number of iterations. Experimental results show that MaskGIT significantly outperforms the state-of-the-art transformer model on conditional image generation, and our model is readily extendable to various image manipulation tasks. As MaskGIT achieves competitive performance with state-of-the-art GANs, applying our approach to other synthesis tasks is a promising direction for future work. Please see the appendix F for the limitations and future work."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                114,
+                470,
+                310
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Acknowledgement The authors would like to thank Xiang Kong for inspiring related works and anonymous reviewers for helpful comments."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                311,
+                470,
+                357
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "References"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                369,
+                174,
+                386
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[1] Jimmy Lei Ba, Jamie Ryan Kiros, and Geoffrey E. Hinton. Layer normalization, 2016. 5"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                86,
+                395,
+                467,
+                424
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[2] Hangbo Bao, Li Dong, Songhao Piao, and Furu Wei. BEit: BERT pre-training of image transformers. In International Conference on Learning Representations, 2022. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                429,
+                468,
+                488
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[3] Connelly Barnes, Eli Shechtman, Adam Finkelstein, and Dan B Goldman. PatchMatch: A randomized correspondence algorithm for structural image editing. ACM Transactions on Graphics (Proc. SIGGRAPH), 28(3), Aug. 2009. 7"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                494,
+                468,
+                566
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[4] Andrew Brock, Jeff Donahue, and Karen Simonyan. Large scale gan training for high fidelity natural image synthesis. In ICLR, 2019. 3, 6, 13"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                573,
+                468,
+                617
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[5] Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel Ziegler, Jeffrey Wu, Clemens Winter, Chris Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei. Language models are few-shot learners. In NeurIPS, 2020. 1"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                621,
+                468,
+                786
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[6] Mathilde Caron, Hugo Touvron, Ishan Misra, Herve´ Jegou, Julien Mairal, Piotr Bojanowski, and Armand´ Joulin. Emerging properties in self-supervised vision transformers. In Proceedings ofthe International Conference on Computer Vision (ICCV), 2021. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                791,
+                468,
+                864
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[7] Mark Chen, Alec Radford, Rewon Child, Jeffrey Wu, Heewoo Jun, David Luan, and Ilya Sutskever. Gener-"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                86,
+                869,
+                468,
+                898
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "ative pretraining from pixels. In International Conference on Machine Learning, pages 1691–1703. PMLR, 2020. 1, 2, 13, 19, 20"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                535,
+                92,
+                890,
+                136
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[8] Yen-Chi Cheng, Chieh Hubert Lin, Hsin-Ying Lee, Jian Ren, Sergey Tulyakov, and Ming-Hsuan Yang. In&out: Diverse image outpainting via gan inversion. arXiv preprint arXiv:2104.00675, 2021. 7, 8"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                141,
+                890,
+                200
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[9] Ekin D. Cubuk, Barret Zoph, Jonathon Shlens, and Quoc V. Le. Randaugment: Practical automated data augmentation with a reduced search space, 2019. 5, 13"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                207,
+                892,
+                265
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[10] Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li, and Li Fei-Fei. Imagenet: A large-scale hierarchical image database. In 2009 IEEE conference on computer vision and pattern recognition, pages 248–255. Ieee, 2009. 5"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                503,
+                272,
+                892,
+                345
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[11] Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. BERT: pre-training of deep bidirectional transformers for language understanding. In Jill Burstein, Christy Doran, and Thamar Solorio, editors, NAACL-HLT, 2019. 2, 3, 4"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                501,
+                353,
+                892,
+                426
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[12] Prafulla Dhariwal and Alexander Quinn Nichol. Diffusion models beat GANs on image synthesis. In A. Beygelzimer, Y. Dauphin, P. Liang, and J. Wortman Vaughan, editors, Advances in Neural Information Processing Systems, 2021. 2, 3, 6, 13"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                501,
+                433,
+                890,
+                508
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[13] Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg Heigold, Sylvain Gelly, Jakob Uszkoreit, and Neil Houlsby. An image is worth 16x16 words: Transformers for image recognition at scale. In ICLR, 2021. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                501,
+                513,
+                892,
+                618
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[14] Patrick Esser, Robin Rombach, Andreas Blattmann, and Bjorn Ommer. Imagebart: Bidirectional context¨ with multinomial diffusion for autoregressive image synthesis, 2021. 8"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                501,
+                625,
+                892,
+                684
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[15] Patrick Esser, Robin Rombach, and Bjorn Ommer.¨ Taming transformers for high-resolution image synthesis. In CVPR, 2021. 1, 2, 3, 5, 6, 12, 13, 19, 20"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                503,
+                689,
+                890,
+                734
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[16] Marjan Ghazvininejad, Omer Levy, Yinhan Liu, and Luke Zettlemoyer. Mask-predict: Parallel decoding of conditional masked language models, 2019. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                503,
+                739,
+                892,
+                784
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[17] Ian Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and Yoshua Bengio. Generative adversarial nets. In NeurIPS, 2014. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                503,
+                790,
+                890,
+                849
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[18] Google. Tfhub model of boundless. https : //tfhub.dev/google/boundless/half/1, 2021. 7"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                501,
+                854,
+                890,
+                898
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                478,
+                924,
+                491,
+                935
+            ]
+        }
+    ],
+    [
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[19] Jiatao Gu, James Bradbury, Caiming Xiong, Victor OK Li, and Richard Socher. Non-autoregressive neural machine translation. In ICLR, 2018. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                90,
+                468,
+                136
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[20] Jiatao Gu and Xiang Kong. Fully non-autoregressive neural machine translation: Tricks of the trade, 2020. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                140,
+                468,
+                184
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[21] Kaiming He, Xinlei Chen, Saining Xie, Yanghao Li, Piotr Dollar, and Ross Girshick. Masked autoencoders´ are scalable vision learners, 2021. 3, 12"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                189,
+                468,
+                234
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[22] Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Deep residual learning for image recognition. In CVPR, 2016. 5, 13"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                239,
+                468,
+                282
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[23] Martin Heusel, Hubert Ramsauer, Thomas Unterthiner, Bernhard Nessler, and Sepp Hochreiter. Gans trained by a two time-scale update rule converge to a local nash equilibrium. In NeurIPS, 2017. 2, 5"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                287,
+                468,
+                348
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[24] Jonathan Ho, Chitwan Saharia, William Chan, David J Fleet, Mohammad Norouzi, and Tim Salimans. Cascaded diffusion models for high fidelity image generation. arXiv preprint arXiv:2106.15282, 2021. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                352,
+                468,
+                412
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[25] Ari Holtzman, Jan Buys, Li Du, Maxwell Forbes, and Yejin Choi. The curious case of neural text degeneration, 2019. 5"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                416,
+                468,
+                460
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[26] Justin Johnson, Alexandre Alahi, and Li Fei-Fei. Perceptual losses for real-time style transfer and superresolution. In European conference on computer vision, pages 694–711. Springer, 2016. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                465,
+                468,
+                526
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[27] Tero Karras, Samuli Laine, Miika Aittala, Janne Hellsten, Jaakko Lehtinen, and Timo Aila. Analyzing and improving the image quality of StyleGAN. In CVPR, 2020. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                529,
+                468,
+                589
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[28] Diederik P Kingma and Jimmy Ba. Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980, 2014. 5"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                594,
+                470,
+                638
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[29] Diederik P. Kingma and Max Welling. Auto-encoding variational bayes. In ICLR, 2014. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                643,
+                468,
+                674
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[30] Tuomas Kynka¨anniemi, Tero Karras, Samuli Laine,¨ Jaakko Lehtinen, and Timo Aila. Improved precision and recall metric for assessing generative models. In NeurIPS, 2019. 5, 13"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                676,
+                468,
+                737
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[31] Chieh Hubert Lin, Hsin-Ying Lee, Yen-Chi Cheng, Sergey Tulyakov, and Ming-Hsuan Yang. Infinitygan: Towards infinite-resolution image synthesis. arXiv preprint arXiv:2104.03963, 2021. 7, 8, 22"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                741,
+                468,
+                803
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[32] Charlie Nash, Jacob Menick, Sander Dieleman, and Peter W. Battaglia. Generating images with sparse representations, 2021. 6"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                806,
+                468,
+                851
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[33] Alex Nichol and Prafulla Dhariwal. Improved denoising diffusion probabilistic models. arXiv preprint arXiv:2102.09672, 2021. 6"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                854,
+                468,
+                898
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[34] Niki Parmar, Ashish Vaswani, Jakob Uszkoreit, Lukasz Kaiser, Noam Shazeer, Alexander Ku, and Dustin Tran. Image transformer. In Jennifer G. Dy and Andreas Krause, editors, ICML, 2018. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                501,
+                90,
+                893,
+                151
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[35] Aditya Ramesh, Mikhail Pavlov, Gabriel Goh, Scott Gray, Chelsea Voss, Alec Radford, Mark Chen, and Ilya Sutskever. Zero-shot text-to-image generation. In Marina Meila and Tong Zhang, editors, ICML, 2021. 1, 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                501,
+                155,
+                893,
+                229
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[36] Suman V. Ravuri and Oriol Vinyals. Classification accuracy score for conditional generative models. In Hanna M. Wallach, Hugo Larochelle, Alina Beygelzimer, Florence d’Alche Buc, Emily B. Fox, and Ro-´ man Garnett, editors, NeurIPS, pages 12247–12258, 2019. 2, 5"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                501,
+                234,
+                893,
+                324
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[37] Ali Razavi, Aaron van den Oord, and Oriol Vinyals.¨ Generating diverse high-fidelity images with VQ-VAE-2. In Hanna M. Wallach, Hugo Larochelle, Alina Beygelzimer, Florence d’Alche-Buc, Emily B. Fox,´ and Roman Garnett, editors, NeurIPS, 2019. 1, 3, 5, 6, 12, 14, 15, 16"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                501,
+                329,
+                893,
+                419
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[38] Chitwan Saharia, William Chan, Huiwen Chang, Chris A. Lee, Jonathan Ho, Tim Salimans, David J. Fleet, and Mohammad Norouzi. Palette: Image-toimage diffusion models, 2021. 8"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                501,
+                424,
+                892,
+                484
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[39] Kim Seonghyeon. Implementation of generating diverse high-fidelity images with vq-vae-2 in pytorch. https://github.com/rosinality/ vq-vae-2-pytorch, 2020. 6"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                501,
+                488,
+                892,
+                549
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[40] Karen Simonyan and Andrew Zisserman. Very deep convolutional networks for large-scale image recognition, 2015. 13"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                501,
+                551,
+                893,
+                597
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[41] Yang Song and Stefano Ermon. Generative modeling by estimating gradients of the data distribution. In Hanna M. Wallach, Hugo Larochelle, Alina Beygelzimer, Florence d’Alche-Buc, Emily B. Fox, and Ro-´ man Garnett, editors, NeurIPS, 2019. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                501,
+                601,
+                893,
+                676
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[42] Christian Szegedy, Vincent Vanhoucke, Sergey Ioffe, Jon Shlens, and Zbigniew Wojna. Rethinking the inception architecture for computer vision. In 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 2818–2826, 2016. 13"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                501,
+                681,
+                893,
+                757
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[43] Piotr Teterwak, Aaron Sarna, Dilip Krishnan, Aaron Maschinot, David Belanger, Ce Liu, and William T Freeman. Boundless: Generative adversarial networks for image extension. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 10521–10530, 2019. 7, 8, 22"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                501,
+                761,
+                893,
+                849
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[44] Hung-Yu Tseng, Lu Jiang, Ce Liu, Ming-Hsuan Yang, and Weilong Yang. Regularizing generative adversarial networks under limited data. In CVPR, 2021. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                501,
+                854,
+                890,
+                900
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                475,
+                924,
+                495,
+                936
+            ]
+        }
+    ],
+    [
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[45] Arash Vahdat and Jan Kautz. NVAE: A deep hierarchical variational autoencoder. In Hugo Larochelle, Marc’Aurelio Ranzato, Raia Hadsell, Maria-Florina Balcan, and Hsuan-Tien Lin, editors, NeurIPS, 2020. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                90,
+                468,
+                165
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[46] Aaron van den Oord, Nal Kalchbrenner, Lasse Es-¨ peholt, Koray Kavukcuoglu, Oriol Vinyals, and Alex Graves. Conditional image generation with pixelcnn decoders. In Daniel D. Lee, Masashi Sugiyama, Ulrike von Luxburg, Isabelle Guyon, and Roman Garnett, editors, NeurIPS, 2016. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                172,
+                468,
+                262
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[47] Aaron van den Oord, Oriol Vinyals, and Koray¨ Kavukcuoglu. Neural discrete representation learning. In Isabelle Guyon, Ulrike von Luxburg, Samy Bengio, Hanna M. Wallach, Rob Fergus, S. V. N. Vishwanathan, and Roman Garnett, editors, NeurIPS, 2017. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                268,
+                468,
+                357
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[48] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosukhin. Attention is all you need. In NeurIPS, 2017. 1, 3, 5"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                364,
+                468,
+                424
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[49] Ziyu Wan, Jingbo Zhang, Dongdong Chen, and Jing Liao. High-fidelity pluralistic image completion with transformers. arXiv preprint arXiv:2103.14031, 2021. 7"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                429,
+                468,
+                489
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[50] Zili Yi, Qiang Tang, Shekoofeh Azizi, Daesik Jang, and Zhan Xu. Contextual residual aggregation for ultra high-resolution image inpainting. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 7508–7517, 2020. 7, 8, 21"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                496,
+                470,
+                571
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[51] Jiahui Yu, Xin Li, Jing Yu Koh, Han Zhang, Ruoming Pang, James Qin, Alexander Ku, Yuanzhong Xu, Jason Baldridge, and Yonghui Wu. Vector-quantized image modeling with improved VQGAN. arXiv preprin arXiv:2110.04627, 2021. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                577,
+                468,
+                652
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[52] Jiahui Yu, Zhe Lin, Jimei Yang, Xiaohui Shen, Xin Lu, and Thomas S Huang. Free-form image inpainting with gated convolution. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 4471–4480, 2019. 7, 8, 21"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                657,
+                468,
+                733
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[53] Han Zhang, Ian J. Goodfellow, Dimitris N. Metaxas, and Augustus Odena. Self-attention generative adversarial networks. In ICML, 2019. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                739,
+                468,
+                784
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[54] Richard Zhang, Phillip Isola, Alexei A Efros, Eli Shechtman, and Oliver Wang. The unreasonable effectiveness of deep features as a perceptual metric. In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 586–595, 2018. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                789,
+                468,
+                864
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[55] Richard Zhang, Phillip Isola, Alexei A Efros, Eli Shechtman, and Oliver Wang. The unreasonable ef-"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                869,
+                468,
+                900
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "fectiveness of deep features as a perceptual metric. In CVPR, 2018. 12"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                535,
+                92,
+                892,
+                121
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[56] Zhu Zhang, Jianxin Ma, Chang Zhou, Rui Men, Zhikang Li, Ming Ding, Jie Tang, Jingren Zhou, and Hongxia Yang. UFC-BERT: Unifying multimodal controls for conditional image synthesis. In A. Beygelzimer, Y. Dauphin, P. Liang, and J. Wortman Vaughan, editors, Advances in Neural Information Processing Systems, 2021. 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                503,
+                125,
+                890,
+                229
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[57] Shengyu Zhao, Jonathan Cui, Yilun Sheng, Yue Dong, Xiao Liang, Eric I Chang, and Yan Xu. Large scale image completion via co-modulated generative adversarial networks. In International Conference on Learning Representations (ICLR), 2021. 7, 8, 21, 22"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                503,
+                234,
+                890,
+                310
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[58] Bolei Zhou, Agata Lapedriza, Aditya Khosla, Aude Oliva, and Antonio Torralba. Places: A 10 million image database for scene recognition. IEEE Transactions on Pattern Analysis and Machine Intelligence, 2017. 8, 21"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                503,
+                314,
+                892,
+                387
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                475,
+                924,
+                493,
+                936
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/c7597d85570225152ca652811bd278b79630eecf9485955c9a4ab75d9977d3b1.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 9. Examples of MaskGIT on Image Reconstruction. MaskGIT takes in masked tokens extracted from original images (row one) using random input masks (row two, with unknown tokens marked in light gray), and outputs reconstructed images (row three). We then randomly sample 100 masks with the same mask ratio, and illustrate the median of the 100 reconstructed samples in row four."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                80,
+                94,
+                887,
+                385
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "A. Discussion on Image Reconstruction"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                76,
+                487,
+                408,
+                503
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In 4.2, we primarily evaluate MaskGIT on classconditional image generation tasks. Here we offer more discussion on its performance on image reconstruction. We set up by first randomly sampling input mask M with a mask ratio r of the visual tokens masked out, and then running MaskGIT’s iterative decoding algorithm to reconstruct images. Figure 10 shows the PSNR and LPIPS [55] of the reconstructed samples as functions of r, whereas Figure 9 visualizes two examples of this process with r ranging from 95% to 75%."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                516,
+                470,
+                667
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We observe that MaskGIT reconstructs holistic information (e.g. pose and shape of the foreground objects) even with a very high percentage (e.g. 95%) of tokens masked out. More importantly, there seems to exist an inflection point around 90%: while both reconstruction quality and consistency improve drastically as the mask ratio decreases until 90%, after 90% further improvements are slowed down. This observation is corroborated by the large jump in the visual similarity between reconstruction samples and the original images from 95% to 90% in Figure 9, e.g. the fence in front of the tiger and the car’s color are consistently captured once the mask ratio is below 90%, but not at 95%."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                671,
+                470,
+                867
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In other words, we find that visual tokens are highly redundant. For a holistic reconstruction, only a very small portion (e.g. 10%) of the tokens are essential; the remaining ones merely improve the recovery of finer appearance or details. This echos our intuition behind the masking design laid out in 3.3 that the prediction of the first few tokens is key to image generation. Similar observations on the spatial redundancy of images are discussed in a concurrent paper MAE [21]. In their work, they find that masking a high proportion of the input image yields a nontrivial and meaningful self-supervisory task for image representation learning."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                869,
+                470,
+                901
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                496,
+                489,
+                893,
+                641
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8757e2bced2d8908f8cd8f9496a2687e469340ac201c020f04376ec7f1647782.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                501,
+                652,
+                700,
+                742
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/4dd83af502e954a5a19cf7bff344b7955bc283871fee419ff5050a8f18175247.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 10. Reconstruction quality and diversity measured by PSNR and LPIPS [55]."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                700,
+                652,
+                895,
+                743
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "B. Additional Class-conditional Image Generation Results"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                500,
+                796,
+                892,
+                830
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In this section, we report additional results on classconditional image generation."
+                    }
+                ]
+            },
+            "bbox": [
+                498,
+                840,
+                892,
+                869
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We follow prior transformer-based methods [15, 37] to employ the classifier-based rejection sampling to improve the sample quality scores. Specifically, we use a pre-trained ResNet classifier [22] to score output samples based on the predicted probability and keep samples with an acceptance rate of 0.05, as in VQGAN [15]. As shown in Table 4, MaskGIT demonstrates consistent improvement over VQ-GAN, and is comparable with ADM with classifier guidance [12]. More importantly, by adding the rejection sampling, MaskGIT achieves state-of-the-art Inception Scores (355.6 on 256ˆ256 and 342.0 on 512ˆ512)."
+                    }
+                ]
+            },
+            "bbox": [
+                498,
+                869,
+                893,
+                901
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                475,
+                924,
+                495,
+                936
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                75,
+                90,
+                470,
+                228
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In Table 5, we report Precision and Recall scores calculated using Inception features [42]. In contrast to the VGG [40] feature-based scores, which we report in Table 1 for a more direct comparison with prior work [12, 30], we find that the Inception feature-based scores are more consistent with our qualitative observations that VQGAN’s samples are more diverse than BigGAN’s. Under both measures, MaskGIT ’s recall scores outperform those of BigGAN and VQGAN. We also report CAS evaluated on classifiers trained without augmentation from RandAugment [9]. Consistent with our main results, MaskGIT outperforms Big-GAN and our baseline VQGAN by a large margin."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                232,
+                470,
+                414
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Finally, we show a few comparisons of the classconditional samples generated by MaskGIT with the samples generated by BigGAN-deep and VQVAE-2 in Figure 11, 12, and 13."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                417,
+                470,
+                479
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/b36e4085c59793cde32be9ef0257c23530a4bf9f8d25a95d607206c7d65eaabf.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 4. Class-conditional image synthesis on ImageNet for methods with classifier guidance."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Dataset</td><td>Model</td><td>Classifier guidance</td><td>FID</td><td>IS</td></tr><tr><td rowspan=\"3\">ImageNet $256 \\times 256$ </td><td>ADM [12]</td><td>1.0 guidance</td><td>4.59</td><td>186.70</td></tr><tr><td>VQGAN [15]</td><td>0.05 acceptance rate</td><td>5.88</td><td>304.8</td></tr><tr><td>MaskGIT</td><td>0.05 acceptance rate</td><td>4.02</td><td>355.6</td></tr><tr><td rowspan=\"2\">ImageNet $512 \\times 512$ </td><td>ADM [12]</td><td>1.0 guidance</td><td>7.72</td><td>172.71</td></tr><tr><td>MaskGIT</td><td>0.05 acceptance rate</td><td>4.46</td><td>342.0</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                84,
+                498,
+                457,
+                590
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/2ab9103196d5e1972a1eeb43f5b190597321c899e3807d565385842b466f541f.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 5. More quantitative comparison with BigGAN-deep and our baseline VQGAN on ImageNet 256ˆ256. <sup>˚</sup> denotes the model we train with the same architecture and setup with ours."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td rowspan=\"2\">Model</td><td rowspan=\"2\">Prec ↑</td><td rowspan=\"2\">Rec ↑</td><td colspan=\"2\">CAS ×100 ↑</td></tr><tr><td>Top-1 (73.1)</td><td>Top-5 (91.5)</td></tr><tr><td>BigGAN-deep [4]</td><td>0.82</td><td>0.27</td><td>42.65</td><td>65.92</td></tr><tr><td>VQ-GAN*</td><td>0.61</td><td>0.47</td><td>47.50</td><td>68.90</td></tr><tr><td>MaskGIT (Ours)</td><td>0.78</td><td>0.50</td><td>58.20</td><td>79.65</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                93,
+                652,
+                450,
+                729
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "C. Additional Examples of Class-conditional Image Editing Applications"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                76,
+                806,
+                468,
+                844
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We show more examples of class-conditional image editing in Figure 14, and examples of image-conditional panorama synthesis in Figure 15."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                854,
+                470,
+                902
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "D. Image Outpainting Comparisons with SOTA Transformer-based Approaches"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                500,
+                89,
+                893,
+                125
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In Figure 16 and 17, we show a few outpainting comparisons among MaskGIT, ImageGPT [7], and VQGAN [15]. In each set of images, we show the groundtruth (left), extrapolated samples using only the top half of the groundtruth (middle), and extrapolated samples using only the bottom half of the groundtruth (right)."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                132,
+                893,
+                223
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MaskGIT and VQGAN can both perform on higher resolutions by taking advantage of tokenization and thus achieve higher sample fidelity than ImageGPT, which runs on a maximum resolution of 192 ˆ 192. At the same time, MaskGIT demonstrates stronger flexibility than ImageGPT and VQGAN in that it can outpaint in arbitrary directions (e.g. both upward and downward), while ImageGPT and VQGAN can only handle outpainting in one direction with a single model due to their autoregressive natures."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                223,
+                893,
+                359
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "E. Image Inpainting and Outpainting Comparisons with SOTA GAN-based Approaches"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                500,
+                372,
+                892,
+                407
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In this section, we show more qualitative comparisons with state-of-the-art GAN-based image completion methods in Figure 18 and Figure 19. Quantitative results have been discussed in 4.3."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                416,
+                893,
+                474
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We find that compared to prior GAN-based methods, MaskGIT demonstrates a stronger capability of completing structures coherently, and its samples contain fewer artifacts. In Figure 19, MaskGIT completes the bridge in row two and the building in the second to last row, which all GAN methods struggle to do in comparison."
+                    }
+                ]
+            },
+            "bbox": [
+                498,
+                476,
+                893,
+                566
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In addition, we compare with CoModGAN on image completion tasks with large masking ratios, i.e. conditioning on the center 50%ˆ50% and the center 31.25%ˆ31.25% respectively, which are challenging cases for traditional GANs. Examples are shown in Figure 20."
+                    }
+                ]
+            },
+            "bbox": [
+                498,
+                566,
+                893,
+                643
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "F. Limitations and Failure Cases"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                500,
+                655,
+                779,
+                672
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In Figure 21, we show several limitations and failure cases of our approach. (A) and (B) are examples of semantic and color shifts in MaskGIT’s outpainting results. Due to its limited attention size, MaskGIT may ”forget” the synthesized semantics or color from one end when it’s outpainting the other end. (C) and (D) show cases where our approach may sometimes ignore or modify objects on the boundary when applied to outpainting and inpainting. (E) showcases MaskGIT’s failure mode in which it causes oversmoothing or creates undesired artifacts on complex structures such as human faces, text and symmetric objects. The improvement for these circumstances remains future work."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                681,
+                893,
+                864
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                475,
+                924,
+                495,
+                936
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/840b7b61b4bee546abaef7fe94bf9933102c9ce4e5a7fdc6a34803c2ec959a1a.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "BigGAN-deep (FID=6.95)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "VQVAE-2<sup>:</sup> (FID=31)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "MaskGIT (FID=6.18)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Figure 11. More diversity comparisons between BigGAN-deep with truncation 1.0, VQVAE-2 [37], and our proposed method MaskGIT on ImageNet. <sup>:</sup> represents extracted samples from the paper."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                124,
+                125,
+                844,
+                849
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                475,
+                924,
+                496,
+                936
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/2e440419e55fd05901dbdcc7cc3dddc11a8e4736ee7af9187097bea922ee9b87.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "BigGAN-deep (FID=6.95)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "VQVAE-2 (FID=31)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "MaskGIT (FID=6.18)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Figure 12. More diversity comparisons between BigGAN-deep with truncation 1.0, VQVAE-2 [37], and our proposed method MaskGIT on ImageNet. <sup>:</sup> represents extracted samples from the paper."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                124,
+                126,
+                846,
+                849
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                475,
+                924,
+                496,
+                936
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/012d1ec8a76dddfb4c2c4f19cc59c1d048a20e579841e6914f462ad8f2a977a5.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "BigGAN-deep (FID=6.95)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "VQVAE-2 (FID=31)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "MaskGIT (FID=6.18)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Figure 13. More Diversity Comparisons among BigGAN-deep with truncation 1.0, VQVAE-2 [37], and our proposed method MaskGIT on ImageNet. <sup>:</sup> represents extracted samples from the paper."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                124,
+                125,
+                846,
+                849
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16"
+                    }
+                ]
+            },
+            "bbox": [
+                475,
+                924,
+                496,
+                936
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Input Image"
+                    }
+                ]
+            },
+            "bbox": [
+                98,
+                169,
+                145,
+                202
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/2ab73d8a7400112fb51b23c456cbc5106554dc21e5b98bbca7d5420105656b0d.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 14. More Examples of Class-conditional Image Editing. In each column, the bottom images are synthesized using the image on the top, ImageNet class labels on the left, and a bounding box of the main object downsampled into latent space (as shown in the second row)."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                96,
+                128,
+                872,
+                844
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "17"
+                    }
+                ]
+            },
+            "bbox": [
+                475,
+                924,
+                496,
+                936
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/641c4b00cbebdcbde83c54a6087550c33cb1d59ea6c484d83d6252dea9adc198.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Input"
+                    },
+                    {
+                        "type": "text",
+                        "content": "MaskGIT (Ours)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Figure 15. More Samples of Horizontal Image Extrapolation (from 512ˆ256 to 512ˆ2304). The synthesized ”panoramas” are created by repeatedly applying MaskGIT’s outpainting abilities horizontally in both directions."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                107,
+                125,
+                857,
+                839
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "18"
+                    }
+                ]
+            },
+            "bbox": [
+                475,
+                924,
+                496,
+                936
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/886aba1af5a7eba34e8188a6ac5b6cf8b4da068d0139f6518d5adbd648e45452.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 16. Outpainting comparisons with the pixel-based approach ImageGPT [7] and the transformer-based approach VQGAN [15]."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                89,
+                162,
+                877,
+                804
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "19"
+                    }
+                ]
+            },
+            "bbox": [
+                475,
+                924,
+                496,
+                936
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/f30067681ed39bd3e5e6e678f311b16b646dd0b532ed44a9dcd19db2855c3bdd.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 17. Outpainting comparisons with the pixel-based approach ImageGPT [7] and the transformer-based approach VQGAN [15]."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                93,
+                170,
+                877,
+                800
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "20"
+                    }
+                ]
+            },
+            "bbox": [
+                473,
+                924,
+                496,
+                936
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/c1dd5b9cde85bb7fc25378502c9f2f6d11f7216ef39a32a6ac7d30680e1d54b3.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "CoModGAN [57]"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Input"
+                    },
+                    {
+                        "type": "text",
+                        "content": "DeepFillv2 [52]"
+                    },
+                    {
+                        "type": "text",
+                        "content": "HiFill [50]"
+                    },
+                    {
+                        "type": "text",
+                        "content": "MaskGIT (Ours)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Groundtruth"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Figure 18. More visual comparisons on image inpainting on Places2 [58] with state-of-the-art GAN methods."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                99,
+                131,
+                870,
+                839
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "21"
+                    }
+                ]
+            },
+            "bbox": [
+                473,
+                924,
+                495,
+                936
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/7117a007a948990b26781c1175d5719369d76565e159719c05687888dde5ffa9.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Input"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Boundless [43]"
+                    },
+                    {
+                        "type": "text",
+                        "content": "InfinityGAN [31]✳"
+                    },
+                    {
+                        "type": "text",
+                        "content": "CoModGAN"
+                    },
+                    {
+                        "type": "text",
+                        "content": "MaskGIT (Ours)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Groundtruth"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Figure 19. More visual comparisons on image outpainting. with state-of-the-art GAN methods. ✳ samples are graciously provided by the authors."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                88,
+                137,
+                877,
+                441
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/79f8fc8c84dfaf5b64395066729e0f978b9d0910a690b227902f2ffd57e84f0f.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Input"
+                    },
+                    {
+                        "type": "text",
+                        "content": "CoModGAN"
+                    },
+                    {
+                        "type": "text",
+                        "content": "MaskGIT (Ours)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Input"
+                    },
+                    {
+                        "type": "text",
+                        "content": "CoModGAN"
+                    },
+                    {
+                        "type": "text",
+                        "content": "MaskGIT (Ours)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Figure 20. Visual comparisons of outpainting with CoModGAN [57] on large outpainting mask."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                89,
+                537,
+                877,
+                844
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "22"
+                    }
+                ]
+            },
+            "bbox": [
+                473,
+                924,
+                496,
+                936
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/0d71b6602604a467c166bc5141d7b11365ffe2e4e1b1a69501d3b721dd0237ba.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 21. Limitations and Failure Cases."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                104,
+                193,
+                857,
+                790
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "23"
+                    }
+                ]
+            },
+            "bbox": [
+                473,
+                922,
+                495,
+                936
+            ]
+        }
+    ]
+]

@@ -1,0 +1,135 @@
+{
+  "_说明": [
+    "本文件是「待下载论文总清单」的**人工标注叠层**：只放脚本无法从索引推导的内容。",
+    "① P0 组：按「这篇决定我们还能主张什么」排的优先级，含人工理由与取回后要做的事；",
+    "② 实测拦截点：用真实 Chrome 逐篇试出来的出版商拦截关卡 —— 这是**实验事实**，重跑脚本得不出来，也不该重新猜；",
+    "③ P0 取回后要做的事。",
+    "凡本文件没有的字段，一律表示「未记录」，**不得由生成器编造**。",
+    "口径纪律：地址只来自 Unpaywall / Crossref / Europe PMC 官方接口，不是搜索引擎结果。"
+  ],
+  "_成文": "2026-10-03（自 2026-10-02 的总清单迁入；P0-7/P0-8 为 2026-10-03 由 V7d 检索顺带发现）",
+  "P0": [
+    {
+      "id": "P0-1",
+      "doi": "10.1145/3664647.3680568",
+      "题名": "Translating Motion to Notation: Hand Labanotation for Intuitive and Comprehensive Hand Movement Documentation",
+      "出处": "ACM Multimedia 2024, pp. 4092-4100",
+      "为什么是P0": "🚨 全项目最撞车的一篇：它已用「Translating」+ 符号化运动记谱 + 4M 标注图像。F11 的正文级差异论证卡在它没有合法 OA（Unpaywall closed，arXiv 按题名 0 命中）。",
+      "取回后要做": "F11a 的正文级差异辩护 —— 决定标题能不能用 \"Translating\"、能不能主张「首次」。",
+      "注意": "🚨 必须用单篇 DOI 10.1145/3664647.3680568。父级 10.1145/3664647 在 Crossref 解析到的是会议论文集容器记录（type=proceedings），会让题名比对静默失败并把该篇打成 D 级（K38）。"
+    },
+    {
+      "id": "P0-2",
+      "doi": "10.1109/tpami.2021.3087695",
+      "题名": "Monocular 3D Pose Estimation via Pose Grammar and Data Augmentation",
+      "出处": "IEEE TPAMI 2022, 44(10): 6327-6344",
+      "为什么是P0": "🚨 它明写引入 kinematics → 作废了我们「grammar 后继不含力学」这条依据（F6/F10）。写 Related Work 必须正面处理它。",
+      "取回后要做": "据全文裁定「Biomechanical Grammar」还能不能主张力学那一半。"
+    },
+    {
+      "id": "P0-3",
+      "doi": "10.1109/tbiom.2023.3315509",
+      "题名": "Progressive Direction-Aware Pose Grammar for Human Pose Estimation",
+      "出处": "IEEE TBME 2023, 5(4): 593-605",
+      "为什么是P0": "pose grammar 线的第三代，同属「必须正面处理」。",
+      "取回后要做": "与 P0-2 一起构成 pose grammar 正面处理的完整一代序列。"
+    },
+    {
+      "id": "P0-4",
+      "doi": "10.1016/j.jbiomech.2025.112905",
+      "题名": "Comparison of shoulder kinematics between Theia 3D markerless motion capture and marker-based motion capture during full arm ranges of motion",
+      "出处": "Journal of Biomechanics (2025)",
+      "为什么是P0": "上肢最接近的对照系统（Theia 3D）。Crossref 无摘要，本库仅题名级，模态与差异均未核实。",
+      "取回后要做": "补完 `创新点查重_vs_竞品.md` §0.5 那三行「仅题名级 / 判不出」。"
+    },
+    {
+      "id": "P0-5",
+      "doi": "10.1016/j.jbiomech.2013.11.031",
+      "题名": "Accuracy and repeatability of joint angles measured using a single camera markerless motion capture system",
+      "出处": "Journal of Biomechanics (2014)",
+      "为什么是P0": "单目 + 关节角的前作，直接关系「单目上肢不新」这条边界能否收紧。Crossref 无摘要，仅题名级。",
+      "取回后要做": "补完 `创新点查重_vs_竞品.md` §0.5。"
+    },
+    {
+      "id": "P0-6",
+      "doi": "10.1002/hfm.20840",
+      "题名": "Accuracy evaluation of two markerless motion capture systems for measurement of upper extremities: Kinect V2 and Captiv",
+      "出处": "Human Factors and Ergonomics in Manufacturing & Service Industries (2020)",
+      "为什么是P0": "🚨 本库至今判不出它的模态（Europe PMC 0 命中、OpenAlex 摘要未明）。它是上肢视觉线的一员，模态不明 = 不能进对照表。",
+      "取回后要做": "确定模态后补进对照表。"
+    },
+    {
+      "id": "P0-7",
+      "doi": "10.1016/S0031-9406(10)63103-3",
+      "题名": "Comparison of Visual Estimation and Goniometry in Determination of a Shoulder Joint Angle",
+      "出处": "Physiotherapy 1990;76:655-657",
+      "为什么是P0": "🚨 比较的是用眼睛估肩关节角与用量角器量 —— 正是「视觉能不能替代仪器测量」在上肢肩关节上的 1990 年版本，与本项目设定最接近。",
+      "取回后要做": "🆕 若给出「眼睛估角度能差多少」的量级，就能与 E12（Cleffken 肘 SDD 8.5°）拼成上肢的两个地板（肘有实测、肩有历史值），并检验「视觉估角」的误差是否大于量角器自身误差 —— 直接关系 E12 那条新论据的边界。",
+      "限制": "⚠️ 无摘要可用（Europe PMC 未收录 Physiotherapy；1990 年刊，无 OA）。其数值在取回前一律不得引用（K19：标识符须反查，数值须回原文）。"
+    },
+    {
+      "id": "P0-8",
+      "doi": "10.5935/medicalexpress.2014.02.08",
+      "题名": "Reliability Index of inter- and intra-rater of manual goniometry and computerized biophotogrammetry to assess the range of motion of internal and external shoulder rotation",
+      "出处": "Medical Express 2014;1(2)",
+      "为什么是P0": "🆕 题名对口肩内外旋 ROM 的测量可靠性 —— 而肩是 V7d 唯一还空着的一半（肘有 Cleffken SDD、腕/前臂有 Alford ICC）。",
+      "取回后要做": "取回后 V7d 才能完整闭合。",
+      "限制": "⚠️ 证据权重低：被引仅 3 次、Europe PMC 无命中、无摘要 → 其可靠性数值目前不可得，取回前一律不得引用（K19）。若取不回，论文须写「肘有实测 SDD、腕/前臂有 ICC 分层、肩未找到」，并把肩显式标为外推 —— 🚫 不得用「肘 + 腕」推出「肩也有」，那是第三次外推。"
+    }
+  ],
+  "P0取回后要做的五件事": [
+    "P0-1 的正文级差异辩护（F11a）—— 决定标题能不能用 \"Translating\"、能不能主张「首次」。",
+    "P0-2 的 kinematics 原文 —— 决定「Biomechanical Grammar」还能不能主张力学那一半。",
+    "P0-4/5/6 的模态与差异 —— 补完 `创新点查重_vs_竞品.md` §0.5 那三行「仅题名级 / 判不出」。",
+    "P0-7 的肩关节视觉估计误差 —— 与 E12 拼成上肢的两个地板，并检验「视觉估角」的误差是否大于量角器自身误差。",
+    "P0-8 的肩内外旋可靠性数值 —— 肩是 V7d 唯一还空着的一半。"
+  ],
+  "实测拦截点": {
+    "_说明": "用真实 Chrome 逐篇试出来的拦截关卡，是**实验事实**。只覆盖当时实际试过的条目；未试过的不得补写。",
+    "10.1109/cvpr.2007.383128": "MPG 仓储「Making sure you're not a bot」",
+    "10.1088/1741-2560/6/3/036004": "IOPscience Radware 机器人验证码",
+    "10.1034/j.1600-0404.2003.00021.x": "Wiley 403",
+    "10.1111/joa.12903": "Wiley 403",
+    "10.1016/j.jbiomech.2019.05.040": "Elsevier 403",
+    "10.1016/j.jbiomech.2024.112118": "Elsevier 403",
+    "10.1093/ptj/pzab010": "OUP 403",
+    "hdl.handle.net/2117/377476": "仓储 WAF（curl 418，浏览器亦拦）",
+    "naist.repo.nii.ac.jp/records/7819": "NAIST 仓储落地页，无 PDF 直链，需逐级点进",
+    "10.1016/S0031-9406(10)63103-3": "本次真实浏览器访问 Physiotherapy 官方全文页，Cloudflare 安全验证要求人工勾选；未获取全文。"
+  },
+  "拦截类型实测汇总": [
+    "| 拦截类型 | 篇数 | 涉及 | 性质 |",
+    "|---|---|---|---|",
+    "| 可用浏览器取回 | 4 | MDPI ×2、Frontiers、SciTePress | 无机器人防护 |",
+    "| PMC reCAPTCHA | 4 | Physiotherapy / Ann Biomed Eng / IEEE TBME / AP&M&R | 人机验证 |",
+    "| 出版商 WAF 403/418 | 6 | Wiley ×2、Elsevier ×2、OUP、UPC 仓储 | 请求层拦截 |",
+    "| Radware 机器人验证 | 1 | IOPscience（J Neural Eng） | 专用反爬 |",
+    "| 仓储 bot 校验 | 1 | MPG（CVPR 2007） | \"Making sure you're not a bot\" |",
+    "| 落地页无直链 | 1 | NAIST 仓储（IEEE EMBC 2012） | 需逐级点进 |"
+  ],
+  "浏览器取件通用手法": "先开落地页过验证 → 再开 `/pdf` 触发下载。已封装成 `06_附录/生物力学语料工具/bm3_ingest.py`（含时间戳与体积护栏，防止抓错文件）。",
+  "本库自行取回记录": [
+    "| 通道 | 篇数 | 论文 |",
+    "|---|---|---|",
+    "| Europe PMC 官方 REST | 4 | Ann Biomed Eng (2016) / Scientific Reports (2022) / JNER (2016) / BioMed Res Int (2014) |",
+    "| arXiv 官方直取 | 2 | `2601.09949` / `2603.09930` |",
+    "| 真实浏览器（Chrome DevTools） | 4 | MDPI Electronics (2019) / MDPI Multimodal Tech Interfaces (2020) / Frontiers in Physics (2025) / SciTePress (2021) |",
+    "| arXiv 官方 PDF 直取（撞红核查） | 3 | `2607.02796` / `2602.13176` / `2607.23608` |",
+    "| arXiv 官方 PDF 直取（顺藤摸瓜） | 1 | `2605.09258` Monocular Biomechanical Tracking of Fingers with IK to Foundation Models（Cotton 等，2026-05）|"
+  ],
+  "边界声明": [
+    "地址全部来自 Unpaywall / Crossref / Europe PMC 官方接口，不是搜索引擎结果。",
+    "「实测拦截点」是用真实 Chrome 逐篇试出来的，不是推测。",
+    "本清单不含任何付费墙绕过内容。OA 但被拦的一组走浏览器正常访问，需订阅的一组走机构订阅，两条都是出版商明示的合法获取方式。",
+    "破解验证码 / 伪造浏览器指纹 / 批量下载器，本项目一律不做 —— 这些是出版商明示的访问控制，绕过去等于侵权。"
+  ],
+  "本库自行取回记录_订正": {
+    "_说明": "旧总清单（2026-10-02）把 `2605.09258` 标为「语料三尚未收录，见 §1.5」。2026-10-03 实测：已在 `生物力学线/B1_视觉运动学_估计与验证方法学/Monocular Biomechanical Tracking of Fingers with Inverse Kin.pdf`，`biomech_resolved.json` 中 status=confirmed_single。合并时按磁盘实况取用，不沿用旧标注。"
+  },
+  "本次取件核查": {
+    "P0-8": "SciELO 官方 PDF 入库，105759 bytes、5 页，题名/DOI/Antonietti 作者一致；未在本任务中提炼可靠性数值。",
+    "XML路径订正": "4 份已存在的 JATS XML 补齐报告路径，保留原件不移动，不计作新增下载。",
+    "语料四": "新增/补齐 arXiv 2609.36154、Frontiers 10.3389/fnbot.2017.00026、Europe PMC PMC10765635 JATS XML；复用跨库和同论文引用。",
+    "错误链接": "Zenodo 17850061 为无关 no title 记录，已改为 Crossref 核验的 IEEE DOI 10.1109/ICMA65362.2025.11120720。"
+  }
+}

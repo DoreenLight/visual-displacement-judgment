@@ -1,0 +1,21 @@
+[
+  {
+    "pmcid": "PMC12204900",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12204900/fullTextXML",
+    "doi": "10.1007/s11517-025-03315-z",
+    "title": "Patient performance assessment methods for upper extremity rehabilitation in assist-as-needed therapy strategies: a comprehensive review",
+    "status": "success"
+  },
+  {
+    "pmcid": "PMC11021326",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11021326/fullTextXML",
+    "doi": "10.1007/s11517-023-03014-7",
+    "title": "Clinical evaluation of a patient participation assessment system for upper extremity rehabilitation exercises",
+    "status": "success"
+  },
+  {
+    "pmcid": "PMC5016233",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5016233/fullTextXML",
+    "error": "HTTP Error 500: "
+  }
+]

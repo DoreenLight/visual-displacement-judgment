@@ -1,0 +1,758 @@
+{
+  "Song_wrist": {
+    "query": "TITLE:\"Myoelectrically controlled wrist robot for stroke rehabilitation\"",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Myoelectrically+controlled+wrist+robot+for+stroke+rehabilitation%22&format=json&resultType=core&pageSize=3",
+    "result": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "TITLE:\"Myoelectrically controlled wrist robot for stroke rehabilitation\"",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 3,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "23758925",
+            "source": "MED",
+            "pmid": "23758925",
+            "pmcid": "PMC3685570",
+            "fullTextIdList": {
+              "fullTextId": [
+                "PMC3685570"
+              ]
+            },
+            "doi": "10.1186/1743-0003-10-52",
+            "title": "Myoelectrically controlled wrist robot for stroke rehabilitation.",
+            "authorString": "Song R, Tong KY, Hu X, Zhou W.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Song R",
+                  "lastName": "Song",
+                  "firstName": "Rong",
+                  "initials": "R",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "School of Engineering, Sun Yat-sen University, Guangzhou, Guang Dong, PR China."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Tong KY",
+                  "lastName": "Tong",
+                  "firstName": "Kai-yu",
+                  "initials": "KY",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0003-4375-653X"
+                  }
+                },
+                {
+                  "fullName": "Hu X",
+                  "lastName": "Hu",
+                  "firstName": "Xiaoling",
+                  "initials": "X",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0003-3188-3005"
+                  }
+                },
+                {
+                  "fullName": "Zhou W",
+                  "lastName": "Zhou",
+                  "firstName": "Wei",
+                  "initials": "W",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-9820-556X"
+                  }
+                }
+              ]
+            },
+            "authorIdList": {
+              "authorId": [
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-9820-556X"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0003-3188-3005"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0003-4375-653X"
+                }
+              ]
+            },
+            "journalInfo": {
+              "volume": "10",
+              "journalIssueId": 2495376,
+              "dateOfPublication": "2013 Jun",
+              "monthOfPublication": 6,
+              "yearOfPublication": 2013,
+              "journal": {
+                "medlineAbbreviation": "J Neuroeng Rehabil",
+                "title": "Journal of neuroengineering and rehabilitation",
+                "essn": "1743-0003",
+                "issn": "1743-0003",
+                "isoabbreviation": "J Neuroeng Rehabil",
+                "nlmid": "101232233"
+              },
+              "printPublicationDate": "2013-06-01"
+            },
+            "pubYear": "2013",
+            "pageInfo": "52",
+            "abstractText": "<h4>Background</h4>Robot-assisted rehabilitation is an advanced new technology in stroke rehabilitation to provide intensive training. Post-stroke motor recovery depends on active rehabilitation by voluntary participation of patient's paretic motor system as early as possible in order to promote reorganization of brain. However, voluntary residual motor efforts to the affected limb have not been involved enough in most robot-assisted rehabilitation for patients after stroke. The objective of this study is to evaluate the feasibility of robot-assisted rehabilitation using myoelectric control on upper limb motor recovery.<h4>Methods</h4>In the present study, an exoskeleton-type rehabilitation robotic system was designed to provide voluntarily controlled assisted torque to the affected wrist. Voluntary intention was involved by using the residual surface electromyography (EMG) from flexor carpi radialis(FCR) and extensor carpi radialis (ECR)on the affected limb to control the mechanical assistance provided by the robotic system during wrist flexion and extension in a 20-session training. The system also applied constant resistant torque to the affected wrist during the training. Sixteen subjects after stroke had been recruited for evaluating the tracking performance and therapeutical effects of myoelectrically controlled robotic system.<h4>Results</h4>With the myoelectrically-controlled assistive torque, stroke survivors could reach a larger range of motion with a significant decrease in the EMG signal from the agonist muscles. The stroke survivors could be trained in the unreached range with their voluntary residual EMG on the paretic side. After 20-session rehabilitation training, there was a non-significant increase in the range of motion and a significant decrease in the root mean square error (RMSE) between the actual wrist angle and target angle. Significant improvements also could be found in muscle strength and clinical scales.<h4>Conclusions</h4>These results indicate that robot-aided therapy with voluntary participation of patient's paretic motor system using myoelectric control might have positive effect on upper limb motor recovery.",
+            "affiliation": "School of Engineering, Sun Yat-sen University, Guangzhou, Guang Dong, PR China.",
+            "publicationStatus": "epublish",
+            "language": "eng",
+            "pubModel": "Electronic",
+            "pubTypeList": {
+              "pubType": [
+                "Clinical Trial",
+                "Research Support, Non-U.S. Gov't",
+                "research-article",
+                "Journal Article"
+              ]
+            },
+            "meshHeadingList": {
+              "meshHeading": [
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Wrist Joint",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "PP",
+                        "qualifierName": "physiopathology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Humans"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Paresis",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "ET",
+                        "qualifierName": "etiology"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PP",
+                        "qualifierName": "physiopathology"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "RH",
+                        "qualifierName": "rehabilitation"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Electromyography"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Range of Motion, Articular"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Motion Therapy, Continuous Passive",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "IS",
+                        "qualifierName": "instrumentation"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "MT",
+                        "qualifierName": "methods"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Therapy, Computer-Assisted",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "MT",
+                        "qualifierName": "methods"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Recovery of Function"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Robotics",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "IS",
+                        "qualifierName": "instrumentation"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "MT",
+                        "qualifierName": "methods"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Middle Aged"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Female"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Male"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Stroke",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "CO",
+                        "qualifierName": "complications"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PP",
+                        "qualifierName": "physiopathology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Stroke Rehabilitation"
+                }
+              ]
+            },
+            "subsetList": {
+              "subset": [
+                {
+                  "code": "IM",
+                  "name": "Index Medicus"
+                }
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.1186/1743-0003-10-52"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "html",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC3685570"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "pdf",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC3685570?pdf=render"
+                }
+              ]
+            },
+            "isOpenAccess": "Y",
+            "inEPMC": "Y",
+            "inPMC": "Y",
+            "citedByCount": 51,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "Y",
+            "hasBook": "N",
+            "hasSuppl": "N",
+            "hasLabsLinks": "N",
+            "hasData": "N",
+            "license": "cc by",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "N",
+            "dateOfCompletion": "2014-01-13",
+            "dateOfCreation": "2013-06-14",
+            "dateOfRevision": "2021-10-21",
+            "electronicPublicationDate": "2013-06-10",
+            "firstPublicationDate": "2013-06-10",
+            "firstIndexDate": "2013-06-20",
+            "fullTextReceivedDate": "2025-02-02",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  },
+  "Song_load": {
+    "query": "PMC11971689",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=PMC11971689&format=json&resultType=core&pageSize=3",
+    "result": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "PMC11971689",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 3,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "40186523",
+            "source": "MED",
+            "pmid": "40186523",
+            "pmcid": "PMC11971689",
+            "fullTextIdList": {
+              "fullTextId": [
+                "PMC11971689"
+              ]
+            },
+            "doi": "10.1002/hbm.70208",
+            "title": "Effective Motor Skill Learning Induces Inverted-U Load-Dependent Activation in Contralateral Pre-Motor and Supplementary Motor Area.",
+            "authorString": "Wang X, Liang X, Ku Y, Zhan Y, Song R.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Wang X",
+                  "lastName": "Wang",
+                  "firstName": "Xiaolu",
+                  "initials": "X",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0001-7568-9226"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Sun Yat-Sen University, Shenzhen, China."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Liang X",
+                  "lastName": "Liang",
+                  "firstName": "Xuan",
+                  "initials": "X",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Institute of Interactive and Visual Informatics, School of Computer Science and Technology, Guangdong University of Technology, Guangzhou, China."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Ku Y",
+                  "lastName": "Ku",
+                  "firstName": "Yixuan",
+                  "initials": "Y",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0003-2804-5123"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Guangdong Provincial Key Laboratory of Brain Function and Disease, Center for Brain and Mental Well-Being, Department of Psychology, Sun Yat-Sen University, Guangzhou, China."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Zhan Y",
+                  "lastName": "Zhan",
+                  "firstName": "Yinwei",
+                  "initials": "Y",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0003-2899-9090"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Institute of Interactive and Visual Informatics, School of Computer Science and Technology, Guangdong University of Technology, Guangzhou, China."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Song R",
+                  "lastName": "Song",
+                  "firstName": "Rong",
+                  "initials": "R",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0003-3662-116X"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Sun Yat-Sen University, Shenzhen, China."
+                      },
+                      {
+                        "affiliation": "Shenzhen Research Institute, Sun Yat-sen University, Shenzhen, China."
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "authorIdList": {
+              "authorId": [
+                {
+                  "type": "ORCID",
+                  "value": "0000-0001-7568-9226"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0003-2804-5123"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0003-2899-9090"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0003-3662-116X"
+                }
+              ]
+            },
+            "dataLinksTagsList": {
+              "dataLinkstag": [
+                "supporting_data"
+              ]
+            },
+            "journalInfo": {
+              "issue": "5",
+              "volume": "46",
+              "journalIssueId": 3916448,
+              "dateOfPublication": "2025 Apr",
+              "monthOfPublication": 4,
+              "yearOfPublication": 2025,
+              "journal": {
+                "medlineAbbreviation": "Hum Brain Mapp",
+                "title": "Human brain mapping",
+                "essn": "1097-0193",
+                "issn": "1065-9471",
+                "isoabbreviation": "Hum Brain Mapp",
+                "nlmid": "9419065"
+              },
+              "printPublicationDate": "2025-04-01"
+            },
+            "pubYear": "2025",
+            "pageInfo": "e70208",
+            "abstractText": "Motor learning involves complex interactions between the cognitive and sensorimotor systems, which are susceptible to different levels of task load. While the mechanism underlying load-dependent regulations in cognitive functions has been extensively investigated, their influence on downstream execution in motor skill learning remains less understood. The current study extends the understanding of whether and how learning alters the load-dependent activation pattern by a longitudinal functional near-infrared spectroscopy (fNIRS) study in which 30 healthy participants (15 females) engaged in extensive practice on a two-dimensional continuous hand tracking task with varying task difficulty. We proposed the index of difficulty (ID) as a quantitative measure of task difficulty, which was monotonically associated with a psychometric measure of subjective workload. As learning progressed, participants exhibited enhanced behavioral and metacognitive performance. Behavioral improvements were accompanied by plastic changes in the inferior prefrontal cortex, reflecting a shift in control strategy during motor learning. Most importantly, we found robust evidence of the learning-induced alteration in load-dependent cortical activation patterns, indicating that effective motor skill learning may lead to the emergence of an inverted-U relationship between cortical activation and load level in the contralateral pre-motor and supplementary motor areas. Our findings provide new insights into the learning-induced plasticity in brain and behavior, highlighting the load-dependent contributions in motor skill learning.",
+            "affiliation": "Key Laboratory of Sensing Technology and Biomedical Instrument of Guangdong Province, School of Biomedical Engineering, Sun Yat-Sen University, Shenzhen, China.",
+            "publicationStatus": "ppublish",
+            "language": "eng",
+            "pubModel": "Print",
+            "pubTypeList": {
+              "pubType": [
+                "Research Support, Non-U.S. Gov't",
+                "research-article",
+                "Journal Article"
+              ]
+            },
+            "grantsList": {
+              "grant": [
+                {
+                  "agency": "Shenzhen Medical Research Fund",
+                  "grantId": "C2301002",
+                  "orderIn": 0
+                },
+                {
+                  "agency": "International Program for Ph.D. Candidates, Sun Yat-Sen University",
+                  "orderIn": 0
+                },
+                {
+                  "agency": "Shenzhen Medical Research Fund",
+                  "grantId": "D2402013",
+                  "orderIn": 0
+                },
+                {
+                  "agency": "Shenzhen Science and Technology Research Program",
+                  "grantId": "JCYJ20220818101602005",
+                  "orderIn": 0
+                }
+              ]
+            },
+            "meshHeadingList": {
+              "meshHeading": [
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Motor Cortex",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "DG",
+                        "qualifierName": "diagnostic imaging"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PH",
+                        "qualifierName": "physiology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Prefrontal Cortex",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "DG",
+                        "qualifierName": "diagnostic imaging"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PH",
+                        "qualifierName": "physiology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Humans"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Spectroscopy, Near-Infrared"
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Learning",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PH",
+                        "qualifierName": "physiology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Psychomotor Performance",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PH",
+                        "qualifierName": "physiology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Motor Skills",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PH",
+                        "qualifierName": "physiology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Neuronal Plasticity",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PH",
+                        "qualifierName": "physiology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Adult"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Female"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Male"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Young Adult"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Functional Neuroimaging"
+                }
+              ]
+            },
+            "keywordList": {
+              "keyword": [
+                "Motor Learning",
+                "Neural Plasticity",
+                "Workload",
+                "Task Difficulty",
+                "Continuous Movements"
+              ]
+            },
+            "subsetList": {
+              "subset": [
+                {
+                  "code": "IM",
+                  "name": "Index Medicus"
+                }
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.1002/hbm.70208"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "html",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC11971689"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "pdf",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC11971689?pdf=render"
+                }
+              ]
+            },
+            "isOpenAccess": "Y",
+            "inEPMC": "Y",
+            "inPMC": "Y",
+            "citedByCount": 3,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "Y",
+            "hasBook": "N",
+            "hasSuppl": "Y",
+            "hasLabsLinks": "Y",
+            "hasData": "Y",
+            "license": "cc by-nc-nd",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "Y",
+            "tmAccessionTypeList": {
+              "accessionType": [
+                "gen",
+                "doi"
+              ]
+            },
+            "dateOfCompletion": "2025-05-16",
+            "dateOfCreation": "2025-04-05",
+            "dateOfRevision": "2026-08-14",
+            "firstPublicationDate": "2025-04-01",
+            "firstIndexDate": "2025-04-07",
+            "fullTextReceivedDate": "2025-12-03",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  },
+  "participation_review": {
+    "query": "TITLE:\"Patient Participation Assessment in Robot-Assisted Upper Limb Rehabilitation\"",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Patient+Participation+Assessment+in+Robot-Assisted+Upper+Limb+Rehabilitation%22&format=json&resultType=core&pageSize=3",
+    "result": {
+      "version": "6.9",
+      "hitCount": 0,
+      "request": {
+        "queryString": "TITLE:\"Patient Participation Assessment in Robot-Assisted Upper Limb Rehabilitation\"",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 3,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": []
+      }
+    }
+  },
+  "Song_TRO": {
+    "query": "TITLE:\"A Cable-Driven Upper Limb Rehabilitation Robot With Muscle-Synergy-Based Myoelectric Controller\"",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22A+Cable-Driven+Upper+Limb+Rehabilitation+Robot+With+Muscle-Synergy-Based+Myoelectric+Controller%22&format=json&resultType=core&pageSize=3",
+    "result": {
+      "version": "6.9",
+      "hitCount": 0,
+      "request": {
+        "queryString": "TITLE:\"A Cable-Driven Upper Limb Rehabilitation Robot With Muscle-Synergy-Based Myoelectric Controller\"",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 3,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": []
+      }
+    }
+  }
+}

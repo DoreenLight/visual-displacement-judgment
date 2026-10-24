@@ -1,0 +1,1907 @@
+[
+    {
+        "type": "text",
+        "text": "A Novel Transformer-Based Method for Full Lower-Limb Joint Angles and Moments Prediction in Gait Using sEMG and IMU data",
+        "text_level": 1,
+        "bbox": [
+            86,
+            70,
+            910,
+            172
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "F.H. Daryakenari<sup>1</sup>, T. Farizeh<sup>∗2</sup>",
+        "bbox": [
+            372,
+            189,
+            611,
+            207
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Abstract—This study presents a transformer-based deep learning framework for the long-horizon prediction of full lower-limb joint angles and joint moments using surface electromyography (sEMG) and inertial measurement unit (IMU) signals. Two separate Transformer Neural Networks (TNNs) were designed: one for kinematic prediction and one for kinetic prediction. The model was developed with real-time application in mind, using only wearable sensors suitable for outside-laboratory use. Two prediction horizons were considered to evaluate short- and long-term performance. The network achieved high accuracy in both tasks, with Spearman correlation coefficients exceeding ρ = 0.96 and $R ^ { 2 }$ scores above 0.92 across all joints. Notably, the model consistently outperformed a recent benchmark method in joint angle prediction, reducing RMSE errors by an order of magnitude. The results confirmed the complementary role of sEMG and IMU signals in capturing both kinematic and kinetic information. This work demonstrates the potential of transformer-based models for real-time, full-limb biomechanical prediction in wearable and robotic applications, with future directions including input minimization and modality-specific weighting strategies to enhance model efficiency and accuracy.",
+        "bbox": [
+            73,
+            250,
+            493,
+            518
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Index Terms—Transformer Neural Networks, Joint Angle and Moment Prediction, sEMG, IMU",
+        "bbox": [
+            75,
+            522,
+            491,
+            549
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "I. INTRODUCTION",
+        "text_level": 2,
+        "bbox": [
+            217,
+            569,
+            349,
+            583
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "CRUCIAL requirement in developing real-world systems—especially those that involve repetitive tasks—is optimization. Without an optimized system, we risk excessive energy consumption, increased physical or computational effort, and ultimately higher operational costs, all of which are undesirable. However, achieving such optimization requires a foundational step: analyzing the system’s dynamics throughout task execution. When the system is intended for human use—such as in rehabilitation, athletic performance enhancement, or elderly care—this analysis becomes even more critical due to strict safety requirements and the need for individualized adaptation. Despite the fact that humans perform a wide range of daily motions unconsciously, analyzing these movements remains challenging. This is largely due to the biomechanical complexity of the human body and the difficulty of estimating external forces and motions, even in fundamental activities such as gait. These challenges underscore the need for a reliable and real-time method to extract both kinematic and kinetic information during movement.",
+        "bbox": [
+            73,
+            587,
+            493,
+            876
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The significance of human motion data and the methods for its accurate extraction have been extensively studied across a wide range of disciplines [1]–[3]. Early research primarily tried to explain the underlying mechanism of human locomotion such as the role of joint forces and moments in muscletendon dynamics. This foundational knowledge has been a key asset in rehabilitation, orthopedic assessment, and enhancing sports performance [3]–[7]. Later, human motion analysis gained prominence in the entertainment industry—including film, animation, and video games—by enabling the creation of realistic and expressive character movements [8]–[12]. More recently, its relevance has expanded into robotics, where detailed information about joint kinematics and kinetics has become critical for the control of prosthetic limbs, exoskeletons, and assistive devices [11]–[15].",
+        "bbox": [
+            503,
+            250,
+            924,
+            476
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Early motion analysis methods relied heavily on mathematical and statistical models, requiring significant computational efforts, which made them unsuitable for real-time applications. Moreover, due to the simplifications inherent in these models, they failed to accurately mimic human movements. Subsequently, methods based on infrared (IR) optical motion capture systems were developed and refined [9]–[12]. Achieving accurate data acquisition with these systems requires multiple IR cameras, which makes this approach costly and impractical for widespread use. Additionally, the recorded data from IR cameras are processed using inverse kinematics and kinetics solvers to calculate motion parameters. Since this data transformation process is not instantaneous, these systems are unsuitable for real-time applications. Their dependence on a laboratory setup further restricts their use to controlled environments. Despite these drawbacks, the high accuracy of marker-based motion capture systems makes them a reliable source for ground-truth data, particularly for validating other motion analysis methods.",
+        "bbox": [
+            501,
+            477,
+            924,
+            763
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "To address the limitations of optical motion capture systems and enable real-world human motion analysis, sensor-based methods have been developed [16]–[19]. Early attempts, such as those by [20] and [21], aimed to create a natural setting for measuring human movement and performance. They employed a regression neural network (NN) to predict hip, knee, and ankle kinematics in the sagittal plane using angular velocity and linear acceleration data from motion sensors attached to the foot and shank. Although conventional NN regressors were groundbreaking, they have since been replaced by more advanced models with greater capability to predict sequential data. To validate their predictions, these early works relied on optical motion capture systems as the gold standard.",
+        "bbox": [
+            501,
+            763,
+            924,
+            946
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "Digital Object Identifier (DOI): see top of this page.",
+        "bbox": [
+            88,
+            931,
+            377,
+            945
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            911,
+            30,
+            919,
+            41
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "arXiv:2506.04577v1 [cs.RO] 5 Jun 2025",
+        "bbox": [
+            22,
+            284,
+            57,
+            710
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "<sup>1</sup>Faculty of Engineering and IT, the University of Melbourne, Victoria, Australia. f.haghgoodaryakenari@unimelb.edu.au; <sup>2</sup>Faculty of Caspian College of Engineering, University of Tehran, Tehran, Iran. tara.farizeh@ut.ac.ir",
+        "bbox": [
+            73,
+            885,
+            491,
+            931
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            73,
+            69,
+            433,
+            84
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Today, Inertial Measurement Units (IMUs) have emerged as a promising alternative to record motion data [22]–[28]. Their portability and ability to record data outside laboratory settings make them a practical substitute for optical motion capture systems. IMU data have proven reliable for extracting joint kinematics [24]–[32], joint kinetics [33]–[35], or both [36]–[42]. This versatility and practicality position IMUs as a transformative tool in motion analysis. IMU data shows promising results in joint kinetic estimation and prediction [36]–[42]. But, its inherently kinematic nature limits its standalone performance in accurately estimating joint kinetics. To improve accuracy in joint kinetics estimation, IMU data can be fused with other sensory data that inherently contain kinetic information. This fusion could enhance the prediction of kinetic data, especially in addressing non-periodic or perturbationinduced movements.",
+        "bbox": [
+            73,
+            84,
+            493,
+            325
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Surface electromyography (sEMG) data have long been studied as a complementary source for joint kinetics and muscle force estimation [43]–[51]. It provides better performance in kinetic analysis compared to kinematics [52]–[55], but has also been explored for joint kinematics estimation or prediction, albeit with relatively lower accuracy [44]–[50], [56]–[59]. Fusing IMU and sEMG data offers the potential to create a comprehensive dataset for joint kinematics and kinetics estimation or prediction. IMU data serves as the primary source for kinematics and a supplementary source for kinetics, while sEMG provides the inverse. One notable advantage of sEMG is its preactivation characteristic [60], which reveals muscle activation before the actual movement. This feature is particularly advantageous in predictive applications, such as assistive robotics or tasks requiring rapid, precise actions. Based on this complementary relationship, we hypothesize that combining IMU and sEMG signals provides sufficient information for accurate joint angle and moment prediction. To realize this, it is essential to develop a mapping between fused sensory data and joint kinematics and kinetics, similar to the approach pioneered by [20] and [21] using neural networks.",
+        "bbox": [
+            73,
+            325,
+            493,
+            643
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Several approaches have been proposed to map inertial data to joint kinematics or kinetics, but many struggle with realtime performance and generalizability. Kalman Filter (KF)- based methods, including Extended Kalman Filters (EKFs), are computationally efficient [30]–[32], [61]–[64], but their reliance on linear assumptions, Gaussian noise, and short temporal windows makes them ill-suited for modeling the nonlinear and dynamic nature of human joint motion. They also require precise system and noise modeling, which is often difficult and error-prone. Similarly, musculoskeletal models (MSMs) offer high biomechanical fidelity by incorporating anatomical parameters [27], [36], but their subject-specific nature and computational demands limit their scalability and real-time applicability. The complexity of tuning and solving these models remains a major barrier for use in interactive scenarios such as human-robot interaction.",
+        "bbox": [
+            73,
+            643,
+            493,
+            883
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Recent advances in Artificial Intelligence (AI), particularly Deep Learning (DL), have enabled the modeling of complex, nonlinear systems such as human motion. Neural Networks (NNs), especially sequential architectures like Long Short-",
+        "bbox": [
+            73,
+            883,
+            493,
+            946
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Term Memory (LSTM) and encoder–decoder models, are wellsuited for time-series prediction due to their ability to capture temporal dependencies. Several studies have applied DL techniques to predict joint kinematics and kinetics from IMU [65]–[69] or sEMG data [70]–[78]. Although most of these methods rely on a single modality, limiting generalization. Notably, Wang et al. [15] introduced a fused sEMG–IMU model using a Temporal Convolution Network–Bidirectional LSTM for joint angle prediction but excluded joint moment estimation. To the best of the authors’ knowledge, the only recent attempt to estimate both kinematics and kinetics from fused signals is by Mohammadi Moghadam et al. [41], who showed that Convolutional Neural Networks (CNNs) outperformed traditional ML methods. However, their reliance on offline preprocessing and CNNs’ limited temporal modeling made their approach unsuitable for real-time deployment. These limitations highlight the need for a unified, multimodal method capable of capturing both spatial and temporal features in realtime for accurate prediction of joint angles and moments.",
+        "bbox": [
+            501,
+            69,
+            924,
+            357
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "One of the neural network-based methods that has gained widespread attention for sequential prediction tasks is Transformer Neural Networks (TNNs) [79]. TNNs utilize the attention mechanism [80], [81], which enables these networks to effectively capture inter-sequence relationships. Originally designed for sequence translation tasks, TNNs leveraged selfattention mechanisms to identify and model the relationships between elements within a sequence, such as the words in a sentence. To address the challenges of prediction delays in real-time applications, TNNs introduced Multi-Head Attention modules. This parallel architecture significantly accelerates sequence predictions by processing multiple attention mechanisms simultaneously. For the purpose of kinematics and kinetics prediction, TNNs offer distinct advantages. They combine the general benefits of neural networks with the ability to analyze sequences of data, capturing both short-term and longterm dependencies. This feature is particularly valuable when dealing with kinematics and kinetics data, where patterns often span extended time sequences.",
+        "bbox": [
+            503,
+            356,
+            924,
+            643
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Additionally, the multi-head attention structure in TNNs makes them particularly suited for tasks involving fused sensory input data. This structure dynamically assigns weights based on the importance of each data source, enabling the network to prioritize certain sensor inputs over others as required by the task. This is especially beneficial in scenarios where sensory data fusion, such as IMU and sEMG signals, is essential for accurate prediction. Furthermore, TNNs’ encoderdecoder architecture enhances their robustness to noisy sensor outputs, reducing the reliance on extensive preprocessing or feature extraction before feeding data into the network. TNNs were initially developed for sequence translation tasks, but their architecture can also be adapted for time series predictions with minimal modifications. This adaptability makes them a compelling choice for applications requiring real-time, sequential predictions, such as human motion modeling or robotic control.",
+        "bbox": [
+            501,
+            642,
+            924,
+            898
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The goal of this paper is to fuse IMU sensory data with sEMG sensory data to predict lower-limb joint kinematics and kinetics during walking, an essential activity of daily living (ADL). To validate our prediction accuracy, we will utilize data from optical motion capture cameras as the gold standard. We hypothesize that IMU data can serve as the primary source of motion kinematic information and an ancillary source of kinetic information, while sEMG data can act as the primary source of kinetic information and an ancillary source of kinematic information. By combining these two complementary data sources, we aim to achieve precise joint angle and moment predictions during walking. For this regression task, we will leverage Transformer Neural Networks (TNNs) as the model for mapping the fused sensory data to joint kinematics and kinetics. TNNs have demonstrated their ability to maintain both intra-sequence and inter-sequence relationships, making them particularly effective for capturing the complex temporal dynamics in human motion data.",
+        "bbox": [
+            501,
+            898,
+            924,
+            946
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            75,
+            30,
+            86,
+            41
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            73,
+            69,
+            493,
+            295
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Beyond standard next-step predictions, we will explore the robustness of TNNs by focusing on two prediction horizons: one near-term (30 milliseconds into the future) and one long-term (250 milliseconds into the future) across all major degrees of freedom in both lower limbs. Additionally, we will examine the network’s ability to handle sudden changes in motion speed, simulating scenarios involving abrupt human movements. This investigation will evaluate the capability of our approach to adapt to real-world, dynamic conditions. We believe that the proposed trained model will provide a valuable resource for future research in this field. By utilizing a large dataset, our model can serve as a foundation for transfer learning and meta-learning applications, enabling researchers to build upon our findings for further advancements in human motion modeling and prediction.",
+        "bbox": [
+            73,
+            295,
+            493,
+            523
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "II. METHOD",
+        "text_level": 2,
+        "bbox": [
+            236,
+            537,
+            330,
+            551
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "A. Overview of the method",
+        "text_level": 2,
+        "bbox": [
+            73,
+            556,
+            266,
+            571
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "To achieve our goal, we require three types of data: IMU, sEMG, and Motion Capture. Among these, the IMU and sEMG data will be processed and used as inputs to our TNN, while the Motion Capture data will serve as ground truth for joint angles and moments rather than being directly used as input. These ground truth values represent the joint angles and moments of the hip, knee, and ankle, which the TNN is tasked with predicting. Specifically, the output of the TNN will perform multivariate regression to predict these values over two distinct horizons: a near-future prediction at 30 milliseconds and a further-future prediction at 250 milliseconds. Additionally, as part of our investigation into the network’s robustness, particularly in scenarios involving sudden changes in movement, the input data will include such variations to evaluate the network’s performance under dynamic conditions. The subsequent sections detail the dataset utilized, the preprocessing steps, the preparation of data for network input, and the architecture of the proposed TNN.",
+        "bbox": [
+            73,
+            575,
+            493,
+            849
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "B. Dataset",
+        "text_level": 2,
+        "bbox": [
+            75,
+            866,
+            156,
+            878
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "To train our model for predicting joint kinematics and kinetics, it is essential to have a comprehensive dataset that includes sEMG, IMU, and optical motion capture data. For this research, we utilize an open-access dataset Camargo et al. [55], which contains recordings from 22 healthy adult participants (average age: $2 1 \\pm 3 . 4$ years, height: $1 . 7 \\pm 0 . 0 7 \\mathrm { ~ m ~ }$ , and weight: $6 8 \\pm 1 0 . 3 9 \\mathrm { k g } )$ . The dataset includes sEMG data collected from 11 muscles in the right leg: gluteus medius, external oblique, semitendinosus, gracilis, biceps femoris, rectus femoris, vastus lateralis, vastus medialis, soleus, tibialis anterior, and gastrocnemius medialis. Raw sEMG signals were recorded at 1000 Hz and processed using a digital bandpass filter (20–400 Hz, 20thorder Butterworth). IMU data was gathered from the torso and three segments of the right lower limb—thigh, shank, and foot—with sensors placed at approximately three-quarters of the length down each segment. The IMU signals were sampled at 200 Hz and filtered with a digital low-pass filter (cutoff 100 Hz, 6th-order Butterworth).",
+        "bbox": [
+            73,
+            883,
+            493,
+            946
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            503,
+            69,
+            924,
+            280
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Motion capture data were collected at 200 Hz from both legs, processed with a low-pass filter (cutoff 6 Hz, 4th-order zero-lag Butterworth), and supplemented by ground reaction force measurements at 1000 Hz, which were filtered using a low-pass filter (cutoff 15 Hz, 10th-order zero-lag Butterworth). Although joint angles were also recorded using goniometers, this data will not be used in our study. To extract joint angles and moments based on the recorded data from motion capture cameras, Opensim was used for solving the inverse kinematics and kinetics by the authors of the dataset [55]. The dataset captures a variety of locomotion modes, including level-ground walking, treadmill walking, stair climbing, and ramp traversal. For this research, we focus exclusively on treadmill walking data, as it offers an opportunity to study changes in motion patterns—one of the key objectives of our study.",
+        "bbox": [
+            501,
+            281,
+            924,
+            523
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "In the aforementioned dataset, treadmill walking trials were conducted across 28 speeds, ranging from 0.5 m/s to 1.85 m/s in 0.05 m/s increments. Speeds were interleaved within seven trials, with four speeds per trial arranged in a sequence that simulates gradual changes in motion. For example, a trial might include transitions from rest to a slow speed, then to medium-fast and fast speeds, before slowing down to mediumslow and stopping (e.g for the first trial speeds are 0.5 m/s, 1.2 m/s, 1.55 m/s, 0.85 m/s and trial two 0.55 m/s, 1.25 m/s, 1.6 m/s, 0.9 m/s). This pattern of incremental speed variations provides a controlled setup to investigate the effects of motion changes on our model’s predictions.",
+        "bbox": [
+            503,
+            525,
+            924,
+            708
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "C. Preprocessing",
+        "text_level": 2,
+        "bbox": [
+            504,
+            739,
+            627,
+            755
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "With the dataset at hand, the next step is preprocessing the sensory data to extract meaningful information. An important aspect of preprocessing is making sure that the methods employed are suitable for real-time applications. As outlined in the dataset description in Section II-B, the released dataset already includes preprocessing for IMU and motion capture data, which we find adequate for our purposes. This preprocessing ensures a clean and reliable signal while maintaining real-time feasibility. However, sEMG data, being inherently noisier than IMU and motion capture data, requires additional preprocessing steps. Based on methodologies suggested by prior studies [41], [82], the sEMG data undergoes the following procedure:",
+        "bbox": [
+            501,
+            763,
+            924,
+            946
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            910,
+            30,
+            921,
+            40
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "1) High-pass filtering – A second-order Butterworth filter with a 25 Hz cutoff frequency is applied to remove lowfrequency noise and baseline wander.",
+        "bbox": [
+            91,
+            69,
+            493,
+            114
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "2) Rectification – The signal is rectified to capture the absolute value, ensuring all signal values are positive.",
+        "bbox": [
+            89,
+            114,
+            493,
+            143
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "3) Low-pass filtering – A second-order Butterworth filter with a 6 Hz cutoff frequency is used to extract the signal envelope.",
+        "bbox": [
+            91,
+            145,
+            493,
+            190
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "This preprocessing transforms the initially processed sEMG signal into a simplified feature—the signal envelope—without relying on complex feature extraction methods. The simplicity and efficiency of this approach ensure it remains robust and applicable in real-time applications.",
+        "bbox": [
+            73,
+            194,
+            493,
+            270
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Since the IMU and sEMG sensors operate at different sampling frequencies (200 Hz for IMU and 1000 Hz for sEMG), a final step is required to harmonize the data for fusion. Both IMU and preprocessed sEMG data are downsampled to 100 Hz, matching the sampling frequency of the calculated joint angles and moments from motion capture data. By the end of this preprocessing stage, all data streams—IMU, processed sEMG, and joint kinematics and kinetics from motion capture cameras—are aligned and prepared for putting in the right shape for the input into the neural network.",
+        "bbox": [
+            73,
+            271,
+            493,
+            422
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Before feeding the data into the neural network, it is essential to structure it correctly. Our dataset includes IMU, sEMG, and ground truth joint kinematics and kinetics data from 22 participants. To ensure the generalizability of the network, we adopt a leave-one-subject-out validation and testing approach. Specifically, data from 20 participants are used for training, one participant’s data is reserved for validation, and the remaining participant’s data is held for testing. To prevent any learning bias toward specific trials or participants, we shuffle the data across trials and subjects prior to data preparation. This step ensures that the network learns patterns representative of the entire dataset rather than overfitting to specific individuals or sequences.",
+        "bbox": [
+            73,
+            422,
+            493,
+            621
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "To prepare the data for input into the network, we employ a sliding window approach to segment it into frames, as illustrated in Fig.1. Each window contains 125 samples, corresponding to 1.25 seconds at a 100 Hz sampling frequency. These 125 samples of IMU and sEMG data serve as the input, while the subsequent 25 samples (250 milliseconds) of joint angles and moments represent the target prediction for each frame. The window is then slid by four samples (0.04 seconds) to generate the next frame. To standardize the data across participants and sensors, we apply the Min-Max Normalization method. This normalization scales all features to a uniform range, facilitating consistent training and improving the stability of the learning process. By the end of this step, the dataset is segmented, normalized, and formatted into input-output pairs suitable for training, validation, and testing of the neural network.",
+        "bbox": [
+            73,
+            621,
+            493,
+            864
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "D. Neural Network Architecture",
+        "text_level": 2,
+        "bbox": [
+            75,
+            891,
+            297,
+            906
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The proposed model for joint kinematics and kinetics prediction is a regression-based Transformer Neural Network (TNN). Since the original Transformer architecture was designed for sequence-to-sequence tasks such as sentence translation, modifications were made to adapt it for multivariable time-series prediction. The overall architecture of the network is depicted in Fig.2(a). To ensure optimal weight adjustment and address issues such as gradient vanishing or explosion, we include a Bidirectional LSTM (Bi-LSTM) layer before the Transformer block. This layer processes the input sequence in both forward and backward directions, improving gradient flow and mitigating sequence forgetfulness. The processed outputs are then fed into the Transformer block, which closely follows the structure defined in [79]. A critical component of the Transformer is its residual connections, inspired by the concept of residual blocks [83]. As illustrated in Fig.2(b), two types of residual blocks are incorporated: one encompassing the Multi-Head Attention mechanism with dropout, and the other involving a dense layer with dropout. These residual connections create bypass paths that alleviate gradient vanishing issues, enabling the network to retain longer temporal dependencies.",
+        "bbox": [
+            73,
+            914,
+            491,
+            945
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b7f88caa9f71052873f664a961df47cd178fbd4aae0f778e854d4495e65a3883.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 1. An illustration of data frame extraction from the input and output data."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            527,
+            73,
+            901,
+            265
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            503,
+            311,
+            924,
+            614
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "In the final stage of the network Fig.2(a), we utilize a lambda layer to reshape the dense layer outputs into a multivariate regression format, aligning with the dimensions of the ground truth data. For this architecture, two parallel TNNs are employed, each specializing in a distinct prediction task: one for joint angles and the other for joint moments, as shown in Fig.3.",
+        "bbox": [
+            503,
+            614,
+            924,
+            720
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The configuration of the network components is shown in Table I. All hyperparameters were selected based on extensive trial and error to optimize performance. The network was implemented and trained using the Keras and TensorFlow libraries [84]. The loss function used was Mean Squared Error (MSE), and Mean Absolute Error (MAE) was chosen as the evaluation metric. This architecture is designed to predict future joint angles and moments robustly over varying horizons, enabling accurate multivariate regression for timeseries data.",
+        "bbox": [
+            501,
+            720,
+            924,
+            872
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "III. RESULTS",
+        "text_level": 2,
+        "bbox": [
+            661,
+            892,
+            764,
+            907
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The Proposed kinematic and kinetic networks were trained for 40 epochs with a batch size of 128. The primary goal of the network was to predict joint angles and moments for a 250-millisecond horizon. To assess the networks performance, two specific samples within this horizon were extracted: one at 30 milliseconds and the other at 250 milliseconds. The test data for performance evaluation came from the test subject, excluded during the preprocessing and data preparation phase. The predicted values from the network, alongside the ground truth values for the same inputs, are shown in Fig.4. To effectively evaluate the results, we have selected a random but continuous batch of 1000 data frames (equivalent to 10 seconds) from the test subject to compute errors. However, due to space constraints, only 200 data frames (2 seconds) are presented as in the visualization in Fig.4.",
+        "bbox": [
+            504,
+            914,
+            924,
+            946
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            76,
+            30,
+            86,
+            40
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/7db5ce458b4a502863e5724fa6c478aeec8011431fd585225c9562b9811d14ea.jpg",
+        "table_caption": [
+            "TABLE I",
+            "NEURAL NETWORK HYPERPARAMETERS"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Hyperparameter</td><td>value</td></tr><tr><td>Bi-LSTM units</td><td>125</td></tr><tr><td>Embedding dimension</td><td>256</td></tr><tr><td>Multi-Head Attention heads</td><td>8</td></tr><tr><td>Dense layer neurons</td><td>512</td></tr><tr><td>Dropout rate</td><td>0.1</td></tr><tr><td>Layer normalization epsilon</td><td> $10^{-6}$ </td></tr><tr><td>Optimizer- $Adam, \\beta_1$ </td><td>0.9</td></tr><tr><td>Optimizer- $Adam, \\beta_2$ </td><td>0.999</td></tr><tr><td>Initial learning rate</td><td>0.0008</td></tr><tr><td>AMSGrad</td><td>True</td></tr></table>",
+        "bbox": [
+            168,
+            103,
+            395,
+            244
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/c8307fe0ce624ac53005a0179883708e685e881bc256d4cac8e573eba706560a.jpg",
+        "image_caption": [
+            "Fig. 2. Neural network architecture. (a) General layers of the network, (b) Inside the transformer block."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            142,
+            289,
+            450,
+            523
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            73,
+            582,
+            493,
+            779
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "For a better understanding of the network performance, the prediction results are reported qualitatively and quantitively, over 10 seconds of data. For qualitative evaluation, we use Coefficient of Determination $( R ^ { 2 } )$ , together with Spearman correlation (based on Shapiro-Wilk test, p-value < 0.05). These two statistical metrics can help us to understand the similarity and compatibility of the prediction curves and ground truth curves that we see in Fig.4. For quantitive evaluation, we report, Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and normalized Root Mean Squared Error (nRMSE). All of the aforementioned metrics are evaluated",
+        "bbox": [
+            73,
+            779,
+            493,
+            945
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/b33957e8ef0066958ef97fbcdd5a70e7954759c707e101731ddd99fefb757c8b.jpg",
+        "image_caption": [
+            "Fig. 3. Proposed network for joint angles and joint moments prediction both for Close Horizon (CH), and Distant Horizon (DH) and reported in the Table II."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            591,
+            71,
+            834,
+            247
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "IV. DISCUSSION",
+        "text_level": 2,
+        "bbox": [
+            651,
+            321,
+            774,
+            337
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The primary objective of this study was to predict full lowerlimb joint angles and joint moments over extended temporal horizons. To this end, we employed data from IMU and sEMG sensors as inputs to two separately designed Transformer Neural Networks (TNNs): one dedicated to joint angle prediction and the other to joint moment prediction. Two distinct prediction horizons were defined: a short-term horizon of 30 milliseconds (close-horizon, CH) and a long-term horizon of 250 milliseconds (distant-horizon, DH). These horizons were selected to systematically evaluate the networks’ predictive performance across both immediate and extended future timeframes. Our underlying hypothesis posits that the combined use of IMU and sEMG signals offers complementary kinematic and neuromuscular information, which is critical for accurately forecasting both joint angles and joint moments.",
+        "bbox": [
+            503,
+            340,
+            924,
+            568
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Both Fig. 4 and the statistical results from Table II demonstrate that the network accurately predicted kinematics and kinetics for the unseen test subject. The Spearman correlation test for kinematic predictions indicates a statistically significant and strong positive correlation between the predicted values and ground truth data. Specifically, for the close-horizon (CH) prediction, the lowest value of the correlation coefficient was $\\rho = 0 . 9 7 3 \\ ( p < 0 . 0 0 1 )$ , while for the distant-horizon (DH) prediction, it was $\\rho = 0 . 9 6 3 \\ ( p < 0 . 0 0 1 )$ ). Among all joints, the left ankle joint had the lowest correlation coefficient, yet still exhibited a strong positive relationship.",
+        "bbox": [
+            503,
+            568,
+            923,
+            734
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "In addition to Spearman’s correlation coefficient, the predictive performance of the network was further evaluated using the coefficient of determination $R ^ { 2 }$ . The lowest $R ^ { 2 }$ value achieved by the model was 0.963 for CH and 0.949 for DH in the left ankle joint, with an RMSE of $0 . 0 4 2 ^ { \\circ }$ and an MAE of 0.028<sup>◦</sup>in CH, and an RMSE of 0.050<sup>◦</sup>with an MAE of 0.035<sup>◦</sup>in DH. These results indicate that approximately 95% (CH) and 92% (DH) of the variance in the ground truth joint angles for the least accurate joint can still be explained by the model’s predictions. This suggests that the proposed network exhibits strong predictive capabilities for lower-limb kinematics and kinetics.",
+        "bbox": [
+            503,
+            734,
+            923,
+            914
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "For the predicted kinetic results, the Spearman correlation test indicates a statistically significant correlation between the predicted joint moments and the ground truth joint moments. The lowest Spearman correlation value in CH is $\\rho = 0 . 9 7 3 \\ ( p$ $< 0 . 0 0 1 )$ , and in DH, equals to $\\rho = 0 . 9 7 3 \\ ( p < 0 . 0 0 1 )$ for the left ankle joint. The $R ^ { 2 }$ score across all joint moments suggests a strong predictive ability. The lowest $R ^ { 2 }$ score for predicted joint moments in CH belongs to the left knee, with a score of 0.952 (MAE = 0.022 N.m/kg and RMSE = 0.03 N.m/kg), while in DH, the lowest $R ^ { 2 }$ score belongs to the right knee, with a score of 0.924 (MAE = 0.025 N.m/kg and $\\mathrm { R M S E } \\ : = \\ : 0 . 0 3 3$ N.m/kg). Meanwhile, the highest recorded MAE and RMSE for joint moments occur at the left ankle in both CH (MAE = 0.038 N.m/kg, RMSE = 0.051 N.m/kg) and DH (MAE = 0.041 N.m/kg, RMSE = 0.061 N.m/kg). The highest joint moment prediction errors based on normalized RMSE are observed at the left ankle in CH, with 5.46% error, and at the right ankle in DH, with 6.97% error.",
+        "bbox": [
+            503,
+            914,
+            923,
+            945
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            911,
+            30,
+            921,
+            41
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b5e21af56c218c0b5c6b8d110fee11e5edd142988f6219006711448c0ad1b164.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 4. Full lower-limb joint angle and joint moment predictions over two horizons: 30 milliseconds (3rd value) and 250 milliseconds (25th value).",
+            "TABLE II"
+        ],
+        "chart_footnote": [
+            "SPEARMAN’S ρ, COEFFICIENT OF DETERMINATION $R ^ { 2 } ,$ MEAN ABSOLUTE ERROR (MAE), MAXIMUM MAE, ROOT MEAN SQUARED ERROR (RMSE), AND NORMALIZED ROOT MEAN SQUARED ERROR (NRMSE) FOR PREDICTED VALUES BY THE NETWORK IN CLOSE HORIZON (30 MILLISECOND) - CH, AND DISTANT HORIZON (250 MILLISECOND) - DH OVER A 10-SECOND PERIOD. BOTH JOINT KINEMATICS AND JOINT KINETICS ARE INCLUDED IN THE TABLE. MAE, RMSE, AND NRMSE VALUES ARE REPORTED IN PERCENTAGE."
+        ],
+        "bbox": [
+            78,
+            66,
+            921,
+            335
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/8f450e44d568d5e3d8692decd205a05556d96621fa5d8c2a726eed0a369dfb2c.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "\\* The reported values of MAE, RMSE, nRMSE in the table are multiplied by 100."
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\" colspan=\"2\"></td><td colspan=\"2\"> $\\rho$ </td><td colspan=\"2\"> ${R}^{2}$ </td><td colspan=\"2\">MAE*</td><td colspan=\"2\">RMSE*</td><td colspan=\"2\">nRMSE*</td></tr><tr><td>Joint</td><td>CH</td><td>DH</td><td>CH</td><td>DH</td><td>CH</td><td>DH</td><td>CH</td><td>DH</td><td>CH</td></tr><tr><td rowspan=\"6\">Kinematics</td><td>Hip Right</td><td>0.995</td><td>0.992</td><td>0.988</td><td>0.983</td><td>2.59</td><td>3.04</td><td>3.1</td><td>3.7</td><td>3.84</td><td>4.56</td></tr><tr><td>Knee Right</td><td>0.982</td><td>0.974</td><td>0.989</td><td>0.980</td><td>2.64</td><td>3.16</td><td>3.2</td><td>3.9</td><td>3.36</td><td>4.14</td></tr><tr><td>Ankle Right</td><td>0.985</td><td>0.976</td><td>0.971</td><td>0.954</td><td>2.15</td><td>3.47</td><td>2.6</td><td>4.4</td><td>3.08</td><td>4.84</td></tr><tr><td>Hip Left</td><td>0.993</td><td>0.992</td><td>0.986</td><td>0.988</td><td>2.97</td><td>2.53</td><td>3.5</td><td>3.2</td><td>4.16</td><td>3.81</td></tr><tr><td>Knee Left</td><td>0.978</td><td>0.972</td><td>0.979</td><td>0.972</td><td>3.48</td><td>4.04</td><td>4.3</td><td>5</td><td>4.61</td><td>5.61</td></tr><tr><td>Ankle Left</td><td>0.973</td><td>0.963</td><td>0.963</td><td>0.949</td><td>2.86</td><td>3.58</td><td>4.2</td><td>5</td><td>4.62</td><td>5.59</td></tr><tr><td rowspan=\"6\">Kinetics</td><td>Hip Right</td><td>0.985</td><td>0.979</td><td>0.955</td><td>0.933</td><td>2.14</td><td>2.50</td><td>2.7</td><td>3.1</td><td>4.54</td><td>5.35</td></tr><tr><td>Knee Right</td><td>0.983</td><td>0.966</td><td>0.959</td><td>0.924</td><td>2.15</td><td>2.5</td><td>2.6</td><td>3.3</td><td>4.28</td><td>5.35</td></tr><tr><td>Ankle Right</td><td>0.966</td><td>0.937</td><td>0.981</td><td>0.945</td><td>2.40</td><td>4.1</td><td>3.1</td><td>5.9</td><td>3.46</td><td>6.97</td></tr><tr><td>Hip Left</td><td>0.981</td><td>0.979</td><td>0.965</td><td>0.952</td><td>2.5</td><td>2.7</td><td>3.2</td><td>3.5</td><td>4.79</td><td>5.38</td></tr><tr><td>Knee Left</td><td>0.966</td><td>0.956</td><td>0.952</td><td>0.930</td><td>2.2</td><td>2.6</td><td>3.0</td><td>3.8</td><td>4.14</td><td>5.38</td></tr><tr><td>Ankle Left</td><td>0.952</td><td>0.937</td><td>0.962</td><td>0.950</td><td>3.8</td><td>4.1</td><td>5.1</td><td>6.1</td><td>5.46</td><td>6.78</td></tr></table>",
+        "bbox": [
+            83,
+            448,
+            919,
+            667
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            73,
+            691,
+            493,
+            934
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "In joint kinematics, based on MAE and RMSE, the joint with the highest error in both CH $( \\mathrm { M A E } = 0 . 0 4 8 ^ { \\circ }$ , RMSE $= \\ 0 . 0 4 3 ^ { \\circ } )$ and DH (MAE = 0.0404<sup>◦</sup>, RMSE = 0.050<sup>◦</sup>) is the left knee. However, the RMSE of the left ankle in DH has the same value as the left knee. According to normalized RMSE, the highest error in CH is for the left ankle (4.62%), while in DH, the highest error is for the left knee (5.61%). As observed, the higher error values correspond to the leg without attached sensors, suggesting that while it is possible to predict joint angles and moments for one leg using sensory data from the opposite leg, achieving equally accurate predictions requires sensor attachment on both legs, which aligns with expectations. Additionally, the joint with the highest prediction error among our six joints is typically the left ankle, indicating that more sensory information is needed for improved accuracy in left ankle predictions.",
+        "bbox": [
+            501,
+            691,
+            924,
+            935
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            76,
+            31,
+            86,
+            40
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Compared to similar research, the closest study to our work is that of Mohammadi-Moghadam et al. [41]. By extracting key features from fused sEMG and IMU signals and leveraging a CNN as their predictor model, they successfully predicted joint angles and joint moments across three planes of motion. However, a limitation of their work is that their network is constrained to real-world scenarios but does not support realtime applications. Moreover, their prediction horizon is limited to one-step-ahead forecasting, which may not be suitable for robotic control systems. Our proposed method, on the other hand, addresses these limitations by enabling real-time predictions and extending the prediction horizon, making it more applicable for robotic control. Additionally, our approach improves both joint angle and joint moment predictions, outperforming their best-reported inter-subject RMSE values.",
+        "bbox": [
+            73,
+            69,
+            493,
+            295
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "For the hip joint angle, our RMSE results are $0 . 0 3 1 ^ { \\circ }$ and $0 . 0 3 7 ^ { \\circ }$ for the right leg in CH and DH predictions, and $0 . 0 3 5 ^ { \\circ }$ and $0 . 0 3 2 ^ { \\circ }$ for the left leg in CH and DH, respectively. These values indicate a significant improvement compared to their reported value of $4 . 7 9 ^ { \\circ }$ . For the knee joint angle, our RMSE values are $0 . 0 3 2 ^ { \\circ }$ and $0 . 0 3 9 ^ { \\circ }$ for the right leg in CH and DH, respectively, and $0 . 0 4 3 ^ { \\circ }$ and $0 . 0 5 0 ^ { \\circ }$ for the left leg in CH and DH, respectively. Similar to our hip joint angle results, these values demonstrate an improvement compared to their reported value of $5 . 4 6 ^ { \\circ }$ . For the ankle joint angle, our RMSE values are $0 . 0 2 6 ^ { \\circ }$ and $0 . 0 4 4 ^ { \\circ }$ for the right leg in CH and DH, respectively, and 0.042<sup>◦</sup> and $0 . 0 5 0 ^ { \\circ }$ for the left leg in CH and DH, respectively. Meanwhile, their reported RMSE for the ankle joint angle was 6.52<sup>◦</sup>. These results indicate that our proposed model for kinematic prediction outperformed their proposed model across all three joint angles.",
+        "bbox": [
+            73,
+            295,
+            493,
+            537
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "For the hip joint moment, our network achieved an RMSE of 0.021 N.m/kg for CH and 0.025 N.m/kg for DH of the right leg. For the left hip joint moment, we obtained an RMSE of 0.025 N.m/kg for CH and 0.027 N.m/kg for DH. The reported inter-subject hip moment RMSE for the baseline research [41] is not explicitly mentioned in the paper. However, based on the boxplot, the lower limit of the hip flexion/extension error median is approximately 0.15 N.m/kg, which corresponds to the Random Forest method. For the right knee joint moment, our proposed method achieved RMSE values of 0.026 N.m/kg and 0.033 N.m/kg for CH and DH, respectively, while for the left knee joint moment, the values were 0.030 N.m/kg and 0.038 N.m/kg. In contrast, Mohammadi-Moghadam et al. reported an inter-subject RMSE of 0.187 N.m/kg for the knee joint moment. For the ankle joint moment, the right leg RMSE was 0.031 N.m/kg for CH and 0.059 N.m/kg for DH, while for the left leg, the values were 0.051 N.m/kg and 0.061 N.m/kg, respectively. The best-reported RMSE value from [41] was 0.066 N.m/kg for intra-subject prediction (which is generally more accurate than inter-subject RMSE, as some portion of the user’s data is seen by the network). As a result, we can conclude that our model outperformed the baseline model in kinetic prediction as well.",
+        "bbox": [
+            73,
+            537,
+            493,
+            883
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Wang et al. [78] recently proposed Dual Transformer Network (DTN) to solve joint kinematics and kinetics using sEMG signals. Compared to the proposed DTN method, our model extends beyond short-term prediction by forecasting joint trajectories multiple steps into the future, enabling anticipatory control strategies that are particularly beneficial for wearable assistive devices. In contrast, the DTN model is limited to a fixed 50 ms prediction horizon, which may not be sufficient for preemptive adjustments in dynamic environments. Additionally, our framework is designed to predict the full set of lower-limb joint kinematics and kinetics—including hip, knee, and ankle—across both legs. This holistic modeling approach provides a richer understanding of bilateral gait dynamics and supports applications in both rehabilitation and robotic assistance. The DTN model, by contrast, is constrained to uniplanar predictions of one leg, limiting its versatility in real-world use cases.",
+        "bbox": [
+            73,
+            883,
+            493,
+            946
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            501,
+            69,
+            924,
+            265
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Furthermore, in compare to Wang et al. [78] proposed model, our model demonstrates lower root-mean-square error (RMSE) across all predicted joint angles with DTN’s reported RMSE values being an order of magnitude higher. This highlights the superior numerical accuracy of our model, which is particularly critical in applications involving realtime control or biomechanical assessment. However, it is noteworthy that DTN reports higher $R ^ { 2 }$ and Spearman’s correlation coefficients, indicating stronger alignment in the temporal patterns and rank-order consistency of predicted signals relative to ground truth. This suggests that while DTN effectively captures the shape and trend of joint trajectories, it lacks precision in magnitude, potentially limiting its use in applications requiring fine-grained kinematic accuracy. Although our kinematic model outperforms their model, the predicted joint moments in our model in the right leg for both CH and DH have slightly better accuracy in the the hip and ankle joints, with their reported values being 0.048 Nm/Kg and 0.060 Nm/Kg, respectively. While, knee moment is the same for CH and slightly increased error for DH, with their reported value for knee moment being 0.026 Nm/Kg. For the left leg, hip and knee joint in both CH and DH have lower RMSE values in our model, while the ankle joint has a lower RMSE in CH and a slightly higher RMSE in DH. Moreover, our model benefits from multi-modal sensor fusion by integrating both sEMG and IMU data, whereas DTN relies solely on sEMG, which can be sensitive to signal variability and lacks motion-state context. Taken together, our approach offers a more robust and precise solution for joint angle and moment prediction, especially in scenarios where absolute accuracy is essential.",
+        "bbox": [
+            501,
+            266,
+            924,
+            720
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "V. CONCLUSION",
+        "text_level": 2,
+        "bbox": [
+            651,
+            741,
+            774,
+            755
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Our goal in this research was to predict full lower-limb joint moments and joint angles over long horizons based on sensory data. To achieve this, we developed a regression network inspired by Transformer Neural Networks (TNNs) and trained the model using IMU and sEMG data. Our hypothesis was that IMU and sEMG signals serve as complementary sources of information for both kinematic and kinetic predictions. The results indicate that our network can accurately predict both joint moments and joint angles, demonstrating superior performance compared to the baseline model. Furthermore, we believe the proposed model can be effectively deployed in real-time applications, as its parallel neural network structure enhances computational efficiency, making it well-suited for real-time scenarios.",
+        "bbox": [
+            501,
+            763,
+            924,
+            946
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            911,
+            31,
+            921,
+            41
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            73,
+            69,
+            491,
+            99
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "VI. FUTURE WORKS",
+        "text_level": 2,
+        "bbox": [
+            207,
+            119,
+            359,
+            133
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "As a potential direction for future research, one could explore ways to enhance the computational efficiency of the network by optimizing the input data. Specifically, investigating whether accurate predictions can be achieved using a reduced number of inputs from IMU signals or sEMG signals could be beneficial. Additionally, in this study, sEMG and IMU signals were treated equally for both the joint angle prediction network and the joint moment prediction network. However, introducing a dynamic weighting mechanism between IMU and sEMG inputs, based on the specific prediction task (whether kinematic or kinetic), may further improve prediction accuracy.",
+        "bbox": [
+            73,
+            138,
+            493,
+            321
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "REFERENCES",
+        "text_level": 2,
+        "bbox": [
+            235,
+            340,
+            333,
+            354
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[1] T. S. Buchanan, D. G. Lloyd, K. Manal, and T. F. Besier, “Estimation of muscle forces and joint moments using a forward-inverse dynamics model,” in Medicine and Science in Sports and Exercise, vol. 37, pp. 1911–1916, 11 2005.",
+        "bbox": [
+            83,
+            363,
+            491,
+            409
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[2] P. Crenna and C. Frigo, “Dynamics of the ankle joint analyzed through moment-angle loops during human walking: Gender and age effects,” Human Movement Science, vol. 30, pp. 1185–1198, 12 2011.",
+        "bbox": [
+            83,
+            409,
+            491,
+            443
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[3] S. Chowdhury and N. Kumar, “Estimation of forces and moments of lower limb joints from kinematics data and inertial properties of the body by using inverse dynamics technique,” 2013.",
+        "bbox": [
+            83,
+            443,
+            491,
+            477
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[4] M. G. Hoy, F. E. Zajac, and M. E. Gordon, “A musculoskeletal model of the human lower extremity: The effect of muscle, tendon, and moment arm on the moment-angle relationship of musculotendon actuators at the hip, knee, and ankle,” Journal of biomechanics, 1990",
+        "bbox": [
+            84,
+            477,
+            491,
+            522
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[5] C. N. Maganaris, “A predictive model of moment-angle characteristics in human skeletal muscle: Application and validation in muscles across the ankle joint,” Journal of Theoretical Biology, vol. 230, pp. 89–98, 9 2004.",
+        "bbox": [
+            84,
+            523,
+            491,
+            566
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[6] E. Ceseracciu, Z. Sawacha, and C. Cobelli, “Comparison of markerless and marker-based motion capture technologies through simultaneous data collection during gait: Proof of concept,” PLoS ONE, vol. 9, 3 2014.",
+        "bbox": [
+            84,
+            568,
+            491,
+            612
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[7] R. M. Kanko, E. K. Laende, E. M. Davis, W. S. Selbie, and K. J. Deluzio, “Concurrent assessment of gait kinematics using marker-based and markerless motion capture,” Journal of Biomechanics, vol. 127, 10 2021.",
+        "bbox": [
+            83,
+            613,
+            491,
+            657
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[8] D. Thalmann and M. Panne, Computer Animation and Simulation ’97, vol. VIII. Springer Vienna, 1 ed., 9 1997.",
+        "bbox": [
+            84,
+            657,
+            490,
+            681
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[9] L. Herda, P. Fua, R. Plankers, R. Boulic, and D. Thalmann, “Skeletonbased motion capture for robust reconstruction of human motion,” IEEE, 5 2000.",
+        "bbox": [
+            83,
+            681,
+            491,
+            714
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[10] G. Liu and L. McMillan, “Estimation of missing markers in human motion capture,” Visual Computer, vol. 22, pp. 721–728, 9 2006.",
+        "bbox": [
+            78,
+            715,
+            490,
+            738
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[11] A. Aristidou, J. Cameron, and J. Lasenby, “Real-time estimation of missing markers in human motion capture-aristidou,” IEEE, 5 2008.",
+        "bbox": [
+            78,
+            739,
+            491,
+            761
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[12] A. Aristidou and J. Lasenby, “Real-time marker prediction and cor estimation in optical motion capture,” Visual Computer, vol. 29, pp. 7– 26, 2013.",
+        "bbox": [
+            78,
+            762,
+            491,
+            794
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[13] T. S. Buchanan, D. G. Lloyd, K. Manal, and T. F. Besier, “Neuromusculoskeletal modeling: Estimation of muscle forces and joint moments and movements from measurements of neural command,” 2004.",
+        "bbox": [
+            78,
+            795,
+            491,
+            829
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[14] B. Gabbasov, I. Danilov, I. M. Afanasyev, and E. Magid, “Toward a human-like biped robot gait: Biomechanical analysis of human locomotion recorded by kinect-based motion capture system,” IEEE International Symposium on Mechatronics and its Applications, 12 2015.",
+        "bbox": [
+            78,
+            829,
+            491,
+            875
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[15] J. ping Wang, S. hua Wang, Y. qing Wang, H. Hu, J. wei Yu, X. Zhao, J. lai Liu, X. Chen, and Y. Li, “A data process of human knee joint kinematics obtained by motion-capture measurement,” BMC Medical Informatics and Decision Making, vol. 21, 12 2021.",
+        "bbox": [
+            78,
+            875,
+            491,
+            920
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[16] A. Willemsen, J. V. Alste, and H. Boom, “Real-time gait assessment utilizing a new way of accelerometry.”",
+        "bbox": [
+            78,
+            920,
+            490,
+            944
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[17] R. Moe-Nilssen and J. L. Helbostad, “Estimation of gait cycle characteristics by trunk accelerometry,” Journal of Biomechanics, vol. 37, pp. 121–126, 2004.",
+        "bbox": [
+            506,
+            71,
+            921,
+            104
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[18] R. W. Selles, M. A. Formanoy, J. B. Bussmann, P. J. Janssens, and H. J. Stam, “Automated estimation of initial and terminal contact timing using accelerometers; development and validation in transtibial amputees and controls,” IEEE Transactions on Neural Systems and Rehabilitation Engineering, vol. 13, pp. 81–88, 3 2005.",
+        "bbox": [
+            506,
+            106,
+            921,
+            161
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[19] P. Picerno, “25 years of lower limb joint kinematics by using inertial and magnetic sensors: A review of methodological approaches,” 1 2017.",
+        "bbox": [
+            506,
+            162,
+            919,
+            184
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[20] J. Y. Goulermas, D. Howard, C. J. Nester, R. K. Jones, and L. Ren, “Regression techniques for the prediction of lower limb kinematics,” Journal of Biomechanical Engineering, vol. 127, pp. 1020–1024, 11 2005.",
+        "bbox": [
+            506,
+            184,
+            921,
+            229
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[21] A. Findlow, J. Y. Goulermas, C. Nester, D. Howard, and L. P. Kenney, “Predicting lower limb joint kinematics using wearable motion sensors,” Gait and Posture, vol. 28, pp. 120–126, 7 2008.",
+        "bbox": [
+            506,
+            229,
+            921,
+            263
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[22] H. Lim, B. Kim, and S. Park, “Prediction of lower limb kinetics and kinematics during walking by a single imu on the lower back using machine learning,” Sensors (Switzerland), vol. 20, 1 2020.",
+        "bbox": [
+            506,
+            263,
+            921,
+            297
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[23] I. Weygers, M. Kok, M. Konings, H. Hallez, H. D. Vroey, and K. Claeys, “Inertial sensor-based lower limb joint kinematics: A methodological systematic review,” 2 2020.",
+        "bbox": [
+            506,
+            297,
+            921,
+            330
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[24] W. Niswander, W. Wang, and K. Kontson, “Optimization of imu sensor placement for the measurement of lower limb joint kinematics,” Sensors (Switzerland), vol. 20, pp. 1–16, 11 2020.",
+        "bbox": [
+            506,
+            332,
+            921,
+            366
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[25] W. Pitt, S. H. Chen, and L. S. Chou, “Using imu-based kinematic markers to monitor dual-task gait balance control recovery in acutely concussed individuals,” Clinical Biomechanics, vol. 80, 12 2020.",
+        "bbox": [
+            506,
+            366,
+            919,
+            398
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[26] S. Majumder and M. J. Deen, “Wearable imu-based system for realtime monitoring of lower-limb joints,” IEEE Sensors Journal, vol. 21, pp. 8267–8275, 3 2021.",
+        "bbox": [
+            506,
+            398,
+            921,
+            434
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[27] T. McGrath and L. Stirling, “Body-worn imu-based human hip and knee kinematics estimation during treadmill walking,” Sensors, vol. 22, 4 2022.",
+        "bbox": [
+            506,
+            434,
+            921,
+            467
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[28] L. Carcreff, G. Payen, G. Grouvel, F. Masse, and S. Armand, “Three-´ dimensional lower-limb kinematics from accelerometers and gyroscopes with simple and minimal functional calibration tasks: Validation on asymptomatic participants,” Sensors, vol. 22, 8 2022.",
+        "bbox": [
+            506,
+            468,
+            921,
+            513
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[29] M. Versteyhe, H. D. Vroey, F. Debrouwere, H. Hallez, and K. Claeys, “A novel method to estimate the full knee joint kinematics using low cost imu sensors for easy to implement low cost diagnostics,” Sensors (Switzerland), vol. 20, 3 2020.",
+        "bbox": [
+            506,
+            513,
+            921,
+            558
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[30] J. S. Lora-Millan, A. F. Hidalgo, and E. Rocon, “An imus-based extended kalman filter to estimate gait lower limb sagittal kinematics for the control of wearable robotic devices,” IEEE Access, vol. 9, pp. 144550– 144554, 2021.",
+        "bbox": [
+            506,
+            558,
+            921,
+            603
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[31] L. Sy, M. Raitor, M. D. Rosario, H. Khamis, L. Kark, N. H. Lovell, and S. J. Redmond, “Estimating lower limb kinematics using a reduced wearable sensor count,” IEEE Transactions on Biomedical Engineering, vol. 68, pp. 1293–1304, 4 2021.",
+        "bbox": [
+            506,
+            603,
+            921,
+            648
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[32] M. V. Potter, S. M. Cain, L. V. Ojeda, R. D. Gurchiek, R. S. McGinnis, and N. C. Perkins, “Evaluation of error-state kalman filter method for estimating human lower-limb kinematics during various walking gaits,” Sensors, vol. 22, 11 2022.",
+        "bbox": [
+            506,
+            648,
+            921,
+            694
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[33] M. Lee and S. Park, “Estimation of three-dimensional lower limb kinetics data during walking using machine learning from a single imu attached to the sacrum,” Sensors (Switzerland), vol. 20, pp. 1–16, 11 2020.",
+        "bbox": [
+            506,
+            694,
+            921,
+            739
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[34] C. J. Lee and J. K. Lee, “Inertial motion capture-based wearable systems for estimation of joint kinetics: A systematic review,” 4 2022.",
+        "bbox": [
+            506,
+            739,
+            921,
+            762
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[35] S. Krishnakumar, B. J. F. van Beijnum, C. T. Baten, P. H. Veltink, and J. H. Buurke, “Estimation of kinetics using imus to monitor and aid in clinical decision-making during acl rehabilitation: A systematic review,” 4 2024.",
+        "bbox": [
+            506,
+            762,
+            921,
+            806
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[36] E. Dorschky, M. Nitschke, A. K. Seifer, A. J. van den Bogert, and B. M. Eskofier, “Estimation of gait kinematics and kinetics from inertial sensor data using optimal control of musculoskeletal models,” Journal of Biomechanics, vol. 95, 10 2019.",
+        "bbox": [
+            506,
+            806,
+            921,
+            853
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[37] M. Mundt, W. Thomsen, T. Witter, A. Koeppe, S. David, F. Bamer, W. Potthast, and B. Markert, “Prediction of lower limb joint angles and moments during gait using artificial neural networks,” Medical and Biological Engineering and Computing, vol. 58, pp. 211–225, 2020.",
+        "bbox": [
+            506,
+            853,
+            921,
+            898
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[38] M. Mundt, A. Koeppe, S. David, T. Witter, F. Bamer, W. Potthast, and B. Markert, “Estimation of gait mechanics based on simulated and measured imu data using an artificial neural network,” Frontiers in Bioengineering and Biotechnology, vol. 8, pp. 1–16, 2020.",
+        "bbox": [
+            506,
+            898,
+            921,
+            944
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            76,
+            31,
+            86,
+            40
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "[39] D. Stanev, K. Filip, D. Bitzas, S. Zouras, G. Giarmatzis, D. Tsaopoulos, and K. Moustakas, “Real-time musculoskeletal kinematics and dynamics analysis using marker-and imu-based solutions in rehabilitation,” Sensors, vol. 21, pp. 1–20, 3 2021.",
+        "bbox": [
+            76,
+            71,
+            491,
+            117
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[40] C. Yi, F. Jiang, M. Z. A. Bhuiyan, C. Yang, X. Gao, H. Guo, J. Ma, and S. Su, “Smart healthcare-oriented online prediction of lower-limb kinematics and kinetics based on data-driven neural signal decoding,” Future Generation Computer Systems, vol. 114, pp. 96–105, 1 2021.",
+        "bbox": [
+            76,
+            118,
+            491,
+            164
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[41] S. M. Moghadam, T. Yeung, and J. Choisne, “A comparison of machine learning models’ accuracy in predicting lower-limb joints’ kinematics, kinetics, and muscle forces from wearable sensors,” Scientific Reports, vol. 13, pp. 1–16, 2023.",
+        "bbox": [
+            76,
+            164,
+            491,
+            210
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[42] H. Dimitrov, A. M. Bull, and D. Farina, “High-density emg, imu, kinetic, and kinematic open-source data for comprehensive locomotion activities,” Scientific Data, vol. 10, 12 2023.",
+        "bbox": [
+            76,
+            210,
+            491,
+            244
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[43] M. M. Ardestani, X. Zhang, L. Wang, Q. Lian, Y. Liu, J. He, D. Li, and Z. Jin, “Human lower extremity joint moment prediction: A wavelet neural network approach,” Expert Systems with Applications, vol. 41, pp. 4422–4433, 7 2014.",
+        "bbox": [
+            76,
+            244,
+            491,
+            291
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[44] J. A. Brantley, S. Member, T. P. Luu, S. Nakagome, J. L. Contreras-Vidal, and S. Member, “Prediction of lower-limb joint kinematics from surface emg during overground locomotion,” 2017.",
+        "bbox": [
+            76,
+            292,
+            491,
+            325
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[45] J. Chen, X. Zhang, Y. Cheng, and N. Xi, “Surface emg based continuous estimation of human lower limb joint angles by using deep belief networks,” Biomedical Signal Processing and Control, vol. 40, pp. 335– 342, 2 2018.",
+        "bbox": [
+            76,
+            327,
+            491,
+            372
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[46] L. Bi, A. Feleke, and C. Guan, “A review on emg-based motor intention prediction of continuous human upper limb motion for human-robot collaboration,” 5 2019.",
+        "bbox": [
+            76,
+            373,
+            491,
+            407
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[47] B. Xiong, N. Zeng, H. Li, Y. Yang, Y. Li, M. Huang, W. Shi, M. Du, and Y. Zhang, “Intelligent prediction of human lower extremity joint moment: An artificial neural network approach,” IEEE Access, vol. 7, pp. 29973–29980, 2019.",
+        "bbox": [
+            76,
+            407,
+            491,
+            454
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[48] Y. Huang, Z. He, Y. Liu, R. Yang, X. Zhang, G. Cheng, J. Yi, J. P. Ferreira, and T. Liu, “Real-time intended knee joint motion prediction by deep-recurrent neural networks,” IEEE Sensors Journal, vol. 19, pp. 11503–11509, 12 2019.",
+        "bbox": [
+            76,
+            454,
+            491,
+            500
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[49] J. Liang, Z. Shi, F. Zhu, W. Chen, X. Chen, and Y. Li, “Gaussian process autoregression for joint angle prediction based on semg signals,” Frontiers in Public Health, vol. 9, 5 2021.",
+        "bbox": [
+            76,
+            500,
+            491,
+            535
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[50] S. P. Sitole and F. C. Sup, “Continuous prediction of human joint mechanics using emg signals: A review of model-based and modelfree approaches,” IEEE Transactions on Medical Robotics and Bionics, vol. 5, pp. 528–546, 8 2023.",
+        "bbox": [
+            76,
+            535,
+            491,
+            582
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[51] N. A. E. Yaakoubi, C. McDonald, and O. Lennon, “Prediction of gait kinematics and kinetics: A systematic review of emg and eeg signal use and their contribution to prediction accuracy,” 10 2023.",
+        "bbox": [
+            76,
+            582,
+            491,
+            617
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[52] S. J. Olney and D. A. Winter, “Predictions of knee and ankle moments of force in walking from emg and kinematic data,” 1985.",
+        "bbox": [
+            76,
+            617,
+            491,
+            641
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[53] T. K. Koo and A. F. Mak, “Feasibility of using emg driven neuromusculoskeletal model for prediction of dynamic movement of the elbow,” Journal of Electromyography and Kinesiology, vol. 15, pp. 12–26, 2 2005.",
+        "bbox": [
+            76,
+            641,
+            491,
+            686
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[54] Q. Shao, D. N. Bassett, K. Manal, and T. S. Buchanan, “An emg-driven model to estimate muscle forces and joint moments in stroke patients,” Computers in Biology and Medicine, vol. 39, pp. 1083–1088, 12 2009.",
+        "bbox": [
+            76,
+            688,
+            491,
+            722
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[55] J. Camargo, D. Molinaro, and A. Young, “Predicting biological joint moment during multiple ambulation tasks,” Journal of Biomechanics, vol. 134, 3 2022.",
+        "bbox": [
+            76,
+            723,
+            491,
+            756
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[56] K. G. Rabe and N. P. Fey, “Evaluating electromyography and sonomyography sensor fusion to estimate lower-limb kinematics using gaussian process regression,” Frontiers in Robotics and AI, vol. 9, 3 2022.",
+        "bbox": [
+            76,
+            758,
+            491,
+            792
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[57] Y. Koike and M. Kawato, “Biological cybernetics estimation of dynamic joint torques and trajectory formation from surface electromyography signals using a neural network model,” Biol. Cybern, vol. 73, p. 300, 1995.",
+        "bbox": [
+            76,
+            792,
+            491,
+            838
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[58] D. G. Lloyd and T. F. Besier, “An emg-driven musculoskeletal model to estimate muscle forces and knee joint moments in vivo,” Journal of Biomechanics, vol. 36, pp. 765–776, 6 2003.",
+        "bbox": [
+            76,
+            839,
+            493,
+            875
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[59] Q. Zhang, R. Hosoda, and G. Venture, “Human joint motion estimation for electromyography (emg)-based dynamic motion control,” 35th Annual International Conference of the IEEE EMBS, 2013.",
+        "bbox": [
+            76,
+            875,
+            491,
+            909
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[60] R. Merletti and G. L. Cerone, “Tutorial. surface emg detection, conditioning and pre-processing: Best practices,” Journal of Electromyography and Kinesiology, vol. 54, 10 2020.",
+        "bbox": [
+            76,
+            909,
+            491,
+            944
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[61] A. Baghdadi, L. A. Cavuoto, and J. L. Crassidis, “Hip and trunk kinematics estimation in gait through kalman filter using imu data at the ankle,” IEEE Sensors Journal, vol. 18, pp. 4253–4260, 5 2018.",
+        "bbox": [
+            506,
+            71,
+            921,
+            104
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[62] M. Abdelhady, A. J. V. D. Bogert, and D. Simon, “A high-fidelity wearable system for measuring lower-limb kinetics and kinematics,” IEEE Sensors Journal, vol. 19, pp. 12482–12493, 12 2019.",
+        "bbox": [
+            506,
+            104,
+            921,
+            138
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[63] W. Teufl, M. Miezal, B. Taetz, M. Frohlichi, and G. Bleser, “Validity of inertial sensor based 3d joint kinematics of static and dynamic sport and physiotherapy specific movements,” PLoS ONE, vol. 14, 2 2019.",
+        "bbox": [
+            506,
+            138,
+            921,
+            174
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[64] L. Sy, N. H. Lovell, and S. J. Redmond, Estimating Lower Limb Kinematics Using a Lie Group Constrained Extended Kalman Filter with a Reduced Wearable IMU Count and Distance Measurements. MDPI Sensors, 2020.",
+        "bbox": [
+            506,
+            172,
+            921,
+            218
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[65] X. Marimon, I. Mengual, C. L. de Celis, A. Portela, J. Rodr´ıguez-Sanz, I. A. Herraez, and A. P´ erez-Bellmunt, “Kinematic analysis of human gait´ in healthy young adults using imu sensors: Exploring relevant machine learning features for clinical applications,” Bioengineering, vol. 11, 2 2024.",
+        "bbox": [
+            506,
+            219,
+            921,
+            273
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[66] M. S. B. Hossain, Z. Guo, and H. Choi, “Estimation of lower extremity joint moments and 3d ground reaction forces using imu sensors in multiple walking conditions: A deep learning approach,” IEEE Journal of Biomedical and Health Informatics, vol. 27, pp. 2829–2840, 6 2023.",
+        "bbox": [
+            506,
+            275,
+            921,
+            320
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[67] M. S. Renani, A. M. Eustace, C. A. Myers, and C. W. Clary, “The use of synthetic imu signals in the training of deep learning models significantly improves the accuracy of joint kinematic predictions,” Sensors, vol. 21, 9 2021.",
+        "bbox": [
+            506,
+            320,
+            921,
+            364
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[68] V. Hernandez, D. Dadkhah, V. Babakeshizadeh, and D. Kulic, “Lower´ body kinematics estimation from wearable sensors for walking and running: A deep learning approach,” Gait and Posture, vol. 83, pp. 185– 193, 1 2021.",
+        "bbox": [
+            506,
+            364,
+            921,
+            410
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[69] Y. L. Chen, I. J. Yang, L. C. Fu, J. S. Lai, H. W. Liang, and L. Lu, “Imubased estimation of lower limb motion trajectory with graph convolution network,” IEEE Sensors Journal, vol. 21, pp. 24549–24557, 11 2021.",
+        "bbox": [
+            506,
+            410,
+            921,
+            445
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[70] E. Kaya and H. Argunsah, “Exploring the contribution of joint angles and semg signals on joint torque prediction accuracy using lstm-based deep learning techniques,” Computer Methods in Biomechanics and Biomedical Engineering, 2024.",
+        "bbox": [
+            506,
+            445,
+            921,
+            489
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[71] J. Zhang, Y. Zhao, F. Shone, Z. Li, A. F. Frangi, S. Q. Xie, and Z. Q. Zhang, “Physics-informed deep learning for musculoskeletal modeling: Predicting muscle forces and joint kinematics from surface emg,” IEEE Transactions on Neural Systems and Rehabilitation Engineering, vol. 31, pp. 484–493, 2023.",
+        "bbox": [
+            506,
+            489,
+            921,
+            546
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[72] Q. Song, X. Ma, and Y. Liu, “Continuous online prediction of lower limb joints angles based on semg signals by deep learning approach,” Computers in Biology and Medicine, vol. 163, 9 2023.",
+        "bbox": [
+            506,
+            547,
+            921,
+            580
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[73] Y. Shi, S. Ma, Y. Zhao, and Z. Zhang, “A physics-informed lowshot learning for semg-based estimation of muscle force and joint kinematics,” archive, 7 2023.",
+        "bbox": [
+            506,
+            580,
+            921,
+            614
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[74] M. T. N. Truong, A. E. A. Ali, D. Owaki, and M. Hayashibe, “Emgbased estimation of lower limb joint angles and moments using long short-term memory network,” Sensors, vol. 23, 3 2023.",
+        "bbox": [
+            506,
+            614,
+            921,
+            648
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[75] A. Foroutannia, M. R. Akbarzadeh-T, and A. Akbarzadeh, “A deep learning strategy for emg-based joint position prediction in hip exoskeleton assistive robots,” Biomedical Signal Processing and Control, vol. 75, 5 2022.",
+        "bbox": [
+            506,
+            648,
+            921,
+            694
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[76] W. Wu, K. R. Saul, and H. Huang, “Using reinforcement learning to estimate human joint moments from electromyography or joint kinematics: An alternative solution to musculoskeletal-based biomechanics,” Journal of Biomechanical Engineering, vol. 143, 4 2021.",
+        "bbox": [
+            506,
+            694,
+            921,
+            739
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[77] L. Zhang, Z. Li, Y. Hu, C. Smith, E. M. Farewik, and R. Wang, “Ankle joint torque estimation using an emg-driven neuromusculoskeletal model and an artificial neural network model,” IEEE Transactions on Automation Science and Engineering, vol. 18, pp. 564–573, 4 2021.",
+        "bbox": [
+            506,
+            739,
+            921,
+            784
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[78] Z. Wang, C. Chen, H. Chen, Y. Zhou, X. Wang, X. Wu, S. Member, and X. W. Z. Wang, “Dual transformer network for predicting joint angles and torques from multi-channel emg signals in the lower limbs,” IEEE Journal of Biomedical and Health Informatics, 2025.",
+        "bbox": [
+            506,
+            784,
+            921,
+            830
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[79] A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, Łukasz Kaiser, and I. Polosukhin, “Attention is all you need,” Advances in Neural Information Processing Systems, vol. 2017-Decem, pp. 5999– 6009, 2017.",
+        "bbox": [
+            506,
+            830,
+            921,
+            875
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[80] D. Bahdanau, K. H. Cho, and Y. Bengio, “Neural machine translation by jointly learning to align and translate,” 3rd International Conference on Learning Representations, ICLR 2015 - Conference Track Proceedings, pp. 1–15, 2015.",
+        "bbox": [
+            506,
+            875,
+            921,
+            920
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "[81] M. T. Luong, H. Pham, and C. D. Manning, “Effective approaches to attention-based neural machine translation,” Conference Proceedings -",
+        "bbox": [
+            506,
+            920,
+            921,
+            944
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            910,
+            31,
+            921,
+            40
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "EMNLP 2015: Conference on Empirical Methods in Natural Language Processing, pp. 1412–1421, 2015.",
+        "bbox": [
+            106,
+            71,
+            490,
+            94
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[82] H. Wang, A. Basu, G. Durandau, and M. Sartori, “A wearable realtime kinetic measurement sensor setup for human locomotion,” Wearable Technologies, vol. 4, 2023.",
+        "bbox": [
+            78,
+            94,
+            491,
+            128
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[83] K. He, X. Zhang, S. Ren, and J. Sun, “Deep residual learning for image recognition,” preprint, 12 2015.",
+        "bbox": [
+            78,
+            128,
+            490,
+            150
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "[84] M. Abadi, P. Barham, J. Chen, Z. Chen, A. Davis, J. Dean, M. Devin, S. Ghemawat, G. Irving, M. Isard, M. Kudlur, J. Levenberg, R. Monga, S. Moore, D. G. Murray, B. Steiner, P. Tucker, V. Vasudevan, P. Warden, M. Wicke, Y. Yu, and X. Zheng, “Tensorflow: A system for largescale machine learning,” Proceedings of the 12th USENIX Symposium on Operating Systems Design and Implementation (OSDI ’16), p. 786, 11 2016.",
+        "bbox": [
+            78,
+            151,
+            491,
+            229
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            76,
+            31,
+            93,
+            40
+        ],
+        "page_idx": 9
+    }
+]

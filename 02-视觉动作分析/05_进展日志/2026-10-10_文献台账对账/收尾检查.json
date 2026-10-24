@@ -1,0 +1,3053 @@
+{
+  "time": "2026-10-10T16:05:50.908988+08:00",
+  "environment": {
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "python": "3.12.7",
+    "pdftotext": "pdftotext version 26.07.0"
+  },
+  "scope": "20个既有文件的本轮差异及本日期目录新证据；不包含其他会话改动",
+  "snapshot_targets": 21,
+  "changed_targets": [
+    {
+      "path": "10_研究方向/主动参与与训练强度_链路研究/文献台账.json",
+      "before_sha256": "c52c995f178d68a00f78a07acb387425967ecb5d575dfa87d4af7c05775793e6",
+      "after_sha256": "e699227c9191700ef03647576b20f025bc29c354f48a5d2992d4eef9edfdc569"
+    },
+    {
+      "path": "06_附录/取件导读.md",
+      "before_sha256": "91ce5b19fb91f9390711260760669df7e68b98872efcded38541736b6827e2c4",
+      "after_sha256": "3c0ac5631be28dfcfefe5bb567e70d7a79407e29e6242409ceaa0bd8dba417ea"
+    },
+    {
+      "path": "06_附录/gen_acquisition_list.py",
+      "before_sha256": "70be5d3891ddb338a8511fdcd18b31cce1f232551ec8897b73c71caa410fb487",
+      "after_sha256": "23abb932006616a0bcdfd645b0fe12b8a86f431d9313b0db534276f454733bd0"
+    },
+    {
+      "path": "06_附录/自检脚本/test_acquisition_list.py",
+      "before_sha256": "31768e147f42deb4a6c6d8a5c3abb5952431c4487a59d3410a824dd0e69190c7",
+      "after_sha256": "b4eb09d6e1d79f4329449966795a5a47f3a96ff0bfe78fc09991c6377e266e18"
+    },
+    {
+      "path": "README.md",
+      "before_sha256": "61f82509b18f5f71fa730f5fea35e6336ffa4ab50912e20d02320ddfa0318537",
+      "after_sha256": "2a69a6ec5b8ac79c197ffbb4a9de9440f2a20eb145cb21e3d0d8ce29c3d76938"
+    },
+    {
+      "path": "INDEX.md",
+      "before_sha256": "fb907412cdbbadbac330da3c4dd5c7f163894108eb7233839f91ee5bb78e9731",
+      "after_sha256": "aa0dac81ca4345b49992dc006bccb8b18166959fd810044919bf00b99adae15f"
+    },
+    {
+      "path": "STATUS.md",
+      "before_sha256": "2e2ebb2a748d60dabdeeb41c924a271e16b7d0264c361cd3f978fbbdee9e3e42",
+      "after_sha256": "6df36a9e2c35f7ca0a0e044b4094e624d4f6c220cb36f83cf4dab4c9b24e3d58"
+    },
+    {
+      "path": "HANDOFF.md",
+      "before_sha256": "f3d4fffe2418439d3d3057fec667e54e7dae6926c481cc24091ff95ee3494fa0",
+      "after_sha256": "2dbc0bb30ea65d3102cfcf5b5ec2a669b647252059bca724fa86af91a1b1245d"
+    },
+    {
+      "path": "10_研究方向/README.md",
+      "before_sha256": "5ecd80bcff68bd0a6887803ee5d005b55880a02c3ffd3111d2eb3882242c7a4c",
+      "after_sha256": "8581f0055aedfb4fa319652a89343f46fcf32c1fc795d2c07173da216156ca53"
+    },
+    {
+      "path": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "before_sha256": "b9a4fdc333f96ba31a7a07f23ae812895b4dd9adfd9f066bb345e917c73d66cc",
+      "after_sha256": "a5c7da7f1efd10d4316845c89ddf8330af551945fb76ab4a045610dcf4c58d59"
+    },
+    {
+      "path": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "before_sha256": "7b60838b65c3eef4c230b701a0512dfd497ccf051060bd79ec550e1dee0ceeaa",
+      "after_sha256": "e4994443d73a4fe971e24e801cb538be0bf32f3693d69a07c4725d019385057d"
+    },
+    {
+      "path": "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "before_sha256": "567a3ff096aff5b0615562044d5b7860c7061e7ab76842875c92724f98b30184",
+      "after_sha256": "0a13f10a50ba6f5aac89ac0856586cd487ab94f41694d22a29b95784cb5a16ae"
+    },
+    {
+      "path": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "before_sha256": "da10b5ee3d9672a93dd2de92447ad875ddb29457df793c29d6d73c472f68e9fe",
+      "after_sha256": "6ab926fe7297162c51d9834eeddbf54ce7a2d614f4b52cd133b2ba9362b6e785"
+    },
+    {
+      "path": "01_参考论文/整合系统/决策模型线_JEV/index.json",
+      "before_sha256": "f7b6fd92fd4380768fac457164b8a12c7b19cde91182572fbfb7f677b393224f",
+      "after_sha256": "58082e27561d5dab30375e0c16b1f39e86c85f3f0009e1d2ae6dd1ad03d72e81"
+    },
+    {
+      "path": "01_参考论文/康复辅助/康复整合链路/index.json",
+      "before_sha256": "9f3adf059ef7b00bb1439c553364dac8e62b78af688020fdfaa8a46a4fe1ed81",
+      "after_sha256": "be580088a0fc8b21514e07275440a7546b1f37ef6257a23bb46626bb6242eb2e"
+    },
+    {
+      "path": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "before_sha256": "81b32c39ef60bda14ee7c618f61cc1d94be3ba7c64fc29379cc91cc519762ae1",
+      "after_sha256": "5566e45d8268b91e7b09f6b5341602fd7414cc26cda4e1d9ab0b5ebde4061c51"
+    },
+    {
+      "path": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "before_sha256": "3d1b3e59832895214b06cb4fdc4d467b75dece8b1760bdb8303026391aa0ac2c",
+      "after_sha256": "f64af1a74f4629fdb08f74a18a482cee94ee0df5adea2f0f3afe85531f440719"
+    },
+    {
+      "path": "01_参考论文/康复辅助/康复整合链路/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制_Evidence_Card.md",
+      "before_sha256": "9c1775af562ca5aa2b84dbb594d24009148af9b8bf1b676b4b09107a73e83261",
+      "after_sha256": "472d5225cacc28331c25df09542ca6c803eb23354f9fe92be9ada6e1bfc346ae"
+    },
+    {
+      "path": "01_参考论文/康复辅助/康复整合链路/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果_Evidence_Card.md",
+      "before_sha256": "b6d3fb0fda4a874ec53fc1decd1de4264f66b8b805d79e4d64a02e1e8163a3a9",
+      "after_sha256": "ac458d180be24f5fceff5f263ca2c031ee3c0113377503a7509d481685361271"
+    },
+    {
+      "path": "01_参考论文/康复辅助/康复整合链路/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制_Evidence_Card.md",
+      "before_sha256": "01b49cb739b83bf608631d573eeb9b8ab622126e62b010b98571d553aae46fa0",
+      "after_sha256": "7b624e19e2873f3f5ffa4df09b0805eecfd29f66d7b9193b76de7b917e433c5f"
+    }
+  ],
+  "unchanged_targets": [
+    "06_附录/待下载论文总清单.md"
+  ],
+  "new_trailing_whitespace": [],
+  "link_checked_count": 447,
+  "link_missing": [],
+  "links": [
+    {
+      "source": "06_附录/取件导读.md",
+      "line": 10,
+      "target": "gen_acquisition_list.py",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "06_附录/取件导读.md",
+      "line": 10,
+      "target": "../05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "06_附录/取件导读.md",
+      "line": 20,
+      "target": "待下载论文总清单.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "06_附录/取件导读.md",
+      "line": 21,
+      "target": "gen_acquisition_list.py",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "06_附录/取件导读.md",
+      "line": 70,
+      "target": "../10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "06_附录/取件导读.md",
+      "line": 72,
+      "target": "../02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "06_附录/取件导读.md",
+      "line": 113,
+      "target": "../02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 3,
+      "target": "09_章隆彬_合作团队/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 3,
+      "target": "09_章隆彬_合作团队/PAPER_GAP_LIST.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 5,
+      "target": "09_章隆彬_合作团队/资料核查/英文Markdown转换记录.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 8,
+      "target": "10_研究方向/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 9,
+      "target": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 10,
+      "target": "../",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 20,
+      "target": "10_研究方向/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 21,
+      "target": "10_研究方向/主动参与与训练强度_链路研究/心理参与补核.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 21,
+      "target": "10_研究方向/主动参与与训练强度_链路研究/外部实验分支核对.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 22,
+      "target": "10_研究方向/主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 23,
+      "target": "10_研究方向/主动参与与训练强度_链路研究/已取得最近工作_方法参照深核.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 24,
+      "target": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 25,
+      "target": "02_创新点矩阵/主动参与与训练强度_候选方向总表.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 26,
+      "target": "Agent.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 27,
+      "target": "HANDOFF.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 28,
+      "target": "INDEX.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 29,
+      "target": "00_研究背景/问题定义_视觉到关节角的翻译.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 30,
+      "target": "02_创新点矩阵/创新点查重_vs_竞品.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 32,
+      "target": "STATUS.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 83,
+      "target": "00_研究背景/问题定义_视觉到关节角的翻译.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 109,
+      "target": "04_实验设计/D435i_四问任务包/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 110,
+      "target": "04_实验设计/D435i_四问任务包/RealSense_D435i_腕关节康复人体运动状态感知测试任务书.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 111,
+      "target": "04_实验设计/D435i_四问任务包/01_上肢关键点三维坐标任务包.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 111,
+      "target": "04_实验设计/D435i_四问任务包/02_腕关节运动轨迹任务包.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 111,
+      "target": "04_实验设计/D435i_四问任务包/03_肩肘代偿识别任务包.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 111,
+      "target": "04_实验设计/D435i_四问任务包/04_运动质量评价任务包.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 112,
+      "target": "04_实验设计/D435i_四问任务包/D435i_实验方案与风险清单.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 112,
+      "target": "04_实验设计/D435i_四问任务包/历史归档/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 113,
+      "target": "00_研究背景/D435i_四问可行性回答.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 114,
+      "target": "05_进展日志/2026-09-30_D435i四问任务包更新与归档.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 151,
+      "target": "06_附录/缺口台账.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 188,
+      "target": "06_附录/缺口台账.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 188,
+      "target": "06_附录/检索渠道尝试记录.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "README.md",
+      "line": 192,
+      "target": "04_实验设计/D435i_四问任务包/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 9,
+      "target": "09_章隆彬_合作团队/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 9,
+      "target": "09_章隆彬_合作团队/资料核查/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 9,
+      "target": "09_章隆彬_合作团队/PAPER_GAP_LIST.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 13,
+      "target": "10_研究方向/主动参与与训练强度_链路研究/心理参与补核.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 13,
+      "target": "10_研究方向/主动参与与训练强度_链路研究/外部实验分支核对.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 14,
+      "target": "10_研究方向/主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 15,
+      "target": "10_研究方向/主动参与与训练强度_链路研究/已取得最近工作_方法参照深核.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 16,
+      "target": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 17,
+      "target": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 18,
+      "target": "12_宋嵘_合作团队/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 19,
+      "target": "10_研究方向/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 20,
+      "target": "HANDOFF.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 21,
+      "target": "00_研究背景/翻译范式论证与定位重定_2026-10-01.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 22,
+      "target": "01_参考论文/整合系统/生物力学线/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 23,
+      "target": "08_三维动作分析展示台/生物力学语料图谱.html",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 24,
+      "target": "00_研究背景/DoF覆盖核查_公开数据集.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 25,
+      "target": "00_研究背景/上肢DoF预算_串联链拓扑.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 26,
+      "target": "00_研究背景/V7_单目前臂旋转可行性_证据链.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 27,
+      "target": "00_研究背景/论文定位陈述_收窄版.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 28,
+      "target": "Agent.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 29,
+      "target": "README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 30,
+      "target": "00_研究背景/问题定义_视觉到关节角的翻译.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 31,
+      "target": "00_研究背景/立项依据_为何不是简单换媒介.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 32,
+      "target": "02_创新点矩阵/创新点查重_vs_竞品.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 33,
+      "target": "00_研究背景/Transformer_发展线与康复迁移推演.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 34,
+      "target": "02_创新点矩阵/Transformer前沿到上肢康复创新点矩阵.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 35,
+      "target": "01_参考论文/运动理解/Transformer_发展线/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 36,
+      "target": "06_附录/待下载论文总清单.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 37,
+      "target": "06_附录/取件导读.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 38,
+      "target": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 39,
+      "target": "02_创新点矩阵/主动参与与训练强度_候选方向总表.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 40,
+      "target": "06_附录/Transformer语料工具/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 41,
+      "target": "06_附录/生物力学语料工具/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 42,
+      "target": "06_附录/Transformer语料工具/翻译/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 43,
+      "target": "01_参考论文/运动理解/Transformer_发展线/取件入口.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 44,
+      "target": "02_创新点矩阵/ViKiT_方法概览.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 45,
+      "target": "08_三维动作分析展示台/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 46,
+      "target": "STATUS.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 47,
+      "target": "06_附录/pdf2zh调用脚本/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 61,
+      "target": "01_参考论文/整合系统/生物力学线/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 62,
+      "target": "01_参考论文/整合系统/生物力学线/index.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 63,
+      "target": "01_参考论文/整合系统/生物力学线/取件入口.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 64,
+      "target": "08_三维动作分析展示台/生物力学语料图谱.html",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 65,
+      "target": "00_研究背景/翻译范式论证与定位重定_2026-10-01.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 66,
+      "target": "00_研究背景/上肢DoF预算_串联链拓扑.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 67,
+      "target": "00_研究背景/DoF覆盖核查_公开数据集.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 68,
+      "target": "00_研究背景/V7_单目前臂旋转可行性_证据链.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 69,
+      "target": "00_研究背景/论文定位陈述_收窄版.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 70,
+      "target": "05_进展日志/2026-10-01_语料三新建与定位重定.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 89,
+      "target": "04_实验设计/D435i_四问任务包/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 90,
+      "target": "04_实验设计/D435i_四问任务包/RealSense_D435i_腕关节康复人体运动状态感知测试任务书.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 91,
+      "target": "04_实验设计/D435i_四问任务包/01_上肢关键点三维坐标任务包.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 92,
+      "target": "04_实验设计/D435i_四问任务包/02_腕关节运动轨迹任务包.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 93,
+      "target": "04_实验设计/D435i_四问任务包/03_肩肘代偿识别任务包.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 94,
+      "target": "04_实验设计/D435i_四问任务包/04_运动质量评价任务包.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 95,
+      "target": "04_实验设计/D435i_四问任务包/D435i_实验方案与风险清单.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 96,
+      "target": "00_研究背景/D435i_四问可行性回答.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 97,
+      "target": "04_实验设计/D435i_四问任务包/历史归档/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 98,
+      "target": "01_参考论文/康复辅助/腕关节康复感知_D435i/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 106,
+      "target": "01_参考论文/整合系统/sEMG_原始参照论文/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 107,
+      "target": "01_参考论文/运动理解/RGB_直接竞品_2026_Chao/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 108,
+      "target": "01_参考论文/运动理解/RGB_角度估计_2022_EMBC/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 109,
+      "target": "09_章隆彬_合作团队/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 115,
+      "target": "01_参考论文/运动理解/ViT_HMR_2.0/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 116,
+      "target": "01_参考论文/运动理解/TokenHMR_PoseTokens/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 117,
+      "target": "01_参考论文/运动理解/PoseFormer_MotionBERT/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 118,
+      "target": "01_参考论文/运动理解/METRO/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "INDEX.md",
+      "line": 124,
+      "target": "01_参考论文/运动理解/OpenCap_传统生物力学/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "STATUS.md",
+      "line": 4,
+      "target": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "STATUS.md",
+      "line": 4,
+      "target": "06_附录/待下载论文总清单.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "STATUS.md",
+      "line": 4,
+      "target": "06_附录/取件导读.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "STATUS.md",
+      "line": 5,
+      "target": "09_章隆彬_合作团队/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "STATUS.md",
+      "line": 5,
+      "target": "09_章隆彬_合作团队/资料核查/验证记录.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "STATUS.md",
+      "line": 6,
+      "target": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "STATUS.md",
+      "line": 7,
+      "target": "10_研究方向/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "STATUS.md",
+      "line": 71,
+      "target": "Agent.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "STATUS.md",
+      "line": 72,
+      "target": "04_实验设计/D435i_四问任务包/RealSense_D435i_腕关节康复人体运动状态感知测试任务书.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "STATUS.md",
+      "line": 73,
+      "target": "04_实验设计/D435i_四问任务包/01_上肢关键点三维坐标任务包.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "STATUS.md",
+      "line": 74,
+      "target": "04_实验设计/D435i_四问任务包/02_腕关节运动轨迹任务包.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "STATUS.md",
+      "line": 75,
+      "target": "04_实验设计/D435i_四问任务包/03_肩肘代偿识别任务包.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "STATUS.md",
+      "line": 76,
+      "target": "04_实验设计/D435i_四问任务包/04_运动质量评价任务包.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "STATUS.md",
+      "line": 77,
+      "target": "04_实验设计/D435i_四问任务包/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "STATUS.md",
+      "line": 77,
+      "target": "04_实验设计/D435i_四问任务包/D435i_实验方案与风险清单.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "STATUS.md",
+      "line": 78,
+      "target": "04_实验设计/D435i_四问任务包/历史归档/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "STATUS.md",
+      "line": 82,
+      "target": "05_进展日志/2026-09-30_D435i四问任务包更新与归档.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "STATUS.md",
+      "line": 145,
+      "target": "06_附录/检索渠道尝试记录.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "STATUS.md",
+      "line": 373,
+      "target": "10_研究方向/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 20,
+      "target": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 26,
+      "target": "09_章隆彬_合作团队/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 26,
+      "target": "09_章隆彬_合作团队/链路索引.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 26,
+      "target": "09_章隆彬_合作团队/资料核查/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 28,
+      "target": "09_章隆彬_合作团队/资料核查/英文Markdown转换记录.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 28,
+      "target": "09_章隆彬_合作团队/PAPER_GAP_LIST.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 38,
+      "target": "10_研究方向/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 40,
+      "target": "02_创新点矩阵/主动参与与训练强度_候选方向总表.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 40,
+      "target": "06_附录/待下载论文总清单.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 40,
+      "target": "06_附录/取件导读.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 40,
+      "target": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 47,
+      "target": "10_研究方向/主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 48,
+      "target": "10_研究方向/主动参与与训练强度_链路研究/链路验证计划.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 49,
+      "target": "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 53,
+      "target": "06_附录/生物力学语料工具/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 56,
+      "target": "06_附录/待下载论文总清单.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 57,
+      "target": "05_进展日志/2026-10-02_论文收尾与目录整理/论文收尾核查.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 58,
+      "target": "05_进展日志/2026-10-02_论文收尾与目录整理/目录迁移执行记录.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 65,
+      "target": "00_研究背景/翻译范式论证与定位重定_2026-10-01.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 66,
+      "target": "01_参考论文/整合系统/生物力学线/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 67,
+      "target": "00_研究背景/上肢DoF预算_串联链拓扑.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 67,
+      "target": "00_研究背景/DoF覆盖核查_公开数据集.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 86,
+      "target": "Agent.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 87,
+      "target": "04_实验设计/D435i_四问任务包/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 88,
+      "target": "04_实验设计/D435i_四问任务包/RealSense_D435i_腕关节康复人体运动状态感知测试任务书.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 88,
+      "target": "04_实验设计/D435i_四问任务包/D435i_实验方案与风险清单.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 88,
+      "target": "00_研究背景/D435i_四问可行性回答.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 89,
+      "target": "04_实验设计/D435i_四问任务包/历史归档/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 91,
+      "target": "05_进展日志/2026-09-30_D435i四问任务包更新与归档.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 109,
+      "target": "00_研究背景/问题定义_视觉到关节角的翻译.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 122,
+      "target": "02_创新点矩阵/创新点查重_vs_竞品.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 172,
+      "target": "05_进展日志/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 173,
+      "target": "03_方法设计/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 174,
+      "target": "03_方法设计/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 175,
+      "target": "03_方法设计/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 176,
+      "target": "04_实验设计/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 177,
+      "target": "06_附录/pdf2zh调用脚本/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 185,
+      "target": "06_附录/检索渠道尝试记录.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 195,
+      "target": "Agent.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 196,
+      "target": "04_实验设计/D435i_四问任务包/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 197,
+      "target": "00_研究背景/Transformer_发展线与康复迁移推演.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 198,
+      "target": "02_创新点矩阵/Transformer前沿到上肢康复创新点矩阵.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 199,
+      "target": "01_参考论文/运动理解/Transformer_发展线/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 200,
+      "target": "01_参考论文/运动理解/Transformer_发展线/取件入口.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 201,
+      "target": "06_附录/待下载论文总清单.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 202,
+      "target": "06_附录/Transformer语料工具/翻译/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 203,
+      "target": "06_附录/Transformer语料工具/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 204,
+      "target": "README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 205,
+      "target": "INDEX.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 206,
+      "target": "STATUS.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 207,
+      "target": "00_研究背景/问题定义_视觉到关节角的翻译.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 208,
+      "target": "00_研究背景/立项依据_为何不是简单换媒介.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 209,
+      "target": "02_创新点矩阵/创新点查重_vs_竞品.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 210,
+      "target": "02_创新点矩阵/ViKiT_方法概览.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 211,
+      "target": "06_附录/pdf2zh调用脚本/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 233,
+      "target": "12_宋嵘_合作团队/团队资料/LAB_PROFILE.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "HANDOFF.md",
+      "line": 234,
+      "target": "09_章隆彬_合作团队/LIST.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/README.md",
+      "line": 13,
+      "target": "../02_创新点矩阵/主动参与与训练强度_候选方向总表.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/README.md",
+      "line": 13,
+      "target": "../05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/README.md",
+      "line": 13,
+      "target": "主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/README.md",
+      "line": 13,
+      "target": "主动参与与训练强度_链路研究/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/README.md",
+      "line": 24,
+      "target": "主动参与与训练强度_链路研究/补取七篇_原件机制与候选裁剪.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/README.md",
+      "line": 24,
+      "target": "主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/README.md",
+      "line": 30,
+      "target": "../02_创新点矩阵/主动参与与训练强度_候选方向总表.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/README.md",
+      "line": 44,
+      "target": "../06_附录/待下载论文总清单.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/README.md",
+      "line": 44,
+      "target": "../06_附录/取件导读.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/README.md",
+      "line": 54,
+      "target": "../06_附录/待下载论文总清单.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/README.md",
+      "line": 78,
+      "target": "R1_AAN介入决策/建议.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/README.md",
+      "line": 79,
+      "target": "R2_运动意图回归主干/建议.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/README.md",
+      "line": 80,
+      "target": "R3_轻量化与端侧部署/建议.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/README.md",
+      "line": 81,
+      "target": "R4_跨被试泛化与个体化/建议.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/README.md",
+      "line": 82,
+      "target": "R5_来源核验与证据分级/建议.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 14,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 23,
+      "target": "../../02_创新点矩阵/主动参与与训练强度_候选方向总表.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 27,
+      "target": "研究范围与指标.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 27,
+      "target": "外部实验分支核对.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 28,
+      "target": "检索与筛选说明.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 28,
+      "target": "文献台账.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 29,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 29,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 29,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 30,
+      "target": "../../06_附录/待下载论文总清单.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 30,
+      "target": "../../05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 31,
+      "target": "文献对照表.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 31,
+      "target": "文献对照_原文定位.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 32,
+      "target": "补取七篇_原件机制与候选裁剪.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 33,
+      "target": "已取得最近工作_方法参照深核.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 33,
+      "target": "心理参与补核.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 33,
+      "target": "RL2026_正文补核与候选裁剪.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 34,
+      "target": "完整链路方案.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 34,
+      "target": "链路接口定义.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 34,
+      "target": "链路验证计划.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 35,
+      "target": "../../02_创新点矩阵/主动参与与训练强度_候选方向总表.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 35,
+      "target": "链路缺口与候选比较.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 35,
+      "target": "研究总结与裁定入口.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "line": 45,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 5,
+      "target": "../../02_创新点矩阵/主动参与与训练强度_候选方向总表.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 11,
+      "target": "../../05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 27,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 27,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 35,
+      "target": "研究范围与指标.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 35,
+      "target": "检索与筛选说明.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 36,
+      "target": "文献对照表.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 36,
+      "target": "文献对照_原文定位.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 36,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 37,
+      "target": "链路缺口与候选比较.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 38,
+      "target": "完整链路方案.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 38,
+      "target": "链路接口定义.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 38,
+      "target": "链路验证计划.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 39,
+      "target": "心理参与补核.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 39,
+      "target": "外部实验分支核对.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 40,
+      "target": "补取七篇_原件机制与候选裁剪.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 41,
+      "target": "已取得最近工作_方法参照深核.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 42,
+      "target": "../../06_附录/待下载论文总清单.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 42,
+      "target": "../../05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 46,
+      "target": "链路_数据反馈图.png",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 56,
+      "target": "链路缺口与候选比较.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 62,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 68,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 68,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 68,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 68,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 72,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 72,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 72,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 72,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 72,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 72,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 72,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 74,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 74,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 74,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 76,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 76,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "line": 76,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "line": 7,
+      "target": "../../05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "line": 7,
+      "target": "../../02_创新点矩阵/主动参与与训练强度_候选方向总表.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "line": 7,
+      "target": "补取七篇_原件机制与候选裁剪.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "line": 9,
+      "target": "外部实验分支核对.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "line": 13,
+      "target": "完整链路方案.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "line": 13,
+      "target": "链路接口定义.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "line": 13,
+      "target": "链路验证计划.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "line": 13,
+      "target": "文献对照表.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "line": 13,
+      "target": "文献对照_原文定位.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "line": 68,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "line": 88,
+      "target": "心理参与补核.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "line": 92,
+      "target": "已取得最近工作_方法参照深核.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "line": 96,
+      "target": "RL2026_正文补核与候选裁剪.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "line": 96,
+      "target": "补取七篇_原件机制与候选裁剪.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "line": 108,
+      "target": "外部实验分支核对.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "line": 108,
+      "target": "链路验证计划.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "line": 109,
+      "target": "补取七篇_原件机制与候选裁剪.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 5,
+      "target": "../05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 9,
+      "target": "主动参与与训练强度_候选方向总表.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 17,
+      "target": "../12_宋嵘_合作团队/资料核查/P0三篇精读_阻塞复核.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 22,
+      "target": "../09_章隆彬_合作团队/资料核查/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 31,
+      "target": "创新点查重_vs_竞品.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 32,
+      "target": "Transformer前沿到上肢康复创新点矩阵.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 33,
+      "target": "ViKiT_方法概览.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 35,
+      "target": "../09_章隆彬_合作团队/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 35,
+      "target": "../12_宋嵘_合作团队/",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 42,
+      "target": "../01_参考论文/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 51,
+      "target": "../12_宋嵘_合作团队/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 51,
+      "target": "../09_章隆彬_合作团队/链路索引.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 52,
+      "target": "../10_研究方向/主动参与与训练强度_链路研究/链路接口定义.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 52,
+      "target": "../10_研究方向/主动参与与训练强度_链路研究/心理参与补核.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 54,
+      "target": "主动参与与训练强度_候选方向总表.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 54,
+      "target": "../10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 54,
+      "target": "../10_研究方向/主动参与与训练强度_链路研究/研究总结与裁定入口.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 113,
+      "target": "../09_章隆彬_合作团队/链路索引.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 114,
+      "target": "../10_研究方向/主动参与与训练强度_链路研究/完整链路方案.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 115,
+      "target": "../10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 232,
+      "target": "../12_宋嵘_合作团队/LIST.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 234,
+      "target": "../06_附录/待下载论文总清单.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 238,
+      "target": "../06_附录/待下载论文总清单.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 239,
+      "target": "../06_附录/取件导读.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 262,
+      "target": "../10_研究方向/主动参与与训练强度_链路研究/完整链路方案.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 262,
+      "target": "../10_研究方向/主动参与与训练强度_链路研究/链路接口定义.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 262,
+      "target": "../10_研究方向/主动参与与训练强度_链路研究/链路验证计划.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 263,
+      "target": "../10_研究方向/主动参与与训练强度_链路研究/链路缺口与候选比较.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 264,
+      "target": "../10_研究方向/主动参与与训练强度_链路研究/心理参与补核.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 265,
+      "target": "../09_章隆彬_合作团队/链路索引.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 266,
+      "target": "../12_宋嵘_合作团队/链路索引.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 266,
+      "target": "../12_宋嵘_合作团队/资料核查/扩充语料_官方双页核对.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 266,
+      "target": "../12_宋嵘_合作团队/LIST.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 267,
+      "target": "../01_参考论文/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 267,
+      "target": "../01_参考论文/index.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 268,
+      "target": "创新点查重_vs_竞品.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 268,
+      "target": "ViKiT_方法概览.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "02_创新点矩阵/主动参与与训练强度_创新点矩阵.md",
+      "line": 268,
+      "target": "Transformer前沿到上肢康复创新点矩阵.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 3,
+      "target": "../../../06_附录/待下载论文总清单.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 3,
+      "target": "../../../10_研究方向/主动参与与训练强度_链路研究/README.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 9,
+      "target": "index.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 13,
+      "target": "PMC8688994.xml",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 14,
+      "target": "PMC2710333.xml",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 15,
+      "target": "PMC11885312.xml",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 16,
+      "target": "../../../12_宋嵘_合作团队/papers/背景资料/Tang2022-Fronteurobot：基于目标位置与跟踪误差的康复机器人变阻抗控制/Tang2022-Fronteurobot：基于目标位置与跟踪误差的康复机器人变阻抗控制.xml",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 17,
+      "target": "../../../12_宋嵘_合作团队/papers/背景资料/Song2013-JNER：面向卒中康复的肌电控制腕部康复机器人/Song2013-JNER：面向卒中康复的肌电控制腕部康复机器人.xml",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 18,
+      "target": "../../../12_宋嵘_合作团队/papers/背景资料/Wang2025-HBM：有效运动技能学习诱发对侧运动前区与辅助运动区的倒 U 型负荷依赖激活/Wang2025-HBM：有效运动技能学习诱发对侧运动前区与辅助运动区的倒 U 型负荷依赖激活.xml",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 19,
+      "target": "PMC12204900.xml",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 20,
+      "target": "PMC11021326.xml",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 21,
+      "target": "PMC12989500.xml",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 22,
+      "target": "PMC13523423.xml",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 23,
+      "target": "PMC4021830.xml",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 24,
+      "target": "PMC9708787.xml",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 25,
+      "target": "基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制.pdf",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 25,
+      "target": "基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制_Evidence_Card.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 31,
+      "target": "../../../12_宋嵘_合作团队/papers/背景资料/Xie2024-TRO：基于肌协同肌电控制器的线缆驱动上肢康复机器人/Xie2024-TRO：基于肌协同肌电控制器的线缆驱动上肢康复机器人.pdf",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 32,
+      "target": "../../../12_宋嵘_合作团队/papers/背景资料/Xie2024-TIE：基于静动态校准的深度 LSTM 人机协作控制/Xie2024-TIE：基于静动态校准的深度 LSTM 人机协作控制.pdf",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 33,
+      "target": "../../../12_宋嵘_合作团队/papers/背景资料/Yang2023-TBME：踝关节动力辅助康复机器人的自主助行控制器/Yang2023-TBME：踝关节动力辅助康复机器人的自主助行控制器.pdf",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 34,
+      "target": "../../../12_宋嵘_合作团队/papers/背景资料/Li2021-TBME：基于表现型混合控制的线缆驱动上肢康复机器人/Li2021-TBME：基于表现型混合控制的线缆驱动上肢康复机器人.pdf",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 35,
+      "target": "../../../12_宋嵘_合作团队/papers/背景资料/Xie2021-TBCAS：基于肌电导纳控制器的臂手一体化康复机器人/Xie2021-TBCAS：基于肌电导纳控制器的臂手一体化康复机器人.pdf",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 36,
+      "target": "基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果.pdf",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 37,
+      "target": "基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制.pdf",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 39,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/README.md",
+      "line": 39,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 5,
+      "target": "../../05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 13,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 13,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 16,
+      "target": "文献对照_判读.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 16,
+      "target": "文献对照_原文定位.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 31,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 46,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 61,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 76,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 91,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 106,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 121,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 136,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 151,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 166,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 181,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 196,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 211,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 226,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 241,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 256,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 271,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 286,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 301,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 316,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 333,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 348,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 363,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 378,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 393,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 408,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 423,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 438,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 453,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 468,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 483,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 498,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 513,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 528,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 543,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 560,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 575,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 590,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 601,
+      "target": "已取得最近工作_方法参照深核.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 605,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 620,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 635,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 650,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 665,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 680,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 695,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 710,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 721,
+      "target": "已取得最近工作_方法参照深核.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 725,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 725,
+      "target": "补取七篇_原件机制与候选裁剪.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 729,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 744,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 759,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 774,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 789,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 804,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 819,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 838,
+      "target": "心理参与补核.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "10_研究方向/主动参与与训练强度_链路研究/文献对照表.md",
+      "line": 851,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制_Evidence_Card.md",
+      "line": 9,
+      "target": "基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制.pdf",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制_Evidence_Card.md",
+      "line": 20,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制/基于阻抗调节的神经模糊肌骨模型驱动康复机器人按需辅助控制_Evidence_Card.md",
+      "line": 20,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果_Evidence_Card.md",
+      "line": 7,
+      "target": "基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果.pdf",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果_Evidence_Card.md",
+      "line": 9,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果_Evidence_Card.md",
+      "line": 23,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果/基于强化学习控制的个性化自适应助力提升机器人辅助手臂伸展训练中的参与度、表现和保持效果_Evidence_Card.md",
+      "line": 23,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制_Evidence_Card.md",
+      "line": 7,
+      "target": "基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制.pdf",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制_Evidence_Card.md",
+      "line": 9,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制_Evidence_Card.md",
+      "line": 23,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "01_参考论文/康复辅助/康复整合链路/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制/基于虚拟生物力学模型和在线刚度自适应的肩部康复机器人按需辅助控制_Evidence_Card.md",
+      "line": 23,
+      "target": "..",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 7,
+      "target": "../../10_研究方向/主动参与与训练强度_链路研究/文献台账.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 8,
+      "target": "../../06_附录/待下载论文总清单.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 8,
+      "target": "../../06_附录/gen_acquisition_list.py",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 8,
+      "target": "../../06_附录/取件导读.md",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 36,
+      "target": "最终87条对账.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 36,
+      "target": "台账修改预演.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 61,
+      "target": "复算对账.py",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 71,
+      "target": "结构提示复核.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 77,
+      "target": "最终87条对账.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 77,
+      "target": "最终87条对账.log",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 77,
+      "target": "最终87条对账.exit",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 78,
+      "target": "生成器回归.log",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 78,
+      "target": "读取顺序回归_RED.log",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 78,
+      "target": "读取顺序回归_GREEN.log",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 79,
+      "target": "相对链接回归.log",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 80,
+      "target": "最终清单幂等性.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 80,
+      "target": "生成与回归结果.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 81,
+      "target": "现行入口链接检查.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 81,
+      "target": "收尾检查.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 82,
+      "target": "最终全库自检.log",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 82,
+      "target": "全库前后比较.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 83,
+      "target": "本轮差异检查.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 83,
+      "target": "Git差异检查.log",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 83,
+      "target": "收尾检查.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 85,
+      "target": "任务包现行哈希.log",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 86,
+      "target": "任务包历史哈希.log",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 100,
+      "target": "全库前后比较.json",
+      "exists_or_self_reference": true
+    },
+    {
+      "source": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "line": 120,
+      "target": "收尾检查.json",
+      "exists_or_self_reference": true
+    }
+  ],
+  "documentation_cases_run_after_self_record_creation": "收尾文档专项.log / 收尾文档专项.exit",
+  "final_87_report_inputs_still_match": true,
+  "removed_disposable_cache": "__pycache__/复算对账.cpython-312.pyc（仅本轮py_compile生成）",
+  "evidence_files_before_self_record": [
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/87条身份扫描_初检.json",
+      "bytes": 115661,
+      "sha256": "d710575e8a27cc1fb340918e6ea38a7514da87a8a6af07310a9f21781fd81be0"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/DL-5e218103_末页抽取.txt",
+      "bytes": 12564,
+      "sha256": "2183ae202cc3a05cd204888ed1661e08500db9615a972fbc2eba44ef2dd5dd32"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/DL-5e218103_首页抽取.txt",
+      "bytes": 29936,
+      "sha256": "9eb16069420f9fb281c3c26a1d05510f9bfb7a7f97ddd6a57f3019f65e979b7f"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/DL-8b2db9dd_末页抽取.txt",
+      "bytes": 1035,
+      "sha256": "a10b7136787ea98f68b7f112537b50ff5addc72047e5fe5b7d1b78367fe47e24"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/DL-8b2db9dd_首页抽取.txt",
+      "bytes": 23602,
+      "sha256": "768693c838386119fb9a7d6bde3f72bcdd737ed1c4459fdec0c025c2818195ce"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/Git差异检查.exit",
+      "bytes": 2,
+      "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/Git差异检查.log",
+      "bytes": 148,
+      "sha256": "bfeecc1453135458a74dae363133e60a9953335469bf2b80c926f55828e72014"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/下载清单生成_第一次.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/下载清单生成_第一次.log",
+      "bytes": 171,
+      "sha256": "f89a89794c329052cceebd86a8744ecc094ffe05c46c0a2433a965073705e689"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/下载清单生成_第二次.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/下载清单生成_第二次.log",
+      "bytes": 171,
+      "sha256": "f89a89794c329052cceebd86a8744ecc094ffe05c46c0a2433a965073705e689"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/任务包历史哈希.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/任务包历史哈希.log",
+      "bytes": 312,
+      "sha256": "a4d02be97fa8c4dec89f2f8d15d0f38fda44f25de89baba9349138206aa18563"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/任务包现行哈希.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/任务包现行哈希.log",
+      "bytes": 546,
+      "sha256": "933ebaa35e7a1eb8a4c7f8b96d29a1bb9ca025c650d04819b33c774899509790"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/全库前后比较.json",
+      "bytes": 9065,
+      "sha256": "03c80caa51802c91d6175d28f8ca12d81d68771aa4a4472172f44b4b7cff3013"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/台账修改预演.json",
+      "bytes": 156423,
+      "sha256": "19e387caf8ccd49f2d07841e3943eb02ba017a199d86c8d0ab68c26e03476db4"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/同步后全库自检.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/同步后全库自检.log",
+      "bytes": 16529,
+      "sha256": "1bc1a097d2430284d07fa08fecd6e9a808cc4fc5433526a356c6030c8b9acd22"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/复算对账.py",
+      "bytes": 10011,
+      "sha256": "608538bedc52e0d35ae635c0af081d5b22e3b1b66e9cbf3194c3737c6d483b6c"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/收尾文本差异.patch",
+      "bytes": 94927,
+      "sha256": "8f4a87a63ae9eb0778cba0ecfd795ecd4d5586671736ec9232f955c9c3977946"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/整理前全库自检.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/整理前全库自检.log",
+      "bytes": 19849,
+      "sha256": "437403002c43fcd1e451cea8ecab8bc6acb92ddeed2b60db49e439ca8ec9f9e1"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/整理前文本快照.json",
+      "bytes": 407670,
+      "sha256": "25065fdc97e4c5b7e3f7526175d27d6f0b6f4d2890c48967591fde995e1124d0"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/整理记录.md",
+      "bytes": 12637,
+      "sha256": "40cdec8204c9945c8c9cd4727eb99b897f818d578e5da223791cd97e633740e7"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/最终87条对账.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/最终87条对账.json",
+      "bytes": 503197,
+      "sha256": "7f4c50d1dc8f4228c68b4e7a116ffbb8170a93f2b09be03b7fab23b0543ae2f0"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/最终87条对账.log",
+      "bytes": 72,
+      "sha256": "e54eab4f72c3db07f91d96aeec315b49d88f1799e1e6e282484e1d0ddbd9e1b7"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/最终全库自检.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/最终全库自检.log",
+      "bytes": 15301,
+      "sha256": "9a27d6c2e75249347653501498c5ccd58fee6b77c9aa6adc31ea58dd5f0c93fd"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/最终清单幂等性.json",
+      "bytes": 950,
+      "sha256": "f8a44983c7723d3c9ad135fdadadaf85b14ecd3f5bb1d233bf605acf14aaee54"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/本轮差异检查.json",
+      "bytes": 2499,
+      "sha256": "b55fc933005a6fb36c8c36fd3ae4e973146dc9ecff972efc25fc9c87c6fc3ea1"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/本轮文本差异.patch",
+      "bytes": 94188,
+      "sha256": "49a5e16ec9d6145ed741f94201d4f99eed1bfcd59a957dca43f14dc8847ec1d7"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/现行入口链接检查.json",
+      "bytes": 99760,
+      "sha256": "c1c15ab68472b19af547dd8c69e61b69c4ea3f3f1514489157da0b5960be745c"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/生成与回归结果.json",
+      "bytes": 1520,
+      "sha256": "a05ddf91c7c251de7c422a6b4d147b70c57ed012a0e67cd68113dd125d0f9546"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/生成器回归.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/生成器回归.log",
+      "bytes": 176,
+      "sha256": "582985ea3b21afd984ff6579add7d34f20137eec24b2f5e73eb67f2d3e60a632"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/生成器整理前预演.json",
+      "bytes": 224,
+      "sha256": "5d74993e22cd36fcc596ad9b60f4d62e444e93727166f833c7c719aa61c9172e"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/直接索引修改前快照.json",
+      "bytes": 152451,
+      "sha256": "025114f3b5c8cb2c2ab8a0a1b32c3cb38a3d1e825044546a6af3218eaa02256b"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/相对链接回归.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/相对链接回归.log",
+      "bytes": 758,
+      "sha256": "5e62aba04832b0596a432da66f1a8fa730e0fcd21145c0d0b2d5f619487d5e25"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/结构提示复核.json",
+      "bytes": 42262,
+      "sha256": "34d10febb05e6231017b49c3024ee4d3f11b5b554283adabe5dd1034d63d01f6"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/证据卡修改前快照.json",
+      "bytes": 7727,
+      "sha256": "00de4d567fe5a40a67a6a96f5284331334d61fd7c797fad865c382e76d2bda06"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/读取顺序回归_GREEN.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/读取顺序回归_GREEN.log",
+      "bytes": 118,
+      "sha256": "30fef72c12f29cee7095d78b3723b53daa76e89cd754d0bbe843fbac24d63b61"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/读取顺序回归_RED.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "05_进展日志/2026-10-10_文献台账对账/读取顺序回归_RED.log",
+      "bytes": 1417,
+      "sha256": "ad2fe57a5747ad1428e954c0bfd42dc9980df17c4d1e8dc83ab1c4fdaea0c17d"
+    }
+  ],
+  "final_summary": {
+    "included": 87,
+    "fulltext_verified": 87,
+    "pending": 0,
+    "full_suite_pass": 15,
+    "full_suite_fail": 7,
+    "full_suite_exit": 1,
+    "generator_regression_pass": 19,
+    "uri_regression_pass": 6,
+    "git_commit_performed": false
+  }
+}

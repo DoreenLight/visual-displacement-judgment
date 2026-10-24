@@ -1,0 +1,354 @@
+{
+  "time": "2026-10-10T16:01:32.675124+08:00",
+  "before": [
+    {
+      "status": "FAIL",
+      "case": "1",
+      "name": "Markdown 相对链接完整性",
+      "failed": 7,
+      "checked": 1191
+    },
+    {
+      "status": "PASS",
+      "case": "2",
+      "name": "翻译文档图片链接完整性",
+      "failed": 0,
+      "checked": 6527
+    },
+    {
+      "status": "PASS",
+      "case": "3",
+      "name": "顶层目录编号唯一性",
+      "failed": 0,
+      "checked": 13
+    },
+    {
+      "status": "PASS",
+      "case": "4",
+      "name": "顶层目录分隔符一致性",
+      "failed": 0,
+      "checked": 13
+    },
+    {
+      "status": "FAIL",
+      "case": "5",
+      "name": "空目录 + 空壳目录",
+      "failed": 3,
+      "checked": 921
+    },
+    {
+      "status": "PASS",
+      "case": "6",
+      "name": "索引一致性（日期/进度条/计数块）",
+      "failed": 0,
+      "checked": 4
+    },
+    {
+      "status": "FAIL",
+      "case": "7",
+      "name": "PDF <-> 全文翻译/定位卡 配对",
+      "failed": 169,
+      "checked": 457
+    },
+    {
+      "status": "PASS",
+      "case": "8",
+      "name": "软链接可达性（断链检查）",
+      "failed": 0,
+      "checked": 31
+    },
+    {
+      "status": "PASS",
+      "case": "9",
+      "name": "LIST.md 陈旧状态字段",
+      "failed": 0,
+      "checked": 32
+    },
+    {
+      "status": "PASS",
+      "case": "10",
+      "name": "正文计数声明 vs 磁盘",
+      "failed": 0,
+      "checked": 0
+    },
+    {
+      "status": "FAIL",
+      "case": "11",
+      "name": "目录树中的子目录 PDF 计数",
+      "failed": 2,
+      "checked": 2
+    },
+    {
+      "status": "PASS",
+      "case": "12",
+      "name": "正文 PDF 字节数 vs 磁盘",
+      "failed": 0,
+      "checked": 0
+    },
+    {
+      "status": "FAIL",
+      "case": "13",
+      "name": "速读卡/精读中的「未获取」陈述",
+      "failed": 2,
+      "checked": 662
+    },
+    {
+      "status": "PASS",
+      "case": "14",
+      "name": "归档包不得自述「替代包/未获原文」",
+      "failed": 0,
+      "checked": 4
+    },
+    {
+      "status": "PASS",
+      "case": "15",
+      "name": "缺口数/用例数自述一致性",
+      "failed": 0,
+      "checked": 6
+    },
+    {
+      "status": "PASS",
+      "case": "16",
+      "name": "现役正文中的无结论占位",
+      "failed": 0,
+      "checked": 363005
+    },
+    {
+      "status": "PASS",
+      "case": "17",
+      "name": "不得把归档包当权威来源",
+      "failed": 0,
+      "checked": 363022
+    },
+    {
+      "status": "FAIL",
+      "case": "18",
+      "name": "语料二（Transformer）索引与定位卡",
+      "failed": 34,
+      "checked": 93
+    },
+    {
+      "status": "PASS",
+      "case": "20",
+      "name": "语料三（生物力学）索引与定位卡",
+      "failed": 0,
+      "checked": 111
+    },
+    {
+      "status": "FAIL",
+      "case": "19",
+      "name": "纯待下载清单 ↔ 本轮纳入及全库全文",
+      "failed": 15,
+      "checked": 87
+    },
+    {
+      "status": "FAIL",
+      "case": "21",
+      "name": "康复链路全文身份/原件哈希/证据卡",
+      "failed": 9,
+      "checked": 20
+    },
+    {
+      "status": "FAIL",
+      "case": "6.5",
+      "name": "索引计数块 vs 磁盘复算",
+      "failed": 8,
+      "checked": 19
+    }
+  ],
+  "after": [
+    {
+      "status": "PASS",
+      "case": "1",
+      "name": "Markdown 相对链接完整性",
+      "failed": 0,
+      "checked": 1222
+    },
+    {
+      "status": "PASS",
+      "case": "2",
+      "name": "翻译文档图片链接完整性",
+      "failed": 0,
+      "checked": 6527
+    },
+    {
+      "status": "PASS",
+      "case": "3",
+      "name": "顶层目录编号唯一性",
+      "failed": 0,
+      "checked": 13
+    },
+    {
+      "status": "PASS",
+      "case": "4",
+      "name": "顶层目录分隔符一致性",
+      "failed": 0,
+      "checked": 13
+    },
+    {
+      "status": "FAIL",
+      "case": "5",
+      "name": "空目录 + 空壳目录",
+      "failed": 3,
+      "checked": 921
+    },
+    {
+      "status": "PASS",
+      "case": "6",
+      "name": "索引一致性（日期/进度条/计数块）",
+      "failed": 0,
+      "checked": 4
+    },
+    {
+      "status": "FAIL",
+      "case": "7",
+      "name": "PDF <-> 全文翻译/定位卡 配对",
+      "failed": 169,
+      "checked": 457
+    },
+    {
+      "status": "PASS",
+      "case": "8",
+      "name": "软链接可达性（断链检查）",
+      "failed": 0,
+      "checked": 31
+    },
+    {
+      "status": "PASS",
+      "case": "9",
+      "name": "LIST.md 陈旧状态字段",
+      "failed": 0,
+      "checked": 32
+    },
+    {
+      "status": "PASS",
+      "case": "10",
+      "name": "正文计数声明 vs 磁盘",
+      "failed": 0,
+      "checked": 0
+    },
+    {
+      "status": "FAIL",
+      "case": "11",
+      "name": "目录树中的子目录 PDF 计数",
+      "failed": 2,
+      "checked": 2
+    },
+    {
+      "status": "PASS",
+      "case": "12",
+      "name": "正文 PDF 字节数 vs 磁盘",
+      "failed": 0,
+      "checked": 0
+    },
+    {
+      "status": "FAIL",
+      "case": "13",
+      "name": "速读卡/精读中的「未获取」陈述",
+      "failed": 2,
+      "checked": 662
+    },
+    {
+      "status": "PASS",
+      "case": "14",
+      "name": "归档包不得自述「替代包/未获原文」",
+      "failed": 0,
+      "checked": 4
+    },
+    {
+      "status": "PASS",
+      "case": "15",
+      "name": "缺口数/用例数自述一致性",
+      "failed": 0,
+      "checked": 6
+    },
+    {
+      "status": "PASS",
+      "case": "16",
+      "name": "现役正文中的无结论占位",
+      "failed": 0,
+      "checked": 363108
+    },
+    {
+      "status": "PASS",
+      "case": "17",
+      "name": "不得把归档包当权威来源",
+      "failed": 0,
+      "checked": 363125
+    },
+    {
+      "status": "FAIL",
+      "case": "18",
+      "name": "语料二（Transformer）索引与定位卡",
+      "failed": 34,
+      "checked": 93
+    },
+    {
+      "status": "PASS",
+      "case": "20",
+      "name": "语料三（生物力学）索引与定位卡",
+      "failed": 0,
+      "checked": 111
+    },
+    {
+      "status": "FAIL",
+      "case": "19",
+      "name": "纯待下载清单 ↔ 本轮纳入及全库全文",
+      "failed": 6,
+      "checked": 87
+    },
+    {
+      "status": "PASS",
+      "case": "21",
+      "name": "康复链路全文身份/原件哈希/证据卡",
+      "failed": 0,
+      "checked": 20
+    },
+    {
+      "status": "FAIL",
+      "case": "6.5",
+      "name": "索引计数块 vs 磁盘复算",
+      "failed": 8,
+      "checked": 19
+    }
+  ],
+  "remaining_case19_outside_87": [
+    {
+      "title": "SalesRLAgent: A Reinforcement Learning Approach for Real-Time Sales Conversion Prediction",
+      "identity": "arxiv:2503.23303",
+      "included_in_87": false,
+      "declared_path": "01_参考论文/整合系统/决策模型线_JEV/D3_开源复现与替代/SalesRLAgent_ A Reinforcement Learning Approach for Real-Tim.pdf"
+    },
+    {
+      "title": "Confidence-Aware Routing for Large Language Model Reliability Enhancement: A Multi-Tier Framework",
+      "identity": "arxiv:2510.01237",
+      "included_in_87": false,
+      "declared_path": "01_参考论文/整合系统/决策模型线_JEV/D3_开源复现与替代/Confidence-Aware Routing for Large Language Model Reliabilit.pdf"
+    },
+    {
+      "title": "Edge-deployable pelvic IMU temporal convolution for real time hip and knee joint angle estimation",
+      "identity": "doi:10.1016/j.bspc.2026.110933",
+      "included_in_87": false,
+      "declared_path": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/Edge-deployable pelvic IMU temporal convolution for real tim.pdf"
+    },
+    {
+      "title": "sEMG-based Regression of Hand Kinematics with Temporal Convolutional Networks on a Low-Power Edge Microcontroller",
+      "identity": "doi:10.1109/embc.46406.2021.9630825",
+      "included_in_87": false,
+      "declared_path": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/sEMG-based Regression of Hand Kinematics with Temporal Convo.pdf"
+    },
+    {
+      "title": "SE-TCN network for continuous estimation of upper limb joint angles",
+      "identity": "doi:10.3934/mbe.2023152",
+      "included_in_87": false,
+      "declared_path": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/SE-TCN network for continuous estimation of upper limb joint.pdf"
+    },
+    {
+      "title": "Multijoint Continuous Motion Estimation for Human Lower Limb Based on Surface Electromyography",
+      "identity": "doi:10.3390/s25030719",
+      "included_in_87": false,
+      "declared_path": "01_参考论文/整合系统/决策模型线_JEV/D5_轻量化非Transformer路线/Multijoint Continuous Motion Estimation for Human Lower Limb.pdf"
+    }
+  ],
+  "boundary": "仅本87条及其直接依赖；不能因标题相近把这些六项混入待下载清单"
+}

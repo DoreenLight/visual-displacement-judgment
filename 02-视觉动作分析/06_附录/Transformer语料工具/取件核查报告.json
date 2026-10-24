@@ -1,0 +1,1554 @@
+{
+  "items": [
+    {
+      "doi": "10.1007/s10439-016-1591-9",
+      "title": "Evaluation of Direct Collocation Optimal Control Problem Formulations for Solving the Muscle Redundancy Problem",
+      "checked_at": "2026-10-02T14:48:07.923600+08:00",
+      "crossref": {
+        "title": [
+          "Evaluation of Direct Collocation Optimal Control Problem Formulations for Solving the Muscle Redundancy Problem"
+        ],
+        "link": [
+          {
+            "URL": "http://link.springer.com/article/10.1007/s10439-016-1591-9/fulltext.html",
+            "content-type": "text/html",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/s10439-016-1591-9.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/s10439-016-1591-9.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          },
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/s10439-016-1591-9",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "resource": {
+          "primary": {
+            "URL": "http://link.springer.com/10.1007/s10439-016-1591-9"
+          }
+        }
+      },
+      "epmc": [
+        {
+          "title": "Evaluation of Direct Collocation Optimal Control Problem Formulations for Solving the Muscle Redundancy Problem.",
+          "doi": "10.1007/s10439-016-1591-9",
+          "pmcid": "PMC5043004",
+          "oa": "Y",
+          "links": {
+            "fullTextUrl": [
+              {
+                "availability": "Subscription required",
+                "availabilityCode": "S",
+                "documentStyle": "doi",
+                "site": "DOI",
+                "url": "https://doi.org/10.1007/s10439-016-1591-9"
+              },
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "html",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC5043004"
+              },
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "pdf",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC5043004?pdf=render"
+              }
+            ]
+          }
+        }
+      ],
+      "openalex": {
+        "title": "Evaluation of Direct Collocation Optimal Control Problem Formulations for Solving the Muscle Redundancy Problem",
+        "oa": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://link.springer.com/content/pdf/10.1007/s10439-016-1591-9.pdf",
+          "any_repository_has_fulltext": true
+        },
+        "locations": [
+          {
+            "pdf": "https://link.springer.com/content/pdf/10.1007/s10439-016-1591-9.pdf",
+            "url": "https://doi.org/10.1007/s10439-016-1591-9",
+            "oa": true
+          },
+          {
+            "pdf": null,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27001399",
+            "oa": false
+          },
+          {
+            "pdf": "https://lirias.kuleuven.be/retrieve/a18bdde4-07db-4654-a032-90a24334b268",
+            "url": "https://lirias.kuleuven.be/handle/123456789/535775",
+            "oa": true
+          },
+          {
+            "pdf": null,
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5043004",
+            "oa": true
+          },
+          {
+            "pdf": null,
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5043004",
+            "oa": true
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.1186/s12984-016-0170-5",
+      "title": "Neuro-musculoskeletal simulation of instrumented contracture and spasticity assessment in children with cerebral palsy",
+      "checked_at": "2026-10-02T14:48:07.923745+08:00",
+      "crossref": {
+        "title": [
+          "Neuro-musculoskeletal simulation of instrumented contracture and spasticity assessment in children with cerebral palsy"
+        ],
+        "link": [
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1186/s12984-016-0170-5",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "resource": {
+          "primary": {
+            "URL": "http://jneuroengrehab.biomedcentral.com/articles/10.1186/s12984-016-0170-5"
+          }
+        }
+      },
+      "epmc": [
+        {
+          "title": "Neuro-musculoskeletal simulation of instrumented contracture and spasticity assessment in children with cerebral palsy.",
+          "doi": "10.1186/s12984-016-0170-5",
+          "pmcid": "PMC4947289",
+          "oa": "Y",
+          "links": {
+            "fullTextUrl": [
+              {
+                "availability": "Subscription required",
+                "availabilityCode": "S",
+                "documentStyle": "doi",
+                "site": "DOI",
+                "url": "https://doi.org/10.1186/s12984-016-0170-5"
+              },
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "html",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC4947289"
+              },
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "pdf",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC4947289?pdf=render"
+              }
+            ]
+          }
+        }
+      ],
+      "openalex": {
+        "title": "Neuro-musculoskeletal simulation of instrumented contracture and spasticity assessment in children with cerebral palsy",
+        "oa": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://jneuroengrehab.biomedcentral.com/track/pdf/10.1186/s12984-016-0170-5",
+          "any_repository_has_fulltext": true
+        },
+        "locations": [
+          {
+            "pdf": "https://jneuroengrehab.biomedcentral.com/track/pdf/10.1186/s12984-016-0170-5",
+            "url": "https://doi.org/10.1186/s12984-016-0170-5",
+            "oa": true
+          },
+          {
+            "pdf": null,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27423898",
+            "oa": false
+          },
+          {
+            "pdf": null,
+            "url": "https://research.vumc.nl/en/publications/4cd016f3-074b-4abe-812d-b66efd2994f3",
+            "oa": false
+          },
+          {
+            "pdf": "https://biblio.ugent.be/publication/8695832/file/8718971",
+            "url": "http://hdl.handle.net/1854/LU-8695832",
+            "oa": true
+          },
+          {
+            "pdf": "https://lirias.kuleuven.be/retrieve/17e5333d-7d3b-4362-b89c-af3aa9c17c27",
+            "url": "https://lirias.kuleuven.be/handle/123456789/526229",
+            "oa": true
+          },
+          {
+            "pdf": null,
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4947289",
+            "oa": true
+          },
+          {
+            "pdf": null,
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4947289",
+            "oa": true
+          },
+          {
+            "pdf": null,
+            "url": "https://pure.amsterdamumc.nl/files/159959213/Neuro-musculoskeletal-simulation-of-instrumented-contracture-and-spasticity-assessment-in-children-with-cerebral-palsy.pdf",
+            "oa": true
+          },
+          {
+            "pdf": null,
+            "url": "https://research.vumc.nl/en/publications/4cd016f3-074b-4abe-812d-b66efd2994f3",
+            "oa": false
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.1038/s41598-022-13386-9",
+      "title": "Muscle coordination retraining inspired by musculoskeletal simulations reduces knee contact force",
+      "checked_at": "2026-10-02T14:48:07.923808+08:00",
+      "crossref": {
+        "title": [
+          "Muscle coordination retraining inspired by musculoskeletal simulations reduces knee contact force"
+        ],
+        "link": [
+          {
+            "URL": "https://www.nature.com/articles/s41598-022-13386-9.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "https://www.nature.com/articles/s41598-022-13386-9",
+            "content-type": "text/html",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "https://www.nature.com/articles/s41598-022-13386-9.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "resource": {
+          "primary": {
+            "URL": "https://www.nature.com/articles/s41598-022-13386-9"
+          }
+        }
+      },
+      "epmc": [
+        {
+          "title": "Muscle coordination retraining inspired by musculoskeletal simulations reduces knee contact force.",
+          "doi": "10.1038/s41598-022-13386-9",
+          "pmcid": "PMC9262899",
+          "oa": "Y",
+          "links": {
+            "fullTextUrl": [
+              {
+                "availability": "Subscription required",
+                "availabilityCode": "S",
+                "documentStyle": "doi",
+                "site": "DOI",
+                "url": "https://doi.org/10.1038/s41598-022-13386-9"
+              },
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "html",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC9262899"
+              },
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "pdf",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC9262899?pdf=render"
+              }
+            ]
+          }
+        }
+      ],
+      "openalex": {
+        "title": "Muscle coordination retraining inspired by musculoskeletal simulations reduces knee contact force",
+        "oa": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://www.nature.com/articles/s41598-022-13386-9.pdf",
+          "any_repository_has_fulltext": true
+        },
+        "locations": [
+          {
+            "pdf": "https://www.nature.com/articles/s41598-022-13386-9.pdf",
+            "url": "https://doi.org/10.1038/s41598-022-13386-9",
+            "oa": true
+          },
+          {
+            "pdf": null,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35798755",
+            "oa": false
+          },
+          {
+            "pdf": null,
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/9262899",
+            "oa": true
+          },
+          {
+            "pdf": null,
+            "url": "https://doaj.org/article/e71fce7e534048f19a07213cb522b737",
+            "oa": true
+          },
+          {
+            "pdf": null,
+            "url": "http://resolver.tudelft.nl/uuid:22c1882c-3670-4c9a-adfe-38182b4a5541",
+            "oa": false
+          },
+          {
+            "pdf": null,
+            "url": "http://resolver.tudelft.nl/uuid:22c1882c-3670-4c9a-adfe-38182b4a5541",
+            "oa": true
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.1088/1741-2560/6/3/036004",
+      "title": "Muscle synergies as a predictive framework for the EMG patterns of new hand postures",
+      "checked_at": "2026-10-02T14:48:12.745525+08:00",
+      "crossref": {
+        "title": [
+          "Muscle synergies as a predictive framework for the EMG patterns of new hand postures"
+        ],
+        "link": null,
+        "resource": {
+          "primary": {
+            "URL": "https://iopscience.iop.org/article/10.1088/1741-2560/6/3/036004"
+          }
+        }
+      },
+      "epmc": [
+        {
+          "title": "Muscle synergies as a predictive framework for the EMG patterns of new hand postures.",
+          "doi": "10.1088/1741-2560/6/3/036004",
+          "pmcid": "PMC3151158",
+          "oa": "N",
+          "links": {
+            "fullTextUrl": [
+              {
+                "availability": "Free",
+                "availabilityCode": "F",
+                "documentStyle": "pdf",
+                "site": "Unpaywall",
+                "url": "https://europepmc.org/articles/pmc3151158?pdf=render"
+              },
+              {
+                "availability": "Subscription required",
+                "availabilityCode": "S",
+                "documentStyle": "doi",
+                "site": "DOI",
+                "url": "https://doi.org/10.1088/1741-2560/6/3/036004"
+              },
+              {
+                "availability": "Free",
+                "availabilityCode": "F",
+                "documentStyle": "html",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC3151158"
+              },
+              {
+                "availability": "Free",
+                "availabilityCode": "F",
+                "documentStyle": "pdf",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC3151158?pdf=render"
+              },
+              {
+                "availability": "Free",
+                "availabilityCode": "F",
+                "documentStyle": "doi",
+                "site": "DOI",
+                "url": "https://doi.org/10.1088/1741-2560/6/3/036004"
+              }
+            ]
+          }
+        }
+      ],
+      "openalex": {
+        "title": "Muscle synergies as a predictive framework for the EMG patterns of new hand postures",
+        "oa": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://iopscience.iop.org/article/10.1088/1741-2560/6/3/036004/pdf",
+          "any_repository_has_fulltext": true
+        },
+        "locations": [
+          {
+            "pdf": "https://iopscience.iop.org/article/10.1088/1741-2560/6/3/036004/pdf",
+            "url": "https://doi.org/10.1088/1741-2560/6/3/036004",
+            "oa": true
+          },
+          {
+            "pdf": null,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19436081",
+            "oa": false
+          },
+          {
+            "pdf": null,
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/3151158",
+            "oa": false
+          },
+          {
+            "pdf": null,
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/3151158",
+            "oa": true
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.1034/j.1600-0404.2003.00021.x",
+      "title": "Motor compensation and recovery for reaching in stroke patients",
+      "checked_at": "2026-10-02T14:48:12.936972+08:00",
+      "crossref": {
+        "title": [
+          "Motor compensation and recovery for reaching in stroke patients"
+        ],
+        "link": [
+          {
+            "URL": "https://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1034%2Fj.1600-0404.2003.00021.x",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "https://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1034%2Fj.1600-0404.2003.00021.x",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://onlinelibrary.wiley.com/wol1/doi/10.1034/j.1600-0404.2003.00021.x/fullpdf",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "resource": {
+          "primary": {
+            "URL": "http://doi.wiley.com/10.1034/j.1600-0404.2003.00021.x"
+          }
+        }
+      },
+      "epmc": [
+        {
+          "title": "Motor compensation and recovery for reaching in stroke patients.",
+          "doi": "10.1034/j.1600-0404.2003.00021.x",
+          "pmcid": null,
+          "oa": "N",
+          "links": {
+            "fullTextUrl": [
+              {
+                "availability": "Free",
+                "availabilityCode": "F",
+                "documentStyle": "doi",
+                "site": "Unpaywall",
+                "url": "https://doi.org/10.1034/j.1600-0404.2003.00021.x"
+              },
+              {
+                "availability": "Subscription required",
+                "availabilityCode": "S",
+                "documentStyle": "doi",
+                "site": "DOI",
+                "url": "https://doi.org/10.1034/j.1600-0404.2003.00021.x"
+              }
+            ]
+          }
+        }
+      ],
+      "openalex": {
+        "title": "Motor compensation and recovery for reaching in stroke patients",
+        "oa": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1034/j.1600-0404.2003.00021.x",
+          "any_repository_has_fulltext": false
+        },
+        "locations": [
+          {
+            "pdf": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1034/j.1600-0404.2003.00021.x",
+            "url": "https://doi.org/10.1034/j.1600-0404.2003.00021.x",
+            "oa": true
+          },
+          {
+            "pdf": null,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12713530",
+            "oa": false
+          },
+          {
+            "pdf": null,
+            "url": "https://hal.science/hal-00174066",
+            "oa": false
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.1155/2014/636123",
+      "title": "Kinematic Analysis of the Upper Limb Motor Strategies in Stroke Patients as a Tool towards Advanced Neurorehabilitation Strategies: A Preliminary Study",
+      "checked_at": "2026-10-02T14:48:13.135597+08:00",
+      "crossref": {
+        "title": [
+          "Kinematic Analysis of the Upper Limb Motor Strategies in Stroke Patients as a Tool towards Advanced Neurorehabilitation Strategies: A Preliminary Study"
+        ],
+        "link": [
+          {
+            "URL": "http://downloads.hindawi.com/journals/bmri/2014/636123.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://downloads.hindawi.com/journals/bmri/2014/636123.xml",
+            "content-type": "application/xml",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://downloads.hindawi.com/journals/bmri/2014/636123.pdf",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "resource": {
+          "primary": {
+            "URL": "http://www.hindawi.com/journals/bmri/2014/636123/"
+          }
+        }
+      },
+      "epmc": [
+        {
+          "title": "Kinematic analysis of the upper limb motor strategies in stroke patients as a tool towards advanced neurorehabilitation strategies: a preliminary study.",
+          "doi": "10.1155/2014/636123",
+          "pmcid": "PMC4017871",
+          "oa": "Y",
+          "links": {
+            "fullTextUrl": [
+              {
+                "availability": "Subscription required",
+                "availabilityCode": "S",
+                "documentStyle": "doi",
+                "site": "DOI",
+                "url": "https://doi.org/10.1155/2014/636123"
+              },
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "html",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC4017871"
+              },
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "pdf",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC4017871?pdf=render"
+              }
+            ]
+          }
+        }
+      ],
+      "openalex": {
+        "title": "Kinematic Analysis of the Upper Limb Motor Strategies in Stroke Patients as a Tool towards Advanced Neurorehabilitation Strategies: A Preliminary Study",
+        "oa": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://downloads.hindawi.com/journals/bmri/2014/636123.pdf",
+          "any_repository_has_fulltext": true
+        },
+        "locations": [
+          {
+            "pdf": "https://downloads.hindawi.com/journals/bmri/2014/636123.pdf",
+            "url": "https://doi.org/10.1155/2014/636123",
+            "oa": true
+          },
+          {
+            "pdf": null,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/24868536",
+            "oa": false
+          },
+          {
+            "pdf": null,
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4017871",
+            "oa": true
+          },
+          {
+            "pdf": null,
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4017871",
+            "oa": true
+          },
+          {
+            "pdf": null,
+            "url": "https://doaj.org/article/5fa9b0f9dfe54817bb963184e977bc4c",
+            "oa": false
+          },
+          {
+            "pdf": null,
+            "url": "http://hdl.handle.net/10807/68069",
+            "oa": true
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.1016/s0268-0033(00)00082-6",
+      "title": "Joint coordinate systems of axes for coherence in reporting kinematic and kinetic data",
+      "checked_at": "2026-10-02T14:48:17.436040+08:00",
+      "crossref": {
+        "title": [
+          "Joint coordinate systems of axes for coherence in reporting kinematic and kinetic data"
+        ],
+        "link": [
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:S0268003300000826?httpAccept=text/xml",
+            "content-type": "text/xml",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:S0268003300000826?httpAccept=text/plain",
+            "content-type": "text/plain",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          }
+        ],
+        "resource": {
+          "primary": {
+            "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0268003300000826"
+          }
+        }
+      },
+      "epmc": [],
+      "openalex": {
+        "title": "Joint coordinate systems of axes for coherence in reporting kinematic and kinetic data",
+        "oa": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "locations": [
+          {
+            "pdf": null,
+            "url": "https://doi.org/10.1016/s0268-0033(00)00082-6",
+            "oa": false
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.1016/0021-9290(96)00031-0",
+      "title": "Moment arms and lengths of human upper limb muscles as functions of joint angles",
+      "checked_at": "2026-10-02T14:48:17.998512+08:00",
+      "crossref": {
+        "title": [
+          "Moment arms and lengths of human upper limb muscles as functions of joint angles"
+        ],
+        "link": [
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:0021929096000310?httpAccept=text/xml",
+            "content-type": "text/xml",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:0021929096000310?httpAccept=text/plain",
+            "content-type": "text/plain",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          }
+        ],
+        "resource": {
+          "primary": {
+            "URL": "https://linkinghub.elsevier.com/retrieve/pii/0021929096000310"
+          }
+        }
+      },
+      "epmc": [
+        {
+          "title": "Moment arms and lengths of human upper limb muscles as functions of joint angles.",
+          "doi": "10.1016/0021-9290(96)00031-0",
+          "pmcid": null,
+          "oa": "N",
+          "links": {
+            "fullTextUrl": [
+              {
+                "availability": "Subscription required",
+                "availabilityCode": "S",
+                "documentStyle": "doi",
+                "site": "DOI",
+                "url": "https://doi.org/10.1016/0021-9290(96)00031-0"
+              }
+            ]
+          }
+        }
+      ],
+      "openalex": {
+        "title": "Moment arms and lengths of human upper limb muscles as functions of joint angles",
+        "oa": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "locations": [
+          {
+            "pdf": null,
+            "url": "https://doi.org/10.1016/0021-9290(96)00031-0",
+            "oa": false
+          },
+          {
+            "pdf": null,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/8884483",
+            "oa": false
+          },
+          {
+            "pdf": null,
+            "url": "https://publications.polymtl.ca/30967/",
+            "oa": false
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.1007/978-981-16-4991-2_8",
+      "title": "Kinematics and Kinetics of Shoulder Complex, Elbow, and Wrist",
+      "checked_at": "2026-10-02T14:48:18.233023+08:00",
+      "crossref": {
+        "title": [
+          "Kinematics and Kinetics of Shoulder Complex, Elbow, and Wrist"
+        ],
+        "link": [
+          {
+            "URL": "https://link.springer.com/content/pdf/10.1007/978-981-16-4991-2_8",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "resource": {
+          "primary": {
+            "URL": "https://link.springer.com/10.1007/978-981-16-4991-2_8"
+          }
+        }
+      },
+      "epmc": [],
+      "openalex": {
+        "title": "Kinematics and Kinetics of Shoulder Complex, Elbow, and Wrist",
+        "oa": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "locations": [
+          {
+            "pdf": null,
+            "url": "https://doi.org/10.1007/978-981-16-4991-2_8",
+            "oa": false
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.1016/s0003-9993(99)90088-6",
+      "title": "Thoracic position effect on shoulder range of motion, strength, and three-dimensional scapular kinematics",
+      "checked_at": "2026-10-02T14:48:22.105962+08:00",
+      "crossref": {
+        "title": [
+          "Thoracic position effect on shoulder range of motion, strength, and three-dimensional scapular kinematics"
+        ],
+        "link": [
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:S0003999399900886?httpAccept=text/xml",
+            "content-type": "text/xml",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:S0003999399900886?httpAccept=text/plain",
+            "content-type": "text/plain",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          }
+        ],
+        "resource": {
+          "primary": {
+            "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0003999399900886"
+          }
+        }
+      },
+      "epmc": [
+        {
+          "title": "Thoracic position effect on shoulder range of motion, strength, and three-dimensional scapular kinematics.",
+          "doi": "10.1016/s0003-9993(99)90088-6",
+          "pmcid": null,
+          "oa": "N",
+          "links": {
+            "fullTextUrl": [
+              {
+                "availability": "Subscription required",
+                "availabilityCode": "S",
+                "documentStyle": "doi",
+                "site": "DOI",
+                "url": "https://doi.org/10.1016/s0003-9993(99)90088-6"
+              }
+            ]
+          }
+        }
+      ],
+      "openalex": {
+        "title": "Thoracic position effect on shoulder range of motion, strength, and three-dimensional scapular kinematics",
+        "oa": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "locations": [
+          {
+            "pdf": null,
+            "url": "https://doi.org/10.1016/s0003-9993(99)90088-6",
+            "oa": false
+          },
+          {
+            "pdf": null,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10453773",
+            "oa": false
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.1016/0021-9290(94)90062-0",
+      "title": "Wrist kinematics differ in expert and novice tennis players performing the backhand stroke: Implications for tennis elbow",
+      "checked_at": "2026-10-02T14:48:22.598516+08:00",
+      "crossref": {
+        "title": [
+          "Wrist kinematics differ in expert and novice tennis players performing the backhand stroke: Implications for tennis elbow"
+        ],
+        "link": [
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:0021929094900620?httpAccept=text/xml",
+            "content-type": "text/xml",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:0021929094900620?httpAccept=text/plain",
+            "content-type": "text/plain",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          }
+        ],
+        "resource": {
+          "primary": {
+            "URL": "https://linkinghub.elsevier.com/retrieve/pii/0021929094900620"
+          }
+        }
+      },
+      "epmc": [
+        {
+          "title": "Wrist kinematics differ in expert and novice tennis players performing the backhand stroke: implications for tennis elbow.",
+          "doi": "10.1016/0021-9290(94)90062-0",
+          "pmcid": null,
+          "oa": "N",
+          "links": {
+            "fullTextUrl": [
+              {
+                "availability": "Subscription required",
+                "availabilityCode": "S",
+                "documentStyle": "doi",
+                "site": "DOI",
+                "url": "https://doi.org/10.1016/0021-9290(94)90062-0"
+              }
+            ]
+          }
+        }
+      ],
+      "openalex": {
+        "title": "Wrist kinematics differ in expert and novice tennis players performing the backhand stroke: Implications for tennis elbow",
+        "oa": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "locations": [
+          {
+            "pdf": null,
+            "url": "https://doi.org/10.1016/0021-9290(94)90062-0",
+            "oa": false
+          },
+          {
+            "pdf": null,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/8027087",
+            "oa": false
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.1016/s0893-6080(09)80003-8",
+      "title": "A neural network model for arm trajectory formation using forward and inverse dynamics models",
+      "checked_at": "2026-10-02T14:48:23.158032+08:00",
+      "crossref": {
+        "title": [
+          "A neural network model for arm trajectory formation using forward and inverse dynamics models"
+        ],
+        "link": [
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:S0893608009800038?httpAccept=text/xml",
+            "content-type": "text/xml",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:S0893608009800038?httpAccept=text/plain",
+            "content-type": "text/plain",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          }
+        ],
+        "resource": {
+          "primary": {
+            "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0893608009800038"
+          }
+        }
+      },
+      "epmc": [],
+      "openalex": {
+        "title": "A neural network model for arm trajectory formation using forward and inverse dynamics models",
+        "oa": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "locations": [
+          {
+            "pdf": null,
+            "url": "https://doi.org/10.1016/s0893-6080(09)80003-8",
+            "oa": false
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.1016/j.jse.2007.02.134",
+      "title": "Test-retest reproducibility of elbow goniometric measurements in a rigid double-blinded protocol: Intervals for distinguishing between measurement error and clinical change",
+      "checked_at": "2026-10-02T14:48:26.645233+08:00",
+      "crossref": {
+        "title": [
+          "Test-retest reproducibility of elbow goniometric measurements in a rigid double-blinded protocol: Intervals for distinguishing between measurement error and clinical change"
+        ],
+        "link": [
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:S1058274607003606?httpAccept=text/xml",
+            "content-type": "text/xml",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:S1058274607003606?httpAccept=text/plain",
+            "content-type": "text/plain",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          }
+        ],
+        "resource": {
+          "primary": {
+            "URL": "https://linkinghub.elsevier.com/retrieve/pii/S1058274607003606"
+          }
+        }
+      },
+      "epmc": [
+        {
+          "title": "Test-retest reproducibility of elbow goniometric measurements in a rigid double-blinded protocol: intervals for distinguishing between measurement error and clinical change.",
+          "doi": "10.1016/j.jse.2007.02.134",
+          "pmcid": null,
+          "oa": "N",
+          "links": {
+            "fullTextUrl": [
+              {
+                "availability": "Subscription required",
+                "availabilityCode": "S",
+                "documentStyle": "doi",
+                "site": "DOI",
+                "url": "https://doi.org/10.1016/j.jse.2007.02.134"
+              }
+            ]
+          }
+        }
+      ],
+      "openalex": {
+        "title": "Test-retest reproducibility of elbow goniometric measurements in a rigid double-blinded protocol: Intervals for distinguishing between measurement error and clinical change",
+        "oa": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "locations": [
+          {
+            "pdf": null,
+            "url": "https://doi.org/10.1016/j.jse.2007.02.134",
+            "oa": false
+          },
+          {
+            "pdf": null,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17967547",
+            "oa": false
+          },
+          {
+            "pdf": null,
+            "url": "https://cris.maastrichtuniversity.nl/en/publications/c57ad0ae-da73-4bd0-b239-6d467173495d",
+            "oa": false
+          },
+          {
+            "pdf": null,
+            "url": "https://cris.maastrichtuniversity.nl/en/publications/c57ad0ae-da73-4bd0-b239-6d467173495d",
+            "oa": false
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.1177/026921559701100408",
+      "title": "Joint angle measurement: a comparative study of the reliability of goniometry and wire tracing for the hand",
+      "checked_at": "2026-10-02T14:48:27.222834+08:00",
+      "crossref": {
+        "title": [
+          "Joint angle measurement: a comparative study of the reliability of goniometry and wire tracing for the hand"
+        ],
+        "link": [
+          {
+            "URL": "https://journals.sagepub.com/doi/pdf/10.1177/026921559701100408",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "https://journals.sagepub.com/doi/pdf/10.1177/026921559701100408",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "resource": {
+          "primary": {
+            "URL": "https://journals.sagepub.com/doi/10.1177/026921559701100408"
+          }
+        }
+      },
+      "epmc": [
+        {
+          "title": "Joint angle measurement: a comparative study of the reliability of goniometry and wire tracing for the hand.",
+          "doi": "10.1177/026921559701100408",
+          "pmcid": null,
+          "oa": "N",
+          "links": {
+            "fullTextUrl": [
+              {
+                "availability": "Subscription required",
+                "availabilityCode": "S",
+                "documentStyle": "doi",
+                "site": "DOI",
+                "url": "https://doi.org/10.1177/026921559701100408"
+              }
+            ]
+          }
+        }
+      ],
+      "openalex": {
+        "title": "Joint angle measurement: a comparative study of the reliability of goniometry and wire tracing for the hand",
+        "oa": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "locations": [
+          {
+            "pdf": null,
+            "url": "https://doi.org/10.1177/026921559701100408",
+            "oa": false
+          },
+          {
+            "pdf": null,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9408672",
+            "oa": false
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.1016/j.jht.2020.05.001",
+      "title": "Remote self-measurement of wrist range of motion performed on normal wrists by a minimally trained individual using the iPhone level application only demonstrated good reliability in measuring wrist flexion and extension",
+      "checked_at": "2026-10-02T14:48:27.591395+08:00",
+      "crossref": {
+        "title": [
+          "Remote self-measurement of wrist range of motion performed on normal wrists by a minimally trained individual using the iPhone level application only demonstrated good reliability in measuring wrist flexion and extension"
+        ],
+        "link": [
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:S0894113020300879?httpAccept=text/xml",
+            "content-type": "text/xml",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:S0894113020300879?httpAccept=text/plain",
+            "content-type": "text/plain",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          }
+        ],
+        "resource": {
+          "primary": {
+            "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0894113020300879"
+          }
+        }
+      },
+      "epmc": [
+        {
+          "title": "Remote self-measurement of wrist range of motion performed on normal wrists by a minimally trained individual using the iPhone level application only demonstrated good reliability in measuring wrist flexion and extension.",
+          "doi": "10.1016/j.jht.2020.05.001",
+          "pmcid": null,
+          "oa": "N",
+          "links": {
+            "fullTextUrl": [
+              {
+                "availability": "Subscription required",
+                "availabilityCode": "S",
+                "documentStyle": "doi",
+                "site": "DOI",
+                "url": "https://doi.org/10.1016/j.jht.2020.05.001"
+              }
+            ]
+          }
+        }
+      ],
+      "openalex": {
+        "title": "Remote self-measurement of wrist range of motion performed on normal wrists by a minimally trained individual using the iPhone level application only demonstrated good reliability in measuring wrist flexion and extension",
+        "oa": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "locations": [
+          {
+            "pdf": null,
+            "url": "https://doi.org/10.1016/j.jht.2020.05.001",
+            "oa": false
+          },
+          {
+            "pdf": null,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32883544",
+            "oa": false
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.5935/medicalexpress.2014.02.08",
+      "title": "Reliability Index of inter- and intra-rater of manual goniometry and\n                        computerized biophotogrammetry to assess the range of motion of internal and\n                        external shoulder rotation",
+      "checked_at": "2026-10-02T14:48:31.176416+08:00",
+      "crossref": {
+        "title": [
+          "Reliability Index of inter- and intra-rater of manual goniometry and\n                        computerized biophotogrammetry to assess the range of motion of internal and\n                        external shoulder rotation"
+        ],
+        "link": [
+          {
+            "URL": "http://www.medicalexpress.net.br/details/54/reliability-index-of-inter--and-intra-rater-of-manual-goniometry-and-computerized-biophotogrammetry-to-assess-the-range-of-motion-of-internal-and-external-shoulder-rotation",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "resource": {
+          "primary": {
+            "URL": "http://www.gnresearch.org/doi/10.5935/MedicalExpress.2014.02.08"
+          }
+        }
+      },
+      "epmc": [],
+      "openalex": {
+        "title": "Reliability Index of inter- and intra-rater of manual goniometry and computerized biophotogrammetry to assess the range of motion of internal and external shoulder rotation",
+        "oa": {
+          "is_oa": true,
+          "oa_status": "diamond",
+          "oa_url": "https://doi.org/10.5935/medicalexpress.2014.02.08",
+          "any_repository_has_fulltext": true
+        },
+        "locations": [
+          {
+            "pdf": null,
+            "url": "https://doi.org/10.5935/medicalexpress.2014.02.08",
+            "oa": true
+          },
+          {
+            "pdf": null,
+            "url": "http://old.scielo.br/scielo.php?script=sci_arttext&amp;pid=S2358-04292014000200095",
+            "oa": true
+          },
+          {
+            "pdf": null,
+            "url": "http://americanae.aecid.es/americanae/es/registros/registro.do?tipoRegistro=MTD&idBib=2632611",
+            "oa": true
+          },
+          {
+            "pdf": null,
+            "url": "https://doaj.org/article/4772a7a7c4834a66997c0f3601c8e170",
+            "oa": false
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.1016/S0031-9406(10)63103-3",
+      "title": "Comparison of Visual Estimation and Goniometry in Determination of a Shoulder Joint Angle",
+      "checked_at": "2026-10-02T14:48:31.751511+08:00",
+      "crossref": {
+        "title": [
+          "Comparison of Visual Estimation and Goniometry in Determination of a Shoulder Joint Angle"
+        ],
+        "link": [
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:S0031940610631033?httpAccept=text/xml",
+            "content-type": "text/xml",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:S0031940610631033?httpAccept=text/plain",
+            "content-type": "text/plain",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          }
+        ],
+        "resource": {
+          "primary": {
+            "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0031940610631033"
+          }
+        }
+      },
+      "epmc": [],
+      "openalex": {
+        "title": "Comparison of Visual Estimation and Goniometry in Determination of a Shoulder Joint Angle",
+        "oa": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "locations": [
+          {
+            "pdf": null,
+            "url": "https://doi.org/10.1016/s0031-9406(10)63103-3",
+            "oa": false
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.1016/j.mechatronics.2022.102919",
+      "title": "Performance-based assistance control for robot-mediated upper-limbs rehabilitation",
+      "checked_at": "2026-10-02T14:48:32.300640+08:00",
+      "crossref": {
+        "title": [
+          "Performance-based assistance control for robot-mediated upper-limbs rehabilitation"
+        ],
+        "link": [
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:S0957415822001374?httpAccept=text/xml",
+            "content-type": "text/xml",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:S0957415822001374?httpAccept=text/plain",
+            "content-type": "text/plain",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          }
+        ],
+        "resource": {
+          "primary": {
+            "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0957415822001374"
+          }
+        }
+      },
+      "epmc": [],
+      "openalex": {
+        "title": "Performance-based assistance control for robot-mediated upper-limbs rehabilitation",
+        "oa": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "locations": [
+          {
+            "pdf": null,
+            "url": "https://doi.org/10.1016/j.mechatronics.2022.102919",
+            "oa": false
+          }
+        ]
+      }
+    }
+  ],
+  "jev_acquisitions": [
+    {
+      "title": "More Features Are Not More Evidence: Limits of Training-Free Human Activity Recognition with Jev",
+      "path": "01_参考论文/决策模型线_JEV/D2_独立评测与反驳/More Features Are Not More Evidence_ Limits of Training-Free.pdf",
+      "url": "https://arxiv.org/pdf/2609.36154",
+      "bytes": 725364,
+      "pages": 15,
+      "verified": true
+    },
+    {
+      "title": "Effects of Assist-As-Needed Upper Extremity Robotic Therapy after Incomplete Spinal Cord Injury: A Parallel-Group Controlled Trial",
+      "path": "01_参考论文/决策模型线_JEV/D4_AAN辅助控制与介入决策/Effects of Assist-As-Needed Upper Extremity Robotic Therapy.pdf",
+      "url": "https://www.frontiersin.org/articles/10.3389/fnbot.2017.00026/pdf",
+      "bytes": 3907364,
+      "pages": 18,
+      "verified": true
+    },
+    {
+      "title": "Effects of an assist-as-needed equipped Tenodesis-Induced-Grip Exoskeleton Robot (TIGER) on upper limb function in patients with chronic stroke",
+      "path": "01_参考论文/决策模型线_JEV/D4_AAN辅助控制与介入决策/Effects of an assist-as-needed equipped Tenodesis-Induced-Gr.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10765635/fullTextXML",
+      "bytes": 111478,
+      "pages": null,
+      "verified": true
+    }
+  ],
+  "jev_checked_at": "2026-10-02T15:04:22",
+  "jev_metadata_correction": "Zenodo 17850061 对应 no title；Crossref 确认正确 DOI 10.1109/ICMA65362.2025.11120720",
+  "completion_acquisitions": [
+    {
+      "doi": "10.1109/icma65362.2025.11120720",
+      "title": "Continuous Motion Prediction for Upper Limb Rehabilitation Robotics Based on Surface Electromyography: A Spatio-Temporal Attention and Lightweight TCN Approach",
+      "path": "01_参考论文/决策模型线_JEV/D5_轻量化非Transformer路线/Continuous Motion Prediction for Upper Limb Rehabilitation R.pdf",
+      "url": "http://www.guolab.org/Papers/2025/Continuous%20Motion%20Prediction%20for%20Upper%20Limb%20Rehabilitation%20Robotics%20Based%20on%20Surface%20Electromyography%20A%20Spatio-Temporal%20Attention%20and%20Lightweight%20TCN%20Approach.pdf",
+      "bytes": 2552350,
+      "pages": 6,
+      "version": "published",
+      "verified": true
+    },
+    {
+      "doi": "10.1088/1741-2560/6/3/036004",
+      "path": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Muscle synergies as a predictive framework for the EMG patte.xml",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=3151158&retmode=xml",
+      "bytes": 133734,
+      "pages": null,
+      "version": "nih_author_manuscript",
+      "verified": true
+    },
+    {
+      "doi": "10.1016/s0893-6080(09)80003-8",
+      "path": "01_参考论文/生物力学线/B5_视觉运动学到动力学_桥接/A neural network model for arm trajectory formation using fo.pdf",
+      "url": "https://results.atr.jp/35th/techreport/TR-H-0001/TR-H-0001.pdf",
+      "bytes": 715213,
+      "pages": 38,
+      "version": "technical_report",
+      "verified": true
+    }
+  ],
+  "current_source_policy": "用户本轮明确允许考虑影子库，不要求完全合法；不绕验证码、账号权限、不执行不可信文件；下载必须核对身份与正文。",
+  "remaining_recheck": [
+    {
+      "doi": "10.1016/s0268-0033(00)00082-6",
+      "title": "Joint coordinate systems of axes for coherence in reporting kinematic and kinetic data",
+      "checked_at": "2026-10-02T16:07:31.466307+08:00",
+      "status": "search_no_new_fulltext",
+      "url": "",
+      "verification": "本轮按题名检索只找到元数据、请求原文入口或其他论文，不将引用目标论文的文章当作目标全文。",
+      "search_evidence": [
+        "muqofdzfao23db",
+        "muqogsyv6p8w69",
+        "muqoh7tmjuanzx",
+        "muqohlgon1mqiq"
+      ]
+    },
+    {
+      "doi": "10.1016/0021-9290(96)00031-0",
+      "title": "Moment arms and lengths of human upper limb muscles as functions of joint angles",
+      "checked_at": "2026-10-02T16:07:31.466799+08:00",
+      "status": "http_403",
+      "url": "https://www.sciencedirect.com/science/article/pii/0021929096000310/pdf",
+      "verification": "本轮直接请求及fetch_content返回403；未取得PDF，不能入库。",
+      "search_evidence": [
+        "muqofdzfao23db",
+        "muqogsyv6p8w69",
+        "muqoh7tmjuanzx",
+        "muqohlgon1mqiq"
+      ]
+    },
+    {
+      "doi": "10.1034/j.1600-0404.2003.00021.x",
+      "title": "Motor compensation and recovery for reaching in stroke patients",
+      "checked_at": "2026-10-02T16:07:31.467289+08:00",
+      "status": "search_no_new_fulltext",
+      "url": "",
+      "verification": "本轮按题名检索只找到元数据、请求原文入口或其他论文，不将引用目标论文的文章当作目标全文。",
+      "search_evidence": [
+        "muqofdzfao23db",
+        "muqogsyv6p8w69",
+        "muqoh7tmjuanzx",
+        "muqohlgon1mqiq"
+      ]
+    },
+    {
+      "doi": "10.1007/978-981-16-4991-2_8",
+      "title": "Kinematics and Kinetics of Shoulder Complex, Elbow, and Wrist",
+      "checked_at": "2026-10-02T16:07:31.467309+08:00",
+      "status": "search_no_new_fulltext",
+      "url": "",
+      "verification": "本轮按题名检索只找到元数据、请求原文入口或其他论文，不将引用目标论文的文章当作目标全文。",
+      "search_evidence": [
+        "muqofdzfao23db",
+        "muqogsyv6p8w69",
+        "muqoh7tmjuanzx",
+        "muqohlgon1mqiq"
+      ]
+    },
+    {
+      "doi": "10.1016/s0003-9993(99)90088-6",
+      "title": "Thoracic position effect on shoulder range of motion, strength, and three-dimensional scapular kinematics",
+      "checked_at": "2026-10-02T16:07:31.467629+08:00",
+      "status": "http_403",
+      "url": "https://golffitnesslosangeles.wordpress.com/wp-content/uploads/2014/05/thoracic-positioning-article.pdf",
+      "verification": "本轮直接请求及fetch_content返回403；未取得PDF，不能入库。",
+      "search_evidence": [
+        "muqofdzfao23db",
+        "muqogsyv6p8w69",
+        "muqoh7tmjuanzx",
+        "muqohlgon1mqiq"
+      ]
+    },
+    {
+      "doi": "10.1016/0021-9290(94)90062-0",
+      "title": "Wrist kinematics differ in expert and novice tennis players performing the backhand stroke: Implications for tennis elbow",
+      "checked_at": "2026-10-02T16:07:31.467652+08:00",
+      "status": "search_no_new_fulltext",
+      "url": "",
+      "verification": "本轮按题名检索只找到元数据、请求原文入口或其他论文，不将引用目标论文的文章当作目标全文。",
+      "search_evidence": [
+        "muqofdzfao23db",
+        "muqogsyv6p8w69",
+        "muqoh7tmjuanzx",
+        "muqohlgon1mqiq"
+      ]
+    },
+    {
+      "doi": "10.1016/j.jse.2007.02.134",
+      "title": "Test-retest reproducibility of elbow goniometric measurements in a rigid double-blinded protocol: Intervals for distinguishing between measurement error and clinical change",
+      "checked_at": "2026-10-02T16:07:31.468776+08:00",
+      "status": "search_no_new_fulltext",
+      "url": "",
+      "verification": "本轮按题名检索只找到元数据、请求原文入口或其他论文，不将引用目标论文的文章当作目标全文。",
+      "search_evidence": [
+        "muqofdzfao23db",
+        "muqogsyv6p8w69",
+        "muqoh7tmjuanzx",
+        "muqohlgon1mqiq"
+      ]
+    },
+    {
+      "doi": "10.1177/026921559701100408",
+      "title": "Joint angle measurement: a comparative study of the reliability of goniometry and wire tracing for the hand",
+      "checked_at": "2026-10-02T16:07:31.468800+08:00",
+      "status": "search_no_new_fulltext",
+      "url": "",
+      "verification": "本轮按题名检索只找到元数据、请求原文入口或其他论文，不将引用目标论文的文章当作目标全文。",
+      "search_evidence": [
+        "muqofdzfao23db",
+        "muqogsyv6p8w69",
+        "muqoh7tmjuanzx",
+        "muqohlgon1mqiq"
+      ]
+    },
+    {
+      "doi": "10.1016/j.jht.2020.05.001",
+      "title": "Remote self-measurement of wrist range of motion performed on normal wrists by a minimally trained individual using the iPhone level application only demonstrated good reliability in measuring wrist flexion and extension",
+      "checked_at": "2026-10-02T16:07:31.468833+08:00",
+      "status": "http_403",
+      "url": "https://www.jhandtherapy.org/article/S0894-1130(20)30087-9/pdf",
+      "verification": "本轮直接请求及fetch_content返回403；未取得PDF，不能入库。",
+      "search_evidence": [
+        "muqofdzfao23db",
+        "muqogsyv6p8w69",
+        "muqoh7tmjuanzx",
+        "muqohlgon1mqiq"
+      ]
+    },
+    {
+      "doi": "10.1016/s0031-9406(10)63103-3",
+      "title": "Comparison of Visual Estimation and Goniometry in Determination of a Shoulder Joint Angle",
+      "checked_at": "2026-10-02T16:07:31.468884+08:00",
+      "status": "http_403",
+      "url": "https://www.physiotherapyjournal.com/article/S0031-9406%2810%2963103-3/fulltext",
+      "verification": "本轮直接请求及fetch_content返回403；未取得PDF，不能入库。",
+      "search_evidence": [
+        "muqofdzfao23db",
+        "muqogsyv6p8w69",
+        "muqoh7tmjuanzx",
+        "muqohlgon1mqiq"
+      ]
+    },
+    {
+      "doi": "10.1016/j.mechatronics.2022.102919",
+      "title": "Performance-based assistance control for robot-mediated upper-limbs rehabilitation",
+      "checked_at": "2026-10-02T16:07:31.469062+08:00",
+      "status": "search_no_new_fulltext",
+      "url": "",
+      "verification": "本轮按题名检索只找到元数据、请求原文入口或其他论文，不将引用目标论文的文章当作目标全文。",
+      "search_evidence": [
+        "muqofdzfao23db",
+        "muqogsyv6p8w69",
+        "muqoh7tmjuanzx",
+        "muqohlgon1mqiq"
+      ]
+    }
+  ],
+  "formal_version_recheck": {
+    "doi": "10.1016/s0893-6080(09)80003-8",
+    "status": "technical_report_only",
+    "search_evidence": "muqohlgon1mqiq",
+    "note": "当前可获取件仍为ATR 1992技术报告；未取得1993期刊正式版。"
+  }
+}

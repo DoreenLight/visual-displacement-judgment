@@ -1,0 +1,112 @@
+{
+ "moved": [
+  {
+   "from": "1-s2.0-S0021929013005848-main.pdf",
+   "to": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Accuracy and repeatability of joint angles measured using a.pdf",
+   "corpus": "生物力学线",
+   "bytes": 673091
+  },
+  {
+   "from": "1-s2.0-S0021929024001969-main.pdf",
+   "to": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Validity of muscle activation estimated with predicted groun.pdf",
+   "corpus": "生物力学线",
+   "bytes": 3838812
+  },
+  {
+   "from": "1-s2.0-S0021929025004178-main (1).pdf",
+   "to": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Comparison of shoulder kinematics between Theia 3D markerles.pdf",
+   "corpus": "生物力学线",
+   "bytes": 6189561
+  },
+  {
+   "from": "1-s2.0-S0263224115006120-main.pdf",
+   "to": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/A clinically feasible kinematic assessment method of upper e.pdf",
+   "corpus": "生物力学线",
+   "bytes": 1087406
+  },
+  {
+   "from": "1-s2.0-S0925231225027985-main.pdf",
+   "to": "01_参考论文/生物力学线/B4_离散运动学token_与表征量化/Masked reconstruction model of latent space vector quantizat.pdf",
+   "corpus": "生物力学线",
+   "bytes": 6969362
+  },
+  {
+   "from": "1-s2.0-S095741582500159X-main.pdf",
+   "to": "01_参考论文/决策模型线_JEV/D4_AAN辅助控制与介入决策/Velocity field assist-as-needed controller for upper limb re.pdf",
+   "corpus": "决策模型线_JEV",
+   "bytes": 3062969
+  },
+  {
+   "from": "1-s2.0-S1746809426014874-main.pdf",
+   "to": "01_参考论文/决策模型线_JEV/D5_轻量化非Transformer路线/Edge-deployable pelvic IMU temporal convolution for real tim.pdf",
+   "corpus": "决策模型线_JEV",
+   "bytes": 2718589
+  },
+  {
+   "from": "1-s2.0-S2210983811000204-main.pdf",
+   "to": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Simulation of human movement_ applications using OpenSim.pdf",
+   "corpus": "生物力学线",
+   "bytes": 2277675
+  },
+  {
+   "from": "1-s2.0-S2210983811000289-main.pdf",
+   "to": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/Implicit methods for efficient musculoskeletal simulation an.pdf",
+   "corpus": "生物力学线",
+   "bytes": 637810
+  },
+  {
+   "from": "nihms240588 (1).pdf",
+   "to": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/A Real-Time, 3-D Musculoskeletal Model for Dynamic Simulatio.pdf",
+   "corpus": "生物力学线",
+   "bytes": 817964
+  },
+  {
+   "from": "nihms679795.pdf",
+   "to": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Validity and reliability of Kinect skeleton for measuring sh.pdf",
+   "corpus": "生物力学线",
+   "bytes": 95177
+  },
+  {
+   "from": "nihms693964.pdf",
+   "to": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/A Probabilistic Approach to Quantify the Impact of Uncertain.pdf",
+   "corpus": "生物力学线",
+   "bytes": 735986
+  },
+  {
+   "from": "nihms820582.pdf",
+   "to": "01_参考论文/生物力学线/B3_上肢康复_代偿与临床评估/Determining Levels of Upper Extremity Movement Impairment by.pdf",
+   "corpus": "生物力学线",
+   "bytes": 952769
+  },
+  {
+   "from": "sensors-25-00719.pdf",
+   "to": "01_参考论文/决策模型线_JEV/D5_轻量化非Transformer路线/Multijoint Continuous Motion Estimation for Human Lower Limb.pdf",
+   "corpus": "决策模型线_JEV",
+   "bytes": 3738402
+  }
+ ],
+ "dup": [
+  {
+   "kept": "01_参考论文/生物力学线/B1_视觉运动学_估计与验证方法学/Comparison of shoulder kinematics between Theia 3D markerles.pdf",
+   "dropped": "1-s2.0-S0021929025004178-main.pdf",
+   "bytes": 6188896
+  },
+  {
+   "kept": "01_参考论文/生物力学线/B2_肌肉骨骼动力学_与可微仿真/A Real-Time, 3-D Musculoskeletal Model for Dynamic Simulatio.pdf",
+   "dropped": "nihms240588.pdf",
+   "bytes": 817964
+  }
+ ],
+ "unmatched": [
+  "1-s2.0-S0021929025002702-main.pdf",
+  "1-s2.0-S0957415822001374-main.pdf",
+  "2211.16016v1.pdf",
+  "2601.09949v2.pdf",
+  "2609.36154v1.pdf",
+  "3664647.3680568.pdf",
+  "639_1.pdf",
+  "Monocular_3D_Pose_Estimation_via_Pose_Grammar_and_Data_Augmentation.pdf",
+  "Progressive_Direction-Aware_Pose_Grammar_for_Human_Pose_Estimation.pdf",
+  "Review_MUBO_25thanniversary.pdf"
+ ]
+}

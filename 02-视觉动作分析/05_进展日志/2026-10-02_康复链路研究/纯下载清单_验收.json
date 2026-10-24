@@ -1,0 +1,20 @@
+{
+  "pending_rows": 7,
+  "required_fields_verified": "title/address/venue/database",
+  "downloaded_rows": 0,
+  "all_pending_identity_sources": "Crossref_本轮纳入候选身份.json",
+  "repeat_and_other_cwd": "same bytes",
+  "sha256": "6925eb77b9ea616d0ec5d201557606df3516631a5f39474d8ac2f8c8b8449256",
+  "regression_tests": 17,
+  "unrelated_protected_unchanged": 1128,
+  "allowed_current_navigation_updates": [
+    "01_参考论文/Transformer_发展线/README.md",
+    "01_参考论文/Transformer_发展线/取件入口.md",
+    "01_参考论文/决策模型线_JEV/取件入口.md",
+    "01_参考论文/生物力学线/README.md",
+    "01_参考论文/生物力学线/取件入口.md"
+  ],
+  "auxiliary_DAUG": "unavailable: no ledger; explicit source/caller/entry and rebuild checks performed",
+  "library_identity_check": "读取全库PDF前两页和XML文章身份；旧索引错误不隐藏原件；已核验作者稿题名别名单列",
+  "selfcheck": "22 PASS / 0 FAIL"
+}

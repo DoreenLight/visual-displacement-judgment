@@ -1,0 +1,95 @@
+{
+  "status": "STAGE_CONTENT_CHECKS_PASS_GOAL_NOT_COMPLETE",
+  "included": 55,
+  "local_fulltexts": 48,
+  "missing": 7,
+  "selected_passages_total": 334,
+  "new_psych_passages_literal_checked": 55,
+  "chain_sha_verified": 13,
+  "messages": [
+    "TaskContext",
+    "RiskEnvelope",
+    "ObservationPacket",
+    "ValidityPacket",
+    "KinematicQualityState",
+    "EffortEstimate",
+    "PsychologicalEngagementState",
+    "ConstraintState",
+    "DecisionRequest",
+    "AppliedPolicyReceipt",
+    "TrainingBlockOutcome",
+    "PlanRevision"
+  ],
+  "nodes": [
+    "S0",
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "S6",
+    "S7",
+    "S8",
+    "S9",
+    "S10"
+  ],
+  "validation_designs": [
+    "V0",
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9"
+  ],
+  "negative_scenarios_design_only": 9,
+  "figure": {
+    "path": "10_研究方向/主动参与与训练强度_链路研究/链路_数据反馈图.png",
+    "size": [
+      2880,
+      3020
+    ],
+    "sha256": "f12be6c38cbde0e0096ff9ad8de3a1ba7bf466c694c4e84f3614b032e22f3a5b",
+    "visual_check": "No clipping; dual constructs, safety path and DESIGN visible"
+  },
+  "protection": [
+    {
+      "baseline": "05_进展日志/2026-10-02_康复链路研究/原件与历史_保护基线.json",
+      "checked": 1133,
+      "authorized_navigation_differences": [
+        "01_参考论文/生物力学线/README.md",
+        "01_参考论文/生物力学线/取件入口.md",
+        "01_参考论文/Transformer_发展线/README.md",
+        "01_参考论文/Transformer_发展线/取件入口.md",
+        "01_参考论文/决策模型线_JEV/取件入口.md"
+      ],
+      "other_bytes_unchanged": 1128
+    },
+    {
+      "baseline": "05_进展日志/2026-10-02_论文收尾与目录整理/迁移前保护基线.json",
+      "checked": 567,
+      "authorized_navigation_differences": [],
+      "other_bytes_unchanged": 567
+    }
+  ],
+  "kb_cases_pass": 22,
+  "kb_fail": 0,
+  "acquisition_regressions_pass": 17,
+  "uri_regressions_pass": 6,
+  "download_two_rebuild_hash": "6925eb77b9ea616d0ec5d201557606df3516631a5f39474d8ac2f8c8b8449256",
+  "harness_corrections": [
+    "Parse every typed token in combined first-column cells and restrict extraction to message section, excluding common-field table.",
+    "Use task-entry migration baseline, not older initial fulltext baseline. ISB card bytes match migration ZIP and task-entry baseline; no card rewritten."
+  ],
+  "daug": "Unavailable: repository has no ledger; did not initialize. Manual entry/template checks and regeneration performed.",
+  "unresolved": [
+    "7 key fulltext mechanisms",
+    "clinical applicability and independent physical/psychological references",
+    "actual assist exposure/effect",
+    "innovation novelty/final direction and goal closeout"
+  ],
+  "no_new_experiments_or_implementation": true
+}

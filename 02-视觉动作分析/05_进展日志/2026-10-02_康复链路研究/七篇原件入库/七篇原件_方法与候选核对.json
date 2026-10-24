@@ -1,0 +1,714 @@
+{
+  "schema": "canonical-pdf-method-review/v1",
+  "status": "canonical_methods_and_literal_sources_checked",
+  "scope": "Only the7 user-provided canonical originals; no experiments, remote execution or implementation. Identity checks are separate from mechanism and effectiveness judgments.",
+  "quote_rule": "pdftotext per PDF file page; NFKC, remove end-of-line word hyphenation, collapse whitespace; quote must occur on the specified page. Formula/table readings require visual check and remain distinct from literal text checks.",
+  "papers": [
+    {
+      "id": "RL2026",
+      "source_record": "原件移动与回滚清单.json",
+      "version": "IEEE publisher PDF, 11 file pages = journal532–542",
+      "mechanism": "Cable-driven planar joystick force control. Actor/critic online RL; state contains mean/peak positive and negative directional errors. g is bounded impedance gain, not a psychological score. Actor cost Eq9 squares a Uc-weighted mixture of predicted error cost and g; Eq11 adjusts Uc using recent performance; Eq12 attempts curriculum adaptation through acceptable-error threshold eta. Fig3 explicitly links evaluation, RL and impedance control.",
+      "reference_and_calibration": "e_neg is a physical-engagement proxy under force perturbation, not independently measured active torque or psychological engagement. Mean g is a robot-assistance surrogate, not measured assistive work/exposure. PRE critic pre-training uses g=0. eta thresholds uniform/manual; learning rates pilot-derived.",
+      "population_design": "15 healthy adults, 11 male,18–32; two within-subject visits at least48h apart, balanced controller order; RL-AAN vs ILC-AAN, four180-cycle training sessions. PT at1/10/20min, force perturbation without assistance. Catch-trial subset N=6.",
+      "effects_and_nulls": "TableII: training under-correction improves for both; no significant controller difference in this training reduction. RL-AAN g estimated controller contrast -0.04(0.008),p<.001; retention under-correction contrast28.3(6.4),p<.001. Training over-correction session trend and retention are different endpoints. Retention e_neg contrasts nonsignificant; do not call all endpoints improved. TableIV catch trials both p<.001, subset N=6.",
+      "dose_psychology_safety": "Performance-based assistance/difficulty adaptation, repetition counts and breaks are reported; not an identified patient dose-response or psychological construct measurement. Uniform parameters, no unguided visual-feedback control, no stroke efficacy conclusion. Consent and bounded controller parameters are not clinical safety validation.",
+      "novelty_consequence": "Eliminates broad novelty claims of RL+AAN, personalization, error/assistance dynamic tradeoff or joint assistance/difficulty adaptation. Does not resolve independent dual-construct references or error/OOD authorization.",
+      "visual_check": {
+        "pages": [
+          5,
+          7,
+          8
+        ],
+        "items": [
+          "Fig3 and Eq7–12",
+          "Fig5–6 and TableII–III",
+          "Fig7–8 and TableIV/engagement footnote"
+        ],
+        "observation": "Rendered originalPDF pages read, plots/tables readable. Original Eq12 prints max(eta_low,eta-zeta) for increasing challenge and min(eta_high,eta+zeta) for easing, but the text assigns eta_low=5mm and eta_high=2mm. This is a documented boundary-symbol ambiguity; do not silently repair or infer the authors' implementation. Curriculum prior still exists regardless of this replication ambiguity.",
+        "ephemeral_render_directory": "/tmp/rehab-paper-page-check.fh0IBD",
+        "renders_are_not_deliverable_figures": true,
+        "ephemeral_renders_removed_after_inspection": true
+      },
+      "passages": [
+        {
+          "uid": "S7-RL-01",
+          "page": 5,
+          "locator": "III.C, Eq9–12/Fig3",
+          "quote": "objectives in exercise training: minimizing external assistance to encourage active effort, vs. minimizing movement errors to promote correct task execution.",
+          "supports": "Dynamic error/assistance tradeoff already exists; not a new coupling claim.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-RL-02",
+          "page": 8,
+          "locator": "V.A footnote1",
+          "quote": "Herein, we use the expression “user engagement” to refer to the degree to which individuals actively participate in—and remain physically involved with—the motor task.",
+          "supports": "The paper's engagement definition is physical, not an independent psychological measure.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-RL-03",
+          "page": 8,
+          "locator": "V.A footnote1",
+          "quote": "utilized as a proxy for engagement",
+          "supports": "Negative directional error is explicitly a proxy, not continuous active-torque truth.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-RL-04",
+          "page": 5,
+          "locator": "IV.A Protocol",
+          "quote": "Fifteen healthy adults (11 males, age 18-32 years) volunteered for this study.",
+          "supports": "15 healthy adults, not stroke patients.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-RL-05",
+          "page": 6,
+          "locator": "IV.A Protocol",
+          "quote": "scheduled at least 48 hours apart",
+          "supports": "Within-subject visits have washout and balanced order; do not treat as15 patients per independent group.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-RL-06",
+          "page": 6,
+          "locator": "IV.A, Fig4",
+          "quote": "These sessions began 1, 10, and 20 minutes after the end of T-4",
+          "supports": "Short-term unassisted retention only.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-RL-07",
+          "page": 6,
+          "locator": "IV.B Statistical Analysis",
+          "quote": "used as a surrogate measure for robot assistance",
+          "supports": "Mean g is an assistance surrogate, not verified delivered dose/work.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-RL-08",
+          "page": 9,
+          "locator": "VI Discussion, limitations",
+          "quote": "were manually set to uniform values across all participants",
+          "supports": "Threshold individuality/objectivity is explicitly limited.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-RL-09",
+          "page": 9,
+          "locator": "VI Discussion, stroke applicability",
+          "quote": "additional work is required before this approach can be piloted in individuals post-stroke.",
+          "supports": "No patient efficacy or clinical implementation conclusion.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-RL-10",
+          "page": 9,
+          "locator": "VI Discussion, control limitation",
+          "quote": "incorporating a control condition with visual feedback but no physical guidance would be valuable",
+          "supports": "No unguided-practice control in this study.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-RL-11",
+          "page": 5,
+          "locator": "III.C actor/critic definition",
+          "quote": "Both the actor and the critic networks are nonlinear feedforward NNs with one hidden layer and sigmoid activation functions",
+          "supports": "Specific online actor/critic model, not inferred generic deep RL.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-RL-12",
+          "page": 8,
+          "locator": "V.A Catch trials/TableIV",
+          "quote": "Catch trials were conducted on a subset of study participants (N=6).",
+          "supports": "Catch-trial findings concern6, not the full15.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-RL-13",
+          "page": 5,
+          "locator": "III.C Eq12 curriculum",
+          "quote": "a more challenging objective is set by decreasing η by a fixed quantity",
+          "supports": "Difficulty adaptation is explicit; equation/text bound notation has an original-PDF ambiguity.",
+          "literal_check": true
+        }
+      ],
+      "source": "01_参考论文/康复整合链路/Personalized_Adaptive_Assistance_With_Reinforcement_Learning_Control_Enhances_Engagement_Performance_and_Retention_in_Robot-Assisted_Arm-Reaching_Exercises.pdf",
+      "sha256": "4b6e21ec3be9c4d677c6ad4d9099df49d3a8198fecf7abe990a360bf93ff97e6",
+      "pages": 11
+    },
+    {
+      "id": "Shoulder2025",
+      "source_record": "原件移动与回滚清单.json",
+      "version": "IEEE publisher PDF,10 file pages=journal2358–2367",
+      "mechanism": "Virtual Biomechanical Shoulder Robot Model, inverse dynamics and robot PID; AAN blends robot torque with VBSRM-computed desired human torque through beta. Online gradient stiffness adaptation and interaction-force-dependent beta are already coupled. Only shoulder module used; model/controller tracking design, not EMG psychological inference.",
+      "reference_and_calibration": "The VBSRM human-torque term is a biomechanically inspired desired-torque reference, not independently validated voluntary human torque. Interaction force and tracking performance are used for adjustment; beta is not calibrated participation probability. Actual contribution/delivered assistive work and psychological construct validity not established.",
+      "population_design": "10 healthy subjects,7male/3female,22–38; a3D ADL reference trajectory, AAN/active vs conventional PID vs passive;10min flush-out between experiments. Exact ADL identity/repetition count and randomized order not explicitly established in the inspected protocol; do not infer5 repetitions or a specific head-reaching task. No stroke treatment trial or independent psychological instrument.",
+      "effects_and_nulls": "TableII Cartesian tracking errors are9.6/9.1/11.4mm in active mode vs10.4/13.7/13.9mm passive and10.1/12.4/12.3mm PID. TableIII reports all three peak-torque comparisons p=.0042/.0039/.0021 and within-subject variability; this is not identified voluntary contribution or clinical recovery. Beta varies0.1–0.9; different torque/tracking endpoints do not prove effort identification.",
+      "dose_psychology_safety": "Stiffness/assistance adaptation and ADL tracking are reported, not patient dose-response or psychological engagement. III.D Stability Considerations argues tuned/coupled PID and geometric limits, not a general passivity or OOD safety theorem. IV explicitly reports bounded beta, software/actuator joint and maximum-torque limits, emergency stop and operator supervision; this is not a quantified adverse-event/fault/OOD validation. Healthy-only, incomplete nonlinear modeling and environmental/long-term limits remain.",
+      "novelty_consequence": "Blocks broad novelty of virtual-biomechanical-model+AAN+online stiffness/personalization. Leaves independent calibration target, uncertainty/abstention and separate psychological adaptation unverified; open here is not proof of a field-wide gap.",
+      "visual_check": {
+        "pages": [
+          4,
+          9
+        ],
+        "items": [
+          "TableII/CAD-model Fig3–4",
+          "TableIII/limits"
+        ],
+        "observation": "Read original-page tables;10 healthy subjects and desired-human-torque inverse-dynamics reference are explicit in conclusion. Diagrams have no identifiable participant imagery.",
+        "ephemeral_render_directory": "/tmp/rehab-paper-page-check.fh0IBD",
+        "renders_are_not_deliverable_figures": true,
+        "ephemeral_renders_removed_after_inspection": true
+      },
+      "passages": [
+        {
+          "uid": "S7-SH-01",
+          "page": 7,
+          "locator": "IV Experimental Setup",
+          "quote": "tested with ten healthy subjects (7 males and 3 females",
+          "supports": "10 healthy, not10 patients.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-SH-02",
+          "page": 7,
+          "locator": "IV Experimental Setup",
+          "quote": "22-38 years; height: 143-183cm, weight: 52-98kg",
+          "supports": "Healthy-adult applicability.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-SH-03",
+          "page": 9,
+          "locator": "V Results and Discussion",
+          "quote": "The VBSRM was used to compute the desired human torque through inverse dynamics, as a biomechanically inspired reference for assistance calculation.",
+          "supports": "Desired model torque reference, not independent voluntary-torque truth.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-SH-04",
+          "page": 9,
+          "locator": "V Results and Discussion",
+          "quote": "updating joint stiffness values continuously as a function of subject interaction with a gradient-based learning rule.",
+          "supports": "Online stiffness adaptation already exists.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-SH-05",
+          "page": 9,
+          "locator": "VI Conclusion",
+          "quote": "Experimental trials on ten healthy subjects during an ADL task",
+          "supports": "ADL engineering experiment, no patient efficacy conclusion.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-SH-06",
+          "page": 9,
+          "locator": "V Limitations",
+          "quote": "experiments were conducted on healthy subjects alone",
+          "supports": "Author's explicit clinical-applicability limit.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-SH-07",
+          "page": 9,
+          "locator": "V Limitations",
+          "quote": "environmental disturbances and long-term adaptability of the system were not tested comprehensively",
+          "supports": "No general long-term/OOD safety guarantee.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-SH-08",
+          "page": 6,
+          "locator": "III.D",
+          "quote": "Stability Considerations",
+          "supports": "Control-design stability discussion is distinct from verified patient safety.",
+          "literal_check": true
+        }
+      ],
+      "source": "01_参考论文/康复整合链路/Assist-as-Needed_Control_of_a_Shoulder_Rehabilitation_Robot_Using_a_Virtual_Biomechanical_Model_and_Online_Stiffness_Adaptation.pdf",
+      "sha256": "e71f6fb2dfc06eb87118b3056e4e82e6bc6dc67fb0554698ba3a008ceabf1768",
+      "pages": 10
+    },
+    {
+      "id": "Song_TRO",
+      "source_record": "原件移动与回滚清单.json",
+      "version": "IEEE publisher PDF,13 file pages=journal3199–3211",
+      "mechanism": "8-channel sEMG/MVC→activation model→6 muscle synergies via NNMF/ALS→W+ pseudoinverse commands→identified transfer-function/state-space3D-force estimate→admittance→workspace-limited target→cable PID/tension controller. Train on one trajectory, test/online assistance on the other, comparator no-MS.",
+      "reference_and_calibration": "Important source distinction: II.C explicitly says OptiTrack end-effector3D positions are inverted through Eq9 to derive force serving as reference/observed output of the transfer-function model. The six-axis end-effector sensor separately measures human-robot interaction force for online comparison. Do not silently replace the stated model-derived training target with independent active-force sensor truth. MVC is normalization, not uncertainty/probability calibration.",
+      "population_design": "8 healthy,4male/4female,24–29; two4-person groups, triangle→rectangle vs rectangle→triangle;9 repetitions of each task and9 online repetitions per controller. Cross-task, not held-out-person or patient generalization. Paper calls t-test sample72=18trials/person×4persons per experiment; repeated trials are not72 independent people. Limits mention144 trials total.",
+      "effects_and_nulls": "MS improves force-estimation, tracking and interaction-force metrics vs no-MS. Group1 interaction p=.043, xyz/3D tracking all significant. Group2 interaction p=.001; y tracking p=.170 nonsignificant, other xyz/3D reported significant. Retain the null. Article's integral-of-absolute-interaction-force label Eq18 is RMS-like aggregation, not robot assistive work or integrated energy/dose.",
+      "dose_psychology_safety": "Human-driven admittance, not automatic dose/difficulty regulation; physical control-channel/force performance, no independently scaled active participation or psychological instrument. Workspace hold and cable tension7–10N are implementation limits, not clinical/OOD safety validation. Stroke synergies may differ; clinical transfer future work.",
+      "novelty_consequence": "Blocks broad novelty of muscle synergies/biomechanical-inspired EMG→force→online3D assistance or simple cross-task generalization. Sharpen C1 by distinguishing model-derived force target from actual independent effort; does not itself establish novelty of reliability-driven authorization.",
+      "passages": [
+        {
+          "uid": "S7-TRO-01",
+          "page": 5,
+          "locator": "II.C Experimental Setup",
+          "quote": "Eight healthy participants (four males and four females; age: 24–29 years)",
+          "supports": "Healthy8, not patient validation.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-TRO-02",
+          "page": 3,
+          "locator": "II.A CDULRR Platform",
+          "quote": "we built a six-axis force sensor (D45MM-F400N) into the end-effector for measuring human–robot interaction force",
+          "supports": "Interaction-force sensor exists but does not change the stated model-derived training target.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-TRO-03",
+          "page": 5,
+          "locator": "II.C reference construction",
+          "quote": "The 3-D position data of the end-effector recorded by the motion capture system",
+          "supports": "Kinematic data are used to derive reference force through Eq9.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-TRO-04",
+          "page": 5,
+          "locator": "II.C reference construction",
+          "quote": "which served as the reference/observed output of the transfer function model.",
+          "supports": "Force supervision is explicitly derived by the stated procedure; independent active torque is not demonstrated.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-TRO-05",
+          "page": 2,
+          "locator": "I final method paragraph",
+          "quote": "one trajectory task was used for model training, whereas the other one was used for both the model testing and online verification",
+          "supports": "Specific cross-task split; do not infer cross-patient validation.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-TRO-06",
+          "page": 4,
+          "locator": "II.B.8 Workspace Limitation/Eq10–11",
+          "quote": "a workspace limitation is added to make sure the position of the end-effector work in the following range",
+          "supports": "Explicit engineering guard, not a clinical safety claim.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-TRO-07",
+          "page": 6,
+          "locator": "II.D Statistics",
+          "quote": "The number of samples for each t-test was 72",
+          "supports": "Trial-level stated sample size, not72 participants.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-TRO-08",
+          "page": 9,
+          "locator": "III.C Results, Fig14",
+          "quote": "p = 0.170",
+          "supports": "Group2 y-axis tracking difference is nonsignificant.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-TRO-09",
+          "page": 10,
+          "locator": "IV.D.2 Limitations",
+          "quote": "tested on eight healthy participants and only 144 trials",
+          "supports": "Limited engineering sample and trial count.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-TRO-10",
+          "page": 10,
+          "locator": "IV.D.2 Limitations",
+          "quote": "muscle synergies of the patients may be different from those of the healthy ones.",
+          "supports": "Stroke efficacy/generalization cannot be inferred.",
+          "literal_check": true
+        }
+      ],
+      "source": "01_参考论文/康复整合链路/A_Cable-Driven_Upper_Limb_Rehabilitation_Robot_With_Muscle-Synergy-Based_Myoelectric_Controller.pdf",
+      "sha256": "7e363aa8dca5100a8ea04afbb5c0fbcb81d8867924695365fbcc2d2958a8f1fe",
+      "pages": 13
+    },
+    {
+      "id": "Song_TIE",
+      "source_record": "原件移动与回滚清单.json",
+      "version": "IEEE publisher PDF,11 file pages=journal16165–16175;Dec2024",
+      "mechanism": "Three-layer DLN/LSTM,8 muscle activations+3 measured joint angles→3D voluntary-force estimate→admittance→workspace guard→cable PID. Static pre-training21 trials/person(9train/3validation/9test), dynamic re-calibration13 rectangular trials/person(6/1/6), then reembed for online inference. Secondary calibration is not uninterrupted online model updating.",
+      "reference_and_calibration": "Static locked-robot labels are measured interaction force, taken as voluntary force under static assumption. Dynamic labels use measured interaction force plus a robot-assisting-force estimate/admittance discrepancy; this is not independently measured dynamic active torque. Multiple-stage calibration and angle-aware EMG force estimation already exist. Different calibration-target construction limits interpretation of force-RMSE comparisons.",
+      "population_design": "3 subjects;160 dynamic-validation trials total with unequal repetition counts40vs20 due fatigue for2 subjects. Demographic/clinical status not clearly reported in inspected protocol; no evidence of3 stroke participants. Post-stroke transfer in conclusion is a future proposition, not observed patient efficacy.",
+      "effects_and_nulls": "Static-dynamic calibration improves3D trajectory tracking and3D force-estimation aggregate. TableIV3D force RMSE9.457→6.278N, but y2.760→3.803N worsens; do not claim every force component improves. Some RERMSE table entries lack significance tests. Mean total processing3.1230ms supports reported100Hz implementation, not worst-case deadline/fault safety.",
+      "dose_psychology_safety": "No independent psychological engagement or patient dose-response. Workspace constraint and10–15N cable tension are engineering limits. Measured kinematics/force in calibration are not identical to actual assistive work/authorization or safe uncertainty-aware action selection.",
+      "novelty_consequence": "Blocks simple adding posture inputs, static/dynamic calibration or nonlinear EMG→force→assistance novelty. Sharpen C1 around specified independent calibration targets and downstream abstention, not the existence of calibration.",
+      "visual_check": {
+        "pages": [
+          9
+        ],
+        "items": [
+          "TableIV–V"
+        ],
+        "observation": "Read original tables: y-force error worsens,3D aggregate improves; online mean timing only.",
+        "ephemeral_render_directory": "/tmp/rehab-paper-page-check.fh0IBD",
+        "renders_are_not_deliverable_figures": true,
+        "ephemeral_renders_removed_after_inspection": true
+      },
+      "passages": [
+        {
+          "uid": "S7-TIE-01",
+          "page": 2,
+          "locator": "I final overview",
+          "quote": "Three subjects were recruited",
+          "supports": "3 participants; no demographics/clinical group inference.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-TIE-02",
+          "page": 5,
+          "locator": "III.A Static Calibration",
+          "quote": "the measured interaction force was equal to the voluntary force applied by subjects.",
+          "supports": "Measured static force under locked-robot assumption.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-TIE-03",
+          "page": 7,
+          "locator": "V Discussion, dynamic target",
+          "quote": "the human voluntary force is not equal to the dynamic interaction force",
+          "supports": "Dynamic target is a sum/estimate, not the force-sensor channel alone.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-TIE-04",
+          "page": 5,
+          "locator": "III.B Dynamic Calibration",
+          "quote": "The updated DLN was then reembedded in the system substituting for the pretrained DLN for dynamic validation.",
+          "supports": "Offline staged calibration before online validation; no continual-online-learning inference.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-TIE-05",
+          "page": 2,
+          "locator": "II.A Fig2",
+          "quote": "eight channels of muscle activations and three joint angles information",
+          "supports": "Posture-aware EMG force inference is a prior.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-TIE-06",
+          "page": 5,
+          "locator": "III.A Acquisition",
+          "quote": "The interaction force and the marker positions were recorded at 100 Hz while the EMG signals were at 1000 Hz.",
+          "supports": "Separate acquisition clocks/rates must not be copied as local synchronization evidence.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-TIE-07",
+          "page": 1,
+          "locator": "Abstract",
+          "quote": "for 160 trials",
+          "supports": "160 trials, not160 participants.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-TIE-08",
+          "page": 10,
+          "locator": "VII Conclusion continuation",
+          "quote": "It might be interesting if the DLN network trained using data from healthy subjects could be slightly calibrated again and then applied to patients after stroke.",
+          "supports": "Stroke transfer is future work, not patient validation.",
+          "literal_check": true
+        }
+      ],
+      "source": "01_参考论文/康复整合链路/Deep-LSTM-Based_Human-Robot_Collaboration_Control_With_Static-Dynamic_Calibration.pdf",
+      "sha256": "051062e5644209088b9c01a0eb023091e070b97400baf3cacd627fb762682615",
+      "pages": 11
+    },
+    {
+      "id": "Song_VAAN",
+      "source_record": "原件移动与回滚清单.json",
+      "version": "IEEE publisher PDF,9 file pages=journal1795–1803;June2023,first publication2022",
+      "mechanism": "TA/GAS sEMG→Hill/musculoskeletal ankle-voluntary-torque estimate→performance-adapted gainK→human-dominant robot-resist/free/robot-assist vs robot-dominant AAN. Human-dominant assistance is proportional to estimated voluntary torque; robot-dominant term uses tracking error. Contribution Rh and time-in-mode are operational physical endpoints, not psychological probabilities.",
+      "reference_and_calibration": "MVC at90/120deg,3×5s/angle, bounded optimization minimises discrepancy to independently measured torque-sensor MVC labels. Sensor-based static physical calibration DOES exist and must not be erased to create a gap. No independent continuous dynamic voluntary-torque validation established; involuntary/spastic EMG contamination explicitly remains.",
+      "population_design": "2 healthy and5 stroke patients; ankle only, inclusion requires measurable affected TA/GAS and following commands, excludes cognition/memory/language impairment.25deg/0.1Hz sinusoid,3×30s with30s rests. No upper-limb clinical efficacy or longitudinal recovery.",
+      "effects_and_nulls": "Descriptive tracking/torque/mode time and Rh: TableV mode means.87/.82/.76/.48,total.73; TableVI healthy Rh.97 vs literature.74 but tracking2.5deg vs.86deg worse. Patient row.76/5.20deg has no comparison-patient data in cited study. Not concurrent randomized superiority or FMA improvement. TableV contains Rh>1(e.g.1.04), whereas Eq25 is a ratio of RMS terms; sign/implementation convention not established. Do not silently turn it into calibrated[0,1] probability.",
+      "dose_psychology_safety": "Patient physical-control feasibility with disability/FMA-LE stratification, not dose-response or psychological engagement. Single short protocol, patient-specific gain tuning/fault/OOD safety unresolved. Does not replace upper-limb labels or actual-assistance verification in supplied engineering material.",
+      "novelty_consequence": "Blocks simplistic novelty of voluntary-torque-aware AAN, active contribution ratios, disability-dependent resistance/assist switching, or adding force-sensor MVC calibration. Independent construct references/calibrated downstream authorization remain narrower questions, not proven field-wide blanks.",
+      "visual_check": {
+        "pages": [
+          7
+        ],
+        "items": [
+          "Fig7/TableV–VI"
+        ],
+        "observation": "Read source table: ratio values exceed1, descriptive source-comparison tracking worsens and patient comparison absent; do not infer benefit across all endpoints or reconstruct missing sign convention.",
+        "ephemeral_render_directory": "/tmp/rehab-paper-page-check.fh0IBD",
+        "renders_are_not_deliverable_figures": true,
+        "ephemeral_renders_removed_after_inspection": true
+      },
+      "passages": [
+        {
+          "uid": "S7-VA-01",
+          "page": 4,
+          "locator": "IV.A Participants",
+          "quote": "experiments were performed on two healthy subjects (H1 and H2)",
+          "supports": "2healthy+5stroke, ankle applicability only.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-VA-02",
+          "page": 4,
+          "locator": "IV.A Inclusion",
+          "quote": "the voluntary EMG signals of the affected tibialis anterior (TA) and gastrocnemius (GAS) should be measurable",
+          "supports": "Selected stroke population; not all impairments.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-VA-03",
+          "page": 4,
+          "locator": "IV.B MVC calibration",
+          "quote": "fixed at 90° and 120°",
+          "supports": "Two-angle static MVC calibration.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-VA-04",
+          "page": 4,
+          "locator": "IV.B Eq19",
+          "quote": "are the actual joint torque measured by the torque sensor",
+          "supports": "Independent torque-sensor MVC calibration prior exists.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-VA-05",
+          "page": 5,
+          "locator": "IV.C Training Protocol",
+          "quote": "an amplitude of 25° and a frequency of 0.1 Hz for 30 seconds.",
+          "supports": "Short ankle exercise exposure, not clinical dose-response.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-VA-06",
+          "page": 5,
+          "locator": "IV.D Eq25",
+          "quote": "The human contribution ratio in four working modes was used to evaluate patient’s active participation",
+          "supports": "Operational physical participation ratio, not psychological engagement.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-VA-07",
+          "page": 7,
+          "locator": "V TableVI literature comparison",
+          "quote": "despite a slight bigger tracking errors were appeared",
+          "supports": "Participation/accuracy tradeoff and cross-study comparator, not across-endpoint superiority.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-VA-08",
+          "page": 8,
+          "locator": "VI.C Limitations and Future Work",
+          "quote": "some involuntary motor activity of stroke patients, such as spasticity, might contaminate voluntary EMG signals",
+          "supports": "Voluntary/involuntary identification limit explicitly acknowledged.",
+          "literal_check": true
+        }
+      ],
+      "source": "01_参考论文/康复整合链路/Voluntary_Assist-as-Needed_Controller_for_an_Ankle_Power-Assist_Rehabilitation_Robot.pdf",
+      "sha256": "360e92e294b0105eec6161352d9f884792e88c82aee11ae3530a95c58858afcb",
+      "pages": 9
+    },
+    {
+      "id": "Song_TBME",
+      "source_record": "原件移动与回滚清单.json",
+      "version": "IEEE publisher PDF,9 file pages=journal1351–1359;Apr2021,first publication2020",
+      "mechanism": "End-effector position/error and velocity→3-region resistance/assistance/restriction→fuzzy-assisted stiffness adjustment(error+error-rate)→cable force/PID. Small-error region adds resistance/difficulty, intermediate assists, boundary overshoot uses restriction damping and stiffness decay. Fuzzy membership is not calibrated observation/effort probability.",
+      "reference_and_calibration": "Four measured cable tensions map toFc; human active force approximated as-Fc assuming small end-effector mass/acceleration. Author explicitly calls for a3D end-effector force sensor later. AAF, MAE and mode occupancy are physical/engineering performance, not independent biological active contribution or delivered-work truth.",
+      "population_design": "10 healthy,6male/4female,mean25.3years; four perturbation levelsD0–D3, each4×30s circular XZ trajectories,10min rest between trials. Random artificial force disturbances simulate reduced performance, not actual stroke disability/patient recovery.",
+      "effects_and_nulls": "Friedman and Wilcoxon with Bonferroni p<.008; D0–D1 andD2–D3 lack corrected significance in MAE/AAF comparisons. Increasing disturbance increases error and assistance occupancy; restriction exposure near0. Demonstrates controller response, not training-benefit causation or clinical safety. AAF relates to cable-force approximation; not physical effort truth.",
+      "dose_psychology_safety": "Difficulty/assistance switching precedes this project; repetition duration/rest explicit but no clinical dose or psychological scale. Position boundary, tension limits and scram button are guards, not fault/OOD clinical safety validation. Clinical trials and better impairment simulation are future work.",
+      "novelty_consequence": "Blocks generic performance-driven assistance/resistance/difficulty or adding fuzzy uncertainty novelty. C3 must exceed an already existing restriction mode/hardware guard and conditional theory, not rename safeguards.",
+      "visual_check": {
+        "pages": [
+          7
+        ],
+        "items": [
+          "Fig10–12"
+        ],
+        "observation": "Read significance marks and mode-occupancy plots; preserve adjacent-group corrected nulls and nearly absent restriction-mode exposure.",
+        "ephemeral_render_directory": "/tmp/rehab-paper-page-check.fh0IBD",
+        "renders_are_not_deliverable_figures": true,
+        "ephemeral_renders_removed_after_inspection": true
+      },
+      "passages": [
+        {
+          "uid": "S7-BM-01",
+          "page": 5,
+          "locator": "III.B Trajectory Tracking Experiment",
+          "quote": "Ten healthy subjects",
+          "supports": "10 healthy, no actual stroke trial.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-BM-02",
+          "page": 3,
+          "locator": "II.B human-force approximation",
+          "quote": "Considering the small mass and acceleration of the end-effector",
+          "supports": "-Fc is an assumed approximation, not an independent active-force reference.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-BM-03",
+          "page": 5,
+          "locator": "III.B perturbed trials",
+          "quote": "four kinds of tasks with different disturbance forces were designed",
+          "supports": "Artificial performance degradation, not a stroke model validated clinically.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-BM-04",
+          "page": 7,
+          "locator": "V Discussion, fuzzy prior",
+          "quote": "fuzzy logic tuner",
+          "supports": "Error/error-rate fuzzy stiffness adaptation already exists; not calibrated uncertainty.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-BM-05",
+          "page": 6,
+          "locator": "III.C Data Analysis",
+          "quote": "A Bonferroni correction was used to adjust the significant level",
+          "supports": "Use corrected threshold, not uncorrected.05, to interpret nulls.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-BM-06",
+          "page": 8,
+          "locator": "V Discussion, limitations",
+          "quote": "the measurement of human active force should be improved",
+          "supports": "Author explicitly acknowledges force-reference weakness.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-BM-07",
+          "page": 8,
+          "locator": "V Discussion, simulated disability",
+          "quote": "simulate patients with various levels of motor disabilities",
+          "supports": "Simulation in healthy subjects does not prove patient outcomes.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-BM-08",
+          "page": 7,
+          "locator": "IV Results, Fig12",
+          "quote": "it is not shown in Fig. 12",
+          "supports": "Restriction-mode time is near0; guard existence is not validated hazardous-boundary exposure.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-BM-09",
+          "page": 5,
+          "locator": "III.B safety control",
+          "quote": "scram button for safety",
+          "supports": "Engineering emergency stop, not clinical safety evidence.",
+          "literal_check": true
+        }
+      ],
+      "source": "01_参考论文/康复整合链路/Performance-Based_Hybrid_Control_of_a_Cable-Driven_Upper-Limb_Rehabilitation_Robot.pdf",
+      "sha256": "bbf68a0f81d3d54716a5e2229404d070891a33b67ea29bd31fdc30e67a00c435",
+      "pages": 9
+    },
+    {
+      "id": "Song_TBCAS",
+      "source_record": "原件移动与回滚清单.json",
+      "version": "IEEE publisher PDF,11 file pages=journal1332–1342;Dec2021",
+      "mechanism": "Reach-and-grasp hybrid arm/hand robot:6 arm EMG activations→identifiedMIMO state-space3D force,2 forearm channels→scalar hand force model→admittance→arm PID/hand rod controller. Compare real-time force-sensing admittance; electromechanical-delay compensation/smoothing and workspace/hand aperture guards already present.",
+      "reference_and_calibration": "II.C explicitly derives arm-force training output from OptiTrack positions through Eq7; measured-force terminology in later RMSE description does not establish independent active-force truth. Six-axis interaction sensor exists for the force-sensing controller; distinguish that comparator channel from the stated model-training target. Hand uses measuredhand force for scalar quadratic fit. Static MVC normalization/delay100ms and model order selection are not uncertainty calibration.",
+      "population_design": "1 healthy subject,age23;20 measured trials split10train/10test; model orders1–10 chosen using both training and testing performance. Online reach-and-grasp10 reps per EMG andforce controller; statistical replications are trials, not10 participants or patient validation.",
+      "effects_and_nulls": "TableI arm FZCRs improve,p<.001; hand p=.055 nonsignificant, despite prose saying all significant. RMS jerk p=.036 end-effector,.001 rods. Smoothing/FZCR/jerk and force-model fits are not independent engagement, recovery or dose outcomes; healthy-single-subject/order-selection limits apply.",
+      "dose_psychology_safety": "Arm-hand integration and motion-intention-controlled assistance already demonstrated in engineering sense. Spherical workspace/hand aperture boundary guards exist; no psychological scale, stroke dose-response, hazard/fault/OOD validation or clinical safety conclusion.",
+      "novelty_consequence": "Blocks simple arm-hand/module integration, EMG→force→assistance and adding smoothness/delay compensation novelty. Does not fill independent body/psych references or actual action exposure in existing external material.",
+      "visual_check": {
+        "pages": [
+          8
+        ],
+        "items": [
+          "TableI/Fig7"
+        ],
+        "observation": "OriginalTableI handp=.055 is nonsignificant; preserve despite surrounding prose claiming all are significant.",
+        "ephemeral_render_directory": "/tmp/rehab-paper-page-check.fh0IBD",
+        "renders_are_not_deliverable_figures": true,
+        "ephemeral_renders_removed_after_inspection": true
+      },
+      "passages": [
+        {
+          "uid": "S7-BC-01",
+          "page": 5,
+          "locator": "II.C Calibration of Arm/Hand Force Model",
+          "quote": "One healthy subject (age: 23 years; height: 171 cm; weight: 76 kg)",
+          "supports": "Single healthy subject, not a patient/multi-person cohort.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-BC-02",
+          "page": 5,
+          "locator": "II.C reference construction",
+          "quote": "The position data were taken into (7) to derive the estimated arm force",
+          "supports": "Kinematic inversion provides stated model-training target, not independent active-force truth.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-BC-03",
+          "page": 5,
+          "locator": "II.C trial partition",
+          "quote": "Among the twenty trials of data, ten were randomly selected for the training and the other ten for the testing.",
+          "supports": "20trials10/10, not an invented80/20 split or held-out-person design.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-BC-04",
+          "page": 6,
+          "locator": "III.A model-order selection/Fig5",
+          "quote": "from 1 to 10",
+          "supports": "Order selection uses training/testing model fits, not fixed independent holdout proof.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-BC-05",
+          "page": 8,
+          "locator": "III.B/TableI",
+          "quote": "Hand: p > 0.05",
+          "supports": "Hand force-zero-crossing difference nonsignificant;TableI exactp=.055 visually verified.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-BC-06",
+          "page": 8,
+          "locator": "III.B/Fig7",
+          "quote": "p = 0.036 for end-effector",
+          "supports": "Jerk endpoint distinct from contribution/clinical outcome.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-BC-07",
+          "page": 8,
+          "locator": "III.B/Fig7",
+          "quote": "p = 0.001 for rod ends",
+          "supports": "Rod-end jerk result, not all physical/psychological endpoints improved.",
+          "literal_check": true
+        },
+        {
+          "uid": "S7-BC-08",
+          "page": 9,
+          "locator": "IV.C Limitations and Future Works",
+          "quote": "tested on the healthy subject at current stage.",
+          "supports": "Patient effectiveness remains future, not established.",
+          "literal_check": true
+        }
+      ],
+      "source": "01_参考论文/康复整合链路/A_Hybrid_Arm-Hand_Rehabilitation_Robot_With_EMG-Based_Admittance_Controller.pdf",
+      "sha256": "cf7bf33523cb6196da35eada7614183a9200c77e7f8d7b6a6fe22140de1b4fc6",
+      "pages": 11
+    }
+  ],
+  "checked_at": "2026-10-04T12:56:53.768900+08:00",
+  "source_quote_count": 64,
+  "main_locator_count_after_merge": 398,
+  "scope_limit": "No novelty confirmation, clinical/safety effect or independent local participation/exposure validity claimed."
+}

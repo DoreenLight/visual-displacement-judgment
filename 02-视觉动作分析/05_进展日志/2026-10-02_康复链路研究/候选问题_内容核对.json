@@ -1,0 +1,53 @@
+{
+  "status": "PROVISIONAL_QUESTIONS_NOT_NOVELTY_CONFIRMED",
+  "draft_questions": 3,
+  "confirmed_final_directions": 0,
+  "fields_per_question": [
+    "研究问题/链路",
+    "最接近已取得工作",
+    "候选差异（未证实新颖）",
+    "可证伪假设",
+    "评价指标",
+    "必需数据/条件",
+    "失败风险/停止",
+    "全文阻塞"
+  ],
+  "source_ids_resolve": true,
+  "known_integration_counterexamples": [
+    "Song_wrist",
+    "ALP2025",
+    "L-561c1bd5",
+    "L-90b8ba05",
+    "TFS2025"
+  ],
+  "closest_work_not_absence_inference": true,
+  "priority_basis": "测量→决策→训练块的验证依赖，不是发表/新颖性评分",
+  "blocking_fulltexts": [
+    "RL2026",
+    "Shoulder2025",
+    "Song_TBCAS",
+    "Song_TBME",
+    "Song_TIE",
+    "Song_TRO",
+    "Song_VAAN"
+  ],
+  "blocking_context": [
+    "患者/病程及关节/任务",
+    "主要参与构念：物理/心理或两者",
+    "外部成果的同步信号/独立参照/真实辅助暴露及权限"
+  ],
+  "affected_work": "创新方向确认和最终收尾仍未完成，须用户裁定；不把文档存在当作通过",
+  "design_runtime_executed": false,
+  "semantic_checks": [
+    "普通模块连接不是创新",
+    "项目材料缺口不等于领域空白",
+    "拒绝更多不自动算更好，比较风险覆盖权衡",
+    "离线反事实不作临床/干预因果证明",
+    "质量/努力/挑战/剂量及症状分开",
+    "仅物理贡献的3条问题，不穷尽心理参与或辅助方式"
+  ],
+  "files": {
+    "链路缺口与候选比较.md": "dc4726fd9526d57a22ad258dcd1074972e0eda4eedd777f51cf1d4ba05768cf6",
+    "研究总结与裁定入口.md": "848b5389206bd7714f940a258605d0d9d774388e64b613a222210eccfbc8a933"
+  }
+}
