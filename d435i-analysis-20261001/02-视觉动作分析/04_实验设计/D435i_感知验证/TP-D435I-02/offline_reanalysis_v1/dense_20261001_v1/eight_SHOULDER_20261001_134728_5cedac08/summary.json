@@ -1,0 +1,10 @@
+{
+  "run_id": "eight_SHOULDER_20261001_134728_5cedac08",
+  "scope": "exploratory dense replay, not formal validation",
+  "rows": 970,
+  "input_measurements_sha256": "14c9df85066d0a6945735f04db5e3e0e3c3e49120d58fc1e54b13d2c8988af57",
+  "input_path": "../../../../TP-D435I-01/offline_reanalysis_v1/dense_20261001_v1/runs/eight_SHOULDER_20261001_134728_5cedac08/measurements.jsonl",
+  "csv_sha256": "c056046247b352f8b9605ced6c67560f9af0a08be5f02d02ae4c792a011dd242",
+  "formal_accuracy": "not_evaluated",
+  "camera_opened": false
+}
