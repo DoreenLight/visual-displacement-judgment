@@ -1,0 +1,74 @@
+[
+  {
+    "path": "prior_closeout\\HANDOFF.md",
+    "sha256": "514d6943f421ce75757a9053793f23eb266b2845e6fecc48b0a9fba8eed60f32"
+  },
+  {
+    "path": "prior_closeout\\INDEX.md",
+    "sha256": "765701c7c6cb1ecaf77e61b0492820907c476d4d5f5a36f95600da3e0d402e4c"
+  },
+  {
+    "path": "prior_closeout\\README.md",
+    "sha256": "376728dded226e506f53f9a170274b25d2d35b22a33210aad870bb3d9b372c58"
+  },
+  {
+    "path": "prior_closeout\\STATUS.md",
+    "sha256": "c80a4d74f571de65f7dffc5fbb06b3b123bf285a1a0502127c39cb83ae0a1975"
+  },
+  {
+    "path": "prior_closeout\\04_实验设计\\D435i_四问任务包\\D435I_四问任务包全套工程验证与科学总结报告.md",
+    "sha256": "60329eb49df6e83be40edeb29cb48429be82846bffb43f957d5f65621f1c370b"
+  },
+  {
+    "path": "prior_closeout\\04_实验设计\\D435i_感知验证\\comprehensive_analysis\\generate_master_report.py",
+    "sha256": "739fe4f77125bb68000cf8fe75875b60020104e2481b9a5fc6cb0dcbef993d49"
+  },
+  {
+    "path": "prior_closeout\\04_实验设计\\D435i_感知验证\\comprehensive_analysis\\tp01_keypoints_eval.py",
+    "sha256": "c19bfe52a2b29a1fb647c0698cf4006eff3af0f21bfe2cd9d93d5a70b57e44f8"
+  },
+  {
+    "path": "prior_closeout\\04_实验设计\\D435i_感知验证\\comprehensive_analysis\\tp02_wrist_kinematics_eval.py",
+    "sha256": "c173ac2f47f7c52ce2f37a8d0edc9c38b4ee7f52cfe731921b30f1de7a3b7bba"
+  },
+  {
+    "path": "prior_closeout\\04_实验设计\\D435i_感知验证\\comprehensive_analysis\\tp03_compensation_eval.py",
+    "sha256": "1cd68516c5a9754b8a1629a52a4dab010e6d4891d3f6f4b5ef9b80bfe75306d5"
+  },
+  {
+    "path": "prior_closeout\\04_实验设计\\D435i_感知验证\\comprehensive_analysis\\tp04_quality_eval.py",
+    "sha256": "b2a4cbd263566ba9d627b9ea70636230e33bd9432c198d0fdc05c13f7c2a072c"
+  },
+  {
+    "path": "prior_closeout\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\TP01_SYNTHESIS_REPORT.md",
+    "sha256": "c529de2b1e90e2fbb39cc8995e9df0b8e39bf82cf488b5b99f1cfc3dbe4d0acf"
+  },
+  {
+    "path": "prior_closeout\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\tp01_synthesis_summary.json",
+    "sha256": "c184e32ee147c9558346c9551e85127647f4b2e595202107ab826eb901973577"
+  },
+  {
+    "path": "prior_closeout\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\TP02_SYNTHESIS_REPORT.md",
+    "sha256": "17849c4569cdcb2ae612252e8415708b8fe204158d79e7a4389650d84ab5b791"
+  },
+  {
+    "path": "prior_closeout\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\tp02_synthesis_summary.json",
+    "sha256": "a3f9318225b50036625ee2ea47789285407984389d9c972cb903594f0bc33a40"
+  },
+  {
+    "path": "prior_closeout\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\TP03_SYNTHESIS_REPORT.md",
+    "sha256": "81aa2637775615776347645cbea01a5e81a3bdb1b9b0aeb1486f7f289cba8f25"
+  },
+  {
+    "path": "prior_closeout\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\tp03_synthesis_summary.json",
+    "sha256": "8aea7c7510b437511c9b31dc4175e52d0e013bbc4399259601e1b458f952da79"
+  },
+  {
+    "path": "prior_closeout\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\TP04_SYNTHESIS_REPORT.md",
+    "sha256": "ce32d6be48a09d2226049c6bbf3e231de05337a5bb4a2dcd1c10ec1b42bab2bc"
+  },
+  {
+    "path": "prior_closeout\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\tp04_synthesis_summary.json",
+    "sha256": "4fdd311d03688d481276036f58b0f6111bc3dd9f0130993e964363a3982c5258"
+  }
+]

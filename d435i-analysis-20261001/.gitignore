@@ -1,0 +1,36 @@
+# macOS 系统文件
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python 缓存与构建产物
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 凭据防御性忽略（本仓库不包含任何真实密钥）
+# 脚本中的密钥均以 ${OPENROUTER_API_KEY} / ${MINIMAX_API_KEY} 形式从环境变量读取
+.env
+.env.*
+.secrets
+*.pem
+*.key
+id_rsa*
+credentials*
+
+# 本地代理/会话工作目录及运行日志
+.pi/
+*.log
+
+# 人体原始资料与实验照片/录像，仅保存在本地
+/02-视觉动作分析/07_资料库/
+/02-视觉动作分析/04_实验设计/D435i_感知验证/**/*.jpg
+/02-视觉动作分析/04_实验设计/D435i_感知验证/**/*.jpeg
+/02-视觉动作分析/04_实验设计/D435i_感知验证/**/*.avi
+/02-视觉动作分析/04_实验设计/D435i_感知验证/**/*.mp4
+/02-视觉动作分析/04_实验设计/D435i_感知验证/**/eight_task_interface.png
+/02-视觉动作分析/04_实验设计/D435i_感知验证/**/interface_actual.png
+/02-视觉动作分析/04_实验设计/D435i_感知验证/**/interface_camera_connected.png
+/02-视觉动作分析/04_实验设计/D435i_感知验证/**/layout_desktop.png

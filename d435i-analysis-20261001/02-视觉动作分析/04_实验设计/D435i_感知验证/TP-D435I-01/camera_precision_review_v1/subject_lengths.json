@@ -1,0 +1,17 @@
+{
+  "participant_id": "P001",
+  "training_side": "right_existing_model_channel",
+  "upper_arm_mm": 300,
+  "forearm_mm": 290,
+  "wrist_to_middle_mcp_mm": 112,
+  "source": "operator_reply: ①30cm②29cm③11.2cm",
+  "definitions": {
+    "upper_arm_mm": "shoulder_marker_or_acromion_to_elbow_marker",
+    "forearm_mm": "elbow_marker_to_white_wrist_marker",
+    "wrist_to_middle_mcp_mm": "white_wrist_marker_to_middle_finger_MCP_not_fingertip"
+  },
+  "measurement_uncertainty_mm": null,
+  "anatomical_rotation_center_mapping": "NOT_VALIDATED",
+  "same_point_as_model_landmarks": "NOT_VALIDATED",
+  "use": "conditional_geometry_conversion_only"
+}

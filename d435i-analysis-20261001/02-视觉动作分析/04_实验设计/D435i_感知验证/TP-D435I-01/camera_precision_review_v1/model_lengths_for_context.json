@@ -1,0 +1,20 @@
+[
+  {
+    "start": "r_shoulder",
+    "end": "r_elbow",
+    "model_median_length_mm": 301.0961875779042,
+    "status": "model_estimate_not_independent_subject_anthropometry"
+  },
+  {
+    "start": "r_elbow",
+    "end": "r_wrist",
+    "model_median_length_mm": 240.04051246978224,
+    "status": "model_estimate_not_independent_subject_anthropometry"
+  },
+  {
+    "start": "hand_wrist",
+    "end": "hand_middle_mcp",
+    "model_median_length_mm": 53.521519216815605,
+    "status": "model_estimate_not_independent_subject_anthropometry"
+  }
+]

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>D435i 实时动作反馈</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1420;--card:#132235;--line:#283e54;--muted:#9eb1c4;--accent:#54d7bc;--warn:#ffd081}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:16px "Microsoft YaHei",sans-serif;color:#eff7ff}
+header{padding:20px 28px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:15px;align-items:center}h1{font-size:23px;margin:0 0 6px}p{margin:0;color:var(--muted);font-size:13px;line-height:1.7}
+.pill{padding:8px 15px;background:#21403e;border-radius:30px;color:var(--accent);white-space:nowrap}
+main{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:20px;padding:22px 28px;max-width:1800px;margin:auto}
+.video{position:relative;min-height:420px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#050b12;display:flex;align-items:center}.video img{width:100%;display:block}.live{position:absolute;top:16px;left:18px;background:#071a24d9;border-radius:20px;padding:6px 11px;font-size:12px}.live:before{content:'●';color:var(--accent);margin-right:8px}
+.card{border:1px solid var(--line);border-radius:16px;padding:19px;background:var(--card);margin-bottom:14px}.label{color:var(--muted);font-size:13px}.big{font-size:51px;font-weight:700;margin:8px 0;color:var(--accent)}.row{display:flex;justify-content:space-between;align-items:center;margin:14px 0;font-size:14px}.row strong{font-weight:500}.line{height:1px;background:var(--line);margin:14px 0}
+button{border:1px solid #375168;border-radius:9px;padding:11px 12px;background:#243950;color:#edf5ff;cursor:pointer;font:14px "Microsoft YaHei";transition:background .15s}button:hover{background:#375168}button:disabled{opacity:.45;cursor:default}.primary{background:#268774;border-color:#39bba0}.primary:hover{background:#2fa58e}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:9px}.wide{grid-column:1/-1}.danger{color:#ffb3a9}.notice{margin-top:12px;font-size:12px;color:var(--muted)}input{width:65px;background:#0b1420;border:1px solid var(--line);border-radius:6px;color:white;padding:6px;font:inherit}
+.prompt{margin:0 28px 22px;padding:24px 28px;border:1px solid #2d6d69;border-radius:16px;background:#112b31}.prompt h2{margin:0 0 9px;font-size:26px}.prompt p{font-size:16px}.warning{border-color:#b28745}.warning h2{color:var(--warn)}.bar{height:5px;border-radius:4px;background:#283e54;margin-top:14px;overflow:hidden}.bar div{height:100%;background:var(--accent);width:0;transition:width .2s}.hint{padding:0 28px 20px;color:var(--muted);font-size:12px}.toast{color:var(--warn);font-size:13px;min-height:22px;margin-top:10px}
+@media(max-width:1000px){main{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:1fr 1fr;gap:14px}.video{min-height:260px}.card{margin:0}.controls{grid-column:1/-1}.prompt h2{font-size:22px}}@media(max-width:600px){header,main{padding:15px}.sidebar{grid-template-columns:1fr}.prompt{margin:0 15px 15px;padding:18px}.big{font-size:40px}header{align-items:flex-start}h1{font-size:19px}.pill{font-size:12px}}
+</style>
+</head>
+<body>
+<header><div><h1>D435i 实时动作反馈</h1><p>右手 · 坐姿腕部训练 · AI 在本机持续运行</p></div><span id="status" class="pill">正在连接</span></header>
+<main>
+<section class="video"><img id="video" src="/video_feed" alt="D435i 实时镜像画面与动作提示"><span class="live" id="live">实时画面</span></section>
+<aside class="sidebar">
+<section class="card"><div class="label">腕部弯曲变化 · 工程估计</div><div class="big" id="angle">—</div><p>相对标定姿势的弯曲变化，尚未验证 FE/RU 解剖角度。</p><div class="row"><span>参考目标</span><span><input id="target" type="number" min="10" max="40" step="5" value="20" aria-label="参考目标角度"> ° <button onclick="setTarget()">设置</button></span></div><div class="line"></div><div class="row"><span>完整动作</span><strong id="reps">0 次</strong></div><div class="row"><span>含额外参与</span><strong id="flagged">0 次</strong></div><div class="row"><span>中断动作</span><strong id="interrupted">0 次</strong></div></section>
+<section class="card"><div class="label">肩肘观测</div><div class="row"><span>右肩相对高度变化</span><strong id="shoulder">—</strong></div><div class="row"><span>肘屈伸变化</span><strong id="elbow">—</strong></div><div class="row"><span>当前提示</span><strong id="participation">等待观测</strong></div><div class="line"></div><p id="performance">等待新画面…</p></section>
+<section class="card controls"><div class="buttons"><button class="primary" id="train" onclick="sendFeedbackCommand('train')" disabled>开始训练</button><button onclick="sendFeedbackCommand('pause')">暂停训练</button><button onclick="sendFeedbackCommand('calibrate')">重新标定</button><button onclick="document.documentElement.requestFullscreen?.()">全屏显示</button><button id="record" class="wide" onclick="toggleRecording()">开始录制</button><button class="wide danger" onclick="sendFeedbackCommand('stop')">结束并关闭摄像头</button></div><p class="notice" id="recordInfo">预览不保存影像。录制后，RGB、深度和分析结果只保存到本地。</p><div class="toast" id="toast" aria-live="polite"></div></section>
+</aside>
+</main>
+<section id="prompt" class="prompt" aria-live="polite"><h2 id="headline">正在连接摄像头，请稍候</h2><p id="detail">双肩、右肘、右腕和手背保持可见。</p><div class="bar"><div id="progress"></div></div></section>
+<div class="hint">先放松坐好、手腕自然放平并完成零位标定，再开始训练。身体重新摆位后请重新标定；不适时暂停。肩肘提示属于工程筛查。</div>
+<script>
+let recording=false, stopped=false, busy=false;
+const $=id=>document.getElementById(id);
+async function sendFeedbackCommand(action,payload={}){
+ try{const r=await fetch('/'+action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const d=await r.json();if(!r.ok)throw Error(d.error||'操作未完成');$('toast').textContent=action==='stop'?'程序正在关闭…':'操作已接收';if(action==='stop'){stopped=true;$('train').disabled=true;$('record').disabled=true;$('status').textContent='已结束';$('headline').textContent='训练已结束，摄像头正在关闭';$('angle').textContent='—';}}
+ catch(e){$('toast').textContent=e.message;}
+}
+function setTarget(){const value=Number($('target').value);if(!Number.isFinite(value)||value<10||value>40){$('toast').textContent='参考目标应在 10～40° 之间';return;}sendFeedbackCommand('target',{value});}
+function toggleRecording(){sendFeedbackCommand(recording?'stop_record':'record');}
+const names={connecting:'正在连接',unknown:'观测不足',calibrating:'零位标定',ready:'准备就绪',rest:'等待动作',moving:'动作进行中',adjust:'请调整',error:'连接异常'};
+const metric=(value,unit)=>value===null||value===undefined?'—':Math.round(value)+unit;
+async function refresh(){
+ if(stopped||busy)return;busy=true;
+ try{const r=await fetch('/telemetry',{cache:'no-store',signal:AbortSignal.timeout(2000)});if(!r.ok)throw Error('分析服务暂时不可用');const d=await r.json();
+ const fresh=d.result_age_ms<1000;recording=!!d.recording;$('status').textContent=names[d.status]||d.status;
+ $('angle').textContent=fresh?metric(d.bend_deg,'°'):'—';$('shoulder').textContent=fresh?metric(d.shoulder_mm,' mm'):'—';$('elbow').textContent=fresh?metric(d.elbow_deg,'°'):'—';
+ $('reps').textContent=(d.reps??0)+' 次';$('flagged').textContent=(d.flagged_reps??0)+' 次';$('interrupted').textContent=(d.interrupted_reps??0)+' 次';
+ $('participation').textContent=!fresh||d.status==='unknown'?'不可判读':d.shoulder_alert&&d.elbow_alert?'肩肘共同参与':d.shoulder_alert?'肩部额外参与':d.elbow_alert?'肘部额外参与':d.training?'未触发提示':'尚未评价';
+ $('participation').style.color=d.shoulder_alert||d.elbow_alert?'#ffd081':'#c7d8e6';
+ $('headline').textContent=d.headline;$('detail').textContent=d.detail;$('prompt').classList.toggle('warning',['unknown','adjust','error'].includes(d.status));
+ $('train').disabled=!fresh||!d.calibrated||['unknown','error'].includes(d.status)||d.training;
+ $('train').textContent=d.training?'训练进行中':'开始训练';$('record').textContent=recording?'停止录制':'开始录制';
+ $('live').textContent=!fresh?'等待新画面':recording?'正在录制 · 实时画面':'实时画面 · 未录制';
+ $('performance').textContent=`分析 ${d.fps??0} 次/秒 · 处理 ${d.processing_latency_ms??'—'} ms · 结果帧龄 ${d.result_age_ms} ms`;
+ $('progress').style.width=(d.calibration_progress??0)*100+'%';
+ $('recordInfo').textContent=d.record_error|| (recording?'正在本地保存 RGB、深度和分析数据。停止录制后仍可实时预览。':d.record_run?'最近记录：'+d.record_run:'预览不保存影像。录制后，RGB、深度和分析结果只保存到本地。');
+ }catch(e){$('status').textContent='服务暂时中断';$('headline').textContent='连接暂时中断，请暂停动作';$('detail').textContent='等待本地服务恢复。';$('angle').textContent=$('shoulder').textContent=$('elbow').textContent='—';$('participation').textContent='不可判读';$('train').disabled=true;}
+ finally{busy=false;}
+}
+setInterval(refresh,150);refresh();
+</script>
+</body></html>

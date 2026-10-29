@@ -1,0 +1,76 @@
+{
+  "overall_verdict": "PARTIAL_PASS (ACCURACY_BLOCKED)",
+  "checks": {
+    "schema": {
+      "verdict": "PASS",
+      "status": "PASS",
+      "msg": "23列齐全，格式与单位严格符合契约"
+    },
+    "nan_integrity": {
+      "verdict": "PASS",
+      "status": "PASS",
+      "msg": "无效点严格置 NaN，无填零或插值伪造"
+    },
+    "usability": {
+      "verdict": "PASS",
+      "status": "PASS",
+      "stats": {
+        "shoulder": {
+          "valid_rate": 1.0,
+          "max_gap_s": 0.0
+        },
+        "elbow": {
+          "valid_rate": 1.0,
+          "max_gap_s": 0.0
+        },
+        "wrist": {
+          "valid_rate": 1.0,
+          "max_gap_s": 0.0
+        }
+      }
+    },
+    "jitter_stability": {
+      "verdict": "PASS",
+      "status": "PASS",
+      "stats": {
+        "shoulder": {
+          "sd_x_mm": 0.16817554614446215,
+          "sd_y_mm": 0.5695184115646473,
+          "sd_z_mm": 1.5501827849213998,
+          "p95_drift_mm": 3.2147317150891497
+        },
+        "elbow": {
+          "sd_x_mm": 0.06500075972965352,
+          "sd_y_mm": 0.028239058844877162,
+          "sd_z_mm": 1.6872667648603967,
+          "p95_drift_mm": 3.0028153456381563
+        },
+        "wrist": {
+          "sd_x_mm": 0.07518438240768432,
+          "sd_y_mm": 0.10548374808998279,
+          "sd_z_mm": 1.8796095601920715,
+          "p95_drift_mm": 4.009239329349147
+        }
+      }
+    },
+    "edge_cases": {
+      "verdict": "PASS",
+      "status": "PASS",
+      "captured_reasons": [
+        "valid",
+        "depth_missing_zero_hole",
+        "forearm_length_anomaly_1.336m",
+        "forearm_length_anomaly_1.338m",
+        "forearm_length_anomaly_1.337m",
+        "forearm_length_anomaly_1.335m",
+        "forearm_length_anomaly_1.339m",
+        "depth_out_of_range_2.800m"
+      ]
+    },
+    "accuracy": {
+      "verdict": "BLOCKED",
+      "status": "BLOCKED",
+      "reason": "缺少独立、同步且经标定的外部真值参考系统 (如 Vicon/Qualisys 或高精工装)。按 Agent.md 与 TP-01 规范，稳定性可独立给结论，绝对准确性必须标为 BLOCKED，严禁虚报全项通过。"
+    }
+  }
+}

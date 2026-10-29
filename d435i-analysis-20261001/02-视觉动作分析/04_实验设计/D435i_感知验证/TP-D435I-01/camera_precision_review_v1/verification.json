@@ -1,0 +1,12 @@
+{
+  "historical_source_files_unchanged": 100,
+  "stored_fit_recomputed": true,
+  "nominal_2mm_step_difference_mm": 0.03149999999999409,
+  "zero_chord_angle": 0.0,
+  "diameter_chord_angle": 180.0,
+  "small_angle_check_deg": 1.432431792389882,
+  "human_accuracy": "BLOCKED_NO_INDEPENDENT_DYNAMIC_REFERENCE",
+  "personal_lengths": "OPERATOR_REPORTED_300_290_112_MM_NOT_INDEPENDENTLY_VALIDATED",
+  "measurement_session": "ENDED_BY_USER",
+  "pair_5_acquired": false
+}

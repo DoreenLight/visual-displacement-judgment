@@ -1,0 +1,555 @@
+{
+  "version": 1,
+  "artifact": {
+    "identity": "D435i four-package closeout",
+    "revision": "review_20261001_v1",
+    "view": "four versioned reports and project navigation"
+  },
+  "categories": [
+    {
+      "id": "usefulness",
+      "label": "材料完整性",
+      "applicable": true,
+      "assessment": "四包逐项缺口可用；参考/标签缺失，不能声称完整正式交付。"
+    },
+    {
+      "id": "clarity",
+      "label": "定义与解释",
+      "applicable": true,
+      "assessment": "使用原阈值，候选角、有效率和不可评分分别说明。"
+    },
+    {
+      "id": "visuals",
+      "label": "图表可读性",
+      "applicable": true,
+      "assessment": "两张图已查看；覆盖曲线重合原因已说明。"
+    },
+    {
+      "id": "authority",
+      "label": "源与权威性",
+      "applicable": true,
+      "assessment": "冻结合同/原始及派生哈希核实；独立真值缺失明确BLOCKED。"
+    },
+    {
+      "id": "values",
+      "label": "计算正确性",
+      "applicable": true,
+      "assessment": "25次计数及75项指标复核，未伪造缺失分数。"
+    },
+    {
+      "id": "chart-agreement",
+      "label": "图值一致",
+      "applicable": true,
+      "assessment": "图中原95%/10mm目标与表格一致。"
+    },
+    {
+      "id": "provenance",
+      "label": "完整来源",
+      "applicable": true,
+      "assessment": "每包提供输入清单、环境、实际命令与缺项。"
+    },
+    {
+      "id": "consistency",
+      "label": "跨文件一致",
+      "applicable": true,
+      "assessment": "STATUS/HANDOFF/README/INDEX指向修订版，旧初稿标明撤回。"
+    },
+    {
+      "id": "quality",
+      "label": "数据质量控制",
+      "applicable": true,
+      "assessment": "25次和排除清单、键/帧关联/NaN检查；观测门控FAIL不掩盖。"
+    },
+    {
+      "id": "conclusions",
+      "label": "结论支持",
+      "applicable": true,
+      "assessment": "四包FAIL/BLOCKED与证据吻合；临床/闭环结论未晋升。"
+    }
+  ],
+  "units": [
+    {
+      "id": "report-1",
+      "label": "TP-D435I-01",
+      "kind": "component",
+      "revision": "review_20261001_v1",
+      "categories": {
+        "usefulness": {
+          "checks": [
+            {
+              "id": "usefulness-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "clarity": {
+          "checks": [
+            {
+              "id": "clarity-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "authority": {
+          "checks": [
+            {
+              "id": "authority-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "values": {
+          "checks": [
+            {
+              "id": "values-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "provenance": {
+          "checks": [
+            {
+              "id": "provenance-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "quality": {
+          "checks": [
+            {
+              "id": "quality-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "conclusions": {
+          "checks": [
+            {
+              "id": "conclusions-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "report-2",
+      "label": "TP-D435I-02",
+      "kind": "component",
+      "revision": "review_20261001_v1",
+      "categories": {
+        "usefulness": {
+          "checks": [
+            {
+              "id": "usefulness-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "clarity": {
+          "checks": [
+            {
+              "id": "clarity-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "authority": {
+          "checks": [
+            {
+              "id": "authority-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "values": {
+          "checks": [
+            {
+              "id": "values-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "provenance": {
+          "checks": [
+            {
+              "id": "provenance-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "quality": {
+          "checks": [
+            {
+              "id": "quality-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "conclusions": {
+          "checks": [
+            {
+              "id": "conclusions-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "report-3",
+      "label": "TP-D435I-03",
+      "kind": "component",
+      "revision": "review_20261001_v1",
+      "categories": {
+        "usefulness": {
+          "checks": [
+            {
+              "id": "usefulness-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "clarity": {
+          "checks": [
+            {
+              "id": "clarity-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "authority": {
+          "checks": [
+            {
+              "id": "authority-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "values": {
+          "checks": [
+            {
+              "id": "values-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "provenance": {
+          "checks": [
+            {
+              "id": "provenance-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "quality": {
+          "checks": [
+            {
+              "id": "quality-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "conclusions": {
+          "checks": [
+            {
+              "id": "conclusions-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "report-4",
+      "label": "TP-D435I-04",
+      "kind": "component",
+      "revision": "review_20261001_v1",
+      "categories": {
+        "usefulness": {
+          "checks": [
+            {
+              "id": "usefulness-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "clarity": {
+          "checks": [
+            {
+              "id": "clarity-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "authority": {
+          "checks": [
+            {
+              "id": "authority-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "values": {
+          "checks": [
+            {
+              "id": "values-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "provenance": {
+          "checks": [
+            {
+              "id": "provenance-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "quality": {
+          "checks": [
+            {
+              "id": "quality-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "conclusions": {
+          "checks": [
+            {
+              "id": "conclusions-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\closeout_review_v1\\review_20261001_v1\\result.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "graphs",
+      "label": "two scientific figures",
+      "kind": "component",
+      "revision": "review_20261001_v1",
+      "categories": {
+        "visuals": {
+          "checks": [
+            {
+              "id": "visuals-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\observation_coverage.png",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\static_position_p95.png"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        },
+        "chart-agreement": {
+          "checks": [
+            {
+              "id": "chart-agreement-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\observation_coverage.png",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\static_position_p95.png"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "navigation",
+      "label": "four project entry files",
+      "kind": "component",
+      "revision": "review_20261001_v1",
+      "categories": {
+        "consistency": {
+          "checks": [
+            {
+              "id": "consistency-review",
+              "state": "passed",
+              "evidence": [
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_20261001_v1\\verification.json",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\STATUS.md",
+                "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\HANDOFF.md"
+              ],
+              "revision": "review_20261001_v1"
+            }
+          ],
+          "findings": []
+        }
+      }
+    }
+  ]
+}

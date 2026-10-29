@@ -1,0 +1,35 @@
+{
+  "timestamp": 1790824354.4572659,
+  "frame_idx": 1600,
+  "fps": 24.0,
+  "director_stage": "STANDARD_TRAIN",
+  "director_headline": "⚠️ 【请贴紧手肘！】手肘向外飞出借力 (+239mm)",
+  "is_calibrated": true,
+  "fe_angle": 16.1,
+  "target_angle": 40.0,
+  "progress_ratio": 0.403,
+  "shrug_displacement_mm": 16.5,
+  "is_shrugging": false,
+  "abduction_displacement_mm": 238.7,
+  "is_flying_elbow": true,
+  "trunk_tilt_diff_deg": 2.0,
+  "has_compensation": true,
+  "comp_reasons": [
+    "手肘向外借力(+239mm)"
+  ],
+  "status_text": "⚠️ 代偿警告",
+  "coach_tip": "【请夹紧手肘！】手肘向外侧飞出 (+239mm)，请贴近肋骨！",
+  "standard_reps": 0,
+  "compensated_reps": 6,
+  "total_cycles": 6,
+  "history_peak_angle": 47.2,
+  "motion_state": "MOVING_OUT",
+  "joints_detected": [
+    "l_shoulder",
+    "r_shoulder",
+    "r_elbow",
+    "r_wrist",
+    "r_pinky",
+    "r_index"
+  ]
+}

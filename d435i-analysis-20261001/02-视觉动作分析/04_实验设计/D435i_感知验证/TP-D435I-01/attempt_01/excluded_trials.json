@@ -1,0 +1,546 @@
+[
+  {
+    "run_id": "eight_FE_20261001_132559_3bcd117e",
+    "excluded_at": "2026-10-01T14:09:15.419358+08:00",
+    "reason": "user_marked_unneeded",
+    "record": {
+      "run_id": "eight_FE_20261001_132559_3bcd117e",
+      "participant_id": "P001",
+      "task_id": 3,
+      "task_name": "标准腕屈伸",
+      "captured_frames": 948,
+      "analysed_frames": 532,
+      "saved_frames": 948,
+      "capture_queue_drops": 0,
+      "active_duration_s": 31.611,
+      "finish_reason": "operator_finish",
+      "estimated_reps": 0,
+      "manual_count": 0,
+      "static_duration_verdict": "NOT_APPLICABLE",
+      "keypoint_statistics": {
+        "shoulder": {
+          "valid_rate": 0.5474683544303798,
+          "gap_max_s": 0.2665536999993492,
+          "raw_axis_sd_mm": [
+            9.23750381267652,
+            10.707543041385422,
+            16.740362604408375
+          ],
+          "position_fluctuation_p95_mm": 50.39973059549121,
+          "availability_verdict": "FAIL",
+          "static_fluctuation_verdict": "NOT_APPLICABLE",
+          "accuracy_verdict": "BLOCKED"
+        },
+        "elbow": {
+          "valid_rate": 0.5474683544303798,
+          "gap_max_s": 0.2665536999993492,
+          "raw_axis_sd_mm": [
+            19.30085330796108,
+            14.260043155927734,
+            45.22318674181538
+          ],
+          "position_fluctuation_p95_mm": 110.26907520517585,
+          "availability_verdict": "FAIL",
+          "static_fluctuation_verdict": "NOT_APPLICABLE",
+          "accuracy_verdict": "BLOCKED"
+        },
+        "wrist": {
+          "valid_rate": 0.5474683544303798,
+          "gap_max_s": 0.2665536999993492,
+          "raw_axis_sd_mm": [
+            97.28800595912112,
+            90.41441266797922,
+            38.78618438717624
+          ],
+          "position_fluctuation_p95_mm": 306.7386364822311,
+          "availability_verdict": "FAIL",
+          "static_fluctuation_verdict": "NOT_APPLICABLE",
+          "accuracy_verdict": "BLOCKED"
+        }
+      },
+      "quality": {
+        "run_id": "eight_FE_20261001_132559_3bcd117e",
+        "task_id": 3,
+        "window_id": "whole_trial",
+        "start_mono_s": 63162.4802357,
+        "end_mono_s": 63194.0703991,
+        "A_value": null,
+        "C_value": null,
+        "S_value": null,
+        "Q_value": 0.5474683544303798,
+        "A_valid": false,
+        "A_status": "not_completed",
+        "reported_cycles": 0,
+        "estimated_cycles": 0,
+        "C_valid": false,
+        "C_status": "independent_labels_missing",
+        "S_valid": false,
+        "S_status": "insufficient_valid_estimates",
+        "Q_valid": true,
+        "Q_body_valid_rate": 0.5474683544303798,
+        "Q_max_gap_s": 0.2665536999993492,
+        "angle_estimate_coverage": 0.4694092827004219,
+        "compensation_coverage": 0.5474683544303798,
+        "host_receive_to_output_p95_ms": 83.19999999999999,
+        "end_to_end_latency_verdict": "BLOCKED",
+        "reason": "no_independent_reference_or_labels; no_device_host_clock_mapping",
+        "parameters_version": "eight-task/v3",
+        "overall_status": "not_scorable"
+      },
+      "smoothness_exploratory": {
+        "status": "insufficient_valid_estimates",
+        "values": []
+      },
+      "candidate_angle_ranges": {
+        "theta_fe_est_deg": {
+          "valid_samples": 446,
+          "min_deg": -35.9,
+          "max_deg": 28.11,
+          "range_deg": 64.00999999999999,
+          "formal_rom_valid": false,
+          "source": "constrained_reference_estimate"
+        },
+        "theta_ru_est_deg": {
+          "valid_samples": 446,
+          "min_deg": -6.36,
+          "max_deg": 83.54,
+          "range_deg": 89.9,
+          "formal_rom_valid": false,
+          "source": "constrained_reference_estimate"
+        }
+      },
+      "operator_reported_completion": false,
+      "manual_clockwise": 0,
+      "manual_counterclockwise": 0,
+      "formal_verdicts": {
+        "TP-01": "BLOCKED_ACCURACY",
+        "TP-02": "BLOCKED_ANATOMICAL_ANGLES_AND_REFERENCE",
+        "TP-03": "BLOCKED_INDEPENDENT_LABELS",
+        "TP-04": "BLOCKED_INPUT_VALIDATION"
+      },
+      "observed_source_frame_skips": 0,
+      "capture_wall_duration_s": 31.610537299995485,
+      "capture_hz_observed": 29.989999568913856,
+      "source_hashes": {
+        "run.json": "774418e1012662a2fa92e0866a7acbce524d5fc0f214f7332b4ed1d4acb925fe",
+        "analysis.jsonl": "80dda856819e7d9860395c09b7fd1e986c68e400acc7d302b5b2b5bc91d15f26",
+        "frames.jsonl": "b87f70d5a483f871da58182963ebd950e43e20b454637714f91fc352f27e95a9"
+      },
+      "output_directories": [
+        "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_FE_20261001_132559_3bcd117e",
+        "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_FE_20261001_132559_3bcd117e",
+        "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_FE_20261001_132559_3bcd117e",
+        "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_FE_20261001_132559_3bcd117e"
+      ],
+      "raw_directory": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_132559_3bcd117e"
+    }
+  },
+  {
+    "run_id": "eight_FE_20261001_132656_a6f5531a",
+    "excluded_at": "2026-10-01T14:09:15.419407+08:00",
+    "reason": "user_marked_unneeded",
+    "record": {
+      "run_id": "eight_FE_20261001_132656_a6f5531a",
+      "participant_id": "P001",
+      "task_id": 3,
+      "task_name": "标准腕屈伸",
+      "captured_frames": 1761,
+      "analysed_frames": 1011,
+      "saved_frames": 1761,
+      "capture_queue_drops": 0,
+      "active_duration_s": 58.747,
+      "finish_reason": "operator_finish",
+      "estimated_reps": 0,
+      "manual_count": 0,
+      "static_duration_verdict": "NOT_APPLICABLE",
+      "keypoint_statistics": {
+        "shoulder": {
+          "valid_rate": 0.5650198750709824,
+          "gap_max_s": 0.13429710000491468,
+          "raw_axis_sd_mm": [
+            45.38637474549276,
+            20.212007795571477,
+            26.448614918417626
+          ],
+          "position_fluctuation_p95_mm": 129.25170846562747,
+          "availability_verdict": "FAIL",
+          "static_fluctuation_verdict": "NOT_APPLICABLE",
+          "accuracy_verdict": "BLOCKED"
+        },
+        "elbow": {
+          "valid_rate": 0.5650198750709824,
+          "gap_max_s": 0.13429710000491468,
+          "raw_axis_sd_mm": [
+            66.11302263701535,
+            18.168125850394002,
+            75.91950792261771
+          ],
+          "position_fluctuation_p95_mm": 191.84121880442825,
+          "availability_verdict": "FAIL",
+          "static_fluctuation_verdict": "NOT_APPLICABLE",
+          "accuracy_verdict": "BLOCKED"
+        },
+        "wrist": {
+          "valid_rate": 0.5650198750709824,
+          "gap_max_s": 0.13429710000491468,
+          "raw_axis_sd_mm": [
+            59.512226831713534,
+            31.33208155041492,
+            142.06244662758795
+          ],
+          "position_fluctuation_p95_mm": 240.8322154893939,
+          "availability_verdict": "FAIL",
+          "static_fluctuation_verdict": "NOT_APPLICABLE",
+          "accuracy_verdict": "BLOCKED"
+        }
+      },
+      "quality": {
+        "run_id": "eight_FE_20261001_132656_a6f5531a",
+        "task_id": 3,
+        "window_id": "whole_trial",
+        "start_mono_s": 63219.2214756,
+        "end_mono_s": 63277.9334778,
+        "A_value": null,
+        "C_value": null,
+        "S_value": null,
+        "Q_value": 0.5650198750709824,
+        "A_valid": false,
+        "A_status": "not_completed",
+        "reported_cycles": 0,
+        "estimated_cycles": 0,
+        "C_valid": false,
+        "C_status": "independent_labels_missing",
+        "S_valid": false,
+        "S_status": "insufficient_valid_estimates",
+        "Q_valid": true,
+        "Q_body_valid_rate": 0.5650198750709824,
+        "Q_max_gap_s": 0.13429710000491468,
+        "angle_estimate_coverage": 0.5235661555934128,
+        "compensation_coverage": 0.5650198750709824,
+        "host_receive_to_output_p95_ms": 82.955,
+        "end_to_end_latency_verdict": "BLOCKED",
+        "reason": "no_independent_reference_or_labels; no_device_host_clock_mapping",
+        "parameters_version": "eight-task/v3",
+        "overall_status": "not_scorable"
+      },
+      "smoothness_exploratory": {
+        "status": "insufficient_valid_estimates",
+        "values": []
+      },
+      "candidate_angle_ranges": {
+        "theta_fe_est_deg": {
+          "valid_samples": 922,
+          "min_deg": -42.21,
+          "max_deg": 81.27,
+          "range_deg": 123.47999999999999,
+          "formal_rom_valid": false,
+          "source": "constrained_reference_estimate"
+        },
+        "theta_ru_est_deg": {
+          "valid_samples": 922,
+          "min_deg": -63.96,
+          "max_deg": 71.76,
+          "range_deg": 135.72,
+          "formal_rom_valid": false,
+          "source": "constrained_reference_estimate"
+        }
+      },
+      "operator_reported_completion": false,
+      "manual_clockwise": 0,
+      "manual_counterclockwise": 0,
+      "formal_verdicts": {
+        "TP-01": "BLOCKED_ACCURACY",
+        "TP-02": "BLOCKED_ANATOMICAL_ANGLES_AND_REFERENCE",
+        "TP-03": "BLOCKED_INDEPENDENT_LABELS",
+        "TP-04": "BLOCKED_INPUT_VALIDATION"
+      },
+      "observed_source_frame_skips": 0,
+      "capture_wall_duration_s": 58.747247499995865,
+      "capture_hz_observed": 29.975872486623718,
+      "source_hashes": {
+        "run.json": "062d7cc5e5c889ac54fd61d8f8b5e450a3c59ac4ff78d8e1cf5bf34b39efbb58",
+        "analysis.jsonl": "c1f3e4a7f63c68919b8b6e9430e44a482d9d614c39909683db86f7b13816e8ab",
+        "frames.jsonl": "255dddb3790d4c1b33cf893425415bcf0e6b7f0716bce0d5fefa4fb5b2e702b2"
+      },
+      "output_directories": [
+        "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_FE_20261001_132656_a6f5531a",
+        "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_FE_20261001_132656_a6f5531a",
+        "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_FE_20261001_132656_a6f5531a",
+        "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_FE_20261001_132656_a6f5531a"
+      ],
+      "raw_directory": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_132656_a6f5531a"
+    }
+  },
+  {
+    "run_id": "eight_SHOULDER_20261001_135000_4315046b",
+    "excluded_at": "2026-10-01T14:09:15.419415+08:00",
+    "reason": "user_marked_unneeded",
+    "record": {
+      "run_id": "eight_SHOULDER_20261001_135000_4315046b",
+      "participant_id": "P001",
+      "task_id": 6,
+      "task_name": "肩部诱导代偿",
+      "captured_frames": 224,
+      "analysed_frames": 181,
+      "saved_frames": 224,
+      "capture_queue_drops": 0,
+      "active_duration_s": 6.517,
+      "finish_reason": "operator_finish",
+      "estimated_reps": 0,
+      "manual_count": 0,
+      "static_duration_verdict": "NOT_APPLICABLE",
+      "keypoint_statistics": {
+        "shoulder": {
+          "valid_rate": 0.38392857142857145,
+          "gap_max_s": 1.1009368999948492,
+          "raw_axis_sd_mm": [
+            11.14252194221444,
+            6.695760700896691,
+            60.90176260613663
+          ],
+          "position_fluctuation_p95_mm": 85.85917848480001,
+          "availability_verdict": "FAIL",
+          "static_fluctuation_verdict": "NOT_APPLICABLE",
+          "accuracy_verdict": "BLOCKED"
+        },
+        "elbow": {
+          "valid_rate": 0.38392857142857145,
+          "gap_max_s": 1.1009368999948492,
+          "raw_axis_sd_mm": [
+            26.838355157380903,
+            57.76649370208535,
+            134.7705560697735
+          ],
+          "position_fluctuation_p95_mm": 250.24382001955397,
+          "availability_verdict": "FAIL",
+          "static_fluctuation_verdict": "NOT_APPLICABLE",
+          "accuracy_verdict": "BLOCKED"
+        },
+        "wrist": {
+          "valid_rate": 0.38392857142857145,
+          "gap_max_s": 1.1009368999948492,
+          "raw_axis_sd_mm": [
+            140.58742796036955,
+            93.84906189044824,
+            97.10217333216332
+          ],
+          "position_fluctuation_p95_mm": 303.784677719634,
+          "availability_verdict": "FAIL",
+          "static_fluctuation_verdict": "NOT_APPLICABLE",
+          "accuracy_verdict": "BLOCKED"
+        }
+      },
+      "quality": {
+        "run_id": "eight_SHOULDER_20261001_135000_4315046b",
+        "task_id": 6,
+        "window_id": "whole_trial",
+        "start_mono_s": 64603.6817366,
+        "end_mono_s": 64611.1210245,
+        "A_value": null,
+        "C_value": null,
+        "S_value": null,
+        "Q_value": 0.38392857142857145,
+        "A_valid": false,
+        "A_status": "not_applicable",
+        "reported_cycles": 0,
+        "estimated_cycles": 0,
+        "C_valid": false,
+        "C_status": "independent_labels_missing",
+        "S_valid": false,
+        "S_status": "not_applicable",
+        "Q_valid": true,
+        "Q_body_valid_rate": 0.38392857142857145,
+        "Q_max_gap_s": 1.1009368999948492,
+        "angle_estimate_coverage": 0.11160714285714286,
+        "compensation_coverage": 0.38392857142857145,
+        "host_receive_to_output_p95_ms": 68.80499999999999,
+        "end_to_end_latency_verdict": "BLOCKED",
+        "reason": "no_independent_reference_or_labels; no_device_host_clock_mapping",
+        "parameters_version": "eight-task/v3",
+        "overall_status": "not_scorable"
+      },
+      "smoothness_exploratory": {
+        "status": "not_applicable",
+        "values": []
+      },
+      "candidate_angle_ranges": {
+        "theta_fe_est_deg": {
+          "valid_samples": 25,
+          "min_deg": -9.97,
+          "max_deg": 23.45,
+          "range_deg": 33.42,
+          "formal_rom_valid": false,
+          "source": "constrained_reference_estimate"
+        },
+        "theta_ru_est_deg": {
+          "valid_samples": 25,
+          "min_deg": -35.55,
+          "max_deg": -11.82,
+          "range_deg": 23.729999999999997,
+          "formal_rom_valid": false,
+          "source": "constrained_reference_estimate"
+        }
+      },
+      "operator_reported_completion": null,
+      "manual_clockwise": 0,
+      "manual_counterclockwise": 0,
+      "formal_verdicts": {
+        "TP-01": "BLOCKED_ACCURACY",
+        "TP-02": "BLOCKED_ANATOMICAL_ANGLES_AND_REFERENCE",
+        "TP-03": "BLOCKED_INDEPENDENT_LABELS",
+        "TP-04": "BLOCKED_INPUT_VALIDATION"
+      },
+      "observed_source_frame_skips": 0,
+      "capture_wall_duration_s": 7.453419499994197,
+      "capture_hz_observed": 30.053319821885026,
+      "source_hashes": {
+        "run.json": "a7e7037a477eac69051119e483b05cdb535444b24e9ee66a33014113e851a70f",
+        "analysis.jsonl": "85c4eb7602d80b37550fec7d671b257025ab46d3bc5771ccc913c5baf3fe278b",
+        "frames.jsonl": "06949d3892cd7e540c991e6e4d67ec3b2830ea0cdc0b618773e3a2f7f55bffb8"
+      },
+      "output_directories": [
+        "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_SHOULDER_20261001_135000_4315046b",
+        "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_SHOULDER_20261001_135000_4315046b",
+        "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_SHOULDER_20261001_135000_4315046b",
+        "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_SHOULDER_20261001_135000_4315046b"
+      ],
+      "raw_directory": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_SHOULDER_20261001_135000_4315046b"
+    }
+  },
+  {
+    "run_id": "eight_ELBOW_20261001_135116_1561cc63",
+    "excluded_at": "2026-10-01T14:09:15.419419+08:00",
+    "reason": "user_marked_unneeded",
+    "record": {
+      "run_id": "eight_ELBOW_20261001_135116_1561cc63",
+      "participant_id": "P001",
+      "task_id": 7,
+      "task_name": "肘部诱导代偿",
+      "captured_frames": 1476,
+      "analysed_frames": 933,
+      "saved_frames": 1476,
+      "capture_queue_drops": 0,
+      "active_duration_s": 30.522,
+      "finish_reason": "operator_finish",
+      "estimated_reps": 0,
+      "manual_count": 0,
+      "static_duration_verdict": "NOT_APPLICABLE",
+      "keypoint_statistics": {
+        "shoulder": {
+          "valid_rate": 0.48441734417344173,
+          "gap_max_s": 1.3011605000065174,
+          "raw_axis_sd_mm": [
+            11.668873271083461,
+            11.755217275843071,
+            15.337060336217522
+          ],
+          "position_fluctuation_p95_mm": 41.062887426689535,
+          "availability_verdict": "FAIL",
+          "static_fluctuation_verdict": "NOT_APPLICABLE",
+          "accuracy_verdict": "BLOCKED"
+        },
+        "elbow": {
+          "valid_rate": 0.48441734417344173,
+          "gap_max_s": 1.3011605000065174,
+          "raw_axis_sd_mm": [
+            31.189834098606532,
+            48.31599361527938,
+            89.94159598656736
+          ],
+          "position_fluctuation_p95_mm": 188.95499644362556,
+          "availability_verdict": "FAIL",
+          "static_fluctuation_verdict": "NOT_APPLICABLE",
+          "accuracy_verdict": "BLOCKED"
+        },
+        "wrist": {
+          "valid_rate": 0.48441734417344173,
+          "gap_max_s": 1.3011605000065174,
+          "raw_axis_sd_mm": [
+            86.97802418860186,
+            62.83569119525252,
+            93.48797488300345
+          ],
+          "position_fluctuation_p95_mm": 219.5985809410168,
+          "availability_verdict": "FAIL",
+          "static_fluctuation_verdict": "NOT_APPLICABLE",
+          "accuracy_verdict": "BLOCKED"
+        }
+      },
+      "quality": {
+        "run_id": "eight_ELBOW_20261001_135116_1561cc63",
+        "task_id": 7,
+        "window_id": "whole_trial",
+        "start_mono_s": 64680.0393158,
+        "end_mono_s": 64729.2103164,
+        "A_value": null,
+        "C_value": null,
+        "S_value": null,
+        "Q_value": 0.48441734417344173,
+        "A_valid": false,
+        "A_status": "not_applicable",
+        "reported_cycles": 0,
+        "estimated_cycles": 0,
+        "C_valid": false,
+        "C_status": "independent_labels_missing",
+        "S_valid": false,
+        "S_status": "not_applicable",
+        "Q_valid": true,
+        "Q_body_valid_rate": 0.48441734417344173,
+        "Q_max_gap_s": 1.3011605000065174,
+        "angle_estimate_coverage": 0.11382113821138211,
+        "compensation_coverage": 0.48441734417344173,
+        "host_receive_to_output_p95_ms": 81.0,
+        "end_to_end_latency_verdict": "BLOCKED",
+        "reason": "no_independent_reference_or_labels; no_device_host_clock_mapping",
+        "parameters_version": "eight-task/v3",
+        "overall_status": "not_scorable"
+      },
+      "smoothness_exploratory": {
+        "status": "not_applicable",
+        "values": []
+      },
+      "candidate_angle_ranges": {
+        "theta_fe_est_deg": {
+          "valid_samples": 133,
+          "min_deg": -38.6,
+          "max_deg": 37.08,
+          "range_deg": 75.68,
+          "formal_rom_valid": false,
+          "source": "constrained_reference_estimate"
+        },
+        "theta_ru_est_deg": {
+          "valid_samples": 133,
+          "min_deg": -81.7,
+          "max_deg": 33.34,
+          "range_deg": 115.04,
+          "formal_rom_valid": false,
+          "source": "constrained_reference_estimate"
+        }
+      },
+      "operator_reported_completion": null,
+      "manual_clockwise": 0,
+      "manual_counterclockwise": 0,
+      "formal_verdicts": {
+        "TP-01": "BLOCKED_ACCURACY",
+        "TP-02": "BLOCKED_ANATOMICAL_ANGLES_AND_REFERENCE",
+        "TP-03": "BLOCKED_INDEPENDENT_LABELS",
+        "TP-04": "BLOCKED_INPUT_VALIDATION"
+      },
+      "observed_source_frame_skips": 0,
+      "capture_wall_duration_s": 49.202381900002365,
+      "capture_hz_observed": 29.998547692259773,
+      "source_hashes": {
+        "run.json": "0e7ef46fc90db61ee3554f1eb1eb7e353dd11b5c5e18972d238167177f249b09",
+        "analysis.jsonl": "bd5241420bfb553ac4b1f6ebd29b80364e536a7233c39eacc6645d1de63a55fa",
+        "frames.jsonl": "002ca1e5832d60b0c5026dc4f6ae3b48a7e7d8ddcf45e950508f14784065c65e"
+      },
+      "output_directories": [
+        "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_ELBOW_20261001_135116_1561cc63",
+        "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_ELBOW_20261001_135116_1561cc63",
+        "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_ELBOW_20261001_135116_1561cc63",
+        "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_ELBOW_20261001_135116_1561cc63"
+      ],
+      "raw_directory": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_ELBOW_20261001_135116_1561cc63"
+    }
+  }
+]

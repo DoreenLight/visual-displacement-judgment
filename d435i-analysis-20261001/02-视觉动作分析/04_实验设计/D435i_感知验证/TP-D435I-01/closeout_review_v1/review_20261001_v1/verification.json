@@ -1,0 +1,18 @@
+{
+  "current_verdicts": {
+    "TP-D435I-01": "FAIL",
+    "TP-D435I-02": "BLOCKED",
+    "TP-D435I-03": "BLOCKED",
+    "TP-D435I-04": "BLOCKED"
+  },
+  "raw_files_hash_checked": 59976,
+  "derived_manifests_verified": 100,
+  "frozen_document_hashes_verified": 12,
+  "all_trial_metric_reconciliation": 75,
+  "sampled_valid_coordinate_triplets": 220,
+  "sampled_missing_coordinate_triplets": 5,
+  "coordinate_sample_scope": "first/middle/last analysed capture frame of each retained trial; 3 body joints",
+  "local_markdown_broken_links": [],
+  "graphs_visually_inspected": 2,
+  "not_verified": "independent anatomical accuracy, annotation/clinical classification, event-onset latency, device-host mapping, hardware control, all possible UI states"
+}

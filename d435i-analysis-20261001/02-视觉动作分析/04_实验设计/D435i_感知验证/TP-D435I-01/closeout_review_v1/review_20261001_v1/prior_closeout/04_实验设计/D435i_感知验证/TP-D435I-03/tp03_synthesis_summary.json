@@ -1,0 +1,530 @@
+{
+  "schema_version": "wrist-rehab/v1-synthesis",
+  "task_package": "TP-D435I-03",
+  "overall_classification_accuracy_pct": 44.0,
+  "negative_control_specificity_pct": 43.75,
+  "induced_compensation_sensitivity_pct": 100.0,
+  "mean_detection_latency_s": 0.19657700000000963,
+  "confusion_matrix_trial_level": {
+    "normal": {
+      "normal": 7,
+      "shoulder_compensation": 3,
+      "elbow_compensation": 1,
+      "combined": 4
+    },
+    "shoulder_compensation": {
+      "normal": 0,
+      "shoulder_compensation": 1,
+      "elbow_compensation": 0,
+      "combined": 2
+    },
+    "elbow_compensation": {
+      "normal": 0,
+      "shoulder_compensation": 0,
+      "elbow_compensation": 0,
+      "combined": 3
+    },
+    "combined": {
+      "normal": 0,
+      "shoulder_compensation": 0,
+      "elbow_compensation": 0,
+      "combined": 3
+    }
+  },
+  "per_class_metrics": {
+    "normal": {
+      "TP": 7,
+      "FP": 0,
+      "FN": 8,
+      "TN": 9,
+      "Sensitivity_Recall": 0.4666666666666667,
+      "Specificity": 1.0,
+      "Precision": 1.0,
+      "F1_score": 0.6363636363636364
+    },
+    "shoulder_compensation": {
+      "TP": 1,
+      "FP": 3,
+      "FN": 2,
+      "TN": 18,
+      "Sensitivity_Recall": 0.3333333333333333,
+      "Specificity": 0.8571428571428571,
+      "Precision": 0.25,
+      "F1_score": 0.28571428571428575
+    },
+    "elbow_compensation": {
+      "TP": 0,
+      "FP": 1,
+      "FN": 3,
+      "TN": 20,
+      "Sensitivity_Recall": 0.0,
+      "Specificity": 0.9523809523809523,
+      "Precision": 0.0,
+      "F1_score": 0.0
+    },
+    "combined": {
+      "TP": 3,
+      "FP": 9,
+      "FN": 0,
+      "TN": 12,
+      "Sensitivity_Recall": 1.0,
+      "Specificity": 0.5714285714285714,
+      "Precision": 0.25,
+      "F1_score": 0.4
+    }
+  },
+  "all_trial_evaluations": [
+    {
+      "run_id": "eight_S1_20261001_131959_59d5ec91",
+      "task_id": 1,
+      "task_name": "自然坐姿静止",
+      "expected_label": "normal",
+      "predicted_label": "normal",
+      "is_correct": true,
+      "state_distribution": {
+        "normal": 674
+      },
+      "total_analysed_frames": 674,
+      "first_alarm_latency_s": null,
+      "shoulder_disp_mean_mm": 15.516023738872402,
+      "shoulder_disp_p95_mm": 23.66,
+      "elbow_disp_mean_mm": 12.839020771513352,
+      "elbow_disp_p95_mm": 22.8215
+    },
+    {
+      "run_id": "eight_S1_20261001_132059_bc0d3f66",
+      "task_id": 1,
+      "task_name": "自然坐姿静止",
+      "expected_label": "normal",
+      "predicted_label": "combined",
+      "is_correct": false,
+      "state_distribution": {
+        "combined": 559
+      },
+      "total_analysed_frames": 559,
+      "first_alarm_latency_s": 0.0,
+      "shoulder_disp_mean_mm": 138.86720930232556,
+      "shoulder_disp_p95_mm": 141.6,
+      "elbow_disp_mean_mm": 46.127710196779965,
+      "elbow_disp_p95_mm": 53.204
+    },
+    {
+      "run_id": "eight_S1_20261001_132148_b0ac2f4c",
+      "task_id": 1,
+      "task_name": "自然坐姿静止",
+      "expected_label": "normal",
+      "predicted_label": "combined",
+      "is_correct": false,
+      "state_distribution": {
+        "combined": 540
+      },
+      "total_analysed_frames": 540,
+      "first_alarm_latency_s": 0.0,
+      "shoulder_disp_mean_mm": 136.5362037037037,
+      "shoulder_disp_p95_mm": 142.35,
+      "elbow_disp_mean_mm": 31.58888888888889,
+      "elbow_disp_p95_mm": 41.18
+    },
+    {
+      "run_id": "eight_S2_20261001_132239_ea3010e2",
+      "task_id": 2,
+      "task_name": "握柄姿态静止",
+      "expected_label": "normal",
+      "predicted_label": "unknown",
+      "is_correct": false,
+      "state_distribution": {},
+      "total_analysed_frames": 0,
+      "first_alarm_latency_s": null,
+      "shoulder_disp_mean_mm": 0.0,
+      "shoulder_disp_p95_mm": 0.0,
+      "elbow_disp_mean_mm": 0.0,
+      "elbow_disp_p95_mm": 0.0
+    },
+    {
+      "run_id": "eight_S2_20261001_132326_343e7896",
+      "task_id": 2,
+      "task_name": "握柄姿态静止",
+      "expected_label": "normal",
+      "predicted_label": "normal",
+      "is_correct": true,
+      "state_distribution": {
+        "normal": 558
+      },
+      "total_analysed_frames": 558,
+      "first_alarm_latency_s": null,
+      "shoulder_disp_mean_mm": 6.877401433691756,
+      "shoulder_disp_p95_mm": 14.92,
+      "elbow_disp_mean_mm": 4.891075268817205,
+      "elbow_disp_p95_mm": 10.26
+    },
+    {
+      "run_id": "eight_S2_20261001_132413_dedfd30f",
+      "task_id": 2,
+      "task_name": "握柄姿态静止",
+      "expected_label": "normal",
+      "predicted_label": "normal",
+      "is_correct": true,
+      "state_distribution": {
+        "normal": 534
+      },
+      "total_analysed_frames": 534,
+      "first_alarm_latency_s": null,
+      "shoulder_disp_mean_mm": 6.914681647940075,
+      "shoulder_disp_p95_mm": 14.76,
+      "elbow_disp_mean_mm": 5.134887640449438,
+      "elbow_disp_p95_mm": 10.26
+    },
+    {
+      "run_id": "eight_RU_20261001_133130_b225807d",
+      "task_id": 4,
+      "task_name": "标准桡偏／尺偏",
+      "expected_label": "normal",
+      "predicted_label": "normal",
+      "is_correct": true,
+      "state_distribution": {
+        "normal": 848,
+        "elbow_compensation": 674
+      },
+      "total_analysed_frames": 1522,
+      "first_alarm_latency_s": 40.46484439999767,
+      "shoulder_disp_mean_mm": 20.99316688567674,
+      "shoulder_disp_p95_mm": 28.948,
+      "elbow_disp_mean_mm": 31.887509855453345,
+      "elbow_disp_p95_mm": 48.216
+    },
+    {
+      "run_id": "eight_RU_20261001_133347_d19a29ac",
+      "task_id": 4,
+      "task_name": "标准桡偏／尺偏",
+      "expected_label": "normal",
+      "predicted_label": "shoulder_compensation",
+      "is_correct": false,
+      "state_distribution": {
+        "shoulder_compensation": 629,
+        "combined": 234,
+        "normal": 13
+      },
+      "total_analysed_frames": 876,
+      "first_alarm_latency_s": 0.0,
+      "shoulder_disp_mean_mm": 53.39331050228311,
+      "shoulder_disp_p95_mm": 62.15,
+      "elbow_disp_mean_mm": 35.699885844748856,
+      "elbow_disp_p95_mm": 42.7775
+    },
+    {
+      "run_id": "eight_RU_20261001_133509_ee4315e4",
+      "task_id": 4,
+      "task_name": "标准桡偏／尺偏",
+      "expected_label": "normal",
+      "predicted_label": "combined",
+      "is_correct": false,
+      "state_distribution": {
+        "combined": 428,
+        "elbow_compensation": 165,
+        "normal": 41,
+        "shoulder_compensation": 14
+      },
+      "total_analysed_frames": 648,
+      "first_alarm_latency_s": 0.0,
+      "shoulder_disp_mean_mm": 35.466342592592596,
+      "shoulder_disp_p95_mm": 41.2185,
+      "elbow_disp_mean_mm": 39.274598765432096,
+      "elbow_disp_p95_mm": 52.168
+    },
+    {
+      "run_id": "eight_FE_20261001_133658_73162b96",
+      "task_id": 3,
+      "task_name": "标准腕屈伸",
+      "expected_label": "normal",
+      "predicted_label": "normal",
+      "is_correct": true,
+      "state_distribution": {
+        "normal": 919,
+        "elbow_compensation": 6
+      },
+      "total_analysed_frames": 925,
+      "first_alarm_latency_s": 53.27391190000344,
+      "shoulder_disp_mean_mm": 7.9148108108108115,
+      "shoulder_disp_p95_mm": 14.905999999999995,
+      "elbow_disp_mean_mm": 15.720875675675677,
+      "elbow_disp_p95_mm": 29.271999999999995
+    },
+    {
+      "run_id": "eight_FE_20261001_133828_a60e1ba6",
+      "task_id": 3,
+      "task_name": "标准腕屈伸",
+      "expected_label": "normal",
+      "predicted_label": "elbow_compensation",
+      "is_correct": false,
+      "state_distribution": {
+        "elbow_compensation": 294,
+        "normal": 30,
+        "combined": 19
+      },
+      "total_analysed_frames": 343,
+      "first_alarm_latency_s": 0.0,
+      "shoulder_disp_mean_mm": 35.91119533527697,
+      "shoulder_disp_p95_mm": 49.07599999999999,
+      "elbow_disp_mean_mm": 55.03609329446064,
+      "elbow_disp_p95_mm": 81.82
+    },
+    {
+      "run_id": "eight_FE_20261001_133920_581ea1c5",
+      "task_id": 3,
+      "task_name": "标准腕屈伸",
+      "expected_label": "normal",
+      "predicted_label": "shoulder_compensation",
+      "is_correct": false,
+      "state_distribution": {
+        "shoulder_compensation": 844,
+        "combined": 243
+      },
+      "total_analysed_frames": 1087,
+      "first_alarm_latency_s": 0.0,
+      "shoulder_disp_mean_mm": 234.8336982520699,
+      "shoulder_disp_p95_mm": 241.05,
+      "elbow_disp_mean_mm": 74.07895124195034,
+      "elbow_disp_p95_mm": 84.919
+    },
+    {
+      "run_id": "eight_FE_20261001_134101_6c9daee0",
+      "task_id": 3,
+      "task_name": "标准腕屈伸",
+      "expected_label": "normal",
+      "predicted_label": "combined",
+      "is_correct": false,
+      "state_distribution": {
+        "combined": 800,
+        "shoulder_compensation": 755,
+        "normal": 74
+      },
+      "total_analysed_frames": 1629,
+      "first_alarm_latency_s": 0.0,
+      "shoulder_disp_mean_mm": 208.0989502762431,
+      "shoulder_disp_p95_mm": 293.344,
+      "elbow_disp_mean_mm": 115.2046101903008,
+      "elbow_disp_p95_mm": 204.48
+    },
+    {
+      "run_id": "eight_CIRCLE_20261001_134353_ece4c4e8",
+      "task_id": 5,
+      "task_name": "腕部复合回转",
+      "expected_label": "normal",
+      "predicted_label": "normal",
+      "is_correct": true,
+      "state_distribution": {
+        "normal": 842
+      },
+      "total_analysed_frames": 842,
+      "first_alarm_latency_s": null,
+      "shoulder_disp_mean_mm": 16.236532066508314,
+      "shoulder_disp_p95_mm": 24.918499999999998,
+      "elbow_disp_mean_mm": 9.903871733966746,
+      "elbow_disp_p95_mm": 17.146499999999993
+    },
+    {
+      "run_id": "eight_CIRCLE_20261001_134509_b65ab28b",
+      "task_id": 5,
+      "task_name": "腕部复合回转",
+      "expected_label": "normal",
+      "predicted_label": "normal",
+      "is_correct": true,
+      "state_distribution": {
+        "normal": 264,
+        "elbow_compensation": 28,
+        "combined": 11,
+        "shoulder_compensation": 6
+      },
+      "total_analysed_frames": 309,
+      "first_alarm_latency_s": 0.0,
+      "shoulder_disp_mean_mm": 34.61433656957929,
+      "shoulder_disp_p95_mm": 64.03399999999999,
+      "elbow_disp_mean_mm": 59.058478964401296,
+      "elbow_disp_p95_mm": 118.458
+    },
+    {
+      "run_id": "eight_CIRCLE_20261001_134606_0e663bce",
+      "task_id": 5,
+      "task_name": "腕部复合回转",
+      "expected_label": "normal",
+      "predicted_label": "shoulder_compensation",
+      "is_correct": false,
+      "state_distribution": {
+        "shoulder_compensation": 292,
+        "normal": 39,
+        "combined": 32
+      },
+      "total_analysed_frames": 363,
+      "first_alarm_latency_s": 1.9686643999957596,
+      "shoulder_disp_mean_mm": 64.97184573002754,
+      "shoulder_disp_p95_mm": 86.80399999999999,
+      "elbow_disp_mean_mm": 52.69641873278237,
+      "elbow_disp_p95_mm": 64.02
+    },
+    {
+      "run_id": "eight_SHOULDER_20261001_134728_5cedac08",
+      "task_id": 6,
+      "task_name": "肩部诱导代偿",
+      "expected_label": "shoulder_compensation",
+      "predicted_label": "shoulder_compensation",
+      "is_correct": true,
+      "state_distribution": {
+        "shoulder_compensation": 586,
+        "normal": 72
+      },
+      "total_analysed_frames": 658,
+      "first_alarm_latency_s": 0.0,
+      "shoulder_disp_mean_mm": 86.60419452887538,
+      "shoulder_disp_p95_mm": 134.616,
+      "elbow_disp_mean_mm": 33.79430091185411,
+      "elbow_disp_p95_mm": 49.028
+    },
+    {
+      "run_id": "eight_SHOULDER_20261001_134819_8be00db0",
+      "task_id": 6,
+      "task_name": "肩部诱导代偿",
+      "expected_label": "shoulder_compensation",
+      "predicted_label": "combined",
+      "is_correct": false,
+      "state_distribution": {
+        "combined": 604
+      },
+      "total_analysed_frames": 604,
+      "first_alarm_latency_s": 0.0,
+      "shoulder_disp_mean_mm": 39.545728476821196,
+      "shoulder_disp_p95_mm": 58.374500000000005,
+      "elbow_disp_mean_mm": 156.06475165562915,
+      "elbow_disp_p95_mm": 195.4385
+    },
+    {
+      "run_id": "eight_SHOULDER_20261001_134908_c025f17f",
+      "task_id": 6,
+      "task_name": "肩部诱导代偿",
+      "expected_label": "shoulder_compensation",
+      "predicted_label": "combined",
+      "is_correct": false,
+      "state_distribution": {
+        "combined": 534,
+        "normal": 17
+      },
+      "total_analysed_frames": 551,
+      "first_alarm_latency_s": 0.0,
+      "shoulder_disp_mean_mm": 177.74635208711433,
+      "shoulder_disp_p95_mm": 193.66,
+      "elbow_disp_mean_mm": 292.1082758620689,
+      "elbow_disp_p95_mm": 321.855
+    },
+    {
+      "run_id": "eight_ELBOW_20261001_135236_ac256f5f",
+      "task_id": 7,
+      "task_name": "肘部诱导代偿",
+      "expected_label": "elbow_compensation",
+      "predicted_label": "combined",
+      "is_correct": false,
+      "state_distribution": {
+        "combined": 588,
+        "normal": 7
+      },
+      "total_analysed_frames": 595,
+      "first_alarm_latency_s": 0.0,
+      "shoulder_disp_mean_mm": 55.14774789915967,
+      "shoulder_disp_p95_mm": 72.956,
+      "elbow_disp_mean_mm": 322.30040336134454,
+      "elbow_disp_p95_mm": 366.688
+    },
+    {
+      "run_id": "eight_ELBOW_20261001_135333_1cd6edcf",
+      "task_id": 7,
+      "task_name": "肘部诱导代偿",
+      "expected_label": "elbow_compensation",
+      "predicted_label": "combined",
+      "is_correct": false,
+      "state_distribution": {
+        "combined": 632,
+        "normal": 47
+      },
+      "total_analysed_frames": 679,
+      "first_alarm_latency_s": 0.0,
+      "shoulder_disp_mean_mm": 42.06047128129602,
+      "shoulder_disp_p95_mm": 62.650000000000006,
+      "elbow_disp_mean_mm": 297.80272459499264,
+      "elbow_disp_p95_mm": 334.465
+    },
+    {
+      "run_id": "eight_ELBOW_20261001_135439_15a01a4e",
+      "task_id": 7,
+      "task_name": "肘部诱导代偿",
+      "expected_label": "elbow_compensation",
+      "predicted_label": "combined",
+      "is_correct": false,
+      "state_distribution": {
+        "combined": 584,
+        "normal": 150,
+        "shoulder_compensation": 64
+      },
+      "total_analysed_frames": 798,
+      "first_alarm_latency_s": 1.5673622000031173,
+      "shoulder_disp_mean_mm": 77.1831328320802,
+      "shoulder_disp_p95_mm": 107.89,
+      "elbow_disp_mean_mm": 278.5650751879699,
+      "elbow_disp_p95_mm": 348.1995
+    },
+    {
+      "run_id": "eight_COMBINED_20261001_135607_5bb6b817",
+      "task_id": 8,
+      "task_name": "肩肘协同代偿",
+      "expected_label": "combined",
+      "predicted_label": "combined",
+      "is_correct": true,
+      "state_distribution": {
+        "combined": 407,
+        "normal": 93,
+        "shoulder_compensation": 38
+      },
+      "total_analysed_frames": 538,
+      "first_alarm_latency_s": 0.0,
+      "shoulder_disp_mean_mm": 90.35810408921934,
+      "shoulder_disp_p95_mm": 176.313,
+      "elbow_disp_mean_mm": 218.70154275092935,
+      "elbow_disp_p95_mm": 361.364
+    },
+    {
+      "run_id": "eight_COMBINED_20261001_135701_cb673e7e",
+      "task_id": 8,
+      "task_name": "肩肘协同代偿",
+      "expected_label": "combined",
+      "predicted_label": "combined",
+      "is_correct": true,
+      "state_distribution": {
+        "combined": 367,
+        "normal": 90,
+        "shoulder_compensation": 65
+      },
+      "total_analysed_frames": 522,
+      "first_alarm_latency_s": 0.2018307999969693,
+      "shoulder_disp_mean_mm": 154.53019157088124,
+      "shoulder_disp_p95_mm": 252.9485,
+      "elbow_disp_mean_mm": 207.3714367816092,
+      "elbow_disp_p95_mm": 261.09950000000003
+    },
+    {
+      "run_id": "eight_COMBINED_20261001_135752_6c5fc62b",
+      "task_id": 8,
+      "task_name": "肩肘协同代偿",
+      "expected_label": "combined",
+      "predicted_label": "combined",
+      "is_correct": true,
+      "state_distribution": {
+        "combined": 273,
+        "normal": 136,
+        "shoulder_compensation": 5
+      },
+      "total_analysed_frames": 414,
+      "first_alarm_latency_s": 0.0,
+      "shoulder_disp_mean_mm": 153.9150966183575,
+      "shoulder_disp_p95_mm": 291.0995,
+      "elbow_disp_mean_mm": 200.15359903381642,
+      "elbow_disp_p95_mm": 332.0535
+    }
+  ]
+}

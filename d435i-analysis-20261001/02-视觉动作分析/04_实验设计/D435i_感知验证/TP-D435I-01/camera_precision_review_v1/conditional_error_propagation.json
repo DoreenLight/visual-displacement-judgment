@@ -1,0 +1,23 @@
+[
+  {
+    "assumed_per_point_error_bound_mm": 2,
+    "upper_arm_direction_bound_deg": 0.7639663640218032,
+    "elbow_included_angle_bound_deg": 1.554278038773155,
+    "hand_forearm_included_angle_bound_deg": 2.8370247724239306,
+    "status": "hypothetical_error_bound_not_measured_FE_RU_accuracy"
+  },
+  {
+    "assumed_per_point_error_bound_mm": 5,
+    "upper_arm_direction_bound_deg": 1.9102131717099304,
+    "elbow_included_angle_bound_deg": 3.886321457425575,
+    "hand_forearm_included_angle_bound_deg": 7.098624385496551,
+    "status": "hypothetical_error_bound_not_measured_FE_RU_accuracy"
+  },
+  {
+    "assumed_per_point_error_bound_mm": 10,
+    "upper_arm_direction_bound_deg": 3.822553729274344,
+    "elbow_included_angle_bound_deg": 7.7771258513651755,
+    "hand_forearm_included_angle_bound_deg": 14.24113273356577,
+    "status": "hypothetical_error_bound_not_measured_FE_RU_accuracy"
+  }
+]

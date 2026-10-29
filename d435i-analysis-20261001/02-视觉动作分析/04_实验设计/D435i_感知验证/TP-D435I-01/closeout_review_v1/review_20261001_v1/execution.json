@@ -1,0 +1,33 @@
+{
+  "review_command": [
+    "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\.venv\\Scripts\\python.exe",
+    "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\review_four_packages.py",
+    "--review-id",
+    "review_20261001_v1"
+  ],
+  "review_exit_code": 0,
+  "finalize_exit_code": 0,
+  "test_command": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\closeout_review_v1\\test_review.py",
+  "test_exit_code": 0,
+  "tests_passed": 8,
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "dependencies": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  },
+  "script_hashes": {
+    "finalize_review.py": "8852153411a658459ec8bd856e971449da9acc005083fd4551200de52de1de46",
+    "review_four_packages.py": "1133d062917e1fe92216963f48fe706f81b7d7989bae0cb3d13642871265b841",
+    "test_review.py": "8c65b16cafeeeebfe965fd0c6e80cada932be2367d4331035f13a52d6982d1aa",
+    "verify_review.py": "441cf9c03ad8dbe2f75cd4abaae6d7529f201b5b420f021d62c4c9c0f66b243b"
+  },
+  "kb_check": {
+    "native_shell_exit_code": 49,
+    "embedded_python_exit_code": 1,
+    "checker_sha256": "4d7ade17dabad07639f13c7153e924583629ca40ef812b41a8e22a7d284dbfb5",
+    "source_modified": false
+  },
+  "verification_exit_code": 0
+}

@@ -1,0 +1,55 @@
+{
+  "checked_at": "2026-10-01T05:18:19.435Z",
+  "camera": {
+    "name": "RealSense D435I",
+    "serial": "244222076984",
+    "firmware": "5.15.1.55",
+    "depth_scale_m": 0.0010000000474974513,
+    "rgb_mode": "848x480 bgr8 30",
+    "depth_mode": "848x480 z16 30",
+    "exposure": {
+      "Stereo Module": {
+        "exposure_value": 8500,
+        "auto_exposure": 1
+      },
+      "RGB Camera": {
+        "exposure_value": 156,
+        "auto_exposure": 1
+      }
+    },
+    "intrinsics": {
+      "width": 848,
+      "height": 480,
+      "fx": 606.7293701171875,
+      "fy": 606.5269775390625,
+      "ppx": 431.3031005859375,
+      "ppy": 258.96722412109375,
+      "model": "distortion.inverse_brown_conrady",
+      "coeffs": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "selected_task": 1,
+  "eight_options": 8,
+  "eight_cards": 8,
+  "advancing_frame_ids": [
+    1989,
+    2000
+  ],
+  "fps": 23.4,
+  "inference_ms": 40.6,
+  "host_receive_to_output_ms": 67.1,
+  "capture_age_ms": 28,
+  "result_age_ms": 27,
+  "page_errors": [],
+  "recording": false,
+  "software_tests": "11 protocol/export + 9 regression; 45 mocked UI operations",
+  "full_human_protocol_collected": false,
+  "formal_accuracy_validation": "BLOCKED: no independent reference",
+  "screenshot_note": "Camera pixels masked; interface only. Actual raw RGB-D is saved only on user-started trials."
+}

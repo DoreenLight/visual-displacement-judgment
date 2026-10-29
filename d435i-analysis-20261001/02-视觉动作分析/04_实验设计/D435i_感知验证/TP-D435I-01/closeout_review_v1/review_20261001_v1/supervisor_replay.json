@@ -1,0 +1,131 @@
+{
+  "mode": "display_only",
+  "actuator_commands": [],
+  "windows": [
+    {
+      "run_id": "eight_S1_20261001_131959_59d5ec91",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_S1_20261001_132059_bc0d3f66",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_S1_20261001_132148_b0ac2f4c",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_S2_20261001_132239_ea3010e2",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_S2_20261001_132326_343e7896",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_S2_20261001_132413_dedfd30f",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_RU_20261001_133130_b225807d",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_RU_20261001_133347_d19a29ac",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_RU_20261001_133509_ee4315e4",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_FE_20261001_133658_73162b96",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_FE_20261001_133828_a60e1ba6",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_FE_20261001_133920_581ea1c5",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_FE_20261001_134101_6c9daee0",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_CIRCLE_20261001_134353_ece4c4e8",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_CIRCLE_20261001_134509_b65ab28b",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_CIRCLE_20261001_134606_0e663bce",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_SHOULDER_20261001_134728_5cedac08",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_SHOULDER_20261001_134819_8be00db0",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_SHOULDER_20261001_134908_c025f17f",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_ELBOW_20261001_135236_ac256f5f",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_ELBOW_20261001_135333_1cd6edcf",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_ELBOW_20261001_135439_15a01a4e",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_COMBINED_20261001_135607_5bb6b817",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_COMBINED_20261001_135701_cb673e7e",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    },
+    {
+      "run_id": "eight_COMBINED_20261001_135752_6c5fc62b",
+      "display": "data_unavailable_no_score",
+      "score_valid": false
+    }
+  ]
+}

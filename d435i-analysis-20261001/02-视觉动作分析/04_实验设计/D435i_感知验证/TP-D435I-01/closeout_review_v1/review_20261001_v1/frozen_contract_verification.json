@@ -1,0 +1,62 @@
+[
+  {
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\README.md",
+    "sha256": "9672f5ee0f7a3bd9bcd9fc7914f0e771364ba1ae882e543cab237c437b2571dd",
+    "verdict": "PASS"
+  },
+  {
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\01_上肢关键点三维坐标任务包.md",
+    "sha256": "95b1a74bcf3000aea21aad3804b93572a38e2cb1e729d931c7c3493c11d0ad3f",
+    "verdict": "PASS"
+  },
+  {
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\02_腕关节运动轨迹任务包.md",
+    "sha256": "57b020ceae206d8ca095bcdc87af3083355552c79d5df8c51807b81692080636",
+    "verdict": "PASS"
+  },
+  {
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\03_肩肘代偿识别任务包.md",
+    "sha256": "0047bfbea1746160dc9c5ca24922b71cc7424024589e2797191b3ad376f1253e",
+    "verdict": "PASS"
+  },
+  {
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\04_运动质量评价任务包.md",
+    "sha256": "c98154eac08e7b29df53d8b73cabe9a17cf939e542b9ac1e7f9d071b346f8d4c",
+    "verdict": "PASS"
+  },
+  {
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\RealSense_D435i_腕关节康复人体运动状态感知测试任务书.md",
+    "sha256": "862cf10f96b4af73428632b1cf9d3ae22d3d17958176c8f9b011e6f3a9801198",
+    "verdict": "PASS"
+  },
+  {
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\D435i_实验方案与风险清单.md",
+    "sha256": "2aee722eda993d935259ca9d8b8248ddacf21dc48ee2e3d2a7f7acc431d4dcd3",
+    "verdict": "PASS"
+  },
+  {
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\00_研究背景\\D435i_四问可行性回答.md",
+    "sha256": "618869f7e12795e1ce81ac304967d8d923a0a028d35f8e2a3d880582f0d87cd8",
+    "verdict": "PASS"
+  },
+  {
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\Agent.md",
+    "sha256": "f2a06fe556e8923a116c42f52d1b2d64f9aebcaf863668255bb61cb9e638e2a7",
+    "verdict": "PASS"
+  },
+  {
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\历史归档\\RealSense_D450i_腕关节康复人体运动状态感知测试任务书.md",
+    "sha256": "a8dc115586647827b446d905d72ef015ac660ff7bfdb0c248b161a9f779d2ff5",
+    "verdict": "PASS"
+  },
+  {
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\历史归档\\D435i_四问可行性回答.md",
+    "sha256": "d6ab8a74f11e8b4cf682aa8df9e11c001bf7f56c262cfb4aae6c06e957382b4d",
+    "verdict": "PASS"
+  },
+  {
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\历史归档\\D435i_实验方案与风险清单.md",
+    "sha256": "65e7961c3955302394e984298eef7b6e65ab1d721344a60474954cb6e304ba9f",
+    "verdict": "PASS"
+  }
+]

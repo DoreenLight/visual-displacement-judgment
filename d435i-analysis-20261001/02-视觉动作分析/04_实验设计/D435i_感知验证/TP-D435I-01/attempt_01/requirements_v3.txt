@@ -1,0 +1,6 @@
+mediapipe==0.10.35
+pyrealsense2==2.58.4.10922
+numpy==2.5.3
+opencv-python==5.0.0.93
+scipy==1.18.1
+Pillow==12.3.0

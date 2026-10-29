@@ -1,0 +1,23 @@
+[
+  {
+    "single_side_angle_deg": 5,
+    "peak_to_peak_angle_deg": 10,
+    "neutral_to_extreme_chord_mm_at_user_hand_length": 9.770742769835264,
+    "opposite_extremes_chord_mm_at_user_hand_length": 19.52288637547543,
+    "status": "software_protocol_geometry_not_empirical_detection_threshold"
+  },
+  {
+    "single_side_angle_deg": 10,
+    "peak_to_peak_angle_deg": 20,
+    "neutral_to_extreme_chord_mm_at_user_hand_length": 19.52288637547543,
+    "opposite_extremes_chord_mm_at_user_hand_length": 38.897191797392395,
+    "status": "software_protocol_geometry_not_empirical_detection_threshold"
+  },
+  {
+    "single_side_angle_deg": 15,
+    "peak_to_peak_angle_deg": 30,
+    "neutral_to_extreme_chord_mm_at_user_hand_length": 29.237867057291552,
+    "opposite_extremes_chord_mm_at_user_hand_length": 57.975466102964646,
+    "status": "software_protocol_geometry_not_empirical_detection_threshold"
+  }
+]

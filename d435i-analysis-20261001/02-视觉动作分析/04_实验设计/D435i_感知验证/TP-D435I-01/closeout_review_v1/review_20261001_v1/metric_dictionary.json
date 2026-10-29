@@ -1,0 +1,14 @@
+{
+  "positions": "aligned depth surface samples, camera_color_optical, meters; no validated anatomical centers",
+  "static_sd": "per-axis population SD of finite original valid nonimputed positions; mm",
+  "position_p95": "P95 distance to within-trial median on original valid positions; mm; not reference error",
+  "rates": "valid original observations / all saved captured frames; skipped inference and unknown retained",
+  "gaps": "maximum invalid duration including trial boundaries and capture gaps; seconds; full stored trial including pauses",
+  "candidate_angles": "fixed neutral palm reference estimates, not validated FE/RU; no formal ROM or direction inference",
+  "candidate_cycles": "offline complete peak-trough-peak per contiguous valid collecting segment; gaps >.2s split; prominence 6deg, distance .6s; exploratory parameters not evaluated as accuracy",
+  "A_C_S": "formal values unavailable; NaN in CSV, null in JSON; no fabricated CV substitute or default reward",
+  "Q": "all-three-body-points true validity fraction; observation reliability separate from clinical quality; gate .95 and gap .2s",
+  "delay": "host-receive-to-output only; trial-start-to-first-alert is NOT event detection latency",
+  "labels": "instruction metadata is not independent annotation; unknown not discarded; static labels not called normal training",
+  "actuators": "none; display-only unavailable state"
+}

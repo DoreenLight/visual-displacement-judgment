@@ -1,0 +1,43 @@
+{
+  "a": 1.0004458286985565,
+  "b_mm": 14.332287430477662,
+  "in_sample_rmse_mm": 0.06822387405520595,
+  "r2": 0.9999172420076597,
+  "residuals_mm": [
+    0.07504682981104338,
+    0.05898442714135399,
+    -0.08321145717451373,
+    -0.050819799777400476
+  ],
+  "physical_distance_span_mm": [
+    200.0,
+    221.0
+  ],
+  "read_distance_span_mm": [
+    214.4965,
+    235.4898
+  ],
+  "slope_only_2mm_projection_mm": 0.0008916573971129438,
+  "step_nominal_mm": [
+    21.0,
+    -11.0,
+    -2.0
+  ],
+  "step_read_mm": [
+    20.993300000000005,
+    -11.147099999999995,
+    -1.968500000000006
+  ],
+  "step_difference_mm": [
+    -0.006699999999995043,
+    -0.14709999999999468,
+    0.03149999999999409
+  ],
+  "stored_mdr_range_mm": [
+    0.0146,
+    0.045
+  ],
+  "reference": "operator_steel_ruler; uncertainty not calibrated; historical report estimates +/-0.5mm",
+  "heldout_validation": false,
+  "raw_temporal_sequences_available": false
+}

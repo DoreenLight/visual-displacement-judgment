@@ -1,0 +1,56 @@
+{
+  "schema_version": "wrist-rehab/v1",
+  "run_id": "RUN_TP01_FIXTURE_001",
+  "task_id": "TP-D435I-01",
+  "attempt_id": "attempt_01",
+  "timestamp_start": "2026-10-01T00:56:41Z",
+  "mode": "fixture",
+  "training_side": "right",
+  "target_hardware": "Intel RealSense D435i",
+  "hardware_connected": false,
+  "coordinate_frame": "camera_color_optical",
+  "unit": "meters",
+  "conditions": [
+    {
+      "condition_name": "S1_natural_sitting",
+      "duration_s": 10.0,
+      "start_frame": 0,
+      "end_frame": 299
+    },
+    {
+      "condition_name": "S2_grip_posture",
+      "duration_s": 10.0,
+      "start_frame": 300,
+      "end_frame": 599
+    },
+    {
+      "condition_name": "S3_rehab_ready",
+      "duration_s": 10.0,
+      "start_frame": 600,
+      "end_frame": 899
+    },
+    {
+      "condition_name": "negative_edge_cases",
+      "duration_s": 5.0,
+      "start_frame": 900,
+      "end_frame": 1049
+    }
+  ],
+  "fixture_info": {
+    "source": "SyntheticD435iFixture",
+    "distance_m": 1.25,
+    "noise_model": "Gaussian(sigma=2.0mm) + Physiological Tremor(1.0mm, 10Hz)",
+    "intrinsics": {
+      "width": 720,
+      "height": 1280,
+      "fx": 900.0,
+      "fy": 900.0,
+      "ppx": 360.0,
+      "ppy": 640.0,
+      "depth_scale": 0.001
+    }
+  },
+  "timestamp_end": "2026-10-01T00:57:08Z",
+  "total_records": 3150,
+  "csv_path": "keypoints.csv"
+}

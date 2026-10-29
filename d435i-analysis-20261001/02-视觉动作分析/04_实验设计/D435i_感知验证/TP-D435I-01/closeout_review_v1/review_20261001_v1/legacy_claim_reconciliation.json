@@ -1,0 +1,12 @@
+{
+  "legacy_tp04_p_value": 0.0013450953457995237,
+  "is_p_less_than_001": false,
+  "interpretation": "legacy within-P001 instruction-group exploration, not independent clinical discriminant validity",
+  "legacy_tp03_computed": {
+    "overall_classification_accuracy_pct": 44.0,
+    "negative_control_specificity_pct": 43.75,
+    "mean_detection_latency_s": 0.19657700000000963
+  },
+  "legacy_frame_claim": 30774,
+  "independently_counted_retained_frames": 29938
+}
