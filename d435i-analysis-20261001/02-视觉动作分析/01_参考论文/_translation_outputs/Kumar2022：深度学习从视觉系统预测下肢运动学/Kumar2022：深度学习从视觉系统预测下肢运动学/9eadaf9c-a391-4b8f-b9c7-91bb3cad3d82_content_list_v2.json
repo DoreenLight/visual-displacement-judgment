@@ -1,0 +1,1342 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Prediction of lower limb kinematics from vision-based system using deep learning approaches"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                107,
+                88,
+                888,
+                138
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Konki Sravan Kumar<sup>1</sup>, Ankhzaya Jamsrandorj<sup>2</sup>, Jinwook Kim<sup>1</sup> and Kyung-Ryoul Mun<sup>1</sup>"
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                157,
+                825,
+                176
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Abstract— The joint angular velocity during daily life exercises is an important clinical outcome for injury risk index, rehabilitation progress monitoring and athlete’s performance evaluation. Recently, wearable sensors have been widely used to monitor lower limb kinematics. However, these sensors are difficult and inconvenient to use in daily life. To mitigate these limitations, this study proposes a vision-based system for estimating lower limb joint kinematics using a deep convolution neural network with bi-directional long-short term memory and gated recurrent unit network. The normalized correlation coefficient, and the mean absolute error were computed between the ground truth obtained from the optical motion capture system and estimated joint angular velocities using proposed models. The estimated results show a highest correlation 0.93 in squat and 0.92 in walking on treadmill action. Furthermore, independent model for each joint angular velocity at the hip, knee, and ankle were analyzed and compared. Among the three joint angular velocities, knee joint has a best estimated accuracy (0.96 in squat and 0.96 in walking on the treadmill). The proposed models show higher estimation accuracy under both the lateral and the frontal view regardless of the camera positions and angles. This study proves the applicability of using sensor free vision-based system to monitor the lower limb kinematics during home workouts for healthcare and rehabilitation."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                202,
+                491,
+                520
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "I. INTRODUCTION"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                207,
+                542,
+                364,
+                556
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Human gait is pattern of movement of the limbs, and gait parameters can reflect the human’s functional ability and health condition [1]. Among the several gait parameters, the lower body joint angular velocity during daily life exercises is an important clinical outcome for injury risk index, determine the progress during the rehabilitation of patients, diagnose early human joint movement disorders and improve athlete’s performance [2, 3]. In addition, recent studies have identified that [4, 5] joint angular velocity is the strong candidate for monitoring changes in lower limb joint powers because the joint power is a product of joint angular velocity and joint motion, which is significant parameter for clinical diagnosis of gait pathology and control of lower limb prosthesis [6, 7]. Inertial sensor-based systems are commonly used to capture the lower limb kinematics. An inertial measurement unit (IMU) sensor based system is designed to measure the knee joint angles during the human limb dynamic movement [8]. An IMU sensor-based 3D motion capture system composed of an accelerator, geomagnetic sensor and gyroscopes are effective measurement tools to record lower limb joints (knee, hip, and spine) motion during daily life actions [9]. Over the last few years, IMU sensor-based systems have drawn researcher’s attention and showed significant accuracy in joint kinematic measurements [10, 11]. However, one IMU sensor cannot be used to track movements of more than one body segment. Therefore, seven IMU sensors are usually required to track just for a lower limb movement such as pelvis, ankle, knee, and hip of each left and right side. As more IMU sensors are attached, several drawback include complex preprocessing processes (sensor-to-segment calibration and subject calibration), inconvenience to daily life and human kinematic chains that should be considered to monitor accurate lower limb kinematics [12]. In addition, the use of motion tracking systems like IMU sensors hinde the natural movements of the subjects due to tight straps for the sensor attachment, and it is still expensive, power consumption, complex handling of equipment, participant cooperation and controlled laboratory environment and plac ing markers, which are labor-intensive. Researchers have developed camera-based system to overcome the limitation of wearable sensor-based capture systems to monitor human low limb motion. The emerged deep learning framework and development of camera technology had created a new opportunity for lower limb angular velocity prediction from video frame information. Recent studies [13, 14] were intro duced a camera-based system using the OpenPose library, which records lower limb joint angles with good accuracy. However, the estimation accuracy of OpenPose library-based system relies on ground truth 2D keypoint dataset; keypoints are manually annotated and not at joint center positions. Therefore, it may not be reliable to estimate lower limb angular velocity. Moreover, these methods were developed to monitor joint angles of the participants only in lateral view and cannot track joint angles in front and back view of subjects. In our previous study, deep convolution neural network CNN architecture has been proposed to measure the lower angular velocity of the hip, knee, and ankle joints, which offers good estimation accuracy under differen camera views [15]. However, these pre-trained deep CNN frameworks still show higher errors due to time delay in the estimation results"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                563,
+                491,
+                867
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                504,
+                202,
+                916,
+                821
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In this study, we propose a vision-based system for estimation of lower limb joint kinematics with a deep convolution neural network with bi-directional long-short term memory recurrent (LSTM)/ gated recurrent unit (GRU) network (DeepConvLSTM/ DeepConvGRU). The proposed approach is based on an RGB camera system, which detects the joint angular velocities at hips, knees, and ankles (right and left sides) during squat and walking on treadmill actions. Estimation performance of DeepConvGRU model was quantified and compared with ground truth joint angular velocities captured by the motion captured system."
+                    }
+                ]
+            },
+            "bbox": [
+                504,
+                821,
+                916,
+                928
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "2022 44th Annual International Conference of the IEEE Engineering in Medicine & Biology Society (EMBC) | 978-1-7281-2782-8/22/$31.00 ©2022 IEEE | DOI: 10.1109/EMBC48229.2022.9871577"
+                    }
+                ]
+            },
+            "bbox": [
+                13,
+                126,
+                32,
+                922
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "<sup>2</sup>Department of Human Computer Interface Robotics Engineering, University of Science Technology, Daejeon, South Korea."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                902,
+                490,
+                926
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2022 44th Annual International Conference of the IEEE Engineering in Medicine & Biology Society (EMBC) Scottish Event Campus, Glasgow, UK, July 11-15, 2022"
+                    }
+                ]
+            },
+            "bbox": [
+                83,
+                30,
+                462,
+                69
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "<sup>1</sup>Center for Artificial intelligence, Korea Institute of science Technology, Seoul, Republic of Korea (e-mail: krmoon02@kist.re.kr)."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                877,
+                490,
+                902
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "978-1-7281-2782-8/22/$31.00 ©2022 IEEE"
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                941,
+                339,
+                955
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "177"
+                    }
+                ]
+            },
+            "bbox": [
+                486,
+                943,
+                511,
+                955
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Authorized licensed use limited to: South-Central Minzu University. Downloaded on September 30,2026 at 08:34:38 UTC from IEEE Xplore. Restrictions apply."
+                    }
+                ]
+            },
+            "bbox": [
+                89,
+                962,
+                903,
+                974
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                81,
+                66,
+                490,
+                128
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "II. METHODS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                228,
+                143,
+                344,
+                159
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "A. Experimental Equipment and Protocol"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                81,
+                171,
+                370,
+                186
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To build the video dataset, participants were recruited by 33 healthy adult (25 – male and 8 – female). Experiments were conducted in an experimental room installed with the optical motion capture system and Xiaomi Mijia Camera 4K digital camera system. Fig.1. shows the arrangement of cameras during our experiments to obtain a video dataset. As the gold standard for recording human joint angles, a six camera optical motion capture system with a resolution of 1280×1024 (around 1.3 million pixels) and a frequency of 120Hz was used. According to the Plug-in-gait marker set, fifteen reflective markers were attached to the human limbs such as pelvis, hip, knee, thigh, shank, toe, ankle, and heel. The optical motion capture system tracks reflective markers attached to the human body and carries out the accurate 3D angles and 3D positions of all joints. The joint angular velocities are calculated by derivation of the joint angles. The capture area is 2.000 meters by 3.685 meters on the floor. Six cameras of digital camera system with a resolution of 1920×1080 and, a frame rate of 60Hz was used. Six cameras were placed in front, back and side of a participant to capture videos of squat and walking on treadmill actions within 30 seconds. We designed a digital circuit to synchronize the optical motion capture camera and digital camera systems. The optical motion capture camera system has samples of 120 frames per second (twice the value of the digital camera’s frame rate. Therefore, Annotations were downsampled with the frame rate of 120Hz to 60Hz."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                193,
+                491,
+                603
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/21600152d6314f600867d922c07c8bb17392eaf5fa8517a8758c7b135552a27a.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 1: Experimental setup. The optical motion captures system tracks the markers, records the angular velocity of joints and digital cameras captures video information of participants during squat and walking on treadmill actions."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                84,
+                618,
+                488,
+                864
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "B. Deep learning framework for estimating the Joint angular velocity of lower limbs."
+                    }
+                ]
+            },
+            "bbox": [
+                504,
+                66,
+                913,
+                97
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We propose a deep learning model (DeepConvLSTM) based on the CNN with LSTM neural network to estimate angular velocities of lower limb joints such as hips, knees, and ankles on both the right and left sides. The convolutional neural network is used to extract features (spatial domain) from the action video, while recurrent neural network is used to provide time-series prediction (time-domain). As a supervised manner, DeepConvLSTM architecture learns the time dependencies between RGB image information as inputs and joint angular velocities as outputs. First, deep learning-based feature selection technique (YOLO4) is applied to detect the human and remove the non-informative background in the action videos [16]. Then, the video frames were cropped based on the resultant human bounding box and resized to 448 × 448. Next, a 27 video frame information is considered input of the proposed DeepConvLSTM network. Then, the network is trained to output the corresponding six joint angular velocities. In this work, we employed a convolutional neural network (ResNet18) with the Bi-LSTM / GRU to predict the joint angular velocity estimation. At each time step, the extracted spatial feature from CNN layer is connected to LSTM/GRU network. Finally, the fully connected (FC) layer provides the six joint angular velocity predictions (left/ right hip flexion/extension, knee flexion/extension, and ankle dorsiflexion/plantarflexion) at each time step as shown in Fig.2."
+                    }
+                ]
+            },
+            "bbox": [
+                504,
+                101,
+                915,
+                494
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/d51ae3786dae0124ca70959c94e4c8b42000710c842a38f959e3dc9a5456fe63.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 2: The DeepConvLSTM architecture. Deep CNN extracts features (spatial domain) from the action video and LSTM is used to provide time-series (time-domain) joint angular velocity predictions."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                511,
+                506,
+                908,
+                688
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "C. DeepConvLSTM model implementation"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                506,
+                755,
+                797,
+                770
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The DeepConvLSTM was implemented using the PyTorch library in Python. The model trained with Adaptive Moment Estimation (Adam) for optimization, the mean absolute error (MAE) as the loss function and the PC configured with the CUDA 10.2 library on a GTX 2080Ti graphics card, using Ubuntu 18.04.5 LTS. The learning rate for the training network was selected to be 0.0001. The batch size was 8, and the model was trained using a sequence of 27 images with corresponding joint angular velocities in 20 epochs. To train the proposed models, Action videos of seven participants during a squat and walking on a treadmill were used for training, action videos of three participants for validation and three participants for testing."
+                    }
+                ]
+            },
+            "bbox": [
+                504,
+                773,
+                915,
+                928
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "178"
+                    }
+                ]
+            },
+            "bbox": [
+                486,
+                943,
+                511,
+                955
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Authorized licensed use limited to: South-Central Minzu University. Downloaded on September 30,2026 at 08:34:38 UTC from IEEE Xplore. Restrictions apply."
+                    }
+                ]
+            },
+            "bbox": [
+                89,
+                962,
+                901,
+                974
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                81,
+                66,
+                491,
+                113
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "III. EXPERIMENTAL RESULTS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                161,
+                119,
+                411,
+                133
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This section presents results of proposed DeepConvLSTM/ DeepConvGRU network for predicting lower limb joint angular velocities during squat and walking on treadmill actions. The difference between the angular velocities obtained from the optical motion capture system and the estimated by the DeepConvLSTM and DeepConvGRU networks were evaluated with the normalized correlation coefficients (r), and the mean absolute error (MAE). To illustrate the estimation performance of the proposed models, Fig.3. shows estimated and ground-truth angular velocities at lower limb joints during squat action. The estimated angular velocities using DeepConvGRU were better than those estimated by ResNet18 and DeepConvLSTM compared to ground truth angular velocities. The predicted angular velocities during walking on a treadmill are depicted in Fig. 4. The average of r for all the three joints of GRU, BI-LSTM and ResNet18 networks during squat and walking on a treadmill are reported in detail in Table I. The average of r of the GRU network shows a strong correlation (0.93 during squat and 0.92 during walking on treadmill) among all three models. The average r and MAE for the joint-wise angular velocity at the hip, knee, and ankle during squat were predicted by three models are presented in Table II. Among the hip, knee and ankle joints, the knee joint angular velocity estimated using the GRU model showed better accuracy in the average r. The GRU network offers a less MAE error than BI-LSTM and ResNet18 networks in all joint estimations during squat action."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                138,
+                491,
+                561
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/86ec1a5a8cec34e3683ba46fd14f45d930e52cd465c71e8955e14276f15769c4.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 3: Example of estimated angular velocity at the hip, knee, and ankle joint for participants during squat action. Comparison between ground truth (Redline) captured by optical motion capture system and joint angular velocities estimated by ResNet18 (black line), GRU (orange line) and Bi-LSTM (cyan line)."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                104,
+                571,
+                470,
+                854
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1aaba270989ce137b75c8dfeb89cc8ec345fd30e29429860003433948cd343d9.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 4: The graph shows participants estimated angular velocities at the hip, knee, and ankle joint for during walking on treadmill action. Comparison between ground truth (Redline) captured by optical motion capture system and joint angular velocities estimated by ResNet18 (black line), GRU (orange line), and Bi-LSTM (cyan line)."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                527,
+                64,
+                895,
+                345
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/17a47451bda8f7f07fbdaa5faccacd7974ab2c82bef7dc2c051506bdd4f5ac74.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "TABLE I: The average r for predicted joint angular velocities using proposed models in squat and walking on a treadmill actions."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Model</td><td>Squat</td><td>Walking on treadmill</td></tr><tr><td>ResNet18</td><td>0.87</td><td>0.90</td></tr><tr><td>Bi-LSTM</td><td>0.92</td><td>0.91</td></tr><tr><td>GRU</td><td>0.93</td><td>0.92</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                522,
+                453,
+                897,
+                523
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/a28ed74fcc2374316564a4285b36e4a30bff887fa9b0a9f6742b1554bc79070d.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "TABLE II: The average r (MAE) for hip, knee and ankle joint angular velocities using GRU, BI-LSTM and ResNet18 models during squat action."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Model</td><td>Hip Joint</td><td>Knee Joint</td><td>Ankle Joint</td></tr><tr><td>ResNet18</td><td>0.87(44.18)</td><td>0.94(30.92)</td><td>0.90(6.09)</td></tr><tr><td>Bi-LSTM</td><td>0.91(18.48)</td><td>0.96(21.56)</td><td>0.89(6.23)</td></tr><tr><td>GRU</td><td>0.94(15.13)</td><td>0.96(18.09)</td><td>0.92(5.83)</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                522,
+                578,
+                897,
+                637
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/aa85b41caa2198818911759b137e17abab37f0de2e13bfd770621bd87f830e55.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "TABLE III: The average r (MAE) for hip, knee and ankle joint angular velocities using GRU, BI-LSTM and ResNet18 models during walking on treadmill action."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Model</td><td>Hip Joint</td><td>Knee Joint</td><td>Ankle Joint</td></tr><tr><td>ResNet18</td><td>0.80(27.20)</td><td>0.94(37.48)</td><td>0.84(6.05)</td></tr><tr><td>Bi-LSTM</td><td>0.89(21.05)</td><td>0.95(24.80)</td><td>0.85(5.70)</td></tr><tr><td>GRU</td><td>0.91(15.97)</td><td>0.96(20.47)</td><td>0.89(4.15)</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                522,
+                691,
+                898,
+                752
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/2865144c8cf68715183e79f41007d5b07f7e1caba140b1e48ab32178a0f1750c.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "TABLE IV: The average r for angular velocities of three participants under lateral and frontal camera views."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Subject</td><td>Side view</td><td>Front view</td></tr><tr><td>S18</td><td>0.92</td><td>0.92</td></tr><tr><td>S30</td><td>0.91</td><td>0.87</td></tr><tr><td>S31</td><td>0.93</td><td>0.92</td></tr><tr><td>Average</td><td>0.92</td><td>0.89</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                522,
+                794,
+                898,
+                864
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Table III show the average r and MAE for the hip, knee and ankle joint angular velocity during walking on a treadmill action. The average MAE of GRU network offers a less error than BI-LSTM and ResNet18 networks during squat and walking on treadmill. The average r for angular velocities of three participants under lateral and frontal camera views is demonstrated in Table IV. The average r in the lateral and front views are 0.92 and 0.89, respectively. Results imply that proposed models has higher estimation accuracy under both views regardless of the camera positions and angles."
+                    }
+                ]
+            },
+            "bbox": [
+                506,
+                896,
+                913,
+                926
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "179"
+                    }
+                ]
+            },
+            "bbox": [
+                486,
+                944,
+                511,
+                954
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Authorized licensed use limited to: South-Central Minzu University. Downloaded on September 30,2026 at 08:34:38 UTC from IEEE Xplore. Restrictions apply."
+                    }
+                ]
+            },
+            "bbox": [
+                89,
+                962,
+                901,
+                974
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                81,
+                66,
+                491,
+                188
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "IV. DISCUSSION"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                217,
+                196,
+                357,
+                210
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This study introduced a vision-based system using Deep-ConvLSTM/ DeepConvGRU network for estimating the lower limb joint angular velocities during squat and walking on treadmill actions. We conducted the experimental study with the optical motion capture system to record the angular velocity and Xiaomi Mijia Camera 4K digital camera system to capture the video of actions. The proposed architectures were trained with action video information as inputs and corresponding joint angular velocities as outputs. To train the proposed models, Action videos of seven participants during a squat and walking on a treadmill were used for training, action videos of three participants for validation and three participants for testing. The difference between the angular velocities obtained from the optical motion capture system and the estimated by the DeepConvLSTM and DeepConvGRU networks were evaluated with r, and the MAE. The r measures correlation between the and estimated and ground truth angular velocities. The predicted joint angular velocities using DeepConvLSTM/ DeepConvGRU network showed a quite good match with the angular velocities obtained using an optical motion capture system during squat and walking on treadmill actions."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                215,
+                491,
+                549
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A reported in Table I, DeepConvGRU model provided the highest accuracy among the three deep learning architectures, 0.93 in squat and 0.92 in walking on treadmill action. The estimation performance of the independent DeepConvLSTM/ DeepConvGRU models were evaluated for each hip, knee, and ankle joint angular velocity during squat and walking on a treadmill actions. The DeepConvGRU network offers a higher r in both actions. Among the three joint angular velocities, the estimated knee joint shows higher accuracy (0.96 in squat and 0.96 in walking on the treadmill) than the estimated hip and ankle joint angular velocities. The knee joint motion in the sagittal plane is more stable between participants and the ankle joint having a higher degree of freedom; the hip joint estimation accuracy may affect by variations in physical measurements of the participants and motion artifacts due to the fluctuations of the marker at the hip joint. The average r for angular velocities of three participants under lateral and frontal camera views is demonstrated in Table IV. The average r in both lateral and front views is more than 0.90, showing that the DeepConvGRU network offers relatively higher prediction accuracy in both camera views regardless of the camera positions and angles. The average MAE for the hip, knee and ankle joint angular velocity during squat and walking on a treadmill action. The average of MAE of GRU network offers a less error than"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                549,
+                491,
+                926
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BI-LSTM and ResNet18 networks during squat and walking on treadmill as reported in Table II and Table III. However, proposed models still show higher MAE error due to lack of accuracy in ground truth angular velocities captured by motion captured system and an offset value error can be generated from the imprecise positions of makers on the human body, and variations in physical measurements of the participants. The proposed DeepConvGRU model shows angular velocity error between 15 to 20 rad/s. Although, the higher MAE error limitation was overcome to some degree by applying a sequential network."
+                    }
+                ]
+            },
+            "bbox": [
+                504,
+                66,
+                915,
+                232
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In our future work, the experiments should be conducted with larger group of participants, different age groups, more daily actions in different speeds and patients who have undergone gait pathologies. The proposed DeepConvGRU model will be extended to use of transformers and multi-head attention based networks for much higher angular velocity estimation. It is essential to confirm using other accurate motion captured system for ground truth annotations. Our work will be extended to estimate other gait parameter (cadence, speed, stride length, and step width)."
+                    }
+                ]
+            },
+            "bbox": [
+                504,
+                232,
+                915,
+                383
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "V. CONCLUSIONS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                633,
+                392,
+                787,
+                406
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This paper presented a vision-based system for estimating lower limb joint angular velocity during a squat and walking on a treadmill action using Bi-LSTM and GRU recurrent neural networks. The proposed architectures were trained with action video information as inputs and corresponding joint angular velocities as outputs. The joint angular velocities estimated using the DeepConvGRU network strongly correlate with joint angular velocities measured using motion captured system and provides higher accuracy under different camera views. These estimation results demonstrate the potential to monitor joint angular velocities using video information without wearable sensors. However, proposed models still show angular velocity error between 15 to 20 rad/s due to lack of accuracy in ground truth angular velocities captured by motion-captured system. For much higher angular velocity estimation, our work will be extended to use of transformers and multi-head attention based networks. The proposed vision- based method also would be applicable to estimate other gait parameter (cadence, speed, stride length, and step width)."
+                    }
+                ]
+            },
+            "bbox": [
+                504,
+                412,
+                915,
+                715
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "ACKNOWLEDGMENT"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                620,
+                723,
+                800,
+                737
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research was supported by the Korea Institute of Science and Technology Institutional Program (Project No. 2E31051), and the Korea Medical Device Development Fund grant funded by the Korea government (the Ministry of Science and ICT, the Ministry of Trade, Industry and Energy, the Ministry of Health & Welfare, the Ministry of Food and Drug Safety) (Project Number: 1711139131)."
+                    }
+                ]
+            },
+            "bbox": [
+                504,
+                743,
+                915,
+                849
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "REFERENCES"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                661,
+                859,
+                758,
+                872
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[1] P. Messier, C. Legault, C. Schoenlank, J. Newman, D. Martin, and P. Devita, “Risk factors and mechanisms of knee injury in runners,” Medicine Science in Sports Exercise, vol. 40, no. 11, pp. 1873–1879, Nov. 2008."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                878,
+                913,
+                924
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "180"
+                    }
+                ]
+            },
+            "bbox": [
+                486,
+                944,
+                511,
+                954
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Authorized licensed use limited to: South-Central Minzu University. Downloaded on September 30,2026 at 08:34:38 UTC from IEEE Xplore. Restrictions apply."
+                    }
+                ]
+            },
+            "bbox": [
+                89,
+                962,
+                901,
+                974
+            ]
+        }
+    ],
+    [
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[2] R. Ibrahim, I. Kingma, V. de Boode, G. S. Faber, and J. H. van Dieen,¨ “Angular velocity, moment, and power analysis of the ankle, knee, and hip joints in the goalkeeper’s diving save in football,” Frontiers in Sports and Active Living, vol. 2, Feb 2020."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                91,
+                68,
+                488,
+                114
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[3] J. Dicharry, “Kinematics and kinetics of gait: From lab to clinic,” Clinics in Sports Medicine, vol. 29, no. 3, pp. 347–364, Jul 2010."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                91,
+                114,
+                488,
+                136
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[4] M. G. Browne and J. R. Franz, “Ankle power biofeedback attenuates the distal-to-proximal redistribution in older adults,” Gait Posture, vol. 71, pp. 44–49, Jun 2019."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                91,
+                137,
+                488,
+                169
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[5] N. L. Pieper, M. D. Lewek, and J. R. Franz, “Can shank acceleration provide a clinically feasible surrogate for individual limb propulsion during walking,” Journal of Biomechanics, vol. 98, p. 109449, Jan 2020."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                93,
+                170,
+                488,
+                214
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[6] Jiang, Gholami, Khoshnam, Eng, and Menon, “Estimation of ankle joint power during walking using two inertial sensors,” Sensors, vol. 19, no. 12, p. 2796, Jan 2019."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                91,
+                215,
+                488,
+                250
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[7] J. F. Hafer and R. F. Zernicke, “Propulsive joint powers track with sensor-derived angular velocity: A potential tool for lab-less gait retraining,” Journal of Biomechanics, vol. 106, p. 109821, Jun 2020."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                91,
+                250,
+                488,
+                284
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[8] M. Ajdaroski, R. Tadakala, L. Nichols, and A. Esquivel, “Validation of a device to measure knee joint angles for a dynamic movement,” Sensors, vol. 20, no. 6, p. 1747, Mar 2020."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                93,
+                284,
+                488,
+                316
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[9] I. Tak, W. Wiertz, M. Barendrecht, and R. Langhout, “Validity of a new 3-d motion analysis tool for the assessment of knee, hip and spine joint angles during the single leg squat,” Sensors, vol. 20, no. 16, p."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                91,
+                316,
+                488,
+                352
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "4539, Aug 2020."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                537,
+                68,
+                632,
+                79
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[10] V. Hernandez, D. Dadkhah, V. Babakeshizadeh, and D. Kulic, “Lower´ body kinematics estimation from wearable sensors for walking and running: A deep learning approach,” Gait Posture, vol. 83, Jan 2021."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                79,
+                913,
+                114
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[11] J. S. et al, “Prediction of lower extremity multi-joint angles during overground walking by using a single imu with a low frequency based on an lstm recurrent neural network,” Sensors, vol. 22, no. 1, p. 53, Dec 2021."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                114,
+                913,
+                157
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[12] Lim, Kim, and Park, “Prediction of lower limb kinetics and kinematics during walking by a single imu on the lower back using machine learning,” Sensors, vol. 20, no. 1, p. 130, Dec 2019."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                508,
+                159,
+                913,
+                193
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[13] A. Schmitz, M. Ye, R. Shapiro, R. Yang, and B. Noehren, “Accuracy and repeatability of joint angles measured using a single camera markerless motion capture system,” Journal of Biomechanics, vol. 47, no. 2, pp. 587–591, Nov 2014."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                193,
+                913,
+                238
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[14] E. D’Antonio, J. Taborri, E. Palermo, S. Rossi, and F. Patane, “A ` markerless system for gait analysis based on openpose library,” in 2020 IEEE International Instrumentation and Measurement Technology Conference (I2MTC), 2020, pp. 1–6."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                508,
+                238,
+                913,
+                284
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[15] K. S. Kumar, A. Jamsarndorj, D. Jung, D. Lee, J. Kim, and K. R. Mun, “Vision-based human joint angular velocity estimation during squat and walking on a treadmill actions,” in 2021 43rd IEEE Engineering in Medicine Biology Society (EMBC), 2021, pp. 2186–2190."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                284,
+                913,
+                329
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[16] A. Bochkovskiy, C. Wang, and H. Liao, “Yolov4: Optimal speed and accuracy of object detection,” ArXiv, vol. abs/2004.10934, 2020."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                508,
+                329,
+                911,
+                352
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "181"
+                    }
+                ]
+            },
+            "bbox": [
+                486,
+                944,
+                511,
+                954
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Authorized licensed use limited to: South-Central Minzu University. Downloaded on September 30,2026 at 08:34:38 UTC from IEEE Xplore. Restrictions apply."
+                    }
+                ]
+            },
+            "bbox": [
+                91,
+                962,
+                901,
+                974
+            ]
+        }
+    ]
+]

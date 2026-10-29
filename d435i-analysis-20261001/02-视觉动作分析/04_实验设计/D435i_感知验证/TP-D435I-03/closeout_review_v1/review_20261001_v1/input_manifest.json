@@ -1,0 +1,1762 @@
+{
+  "source_files": [
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S1_20261001_131959_59d5ec91\\run.json",
+      "sha256": "400e6769b419313e5a845f5c88a1de507b4d268049a7ff0df05949ff60305524",
+      "run_id": "eight_S1_20261001_131959_59d5ec91"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S1_20261001_131959_59d5ec91\\frames.jsonl",
+      "sha256": "dfc9d652b199b142b5898d7ec9448c074386777fb6e26d13dc7868fd85be95b4",
+      "run_id": "eight_S1_20261001_131959_59d5ec91"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S1_20261001_131959_59d5ec91\\analysis.jsonl",
+      "sha256": "95adf3fff3d708d765dcda208c65dadb93af00d7fcd2ad9bc6fe09dd10db6028",
+      "run_id": "eight_S1_20261001_131959_59d5ec91"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S1_20261001_131959_59d5ec91\\events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run_id": "eight_S1_20261001_131959_59d5ec91"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S1_20261001_131959_59d5ec91\\files.sha256",
+      "sha256": "4715f8f0e358b5682d7c8788255a4e3eef7b678fd134a28b17d77d639ced51a0",
+      "run_id": "eight_S1_20261001_131959_59d5ec91"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_S1_20261001_131959_59d5ec91\\keypoints.csv",
+      "sha256": "02105715a60c4fe6f4aa5c7f860ab0c965095e4c5c238c3b0f17640071d1386a",
+      "run_id": "eight_S1_20261001_131959_59d5ec91"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_S1_20261001_131959_59d5ec91\\wrist_kinematics.csv",
+      "sha256": "519a660ee6089b7bd2f616b5823e7fbf3c0261e76e6219c1d43a513059b7d657",
+      "run_id": "eight_S1_20261001_131959_59d5ec91"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_S1_20261001_131959_59d5ec91\\compensation.csv",
+      "sha256": "c380705197423d1ac9d1b29de35f12f2ebe94fb82c776c1d28e17272d905db37",
+      "run_id": "eight_S1_20261001_131959_59d5ec91"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_S1_20261001_131959_59d5ec91\\quality.csv",
+      "sha256": "e97c2f169b6442f4fe1c1ae75f777091680f7a63aeab032778ab336794fee23a",
+      "run_id": "eight_S1_20261001_131959_59d5ec91"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S1_20261001_132059_bc0d3f66\\run.json",
+      "sha256": "309950c53ebe9995a4af71ad72740e037c4a088da3e2dc799672e5e4ad819e1f",
+      "run_id": "eight_S1_20261001_132059_bc0d3f66"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S1_20261001_132059_bc0d3f66\\frames.jsonl",
+      "sha256": "42ef5f2db728a53550f7db99d8e4c38ffa2b41ef7315a670d94cf52ab4247629",
+      "run_id": "eight_S1_20261001_132059_bc0d3f66"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S1_20261001_132059_bc0d3f66\\analysis.jsonl",
+      "sha256": "eff8c8d378c6adc58fc803ce3a4431b2e0db821a9accb7e975a312cb07b58176",
+      "run_id": "eight_S1_20261001_132059_bc0d3f66"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S1_20261001_132059_bc0d3f66\\events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run_id": "eight_S1_20261001_132059_bc0d3f66"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S1_20261001_132059_bc0d3f66\\files.sha256",
+      "sha256": "54dc89baef811835626974b56c1538c7b07a5a3080b48cc3c2205db9e69cd069",
+      "run_id": "eight_S1_20261001_132059_bc0d3f66"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_S1_20261001_132059_bc0d3f66\\keypoints.csv",
+      "sha256": "7cda9b172b212be30747e4909004c9c13a3969c27e46c0df7e9e1a8b7a93e22d",
+      "run_id": "eight_S1_20261001_132059_bc0d3f66"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_S1_20261001_132059_bc0d3f66\\wrist_kinematics.csv",
+      "sha256": "62c82f463f23afaa4c681124bce2141732d58e72c4a750308590929c7966942a",
+      "run_id": "eight_S1_20261001_132059_bc0d3f66"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_S1_20261001_132059_bc0d3f66\\compensation.csv",
+      "sha256": "24188878ed566a9d3ac994cd5be1ea07507331c0de55fe5b175607495abdc9fe",
+      "run_id": "eight_S1_20261001_132059_bc0d3f66"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_S1_20261001_132059_bc0d3f66\\quality.csv",
+      "sha256": "56a06ad043bcf413b9669aa7a6fe05116b5e279fd3ae8a25435123d3a6b31295",
+      "run_id": "eight_S1_20261001_132059_bc0d3f66"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S1_20261001_132148_b0ac2f4c\\run.json",
+      "sha256": "e5c47111b779307cd77fbd13aba49fcf4b869157f385ee0a665831f785e6603e",
+      "run_id": "eight_S1_20261001_132148_b0ac2f4c"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S1_20261001_132148_b0ac2f4c\\frames.jsonl",
+      "sha256": "391da33dd01b226ea81fcf4b14e5a8c1eaa5f03a98098854e5085cd0d347b017",
+      "run_id": "eight_S1_20261001_132148_b0ac2f4c"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S1_20261001_132148_b0ac2f4c\\analysis.jsonl",
+      "sha256": "8abc5b7e9730f8b1235cd10ec674b3cc9887a39f0e19a5e41aeedec3da664cf9",
+      "run_id": "eight_S1_20261001_132148_b0ac2f4c"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S1_20261001_132148_b0ac2f4c\\events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run_id": "eight_S1_20261001_132148_b0ac2f4c"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S1_20261001_132148_b0ac2f4c\\files.sha256",
+      "sha256": "2bd5ca40567174e4492d13b79f25f56e967a3883bc4fba0e2cbc732513e4a902",
+      "run_id": "eight_S1_20261001_132148_b0ac2f4c"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_S1_20261001_132148_b0ac2f4c\\keypoints.csv",
+      "sha256": "fcdb1c79b2545d49a6f9defdbb000f8dfbc0ac00405edb7db2c6a00690bade72",
+      "run_id": "eight_S1_20261001_132148_b0ac2f4c"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_S1_20261001_132148_b0ac2f4c\\wrist_kinematics.csv",
+      "sha256": "fde48c295899eb82d37412e9d73cb621b5e8cca5c774324c0fd039288bf3c441",
+      "run_id": "eight_S1_20261001_132148_b0ac2f4c"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_S1_20261001_132148_b0ac2f4c\\compensation.csv",
+      "sha256": "7b454645d8b09f2b8d69dc8bbc5e28998f8219b6558535c5635da421a2a4c00a",
+      "run_id": "eight_S1_20261001_132148_b0ac2f4c"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_S1_20261001_132148_b0ac2f4c\\quality.csv",
+      "sha256": "ad7b10f71a29a0e6c390cfdc2bbc88a987a2cbf55c570a2fc2c4188cd18ce342",
+      "run_id": "eight_S1_20261001_132148_b0ac2f4c"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S2_20261001_132239_ea3010e2\\run.json",
+      "sha256": "0d73cedd2092de0abfc4ccc799acf8efddc5d822aef060f0e3ab5fdc31bd8a28",
+      "run_id": "eight_S2_20261001_132239_ea3010e2"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S2_20261001_132239_ea3010e2\\frames.jsonl",
+      "sha256": "29f89231c3e5ba6eef533616aa9acce55ea30aebe44055d4f996d36aa6998148",
+      "run_id": "eight_S2_20261001_132239_ea3010e2"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S2_20261001_132239_ea3010e2\\analysis.jsonl",
+      "sha256": "753b6a46007ca2c851d8c6032c1bc4d286b8b89864429ada8140aacdc7fc1244",
+      "run_id": "eight_S2_20261001_132239_ea3010e2"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S2_20261001_132239_ea3010e2\\events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run_id": "eight_S2_20261001_132239_ea3010e2"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S2_20261001_132239_ea3010e2\\files.sha256",
+      "sha256": "eddfe69d46c8ea6e3878f5dd4ff833bc8f6f0f55abef2375fdf5fe2a997d3f05",
+      "run_id": "eight_S2_20261001_132239_ea3010e2"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_S2_20261001_132239_ea3010e2\\keypoints.csv",
+      "sha256": "22e40e90deb3718d6aee3df559a65999b82ab45484c997a245669bec77ac52c2",
+      "run_id": "eight_S2_20261001_132239_ea3010e2"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_S2_20261001_132239_ea3010e2\\wrist_kinematics.csv",
+      "sha256": "8e1e97e36ade038d1e855e134f5baad7b33b8e14c9682d8d8985a31375a624a0",
+      "run_id": "eight_S2_20261001_132239_ea3010e2"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_S2_20261001_132239_ea3010e2\\compensation.csv",
+      "sha256": "bcbdb84a85edc92d92e1ebebc6988aa481ecccd4619b37604b64cf7336b35d6f",
+      "run_id": "eight_S2_20261001_132239_ea3010e2"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_S2_20261001_132239_ea3010e2\\quality.csv",
+      "sha256": "367453e85cfa54683e3ee9af4c79cde139ea9d82a730f99427af51f870149f61",
+      "run_id": "eight_S2_20261001_132239_ea3010e2"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S2_20261001_132326_343e7896\\run.json",
+      "sha256": "6b9967bc3b9e4e0b6762cce527e581931c95726d0167736d7aeadd69a39fdcb8",
+      "run_id": "eight_S2_20261001_132326_343e7896"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S2_20261001_132326_343e7896\\frames.jsonl",
+      "sha256": "c477b6d40e2c8af59931b0acb5c7525b07982588317f6946dc764ef3493a4dc5",
+      "run_id": "eight_S2_20261001_132326_343e7896"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S2_20261001_132326_343e7896\\analysis.jsonl",
+      "sha256": "8c748c5729f8b52a35f9b53f54a1aa45116db1b10ff70007db8fd9583cecaed8",
+      "run_id": "eight_S2_20261001_132326_343e7896"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S2_20261001_132326_343e7896\\events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run_id": "eight_S2_20261001_132326_343e7896"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S2_20261001_132326_343e7896\\files.sha256",
+      "sha256": "30260285402566c6366aef85705723c7a0a3aeb17ed25da1b93c652ad5770c9d",
+      "run_id": "eight_S2_20261001_132326_343e7896"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_S2_20261001_132326_343e7896\\keypoints.csv",
+      "sha256": "b1269e3fa00c26b5b11483d82baad9bb2c71b3f4d28b6dd63d3a3234a204f209",
+      "run_id": "eight_S2_20261001_132326_343e7896"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_S2_20261001_132326_343e7896\\wrist_kinematics.csv",
+      "sha256": "c51c64838899064e7344d7f3e4418de10551fe0218e82443f22361bf7d6bb389",
+      "run_id": "eight_S2_20261001_132326_343e7896"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_S2_20261001_132326_343e7896\\compensation.csv",
+      "sha256": "053627cad4bc22dca683a6b43b47fd9bbe3bda9c00c9558d2beb9353a04f2de4",
+      "run_id": "eight_S2_20261001_132326_343e7896"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_S2_20261001_132326_343e7896\\quality.csv",
+      "sha256": "a4c8861306c0bbe4f7346664ed67e3cb44211d1571d318009b76dfc1890a8ab8",
+      "run_id": "eight_S2_20261001_132326_343e7896"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S2_20261001_132413_dedfd30f\\run.json",
+      "sha256": "a4cf61cc73d50d840d7c8dc72aa4492e197b9b4f7208aff08111892f083a5b86",
+      "run_id": "eight_S2_20261001_132413_dedfd30f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S2_20261001_132413_dedfd30f\\frames.jsonl",
+      "sha256": "108f7e850ce21fc758edf330f92279805fa3d2546a53c4d2e95594e3e42c926a",
+      "run_id": "eight_S2_20261001_132413_dedfd30f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S2_20261001_132413_dedfd30f\\analysis.jsonl",
+      "sha256": "2a60cab8312e9c0e2272c9d18527477561f6768d5385fca00a1bdf37ae9c0a89",
+      "run_id": "eight_S2_20261001_132413_dedfd30f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S2_20261001_132413_dedfd30f\\events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run_id": "eight_S2_20261001_132413_dedfd30f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_S2_20261001_132413_dedfd30f\\files.sha256",
+      "sha256": "bf336c5bd2e66404057b98a04b2cd01ff2b8f632aa55bb58ebafe42e4039c127",
+      "run_id": "eight_S2_20261001_132413_dedfd30f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_S2_20261001_132413_dedfd30f\\keypoints.csv",
+      "sha256": "470c8b8c9a6f14396e2a97e524075f85f9ead32b0b2eda12d4f2feef5537ec91",
+      "run_id": "eight_S2_20261001_132413_dedfd30f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_S2_20261001_132413_dedfd30f\\wrist_kinematics.csv",
+      "sha256": "9a229de899a72bb9823c5f66570c1f45d3bc89617ad961766a72ee80e8cf9172",
+      "run_id": "eight_S2_20261001_132413_dedfd30f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_S2_20261001_132413_dedfd30f\\compensation.csv",
+      "sha256": "4c4318c377306c57079eff8c7753064f75bbe6f3ac997783429d50cef5f224e9",
+      "run_id": "eight_S2_20261001_132413_dedfd30f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_S2_20261001_132413_dedfd30f\\quality.csv",
+      "sha256": "c277b702b5db55f9219ccdf1aa5ac0fd112aa2e511f8ddd6df7e61a21e7ab096",
+      "run_id": "eight_S2_20261001_132413_dedfd30f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_RU_20261001_133130_b225807d\\run.json",
+      "sha256": "655bef756d1d4d3e76ca4359376d1b211dfd02561f379aa49ce11216352673bf",
+      "run_id": "eight_RU_20261001_133130_b225807d"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_RU_20261001_133130_b225807d\\frames.jsonl",
+      "sha256": "50f39fc51cafd1f94a2427b94dc7f86fe1db9fd2697c31613048b23ce390448b",
+      "run_id": "eight_RU_20261001_133130_b225807d"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_RU_20261001_133130_b225807d\\analysis.jsonl",
+      "sha256": "38c9cc266e239a44f0adade18a86a4b569d5522aaaf099168a860b6e62a2257f",
+      "run_id": "eight_RU_20261001_133130_b225807d"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_RU_20261001_133130_b225807d\\events.jsonl",
+      "sha256": "bde15ebc06a39b0255de360f487a961c59128c8bdbe1a7daf36243af9165f2b0",
+      "run_id": "eight_RU_20261001_133130_b225807d"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_RU_20261001_133130_b225807d\\files.sha256",
+      "sha256": "065a893feeb031cae58222d372c243884a08b358c4c355c517fcf2b395922c95",
+      "run_id": "eight_RU_20261001_133130_b225807d"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_RU_20261001_133130_b225807d\\keypoints.csv",
+      "sha256": "b78ca88b82fb9cbf0c1e11909594799d325470ad42f4cc1a86412920ff3e63b2",
+      "run_id": "eight_RU_20261001_133130_b225807d"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_RU_20261001_133130_b225807d\\wrist_kinematics.csv",
+      "sha256": "91a6648318070e32cb397b515c08465b703ec6b54646ec3b19f712939fd4ee69",
+      "run_id": "eight_RU_20261001_133130_b225807d"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_RU_20261001_133130_b225807d\\compensation.csv",
+      "sha256": "6f04ecaa2a3f775d55d9b22dc04fa68b79dcc3c7628623be00194b70efa793bf",
+      "run_id": "eight_RU_20261001_133130_b225807d"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_RU_20261001_133130_b225807d\\quality.csv",
+      "sha256": "c9ab36921ebeb8eded2b837907dd0f2ec9172ed0589c90cf8d7e94d5c75aa444",
+      "run_id": "eight_RU_20261001_133130_b225807d"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_RU_20261001_133347_d19a29ac\\run.json",
+      "sha256": "2c15cdc9d1a967630bcaee8bc35279f4b7880c084b086837782c4ee5022a9184",
+      "run_id": "eight_RU_20261001_133347_d19a29ac"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_RU_20261001_133347_d19a29ac\\frames.jsonl",
+      "sha256": "97816997328744fc494b411a27d479dbdb8263490ff77926a0f5fa1de9451e1f",
+      "run_id": "eight_RU_20261001_133347_d19a29ac"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_RU_20261001_133347_d19a29ac\\analysis.jsonl",
+      "sha256": "93ee1ad5043608a7ce3289cd449df4ee7c5cf746ee74a373c8e35fa21199455d",
+      "run_id": "eight_RU_20261001_133347_d19a29ac"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_RU_20261001_133347_d19a29ac\\events.jsonl",
+      "sha256": "f2e1465c6b777a2a04fe422f61893396e813f2394f10a0c684df3b65082da65d",
+      "run_id": "eight_RU_20261001_133347_d19a29ac"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_RU_20261001_133347_d19a29ac\\files.sha256",
+      "sha256": "0243f98f7de358b92c5e0e5e6b7702b079eac9f0edde22cd40ae87d09654348f",
+      "run_id": "eight_RU_20261001_133347_d19a29ac"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_RU_20261001_133347_d19a29ac\\keypoints.csv",
+      "sha256": "f101c2fe4768c6cc100ea3b6b95631d5160b04f4c78468f61da44d43f8fe0da3",
+      "run_id": "eight_RU_20261001_133347_d19a29ac"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_RU_20261001_133347_d19a29ac\\wrist_kinematics.csv",
+      "sha256": "4c9728b06152bac02bfeefbebc2dc80817f78151715b7f391e00283c21914f34",
+      "run_id": "eight_RU_20261001_133347_d19a29ac"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_RU_20261001_133347_d19a29ac\\compensation.csv",
+      "sha256": "29bdd6101b5cea1ec68d6f4ba49918d0061b0d9c5369ffdd85fbb50b18c905e9",
+      "run_id": "eight_RU_20261001_133347_d19a29ac"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_RU_20261001_133347_d19a29ac\\quality.csv",
+      "sha256": "7411c89433427c9876102a5e2a36aa49d59c918a4595b01417ab745ef2a0e4c1",
+      "run_id": "eight_RU_20261001_133347_d19a29ac"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_RU_20261001_133509_ee4315e4\\run.json",
+      "sha256": "0357b9268bb9c0ef3e63b4b8de1f1fdf15245c69630bc93f0344a5c456bdbdd7",
+      "run_id": "eight_RU_20261001_133509_ee4315e4"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_RU_20261001_133509_ee4315e4\\frames.jsonl",
+      "sha256": "9b9e194da83e7ab3e167fa2cb5c8dc3b7101bd13492415c230ddca344d6d499c",
+      "run_id": "eight_RU_20261001_133509_ee4315e4"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_RU_20261001_133509_ee4315e4\\analysis.jsonl",
+      "sha256": "564847dbf1a1685670f13329b55bd8572a57cff07db470674163c3ff2a4f55f3",
+      "run_id": "eight_RU_20261001_133509_ee4315e4"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_RU_20261001_133509_ee4315e4\\events.jsonl",
+      "sha256": "f12497ffaf5858ba90c88c6c693adef6143c06dbd80e379467a2a99e4e6260b1",
+      "run_id": "eight_RU_20261001_133509_ee4315e4"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_RU_20261001_133509_ee4315e4\\files.sha256",
+      "sha256": "270078ced32189a5ad023c92edc83b22f72f1f346683ae5ee6561d98a603dc6c",
+      "run_id": "eight_RU_20261001_133509_ee4315e4"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_RU_20261001_133509_ee4315e4\\keypoints.csv",
+      "sha256": "61d678072f4c091d4a2f4c607f41fa32702344222c660e57c171f8b1f2ec0511",
+      "run_id": "eight_RU_20261001_133509_ee4315e4"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_RU_20261001_133509_ee4315e4\\wrist_kinematics.csv",
+      "sha256": "359910ec7208db2904b952412162964a6c4e37a599a194cfcc234d6e1195972b",
+      "run_id": "eight_RU_20261001_133509_ee4315e4"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_RU_20261001_133509_ee4315e4\\compensation.csv",
+      "sha256": "f1a1d9f43da4138da84c19f85ef3c1973410c380ce329697e104c9ed6cbdbb72",
+      "run_id": "eight_RU_20261001_133509_ee4315e4"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_RU_20261001_133509_ee4315e4\\quality.csv",
+      "sha256": "3edbc5bc92f5d1a724b0a1291a2f2b4415723fd62c0cd7a2bc4e7c3d4c766915",
+      "run_id": "eight_RU_20261001_133509_ee4315e4"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_133658_73162b96\\run.json",
+      "sha256": "40f314a907f39338c8536ff3524b4b5672b4ea1217239e16fcbf7b7db270692f",
+      "run_id": "eight_FE_20261001_133658_73162b96"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_133658_73162b96\\frames.jsonl",
+      "sha256": "bffabd714aecc5d8400d627197453bbcfc624bb48ed3c197737660804e7621a7",
+      "run_id": "eight_FE_20261001_133658_73162b96"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_133658_73162b96\\analysis.jsonl",
+      "sha256": "8d86c95b81d658ba72466c1913d0032e26a24fdf047af394e724657555b6efc2",
+      "run_id": "eight_FE_20261001_133658_73162b96"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_133658_73162b96\\events.jsonl",
+      "sha256": "8830046d57c2eec2c949f6619c249d7d5bcb6254df31b780448b4d7a67eb2fff",
+      "run_id": "eight_FE_20261001_133658_73162b96"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_133658_73162b96\\files.sha256",
+      "sha256": "a494c108061df8d6d5ad8e888177698aecbb4bb18515b475039df60e2211bdb3",
+      "run_id": "eight_FE_20261001_133658_73162b96"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_FE_20261001_133658_73162b96\\keypoints.csv",
+      "sha256": "3a48c6938be8dd45ec56affacd745b29a965a9f7007af1c0c7872c703e64e300",
+      "run_id": "eight_FE_20261001_133658_73162b96"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_FE_20261001_133658_73162b96\\wrist_kinematics.csv",
+      "sha256": "1f8badc148eab3328292b94e981a68c4da9bb39901a5eec84214fb8c3d3b9dd1",
+      "run_id": "eight_FE_20261001_133658_73162b96"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_FE_20261001_133658_73162b96\\compensation.csv",
+      "sha256": "9bb9f2f6980dfb408a96383e7e676f82d9466f4496e5ea8ed2d1b56ee96b68ca",
+      "run_id": "eight_FE_20261001_133658_73162b96"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_FE_20261001_133658_73162b96\\quality.csv",
+      "sha256": "74958bf646af7c78e2b775e1b715e0386b9f51d4655b48122f7219dfde09ea19",
+      "run_id": "eight_FE_20261001_133658_73162b96"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_133828_a60e1ba6\\run.json",
+      "sha256": "d4620a6ee4ff5c7206946d06dcf11efe2d06fd761e2c271607c0cce33b3f2c18",
+      "run_id": "eight_FE_20261001_133828_a60e1ba6"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_133828_a60e1ba6\\frames.jsonl",
+      "sha256": "96f0c1cf2fed7df0f041d585bf1301f094d99137f2bfb460296e7699d1084e3b",
+      "run_id": "eight_FE_20261001_133828_a60e1ba6"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_133828_a60e1ba6\\analysis.jsonl",
+      "sha256": "1807d3f4abeb71eb1e1c5edc67e7f3aea794294b6c23e737ebfa3bf33bc3289c",
+      "run_id": "eight_FE_20261001_133828_a60e1ba6"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_133828_a60e1ba6\\events.jsonl",
+      "sha256": "6c019c12c11a291f53fbfabffbff73d545ef1bd6a37e890c2000a677ec36b091",
+      "run_id": "eight_FE_20261001_133828_a60e1ba6"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_133828_a60e1ba6\\files.sha256",
+      "sha256": "eb3ad8a1630a8a7cabd735134928f97acdcec1fcd47875abf1e951706d1616f9",
+      "run_id": "eight_FE_20261001_133828_a60e1ba6"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_FE_20261001_133828_a60e1ba6\\keypoints.csv",
+      "sha256": "979668ec4fc0db059bbaedf6f254360063b19be3de797c95917a8a38dc6504a4",
+      "run_id": "eight_FE_20261001_133828_a60e1ba6"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_FE_20261001_133828_a60e1ba6\\wrist_kinematics.csv",
+      "sha256": "e0ae12749c1707fdcc922ac39f187cc06a687049690986873361e044e9bdd166",
+      "run_id": "eight_FE_20261001_133828_a60e1ba6"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_FE_20261001_133828_a60e1ba6\\compensation.csv",
+      "sha256": "4470e95516258bda0e4c48a2281fc9ff171012fa068b0587becd7f3422132c9d",
+      "run_id": "eight_FE_20261001_133828_a60e1ba6"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_FE_20261001_133828_a60e1ba6\\quality.csv",
+      "sha256": "31c2eb77ad29b341f2419ceff5a3fb7f3fb516feacc6bd1de72b7213d347698e",
+      "run_id": "eight_FE_20261001_133828_a60e1ba6"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_133920_581ea1c5\\run.json",
+      "sha256": "bac39bed644316bd48bbe43b98aab60315cd610fc50538821dad7dcaebb1c489",
+      "run_id": "eight_FE_20261001_133920_581ea1c5"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_133920_581ea1c5\\frames.jsonl",
+      "sha256": "63bbc9582a81808c198eaca967844372ad4ea8ebc2b4b357d388ab09311d3d19",
+      "run_id": "eight_FE_20261001_133920_581ea1c5"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_133920_581ea1c5\\analysis.jsonl",
+      "sha256": "bb7972bf0aa3a826811a2d05000340559a0335e65f2f0c84f3549e86eaf3a5b4",
+      "run_id": "eight_FE_20261001_133920_581ea1c5"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_133920_581ea1c5\\events.jsonl",
+      "sha256": "110d82039eb1fcddc713a0c6f38197f1fd3058cfe6124ad754e1c201cead6aa0",
+      "run_id": "eight_FE_20261001_133920_581ea1c5"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_133920_581ea1c5\\files.sha256",
+      "sha256": "cbd3c6fd14f9f699701b2d06021440e050d47630ae3e45a50aff8cdce737462c",
+      "run_id": "eight_FE_20261001_133920_581ea1c5"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_FE_20261001_133920_581ea1c5\\keypoints.csv",
+      "sha256": "edbbf770d72fa036c4404e21ef659aba0d14f48220bc48c87e5845ccd00f3edc",
+      "run_id": "eight_FE_20261001_133920_581ea1c5"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_FE_20261001_133920_581ea1c5\\wrist_kinematics.csv",
+      "sha256": "641483b6c01f0498007a902c0c22e577a861d4f9e6638f746e8cebfab106caeb",
+      "run_id": "eight_FE_20261001_133920_581ea1c5"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_FE_20261001_133920_581ea1c5\\compensation.csv",
+      "sha256": "eaedf17398d55220149d2f015d5cbafda3d8394a886379a90dbf8a45213b175a",
+      "run_id": "eight_FE_20261001_133920_581ea1c5"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_FE_20261001_133920_581ea1c5\\quality.csv",
+      "sha256": "f035259a6096aa70de80b560db66c20cf14abb157be62f9a4450f5cf21a57d57",
+      "run_id": "eight_FE_20261001_133920_581ea1c5"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_134101_6c9daee0\\run.json",
+      "sha256": "e690057213f845743ba5fd059189a78b10b95dfaa4ff1c57c00f7511b6a754c1",
+      "run_id": "eight_FE_20261001_134101_6c9daee0"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_134101_6c9daee0\\frames.jsonl",
+      "sha256": "c39c5fa5e07c35aeb75317ba294ea06e9d4c370735476422317b3007b01bcdcf",
+      "run_id": "eight_FE_20261001_134101_6c9daee0"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_134101_6c9daee0\\analysis.jsonl",
+      "sha256": "245aa33d4d3f037ee626d22c8e280cfade43189b88d0f824679112b3686d9e15",
+      "run_id": "eight_FE_20261001_134101_6c9daee0"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_134101_6c9daee0\\events.jsonl",
+      "sha256": "caee21a4f6c023ef3971277c4bbd806369a3cfbd2f332f514378dd6b8fa06d70",
+      "run_id": "eight_FE_20261001_134101_6c9daee0"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_134101_6c9daee0\\files.sha256",
+      "sha256": "3664d33b95e1bc9230b93d8f2903aea04fbb1d73db6c1974a0feff1557be8745",
+      "run_id": "eight_FE_20261001_134101_6c9daee0"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_FE_20261001_134101_6c9daee0\\keypoints.csv",
+      "sha256": "70d2adcfe220ff2e6a2868a3ddd5451bc48595e4054310dab214898447150fe7",
+      "run_id": "eight_FE_20261001_134101_6c9daee0"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_FE_20261001_134101_6c9daee0\\wrist_kinematics.csv",
+      "sha256": "839fe613d423fb241a89158bf52597f7b95c77a75dc37c212bd449a31faa4d97",
+      "run_id": "eight_FE_20261001_134101_6c9daee0"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_FE_20261001_134101_6c9daee0\\compensation.csv",
+      "sha256": "d548e3785755df7374cea7c3de2c10f24d92c0430a2d72553f0adce571a86431",
+      "run_id": "eight_FE_20261001_134101_6c9daee0"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_FE_20261001_134101_6c9daee0\\quality.csv",
+      "sha256": "248a7d64bf32c9d5941d13152c681c65d87897480b26139e62c4acad1e2b1529",
+      "run_id": "eight_FE_20261001_134101_6c9daee0"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_CIRCLE_20261001_134353_ece4c4e8\\run.json",
+      "sha256": "86b1d4b2dd9ec9d5fe112cc2af8333324b23ad1a5aa1481e3bbd97c1f56dc848",
+      "run_id": "eight_CIRCLE_20261001_134353_ece4c4e8"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_CIRCLE_20261001_134353_ece4c4e8\\frames.jsonl",
+      "sha256": "c943c79697e97a1448c14e2332ea002acccc668abad99ac05f9405c00e67ae4e",
+      "run_id": "eight_CIRCLE_20261001_134353_ece4c4e8"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_CIRCLE_20261001_134353_ece4c4e8\\analysis.jsonl",
+      "sha256": "d91506a8045eb93f9c552dff8f8c828f8c44df8e3aef0f74ab53783e094a1601",
+      "run_id": "eight_CIRCLE_20261001_134353_ece4c4e8"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_CIRCLE_20261001_134353_ece4c4e8\\events.jsonl",
+      "sha256": "610eb19e686d87cc07f144cdc504cad3e43daa5b30d1792934e49d719c8b5469",
+      "run_id": "eight_CIRCLE_20261001_134353_ece4c4e8"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_CIRCLE_20261001_134353_ece4c4e8\\files.sha256",
+      "sha256": "d1a5c72103c9f12500781873d7ed8f3c591a9f88b94add9c18b5bd76ae9ae4ab",
+      "run_id": "eight_CIRCLE_20261001_134353_ece4c4e8"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_CIRCLE_20261001_134353_ece4c4e8\\keypoints.csv",
+      "sha256": "9fdd59953a750b4d61ce563c4c740ae758938bd79e6a33f7c9a4820e8d1342a5",
+      "run_id": "eight_CIRCLE_20261001_134353_ece4c4e8"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_CIRCLE_20261001_134353_ece4c4e8\\wrist_kinematics.csv",
+      "sha256": "c735c556c472d97ba80c7dbce53473d633e0ba50ab5c1b5d1f266318b00ba6ac",
+      "run_id": "eight_CIRCLE_20261001_134353_ece4c4e8"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_CIRCLE_20261001_134353_ece4c4e8\\compensation.csv",
+      "sha256": "40f32c5057fd39444fb408cbc8a9140049500965b0b0b832ff54e00faf393bbb",
+      "run_id": "eight_CIRCLE_20261001_134353_ece4c4e8"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_CIRCLE_20261001_134353_ece4c4e8\\quality.csv",
+      "sha256": "04e088d6ae7c8f7274c592c69dae55e1a1d12156fec457ca28fdaeed06cfe74f",
+      "run_id": "eight_CIRCLE_20261001_134353_ece4c4e8"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_CIRCLE_20261001_134509_b65ab28b\\run.json",
+      "sha256": "7da9b3df4503d4ccca2dfeb02f9f59f92085f2ab689b38b919878842aa810c7d",
+      "run_id": "eight_CIRCLE_20261001_134509_b65ab28b"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_CIRCLE_20261001_134509_b65ab28b\\frames.jsonl",
+      "sha256": "c0e219b751a2815ac6133439f79edff2c0c38cd6dd657b3557c9e09d9d907e0f",
+      "run_id": "eight_CIRCLE_20261001_134509_b65ab28b"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_CIRCLE_20261001_134509_b65ab28b\\analysis.jsonl",
+      "sha256": "4a73e9db9bdfbf37941414c2266247bc65fafe17f37c7492f39e34bc8864042d",
+      "run_id": "eight_CIRCLE_20261001_134509_b65ab28b"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_CIRCLE_20261001_134509_b65ab28b\\events.jsonl",
+      "sha256": "5fd1a60bf9ae8871fdfb57d1fd1cefc83bacc87b74f260506a38b4fdd896c397",
+      "run_id": "eight_CIRCLE_20261001_134509_b65ab28b"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_CIRCLE_20261001_134509_b65ab28b\\files.sha256",
+      "sha256": "689f065b4736e007b0a4d33e7eccf367f528b3ee16ab50c5ee52ec92ae623084",
+      "run_id": "eight_CIRCLE_20261001_134509_b65ab28b"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_CIRCLE_20261001_134509_b65ab28b\\keypoints.csv",
+      "sha256": "69fc8f134a085331eb5a07c4fff858eb9493719932a3acff2125598330515509",
+      "run_id": "eight_CIRCLE_20261001_134509_b65ab28b"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_CIRCLE_20261001_134509_b65ab28b\\wrist_kinematics.csv",
+      "sha256": "d9b7a35230d024f926103a29330a1363459b30b7f5c815e802e914c7ea99fb7b",
+      "run_id": "eight_CIRCLE_20261001_134509_b65ab28b"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_CIRCLE_20261001_134509_b65ab28b\\compensation.csv",
+      "sha256": "8c0ec392e5b8a311af04f1cfbc0ec69e8d98f0726a55176dbc9b37db6aeeeea2",
+      "run_id": "eight_CIRCLE_20261001_134509_b65ab28b"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_CIRCLE_20261001_134509_b65ab28b\\quality.csv",
+      "sha256": "c828f5e8a82e6249da312510fa856a52d9669889983eb92fabc661fa36b83bf1",
+      "run_id": "eight_CIRCLE_20261001_134509_b65ab28b"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_CIRCLE_20261001_134606_0e663bce\\run.json",
+      "sha256": "9d5cd280a9266a0f1ae72212a925e7f0312adcb061676cb1d00578bf7f171305",
+      "run_id": "eight_CIRCLE_20261001_134606_0e663bce"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_CIRCLE_20261001_134606_0e663bce\\frames.jsonl",
+      "sha256": "3ac67facfbb3fcd4da1e2b72c37092feb8da753351e8ec8a6c63940416bb91fd",
+      "run_id": "eight_CIRCLE_20261001_134606_0e663bce"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_CIRCLE_20261001_134606_0e663bce\\analysis.jsonl",
+      "sha256": "f2cec5edfb34d60f4b0e91aef8084ce642a555554b2ecffd91d586576a41933f",
+      "run_id": "eight_CIRCLE_20261001_134606_0e663bce"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_CIRCLE_20261001_134606_0e663bce\\events.jsonl",
+      "sha256": "9571a6ab2ca83e01b16959b08f89ff10258e17395aad01dc117f77f4110168f9",
+      "run_id": "eight_CIRCLE_20261001_134606_0e663bce"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_CIRCLE_20261001_134606_0e663bce\\files.sha256",
+      "sha256": "f49217850a7c0c026f7f661d1f03bf957fbce3d074d910d9553a306a83bf076a",
+      "run_id": "eight_CIRCLE_20261001_134606_0e663bce"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_CIRCLE_20261001_134606_0e663bce\\keypoints.csv",
+      "sha256": "cf65cac8c679ce784fe5b7d1b98d19de278e0a7c577f7392a30b810a8f3b5314",
+      "run_id": "eight_CIRCLE_20261001_134606_0e663bce"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_CIRCLE_20261001_134606_0e663bce\\wrist_kinematics.csv",
+      "sha256": "7cdbd27ab08d19a93b2aeef8d430ac6883ddd626bf7eb0266b358adca18b62b3",
+      "run_id": "eight_CIRCLE_20261001_134606_0e663bce"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_CIRCLE_20261001_134606_0e663bce\\compensation.csv",
+      "sha256": "2075b0cbe8d43d82837d8379bb933b11131253bf4e3bb4030568911564391eed",
+      "run_id": "eight_CIRCLE_20261001_134606_0e663bce"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_CIRCLE_20261001_134606_0e663bce\\quality.csv",
+      "sha256": "ae95c7508bbcdbbdef30996c5efb71facb50064194007df7ce176d35b86ed40f",
+      "run_id": "eight_CIRCLE_20261001_134606_0e663bce"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_SHOULDER_20261001_134728_5cedac08\\run.json",
+      "sha256": "f88595e415c4662e08d47a9ff8dccf8632b54076d789c8b4cd6c454451e10195",
+      "run_id": "eight_SHOULDER_20261001_134728_5cedac08"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_SHOULDER_20261001_134728_5cedac08\\frames.jsonl",
+      "sha256": "eac3e7a3c926901e267d50e19c16f62b5bdbe883f24c5488528042cc90f1409e",
+      "run_id": "eight_SHOULDER_20261001_134728_5cedac08"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_SHOULDER_20261001_134728_5cedac08\\analysis.jsonl",
+      "sha256": "847d940bf98f14cdd2ca725462aeaac33488dc25223ce0b81980e73d937832b2",
+      "run_id": "eight_SHOULDER_20261001_134728_5cedac08"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_SHOULDER_20261001_134728_5cedac08\\events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run_id": "eight_SHOULDER_20261001_134728_5cedac08"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_SHOULDER_20261001_134728_5cedac08\\files.sha256",
+      "sha256": "de40cfa56aa151ac6d6090073d6acd7660ca27a1a6cc5334172aa3978a1a76c3",
+      "run_id": "eight_SHOULDER_20261001_134728_5cedac08"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_SHOULDER_20261001_134728_5cedac08\\keypoints.csv",
+      "sha256": "ffef85a63477386a1f8898d6bf0857cb53259f4c7c73031cbbea2ea36a0c0368",
+      "run_id": "eight_SHOULDER_20261001_134728_5cedac08"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_SHOULDER_20261001_134728_5cedac08\\wrist_kinematics.csv",
+      "sha256": "e436fe43129e0af847a1fc69d69bf9f9a77b7f541f632d36c884ec44b8acd0e3",
+      "run_id": "eight_SHOULDER_20261001_134728_5cedac08"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_SHOULDER_20261001_134728_5cedac08\\compensation.csv",
+      "sha256": "1723c133baeffb18777f36f37d3ae14b07e1f8ed433d99f48d156a0ca9579b36",
+      "run_id": "eight_SHOULDER_20261001_134728_5cedac08"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_SHOULDER_20261001_134728_5cedac08\\quality.csv",
+      "sha256": "780ee168944fa0ddb5e8bd5609f9da5465aa1eefcb68d8060c748c53b11401c2",
+      "run_id": "eight_SHOULDER_20261001_134728_5cedac08"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_SHOULDER_20261001_134819_8be00db0\\run.json",
+      "sha256": "4c9819f97494ec7a04b42b1661db83cc3ff7054c63505ab89c0ffc91fb10370d",
+      "run_id": "eight_SHOULDER_20261001_134819_8be00db0"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_SHOULDER_20261001_134819_8be00db0\\frames.jsonl",
+      "sha256": "76c02263f0c1dc9717799291a19bbf4f3a0193f570f9936619914bf1dc5a8a1c",
+      "run_id": "eight_SHOULDER_20261001_134819_8be00db0"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_SHOULDER_20261001_134819_8be00db0\\analysis.jsonl",
+      "sha256": "57d5c0acac12359bd154762f1f0914e10602f30d5b703624a6564e1362576ded",
+      "run_id": "eight_SHOULDER_20261001_134819_8be00db0"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_SHOULDER_20261001_134819_8be00db0\\events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run_id": "eight_SHOULDER_20261001_134819_8be00db0"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_SHOULDER_20261001_134819_8be00db0\\files.sha256",
+      "sha256": "070dbcbeb635e24b25650ad7e684a0a14fa765f9e8e2903cd7ed1aeeb4fefee2",
+      "run_id": "eight_SHOULDER_20261001_134819_8be00db0"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_SHOULDER_20261001_134819_8be00db0\\keypoints.csv",
+      "sha256": "fbb20276585f32405c324f97174a3cee056b5c4e202d715376d602c2e90cf93e",
+      "run_id": "eight_SHOULDER_20261001_134819_8be00db0"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_SHOULDER_20261001_134819_8be00db0\\wrist_kinematics.csv",
+      "sha256": "66d6940ad470a23e01cfb7415c1dc9d9a02fa698329460bf1f72ede12029c438",
+      "run_id": "eight_SHOULDER_20261001_134819_8be00db0"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_SHOULDER_20261001_134819_8be00db0\\compensation.csv",
+      "sha256": "1add84d7b8980b8548d11093dc30cea241a5267715aab1d6e0dba99a7d29ecf0",
+      "run_id": "eight_SHOULDER_20261001_134819_8be00db0"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_SHOULDER_20261001_134819_8be00db0\\quality.csv",
+      "sha256": "99805a77477ca2927aed396873fc01ea2b7c119a312ac30585bc26727e44f690",
+      "run_id": "eight_SHOULDER_20261001_134819_8be00db0"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_SHOULDER_20261001_134908_c025f17f\\run.json",
+      "sha256": "e80de9925e724005809400f1db4ce4fb3ea1209c0bb34ed3a8d10ea53806924e",
+      "run_id": "eight_SHOULDER_20261001_134908_c025f17f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_SHOULDER_20261001_134908_c025f17f\\frames.jsonl",
+      "sha256": "e1a4dcf10602e273e8f454b5e34db780f15e463228363291893eb62afa90a6ea",
+      "run_id": "eight_SHOULDER_20261001_134908_c025f17f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_SHOULDER_20261001_134908_c025f17f\\analysis.jsonl",
+      "sha256": "d186793e4c4be6c219f2cd9fdd3f403a1da13705fef614fa95da9aa713038c8f",
+      "run_id": "eight_SHOULDER_20261001_134908_c025f17f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_SHOULDER_20261001_134908_c025f17f\\events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run_id": "eight_SHOULDER_20261001_134908_c025f17f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_SHOULDER_20261001_134908_c025f17f\\files.sha256",
+      "sha256": "b86afcae528c752942efbbf71dc28eab1e617475ace3de93f3d665994d5662ae",
+      "run_id": "eight_SHOULDER_20261001_134908_c025f17f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_SHOULDER_20261001_134908_c025f17f\\keypoints.csv",
+      "sha256": "4f93caa7e4d9a15ced5b43ce5e9ed45cf95d428921a7d33fd1d69a7d2888dcd4",
+      "run_id": "eight_SHOULDER_20261001_134908_c025f17f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_SHOULDER_20261001_134908_c025f17f\\wrist_kinematics.csv",
+      "sha256": "fe041f02104536f37c09d5e90d2e991617f89a419121ed457db51dbe4ba6a312",
+      "run_id": "eight_SHOULDER_20261001_134908_c025f17f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_SHOULDER_20261001_134908_c025f17f\\compensation.csv",
+      "sha256": "2864c2deaa8e490ced2818e48d357a45bcf7beb0149abd649d1475acad72c4e3",
+      "run_id": "eight_SHOULDER_20261001_134908_c025f17f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_SHOULDER_20261001_134908_c025f17f\\quality.csv",
+      "sha256": "f7c9a78ff3690e3afb0b034c84634a3a7e4c538fc9f624e3448c9d72b0c2630f",
+      "run_id": "eight_SHOULDER_20261001_134908_c025f17f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_ELBOW_20261001_135236_ac256f5f\\run.json",
+      "sha256": "14ec9e52db0483f85a8282b7ad8adf2b88e73c0407d1a08cdf8d6b386675b48f",
+      "run_id": "eight_ELBOW_20261001_135236_ac256f5f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_ELBOW_20261001_135236_ac256f5f\\frames.jsonl",
+      "sha256": "1acfa8d6d6a9d84814d976f645f1944ddad528a960aff6ed453ec17b05a39a9e",
+      "run_id": "eight_ELBOW_20261001_135236_ac256f5f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_ELBOW_20261001_135236_ac256f5f\\analysis.jsonl",
+      "sha256": "b0107bf2d102cbdb3803ef62abb6311f4426fd1ac8b208bdd77e9a0e02490ef1",
+      "run_id": "eight_ELBOW_20261001_135236_ac256f5f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_ELBOW_20261001_135236_ac256f5f\\events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run_id": "eight_ELBOW_20261001_135236_ac256f5f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_ELBOW_20261001_135236_ac256f5f\\files.sha256",
+      "sha256": "796240e76fbe876c9bf521545ca2c6d053b6f9d14148f69a132cd75b3f465040",
+      "run_id": "eight_ELBOW_20261001_135236_ac256f5f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_ELBOW_20261001_135236_ac256f5f\\keypoints.csv",
+      "sha256": "9427a9c9717621979a470dea987ef60428290c615da60aec1b9307c68f48e585",
+      "run_id": "eight_ELBOW_20261001_135236_ac256f5f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_ELBOW_20261001_135236_ac256f5f\\wrist_kinematics.csv",
+      "sha256": "5421c0ab85c9b36500d05b2f6c127a50a99d05c97a3bf985b751ef02a628ce79",
+      "run_id": "eight_ELBOW_20261001_135236_ac256f5f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_ELBOW_20261001_135236_ac256f5f\\compensation.csv",
+      "sha256": "833fe6a11eae551b7bb0eddd457d094d65e5c2dbd19b9604bf05b66de7ed560b",
+      "run_id": "eight_ELBOW_20261001_135236_ac256f5f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_ELBOW_20261001_135236_ac256f5f\\quality.csv",
+      "sha256": "856f7589dcd2b0c54c78f53100c738f078aa53dd7cc9ba896c45a9403cc38cf5",
+      "run_id": "eight_ELBOW_20261001_135236_ac256f5f"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_ELBOW_20261001_135333_1cd6edcf\\run.json",
+      "sha256": "945b5aa70a7dffce943716a8ff22450a57c52a4905029b8f12a1ab9ab8d12339",
+      "run_id": "eight_ELBOW_20261001_135333_1cd6edcf"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_ELBOW_20261001_135333_1cd6edcf\\frames.jsonl",
+      "sha256": "cb2a4714d463fd688d1914c507199e5b00ab7c6e42c165f35e6b1375704c49fc",
+      "run_id": "eight_ELBOW_20261001_135333_1cd6edcf"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_ELBOW_20261001_135333_1cd6edcf\\analysis.jsonl",
+      "sha256": "44114be26565356e74a9ef28389a71f0b6f80f038f17ea74e74a46989790a9cc",
+      "run_id": "eight_ELBOW_20261001_135333_1cd6edcf"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_ELBOW_20261001_135333_1cd6edcf\\events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run_id": "eight_ELBOW_20261001_135333_1cd6edcf"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_ELBOW_20261001_135333_1cd6edcf\\files.sha256",
+      "sha256": "cfbd9f43269259a96d9de3fe98a040cb63f9862cbcbe1e2f962b34dac76522bb",
+      "run_id": "eight_ELBOW_20261001_135333_1cd6edcf"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_ELBOW_20261001_135333_1cd6edcf\\keypoints.csv",
+      "sha256": "cc37c1403d1d98f38204992a4b7688c9db55d315b6595878471720ec5913f495",
+      "run_id": "eight_ELBOW_20261001_135333_1cd6edcf"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_ELBOW_20261001_135333_1cd6edcf\\wrist_kinematics.csv",
+      "sha256": "cb13a7b08438a85475c07c73a72ad409cd32f75e6966ae7c2aef0609fb4b7fc0",
+      "run_id": "eight_ELBOW_20261001_135333_1cd6edcf"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_ELBOW_20261001_135333_1cd6edcf\\compensation.csv",
+      "sha256": "dbe099c2034f21ed9664f2fcef3ca35e820527ea4ee4b83843d9985c275365fe",
+      "run_id": "eight_ELBOW_20261001_135333_1cd6edcf"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_ELBOW_20261001_135333_1cd6edcf\\quality.csv",
+      "sha256": "1b73fb351368a41faf7fac7c83d8416702bd800fd0ebb636cc08557543ae32b6",
+      "run_id": "eight_ELBOW_20261001_135333_1cd6edcf"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_ELBOW_20261001_135439_15a01a4e\\run.json",
+      "sha256": "ed8d95f6f2e8bb223936881a03e7e96bcd288a6fac93868492e3c98b3add3898",
+      "run_id": "eight_ELBOW_20261001_135439_15a01a4e"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_ELBOW_20261001_135439_15a01a4e\\frames.jsonl",
+      "sha256": "4d109e6114c3885544988763a1264ae1181d7455ea3f760a1325912787e3f363",
+      "run_id": "eight_ELBOW_20261001_135439_15a01a4e"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_ELBOW_20261001_135439_15a01a4e\\analysis.jsonl",
+      "sha256": "921d1391688fdb5a62345c616362171f60d860560bdaecf6d3bc44b44546d054",
+      "run_id": "eight_ELBOW_20261001_135439_15a01a4e"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_ELBOW_20261001_135439_15a01a4e\\events.jsonl",
+      "sha256": "08d21b8be1ea12698636e838244222cabc24c8eba4a3fc5f6ab327de071dbe03",
+      "run_id": "eight_ELBOW_20261001_135439_15a01a4e"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_ELBOW_20261001_135439_15a01a4e\\files.sha256",
+      "sha256": "6f128867d6526e24221d43501510ce101fc5a080ce419e8b91183d714901f9b9",
+      "run_id": "eight_ELBOW_20261001_135439_15a01a4e"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_ELBOW_20261001_135439_15a01a4e\\keypoints.csv",
+      "sha256": "8b37d79fe9975a9a2b535f50b99fd2e41ed4c3cfb389f8078e638ba709285014",
+      "run_id": "eight_ELBOW_20261001_135439_15a01a4e"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_ELBOW_20261001_135439_15a01a4e\\wrist_kinematics.csv",
+      "sha256": "a15e8f8fc75c265ae9766125f0d999c351346da43e2a243e01c18bb43550ea30",
+      "run_id": "eight_ELBOW_20261001_135439_15a01a4e"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_ELBOW_20261001_135439_15a01a4e\\compensation.csv",
+      "sha256": "5a6efceb8dba8f20e81c86bb6c68a1fd40818d2bfe74ca2755e6e57b0df9b4f2",
+      "run_id": "eight_ELBOW_20261001_135439_15a01a4e"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_ELBOW_20261001_135439_15a01a4e\\quality.csv",
+      "sha256": "b8db76cae02e3a4a0a870ed15a1a47997bfcb9b5420093fcc1f0be2af81028e9",
+      "run_id": "eight_ELBOW_20261001_135439_15a01a4e"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_COMBINED_20261001_135607_5bb6b817\\run.json",
+      "sha256": "576e447cf259b963a3de8afdb5ef74225bf4458655187fc2933c6cc38c844635",
+      "run_id": "eight_COMBINED_20261001_135607_5bb6b817"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_COMBINED_20261001_135607_5bb6b817\\frames.jsonl",
+      "sha256": "d49cbbca51127f58b5a5a9ebabc5668506590ce4f327d360c9ea434deab34a40",
+      "run_id": "eight_COMBINED_20261001_135607_5bb6b817"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_COMBINED_20261001_135607_5bb6b817\\analysis.jsonl",
+      "sha256": "2ae8b41e6f142bc6db5c3171eee5bdbd780dfeae2c5f8532033cc2a8d60f7f09",
+      "run_id": "eight_COMBINED_20261001_135607_5bb6b817"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_COMBINED_20261001_135607_5bb6b817\\events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run_id": "eight_COMBINED_20261001_135607_5bb6b817"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_COMBINED_20261001_135607_5bb6b817\\files.sha256",
+      "sha256": "d53e08d66784191f7bc801ce7ca163dd19cbc897c5569ecd5bd97ddcceba5939",
+      "run_id": "eight_COMBINED_20261001_135607_5bb6b817"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_COMBINED_20261001_135607_5bb6b817\\keypoints.csv",
+      "sha256": "bfc7ee02eb217b3afb8ff2ad74f9f17bbdd7f0b8645313b5fe0adcbabaf38837",
+      "run_id": "eight_COMBINED_20261001_135607_5bb6b817"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_COMBINED_20261001_135607_5bb6b817\\wrist_kinematics.csv",
+      "sha256": "7dad13ff2dd3b148bee92dd388c536972ce473b1a9fc7dfd6780335c9609fc05",
+      "run_id": "eight_COMBINED_20261001_135607_5bb6b817"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_COMBINED_20261001_135607_5bb6b817\\compensation.csv",
+      "sha256": "ba35d3f4a8628c8c4f209840f3549462769690624d8229595382b32aad57512a",
+      "run_id": "eight_COMBINED_20261001_135607_5bb6b817"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_COMBINED_20261001_135607_5bb6b817\\quality.csv",
+      "sha256": "0e1f8c19bcc211a692d2e20436633f461405b6d117386d0d680e1c806ec5711b",
+      "run_id": "eight_COMBINED_20261001_135607_5bb6b817"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_COMBINED_20261001_135701_cb673e7e\\run.json",
+      "sha256": "5a81883c820da09cc70fa74213374d34f5baa4763e8a4ae9c5881007bcd995c4",
+      "run_id": "eight_COMBINED_20261001_135701_cb673e7e"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_COMBINED_20261001_135701_cb673e7e\\frames.jsonl",
+      "sha256": "1b0f958ae1a3d5ef8dfa9f3257b1fc509fb6df7619f51ca6eb71a3e459ee1614",
+      "run_id": "eight_COMBINED_20261001_135701_cb673e7e"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_COMBINED_20261001_135701_cb673e7e\\analysis.jsonl",
+      "sha256": "550969e95242955a7c50f892dd7b5c1867a0dbfad6488504b2b4b6cb23dd3106",
+      "run_id": "eight_COMBINED_20261001_135701_cb673e7e"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_COMBINED_20261001_135701_cb673e7e\\events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run_id": "eight_COMBINED_20261001_135701_cb673e7e"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_COMBINED_20261001_135701_cb673e7e\\files.sha256",
+      "sha256": "1cc263c736d09dc03fbde37e239e86e9c59ffda1a070f9cafb786dbd8be04134",
+      "run_id": "eight_COMBINED_20261001_135701_cb673e7e"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_COMBINED_20261001_135701_cb673e7e\\keypoints.csv",
+      "sha256": "7216634812705049108ff5f8a3ce588a614aed3a4f7f74051dfde6a559ce24a2",
+      "run_id": "eight_COMBINED_20261001_135701_cb673e7e"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_COMBINED_20261001_135701_cb673e7e\\wrist_kinematics.csv",
+      "sha256": "7ab46b8afce51bd4818f7fb154836fa8c32ca8ab9dad3713c86897233ee34098",
+      "run_id": "eight_COMBINED_20261001_135701_cb673e7e"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_COMBINED_20261001_135701_cb673e7e\\compensation.csv",
+      "sha256": "aa86d81bbd3773ffa2771cb147d84a6c070e93b21f8eb2d0770d472282b9780b",
+      "run_id": "eight_COMBINED_20261001_135701_cb673e7e"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_COMBINED_20261001_135701_cb673e7e\\quality.csv",
+      "sha256": "f9eabd12f957e043416e85200f65abf4ad59b3db080af037815a785c97abb5d4",
+      "run_id": "eight_COMBINED_20261001_135701_cb673e7e"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_COMBINED_20261001_135752_6c5fc62b\\run.json",
+      "sha256": "9ead84863709288254d5483a94eb64c3d9cb7d1001fea84d26733a17cc44243a",
+      "run_id": "eight_COMBINED_20261001_135752_6c5fc62b"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_COMBINED_20261001_135752_6c5fc62b\\frames.jsonl",
+      "sha256": "3feb945a6e86afa6f6df671c80e11c99085fd55865a679a10fba154b2584fc9a",
+      "run_id": "eight_COMBINED_20261001_135752_6c5fc62b"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_COMBINED_20261001_135752_6c5fc62b\\analysis.jsonl",
+      "sha256": "5dfade2b765b461ccaead29b05ee0517dcf2cae7580de595deb698f36c4dcb27",
+      "run_id": "eight_COMBINED_20261001_135752_6c5fc62b"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_COMBINED_20261001_135752_6c5fc62b\\events.jsonl",
+      "sha256": "c4417c51a1018f721e435c49223da2b128a96a354d0244aac0cc81360f8ab324",
+      "run_id": "eight_COMBINED_20261001_135752_6c5fc62b"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_COMBINED_20261001_135752_6c5fc62b\\files.sha256",
+      "sha256": "bf418474e6a3f724db2059b3ea9bdcd99cb7fe51bcf1c260d0510bcc3cc7bb3e",
+      "run_id": "eight_COMBINED_20261001_135752_6c5fc62b"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_COMBINED_20261001_135752_6c5fc62b\\keypoints.csv",
+      "sha256": "53349fe96098cbf28bb06d0a5d10207922c8fef71a49a5470684f374398c16b7",
+      "run_id": "eight_COMBINED_20261001_135752_6c5fc62b"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_COMBINED_20261001_135752_6c5fc62b\\wrist_kinematics.csv",
+      "sha256": "ee05a44901462dc54c163fe2252bd659688a3894675a2d804c37097e5557006c",
+      "run_id": "eight_COMBINED_20261001_135752_6c5fc62b"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_COMBINED_20261001_135752_6c5fc62b\\compensation.csv",
+      "sha256": "bb9f214dd1071bd3b12cba6fffca075db727bacbd1f49a59774699467e8daf83",
+      "run_id": "eight_COMBINED_20261001_135752_6c5fc62b"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_COMBINED_20261001_135752_6c5fc62b\\quality.csv",
+      "sha256": "47d38dc3cb9ba3f1a42d9bffadd50b92009954b7f6a1e5bdc41043b566aba7a6",
+      "run_id": "eight_COMBINED_20261001_135752_6c5fc62b"
+    }
+  ],
+  "selection_sha256": "29de1a6f8f1126de7ec182dc0f25a2e2af07eeea02e0f998997ccfdf51b89383",
+  "exclusions": [
+    {
+      "run_id": "eight_FE_20261001_132559_3bcd117e",
+      "excluded_at": "2026-10-01T14:09:15.419358+08:00",
+      "reason": "user_marked_unneeded",
+      "record": {
+        "run_id": "eight_FE_20261001_132559_3bcd117e",
+        "participant_id": "P001",
+        "task_id": 3,
+        "task_name": "标准腕屈伸",
+        "captured_frames": 948,
+        "analysed_frames": 532,
+        "saved_frames": 948,
+        "capture_queue_drops": 0,
+        "active_duration_s": 31.611,
+        "finish_reason": "operator_finish",
+        "estimated_reps": 0,
+        "manual_count": 0,
+        "static_duration_verdict": "NOT_APPLICABLE",
+        "keypoint_statistics": {
+          "shoulder": {
+            "valid_rate": 0.5474683544303798,
+            "gap_max_s": 0.2665536999993492,
+            "raw_axis_sd_mm": [
+              9.23750381267652,
+              10.707543041385422,
+              16.740362604408375
+            ],
+            "position_fluctuation_p95_mm": 50.39973059549121,
+            "availability_verdict": "FAIL",
+            "static_fluctuation_verdict": "NOT_APPLICABLE",
+            "accuracy_verdict": "BLOCKED"
+          },
+          "elbow": {
+            "valid_rate": 0.5474683544303798,
+            "gap_max_s": 0.2665536999993492,
+            "raw_axis_sd_mm": [
+              19.30085330796108,
+              14.260043155927734,
+              45.22318674181538
+            ],
+            "position_fluctuation_p95_mm": 110.26907520517585,
+            "availability_verdict": "FAIL",
+            "static_fluctuation_verdict": "NOT_APPLICABLE",
+            "accuracy_verdict": "BLOCKED"
+          },
+          "wrist": {
+            "valid_rate": 0.5474683544303798,
+            "gap_max_s": 0.2665536999993492,
+            "raw_axis_sd_mm": [
+              97.28800595912112,
+              90.41441266797922,
+              38.78618438717624
+            ],
+            "position_fluctuation_p95_mm": 306.7386364822311,
+            "availability_verdict": "FAIL",
+            "static_fluctuation_verdict": "NOT_APPLICABLE",
+            "accuracy_verdict": "BLOCKED"
+          }
+        },
+        "quality": {
+          "run_id": "eight_FE_20261001_132559_3bcd117e",
+          "task_id": 3,
+          "window_id": "whole_trial",
+          "start_mono_s": 63162.4802357,
+          "end_mono_s": 63194.0703991,
+          "A_value": null,
+          "C_value": null,
+          "S_value": null,
+          "Q_value": 0.5474683544303798,
+          "A_valid": false,
+          "A_status": "not_completed",
+          "reported_cycles": 0,
+          "estimated_cycles": 0,
+          "C_valid": false,
+          "C_status": "independent_labels_missing",
+          "S_valid": false,
+          "S_status": "insufficient_valid_estimates",
+          "Q_valid": true,
+          "Q_body_valid_rate": 0.5474683544303798,
+          "Q_max_gap_s": 0.2665536999993492,
+          "angle_estimate_coverage": 0.4694092827004219,
+          "compensation_coverage": 0.5474683544303798,
+          "host_receive_to_output_p95_ms": 83.19999999999999,
+          "end_to_end_latency_verdict": "BLOCKED",
+          "reason": "no_independent_reference_or_labels; no_device_host_clock_mapping",
+          "parameters_version": "eight-task/v3",
+          "overall_status": "not_scorable"
+        },
+        "smoothness_exploratory": {
+          "status": "insufficient_valid_estimates",
+          "values": []
+        },
+        "candidate_angle_ranges": {
+          "theta_fe_est_deg": {
+            "valid_samples": 446,
+            "min_deg": -35.9,
+            "max_deg": 28.11,
+            "range_deg": 64.00999999999999,
+            "formal_rom_valid": false,
+            "source": "constrained_reference_estimate"
+          },
+          "theta_ru_est_deg": {
+            "valid_samples": 446,
+            "min_deg": -6.36,
+            "max_deg": 83.54,
+            "range_deg": 89.9,
+            "formal_rom_valid": false,
+            "source": "constrained_reference_estimate"
+          }
+        },
+        "operator_reported_completion": false,
+        "manual_clockwise": 0,
+        "manual_counterclockwise": 0,
+        "formal_verdicts": {
+          "TP-01": "BLOCKED_ACCURACY",
+          "TP-02": "BLOCKED_ANATOMICAL_ANGLES_AND_REFERENCE",
+          "TP-03": "BLOCKED_INDEPENDENT_LABELS",
+          "TP-04": "BLOCKED_INPUT_VALIDATION"
+        },
+        "observed_source_frame_skips": 0,
+        "capture_wall_duration_s": 31.610537299995485,
+        "capture_hz_observed": 29.989999568913856,
+        "source_hashes": {
+          "run.json": "774418e1012662a2fa92e0866a7acbce524d5fc0f214f7332b4ed1d4acb925fe",
+          "analysis.jsonl": "80dda856819e7d9860395c09b7fd1e986c68e400acc7d302b5b2b5bc91d15f26",
+          "frames.jsonl": "b87f70d5a483f871da58182963ebd950e43e20b454637714f91fc352f27e95a9"
+        },
+        "output_directories": [
+          "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_FE_20261001_132559_3bcd117e",
+          "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_FE_20261001_132559_3bcd117e",
+          "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_FE_20261001_132559_3bcd117e",
+          "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_FE_20261001_132559_3bcd117e"
+        ],
+        "raw_directory": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_132559_3bcd117e"
+      }
+    },
+    {
+      "run_id": "eight_FE_20261001_132656_a6f5531a",
+      "excluded_at": "2026-10-01T14:09:15.419407+08:00",
+      "reason": "user_marked_unneeded",
+      "record": {
+        "run_id": "eight_FE_20261001_132656_a6f5531a",
+        "participant_id": "P001",
+        "task_id": 3,
+        "task_name": "标准腕屈伸",
+        "captured_frames": 1761,
+        "analysed_frames": 1011,
+        "saved_frames": 1761,
+        "capture_queue_drops": 0,
+        "active_duration_s": 58.747,
+        "finish_reason": "operator_finish",
+        "estimated_reps": 0,
+        "manual_count": 0,
+        "static_duration_verdict": "NOT_APPLICABLE",
+        "keypoint_statistics": {
+          "shoulder": {
+            "valid_rate": 0.5650198750709824,
+            "gap_max_s": 0.13429710000491468,
+            "raw_axis_sd_mm": [
+              45.38637474549276,
+              20.212007795571477,
+              26.448614918417626
+            ],
+            "position_fluctuation_p95_mm": 129.25170846562747,
+            "availability_verdict": "FAIL",
+            "static_fluctuation_verdict": "NOT_APPLICABLE",
+            "accuracy_verdict": "BLOCKED"
+          },
+          "elbow": {
+            "valid_rate": 0.5650198750709824,
+            "gap_max_s": 0.13429710000491468,
+            "raw_axis_sd_mm": [
+              66.11302263701535,
+              18.168125850394002,
+              75.91950792261771
+            ],
+            "position_fluctuation_p95_mm": 191.84121880442825,
+            "availability_verdict": "FAIL",
+            "static_fluctuation_verdict": "NOT_APPLICABLE",
+            "accuracy_verdict": "BLOCKED"
+          },
+          "wrist": {
+            "valid_rate": 0.5650198750709824,
+            "gap_max_s": 0.13429710000491468,
+            "raw_axis_sd_mm": [
+              59.512226831713534,
+              31.33208155041492,
+              142.06244662758795
+            ],
+            "position_fluctuation_p95_mm": 240.8322154893939,
+            "availability_verdict": "FAIL",
+            "static_fluctuation_verdict": "NOT_APPLICABLE",
+            "accuracy_verdict": "BLOCKED"
+          }
+        },
+        "quality": {
+          "run_id": "eight_FE_20261001_132656_a6f5531a",
+          "task_id": 3,
+          "window_id": "whole_trial",
+          "start_mono_s": 63219.2214756,
+          "end_mono_s": 63277.9334778,
+          "A_value": null,
+          "C_value": null,
+          "S_value": null,
+          "Q_value": 0.5650198750709824,
+          "A_valid": false,
+          "A_status": "not_completed",
+          "reported_cycles": 0,
+          "estimated_cycles": 0,
+          "C_valid": false,
+          "C_status": "independent_labels_missing",
+          "S_valid": false,
+          "S_status": "insufficient_valid_estimates",
+          "Q_valid": true,
+          "Q_body_valid_rate": 0.5650198750709824,
+          "Q_max_gap_s": 0.13429710000491468,
+          "angle_estimate_coverage": 0.5235661555934128,
+          "compensation_coverage": 0.5650198750709824,
+          "host_receive_to_output_p95_ms": 82.955,
+          "end_to_end_latency_verdict": "BLOCKED",
+          "reason": "no_independent_reference_or_labels; no_device_host_clock_mapping",
+          "parameters_version": "eight-task/v3",
+          "overall_status": "not_scorable"
+        },
+        "smoothness_exploratory": {
+          "status": "insufficient_valid_estimates",
+          "values": []
+        },
+        "candidate_angle_ranges": {
+          "theta_fe_est_deg": {
+            "valid_samples": 922,
+            "min_deg": -42.21,
+            "max_deg": 81.27,
+            "range_deg": 123.47999999999999,
+            "formal_rom_valid": false,
+            "source": "constrained_reference_estimate"
+          },
+          "theta_ru_est_deg": {
+            "valid_samples": 922,
+            "min_deg": -63.96,
+            "max_deg": 71.76,
+            "range_deg": 135.72,
+            "formal_rom_valid": false,
+            "source": "constrained_reference_estimate"
+          }
+        },
+        "operator_reported_completion": false,
+        "manual_clockwise": 0,
+        "manual_counterclockwise": 0,
+        "formal_verdicts": {
+          "TP-01": "BLOCKED_ACCURACY",
+          "TP-02": "BLOCKED_ANATOMICAL_ANGLES_AND_REFERENCE",
+          "TP-03": "BLOCKED_INDEPENDENT_LABELS",
+          "TP-04": "BLOCKED_INPUT_VALIDATION"
+        },
+        "observed_source_frame_skips": 0,
+        "capture_wall_duration_s": 58.747247499995865,
+        "capture_hz_observed": 29.975872486623718,
+        "source_hashes": {
+          "run.json": "062d7cc5e5c889ac54fd61d8f8b5e450a3c59ac4ff78d8e1cf5bf34b39efbb58",
+          "analysis.jsonl": "c1f3e4a7f63c68919b8b6e9430e44a482d9d614c39909683db86f7b13816e8ab",
+          "frames.jsonl": "255dddb3790d4c1b33cf893425415bcf0e6b7f0716bce0d5fefa4fb5b2e702b2"
+        },
+        "output_directories": [
+          "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_FE_20261001_132656_a6f5531a",
+          "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_FE_20261001_132656_a6f5531a",
+          "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_FE_20261001_132656_a6f5531a",
+          "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_FE_20261001_132656_a6f5531a"
+        ],
+        "raw_directory": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_FE_20261001_132656_a6f5531a"
+      }
+    },
+    {
+      "run_id": "eight_SHOULDER_20261001_135000_4315046b",
+      "excluded_at": "2026-10-01T14:09:15.419415+08:00",
+      "reason": "user_marked_unneeded",
+      "record": {
+        "run_id": "eight_SHOULDER_20261001_135000_4315046b",
+        "participant_id": "P001",
+        "task_id": 6,
+        "task_name": "肩部诱导代偿",
+        "captured_frames": 224,
+        "analysed_frames": 181,
+        "saved_frames": 224,
+        "capture_queue_drops": 0,
+        "active_duration_s": 6.517,
+        "finish_reason": "operator_finish",
+        "estimated_reps": 0,
+        "manual_count": 0,
+        "static_duration_verdict": "NOT_APPLICABLE",
+        "keypoint_statistics": {
+          "shoulder": {
+            "valid_rate": 0.38392857142857145,
+            "gap_max_s": 1.1009368999948492,
+            "raw_axis_sd_mm": [
+              11.14252194221444,
+              6.695760700896691,
+              60.90176260613663
+            ],
+            "position_fluctuation_p95_mm": 85.85917848480001,
+            "availability_verdict": "FAIL",
+            "static_fluctuation_verdict": "NOT_APPLICABLE",
+            "accuracy_verdict": "BLOCKED"
+          },
+          "elbow": {
+            "valid_rate": 0.38392857142857145,
+            "gap_max_s": 1.1009368999948492,
+            "raw_axis_sd_mm": [
+              26.838355157380903,
+              57.76649370208535,
+              134.7705560697735
+            ],
+            "position_fluctuation_p95_mm": 250.24382001955397,
+            "availability_verdict": "FAIL",
+            "static_fluctuation_verdict": "NOT_APPLICABLE",
+            "accuracy_verdict": "BLOCKED"
+          },
+          "wrist": {
+            "valid_rate": 0.38392857142857145,
+            "gap_max_s": 1.1009368999948492,
+            "raw_axis_sd_mm": [
+              140.58742796036955,
+              93.84906189044824,
+              97.10217333216332
+            ],
+            "position_fluctuation_p95_mm": 303.784677719634,
+            "availability_verdict": "FAIL",
+            "static_fluctuation_verdict": "NOT_APPLICABLE",
+            "accuracy_verdict": "BLOCKED"
+          }
+        },
+        "quality": {
+          "run_id": "eight_SHOULDER_20261001_135000_4315046b",
+          "task_id": 6,
+          "window_id": "whole_trial",
+          "start_mono_s": 64603.6817366,
+          "end_mono_s": 64611.1210245,
+          "A_value": null,
+          "C_value": null,
+          "S_value": null,
+          "Q_value": 0.38392857142857145,
+          "A_valid": false,
+          "A_status": "not_applicable",
+          "reported_cycles": 0,
+          "estimated_cycles": 0,
+          "C_valid": false,
+          "C_status": "independent_labels_missing",
+          "S_valid": false,
+          "S_status": "not_applicable",
+          "Q_valid": true,
+          "Q_body_valid_rate": 0.38392857142857145,
+          "Q_max_gap_s": 1.1009368999948492,
+          "angle_estimate_coverage": 0.11160714285714286,
+          "compensation_coverage": 0.38392857142857145,
+          "host_receive_to_output_p95_ms": 68.80499999999999,
+          "end_to_end_latency_verdict": "BLOCKED",
+          "reason": "no_independent_reference_or_labels; no_device_host_clock_mapping",
+          "parameters_version": "eight-task/v3",
+          "overall_status": "not_scorable"
+        },
+        "smoothness_exploratory": {
+          "status": "not_applicable",
+          "values": []
+        },
+        "candidate_angle_ranges": {
+          "theta_fe_est_deg": {
+            "valid_samples": 25,
+            "min_deg": -9.97,
+            "max_deg": 23.45,
+            "range_deg": 33.42,
+            "formal_rom_valid": false,
+            "source": "constrained_reference_estimate"
+          },
+          "theta_ru_est_deg": {
+            "valid_samples": 25,
+            "min_deg": -35.55,
+            "max_deg": -11.82,
+            "range_deg": 23.729999999999997,
+            "formal_rom_valid": false,
+            "source": "constrained_reference_estimate"
+          }
+        },
+        "operator_reported_completion": null,
+        "manual_clockwise": 0,
+        "manual_counterclockwise": 0,
+        "formal_verdicts": {
+          "TP-01": "BLOCKED_ACCURACY",
+          "TP-02": "BLOCKED_ANATOMICAL_ANGLES_AND_REFERENCE",
+          "TP-03": "BLOCKED_INDEPENDENT_LABELS",
+          "TP-04": "BLOCKED_INPUT_VALIDATION"
+        },
+        "observed_source_frame_skips": 0,
+        "capture_wall_duration_s": 7.453419499994197,
+        "capture_hz_observed": 30.053319821885026,
+        "source_hashes": {
+          "run.json": "a7e7037a477eac69051119e483b05cdb535444b24e9ee66a33014113e851a70f",
+          "analysis.jsonl": "85c4eb7602d80b37550fec7d671b257025ab46d3bc5771ccc913c5baf3fe278b",
+          "frames.jsonl": "06949d3892cd7e540c991e6e4d67ec3b2830ea0cdc0b618773e3a2f7f55bffb8"
+        },
+        "output_directories": [
+          "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_SHOULDER_20261001_135000_4315046b",
+          "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_SHOULDER_20261001_135000_4315046b",
+          "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_SHOULDER_20261001_135000_4315046b",
+          "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_SHOULDER_20261001_135000_4315046b"
+        ],
+        "raw_directory": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_SHOULDER_20261001_135000_4315046b"
+      }
+    },
+    {
+      "run_id": "eight_ELBOW_20261001_135116_1561cc63",
+      "excluded_at": "2026-10-01T14:09:15.419419+08:00",
+      "reason": "user_marked_unneeded",
+      "record": {
+        "run_id": "eight_ELBOW_20261001_135116_1561cc63",
+        "participant_id": "P001",
+        "task_id": 7,
+        "task_name": "肘部诱导代偿",
+        "captured_frames": 1476,
+        "analysed_frames": 933,
+        "saved_frames": 1476,
+        "capture_queue_drops": 0,
+        "active_duration_s": 30.522,
+        "finish_reason": "operator_finish",
+        "estimated_reps": 0,
+        "manual_count": 0,
+        "static_duration_verdict": "NOT_APPLICABLE",
+        "keypoint_statistics": {
+          "shoulder": {
+            "valid_rate": 0.48441734417344173,
+            "gap_max_s": 1.3011605000065174,
+            "raw_axis_sd_mm": [
+              11.668873271083461,
+              11.755217275843071,
+              15.337060336217522
+            ],
+            "position_fluctuation_p95_mm": 41.062887426689535,
+            "availability_verdict": "FAIL",
+            "static_fluctuation_verdict": "NOT_APPLICABLE",
+            "accuracy_verdict": "BLOCKED"
+          },
+          "elbow": {
+            "valid_rate": 0.48441734417344173,
+            "gap_max_s": 1.3011605000065174,
+            "raw_axis_sd_mm": [
+              31.189834098606532,
+              48.31599361527938,
+              89.94159598656736
+            ],
+            "position_fluctuation_p95_mm": 188.95499644362556,
+            "availability_verdict": "FAIL",
+            "static_fluctuation_verdict": "NOT_APPLICABLE",
+            "accuracy_verdict": "BLOCKED"
+          },
+          "wrist": {
+            "valid_rate": 0.48441734417344173,
+            "gap_max_s": 1.3011605000065174,
+            "raw_axis_sd_mm": [
+              86.97802418860186,
+              62.83569119525252,
+              93.48797488300345
+            ],
+            "position_fluctuation_p95_mm": 219.5985809410168,
+            "availability_verdict": "FAIL",
+            "static_fluctuation_verdict": "NOT_APPLICABLE",
+            "accuracy_verdict": "BLOCKED"
+          }
+        },
+        "quality": {
+          "run_id": "eight_ELBOW_20261001_135116_1561cc63",
+          "task_id": 7,
+          "window_id": "whole_trial",
+          "start_mono_s": 64680.0393158,
+          "end_mono_s": 64729.2103164,
+          "A_value": null,
+          "C_value": null,
+          "S_value": null,
+          "Q_value": 0.48441734417344173,
+          "A_valid": false,
+          "A_status": "not_applicable",
+          "reported_cycles": 0,
+          "estimated_cycles": 0,
+          "C_valid": false,
+          "C_status": "independent_labels_missing",
+          "S_valid": false,
+          "S_status": "not_applicable",
+          "Q_valid": true,
+          "Q_body_valid_rate": 0.48441734417344173,
+          "Q_max_gap_s": 1.3011605000065174,
+          "angle_estimate_coverage": 0.11382113821138211,
+          "compensation_coverage": 0.48441734417344173,
+          "host_receive_to_output_p95_ms": 81.0,
+          "end_to_end_latency_verdict": "BLOCKED",
+          "reason": "no_independent_reference_or_labels; no_device_host_clock_mapping",
+          "parameters_version": "eight-task/v3",
+          "overall_status": "not_scorable"
+        },
+        "smoothness_exploratory": {
+          "status": "not_applicable",
+          "values": []
+        },
+        "candidate_angle_ranges": {
+          "theta_fe_est_deg": {
+            "valid_samples": 133,
+            "min_deg": -38.6,
+            "max_deg": 37.08,
+            "range_deg": 75.68,
+            "formal_rom_valid": false,
+            "source": "constrained_reference_estimate"
+          },
+          "theta_ru_est_deg": {
+            "valid_samples": 133,
+            "min_deg": -81.7,
+            "max_deg": 33.34,
+            "range_deg": 115.04,
+            "formal_rom_valid": false,
+            "source": "constrained_reference_estimate"
+          }
+        },
+        "operator_reported_completion": null,
+        "manual_clockwise": 0,
+        "manual_counterclockwise": 0,
+        "formal_verdicts": {
+          "TP-01": "BLOCKED_ACCURACY",
+          "TP-02": "BLOCKED_ANATOMICAL_ANGLES_AND_REFERENCE",
+          "TP-03": "BLOCKED_INDEPENDENT_LABELS",
+          "TP-04": "BLOCKED_INPUT_VALIDATION"
+        },
+        "observed_source_frame_skips": 0,
+        "capture_wall_duration_s": 49.202381900002365,
+        "capture_hz_observed": 29.998547692259773,
+        "source_hashes": {
+          "run.json": "0e7ef46fc90db61ee3554f1eb1eb7e353dd11b5c5e18972d238167177f249b09",
+          "analysis.jsonl": "bd5241420bfb553ac4b1f6ebd29b80364e536a7233c39eacc6645d1de63a55fa",
+          "frames.jsonl": "002ca1e5832d60b0c5026dc4f6ae3b48a7e7d8ddcf45e950508f14784065c65e"
+        },
+        "output_directories": [
+          "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\eight_task_v3\\eight_ELBOW_20261001_135116_1561cc63",
+          "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\eight_task_v3\\eight_ELBOW_20261001_135116_1561cc63",
+          "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\eight_task_v3\\eight_ELBOW_20261001_135116_1561cc63",
+          "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-04\\eight_task_v3\\eight_ELBOW_20261001_135116_1561cc63"
+        ],
+        "raw_directory": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\eight_ELBOW_20261001_135116_1561cc63"
+      }
+    }
+  ],
+  "script_sha256": "1133d062917e1fe92216963f48fe706f81b7d7989bae0cb3d13642871265b841",
+  "thresholds": {
+    "point_valid_rate_min": 0.95,
+    "invalid_gap_s_max": 0.2,
+    "static_axis_sd_mm_max": 5.0,
+    "static_position_p95_mm_max": 10.0,
+    "reference_3d_rmse_mm_max": 10.0,
+    "reference_3d_error_p95_mm_max": 20.0,
+    "angle_rmse_deg_max": 5.0,
+    "angle_error_p95_deg_max": 10.0,
+    "rom_error_deg_max": 5.0,
+    "count_error_per_10_max": 1,
+    "channel_sensitivity_min": 0.9,
+    "channel_specificity_min": 0.9,
+    "detection_latency_p95_ms_max": 300,
+    "quality_end_to_end_latency_p95_ms_max": 200,
+    "independent_auc_min": 0.85
+  },
+  "frozen_task_documents": [
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\README.md",
+      "sha256": "9672f5ee0f7a3bd9bcd9fc7914f0e771364ba1ae882e543cab237c437b2571dd",
+      "verdict": "PASS"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\01_上肢关键点三维坐标任务包.md",
+      "sha256": "95b1a74bcf3000aea21aad3804b93572a38e2cb1e729d931c7c3493c11d0ad3f",
+      "verdict": "PASS"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\02_腕关节运动轨迹任务包.md",
+      "sha256": "57b020ceae206d8ca095bcdc87af3083355552c79d5df8c51807b81692080636",
+      "verdict": "PASS"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\03_肩肘代偿识别任务包.md",
+      "sha256": "0047bfbea1746160dc9c5ca24922b71cc7424024589e2797191b3ad376f1253e",
+      "verdict": "PASS"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\04_运动质量评价任务包.md",
+      "sha256": "c98154eac08e7b29df53d8b73cabe9a17cf939e542b9ac1e7f9d071b346f8d4c",
+      "verdict": "PASS"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\RealSense_D435i_腕关节康复人体运动状态感知测试任务书.md",
+      "sha256": "862cf10f96b4af73428632b1cf9d3ae22d3d17958176c8f9b011e6f3a9801198",
+      "verdict": "PASS"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\D435i_实验方案与风险清单.md",
+      "sha256": "2aee722eda993d935259ca9d8b8248ddacf21dc48ee2e3d2a7f7acc431d4dcd3",
+      "verdict": "PASS"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\00_研究背景\\D435i_四问可行性回答.md",
+      "sha256": "618869f7e12795e1ce81ac304967d8d923a0a028d35f8e2a3d880582f0d87cd8",
+      "verdict": "PASS"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\Agent.md",
+      "sha256": "f2a06fe556e8923a116c42f52d1b2d64f9aebcaf863668255bb61cb9e638e2a7",
+      "verdict": "PASS"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\历史归档\\RealSense_D450i_腕关节康复人体运动状态感知测试任务书.md",
+      "sha256": "a8dc115586647827b446d905d72ef015ac660ff7bfdb0c248b161a9f779d2ff5",
+      "verdict": "PASS"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\历史归档\\D435i_四问可行性回答.md",
+      "sha256": "d6ab8a74f11e8b4cf682aa8df9e11c001bf7f56c262cfb4aae6c06e957382b4d",
+      "verdict": "PASS"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_四问任务包\\历史归档\\D435i_实验方案与风险清单.md",
+      "sha256": "65e7961c3955302394e984298eef7b6e65ab1d721344a60474954cb6e304ba9f",
+      "verdict": "PASS"
+    }
+  ],
+  "postprocessing_script_hashes": {
+    "finalize_review.py": "8852153411a658459ec8bd856e971449da9acc005083fd4551200de52de1de46",
+    "review_four_packages.py": "1133d062917e1fe92216963f48fe706f81b7d7989bae0cb3d13642871265b841",
+    "test_review.py": "8c65b16cafeeeebfe965fd0c6e80cada932be2367d4331035f13a52d6982d1aa",
+    "verify_review.py": "441cf9c03ad8dbe2f75cd4abaae6d7529f201b5b420f021d62c4c9c0f66b243b"
+  }
+}

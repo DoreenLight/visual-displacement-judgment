@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>实验2：腕部运动轨迹重构与腕肘肩代偿三维分析 (Three.js 3D Visualizer)</title>
+  <style>
+    :root {
+      --bg-dark: #0a0e17;
+      --panel-bg: rgba(13, 20, 36, 0.88);
+      --panel-border: rgba(56, 189, 248, 0.22);
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --accent-blue: #3b82f6;
+      --accent-purple: #a855f7;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    #canvas-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    /* Top Navigation Header */
+    header {
+      position: absolute;
+      top: 16px;
+      left: 20px;
+      right: 20px;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    .title-box {
+      pointer-events: auto;
+      background: var(--panel-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--panel-border);
+      border-radius: 12px;
+      padding: 12px 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    .title-box h1 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #ffffff, var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .title-box p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .stats-pills {
+      display: flex;
+      gap: 10px;
+      pointer-events: auto;
+    }
+
+    .pill {
+      background: var(--panel-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--panel-border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill .val {
+      font-weight: 700;
+      color: var(--accent-cyan);
+    }
+
+    .pill.warning .val {
+      color: var(--accent-amber);
+    }
+
+    /* Left Telemetry HUD */
+    #telemetry-panel {
+      position: absolute;
+      top: 90px;
+      left: 20px;
+      width: 330px;
+      z-index: 10;
+      background: var(--panel-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--panel-border);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 8px;
+    }
+
+    .panel-title {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--accent-cyan);
+    }
+
+    .phase-badge {
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      transition: all 0.3s;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .metric-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 8px 10px;
+    }
+
+    .metric-label {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .metric-value {
+      font-size: 15px;
+      font-weight: 700;
+      font-family: "SF Mono", Monaco, monospace;
+      margin-top: 2px;
+      color: #fff;
+    }
+
+    .metric-unit {
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-left: 2px;
+    }
+
+    /* Compensation Section */
+    .comp-box {
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+
+    .comp-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent-amber);
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .gauge-bar-bg {
+      width: 100%;
+      height: 6px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 3px;
+      overflow: hidden;
+      margin: 4px 0 6px 0;
+    }
+
+    .gauge-bar-fill {
+      height: 100%;
+      width: 0%;
+      transition: width 0.08s ease;
+    }
+
+    /* Right Container: PIP Video + Real-time Chart */
+    #right-panel {
+      position: absolute;
+      top: 90px;
+      right: 20px;
+      width: 320px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .video-card {
+      background: var(--panel-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--panel-border);
+      border-radius: 14px;
+      padding: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .video-card video {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #000;
+      display: block;
+    }
+
+    .chart-card {
+      background: var(--panel-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--panel-border);
+      border-radius: 14px;
+      padding: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    #sparkline-canvas {
+      width: 100%;
+      height: 120px;
+      border-radius: 6px;
+      display: block;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    /* Bottom Control Deck */
+    #control-deck {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      z-index: 10;
+      background: var(--panel-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--panel-border);
+      border-radius: 16px;
+      padding: 12px 24px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .scrubber-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .time-display {
+      font-family: "SF Mono", Monaco, monospace;
+      font-size: 13px;
+      font-weight: 600;
+      min-width: 95px;
+      color: var(--accent-cyan);
+    }
+
+    .slider-track {
+      flex: 1;
+      position: relative;
+      height: 8px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .slider-progress {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+      border-radius: 4px;
+      pointer-events: none;
+    }
+
+    .slider-thumb {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      width: 16px;
+      height: 16px;
+      background: #fff;
+      box-shadow: 0 0 10px var(--accent-cyan);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .actions-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    button {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--text-main);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    button:hover {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: var(--accent-cyan);
+      color: #fff;
+    }
+
+    button.primary {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+      border-color: transparent;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    button.primary:hover {
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    }
+
+    button.active {
+      background: rgba(56, 189, 248, 0.25);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    /* Modal */
+    #model-modal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.95);
+      width: 700px;
+      max-height: 85vh;
+      overflow-y: auto;
+      background: #0f172a;
+      border: 1px solid var(--panel-border);
+      border-radius: 16px;
+      padding: 24px;
+      z-index: 100;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #model-modal.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .modal-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      z-index: 99;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .modal-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .formula-box {
+      background: rgba(0,0,0,0.4);
+      border-left: 3px solid var(--accent-amber);
+      padding: 10px 14px;
+      font-family: "SF Mono", Monaco, "Courier New", monospace;
+      font-size: 12px;
+      color: #fcd34d;
+      margin: 10px 0;
+      border-radius: 0 8px 8px 0;
+      line-height: 1.6;
+    }
+
+    #waypoint-tooltip {
+      position: absolute;
+      z-index: 50;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid var(--accent-cyan);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12px;
+      pointer-events: none;
+      display: none;
+      transform: translate(-50%, -120%);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="canvas-container"></div>
+  <div id="waypoint-tooltip"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="title-box">
+      <h1>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+          <path d="M2 12h20"></path>
+        </svg>
+        实验2：腕部运动轨迹重构与腕-肘-肩代偿三维分析
+      </h1>
+      <p>视频来源: 实验2-腕肘肩代偿判断-视频1-腕.mp4 | 追踪模型: MediaPipe Hands (100%) + Pose (100%) 双网络时空融合</p>
+    </div>
+
+    <div class="stats-pills">
+      <div class="pill">
+        <span>腕部包络:</span>
+        <span class="val">68 × 89 × 60 mm</span>
+      </div>
+      <div class="pill warning">
+        <span>肘部联动相关度:</span>
+        <span class="val">r = 0.666 (显著代偿)</span>
+      </div>
+      <div class="pill">
+        <span>肘角变幅:</span>
+        <span class="val">19.0° (144°~163°)</span>
+      </div>
+      <button onclick="location.href='../index.html'" style="padding: 6px 14px; border-radius: 20px; background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2);">
+        🏠 返回总览
+      </button>
+      <button onclick="toggleModal(true)" style="padding: 6px 14px; border-radius: 20px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        代偿判定力学报告
+      </button>
+    </div>
+  </header>
+
+  <!-- Left Telemetry Panel -->
+  <div id="telemetry-panel">
+    <div class="panel-header">
+      <span class="panel-title">动力学与代偿监测 (Compensation)</span>
+      <span id="motion-badge" class="phase-badge">向上扬起 (Flexion)</span>
+    </div>
+
+    <!-- Wrist Coordinates -->
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="metric-label">腕部 X (横向左右)</div>
+        <div class="metric-value"><span id="val-x">0.0</span><span class="metric-unit">mm</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">腕部 Y (垂直上下)</div>
+        <div class="metric-value"><span id="val-y">0.0</span><span class="metric-unit">mm</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">腕部 Z (前后景深)</div>
+        <div class="metric-value"><span id="val-z">0.0</span><span class="metric-unit">mm</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">腕关节偏摆角度</div>
+        <div class="metric-value" style="color:var(--accent-cyan);"><span id="val-wrist-angle">0.0</span>°</div>
+      </div>
+    </div>
+
+    <!-- Compensation Section -->
+    <div class="comp-box">
+      <div class="comp-title">
+        <span>⚠️ 肘关节代偿率 (Elbow Comp.)</span>
+        <span id="val-comp-elbow-pct" style="color:var(--accent-amber);">58.4%</span>
+      </div>
+      <div class="gauge-bar-bg">
+        <div id="comp-elbow-bar" class="gauge-bar-fill" style="background: linear-gradient(90deg, #10b981, #f59e0b, #ef4444);"></div>
+      </div>
+      <div style="display:flex; justify-content:space-between; font-size:10px; color:var(--text-muted);">
+        <span>肘部瞬时位移: <strong id="val-disp-elbow" style="color:#fff;">0.0</strong> mm</span>
+        <span>肘屈伸角: <strong id="val-elbow-angle" style="color:var(--accent-amber);">0.0°</strong></span>
+      </div>
+    </div>
+
+    <div class="comp-box" style="background: rgba(59, 130, 246, 0.08); border-color: rgba(59, 130, 246, 0.25);">
+      <div class="comp-title" style="color:var(--accent-blue);">
+        <span>✅ 肩关节代偿率 (Shoulder Comp.)</span>
+        <span id="val-comp-shoulder-pct" style="color:var(--accent-blue);">18.2%</span>
+      </div>
+      <div class="gauge-bar-bg">
+        <div id="comp-shoulder-bar" class="gauge-bar-fill" style="background: #3b82f6;"></div>
+      </div>
+      <div style="display:flex; justify-content:space-between; font-size:10px; color:var(--text-muted);">
+        <span>肩部瞬时位移: <strong id="val-disp-shoulder" style="color:#fff;">0.0</strong> mm</span>
+        <span style="color:#10b981;">● 处于正常锁肩范围</span>
+      </div>
+    </div>
+
+    <!-- Speed / Accel Gauges -->
+    <div class="metric-card">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span class="metric-label">腕部合速度 (Speed)</span>
+        <span class="metric-value" style="font-size:13px;"><span id="val-speed">0.0</span><span class="metric-unit">mm/s</span></span>
+      </div>
+      <div class="gauge-bar-bg" style="margin-top:4px;">
+        <div id="speed-gauge" class="gauge-bar-fill" style="background: linear-gradient(90deg, var(--accent-cyan), var(--accent-rose));"></div>
+      </div>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--text-muted); border-top:1px solid rgba(255,255,255,0.06); padding-top:6px;">
+      <span>运动循环: <strong id="val-cycle" style="color:#fff;">Cycle 1</strong> / 9</span>
+      <span>判定: <strong style="color:var(--accent-amber);">显著肘关节代偿</strong></span>
+    </div>
+  </div>
+
+  <!-- Right Panel: Synced Video PIP + Curve Monitor -->
+  <div id="right-panel">
+    <div class="video-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+        <span class="panel-title">原视频同屏对齐 (Synchronized)</span>
+        <span style="font-size:10px; color:var(--accent-emerald); font-weight:600;">● 逐帧锁频</span>
+      </div>
+      <video id="sync-video" src="../07_资料库/实验2-腕肘肩代偿判断-视频1-腕_h264.mp4" muted playsinline></video>
+    </div>
+
+    <div class="chart-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+        <span class="panel-title">代偿位移对比示波器</span>
+        <span style="font-size:10px; color:var(--text-muted);">
+          <span style="color:#f43f5e;">■ 腕</span> 
+          <span style="color:#f59e0b;">■ 肘代偿</span> 
+          <span style="color:#3b82f6;">■ 肩</span>
+        </span>
+      </div>
+      <canvas id="sparkline-canvas" width="300" height="120"></canvas>
+    </div>
+  </div>
+
+  <!-- Bottom Control Deck -->
+  <div id="control-deck">
+    <div class="scrubber-row">
+      <span id="current-time" class="time-display">0.00s / 7.30s</span>
+      <div id="slider-track" class="slider-track">
+        <div id="slider-progress" class="slider-progress"></div>
+        <div id="slider-thumb" class="slider-thumb"></div>
+      </div>
+      <span id="current-frame" class="time-display" style="text-align:right; min-width:80px;">Frame 0</span>
+    </div>
+
+    <div class="actions-row">
+      <div class="btn-group">
+        <button id="btn-play" class="primary" onclick="togglePlay()">
+          <svg id="icon-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <span id="text-play">播放 (Space)</span>
+        </button>
+        <button onclick="stepFrame(-1)">⏮ 上一帧</button>
+        <button onclick="stepFrame(1)">下一帧 ⏭</button>
+        <button onclick="resetPlayback()">重置</button>
+        <div style="width:1px; height:18px; background:rgba(255,255,255,0.15); margin:0 4px;"></div>
+        <button class="speed-btn active" onclick="setSpeed(0.5, this)">0.5x</button>
+        <button class="speed-btn" onclick="setSpeed(1.0, this)">1.0x</button>
+        <button class="speed-btn" onclick="setSpeed(2.0, this)">2.0x</button>
+      </div>
+
+      <div class="btn-group">
+        <span style="font-size:12px; color:var(--text-muted);">视角:</span>
+        <button onclick="setCameraView('iso')">3D 自由透视</button>
+        <button onclick="setCameraView('front')">冠状面正视 (XZ横向代偿)</button>
+        <button onclick="setCameraView('side')">矢状面侧视 (YZ屈伸)</button>
+        <button onclick="setCameraView('top')">水平面俯视 (XY)</button>
+      </div>
+
+      <div class="btn-group">
+        <button id="btn-toggle-arm" class="active" onclick="toggleArm()">肩肘动力链</button>
+        <button id="btn-toggle-elbow-trail" class="active" onclick="toggleElbowTrail()">肘轨迹</button>
+        <button id="btn-toggle-hand" class="active" onclick="toggleHand()">手部骨骼</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Theoretical & Compensation Modal -->
+  <div id="modal-overlay" class="modal-overlay" onclick="toggleModal(false)"></div>
+  <div id="model-modal">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+      <h2 style="font-size:18px; color:var(--accent-cyan);">实验2：腕部运动轨迹建模与腕-肘-肩代偿评测机理</h2>
+      <button onclick="toggleModal(false)" style="padding:4px 8px; font-size:16px;">✕</button>
+    </div>
+
+    <h3 style="font-size:14px; margin-top:14px; color:#fff;">1. 实验目的与动作解构 (Clinical & Biomechanical Context)</h3>
+    <p style="font-size:13px; color:var(--text-muted); line-height:1.6; margin-top:6px;">
+      本实验旨在判断受试者在执行<strong>主动腕关节孤立运动（屈伸/环转/偏展）</strong>时，是否存在因腕部力量、活动度受限或协同控制异常而引发的<strong>肘关节或肩关节联动代偿现象 (Compensatory Movements)</strong>。
+    </p>
+
+    <h3 style="font-size:14px; margin-top:16px; color:#fff;">2. 代偿判定数学指标与定量结果 (Compensation Metrics)</h3>
+    <div class="formula-box">
+      • 关节瞬时位移: D_j(t) = || P_j(t) - P_j(0) ||, 其中 j ∈ {腕 Wrist, 肘 Elbow, 肩 Shoulder}<br>
+      • 代偿率系数: η_肘(t) = D_肘(t) / D_腕(t) , η_肩(t) = D_肩(t) / D_腕(t)<br>
+      • 空间轨迹皮尔逊联动相关系数: r_{x} = Corr(X_腕, X_肘), r_{y} = Corr(Y_腕, Y_肘)
+    </div>
+
+    <table style="width:100%; border-collapse:collapse; font-size:12px; margin-top:10px; color:var(--text-muted);">
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.1); text-align:left;">
+        <th style="padding:6px; color:#fff;">关节部位</th>
+        <th style="padding:6px; color:#fff;">运动跨度 (X / Y)</th>
+        <th style="padding:6px; color:#fff;">位移相关度 r</th>
+        <th style="padding:6px; color:#fff;">代偿判定结论</th>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+        <td style="padding:6px; color:#fff; font-weight:600;">腕关节 (目标关节)</td>
+        <td style="padding:6px; color:var(--accent-cyan);">67.56 / 89.21 mm</td>
+        <td style="padding:6px;">1.000 (基准)</td>
+        <td style="padding:6px; color:var(--accent-emerald);">主运动源，偏摆角 0°~45.7°</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.05); background: rgba(245, 158, 11, 0.05);">
+        <td style="padding:6px; color:var(--accent-amber); font-weight:600;">肘关节 (代偿检测)</td>
+        <td style="padding:6px; color:var(--accent-amber);">55.20 / 35.83 mm</td>
+        <td style="padding:6px; color:var(--accent-amber); font-weight:600;">r_x = 0.666, r_y = 0.639</td>
+        <td style="padding:6px; color:var(--accent-amber); font-weight:600;">⚠️ 显著存在肘关节外展/屈伸代偿 (代偿率 ~58%)</td>
+      </tr>
+      <tr>
+        <td style="padding:6px; color:var(--accent-blue); font-weight:600;">肩关节 (代偿检测)</td>
+        <td style="padding:6px; color:var(--accent-blue);">22.3 / 24.1 mm</td>
+        <td style="padding:6px;">r_x = 0.215</td>
+        <td style="padding:6px; color:var(--accent-emerald);">✅ 无明显代偿 (处于人体正常锁肩微动阈值内)</td>
+      </tr>
+    </table>
+
+    <h3 style="font-size:14px; margin-top:16px; color:#fff;">3. 结论与临床建议</h3>
+    <p style="font-size:13px; color:var(--text-muted); line-height:1.6; margin-top:6px;">
+      分析表明，受试者在尝试摆动或环转手腕时，未能在前臂保持静止的前提下独立控制腕骨动作，而是借由<strong>肘关节的横向外展及屈伸联动（达 55.2 mm 左右横向位移与 19° 肘屈角变化）</strong>共同带动前臂，表现出典型的<strong>肘关节中度至高度联动代偿</strong>；肩部则基本保持固定。在康复训练或动作矫正中，建议固定前臂近端以抑制肘部代偿。
+    </p>
+
+    <div style="margin-top:20px; display:flex; justify-content:flex-end; gap:10px;">
+      <button onclick="downloadJSON()">下载本实验原始数据 (JSON)</button>
+      <button class="primary" onclick="toggleModal(false)">返回三维视图</button>
+    </div>
+  </div>
+
+  <!-- Local Script Dependencies -->
+  <script src="../libs/three.min.js"></script>
+  <script src="../libs/OrbitControls.js"></script>
+  <script src="wrist_exp2_data.js"></script>
+
+  <script>
+    // --- Application State ---
+    let data = window.EXP2_TRAJECTORY_DATA;
+    let frames = data.frames;
+    let waypoints = data.waypoints;
+    let totalFrames = frames.length;
+    let duration = frames[totalFrames - 1].time;
+
+    let currentIndex = 0;
+    let isPlaying = false;
+    let playbackSpeed = 0.5;
+    let lastAnimTime = null;
+
+    let showArm = true;
+    let showElbowTrail = true;
+    let showHand = true;
+
+    // --- Three.js Scene Setup ---
+    const container = document.getElementById('canvas-container');
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x0a0e17);
+    scene.fog = new THREE.FogExp2(0x0a0e17, 0.0012);
+
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 3000);
+    camera.position.set(180, 140, 360);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    container.appendChild(renderer.domElement);
+
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.target.set(30, 40, -10);
+    controls.minDistance = 60;
+    controls.maxDistance = 1200;
+
+    // --- Lighting ---
+    const ambientLight = new THREE.AmbientLight(0xdbeafe, 0.7);
+    scene.add(ambientLight);
+
+    const mainLight = new THREE.DirectionalLight(0xffffff, 1.3);
+    mainLight.position.set(160, 380, 240);
+    mainLight.castShadow = true;
+    mainLight.shadow.mapSize.width = 2048;
+    mainLight.shadow.mapSize.height = 2048;
+    scene.add(mainLight);
+
+    const rimLight = new THREE.DirectionalLight(0x38bdf8, 0.5);
+    rimLight.position.set(-200, 100, -200);
+    scene.add(rimLight);
+
+    // Coordinate conversion:
+    // pos[0] (X): lateral -> Three.js X
+    // pos[1] (Y): vertical up -> Three.js Y
+    // pos[2] (Z): depth -> Three.js Z
+    function toThree(pos) {
+      return new THREE.Vector3(pos[0], pos[1], pos[2]);
+    }
+
+    // --- Floor Reference Grid ---
+    const groundGroup = new THREE.Group();
+    const gridHelper = new THREE.GridHelper(800, 40, 0x38bdf8, 0x1e293b);
+    gridHelper.position.y = -60;
+    groundGroup.add(gridHelper);
+
+    // Coordinate Axes
+    const axesGroup = new THREE.Group();
+    axesGroup.position.set(0, -60, 0);
+    axesGroup.add(new THREE.ArrowHelper(new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 0), 80, 0xef4444, 8, 4));
+    axesGroup.add(new THREE.ArrowHelper(new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, 0, 0), 80, 0x10b981, 8, 4));
+    axesGroup.add(new THREE.ArrowHelper(new THREE.Vector3(0, 0, 1), new THREE.Vector3(0, 0, 0), 80, 0x3b82f6, 8, 4));
+    groundGroup.add(axesGroup);
+    scene.add(groundGroup);
+
+    // --- 1. Wrist 3D Trajectory Tube (Red / Crimson Speed Gradient) ---
+    const wristPoints = frames.map(f => toThree(f.pos));
+    const wristSpline = new THREE.CatmullRomCurve3(wristPoints);
+    wristSpline.curveType = 'centripetal';
+
+    const tubeRadius = 2.4;
+    const tubeSegments = 500;
+    const wristTubeGeo = new THREE.TubeGeometry(wristSpline, tubeSegments, tubeRadius, 12, false);
+
+    // Speed-based vertex coloring
+    const colors = [];
+    const maxSpeed = data.model_summary.speed_stats_mm_s.max_speed;
+    const radialSegs = 12;
+
+    for (let i = 0; i <= tubeSegments; i++) {
+      const u = i / tubeSegments;
+      const fIdx = Math.min(Math.floor(u * (totalFrames - 1)), totalFrames - 1);
+      const spd = frames[fIdx].speed;
+      const normSpd = Math.min(spd / 400, 1.0);
+
+      const col = new THREE.Color();
+      col.lerpColors(new THREE.Color(0x38bdf8), new THREE.Color(0xf43f5e), normSpd);
+
+      for (let r = 0; r <= radialSegs; r++) {
+        colors.push(col.r, col.g, col.b);
+      }
+    }
+    wristTubeGeo.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+
+    const wristTubeMat = new THREE.MeshStandardMaterial({
+      vertexColors: true,
+      roughness: 0.25,
+      metalness: 0.4,
+      emissive: 0x220510,
+      emissiveIntensity: 0.4
+    });
+    const wristTubeMesh = new THREE.Mesh(wristTubeGeo, wristTubeMat);
+    scene.add(wristTubeMesh);
+
+    // Ground projection of wrist
+    const wristProjPoints = wristPoints.map(p => new THREE.Vector3(p.x, -59.5, p.z));
+    const wristProjGeo = new THREE.BufferGeometry().setFromPoints(wristProjPoints);
+    const wristProjMat = new THREE.LineBasicMaterial({ color: 0xf43f5e, transparent: true, opacity: 0.35 });
+    const wristProjLine = new THREE.Line(wristProjGeo, wristProjMat);
+    scene.add(wristProjLine);
+
+    // --- 2. Elbow Compensation Trajectory Tube (Amber / Green) ---
+    const elbowPoints = frames.map(f => toThree(f.elbow_pos));
+    const elbowSpline = new THREE.CatmullRomCurve3(elbowPoints);
+    elbowSpline.curveType = 'centripetal';
+
+    const elbowTubeGeo = new THREE.TubeGeometry(elbowSpline, 300, 1.6, 8, false);
+    const elbowTubeMat = new THREE.MeshStandardMaterial({
+      color: 0xf59e0b,
+      emissive: 0x78350f,
+      emissiveIntensity: 0.5,
+      roughness: 0.3
+    });
+    const elbowTubeMesh = new THREE.Mesh(elbowTubeGeo, elbowTubeMat);
+    scene.add(elbowTubeMesh);
+
+    // Ground projection of elbow
+    const elbowProjPoints = elbowPoints.map(p => new THREE.Vector3(p.x, -59.5, p.z));
+    const elbowProjGeo = new THREE.BufferGeometry().setFromPoints(elbowProjPoints);
+    const elbowProjMat = new THREE.LineBasicMaterial({ color: 0xf59e0b, transparent: true, opacity: 0.3 });
+    const elbowProjLine = new THREE.Line(elbowProjGeo, elbowProjMat);
+    scene.add(elbowProjLine);
+
+    // --- 3. Upper Limb Kinetic Chain (Shoulder -> Elbow -> Wrist) ---
+    const armChainGroup = new THREE.Group();
+
+    // Shoulder Joint
+    const shoulderGeo = new THREE.SphereGeometry(7, 24, 24);
+    const shoulderMat = new THREE.MeshStandardMaterial({
+      color: 0x3b82f6,
+      emissive: 0x1e3a8a,
+      emissiveIntensity: 0.6
+    });
+    const shoulderMesh = new THREE.Mesh(shoulderGeo, shoulderMat);
+    armChainGroup.add(shoulderMesh);
+
+    // Elbow Joint
+    const elbowJointGeo = new THREE.SphereGeometry(6, 24, 24);
+    const elbowJointMat = new THREE.MeshStandardMaterial({
+      color: 0xf59e0b,
+      emissive: 0x78350f,
+      emissiveIntensity: 0.7
+    });
+    const elbowJointMesh = new THREE.Mesh(elbowJointGeo, elbowJointMat);
+    armChainGroup.add(elbowJointMesh);
+
+    // Wrist Joint Head
+    const wristHeadGeo = new THREE.SphereGeometry(6, 24, 24);
+    const wristHeadMat = new THREE.MeshStandardMaterial({
+      color: 0xf43f5e,
+      emissive: 0x9f1239,
+      emissiveIntensity: 0.8
+    });
+    const wristHeadMesh = new THREE.Mesh(wristHeadGeo, wristHeadMat);
+    wristHeadMesh.add(new THREE.AxesHelper(25));
+    armChainGroup.add(wristHeadMesh);
+
+    // Upper Arm Bone (Cylinder)
+    const upperBoneGeo = new THREE.CylinderGeometry(5, 6, 1, 16);
+    upperBoneGeo.rotateX(Math.PI / 2);
+    const upperBoneMat = new THREE.MeshStandardMaterial({
+      color: 0x475569,
+      roughness: 0.5,
+      metalness: 0.2
+    });
+    const upperBoneMesh = new THREE.Mesh(upperBoneGeo, upperBoneMat);
+    armChainGroup.add(upperBoneMesh);
+
+    // Forearm Bone (Cylinder)
+    const forearmBoneGeo = new THREE.CylinderGeometry(4.5, 5, 1, 16);
+    forearmBoneGeo.rotateX(Math.PI / 2);
+    const forearmBoneMat = new THREE.MeshStandardMaterial({
+      color: 0x64748b,
+      roughness: 0.5,
+      metalness: 0.2
+    });
+    const forearmBoneMesh = new THREE.Mesh(forearmBoneGeo, forearmBoneMat);
+    armChainGroup.add(forearmBoneMesh);
+
+    // Hand Skeleton
+    const handGroup = new THREE.Group();
+    const handJointMeshes = [];
+    const jointGeo = new THREE.SphereGeometry(1.6, 12, 12);
+    const jointMat = new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xf43f5e, emissiveIntensity: 0.3 });
+    for (let i = 0; i < 21; i++) {
+      const jm = new THREE.Mesh(jointGeo, jointMat);
+      handGroup.add(jm);
+      handJointMeshes.push(jm);
+    }
+
+    const BONE_CONNECTIONS = [
+      [0, 1], [1, 2], [2, 3], [3, 4],
+      [0, 5], [5, 6], [6, 7], [7, 8],
+      [0, 9], [9, 10], [10, 11], [11, 12],
+      [0, 13], [13, 14], [14, 15], [15, 16],
+      [0, 17], [17, 18], [18, 19], [19, 20],
+      [5, 9], [9, 13], [13, 17]
+    ];
+    const boneCylGeo = new THREE.CylinderGeometry(0.9, 0.9, 1, 8);
+    boneCylGeo.rotateX(Math.PI / 2);
+    const boneMat = new THREE.MeshStandardMaterial({ color: 0xfca5a5, roughness: 0.4 });
+    const handBoneMeshes = [];
+    BONE_CONNECTIONS.forEach(() => {
+      const bm = new THREE.Mesh(boneCylGeo, boneMat);
+      handGroup.add(bm);
+      handBoneMeshes.push(bm);
+    });
+
+    armChainGroup.add(handGroup);
+    scene.add(armChainGroup);
+
+    // Velocity Vector
+    const velArrow = new THREE.ArrowHelper(new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 0), 20, 0x38bdf8, 6, 3);
+    scene.add(velArrow);
+
+    // --- UI Elements ---
+    const video = document.getElementById('sync-video');
+    const timeDisplay = document.getElementById('current-time');
+    const frameDisplay = document.getElementById('current-frame');
+    const sliderProgress = document.getElementById('slider-progress');
+    const sliderThumb = document.getElementById('slider-thumb');
+    const sliderTrack = document.getElementById('slider-track');
+    const btnPlay = document.getElementById('btn-play');
+    const textPlay = document.getElementById('text-play');
+    const iconPlay = document.getElementById('icon-play');
+
+    const valX = document.getElementById('val-x');
+    const valY = document.getElementById('val-y');
+    const valZ = document.getElementById('val-z');
+    const valWristAngle = document.getElementById('val-wrist-angle');
+    const valCompElbowPct = document.getElementById('val-comp-elbow-pct');
+    const compElbowBar = document.getElementById('comp-elbow-bar');
+    const valDispElbow = document.getElementById('val-disp-elbow');
+    const valElbowAngle = document.getElementById('val-elbow-angle');
+    const valCompShoulderPct = document.getElementById('val-comp-shoulder-pct');
+    const compShoulderBar = document.getElementById('comp-shoulder-bar');
+    const valDispShoulder = document.getElementById('val-disp-shoulder');
+    const valSpeed = document.getElementById('val-speed');
+    const speedGauge = document.getElementById('speed-gauge');
+    const valCycle = document.getElementById('val-cycle');
+    const motionBadge = document.getElementById('motion-badge');
+
+    const sparkCanvas = document.getElementById('sparkline-canvas');
+    const sparkCtx = sparkCanvas.getContext('2d');
+
+    // Helper: update a cylinder connecting two 3D points
+    function setCylinderBetween(mesh, p1, p2) {
+      const mid = new THREE.Vector3().addVectors(p1, p2).multiplyScalar(0.5);
+      const dir = new THREE.Vector3().subVectors(p2, p1);
+      const len = dir.length();
+      mesh.position.copy(mid);
+      mesh.scale.set(1, 1, Math.max(len, 0.01));
+      mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), dir.normalize());
+    }
+
+    // --- Update Frame ---
+    function updateToFrame(idx, syncVideo = true) {
+      if (idx < 0) idx = 0;
+      if (idx >= totalFrames) idx = totalFrames - 1;
+      currentIndex = idx;
+      const f = frames[idx];
+
+      const pW = toThree(f.pos);
+      const pE = toThree(f.elbow_pos);
+      const pS = toThree(f.shoulder_pos);
+
+      // Update Kinetic Chain Joints
+      shoulderMesh.position.copy(pS);
+      elbowJointMesh.position.copy(pE);
+      wristHeadMesh.position.copy(pW);
+
+      // Update Upper Arm & Forearm Bones
+      setCylinderBetween(upperBoneMesh, pS, pE);
+      setCylinderBetween(forearmBoneMesh, pE, pW);
+
+      // Update Hand Skeleton
+      if (f.hand_landmarks_3d && f.hand_landmarks_3d.length === 21) {
+        handGroup.visible = showHand;
+        const lms = f.hand_landmarks_3d;
+        const wJoints = [];
+        for (let j = 0; j < 21; j++) {
+          const pt = lms[j];
+          const jp = new THREE.Vector3(pW.x + pt[0], pW.y + pt[1], pW.z + pt[2]);
+          handJointMeshes[j].position.copy(jp);
+          wJoints.push(jp);
+        }
+        BONE_CONNECTIONS.forEach((conn, bIdx) => {
+          setCylinderBetween(handBoneMeshes[bIdx], wJoints[conn[0]], wJoints[conn[1]]);
+        });
+      } else {
+        handGroup.visible = false;
+      }
+
+      // Update Velocity Vector
+      const velThree = new THREE.Vector3(f.vel[0], f.vel[1], f.vel[2]);
+      const spd = velThree.length();
+      if (spd > 10) {
+        velArrow.visible = true;
+        velArrow.position.copy(pW);
+        velArrow.setDirection(velThree.clone().normalize());
+        velArrow.setLength(Math.min(spd * 0.15, 60), 6, 3);
+      } else {
+        velArrow.visible = false;
+      }
+
+      // Synchronize Video
+      if (syncVideo && video && Math.abs(video.currentTime - f.time) > 0.05) {
+        video.currentTime = f.time;
+      }
+
+      // UI Scrubber & Metrics
+      const pct = (idx / (totalFrames - 1)) * 100;
+      sliderProgress.style.width = pct + '%';
+      sliderThumb.style.left = pct + '%';
+      timeDisplay.textContent = `${f.time.toFixed(2)}s / ${duration.toFixed(2)}s`;
+      frameDisplay.textContent = `Frame ${f.frame}`;
+
+      valX.textContent = (f.pos[0] >= 0 ? '+' : '') + f.pos[0].toFixed(1);
+      valY.textContent = (f.pos[1] >= 0 ? '+' : '') + f.pos[1].toFixed(1);
+      valZ.textContent = (f.pos[2] >= 0 ? '+' : '') + f.pos[2].toFixed(1);
+      valWristAngle.textContent = f.wrist_deflection.toFixed(1);
+
+      const elbowPct = Math.round(f.comp_ratio_elbow * 100);
+      valCompElbowPct.textContent = elbowPct + '%';
+      compElbowBar.style.width = Math.min(elbowPct, 100) + '%';
+      valDispElbow.textContent = f.disp_elbow.toFixed(1);
+      valElbowAngle.textContent = f.elbow_angle.toFixed(1) + '°';
+
+      const shoulderPct = Math.round(f.comp_ratio_shoulder * 100);
+      valCompShoulderPct.textContent = shoulderPct + '%';
+      compShoulderBar.style.width = Math.min(shoulderPct * 2, 100) + '%';
+      valDispShoulder.textContent = f.disp_shoulder.toFixed(1);
+
+      valSpeed.textContent = f.speed.toFixed(1);
+      speedGauge.style.width = Math.min((f.speed / 450) * 100, 100) + '%';
+      valCycle.textContent = `Cycle ${f.cycle}`;
+
+      motionBadge.textContent = f.motion_state;
+
+      drawSparkline(idx);
+    }
+
+    // --- Sparkline Waveform (Wrist Disp vs Elbow Disp) ---
+    function drawSparkline(activeIdx) {
+      const w = sparkCanvas.width;
+      const h = sparkCanvas.height;
+      sparkCtx.clearRect(0, 0, w, h);
+
+      // Max value for scaling
+      const maxVal = 100;
+
+      function plotCurve(getter, color, width) {
+        sparkCtx.strokeStyle = color;
+        sparkCtx.lineWidth = width;
+        sparkCtx.beginPath();
+        for (let i = 0; i < totalFrames; i++) {
+          const px = (i / (totalFrames - 1)) * w;
+          const py = h - (getter(frames[i]) / maxVal) * (h - 10) - 5;
+          if (i === 0) sparkCtx.moveTo(px, py);
+          else sparkCtx.lineTo(px, py);
+        }
+        sparkCtx.stroke();
+      }
+
+      plotCurve(f => f.disp_wrist, '#f43f5e', 2.0);    // Wrist (Red)
+      plotCurve(f => f.disp_elbow, '#f59e0b', 2.0);    // Elbow (Amber)
+      plotCurve(f => f.disp_shoulder, '#3b82f6', 1.5); // Shoulder (Blue)
+
+      // Active Playhead
+      const curX = (activeIdx / (totalFrames - 1)) * w;
+      sparkCtx.strokeStyle = '#ffffff';
+      sparkCtx.lineWidth = 2;
+      sparkCtx.beginPath();
+      sparkCtx.moveTo(curX, 0);
+      sparkCtx.lineTo(curX, h);
+      sparkCtx.stroke();
+    }
+
+    // --- Controls ---
+    function togglePlay() {
+      isPlaying = !isPlaying;
+      if (isPlaying) {
+        textPlay.textContent = '暂停 (Space)';
+        iconPlay.innerHTML = '<rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect>';
+        btnPlay.classList.add('active');
+        lastAnimTime = performance.now();
+        if (video) video.play().catch(() => {});
+      } else {
+        textPlay.textContent = '播放 (Space)';
+        iconPlay.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"></polygon>';
+        btnPlay.classList.remove('active');
+        if (video) video.pause();
+      }
+    }
+
+    function setSpeed(spd, btn) {
+      playbackSpeed = spd;
+      document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (video) video.playbackRate = spd;
+    }
+
+    function stepFrame(step) {
+      if (isPlaying) togglePlay();
+      updateToFrame(currentIndex + step);
+    }
+
+    function resetPlayback() {
+      if (isPlaying) togglePlay();
+      updateToFrame(0);
+    }
+
+    let isDragging = false;
+    function handleScrub(e) {
+      const rect = sliderTrack.getBoundingClientRect();
+      const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+      const pct = x / rect.width;
+      const targetIdx = Math.round(pct * (totalFrames - 1));
+      updateToFrame(targetIdx);
+    }
+
+    sliderTrack.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      handleScrub(e);
+    });
+    window.addEventListener('mousemove', (e) => {
+      if (isDragging) handleScrub(e);
+    });
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Space') {
+        e.preventDefault();
+        togglePlay();
+      } else if (e.code === 'ArrowRight') {
+        stepFrame(1);
+      } else if (e.code === 'ArrowLeft') {
+        stepFrame(-1);
+      }
+    });
+
+    // Camera Views
+    function setCameraView(view) {
+      const center = new THREE.Vector3(30, 40, -10);
+      controls.target.copy(center);
+
+      if (view === 'iso') {
+        camera.position.set(180, 140, 360);
+      } else if (view === 'front') {
+        camera.position.set(30, 40, 480); // Coronal Plane (XZ)
+      } else if (view === 'side') {
+        camera.position.set(480, 40, -10); // Sagittal Plane (YZ)
+      } else if (view === 'top') {
+        camera.position.set(30, 480, -9.9); // Transverse Plane (XY)
+      }
+      controls.update();
+    }
+
+    function toggleArm() {
+      showArm = !showArm;
+      upperBoneMesh.visible = showArm;
+      forearmBoneMesh.visible = showArm;
+      shoulderMesh.visible = showArm;
+      document.getElementById('btn-toggle-arm').classList.toggle('active', showArm);
+    }
+
+    function toggleElbowTrail() {
+      showElbowTrail = !showElbowTrail;
+      elbowTubeMesh.visible = showElbowTrail;
+      elbowProjLine.visible = showElbowTrail;
+      document.getElementById('btn-toggle-elbow-trail').classList.toggle('active', showElbowTrail);
+    }
+
+    function toggleHand() {
+      showHand = !showHand;
+      handGroup.visible = showHand;
+      document.getElementById('btn-toggle-hand').classList.toggle('active', showHand);
+    }
+
+    function toggleModal(show) {
+      document.getElementById('model-modal').classList.toggle('show', show);
+      document.getElementById('modal-overlay').classList.toggle('show', show);
+    }
+
+    function downloadJSON() {
+      const blob = new Blob([JSON.stringify(window.EXP2_TRAJECTORY_DATA, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'wrist_exp2_compensation_data.json';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    // Animation Loop
+    let accumTime = 0;
+    function animate(now) {
+      requestAnimationFrame(animate);
+
+      if (isPlaying && lastAnimTime !== null) {
+        const delta = (now - lastAnimTime) / 1000;
+        accumTime += delta * playbackSpeed;
+        const frameInterval = 1.0 / data.model_summary.sampling_fps;
+
+        if (accumTime >= frameInterval) {
+          const advanceFrames = Math.floor(accumTime / frameInterval);
+          accumTime -= advanceFrames * frameInterval;
+          let nextIdx = currentIndex + advanceFrames;
+          if (nextIdx >= totalFrames) {
+            nextIdx = 0;
+          }
+          updateToFrame(nextIdx);
+        }
+      }
+      lastAnimTime = now;
+
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    updateToFrame(0);
+    animate(performance.now());
+  </script>
+</body>
+</html>

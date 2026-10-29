@@ -1,0 +1,563 @@
+[
+  {
+    "run_id": "eight_FE_20261001_133658_73162b96",
+    "frame_id": 35607,
+    "t_s": 2.0038606000016443,
+    "selection_reason": "depth_edge_spread",
+    "prediction": {
+      "body_valid": true,
+      "estimate_valid": true,
+      "estimate_invalid_reason": "",
+      "theta_fe_est_deg": -53.49,
+      "theta_ru_est_deg": 28.21,
+      "compensation_valid": true,
+      "compensation_state": "normal",
+      "shoulder_alert": false,
+      "elbow_alert": false,
+      "shoulder_abs_mm": 9.88,
+      "elbow_deg": 1.18,
+      "upper_arm_swing_deg": 2.33,
+      "reps": 0,
+      "paused": false,
+      "direction": "clockwise"
+    },
+    "measurements": {
+      "l_shoulder": {
+        "point_m": [
+          -0.06562773883342743,
+          -0.08225344866514206,
+          1.3140000104904175
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": 0.9976150989532471,
+        "visibility": 0.9989140033721924,
+        "u_px": 401.65,
+        "v_px": 221.26,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.028600001358427107,
+        "patch_median_m": 1.314000062411651
+      },
+      "r_shoulder": {
+        "point_m": [
+          -0.2992788851261139,
+          -0.045381754636764526,
+          1.0600000619888306
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": 0.9838498830795288,
+        "visibility": 0.9988460540771484,
+        "u_px": 260.06,
+        "v_px": 233.76,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.01500000071246177,
+        "patch_median_m": 1.0600000503472984
+      },
+      "r_elbow": {
+        "point_m": [
+          -0.13408799469470978,
+          0.11720478534698486,
+          0.9110000729560852
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": 0.9203795790672302,
+        "visibility": 0.98512202501297,
+        "u_px": 342.35,
+        "v_px": 337.3,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.004000000189989805,
+        "patch_median_m": 0.9110000432701781
+      },
+      "r_wrist": {
+        "point_m": [
+          0.03143341466784477,
+          -0.06951577216386795,
+          0.8790000677108765
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": 0.9429594874382019,
+        "visibility": 0.9481204748153687,
+        "u_px": 453.37,
+        "v_px": 211.27,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.00800000037997961,
+        "patch_median_m": 0.8790000417502597
+      },
+      "r_index": {
+        "point_m": null,
+        "measurement_valid": false,
+        "depth_valid": false,
+        "keypoint_score": 0.901626467704773,
+        "visibility": 0.901626467704773,
+        "u_px": 481.74,
+        "v_px": 167.4,
+        "invalid_reason": "depth_edge_spread",
+        "patch_coverage": 0.8571428571428571,
+        "patch_spread_m": 1.276300060620997,
+        "patch_median_m": 0.878500041726511
+      },
+      "r_pinky": {
+        "point_m": null,
+        "measurement_valid": false,
+        "depth_valid": false,
+        "keypoint_score": 0.9045970439910889,
+        "visibility": 0.9045970439910889,
+        "u_px": 490.99,
+        "v_px": 187.35,
+        "invalid_reason": "depth_coverage_low",
+        "patch_coverage": 0.5714285714285714,
+        "patch_spread_m": 1.1550000548595563,
+        "patch_median_m": 2.014000095659867
+      },
+      "hand_wrist": {
+        "point_m": [
+          0.05124525725841522,
+          -0.07749935984611511,
+          0.8710000514984131
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": null,
+        "visibility": null,
+        "u_px": 467.33,
+        "v_px": 205.4,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.0020000000949949026,
+        "patch_median_m": 0.8710000413702801
+      },
+      "hand_index_mcp": {
+        "point_m": [
+          0.01558530144393444,
+          -0.15444496273994446,
+          0.8840000629425049
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": null,
+        "visibility": null,
+        "u_px": 442.25,
+        "v_px": 154.0,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.009200000436976552,
+        "patch_median_m": 0.884000041987747
+      },
+      "hand_middle_mcp": {
+        "point_m": [
+          0.01698445715010166,
+          -0.15537334978580475,
+          0.8810000419616699
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": null,
+        "visibility": null,
+        "u_px": 443.16,
+        "v_px": 152.87,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.009200000436976552,
+        "patch_median_m": 0.8810000418452546
+      },
+      "hand_pinky_mcp": {
+        "point_m": [
+          0.0377531424164772,
+          -0.14565861225128174,
+          0.8580000400543213
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": null,
+        "visibility": null,
+        "u_px": 458.44,
+        "v_px": 156.66,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.0050000002374872565,
+        "patch_median_m": 0.8580000407528132
+      }
+    }
+  },
+  {
+    "run_id": "eight_ELBOW_20261001_135236_ac256f5f",
+    "frame_id": 63753,
+    "t_s": 2.6360249999997905,
+    "selection_reason": "angle_out_of_observable_range",
+    "prediction": {
+      "body_valid": true,
+      "estimate_valid": false,
+      "estimate_invalid_reason": "angle_out_of_observable_range",
+      "theta_fe_est_deg": null,
+      "theta_ru_est_deg": null,
+      "compensation_valid": true,
+      "compensation_state": "combined",
+      "shoulder_alert": true,
+      "elbow_alert": true,
+      "shoulder_abs_mm": 31.88,
+      "elbow_deg": 32.61,
+      "upper_arm_swing_deg": 41.34,
+      "reps": 0,
+      "paused": false,
+      "direction": "clockwise"
+    },
+    "measurements": {
+      "l_shoulder": {
+        "point_m": [
+          0.26993700861930847,
+          -0.08274133503437042,
+          1.225000023841858
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": 0.9997027516365051,
+        "visibility": 0.9997027516365051,
+        "u_px": 565.64,
+        "v_px": 218.21,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.00800000037997961,
+        "patch_median_m": 1.2250000581843778
+      },
+      "r_shoulder": {
+        "point_m": [
+          -0.07638785243034363,
+          -0.09768789261579514,
+          1.2100000381469727
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": 0.9968811273574829,
+        "visibility": 0.9985336065292358,
+        "u_px": 393.77,
+        "v_px": 210.26,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.0020000000949949026,
+        "patch_median_m": 1.210000057471916
+      },
+      "r_elbow": {
+        "point_m": [
+          -0.2400835156440735,
+          0.06359336525201797,
+          1.1010000705718994
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": 0.9953415393829346,
+        "visibility": 0.995901346206665,
+        "u_px": 299.65,
+        "v_px": 294.74,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.006200000294484198,
+        "patch_median_m": 1.1010000522946939
+      },
+      "r_wrist": {
+        "point_m": [
+          -0.28370407223701477,
+          0.10459064692258835,
+          0.7640000581741333
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": 0.9734154343605042,
+        "visibility": 0.992217481136322,
+        "u_px": 206.15,
+        "v_px": 342.15,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.009000000427477062,
+        "patch_median_m": 0.7640000362880528
+      },
+      "r_index": {
+        "point_m": [
+          -0.3155171275138855,
+          0.11166590452194214,
+          0.7440000176429749
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": 0.9401461482048035,
+        "visibility": 0.9763622879981995,
+        "u_px": 174.56,
+        "v_px": 350.48,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.007200000341981649,
+        "patch_median_m": 0.7440000353381038
+      },
+      "r_pinky": {
+        "point_m": [
+          -0.3208528161048889,
+          0.11304431408643723,
+          0.7450000643730164
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": 0.9307812452316284,
+        "visibility": 0.9722015857696533,
+        "u_px": 170.52,
+        "v_px": 351.86,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.0082000003894791,
+        "patch_median_m": 0.7450000353856012
+      },
+      "hand_wrist": {
+        "point_m": [
+          -0.279117614030838,
+          0.12576480209827423,
+          0.7550000548362732
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": null,
+        "visibility": null,
+        "u_px": 207.45,
+        "v_px": 360.72,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.011200000531971455,
+        "patch_median_m": 0.7550000358605757
+      },
+      "hand_index_mcp": {
+        "point_m": [
+          -0.34910115599632263,
+          0.10098545998334885,
+          0.7750000357627869
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": null,
+        "visibility": null,
+        "u_px": 158.33,
+        "v_px": 338.87,
+        "invalid_reason": "",
+        "patch_coverage": 0.7959183673469388,
+        "patch_spread_m": 0.0082000003894791,
+        "patch_median_m": 0.7750000368105248
+      },
+      "hand_middle_mcp": {
+        "point_m": [
+          -0.3573401868343353,
+          0.11780048161745071,
+          0.7680000066757202
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": null,
+        "visibility": null,
+        "u_px": 149.84,
+        "v_px": 352.2,
+        "invalid_reason": "",
+        "patch_coverage": 0.7959183673469388,
+        "patch_spread_m": 0.007000000332482159,
+        "patch_median_m": 0.7680000364780426
+      },
+      "hand_pinky_mcp": {
+        "point_m": [
+          -0.34493786096572876,
+          0.1463424563407898,
+          0.7520000338554382
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": null,
+        "visibility": null,
+        "u_px": 153.06,
+        "v_px": 377.96,
+        "invalid_reason": "",
+        "patch_coverage": 0.9183673469387755,
+        "patch_spread_m": 0.00800000037997961,
+        "patch_median_m": 0.7520000357180834
+      }
+    }
+  },
+  {
+    "run_id": "eight_COMBINED_20261001_135607_5bb6b817",
+    "frame_id": 70063,
+    "t_s": 2.634780199994566,
+    "selection_reason": "body_geometry_or_keypoints_invalid",
+    "prediction": {
+      "body_valid": false,
+      "estimate_valid": false,
+      "estimate_invalid_reason": "body_geometry_or_keypoints_invalid",
+      "theta_fe_est_deg": null,
+      "theta_ru_est_deg": null,
+      "compensation_valid": false,
+      "compensation_state": "unknown",
+      "shoulder_alert": false,
+      "elbow_alert": false,
+      "shoulder_abs_mm": null,
+      "elbow_deg": null,
+      "upper_arm_swing_deg": null,
+      "reps": 0,
+      "paused": false,
+      "direction": "clockwise"
+    },
+    "measurements": {
+      "l_shoulder": {
+        "point_m": [
+          0.24102112650871277,
+          -0.0913390964269638,
+          1.2320001125335693
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": 0.9962587356567383,
+        "visibility": 0.9996548891067505,
+        "u_px": 550.24,
+        "v_px": 214.55,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.004000000189989805,
+        "patch_median_m": 1.23200005851686
+      },
+      "r_shoulder": {
+        "point_m": [
+          -0.11202279478311539,
+          -0.08503780514001846,
+          1.2290000915527344
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": 0.9686106443405151,
+        "visibility": 0.9992799162864685,
+        "u_px": 376.21,
+        "v_px": 217.4,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.007000000332482159,
+        "patch_median_m": 1.2290000583743677
+      },
+      "r_elbow": {
+        "point_m": [
+          -0.18000386655330658,
+          0.06079481914639473,
+          0.784000039100647
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": 0.9031994938850403,
+        "visibility": 0.9944756031036377,
+        "u_px": 292.77,
+        "v_px": 306.8,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.003000000142492354,
+        "patch_median_m": 0.7840000372380018
+      },
+      "r_wrist": {
+        "point_m": [
+          -0.1649380922317505,
+          0.0886773020029068,
+          0.7680000066757202
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": 0.8065671920776367,
+        "visibility": 0.991048276424408,
+        "u_px": 301.48,
+        "v_px": 329.66,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.0,
+        "patch_median_m": 0.7680000364780426
+      },
+      "r_index": {
+        "point_m": [
+          -0.1462205946445465,
+          0.10977363586425781,
+          0.7830000519752502
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": 0.7790775895118713,
+        "visibility": 0.9824258089065552,
+        "u_px": 318.8,
+        "v_px": 344.53,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.003200000151991844,
+        "patch_median_m": 0.7830000371905044
+      },
+      "r_pinky": {
+        "point_m": [
+          -0.3345298767089844,
+          0.26768746972084045,
+          1.6070001125335693
+        ],
+        "measurement_valid": true,
+        "depth_valid": true,
+        "keypoint_score": 0.6788100004196167,
+        "visibility": 0.9807631969451904,
+        "u_px": 305.86,
+        "v_px": 360.37,
+        "invalid_reason": "",
+        "patch_coverage": 1.0,
+        "patch_spread_m": 0.011800000560469925,
+        "patch_median_m": 1.6070000763284042
+      },
+      "hand_wrist": {
+        "point_m": null,
+        "measurement_valid": false,
+        "depth_valid": false,
+        "keypoint_score": null,
+        "visibility": null,
+        "u_px": null,
+        "v_px": null,
+        "invalid_reason": "right_hand_association_missing",
+        "patch_coverage": null,
+        "patch_spread_m": null,
+        "patch_median_m": null
+      },
+      "hand_index_mcp": {
+        "point_m": null,
+        "measurement_valid": false,
+        "depth_valid": false,
+        "keypoint_score": null,
+        "visibility": null,
+        "u_px": null,
+        "v_px": null,
+        "invalid_reason": "right_hand_association_missing",
+        "patch_coverage": null,
+        "patch_spread_m": null,
+        "patch_median_m": null
+      },
+      "hand_middle_mcp": {
+        "point_m": null,
+        "measurement_valid": false,
+        "depth_valid": false,
+        "keypoint_score": null,
+        "visibility": null,
+        "u_px": null,
+        "v_px": null,
+        "invalid_reason": "right_hand_association_missing",
+        "patch_coverage": null,
+        "patch_spread_m": null,
+        "patch_median_m": null
+      },
+      "hand_pinky_mcp": {
+        "point_m": null,
+        "measurement_valid": false,
+        "depth_valid": false,
+        "keypoint_score": null,
+        "visibility": null,
+        "u_px": null,
+        "v_px": null,
+        "invalid_reason": "right_hand_association_missing",
+        "patch_coverage": null,
+        "patch_spread_m": null,
+        "patch_median_m": null
+      }
+    }
+  }
+]

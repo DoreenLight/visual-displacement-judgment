@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>视觉动作分析与三维动力学建模展示台</title>
+  <style>
+    :root {
+      --bg: #070a12;
+      --panel: rgba(15, 23, 42, 0.75);
+      --border: rgba(56, 189, 248, 0.2);
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #10b981;
+      --accent-magenta: #f43f5e;
+      --accent-amber: #f59e0b;
+      --accent-blue: #3b82f6;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: 
+        radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(244, 63, 94, 0.06) 0%, transparent 40%);
+    }
+
+    header {
+      padding: 30px 40px 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #0284c7 0%, #10b981 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 4px 16px rgba(2, 132, 199, 0.35);
+    }
+
+    .brand-text h1 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #38bdf8 0%, #10b981 50%, #f43f5e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-text p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .tag-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #34d399;
+      box-shadow: 0 0 8px #34d399;
+    }
+
+    main {
+      flex: 1;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 40px 24px 60px 24px;
+      width: 100%;
+    }
+
+    .hero-banner {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 30px;
+      margin-bottom: 36px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-banner h2 {
+      font-size: 17px;
+      color: var(--accent-cyan);
+      margin-bottom: 8px;
+    }
+
+    .hero-banner p {
+      font-size: 13px;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 10px;
+      padding: 12px 16px;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .stat-val {
+      font-size: 20px;
+      font-weight: 700;
+      font-family: "SF Mono", Monaco, monospace;
+      color: #fff;
+      margin-top: 4px;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 24px;
+    }
+
+    .exp-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .exp-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.5);
+      box-shadow: 0 20px 45px rgba(2, 132, 199, 0.25);
+    }
+
+    .exp-card.featured {
+      border: 1.5px solid rgba(244, 63, 94, 0.5);
+      box-shadow: 0 12px 36px rgba(244, 63, 94, 0.15);
+    }
+
+    .exp-card.featured::before {
+      content: "🔥 重点实验 · 三关节协同代偿";
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      font-size: 10px;
+      font-weight: 700;
+      color: #fb7185;
+      background: rgba(244, 63, 94, 0.18);
+      border: 1px solid rgba(244, 63, 94, 0.35);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .card-badge {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .exp-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .exp-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+      flex: 1;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .tech-tag {
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #94a3b8;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .btn-action {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: #fff;
+      border: 1px solid #38bdf8;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn-action:hover {
+      background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+      box-shadow: 0 4px 16px rgba(56, 189, 248, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .btn-action.featured-btn {
+      background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+      border-color: #f43f5e;
+      box-shadow: 0 4px 16px rgba(244, 63, 94, 0.35);
+    }
+
+    .btn-action.featured-btn:hover {
+      background: linear-gradient(135deg, #be123c 0%, #9f1239 100%);
+    }
+
+    footer {
+      padding: 24px;
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-icon">🦾</div>
+      <div class="brand-text">
+        <h1>视觉动作分析与三维动力学建模展示台</h1>
+        <p>Three.js 3D Visualizer & Biomechanical Compensation Analysis Hub</p>
+      </div>
+    </div>
+    <div class="tag-status">
+      <div class="dot"></div>
+      <span>4 组实验三维工程全部就绪</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-banner">
+      <h2>📌 平台架构与研究定位</h2>
+      <p>
+        本展示台作为「<b>视觉动作分析（视觉→关节角 Seq2Seq 翻译）</b>」研究体系的实验验证与动力学可视化中枢，基于自研的高鲁棒计算机视觉运动捕捉算法（MediaPipe Pose 3D + Hands 21 关节），实现了从单目普通 RGB 视频到<b>毫米级多关节三维动力学轨迹</b>的高保真重建与代偿机制量化。
+      </p>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-label">已接入实验视频</div>
+          <div class="stat-val" style="color:var(--accent-cyan);">3 套序列</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">空间追踪连续检出率</div>
+          <div class="stat-val" style="color:var(--accent-emerald);">100.0%</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">多关节代偿定量模型</div>
+          <div class="stat-val" style="color:var(--accent-magenta);">SCR / ECR / KCC</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">三维渲染帧率</div>
+          <div class="stat-val" style="color:var(--accent-amber);">60 FPS</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <span>🚀 实验三维可视化系统矩阵</span>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- Experiment 2-B (Featured) -->
+      <div class="exp-card featured">
+        <div>
+          <div class="card-badge" style="color:var(--accent-magenta);">实验 2 · 视频 3</div>
+          <div class="exp-title">腕-肘-肩三关节空间动力学与协同代偿建模</div>
+          <div class="exp-desc">
+            全动力学链分析：重构<b>肩关节抬升(耸肩)</b>、<b>肘关节侧向扑动(Flaring)</b>与<b>腕部复合三维运动轨道</b>。输出肩代偿率 (SCR=42.7%)、肘代偿率 (ECR=82.2%) 及空间协同耦合系数 (r=0.86)，配备双视口原片毫秒级重合核验与时序曲线。
+          </div>
+          <div class="tag-row">
+            <span class="tech-tag">肩/肘/腕三关节</span>
+            <span class="tech-tag">多关节动力学 Rig</span>
+            <span class="tech-tag">视频双视口同步</span>
+            <span class="tech-tag">皮尔逊协同性分析</span>
+            <span class="tech-tag">傅里叶级数分解</span>
+          </div>
+        </div>
+        <a href="04_腕肘肩协同代偿/arm_compensation_visualization.html" class="btn-action featured-btn" target="_self">
+          <span>🚀 打开三维展示台 (腕肘肩)</span>
+        </a>
+      </div>
+
+      <!-- Experiment 2-A -->
+      <div class="exp-card">
+        <div>
+          <div class="card-badge" style="color:var(--accent-cyan);">实验 2 · 视频 2</div>
+          <div class="exp-title">腕-肘代偿运动学建模与生物力学分析</div>
+          <div class="exp-desc">
+            针对前臂翻转过程中的<b>肘关节外展屈曲代偿</b>进行建模，呈现腕部与肘部双重运动轨迹管，解算动态肘屈伸角 $\theta_{\text{elbow}}(t)$，量化代偿位移比与相位差。
+          </div>
+          <div class="tag-row">
+            <span class="tech-tag">腕-肘双节点</span>
+            <span class="tech-tag">肘屈曲角解算</span>
+            <span class="tech-tag">原片画中画</span>
+            <span class="tech-tag">速度热力梯度</span>
+          </div>
+        </div>
+        <a href="03_腕肘代偿分析/wrist_elbow_compensation_visualization.html" class="btn-action" target="_self">
+          <span>进入三维展示台 (腕肘)</span>
+        </a>
+      </div>
+
+      <!-- Experiment 2 - Video 1 -->
+      <div class="exp-card">
+        <div>
+          <div class="card-badge" style="color:var(--accent-amber);">实验 2 · 视频 1</div>
+          <div class="exp-title">腕部主动运动与肘-肩代偿初探分析</div>
+          <div class="exp-desc">
+            受试者悬空握拳进行主动腕关节屈伸与偏摆动作。双网络融合捕捉肩-肘-腕三维链，量化肘关节外展联动（代偿率 58.4%，r=0.666）与肘屈伸角度变化（19.0°），肩部保持正常锁肩。
+          </div>
+          <div class="tag-row">
+            <span class="tech-tag">腕部主运动</span>
+            <span class="tech-tag">肘外展代偿</span>
+            <span class="tech-tag">锁肩微动阈值</span>
+            <span class="tech-tag">双轨迹示波器</span>
+          </div>
+        </div>
+        <a href="02_腕部代偿初探/wrist_compensation_visualization.html" class="btn-action" target="_self">
+          <span>进入三维展示台 (腕部代偿)</span>
+        </a>
+      </div>
+
+      <!-- Experiment 1 -->
+      <div class="exp-card">
+        <div>
+          <div class="card-badge" style="color:var(--accent-emerald);">实验 1 · 视频 1</div>
+          <div class="exp-title">腕关节孤立旋前/旋后运动学基线分析</div>
+          <div class="exp-desc">
+            健康基准动作：近端肢体处于稳定姿态下的前臂交替翻转。提取腕关节 3D 轨迹，完成 3 阶傅里叶级数拟合与频域基频辨识 ($f_0 = 0.99\text{ Hz}$)，提供手掌法向量空间姿态跟踪。
+          </div>
+          <div class="tag-row">
+            <span class="tech-tag">单自由度基线</span>
+            <span class="tech-tag">手掌法向量</span>
+            <span class="tech-tag">傅里叶拟合</span>
+            <span class="tech-tag">21 关节手部骨骼</span>
+          </div>
+        </div>
+        <a href="01_腕部基线实验/wrist_motion_visualization.html" class="btn-action" target="_self">
+          <span>进入三维展示台 (腕部基线)</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>视觉动作分析课题组 · 02-视觉动作分析 / 08_三维动作分析展示台 · Powered by Three.js & MediaPipe</p>
+  </footer>
+
+</body>
+</html>

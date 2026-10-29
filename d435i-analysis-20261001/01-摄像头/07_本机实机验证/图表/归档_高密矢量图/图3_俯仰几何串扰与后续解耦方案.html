@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>第三部分：存在问题与后续实验 —— 真人颈部牵引的几何风险与解耦方案</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1920px;
+      height: 1080px;
+      background: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+      color: #0f172a;
+      padding: 36px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    /* 顶部标题栏 */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 3px solid #cbd5e1;
+    }
+    .header-left .tag {
+      display: inline-block;
+      background: #fee2e2;
+      color: #991b1b;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 4px 14px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .header-left h1 {
+      font-size: 34px;
+      font-weight: 900;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+    }
+    .header-left p {
+      font-size: 16px;
+      color: #475569;
+      margin-top: 4px;
+    }
+    .alert-pill {
+      background: #fff1f2;
+      border: 2px solid #f43f5e;
+      padding: 10px 22px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 800;
+      color: #be123c;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 6px -1px rgba(244, 63, 94, 0.15);
+    }
+
+    /* 三列主体网格 */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr 1.25fr;
+      gap: 22px;
+      margin: 18px 0;
+      flex: 1;
+    }
+    .panel {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .panel-header h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #1e293b;
+    }
+    .icon-wrap {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fee2e2;
+      color: #dc2626;
+      font-weight: 900;
+      font-size: 16px;
+    }
+
+    /* 左列：几何推导与风险表 */
+    .math-card {
+      background: #fff5f5;
+      border: 1.5px solid #fecaca;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+    .math-card h3 {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #991b1b;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .math-formula {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 14px;
+      background: #ffffff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid #fca5a5;
+      color: #b91c1c;
+      font-weight: 800;
+      text-align: center;
+      margin: 8px 0;
+    }
+    .math-card p {
+      font-size: 13px;
+      color: #7f1d1d;
+      line-height: 1.5;
+    }
+
+    .risk-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+    .risk-table th {
+      background: #f8fafc;
+      color: #334155;
+      font-weight: 700;
+      padding: 7px 10px;
+      border: 1px solid #cbd5e1;
+      text-align: center;
+    }
+    .risk-table td {
+      padding: 7px 10px;
+      border: 1px solid #cbd5e1;
+      text-align: center;
+    }
+    .risk-row-danger {
+      background: #fef2f2 !important;
+      color: #dc2626;
+      font-weight: 800;
+    }
+
+    /* 中列：实际临床差距 */
+    .gap-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+    .gap-card h3 {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .gap-card p {
+      font-size: 13.5px;
+      color: #475569;
+      line-height: 1.55;
+    }
+
+    /* 右列：后续方案与路线 */
+    .solution-card {
+      background: #f0fdf4;
+      border: 1.5px solid #86efac;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+    .solution-card h3 {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #166534;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .solution-card p {
+      font-size: 13px;
+      color: #14532d;
+      line-height: 1.55;
+    }
+
+    .roadmap-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .roadmap-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 10px 14px;
+    }
+    .roadmap-badge {
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .roadmap-badge.p0 { background: #fee2e2; color: #b91c1c; }
+    .roadmap-badge.p1 { background: #fef3c7; color: #92400e; }
+    .roadmap-badge.p2 { background: #e0e7ff; color: #3730a3; }
+    .roadmap-text {
+      font-size: 13px;
+      color: #334155;
+      line-height: 1.45;
+    }
+
+    /* 底部条 */
+    .footer-bar {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      padding: 14px 26px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 15px;
+      color: #334155;
+    }
+    .footer-bar strong { color: #0f172a; font-weight: 800; }
+    .footer-tags { display: flex; gap: 10px; }
+    .footer-tag {
+      background: #f1f5f9;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #475569;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部标题栏 -->
+  <div class="header">
+    <div class="header-left">
+      <div class="tag">第三部分 · 存在问题与后续实验</div>
+      <h1>真人颈部牵引的几何风险与 6 自由度解耦方案</h1>
+      <p>剖析头部仰角引起的虚假位移 · 对比实验与临床三大差距 · 规划三阶段工程突破路线</p>
+    </div>
+    <div class="alert-pill">
+      <span>⚠️ 核心几何风险：头部仰角 10° 可致 3.39mm 虚假位移（超标 170%）</span>
+    </div>
+  </div>
+
+  <!-- 三列主体网格 -->
+  <div class="main-grid">
+
+    <!-- 左列：几何推导与串扰风险 -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="icon-wrap">!</div>
+        <h2>1. 致命的“俯仰旋转几何串扰”</h2>
+      </div>
+
+      <div class="math-card">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          几何测距投影公式与成因
+        </h3>
+        <p>在真实颈部康复牵引中，患者头部受向上拉伸时，必然伴随微小的仰头角度 θ。相机沿光轴测得的距离遵循投影关系：</p>
+        <div class="math-formula">Z_测得 = Z_真实 / cos(θ) ≈ Z_真实 × [1 + θ² / 2]</div>
+        <p><strong>⚠️ 性质警告：</strong> 这是纯粹的空间空间几何投影效应，<strong>绝对不是传感器噪声！多帧求平均完全无法消除！</strong></p>
+      </div>
+
+      <!-- 恶化数据表 -->
+      <table class="risk-table">
+        <thead>
+          <tr>
+            <th>头部微仰角度 θ</th>
+            <th>@220mm 虚假偏大量</th>
+            <th>占 2.0mm 指标比例</th>
+            <th>状态判定</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>微仰 2°</td>
+            <td>+0.13 毫米</td>
+            <td>6.5%</td>
+            <td style="color:#059669; font-weight:700;">✅ 安全</td>
+          </tr>
+          <tr>
+            <td>微仰 5°</td>
+            <td>+0.84 毫米</td>
+            <td>42.0%</td>
+            <td style="color:#d97706; font-weight:700;">⚠️ 临界</td>
+          </tr>
+          <tr class="risk-row-danger">
+            <td><strong>明显仰角 10°</strong></td>
+            <td><strong>+3.39 毫米</strong></td>
+            <td><strong>169.5%</strong></td>
+            <td><strong>❌ 严重超标</strong></td>
+          </tr>
+          <tr class="risk-row-danger">
+            <td>大幅仰角 15°</td>
+            <td>+7.76 毫米</td>
+            <td>388.0%</td>
+            <td>❌ 彻底失真</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="background:#fef2f2; border:1px solid #fecaca; border-radius:10px; padding:10px 14px; font-size:13px; color:#991b1b; line-height:1.5; margin-top:8px;">
+        💡 <strong>导师汇报提点</strong>：静止平移时相机精度极高，但如果真实牵引时患者仰了仰头，没有真正向后平移，相机表面测得距离也会凭空增加 3.4 毫米！这个几何效应必须予以纠正。
+      </div>
+    </div>
+
+    <!-- 中列：实际临床差距 -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="icon-wrap" style="background:#f1f5f9; color:#475569;">2</div>
+        <h2>实验场景 vs 真实临床三大差距</h2>
+      </div>
+
+      <div class="gap-card">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M16 12l-4-4-4 4M12 8v8"/></svg>
+          差距一：多轴运动耦合 (Y轴上下 vs Z轴前后)
+        </h3>
+        <p>老师目前只要 Z 轴（前后）数据，但颈部牵引本质是<strong>沿 Y 轴向上大行程拉伸</strong>，Z 轴只是伴随微动。当头部向上移动偏离相机中心光轴时，透视投影会产生假视差，将上下位移误判为前后距离变化。</p>
+      </div>
+
+      <div class="gap-card">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          差距二：目标表面材质与刚体假设失效
+        </h3>
+        <p>当前实验用的是平整白纸包裹的刚性细杆；而真实人体颈部和面部皮肤具有半透光散射、油脂微反光，且牵引带会勒动皮肤软组织产生非刚体形变，容易导致局部点云丢失。</p>
+      </div>
+
+      <div class="gap-card">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          差距三：牵引行程跨度与安装距离
+        </h3>
+        <p>本次仅验证了 13~21 毫米的小跨度；临床牵引有效行程通常在 50~100 毫米。此外相机目前架在 20 厘米近景，临床为了安全操作可能需要拉远至 30~50 厘米。</p>
+      </div>
+    </div>
+
+    <!-- 右列：后续方案与路线 -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="icon-wrap" style="background:#ecfdf5; color:#059669;">3</div>
+        <h2>后续实验攻坚方案与路线规划</h2>
+      </div>
+
+      <div class="solution-card">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          终极解耦方案：3 点刚体解算 6 自由度位姿
+        </h3>
+        <p>在患者头戴牵引套（或下颌硬质托具）上固定 <strong>3 个非共线的微型轻质高反光刚体标记点</strong>。利用双目视觉直接解算出头部的三维旋转姿态与空间位置，彻底正交分离 <strong>Y轴上下拉伸行程</strong>、<strong>Z轴纯前后位移</strong> 与 <strong>仰头俯仰角度 θ</strong>！</p>
+      </div>
+
+      <div class="roadmap-list">
+        <div class="roadmap-item">
+          <span class="roadmap-badge p0">P0 最高优先</span>
+          <div class="roadmap-text">
+            <strong>阶段 A：串扰解耦实验（近期执行）</strong><br>
+            ① 用垫片垫高测试目标底部，定量测定 2°~15° 俯仰串扰；② 测试目标上下偏移 ±40mm 的横向串扰；③ 标定 50~100mm 大行程。
+          </div>
+        </div>
+
+        <div class="roadmap-item">
+          <span class="roadmap-badge p1">P1 重点验证</span>
+          <div class="roadmap-text">
+            <strong>阶段 B：长时间时效与温漂补偿</strong><br>
+            连续运行 15~30 分钟，监测相机传感器芯片发热导致的深度漂移曲线，建立在线温漂校正函数。
+          </div>
+        </div>
+
+        <div class="roadmap-item">
+          <span class="roadmap-badge p2">P2 临床落地</span>
+          <div class="roadmap-text">
+            <strong>阶段 C：真实牵引机联合多模态实机测试</strong><br>
+            在实际牵引床结合 3-Marker 刚体标记，同步记录视觉位移、牵引拉力传感器和肌电信号，输出完整评估报告。
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 底部汇总 Bar -->
+  <div class="footer-bar">
+    <div>
+      <strong>核心答卷：</strong> 静止平移的 2 毫米精度验证已彻底结题；后续真正决定临床能否好用的关键，是**采用 3 点刚体解算，消除头部仰角造成的 3.4 毫米虚假位移**。
+    </div>
+    <div class="footer-tags">
+      <span class="footer-tag">核心隐患：俯仰角 θ 几何串扰</span>
+      <span class="footer-tag">解耦核心：3-Marker 刚体解算</span>
+      <span class="footer-tag">下一阶段：倾角实验 A3 + 姿态解耦</span>
+    </div>
+  </div>
+
+</body>
+</html>

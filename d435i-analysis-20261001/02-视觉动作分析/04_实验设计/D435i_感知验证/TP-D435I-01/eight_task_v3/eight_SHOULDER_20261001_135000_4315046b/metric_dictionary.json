@@ -1,0 +1,51 @@
+{
+  "A": {
+    "input": "independently validated FE/RU, target and cycles",
+    "formula": null,
+    "unit": null,
+    "valid": false,
+    "invalid_reason": "angles and reference unvalidated"
+  },
+  "C": {
+    "input": "shoulder/elbow regional movement features",
+    "formula": null,
+    "unit": null,
+    "valid": false,
+    "invalid_reason": "independent labels and causal validation missing; no composite index frozen"
+  },
+  "S": {
+    "input": "candidate angular speed per FE/RU submovement",
+    "formula": "spectral arc length, normalized FFT magnitude >=0.05, <=10 Hz",
+    "unit": "dimensionless",
+    "direction": "higher is smoother",
+    "formal_valid": false,
+    "invalid_reason": "candidate angles unvalidated; static/incomplete/gapped segments excluded",
+    "normalization": "frequency/max included frequency; FFT magnitude/DC"
+  },
+  "Q": {
+    "input": "all saved capture frames, including unanalysed frames",
+    "formula": "frames with all three body points valid / saved capture frames",
+    "unit": "fraction",
+    "direction": "higher has more observed frames",
+    "supplements": "largest invalid gap includes capture gaps and trial boundaries; queue drop counts separate",
+    "normalization": "0..1; no clinical score"
+  },
+  "positions": {
+    "source": "aligned depth surface deprojection",
+    "unit": "m",
+    "coord_frame": "camera_color_optical",
+    "joint_center_validated": false,
+    "filter": "none"
+  },
+  "angles": {
+    "formal_columns": "theta_fe_deg/theta_ru_deg = NaN",
+    "candidate_columns": "theta_fe_est_deg/theta_ru_est_deg",
+    "unit": "deg",
+    "assumption": "fixed neutral palm normal; unobserved forearm axial rotation",
+    "filter": "causal EMA alpha .55"
+  },
+  "timing": {
+    "host_receive_to_output_ms": "host monotonic output minus host frame receipt; does not establish device end-to-end latency",
+    "device_host_mapping": null
+  }
+}

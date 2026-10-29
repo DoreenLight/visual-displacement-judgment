@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "mode": "full",
+  "output_contract": "full",
+  "pipeline_complete": false,
+  "elapsed_sec": 652.86,
+  "resume_enabled": true,
+  "llm_stage_attempts": 3,
+  "search_cache_enabled": true,
+  "stages_completed": [
+    "clean",
+    "knowledge",
+    "inspect",
+    "targeted",
+    "merge",
+    "qgate"
+  ],
+  "stages_skipped": [],
+  "citation_coverage": null,
+  "failed_stage": "targeted",
+  "stage_metrics": [
+    {
+      "stage": "knowledge",
+      "status": "completed",
+      "duration_sec": 590.5696980409557,
+      "message": ""
+    },
+    {
+      "stage": "inspect",
+      "status": "completed",
+      "duration_sec": 0.0009238329948857427,
+      "message": ""
+    },
+    {
+      "stage": "targeted",
+      "status": "failed",
+      "duration_sec": 0.0,
+      "message": "targeted 失败: 未获取可清洗的新来源，禁止构造补搜事实"
+    },
+    {
+      "stage": "qgate",
+      "status": "completed",
+      "duration_sec": 0.000666750012896955,
+      "message": ""
+    },
+    {
+      "stage": "clean",
+      "status": "completed",
+      "duration_sec": 42.46596804203,
+      "message": ""
+    }
+  ],
+  "source_audits": [
+    {
+      "engine": "arxiv",
+      "attempted": 29,
+      "hits": 202,
+      "failed": 6,
+      "filtered": 168,
+      "deduplicated": 29,
+      "fetch_failed": 0,
+      "retained": 5
+    },
+    {
+      "engine": "crossref",
+      "attempted": 29,
+      "hits": 334,
+      "failed": 0,
+      "filtered": 129,
+      "deduplicated": 85,
+      "fetch_failed": 47,
+      "retained": 60
+    },
+    {
+      "engine": "expert_seed",
+      "attempted": 0,
+      "hits": 0,
+      "failed": 0,
+      "filtered": 0,
+      "deduplicated": 0,
+      "fetch_failed": 0,
+      "retained": 13
+    },
+    {
+      "engine": "google_news",
+      "attempted": 29,
+      "hits": 49,
+      "failed": 0,
+      "filtered": 48,
+      "deduplicated": 1,
+      "fetch_failed": 0,
+      "retained": 0
+    },
+    {
+      "engine": "pubmed",
+      "attempted": 29,
+      "hits": 183,
+      "failed": 0,
+      "filtered": 178,
+      "deduplicated": 5,
+      "fetch_failed": 0,
+      "retained": 0
+    },
+    {
+      "engine": "web",
+      "attempted": 29,
+      "hits": 316,
+      "failed": 0,
+      "filtered": 262,
+      "deduplicated": 49,
+      "fetch_failed": 4,
+      "retained": 1
+    },
+    {
+      "engine": "wikipedia",
+      "attempted": 29,
+      "hits": 53,
+      "failed": 0,
+      "filtered": 52,
+      "deduplicated": 1,
+      "fetch_failed": 0,
+      "retained": 0
+    }
+  ]
+}

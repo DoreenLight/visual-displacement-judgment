@@ -1,0 +1,15 @@
+{
+  "stage": "organize",
+  "status": "completed",
+  "timestamp": 1790812041.3860748,
+  "input_fingerprint": "b4ced558c9892478627c5f8c1bd44ea51d08b40358f640f502a9073161f7faf9",
+  "outputs_sha256": {
+    "tree/00-主表.md": "2632380de35845861a1556f0898f386830118e9e99ac4c9ad90fb92d5a092a9d",
+    "tree/N1-EMG与超声驱动的个性化肌肉-肌腱参数估计.md": "371c5e4552182cdbb015e74168f0dfb68ffeddeb72d806564b17e5812c6cec32",
+    "tree/N2-物理信息混合模型驱动的下肢多关节力矩预测.md": "7e77614be6d32e949ff06b1369e21c9229f7e4db6eba9935bb6e9ee3b615254b",
+    "tree/N3-面向外骨骼按需辅助的自适应控制与不确定性量化.md": "71726e35a38ea5b9143ef7426a42b877fa1741fa0e66a579f7307467f474f25f",
+    "tree/N4-无标记运动捕捉与机器学习的临床步态与平衡评估.md": "144ed75770a252257610f543fded9016bfd06f77727f8cb5ee522fe4152f98c3",
+    "tree/N5-面向运动功能恢复的脑机接口系统.md": "2f29dd65c736eb28f0e63b6411f1839c7ea323dcb721399f6b6ce33a7335242f",
+    "tree/N6-实验室团队与国际合作网络.md": "6b422b4077d7f6036870bf3456b11ccc80d2de7afb24c35aba5737b56055c7d2"
+  }
+}

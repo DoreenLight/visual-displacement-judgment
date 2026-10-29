@@ -1,0 +1,112 @@
+# 专家库（ExpertLib）—— 章隆彬及合作团队
+#
+# 用法：任何调研用 --experts-file 指向本文件（或 config.yaml 的 collector.experts_file）。
+# 强档：seed_urls 直塞抓取队列、跳过搜索排序，保证她的官方主页/全文/博论一定入库。
+# 弱档：handles.github 存在时生成 scoped 查询（本库无 github 句柄，故不用）。
+# domains 与 topic 做词重叠匹配（v1 无线语义），标签已按同义词归并收敛。
+#
+# 建库日期：2026-09-30（首次建立，随合作进展增量维护）
+# 维护约定：新增条目只允许"已在 papers/ 或报告中确证"的实体，禁止凭印象写入。
+version: 1
+experts:
+  # ---------------------------------------------------------------- 主条目
+  - id: longbin-zhang
+    name: 章隆彬 (Longbin Zhang)
+    kind: author
+    domains:
+      - rehabilitation robotics
+      - exoskeleton
+      - wearable assistive device
+      - neuromusculoskeletal model
+      - muscle tendon estimation
+      - ultrasound imaging
+      - surface emg
+      - emg driven control
+      - brain computer interface
+      - eeg
+      - markerless motion capture
+      - human motion analysis
+      - biomechanics
+      - musculoskeletal modelling
+      - joint torque prediction
+      - muscle force prediction
+      - gait analysis
+      - balance assessment
+      - fall risk
+      - timed up and go
+      - clinical gait assessment
+      - digital twin
+      - physics informed machine learning
+      - hybrid physics data driven model
+      - machine learning
+      - transfer learning
+      - lstm
+      - uncertainty quantification
+      - post stroke rehabilitation
+      - hunan university
+      - royal institute of technology kth
+      - nanyang technological university
+    handles:
+      homepage: https://grzy.hnu.edu.cn/site/index/zhanglongbin
+      faculty_hnu: https://robotics.hnu.edu.cn/info/1176/3002.htm
+      orcid: 0000-0001-8785-5885
+      scholar: https://scholar.google.com/citations?user=zfHrGd0AAAAJ
+      ieee: https://ieeexplore.ieee.org/author/37088232279
+      openalex: A5002794703
+      kth_diva: https://kth.diva-portal.org/smash/person.jsf?pid=authority-person:73231
+      linkedin: https://www.linkedin.com/in/longbin-zhang-863957190
+      email: longbin@hnu.edu.cn
+    seed_urls:
+      # 官方身份与团队（强档优先）
+      - https://robotics.hnu.edu.cn/info/1176/3002.htm
+      - https://grzy.hnu.edu.cn/site/index/zhanglongbin
+      - https://robotics.hnu.edu.cn/szdw/jsjj2.htm
+      # 学术身份（去重/消歧/时间线）
+      - https://orcid.org/0000-0001-8785-5885
+      - https://api.openalex.org/authors/A5002794703
+      - "https://api.openalex.org/works?filter=author.id:A5002794703&per-page=50&sort=publication_date:desc"
+      # 博士阶段（KTH）：博论 + 档案，补齐履历与早期代表作
+      - https://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A1599588
+      - https://kth.diva-portal.org/smash/person.jsf?pid=authority-person:73231
+      # 开放获取全文（无需机构权限即可进 raw/）
+      - https://arxiv.org/abs/2503.00794
+      - https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2023.1254088/full
+      - https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2021.620928/full
+      - https://loop.frontiersin.org/people/1121302/overview
+      # 课题组公开信息（招生/团队规模侧证）
+      - https://www.gaoxiaojob.com/announcement/detail/414402.html
+    priority: high
+    notes: >-
+      湖南大学人工智能与机器人学院教授（博导），国家海外青年人才；KTH 博士、NTU 博后。
+      核心命题：NMS + ML 混合模型实时预测运动意图/关节力矩/肌肉力，个性化肌腱参数估计。
+      2025 起团队产出转向前移：markerless 动捕 + 临床步态/平衡评估（arXiv 2503.00794 为湖大团队
+      代表作）。代表性论文见 LIST.md；本条 seed_urls 只收公开可抓 URL，付费墙论文走 papers/ 原文。
+
+  # ------------------------------------------------------- 长期合作者（KTH）
+  - id: gutierrez-farewik-elena
+    name: Elena M. Gutierrez-Farewik（KTH 神经肌肉骨骼研究单元，合作导师/长期合作者）
+    kind: author
+    domains:
+      - neuromuscular research
+      - muscle modelling
+      - biomechanics
+      - electromyography
+      - wearable sensors
+      - gait analysis
+      - balance
+      - motion analysis
+      - physiotherapy
+      - rehabilitation
+      - markerless motion capture
+      - joint torque prediction
+      - machine learning
+      - royal institute of technology kth
+    handles: {}
+    seed_urls: []
+    priority: normal
+    notes: >-
+      章隆彬 KTH 阶段与合作者（2021-2023 多篇共同作者）。无 github/无免付费墙主页，
+      故不设 seed_urls，靠 OpenAlex/Crossref 作者检索兜底命中。
+
+  # 说明：湖南大学团队成员（博士后/博士生）条目待 09 章隆彬_合作团队/_research_run/ 的
+  # 深度调研确证后增量追加，确证标准见文件头"维护约定"。

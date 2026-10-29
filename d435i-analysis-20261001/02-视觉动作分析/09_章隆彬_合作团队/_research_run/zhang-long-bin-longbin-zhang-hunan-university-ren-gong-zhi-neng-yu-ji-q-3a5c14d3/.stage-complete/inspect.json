@@ -1,0 +1,9 @@
+{
+  "stage": "inspect",
+  "status": "completed",
+  "timestamp": 1790812041.4329321,
+  "input_fingerprint": "6a6f7a7010c883475c6f9e9ee98438613b398b09e08d9cff113cadbf19ce86ac",
+  "outputs_sha256": {
+    "artifacts/inspect.json": "d99bd4729ba7c1396aad4ce7270ea280e10842aa97aa63a8175a1f99c065ecf7"
+  }
+}

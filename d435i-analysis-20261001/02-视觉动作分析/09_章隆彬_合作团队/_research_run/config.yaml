@@ -1,0 +1,99 @@
+# 章隆彬（Longbin Zhang）深度调研 · 运行配置
+# 用途：research-tool 九段闭环（collect→clean→extract→knowledge→inspect→targeted→merge→qgate→report）
+# 说明：本文件是本次调研的隔离运行配置（不修改 research-tool 仓库任何生产配置）。
+# 密钥：全部走环境变量（MINIMAX_API_KEY），文件内不落任何明文密钥。
+# LLM 选型：火山 Ark CodingPlan 已失效（InvalidSubscription），改用 MiniMax 官方 provider。
+#   端点 api.minimaxi.com/v1 = 项目内置 minimax 默认；模型 MiniMax-M3 推理模型，
+#   会先输出 <think> 块，项目 openai_client 已有对应剥离逻辑，结构化抽取不受影响。
+# 人物调研注记：官方 model 明确"人物调研一般不设 from_year"（让画像按时间线逐节点过滤），
+# 故此处刻意不设 from_year/to_year，保留她 2015 至今的完整履历与论文时间线。
+
+mode: full
+
+collector:
+  # 6 路学术+通用源，均实测可用（1-6s 返回）。
+  # 2026-09-30 剔除两个引擎，原因如下（调研期不改源码，仅本配置层规避）：
+  #   openalex          —— 项目内 OpenAlexBackend.search 挂死 >75s（直连 api.openalex.org 仅 1.8s，
+  #                        属该 backend 实现问题；该文件当前还有未提交改动）。她的 97 篇作品清单
+  #                        改由 experts.yaml 的 seed_url 直连抓取 API 覆盖，不丢覆盖。
+  #   semantic_scholar  —— 无 API key 触发 429 限流。
+  search_engines:
+    - crossref
+    - arxiv
+    - pubmed
+    - web
+    - wikipedia
+    - google_news
+  max_results_per_engine: 12
+  max_total_results: 120        # 人物+团队调研需要比学科调研(默认40)更大的覆盖面
+  search_rounds: 2
+  language: both
+  concurrency: 4
+  max_concurrent_searches: 4
+  timeout_sec: 30
+  depth: 2
+  # 主题较长，预抓取词重叠阈值会误杀有效命中 → 关闭，改由 clean 阶段 LLM 相关性过滤把关
+  search_relevance_min_overlap: 0.0
+  search_cache: true
+  # mineru 未安装，PDF 解析显式关闭（付费墙论文原文已在 09_.../papers/ 单独管理）
+  parse_pdf: false
+  save_originals: true
+  # 专家库：强档直注她的官方主页/全文/博论/ORCID/OpenAlex 清单
+  experts_file: /Users/xbpd/Projects/视觉位移判断/02-视觉动作分析/09_章隆彬_合作团队/experts.yaml
+  # 人物调研去锚：Phase2 用"章隆彬"+"维度"突破单一机构锚点
+  core_keyword: 章隆彬
+  facets:
+    - 湖南大学
+    - 人工智能与机器人学院
+    - 机器人视觉感知与控制技术国家工程研究中心
+    - rehabilitation robotics
+    - wearable exoskeleton
+    - neuromusculoskeletal modelling
+    - surface EMG
+    - markerless motion capture
+    - brain computer interface
+    - muscle tendon parameter estimation
+    - joint torque prediction
+    - digital twin
+    - gait balance fall assessment
+    - KTH Royal Institute of Technology
+    - Nanyang Technological University
+    - Gutierrez-Farewik
+    - co-author collaboration network
+    - 团队成员 博士后 博士生
+    - 课题组 招聘 招生
+  llm_query_expansion: true
+
+llm:
+  provider: minimax
+  model: MiniMax-M3
+  api_key: ${MINIMAX_API_KEY}
+  base_url: https://api.minimaxi.com/v1
+  temperature: 0.3
+  max_tokens: 16384          # M3 是推理模型，think 块也吃 token 预算，全量报告留足
+  sdk_max_retries: 2
+  read_timeout_sec: 300
+  request_timeout_sec: 300
+
+cleaner:
+  max_content_length: 50000    # 硬截断：禁止未清洗超大正文冲进抽取
+  dedup_similarity: 0.85       # MinHash 近似去重
+  relevance_filter: true       # LLM 相关性过滤（人物调研噪声多，必须开）
+  relevance_threshold: 0.35
+  relevance_batch_size: 10
+  relevance_fail_open: true
+
+extractor:
+  enabled: true
+
+qgate:
+  max_high_findings: 0         # 严重矛盾零容忍
+  max_total_findings: 12
+
+targeted:
+  max_rounds: 2
+  max_queries_per_round: 8
+  max_results_per_query: 5
+
+reporter:
+  max_length: 50000            # 人物+团队档案需要更长正文
