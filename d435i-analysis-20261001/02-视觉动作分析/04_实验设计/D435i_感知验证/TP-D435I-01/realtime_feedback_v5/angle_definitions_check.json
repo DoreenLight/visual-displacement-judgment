@@ -1,0 +1,39 @@
+{
+  "scope": "ideal synthetic geometry, source-definition verification only, not human/device accuracy",
+  "examples": [
+    {
+      "example": "straight",
+      "elbow_deg": 0.0,
+      "expected_deg": 0
+    },
+    {
+      "example": "right_angle",
+      "elbow_deg": 90.0,
+      "expected_deg": 90
+    },
+    {
+      "example": "FE_projection",
+      "fe_deg": 30.000000000000025,
+      "ru_deg": 0.0
+    },
+    {
+      "example": "RU_projection",
+      "fe_deg": 0.0,
+      "ru_deg": 20.0
+    }
+  ],
+  "sources": [
+    {
+      "file": "curves.py",
+      "sha256": "da0955908eb31f8920dce5915dc736021cb599e7f613fbf53fffbc29ad1a29fd"
+    },
+    {
+      "file": "training_protocol_v5.py",
+      "sha256": "ce8ca5c428a4be0d942f31a65d90961d2fd09f10199143a89e372a9a94d5641c"
+    },
+    {
+      "file": "live_feedback_v5.py",
+      "sha256": "0e9167b2ad33f493d762ae60e5f89cdba0778953f0706b75c3fe1db411b88c7f"
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+[
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_CIRCLE_20261001_134353_ece4c4e8\\wrist_candidate_trajectory.csv",
+    "rows": 1417
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_CIRCLE_20261001_134353_ece4c4e8\\motion_screening.csv",
+    "rows": 1417
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_CIRCLE_20261001_134509_b65ab28b\\wrist_candidate_trajectory.csv",
+    "rows": 815
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_CIRCLE_20261001_134509_b65ab28b\\motion_screening.csv",
+    "rows": 815
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_CIRCLE_20261001_134606_0e663bce\\wrist_candidate_trajectory.csv",
+    "rows": 730
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_CIRCLE_20261001_134606_0e663bce\\motion_screening.csv",
+    "rows": 730
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_COMBINED_20261001_135607_5bb6b817\\wrist_candidate_trajectory.csv",
+    "rows": 925
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_COMBINED_20261001_135607_5bb6b817\\motion_screening.csv",
+    "rows": 925
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_COMBINED_20261001_135701_cb673e7e\\wrist_candidate_trajectory.csv",
+    "rows": 955
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_COMBINED_20261001_135701_cb673e7e\\motion_screening.csv",
+    "rows": 955
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_COMBINED_20261001_135752_6c5fc62b\\wrist_candidate_trajectory.csv",
+    "rows": 1072
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_COMBINED_20261001_135752_6c5fc62b\\motion_screening.csv",
+    "rows": 1072
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_ELBOW_20261001_135236_ac256f5f\\wrist_candidate_trajectory.csv",
+    "rows": 957
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_ELBOW_20261001_135236_ac256f5f\\motion_screening.csv",
+    "rows": 957
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_ELBOW_20261001_135333_1cd6edcf\\wrist_candidate_trajectory.csv",
+    "rows": 1152
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_ELBOW_20261001_135333_1cd6edcf\\motion_screening.csv",
+    "rows": 1152
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_ELBOW_20261001_135439_15a01a4e\\wrist_candidate_trajectory.csv",
+    "rows": 1502
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_ELBOW_20261001_135439_15a01a4e\\motion_screening.csv",
+    "rows": 1502
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_FE_20261001_133658_73162b96\\wrist_candidate_trajectory.csv",
+    "rows": 1608
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_FE_20261001_133658_73162b96\\motion_screening.csv",
+    "rows": 1608
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_FE_20261001_133828_a60e1ba6\\wrist_candidate_trajectory.csv",
+    "rows": 707
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_FE_20261001_133828_a60e1ba6\\motion_screening.csv",
+    "rows": 707
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_FE_20261001_133920_581ea1c5\\wrist_candidate_trajectory.csv",
+    "rows": 1860
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_FE_20261001_133920_581ea1c5\\motion_screening.csv",
+    "rows": 1860
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_FE_20261001_134101_6c9daee0\\wrist_candidate_trajectory.csv",
+    "rows": 2847
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_FE_20261001_134101_6c9daee0\\motion_screening.csv",
+    "rows": 2847
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_RU_20261001_133130_b225807d\\wrist_candidate_trajectory.csv",
+    "rows": 2592
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_RU_20261001_133130_b225807d\\motion_screening.csv",
+    "rows": 2592
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_RU_20261001_133347_d19a29ac\\wrist_candidate_trajectory.csv",
+    "rows": 1447
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_RU_20261001_133347_d19a29ac\\motion_screening.csv",
+    "rows": 1447
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_RU_20261001_133509_ee4315e4\\wrist_candidate_trajectory.csv",
+    "rows": 1128
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_RU_20261001_133509_ee4315e4\\motion_screening.csv",
+    "rows": 1128
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_S1_20261001_131959_59d5ec91\\wrist_candidate_trajectory.csv",
+    "rows": 900
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_S1_20261001_131959_59d5ec91\\motion_screening.csv",
+    "rows": 900
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_S1_20261001_132059_bc0d3f66\\wrist_candidate_trajectory.csv",
+    "rows": 900
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_S1_20261001_132059_bc0d3f66\\motion_screening.csv",
+    "rows": 900
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_S1_20261001_132148_b0ac2f4c\\wrist_candidate_trajectory.csv",
+    "rows": 900
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_S1_20261001_132148_b0ac2f4c\\motion_screening.csv",
+    "rows": 900
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_S2_20261001_132239_ea3010e2\\wrist_candidate_trajectory.csv",
+    "rows": 900
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_S2_20261001_132239_ea3010e2\\motion_screening.csv",
+    "rows": 900
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_S2_20261001_132326_343e7896\\wrist_candidate_trajectory.csv",
+    "rows": 900
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_S2_20261001_132326_343e7896\\motion_screening.csv",
+    "rows": 900
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_S2_20261001_132413_dedfd30f\\wrist_candidate_trajectory.csv",
+    "rows": 899
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_S2_20261001_132413_dedfd30f\\motion_screening.csv",
+    "rows": 899
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_SHOULDER_20261001_134728_5cedac08\\wrist_candidate_trajectory.csv",
+    "rows": 970
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_SHOULDER_20261001_134728_5cedac08\\motion_screening.csv",
+    "rows": 970
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_SHOULDER_20261001_134819_8be00db0\\wrist_candidate_trajectory.csv",
+    "rows": 929
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_SHOULDER_20261001_134819_8be00db0\\motion_screening.csv",
+    "rows": 929
+  },
+  {
+    "package": 2,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-02\\offline_reanalysis_v1\\dense_20261001_v1\\eight_SHOULDER_20261001_134908_c025f17f\\wrist_candidate_trajectory.csv",
+    "rows": 926
+  },
+  {
+    "package": 3,
+    "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-03\\offline_reanalysis_v1\\dense_20261001_v1\\eight_SHOULDER_20261001_134908_c025f17f\\motion_screening.csv",
+    "rows": 926
+  }
+]

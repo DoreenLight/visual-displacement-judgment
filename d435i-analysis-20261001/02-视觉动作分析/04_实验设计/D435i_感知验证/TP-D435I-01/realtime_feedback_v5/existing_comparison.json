@@ -1,0 +1,31 @@
+{
+  "results": [
+    {
+      "run_id": "eight_FE_20261001_133658_73162b96",
+      "frames": 300,
+      "old_valid": 151,
+      "new_valid": 204,
+      "old_reps": 0,
+      "new_reps": 1,
+      "old_step_p95_deg": 3.002,
+      "new_step_p95_deg": 3.206000000000002,
+      "input_sha256": "c87bed41f37130d8476be7e11a483b9818737a91de7749ad803664bad560acc0"
+    },
+    {
+      "run_id": "eight_RU_20261001_133347_d19a29ac",
+      "frames": 300,
+      "old_valid": 262,
+      "new_valid": 299,
+      "old_reps": 0,
+      "new_reps": 0,
+      "old_step_p95_deg": 3.8980000000000015,
+      "new_step_p95_deg": 3.7680000000000016,
+      "input_sha256": "c10f850d730aea000bfa4ef1054a89b474d66682aedd4b6e7b1791b0c528770d"
+    }
+  ],
+  "scope": "first 300 captured frames each retained FE1/RU2; previous pose/hand pixel detections reused; hand depth resampled; stored original neutral references reused to isolate changes; rounded pixels may differ at a pixel boundary; no independent angular reference",
+  "accuracy_verified": false,
+  "neutral_recalibration_evaluated": false,
+  "counter_new_thresholds": "original FE15 RU10",
+  "camera_opened": false
+}

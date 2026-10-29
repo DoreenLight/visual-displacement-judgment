@@ -1,0 +1,8 @@
+{
+  "version": "curves/v4",
+  "camera_connected": false,
+  "capture_age_ms": null,
+  "status": "unknown",
+  "actual_latency_samples": 0,
+  "page_errors": []
+}

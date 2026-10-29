@@ -1,0 +1,10 @@
+{
+  "version": "feedback/v5",
+  "recording": false,
+  "training": false,
+  "discard_button_present": 1,
+  "deleted_trial_present": true,
+  "unwanted_trial_active": false,
+  "camera_connected": true,
+  "page_errors": []
+}

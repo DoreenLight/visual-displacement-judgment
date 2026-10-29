@@ -1,0 +1,17 @@
+{
+  "run_id": "eight_FE_20261001_133920_581ea1c5",
+  "task_id": 3,
+  "frames": 1860,
+  "body_valid": 1860,
+  "angle_valid": 419,
+  "states": {
+    "normal": 6,
+    "shoulder_compensation": 1442,
+    "combined": 412
+  },
+  "reasons": {
+    "hand_or_basis_missing": 1441
+  },
+  "final_reps": 0,
+  "seconds": 79.91737199999625
+}

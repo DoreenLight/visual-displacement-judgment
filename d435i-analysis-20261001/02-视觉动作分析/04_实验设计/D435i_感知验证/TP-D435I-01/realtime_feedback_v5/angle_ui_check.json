@@ -1,0 +1,8 @@
+{
+  "legend": "蓝：上臂方向相对基线偏离 · 红：肘弯曲角（伸直为0°） · 黑：腕FE相对中立位 · 绿：腕RU相对中立位。纵轴：角度（°）；横轴：时间（秒）。当前为工程估计，尚未完成标准生物力学标定。",
+  "explanation_present": true,
+  "same_top": true,
+  "desktop_both_visible": true,
+  "horizontal_overflow": false,
+  "page_errors": []
+}

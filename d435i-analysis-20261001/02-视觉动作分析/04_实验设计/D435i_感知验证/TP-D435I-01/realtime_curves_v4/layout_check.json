@@ -1,0 +1,68 @@
+{
+  "checks": [
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "video": {
+        "x": 22,
+        "y": 91,
+        "width": 653,
+        "height": 478.984375,
+        "bottom": 569.984375
+      },
+      "chart": {
+        "x": 691,
+        "y": 91,
+        "width": 653,
+        "height": 478.984375,
+        "bottom": 569.984375
+      },
+      "overflow": false
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "video": {
+        "x": 22,
+        "y": 91,
+        "width": 930,
+        "height": 572.59375,
+        "bottom": 663.59375
+      },
+      "chart": {
+        "x": 968,
+        "y": 91,
+        "width": 930,
+        "height": 572.59375,
+        "bottom": 663.59375
+      },
+      "overflow": false
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "video": {
+        "x": 12,
+        "y": 102,
+        "width": 365.96875,
+        "height": 207.15625,
+        "bottom": 309.15625
+      },
+      "chart": {
+        "x": 12,
+        "y": 325.15625,
+        "width": 366,
+        "height": 527.59375,
+        "bottom": 852.75
+      },
+      "overflow": false
+    }
+  ],
+  "page_errors": []
+}

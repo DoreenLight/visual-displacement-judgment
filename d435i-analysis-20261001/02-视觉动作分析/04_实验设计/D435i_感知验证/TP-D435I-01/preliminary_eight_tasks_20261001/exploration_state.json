@@ -1,0 +1,130 @@
+{
+  "revision": "preliminary-eight-tasks/v1",
+  "updated": "2026-10-01",
+  "stage": "initial-investigation-debugging-next",
+  "retained_trials": 25,
+  "participant_ids": [
+    "P001"
+  ],
+  "captured_rgb_depth_pairs": 29938,
+  "analysis_records": 18310,
+  "task_summary": [
+    {
+      "task_id": 1,
+      "task_name": "自然坐姿静止",
+      "trials": 3,
+      "captured_frames": 2700,
+      "analysis_records": 1776,
+      "valid_point_frames": 1773,
+      "point_fraction_of_capture": 0.6566666666666666,
+      "point_fraction_of_analysis_records": 0.9983108108108109
+    },
+    {
+      "task_id": 2,
+      "task_name": "握柄姿态静止",
+      "trials": 3,
+      "captured_frames": 2699,
+      "analysis_records": 1640,
+      "valid_point_frames": 1637,
+      "point_fraction_of_capture": 0.6065209336791404,
+      "point_fraction_of_analysis_records": 0.9981707317073171
+    },
+    {
+      "task_id": 3,
+      "task_name": "标准腕屈伸",
+      "trials": 4,
+      "captured_frames": 7022,
+      "analysis_records": 4124,
+      "valid_point_frames": 3984,
+      "point_fraction_of_capture": 0.5673597265736258,
+      "point_fraction_of_analysis_records": 0.9660523763336566
+    },
+    {
+      "task_id": 4,
+      "task_name": "标准桡偏／尺偏",
+      "trials": 3,
+      "captured_frames": 5167,
+      "analysis_records": 3074,
+      "valid_point_frames": 3046,
+      "point_fraction_of_capture": 0.5895103541706986,
+      "point_fraction_of_analysis_records": 0.9908913467794405
+    },
+    {
+      "task_id": 5,
+      "task_name": "腕部复合回转",
+      "trials": 3,
+      "captured_frames": 2962,
+      "analysis_records": 1771,
+      "valid_point_frames": 1514,
+      "point_fraction_of_capture": 0.5111411208642809,
+      "point_fraction_of_analysis_records": 0.854884246188594
+    },
+    {
+      "task_id": 6,
+      "task_name": "肩部诱导代偿",
+      "trials": 3,
+      "captured_frames": 2825,
+      "analysis_records": 1824,
+      "valid_point_frames": 1813,
+      "point_fraction_of_capture": 0.6417699115044248,
+      "point_fraction_of_analysis_records": 0.9939692982456141
+    },
+    {
+      "task_id": 7,
+      "task_name": "肘部诱导代偿",
+      "trials": 3,
+      "captured_frames": 3611,
+      "analysis_records": 2271,
+      "valid_point_frames": 2072,
+      "point_fraction_of_capture": 0.5738022708391027,
+      "point_fraction_of_analysis_records": 0.912373403786878
+    },
+    {
+      "task_id": 8,
+      "task_name": "肩肘协同代偿",
+      "trials": 3,
+      "captured_frames": 2952,
+      "analysis_records": 1830,
+      "valid_point_frames": 1474,
+      "point_fraction_of_capture": 0.4993224932249323,
+      "point_fraction_of_analysis_records": 0.805464480874317
+    }
+  ],
+  "visual_check": {
+    "frames": 24,
+    "scope": "first retained trial per task at20/50/80 percent",
+    "full_video_annotation": false
+  },
+  "not_started": [
+    "offline_reinference",
+    "program_fixes",
+    "new_collection",
+    "independent_validation"
+  ],
+  "sources": [
+    {
+      "path": "../closeout_review_v1/review_20261001_v1/summary.json",
+      "sha256": "d2fb392349ff5bb4358d61dec625d813c7b3e2ec1009f70ce29b389502b72a39"
+    },
+    {
+      "path": "../closeout_review_v1/review_20261001_v1/keypoint_statistics.csv",
+      "sha256": "ac566e11a9985e5189c3cab916ff69aa58371db66cf67a1e0c3773a17b81d589"
+    },
+    {
+      "path": "../../TP-D435I-02/closeout_review_v1/review_20261001_v1/candidate_kinematics_summary.csv",
+      "sha256": "95497cd7d01468de269b1aa94c2f9323ea7820527387d0bedd9d00da024db097"
+    },
+    {
+      "path": "../../TP-D435I-03/closeout_review_v1/review_20261001_v1/compensation_observations.csv",
+      "sha256": "2509cf1f9514266f18e1c2afb3e11db6dc93178c195f898741fb8a29598caa66"
+    },
+    {
+      "path": "../attempt_01/eight_task_sessions.json",
+      "sha256": "29de1a6f8f1126de7ec182dc0f25a2e2af07eeea02e0f998997ccfdf51b89383"
+    },
+    {
+      "path": "../attempt_01/excluded_trials.json",
+      "sha256": "373649a3bdd1e8cf38c471726a85b6d4c04aaee6f880deafcbae95be7f345852"
+    }
+  ]
+}

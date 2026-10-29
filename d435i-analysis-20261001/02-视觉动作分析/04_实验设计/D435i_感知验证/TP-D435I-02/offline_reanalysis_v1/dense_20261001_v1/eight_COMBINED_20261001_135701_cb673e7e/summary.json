@@ -1,0 +1,10 @@
+{
+  "run_id": "eight_COMBINED_20261001_135701_cb673e7e",
+  "scope": "exploratory dense replay, not formal validation",
+  "rows": 955,
+  "input_measurements_sha256": "f4ea656e353be432afa4b437ea9f65bd9a7757db9a147e42c70cdc584f8050ee",
+  "input_path": "../../../../TP-D435I-01/offline_reanalysis_v1/dense_20261001_v1/runs/eight_COMBINED_20261001_135701_cb673e7e/measurements.jsonl",
+  "csv_sha256": "448c5ebe041b7f5eb331aa687147c094d9f67678d761231a5f7695ff8c5b4dc6",
+  "formal_accuracy": "not_evaluated",
+  "camera_opened": false
+}

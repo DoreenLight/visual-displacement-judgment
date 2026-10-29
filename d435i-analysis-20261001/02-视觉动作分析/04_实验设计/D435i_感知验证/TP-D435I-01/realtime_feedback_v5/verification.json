@@ -1,0 +1,21 @@
+{
+  "unit_tests_passed": 19,
+  "ui_fixture_verified": true,
+  "offline_comparison_frames": 600,
+  "local_links_checked": 7,
+  "frozen_documents_verified": 12,
+  "deployed": true,
+  "current_live_version": "feedback/v5",
+  "current_recording": false,
+  "current_run_id": "curves4_FE_20261001_203442_ff7b172a",
+  "human_angular_accuracy_verified": false,
+  "real_trials_deleted_by_tools": true,
+  "original_data_modified": false,
+  "discarded_trial": "curves4_FE_20261001_203442_ff7b172a",
+  "physical_files_deleted": false,
+  "discarded_trial_finalization_interrupted_by_user_authorization": true,
+  "deployment_check": "deployment_check.json",
+  "connection_fix_check": "connection_fix_check.json",
+  "connection_requests_passed": 100,
+  "json_native_boolean_regression_passed": true
+}

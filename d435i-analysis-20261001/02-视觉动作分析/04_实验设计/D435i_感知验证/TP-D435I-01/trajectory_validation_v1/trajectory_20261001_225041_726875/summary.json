@@ -1,0 +1,91 @@
+{
+  "run_id": "trajectory_20261001_225041_726875",
+  "phase": "endpoint_b",
+  "static_compliance": "NOT_INDEPENDENTLY_CONFIRMED",
+  "seconds": 5.019530899997335,
+  "unique_outputs": 95,
+  "duplicate_polls_ignored": 1,
+  "http_failure_count": 0,
+  "captured_frame_id_span": 149,
+  "max_polled_source_time_step_s": 0.1004108999914024,
+  "denominator_note": "Unique polled analyzed outputs only; not all camera frames. Missing source frames are unobserved, not classified valid.",
+  "joints": [
+    {
+      "joint_id": "r_shoulder",
+      "valid_count": 95,
+      "polled_unique_outputs": 95,
+      "valid_rate_among_polled_outputs": 1.0,
+      "axis_sd_mm": [
+        2.0598629139027484,
+        1.242484004387685,
+        4.217959262185221
+      ],
+      "median_distance_p95_mm": 9.26382931413095,
+      "median_distance_max_mm": 13.235320195677033,
+      "observed_invalid_gap_max_s": 0.0,
+      "accuracy_status": "BLOCKED_NO_INDEPENDENT_REFERENCE"
+    },
+    {
+      "joint_id": "r_elbow",
+      "valid_count": 95,
+      "polled_unique_outputs": 95,
+      "valid_rate_among_polled_outputs": 1.0,
+      "axis_sd_mm": [
+        1.7386719662103431,
+        2.576117988566381,
+        2.2220024438595876
+      ],
+      "median_distance_p95_mm": 5.9387059081377505,
+      "median_distance_max_mm": 7.541721735386675,
+      "observed_invalid_gap_max_s": 0.0,
+      "accuracy_status": "BLOCKED_NO_INDEPENDENT_REFERENCE"
+    },
+    {
+      "joint_id": "r_wrist",
+      "valid_count": 95,
+      "polled_unique_outputs": 95,
+      "valid_rate_among_polled_outputs": 1.0,
+      "axis_sd_mm": [
+        2.695265687200089,
+        0.9518780559978404,
+        2.171273747930445
+      ],
+      "median_distance_p95_mm": 6.118204992388194,
+      "median_distance_max_mm": 7.051898187180841,
+      "observed_invalid_gap_max_s": 0.0,
+      "accuracy_status": "BLOCKED_NO_INDEPENDENT_REFERENCE"
+    },
+    {
+      "joint_id": "hand_wrist",
+      "valid_count": 95,
+      "polled_unique_outputs": 95,
+      "valid_rate_among_polled_outputs": 1.0,
+      "axis_sd_mm": [
+        0.5551582392154996,
+        0.7374763472687635,
+        1.6143905984316342
+      ],
+      "median_distance_p95_mm": 3.1055222324014844,
+      "median_distance_max_mm": 5.175823113214583,
+      "observed_invalid_gap_max_s": 0.0,
+      "accuracy_status": "BLOCKED_NO_INDEPENDENT_REFERENCE"
+    },
+    {
+      "joint_id": "hand_middle_mcp",
+      "valid_count": 95,
+      "polled_unique_outputs": 95,
+      "valid_rate_among_polled_outputs": 1.0,
+      "axis_sd_mm": [
+        0.843335020784896,
+        0.8265536690296451,
+        1.2311630021025832
+      ],
+      "median_distance_p95_mm": 2.94596221571086,
+      "median_distance_max_mm": 4.232738568513472,
+      "observed_invalid_gap_max_s": 0.0,
+      "accuracy_status": "BLOCKED_NO_INDEPENDENT_REFERENCE"
+    }
+  ],
+  "accuracy_status": "BLOCKED_NO_INDEPENDENT_REFERENCE",
+  "raw_directory": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\trajectory_20261001_225041_726875"
+}

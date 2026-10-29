@@ -1,0 +1,67 @@
+{
+  "a_run_id": "trajectory_20261001_224520_425293",
+  "b_run_id": "trajectory_20261001_224638_254357",
+  "results": [
+    {
+      "joint_id": "r_wrist",
+      "valid_counts_a_b": [
+        92,
+        94
+      ],
+      "median_positions_m": [
+        [
+          0.22120720148086548,
+          0.12377148121595383,
+          0.9375000298023224
+        ],
+        [
+          0.2289518415927887,
+          0.12595830857753754,
+          0.8870000243186951
+        ]
+      ],
+      "delta_xyz_mm": [
+        7.744640111923218,
+        2.1868273615837097,
+        -50.50000548362732
+      ],
+      "median_endpoint_distance_mm": 51.13719016742092,
+      "nominal_ruler_distance_mm": 50.0,
+      "difference_from_nominal_mm": 1.1371901674209184
+    },
+    {
+      "joint_id": "hand_wrist",
+      "valid_counts_a_b": [
+        92,
+        94
+      ],
+      "median_positions_m": [
+        [
+          0.24483813345432281,
+          0.13628871738910675,
+          0.9390000700950623
+        ],
+        [
+          0.24864554405212402,
+          0.13620682060718536,
+          0.8880000710487366
+        ]
+      ],
+      "delta_xyz_mm": [
+        3.8074105978012085,
+        -0.08189678192138672,
+        -50.999999046325684
+      ],
+      "median_endpoint_distance_mm": 51.141988475892866,
+      "nominal_ruler_distance_mm": 50.0,
+      "difference_from_nominal_mm": 1.141988475892866
+    }
+  ],
+  "comparison_scope": "single_pair_median_endpoint_distance_only",
+  "reference_source": "operator_confirmed_ruler_distance",
+  "reference_uncertainty_mm": null,
+  "white_marker_tracking": false,
+  "anatomical_point_mapping": null,
+  "continuous_dynamic_accuracy": "BLOCKED",
+  "absolute_3d_accuracy": "BLOCKED"
+}

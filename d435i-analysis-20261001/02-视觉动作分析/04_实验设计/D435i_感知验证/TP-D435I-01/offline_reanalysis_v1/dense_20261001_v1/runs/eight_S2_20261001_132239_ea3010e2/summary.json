@@ -1,0 +1,15 @@
+{
+  "run_id": "eight_S2_20261001_132239_ea3010e2",
+  "task_id": 2,
+  "frames": 900,
+  "body_valid": 900,
+  "angle_valid": 0,
+  "states": {
+    "unknown": 900
+  },
+  "reasons": {
+    "hand_or_basis_missing": 900
+  },
+  "final_reps": 0,
+  "seconds": 46.2449190000043
+}

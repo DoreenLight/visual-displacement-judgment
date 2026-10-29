@@ -1,0 +1,53 @@
+{
+  "exit_code": 0,
+  "dense_reinference_exit_code": 0,
+  "analysis_exit_code": 0,
+  "report_generation_exit_code": 0,
+  "tests_exit_code": 0,
+  "tests_passed": 6,
+  "frame_identity_checks": 29938,
+  "sampled_point_checks": 750,
+  "valid_sampled_deprojections": 666,
+  "model_code_selection_hashes_verified": 9,
+  "frozen_document_hashes_verified": 12,
+  "replay_clips_decoded": 11,
+  "decoded_first_middle_last_frames": 33,
+  "visual_scope": "11case contact sheets x6frames and selected signal plots; no independent full-event annotation",
+  "full_original_data_rehashed_this_turn": false,
+  "previous_full_original_sha_verified_files": 59976,
+  "hardware_limits_not_identifiable": true,
+  "real_time_service_changed": false,
+  "postprocess_sources": [
+    {
+      "path": "analyze.py",
+      "sha256": "5a1a9963952757b5b57bcb5415a5c7a7a06d2d3be72c735c92a74a62443e7f5c"
+    },
+    {
+      "path": "finalize.py",
+      "sha256": "eb8dafb884c1c3824c10408c6a2d8e98c150b9e21c0588fce8d561e5fa54e4c2"
+    },
+    {
+      "path": "test_analysis.py",
+      "sha256": "aba9528da4a57570a2242080ff4cf8d85d0bdaabfb182313f88ae1af632e839a"
+    }
+  ],
+  "local_links_checked": 59,
+  "broken_links": [],
+  "scientific_figures_visually_checked": [
+    "coverage_comparison.png",
+    "static_stability.png",
+    "RU2_signals",
+    "FE1_signals",
+    "failure_boundary_examples.jpg"
+  ],
+  "visual_contact_sheet_checks": 11,
+  "observed_static_position_p95_range_mm": [
+    4.309488035375514,
+    36.261127508243355
+  ],
+  "kb_embedded_python_exit_code": 1,
+  "kb_pass_cases": 12,
+  "kb_fail_cases": 6,
+  "kb_original_shell_wrapper_executed": false,
+  "kb_checker_sha256": "4d7ade17dabad07639f13c7153e924583629ca40ef812b41a8e22a7d284dbfb5"
+}

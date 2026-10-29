@@ -1,0 +1,15 @@
+{
+  "run_id": "eight_S1_20261001_131959_59d5ec91",
+  "task_id": 1,
+  "frames": 900,
+  "body_valid": 900,
+  "angle_valid": 380,
+  "states": {
+    "normal": 900
+  },
+  "reasons": {
+    "hand_or_basis_missing": 520
+  },
+  "final_reps": 0,
+  "seconds": 45.30996569999843
+}

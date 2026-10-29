@@ -1,0 +1,17 @@
+{
+  "measurement_session": "ENDED_BY_USER",
+  "operator_stop_instruction": "结束这个测量",
+  "completed_pairs": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "pair_5_acquired": false,
+  "pending_ready_questions_revoked": true,
+  "reference_conditions": {
+    "pairs_1_3": "original_same_endpoints_50mm",
+    "pair_4": "changed_endpoints_50mm_operator_confirmed"
+  },
+  "next_action": "historical_data_review_only_no_new_capture"
+}

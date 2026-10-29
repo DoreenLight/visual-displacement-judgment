@@ -1,0 +1,7 @@
+{
+  "run_id": "eight_ELBOW_20261001_135333_1cd6edcf",
+  "has_stored_hand_basis": true,
+  "has_stored_body_baseline": true,
+  "all_hand_points_valid_rate": 0.6762152777777778,
+  "body_valid_but_hand_points_missing_rate": 0.3090277777777778
+}

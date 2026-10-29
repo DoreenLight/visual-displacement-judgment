@@ -1,0 +1,20 @@
+[
+  {
+    "run_id": "curves4_FE_20261001_203442_ff7b172a",
+    "deleted_at": "2026-10-01T21:25:00.815207+08:00",
+    "reason": "user_explicitly_discarded_current_trial",
+    "record": {
+      "run_id": "curves4_FE_20261001_203442_ff7b172a",
+      "participant_id": "P001",
+      "task_id": 3,
+      "task_name": "标准腕屈伸",
+      "captured_frames": 80743,
+      "active_duration_s": 1674.055,
+      "finish_reason": "user_discarded_during_finalization",
+      "raw_directory": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\07_资料库\\D435i_感知验证\\curves4_FE_20261001_203442_ff7b172a"
+    },
+    "physical_files_retained": true,
+    "restorable": false,
+    "finalization_incomplete": true
+  }
+]

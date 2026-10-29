@@ -1,0 +1,26 @@
+{
+  "run_id": "eight_FE_20261001_134101_6c9daee0",
+  "metadata": [
+    {
+      "name": "run.json",
+      "sha256": "e690057213f845743ba5fd059189a78b10b95dfaa4ff1c57c00f7511b6a754c1"
+    },
+    {
+      "name": "frames.jsonl",
+      "sha256": "c39c5fa5e07c35aeb75317ba294ea06e9d4c370735476422317b3007b01bcdcf"
+    },
+    {
+      "name": "analysis.jsonl",
+      "sha256": "245aa33d4d3f037ee626d22c8e280cfade43189b88d0f824679112b3686d9e15"
+    },
+    {
+      "name": "events.jsonl",
+      "sha256": "caee21a4f6c023ef3971277c4bbd806369a3cfbd2f332f514378dd6b8fa06d70"
+    },
+    {
+      "name": "files.sha256",
+      "sha256": "3664d33b95e1bc9230b93d8f2903aea04fbb1d73db6c1974a0feff1557be8745"
+    }
+  ],
+  "image_scope": "all selected frames; paired files read, no thinning; previous raw manifest SHA audit retained"
+}

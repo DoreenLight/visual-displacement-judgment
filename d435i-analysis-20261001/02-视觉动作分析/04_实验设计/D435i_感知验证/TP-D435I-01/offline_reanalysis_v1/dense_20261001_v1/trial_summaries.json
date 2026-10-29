@@ -1,0 +1,469 @@
+[
+  {
+    "run_id": "eight_S1_20261001_131959_59d5ec91",
+    "task_id": 1,
+    "frames": 900,
+    "body_valid": 900,
+    "angle_valid": 380,
+    "states": {
+      "normal": 900
+    },
+    "reasons": {
+      "hand_or_basis_missing": 520
+    },
+    "final_reps": 0,
+    "seconds": 45.30996569999843
+  },
+  {
+    "run_id": "eight_S2_20261001_132239_ea3010e2",
+    "task_id": 2,
+    "frames": 900,
+    "body_valid": 900,
+    "angle_valid": 0,
+    "states": {
+      "unknown": 900
+    },
+    "reasons": {
+      "hand_or_basis_missing": 900
+    },
+    "final_reps": 0,
+    "seconds": 46.2449190000043
+  },
+  {
+    "run_id": "eight_FE_20261001_133658_73162b96",
+    "task_id": 3,
+    "frames": 1608,
+    "body_valid": 1576,
+    "angle_valid": 1066,
+    "states": {
+      "unknown": 32,
+      "normal": 1563,
+      "elbow_compensation": 13
+    },
+    "reasons": {
+      "body_geometry_or_keypoints_invalid": 32,
+      "hand_or_basis_missing": 508,
+      "hand_geometry_or_reference_invalid": 2
+    },
+    "final_reps": 0,
+    "seconds": 85.00325380000868
+  },
+  {
+    "run_id": "eight_RU_20261001_133130_b225807d",
+    "task_id": 4,
+    "frames": 2592,
+    "body_valid": 2576,
+    "angle_valid": 1344,
+    "states": {
+      "normal": 1533,
+      "unknown": 16,
+      "elbow_compensation": 1043
+    },
+    "reasons": {
+      "hand_or_basis_missing": 1230,
+      "body_geometry_or_keypoints_invalid": 16,
+      "hand_geometry_or_reference_invalid": 2
+    },
+    "final_reps": 0,
+    "seconds": 129.28608279999753
+  },
+  {
+    "run_id": "eight_CIRCLE_20261001_134353_ece4c4e8",
+    "task_id": 5,
+    "frames": 1417,
+    "body_valid": 1405,
+    "angle_valid": 915,
+    "states": {
+      "normal": 1405,
+      "unknown": 12
+    },
+    "reasons": {
+      "hand_or_basis_missing": 475,
+      "body_geometry_or_keypoints_invalid": 12,
+      "angle_out_of_observable_range": 15
+    },
+    "final_reps": 0,
+    "seconds": 68.16724679998879
+  },
+  {
+    "run_id": "eight_SHOULDER_20261001_134728_5cedac08",
+    "task_id": 6,
+    "frames": 970,
+    "body_valid": 969,
+    "angle_valid": 265,
+    "states": {
+      "normal": 139,
+      "unknown": 1,
+      "shoulder_compensation": 830
+    },
+    "reasons": {
+      "hand_or_basis_missing": 704,
+      "body_geometry_or_keypoints_invalid": 1
+    },
+    "final_reps": 0,
+    "seconds": 42.568845300003886
+  },
+  {
+    "run_id": "eight_ELBOW_20261001_135236_ac256f5f",
+    "task_id": 7,
+    "frames": 957,
+    "body_valid": 952,
+    "angle_valid": 176,
+    "states": {
+      "normal": 14,
+      "unknown": 5,
+      "combined": 938
+    },
+    "reasons": {
+      "hand_or_basis_missing": 390,
+      "body_geometry_or_keypoints_invalid": 5,
+      "angle_out_of_observable_range": 363,
+      "angle_jump": 7,
+      "hand_geometry_or_reference_invalid": 16
+    },
+    "final_reps": 0,
+    "seconds": 33.130977699998766
+  },
+  {
+    "run_id": "eight_COMBINED_20261001_135607_5bb6b817",
+    "task_id": 8,
+    "frames": 925,
+    "body_valid": 783,
+    "angle_valid": 99,
+    "states": {
+      "normal": 156,
+      "shoulder_compensation": 36,
+      "unknown": 142,
+      "combined": 591
+    },
+    "reasons": {
+      "hand_or_basis_missing": 450,
+      "angle_jump": 5,
+      "body_geometry_or_keypoints_invalid": 142,
+      "angle_out_of_observable_range": 164,
+      "hand_geometry_or_reference_invalid": 65
+    },
+    "final_reps": 0,
+    "seconds": 43.432950799993705
+  },
+  {
+    "run_id": "eight_CIRCLE_20261001_134509_b65ab28b",
+    "task_id": 5,
+    "frames": 815,
+    "body_valid": 540,
+    "angle_valid": 421,
+    "states": {
+      "normal": 464,
+      "elbow_compensation": 36,
+      "shoulder_compensation": 30,
+      "unknown": 275,
+      "combined": 10
+    },
+    "reasons": {
+      "hand_geometry_or_reference_invalid": 5,
+      "hand_or_basis_missing": 108,
+      "body_geometry_or_keypoints_invalid": 275,
+      "angle_out_of_observable_range": 6
+    },
+    "final_reps": 0,
+    "seconds": 42.33285479999904
+  },
+  {
+    "run_id": "eight_CIRCLE_20261001_134606_0e663bce",
+    "task_id": 5,
+    "frames": 730,
+    "body_valid": 655,
+    "angle_valid": 427,
+    "states": {
+      "normal": 76,
+      "unknown": 75,
+      "shoulder_compensation": 522,
+      "combined": 57
+    },
+    "reasons": {
+      "hand_or_basis_missing": 211,
+      "body_geometry_or_keypoints_invalid": 75,
+      "angle_out_of_observable_range": 17
+    },
+    "final_reps": 0,
+    "seconds": 37.41297670001222
+  },
+  {
+    "run_id": "eight_COMBINED_20261001_135701_cb673e7e",
+    "task_id": 8,
+    "frames": 955,
+    "body_valid": 842,
+    "angle_valid": 49,
+    "states": {
+      "normal": 164,
+      "unknown": 113,
+      "shoulder_compensation": 80,
+      "combined": 598
+    },
+    "reasons": {
+      "hand_or_basis_missing": 413,
+      "body_geometry_or_keypoints_invalid": 113,
+      "hand_geometry_or_reference_invalid": 26,
+      "angle_out_of_observable_range": 354
+    },
+    "final_reps": 0,
+    "seconds": 40.41745049999736
+  },
+  {
+    "run_id": "eight_COMBINED_20261001_135752_6c5fc62b",
+    "task_id": 8,
+    "frames": 1072,
+    "body_valid": 711,
+    "angle_valid": 46,
+    "states": {
+      "unknown": 361,
+      "normal": 278,
+      "combined": 412,
+      "shoulder_compensation": 21
+    },
+    "reasons": {
+      "body_geometry_or_keypoints_invalid": 361,
+      "hand_geometry_or_reference_invalid": 39,
+      "hand_or_basis_missing": 386,
+      "angle_out_of_observable_range": 238,
+      "angle_jump": 2
+    },
+    "final_reps": 0,
+    "seconds": 49.126485100001446
+  },
+  {
+    "run_id": "eight_ELBOW_20261001_135333_1cd6edcf",
+    "task_id": 7,
+    "frames": 1152,
+    "body_valid": 1122,
+    "angle_valid": 529,
+    "states": {
+      "normal": 57,
+      "elbow_compensation": 1,
+      "combined": 1064,
+      "unknown": 30
+    },
+    "reasons": {
+      "hand_or_basis_missing": 356,
+      "body_geometry_or_keypoints_invalid": 30,
+      "hand_geometry_or_reference_invalid": 33,
+      "angle_out_of_observable_range": 200,
+      "angle_jump": 4
+    },
+    "final_reps": 0,
+    "seconds": 42.534880000006524
+  },
+  {
+    "run_id": "eight_ELBOW_20261001_135439_15a01a4e",
+    "task_id": 7,
+    "frames": 1502,
+    "body_valid": 1247,
+    "angle_valid": 618,
+    "states": {
+      "normal": 311,
+      "shoulder_compensation": 63,
+      "unknown": 255,
+      "combined": 873
+    },
+    "reasons": {
+      "hand_or_basis_missing": 445,
+      "body_geometry_or_keypoints_invalid": 255,
+      "hand_geometry_or_reference_invalid": 33,
+      "angle_jump": 4,
+      "angle_out_of_observable_range": 147
+    },
+    "final_reps": 0,
+    "seconds": 61.15823960000125
+  },
+  {
+    "run_id": "eight_FE_20261001_133828_a60e1ba6",
+    "task_id": 3,
+    "frames": 707,
+    "body_valid": 626,
+    "angle_valid": 332,
+    "states": {
+      "normal": 87,
+      "elbow_compensation": 495,
+      "unknown": 81,
+      "combined": 44
+    },
+    "reasons": {
+      "hand_or_basis_missing": 291,
+      "angle_jump": 2,
+      "body_geometry_or_keypoints_invalid": 81,
+      "hand_geometry_or_reference_invalid": 1
+    },
+    "final_reps": 0,
+    "seconds": 39.142120400007116
+  },
+  {
+    "run_id": "eight_FE_20261001_133920_581ea1c5",
+    "task_id": 3,
+    "frames": 1860,
+    "body_valid": 1860,
+    "angle_valid": 419,
+    "states": {
+      "normal": 6,
+      "shoulder_compensation": 1442,
+      "combined": 412
+    },
+    "reasons": {
+      "hand_or_basis_missing": 1441
+    },
+    "final_reps": 0,
+    "seconds": 79.91737199999625
+  },
+  {
+    "run_id": "eight_FE_20261001_134101_6c9daee0",
+    "task_id": 3,
+    "frames": 2847,
+    "body_valid": 2715,
+    "angle_valid": 1200,
+    "states": {
+      "normal": 153,
+      "combined": 1357,
+      "unknown": 132,
+      "shoulder_compensation": 1205
+    },
+    "reasons": {
+      "hand_or_basis_missing": 1511,
+      "body_geometry_or_keypoints_invalid": 132,
+      "hand_geometry_or_reference_invalid": 4
+    },
+    "final_reps": 0,
+    "seconds": 114.4303704000049
+  },
+  {
+    "run_id": "eight_RU_20261001_133347_d19a29ac",
+    "task_id": 4,
+    "frames": 1447,
+    "body_valid": 1446,
+    "angle_valid": 1403,
+    "states": {
+      "normal": 12,
+      "shoulder_compensation": 1058,
+      "unknown": 1,
+      "combined": 376
+    },
+    "reasons": {
+      "hand_or_basis_missing": 43,
+      "body_geometry_or_keypoints_invalid": 1
+    },
+    "final_reps": 0,
+    "seconds": 70.75235930000781
+  },
+  {
+    "run_id": "eight_RU_20261001_133509_ee4315e4",
+    "task_id": 4,
+    "frames": 1128,
+    "body_valid": 1101,
+    "angle_valid": 1054,
+    "states": {
+      "normal": 108,
+      "elbow_compensation": 196,
+      "unknown": 27,
+      "combined": 781,
+      "shoulder_compensation": 16
+    },
+    "reasons": {
+      "body_geometry_or_keypoints_invalid": 27,
+      "hand_or_basis_missing": 47
+    },
+    "final_reps": 0,
+    "seconds": 59.945896200006246
+  },
+  {
+    "run_id": "eight_S1_20261001_132059_bc0d3f66",
+    "task_id": 1,
+    "frames": 900,
+    "body_valid": 900,
+    "angle_valid": 116,
+    "states": {
+      "normal": 6,
+      "shoulder_compensation": 2,
+      "combined": 892
+    },
+    "reasons": {
+      "hand_or_basis_missing": 784
+    },
+    "final_reps": 0,
+    "seconds": 44.66537080000853
+  },
+  {
+    "run_id": "eight_S1_20261001_132148_b0ac2f4c",
+    "task_id": 1,
+    "frames": 900,
+    "body_valid": 900,
+    "angle_valid": 7,
+    "states": {
+      "normal": 6,
+      "combined": 894
+    },
+    "reasons": {
+      "hand_or_basis_missing": 887,
+      "hand_geometry_or_reference_invalid": 6
+    },
+    "final_reps": 0,
+    "seconds": 45.12808209999639
+  },
+  {
+    "run_id": "eight_S2_20261001_132326_343e7896",
+    "task_id": 2,
+    "frames": 900,
+    "body_valid": 900,
+    "angle_valid": 900,
+    "states": {
+      "normal": 900
+    },
+    "reasons": {},
+    "final_reps": 0,
+    "seconds": 43.62426640000194
+  },
+  {
+    "run_id": "eight_S2_20261001_132413_dedfd30f",
+    "task_id": 2,
+    "frames": 899,
+    "body_valid": 899,
+    "angle_valid": 899,
+    "states": {
+      "normal": 899
+    },
+    "reasons": {},
+    "final_reps": 0,
+    "seconds": 41.69471700000577
+  },
+  {
+    "run_id": "eight_SHOULDER_20261001_134819_8be00db0",
+    "task_id": 6,
+    "frames": 929,
+    "body_valid": 929,
+    "angle_valid": 691,
+    "states": {
+      "normal": 6,
+      "combined": 923
+    },
+    "reasons": {
+      "hand_or_basis_missing": 238
+    },
+    "final_reps": 0,
+    "seconds": 29.836089099990204
+  },
+  {
+    "run_id": "eight_SHOULDER_20261001_134908_c025f17f",
+    "task_id": 6,
+    "frames": 926,
+    "body_valid": 915,
+    "angle_valid": 909,
+    "states": {
+      "normal": 26,
+      "combined": 889,
+      "unknown": 11
+    },
+    "reasons": {
+      "body_geometry_or_keypoints_invalid": 11,
+      "hand_or_basis_missing": 6
+    },
+    "final_reps": 0,
+    "seconds": 34.905593699993915
+  }
+]

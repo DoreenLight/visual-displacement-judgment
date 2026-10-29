@@ -1,0 +1,21 @@
+{
+  "run_id": "eight_ELBOW_20261001_135236_ac256f5f",
+  "task_id": 7,
+  "frames": 957,
+  "body_valid": 952,
+  "angle_valid": 176,
+  "states": {
+    "normal": 14,
+    "unknown": 5,
+    "combined": 938
+  },
+  "reasons": {
+    "hand_or_basis_missing": 390,
+    "body_geometry_or_keypoints_invalid": 5,
+    "angle_out_of_observable_range": 363,
+    "angle_jump": 7,
+    "hand_geometry_or_reference_invalid": 16
+  },
+  "final_reps": 0,
+  "seconds": 33.130977699998766
+}

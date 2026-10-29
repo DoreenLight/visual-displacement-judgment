@@ -1,0 +1,21 @@
+{
+  "documentation_verdict": "PASS",
+  "trial_rows": 25,
+  "task_groups": 8,
+  "issues": 6,
+  "local_links_checked": 16,
+  "broken_local_links": [],
+  "frozen_document_hashes_verified": 12,
+  "source_hashes_verified": 6,
+  "raw_frames_rehashed_this_turn": false,
+  "raw_frames_previous_verified_count": 59976,
+  "kb_embedded_python_exit_code": 1,
+  "kb_shell_wrapper_executed": false,
+  "checker_sha256": "4d7ade17dabad07639f13c7153e924583629ca40ef812b41a8e22a7d284dbfb5",
+  "scope": "new exploration documents, source reconciliation, added navigation links; original embedded knowledge-base checker unchanged",
+  "program_changes": false,
+  "new_data_collection": false,
+  "kb_pass_cases": 12,
+  "kb_fail_cases": 6,
+  "documentation_organizing_verification_exit_code": 0
+}

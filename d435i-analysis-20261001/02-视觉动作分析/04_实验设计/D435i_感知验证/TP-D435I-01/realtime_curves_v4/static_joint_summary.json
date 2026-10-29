@@ -1,0 +1,51 @@
+[
+  {
+    "joint": "r_shoulder",
+    "static_trials_with_observations": 6,
+    "position_p95_min_mm": 11.326359949041457,
+    "position_p95_max_mm": 17.522476435130724,
+    "definition": "95th percentile Euclidean distance to per-trial median position; valid observations only; not accuracy"
+  },
+  {
+    "joint": "r_elbow",
+    "static_trials_with_observations": 6,
+    "position_p95_min_mm": 7.697700148102539,
+    "position_p95_max_mm": 23.436513128207483,
+    "definition": "95th percentile Euclidean distance to per-trial median position; valid observations only; not accuracy"
+  },
+  {
+    "joint": "r_wrist",
+    "static_trials_with_observations": 6,
+    "position_p95_min_mm": 4.309488035375514,
+    "position_p95_max_mm": 36.261127508243355,
+    "definition": "95th percentile Euclidean distance to per-trial median position; valid observations only; not accuracy"
+  },
+  {
+    "joint": "hand_wrist",
+    "static_trials_with_observations": 6,
+    "position_p95_min_mm": 3.1860794726848756,
+    "position_p95_max_mm": 8.20893794298172,
+    "definition": "95th percentile Euclidean distance to per-trial median position; valid observations only; not accuracy"
+  },
+  {
+    "joint": "hand_index_mcp",
+    "static_trials_with_observations": 6,
+    "position_p95_min_mm": 4.073050942870672,
+    "position_p95_max_mm": 210.08938356649102,
+    "definition": "95th percentile Euclidean distance to per-trial median position; valid observations only; not accuracy"
+  },
+  {
+    "joint": "hand_middle_mcp",
+    "static_trials_with_observations": 6,
+    "position_p95_min_mm": 2.0838248099247303,
+    "position_p95_max_mm": 15.20560035432366,
+    "definition": "95th percentile Euclidean distance to per-trial median position; valid observations only; not accuracy"
+  },
+  {
+    "joint": "hand_pinky_mcp",
+    "static_trials_with_observations": 6,
+    "position_p95_min_mm": 2.2462092742342263,
+    "position_p95_max_mm": 5.105091341664496,
+    "definition": "95th percentile Euclidean distance to per-trial median position; valid observations only; not accuracy"
+  }
+]

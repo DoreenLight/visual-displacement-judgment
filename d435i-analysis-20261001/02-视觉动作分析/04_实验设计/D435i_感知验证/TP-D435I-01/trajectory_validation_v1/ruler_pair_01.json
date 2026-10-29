@@ -1,0 +1,13 @@
+{
+  "pair_id": "ruler_pair_01",
+  "a_run_id": "trajectory_20261001_224520_425293",
+  "b_run_id": "trajectory_20261001_224638_254357",
+  "reference_distance_mm": 50,
+  "requested_distance_mm": 50,
+  "operator_marker": "white_dot_on_wrist",
+  "marker_tracking_implemented": false,
+  "comparison_status": "SINGLE_ENDPOINT_PAIR_COMPLETE",
+  "accuracy_status": "BLOCKED_NO_INDEPENDENT_3D_REFERENCE",
+  "reference_source": "operator_confirmation",
+  "reference_uncertainty_mm": null
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "run": "eight_S1_20261001_131959_59d5ec91",
+    "frames": 150,
+    "decoded": true
+  },
+  {
+    "run": "eight_S2_20261001_132239_ea3010e2",
+    "frames": 150,
+    "decoded": true
+  },
+  {
+    "run": "eight_FE_20261001_133658_73162b96",
+    "frames": 150,
+    "decoded": true
+  },
+  {
+    "run": "eight_RU_20261001_133130_b225807d",
+    "frames": 150,
+    "decoded": true
+  },
+  {
+    "run": "eight_CIRCLE_20261001_134353_ece4c4e8",
+    "frames": 150,
+    "decoded": true
+  },
+  {
+    "run": "eight_SHOULDER_20261001_134728_5cedac08",
+    "frames": 150,
+    "decoded": true
+  },
+  {
+    "run": "eight_ELBOW_20261001_135236_ac256f5f",
+    "frames": 150,
+    "decoded": true
+  },
+  {
+    "run": "eight_COMBINED_20261001_135607_5bb6b817",
+    "frames": 150,
+    "decoded": true
+  }
+]

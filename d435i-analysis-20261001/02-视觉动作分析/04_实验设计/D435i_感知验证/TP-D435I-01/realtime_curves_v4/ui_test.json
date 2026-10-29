@@ -1,0 +1,8 @@
+{
+  "synthetic": true,
+  "samples": 20,
+  "latency_pipeline_samples": 20,
+  "missing_wrist_samples": 4,
+  "page_errors": [],
+  "real_hardware_latency_verified": false
+}

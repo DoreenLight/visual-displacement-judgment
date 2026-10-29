@@ -1,0 +1,18 @@
+{
+  "run_id": "eight_SHOULDER_20261001_134908_c025f17f",
+  "task_id": 6,
+  "frames": 926,
+  "body_valid": 915,
+  "angle_valid": 909,
+  "states": {
+    "normal": 26,
+    "combined": 889,
+    "unknown": 11
+  },
+  "reasons": {
+    "body_geometry_or_keypoints_invalid": 11,
+    "hand_or_basis_missing": 6
+  },
+  "final_reps": 0,
+  "seconds": 34.905593699993915
+}

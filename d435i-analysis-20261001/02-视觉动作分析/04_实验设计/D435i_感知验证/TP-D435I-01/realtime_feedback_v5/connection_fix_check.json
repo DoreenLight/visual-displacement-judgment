@@ -1,0 +1,12 @@
+{
+  "display_packet_requests": 100,
+  "wrist_observable_packets": 0,
+  "advancing_sequences": [
+    1366,
+    1957
+  ],
+  "connection_label": "实时连接",
+  "latency_samples": 264,
+  "page_errors": [],
+  "failed_requests": []
+}

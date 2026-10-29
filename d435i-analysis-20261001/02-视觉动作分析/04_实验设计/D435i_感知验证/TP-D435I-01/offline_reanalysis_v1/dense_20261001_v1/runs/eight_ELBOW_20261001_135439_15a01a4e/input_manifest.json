@@ -1,0 +1,26 @@
+{
+  "run_id": "eight_ELBOW_20261001_135439_15a01a4e",
+  "metadata": [
+    {
+      "name": "run.json",
+      "sha256": "ed8d95f6f2e8bb223936881a03e7e96bcd288a6fac93868492e3c98b3add3898"
+    },
+    {
+      "name": "frames.jsonl",
+      "sha256": "4d109e6114c3885544988763a1264ae1181d7455ea3f760a1325912787e3f363"
+    },
+    {
+      "name": "analysis.jsonl",
+      "sha256": "921d1391688fdb5a62345c616362171f60d860560bdaecf6d3bc44b44546d054"
+    },
+    {
+      "name": "events.jsonl",
+      "sha256": "08d21b8be1ea12698636e838244222cabc24c8eba4a3fc5f6ab327de071dbe03"
+    },
+    {
+      "name": "files.sha256",
+      "sha256": "6f128867d6526e24221d43501510ce101fc5a080ce419e8b91183d714901f9b9"
+    }
+  ],
+  "image_scope": "all selected frames; paired files read, no thinning; previous raw manifest SHA audit retained"
+}

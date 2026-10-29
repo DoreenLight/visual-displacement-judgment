@@ -1,0 +1,21 @@
+{
+  "run_id": "eight_FE_20261001_133828_a60e1ba6",
+  "task_id": 3,
+  "frames": 707,
+  "body_valid": 626,
+  "angle_valid": 332,
+  "states": {
+    "normal": 87,
+    "elbow_compensation": 495,
+    "unknown": 81,
+    "combined": 44
+  },
+  "reasons": {
+    "hand_or_basis_missing": 291,
+    "angle_jump": 2,
+    "body_geometry_or_keypoints_invalid": 81,
+    "hand_geometry_or_reference_invalid": 1
+  },
+  "final_reps": 0,
+  "seconds": 39.142120400007116
+}

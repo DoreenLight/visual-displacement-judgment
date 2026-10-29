@@ -1,0 +1,40 @@
+{
+  "measured_at": "2026-10-01T12:21:36.518Z",
+  "observation_seconds": 60,
+  "camera_connected": true,
+  "frame_ids": [
+    10617,
+    12424
+  ],
+  "inference_fps": 27.8,
+  "receive_to_browser_draw": {
+    "n": 733,
+    "p50_ms": 90.237399995327,
+    "p95_ms": 119.83499999344349,
+    "min_ms": 60.81910000741482,
+    "max_ms": 187.11789998412132
+  },
+  "receive_to_analysis": {
+    "n": 733,
+    "p50_ms": 49.7,
+    "p95_ms": 65.7,
+    "min_ms": 31.3,
+    "max_ms": 87.4
+  },
+  "clock_half_rtt_ms": 1,
+  "curve_valid_samples": {
+    "shoulder": 1483,
+    "elbow": 1572,
+    "wrist_fe": 1111,
+    "wrist_ru": 1111
+  },
+  "page_errors": [],
+  "recording": false,
+  "training": false,
+  "client": "headless Microsoft Edge browser; foreground visibility in headless environment",
+  "physical_monitor_photon_latency_measured": false,
+  "motion_to_screen_latency_measured": false,
+  "hardware_pre_receive_delay_included": false,
+  "smoothing_phase_delay_included": false,
+  "scope": "actual RGB-D processing and browser callback timing; separate from human anatomical accuracy and physical display latency"
+}

@@ -1,0 +1,8 @@
+{
+  "fixture_only": true,
+  "delete_removed_trial": true,
+  "restore_reinstated_trial": true,
+  "count_threshold_applied": 12,
+  "page_errors": [],
+  "real_user_trials_mutated": false
+}

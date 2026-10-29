@@ -1,0 +1,9 @@
+{
+  "stage": "analysis_complete",
+  "trials": 25,
+  "frames": 29938,
+  "offline_body_valid_rate": 0.947591689491616,
+  "report": "REPORT.md",
+  "next_stage": "targeted_software_improvements_then_replay",
+  "real_time_fixes_done": false
+}

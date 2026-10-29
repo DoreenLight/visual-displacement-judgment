@@ -1,0 +1,8 @@
+{
+  "run_id": "eight_SHOULDER_20261001_134728_5cedac08",
+  "start_s": 2.0,
+  "end_s": 12.0,
+  "selection": "highest dense-body/candidate availability among fixed 10s windows; exploratory; visual review required",
+  "review_status": "not_yet_reviewed",
+  "baseline_counterfactual_note": "first2s recentered baseline may contain motion; diagnostic only"
+}

@@ -1,0 +1,9 @@
+{
+  "capture_to_replay_frame_identity_checked": 29938,
+  "sampled_point_records": 750,
+  "valid_sampled_deprojections": 666,
+  "sample_scope": "first/middle/last capture per25 trials,10 source points each",
+  "deprojection_tolerance": "one rounded pixel in each axis plus1e-5m; source display stores 2decimal pixels, source sampler floors unrounded coordinate",
+  "derived_package_csvs": 50,
+  "original_frames_changed": false
+}

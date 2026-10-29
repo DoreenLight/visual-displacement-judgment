@@ -1,0 +1,9 @@
+{
+  "pair_id": "ruler_pair_02",
+  "a_run_id": "trajectory_20261001_224955_459820",
+  "b_run_id": "trajectory_20261001_225041_726875",
+  "requested_distance_mm": 50,
+  "comparison_status": "SINGLE_ENDPOINT_PAIR_COMPLETE",
+  "white_marker_tracking": false,
+  "reference_distance_mm": 50
+}

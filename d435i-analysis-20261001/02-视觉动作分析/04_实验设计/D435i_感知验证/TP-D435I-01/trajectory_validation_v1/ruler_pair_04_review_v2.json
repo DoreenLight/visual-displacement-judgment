@@ -1,0 +1,73 @@
+{
+  "a_run_id": "trajectory_20261001_225352_605218",
+  "b_run_id": "trajectory_20261001_225431_107797",
+  "results": [
+    {
+      "joint_id": "r_wrist",
+      "valid_counts_a_b": [
+        95,
+        92
+      ],
+      "median_positions_m": [
+        [
+          0.19709043204784393,
+          0.133964404463768,
+          0.8550000190734863
+        ],
+        [
+          0.1957976073026657,
+          0.1287938505411148,
+          0.8210000395774841
+        ]
+      ],
+      "delta_xyz_mm": [
+        -1.2928247451782227,
+        -5.170553922653198,
+        -33.9999794960022
+      ],
+      "median_endpoint_distance_mm": 34.41518021770886,
+      "nominal_ruler_distance_mm": 50.0,
+      "difference_from_nominal_mm": -15.584819782291142
+    },
+    {
+      "joint_id": "hand_wrist",
+      "valid_counts_a_b": [
+        95,
+        92
+      ],
+      "median_positions_m": [
+        [
+          0.19426874816417694,
+          0.1312984675168991,
+          0.8560000658035278
+        ],
+        [
+          0.182932049036026,
+          0.1304657757282257,
+          0.8240000605583191
+        ]
+      ],
+      "delta_xyz_mm": [
+        -11.33669912815094,
+        -0.8326917886734009,
+        -32.00000524520874
+      ],
+      "median_endpoint_distance_mm": 33.95901144660323,
+      "nominal_ruler_distance_mm": 50.0,
+      "difference_from_nominal_mm": -16.040988553396772
+    }
+  ],
+  "comparison_scope": "single_pair_median_endpoint_distance_only",
+  "reference_source": "operator_confirmed_new_endpoints_50mm",
+  "reference_uncertainty_mm": null,
+  "white_marker_tracking": false,
+  "anatomical_point_mapping": null,
+  "continuous_dynamic_accuracy": "BLOCKED",
+  "absolute_3d_accuracy": "BLOCKED",
+  "operator_feedback": "1-3组的没有变更过,新 A/B 点实际相距50毫米",
+  "condition": "changed_endpoints_still_50mm",
+  "comparison_valid_for_nominal_distance": true,
+  "comparison_status": "NOMINAL_ENDPOINT_DISTANCE_COMPARISON_ONLY",
+  "supersedes": "ruler_pair_04_review.json",
+  "measurement_session": "ENDED_BY_USER"
+}

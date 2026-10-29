@@ -1,0 +1,10 @@
+{
+  "csv_metrics_recomputed": true,
+  "composite_keys_unique": true,
+  "coordinate_rows": 4770,
+  "frozen_original_hashes_checked": 12,
+  "accuracy": "BLOCKED_NO_INDEPENDENT_REFERENCE",
+  "operator_static_confirmation": "trajectory_20261001_223257_586667",
+  "first_run_excluded_from_static": "trajectory_20261001_222829_853865",
+  "new_document_local_links_checked": 6
+}

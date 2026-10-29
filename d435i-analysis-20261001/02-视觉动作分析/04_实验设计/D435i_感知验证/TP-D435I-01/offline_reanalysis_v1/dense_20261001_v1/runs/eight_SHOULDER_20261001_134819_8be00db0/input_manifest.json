@@ -1,0 +1,26 @@
+{
+  "run_id": "eight_SHOULDER_20261001_134819_8be00db0",
+  "metadata": [
+    {
+      "name": "run.json",
+      "sha256": "4c9819f97494ec7a04b42b1661db83cc3ff7054c63505ab89c0ffc91fb10370d"
+    },
+    {
+      "name": "frames.jsonl",
+      "sha256": "76c02263f0c1dc9717799291a19bbf4f3a0193f570f9936619914bf1dc5a8a1c"
+    },
+    {
+      "name": "analysis.jsonl",
+      "sha256": "57d5c0acac12359bd154762f1f0914e10602f30d5b703624a6564e1362576ded"
+    },
+    {
+      "name": "events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "files.sha256",
+      "sha256": "070dbcbeb635e24b25650ad7e684a0a14fa765f9e8e2903cd7ed1aeeb4fefee2"
+    }
+  ],
+  "image_scope": "all selected frames; paired files read, no thinning; previous raw manifest SHA audit retained"
+}
