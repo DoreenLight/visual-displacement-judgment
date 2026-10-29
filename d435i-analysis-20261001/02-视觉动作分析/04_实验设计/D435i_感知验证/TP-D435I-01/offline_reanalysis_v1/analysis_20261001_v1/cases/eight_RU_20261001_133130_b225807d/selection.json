@@ -1,0 +1,13 @@
+{
+  "run_id": "eight_RU_20261001_133130_b225807d",
+  "start_s": 15.0,
+  "end_s": 25.0,
+  "selection": "highest dense-body/candidate availability among fixed 10s windows; exploratory; visual review required",
+  "review_status": "sampled_images_and_signals_checked",
+  "baseline_counterfactual_note": "first2s recentered baseline may contain motion; diagnostic only",
+  "review_scope": "六张叠加采样帧与信号合理性；无独立完整逐事件标注",
+  "note": "手方向变化可见，指根深度间歇无效；候选RU偏零且缺失，不能证明可靠计数。",
+  "video_frames": 150,
+  "video_decoded": true,
+  "video_encoding": "MJPEG AVI 15fps nearest capture visualization only"
+}

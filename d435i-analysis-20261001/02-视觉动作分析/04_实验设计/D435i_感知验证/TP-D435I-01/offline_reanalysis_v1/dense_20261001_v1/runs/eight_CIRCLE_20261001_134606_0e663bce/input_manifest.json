@@ -1,0 +1,26 @@
+{
+  "run_id": "eight_CIRCLE_20261001_134606_0e663bce",
+  "metadata": [
+    {
+      "name": "run.json",
+      "sha256": "9d5cd280a9266a0f1ae72212a925e7f0312adcb061676cb1d00578bf7f171305"
+    },
+    {
+      "name": "frames.jsonl",
+      "sha256": "3ac67facfbb3fcd4da1e2b72c37092feb8da753351e8ec8a6c63940416bb91fd"
+    },
+    {
+      "name": "analysis.jsonl",
+      "sha256": "f2cec5edfb34d60f4b0e91aef8084ce642a555554b2ecffd91d586576a41933f"
+    },
+    {
+      "name": "events.jsonl",
+      "sha256": "9571a6ab2ca83e01b16959b08f89ff10258e17395aad01dc117f77f4110168f9"
+    },
+    {
+      "name": "files.sha256",
+      "sha256": "f49217850a7c0c026f7f661d1f03bf957fbce3d074d910d9553a306a83bf076a"
+    }
+  ],
+  "image_scope": "all selected frames; paired files read, no thinning; previous raw manifest SHA audit retained"
+}

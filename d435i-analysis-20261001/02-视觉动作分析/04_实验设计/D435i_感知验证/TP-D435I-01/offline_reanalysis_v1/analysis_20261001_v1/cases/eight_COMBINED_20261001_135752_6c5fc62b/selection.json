@@ -1,0 +1,8 @@
+{
+  "run_id": "eight_COMBINED_20261001_135752_6c5fc62b",
+  "start_s": 14.0,
+  "end_s": 24.0,
+  "selection": "highest dense-body/candidate availability among fixed 10s windows; exploratory; visual review required",
+  "review_status": "not_yet_reviewed",
+  "baseline_counterfactual_note": "first2s recentered baseline may contain motion; diagnostic only"
+}

@@ -1,0 +1,10 @@
+{
+  "scope": "25 retained trials, one participant, current scene; exploratory",
+  "frames": 29938,
+  "online_body_valid_frames": 17313,
+  "dense_body_valid_frames": 28369,
+  "question1": "surface points observable, stability varies; localization contributes",
+  "question2": "positions and candidate angles observable; anatomical angle/count not validated",
+  "question3": "extra movement responses; baseline/semantics limit attribution",
+  "hardware_extreme_limit": "not identifiable from current data"
+}

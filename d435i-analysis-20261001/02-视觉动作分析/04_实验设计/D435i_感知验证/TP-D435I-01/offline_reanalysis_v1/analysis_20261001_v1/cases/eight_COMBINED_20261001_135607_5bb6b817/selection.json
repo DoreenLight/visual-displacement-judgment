@@ -1,0 +1,13 @@
+{
+  "run_id": "eight_COMBINED_20261001_135607_5bb6b817",
+  "start_s": 10.0,
+  "end_s": 20.0,
+  "selection": "highest dense-body/candidate availability among fixed 10s windows; exploratory; visual review required",
+  "review_status": "sampled_images_and_signals_checked",
+  "baseline_counterfactual_note": "first2s recentered baseline may contain motion; diagnostic only",
+  "review_scope": "六张叠加采样帧与信号合理性；无独立完整逐事件标注",
+  "note": "手臂与躯干/肩姿态变化可见，混合提示有迹象；部分帧因观测/几何失效进入unknown。",
+  "video_frames": 150,
+  "video_decoded": true,
+  "video_encoding": "MJPEG AVI 15fps nearest capture visualization only"
+}

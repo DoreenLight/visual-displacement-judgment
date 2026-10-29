@@ -1,0 +1,66 @@
+[
+  {
+    "task_id": 1,
+    "trials": 3,
+    "frames": 2700,
+    "online_rate": 0.6566666666666666,
+    "dense_rate": 1.0,
+    "candidate_rate": 0.1862962962962963
+  },
+  {
+    "task_id": 2,
+    "trials": 3,
+    "frames": 2699,
+    "online_rate": 0.6065209336791404,
+    "dense_rate": 1.0,
+    "candidate_rate": 0.6665431641348648
+  },
+  {
+    "task_id": 3,
+    "trials": 4,
+    "frames": 7022,
+    "online_rate": 0.5673597265736258,
+    "dense_rate": 0.9651096553688407,
+    "candidate_rate": 0.4296496724579892
+  },
+  {
+    "task_id": 4,
+    "trials": 3,
+    "frames": 5167,
+    "online_rate": 0.5895103541706986,
+    "dense_rate": 0.9914844203599767,
+    "candidate_rate": 0.7356299593574608
+  },
+  {
+    "task_id": 5,
+    "trials": 3,
+    "frames": 2962,
+    "online_rate": 0.5111411208642809,
+    "dense_rate": 0.8777852802160703,
+    "candidate_rate": 0.5952059419311276
+  },
+  {
+    "task_id": 6,
+    "trials": 3,
+    "frames": 2825,
+    "online_rate": 0.6417699115044248,
+    "dense_rate": 0.9957522123893805,
+    "candidate_rate": 0.6601769911504425
+  },
+  {
+    "task_id": 7,
+    "trials": 3,
+    "frames": 3611,
+    "online_rate": 0.5738022708391027,
+    "dense_rate": 0.9196898366103572,
+    "candidate_rate": 0.36638050401550815
+  },
+  {
+    "task_id": 8,
+    "trials": 3,
+    "frames": 2952,
+    "online_rate": 0.4993224932249323,
+    "dense_rate": 0.7913279132791328,
+    "candidate_rate": 0.06571815718157181
+  }
+]

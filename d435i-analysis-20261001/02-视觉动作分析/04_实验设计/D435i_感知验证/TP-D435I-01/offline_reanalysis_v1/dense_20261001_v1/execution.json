@@ -1,0 +1,77 @@
+{
+  "command": [
+    "04_实验设计/D435i_感知验证/TP-D435I-01/offline_reanalysis_v1/reprocess.py",
+    "--output",
+    "04_实验设计/D435i_感知验证/TP-D435I-01/offline_reanalysis_v1/dense_20261001_v1"
+  ],
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "sources": [
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\attempt_01\\pose_landmarker_lite.task",
+      "sha256": "59929e1d1ee95287735ddd833b19cf4ac46d29bc7afddbbf6753c459690d574a"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\attempt_01\\hand_landmarker.task",
+      "sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\attempt_01\\training_protocol_v3.py",
+      "sha256": "610cca96f91669ae7a1495a032f1387f0ca2faecb1db372a2e2ac80265d8b27e"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\attempt_01\\live_feedback_v3.py",
+      "sha256": "0e2895a2e79ff8dce51e7927161f85a9d24d16cb3de694388452949897bdefd4"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\attempt_01\\live_feedback_v2.py",
+      "sha256": "165ef93ebe189f1b8f7b0c35e417d85f9a46a802a30074795e9c3dfd0ec3d351"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\attempt_01\\feedback_engine_v2.py",
+      "sha256": "0e1e74e3560dcd5f5eeca78e6c5b519bcaa783edd769bca6ffa0de5d6196e907"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\attempt_01\\eight_task_sessions.json",
+      "sha256": "29de1a6f8f1126de7ec182dc0f25a2e2af07eeea02e0f998997ccfdf51b89383"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\attempt_01\\excluded_trials.json",
+      "sha256": "373649a3bdd1e8cf38c471726a85b6d4c04aaee6f880deafcbae95be7f345852"
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\visual-displacement-judgment-main\\02-视觉动作分析\\04_实验设计\\D435i_感知验证\\TP-D435I-01\\offline_reanalysis_v1\\reprocess.py",
+      "sha256": "817d175344de2fc5a2337d8e3649953d42b3185b2978499e8c3361301dac9349"
+    }
+  ],
+  "runs": [
+    "eight_S1_20261001_131959_59d5ec91",
+    "eight_S2_20261001_132239_ea3010e2",
+    "eight_FE_20261001_133658_73162b96",
+    "eight_RU_20261001_133130_b225807d",
+    "eight_CIRCLE_20261001_134353_ece4c4e8",
+    "eight_SHOULDER_20261001_134728_5cedac08",
+    "eight_ELBOW_20261001_135236_ac256f5f",
+    "eight_COMBINED_20261001_135607_5bb6b817",
+    "eight_CIRCLE_20261001_134509_b65ab28b",
+    "eight_CIRCLE_20261001_134606_0e663bce",
+    "eight_COMBINED_20261001_135701_cb673e7e",
+    "eight_COMBINED_20261001_135752_6c5fc62b",
+    "eight_ELBOW_20261001_135333_1cd6edcf",
+    "eight_ELBOW_20261001_135439_15a01a4e",
+    "eight_FE_20261001_133828_a60e1ba6",
+    "eight_FE_20261001_133920_581ea1c5",
+    "eight_FE_20261001_134101_6c9daee0",
+    "eight_RU_20261001_133347_d19a29ac",
+    "eight_RU_20261001_133509_ee4315e4",
+    "eight_S1_20261001_132059_bc0d3f66",
+    "eight_S1_20261001_132148_b0ac2f4c",
+    "eight_S2_20261001_132326_343e7896",
+    "eight_S2_20261001_132413_dedfd30f",
+    "eight_SHOULDER_20261001_134819_8be00db0",
+    "eight_SHOULDER_20261001_134908_c025f17f"
+  ],
+  "limit": 0,
+  "offline_method": "fresh VIDEO tracker per trial; original gates and stored baseline; captured time; no live deadline or interpolation",
+  "camera_opened": false,
+  "exit_code": 0
+}

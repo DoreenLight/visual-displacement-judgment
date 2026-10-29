@@ -1,0 +1,124 @@
+{
+  "run_id": "eight_FE_20261001_132656_a6f5531a",
+  "participant_id": "P001",
+  "task_id": 3,
+  "task_name": "标准腕屈伸",
+  "captured_frames": 1761,
+  "analysed_frames": 1011,
+  "saved_frames": 1761,
+  "capture_queue_drops": 0,
+  "active_duration_s": 58.747,
+  "finish_reason": "operator_finish",
+  "estimated_reps": 0,
+  "manual_count": 0,
+  "static_duration_verdict": "NOT_APPLICABLE",
+  "keypoint_statistics": {
+    "shoulder": {
+      "valid_rate": 0.5650198750709824,
+      "gap_max_s": 0.13429710000491468,
+      "raw_axis_sd_mm": [
+        45.38637474549276,
+        20.212007795571477,
+        26.448614918417626
+      ],
+      "position_fluctuation_p95_mm": 129.25170846562747,
+      "availability_verdict": "FAIL",
+      "static_fluctuation_verdict": "NOT_APPLICABLE",
+      "accuracy_verdict": "BLOCKED"
+    },
+    "elbow": {
+      "valid_rate": 0.5650198750709824,
+      "gap_max_s": 0.13429710000491468,
+      "raw_axis_sd_mm": [
+        66.11302263701535,
+        18.168125850394002,
+        75.91950792261771
+      ],
+      "position_fluctuation_p95_mm": 191.84121880442825,
+      "availability_verdict": "FAIL",
+      "static_fluctuation_verdict": "NOT_APPLICABLE",
+      "accuracy_verdict": "BLOCKED"
+    },
+    "wrist": {
+      "valid_rate": 0.5650198750709824,
+      "gap_max_s": 0.13429710000491468,
+      "raw_axis_sd_mm": [
+        59.512226831713534,
+        31.33208155041492,
+        142.06244662758795
+      ],
+      "position_fluctuation_p95_mm": 240.8322154893939,
+      "availability_verdict": "FAIL",
+      "static_fluctuation_verdict": "NOT_APPLICABLE",
+      "accuracy_verdict": "BLOCKED"
+    }
+  },
+  "quality": {
+    "run_id": "eight_FE_20261001_132656_a6f5531a",
+    "task_id": 3,
+    "window_id": "whole_trial",
+    "start_mono_s": 63219.2214756,
+    "end_mono_s": 63277.9334778,
+    "A_value": null,
+    "C_value": null,
+    "S_value": null,
+    "Q_value": 0.5650198750709824,
+    "A_valid": false,
+    "A_status": "not_completed",
+    "reported_cycles": 0,
+    "estimated_cycles": 0,
+    "C_valid": false,
+    "C_status": "independent_labels_missing",
+    "S_valid": false,
+    "S_status": "insufficient_valid_estimates",
+    "Q_valid": true,
+    "Q_body_valid_rate": 0.5650198750709824,
+    "Q_max_gap_s": 0.13429710000491468,
+    "angle_estimate_coverage": 0.5235661555934128,
+    "compensation_coverage": 0.5650198750709824,
+    "host_receive_to_output_p95_ms": 82.955,
+    "end_to_end_latency_verdict": "BLOCKED",
+    "reason": "no_independent_reference_or_labels; no_device_host_clock_mapping",
+    "parameters_version": "eight-task/v3",
+    "overall_status": "not_scorable"
+  },
+  "smoothness_exploratory": {
+    "status": "insufficient_valid_estimates",
+    "values": []
+  },
+  "candidate_angle_ranges": {
+    "theta_fe_est_deg": {
+      "valid_samples": 922,
+      "min_deg": -42.21,
+      "max_deg": 81.27,
+      "range_deg": 123.47999999999999,
+      "formal_rom_valid": false,
+      "source": "constrained_reference_estimate"
+    },
+    "theta_ru_est_deg": {
+      "valid_samples": 922,
+      "min_deg": -63.96,
+      "max_deg": 71.76,
+      "range_deg": 135.72,
+      "formal_rom_valid": false,
+      "source": "constrained_reference_estimate"
+    }
+  },
+  "operator_reported_completion": false,
+  "manual_clockwise": 0,
+  "manual_counterclockwise": 0,
+  "formal_verdicts": {
+    "TP-01": "BLOCKED_ACCURACY",
+    "TP-02": "BLOCKED_ANATOMICAL_ANGLES_AND_REFERENCE",
+    "TP-03": "BLOCKED_INDEPENDENT_LABELS",
+    "TP-04": "BLOCKED_INPUT_VALIDATION"
+  },
+  "observed_source_frame_skips": 0,
+  "capture_wall_duration_s": 58.747247499995865,
+  "capture_hz_observed": 29.975872486623718,
+  "source_hashes": {
+    "run.json": "062d7cc5e5c889ac54fd61d8f8b5e450a3c59ac4ff78d8e1cf5bf34b39efbb58",
+    "analysis.jsonl": "c1f3e4a7f63c68919b8b6e9430e44a482d9d614c39909683db86f7b13816e8ab",
+    "frames.jsonl": "255dddb3790d4c1b33cf893425415bcf0e6b7f0716bce0d5fefa4fb5b2e702b2"
+  }
+}

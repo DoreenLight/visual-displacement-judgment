@@ -1,0 +1,13 @@
+{
+  "run_id": "eight_ELBOW_20261001_135236_ac256f5f",
+  "start_s": 3.0,
+  "end_s": 13.0,
+  "selection": "highest dense-body/candidate availability among fixed 10s windows; exploratory; visual review required",
+  "review_status": "sampled_images_and_signals_checked",
+  "baseline_counterfactual_note": "first2s recentered baseline may contain motion; diagnostic only",
+  "review_scope": "六张叠加采样帧与信号合理性；无独立完整逐事件标注",
+  "note": "明显外展和肘运动可见；原肩通道包含上臂摆动，因此combined可解释，但不证明同时耸肩。",
+  "video_frames": 150,
+  "video_decoded": true,
+  "video_encoding": "MJPEG AVI 15fps nearest capture visualization only"
+}

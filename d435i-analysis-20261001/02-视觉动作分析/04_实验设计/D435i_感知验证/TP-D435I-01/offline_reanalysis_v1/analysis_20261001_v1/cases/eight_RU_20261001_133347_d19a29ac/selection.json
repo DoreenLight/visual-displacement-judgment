@@ -1,0 +1,13 @@
+{
+  "run_id": "eight_RU_20261001_133347_d19a29ac",
+  "start_s": 24.0,
+  "end_s": 34.0,
+  "selection": "highest dense-body/candidate availability among fixed 10s windows; exploratory; visual review required",
+  "review_status": "sampled_images_and_signals_checked",
+  "baseline_counterfactual_note": "first2s recentered baseline may contain motion; diagnostic only",
+  "review_scope": "六张叠加采样帧与信号合理性；无独立完整逐事件标注",
+  "note": "该试次候选角可用96.96%，周期变化清楚，但RU候选一直偏负、主周期也出现在另一候选通道；只能证明存在可提取运动信号，不能以指令名判定轴准确。",
+  "video_frames": 150,
+  "video_decoded": true,
+  "video_encoding": "MJPEG AVI 15fps nearest capture visualization only"
+}

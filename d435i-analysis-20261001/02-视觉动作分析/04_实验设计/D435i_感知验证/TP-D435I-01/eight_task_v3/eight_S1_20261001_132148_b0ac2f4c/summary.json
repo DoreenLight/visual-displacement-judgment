@@ -1,0 +1,124 @@
+{
+  "run_id": "eight_S1_20261001_132148_b0ac2f4c",
+  "participant_id": "P001",
+  "task_id": 1,
+  "task_name": "自然坐姿静止",
+  "captured_frames": 900,
+  "analysed_frames": 541,
+  "saved_frames": 900,
+  "capture_queue_drops": 0,
+  "active_duration_s": 30.03,
+  "finish_reason": "duration_complete",
+  "estimated_reps": 0,
+  "manual_count": 0,
+  "static_duration_verdict": "PASS",
+  "keypoint_statistics": {
+    "shoulder": {
+      "valid_rate": 0.6,
+      "gap_max_s": 0.07047539999621222,
+      "raw_axis_sd_mm": [
+        3.994136822458925,
+        3.552322027498338,
+        7.855991008410041
+      ],
+      "position_fluctuation_p95_mm": 18.78309381336423,
+      "availability_verdict": "FAIL",
+      "static_fluctuation_verdict": "FAIL",
+      "accuracy_verdict": "BLOCKED"
+    },
+    "elbow": {
+      "valid_rate": 0.6,
+      "gap_max_s": 0.07047539999621222,
+      "raw_axis_sd_mm": [
+        6.682145380809266,
+        4.484207640637687,
+        1.7401703525318648
+      ],
+      "position_fluctuation_p95_mm": 16.641659335952028,
+      "availability_verdict": "FAIL",
+      "static_fluctuation_verdict": "FAIL",
+      "accuracy_verdict": "BLOCKED"
+    },
+    "wrist": {
+      "valid_rate": 0.6,
+      "gap_max_s": 0.07047539999621222,
+      "raw_axis_sd_mm": [
+        22.43295623900862,
+        2.8142455008927527,
+        6.470526529674942
+      ],
+      "position_fluctuation_p95_mm": 37.530521708231184,
+      "availability_verdict": "FAIL",
+      "static_fluctuation_verdict": "FAIL",
+      "accuracy_verdict": "BLOCKED"
+    }
+  },
+  "quality": {
+    "run_id": "eight_S1_20261001_132148_b0ac2f4c",
+    "task_id": 1,
+    "window_id": "whole_trial",
+    "start_mono_s": 62912.0265113,
+    "end_mono_s": 62942.0178523,
+    "A_value": null,
+    "C_value": null,
+    "S_value": null,
+    "Q_value": 0.6,
+    "A_valid": false,
+    "A_status": "not_applicable",
+    "reported_cycles": 0,
+    "estimated_cycles": 0,
+    "C_valid": false,
+    "C_status": "independent_labels_missing",
+    "S_valid": false,
+    "S_status": "not_applicable",
+    "Q_valid": true,
+    "Q_body_valid_rate": 0.6,
+    "Q_max_gap_s": 0.07047539999621222,
+    "angle_estimate_coverage": 0.005555555555555556,
+    "compensation_coverage": 0.6,
+    "host_receive_to_output_p95_ms": 79.41499999999999,
+    "end_to_end_latency_verdict": "BLOCKED",
+    "reason": "no_independent_reference_or_labels; no_device_host_clock_mapping",
+    "parameters_version": "eight-task/v3",
+    "overall_status": "not_scorable"
+  },
+  "smoothness_exploratory": {
+    "status": "not_applicable",
+    "values": []
+  },
+  "candidate_angle_ranges": {
+    "theta_fe_est_deg": {
+      "valid_samples": 5,
+      "min_deg": -4.25,
+      "max_deg": 7.62,
+      "range_deg": 11.870000000000001,
+      "formal_rom_valid": false,
+      "source": "constrained_reference_estimate"
+    },
+    "theta_ru_est_deg": {
+      "valid_samples": 5,
+      "min_deg": 0.72,
+      "max_deg": 4.72,
+      "range_deg": 4.0,
+      "formal_rom_valid": false,
+      "source": "constrained_reference_estimate"
+    }
+  },
+  "operator_reported_completion": null,
+  "manual_clockwise": 0,
+  "manual_counterclockwise": 0,
+  "formal_verdicts": {
+    "TP-01": "BLOCKED_ACCURACY",
+    "TP-02": "BLOCKED_ANATOMICAL_ANGLES_AND_REFERENCE",
+    "TP-03": "BLOCKED_INDEPENDENT_LABELS",
+    "TP-04": "BLOCKED_INPUT_VALIDATION"
+  },
+  "observed_source_frame_skips": 0,
+  "capture_wall_duration_s": 30.02965630000108,
+  "capture_hz_observed": 29.970372987584533,
+  "source_hashes": {
+    "run.json": "e5c47111b779307cd77fbd13aba49fcf4b869157f385ee0a665831f785e6603e",
+    "analysis.jsonl": "8abc5b7e9730f8b1235cd10ec674b3cc9887a39f0e19a5e41aeedec3da664cf9",
+    "frames.jsonl": "391da33dd01b226ea81fcf4b14e5a8c1eaa5f03a98098854e5085cd0d347b017"
+  }
+}

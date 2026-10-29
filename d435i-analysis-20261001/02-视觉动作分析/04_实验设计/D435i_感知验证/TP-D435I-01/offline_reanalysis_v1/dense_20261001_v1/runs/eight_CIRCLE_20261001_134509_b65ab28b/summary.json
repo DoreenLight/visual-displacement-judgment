@@ -1,0 +1,22 @@
+{
+  "run_id": "eight_CIRCLE_20261001_134509_b65ab28b",
+  "task_id": 5,
+  "frames": 815,
+  "body_valid": 540,
+  "angle_valid": 421,
+  "states": {
+    "normal": 464,
+    "elbow_compensation": 36,
+    "shoulder_compensation": 30,
+    "unknown": 275,
+    "combined": 10
+  },
+  "reasons": {
+    "hand_geometry_or_reference_invalid": 5,
+    "hand_or_basis_missing": 108,
+    "body_geometry_or_keypoints_invalid": 275,
+    "angle_out_of_observable_range": 6
+  },
+  "final_reps": 0,
+  "seconds": 42.33285479999904
+}

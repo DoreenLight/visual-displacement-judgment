@@ -1,0 +1,13 @@
+{
+  "run_id": "eight_S1_20261001_132059_bc0d3f66",
+  "start_s": 2.0,
+  "end_s": 12.0,
+  "selection": "highest dense-body/candidate availability among fixed 10s windows; exploratory; visual review required",
+  "review_status": "sampled_images_and_signals_checked",
+  "baseline_counterfactual_note": "first2s recentered baseline may contain motion; diagnostic only",
+  "review_scope": "六张叠加采样帧与信号合理性；无独立完整逐事件标注",
+  "note": "采样画面姿态基本稳定却持续combined；旧基线与重新摆位不匹配的证据强，不能视为持续真实代偿。",
+  "video_frames": 150,
+  "video_decoded": true,
+  "video_encoding": "MJPEG AVI 15fps nearest capture visualization only"
+}

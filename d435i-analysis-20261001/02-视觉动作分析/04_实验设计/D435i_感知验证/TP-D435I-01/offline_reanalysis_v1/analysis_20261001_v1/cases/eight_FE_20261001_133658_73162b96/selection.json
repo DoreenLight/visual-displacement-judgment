@@ -1,0 +1,13 @@
+{
+  "run_id": "eight_FE_20261001_133658_73162b96",
+  "start_s": 13.0,
+  "end_s": 23.0,
+  "selection": "highest dense-body/candidate availability among fixed 10s windows; exploratory; visual review required",
+  "review_status": "sampled_images_and_signals_checked",
+  "baseline_counterfactual_note": "first2s recentered baseline may contain motion; diagnostic only",
+  "review_scope": "六张叠加采样帧与信号合理性；无独立完整逐事件标注",
+  "note": "手姿态变化且前臂较稳定，点位追踪大致合理；FE/RU候选都明显变化与偏零，不能证明轴分离或计数正确。",
+  "video_frames": 150,
+  "video_decoded": true,
+  "video_encoding": "MJPEG AVI 15fps nearest capture visualization only"
+}

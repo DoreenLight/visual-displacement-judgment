@@ -1,0 +1,13 @@
+{
+  "run_id": "eight_CIRCLE_20261001_134353_ece4c4e8",
+  "start_s": 29.0,
+  "end_s": 39.0,
+  "selection": "highest dense-body/candidate availability among fixed 10s windows; exploratory; visual review required",
+  "review_status": "sampled_images_and_signals_checked",
+  "baseline_counterfactual_note": "first2s recentered baseline may contain motion; diagnostic only",
+  "review_scope": "六张叠加采样帧与信号合理性；无独立完整逐事件标注",
+  "note": "肘支撑时手朝向变化可见；未触发额外参与大致合理；六帧不能独立确认圈数或真实方向。",
+  "video_frames": 150,
+  "video_decoded": true,
+  "video_encoding": "MJPEG AVI 15fps nearest capture visualization only"
+}

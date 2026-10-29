@@ -1,0 +1,13 @@
+{
+  "run_id": "eight_S1_20261001_131959_59d5ec91",
+  "start_s": 2.0,
+  "end_s": 12.0,
+  "selection": "highest dense-body/candidate availability among fixed 10s windows; exploratory; visual review required",
+  "review_status": "sampled_images_and_signals_checked",
+  "baseline_counterfactual_note": "first2s recentered baseline may contain motion; diagnostic only",
+  "review_scope": "六张叠加采样帧与信号合理性；无独立完整逐事件标注",
+  "note": "静止且关键点位置基本贴合画面，未触发额外参与提示合理；部分手点深度无效。",
+  "video_frames": 150,
+  "video_decoded": true,
+  "video_encoding": "MJPEG AVI 15fps nearest capture visualization only"
+}
